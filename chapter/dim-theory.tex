@@ -1,0 +1,946 @@
+\chapter{Dimension theory and homological method}
+\section{Regular sequences and the Koszul complex}
+\subsection{Regular sequences}
+Let $A$ be a ring and $M$ an $A$-module. An element $a\in A$ is said to be \textbf{$\bm{M}$-regular} if $ax\neq0$ for all non-zero $x\in M$. A sequence $a_1,\dots,a_n$ of elements $A$ is an \textbf{$\bm{M}$-sequence} (or an \textbf{$\bm{M}$-regular sequence}) if the following two
+\begin{itemize}
+\item[$(1)$]$a_1$ is $M$-regular, $a_2$ is $(M/a_1M)$-regular, $\cdots$, $a_n$ is $(M/\sum_{i=1}^{n-1}a_iM)$-regular.
+\item[$(2)$]$M/\sum_{i=1}^{n}a_iM\neq 0$.
+\end{itemize}
+Note that, after permutation, the elements of an $M$-sequence may no longer
+form an $M$-sequence.
+\begin{lemma}\label{regular seq lem}
+Suppose $b_1,b_2,\dots,b_n$ is an $M$-sequence. If $b_1\xi_1+\cdots+b_n\xi_n=0$ with $\xi_i\in M$ then $\xi_i\in b_1M+\cdots+b_nM$ for all $i$
+\end{lemma}
+\begin{proof}
+Let us rove by induction on $n$. First of all from the condition that $b_n$ is not a zero-divisor modulo $b_1,\dots,b_{n-1}$, we get $\xi_n\in\sum_{i=1}^{n-1}b_iM$, hence we can write
+\[\xi_n=\sum_{i=1}^{n-1}b_i\eta_i,\quad \eta_i\in M\]
+Therefore $\sum_{i=1}^{n-1}b_i(\xi_i+b_n\eta_i)=0$, so that by induction hypothesis we have
+\[\xi_i+b_n\eta_i\in b_1M+\cdots+b_{n-1}M,\quad\forall 1\leq i\leq n-1.\]
+giving $\xi_i\in b_1M+\cdots+b_nM$ for $1\leq i\leq n-1$. The condition for $\xi_n$ is already known.
+\end{proof}
+\begin{lemma}\label{regular seq extend}
+Let $A$ be a noetherian ring and $M$ an $A$-module. Any $M$-regular sequence $a_1,\dots,a_n$ in an ideal $I$ can be extended to a maximal $M$-regular sequence in $I$.
+\end{lemma}
+\begin{proof}
+If $a_1,\dots,a_n$ is not maximal in $I$, we can find $a_{n+1}\in I$ such that $a_1,\dots,a_n,a_{n+1}$ is an $M$-regular sequence. Either this process terminates at a maximal $M$-regular sequence in $I$, or it produces a strictly ascending chain of ideals
+\[(a_1)\subset(a_1,a_2)\subset\cdots\]
+Since $A$ is noetherian, we can exclude this latter possibility.
+\end{proof}
+\begin{proposition}\label{regular power}
+If $a_1,\dots,a_n$ is an $M$-sequence then so is $a_1^{\nu_1},\dots,a_n^{\nu_n}$ for any positive integers $\nu_1,\dots,\nu_n$.
+\end{proposition}
+\begin{proof}
+It is sufficient to prove that if $a_1,\dots,a_n$ is an $M$-sequence then so is $a_1^{\nu_1},a_2,\dots,a_n$. Indeed, assuming this, we have in turn that $a_1^{\nu_1},a_2,\dots,a_n$ is an $M$-sequence, then setting $M_1=M/a_1^{\nu_1}M$ that $a_2,a_3,\dots,a_n$ and hence also $a_2^{\nu_2},a_3,\dots,a_n$ is an $M_1$-sequence, and so on. Also, the
+second condition $M\neq\sum_{i=1}^{n}a_i^{\nu_i}M$ is obvious.\par
+Now assuming $\nu>1$ we prove by induction on $\nu$ that $a_1^{\nu},a_2,\dots,a_n$ is an $M$-sequence. Since $a_1$ is $M$-regular, so is $a_1^{\nu_1}$. For $i>1$, suppose that for some $\omega\in M$ we have
+\[a_i\omega=a_1^{\nu}\xi_1+a_2\xi_2+\cdots+a_{i-1}\xi_{i-1},\quad\]
+Then since $a_1^{\nu-1},a_2,\dots,a_n$ is an $M$-sequence, we can write
+\[\omega=a_1^{\nu-1}\eta_1+\cdots+a_{i-1}\eta_{i-1},\quad\eta_j\in M\]
+Hence we get 
+\[0=a_1^{\nu-1}(a_1\xi_1-a_i\eta_1)+a_2(\xi_2-a_i\eta_2)+\cdots+a_{i-1}(\xi_{i-1}-a_i\eta_{i-1})\]
+Then Lemma~\ref{regular seq lem} gives \[a_1\xi_1-a_i\eta_1\in a_1^{\nu-1}M+a_2M+\cdots+a_{i-1}M\]
+and hence $a_i\eta_1\in a_1M+a_2M+\cdots+a_{i-1}M$. Therefore $\eta_1\in a_1M+a_2M+\cdots+a_{i-1}M$, and so as required we have $\omega\in a_1^{\nu}M+a_2M+\cdots+a_{i-1}M$.
+\end{proof}
+Let $A$ be a ring, $X_1,\dots,X_n$ indeterminates over $A$, and $M$ an $A$-module. We can view elements of $M\otimes_AA[X_1,\dots,X_n]$ as polynomials in the $x_i$ with coefftcients in $M$,
+\[F(X)=F(X_1,\dots,X_n)=\sum_\alpha\xi_\alpha X^\alpha,\quad \xi_\alpha\in M\]
+For this reason we write $M[X_1,\dots,X_n]$ for $M\otimes_AA[X_1,\dots,X_n]$; we can consider this either as an $A$-module or as an $A[X_1,\dots,X_n]$-module. For $a_1,\dots,a_n\in A$ and $F\in M[X_1,\dots,X_n]$, we can substitute the $a_i$ for $X_i$ to get $F(a_1,\dots,a_n)\in M$.
+\begin{definition}
+Let $a_1,\dots,a_n\in A$, set $I=\sum_{i=1}^{n}a_iA$ and let $M$ be an $A$-module with $IM\neq M$.We say that $a_1,\dots,a_n$ is an \textbf{$\bm{M}$-quasi-regular sequence} if the following condition holds for each $\nu$:
+\begin{itemize}
+\item $F(X_1,\dots,X_n)\in M[X_1,\dots,X_n]$ is homogeneous of degree $\nu$ and $F(a)\in I^{\nu+1}M$ implies that all the coefticients of $F$ are in $IM$.
+\end{itemize}
+This notion is obviously independent of the order of $a_1,\dots,a_n$.
+\end{definition}
+In the above definition it would not make any difference if we replaced the condition that $F(a)\in I^{\nu+1}M$ by the condition $F(a)=0$. This is similar to that in Remark~\ref{analy inde remk}.\par
+We can define a map 
+\[\varphi:(M/IM)[X_1,\dots,X_n]\to G_I(M)=\bigoplus_{i=0}^{\infty}(I^iM/I^{i+1}M)\]
+as follows: taking a homogeneous element $F(X)\in M[X]$ of degree $\nu$ into the class of $F(a)$ in $I^\nu M/I^{\nu+1}M$ provides a homomorphism (of additive groups) from $M[X]$ into $G_I(M)$ which preserves degrees. Since $IM[X]$ is in the kernel, this induces a homomorphism
+\[\varphi:M[X]/IM[X]=(M/IM)[X]\to G_I(M)\]
+which is obviously surjective. Then $a_1,\dots,a_n$ is a quasi-regular sequence precisely when $\varphi$ is injective, and hence an isomorphism.\par
+Concluding we have the following result.
+\begin{proposition}\label{quasi regular}
+Let $A$ be a ring and $M$ an $A$-module. Let $a_1,\dots,a_n\in A$ and set $I=(a_1,\dots,a_n)$. Then the following conditions are equivalent
+\begin{itemize}
+\item[$(1)$]For every $\nu>0$ and for every homogenous polynomial $F(X)\in M[X_1,\dots,X_n]$ of degree $\nu$ such that $F(a_1,\dots,a_n)\in I^{\nu+1}M$, we have $F\in IM[X_1,\dots,X_n]$.
+\item[$(2)$]For every $\nu>0$ and for every homogenous polynomial $F(X)\in M[X_1,\dots,X_n]$ such that $F(a_1,\dots,a_n)=0$, we have $F\in IM[X_1,\dots,X_n]$.
+\item[$(3)$]The morphism of abelian groups 
+\[\varphi:(M/IM)[X_1,\dots,X_n]\to G_I(M)\] 
+defined by mapping a homogenous polynomial $F(X)$ of degree $\nu$ to $F(a_1,\dots,a_n)\in I^{\nu}M/I^{\nu+1}M$ is an isomorphism.
+\end{itemize}
+\end{proposition}
+Recall that for an $A$-module $M$, a submodule $N\sub M$ and $x\in A$ the notation $(N:x)$ means $\{m\in M\mid xm\in N\}$. This is a submodule of $M$. If $A$ is a ring, $I$ an ideal and $M$ an $A$-module, recall that $M$ is separated in the $I$-adic topology when $\bigcap_nI^nM=0$.
+\begin{proposition}
+Let $A$ be a ring, $M$ a nonzero $A$-module, $a_1,\dots,a_n\in A$ and $I=(a_1,\dots,a_n)$. Then
+\begin{itemize}
+\item[$(1)$]If $a_1,\dots,a_n$ is $M$-quasi regular and $x\in A$ is such that $(IM:x)=IM$, then $(I^\nu M:x)=I^\nu M$ for all $\nu>0$.
+\item[$(2)$]If $a_1,\dots,a_n$ is $M$-regular then it is $M$-quasi regular.
+\item[$(3)$]If $M$, $M/a_1M$, $\cdots$, $M/\sum_{i=1}^{n-1}a_iM$ are separated in the $I$-adic topology, then the converse of $(2)$ is also true.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+$(1)$ By induction on $\nu$, with the case $\nu=1$ true by assumption. Suppose $\nu>1$ and $\xi\in(I^\nu M:x)$, then $x\xi\in I^{\nu}M\sub I^{\nu-1}M$. By the inductive hypothesis $\xi\in I^{\nu-1}M$, hence there exists a homogenous polynomial $F(X)\in M[X_1,\dots,X_n]$ of degree $\nu-1$ such that 
+\[\xi=F(a_1,\dots,a_n)\] 
+Since $x=x\xi=xF(a_1,\dots,a_n)\in I^\nu M$, the coefficients of $F$ are in $(IM:x)=IM$. Therefore $\xi=F(a_1,\dots,a_n)\in I^\nu M$.\par
+$(2)$ By induction on $n$. For $n=1$ this is easy to check: a homogeneous polynomial od degree $\nu$ in $M[X]$ is of the form $F(X)=mX^{\nu}$. Let $a$ be $M$-regular, if $F(a)=ma^\nu=a^{\nu+1}\xi\in I^{\nu+1}M$, then since $a$ is not a zero-divisor for $M$, we conclude $m=a\xi$, hence is in $aM$.\par
+Then by the induction hypothesis $a_1,\dots,a_{n-1}$ is $M$-quasi regular. Let $F(X)\in M[X_1,\dots,X_n]$ be homogenous of degree $\nu>0$ such that $F(a_1,\dots,a_n)=0$. We prove that $F\in IM[X_1,\dots,X_n]$ by induction on $\nu$ (the case $\nu=0$ being trivial). Write
+\[F(X_1,\dots,X_n)=G(X_1,\dots,X_{n-1})+X_nH(X_1,\dots,X_n)\]
+Here $G$ is homogeneous of degree $\nu$ and $H$ of degree $\nu-1$. Then, from the regularity we get
+\[((a_1,\dots,a_{n-1})M:a_n)=(a_1,\dots,a_{n-1})M\] 
+Then from $(1)$, since $a_nH(a_1,\dots,a_{x})=-G(a_1,\dots,a_{n-1})$,
+\[H(a_1,\dots,a_n)\in((a_1,\dots,a_{n-1})^\nu M:a_n)=(a_1,\dots,a_{n-1})^\nu M\sub I^\nu M\]
+So by the induction hypothesis on $\nu$ we have $H(X)\in IM[X_1,\dots,X_n]$. Moreover, by the above formula there is a homogeneous polynomial $h(X_1,\dots,X_{n-1})$ of degree $\nu$ with coefficients in $M$ such that $H(a)=h(a_1,\dots,a_{n-1})$, and so setting
+\[g(X)=G(X_1,\dots,X_{n-1})+a_nh(a_1,\dots,a_{n-1})\]
+We have $g(a_1,\dots,a_{n-1})=0$, so by the inductive hypothesis on $n$ we get the coefficients of $g$ are all in $(a_1,\dots,a_{n-1})M$, therefore the coefficients of $G$ belong to $(a_1,\dots,a_n)M$. Since we already prove $H(X)\in IM[X_1,\dots,X_n]$, this implies the claim.\par
+$(3)$ Assume that $a_1,\dots,a_n$ is $M$-quasi regular and the modules $M$, $M/a_1M$, $\cdots$, $M/\sum_{i=1}^{n-1}a_iM$ are all separated in the $I$-adic topology.\par 
+Let $\xi\in M$, we proceed in this way
+\[\begin{tikzcd}
+a_1\xi=0\ar[rr,"\xi X_1"]\ar[rr,swap,"\text{quasi-regular}"]&&\xi\in IM\ar[rr]&&\xi=\sum_{i=1}^{n}a_i\xi_i^{(1)}\\
+a_1\sum a_i\xi_i^{(1)}=0\ar[rr,"\sum\xi_i^{(1)}X_1X_i"]\ar[rr,swap,"\text{quasi-regular}"]&&\xi_i^{(1)}\in IM\ar[rr]&&\xi_i^{(1)}=\sum_{i=1}^{n}a_i\xi_i^{(2)}
+\end{tikzcd}\]
+We see that $\xi\in\bigcap_nI^nM=0$, thus $a_1$ is regular over $M$, and this also takes care of the case $n=1$ since $M\neq IM$ by the separation condition.\par
+So assume $n>1$. Let $N=M/a_1M$, then there is an isomorphism of
+$A$-modules for $2\leq i\leq n-1$
+\[M/(a_1,\dots,a_i)M\cong N/(a_2,\dots,a_i)N\]
+So the modules $N$, $N/a_2N$, $\cdots$, $N/(a_1,\dots,a_{n-1})N$ are separated in the $I$-adic topology. If we show the sequence $a_2,\dots,a_n$ is $N$-quasi regular, then the claim follows by induction on $n$.\par
+So let $f(X_2,\dots,X_n)$ be a homogeneous polynomial of degree $\nu$ with coefficients in $N$, such that $f(a_2,\dots,a_n)=0$. If $F(X_2,\dots,X_n)$ is a homogeneous polynomial of degree $\nu$ with coefficients in $M$ which reduces to $f$ modulo $a_1M$, then $F(a_2,\dots,a_n)\in a_1M$. Set $F(a_2,\dots,a_n)=a_1\omega$; suppose that $\omega\in I^iM$, so that we can write $\omega=G_i(a)$ with $G_i(X)\in M[X_1,\dots,X_n]$ homogeneous of degree $i$. Then
+\[F(a_2,\dots,a_n)=a_1G_i(a_1,\dots,a_n)\]
+and if $i<\nu-1$ by applying the quasi regularity of $a_1,\dots,a_n$ on
+$X_1G_i(X_1,\dots,X_n)$ that the coefficients of $G_i$ belong to $IM$, so that $\omega\in I^{i+1}M$; repeating this argument we see that $\omega\in I^{\nu-1}M$. Setting $i=\nu-1$ in the above formula, then since $X_1$ does not appear in $F$, we can apply the definition of quasi-regular sequence to $F(X_2,\dots,X_n)-X_1G_{\nu-1}(X_1,\dots,X_n)$ to deduce that the coefficients of $F$ belong to $IM$. Hence, the coefficients of $f$ belong to $IN$.
+\end{proof}
+The theorem shows that, under the assumptions of $(3)$ any permutation of an $M$-regular sequence is $M$-regular.
+\begin{corollary}\label{regular permute}
+Let $A$ be a Noetherian ring, $M$ a finitely generated $A$-module and let $a_1,\dots,a_n$ be contained in the Jacobson radical of $A$. Then $a_1,\dots,a_n$ is $M$-regular if and only if it is $M$-quasi regular.\par
+In particular if $a_1,\dots,a_n$ is $M$-regular so is any permutation of the sequence.
+\end{corollary}
+\begin{remark}\label{regular permute eg}
+Here is an example where a permutation of an $M$-sequence fails to be an $M$-sequence: let $k$ be a field, $A=k[x,y,z]$ and set $a_1=x(y-1)$, $a_2=y$, $a_3=z(y-1)$. Then $(a_1,a_2,a_3)A=(x,y,z)A\neq A$, and $a_1,a_2,a_3$ is an $A$-sequence, whereas $a_1,a_3,a_2$ is not.
+\end{remark}
+\subsection{Koszul complex}
+We can decide whether an element $x\in A$ is a nonzero divisor from the homology of the complex
+\[K(x):\begin{tikzcd}
+0\ar[r]&R\ar[r,"x"]&R\ar[r]&0
+\end{tikzcd}\]
+which is $(0:x)$. This trivial remark is the essential basis for the homological study of regular sequences.\par
+Given a second element $y\in R$, multiplication by $y$ defines a map of complexes $K(x)\to K(x)$. That is, a commutative diagram
+\[\begin{tikzcd}
+K(x):&0\ar[r]&R\ar[d,"y"]\ar[r,"x"]&R\ar[d,"y"]\ar[r]&0\\
+K(x):&0\ar[r]&R\ar[r,"x"]&R\ar[r]&0
+\end{tikzcd}
+\]
+We can form the mapping cone of this map to get another complex
+\[K(x,y):\begin{tikzcd}
+0\ar[r]&R\ar[r,"x"]\ar[rd,"y"]&R\ar[draw=none]{d}[name=X, anchor=center,scale=1.5]{\oplus}\ar[r]\ar[rd,"y"]&0&\\
+&0\ar[r]&R\ar[r,swap,"-x"]&R\ar[r]&0
+\end{tikzcd}\]
+or in more usual notation as
+\[K(x,y):\begin{tikzcd}
+0\ar[r]&R\ar[r,"\big(\begin{smallmatrix}y\\x
+\end{smallmatrix}\big)"]&R\oplus R\ar[r,"(-x\,y)"]&R\ar[r]&0
+\end{tikzcd}\]
+Note that for convenience, we use cohomological notations, but there is a slight change of this: The degree $0$ term will always be the leftmost non-zero one. So $K(x,y)=K(x)[-1]\oplus K(x)$.\par 
+In particular, with our notation, $H^0(K(x))$ is the homology at the leftmost nonzero term $R$ of $K(x)$. We see from the definition that \[H^0(K(x))=(0:x)=\Ann(x)\]
+and $H^0(K(x,y))$ is $(0:(x, y))$, so that if $x$ is a non zero-divisor then $H^0(K(x,y))=0$.\par
+What is $H^1(K(x,y))$? An element $(a,b)\in R\oplus R$ is in the kernel iff $ax+by=0$. Of course this requires $b\in(x:y)$. Conversely, if $b\in(x:y)$, then there is an element $a$ with $ax+yb=0$, so that $(a,b)$ will be in the kernel.\par
+If we assume that $x$ is a non zero-divisor, then $a$ is uniquely determined by $b$, and the association $b\mapsto a$ is a module homomorphism, so the kernel is isomorphic to $(x:y)$.\par
+On the other hand, an element is in the image of the left-hand map iff it
+is of the form $(cy,-cx)$, so the elements of $(x:y)$ that correspond to elements of the image are the elements of $(x)$. Thus if $x$ is a non zero-divisor, then
+\[H^1(K(x,y))\cong(x,y)/(x)\]
+In particular, if $x$ is a nonzero divisor then $H^1(K(x,y))=0$ iff $x,y$ is a regular sequence.\par
+\vspace{5mm}
+As we know, there is an exact sequence
+\[\begin{tikzcd}
+0\ar[r]&K(x)[-1]\ar[r]&K(x,y)\ar[r]&K(x)\ar[r]&0
+\end{tikzcd}\]
+which gives a long exact seuqnece
+\[\begin{tikzcd}
+0\ar[r]&H^0(K(x))\ar[r,"\delta"]&H^0(K(x))\ar[r]&H^1(K(x,y))\ar[r]&H^1(K(x))\ar[r,"\delta"]&\cdots
+\end{tikzcd}\]
+The $\delta$ is the connecting morphism given be multiplication by $y$.\par
+Now suppose only that $H^1(K(x,y))=0$. It follows from the preceding long exact sequence that
+\[H^0(K(x))/yH^0(K(x))=0\]
+In general, not much can be deduced from this; but if we assume in addition
+that $R$ is a Noetherian local ring and $y$ is in the maximal ideal, then Nakayama's lemma shows that $H^0(K(x))=0$. Consequently, $x$ is a non zero-divisor, and $x,y$ is a regular sequence by what we have already proved. We may state what we have shown as follows:
+\begin{theorem}\label{Koszul K(x,y) thm}
+If $R$ is a Noetherian local ring and $x,y$ are in the maximal ideal, then $x,y$ is a regular sequence iff $H^0(K(x,y))=0$.
+\end{theorem}
+From the way the Koszul complex is written, it is clear that the complexes $K(x,y)$ and $K(y,x)$ are isomorphic. Thus under the hypothesis of Theorem~\ref{Koszul K(x,y) thm}, $x,y$ is a regular sequence iff $y,x$ is. This is enough to show that regular sequences may be permuted.
+\begin{corollary}
+If $R$ is a Noetherian local ring and $x_1,\dots,x_r$ is a regular sequence of elements in the maximal ideal of $R$, then any permutation of
+$x_1,\dots,x_r$ is again a regular sequence.
+\end{corollary}
+\begin{proof}
+Since every permutation is a product of transpositions of neighboring
+elements, it suffices to show that we can interchange two neighbors; that is, if $x_1,\dots,x_{i},x_{i+1},\dots,x_r$ is a regular sequence, then $x_1,\dots,x_{i+1},x_i,\dots,x_r$ is too. The only part of the definition of a regular sequence that is not immediate for $x_1,\dots,x_{i+1},x_i,\dots,x_r$ amounts to saying that $x_{i+1},x_i$ is a regular sequence modulo $(x_1,\dots,x_{i-1})$. After factoring out $(x_1,\dots,x_{i-1})$, Theorem~\ref{Koszul K(x,y) thm} and the remark following it give the desired conclusion.
+\end{proof}
+One might at first hope that the local hypothesis in these two results
+would be superfluous, required only by the clumsy methods used in the
+proof. This is not the case.
+\begin{example}
+Recall Example~\ref{regular permute eg}, consider the ring
+\[R=k[x,y,z]/x(y-1)\]
+and the sequence of elements
+\[y,z(y-1)\]
+The ideal they generate is $(y,z(y-1))=(y,z)\neq R$. Further, it is easy to
+see that $y$ is not a zero divisor in $R$, and $R/(y)=k[x,y,z]/(x,y)\cong k[z]$. Thus $y,z(y-1)$ is a regular sequence and
+\[H^1(K(y,z(y-1)))=0\]
+However, $z(y-1)$ is a zero divisor-it is killed by $x$-so that the sequence in reversed order is not a regular sequence.\par
+One further point is worth noting: If $x\in R$ is arbitrary, then $H^0(K(x,0))=H^0(K(x))$ $($since both are isomorphic to $(0:(x)))$ even though the complex $K(x,0)$ is not isomorphic to $K(x)$.
+\end{example}
+\subsubsection{Koszul Complexes in General}
+We could build up the Koszul complex step by step, iterating the process
+just illustrated (and we shall soon prove that this gives the correct answer), but the following construction is so direct, simple, and invariant that it has many advantages.
+If $M$ is any $R$-module, then the exterior algebra $\bigwedge M$ may be defined as the free algebra $R\oplus M\oplus(M\otimes M)\oplus\cdots$ modulo the relations 
+\[x\otimes y=-y\otimes x\quad\text{and}\quad x\otimes x=0\]
+for all $x$ and $y$ in $M$. The product of two elements $a,b$ in $\bigwedge M$ will be written $a\wedge b$. $\bigwedge M$ is a graded algebra--the part of degree $n$, written $\bigwedge^nM$, is generated as an $R$-module by the products of exactly $n$ elements of $N$. It is \textbf{skew commutative} in the sense that if $a$ and $b$ are homogeneous elements of degree $p,q$, respectively, then
+\[a\wedge b=(-1)^{pq}b\wedge a\]
+and if $a$ has degree $1$, then $a\wedge a=0$. (These two conditions are equivalent if $2$ is a unit in $R$.) To avoid needing a notation for the degrees of elements, we shall usually abuse notation and write $(-1)^{ab}$ for $(-1)^{(\deg a)(\deg b)}$. Note that for any $M$ we have $\bigwedge^0M=R$.\par
+The construction $\bigwedge M$ is functorial in $M$: That is, if $f:M\to N$ is a map of modules, then we get a map $\wedge f:\bigwedge M\to\bigwedge N$ on exterior algebras. If $M$ is a free module (the only case we shall actually use) then the construction behaves just like the more familiar version where $R$ is a field and $M$ is a vector space. In particular, if $M$ is free of rank $n$, then $\wedge^nM\cong R$, and if $f:M\to M$ is a map, then $\wedge^nf$ is multiplication by the determinant of any matrix representing $f$. In this case $\wedge^mM=0$ for $m>n$.\par
+Now given a module $M$ and an element $x\in M$, we define the \textbf{Koszul complex} to be the complex
+\[K(x):\begin{tikzcd}
+0\ar[r]&R\ar[r]&M\ar[r]&\bigwedge^2M\ar[r]&\cdots\ar[r]&\bigwedge^iM\ar[r,"d_x"]&\bigwedge^{i+1}M\ar[r]&\cdots
+\end{tikzcd}\]
+where $d_x$ sends an element $a$ to the element $x\wedge a$. If $M$ is free of rank $n$ and
+\[x=(x_1,\dots,x_n)\in R^n\cong M\]
+then we shall sometimes write $K(x_1,\dots,x_n)$ in place of $K(x)$.\par
+One advantage of this definition is that it makes the functoriality of the
+Koszul complex obvious: If $f:M\to N$ is a map of modules sending $x\in M$ to $y\in N$, then the map $\wedge f:\bigwedge M\to\bigwedge N$ preserves the differential, and is thus a map of complexes.\par
+To gain familiarity with the Koszul complex, and because it will be important later, let us show that $H^n(K(x_1,\dots,x_n))=R/(x_1,\dots,x_n)$. Set $M=R^n$, and consider the right-hand end of the Koszul complex
+\[\begin{tikzcd}
+\cdots\ar[r]&\bigwedge^{n-1}M\ar[r,"d_x"]&\bigwedge^nM\ar[r]&0
+\end{tikzcd}\]
+Let $e_1,\dots,e_n$ be a basis for $M=R^n$. We have $\wedge^nM\cong R$ by an isomorphism sending $e_1\wedge\cdots\wedge e_n$ to $1$. Similarly $\wedge^{n-1}M\cong R^n$, with basi
+\[\{e_1\wedge\cdots\wedge \widehat{e}_i\wedge\cdots\wedge e_n\mid 1\leq i\leq n\}\] 
+Now the image of $e_1\wedge\cdots\wedge \widehat{e}_i\wedge\cdots\wedge e_n$ under the differential of the Koszul complex is
+\[\Big(\sum_{i=1}^{n}x_ie_i\Big)\wedge e_1\wedge\cdots\wedge \widehat{e}_i\wedge\cdots\wedge e_n=(-1)^{i-1}e_1\wedge\cdots\wedge e_n\]
+so the cokernel of $\bigwedge^{n-1}M\to\bigwedge^nM$ is isomorphic to $R/(x_1,\dots,x_n)$.\par
+In general, as suggested by the case of a Koszul complex of length $2$,
+the homology of the Koszul complex $K(x_1,\dots,x_n)$ has to do with regular sequences. It does not in general detect whether $x_1,\dots,x_n$ is a regular sequence, but it detects something even more interesting: the lengths of the maximal regular sequences in the ideal $(x_1,\dots,x_n)$. The result also shows that these lengths are all the same.
+\begin{theorem}\label{Koszul H^i=0}
+Let $M$ be a finitely generated module over a Noetherian ring $R$. If
+\[H^i(M\otimes_RK(x_1,\dots,x_n))=0\for i<r\]
+while
+\[H^r(M\otimes_RK(x_1,\dots,x_n))\neq 0\]
+then every maximal $M$-sequence in $I=(x_1,\dots,x_n)\subset R$ has length $r$.
+\end{theorem}
+We put off the proof until later in this section.
+\begin{itemize}
+\item \textit{To avoid endlessly repeating the hypothesis, we shall use the letter $M$ to denote a \textbf{finitely generated} $R$-module throughout the remainder of this section. And we may assume the ring $R$ to be \textbf{Noetherian}}5.
+\end{itemize}
+\begin{corollary}\label{Koszul reg seq exact}
+If $x_1,\dots,x_n$ is an $M$-sequence, then $M\otimes_RK(x_1,\dots,x_n)$
+is exact except at the extreme right; that is, $H^i(M\otimes_RK(x_1,\dots,x_n))=0$ for $i<n$. Furthermore, 
+\[H^n(M\otimes_RK(x_1,\dots,x_n))=M/(x_1,\dots,x_n)M\]
+\end{corollary}
+\begin{proof}
+The length of a maximal $M$-sequence in $(x_1,\dots,x_n)$ is clearly $\geq n$. The first conclusion follows from Theorem~\ref{Koszul H^i=0}. For the second statement, writing $N$ for $R^n$, we note that $H^n(M\otimes K(x_1,\dots,x_n))$ is the homology of 
+\[\begin{tikzcd}
+M\otimes_R\bigwedge^{n-1}N\ar[r,"id\otimes_Rd_x"]&M\otimes_R\bigwedge^{n}N\ar[r]&0
+\end{tikzcd}\]
+at $M\otimes_R\bigwedge^nN$. That is, it is the cokernel of $id\otimes_Rd_x$. By the right-exactness of the tensor product,
+\[\coker(id\otimes_Rd_x)=M\otimes\coker d_x=M\otimes H^n(K(x_1,\dots,x_n))\]
+Using the computation we already made of $H^n(K(x_1,\dots,x_n))$ we see that
+\[H^n(M\otimes_RK(x_1,\dots,x_n))=M\otimes_RR/(x_1,\dots,x_n)=M/(x_1,\dots,x_n)M\]
+\end{proof}
+Note that if $IM\neq M$, then at least
+\[H^n(M\otimes_RK(x_1,\dots,x_n))=M/(x_1,\dots,x_n)M\neq0\]
+while, of course,
+\[H^{-1}(M\otimes_RK(x_1,\dots,x_n))=0\]
+so there is an $r$ for which Theorem~\ref{Koszul H^i=0} may be applied, the lengths of all maximal $M$-sequences in $I$ are the same. We define the \textbf{depth} of $I$ on $M$, written $\depth(I,M)$, to be the length of any maximal $M$-sequence in $I$. If $M=R$, we shall speak simply of the depth of $I$. If $IM=M$, we adopt the convention that $\depth(I,M)=\infty$.\par
+When $R$ is local with maximal ideal $\m$, and $M$ is an $R$-module, then we shall see that the depth of $\m$ on $M$, simply called the \textbf{depth of $\bm{M}$}, is a particularly interesting number. This terminology conflicts with the one just introduced in case $M$ is an ideal; however, confusion does not really arise in practice, and both pieces of terminology are commonly in use side by side.
+\begin{theorem}\label{Koszul local ring}
+Let $M$ be a finitely generated module over the local ring $(R,\m)$. Suppose $x_1,\dots,x_n\in\m$. If for some $k$
+\[H^k(M\otimes_R(K(x_1,\dots,x_n)))=0\]
+then 
+\[H^i(M\otimes_RK(x_1,\dots,x_n))=0\quad\forall\ i<k\]
+In particular, if $H^{n-1}(M\otimes_R(K(x_1,\dots,x_n)))=0$, then $x_1,\dots,x_n$ is an $M$-sequence.
+\end{theorem}
+We shall postpone the proofs of Theorems~\ref{Koszul H^i=0} and ~\ref{Koszul local ring} until we have developed some tools for handling Koszul complexes.\par
+An immediate consequence of Theorem~\ref{Koszul local ring} strengthens Corollary~\ref{Koszul reg seq exact}. 
+\begin{corollary}\label{local regular seq}
+If $R$ is local and $(x_1,\dots,x_n)\subset R$ is a proper ideal containing
+an $M$-sequence of length $n$, then $x_1,\dots,x_n$ is an $M$-sequence.
+\end{corollary}
+\begin{proof}
+Since $M$ is finitely generated, Nakayama's lemma shows that
+\[H^n(M\otimes_RK(x_1,\dots,x_n))=M/(a_1,\dots,a_n)M\neq 0\]
+If now $r$ is the smallest number such that $H^n(M\otimes_RK(x_1,\dots,x_n))\neq 0$, then every maximal $M$-sequence in $(x_1,\dots,x_n)$ has length $r$ by Theorem~\ref{Koszul H^i=0}. It follows from our hypothesis that $r=n$. Thus $x_1,\dots,x_n$ is a regular sequence by Theorem~\ref{Koszul local ring}.
+\end{proof}
+This result can often be used to prove that a given sequence is regular.
+For example, we can reprove Proposition~\ref{regular power}:
+\begin{corollary}[\textbf{Geometric nature of depth}]\label{depth geometric}
+\mbox{}
+\begin{itemize}
+\item[$(a)$]If $x_1,\dots,x_n$ is an $M$-sequence, then so is $x_1^{\nu_1},\dots,x_n^{\nu_n}$ for any positive integers $\nu_i$.
+\item[$(b)$]Thus if $I$ is an ideal of $R$, we have 
+\[\depth(I,M)=\depth(\sqrt{I},M).\]
+\end{itemize}
+\end{corollary}
+\begin{proof}
+$(a)$ If $x$ is not a zero-divisor for $M$, then so is $x^\nu$ for all $\nu>0$. Thus if $x_1,\dots,x_n$ is an $M$-sequence, $x_1,\dots,x_n^{\nu_n}$ is also a $M$-sequence. Since $(x_1,\dots,x_n)$ is a proper ideal, it is contained in a maximal ideal $\m$. By localizing at $\m$ we may assume $R$ is a local ring, and then we apply Corollary~\ref{local regular seq} to obtain $x_n^{\nu_n},x_{2},\dots,x_{n-1}$ is an $M$-sequence. Then iterate this process, we find $x_{n}^{\nu_n},x_{n-1}^{\nu_{n-1}},\dots,x_1^{\nu_1}$ is $M$-regular. Then again apply Corollary~\ref{local regular seq} we conclude $x_1^{\nu_1},\dots,x_{n}^{\nu_n}$ is an $M$-sequence.\par
+$(b)$ Since $I\sub\sqrt{I}$ we have $\depth(I,M)\leq\depth(\sqrt{I},M)$ trivially. The opposite equality follows using part $(a)$ since if $x_1,\dots,x_n$ is an $M$-sequence in $\sqrt{I}$, then there is $\nu_i>0$ such that $x_i^{\nu_i}\in I$. And $x_1^{\nu_1},\dots,x_n^{\nu_n}$ is an $M$-sequence.
+\end{proof}
+\subsection{Building the Koszul Complex from Parts}
+\subsubsection{Tensor product of complexes}
+Given two complexes of $A$-modules $K_\bullet$ and $L_\bullet$ the \textbf{tensor product} $K\otimes_AL$ is defined as follows: firstly, set
+\[(K\otimes_AL)_n=\bigoplus_{p+q=n}K_p\otimes_AL_q\]
+and define the differential $d$ by setting
+\[d(x\otimes y)=dx\otimes y+(-1)^px\otimes dy\]
+for $x\in K_p$ and $y\in L_q$. In other words, $K\otimes L$ is the total complex obtained from the double complex $W_{\bullet,\bullet}$, where $W_{p,q}=K_p\otimes L_q$.\par
+There is an isomorphism of complexes $K\otimes L\cong L\otimes K$ obtained by sending $x\otimes y$ into $(-1)^{pq}y\otimes x$ for $x\otimes y\in K_p\otimes L_q$. For a third complex of $A$-modules $M$, the associative law holds:
+\[(K\otimes L)\otimes M=K\otimes(L\otimes M)\]
+We regard $R$ as a complex $0\to R\to 0$ with $R$ in the zeroeth position, then $R[-i]$ will denote the complex $0\to R\to 0$ with $R$ in the $i$-th position. Note that $\mathcal{G}\otimes R[n]=\mathcal{G}[n]$ for a complex $\mathcal{G}$.\par
+We now return to the Koszul complex. If $\mathcal{F}$ is the Koszul complex on one element $y\in R$,
+\[\mathcal{F}:\begin{tikzcd}
+0\ar[r]&R\ar[r,"y"]&R\ar[r]&0
+\end{tikzcd}\]
+then the obvious diagram 
+\[\begin{tikzcd}
+R[-1]:&0\ar[r]&0\ar[r]\ar[d]&R\ar[r]\ar[d,"1"]&0\\
+\mathcal{F}:&0\ar[r]&R\ar[r,"y"]\ar[d,"y"]&R\ar[r]\ar[d]&0\\
+R:&0\ar[r]&R\ar[r]&0\ar[r]&0
+\end{tikzcd}\]
+is a short exact sequence of complexes
+\[\begin{tikzcd}
+0\ar[r]&R[-1]\ar[r]&\mathcal{F}\ar[r]&R\ar[r]&0
+\end{tikzcd}\]
+If we tensor this diagram with another complex $\mathcal{G}$, then we get a short exact sequence of complexes 
+\[\begin{tikzcd}
+0\ar[r]&\mathcal{G}[-1]\ar[r]&\mathcal{F}\otimes\mathcal{G}\ar[r]&\mathcal{G}\ar[r]&0
+\end{tikzcd}\]
+Indeed, is the mapping cone of the map $\mathcal{G}[-1]\to\mathcal{G}$ of complexes given by multiplication by $y$-that is, schematically as before, $\mathcal{F}\otimes\mathcal{G}$ is given by
+\[\mathcal{F}\otimes\mathcal{G}:\begin{tikzcd}
+\cdots\ar[r]&G_i\ar[r,"d_i"]\ar[rd,"y"]\ar[draw=none]{d}[name=X, anchor=center,scale=1.5]{\oplus}&G_{i+1}\ar[draw=none]{d}[name=X, anchor=center,scale=1.5]{\oplus}\ar[r,"d_{i+1}"]\ar[rd,"y"]&G_{i+2}\ar[draw=none]{d}[name=X, anchor=center,scale=1.5]{\oplus}\ar[r]&\cdots\\
+\cdots\ar[r]&G_{i-1}\ar[r,"-d_{i-1}"]&G_{i}\ar[r,"-d_i"]&F_{i+1}\ar[r]&\cdots\\
+\end{tikzcd}\]
+Since $H^i(\mathcal{G}[-1])=H^{i-1}(\mathcal{G})$, the short exact sequence of complexes gives rise to a long exact sequence in homology
+\[\begin{tikzcd}
+\cdots\ar[r]&H^{i-1}(\mathcal{G})\ar[r]&H^i(\mathcal{F}\otimes\mathcal{G})\ar[r]&H^i(\mathcal{G})\ar[r,"y"]&H^i(\mathcal{G})\ar[r]&\cdots
+\end{tikzcd}\]
+\begin{proposition}\label{Koszul tensor prod}
+If $N=N_1\oplus N_2$, then $\bigwedge N=\bigwedge N_1\otimes\bigwedge N_2$ as skew-commutative algebras. If $x_1\in N_1$ and $x_2\in N_2$ are elements, so that $x=(x_1,x_2)\in N$, then
+\[K(x)=K(x_1)\otimes K(x_2)\]
+as complexes.
+\end{proposition}
+\begin{proof}
+Each element $\alpha$ in $\bigwedge^nN$ has the form $\alpha=(x_1+y_1)\otimes(x_2+y_2)\otimes\cdots\otimes(x_n+y_n)$ with $x_i\in N_1,y_i\in N_2$. So we define $\varphi$ to be the expanding:
+\begin{align*}
+\varphi(\alpha)&=(x_1+y_1)\otimes(x_2+y_2)\otimes\cdots\otimes(x_n+y_n)\\
+&=x_1\otimes\cdots\otimes x_n+\cdots+y_1\otimes\cdots\otimes y_n\in\bigoplus_{p+q=n}\bigwedge\nolimits^pN_1\otimes\bigwedge\nolimits^qN_2
+\end{align*}
+Then $\varphi$ is a homomorphism and is injective. To show it is an isomorphism, we prove $\varphi$ is surjective on each homogeneous factor of $\bigwedge N_1\otimes\bigwedge N_2$. Let 
+\[a_1\otimes\cdots\otimes a_p\otimes b_1\otimes\cdots\otimes b_q\in\bigwedge\nolimits^pN_1\otimes\bigwedge\nolimits^qN_2 \]
+Then as we can see,
+\[\varphi\big((a_1+0)\otimes\cdots\otimes(a_p+0)\otimes(0+b_1)\otimes\cdots\otimes(0+b_q)\big)=a_1\otimes\cdots\otimes a_p\otimes b_1\otimes\cdots\otimes b_q\]
+Hence $\varphi$ is surjective, and is therefore an isomorphsim.\par
+For the second statement, we only need to verify for homogeneous element. So let
+\[\alpha=(a_1+b_1)\otimes(a_2+b_2)\otimes\cdots\otimes(a_n+b_n)\in\bigwedge\nolimits^nN\]
+Then $d_x(\alpha)=(x_1+x_2)\wedge(a_1+b_1)\otimes(a_2+b_2)\otimes\cdots\otimes(a_n+b_n)$. To show the two differentials coincide, we consider a single term in the expansion. For example, for the term $x_1\otimes\cdots\otimes x_i\otimes y_{i+1}\otimes\cdots\otimes y_n$ we have
+\begin{align*}
+&d_a(\alpha)=(a_1+a_2)\wedge x_1\otimes\cdots\otimes x_i\otimes y_{i+1}\otimes\cdots\otimes y_n\\
+&=(a_1\wedge x_1\otimes\cdots\otimes x_i)\otimes y_{i+1}\otimes\cdots\otimes y_n+(-1)^ix_1\otimes\cdots\otimes x_i\otimes(a_2\wedge y_{i+1}\otimes\cdots\otimes y_n)\\
+&=d_{a_1}(x_1\otimes\cdots\otimes x_i)\otimes y_{i+1}\otimes\cdots\otimes y_n+(-1)^ix_1\otimes\cdots\otimes x_i\otimes d_{a_2}(y_{i+1}\otimes\cdots\otimes y_n)
+\end{align*}
+Thus by using linearity of the differential we get the claim.
+\end{proof}
+We shall prove Theorem~\ref{Koszul H^i=0} by applying Proposition~\ref{Koszul tensor prod} in two ways. The first shows how the Koszul complex of $x_1,\dots,x_n$ can reflect information about regular sequences contained in the ideal generated by $x_1,\dots,x_n$.
+\begin{corollary}\label{Koszul iso}
+If $y_1,\dots,y_r$ are elements of the ideal generated by $x_1,\dots,x_n\in R$, and $M$ is any $R$-module, then
+\[H^*(M\otimes_RK(x_1,\dots,x_n,y_1,\dots,y_r))\cong H^*(M\otimes_RK(x_1,\dots,x_r))\otimes\bigwedge R^r.\]
+as graded modules, In particular, for each $i$ we have
+\[H^i(M\otimes_RK(x_1,\dots,x_n,y_1,\dots,y_r))\cong\sum_{j+k=i}H^j(M\otimes_RK(x_1,\dots,x_n))\otimes \bigwedge\nolimits^kR^r\]
+Thus 
+\[H^i(M\otimes_RK(x_1,\dots,x_n,y_1,\dots,y_r))=0\]
+iff
+\[H^k(M\otimes_RK(x_1,\dots,x_n))=0\quad\text{for all $k$ with $i-r\leq k\leq i$}\]
+\end{corollary}
+\begin{proof}
+There is an automorphism of $R^n\oplus R^r$ taking the element with coordinates $x_1,\dots,x_n,y_1,\dots,y_r$ to the one with coordinates $x_1,\dots,x_n,0,\dots,0$. Indeed, if
+\[y_i=\sum_{j=1}^{n}a^j_{i}x_j\]
+and $A$ is the $r\times n$ matrix with entries $a^i_j$, then the linear map with the following matrix representation
+\[
+\left[\begin{array}{c|c}
+I_n&0\\
+-A&I_r
+\end{array}\right]\]
+satisfies the condition. From the functoriality of the Koszul complex and Proposition~\ref{Koszul tensor prod} we get
+\[K(x_1,\dots,x_n,y_1,\dots,y_r)\cong K(x_1,\dots,x_n,0,\dots,0)=K(x_1,\dots,x_n)\otimes K(0,\dots,0)\]
+Now $K(0,\dots,0)$ is the exterior algebra on $r$ generators, with differentials all $0$, whence the first statement of the corollary. The last two statements follow immediately.
+\end{proof}
+Applying Proposition~\ref{Koszul tensor prod} in the case $N=R\oplus N'$ and using the remarks just before the proposition, we get:
+\begin{corollary}\label{Koszul tensor corollary}
+If $x=(x',y)\in N=N'\oplus R$, then $K(x)$ is isomorphic to the mapping cone of the map $K(x')\to K(x')$ induced by multiplication by $y$; in particular, we have a long exact sequence:
+\[\begin{tikzcd}[column sep=small]
+\cdots\ar[r]&H^i(M\otimes K(x'))\ar[r,"y"]&H^i(M\otimes K(x'))\ar[r]&H^{i+1}(M\otimes K(x))\ar[r]&H^{i+1}(M\otimes K(x'))\ar[r]&\cdots
+\end{tikzcd}\]
+Moreover, we have $y\cdot H^i(M\otimes K(x'))=0$ for all $i$. Therefore, by using the commutativity of tensor product of complexes, we see that the ideal $I=(x_1,\dots,x_n)$ annihilates the homology groups $H^i(M\otimes_RK(x_1,\dots,x_n))$:
+\[IH^i(M\otimes_RK(x_1,\dots,x_n))=0\quad\text{for all $i$}\]
+\end{corollary}
+\begin{proof}
+Since $N'\oplus R\cong R\oplus N'$ in a natural way, we have $K(x)=K(y,x')$ by functoriality. By Proposition~\ref{Koszul tensor prod}, $K(x)=K(y)\otimes K(x')$ and by the remark before the proposition such a tensor product is a mapping cone, so we have a short exact sequence of complexes
+\[\begin{tikzcd}
+0\ar[r]&M\otimes K(x')[-1]\ar[r]&M\otimes K(x)\ar[r]&M\otimes K(x')\ar[r]&0
+\end{tikzcd}\]
+The desired long exact sequence is just the long exact sequence in homology of this short exact sequence of complexes.\par
+For the second claim, if we denote by $C_i$ the $i$-th module in the complex $M\otimes K(x')$, then the differential of $M\otimes K(x)$ is written as
+\[d_x^i(\xi,\eta)=(d^i_{x'}(\xi),y\xi-d^{i-1}_{x'}\eta)\quad \xi\in C_i,\eta\in C_{i-1}\]
+Therefore, 
+\[d_{x}^i(\xi,\eta)=0\iff d^i_{x'}(\xi)=0\text{ and }d^{i-1}_{x'}(\eta)=y\xi.\]
+For $(\xi,\eta)\in H^i(M\otimes K(x))$, we have $d_x^i(\xi,\eta)=0$, so
+\[y(\xi,\eta)=(y\xi,y\eta)=(d^{i-1}_{x'}(\eta),y\eta)=d^{i-1}_x(\eta,0)\]
+This implies $y\cdot H^i(M\otimes K(x'))=0$.
+\end{proof}
+From Corollary~\ref{Koszul tensor corollary} we obtain a more precise version of part of Theorem~\ref{Koszul H^i=0}.
+\begin{corollary}\label{Koszul regular H^i=}
+If $x_1,\dots,x_i$ is an $M$-sequence, then
+\[H^i(M\otimes K(x_1,\dots,x_n))=\big((x_1,\dots,x_i)M:(x_1,\dots,x_n)\big)/(x_1,\dots,x_i)M\]
+In particular, if $x_1,\dots,x_i$ is an $M$-sequence in the ideal $I=(x_1,\dots,x_n)$, then 
+\[H^j(M\otimes K(x_1,\dots,x_n))=0\quad\text{for }j<i.\] 
+If $x_1,\dots,x_i$ is a maximal $M$-sequence in $I$, and $IM\neq M$, then $H^i(M\otimes K(x_1,\dots,x_n))\neq 0$.
+\end{corollary}
+\begin{proof}
+We prove the first statement by induction on $i$, starting with $i=0$, where the statement follows directly from the definition of the Koszul
+complex.\par
+For given $i$, we do induction on $n$, starting from $n=i$. If $n=i$ then the first statement becomes $H^i(M\otimes K(x_1,\dots,x_n)=M/(x_1,\dots,x_n)M$, which is clear from the definition of the Koszul complex. Now suppose $n>i$. By the induction on $i$ we have
+\[H^{i-1}(M\otimes K(x_1,\dots,x_n))=\big((x_1,\dots,x_{i-1})M:(x_1,\dots,x_n)\big)/(x_1,\dots,x_{i-1})M=0\]
+since $x_i$ is a non zero-divisor on $M/(x_1,\dots,x_{i-1})M$. Thus the exact sequence of Corollary~\ref{Koszul tensor corollary} yields
+\begin{align*}
+H^i(M\otimes K(x_1,\dots,x_n))&=\ker\big(H^i(M\otimes K(x_1,\dots,x_{n-1}))\stackrel{x_n}{\to}H^i(M\otimes K(x_1,\dots,x_{n-1}))\big)\\
+&=\big((x_1,\dots,x_i)M:(x_1,\dots,x_n)\big)/(x_1,\dots,x_i)M
+\end{align*}
+where we use the inductive hypothesis on $n-1$:
+\[H^i(M\otimes K(x_1,\dots,x_{n-1}))=\big((x_1,\dots,x_i)M:(x_1,\dots,x_{n-1})\big)/(x_1,\dots,x_i)M\]
+Thus we are done.\par
+The vanishing part of the second statement follows from the first since
+$x_1,\dots,x_j$ is an $M$-sequence for all $j<i$, so $x_{j+1}$ is a non zero-divisor on $M/(x_1,\dots,x_j)M$, and therefore
+\[\big((x_1,\dots,x_j)M:(x_1,\dots,x_n)\big)=(x_1,\dots,x_j)M\]
+To deduce the nonvanishing part, suppose that $(x_1,\dots,x_i)$ is a maximal $M$-sequence in $I$. This means that $I$ is contained in the set of zero-divisors on $M/(x_1,\dots,x_i)M$. Since $R$ is Noetherian, by the theory of associated primes this set of zero divisors is a finite union of associated primes, so by prime avoidance, $I$ must be contained in a single associated prime $Q$ of $M/(x_1,\dots,x_i)M$. By definition, $Q$ is the annihilator of some nonzero element $m$ of $M/(x_1,\dots,x_i)M$, so we see that
+\[m\in\big((x_1,\dots,x_i)M:(x_1,\dots,x_n)\big)/(x_1,\dots,x_i)M\]
+\end{proof}
+We turn to the proofs of Theorems~\ref{Koszul H^i=0} and ~\ref{Koszul local ring}.
+\begin{proof}[\textbf{Proof of Theorem~\ref{Koszul H^i=0}}]
+Let $y_1,\dots,y_s$ be a maximal $M$-sequence in $I$. By hypothesis, $r$ is the smallest integer $i$ such that
+\[H^i(M\otimes_RK(x_1,\dots,x_n))\neq 0\]
+By Corollary~\ref{Koszul tensor corollary}, $r$ is also the smallest for which
+\[H^i(M\otimes_R(y_1,\dots,y_s,x_1,\dots,x_n))\neq 0\]
+Now since $y_1,\dots,y_s$ is an $M$-sequence, and by Proposition~\ref{Koszul homotopy coro} we know $IM\neq M$, so by the second statement of Corollary~\ref{Koszul regular H^i=}, we conclude $s=r$.
+\end{proof}
+\begin{proof}[\textbf{Proof of Theorem~\ref{Koszul local ring}}]
+We prove the first statement by induction on $n$. If \[H^k(M\otimes_RK(x_1,\dots,x_n))=0\]
+then by Corollary~\ref{Koszul tensor corollary} the map
+\[\begin{tikzcd}
+H^{k-1}(M\otimes_RK(x_1,\dots,x_{n-1}))\ar[r,"x_n"]&H^{k-1}(M\otimes_RK(x_1,\dots,x_{n-1}))
+\end{tikzcd}\]
+is an epimorphism. By Nakayama's lemma, this implies that
+\[H^{k-1}(M\otimes_RK(x_1,\dots,x_{n-1}))=0\]
+so by induction hypothesis,
+\[H^{i}(M\otimes_RK(x_1,\dots,x_{n-1}))=0\quad\text{for }i\leq k-1\]
+Using Corollary~\ref{Koszul tensor corollary} again, we see that
+\[H^{i}(M\otimes_RK(x_1,\dots,x_{n}))=0\quad\text{for }i\leq k\]
+as required for the first statement.\par
+To prove the second statement we use the same strategy. If
+\[H^{n-1}(M\otimes_RK(x_1,\dots,x_n))=0\]
+then, as just noted
+\[H^{n-2}(M\otimes_R(x_1,\dots,x_{n-1}))=0\]
+so by induction $x_1,\dots,x_{n-1}$ is an $M$-sequence. Now by Corollary~\ref{Koszul tensor corollary} we have an exact sequence
+\[\begin{tikzcd}[column sep=small]
+0=H^{n-1}(M\otimes K(x_1,\dots,x_n))\ar[r]&H^{n-1}(M\otimes K(x_1,\dots,x_{n-1}))\ar[r,"x_n"]&H^{n-1}(M\otimes K(x_1,\dots,x_{n-1}))
+\end{tikzcd}\]
+By definition we have
+\[H^{n-1}(M\otimes K(x_,\dots,x_{n-1}))=M/(x_1,\dots,x_{n-1})M\]
+so by the exactness $x_n$ is a nonzero divisor on $M/(x_1,\dots,x_{n-1})M$, as required.
+\end{proof}
+\subsection{Duality and Homotopies}
+There is a dual version of the Koszul complex, associated to an $R$-module
+$N$ and a map $\varphi:N\to R$.\par
+Corresponding to $\varphi:N\to R$ we shall describe a complex
+\[K'(\varphi):\begin{tikzcd}
+\cdots\ar[r]&\bigwedge^iN\ar[r,"\delta_\varphi"]&\bigwedge^{i-1}N\ar[r]&\cdots\ar[r]&N\ar[r,"\varphi"]&R\ar[r]&0
+\end{tikzcd}\]
+To describe the differential $\delta_\varphi:\bigwedge^iN\to\bigwedge^{i-1}N$ we use the diagonalization
+map $\Delta:\bigwedge N\to\bigwedge N\otimes\bigwedge N$, the unique map of algebras taking each $m\in N=\bigwedge^1N$ to
+\[m\otimes 1-1\otimes m\in\bigwedge N\otimes\bigwedge N\]
+We shall actually use only the component of $\Delta$ that maps $\bigwedge^i N$ to $N\otimes(\bigwedge^{i-1}N)$, which may be described on generators as
+\[\Delta(m_1\wedge\cdots\wedge m_i)=\sum_{j=1}^{i}(-1)^{j-1}m_j\otimes m_1\wedge\cdots\wedge\widehat{m}_j\wedge\cdots\wedge m_i\]
+We define $\delta_\varphi$ to be the composite
+\[\begin{tikzcd}
+\bigwedge^iN\ar[r,"\Delta"]&N\otimes\bigwedge^{i-1}N\ar[r,"\varphi\otimes id"]&R\otimes\bigwedge^{i-1}N=\bigwedge^{i-1}N
+\end{tikzcd}\]
+When $i=1$ this is nothing but $\varphi$. One can verify that
+\[\delta_\varphi(n\wedge n')=\delta_\varphi(n)\wedge n'+(-1)^nn\wedge\delta_\varphi(n')\]
+So $\delta_\varphi^2=0$.\par
+Here is one relation between the Koszul complex defined originally and
+this dual version:
+\begin{proposition}[\textbf{Homotopy for the Koszul complex}]
+If $x\in N$ and $\varphi:N\to R$, then the maps $d_x$ and $\delta_\varphi$ satisfy the identity
+\[d_x\delta_\varphi+\delta_\varphi d_x=\varphi(x)\cdot 1\]
+where $1$ is the identity map on $\bigwedge N$. Thus $\delta_\varphi$ is a homotopy showing that multiplication by $\varphi(x)$ is homotopic to $0$ on $K(x)$, and similarly for $d_x$ on $K'(\varphi)$.
+\end{proposition}
+\begin{proof}
+The proof is a straightforward computation. Indeed, it is trivial if we use the fact that $\delta_\varphi$ is a derivation. We have
+\begin{align*}
+d_x\delta_\varphi(n)+\delta_\varphi d_x(n)&=x\wedge\delta_\varphi(n)+\delta_\varphi(x\wedge n)\\
+&=x\wedge\delta_\varphi(n)+\delta_\varphi(x)\wedge n-x\wedge\delta_\varphi(n)\\
+&=\delta_\varphi(x)\wedge n=\varphi(x)n
+\end{align*}
+\end{proof}
+Here are some consequences:
+\begin{proposition}~\label{Koszul homotopy coro}
+\mbox{}
+\begin{itemize}
+\item[$(a)$]If $y\in(x_1,\dots,x_n)$, then $y$ annihilates the Koszul homology groups $H^i(M\otimes_RK(x_1,\dots,x_n))$ for all $M$ and all $i$.
+\item[$(b)$]If $(x_1,\dots,x_n)M=M$, then $H^i(M\otimes_RK(x_1,\dots,x_n))=0$ for all $i$.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+$(a)$ If $y=\sum_{i=1}^{n}a_ix_i$, then the map $\varphi:R^n\to R$ with matrix $(a_1,\dots,a_n)$ carries $x:=(x_1,\dots,x_n)\in R^n$ to $y\in R$. Thus, by the lemma, $\delta_\varphi$ is a homotopy showing that multiplication by $\varphi(x)=y$ on $K(x_1,\dots,x_n)$ is homotopic to $0$. Since a map homotopic to $0$ induces the zero map on homology, we are done.\par
+$(b)$ We may replace $R$ by $R/(\Ann(M))$ without changing $M\otimes_RK(x_1,\dots,x_n)$, so we may assume that the annihilator of $M$ is $0$. By Proposition~\ref{module f.g IM=M}, we see that there is an element $y\in(x_1,\dots,x_n)$ such that $1+y$ annihilates $M$; thus $y=1$. Now apply part $(a)$.
+\end{proof}
+If $M$ is an $R$-module and $x\in M$ then $x$ corresponds to a functional
+$x^*:M^*\to R$ given by $x^*(\varphi)=\varphi(x)$. Thus we may define Koszul complexes $K(x)$ and $K'(x^*)$. If $M$ is a free module (and as always finitely generated), then an examination of the terms suggests that these complexes are dual to one another, and this is true. More surprisingly, they are isomorphic; that is, the Koszul complex is self-dual. We make the isomorphism explicit as follows.\par
+As we have already noted, $\bigwedge^nR^n\cong R$. If we fix such an isomorphism $\bigwedge^nR^n\to R$ (called an orientation of $R^n$ because if $R=\R$, the real numbers, then this corresponds exactly to the geometric notion of orientation), then there are induced isomorphisms 
+\[\bigwedge\nolimits^kR^n\to\bigwedge\nolimits^{n-k}R^n\to\bigwedge\nolimits^{n-k}(R^n)^*\] 
+that may be defined as follows. First, consider the hodge star operator on $\bigwedge^kR^n$: For $e_{(j)}\in\bigwedge^kR^n$, $(j)=(j_1,\dots,j_k)$, there is a unique element $\ast e_{(j)}$ in $\bigwedge^{n-k}$ such that
+\[e_{(j)}\wedge\ast e_{(j)}=e_1\wedge\cdots\wedge e_n\]
+In fact, we can find 
+\[\ast e_{(j)}=s(j)e_{(j^c)}\]
+where
+\[(j)\cup(j^c)\in\mathfrak{S}_n,\quad s(j):=\sgn((j)\cup(j^c))\]
+Now if $\{e^1,\dots,e^n\}$ is the dual basis of $\{e_1,\dots,e_n\}$, we define the map $\alpha$
+That is, $\alpha$ dual the basis of $R^n$. This gives an isomorphism 
+\[\Theta(a):=\alpha(\ast a).\]
+Using these isomorphisms we have:
+\begin{proposition}[\textbf{Self-duality of the Koszul complex}]
+For $x\in R^n$ there is a commutative diagram
+\[\begin{tikzcd}
+K(x):&\cdots\ar[r]&\bigwedge^iR^n\ar[d,"\Theta"]\ar[r,"d_x"]&\bigwedge^{i+1}R^n\ar[r]\ar[d,"\Theta"]&\cdots\\
+K(x^*):&\cdots\ar[r]&\bigwedge^{n-i}(R^n)^*\ar[r,"\delta_{x^*}"]&\bigwedge^{n-i-1}(R^n)^*\ar[r]&\cdots
+\end{tikzcd}\]
+where the vertical map $\Theta$ is an isomorphism.
+\end{proposition}
+This explains at last our convention of writing the homology of the Koszul
+complex as cohomology: With the obvious notation, we have
+\[H^k(K(x),d_x)=H_{n-k}(K(x),\delta_{x^*})=H^k(\Hom(K(x),R),d_x^*)\]
+The two right-hand forms are the ones that usually occur in the literature,
+despite the advantage of simplicity in the form we have adopted.
+\section{Depth, Codimension, and Cohen-Macaulay Rings}
+\textit{In this section all the rings are assumed to be Noetherian.}
+\subsection{Depth}
+Recall from the previous section that if $I$ is an ideal of a ring $R$, and $M$ is a finitely generated $R$-module such that $IM\neq M$, then the depth of $I$ on $M$, written $\depth(I,M)$, is the length of a (indeed any) maximal $M$-sequence in $I$. When $M=R$, we shall simply speak of the depth of $I$. Theorem~\ref{Koszul H^i=0} characterizes $\depth(I,M)$ in terms of the vanishing of the homology of the Koszul complex.\par
+As usual, we shall frequently want to localize, so a remark on the behavior
+of depth under localization is in order.
+\begin{lemma}\label{depth locali lem}
+If $R$ is a ring, and $\p$ is a prime ideal in the support of a finitely generated $R$-module $M$, then any $M$-sequence in $\p$ localizes to an $M_\p$-sequence. Thus for any ideal $I\sub\p$ we have \[\depth(I,M)\leq\depth(I_\p,M_\p)\] 
+the latter taken in the ring $R_\p$.\par 
+In general, the inequality may be strict, but for any ideal $I$ there exist maximal ideals $\p$ in the support of $M$ such that 
+\[\depth(I,M)=\depth(I_\p,M_\p).\] 
+In particular, if $\p$ is a maximal ideal, then 
+\[\depth(\p,M)=\depth(\p_\p,M_\p).\]
+\end{lemma}
+\begin{proof}
+Nakayama's lemma guarantees that $I_\p M_\p\neq M_\p$, the only tricky part of the first statement. The depth really can increase on localization,
+since for example the localization map $M\to M_\p$ might kill some of the elements killed by elements of $I$, so that these elements of $I$ might become non zero-divisors.\par
+For the second statement write $I=(x_1,\dots,x_n)$, and set $r=\depth(I,M)$. By Theorems~\ref{Koszul H^i=0} and ~\ref{Koszul local ring}, $H^r(M\otimes_RK(x_1,\dots,x_n))\neq0$ and the primes $\p$ containing $I$ such that $\depth(I_\p,M_\p)=\depth(I,M)$ are exactly the primes in the support of $H^r(M\otimes_RK(x_1,\dots,x_n))$. In particular, there are some maximal ideals $\p$ with this property. The last statement of the lemma follows at once from the second.
+\end{proof}
+We have already remarked that depth $I$ is a measure of the size of $I$, as
+is codim $I$. In this section we shall explore the relation between these two notions. First we show that there is always an inequality. It is technically useful to work with the depth of $I$ on a module $M$.\par 
+If $x\in R$ then the action of $x$ on $M$ depends only on the residue class of $x$ modulo $\Ann(M)$, so the depth of $I$ on $M$ is the same as that of $I+\Ann(M)$ on $M$. For this reason we can restrict attention to ideals containing $\Ann(M)$.
+\begin{lemma}\label{depth lem +1}
+If $(R,\m)$ is a local ring, $M$ is a finitely generated $R$-module, $I$ is an ideal of $R$, and $y\in\m$, then
+\[\depth((I,y),M)\leq\depth(I,M)+1\]
+\end{lemma}
+\begin{proof}
+Let $x_1,\dots,x_n$ be a set of generators for $I$, and set $r=\depth(I+(y),M)$. By Theorem~\ref{Koszul H^i=0}, $H^i(M\otimes_RK(x_1,\dots,x_n,y))=0$ for $i<r$. From the exact sequence
+\[\begin{tikzcd}[column sep=small]
+\cdots\ar[r]&H^{i-1}(M\otimes K(x_1,\dots,x_n))\ar[r]&H^{i}(M\otimes K(x_1,\dots,x_n,y))\ar[r]&H^{i}(M\otimes K(x_1,\dots,x_n))\ar[r]&\cdots
+\end{tikzcd}\]
+By using Nakayama's lemma We conclude 
+\[\begin{array}{c}
+H^i(M\otimes_RK(x_1,\dots,x_n))=0\quad\text{for }i<r-1\\
+\end{array}\] 
+By Theorem~\ref{Koszul H^i=0}, $\depth(I,M)\geq r-1$.
+\end{proof}
+\begin{proposition}\label{depth leq codim}
+Let $R$ be a ring and let $M$ be a finitely generated $R$-module. If $I$ is an ideal of $R$ containing $\Ann(M)$, then $\depth(I,M)$ is $\leq$ the length of any maximal chain of prime ideals descending from a prime containing $I$ to an associated prime of $M$. In particular, the depth of $I$ $($on $R)$ is $\leq$ $\codim I$.
+\end{proposition}
+\begin{proof}
+Though the second statement follows from the first, its proof is so easy as to be worth giving separately: Let $x_1,\dots,x_n$ be a maximal $R$-sequence in $I$. Since $x_1$ is a non zero-divisor, it is not contained
+in any minimal prime of $R$, so the $\codim I/(x_1)$ (as an ideal in $R/(x_1)<\codim I$. But the depth of $I/(x_1)$ as an ideal in $R/(x_1)$ is $n-1$, so by induction $n-1\leq\codim I/(x_1)<\codim I$, and we are done.\par
+For the main result, let $Q\supset Q_1\supset\cdots\supset Q_l$ be any maximal chain of primes descending from a prime $Q$ containing $I$ to a prime $Q_l$ associated to $M$. We do induction on $l$. The case $l=0$, where $Q$ is an associated prime, is immediate from the definitions.\par
+Now suppose $l\geq 1$. Enlarging $I$, we may as well assume that $I=Q$. If
+we localize at $Q$, any regular sequence in $Q$ remains a regular sequence, so the depth can only increase and we may suppose that $R$ is local and that $Q$ is its maximal ideal. Let $x\in Q$ be an element outside $Q_1$. Since $Q$ is the only minimal prime over $Q_1+(x)$, we conclude $\sqrt{Q_1+(x)}=Q$. Thus by Corollary~\ref{depth geometric} $\depth Q=\depth(Q_1+(x))$.\par
+By Lemma~\ref{depth lem +1}, $\depth(Q_1+(x))\leq\depth(Q_1)+1$. From the inductive hypothesis we get $\depth(Q_1,M)\leq l-1$. Putting these inequalities together we get 
+\[\depth Q\leq\depth Q_1+1\leq l-1+1=l\] 
+as required.
+\end{proof}
+\subsection{Depth and the Vanishing of Ext}
+There is another characterization of depth that generalizes, in a certain
+sense, the characterization by the homology of the Koszul complex of Theorem~\ref{Koszul H^i=0}.
+\begin{proposition}\label{depth Ext}
+Let $R$ be a ring and let $M$ and $N$ be finitely generated $R$-modules. If $\Ann(M)+\Ann(N)=R$ then $\Ext^r_R(M,N)=0$ for every $r$. Otherwise, 
+\[\depth(\Ann(M),N)=\min\{r:\Ext^r_R(M,N)\neq 0\}.\]
+\end{proposition}
+\begin{proof}
+Since $\Ext$ is an $R$-linear functor in each variable, $\Ext^*_R(M,N)$ is
+annihilated by each element of $\Ann(M)$ and $\Ann(N)$, so the first statement is clear.\par
+First we show that 
+\[\Ann(M)+\Ann(N)=R\iff \Ann(M)N=N\]
+Suppose that $\Ann(M)N=N$: By Proposition~\ref{module f.g IM=M}, there is an element $r\in\Ann(M)$ such that $(1-r)N=0$. Thus $1\in\Ann(M)+\Ann(N)$. Conversely, if we can write $1=r+s$ with $r\in\Ann(M)$ and $s\in\Ann(N)$, then $rN=(r+s)N=N$.\par
+Now suppose that $\Ann(M)+\Ann(N)\neq R$. Since then $\Ann(M)N\neq N$, the
+number $d=\depth(\Ann(M),N)$ is $<\infty$, and we do induction on $d$. If $d=0$ we must show that $\Hom(M,N)\neq 0$. Since $\depth(\Ann(M),N)=0$, there is an associated prime $\p$ of $N$ that contains $\Ann(M)$. Since $M$ is finitely generated, the formation of $\Hom$ commutes with localization (Proposition~\ref{locali hom commute}), so it is enough to prove the result after localizing at $\p$. After localizing we are in the situation where $R$ is local, and $N$ contains a copy of the residue class field $R/\p$. Since $M\neq0$, Nakayama's lemma shows that $M/\p M\neq 0$, so as a $R/\p$ vector space, $M/\p M$ is a nonzero direct sum of copies of $R/\p$. Thus there is a nonzero map $M\to R/\p\subset N$.\par
+Next suppose that $d\geq 1$, and let $x\in\Ann(M)$ be a nonzero divisor on $N$. We have $\Ann(M)N/xN\neq N/xN$, and $\depth(\Ann(M),N/xN)=d-1$. By
+induction $\Ext^i_R(M,N/xN)\neq0$ for $i=d-1$, but for no smaller $i$.\par
+We apply the long exact sequence in $\Ext_R(M,-)$ to the short exact sequence
+\[\begin{tikzcd}
+0\ar[r]&N\ar[r]&N\ar[r,"x"]&N\ar[r]&N/xN\ar[r]&0
+\end{tikzcd}\]
+Since $x$ kills $M$, it kills each $\Ext^*_R(M,N)$. Thus $\Hom(M,N)=0$, and we obtain short exact sequences
+\[\begin{tikzcd}
+0\ar[r]&\Ext^{j-1}_R(M,N)\ar[r]&\Ext^{j-1}_R(M,N/xN)\ar[r]&\Ext^{j}_R(M,N)\ar[r]&0
+\end{tikzcd}\]
+for every $j\geq1$. By induction it follows that $\Ext^i_R(M,N)=0$ for $i<d$, while $\Ext^d_R(M,N)\cong\Ext^{d-1}_R(M,N/xN)\neq0$, as required.
+\end{proof}
+The connection with Theorem~\ref{Koszul H^i=0} is as follows: If $x_1,\dots,x_n$ is a regular sequence in $R$, then the Koszul complex $K(x_1,\dots,x_n)$ is a free resolution of $R/(x_1,\dots,x_n)$ by Corollary~\ref{Koszul reg seq exact}. Thus the homology of the complex $\Hom(K(x_1,\dots,x_n),M)$ is $\Ext_R(N,M)$ where $N=R/(x_1,\dots,x_n)$. Since $K(x_1,\dots,x_n)$ is a free module of finite rank, by Exercise~\ref{dual free iso}, we have
+\[\Hom(K(x_1,\dots,x_n),M)\cong M\otimes_RK(x_1,\dots,x_n),\quad \Ext_R(M,N)=\Ext_R(N,M).\]
+So Theorem~\ref{Koszul H^i=0} coincides with Proposition~\ref{depth Ext} in this case.\par
+Recall that $pd_R(M)$ is the minimum length of a free resolution of $M$. Since $\Ext(M,N)$ is computed from a free resolution of $M$, we see that if
+$\Ext^i_R(M,N)\neq0$ for any module $N$, then $pd_RM\geq i$. In particular, we get
+\begin{proposition}
+For any nonzero module $M$, $\pd_RM\geq\depth\Ann(M)$.
+\end{proposition}
+In case $(R,\m)$ is local, Proposition~\ref{depth Ext} shows that the depth of any module $N$ (that is, $\depth(\m,N)$) may be computed from the vanishing behavior of $\Ext^*_R(R/\m,N)$. For every short exact sequence of modules
+\[\begin{tikzcd}
+0\ar[r]&N'\ar[r]&N\ar[r]&N''\ar[r]&0
+\end{tikzcd}\]
+we get a long exact sequence in $\Ext$, so we get inequalities on the depths of $N$, $N'$, and $N''$. We record two of them
+\begin{corollary}
+With notation as above, if $N$, $N'$ and $N''$ are nonzero, then
+\begin{itemize}
+\item[$(a)$]$\depth N''\geq\min\{\depth N,\depth N'-1\}$.
+\item[$(b)$]$\depth N'\geq\min\{\depth N,\depth N''+1\}$.
+\end{itemize}
+\end{corollary}
+\begin{proof}
+For $(a)$, consider the exact sequence
+\[\begin{tikzcd}
+\Ext^{i}_R(R/\m,N)\ar[r]&\Ext^{i}_R(R/\m,N'')\ar[r]&\Ext^{i+1}_R(R/\m,N')
+\end{tikzcd}\]
+For $(b)$, consider the exact sequence
+\[\begin{tikzcd}
+\Ext^{i-1}_R(R/\m,N'')\ar[r]&\Ext^{i}_R(R/\m,N')\ar[r]&\Ext^i_R(R/\m,N)
+\end{tikzcd}\]
+\end{proof}
+\subsection{Cohen-Macaulay Rings}
+\begin{theorem}\label{depth=codim thm}
+Let $R$ be a ring such that $\depth\m=\codim\m$ for every maximal ideal $\m$ of $R$. If $I\subset R$ is a proper ideal, then $\depth I=\codim I$.
+\end{theorem}
+\begin{proof}
+By Proposition~\ref{depth leq codim} we have $\depth I\leq\codim I$, and we must prove the other inequality.\par
+By Lemma~\ref{depth locali lem} we may localize at some maximal ideal $\m\sups I$ without disturbing the depth or the depth of $\m$, so we may assume that $(R,\m)$ is local with $I\sub\m$. If $I$ is $\m$-primary, then $\codim I=\codim\m$. By Corollary~\ref{depth geometric}, $\depth I=\depth\m$, so the theorem is true for $I$. Thus we may assume that $I$ is not $\m$-primary. By Noetherian induction, we may assume that the theorem holds for all ideals strictly larger than $I$.\par
+Since $\m$ is not a minimal prime of $I$, we may by prime avoidance find an element $x\in\m$ not in any minimal prime of $I$, so that $\codim(I+(x))>\codim(I)$. Then by Proposition~\ref{Noe mimimal prime height}, we have $\codim(I+(x))=\codim(I)+1$. Then by induction
+\[\depth(I+(x))=\codim(I+(x))=\codim(I)+1.\] 
+But by Lemma~\ref{depth lem +1},
+\[\depth(I+(x))\leq\depth(I)+1\] 
+so $\depth(I)\geq\codim(I)$, as required.
+\end{proof}
+Theorem~\ref{depth=codim thm} is so useful that its hypothesis has become one of the central definitions in commutative algebra.
+\begin{definition}
+A ring such that $\depth\m=\codim\m$ for every maximal ideal $\m$ of $R$ is called a \textbf{Cohen-Macaulay ring}.
+\end{definition}
+\begin{proposition}\label{regular local Cohen}
+If $R$ is a regular local ring, then it is Cohen-Macaulay.
+\end{proposition}
+\begin{proof}
+Let $\m=(x_1,\dots,x_n)$ in $R$, where $n=\dim R$. From Proposition~\ref{system of para} we know $x_1,\dots,x_n$ is quasi-regular, and hence is regular by Proposition~\ref{regular permute}. So $\depth(\m,R)=n=\dim R$.
+\end{proof}
+\begin{proposition}\label{Cohen-Macaulay iff}
+$R$ is Cohen-Macaulay iff $R_\m$ is Cohen-Macaulay for every maximal ideal $\m$ of $R$, and then $R_\p$ is Cohen-Macaulay for every prime $\p$ of $R$.\par 
+A local ring is Cohen-Macaulay iff its completion is Cohen-Macaulay.
+\end{proposition}
+\begin{proof}
+If $R$ is Cohen-Macaulay, and $\p$ is a prime ideal, then 
+\[\codim\p_\p=\codim\p=\depth(\p,R)\leq\depth\p_\p\leq\codim\p_\p\] 
+by Proposition~\ref{depth leq codim}, so the inequality is an equality and $R_\p$ is Cohen-Macaulay.\par 
+If $R_\m$ is CohenMacaulay for every maximal ideal $\m$, then $\depth(\m,R)=\depth(\m_\m,R_\m)$ by Lemma~\ref{depth locali lem}. As $\codim\m=\codim R_\m$, we see that $R$ is Cohen-Macaulay.\par
+Now suppose that $(R,\m)$ is a local ring, and let $(\widehat{R},\widehat{\m})$ be its completion. We already know that $\codim\m=\codim\widehat{\m}$ by Proposition~\ref{complition dim}, so it is enough to show that $\depth(\m,R)=\depth(\widehat{\m},\widehat{R})$.\par
+Let $x_1,\dots,x_n$ be generators for $\m$. From the construction we see that $\widehat{R}\otimes_RK(x_1,\dots,x_n)$ is the Koszul complex $\widehat{K}$ of $x_1,\dots,x_n$ as elements of $\widehat{R}$. By Proposition~\ref{complition flat} $\widehat{R}$ is flat over $R$ so we have \[H^*(\widehat{K})=\widehat{R}\otimes H^*(K(x_1,\dots,x_N))\]
+By Proposition~\ref{complition iso} and Corollary~\ref{Krull intersection}, any finitely generated nonzero $R$-module remains nonzero on tensoring with $\widehat{R}$, so $\depth(\m,R)=\depth(\widehat{\m},\widehat{R})$ by Theorem~\ref{Koszul H^i=0}.
+\end{proof}
+The Cohen-Macaulay property passes to polynomial rings:
+\begin{proposition}\label{Cohen polynomial}
+A ring $R$ is Cohen-Macaulay iff the polynomial ring $R[x]$ is Cohen-Macaulay.
+\end{proposition}
+\begin{proof}
+If $R[x]$ is Cohen-Macaulay, then since $x$ is a non zero-divisor, $R[x]/(x)=R$ is Cohen-Macaulay.\par
+For the converse, it suffices by Proposition~\ref{Cohen-Macaulay iff} to prove that each localization of $R[x]$ at a maximal ideal is Cohen-Macaulay. Let $\m$ be a maximal ideal of $R[x]$, and let $\n=\m\cap R$. Since the complement of $\n$ in $R$ is contained in the complement of  $\m$ in $R[x]$ we have
+\[R[x]_\m=(R_\n[x])_\m\]
+so we may assume that $R$ is local with maximal ideal $\n$. The ring $R[x]/\n R[x]=(R/\n)[x]$ is a principal ideal domain, so modulo $\n$ the ideal $\m$ is generated by a monic polynomial $f(x)$: That is, $\m=(\n,f(x))$. If $x_1,\dots,x_n$ is an $R$-sequence in $\n$, then it is also an $R[x]$-sequence since $R[x]$ is a free $R$-module. Further, the monic polynomial $f(x)$ is a non zero-divisor modulo any ideal of $R$, so $x_1,\dots,x_n,f(x)$ is an $R[x]$-sequence. Thus $\depth\m\geq 1+\depth\n$.\par
+On the other hand, $\codim\m\leq 1+\codim\n$ by Krull principal ideal theorem, so concluding
+\[\depth\n+1\leq\depth\m\leq\codim\m\leq\codim\n+1\] 
+Since $R$ is Cohen-Macaulay we have $\codim\n=\depth\n$, and we
+obtain $\codim\m=\depth\m$, so $R[x]_\m$ is Cohen-Macaulay as required.
+\end{proof}
+Now we turn to some of the desirable properties of Cohen-Macaulay rings. Recall that a ring $R$ is catenary, or has the saturated chain condition, if given any primes $P\sub Q$ of $R$, the maximal chains of primes between $P$ and $Q$ all have the same length. $R$ is universally catenary if every finitely generated $R$-algebra is catenary. It follows at once that a homomorphic image of a universally catenary ring is universally catenary.
+\begin{corollary}\label{Cohen catenary}
+Cohen-Macaulay rings are universally catenary. Moreover, in a local Cohen-Macaulay ring, any two maximal chains of primes have equal length, and every associated prime of $R$ is minimal.
+\end{corollary}
+\begin{proof}
+Since the polynomial ring over a Cohen-Macaulay ring is again Cohen-Macaulay by Proposition~\ref{Cohen polynomial}, it suffices to show that a homomorphic image $S$ of a Cohen-Macaulay ring $R$ is catenary. Any two maximal chains between a given pair of primes in $S$ pull back to two maximal chains between two primes $Q\sub P$ in $R$. By Proposition~\ref{Cohen-Macaulay iff} we may localize and suppose that $R$ is local with maximal ideal $P$. The two chains may be extended to maximal chains in $R$ by adding the same chain of primes descending from $Q$ to each. Thus the first statement of the corollary will follow from the second statement.\par
+Let $(R,\m)$ be a local Cohen-Macaulay ring. For the second statement of
+the corollary it is sufficient to show that all maximal chains of primes from $\m$ to an associated prime of $R$ have the same length, namely $\dim R$. By Proposition~\ref{depth leq codim}, the length of any such chain $\geq\depth\m$. But $\depth\m=\codim\m=\dim R$, the maximal length of such a chain, by hypothesis.
+\end{proof}
+\begin{proposition}\label{Cohen depth=n}
+Let $R$ be a Cohen-Macaulay ring. If $I=(x_1,\dots,x_n)$ is an ideal generated by $n$ elements in $R$ such that $\depth I=\codim I=n$, the largest possible value, then $R/I$ is a Cohen-Macaulay ring.
+\end{proposition}
+\begin{proof}
+By Proposition~\ref{Cohen-Macaulay iff} we may assume that $R$ is local, with maximal ideal $\m$. So by Corollary~\ref{local regular seq} $x_1,\dots,x_n$ is a regular sequence, and so by Lemma~\ref{regular seq extend} we can choose a maximal regular sequence in $\m$ that begins with $x_1,\dots,x_n$. Then we see that $\depth R/I=\depth R-n$. On the other hand, $\dim R/I\leq\dim R-n$ because for $i=1,\dots,n$ the element $x_i$ is not in any of the minimal primes of $(x_1,\dots,x_{i-1})$. Now use $\depth R=\dim R$ we get the claim.
+\end{proof}
+A consequence, the second statement of the following corollary, was proved by Macaulay in the case $R$ is a polynomial ring, and by Cohen for regular local rings. This is the reason for the name Cohen-Macaulay.
+\begin{corollary}[\textbf{Unmixedness Theorem}]
+Let $R$ be a ring. If $I=(x_1,\dots,x_n)$ is an ideal generated by $n$ elements such that $\codim I=n$, then all minimal primes of $I$ have codimension $n$. If $R$ is Cohen-Macaulay, then every associated prime of $I$ is minimal over $I$.
+\end{corollary}
+\begin{proof}
+Since the codimension of $I$ is the minimum of the codimensions of the minimal primes, we see that these all have codimension $\geq n$. By the
+principal ideal theorem, they all have codimension $\leq n$.\par
+If now $R$ is Cohen-Macaulay, then $R/I$ is Cohen-Macaulay by Proposition~\ref{Cohen depth=n}, so all the associated primes of $I$ (that is, the primes of $\Ass(R/I)$) are minimal over $I$ by Corollary~\ref{Cohen catenary}.
+\end{proof}
+\section{Homological Theory of Regular Local Rings}
+\subsection{Projective Dimension and Minimal Resolutions}
+We begin with some basic ideas.
+\begin{definition}
+A \textbf{projective resolution} of an $R$-module $M$ is a complex
+\[\mathcal{F}:\begin{tikzcd}
+\cdots\ar[r]&F_n\ar[r,"d_n"]&F_{n-1}\ar[r]&\cdots\ar[r,"d_0"]&F_0
+\end{tikzcd}\]
+\end{definition}
+of projective $R$-modules such that $\coker d_0=M$ and $\mathcal{F}$ has no homology.\par
+We shall sometimes abuse this notation and say that
+\[\mathcal{F}:\begin{tikzcd}
+\cdots\ar[r]&F_n\ar[r,"d_n"]&F_{n-1}\ar[r]&\cdots\ar[r,"d_0"]&F_0\ar[r]&M\ar[r]&0
+\end{tikzcd}\]
+is a resolution of $M$. $\mathcal{F}$ is a free resolution if all the $F_i$ are free, and a graded free resolution if $R$ is a graded ring, all the $F_i$ are graded free modules, and the maps are all homogeneous maps of degree $0$ (that is, they take homogeneous elements to homogeneous elements of the same degree). Of course, only graded modules can have graded free resolutions. If for some $n<\infty$ we have $F_{n+1}=0$, but $F_i\neq0$ for $0\leq i\leq n$, then we shall say that $\mathcal{F}$ is a finite resolution, of length $n$.\par
+In general, we define the \textbf{projective dimension} of $M$, written $\pd\ M$ (or $\pd_RM$ if the ring involved is not clear from context), to be the minimum of the lengths of projective resolutions of $M$ (it is $\infty$ if $M$ has no finite projective resolution). The \textbf{global dimension} of $R$ is the supremum of the projective dimensions of all $R$-modules. The following result of Auslander shows that it is enough to take the supremum for finitely generated $R$-modules.
+\begin{theorem}[\textbf{Auslander}]
+The following conditions on a ring $R$ are equivalent:
+\begin{itemize}
+\item[$(a)$]$\gldim R\leq n$---that is, $\pd_RM\leq n$ for every $R$-module $M$.
+\item[$(b)$]$\pd_RM\leq n$ for every finitely generated module $M$.
+\end{itemize}
+\end{theorem}
+There is a simplification in the local and graded cases that is essentially
+a consequence of Nakayama's lemma: The notions of projective and free
+modules coincide. This gives rise to a characterization of projectives as
+locally free modules that we shall need later.
+\begin{theorem}[\textbf{Characterization of projectives}]
+Let $M$ be a finitely generated module over a Noetherian ring $R$. The following statements are equivalent:
+\begin{itemize}
+\item[$(1)$]$M$ is a projective module.
+\item[$(2)$]$M_\m$ is a free module for every maximal ideal $($and thus for every prime ideal$)$ $\m$ of $R$.
+\item[$(3)$]There is a finite set of elements $x_1,\dots,x_r\in R$ that generate the unit ideal of $R$ such that $M_{x_i}$ is free over $R_{x_i}$ for each $i$.
+\end{itemize}
+In particular, every projective module over a local ring is free. Every graded projective module over a positively graded ring $R$ with $R_0$ a field is a graded free module.
+\end{theorem}
+We have already studied one family of finite free resolutions in some detail: the Koszul complexes of regular sequences. They yield:
+\begin{corollary}
+If $x=(x_1,\dots,x_n)$ is a regular sequence, then $K(x)$ is a free resolution of $R/(x_1,\dots,x_n)$. In particular, if $R$ is a regular local ring, and $x_1,\dots,x_n$ is a minimal set of generators for the maximal ideal of $R$, then the Koszul complex $K(x_1,\dots,x_n)$ is a finite free resolution of the residue class field of $R$.
+\end{corollary}
+\begin{proof}
+The first statement is a restatement of Corollary~\ref{Koszul reg seq exact} in the case $M=R$. That the generators of the maximal ideal in a regular local ring form a regular sequence is proved in Corollary~\ref{regulal local Cohen}.
+\end{proof}
+\begin{definition}
+A complex
+\[\mathcal{F}:\begin{tikzcd}
+\cdots\ar[r]&F_n\ar[r,"d_n"]&F_{n-1}\ar[r]&\cdots
+\end{tikzcd}\]
+over a local ring $(R,\m)$ is \textbf{minimal} if the maps in the complex $\mathcal{F}\otimes_RR/\m$ are all $0$; that is, for each $n$, the image of $d_n:F_n\to F_{n-1}$ is contained in $\m F_{n-1}$.
+\end{definition}
+In case $\mathcal{F}$ is a complex of free modules, this simply means that any matrix representing $\varphi_n$ has all its entries in $\m$.\par
+For example, if $x:=(x_1,\dots,x)\in R^n$ and each component $x_i$ is in $\m$, then the Koszul complex $K(x)$ is a minimal complex since the maps in the complex $K(x)\otimes_RR/\m$ are given by the exterior product with the image of the element $x$ in $R^n/\m R^n$--and this image is $0$.\par
+\begin{lemma}
+A free resolution
+\[\mathcal{F}:\begin{tikzcd}
+\cdots\ar[r]&F_n\ar[r,"d_n"]&F_{n-1}\ar[r]&\cdots\ar[r,"d_1"]&F_0
+\end{tikzcd}\]
+over a local ring is a minimal complex iff for each $n$, a basis of $F_{n-1}$ maps onto a minimal set of generators of $\coker d_n$.
+\end{lemma}
+\begin{proof}
+Let $(R,\m)$ be the local ring, and let $d_0$ be the natural map $F_0\to\coker d_1$. For any $n\geq0$, consider the induced epimorphism of vector spaces
+\[F_{n-1}/\m F_{n-1}\twoheadrightarrow(\coker d_n)/\m(\coker d_n)\]
+By Nakayama's lemma, a basis for the vector space on the right is a minimal
+set of generators of $\coker d_n$. Thus the second condition of the lemma is satisfied iff this epimorphism is an isomorphism. This is equivalent to the condition that $\im d_n$ is in $\m F_n$, which is the condition of minimality.
+\end{proof}
+The following useful consequence might be described as a homological
+version of Nakayama's lemma.
+\begin{corollary}\label{local gldim}
+If $R$ is a local ring with residue class field $k$, and $M$ is a finitely generated nonzero $R$-module, then $\pd_RM$ is the length of every minimal free resolution of $M$. Further, $\pd_RM$ is the smallest integer $i$ for which $\Tor_{i+1}^R(k,M)=0$. Thus the global dimension of $R$ is equal to $\pd_Rk$.
+\end{corollary}
+The proof of the last statement rests on the fact that if $R$ is a ring and
+$M$ and $N$ are $R$-modules, then the module $\Tor_i^R(M,N)$ can be computed either as the $i$-th homology of the tensor product of $M$ with a projective resolution of $N$.
+\begin{proof}
+$\Tor^R_{i+1}(k,M)$ can be computed as the $(i+1)$ homology module of the
+tensor product of $k$ and an arbitrary resolution of $M$. Thus if $n=\pd_RM$, then $\Tor^R_{i+1}(k,M)=0$ for $i\geq n$.\par
+Now suppose
+\[\mathcal{F}:\begin{tikzcd}
+0\ar[r]&F_n\ar[r,"d_n"]&F_{n-1}\ar[r]&\cdots\ar[r,"d_1"]&F_0
+\end{tikzcd}\]
+is a free resolution of $M$ of length $n$. If $i$ is the smallest integer for which $\Tor_{i+1}^R(k,M)=0$, then we trivially have $n\geq\pd_RM\geq i$. But if $\mathcal{F}$ is minimal then the differentials in the complex $k\otimes_R\mathcal{F}$ are $0$, so
+\[\Tor^R_{i+1}(k,M)=k\otimes_RF_{i+1}\]
+This is $0$ iff $F_{i+1}$ is $0$, so $i=n$, proving the first two statements of the corollary.\par
+Since we may compute $\Tor^R_{i+1}(k,M)$ from a free resolution for $k$ as well, $\Tor_{i+1}^R(k,M)=0$ for $i\geq\pd_Rk$, and we see that $\pd_RM\leq\pd_Rk$ for any finitely generated $R$-module. Combining this with Auslander's theorem we get the last statement.
+\end{proof}
+\subsection{Global Dimension and the Syzygy Theorem}
+We return at last to regular local rings.
+\begin{corollary}\label{regular local gldim}
+If $R$ is a regular local ring of dimension $n$, then the global dimension of $R$ is $n$.
+\end{corollary}
+\begin{proof}
+If $x_1,\dots,x_n$ generate the maximal ideal of $R$, then we have seen that the Koszul complex $K(x_1,\dots,x_n)$ is a minimal free resolution of length $n$ of the residue class field $k$ of $R$. By Corollary~\ref{local gldim}, $n=\pd_Rk$ is equal to the global dimension of $R$.
+\end{proof}
+\begin{corollary}[\textbf{Hilbert Syzygy Theorem}]
+If $k$ is a field, then every finitely generated graded module over $k[x_1,\dots,x_n]$ has a graded free resolution of length $n$.
+\end{corollary}
+Somewhat surprisingly, Corollary~\ref{regular local gldim} implies the corresponding result in the ungraded case.
+\begin{corollary}
+Every finitely generated module over $k[x_1,\dots,x_n]$ has a finite free resolution.
+\end{corollary}
+\begin{proof}
+Let 
+\[\begin{tikzcd}
+F\ar[r,"\varphi"]&G\ar[r]&M\ar[r]&0
+\end{tikzcd}\] 
+be a free presentation of the finitely generated module $M$ over the polynomial ring $S=k[x_1,\dots,x_n]$. Introducing a new variable $x_0$, we may homogenize $\varphi$ as follows: First choose bases, so that $\varphi$ is represented by a matrix, and let $d$ be the maximum of the degrees of the polynomials appearing in this matrix. Next, replace each monomial in each entry of $\varphi$ by that monomial multiplied by the power of $x_0$ necessary to bring its degree up to $d$; let $\widetilde{\varphi}$ be the matrix over $T=k[x_0,x_1,\dots,x_n]$ whose entries are the resulting homogeneous polynomials of degree $d$.\par
+Note that we may write $S\cong T/(1-x_0)$. With this module structure on
+$S$, we claim that $\varphi=\widetilde{\varphi}\otimes_TS$ indeed, this equation simply says that if we replace $x_0$ by $1$ in each entry of $\widetilde{\varphi}$, we get back $\varphi$, which is obvious from the construction. If we let $\widetilde{M}=\coker\widetilde{\varphi}$, we thus have $M=\widetilde{M}\otimes_TS$.\par
+Now let $\widetilde{\mathcal{F}}$ be a free resolution of $\widetilde{M}$, beginning with $\widetilde{\varphi}$, which exists by virtue of the Hilbert syzygy theorem (applied, for instance, to $\ker\widetilde{\varphi}$). We shall complete the proof by showing that $\widetilde{\mathcal{F}}\otimes_TS$ is a resolution of $M$. For this it suffices to show that $\widetilde{\mathcal{F}}\otimes_TS$ has no homology (except $M$, at the zeroeth step), that is, that $\Tor^T_i(\widetilde{M},S)=0$ for $i\geq1$. We may compute this module from the free resolution
+\[\begin{tikzcd}
+0\ar[r]&T\ar[r,"1-x_0"]&T\ar[r]&S\ar[r]&0
+\end{tikzcd}\]
+of $S$; tensoring with $\widetilde{M}$, we see we must show that
+\[\begin{tikzcd}
+0\ar[r]&\widetilde{M}\ar[r,"1-x_0"]&\widetilde{M}
+\end{tikzcd}\]
+is exact, that is, that $1-x_0$ is a nonzero divisor on $\widetilde{M}$. But $1-x_0$ is a non zero-divisor on any graded module $M$, since for any element
+\[m=m_e+h\in M\]
+where $\deg m_e=e$ and $h$ has degree greater than $e$, we have
+\[(1-x_0)m=m_e+h'\]
+This proves the claim.
+\end{proof}
+\subsection{Depth and Projective Dimension}
+In order to exploit the fact that regular local rings have finite global dimension, we shall use a connection between projective dimension and depth
+discovered by Auslander and Buchsbaum.
+\begin{theorem}[\textbf{Auslander-Buchsbaum formula}]
+Let $(R,\m)$ be a local ring. If $M$ is a finitely generated $R$-module of finite projective dimension, then
+\[\pd_RM=\depth(\m,R)-\depth(\m,M)\]
+\end{theorem}
+We first note that, if $R$ is a regular local ring, this formula follows at once from Corollary~\ref{local gldim} and Theorem~\ref{Koszul H^i=0}, because if the maximal ideal of $R$ is generated by the regular sequence $x_1,\dots,x_n$, we have
+\[\Tor_{i+1}^R(k,M)=H^{n-i-1}(M\otimes_RK(x_1,\dots,x_n))\]
+The left side computes the projective dimension while the right side computes the depth.
+\begin{proof}
+We exploit the finiteness of the projective dimension of $M$ by using induction; if $\pd_RM=0$ then $M$ is free and the result is obvious.\par
+If $\pd_RM>0$, let
+\[\mathcal{F}:\begin{tikzcd}
+0\ar[r]&N\ar[r,"\varphi"]&F\ar[r]&M\ar[r]&0
+\end{tikzcd}\]
+be one step of a minimal free resolution of $M$---that is, let $F\to M$ be an epimorphism from a free module $F$ of minimum possible rank, and let $N$
+be the kernel, with $\varphi:N\to F$ the inclusion. By Corollary~\ref{local gldim} we have $\pd_RN=\pd_RM-1$, so we may apply the theorem inductively to $N$. Writing $d=\depth N$, we must show that the depth of $M$ is exactly $d-1$.\par
+To do this we shall exploit the characterization of depth by the Koszul
+complex. Let $x=(x_1,\dots,x_n)$ be a set of generators of the maximal ideal. If we tensor the Koszul complex $K(x)$ with the short exact sequence $\mathcal{F}$, we obtain a short exact sequence of complexes which gives the following long exact homology sequence:
+\[\begin{tikzcd}[column sep=small]
+\cdots\ar[r]&H^{i-1}(F\otimes K(x))\ar[r]&H^{i-1}(M\otimes K(x))\ar[r]&H^{i}(N\otimes K(x))\ar[r]&H^{i}(F\otimes K(x))\ar[r]&\cdots
+\end{tikzcd}\]
+Since $\depth N=d$ and $\depth F=\depth R\geq d$, we see at once that
+\[H^i(M\otimes K(x))=0\quad\text{for }i<d-1\]
+To prove that $\depth M=d-1$ it therefore suffices to show that
+\[H^{d-1}(M\otimes K(x))\neq 0\]
+Since $\depth N=d$ we know $H^d(N\otimes K(x))\neq 0$. It is thus more than
+sufficient to prove that the map
+\[H^d(N\otimes K(x))\to H^d(F\otimes K(x))\]
+which is the map induced by $\varphi$, is zero.\par
+If $\pd_RN>0$, then by the theorem applied to $N$, we have $d<\depth R$, so that in fact $H^d(F\otimes K(x))=0$. Otherwise, $\pd_RN=0$, so that $N$ is free, and we have
+\[H^d(N\otimes K(x))=N\otimes H^d(K(x))\quad H^d(F\otimes K(x))=F\otimes H^d(K(x))\]
+The map induced by $\varphi$ is in these terms simply $\varphi\otimes 1$. Since $\varphi$ is a minimal presentation, it may be represented by a matrix with entries in $\m$. But $H^d(K(x))$ is annihilated by $\m$ by Proposition~\ref{Koszul homotopy coro}, so the tensor product map is in fact $0$, as required.
+\end{proof}
+The Auslander-Buchsbaum formula is a fundamental tool for studying modules of finite projective dimension. Here is a first indication of its usefulness: A result connecting projective dimension to the theory of primary decomposition.
+\begin{corollary}
+Let $(R,\m)$ be a local ring. If there exists a finitely generated module of projective dimension equal to the dimension of $R$, then $R$ is Cohen-Macaulay. If $R$ is Cohen-Macaulay, then a module $M$ of finite
+projective dimension has $\pd_RM=\dim R$ iff the maximal ideal is associated to $M$.
+\end{corollary}
+One of the most significant applications of the Auslander-Buchsbaum
+formula is the promised completion of Corollary~\ref{regular local gldim}, a fundamental result of Auslander-Buchsbaum and Serre:
+\begin{theorem}\label{regular local iff gldim}
+A local ring has finite global dimension iff it is regular.
+\end{theorem}
+\begin{proof}
+Half of this is done in Corollary~\ref{regular local gldim}. We now must show that if $R$ has finite global dimension then $R$ is regular.\par
+Suppose that $R$ has finite global dimension, and let $k$ be its residue class field. Let $x_1,\dots,x_n$ be a minimal set of generators of the maximal ideal of $R$. We must show $\dim R=n$; since we already have $\dim R\leq n$, it suffices to prove the opposite inequality.\par
+By Proposition~\ref{depth leq codim} it suffices to show that $\depth R\geq n$. But, by the Auslander-Buchsbaum formula, $\depth R=\pd_Rk$. In Lemma~\ref{Koszul minimal resolution} we shall show that the Koszul complex $K(x_1,\dots,x_n)$, which has length $n$, is contained in the minimal free resolution of $k$. In particular, $\pd_Rk\geq n$, and we are done.
+\end{proof}
+It remains to prove the following more-general result:
+\begin{lemma}\label{Koszul minimal resolution}
+If $(R,\m)$ is a local ring with residue class field $k$, and if $\m$ is minimally generated by $x_1,\dots,x_n$, then $K(x_1,\dots,x_n)$ is a subcomplex of the minimal free resolution of $k$.
+\end{lemma}
+\begin{proof}
+Let
+\[\mathcal{F}:\begin{tikzcd}
+\cdots\ar[r]&F_1\ar[r]&F_0
+\end{tikzcd}\]
+be the minimal free resolution of $k$. We have trivially a comparison map of complexes $\varphi:K(x_1,\dots,x_n)\to\mathcal{F}$ lifting the identity map $k\to k$ (for example, by the horseshoe lemma). We shall
+show by induction on $i$ that, for each $i$, the map
+\[\varphi_i:\bigwedge\nolimits^{n-i}R^n\to F_i\]
+is a split monomorphism.\par
+The statement is obvious for $i=0$ and $1$; since in fact
+\[\begin{tikzcd}
+(\bigwedge^{n-1}R^n\cong R^n)\ar[r]&(\bigwedge^nR^n\cong R)\ar[r]&k\ar[r]&0
+\end{tikzcd}\]
+is a minimal free presentation of $k$, it is isomorphic to
+\[\begin{tikzcd}
+F_1\ar[r]&F_0\ar[r]&k\ar[r]&0
+\end{tikzcd}\]
+via $\varphi_0$ and $\varphi_1$.\par
+Suppose, inductively, that we know that the map $\varphi_{i-1}$ is a split monomorphism. Consider the following diagram
+\[\begin{tikzcd}
+F_i\ar[r]&F_{i-1}\\
+\bigwedge^{n-i}R^n\ar[r,"d_x"]\ar[u,"\varphi_i"]&\bigwedge^{n-i+1}R^n\ar[u,swap,"\varphi_{i-1}"]
+\end{tikzcd}\]
+It will be enough to show that
+\[(R/\m)\otimes\varphi_i:(R/\m)\otimes\bigwedge\nolimits^{n-i}R^n\to (R/\m)\otimes F_i\]
+is a monomorphism, since then by Nakayama's lemma a minimal set of generators of $\bigwedge^{n-i}R^n$ maps to a subset of a minimal set of generators for $F_i$.\par
+Note that since the differential $d$ of the Koszul complex maps into the
+maximal ideal times $\bigwedge^{n-i}R^n$, it induces a map of vector spaces
+\[\widebar{d}:(R/\m)\otimes_R\bigwedge\nolimits^{n-i}R^n\to(\m/\m^2)\otimes_R\bigwedge\nolimits^{n-i+1}R^n\]
+We shall show that $\widebar{d}$ is a monomorphism; since $\varphi_{i-1}$ is a split monomorphism, it takes $(\m/\m^2)\otimes\bigwedge\nolimits^{n-i+1}R^n$ monomorphically to $(\m/\m^2)\otimes F_{i-1}$, and by the commutativity
+this implies that $(R/\m)\otimes\varphi_{i-1}$ is a monomorphism, as desired.\par
+Finally, the proof that $\widebar{d}$ is a monomorphism is nothing but linear algebra. Since the elements $x_i$ minimally generate $\m$, the vector space $\m/\m^2$ is isomorphic to $k^n$, with basis $\{x_j\}$. Hence
+\begin{align*}
+(\m/\m^2)\otimes_R\bigwedge\nolimits^{n-i+1}R^n&=(R/\m)\otimes_{R/\m}(\m/\m^2)\otimes_R\bigwedge\nolimits^{n-i+1}R^n\\
+&\cong (\m/\m^2)\otimes_{R/\m}(R/\m)\otimes_R\bigwedge\nolimits^{n-i+1}R^n\\
+&\cong k^n\otimes_{R/\m}\bigwedge\nolimits^{n-i+1}k^n
+\end{align*}
+Writing $\{e_j\}$ for a basis of $R^n$, we wish to show that the map
+\[\bigwedge\nolimits^{n-i}k^n\to k^n\otimes_k\bigwedge\nolimits^{n-i+1}k^n\]
+given by
+\[a\mapsto \sum_jx_j\otimes e_j\wedge a\]
+is a monomorphism for each $i<n$. Since the elements $x_j$ are linearly independent, it suffices to show that not all the $e_j\wedge a$ can be zero unless $a$ is zero. This follows at once by direct computation, or from the observation that the multiplication map $\bigwedge^{n-i}k^n\times\bigwedge^ik^n\to k$ is a perfect pairing.
+\end{proof}
+\begin{corollary}
+Every localization of a regular local ring is regular. Every localization of a polynomial ring over a field is regular.
+\end{corollary}
+\begin{proof}
+Suppose $R$ is a regular local ring or a polynomial ring, and let $R_\p$
+be a localization. By Theorem~\ref{regular local iff gldim} it is enough to show that $R_\p$ has finite global dimension, and by Corollary~\ref{local gldim} it suffices to prove that the residue field $R_\p/\p R_\p$ has finite projective dimension. Since $R$ is regular, $R/\p$ has a finite projective resolution over $R$, and the localization of this is a finite free resolution of $R_\p/\p R_\p$ over $R_\p$, and we are done.
+\end{proof}
+The Auslander-Buchsbaum formula can also be used to give an \textit{extrinsic} characterization of Cohen-Macaulay rings:
+\begin{corollary}\label{local alg Cohen iff}
+If $R$ is a regular local ring and $A$ is a local $R$-algebra that is finitely generated as an $R$-module, then $A$ is Cohen-Macaulay iff $\pd_RA=\codim_RA$ $($the codimension of the annihilator of $A$ in $R$$)$.
+\end{corollary}
+For example, if $A$ is a local ring that is a finitely generated module over a regular local ring $R\subset A$, then Corollary~\ref{local alg Cohen iff} implies that $A$ is Cohen-Macaulay iff $A$ is a free $R$-module.
+\begin{proof}
+Let $\m$ be the maximal ideal of $R$ and let $\n$ be the maximal ideal
+of $A$. Since $A$ is a finitely generated $R$-module, $\m A\neq A$ by Nakayama's lemma, so $\m A\sub\n$. Since $A$ is finitely generated over $R$, $A/\m A$ is a finite-dimensional $R/\m$ vector space, and is thus Artinian. It follows from Proposition~\ref{Art nil} that $\n^n\subset\m A$ for some $n$, so $\depth(\n,A)=\depth(\m A,A)$.\par
+If $x_1,\dots,x_n$ is a maximal $A$-sequence in $\m$, then $\m$ is contained in an associated prime (in $R$) of $A/(x_1,\dots,x_n)A$, and thus $\m$ annihilates some nonzero element $y\in A/(x_1,\dots,x_n)A$. It follows that $\m A$ annihilates $y$, so $x_1,\dots,x_n$ is a maximal $A$-sequence in $\m A$. This shows $\depth(\m A,A)=\depth(\m,A)$.\par
+By the Auslander-Buchsbaum formula, 
+\[\depth(\m,A)=\depth R-\pd_RA=\dim R-\pd_RA\]
+Putting these things together we see that
+\begin{equation*}
+\depth(\n,A)=\dim A\iff \dim R-\pd_RA=\dim A\iff \pd_RA=\codim_RA\qedhere
+\end{equation*}
+\end{proof}

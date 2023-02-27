@@ -1,0 +1,4 @@
+\babel@toc {english}{}
+\contentsline {subsection}{\numberline {0.0.1}Sheaves and \'Etal\'e Spaces}{3}{subsection.0.0.1}%
+\contentsline {subsubsection}{\numberline {0.0.1.1}Inverse image and \'etal\'e space}{7}{subsubsection.0.0.1.1}%
+\contentsfinish 

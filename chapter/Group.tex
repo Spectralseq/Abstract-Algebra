@@ -1,0 +1,1141 @@
+\chapter{Group}
+\section{Basic definitions}
+\subsection{Groups}
+A group $G$ is a monoid, such that for every element $x\in G$ there exists an element $y\in G$ such that $xy=yx=e$. We denote this inverse by $x^{-1}$ (or by $-x$ when the law of composition is written additively). For any positive integer $n$, we let $x^{-n}=(x^{-n})^n$.\par
+In the definitions of identity elements and in verses, we could also define left identity and left inverses (in the obvious way). One can easily prove that these are also identities and inverses respectively under suitable conditions. Namely:
+\begin{lemma}
+Let $G$ be a set with an associative law of composition, let $e$ be a left identity for that law, and assume that every element has a left inverse. Then $e$ is an identity, and each left inverse is also an inverse. In particular, $G$ is a group.
+\end{lemma}
+\begin{proof}
+Let $a\in G$ and let $b\in G$ be such that $ba=e$. Then
+\[bab=eb=b.\]
+Multiplying on the left by a left inverse for $b$ yields $ab=e$, so $b$ is also a right inverse of $a$. One sees also that $a$ is a left inverse of $b$. Furthermore,
+\[ae=aba=ea=a\]
+so $e$ is a right identity.
+\end{proof}
+Before continuing with more elaborate examples we prove two basic results which in particular enable us to talk about the identity and the inverse of an element.
+\begin{proposition}
+If $G$ is a group, then
+\begin{itemize}
+\item[(a)] the identity of $G$ is unique.
+\item[(b)] for each $a\in G$, the inverse of $a$ is unique.
+\item[(c)] $(a^{-1})^{-1}=a$ for any $a\in G$.
+\item[(d)] $(ab)^{-1}=b^{-1}a^{-1}$.
+\item[(e)] for any $a_1,\dots,a_n\in G$ the value of $a_1\cdots a_n$ is independent of how the expression is bracketed (this is called the generalized associative law).
+\end{itemize}
+\end{proposition}
+\begin{proof}
+Assume that $b$ and $b'$ are both inverses of $a$. Then
+\[b=be=bab'=eb'=b',\]
+so the inverse of $a$ is unique. Part $(e)$ is clearly ture for $n=1,2,3$. Next assume for any $k<n$ that any bracketing of a product of $k$ elements can be reduced (without altering the value of the product) to an expression of the form $b_1(b_2(\cdots b_k))$. Now that any bracketing of the product $a_1,\dots,a_n$ must break into $2$ subproducts, where each sub-product is bracketed in some fashion. Applyng the induction assumption to each of these two sub-products gives the claim.
+\end{proof}
+\begin{proposition}\label{Group cancellation}
+Let $G$ be a group and let $a,b\in G$. The equations $ax=b$ and $ya=b$ have unique solutions for $x,y\in G$. In particular, the left and right cancellation laws hold in $G$.
+\end{proposition}
+\begin{proof}
+We can solve $ax=b$ by multiplying both sides on the left by $a^{-1}$ and simplifying to get $x=a^{-1}b$. The uniqueness of $x$ follows because $a^{-1}$ is unique. Similarly, if $ya=b$, $y=ba^{-1}$. If $au=av$, multiply both sides on the left by $a^{-1}$ and simplify to get $u=v$. Similarly, the right cancellation law holds.
+\end{proof}
+One consequence of Proposition~\ref{Group cancellation} is that if $a$ is any element of $G$ and for some $b\in G$, $ab=e$ or $ba=e$, then $b=a^{-1}$, i.e., we do not have to show both equations hold. Also, if for some $b\in G$, $ab=a$ (or $ba=a$), then $b$ must be the identity of $G$, i.e., we do not have to check $bx=xb=x$ for all $x\in G$.
+\begin{example}
+Let $G$ be a group and $S$ a nonempty set. The set of maps $G^S$ is itself a group; namely for two maps $f,g$ of $S$ into $G$ we define $fg$ to be the map such that
+\[(fg)(x)=f(x)g(x).\]
+and we define $f^{-1}$ to be the map such that $f^{-1}(x)=f(x)^{-1}$. It is then trivial to verify that $G^S$ is a group. If $G$ is commutative, so is $G^S$, and when the law of composition in $G$ is written additively, so is the law of composition in $G^S$, so that we would write $f+g$ instead of $fg$, and $-f$ instead of $f^{-1}$.
+\end{example}
+\begin{definition}
+For $G$ a group and $x\in G$ define the \textbf{order} of $x$ to be the smallest positive integer $n$ such that $x^n=e$, and denote this integer by $|x|$. In this case $x$ is said to be of order $n$. If no positive power of $x$ is the identity, the order of $x$ is defined to be infinity and $x$ is said to be of \textbf{infinite order}.
+\end{definition}
+The symbol for the order of $x$ should not be confused with the absolute value symbol. It may seem injudicious to choose the same symbol for order of an element as the one used to denote the cardinality (or order) of a set, however, we shall see that the order of an element in a group is the same as the cardinality of the set of all its (distinct) powers so the two uses of the word "order" are naturally related.
+\subsection{Homomorphisms}
+\begin{definition}
+Let $G$ and $H$ be groups. A map $\varphi:G\to H$ such that
+\[\varphi(xy)=\varphi(x)\varphi(y)\for x,y\in G\]
+is called a \textbf{homomorphism}. If $\varphi$ is also bijective, then it is called an \textbf{isomorphism}. Two groups are called \textbf{isomorphic} if there exists an isomorphism between them.
+\end{definition}
+\begin{proposition}
+Let $\varphi:G\to H$ be a group homomorphism.
+\begin{itemize}
+\item[(a)] $\varphi(e)=e$.
+\item[(b)] $\varphi(x^{-1})=\varphi(x)^{-1}$.
+\item[(c)] If $\psi:H\to K$ is another homomorphism, then $\psi\circ\varphi$ is a homomorphism.
+\item[(d)] If $\varphi$ is an isomorphism, then $\varphi^{-1}$ is also an isomorphism.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+Let $x\in G$. Then
+\[\varphi(x)=\varphi(xe)=\varphi(x)\varphi(e).\]
+Multiplying $\varphi(x)^{-1}$ at both sides, we get $\varphi(e)=e$. Now
+\[e=\varphi(e)=\varphi(xx^{-1})=\varphi(x)\varphi(x^{-1}),\]
+so $\varphi(x^{-1})=\varphi(x)^{-1}$.\par
+If $\psi$ is also a homomorphism, then
+\[\psi(\varphi(xy))=\psi(\varphi(x)\varphi(y))=\psi(\varphi(x))\psi(\varphi(y)),\]
+so $\psi\circ\varphi$ is also a homomorphism. Assume that $\varphi$ is bijective. Then it is not hard to see $\varphi^{-1}$ is also an homomorphism:
+\[\varphi^{-1}(\varphi(x)\varphi(y))=\varphi^{-1}(\varphi(xy))=xy=\varphi^{-1}(\varphi(x))\varphi^{-1}(\varphi(y)).\]
+Thus $\varphi^{-1}$ is an isomorphism.
+\end{proof}
+\begin{example}
+Let $G$ be a group. Then a homomorphisms from $G$ to $G$ is called an \textbf{endomorphism}. The set of all endomorphisms is denoted by $\End(G)$. If an endomorphism of $G$ is bijective, we say it is an \textbf{automorphism} of $G$. The set of all endomorphisms of $G$ forms a group under composition, which we denoted by $\Aut(G)$.
+\end{example}
+\begin{example}
+Let $G$ be a monoid and $x$ an element of $G$. Let $\N$ denote the (additive) monoid of integers. Then the map $f:\N\to G$ such that $f(n)=x^n$ is a homomorphism. If $G$ is a group, we can extend $f$ to a homomorphism of $\Z$ into $G$.
+\end{example}
+\begin{example}
+Let $n$ be a fixed integer and let $G$ be an abelian group. Then one verifies easily that the map $G\to G,x\mapsto x^n$ is a homomorphism. The map $x\mapsto x^n$ is called the $n$-th power map.
+\end{example}
+Let $G$ be a group and $S$ a subset of $G$. We shall say that $S$ generates $G$, or that $S$ is a set of generators for $G$, if every element of $G$ can be expressed as a product of elements of $S$ or inverses of elements of $S$, i.e. as a product $x_1\cdots x_n$
+where each $x_i$ or $x_i^{-1}$ is in $S$. It is clear that the set of all such products is a subgroup of $G$ (the empty product is the identity element), and is the smallest subgroup of $G$ containing $S$. Thus $S$ generates $G$ if and only if the smallest subgroup of $G$ containing $S$ is $G$ itself. If $G$ is generated by $S$, then we write $G=\langle S\rangle$. The following result about generating set is immediate.
+\begin{proposition}
+Let $G$ be a group, $S$ a set of generators for $G$, and $H$ another group. Let $f:S\to H$ be a map. If there exists a homomorphism $\widetilde{f}$ of $G$ into $H$ whose restriction to $S$ is $f$, then there is only one.
+\end{proposition}
+Let $f:G\to H$ be a group-homomorphism. Let $e_G,e_H$ be the respective identity elements of $G$, $H$. We define the kernel of $f$ to be
+\[\ker f=\{x\in G:f(x)=e_H\}.\]
+From the definitions, it follows at once that the kernel of $f$ is a subgroup of $G$. Similarly, the image of $f$ is defined by
+\[\im f=\{y\in H:\text{there exists $x\in G$ such that $f(x)=y$}\}.\]
+Then $\im f$ is a subgroup of $H$.
+\subsection{Subgroups}
+\begin{definition}
+Let $G$ be a group. The subset $H$ of $G$ is a \textbf{subgroup} of $G$ if $H$ is nonempty and $H$ is closed under products and inverses. If $H$ is a subgroup of $G$ we shall write $H\leq G$.
+\end{definition}
+Subgroups of $G$ are just subsets of $G$ which are themselves groups with respect to the operation defined in $G$, i.e., the binary operation on $G$ restricts to give a binary
+operation on $H$ which is associative, has an identity in $H$, and has inverses in $H$ for all the elements of $H$.
+When we say that $H$ is a subgroup of $G$ we shall always mean that the operation for the group $H$ is the operation on $G$ restricted to $H$ (in general it is possible that the subset $H$ has the structure of a group with respect to some operation other than the operation on $G$ restricted to $H$). As we have been doing for functions restricted to a subset, we shall denote the operation for $G$ and the operation for the subgroup $H$ by the same symbol.\par
+If $H$ is a subgroup of $G$ then, since the operation for $H$ is the operation for $G$ restricted to $H$, any equation in the subgroup $H$ may also be viewed as an equation in the group $G$. Thus the cancellation laws for $G$ imply that the identity for $H$ is the same as the identity of $G$ (in particular, every subgroup must contain $e$, the identity of $G$) and the inverse of an element $x$ in $H$ is the same as the inverse of $x$ when considered as an element of $G$ (so the notation $x^{-1}$ is unambiguous).
+
+\begin{example}
+\mbox{}
+\begin{itemize}
+\item[(a)] $\Z\leq\Q$ and $\Q\leq\R$.
+\item[(b)] Any group $G$ has two subgroups: $H=G$ and $H=\{e\}$; the latter is called the trivial subgroup.
+\item[(c)] The relation "is a subgroup of" is transitive: if $H$ is a subgroup of a group $G$ and $K$ is a subgroup of $H$, then $K$ is also a subgroup of $G$. 
+\end{itemize}
+\end{example}
+Even for easy examples checking that all the group axioms (especially the associative law) hold for any given binary operation can be tedious at best. Once we know that we have a group, however, checking that a subset of it is (or is not) a subgroup is a much easier task, since all we need to check is closure under multiplication and under taking inverses. The next proposition shows that these can be amalgamated into a single test and also shows that for finite groups it suffices to check for closure under multiplication.
+\begin{proposition}
+A subset $H$ of a group $G$ is a subgroup if and only if
+\begin{itemize}
+\item[(a)] $H$ is nonempty.
+\item[(b)] for any $x,y\in H$, $xy^{-1}\in H$. 
+\end{itemize}
+Furthermore, if $H$ is finite, then it suffices to check that $H$ is nonempty and closed under multiplication.
+\end{proposition}
+\begin{proof}
+If $H$ is a subgroup of $G$, then certainly $(a)$ and $(b)$ hold because $H$ contains the identity of $G$ and the inverse of each of its elements and because $H$ is closed under multiplication.\par
+It remains to show conversely that if $H$ satisfies both $(a)$ and $(b)$, then $H\leq G$. Let $x$ be any element in $H$ (such $x$ exists by property $(a)$). Let $y=x$ and apply property $(b)$ to deduce that $e=xx^{-1}\in H$, so $H$ contains the identity of $G$. Then, again by $(b)$, since $H$ contains $e$ and $x$, $H$ contains the element $ex^{-1}=x^{-1}$ and $H$ is closed under taking inverses. Finally, if $x$ and $y$ are any two elements of $H$, then $H$ contains $x$ and $y^{-1}$ by what we have just proved, so by $(b)$, $H$ also contains $xy$. Hence $H$ is also closed under multiplication, which proves $H$ is a subgroup of $G$.\par
+Suppose now that $H$ is finite and closed under multiplication and let $x$ be any element in $H$. Then there are only finitely many distinct elements among $x,x^2,\dots$ and so $x^a=x^b$ for some integers $a,b$ with $b>a$. If $n=b-a$, then $x^n=e$ so in particular every element $x\in H$ is of finite order. Then $x^{n-1}=x^{-1}$ is an element of $H$, so $H$ is automatically also closed under inverses.
+\end{proof}
+Let $H$ and $K$ be subgroups of $G$, then we define
+\[HK=\{hk:h\in H,k\in K\}\]
+It is worth noting that in general $HK$ need not to be a group. In fact, we have the following characterization.
+\begin{proposition}
+Let $H$ and $K$ be finite subgroups of $G$, then $HK$ is a group if and only if $HK=KH$.
+\end{proposition}
+\begin{proof}
+If $HK$ is a subgroup, then $(HK)^{-1}\sub HK$, which implies
+\[KH=K^{-1}H^{-1}=(HK)^{-1}\sub HK,\]
+and
+\[HK=((HK)^{-1})^{-1}\sub(HK)^{-1}=K^{-1}H^{-1}=KH.\]
+Therefore $HK\sub KH$.\par
+Conversely, if $HK=KH$, then
+\[HK(HK)^{-1}=HKK^{-1}H^{-1}\sub HKH^{-1}\sub HKH=HHK\sub HK,\]
+therefore $HK$ is a subgroup.
+\end{proof}
+\begin{proposition}[\textbf{Product formula}]\label{subgroup product formula}
+Let $H$ and $K$ be finite subgroups of $G$, then
+\[\frac{|HK|}{|K|}=\frac{|H|}{|H\cap K|}.\]
+\end{proposition}
+\begin{proof}
+Since $HK$ is the union of all cosets of $K$ in $H$, and $H$ is the union of all cosets of $H\cap K$ in $H$, we consider the natural map
+\[HK/K\to H/H\cap K,\quad hK\mapsto h(H\cap K).\]
+Not that, since $H$ is a group, we have
+\[h_1K=h_2K\iff h_1^{-1}h_2\in K\iff h_1(H\cap K)=h_2(H\cap K).\]
+Therefore this map is bijective and the claim follows.
+\end{proof}
+The proposition above considered the size of subgroups. We now consider the index of these groups.
+\begin{proposition}\label{subgroup index formula}
+Let $H$ and $K$ be finite subgroups of $G$, then
+\[\lcm([G:H],[G:K])\leq[G:H\cap K]\leq[G:H][G:K].\]
+\end{proposition}
+\begin{proof}
+By the multiplicity we have
+\[[G:H\cap K]=[G:H][H:H\cap K],\quad [G:H\cap K]=[G:K][K:K\cap H].\]
+This then implies $\lcm([G:H],[G:K])\mid[G:H\cap K]$, and we get the first equality.\par
+For the second inequality, consider the coset $G/H\cap K$. For $g\in a(H\cap K)\in G/H\cap K$ we have $g=ah_1=ak_1$, so $g\in aH\cap aK$. Therefore every left coset of $H\cap K$ is an intersection of a left coset of $H$ and a left coset of $K$. As the number of left cosets of $H$ and $K$ are finite, number of distinct left cosets of $H\cap K$ must be finite, and we have
+\[[G:H\cap K]\leq[G:H][G:K].\]
+This completes the proof.
+\end{proof}
+\section{Sylow Theorem}
+\subsection{Group action}
+An \textbf{action} of a group $G$ on an object $A$ of a category $\mathcal{C}$ is simply a homomorphism
+\[\sigma:G\to\Aut_{\mathcal{C}}(A)\]
+\begin{definition}
+An action of a group $G$ on an object $A$ of a category $\mathcal{C}$ is \textbf{faithful} (or effective) if the corresponding $\sigma:G\to\Aut_{\mathcal{C}}(A)$ is injective.
+\end{definition}
+The case $\mathcal{C}=\mathsf{Set}$ is already very rich, and we focus on it. Spelling out our definition of action in case $A$ is a set, so that $\Aut_{\mathcal{C}}(A)$ is the symmetric group $\mathfrak{S}_A$, we get the following:
+\begin{definition}
+An action of a group $G$ on a set $A$ is a set-function
+\[\rho:G\times A\to A\]
+such that $\rho(e_G,a)=a$ for all $a\in A$ and
+\[(\forall g,h\in G),(\forall a\in A):\quad\rho(gh,a)=\rho(g,\rho(h,a))\]
+\end{definition}
+\begin{example}
+$G$ acts by left-multiplication on the set $G/H$ of left-cosets of any subgroup $H$: act by $g\in G$ on $aH\in G/H$ by sending it to $(ga)H$.
+\end{example}
+\begin{theorem}[\textbf{Cayley's theorem}]\label{Cayley theorem}
+Let the group $G$ have a subgroup $H$ of index $n$, then there is a normal subgroup $K$ of $G$ such that
+\[K\sub H,\quad m=[G:K]<\infty,\quad m\mid n!.\]
+\end{theorem}
+\begin{proof}
+Let $G$ act on the left cosets of $H$ by left-multiplication. Then we get a homomorphism $\varphi:G\to\mathfrak{S}_{[G/H]}=\mathfrak{S}_n$. In particular, its kernel $K$ is a normal subgroup of $G$. Since $G/K$ is isomorphic to a subgroup of $\mathfrak{S}_n$, we deduce that $m:=[G:K]$ is finite and $m\mid n!$. Now if $g\in\ker\varphi$, then in particular $gH=H$, thus $g\in H$. This implies $K\sub H$, so the claim follows.
+\end{proof}
+\begin{corollary}
+Every finite group $G$ is isomorphic to a subgroup of some symmetric group.
+\end{corollary}
+\begin{proof}
+Take $H=\{e\}$ in Cayley's theorem, then we get an embedding of $G$ into $\mathfrak{S}_{|G|}$.
+\end{proof}
+As an application of Cayley's theorem, we prove the following result.
+\begin{proposition}
+Let $G$ be a group of order $n$ and $p$ be the smallest prime dividing $n$. Then any subgroup of index $p$ in $G$ is normal.
+\end{proposition}
+\begin{proof}
+Let $H$ be such a subgroup. Then by Cayley's theorem, there is a normal subgroup $K$ such that 
+\[K\sub H,\quad [G:K]\mid p!.\] 
+Let $d$ be any prime divisor of $[G:K]$. Then since $[G:K]$ divides $n$ and $p$ is the smallest prime divisor of $n$, we have
+\[1\leq d\leq p,\quad d\geq p.\]
+So the only possibility is $d=p$, and therefore $[G:K]=p$. Since $K\sub H$, this implies $H=K$ is normal.
+\end{proof}
+\begin{definition}
+The \textbf{orbit} of $a\in A$ under an action of a group $G$ is the set
+\[O_G(a):=\{ga\mid g\in G\}\]
+\end{definition}
+\begin{definition}
+Let $G$ act on a set $A$, and let $a\in A$. The \textbf{isotopy subgroup} or \textbf{stabilizer} of $a$ consists of the elements of $G$ which fix $a$:
+\[G_a:=\{g\in G\mid ga=a\}\]
+\end{definition}
+\begin{definition}
+An action of a group $G$ on a set $A$ is \textbf{transitive} if it has single orbit.
+\end{definition}
+Orbits of an action of a group $G$ on a set $A$ form a \textit{partition} of $A$; and we have an induced, transitive action of $G$ on each orbit. Therefore we can, in a sense, understand all actions if we understand transitive actions.\par
+For any group $G$, sets endowed with a (left) $G$-action form in a natural way a category $G$-$\mathsf{Set}$: objects are pairs $(\rho,A)$, where $\rho:G\times A\to A$ is an action and morphisms between two objects are set-functions which are compatible with the actions. That is, a morphism
+\[(\rho,A)\to(\rho',A')\]
+in $G$-$\mathsf{Set}$ amounts to a set-function $\varphi:A\to A'$ such that the diagram
+\[\begin{tikzcd}
+G\times A\ar[d,"\rho"]\ar[r,"\id_G\times\varphi"]&G\times A'\ar[d,"\rho'"]\\
+A\ar[r,"\varphi"]&A'
+\end{tikzcd}\]
+commutes. In the usual shorthand notation omitting the $\rho$'s, this means that $\forall g\in G$, $\forall a\in A$,
+\[g\varphi(a)=\varphi(ga)\]
+that is, the action commute with $\varphi$. Such functions are called \textbf{$\bm{G}$-equivariant}.\par
+Among $G$-sets we single out the sets $G/H$ of left-cosets of subgroups $H$ of $G$; $G$ acts on $G/H$ by left-multiplication.
+\begin{proposition}\label{transitive set isomorphic coset}
+Every transitive left-action of $G$ on a set $A$ is isomorphic to the left multiplication of $G$ on $G/H$, for $H$ being the isotopy group of any $a\in A$.
+\end{proposition}
+\begin{proof}
+Let $G$ act transitively on a set $A$, let $a\in A$ be any element. We define a map
+\[\varphi:G/H\to A,\quad gH\mapsto ga.\]
+First, it is clear that $\varphi$ is well defined, and injective. Since $G$ acts transitively, $\varphi$ is also surjective. Now we verify the equivariance:
+\[\varphi(g'(gH))=g'ga=g'(ga)=g'(\varphi(gH))\]
+Therefore $\varphi$ is an ismorphism.
+\end{proof}
+\begin{corollary}\label{orbits card}
+If $O$ is an orbit of the action of a finite group $G$ on a set $A$, then $O$ is a finite set and
+\[|G|=|O|\cdot|G_a|\]
+for any $a\in O$. In particular, $|O|$ divides $|G|$.
+\end{corollary}
+\begin{proposition}\label{group isotopy conjugate relation}
+Suppose a group $G$ acts on a set $A$, and let $a\in A$, $g\in G$, $b=ga$. Then
+\[G_b=g\cdot G_a\cdot g^{-1}\]
+\end{proposition}
+For example, if $G_a$ happens to be normal, then it is really independent of $a$. In any case, there is an isomorphism of $G$-sets beween $G/H$ and $G/(gHg^{-1})$.\par
+Assume $G$ acts on a set $S$. Let $Z$ be the set of fixed points of the action:
+\[Z:=\{a\in S:(\forall g\in G)\ ga=a\}\]
+Since the group action on each orbit is transitive, we have the following corollary of Proposition~\ref{transitive set isomorphic coset}.
+\begin{proposition}\label{class formula conjugation}
+Let $S$ be a finite set, and let $G$ be a group acting on $S$. With
+notation as above,
+\[|S|=|Z|+\sum_{a\in A}[G:G_a]\]
+where $A\sub S$ is the set $S$ modulo the orbit relation, having exactly one element for each nontrivial orbit of the action
+\end{proposition}
+\begin{proof}
+The orbits form a partition of $S$, and $Z$ collects the trivial orbits; hence
+\[|S|=|Z|+\sum_{a\in A}|O_a|\]
+By Proposition~\ref{orbits card} we have $|O_a|=[G:G_a]$, so the claim follows.
+\end{proof}
+The main strength of Proposition~\ref{class formula conjugation} rests in the fact that, if $G$ is finite, each summand $[G:G_a]$ divides the order of $G$. This can be a strong constraint, when some information is known about $|G|$. For example, let's see what this says when $G$ is a $p$-group:
+\begin{definition}
+A \textbf{$\bm{p}$-group} is a finite group whose order is a power of a prime integer $p$.
+\end{definition}
+\begin{corollary}\label{p-group act fixed point}
+Let $G$ be a $p$-group acting on a finite set $S$, and let $Z$ be the fixed
+point set of the action. Then
+\[|S|\equiv|Z|\pmod{p}\]
+\end{corollary}
+\begin{proof}
+Indeed, each summand $[G:G_a]$ in Proposition~\ref{class formula conjugation} is a power of $p$ larger than $1$; hence it is $0$ mod $p$.
+\end{proof}
+Recall that every group $G$ acts on itself in at least two interesting ways: by left multiplication and by conjugation. The latter action is defined by
+\[\rho:G\times G\to G,\quad \rho(g,a)\mapsto gag^{-1}.\]
+This datum is equivalent to the datum of a certain group homomorphism:
+\[\sigma:G\to\mathfrak{S}_G\]
+from $G$ to the permutation group on $G$.
+\begin{definition}
+The \textbf{center} of $G$, denoted $Z(G)$, is the fixed points of $G$ under conjugation. That is,
+\[Z(g):=\{a\in G:(\forall g\in G)\ ga=ag\}\]
+\end{definition}
+\begin{corollary}\label{p-group center}
+Let $G$ be a $p$-group, then $Z(G)\neq\{1\}$.
+\end{corollary}
+\begin{proof}
+Since $Z(G)$ is the fixed points of conjugation action of $G$, byCorollary~\ref{p-group act fixed point} we have $|Z(G)|\equiv 0$ mod $p$. Since $1\in Z(G)$, we conclude that $|Z(G)|\geq p$, so in particular $Z(G)$ is nontrivial.
+\end{proof}
+\begin{lemma}\label{center cyclic}
+Let $G$ be a finite group, and assume $G/Z(G)$ is cyclic. Then $G$ is
+commutative $($and hence $G/Z(G)$ is in fact trivial$)$.
+\end{lemma}
+\begin{proof}
+Assume $G/Z(G)$ is generated by $gZ(G)$. Then for all $a\in G$,
+\[aZ(G)=g^rZ(G)\]
+for some $r\in\Z$; that is, there is an element $z\in\Z(G)$ of the center such that $a=g^rz$.\par
+Now let $a,b\in G$ and write
+\[a=g^rz,\quad b=g^sw\]
+where $z,w\in Z(G)$. Then
+\[ab=g^{r}zg^sw=g^{r+s}zw,\quad ba=g^swg^rz=g^{r+s}wz.\]
+Thus $ab=ba$, proving $G$ is commutative.
+\end{proof}
+Next, the isotopy group of $a\in G$ under conjugation has a special name:
+\begin{definition}
+The \textbf{centralizer} $Z_G(a)$ of $a\in G$ is its isotopy group under conjugation. That is,
+\[Z_G(a)=\{g\in G\mid gag^{-1}=a\}=\{g\in G\mid ag=ga\}\]
+consists of those elements in $G$ which commute with $a$.
+\end{definition}
+In particular, $Z(G)\sub Z_G(a)$ for all $a\in G$; in fact, we have
+\[Z(G)=\bigcap_{a\in G}Z_G(a).\]
+It is clear that $g\in Z(G)$ if and only if $g\in Z_G(a)$ for all $a\in G$.
+\begin{definition}
+The \textbf{conjugacy class} of $a\in G$ is the orbit $[a]$ of a under the
+conjugation action. Two elements $a,b$ of $G$ are conjugate if they belong to the same conjugacy class. Note that $[a]=\{a\}$ if and only if $a\in Z(G)$.
+\end{definition}
+\begin{proposition}[\textbf{Class formula}]\label{class formula}
+Let $G$ be a finite group. Then
+\[|G|=|Z(G)|+\sum_{a\in A}[G:Z_G(a)]\]
+where $A\sub G$ is a set containing one representative for each nontrivial conjugacy class in $G$.
+\end{proposition}
+\begin{corollary}
+Let $G$ be a nontrivial $p$-group. Then $G$ has a nontrivial center.
+\end{corollary}
+We may also act by conjugation on subset of $G$: if $A\sub G$ is a subset and $g\in G$, the conjugate of $A$ is the subset $gAg^{-1}$. By cancellation, the conjugation map $a\mapsto gag^{-1}$ is a bijection between $A$ and $gAg^{-1}$.\par
+\begin{definition}
+The \textbf{normalizer} $N_G(A)$ of $A$ is its isotopy under conjugation. The \textbf{centralizer} of $A$ is the subgroup $Z_G(A)\sub N_G(A)$ fixing each element of $A$.
+\end{definition}
+\begin{proposition}\label{conjugate subgroup number}
+Let $H\sub G$ be a subgroup. Then $($if finite$)$ the number of subgroups
+conjugate to $H$ equals the index $[G:N_G(H)]$ of the normalizer of $H$ in $G$.
+\end{proposition}
+\begin{proof}
+This is again an immediate consequence of Proposition~\ref{orbits card}, since the conjugate classes of $H$ is the orbit of $H$ under the conjugate action of $G$ on the set of subgroups of $G$.
+\end{proof}
+\begin{corollary}
+If $[G:H]$ is finite, then the number of subgroups conjugate to $H$ is finite and divides $[G:H]$.
+\end{corollary}
+\begin{proof}
+This comes from the observation
+\[[G:H]=[G:N_G(H)][N_G(H):H]\]
+and the class formula.
+\end{proof}
+\subsection{Sylow \Rmnum{1}}
+\begin{theorem}[Cauchy's theorem]
+Let $G$ be a finite group, and let p be a prime divisor of $|G|$, then:
+\begin{itemize}
+\item[(a)] $G$ contains an element of order $p$.
+\item[(b)] Let $N$ be the number of cyclic subgroups of $G$ of order $p$. Then $N\equiv1$ mod $p$.
+\end{itemize}
+\end{theorem}
+\begin{proof}
+Consider the set $S$ of $p$-tuples of elements of $G$ 
+\[S:=\{(a_1,\cdots,a_p)\in G^p:a_1a_2\cdots a_p=e\}\]
+Then $|S|=|G|^{p-1}$, as can be easily verified. Therefore, $p$ divides the order of $S$ as it divides the order of $G$.\par
+Note that if $a_1a_2\cdots a_p=e$, then
+\[a_{2}\cdots a_1=e\]
+Since $a_1=(a_2a_3\cdots a_p)^{-1}$. Thus, the group $\Z/p\Z$ acts on $S$ by
+\[[m]\cdot(a_1,\cdots,a_p)=(a_{m+1},\cdots,a_m)\]
+Now Corollary~\ref{p-group act fixed point} implies
+\[|Z|\equiv|S|\equiv 0\mod{p}\]
+where $Z$ is the set of fixed points of this action. Now
+\[(a_1,\cdots,a_n)\in Z\iff a_1=a_2=\cdots=a_n=a.\]
+Since $Z\neq\emp$, and $p\geq 2$, we must have some $a\neq e$ in $G$ such that $a^p=e$. Now since $p$ is a prime, $a$ has order $p$.\par
+For the second claim, each element $a$ in $Z$ generates a subgroup $\{e,a,\cdots,a^{p-1}\}$, where $a^2,\cdots,a^{p-1}$ all have order $p$. Since any tow such subgroups only touches at $e$, we have the following relation
+\[|S|=N(p-1)+1=Np-N+1\]
+Thus we find $N\equiv 1$ mod $p$ from $|S|\equiv 0$ mod $p$.
+\end{proof}
+\begin{proposition}[\textbf{First Sylow theorem}]
+Every finite group contains a $p$-Sylow subgroup, for all primes $p$. In fact, if $p^k$ divides $|G|$, then $G$ has a subgroup of order $p^k$.
+\end{proposition}
+\begin{proof}
+If $k=0$, there is nothing to prove, so we may assume $k\geq 1$ and in particular that $|G|$ is a multiple of $p$.\par
+Argue by induction on $|G|$: if $|G|=p$, again there is nothing to prove; further more, if $|G|>p$ and $G$ contains a proper subgroup $H$ such that $[G:H]$ is relatively 
+prime to $p$, then $p^k$ divides the order of $H$, and hence $H$ contains a subgroup of order $p^k$ by the induction hypothesis, and thus so does $G$.\par
+Therefore we may assume that all proper subgroups of $G$ have index divisible by $p$. By the class formula (Proposition~\ref{class formula}), $p$ divides the order of 
+the center $Z(G)$. By Cauchy's theorem, there exists $a\in Z(G)$ such that $a$ has order $p$. The cyclic subgroup $N=\langle a\rangle$ is contained in $Z(G)$, and hence 
+it is normal in $G$. Therefore we can consider the quotient $G/N$. Since $|G/N|=|G|/p$ and $p^k$ divides $|G|$ by hypothesis, we have that $p^{k-1}$ divides the order 
+of $G/N$. By the induction hypothesis, we may conclude that $G/N$ contains a subgroup of order $p^{k-1}$. By the structure of the subgroups of a quotient, this subgroup 
+must be of the form $P/N$, for $P$ a subgroup of $G$. But then $|P|=|P/N|\cdot|N|=p^{k-1}\cdot p=p^k$, as needed.
+\end{proof}
+\subsection{Sylow \Rmnum{2}}
+\begin{theorem}[\textbf{Second Sylow theorem}]
+Let $G$ be a finite group, let $P$ be a $p$-Sylow subgroup, and let $H\sub G$ be a $p$-group. Then $H$ is contained in a conjugate of $P$: there exists $g\in G$ such that $H\sub gPg^{-1}$.
+\end{theorem}
+\begin{proof}
+Act with $H$ on the set of left-cosets of $P$, by left-multiplication. Since there are $[G:P]$ cosets and $p$ does not divide $[G:P]$, we know this action must have fixed points by Corollary~\ref{p-group act fixed point}: let $gP$ be one of them. This means that $\forall h\in H$
+\[hgP=gP\]
+that is, $g^{-1}hgP=P$ for all $h$ in $H$; that is, $g^{-1}Hg\sub P$; that is, $H\sub gPg^{-1}$ as needed.
+\end{proof}
+We can obtain an even more complete picture of the situation. Suppose we have constructed a chain
+\[H_0=\{e\}\sub H_1\sub\cdots\sub H_k\]
+of $p$-subgroups of a group $G$, where $|H_i|=p^i$. By the second Sylow theorem we know that $H_k$ is contained in some $p$-Sylow subgroup, of order $p^r$ (the maximum power of $p$ dividing the order of $G$). But we claim that the chain can in fact be continued one step at a time all the way up to the Sylow subgroup:
+\[H_0=\{e\}\sub H_1\sub\cdots\sub H_k\sub H_{k+1}\sub\cdots\sub H_r.\]
+and, further, $H_k$ may be assumed to be normal in $H_{k+1}$. The following lemma will simplify the proof of this fact considerably and will also help us prove the 
+third Sylow theorem.
+\begin{lemma}\label{p-group normalizer congruence}
+Let $H$ be a $p$-group contained in a finite group $G$. Then
+\[[N_G(H):H]\equiv[G:H]\pmod{p}\]
+\end{lemma}
+\begin{proof}
+If $H$ is trivial, then $N_G(H)=G$ and the two numbers are equal.\par
+Assume then that $H$ is nontrivial, and act with $H$ on the set of left-cosets of $H$ in $G$, by left-multiplication. Let $Z$ be the fixed points of this action, then 
+\begin{align*}
+gH\in Z&\iff(\forall h\in H)\ hgH=gH\\
+&\iff g^{-1}Hg\sub H\iff g^{-1}Hg=H\\
+&\iff g\in N_G(H)
+\end{align*}
+Therefore, the set of fixed points of the action consists of the set of cosets of $H$ in $N_G(H)$. Thus apply Corollary~\ref{p-group act fixed point} we get the claim.
+\end{proof}
+As a consequence, if $H_k$ is not a $p$-Sylow subgroup, in the sense that $p$ still divides $[G:H_k]$, then $p$ must also divide $[N_G(H_k):H_k]$. Another application of Cauchy's theorem tells us how to obtain the next subgroup $H_{k+1}$ in the chain. More precisely, we have the following result.
+\begin{proposition}\label{p group chain}
+Let $H$ be a $p$-subgroup of a finite group $G$, and assume that $H$ is not a $p$-Sylow subgroup. Then there exists a $p$-subgroup $H'$ of $G$ containing $H$, such that 
+$[H':H]=p$ and $H$ is normal in $H'$.
+\end{proposition}
+\begin{proof}
+Since $H$ is not a $p$-Sylow subgroup of $G$, $p$ divides $[N_G(H):H]$, by Lemma~\ref{p-group normalizer congruence}. Since $H$ is normal in $N_G(H)$, we may consider 
+the quotient group $N_G(H)/H$, and $p$ divides the order of this group. By Cuachy's theorem, $N_G(H)/H$ has an element of order $p$; this generates a subgroup of order 
+$p$ of $N_G(H)/H$, which must be in the form $H'/H$ for a subgroup $H'$ of $N_G(H)$. It is straightforward to verify that $H'$ satisfies the stated requirements.
+\end{proof}
+\subsection{Sylow \Rmnum{3}}
+\begin{theorem}[\textbf{Sylow \Rmnum{3}}]
+Let $p$ be a prime integer, and let $G$ be a finite group of order $|G|=p^rm$ ($p$ does not divide $m$). Then the number of $p$-Sylow subgroups of $G$ divides $m$ and is congruent to $1$ modulo $p$.
+\end{theorem}
+\begin{proof}
+Let $N_p$ denote the number of $p$-Sylow subgroups of $G$.\par
+By Sylow \Rmnum{2}, the $p$-Sylow subgroups of $G$ are the conjugates of any given $p$-Sylow subgroup $P$. By Lemma~\ref{conjugate subgroup number}, $N_p=[G:N_G(H)]$, so it divides the index $m$ of $P$. In fact,
+\[m=[G:H]=[G:N_G(H)][N_G(H):H].\]
+Now, by Lemma~\ref{p-group normalizer congruence} we have
+\[[G:H]\equiv[N_G(H):H]\pmod{p}\]
+multiplying by $N_p$, we get
+\[mN_p\equiv [G:H]=m\pmod{p}\]
+Since $m\not\equiv 0$ mod $p$ and $p$ is prime, this implies $N_p\equiv 1$ mod $p$.
+\end{proof}
+\subsection{Applications}
+\begin{proposition}
+Let $G$ be a group of order $mp^r$, where $p$ is a prime integer and $1<m<p$. Then $G$ is not simple.
+\end{proposition}
+\begin{proof}
+In this case $G$ has a unique $p$-sylow group, hence is normal.
+\end{proof}
+\begin{proposition}\label{group pq}
+Assume $p<q$ are prime integers and $q\not\equiv 1 \pmod{p}$. Let $G$ be a group of order $pq$. Then $G$ is cyclic.
+\end{proposition}
+\begin{proof}
+By Sylow's theorem, $G$ has a unique $p$-sylow subgroup $H$, hence is normal. Since $H$ is normal, conjugation gives an action of $G$ on $H$, hence a homomorphism $\gamma:G\to\Aut(H)$. Now $H$ is cyclic of order $p$, so $|\Aut(H)|=p-1$; the order of $\gamma(G)$ must divide both $pq$ and $p-1$, and it follows that $\gamma$ is the trivial map.\par
+Therefore, conjugation is trivial on $H$: that is, $H\sub Z(G)$. Then $G/Z(G)$ is either trivial or has order $q$, in which case is cyclic, and Lemma~\ref{center cyclic} 
+implies that $G$ is abelian. Now $G$ is abelian of order $pq$, so there are elements of order $p,q$ respectively. Their product has order $pq$, so $G$ is cyclic.
+\end{proof}
+\begin{proposition}
+Let $p$ be an odd prime, and let $G$ be a noncommutative group of order $2p$. Then $G\cong D_{p}$, then dihedral group.
+\end{proposition}
+\begin{proof}
+We divide this proof into several steps.
+\begin{itemize}
+\item By Cauchy's theorem, there is $y\in G$ such that $y$ has order $p$. By the third Sylow theorem, $\langle y\rangle$ is the unique subgroup of order $p$ in $G$ and is therefore normal.
+\item Since $G$ is not commutative and in particular it is not cyclic, it has no elements of order $2p$; therefore, every element in the complement of $\langle y\rangle$ has order $2$; let $x$ be any such element.
+\item Since $\langle y\rangle$ is normal, $xyx^{-1}\in\langle y\rangle$. Thus we can write $xyx^{-1}=y^r$ for $0\leq r\leq p-1$. Now observe that since $|x|=2$,
+\[(y^r)^r=(xyx^{-1})^r=xy^rx^{-1}=x^2yx^{-2}=y\]
+Therefore, $y^{r^2-1}=e$, which implies
+\[p\mid r^2-1=(r-1)(r+1)\]
+Since $p$ is prime, this says $p\mid(r-1)$ or $p\mid(r+1)$; but $0\leq r\leq p-1$, so $r=1$ or $r=p-1$.
+\item If $r=1$, then $xy=yx$ and the order of $xy$ is then $2p$, contradiction. Thus we have $xyx^{-1}=y^{p-1}$, and we have established the relations
+\[\left\{\begin{array}{l}
+x^2=e\\
+y^p=e\\
+xyx^{-1}=y^{p-1}
+\end{array}\right. \]
+This is the representation of $D_p$.
+\end{itemize}
+\end{proof}
+\begin{exercise}
+Let $G$ be a group. A subgroup $H$ of $G$ is \textbf{characteristic} if $\varphi(H)\sub H$ for every automorphism $\varphi$ of $G$. It is clear that every characteristic 
+subgroup is normal.
+\begin{itemize}
+\item[$(a)$] Let $H\sub K\sub G$, with $H$ characteristic in $K$ and $K$ normal in $G$. Prove that $H$ is normal in $G$.
+\item[$(b)$] Let $G,K$ be groups, and assume that $G$ contains a single subgroup $H$ isomorphic to $K$. Prove that $H$ is normal in $G$.
+\item[$(c)$] Let $K$ be a normal subgroup of a finite group $G$, and assume that $|K|$ and $|G/K|$ are relatively prime. Prove that $K$ is characteristic in $G$.  
+\end{itemize}
+\end{exercise}
+\begin{proof}
+Part $(a)$: The conjugation by $g\in G$ is an automorphism of $K$, hence fixed $H$. Therefore $H$ is normal in $K$.\par
+Part $(b)$: Every conjugation class of $H$ is isomorphic to $H$, hence $K$.\par
+Part $(c)$: Let $\varphi\in\Aut(G)$, and consider the image $\varphi(H)$. The image of $\varphi(H)$ under the quotient map $\pi:G\to G/H$ is a subgroup having order dividing 
+$\varphi(H)$, hence $H$. Also, since it is a subgroup of $G/H$, its order also divides $|G/H|$. But $|H|$ and $|G/N|$ are coprime, so $\pi(\varphi(H))$ is trivial. This 
+implies $\varphi(H)\sub H$, so $H$ is characteristic.
+\end{proof}
+\section{Normal Series}
+\subsection{The Jordan-H\"older theorem} 
+A series of subgroups $G_i$ of a group $G$ is a decreasing sequence of subgroups starting from $G$:
+\[G=G_0\supset G_1\supset\cdots\]
+The length of a series is the number of strict inclusions.\par
+A series is \textbf{normal} if $G_{i+1}$ is normal in $G_i$ for all $i$. We will be interested in the maximal length of a normal series in $G$; if finite, we will denote this number by $\ell(G)$. The number $\ell(G)$ is a measure of how far $G$ is from being simple. Indeed, $\ell(G)=0$ if and only if $G$ is trivial, and $\ell(G)=1$ if and only if $G$ is nontrivial and simple: for a simple nontrivial group, the only maximal normal series is $G\supset\{e\}$.
+\begin{definition}
+Let $G$ be a group.
+\begin{itemize}
+\item A \textbf{Jordan-H\"older series} (or \textbf{composition series}) for $G$ is a normal series
+\[G=G_0\supset G_1\supset\cdots\supset G_n=\{e\}\]
+such that the successive quotients $G_i/G_{i+1}$ are simple.
+\item Two Jordan-H\"older series $(G_i)_{0\leq i\leq n}$ and $(G'_j)_{0\leq j\leq m}$ are called \textbf{equivalent} if $n=m$ and there exists a permutation $\sigma\in\mathfrak{S}_n$ such that $G_i/G_{i+1}\cong G'_{\sigma(i)}/G'_{\sigma(i+1)}$ for every $i$.
+\end{itemize}
+\end{definition}
+\begin{theorem}[\textbf{Jordan-H\"older}]
+Let $G$ be a group, and let $(G_i)$ and $(G'_j)$ be two composition series for $G$. Then these two series are equivalent.
+\end{theorem}
+\begin{proof}
+Let
+\[G=G_0\supset G_1\supset\cdots\supset G_n=\{e\}\]
+be a composition series. Argue by induction on $n$: if $n=0$, then $G$ is trivial, and there is nothing to prove. Assume $n>0$, and let
+\[G=G'_0\supset G'_1\supset\cdots\supset G'_m=\{e\}\]
+be another composition series for $G$. If $G_1=G'_1$, then the result follows from the induction hypothesis, since $G_1$ has a composition series of length $n-1<n$.\par
+We may then assume $G_1\neq G'_1$. Note that $G_1G'_1=G$: indeed, since $G_1$ and $G'_1$ are normal in $G$, $G_1G'_1$ is also normal in $G$, and $G_1\subset G_1G'_1$; but there are no proper normal subgroups between $G_1$ and $G$ since $G/G_1$ is simple.\par
+Let $K=G_1\cap G'_1$, and let
+\[K=K_0\supset K_1\supset\cdots\supset K_r=\{e\}\]
+be a composition series for $K$. Since $G_1G'_1=G$, by the second isomorphism theorem, the groups
+\[\frac{G_1}{K}=\frac{G_1}{G_1\cap G'_1}\cong\frac{G_1G'_1}{G'_1}=\frac{G}{G'_1}\And \frac{G'_1}{K}=\frac{G}{G_1}.\]
+are simple. Therefore, we have new composition series:
+\[
+G_1\supset K\supset K_1\supset\cdots\supset K_r=\{e\}\And G_1\supset G_2\supset \cdots\supset G_n=\{e\}\]
+\[
+G'_1\supset K\supset K_1\supset\cdots\supset K_r=\{e\}\And G'_1\supset G'_2\supset \cdots\supset G'_m=\{e\}
+\]
+By inductive hypothesis, the composition series on the same row are equivalent, respectively. Moreover, the composition series
+\[
+G\supset G_1\supset K\supset K_1\supset\cdots\supset K_r=\{e\}\]
+\[
+G\supset G'_1\supset K\supset K_1\supset\cdots\supset K_r=\{e\}
+\]
+are also equivalent by our isomorphism. Therefore we get the claim.
+\end{proof}
+\subsection{Schreier's theorem}
+Two normal series are equivalent if they have the same length and the same quotients (up to order). The Jordan-H\"older theorem shows that any two maximal finite series of a group are equivalent. That is, the (isomorphism classes of the) quotients of a composition series depend only on the group, not on the chosen series. These are called the \textbf{composition factors} of the group.
+\begin{theorem}\label{group comp factor quotient}
+Let $G$ be a group, and let $N$ be a normal subgroup of $G$. Then $G$ has a composition series if and only if both $N$ and $G/N$ have composition series. Further, if this is the case, then
+\[\ell(G)=\ell(N)+\ell(G/N)\]
+and the composition factors of $G$ consist of the collection of composition factors of $N$ and of $G/N$.
+\end{theorem}
+\begin{proof}
+If $G/N$ has a composition series, the subgroups appearing in it correspond to subgroups of $G$ containing $N$, with isomorphic quotients. Thus, if both $G/N$ and $N$ have composition series, juxtaposing them produces a composition series for $G$, with the stated consequence on composition factors.\par
+The converse is a little trickier. Assume that $G$ has a composition series
+\[G=G_0\supset G_1\supset\cdots\supset G_n=\{e\}\]
+and that $N$ is a normal subgroup of $G$. Intersecting the series with $N$ gives a sequence of subgroups of the latter:
+\[N=G_0\cap N\supset G_1\cap N\supset\cdots\supset G_n\cap N=\{e\}\]
+such that $G_{i+1}\cap N$ is normal in $G_i\cap N$, for all $i$. We claim that this becomes a composition series for $N$ once repetitions are eliminated. Indeed, this follows once we establish that
+\[\frac{G_{i}\cap N}{G_{i+1}\cap N}\]
+is a normal subgroup of $G_{i}/G_{i+1}$ (since the latter is simple). To see this, consider the canonical homomorphism
+\[G_i\cap N\hookrightarrow G_i\twoheadrightarrow\frac{G_i}{G_{i+1}}.\]
+the kernel is clearly $G_{i+1}\cap N$; therefore we have an injective homomorphisms
+\[\frac{G_{i}\cap N}{G_{i+1}\cap N}\hookrightarrow\frac{G_{i}}{G_{i+1}}.\]
+identifying $(G_i\cap N)/(G_{i+1}\cap N)$ with a subgroup of $G_i/G_{i+1}$. Now, this subgroup is normal (because $N$ is normal in $G$) so our claim follows.\par
+As for $G/N$, obtain a sequence of subgroups from a composition series for $G$:
+\[\frac{G}{N}\supset\frac{G_1N}{N}\supset\cdots\supset\frac{G_nN}{N}=\{e_{G/N}\}\]
+such that $(G_{i+1}N)/N$ is normal in $(G_iN)/N$. As above, we have to check that 
+\[\frac{G_iN/N}{G_{i+1}N/N}\]
+is either trivial or isomorphic to $G_i/G_{i+1}$. By the third isomorphism theorem, this quotient is isomorphic to $(G_iN)/(G_{i+1}N)$. This time, consider the homomorphism
+\[G_i\hookrightarrow G_iN\twoheadrightarrow\frac{G_iN}{G_{i+1}N}\]
+this is surjective since every element $gn\in G_iN$ can be written into $g'hn$ for $g'\in G_i$ and $h\in G_{i+1}$, so that
+\[gnG_{i+1}N=g'G_{i+1}N\]
+Note that the subgroup $G_{i+1}$ of the source is sent to the identity element in the target; hence there is an onto homomorphism
+\[\frac{G_i}{G_{i+1}}\twoheadrightarrow\frac{G_iN}{G_{i+1}N}\]
+Since $G_i/G_{i+1}$ is simple, it follows that $(G_iN)/(G_{i+1}N)$ is either trivial or isomorphic to it, as needed.\par 
+Summarizing, we have shown that if $G$ has a composition series and $N$ is normal in $G$, then both $N$ and $G/N$ have composition series. The first part of the argument yields the statement on lengths and composition factors, concluding the proof.
+\end{proof}
+One nice consequence of the Jordan-H\"older theorem is the following observation. A series is a \textbf{refinement} of another series if all terms of the first appear in the second.
+\begin{proposition}
+Any two normal series of a finite group ending with $\{e\}$ admit equivalent refinements.
+\end{proposition}
+\begin{proof}
+Refine the series to a composition series; then apply the Jordan-H\"older
+theorem.
+\end{proof}
+\subsection{Derived series and solvability}
+\begin{definition}
+Let $G$ be a group. The \textbf{commutator subgroup} of $G$ is the subgroup generated by all elements
+\[[g,h]:=ghg^{-1}h^{-1}\]
+with $g,h\in G$.
+\end{definition}
+In the same notational style, the commutator subgroup of $G$ should be denoted $[G,G]$; this is a bit heavy, and the common 
+shorthand for it is $G'$, which offers the possibility of iterating the notation. Thus, $G''$ may be used to 
+denote the commutator subgroup of the commutator subgroup of $G$, and $G^{(i)}$ denotes the $i$-th
+iterate.\par
+\begin{definition}
+A subgroup $H$ of $G$ is called \textbf{characteristic} in $G$, denoted by $H$ char $G$, if $\varphi(H)\sub H$ for every automorphism $\varphi$ of $G$.
+\end{definition}
+The following result is immediate.
+\begin{lemma}
+\mbox{}
+\begin{itemize}
+\item A characteristic subgroup is normal.
+\item If $H$ char $K$ and $K$ char $G$, then $H$ char $G$.
+\item If $H$ char $K$ and $K\lhd G$, then $H\lhd G$.
+\end{itemize}
+\end{lemma}
+\begin{proof}
+Since the conjugations are automorphisms, the first point is clear.\par
+If $\varphi$ is an automorphism of $G$, then $\varphi(K)=K$, and so the restriction $\varphi|_K:K\to K$ is an automorphism 
+of $K$; since $H$ char $K$, it follows that $\varphi(H)=(\varphi|_K)(H)=H$.\par
+Let $g\in G$ and let $C_g:G\to G$ be conjugation by $g$. Since $K\lhd G$, $(C_g)|_K$ is an automorphism of $K$; since $H$ char $K$, 
+$(C_g)|_K$ fixes $H$. This says that $H$ is normal.
+\end{proof}
+First we record the following trivial, but useful, remark:
+\begin{lemma}
+Let $\varphi:G_1\to G_2$ be a group homomorphism. Then $\forall g,h\in G_1$ we have
+\[\varphi([g,h])=[\varphi(g),\varphi(h)]\]
+and $\varphi(G_1')\sub G_2'$.
+\end{lemma}
+This simple observation makes the key properties of the commutator subgroup essentially immediate:
+\begin{proposition}\label{group commutator}
+Let $G'$ be the commutator subgroup of $G$. Then
+\begin{itemize}
+\item $G'$ is normal in $G$.
+\item $G/G'$ is commutative.
+\item If $\alpha:G\to A$ is a homomorphism of $G$ to a commutative group, then $G'\sub\ker\alpha$.
+\item The natural projection $G\to G/G'$ is universal in the sense explained above.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+The commutator subgroup is characteristic, hence normal. The others are clear.
+\end{proof}
+Taking successive commutators of a group produces a descending sequence of subgroups,
+\[G\sups G'\sups\cdots\supset G^{(n)}\sups\cdots.\]
+\begin{definition}
+Let $G$ be a group. The derived series of $G$ is the sequence of subgroups
+\[G\sups G'\sups\cdots\supset G^{(n)}\sups\cdots.\]
+A group is \textbf{solvable} if its derived series terminates with the identity.
+\end{definition}
+For example, abelian groups are solvable.
+\begin{proposition}\label{group solvable iff}
+For a finite group G, the following are equivalent:
+\begin{itemize}
+\item[(\rmnum{1})] All composition factors of $G$ are cyclic.
+\item[(\rmnum{2})] $G$ admits a cyclic series ending in $\{e\}$.
+\item[(\rmnum{3})] $G$ admits an abelian series ending in $\{e\}$.
+\item[(\rmnum{4})] $G$ is solvable.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+(\rmnum{1})$\Rightarrow$(\rmnum{2})$\Rightarrow$(\rmnum{3}) are trivial. (\rmnum{3})$\Rightarrow$(\rmnum{1}) is obtained 
+by refining an abelian series to a composition series (keeping in mind that the simple abelian groups are cyclic $p$-groups)\par
+(\rmnum{4})$\Rightarrow$(\rmnum{3}) is also trivial, since the derived series is abelian.\par
+Thus, we only have to prove (\rmnum{3})$\Rightarrow$(\rmnum{4}). For this, let
+\[G=G_0\supsetneq G_1\supsetneq\cdots\supsetneq\{e\}\]
+be an abelian series. Then we claim that $G^{(i)}\sub G_i$ for all $i$, where $G^{(i)}$ denotes
+the $i$-th iterated commutator subgroup.\par
+This can be verified by induction. For $i=1$, $G/G_1$ is commutative; thus $G'\sub G_1$, by the third 
+point in Proposition\ref{group commutator}. Assuming we know $G^{(i)}\sub G_i$, the fact that $G_i/G_{i+1}$ is abelian 
+implies $G_i'\sub G_{i+1}$, and hence
+\[G^{(i+1)}=(G^{(i)})'\sub(G_i)'\sub G_{i+1}.\]
+as claimed.\par
+In particular we obtain that $G^{(n)}\sub G_n=\{e\}$: that is, the derived series terminates at 
+$\{e\}$, as needed.
+\end{proof}
+\begin{example}
+All $p$-groups are solvable. Indeed, the composition factors of a $p$-group are simple $p$-groups, hence cyclic.
+\end{example}
+\begin{proposition}\label{group quotient solvable}
+Let $N$ be a normal subgroup of a group $G$. Then $G$ is solvable if and only if both $N$ and $G/N$ are solvable.
+\end{proposition}
+\begin{proof}
+This follows immediately from Proposition~\ref{group comp factor quotient} and the formulation of solvability in terms of composition factors given in Proposition~\ref{group solvable iff}.
+\end{proof}
+\begin{corollary}
+The dihedral groups $D_n$ are solvable.
+\end{corollary}
+\begin{proof}
+The group $D_n$ has a normal subgroup isomorphic to $\Z/n\Z$, and its quotient is $\Z/2\Z$. Therefore by Proposition~\ref{group quotient solvable} $D_n$ is solvable.
+\end{proof}
+\begin{proposition}
+If $n\geq 5$, then $\mathfrak{S}_n$ is not solvable.
+\end{proposition}
+\begin{proof}
+Since $\mathfrak{A}_n$ is a simple group for $n\geq 5$, the normal series
+\[\mathfrak{S}_n\sups\mathfrak{A}_n\sups\{1\}\]
+is a composition series; its composition factors are $\Z/2\Z$ and $\mathfrak{A}_n$ and hence $\mathfrak{S}_n$ 
+is not solvable.
+\end{proof}
+\section{The symmetric group}
+\subsection{Conjugate class in $\mathfrak{S}_n$}
+Given a permutation $\sigma\in\mathfrak{S}_n$, consider the cyclic group $\langle\sigma\rangle$ generated by $\sigma$ and its action on $\{1,\cdots,n\}$. The orbits of this action form a partition of $\{1,\cdots,n\}$ therefore, every $\sigma\in\mathfrak{S}_n$ determines a prtition of $\{1,\cdots,n\}$.
+\begin{definition}
+A \textbf{cycle} is an element of $\mathfrak{S}_n$ with exactly one nontrivial
+orbit. For distinct $a_1,\cdots,a_r$ in $\{1,\cdots,n\}$, the notation
+\[(a_1\cdots a_r)\]
+denotes the cycle in $\mathfrak{S}_n$ with nontrivial orbit $\{a_1\cdots a_r\}$, acting as
+\[a_1\mapsto a_2\mapsto\cdots\mapsto a_r\mapsto a_1\]
+In this case, $r$ is the length of the cycle. A cycle of length $r$ is called an \textbf{$\bm{r}$-cycle}.
+\end{definition}
+Two cycles are \textbf{disjoint} if their nontrivial orbits are. The following observation deserves to be highlighted, but it does not seem to deserve a proof:
+\begin{lemma}
+Disjoint cycles commute.
+\end{lemma}
+The next one gives us the alternative notation of permutations.
+\begin{lemma}
+Every $\sigma\in\mathfrak{S}_n$ and $\sigma\neq e$ can be written as a product of disjoint nontrivial cycles, in a unique way up to permutations of the factors.
+\end{lemma}
+\begin{definition}
+A \textbf{partition} of an integer $n>0$ is a nonincreasing sequence of positive integers whose sum is $n$.\par
+The partition $\lambda_1\geq\lambda_2\geq\cdots\geq\lambda_r$ may be denoted
+\[[\lambda_1,\cdots,\lambda_r]\]
+Or, in view of counting, may also be denoted by
+\[1^{\lambda_1}2^{\lambda_2}\cdots n^{\lambda_n}\]
+where $\lambda_i\geq 0$ and $\lambda_1+\cdots+\lambda_n=n$.
+\end{definition}
+\begin{definition}
+The \textbf{type} of $\sigma\in\mathfrak{S}_n$ is the partition of $n$ given by the sizes of the orbits of the action of $\langle\sigma\rangle$ on $\{1,\cdots,n\}$.
+\end{definition}
+\begin{proposition}
+For a given type $1^{\lambda_1}2^{\lambda_2}\cdots n^{\lambda_n}$ in $\mathfrak{S}_n$, there are
+\[\frac{n!}{\prod_{i=1}^{n}i^{\lambda_i}(\lambda_i)!}\]
+elements in $\mathfrak{S}_n$ having this type.
+\end{proposition}
+\begin{proof}
+We only need to choose elements in each cycle, and divide $(\lambda_i)!$ to cancle the repeted choice since there are no order restriction for the cycles having the same length.
+\end{proof}
+\begin{lemma}\label{cycle conjugate}
+Let $\tau\in\mathfrak{S}_n$, and let $(a_1,\cdots,a_r)$ be a cycle. Then
+\[\tau(a_1\cdots a_r)\tau^{-1}=(\tau(a_1)\cdots\tau(a_r)).\]
+Thus, by the usual trick of judiciously inserting identity factors $\tau\tau^{-1}$, this formula for computing conjugates extends immediately to any product of cycles:
+\[\tau(a_1\cdots a_r)\cdots(b_1\cdots b_s)\tau^{-1}=(\tau(a_1)\cdots\tau(a_r))\cdots(\tau(b_1)\cdots\tau(b_s)).\]
+\end{lemma}
+\begin{proof}
+This is obtained by check the action of both sides on $\{1,\cdots,n\}$. For example,
+\[\tau(a_1\cdots a_r)\tau^{-1}(\tau(a_1))=\tau(a_1\cdots a_r)(a_1)=\tau(a_2).\]
+\end{proof}
+\begin{proposition}
+Two elements of $\mathfrak{S}_n$ are conjugate in $\mathfrak{S}_n$ if and only if they have the same type.
+\end{proposition}
+\begin{proof}
+The only if part of this statement follows immediately from the preceding
+considerations: conjugating a permutation yields a permutation of the same type.\par
+As for the if part, suppose
+\[\sigma_1=(a_1\cdots a_r)(b_1\cdots b_s)\cdots(c_1\cdots c_t)\]
+and
+\[\sigma_1=(a'_1\cdots a'_r)(b'_1\cdots b'_s)\cdots(c'_1\cdots c'_t)\]
+are two permutations with the same type $[r,s,\cdots,t]$, written in cycle notation. Then by Lemma~\ref{cycle conjugate} it is easy to construct a permutation $\sigma$ such that $\sigma_2=\tau\sigma_1\tau^{-1}$, so $\sigma_1$ and $\sigma_2$ are conjugate, as needed.
+\end{proof}
+\begin{corollary}
+The number of conjugacy classes in $\mathfrak{S}_n$ equals the number of partitions of $n$.
+\end{corollary}
+\begin{example}
+Take $n=5$ for example:
+\[[1,1,1,1,1]\quad [2,1,1,1]\quad [2,2,1]\quad[3,1,1]\quad[3,2]\quad[4,1]\quad[5]\]
+Adding up the sizes of the corresponding conjugacy classes, we get the class formula for $\mathfrak{S}_5$:
+\[120=1+10+15+20+20+30+24\]
+\end{example}
+\subsection{Transpositions, parity, and the alternating group}
+For $n\geq 1$, consider the polynomial
+\[\Delta_n=\prod_{1\leq i<j\leq n}(x_i-x_j)\]
+\begin{definition}
+The sign of a permutation $\sigma\in\mathfrak{S}_n$, denoted $(-1)^\sigma$, is determined by the action of $\sigma$ on $\Delta_n$:
+\[\sigma(\Delta_n)=(-1)^\sigma\Delta_n\]
+This gives a homomorphism 
+\[\eps:\mathfrak{S}_n\to\Z/2\Z\]
+\end{definition}
+\begin{lemma}
+Transpositions generate $\mathfrak{S}_n$.
+\end{lemma}
+\begin{proof}
+We only need to prove this for cycles, and in fact
+\[(a_1\cdots,a_r)=(a_1a_r)\cdots(a_1a_3)(a_1a_2)\]
+\end{proof}
+\begin{lemma}
+Let $\sigma=\tau_1\cdots\tau_r$ be a product of transpositions. Then $\sigma$ is even, resp., odd, according to whether $r$ is even, resp., odd.
+\end{lemma}
+\begin{corollary}
+A cycle is \textbf{even}, resp., \textbf{odd}, if it has \textbf{odd}, resp., \textbf{even} length.
+\end{corollary}
+\begin{definition}
+The alternating group on $\{1,\cdots,n\}$, denoted $\mathfrak{A}_n$, consists of all even permutations $\sigma\in\mathfrak{S}_n$.
+\end{definition}
+\subsection{Conjugacy in $\mathfrak{A}_n$; simplicity of $\mathfrak{A}_n$ and solvability of $\mathfrak{S}_n$}
+Denote by 
+\[[\sigma]_{\mathfrak{S}_n},\quad [\sigma]_{\mathfrak{A}_n}\] 
+for the conjugacy class of an even permutation $\sigma$ in $\mathfrak{S}_n$, resp., $\mathfrak{A}_n$. Clearly $[\sigma]_{\mathfrak{A}_n}\sub [\sigma]_{\mathfrak{S}_n}$; we proceed to compare these two sets.
+\begin{proposition}
+Let $G$ be a finite group, and let $H\sub G$ be a subgroup of index $2$. For
+$a\in H$, denote by $[a]_H$, resp., $[a]_G$, the conjugacy class of $a$ in $H$, resp., $G$. Then
+\[[a]_H=\begin{cases}
+[a]_G&\text{if }Z_G(a)\nsubseteq H\\
+\dfrac{1}{2}[a]_G&\text{if }Z_G(a)\sub H
+\end{cases}\]
+\end{proposition}
+\begin{proof}
+Since $[G:H]=2$, $H$ is normal in $G$. Also, the number of conjugate elements of $a$ is 
+\[[G:Z_G(a)]\quad [H:Z_H(a)]\]
+respectively.\par
+If $Z_G(a)\nsubseteq H$, then note that $Z_G(a)H=G$, so by the second isomorphism theorem
+\[\frac{G}{Z_G(a)}\cong\frac{H}{Z_G(a)\cap H}\]
+Hence
+\[[G:Z_G(a)]=[H:Z_G(a)\cap H]=[H:Z_H(a)]\]
+Thus $[a]_G=[a]_H$.\par
+If $Z_G(a)\sub H$, then $Z_G(a)=Z_G(a)\cap H=Z_H(a)$. Hence by our observation
+\[[G:Z_G(a)]=[G:Z_H(a)]=[G:H][H:Z_H(a)]=2[H:Z_H(a)]\]
+and so $[a]_H=1/2[a]_G$.
+\end{proof}
+\begin{corollary}\label{conjugate in A_n}
+Let $n\geq 2$, and let $\sigma\in\mathfrak{A}_n$. Then
+\[[\sigma]_{\mathfrak{A}_n}=\begin{cases}
+[\sigma]_{\mathfrak{S}_n}&\text{if }Z_{\mathfrak{S}_n}(\sigma)\nsubseteq\mathfrak{A}_n\\
+\dfrac{1}{2}[\sigma]_{\mathfrak{S}_n}&\text{if }Z_{\mathfrak{S}_n}(\sigma)\sub\mathfrak{A}_n
+\end{cases}\]
+where $Z_{\mathfrak{S}_n}(\sigma)$ is the center of $\sigma$ in $\mathfrak{S}_n$.
+\end{corollary}
+Therefore, conjugacy classes of even permutations either are preserved from $\mathfrak{S}_n$ to $\mathfrak{A}_n$ or they split into two distinct, equal-sized classes. We are now in a position to give precise conditions determining which happens when.
+\begin{proposition}\label{conjugate in A_n type}
+Let $\sigma\in\mathfrak{A}_n$, $n\geq2$. Then the conjugacy class of $\sigma$ in $\mathfrak{S}_n$ splits into two conjugacy classes in $\mathfrak{A}_n$ if and only if the type of $\sigma$ consists of distinct odd numbers.
+\end{proposition}
+\begin{proof}
+We have to verify that $Z_{\mathfrak{S}_n}(\sigma)$ is contained in $\mathfrak{A}_n$ precisely when the stated condition is satisfied. That is, we have to show that
+\[\tau\sigma\tau^{-1}=\sigma\Rightarrow \tau\text{ is even}\]
+if and only if the type of $\sigma$ consists of distinct odd numbers.\par
+Write $\sigma$ in cycle notation
+\[\sigma=(a_1\cdots a_\lambda)(b_1\cdots b_\mu)\cdots(c_1\cdots c_\nu)\]
+and recall that
+\[\tau\sigma\tau^{-1}=(\tau(a_1)\cdots\tau(a_\lambda))(\tau(b_1)\cdots \tau(b_\mu))\cdots(\tau(c_1)\cdots\tau(c_\nu))\]
+Assume that $\lambda,\mu,\cdots,\nu$ are odd and distinct. If $\tau\sigma\tau^{-1}=\sigma$ then conjugation by $\tau$ must preserve each cycle in $\sigma$, as all cycle lengths are distinct:
+\[(\tau(a_1)\cdots\tau(a_\lambda))=(a_1\cdots a_\lambda)\quad\text{etc.}\]
+This means that $\tau$ acts as a cyclic permutation on (e.g.) $a_1,\cdots,a_\lambda$ and therefore in the same way as a power of $(a_1\cdots a_\lambda)$. It follows that
+\[\tau=(a_1\cdots a_\lambda)^r(b_1\cdots b_\mu)^s\cdots(c_1\cdots c_\nu)^t\]
+for suitable $r,s,\cdots,t$. Since all cycles have odd lengths, each cycle is an even permutation; and $\tau$ must then be even as it is a product of even permutations. This proves that $Z_{\mathfrak{S}_n}(\sigma)\sub\mathfrak{A}_n$ if the stated condition holds.\par
+Conversely, assume that the stated condition does not hold: that is, either some of the cycles in the cycle decomposition have even length or all have odd length but two of the cycles have the same length.\par
+In the first case, let $\tau$ be an even-length cycle in the cycle decomposition of $\sigma$. Note that $\tau\sigma\tau^{-1}=\sigma$: indeed, $\tau$ commutes with itself and with all cycles in $\sigma$ other than $\tau$. Since $\tau$ has even length, then it is odd as a permutation: this shows that $Z_{\mathfrak{S}_n}(\sigma)\nsubseteq\mathfrak{A}_n$, as needed.\par
+In the second case, without loss of generality assume $\lambda=\mu$, and consider the odd permutation
+\[\tau=(a_1b_1)(a_2b_2)\cdots(a_\lambda b_\lambda)\]
+conjugating by $\tau$ simply interchanges the first two cycles in $\sigma$; hence $\tau\sigma\tau^{-1}$. As $\tau$ is odd, this again shows that $Z_{\mathfrak{S}_n}(\sigma)\nsubseteq\mathfrak{A}_n$, and we are done.
+\end{proof}
+\begin{example}
+Looking again at $\mathfrak{A}_5$ we have noted that the types of the even permutations in $\mathfrak{S}_5$ are 
+\[[1,1,1,1,1]\quad[2,2,1]\quad[3,1,1]\quad[5].\] 
+By Proposition~\ref{conjugate in A_n type} the conjugacy classes corresponding to the first three types are preserved in $\mathfrak{A}_5$, while the last one splits.\par
+Therefore there are exactly $5$ conjugacy classes in $\mathfrak{A}_5$, and the class formula for $\mathfrak{A}_5$ is
+\[60=1+15+20+12+12\]
+\end{example}
+\begin{corollary}
+The alternating group $\mathfrak{A}_5$ is a simple noncommutative group of
+order $60$.
+\end{corollary}
+\begin{proof}
+A normal subgroup of $\mathfrak{A}_5$ is necessarily the union of conjugacy classes, contains the identity, and has order equal to a divisor of $60$. The divisors of $60$ other than $1$ and $60$ are
+\[2,3,4,5,6,10,12,15,20,30.\]
+counting the elements other than the identity would give one of
+\[1,2,3,4,5,9,11,14,19,29\]
+as a sum of numbers $\neq1$ from the class formula for $\mathfrak{A}_5$. But this simply does not happen.
+\end{proof}
+The simplicity of $\mathfrak{A}_n$ for $n\geq 5$ may be established by studying $3$-cycles. First of all, it is natural to wonder whether every even permutation may be written as a product of $3$-cycles, and this is indeed so:
+\begin{lemma}
+The alternating group $\mathfrak{A}_n$ is generated by $3$-cycles.
+\end{lemma}
+\begin{proof}
+it suffices to show that every product of two $2$-cycles may be written as product of $3$-cycles. Therefore, consider a product
+\[(ab)(cd)\quad a\neq b,c\neq d\]
+\begin{itemize}
+\item If $(ab)=(cd)$, then this product is the identity, and there is nothing to prove.
+\item If $\{a,b\}$, $\{c,d\}$ have exactly one element in common, then we may assume $a=c$ and observe
+\[(ab)(ad)=(adb)\]
+\item If $\{a,b\}$, $\{c,d\}$ are disjoint, then
+\[(ab)(cd)=(adc)(abc)\]
+\end{itemize}
+and we are done.
+\end{proof}
+\begin{lemma}\label{cycle 3 A_n}
+Let $n\geq 5$. If a normal subgroup of $\mathfrak{A}_n$ contains a $3$-cycle, then it contains all $3$-cycles.
+\end{lemma}
+\begin{proof}
+Normal subgroups are unions of conjugacy classes, so we just need to verify
+that $3$-cycles form a conjugacy class in $\mathfrak{A}_n$, for $n\geq 5$. But they do in $\mathfrak{S}_n$, and the type of a $3$-cycle is $[3,1,1,\cdots]$ for $n\geq 5$; hence the conjugacy class does not split in $A_n$, by Proposition~\ref{conjugate in A_n type}.
+\end{proof}
+The general statement now follows easily by tying up loose ends:
+\begin{theorem}
+The alternating group $\mathfrak{A}_n$ is simple for $n\geq 5$.
+\end{theorem}
+\begin{proof}
+Let $N$ be a non-trivial normal subgroup of $\mathfrak{A}_n$. We prove that $N$ contains some $3$-cycle, whence the theorem follows by Lemma~\ref{cycle 3 A_n}. Let $\sigma\in N$, $\sigma\neq id$ be an element which has the maximal number of fixed points; that is, integers $i$ such that $\sigma(i)=i$. It will suffice to prove that $\sigma$ is a $3$-cycle or the identity.
+\begin{itemize}
+\item Write out the cyclic representation of $\sigma$. Then some orbits have more than one element. Suppose all orbits have $2$ elements (except for the fixed points). Since $\sigma$ is even, there are at least two such orbits. On their union, $\sigma$ is represented as a product of two transpositions
+\[(ab)(cd)\]
+Let $e\neq a,b,c,d$ and define $\tau=(cde)$. Then
+\[\sigma':=\tau\sigma\tau^{-1}\sigma^{-1}\]
+is a product of a conjugate of $\sigma$ and $\sigma^{-1}$, so $\sigma'\in N$. Also, $\sigma'$ also fix $a,b$ and elements $\sigma$ other than $a,b,c,d,f$ that is fixed by $\sigma$. Thus $\sigma'$ has more fixed points than $\sigma$, contradicting our hypothesis.
+\item So we are reduced to the case when at least one orbit of $\sigma$ has $\geq3$ elements, say $(abc\cdots)$. If $\sigma$ is not the $3$-cycle $(abc)$, then $\sigma$ must move at least two other elements of $\{1,2,\cdots,n\}$, otherwise $\sigma$ is an odd permutation $(abcd)$ for some $d$, which is impossible. Then let $\sigma$ move $d,e$ other than $a,b,c$, and let $\tau=(cde)$. Let $\sigma'$ be the commutator as before. Then $\sigma'\in N$, and $\sigma'$ fixes $a,b$ additionally, so has more fixed points than $\sigma$, a contradiction which proves the theorem.
+\end{itemize}
+\end{proof}
+\begin{corollary}
+For $n\geq 5$, the group $\mathfrak{S}_n$ is not solvable.
+\end{corollary}
+\begin{proof}
+Since $\mathfrak{A}_n$ is simple, the sequence
+\[\mathfrak{S}_n\supset\mathfrak{A}_n\supset\{1\}\]
+is a composition series for $\mathfrak{S}_n$. It follows that the composition factors of $\mathfrak{A}_n$ are $\Z/2\Z$. Since $\mathfrak{A}_n$ is non abealian, $\mathfrak{S}_n$ is not solvable.
+\end{proof}
+Using the simplicity of $\mathfrak{A}_n$ for $n\geq 5$, we can prove that $\mathfrak{A}_n$ is the only normal subgroup of $\mathfrak{S}_n$ when $n\geq 5$. First we need a lemma.
+\begin{lemma}
+Let $N$ be a normal subgroup of $G$ such that $N\cap[G,G]=\{1\}$. Then $H\sub Z(G)$.
+\end{lemma}
+\begin{proof}
+For any $h\in H$ and $g\in G$, we have
+\[[h,g]=hgh^{-1}g^{-1}=h(ghg^{-1})\in H\cap[G,G].\]
+since $H$ is normal. Thus $h$ commute with $G$, which implies $H\sub Z(G)$.
+\end{proof}
+\begin{proposition}
+If $n=3$ or $n\geq 5$, then $\mathfrak{A}_n$ is the only normal subgroup of $\mathfrak{S}_n$.
+\end{proposition}
+\begin{proof}
+Let $N$ be a normal subgroup of $\mathfrak{S}_n$. Then $N\cap\mathfrak{A}_n$ is normal in $\mathfrak{A}_n$. Since $\mathfrak{A}_n$ is simple when $n=3$ or $n\geq 5$, this implies $N\cap\mathfrak{A}_n=\{1\}$ or $\mathfrak{A}_n$.\par
+When $N\cap\mathfrak{A}_n=\mathfrak{A}_n$, we must have $A_n\leq N\leq\mathfrak{S}_n$, and thus $N=\mathfrak{A}_n$ or $N=\mathfrak{S}_n$. In the case $N\cap\mathfrak{A}_n=\{1\}$, since $Z(\mathfrak{S}_n)=\{1\}$ when $n\geq 3$ and $[\mathfrak{S}_n,\mathfrak{S}_n]=\mathfrak{A}_n$, by the previous lemma we conclude $H=\{1\}$.
+\end{proof}
+\subsection{Generating sets of $\mathfrak{S}_n$}
+We already know that $\mathfrak{S}_n$ is generated by all transpositions. The next proposition shows we can get a generating set for $\mathfrak{S}_n$ containing just $n-1$ transpositions.
+\begin{proposition}\label{generate S_n trans with 1}
+For $n\geq2$, $\mathfrak{S}_n$ is generated by the $n-1$ transposition
+\[(12),(13),\dots,(1n).\]
+\end{proposition}
+\begin{proof}
+The statement is obvious for $n=2$, so we take $n\geq3$. Since $\mathfrak{S}_n$ is generated by transpositions, it suffices to write each transposition in $\mathfrak{S}_n$ as a product of the transpositions involving a $1$. For a transposition $(ij)$ where $i$ and $j$ are not $1$, check that
+\[(ij)=(1i)(1j)(1i)^{-1}=(1i)(1j)(1i).\]
+so our claim follows.
+\end{proof}
+Here is a different generating set of $n-1$ transposition.
+\begin{proposition}\label{generate S_n adjacent trans}
+For $n\geq2$, $\mathfrak{S}_n$ is generated by the $n-1$ transposition
+\[(12),(23),\dots,(n-1\ n).\]
+\end{proposition}
+\begin{proof}
+Again, it suffices to show each transposition $(ab)$ in $\mathfrak{S}_n$ is a product of transpositions of the form $(i\ i+1)$ where $i<n$. Since $(ab)=(ba)$, we may assume $a<b$.\par
+The case $b-a=1$ is in our generating set. Now suppose this is ture for $b-a=k$. When $b-a=k+1$, consider the formula
+\[(ab)=(b-1\ b)(a\ b-1)(b-1\ b)^{-1}.\]
+This reduces to the case $b-a=k$, which is ture by hypothetis.
+\end{proof}
+\begin{proposition}\label{generate S_n (12) (12 n)}
+For $n\geq2$, $\mathfrak{S}_n$ is generated by the transposition $(12)$ and the $n$-cycle $(12\dots n)$.
+\end{proposition}
+\begin{proof}
+Set $\sigma=(12\dots n)$, then by conjugation
+\[\sigma(12)\sigma^{-k}=(k+1\,k+2).\]
+Then by Proposition~\ref{generate S_n adjacent trans}, $\sigma$ and $(12)$ generate $\mathfrak{S}_n$.
+\end{proof}
+\begin{corollary}
+For $n\geq3$, $\mathfrak{S}_n$ is generated by $(12)$ and the $(n-1)$-cycle $(23\dots n)$.
+\end{corollary}
+\begin{proof}
+This comes from Proposition~\ref{generate S_n (12) (12 n)} and the observation $(12\dots n)=(12)(23\dots n)$.
+\end{proof}
+While $\mathfrak{S}_n$ is generated by the particular transposition $(12)$ and $n$-cycle $(12\dots n)$, it is usually not true that $\mathfrak{S}_n$ is generated by an arbitrary transposition and $n$-cycle. For instance, $(13)$ and $(1234)$ do not generate $\mathfrak{S}_4$. The reason is that these two permutations preserve
+congruences mod $2$: if $a,b\in\{1,2,3,4\}$ satisfy $a-b\equiv 0$ mod $2$, then applying either permutation to them returns values mod $2$, so the subgroup they generate in $\mathfrak{S}_4$ has this property while $\mathfrak{S}_4$ does not have this property.
+\begin{proposition}\label{generate S_n (ab) n-cycle}
+For $1\leq a<b\leq n$, the transposition $(ab)$ and $n$-cycle $(12\dots n)$ generate $\mathfrak{S}_n$ if and only if $\gcd(b-a,n)=1$.
+
+\end{proposition}
+Here the transposition $(ab)$ is general, but the $n$-cycle is the standard one.
+\begin{proof}
+Let $d=\gcd(b-a,n)$. We will show every $\sigma\in\langle(ab),(12\dots n)\rangle$ preserves mod $d$ congruences among $\{1,2,\dots,n\}$:
+\begin{align}\label{generate S_n-1}
+i\equiv j\mod d\Longrightarrow \sigma(i)\equiv\sigma(j)\mod d.
+\end{align}
+It suffices to check $(\ref{generate S_n-1})$ for $(ab)$ and $(12\dots n)$. In fact, this comes from the observations
+\[(12\dots n)(i)=i+1\And (ab)(i)=\begin{cases}
+i&i\neq a,b,\\
+b&i=a,\\
+b&i=b.
+\end{cases}\]
+
+For $d>1$, the group $\mathfrak{S}_n$ does not preserve mod $d$ congruences, so for $\langle(ab),(12\dots n)\rangle=\mathfrak{S}_n$ we must have $d=1$.\par
+Now we prove the converse direction: if $d=1$, let $\sigma=(12\dots n)$, so that $\sigma^{b-a}(a)=b$. Then $\sigma^{b-a}$ is of the form $(ab\dots)$. Note that, since $\gcd(b-a,n)=1$ and $\sigma$ has order $n$, we have $\langle\sigma\rangle=\langle\sigma^{b-a}\rangle$, and thus
+\[\langle(ab),\sigma\rangle=\langle(ab),\sigma^{b-a}\rangle=\langle(ab),(ab\dots)\rangle.\]
+A suitable relabeling of the numbers $1,2,\dots,n$ (that is, making an overall conjugation on $\mathfrak{S}_n$) turns $(ab)$ into $(12)$ and $(ab\dots)$ into $(12\dots n)$, so $\langle(ab),\sigma\rangle$ is conjugate to $\langle(12),(12\dots n)\rangle$, which is $\mathfrak{S}_n$ by Proposition~\ref{generate S_n (12) (12 n)}. Therefore $\langle(ab),\sigma\rangle=\mathfrak{S}_n$.
+\end{proof}
+\begin{corollary}\label{generate S_n trans n-cycle}
+For each transposition $\tau=(ab)$ and $n$-cycle $\sigma$ in $\mathfrak{S}_n$, $\langle\tau,\sigma\rangle=\mathfrak{S}_n$ if and only if $\gcd(k,n)=1$, where $\sigma^k(a)=b$.\par
+In particular, for a prime $p$, $\mathfrak{S}_p$ is generated by a transposition and a $p$-cycle.
+\end{corollary}
+\begin{proof}
+Let $g\in\mathfrak{S}_n$ such that $g\sigma g^{-1}=(12\dots n)$. Then the condition reads
+\[(12\dots n)^k(g(a))=g\sigma^kg^{-1}(g(a))=g(b).\]
+Note that $g(ab)g^{-1}=(g(a)\ g(b))$, so the claim follows from Proposition~\ref{generate S_n (ab) n-cycle}.
+\end{proof}
+\section{Products of groups}
+\subsection{The direct product}
+The \textbf{commutator} $[A,B]$ of two subsets $A,B$ of $G$ is the subgroup generated by all commutators $[a,b]$ with $a\in A, b\in B$.
+\begin{lemma}\label{commutator normal subgroup}
+Let $N,H$ be normal subgroups of a group $G$. Then
+\[[N,H]\sub N\cap H\]
+\end{lemma}
+\begin{proof}
+It suffices to verify this on generators, that is, it suffices to check that
+\[[n,h]=n(hn^{-1}h^{-1})=(nhn^{-1})h^{-1}\in N\cap H\]
+for all $n\in N$, $h\in H$. But the first expression and the normality of $N$ show that $[n,h]\in N$, the second expression and the normality of $H$ show that $[n,h]\in H$.
+\end{proof}
+\begin{corollary}\label{normal subgroup commute}
+Let $N,H$ be normal subgroups of a group $G$. Assume $N\cap H=\{e\}$. Then $N,H$ commute with each other:
+\[nh=hn\for n\in N,h\in H\]
+\end{corollary}
+In fact, under the same hypothesis more is true:
+\begin{proposition}\label{normal subgroup NH=N times H}
+Let $N,H$ be normal subgroups of a group $G$, such that $N\cap H=\{e\}$. Then $NH=N\times H$.
+\end{proposition}
+\begin{proof}
+Consider the function
+\[\varphi:N\times H\to NH\]
+defined by $\varphi(n,h)=nh$. Under the stated hypothesis, $\varphi$ is a group homomorphism: indeed
+\begin{align*}
+\varphi((n_1,h_1)\cdot(n_2,h_2))&=\varphi(n_1n_2,h_1h_2)=n_1n_2h_1h_2=n_1h_1n_2h_2=\varphi(n_1,h_1)\varphi(n_2,h_2)
+\end{align*}
+since $N,H$ commute by Corollary~\ref{normal subgroup commute}. The homomorphism $\varphi$ is surjective by definition of $NH$. To verify it is injective, consider its kernel:
+\[\ker\varphi=\{(n,h)\in H\times H:nh=e\}\]
+If $nh=e$, then $n\in N$ and $n=h^{-1}\in H$, thus $n=e$ since $N\cap H=\{e\}$. Using the same token for $h$, we conclude $h=e$, hence $\varphi$ is injective. Thus $\varphi$ is an isomorphism, as needed.
+\end{proof}
+\begin{remark}
+This result gives an alternative argument for the proof of : if $|G|=pq$, with $p<q$ prime integers, and $G$ contains normal subgroups $H,K$ of order $p,q$, respectively $($as is the case if $q\not\equiv 1$ mod $p$, by Sylow$)$, then $H\cap K=\{e\}$ necessarily, and then Proposition~\ref{normal subgroup NH=N times H} shows $HK\cong H\times K$. As $|HK|=|G|=pq$, this proves $G\cong N\times K\cong\Z/p\Z\times\Z/q\Z$. Finally, $(1,1)$ has order $pq$ in this group, so $G$ is cyclic.
+\end{remark}
+\subsection{Exact sequences of groups}
+\begin{definition}
+Let $N,H$ be groups. A group $G$ is an \textbf{extension} of $H$ by $N$ if there is an exact sequence of groups
+\[\begin{tikzcd}
+1\ar[r]&N\ar[r]&G\ar[r]&H\ar[r]&1
+\end{tikzcd}\]
+\end{definition}
+\begin{definition}
+An exact sequence of groups
+\[\begin{tikzcd}
+1\ar[r]&N\ar[r]&G\ar[r]&H\ar[r]&1
+\end{tikzcd}\]
+is said to \textbf{split} if $H$ may be identified with a subgroup of $G$, so that $N\cap H=\{e\}$.
+\end{definition}
+\begin{lemma}
+Let $N$ be a normal subgroup of a group $G$, and let $H$ be a subgroup of $G$ such that $G=NH$ and $N\cap H=\{e\}$. Then $G$ is a split extension of $H$ by $N$.
+\end{lemma}
+\begin{proof}
+We have to construct an exact sequence
+\[\begin{tikzcd}
+1\ar[r]&N\ar[r]&G\ar[r]&H\ar[r]&1
+\end{tikzcd}\]
+we let $N\to G$ be the inclusion map, and we prove that $G/N\cong H$. For this,
+consider the composition
+\[\alpha:H\hookrightarrow G\twoheadrightarrow G/N\]
+Then $\alpha$ is surjective: indeed, since $G=NH$, for $g\in G$ we have $g=nh$ for some $n\in N$ and $h\in H$, and then
+\[gN=nhN=h(h^{-1}nh)N=hN=\alpha(h)\]
+Further, $\ker\alpha=\{h\in H\mid hN=N\}=N\cap H=\{e\}$, therefore $\alpha$ is also injective, as needed.
+\end{proof}
+\subsection{Semidirect products}
+Let $N$ and $H$ be two groups and let $H$ act on $G$, that is, there is a homomorphism
+\[\theta:H\to\Aut(N),\quad h\mapsto\theta_h\]
+Define an operation $\bullet_\theta$ on the set $N\times H$ as follows: for $n_1,n_2\in N$ and $h_1,h_2\in H$, let
+\[(n_1,h_1)\bullet_\theta(n_2,h_2):=(n_1\theta_{h_1}(n_2),h_1h_2)\]
+\begin{lemma}
+The resulting structure $(N\times H,\bullet_\theta)$ is a group, with identity element $(e_N,e_H)$.
+\end{lemma}
+\begin{proof}
+We check the associativity
+\begin{align*}
+\big((n_1,h_1)\bullet_\theta(n_2,h_2)\big)\bullet_\theta(n_3,h_3)&=(n_1\theta_{h_1}(n_2),h_1h_2)\bullet_\theta(n_3,h_3)\\
+&=(n_1\theta_{h_1}(n_2)\theta_{h_1h_2}(n_3),h_1h_2h_3).
+\end{align*}
+\begin{align*}
+(n_1,h_1)\bullet_\theta\big((n_2,h_2)\bullet_\theta(n_3,h_3)\big)&=(n_1,h_1)\bullet_\theta(n_2\theta_{h_2}(n_3),h_2h_3)\\
+&=(n_1\theta_{h_1}(n_2\theta_{h_2}(n_3)),h_1h_2h_3)\\
+&=(n_1\theta_{h_1}(n_2)\theta_{h_1}\theta_{h_2}(n_3),h_1h_2h_3)\\
+&=(n_1\theta_{h_1}(n_2)\theta_{h_1h_2}(n_3),h_1h_2h_3).
+\end{align*}
+The identity is $(e_N,e_H)$ because
+\[(n_1,h_1)\bullet\theta(e_N,e_H)=(n_1\theta_{h_1}(e_N),h_1e_H)=(n_1,h_1)\]
+\[(e_N,e_H)\bullet\theta(n_1,h_1)=(e_N\theta_{e_H}(n_1),e_Hh_1)=(n_1,h_1)\]
+Inverses exist because
+\[(n_1,h_1)\bullet_\theta(\theta_{h_1^{-1}}(n_1^{-1}),h_1^{-1})=(n_1\theta_{h_1}(\theta_{h_1^{-1}}(n_1^{-1})),h_1h_1^{-1})=(e_N,e_H)\]
+\end{proof}
+\begin{definition}
+The group $(N\times H,\bullet_\theta)$ is a \textbf{semidirect produc}t of $N$ and $H$ and is denoted by $N\rtimes_\theta H$.
+\end{definition}
+The following proposition checks that semidirect products are split extensions:
+\begin{proposition}\label{semiprod prop}
+Let $N,H$ be groups, and let $\theta:H\to\Aut(N)$ be a homomorphism; let $G=N\rtimes_\theta H$ be the corresponding semidirect product. Then
+\begin{itemize}
+\item $G$ contains isomorphic copies of $N$ and $H$.
+\item the natural projection $G\to H$ is a surjective homomorphism, with kernel $N$, thus $N$ is normal in $G$, and the sequence
+\[\begin{tikzcd}
+1\ar[r]&N\ar[r]&G\ar[r]&H\ar[r]&1
+\end{tikzcd}\]
+is split exact.
+\item We have $G=NH$ and $N\cap H=\{e_G\}$.
+\item the homomorphism $\theta$ is realized by conjugation in $G$: that is, for $h\in H$ and $n\in N$ we have
+\[\theta_h(n)=hnh^{-1}\]
+in $G$.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+We identify $N$ and $H$ with the subgroups $N\times\{e_H\}$ and $\{e_N\}\times H$. It is clear that $N\cap H=\{(e_N,e_H)\}$, and we have
+\[(n,e_H)\bullet_\theta(e_N,h)=(n,h)\]
+showing that $G=NH$.\par
+The projection $G\to H$ defined by $(n,h)\mapsto h$ is a surjective homomorphism, with kernel $N$, therefore $N$ is normal in $G$. Finally 
+\[(e_N,h)\bullet_\theta(n,e_H)\bullet_\theta(e_N,h)^{-1}=(\theta_h(n),h)\bullet_\theta(e_n,h^{-1})=(\theta_h(n),e_H)\]
+as claimed in the last point.
+\end{proof}
+Our original goal of reconstructing a given split extension of a group $H$ by a
+group $N$ is a sort of converse to this proposition. More precisely,
+\begin{proposition}\label{semiprod if}
+Let $N,H$ be subgroups of a group $G$, with $N$ normal in $G$. Assume that $N\cap H=\{e\}$, and $G=NH$. Let $\gamma:H\to\Aut(N)$ be defined by conjugation: $\gamma_h(n)=hnh^{-1}$. Then $G\cong N\rtimes_\gamma H$.
+\end{proposition}
+\begin{proof}
+We define a function 
+\[\varphi:N\rtimes_\gamma H\to G,\quad\varphi(n,h)=nh\]
+Then for $n_1,n_2\in N,h_1,h_2\in H$ we have
+\[\varphi\big((n_1,h_1)\bullet_\gamma(n_2,h_2)\big)=\varphi(n_1h_1n_2h_1^{-1},h_1h_2)=n_1h_1n_2h_2=\varphi(n_1,h_1)\varphi(n_2,h_2)\]
+Thus $\varphi$ is a homomorphism, as needed. It is clear that $\varphi$ is a bijection, hence is an isomorphism.
+\end{proof}
+\begin{corollary}
+Let $G,N$, and $H$ be groups. Then $G$ is isomorphic to a semidirect product $N\rtimes H$ if and only if there are homomorphisms $\varphi:G\to H$ and $\psi:H\to G$ such that $\varphi\circ\psi=\mathrm{id}_H$ and $\ker\varphi\cong N$.
+\end{corollary}
+\begin{proof}
+If $G$ is isomorphic to a semidirect product, then we can simply choose the projection on $H$. Conversely, if there are $\varphi,\psi$ as steted, then $\psi$ embeddes $H$ into $G$, such that $\psi(H)\cap\ker\varphi=\{e\}$. Now since $G/\ker\varphi\cong H$, we see $\psi(H)\ker\varphi=G$, and the claim then follows from Proposition~\ref{semiprod if}.
+\end{proof}
+\begin{example}
+The automorphism group of $C_3$ is isomorphic to the cyclic group $C_2$: if $C_3=\{e,y,y^2\}$, then the two automorphisms of $C_3$ are
+\[\mathrm{id}:\left\{\begin{array}{l}
+e\mapsto e\\
+y\mapsto y\\
+y^2\mapsto y^2
+\end{array}\right. \quad \sigma:\left\{\begin{array}{l}
+e\mapsto e\\
+y\mapsto y^2\\
+y^2\mapsto y
+\end{array}\right. \]
+Therefore, there are two homomorphisms $C_2\to\Aut(C_3)$: the trivial map, and
+the isomorphism sending the identity to $\mathrm{id}$ and the nonidentity element to $\sigma$. The semidirect product corresponding to the trivial map is the direct product $C_2\times C_3\cong C_6$; the other semidirect product $C_3\times C_2$ is isomorphic to $\mathfrak{S}_3$, since $N=\langle(123)\rangle$ and $H=\langle 12\rangle$ satisfy the hypotheses.
+\end{example}
+\begin{example}[\textbf{Groups of Order $\bm{pq}$}]
+Let $G$ be any group of order $pq$, where $p,q$ are primes and $p<q$. Let $N$ be the $q$-Sylow subgroup of $G$, which is unique, and $H$ be a $q$-Sylow subgroup. We write $N=\langle y\rangle$, $H=\langle x\rangle$.\par
+Now if $q\not\equiv q$ mod $p$, then $G$ has one $q$-Sylow group, thus $H$ is normal in $G$. Hence from Proposition~\ref{normal subgroup NH=N times H} we conclude $G\cong N\times H$.\par
+If $q\equiv 1$ mod $p$, then we have $G=N\rtimes H$. Since $q$ is prime, $\Aut(N)\cong\Aut(C_q)\cong C_{q-1}$. Thus there is a unique homomorphism from $C_p$ to $\Aut(N)$, hence this semidirect product is unique.
+\end{example}
+\begin{remark}
+If $H$ and $N$ are both groups and we have an action:
+\[\theta:H\to\Aut(N),\quad h\mapsto\theta_h,\]
+then the semidirect product $N\rtimes_\theta H$ acts on $N$ natrually by
+\[(n,h)\cdot n':=n\theta_h(n').\]
+It is easy to check that
+\begin{align*}
+(n_2,h_2)\cdot\big((n_1,h_1)\cdot n'\big)&=(n_2,h_2)\cdot\big(n_1\theta_{h_1}(n')\big)=n_2\theta_{h_2}(n_1\theta_{h_1}(n'))\\
+&=n_2\theta_{h_2}(n_1)\theta_{h_2}\theta_{h_1}(n')=n_2\theta_{h_2}(n_1)\theta_{h_2h_1}(n')\\
+&=\big(n_2\theta_{h_2}(n_1),h_2h_1\big)\cdot n'\\
+&=\big((n_2,h_2)\cdot(n_1,h_1)\big)\cdot n'
+\end{align*}
+\end{remark}

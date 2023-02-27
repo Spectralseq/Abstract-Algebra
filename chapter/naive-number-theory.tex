@@ -1,0 +1,345 @@
+\chapter{Elementray number theory}
+\section{Dirichlet's approximation theorem}
+\begin{theorem}[\textbf{Dirichlet's Approximation Theorem}]\label{Dirichlet approximation}
+Given $\alpha\in\R$ and any positive integer $N$, there exist relatively prime integers $p,q$ with $1\leq q\leq N$ such that $|q\alpha-p|<1/N$.
+\end{theorem}
+\begin{proof}
+For any real number $x$, let $f(x)=x-[x]$. Divide the interval $[0,1)$ into $N$ parts
+\[[0,1)=\coprod_{i=1}^{N}[\frac{i-1}{N},\frac{i}{N})\]
+Since the $N+1$ numbers $\{f(i\alpha):0\leq i\leq N\}$ all lie in the interval $[0,1)$, by the pigeonhole principle there must exist integers $i$ and $j$ with $0\leq i<j\leq N$ such that both $f(i\alpha)$ and $f(j\alpha)$ lie in one of the $N$ subintervals. Thus 
+\[|f(i\alpha)-f(j\alpha)|<\frac{1}{N}\]
+so we can take $q=j-i$ and $p=[j\alpha]-[i\alpha]$.\par
+Now for the relatively prime part, write $d=(p,q)$ and $p=p'd,q=q'd$. Then $q'\leq q\leq N$ and
+\[|q'\alpha-p'|=\frac{1}{d}|q\alpha-p|<\frac{1}{Nd}\leq\frac{1}{N}\]
+Thus the intergers $p'$ and $q'$ satisfy the conditions.
+\end{proof}
+\begin{corollary}
+For every real $\alpha$ there exist relatively prime integers $p$ and $q$ with $q>0$ such that
+\[\Big|\alpha-\frac{p}{q}\Big|<\frac{1}{q^2}\]
+\end{corollary}
+\begin{proof}
+In Theorem~\ref{Dirichlet approximation} we have $1/(Np)\leq 1/p^2$ because $p\leq N$.
+\end{proof}
+\begin{theorem}\label{real number irrational iff}
+If $\alpha$ is real, let $S_\alpha$ denote the set of all ordered pairs of coprime integers
+$(p,q)$ with $q>0$ such that
+\[\Big|\alpha-\frac{p}{q}\Big|<\frac{1}{q^2}\]
+Then $S_\alpha$ has the following properties:
+\begin{itemize}
+\item[$(a)$]$S_\alpha$ is nonempty.
+\item[$(b)$]If $\alpha$ is irrational, $S_\alpha$ is an infinite set.
+\item[$(c)$]When $S_\alpha$ is infinite it contains pairs $(p,q)$ with $q$ arbitrarily large.
+\item[$(d)$]If $\alpha$ is rational, $S_\alpha$ is a finite set.
+\end{itemize}
+\end{theorem}
+\begin{proof}
+Part $(a)$ follows immediately from Theorem~\ref{Dirichlet approximation}. For $(b)$, assurne $\alpha$ is irrational and assurne also that $S_\alpha$ is finite. We shall obtain a contradiction. Let
+\[\eps:=\inf_{(p,q)\in S_\alpha}\Big|\alpha-\frac{p}{q}\Big|\]
+Since $\alpha$ is irrational, $\eps$ is positive. Choose any integer $N>1/\eps$ and apply Theorem~\ref{Dirichlet approximation} with this $N$. We obtain a pair of integers $(p,q)\in S_\alpha$ with $1\leq q\leq N$ such that
+\[\Big|\alpha-\frac{p}{q}\Big|<\frac{1}{qN}<\frac{1}{N}<\eps\]
+This is a contradiction.\par
+To prove $(c)$ assurne that all pairs $(p,q)$ in $S_\alpha$ have $q\leq M$ for some $M$. We will show that this leads to a contradiction by showing that the number
+of choices for $p$ is also bounded. If $(p,q)\in S_\alpha$ we have
+\[|q\alpha-p|<\frac{1}{q}\leq 1\]
+Hence
+\[|p|=|p-q\alpha+q\alpha|\leq|q\alpha-p|+|q\alpha|<1+|q\alpha|\leq 1+|M\alpha|\]
+Therefore the number of choices for $p$ is bounded, contradicting the fact that $S_\alpha$ is infinite.\par
+Finially, for $(d)$, if $\alpha=a/b$ is rational where $(a,b)=1$, then $(a,b)\in S_\alpha$. Now we assurne that $S_\alpha$ is an infinite set and obtain a contradiction. If $S_\alpha$ is infinite then by part $(c)$ there is a pair $(p,q)$ in $S_\alpha$ with $q>b$. For this pair we have
+\[0<\Big|\frac{a}{b}-\frac{p}{q}\Big|<\frac{1}{q^2}\]
+from which we find $0<|aq-bp|<1$. This is a contradiction because $aq-bp$ is an integer.
+\end{proof}
+\begin{remark}
+Theorem~\ref{real number irrational iff} shows that areal number $\alpha$ is irrational if, and only if, there are infinitely many rational numbers $p,q$ with $(p,q)=1$ and $q>0$ such that
+\[\Big|\alpha-\frac{p}{q}\Big|<\frac{1}{q^2}\]
+The constant $1$ can be replaced by $1/\sqrt{5}$. Moreover, the result is false if $1/\sqrt{5}$ is replaced by any smaller constant.
+\end{remark}
+\section{Kronecker's approximation theorem}
+We make use of the fractional parts $\{x\}:=x-[x]$.
+\begin{theorem}
+If $\alpha$ is a given irrational number the sequence of numbers $\{n\alpha\}$ is dense in the unit interval. That is, given any $x\in[0,1]$, and given any $\eps>0$, there exists a positive integer $n$ such that
+\[|\{n\alpha\}-x|<\eps\]
+\end{theorem}
+\begin{proof}
+First we note that $\{n\alpha\}\neq\{m\alpha\}$ if $m\neq n$ because $\alpha$ is irrational. Also, there is no loss of generality if we assume $0<\alpha<1$.\par
+Let $\eps>0$ be given and choose any $0<\alpha<1$. By Dirichlet's approximation theorem there exist integers $p$ and $q$ such that $|q\alpha-p|<\eps$. Suppose that $q\alpha>p$, so that $0<\{q\alpha\}<\eps$. Now consider the subsequence $\{nq\alpha:n\in\N\}$. We have
+\[nq\alpha=n[q\alpha]+n\{q\alpha\}\]
+Hence
+\[\{nq\alpha\}=n\{q\alpha\}\iff \{q\alpha\}<\frac{1}{n}\]
+Now choose the largest integer $N$ which satisfies $\{q\alpha\}<1/N$. Then we have
+\[\frac{1}{N+1}<\{q\alpha\}<\frac{1}{N}\]
+Therefore $\{nq\alpha\}=n\{q\alpha\}$ for $n\leq N$, so the $N$ numbers
+\[\{q\alpha\},\{2q\alpha\},\cdots,\{Nq\alpha\}\]
+form an increasing \textbf{equally-spaced} chain running from left to right in the interval $(0,1)$. The last member of this chain (by the definition of $N$) satisfies the inequality
+\[\frac{N}{N+1}<\{Nq\alpha\}<1\]
+or
+\[1-\frac{1}{N+1}<\{Nq\alpha\}<1\]
+Thus $\{Nq\alpha\}$ differs from $1$ by less than $1/(N+1)<\{q\alpha\}<\eps$. Therefore the first $N$ members of the subsequence $\{nq\alpha\}$ subdivide the unit interval into subintervals of length $<\eps$. Since $x$ lies in one of these subintervals, the theorem is proved.
+\end{proof}
+\begin{corollary}
+Given any real $x$, any irrational $\alpha$, and an $\eps>0$, there exist integers $m$ and $n$ with $n>0$ such that
+\[|n\alpha-m-x|<\eps\]
+Thus the subset $\alpha\Z+\Z$ is dense in $\R$.
+\end{corollary}
+\section{Quadratic Residues}
+An integer $k$ that is prime to a positive integer $m$ is said to be a quadratic residue modulo $m$ if there exists $z\in\Z$ such that
+\[z^2\equiv k\mod m\]
+\subsection{Units in \boldmath$\Z/n\Z$}
+\begin{proposition}
+Let $p$ be a prime, then the group $(\Z/p^n\Z)^\times$ has order $p^{n-1}(p-1)$.
+\end{proposition}
+\begin{proof}
+Note that $[m]_{p^n}$ is a unit iff $\gcd(m,p^n)=\gcd(m,p)=1$. Thus the elements in $\Z/p^n\Z$ are unit except
+\[0,[p],[2p],\dots,[p^{n}-p].\]
+Thus the order of $(\Z/p^n\Z)^\times$ is
+\[|(\Z/p^n\Z)^\times|=p^n-p^{n-1}=p^{n-1}(p-1)\]
+as claimed.
+\end{proof}
+\begin{lemma}\label{Z/nZ iso}
+Let $n=p_1^{e_1}\cdots p_r^{e_r}$ be an integer, then there is a ring isomorphism
+\[\Z/n\Z=\prod_{i=1}^{r}\Z/p_i^{e_i}\Z.\]
+\end{lemma}
+\begin{proof}
+Since $p_i$'s are coprime, this follows from the Chinese remainder theorem.
+\end{proof}
+\begin{theorem}\label{unit in Z/nZ}
+Let $n=p_1^{e_1}\cdots p_r^{e_r}$ be an integer, then
+\[(\Z/n\Z)^\times\cong\prod_{i=1}^{r}(\Z/p_i^{e_i}\Z)^{\times}.\]
+In particular, we have
+\[\phi(n)=n\prod_{i=1}^{r}\Big(1-\frac{1}{p_i}\Big).\]
+\end{theorem}
+\begin{proof}
+Under the ring isomorphism in Lemma~\ref{Z/nZ iso}, an element $[m]\in\Z/n\Z$ is a unit if and only if its image is a unit, which holds if and only if each of its components is a unit. With this,
+\[\phi(n)=\prod_{i=1}^{r}\phi(p_i^{e_i})=\prod_{i=1}^{r}p_i^{e_i-1}(p_i-1)=n\prod_{i=1}^{r}\Big(1-\frac{1}{p_i}\Big)\]
+as claimed.
+\end{proof}
+\begin{corollary}
+If $m$ and $n$ are coprime, then $\phi(mn)=\phi(m)\phi(n)$.
+\end{corollary}
+\begin{corollary}
+If $n$ is odd, then $\Phi_{2n}(x)=\Phi_{n}(-x)$.
+\end{corollary}
+\begin{proof}
+Defined a map
+\[\varphi:(\Z/n\Z)^{\times}\to (\Z/2n\Z)^{\times},\quad [m]_n\mapsto[2m+n]_{2n}.\]
+This map is well defined since $\gcd(m,n)=1$ implies $\gcd(2m+n,2n)=1$ when $n$ is odd. Moreover, we observe that
+\[[2m_1+n]_{2n}=[2m_2+n]_{2n}\Longrightarrow 2m_1-2m_2\equiv 0\text{ mod $2n$}\Longrightarrow m_1-m_2\equiv 0\text{ mod $n$}.\]
+Therefore $\varphi$ is injective. Since we already have that $\phi(2n)=\phi(n)$, $\varphi$ is then an isomorphism. Now 
+\[\zeta^{2m+n}_{2n}=e^{\frac{(2m+n)2\pi i}{2n}}=-e^{\frac{2\pi im}{n}}=-\zeta^m_n,\] 
+so we conclude that
+\[\Phi(x)_{2n}=\prod(x-\zeta_{2n}^r)=\prod(x+\zeta_n^m)=(-1)^{\phi(n)}\prod(-x-\zeta_n^m)=(-1)^{\phi(n)}\Phi_n(-x).\]
+Since $n$ is odd, every prime divisor of $n$ is also odd, thus $\phi(n)$ is even in view of the formula in Theorem~\ref{unit in Z/nZ}. Thus we are done.
+\end{proof}
+\begin{proposition}
+Let $p$ be a prime. Then $(\Z/p\Z)^\times$ is a cyclic group of order $p-1$.
+\end{proposition}
+\begin{proof}
+$(\Z/p\Z)^\times$ is an abelian group, and the equation $x^{n}-1=0$ has at most $n$ solutions in it. By the classification theorem of abelian groups, we conclude that it is cyclic.
+\end{proof}
+\begin{lemma}
+In an abelian group $G$, if $a,b$ have finite orders $q,r$ which are coprime, then $ab$ has order $qr$.
+\end{lemma}
+\begin{proof}
+If $(ab)^s=1$ then $a^s=b^{-s}$, thus they have the same order $k$. However, the order of $a^s$ divides the order of $a$, so $k$ divides $q$, similarly $k$ divides $r$. Since $\gcd(q,r)=1$, this implies $k=1$. Therefore
+\[a^s=b^{-s}=1.\]
+This immediately implies $qr=\mathrm{lcm}(q,r)\mid s$. Thus $ab$ has order $qr$.
+\end{proof}
+\begin{lemma}\label{primitive root lem}
+\mbox{}
+\begin{itemize}
+\item[$(a)$] If $s$ is a primitive root of $p$, then so is $s^r$ if and only if $r$ and $p-1$ are coprime.
+\item[$(b)$] If $s$ is a primitive root of $p$ and $k$ is a positive integer, then there is another primitive root $\lambda$ of $p$ such that $[s]=[\lambda]^{p^k}$.
+\end{itemize}
+\end{lemma}
+\begin{proof}
+For $(a)$, we have
+\[|s^r|=\frac{p-1}{\gcd(r,p-1)}\]
+Thus $s^r$ is a primitive root of $p$ iff $r$ and $p-1$ are coprime.\par
+For $(b)$, since $p^k$ and $p-1$ are coprime, there exist integers $a,b$ where $a$ is prime to $p-1$ such that
+\[ap^k+b(p-1)=1.\]
+Hence $\lambda=s^a$ is a primitive root of $p$ by part $(a)$ and
+\[[\lambda]^{p^k}=[s]^{ap^k}=[s]^{ap^k+b(p-1)}=[s]\]
+as needed.
+\end{proof}
+\begin{theorem}\label{unit Z/p^nZ}
+If $p$ is an odd prime and $n\geq 2$, then $(\Z/p^n\Z)^\times$ is a cyclic group of order $p^{n-1}(p-1)$ with generator $[s(1+p)]$, where $[s]$ is a primitive root of $p$.
+\end{theorem}
+\begin{proof}
+Since $p-1$ and $p^{n-1}$ are coprime, it is sufficient to show that $[s]$ has order $p-1$ and $[1+p]$ has order $p^{n-1}$ in $(\Z/p^n\Z)^\times$.
+\begin{itemize}
+\item For $s$, by Lemma~\ref{primitive root lem}, there is a primitive root $\lambda$ such that $[\lambda]^{p^{n-1}}=[s]$, thus
+\[[s]^{p-1}=[\lambda]^{p^{n-1}(p-1)}=[1].\]
+On the other hand, $[s]^r=1$ in $\Z/p^n\Z$ implies $[s]^r=1$ in $\Z/p\Z$. So since $s$ is a primitive root of $p$ we have $[s]^r\not\equiv 1$ for $1<r<p-1$ in $\Z/p^n\Z$. Therfore $[s]$ has order $p-1$.
+\item We compute by an induction that
+\[(1+p)^{p^{n-2}}\equiv 1+kp^{n-1}\]
+where $k$ depends on $n$ but $k\not\equiv 0$ mod $p$. For $n=2$ this is true with $k=1$. Assume it true for some $n\geq2$. Then 
+\[(1+p)^{p^{n-2}}=1+kp^{n-1}+rp^e=1+sp^{n-1}\]
+where $s=k+rp\not\equiv 0$ mod $p$. Hence
+\begin{align*}
+(1+p)^{p^{n-1}}&=(1+sp^{n-1})^p\\
+&=1+psp^{n-1}+\binom{p}{2}s^2p^{2(n-1)}+\cdots+s^pp^{p(n-1)}.
+\end{align*}
+For $n\geq2$ and prime $p\neq2$ this is of the form
+\[1+sp^n+bp^{n+1}\]
+Therefore
+\[(1+p)^{p^{n-1}}\equiv 1+sp^n\mod p^{n+1}.\]
+where $s\not\equiv0$ mod $p$, completing the induction.\par
+This then gives
+\[(1+p)^{p^{n-2}}\equiv 1+kp^{n-1}\not\equiv[1]\text{ mod $p^n$},\quad (1+p)^{p^{n-1}}\equiv 1+kp^{n}\equiv 1\text{ mod $p^n$}.\]
+Therefore $[1+p]$ has order $p^{n-1}$.
+\end{itemize}
+These give the proof.
+\end{proof}
+Since the proof breaks down for $p=2$, we must treat this case separately. We find:
+\begin{proposition}~\label{unit Z/2^nZ}
+$(\Z/4\Z)^\times=\{[1],[-1]\}$ is cyclic with generator $[-1]$. For $n\geq3$, $(\Z/2^n\Z)^{\times}$ is not cyclic, but $[-1]$ is of order $2$, $[5]$ is of order $2^{n-2}$ and $(\Z/2^n\Z)^{\times}$ is the direct product of the cyclic groups generated by $[-1],[5]$.
+\end{proposition}
+\begin{proof}
+The assertion concerning $(\Z/4\Z)^\times$ is trivial. For $n\geq3$, the order of $(\Z/2^n\Z)^\times$ is $2^{n-1}$. Clearly the order of $[-1]$ in $(\Z/2^n\Z)^\times$ is $2$. For the element $[5]$ we note that by induction on $n\geq3$ we may establish
+\[5^{2^{n-3}}=(1+2^2)^{2^{n-3}}\equiv 1+2^{n-1}\mod 2^n.\]
+Hence $[5]^{2^{n-3}}\not\equiv1$ in $\Z/2^n\Z$, but
+\[5^{2^{n-2}}\equiv(1+2^{n-1})^2\equiv 1\mod 2^e\]
+wo $[5]$ has order $2^{n-2}$ in $(\Z/2^n\Z)^\times$.\par
+Now $[-1]$ is not a power of $[5]$ in $(\Z/2^n\Z)^\times$ since
+\[-1\not\equiv 5^r\mod 4\]
+so certainly $[-1]\neq[5^r]$ in $(\Z/2^n\Z)^\times$. Hence if $N,H$ is the cyclic subgroup generated by $[-1],[5]$ respectively, then $N\cap H=\{[1]\}$. Since multiplication is commutative, $(\Z/2^n\Z)^\times$ is the direct product of $N$ and $H$. Clearly $(\Z/2^n\Z)^\times$ is not cyclic.
+\end{proof}
+\subsection{Quadratic Residues}
+\begin{proposition}
+If $m=p_1^{e_1}\cdots p_r^{e_r}$ and $k$ is relatively prime to $m$, then $k$ is a quadratic residue modulo $m$ if and only if it is a quadratic residue of $p^{e_i}_i$ for all $i$.
+\end{proposition}
+\begin{proof}
+Using the isomorphism of Theorem~\ref{unit in Z/nZ}, $[k]$ is a square if and only if each component of its image is a square, and the $i$-th component is the residue class of $k$ modulo $p_i^{e_i}$.
+\end{proof}
+This reduces the general problem of finding quadratic residues to the simpler problem of finding quadratic residues modulo a prime power. Following the last subsection we distinguish between the case of an odd prime and $p=2$ first, because this can be given an immediate answer:
+\begin{proposition}
+The odd integer $k$ is a quadratic residue modulo $4$ if and only if $k\equiv1$ mod $4$, and is a quadratic residue modulo $2^n$ for $n\geq3$ if and only if $k\equiv1$ mod $8$.
+\end{proposition}
+\begin{proof}
+Since $(\Z/4\Z)^\times=\{[1],[3]\}$, the only square in $(\Z/4\Z)^\times$ is $[1]$. For $n\geq 3$, if $z^2=k$ in $(\Z/2^n\Z)^\times$, we use Proposition~\ref{unit Z/2^nZ} to write
+\[[z]=[-1]^a[5]^b,\quad [k]=[-1]^c[5]^d,\]
+and then
+\[[-1]^{2a}[5]^{2b}=[-1]^c[5]^d\]
+whence $c$ is even and $2b\equiv d$ mod $2^{n-2}$. Given $d$, the congruence can be solved for $b$ if and only if $d$ is even. Thus $[k]$ is a quadratic residue modulo $2^n$ if and only if
+\[[k]=[5]^d\]
+in $\Z/2^n\Z$ where $d$ is even. Putting $d=2r$ this implies
+\begin{align*}
+k\equiv 5^{2r}\mod 2^n
+\end{align*}
+for $n\geq 3$, hence 
+\[k\equiv 25^r\equiv 1\mod 8\]
+Conversely if $k\equiv1$ mod $8$ and $[k]\equiv[(-1)^c5^d]$, then \[(-1)^c5^d\equiv 1\mod 8.\]
+This happens only when $c,d$ are even, and then $(-1)^c5^d$ is a square in $(\Z/2^n\Z)^\times$.
+\end{proof}
+In the case $p$ odd we first characterize the quadratic residues modulo $p$ by using a primitive root of $p$:
+\begin{lemma}\label{primitive root squre}
+If $s$ is a primitive root of $p$, then $[k]=[s]^a$ is a quadratic residue if and only if $a$ is even.
+\end{lemma}
+\begin{proof}
+If $a=2b$, then $[k]=[s^b]^2$. Now $[s]$ has even order $p-1$, it cannot be a square, nor can $[s]^a$ for $a$ odd.
+\end{proof}
+\begin{proposition}
+If $p$ is an odd prime, then $k$ is a quadratic residue modulo $p^n$ for $n\geq 2$ if and only if $k$ is a quadratic residue modulo $p$.
+\end{proposition}
+\begin{proof}
+If $z^2\equiv k$ mod $p^n$, then clearly $z^2\equiv k$ mod $p$, so a quadratic residue modulo $p^n$ also servesmodulo $p$. Conversely, suppose $k$ is a quadratic residue modulo $p$. By Proposition~\ref{unit Z/p^nZ} we can write $k\equiv s^a(1+p)^a$ mod $p^n$, and reducing this modulo $p$ gives $k\equiv s^a$ mod $p$, so Lemma~\ref{primitive root squre} implies that $a=2b$ for an integer $b$, so $k\equiv[s^b(1+p)b]^2$ mod $p^n$ and $k$ is a quadratic residue modulo $p^n$.
+\end{proof}
+This leaves the central core of the problem: to determine quadratic residues modulo any odd prime $p$. We define the symbol $(k/p)$ for an odd prime
+$p$ and an integer $k$ not divisible by $p$ as
+\[\Big(\frac{k}{p}\Big)=\begin{cases}
++1&\text{if $k$ is quadratic residue modulo $p$}\\
+-1&\text{otherwise}.
+\end{cases}\]
+The value of this notation can be seen by writing $[k]=[s^a]$ where $s$ is a primitive root of $p$. By Lemma~\ref{primitive root squre}, $k$ is a quadratic residue modulo $p$ if and only if $a$ is even, hence
+\[\Big(\frac{k}{p}\Big)=(-1)^a.\]
+From this it is easy to deduce the following useful properties:
+\begin{proposition}
+\mbox{}
+\begin{itemize}
+\item[$(a)$] $k\equiv r$ mod $p$ implies $(k/p)=(r/p)$.
+\item[$(b)$] $(kr/p)=(k/p)(r/p)$.
+\end{itemize}
+\end{proposition}
+It is now possible to give a computational test for quadratic residues:
+\begin{proposition}[\textbf{Euler's Criterion}]
+For an odd prime $p$ and an integer $k$ not divisible by $p$,
+\[\Big(\frac{k}{p}\Big)\equiv k^{(p-1)/2}\mod p\]
+\end{proposition}
+\begin{proof}
+For a primitive root $s$ modulo $p$ we have $s^{p-1}\equiv 1$ mod $p$, and since $p-1$ is even, 
+\[(s^{(p-1)/2}-1)(s^{(p-1)/2}+1)=s^{p-1}-1\equiv0\mod p.\]
+Because $s^{(p-1)/2}\not\equiv1$ mod $p$, we deduce that
+\[s^{(p-1)/2}\equiv -1\mod p.\]
+Hence, writing $[k]=[s^a]$ as before
+\begin{align*}
+\Big(\frac{k}{p}\Big)=(-1)^a\equiv(s^{(p-1)/2})^a\equiv s^{a(p-1)/2}\equiv k^{(p-1)/2}\mod p.
+\end{align*}
+\end{proof}
+\begin{example}
+$k$ is a quadratic residue mod $5$ if $k^2\equiv1$ mod $5$, giving $k=1,4$.
+\end{example}
+We partition the units modulo $p$ by writing them in the form
+\[(\Z/p\Z)^\times=\{[-(p-1)/2],\dots,[-2],[-1]\}\cup\{[1],[2],\dot,[(p-1)/2]\}:=N\cup P\]
+Using the usual multiplicative notation $aS=\{as\mid s\in S\}$, we can write $N=([-1])P$. To find out whether $k$ is a quadratic residue, Gauss computed
+the set $[k]P$ and proved:
+\begin{proposition}[\textbf{Gauss's Criterion}]
+With the above notation, if $[k]P\cap N$ has $\nu$ elements then $(k/p)=(-1)^\nu$.
+\end{proposition}
+\begin{proof}
+Since $[k]$ is a unit, the elements of  $[k]P$ are distinct. Furthermore if $[a],[b]$ are distinct elements of $P$, then we may take $0<a<b\leq(p-1)/2$. We cannot have $[k][a]=-[k][b]$, for that implies $k(a+b)$ is divisible by $p$, hence $a+b$ is divisible by $p$, contradicting the inequalities satisfied by $a,b$. Thus the elements $[k],[2k],\dots,[k(p-1)/2]$ of $[k]P$ consist precisely of the elements $\pm[1],\pm[2],\dots,\pm[(p-1)/2]$, possibly in a different order, where the number of minus signs is the number of elements of $[k]P$ in $N$. Hence
+\[[k]\cdot[2k]\cdots[k(p-1)/2]=[(-1)^\nu]\cdot[1]\cdots[2]\cdots[(p-1)/2]\]
+so
+\[[k]^{(p-1)/2}=[(-1)^\nu]\]
+where $\nu$ is the number of elements in $[k]P\cap N$. Thus
+\[k^{(p-1)/2}\equiv(-1)^\nu\mod p.\]
+and Euler's criterion gives
+\[\Big(\frac{k}{p}\Big)=(-1)^\nu.\]
+\end{proof}
+\begin{example}
+Is $3$ a quadratic residue modulo $19$? To answer this we calculate
+\[[3]P=\{3,6,9,12,15,18,2,5,8\}=\{3,6,9,2,5,8\}\cup\{-7,-4,-1\},\]
+so $\nu=3$ and Gauss's criterion tells us that $3$ is not a quadratic residue modulo $19$.
+\end{example}
+These two criteria take us further in the search for quadratic residues $k$ modulo an odd prime $p$, for by factorizing
+\[k=(-1)^a2^bp_1^{e_1}\cdots p_r^{e_r}\]
+then $k$ is a square if $a,b,e_1,\dots,e_r$ are even; moreover, it is a quadratic residue if the factors with odd exponent are quadratic residues. Thus the question of quadratic residues is finally reduced to determining whether $-1,2$ or an odd prime $q$ (distinct from $p$) are quadratic residues modulo an odd prime $p$.\par
+The given criteria solve the question for $-1$ and $2$.
+\begin{proposition}
+Let $p$ be an odd prime, we have
+\[\Big(\frac{-1}{p}\Big)=(-1)^{(p-1)/2},\quad \Big(\frac{2}{p}\Big)=(-1)^{(p^2-1)/8}.\]
+\end{proposition}
+\begin{proof}
+The first result is a trivial consequence of Euler's criterion. So we consider $2$.\par
+We have 
+\[[2]P=\{[2],[4],\dots,[p-1]\}\]
+so $|[2]P\cap N|$ is $\nu=(p-1)/2-r$ where $r$ is the largest integer such that $2r\leq(p-1)/2$. The proof now splits into two cases.
+\begin{itemize}
+\item If $(p-1)/2$ is even then $2r=(p-1)/2$, whence 
+\[\nu=\frac{p-1}{2}-\frac{p-1}{4}=\frac{p-1}{4}.\]
+Thus $(2/p)=(-1)^{(p-1)/4}$.
+\item If $(p-1)/2$ is odd, then $2r=(p-1)/2-1$, whence
+\[\nu=\frac{p-1}{2}-\frac{p-1}{4}+\frac{1}{2}=\frac{p+1}{4}.\]
+Thus $(2/p)=(-1)^{(p+1)/4}$.
+\end{itemize}
+We can put these two cases together by noting that in the first case $(p-1)/2$ is even if and only if $(p+1)/2$ is odd. so in case one
+\[\Big(\frac{2}{p}\Big)=[(-1)^{(p-1)/4}]^{(p+1)/2}=(-1)^{(p^2-1)/8}.\]
+Case two gives the same result by raising to the odd power $(p-1)/2$.
+\end{proof}
+\begin{theorem}[\textbf{Quadratic Reciprocity Law}]
+If $p,q$ are distinct odd primes, then
+\[\Big(\frac{p}{q}\Big)\Big(\frac{q}{p}\Big)=(-1)^{(p-1)(q-1)/4}.\]
+\end{theorem}
+An immediate deduction is the quadratic reciprocity law in the form stated by Gauss:
+\begin{proposition}
+If $p$ and $q$ are distinct odd primes, at least one of which is congruent to $1$ modulo $4$, then $p$ is a quadratic residue of $p$ if and only if $q$ is a quadratic residue of $p$; otherwise if neither is congruent to $1$ modulo $4$ then precisely one is a quadratic residue of the other.
+\end{proposition}
+\begin{proof}
+If at least one of $p, q$ is congruent to $1$ modulo $4$, then $(p-1)(q-1)/4$
+is even. If neither is congruent to $1$ modulo $4$, then $(p-1)(q-1)/4$ is odd,
+\end{proof}
+\begin{example}
+Is $1984$ a quadratic residue modulo $97$?
+\begin{align*}
+\Big(\frac{1984}{97}\Big)&=\Big(\frac{44}{97}\Big)=\Big(\frac{2}{97}\Big)^2\Big(\frac{11}{97}\Big)=\Big(\frac{97}{11}\Big)=\Big(\frac{9}{11}\Big)=\Big(\frac{3}{11}\Big)^2=1
+\end{align*}
+because $97\equiv1$ mod $4$. Hence $1984$ is a quadratic residue modulo $97$.
+\end{example}

@@ -1,0 +1,365 @@
+\section{The snake lemma, again}
+\begin{lemma}\label{pull bak lem}
+Let
+\[\begin{tikzcd}
+A\times_{C}B\ar[d,swap,"\psi'"]\ar[r,"\varphi'"]&B\ar[d,"\psi"]\\
+A\ar[r,swap,"\varphi"]&C
+\end{tikzcd}\]
+be a fibered diagram in an abelian category, and assume $\varphi$ is an epimorphism. Then $\varphi'$ is also an epimorphism.
+\end{lemma}
+\begin{proof}
+First, observe that if $\varphi:A\to C$ is an epimorphism, so is the map $A\oplus B\to C$ considered in Example\ref{fibered diagram}. Since epimorphisms are cokernels in an abelian
+category and cokernels are cokernels of their kernels (Lemma~\ref{ker is ker of coker}), we see that $A\oplus B\to C$ is the cokernel of the natural morphism
+\[A\times_{C}B\to A\oplus B\]
+(by our construction of $A\times_{C}B$) To prove that $\varphi'$ is an epimorphism, it suffices to show that if $\zeta:B\to Z$ is a morphism for which $\zeta\circ\varphi'=0$, then $\zeta=0$.\par
+For this, consider the morphism
+\[A\oplus B\stackrel{(0,\zeta)}{\longrightarrow}Z\]
+obtained by using the fact that $A\oplus B$ is a coproduct of $A$ and $B$. The composition
+\[A\times_{C}B\to A\oplus B\to Z\]
+agrees with $\zeta\circ\varphi'$, so it is the zero-morphism. By the universal property of cokernels, we have the factorization
+\[\begin{tikzcd}
+A\times_{C}B\ar[r]&A\oplus B\ar[d]\ar[r,"{(0,\zeta)}"]&Z\\
+&C\ar[ru,swap,"\zeta'"]&
+\end{tikzcd}\]
+for a unique morphism $\zeta'$. By the commutativity of
+\[\begin{tikzcd}
+A\ar[rd,swap,"\varphi"]\ar[r]&A\oplus B\ar[r,"{(0,\zeta)}"]&Z\\
+&C\ar[ru,swap,"\zeta'"]
+\end{tikzcd}\]
+we see that the composition $\zeta'\circ\varphi:A\to C\to Z$ is the zero-morphism. Since $\varphi$ is an epimorphism, it follows that $\zeta'=0$. This implies that $(0,\zeta):A\oplus B\to Z$ is the zero-morphism, and we are done: $\zeta=0$ as promised.
+\end{proof}
+Here is a quicker proof: if $\varphi$ is an epimorphism, then $A\oplus B\to C$ is an epimorphism, so the diagram is a push-out as well as a pull-back (Example~\ref{fibered diagram}). By Exercise~\ref{pull back ker}, $\coker\varphi'=\coker\varphi=0$; therefore $\varphi'$ is an epimorphism.\par
+\begin{lemma}\label{exact iff}
+Let \begin{tikzcd}X'\ar[r,"f"]&X\ar[r,"g"]&X''\end{tikzcd} be a complex $($i.e., $g\circ f=0$$)$. Then the conditions below are equivalent:
+\begin{itemize}
+\item[$(\rmnum{1})$] the complex \begin{tikzcd}X'\ar[r,"f"]&X\ar[r,"g"]&X''\end{tikzcd} is exact.
+\item[$(\rmnum{2})$] the induced morphism $X'\to\ker g$ is an epimorphism.
+\item[$(\rmnum{3})$] for any morphism $h:S\to X$ such that $g\circ h=0$, there exist an epimorphism $f':S'\twoheadrightarrow S$ and a commutative diagram
+\[\begin{tikzcd}
+S'\ar[d]\ar[r,twoheadrightarrow,"f'"]&S\ar[d,"h"]\ar[rd,"0"]&\\
+X'\ar[r,"f"]&X\ar[r,"g"]&X''
+\end{tikzcd}\]
+\end{itemize}
+\end{lemma}
+\begin{proof}
+$(\rmnum{1})\iff(\rmnum{2})$: the exactness is saying $\ker g=\im f$. If $X'\to\ker g$ is epic, by Exercise~\ref{epi mono decop}, $\ker g=\im f$ as needed. Conversely, if $\ker g=\in f$, by Lemma~\ref{im decomp}, $X'\to\ker g$ is epic.\par
+$(\rmnum{1})\Rightarrow(\rmnum{3})$: It is enough to choose $X'\times_{\ker g}S$ as $S'$. Since $X'\to\ker g$ is an epimorphism, $S'\to S$ is an epimorphism by Lemma~\ref{pull bak lem}.\par
+$(\rmnum{3})\Rightarrow(\rmnum{2})$: Choose $S=\ker g$. Then the diagram becomes
+\[\begin{tikzcd}
+S'\ar[d]\ar[r,twoheadrightarrow,"f'"]&\ker g\ar[d]\ar[rd,"0"]&\\
+X'\ar[ru,dashed]\ar[r,"f"]&X\ar[r,"g"]&X''
+\end{tikzcd}\]
+since $g\circ f=0$, by the universal property of $\ker g$, there is a unique morphism $X'\to\ker g$. It follows that the composition $S'\to X'\to\ker g$ is an epimorphism. Hence $X'\to\ker g$ is an epimorphism.
+\end{proof}
+Going back to the snake lemma, start from a commutative diagram linking two exact sequences in an abelian category:
+\[\begin{tikzcd}
+&A_0\ar[r,"f_0"]\ar[d,"\alpha"]&B_0\ar[r,"g_0"]\ar[d,"\beta"]&C_0\ar[r]\ar[d,"\gamma"]&0\\
+0\ar[r]&A_1\ar[r,"f_1"]&B_1\ar[r,"g_1"]&C_1
+\end{tikzcd}\]
+The main task is to construct a connecting morphism $\delta:\ker\gamma\to\coker\alpha$. The problem is that the universal properties of kernel and cokernel would seem to guarantee the existence of morphisms to $\ker$ and from $\coker$. How on to get a morphism from $\ker$ to $\coker$?\par
+The answer is to view $\ker$ as a cokernel and $\coker$ as a kernel. This can be achieved by constructing suitable pull-back, resp., push-out, diagrams:
+\[\begin{tikzcd}
+B_0\times_{C_0}(\ker\gamma)\ar[d]\ar[r,"g'_0"]&\ker\gamma\ar[d]\\
+B_0\ar[r,"g_0"]&C_0
+\end{tikzcd}\quad\begin{tikzcd}
+A_1\ar[d]\ar[r,"f_1"]&B_1\ar[d]\\
+\coker\alpha\ar[r,"f'_1"]&(\coker\alpha)\amalg_{A_1}B_1
+\end{tikzcd}\]
+By Lemma~\ref{pull bak lem}, $g'_0$ is an epimorphism since $g_0$ is an epimorphism, and $\ker g_0$, $\ker g_0'$ have matching sources by Exercise~\ref{pull back ker} (which is $A_0$ by the exactness). Analogous (dual) statements hold for the second diagram. Putting everything into one commutative diagram,
+\[\begin{tikzcd}
+&A_0\ar[r,"\sigma"]\ar[d,equal]&B_0\times_{C_0}(\ker\gamma)\ar[ddd,bend right,"\epsilon"]\ar[d]\ar[r]&\ker\gamma\ar[d]\ar[r]&0\\
+&A_0\ar[d,swap,"\alpha"]\ar[r]&B_0\ar[d]\ar[r]&C_0\ar[d,"\gamma"]\ar[r]&0\\
+0\ar[r]&A_1\ar[d]\ar[r]&B_1\ar[d]\ar[r]&C_1\ar[d,equal]&\\
+0\ar[r]&\coker\alpha\ar[r]&(\coker\alpha)\amalg_{A_1}B_1\ar[r,"\tau"]&C_1&
+\end{tikzcd}\]
+has exact rows (not columns!). We get a morphism
+\[\epsilon:B_0\times_{C_0}(\ker\gamma)\to(\coker\alpha)\amalg_{A_1}B_1\]
+Note that 
+\[\epsilon\circ\sigma=0,\quad \tau\circ\epsilon=0\]
+by the commutativity of the diagram: indeed, the compositions
+\[A_0\to\coker\alpha,\quad \ker\gamma\to C_1\]
+are both zero. Since $\ker\gamma$ plays the role of cokernel in the top row, $\epsilon\circ\sigma=0$ implies that $\epsilon$ must factor through $\ker\gamma$, giving a morphism
+\[\epsilon':\ker\gamma\to (\coker\alpha)\amalg_{A_1}B_1\]
+Since $\coker\alpha$ plays the role of kernel in the bottom row and $\tau\circ\epsilon':\ker\gamma\to\tau$ is the zero-morphism (since $g'_0$ is epic), $\epsilon'$ must factor through $\coker\lambda$, finally yielding
+\[\delta:\ker\gamma\to\coker\alpha\]
+Writing elements out, the reader can verify that this morphism $\delta$ agrees with the
+connecting morphism $\delta$ defined in Lemma~\ref{snake lemma}.
+\begin{lemma}
+With $\delta$ as defined above, we have an exact sequence for the induced morphisms
+\[\begin{tikzcd}[row sep=tiny, column sep=tiny]
+0\ar[r]&\ker f_0\ar[r]&\ker\alpha\ar[r]&\ker\beta\ar[r]&\ker\gamma\ar[r,"\delta"]&\coker\alpha\ar[r]&\coker\beta\ar[r]&\coker\gamma\ar[r]&\coker g_1\ar[r]&0
+\end{tikzcd}\]
+\end{lemma}
+\begin{proof}
+First, we establish the induced morphisms at two ends. Consider the commutative diagram:
+\[\begin{tikzcd}
+&\ker\alpha\ar[d]&\\
+\ker f_0\ar[ru,dashed]\ar[r]&A_0\ar[r,"f_0"]\ar[d,"\alpha"]&B_0\ar[d,"\beta"]\\
+0\ar[r]&A_1\ar[r,"f_1"]&B_1
+\end{tikzcd}\]
+The composition $\ker f_0\to A_0\to B_0\to B_1$ is zero, therefore so is the composition $\ker f_0\to A_0\stackrel{f_0}{\to}A_1\to B_1$. Since $A_1\to B_1$ is monic, $\ker f_0\to A_0\stackrel{\alpha}{\to}A_1$ is zero also, and by the universal property of $\ker\alpha$, there is a unique morphism $i:\ker f_0\to\ker\alpha$. Similarly, we can obtain a morphism $j:\coker\gamma\to\coker g_1$.\par
+For the induced morphism between kernels and cokernels, they just come from the commutative diagram and universal property. For example, comsider the diagram
+\[\begin{tikzcd}
+\ker\alpha\ar[r,dashed]\ar[d]&\ker\beta\ar[d]\\
+A_0\ar[d,"\alpha"]\ar[r]&B_0\ar[d,"\beta"]\\
+A_1\ar[r]&B_1
+\end{tikzcd}\]
+The composition $\ker\alpha\to B_1$ is zero again, and use the universal property of $\ker\beta$, we get $f^*_0:\ker\alpha\to\ker\beta$.\par
+Now we may write our sequence as
+\[\begin{tikzcd}[row sep=tiny, column sep=tiny]
+0\ar[r]&\ker f_0\ar[r,"i"]&\ker\alpha\ar[r,"f^*_0"]&\ker\beta\ar[r,"g_0^*"]&\ker\gamma\ar[r,"\delta"]&\coker\alpha\ar[r,"f_1^*"]&\coker\beta\ar[r,"g^*_1"]&\coker\gamma\ar[r,"j"]&\coker g_1\ar[r]&0
+\end{tikzcd}\]
+The exactness needs some work. 
+\begin{itemize}
+\item The exactness of $i$ is easy: since  $\ker\alpha\circ i=\ker f_0$, and both $\ker\alpha,\ker f_0$ are monomorphisms, hence so is $i$. Similarly, $j$ is epic.
+\item To show the exactness at $\ker\alpha$, it suffices to prove $\ker f_0$ is the kernel of $f_0^*$. So let $\varphi:Z\to\ker\alpha$ be a morphism such that $f_0^*\circ\varphi=0$:
+\[\begin{tikzcd}
+&Z\ar[d,"\varphi"]\ar[ddl,dashed]&\\
+&\ker\alpha\ar[r,"f_0^*"]\ar[d]&\ker\beta\ar[d]\\
+\ker f_0\ar[r]&A_0\ar[r,"f_0"]&B_0
+\end{tikzcd}\]
+The composition $Z\to B_0$ is therefore zero, hence by the universal property of $\ker f_0$, $\varphi$ factors through $\ker f_0$. This means $\ker f_0$ is exactly the kernel of $f_0^*$. So the exactness follows. The exactness at $\coker\gamma$ can be obtained by the same strategy.
+\item To prove the exactness at $\ker\beta$, assume $\varphi:Z\to\ker\beta$ such that $g_0^*\circ\varphi=0$. The composition $Z\to\ker\beta\to B_0\to C_0$ is zero, by the commutative rectangle. Since the first row is exact, by Lemma~\ref{exact iff}, there is an epimorphism $h:Z'\twoheadrightarrow Z$ and a commutative diagram:
+\[\begin{tikzcd}
+Z'\ar[d]\ar[r,twoheadrightarrow,"h"]&Z\ar[d]\\
+A_0\ar[r]&B_0
+\end{tikzcd}\]
+By considering the following diagram:
+\[\begin{tikzcd}
+&Z'\ar[d,dashed]\ar[dd,bend right=50]\ar[r,twoheadrightarrow]&Z\ar[d,"\varphi"]&\\
+&\ker\alpha\ar[d]\ar[r,"f_0^*"]&\ker\beta\ar[d]\ar[r,"g_0^*"]&\ker\gamma\\
+&A_0\ar[d,"\alpha"]\ar[r,"f_0"]&B_0\ar[d,"\beta"]\\
+0\ar[r]&A_1\ar[r,"f_1"]&B_1
+\end{tikzcd}\]
+We find the composition $Z'\to A_0\stackrel{\alpha}{\to}A_1\to B_1$ is zero, and therefore, the composition $Z'\to A_0\stackrel{\alpha}{\to}A_1$ is also zero. From the univeral property of $\ker\alpha$, we get the unique morphism $\mu:Z\to\im f_0$. The composition $g_0^*\circ f_0^*=0$ is easy to verify, so the claim follows again from Lemma~\ref{exact iff}.
+\item The exactness at $\ker\gamma$: Let $\psi:S\to\ker\gamma$ be a morphism such that $\delta\circ\psi=0$. Since $B_0\times_{C_0}(\ker\gamma)$ is an epimorphism, we can find an epimorphism $S'\to S$ and a commutative diagram (agian Lemma~\ref{exact iff})
+\[\begin{tikzcd}
+&&S'\ar[r]\ar[d]&S\ar[d]&\\
+&&B_0\times_{C_0}(\ker\gamma)\ar[d]\ar[r,"g_0"]&\ker\gamma\ar[d]\ar[r]&0\\
+&A_0\ar[d,"\alpha"]\ar[r,"f_0"]&B_0\ar[d,"\beta"]\ar[r,"g_0"]&C_0\ar[d,"\gamma"]\ar[r]&0\\
+0\ar[r]&A_1\ar[r,"f_1"]&B_1\ar[r,"g_1"]&C_1\\
+0\ar[r]&\coker\alpha\ar[r]&(\coker\alpha)\amalg_{A_1}B_1
+\end{tikzcd}\]
+The composition $B_0\times_{C_0}(\ker\gamma)\to B_0\to B_1\to C_1$ is zero, and the second row is exact, so $B_0\times_{C_0}(\ker\gamma)\to B_0\to B_1$ facctors through $\ker g_1$, that is, $A_1$. So we get the morphism $B_0\times_{C_0}(\ker\gamma)\to A_1$. Since the composition $S'\to B_0\times_{C_0}(\ker\gamma)\to A_1\to\coker\alpha=0$, and the sequence $A_0\to A_1\to\coker\alpha$ is exact, by Lemma~\ref{exact iff} there is an epimorphism $S''\twoheadrightarrow S'$ such that the following diagram commutes:
+\[\begin{tikzcd}
+&S''\ar[dd,dashed,"k"]\ar[rdd,dashed,swap,"\lambda"]\ar[r,twoheadrightarrow]&S'\ar[r,twoheadrightarrow]\ar[d]&S\ar[d]&\\
+&&B_0\times_{C_0}(\ker\gamma)\ar[ldd,dashed]\ar[d]\ar[r,"g'_0"]&\ker\gamma\ar[d]\ar[r]&0\\
+&A_0\ar[d,"\alpha"]\ar[r,"f_0"]&B_0\ar[d,"\beta"]\ar[r,"g_0"]&C_0\ar[d,"\gamma"]\ar[r]&0\\
+0\ar[r]&A_1\ar[d]\ar[r,"f_1"]&B_1\ar[d]\ar[r,"g_1"]&C_1\\
+0\ar[r]&\coker\alpha\ar[r]&(\coker\alpha)\amalg_{A_1}B_1
+\end{tikzcd}\]
+Now define $\lambda$ to be the composition $S''\to S'\to B_0$. We see
+\[\beta\circ f_0\circ k=\beta\circ\lambda\]
+so $f_0\circ k-\lambda$ factors through $\ker\beta$. Concluding we get the diagram
+\[\begin{tikzcd}
+S''\ar[d]\ar[dd,bend right=50,swap,"f_0\circ k-\lambda"]\ar[r,twoheadrightarrow]&S\ar[d]\\
+\ker\beta\ar[d]\ar[r]&\ker\gamma\ar[d]\\
+B_0\ar[r]\ar[r,"g_0"]&C_0
+\end{tikzcd}\]
+To apply Lemma~\ref{exact iff}, we still need to show $\delta\circ g_0^*=0$. Since we have $\ker\beta\to B_0$ and $\ker\beta\to\ker\gamma$, by the universal property of pull back, we get a unique morphsim $\ker\beta\to B_0\times_{C_0}(\ker\gamma)$. Compostion with $g_0'$ gives a morphsim $\ker\beta\to\ker\gamma$, which should be $g_0^*$ since the latter is unique. Now consider the diagram
+\[\begin{tikzcd}
+&\ker\beta\ar[rr,bend left,"g_0^*"]\ar[r,dashed]&B_0\times_{C_0}(\ker\gamma)\ar[ldd,dashed]\ar[d]\ar[r,"g'_0"]&\ker\gamma\ar[d]\ar[r]&0\\
+&A_0\ar[d,"\alpha"]\ar[r,"f_0"]&B_0\ar[d,"\beta"]\ar[r,"g_0"]&C_0\ar[d,"\gamma"]\ar[r]&0\\
+0\ar[r]&A_1\ar[d]\ar[r,"f_1"]&B_1\ar[d]\ar[r,"g_1"]&C_1\\
+0\ar[r]&\coker\alpha\ar[r]&(\coker\alpha)\amalg_{A_1}B_1
+\end{tikzcd}\]
+$\ker\beta\stackrel{\ker\beta}{\to}B_0\stackrel{\beta}{\to}B_1\to(\coker\alpha)\amalg_{A_1}B_1$ is zero clearly, therefore so is the composition $\ker\beta\to B_0\times_{C_0}(\ker\gamma)\to A_1\to\coker\alpha\to(\coker\alpha)\amalg_{A_1}B_1$. Since $f_1$ is monic, by the dual of Lemma~\ref{pull bak lem} $\coker\alpha\to(\coker\alpha)\amalg_{A_1}B_1$ is also monic. Then the morphism $\ker\beta\to B_0\times_{C_0}(\ker\gamma)\to A_1\to\coker\alpha$ vanishes, which means $\delta\circ g_0^*$ is zero, as needed.
+\item The exactness for the right half of the sequence follows by reversing the arrows. (this is the dual argument)
+\end{itemize}
+\end{proof}
+
+\subsection{Working with elements in a small abelian category}
+The category $\mathsf{Set}^*$ has a zero-object $0$ (the singleton $\{0\}$); hence we can talk of zero-morphisms in $\mathsf{Set}^*$. Further, the category $\mathsf{Set}^*$ has enough structure to make sense of the notion of an exact sequence of pointed sets: we can stipulate that
+\[\begin{tikzcd}
+\cdots\ar[r]&S\ar[r,"f"]&T\ar[r,"g"]&U\ar[r]&\cdots
+\end{tikzcd}\]
+is \textit{exact} at $T$ if the (set-theoretic!) image of $f$ equals the kernel of $g$ (that is, the preimage $g^{-1}(0)$). This notion should be taken with a grain of salt: while it is the case that $S\to T\to 0$ is exact at $T$ if and only if $S\to T$ is surjective, it is not true that $0\to T\to U$ is exact at $T$ in $\mathsf{Set}^*$ if and only if $T\to U$ is injective (the only requirement posed by the exactness of $0\to T\to U$ is that the only element of $T$ mapping to the distinguished element in $U$ is the distinguished element of $T$; this is weaker than injectivity). The category $\mathsf{Set}^*$ is, after all, not additive.\\
+\vspace{5mm}
+Now we want to assoicate each abelian category $\mathcal{A}$ with a set category. We will (often silently) assume that our category $\mathcal{A}$ is small, to steer clear of any possible set-theoretic subtlety. It is convenient to consider a companion category $\mathcal{A}_{\twoheadleftarrow}$, with the same objects as $\mathcal{A}$ but in which
+\[\Hom_{\mathcal{A}_{\twoheadleftarrow}}(Z,W):=\{\text{epimorphisms }W\twoheadrightarrow Z\text{ in }\mathcal{A}\}\]
+This is legal, because the composition of two epimorphisms in $\mathcal{A}$ is an epimorphism; but note that $\mathcal{A}_{\twoheadleftarrow}$ is no longer additive (the sum of two epimorphisms need not be an epimorphism, so we lose the algebraic structure on $\Hom$). Also note the reversing of arrows; this is in order that the functor that we are about to define be covariant.\par
+We will use $\mathcal{A}_{\twoheadleftarrow}$ as index category for a limit. For a fixed object $A$ of $\mathcal{A}$, we define a covariant functor
+\[\mathscr{H}_A:\mathcal{A}_{\twoheadleftarrow}\to\mathsf{Set}^*\]
+by restricting the functor of points $h_A$ to $\mathcal{A}_{\twoheadleftarrow}$ and preserving the information of the zero-morphism. That is, we set
+\[\mathscr{H}_A(Z)=\Hom_{\mathcal{A}}(Z,A)\]
+for all objects $Z$ of $\mathcal{A}_{\twoheadleftarrow}$ (that is, of $\mathcal{A}$), viewing $\Hom_{\mathcal{A}}(Z,A)$ as a pointed set by distinguishing the zero-morphism, and define $\mathscr{H}_A$ on morphisms by composition: for a morphism $Z\to W$ in $\mathcal{A}_{\twoheadleftarrow}$ (that is, an epimorphism $\alpha:W\twoheadrightarrow Z$);
+\[\begin{tikzcd}
+W\ar[rd,swap,"w"]\ar[rr,twoheadrightarrow,"\alpha"]&&Z\ar[ld,"z"]\\
+&A&
+\end{tikzcd}\]
+define
+\[\mathscr{H}_A(Z)\to\mathscr{H}_A(W)\]
+by sending $z$ to $w=z\circ\alpha$. Of course the zero-morphism is mapped to the zeromorphism, so this is indeed a morphism in $\mathsf{Set}^*$.
+\begin{definition}
+Let $A$ be an object of a small abelian category $\mathcal{A}$. The pointed set $\hat{A}$ of elements of $A$ is the colimit of $\mathscr{H}_A$:
+\[\hat{A}:=\rlim\mathscr{H}_A\]
+\end{definition}
+So an element of $A$ consists of the choice of a morphism $z:Z\to A$ in $\mathcal{A}$, stipulating that two morphisms $z_1:Z_1\to A$, $z_2:Z_2\to A$ determine the same element if
+there are epimorphisms $w_1:W\twoheadrightarrow Z_1$, $w_2:W\twoheadrightarrow Z_2$ such that the diagram
+\[\begin{tikzcd}
+&Z_1\ar[rd,"z_1"]&\\
+W\ar[ru,twoheadrightarrow,"w_1"]\ar[rd,twoheadrightarrow,"w_2"]&&A\\
+&Z_2\ar[ru,"z_2"]
+\end{tikzcd}\]
+commutes. And this equivalent to define $z_1\simeq z_2\iff\exists w:Z_1\twoheadrightarrow Z_2$. \par
+Now we want to make the assignment $A\to\hat{A}$ into a covariant functor $A\to\mathsf{Set}^*$, and there is only one reasonable way to do so: for $\varphi:A\to B$ and $z:Z\to A$, define $\hat{\varphi}(z)$ by composing morphisms, i.e.,
+\[\begin{tikzcd}
+A\ar[rr,"\varphi"]&&B\\
+&Z\ar[lu,"z"]\ar[ru,swap,"\hat{\varphi}(z):=\varphi\circ z"]&
+\end{tikzcd}\]
+This prescription is (manifestly) compatible with the equivalence relation, so it defines a set-function $\hat{\varphi}:\hat{A}\to\hat{B}$. The image of the zero-morphism is zero, so $\hat{\varphi}$ is a morphism in $\mathsf{Set}^*$, as needed. The covariance property of this assignment is evident.\par
+In the following subsection, the symbol $\sim$ will stand for the equivalence relation defined above; thus, two morphisms $z_1:Z_1\to A$, $z_1:Z_2\to A$ determine the same element of $\hat{A}$ if and only if $z_1\sim z_2$.\par
+One useful preliminary observation is that the only morphism representing the
+distinguished element is the zero-morphism and that we can detect whether a morphism is $0$ by working in $\mathsf{Set}^*$:
+\begin{lemma}\label{zero iff}
+$z\sim 0\iff z=0$. Further, a morphism $\varphi:A\to B$ in $\mathcal{A}$ is $0$ if and
+only if $\hat{\varphi}(z)=0$ for all $z\in\hat{A}$.
+\end{lemma}
+\begin{proof}
+According to the definition given above, $z:Z\to A$ is equivalent to $0$ if and only if there is an epimorphism $W\twoheadrightarrow Z$ making the following diagram commute:
+\[\begin{tikzcd}
+&Z\ar[rd,"z"]&\\
+W\ar[ru,twoheadrightarrow]\ar[rd,twoheadrightarrow]&&A\\
+&0\ar[ru]
+\end{tikzcd}\]
+Since $W\twoheadrightarrow Z$ is an epimorphism, this diagram commutes if and only if $z=0$, as claimed.\par
+For the second statement, consider the situation
+\[\begin{tikzcd}
+A\ar[r,"\varphi"]&B\\
+Z\ar[u,"z"]\ar[ru,swap,"\hat{\varphi}(z)"]
+\end{tikzcd}\]
+If $\hat{\varphi}=0$, then so is $\hat{\varphi}(z)=\varphi\circ z$. Conversely, if $\hat{\varphi}(z)=0$ for all $z$, then taking $z:Z=A\to A$ to be the identity, we get $\hat{\varphi}(z)=\varphi=0$.
+\end{proof}
+This tells us in particular that we can verify the commutativity of a diagram in $\mathcal{A}$ by working in $\mathsf{Set}^*$: because we can check whether two morphisms $\varphi,\psi\in\Hom_{\mathcal{A}}(A,B)$ are equal by verifying that their difference $\varphi-\psi$ equals $0$, which we can do at the level of pointed sets (hence, by chasing elements!) by Lemma~\ref{zero iff}.
+\begin{lemma}\label{mono inje}
+Let $\varphi:A\to B$ be a morphism in $\mathcal{A}$. Then
+\begin{itemize}
+\item $\varphi$ is a monomorphism if and only if $\hat{\varphi}$ is injective.
+\item $\varphi$ is an epimorphism if and only if $\hat{\varphi}$ is surjective.
+\end{itemize}
+\end{lemma}
+\begin{proof}
+Assume $\varphi$ is an epimorphism, and let $z:Z\to B$ represent an arbitrary element
+of $\hat{B}$. Consider the fiber product:
+\[\begin{tikzcd}
+A\ar[r,twoheadrightarrow,"\varphi"]&B\\
+A\times_{B}Z\ar[u,"z'"]\ar[r,"\varphi'"]&Z\ar[u,swap,"z"]
+\end{tikzcd}\]
+By Lemma~\ref{pull bak lem}, $\varphi'$ is an epimorphism. It follows that $\varphi\circ z'\sim z$, that is, $\hat{\varphi}(z')=z$. This shows that $\hat{\varphi}$ is surjective.\par
+Conversely, assume $\hat{\varphi}:\hat{A}\to\hat{B}$ is surjective. In particular, there is an element of $\hat{A}$ mapping to $id_B$. This element is represented by a morphism $z:Z\to A$, and the condition $\hat{\varphi}(z)=id_B$ means that there are epimorphisms $w_1,w_2$, as in the commutative diagram:
+\[\begin{tikzcd}
+A\ar[rr,"\varphi"]&&B\\
+Z\ar[u,swap,"z"]&W\ar[l,"w_1"]\ar[r,"w_2"]&B\ar[u,equal,swap,"id_B"]
+\end{tikzcd}\]
+\end{proof}
+Next, let’s verify that the notions of kernel and image in an abelian category $\mathcal{A}$ match precisely their simple-minded counterparts in $\mathsf{Set}^*$.
+\begin{lemma}
+With notation as above, let $\varphi:A\to B$ be a morphism in a small abelian category $\mathcal{A}$, and let $\hat{\varphi}:\hat{A}\to\hat{B}$ be the corresponding function of pointed sets. Let $\ker\varphi:K\to A$, resp., $\im\varphi:I\to B$, be the kernel and the image of $\varphi$, respectively. Then
+\begin{itemize}
+\item $\widehat{\ker\varphi}$ identifies $\hat{K}$ with the subset $\hat{\varphi}^{-1}(0)$ of $\hat{A}$.
+\item $\widehat{\im\varphi}$ identifies $\hat{I}$ with the image of $\hat{\varphi}$ in $\hat{B}$.
+\end{itemize}
+\end{lemma}
+\begin{proof}
+For the image, recall that we have a decomposition of $\varphi$,
+\[\varphi:A\twoheadrightarrow I\stackrel{\im\varphi}{\rightarrowtail}B\]
+and that $\im\varphi:I\to B$ is a kernel of $\coker\varphi$ (this is the definition of image; the fact that $A\to I$ is an epimorphism is part of the content of Theorem~\ref{image}).\par
+To simplify the notation, let $j=\im\varphi$. Then (by Lemma~\ref{mono inje}) $\hat{j}$ is an injective function $\hat{I}\to\hat{B}$, mapping a representative $z:Z\to I$ to $j\circ z:Z\to B$; we have to verify that $\hat{j}(\hat{I})=\im\hat{\varphi}$. To verify that $\hat{j}(z)$ is in the image of $\hat{\varphi}$, consider the fiber product
+\[\begin{tikzcd}
+A\ar[r,twoheadrightarrow]\ar[rr,bend left,"\varphi"]&I\ar[r,rightarrowtail,"j"]&B\\
+A\times_{I}Z\ar[r,twoheadrightarrow]\ar[u,"z'"]&Z\ar[u,"z"]\ar[ru,swap,"\hat{j}(z)"]
+\end{tikzcd}\]
+The bottom map is an epimorphism by virtue of Lemma~\ref{pull bak lem}, since the top map
+in the fiber square is an epimorphism. This shows that $\varphi\circ z'\sim\hat{j}(z)$; that is, $\hat{j}(z)=\hat{\varphi}(z')$ is in the image of $\hat{\varphi}$, as claimed. This verifies that the image of $\hat{j}$ is contained in the image of $\hat{\varphi}$:
+\[\hat{I}\to\im\hat{\varphi}\sub\hat{B}\]
+To show that every element in the image of $\hat{\varphi}$ is obtained in this fashion, let
+$z:Z\to B$ be in the image of $\hat{\varphi}$. That is, there is a $z':Z'\to A$ and epimorphisms $w_1, w_2$ making the following diagram commute:
+\[\begin{tikzcd}
+A\ar[rr,"\varphi"]&&B\ar[r,"\coker\varphi"]&\coker\varphi\\
+Z'\ar[u,"z'"]&W\ar[l,"w_1",twoheadrightarrow]\ar[r,"w_2",twoheadrightarrow]&Z\ar[u,"z"]
+\end{tikzcd}\]
+Note that $(\coker\varphi)\circ z\circ w_2=(\coker\varphi\circ\varphi)\circ z'\circ w_1=0$; since $w_2$ is an epimorphism,
+it follows that $\coker\varphi\circ z=0$. By the universal property of kernels, this says that $z$ factors uniquely through $\ker\coker\varphi=\im\varphi=j$:
+\[\begin{tikzcd}
+A\ar[r,twoheadrightarrow]&I\ar[r,rightarrowtail,"j"]&B\\
+&&Z\ar[u,"z"]\ar[lu,"\exists!"]
+\end{tikzcd}\]
+This gives an element of $\hat{I}$ mapping to $z$, as needed.
+\end{proof}
+\begin{proposition}\label{exact in set iff}
+Let $\mathcal{A}$ be a small abelian category. Then a sequence
+\[\begin{tikzcd}
+A\ar[r,"\varphi"]&B\ar[r,"\psi"]&C
+\end{tikzcd}\]
+in $\mathcal{A}$ is exact if and only if the corresponding sequence
+\[\begin{tikzcd}
+\hat{A}\ar[r,"\hat{\varphi}"]&\hat{B}\ar[r,"\hat{\psi}"]&\hat{C}
+\end{tikzcd}\]
+is exact in $\mathsf{Set}^*$.
+\end{proposition}
+\begin{remark}
+Proposition~\ref{exact in set iff} does not contradict our previous observation, because not all function in $\mathsf{set}^*$ is a image of a morphism in $\mathcal{A}$. Althrough the exactness of $0\to A\stackrel{\varphi}{\to}B$ in $\mathsf{Set}^*$ is not equivalent to injection of $\varphi$ in general, but if $\varphi=\hat{\psi}$ for some $\psi\in\mathcal{A}$, then this is ture.
+\subsection{What is missing?}
+Pretty as it is, the construction presented in the previous subsection has several shortcomings:
+\begin{itemize}
+\item The structure of pointed set is less rigid than, say, that of an abelian group; since $\mathsf{Ab}$ is itself an abelian category, it would be more natural to land in $\mathsf{Ab}$ than $\mathsf{Set}^*$, if possible.
+\item While we can check that a diagram commutes in $\mathcal{A}$ by performing some computation in $\mathsf{Set}^*$, we have stopped short of claiming that the functor $A\to\hat{A}$ is faithful, that is, that it induces injective functions $\Hom_{\mathcal{A}}(A,B)\to\Hom_{\mathsf{Set}^*}(\hat{A},\hat{B})$ for all $A$, $B$. In fact, \textbf{the functor is not faithful}.
+\item The functor $A\to\mathsf{Set}^*$ is not full; that is, it is not surjective on $\Hom$-sets. In other words, there will be many functions of pointed sets that are not induced by morphisms in $\mathcal{A}$. Thus, we cannot use elements to construct morphisms in $\mathcal{A}$: the arrow-theoretic work performed in $\S 2.2$ in order to construct the connecting morphism remains necessary (even if the properties of this morphism can then be verified by using elements).
+\end{itemize}
+\end{remark}
+It is in fact possible to construct fully faithful, exact functors from any given (small) abelian category to a category of modules.
+\begin{theorem}[\textbf{Freyd-Mitchell theorem}]
+Let $\mathcal{A}$ be a small abelian category. Then there is a fully faithful, exact functor $\mathcal{A}\to R$-$\mathsf{Mod}$ for a suitable ring $R$.
+\end{theorem}
+Caveat: In this statement $R$ is not necessarily commutative; $R$-$\mathsf{Mod}$ denotes
+the category of left-$R$-modules.\par
+This is impressive: it says that doing homological algebra in the category of left-modules over a ring is essentially as general as doing it in an arbitrary (small) abelian category, at least for what concerns constructions that do not require the category to have special objects.
+\section{Exercise}
+\begin{exercise}
+Prove the \textbf{four-lemma} in every abelian category. In fact, show that it is only necessary to prove one of the two forms of the lemma, for the other then follows automatically.
+\end{exercise}
+\begin{proof}
+if
+\[\begin{tikzcd}
+A_1\ar[r]\ar[d,"\alpha"]&B_1\ar[d,"\beta"]\ar[r]&C_1\ar[d,"\gamma"]\ar[r]&D_1\ar[d,"\delta"]\\
+A_0\ar[r]&B_0\ar[r]&C_0\ar[r]&D_0
+\end{tikzcd}\]
+is a commutative diagram of an abealian category $\mathcal{A}$ with exact rows, $\alpha$ is an epimorphism, and $\beta$, $\delta$ are monomorphisms, then we need to show $\gamma$ is an monomorphism.\par
+So assume $\varphi:Z\to C_1$ is a morphism such that $\gamma\circ\varphi=0$. Then $Z\to C_1\to D_1=0$ since $\delta$ is monic. Recall that the row is exact, by Lemma~\ref{exact iff}, there is $X\twoheadrightarrow Z$ such that the relating diagram commutes. Then $X\to B_1\to B_0\to C_0$ vanished due to $\gamma\circ\varphi=0$, again from the exactness of the second row and the lemma, there is $X'\twoheadrightarrow X$ such that the diagram commutes. 
+\[\begin{tikzcd}
+X'\ar[dd,bend right]\ar[r,twoheadrightarrow]&X\ar[d]\ar[r,twoheadrightarrow]&Z\ar[d,"\varphi"]\\
+A_1\ar[r]\ar[d,"\alpha"]&B_1\ar[d,"\beta"]\ar[r]&C_1\ar[d,"\gamma"]\ar[r]&D_1\ar[d,"\delta"]\\
+A_0\ar[r]&B_0\ar[r]&C_0\ar[r]&D_0
+\end{tikzcd}\]
+The condition $\alpha$ is epic implies $A_1\to A_0\to 0$ is exact. Since $X'\to A_0\to 0$ is also zero, there is a morphism $X''\twoheadrightarrow X'$, with $X''\to A_1$. Now the key point is that our diagram may \textbf{not be commutative}, we should check it:
+\[\begin{tikzcd}
+&X'\ar[dd,bend right=35]\ar[r,twoheadrightarrow,"f"]&X\ar[d,"\varphi'"]\ar[r,twoheadrightarrow]&Z\ar[d,"\varphi"]\\
+X''\ar[r,"\mu"]\ar[ru,twoheadrightarrow,"\nu"]&A_1\ar[r,"f_1"]\ar[d,"\alpha"]&B_1\ar[d,"\beta"]\ar[r]&C_1\ar[d,"\gamma"]\ar[r]&D_1\ar[d,"\delta"]\\
+&A_0\ar[r,"f_0"]&B_0\ar[r]&C_0\ar[r]&D_0
+\end{tikzcd}\]
+Let us denote the morphism $X'\to A_0$ by $\epsilon$, since it is not convenient to draw it on the diagram. In fact the only problem occurs at whether $f_1\circ\mu$ equals with $\varphi'\circ f\circ \nu$. Note that if we compose them with $\beta$ respectively, we do get the equality:
+\[\beta\circ\varphi'\circ f\circ\mu=f_0\circ\epsilon\circ mu=f_0\circ\alpha\circ\mu=\beta\circ f_1\circ\mu\]
+where we use the commutative of the original diagram, and our new morphisms about $X''$. Here the monicness of $\beta$ gives us $f_1\circ\mu=\varphi'\circ f\circ \nu$. So our diagram is indeed commutative.
+Now consider the composition $X'\to\twoheadrightarrow X'\twoheadrightarrow X\twoheadrightarrow Z\to C_1$: The first row gives us $A_1\to B_1\to C_1=0$, so it's also zero. With $X''\to X'\to X'\to Z$ epic, our conclusion $\varphi=0$ follows.\par
+The dual argument is also proved.
+\end{proof}
+\begin{remark}
+The step where we check the commutativity of the diagram, is indespensible. Without it we can not establish $\varphi=0$. In fact, there is a conterexample:
+\[\begin{tikzcd}
+\Z\ar[dd,bend right]\ar[r,twoheadrightarrow]&\Z\ar[d]\ar[r,twoheadrightarrow]&Z\ar[d,"\varphi"]\\
+0\ar[r]\ar[d,"0"]&\Z\ar[d,"0"]\ar[r]&\Z\ar[d,"0"]\ar[r]&0\ar[d,"0"]\\
+0\ar[r]&\Z\ar[r]&\Z\ar[r]&0
+\end{tikzcd}\]
+\end{remark}
+\begin{exercise}
+Prove the short five-lemma in any abelian category: consider a commutative diagram
+\[\begin{tikzcd}
+0\ar[r]&M_1\ar[d,"\alpha"]\ar[r]&N_1\ar[d,"\beta"]\ar[r]&L_1\ar[d,"\gamma"]\ar[r]&0\\
+0\ar[r]&M_0\ar[r]&N_0\ar[r]&L_0\ar[r]&0\\
+\end{tikzcd}\]
+with exact rows in any abelian category, and assume that $\alpha$ and $\gamma$ are isomorphisms; prove that $\beta$ is an isomorphism, by an explicit arrow-theoretic chase of the diagram.
+\end{exercise}
+\begin{proof}
+Well, the claim follows immediately form snake lemma, or five lemma. But we provide a direct arrow-theoritic argument here.\par
+Assume $\varphi:Z\to N_1$ satisfies $\beta\circ\varphi=0$. Similarly, we get $X\twoheadrightarrow Z$. Note that $X\to M_1\to M_0\to N_0$ is zero, and $M_1\to M_0$, $M_0\to N_0$ are both monic, so $X\to M_0$ is zero. This gives $\varphi=0$, since $X\to Z$ is epic. By the dual argument, we can show $\beta$ is epic.
+\end{proof}

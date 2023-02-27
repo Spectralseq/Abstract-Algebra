@@ -1,0 +1,1384 @@
+\chapter{Algebraic number theory}
+\section{Algebraic numbers}
+\subsection{Algebraic Numbers}
+\begin{definition}
+A complex number $\alpha$ is algebraic if it is algebraic over $\Q$.
+\end{definition}
+\begin{theorem}
+The set $\mathbb{A}$ of algebraic numbers is a subfield of the complex field $\C$.
+\end{theorem}
+The whole field $\mathbb{A}$ is not as interesting, for us, as certain of its subfields. We define a \textbf{number field} to be a subfield $K$ of $\C$ such that $[K:\Q]$ is finite. This implies that every element of $K$ is algebraic, so $K\sub\mathbb{A}$. The trouble with $\mathbb{A}$ is that $[\mathbb{A}:\Q]$ is not finite. If $K$ is a number field then $K=\Q(\alpha_1,\dots,\alpha_n)$ for finitely many algebraic numbers $\alpha_1,\dots,\alpha_n$ (for instance, a basis for $K$ as vector space over $\Q$). We can strengthen this observation
+considerably:
+\begin{theorem}\label{number field simple}
+If $K$ is a number field then $K=\Q(\theta)$ for some algebraic number $\theta$.
+\end{theorem}
+\begin{proof}
+Arguing by induction, it is sufficient to prove that the extension $K\sub K(\alpha,\beta)$ is simple. Let $p$ and $q$ respectively be the minimum polynomials of $\alpha,\beta$ over $K$, and suppose that over $\C$ these factorize as
+\[p(t)=\prod_{i=1}^{n}(t-\alpha_i),\quad q(t)=\prod_{k=1}^{m}(t-\beta_k).\]
+where we choose the numbering so that $\alpha_1=\alpha,\beta_1=\beta$. Since $\alpha_i$ and $\beta_k$ are distinct, for each $i$ and each $k\neq1$ there is
+at most one element $x\in K$ such that
+\[\alpha_i+x\beta_k=\alpha+x\beta.\]
+Since there are only finitely many such equations, we may choose $c\neq0$ in
+$K$ such that
+\[\alpha_i+c\beta_k\neq\alpha+c\beta\]
+for all $i$ and $k\neq 1$. Define $\theta=\alpha+c\beta$, then we claim that $K(\alpha,\beta)=K(\theta)$. Obviously $K(\theta)\sub K(\alpha,\beta)$, and it suffices to prove that $\beta\in K(\theta)$ since $\alpha=\theta-c\beta$.\par
+Observe that $p(\theta-c\beta)=p(\alpha)=0$, define the polynomial
+\[r(t)=p(\theta-ct)\in K(\theta)[t].\]
+Now $\beta$ is a zero of both $q(t)$ and $r(t)$ as polynomials over $K(\theta)$. These polynomials have only one common zero, for if $q(\xi)=r(\xi)=0$ then $\xi$ is one of $\beta_1,\dots,\beta_m$ and also $\theta-c\xi$ is one of $\alpha_1,\dots,\alpha_n$. Our choice of $c$ forces $\xi=\beta$. Let $h(t)$ be the minimum polynomial of $\beta$ over $K(\theta)$. Then $h(t)\mid q(t)$ and $h(t)\mid r(t)$. Since $q$ and $r$ have just one common zero in $\C$ we have $\deg h=1$, so
+\[h(t)=t+\mu,\quad \mu\in K(\theta).\]
+Then since $h(\beta)=0$, we find $\beta=-\mu\in k(\theta)$.
+\end{proof}
+\begin{example}
+Consider the extension $\Q\sub\Q(\sqrt{2},\sqrt[3]{5})$. We have
+\[\alpha_1=\sqrt{2},\alpha_2=-\sqrt{2},\quad \beta_1=\sqrt[3]{5},\beta_2=\omega\sqrt[3]{5},\beta_3=\omega^2\sqrt[3]{5}.\]
+where $\omega$ is a complex cube root of $1$. The number $c=1$ satisfies
+\[\alpha_i+c\beta_k\neq\alpha+c\beta\]
+for $i=1,2,k=2,3$; since the number on the left is not real in any of the
+four cases, whereas that on the right is. Hence $\Q(\sqrt{2},\sqrt[3]{5})=\Q(\sqrt{2}+\sqrt[3]{5})$.
+\end{example}
+\subsection{Conjugates and Discriminants}
+If $K=\Q(\theta)$ is a number field there are, in general, several distinct monomorphisms $\sigma:K\to\C$. For instance, if $K=\Q(i)$ where $i=\sqrt{-1}$ then the possibilities are
+\[\sigma_1(x+iy)=x+iy,\quad\sigma_2=(x+iy)=x-iy.\]
+for $x,y\in\Q$. The full set of such monomorphisms plays a fundamental role in the theory, so we begin with a description.
+\begin{theorem}
+Let $K=\Q(\theta)$ be a number field of degree $n$ over $\Q$. Then there are exactly $n$ distinct monomorphisms $\sigma_i:K\to\C$. The elements $\sigma_i(\theta)=\theta_i$ are the distinct zeros in $\C$ of the minimum polynomial of $\theta$ over $\Q$.
+\end{theorem}
+Keep this notation, and for each $\alpha\in\Q(\theta)$ define the \textbf{field polynomial} of $\alpha$ over $K$ to be
+\[f_\alpha(t)=\prod_{i=1}^{n}(t-\sigma_i(\alpha)).\]
+As it stands, this is in $K[t]$. In fact more is true:
+\begin{theorem}
+The coefficients of the field polynomial are rational numbers, so that $f_\alpha(t)\in\Q[t]$.
+\end{theorem}
+\begin{proof}
+Note that the polynomial $f_\alpha(t)$ is invariant under $\mathrm{Gal}_\Q(K)$, thus $f_\alpha(t)\in\Q[t]$.
+\end{proof}
+The elements $\sigma_i(\alpha)$ for $1\leq i\leq n$ are the \textbf{$\bm{K}$-conjugates} of $\alpha$. Although the $\theta_i$ are distinct, it is not always the case that the $K$-conjugates of $\alpha$ are distinct: for instance $\sigma_i(1)=1$ for all $i$. The precise situation is given by:
+\begin{proposition}\label{field polonomial}
+Let $p_\alpha$ be the minimum polynomial of $\alpha$ in $\Q$.
+\begin{itemize}
+\item[$(a)$] The field polynomial $f_\alpha$ is a power of $p_\alpha$.
+\item[$(b)$] The $K$-conjugates of $\alpha$ are the zeros of $p_\alpha$ in $\C$, each repeated $n/m$ times where $m=\deg p_\alpha$ is a divisor of $n$.
+\item[$(c)$] The element $\alpha\in\Q$ if and only if all of its $K$-conjugates are equal.
+\item[$(d)$] $\Q(\alpha)=\Q(\theta)$ if and only if all $K$-conjugates of $\alpha$ are distinct.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+The main point is $(a)$. Note that $\alpha$ is a zero of $f_\alpha$, so by the definition of minimal polynomial we have $f_\alpha=p_\alpha^sh$ where $p_\alpha$ and $h$ are coprime and both are monic. We claim that $h$ is constant. If not, by the definition of $f_\alpha$ some $\alpha_i=\sigma_i(\alpha)=r(\theta_i)$ is a zero of $h$, where $\alpha=r(\theta)$. Therefore if we define $g(t):=h(r(t))$ then $g(\theta_i)=0$. Let $p_\theta$ be the minimum polynomial of $\theta$ over $\Q$, hence also of each $\theta_i$. Then $p_\theta\mid g$, so that $g(\theta_j)=0$ for all $j$, and in particular $g(\theta)=0$. Therefore, $h(\alpha)=h(r(\theta))=g(\theta)=0$, so $p_\alpha$ divides $h$, a contradiction. Hence $h$ is constant and monic, so $h=1$ and $f_\alpha=p_\alpha^s$.\par
+Now $(b)$ is an immediate consequence of $(a)$ by the definition of the field
+polynomial.\par
+To prove $(c)$, it is clear that $\alpha\in\Q$ implies $\sigma_i(\alpha)\in\Q$. Conversely, if all $\sigma_i(\alpha)$ are equal then since the zeros of $p_\alpha$ are distinct and $f_\alpha=p_\alpha^s$, we have $\deg p_\alpha=1$ so $\alpha\in\Q$.\par
+Finally for $(d)$: if all $\sigma_i(\alpha)$ are distinct then $\deg p_\alpha=n$, so $[\Q(\alpha):\Q]=n=[\Q(\theta):\Q]$. Thus $\Q(\alpha)=\Q(\theta)$. Conversely if $\Q(\alpha)=\Q(\theta)$ then $\deg p_\alpha=n$ so the $\sigma_i(\alpha)$ are distinct.
+\end{proof}
+\begin{remark}
+The $K$-conjugates of $\alpha$ need not be elements of $K$. Even the $\theta_i$ need not be elements of $K$. For example, let $\theta$ be the real cube root of $2$. Then $\Q(\theta)$ is a subfield of $\R$. The $K$-conjugates of $\theta$, however, are $\theta,\omega\theta,\omega^2\theta$, where $\omega=(-1+\sqrt{3}i)/2$. The last two of these are nonreal, hence do not lie in $\Q(\theta)$.
+\end{remark}
+Still with $K=\Q(\theta)$ of degree $n$, let $\{\alpha_1,\dots,\alpha_n\}$ be a basis of $K$ (as vector space over $\Q$). Define the discriminant of this basis to be
+\[\Delta[\alpha_1,\dots,\alpha_n]=(\det[\sigma_i(\alpha_j)])^2.\]
+If we pick another basis $\{\beta_1,\dots,\beta_n\}$ then
+\[\beta_k=\sum_{i=1}^{n}c_{ik}\alpha_i.\]
+for $1\leq k\leq n$, and $\det(c_{ik})\neq 0$. The product formula for determinants, and the fact that the $\sigma_i$ are monomorphisms, hence the identity on $\Q$, shows that
+\[\Delta[\beta_1,\dots,\beta_n]=[\det(c_{ik})]^2\Delta[\alpha_1,\dots,\alpha_n].\]
+\begin{theorem}\label{discriminant rational}
+The discriminant of any basis for $K=\Q(\theta)$ is rational and non-zero. If all $K$-conjugates of $\theta$ are real then the discriminant of any basis is positive.
+\end{theorem}
+\begin{proof}
+Pick a basis that makes computations straightforward: the obvious one is $\{1,\theta,\dots,\theta^{n-1}\}$. If the conjugates of $\theta$ are $\theta_1,\dots,\theta_{n}$ then
+\[\Delta:=\Delta[1,\theta,\dots,\theta^{n-1}]=(\det\theta_i^j)^2=\prod_{1\leq i<j\leq n}(\theta_i-\theta_j)^2.\]
+The polynomial $\prod(t_i-t_j)^2$ is a symetric polynomial in $\Q[t_1,\dots,t_n]$, hence can be represented as sumes of elementary symmetric polynomials. After inserting $\theta_i$, each elementary symmetric polynomial takes its value in $\Q$ by Vieta's formula, therefore we see that $\Delta\in\Q$.\par
+Now let $\{\beta_1,\dots,\beta_n\}$ be any basis. Then
+\[\Delta[\beta_1,\dots,\beta_n]=(\det(c_{ik})^2)\Delta.\]
+for certain rational numbers $c_{ik}$, and $\det(c_{ik})\neq0$, so that $\Delta[\beta_1,\dots,\beta_n]\neq0$ and is rational. Clearly if all $\theta_i$ are real then $\Delta$ is a positive real number, hence so is $\Delta[\beta_1,\dots,\beta_n]$.
+\end{proof}
+With the above notation, $\Delta$ vanishes if and only if some $\theta_i$ is equal to another $\theta_j$. Hence the non-vanishing of $\Delta$ lets us discriminate among the $\theta_i$, which motivates calling $\Delta$ the discriminant.
+\subsection{Algebraic Integers}
+A complex number $\theta$ is an \textbf{algebraic integer} if there is a monic polynomial $p(t)$ with integer coefficients such that $p(\theta)=\theta$. In other words,
+\[\theta^{n}+a_{n-1}\theta^{n-1}+\cdots+a_0=0\]
+where $a_i\in\Z$ for all $i$. We write $\mathbb{B}$ for the set of algebraic integers.
+\begin{theorem}
+The algebraic integers form a subring of the field of algebraic numbers.
+\end{theorem}
+\begin{theorem}
+Let $\theta$ be a complex number satisfying a monic polynomial equation whose coefficients are algebraic integers. Then $\theta$ is an algebraic integer.
+\end{theorem}
+\begin{proof}
+By assumption $\theta$ is integral over the ring $\Z[\psi_1,\dots,\psi_n]$ where $\psi_i$ are algebraic integers. But $\Z[\psi_1,\dots,\psi_n]$ is finite by integrality, so $\theta$ is integral over $\Z$.
+\end{proof}
+\subsection{The Ring of Integers of a Number Field}
+For any number field $K$ write
+\[\mathfrak{O}=K\cap\mathbb{B}.\]
+and call $\mathfrak{O}$ the \textbf{ring of integers of $\bm{K}$}. In cases where it is not immediately clear which number field is involved, we write more explicitly $\mathfrak{O}_K$. Since $K$ and $B$ are subrings of $\C$ it follows that $\mathfrak{O}$ is a subring of $K$. Further $\Z\sub\Q\sub K$ and $\Z\sub\mathbb{B}$ so $\Z\sub\mathfrak{O}$.
+\begin{lemma}\label{alg number int multiple}
+If $\alpha\in K$ then $c\alpha\in\mathfrak{O}$ for some nonzero $c\in\Z$.
+\end{lemma}
+\begin{proof}
+Since $\alpha$ is algebraic over $\Q$, we have an equation
+\[\frac{r_n}{s_n}\alpha^n+\frac{r_{n-1}}{s_{n-1}}\alpha^{n-1}+\cdots+\frac{r_0}{s_0}=0,\quad r_i,s_i\in\Z.\]
+Then by multiplying a suitable integer we can get an equation with coefficient in $\Z$:
+\[a_n\alpha^n+a_{n-1}\alpha^{n-1}+\cdots+a_0=0,\quad a_i\in\Z.\]
+Now by multiplying $a_n^{n-1}$ on both sides we find
+\[(a_n\alpha)^n+a_{n-1}(a_n\alpha)^{n-1}+\cdots+a_{n}^{n-1}a_0=0.\]
+Thus $a_n\alpha$ is an algebraic integer.
+\end{proof}
+\begin{corollary}
+If $K$ is a number field then $K=\Q(\theta)$ for an algebraic integer $\theta$.
+\end{corollary}
+\begin{proof}
+By Theorem~\ref{number field simple}, $K=\Q(\phi)$ for an algebraic number $\phi$. By Lemma~\ref{alg number int multiple}, $\theta=c\phi$ is an algebraic integer for some $0\neq c\in\Z$. Clearly $Q(\phi)=\Q(\theta)$.
+\end{proof}
+\begin{remark}
+For $\theta\in\C$, write $\Z[\theta]$ for the set of elements $p(\theta)$ for polynomials $p\in\Z[t]$. If $K=\Q(\theta)$ where θ is an algebraic integer then certainly $\mathfrak{O}$ contains $\Z[\theta]$ since $\mathfrak{O}$ is a ring containing $\theta$. However, $\mathfrak{O}$ need not equal $\Z[\theta]$. For example, $\Q(\sqrt{5})$ is a number field and $\sqrt{5}$ an algebraic integer. But $(1+\sqrt{5})/2$ is a zero of $t^2-t-1$, hence an algebraic integer; and it lies in $\Q(\sqrt{5})$ so it belongs to $\mathfrak{O}$. It does not belong to $\Z[\sqrt{5}]$.
+\end{remark}
+There is a useful criterion, in terms of the minimum polynomial, for a
+number to be an algebraic integer:
+\begin{lemma}\label{alg number int iff}
+An algebraic number $\alpha$ is an algebraic integer if and only if its minimum polynomial over $\Q$ has coefficients in $\Z$.
+\end{lemma}
+\begin{proof}
+See Theorem~\ref{integral minimal poly}.
+\end{proof}
+To avoid confusion about the word integer we adopt the following convention: a \textbf{rational integer} is an element of $\Z$, and a plain \textbf{integer} is an algebraic integer. Any remaining possibility of confusion is
+eliminated by:
+\begin{lemma}
+An algebraic integer is a rational number if and only if it is a rational integer. Equivalently $\mathfrak{D}\cap\Q=\Z$.
+\end{lemma}
+\begin{proof}
+$\Z$ is a UFD, hence integrally closed.
+\end{proof}
+\subsection{Integral Bases}
+Let $K$ be a number field of degree $n$ over $\Q$. A basis of $K$ is a basis for $K$ as a vector space over $\Q$.　Since we have $K=\Q(\theta)$ where $\theta$ is an algebraic integer, so the minimum polynomial $p$ of $\theta$ has degree $n$ and $\{1,\theta,\cdots,\theta^{n-1}\}$ is a basis for $K$.\par
+The ring $\mathfrak{O}$ of integers of $K$ is an abelian group under addition. A $\Z$-basis for $(\mathfrak{O},+)$ is called an \textbf{integral basis} for $K$ (or for $\mathfrak{O}$). Thus $\{\alpha_1,\dots,\alpha_s\}$ is an integral basis if and only if all $\alpha_i\in\mathfrak{O}$ and every element of $\mathfrak{O}$ is uniquely expressible in the form
+\[a_1\alpha_1+\cdots+a_s\alpha_s.\]
+for rational integers $\alpha_1,\dots,\alpha_s$. It is obvious from Lemma~\ref{alg number int multiple} that any integral basis for $K$ is a $\Q$-basis, so $s=n$. But we have to verify that integral bases exist. In fact they do, but they are not always what naively we might expect them to be.
+\begin{example}
+For instance, $K=\Q[\theta]$ for an algebraic integer $\theta$, so $\{1,\theta,\dots,\theta^{n-1}\}$ is a $\Q$-basis for $K$ which consists of integers. However, it does not follow that $\{1,\theta,\dots,\theta^{n-1}\}$ is an integral basis, because some elements in $\Q[\theta]$ with non-integer coefficients may also be (algebraic) integers. As an example, consider $K=\Q(\sqrt{5})$. We saw that $(1+\sqrt{5})/2$ is an integer in $\Q(\sqrt{5})$, but it is not an element of $\Z[\sqrt{5}]$.
+\end{example}
+\begin{lemma}
+If $\{\alpha_1,\dots,\alpha_n\}$ is a basis of $K$ consisting of integers, then the discriminant $\Delta[\alpha_1,\dots,\alpha_n]$ is a rational integer, not equal to zero.
+\end{lemma}
+\begin{proof}
+The element $\Delta[\alpha_1,\dots,\alpha_n]$ is in $\Z[\alpha_1,\dots,\alpha_n]$, thus is integral over $\Z$. Since by Theorem~\ref{discriminant rational} $\Delta[\alpha_1,\dots,\alpha_n]$ is rational, it is a rational integer.
+\end{proof}
+\begin{theorem}\label{int basis rank}
+Every number field $K$ possesses an integral basis, and the additive group of $\mathfrak{O}$ is free abelian of rank $n$ equal to the degree of $K$.
+\end{theorem}
+\begin{proof}
+We have $K=\Q(\theta)$ for $\theta$ an integer. Hence there exist bases for $K$ consisting of integers: for example $\{1,\theta,\dots,\theta^{n-1}\}$. We have already seen that such $\Q$-bases need not be integral bases. However, the discriminant of a $\Q$-basis consisting of integers is always a rational integer, so what we do is to select a $\Q$-basis $\{\omega_1,\dots,\omega_n\}$ of integers for which 
+\[|\Delta[\omega_1,\dots,\omega_n]|\]
+is least. We claim that this is in fact an integral basis. If not, there is an
+integer $\omega$ of $K$ such that 
+\[\omega=a_1\omega_1+\cdots+a_n\omega_n\]
+for $a_i\in\Q$, not all in $\Z$. Choose the numbering so that $a_1\notin\Z$. Then $a_1=a+r$ where $a\in\Z$ and $0<r<1$. Define $\psi=\omega-a\omega_1$, then $\{\psi.\alpha_2,\dots,\alpha_n\}$ is a basis of $K$ consists of integers, and we have
+\[\Delta[\psi,\alpha_2,\dots,\alpha_n]=r^2\Delta[\alpha_1,\dots,\alpha_n].\]
+Since $0<r<1$, this is a contradiction.\par
+It follows that $\{\omega_1,\dots,\omega_n\}$ is an integral basis, and so $(\mathfrak{O},+)$ is free abelian of rank $n$.
+\end{proof}
+This raises the question of finding integral bases in cases such as $\Q(\sqrt{5})$ where the $\Q$-basis $\{1,\sqrt{5}\}$ is not an integral basis. We consider a more general case in the next section, but this particular example is worth a brief discussion here.
+\begin{example}
+An element of $\Q(\sqrt{5})$ is of the form $p+q\sqrt{5}$ for $p,q\in\Q$, and has minimum polynomial
+\[(t-p-q\sqrt{5})(t-p+\sqrt{5})=t^2-2pt+(p^2-5q^2).\]
+Then $p+q\sqrt{5}$ is an integer if and only if the coefficients $2p,p^2-5q^2$ are rational integers. Thus $p=P/2$ where $P$ is a rational integer.
+\begin{itemize}
+\item When $P$ is even, $p$ is also a rational integer. Thus $5q^2$ is also a rational integer which implies $q\in\Z$. Thus $p+q\sqrt{5}\in\Z[\sqrt{5}]$.
+\item If $P$ is even, then since $p^2-5q^2$ is a rational integer, we have
+\[\frac{P^2}{4}-5q^2=m\in\Z.\]
+Therefore $q=Q/2$ for some $Q\in\Z$. 
+\end{itemize}
+From this it follows that $\mathfrak{O}=\Z[(1+\sqrt{5})/2]$ and an integral basis is $\{1,(1+\sqrt{5})/2\}$.\end{example}
+We can prove this by another route using the discriminant. The two monomorphisms $\Q(\sqrt{5})\to\C$ are
+\[\sigma_1(p+q\sqrt{5})=p+q\sqrt{5},\quad \sigma_2(p+q\sqrt{5})=p-q\sqrt{5}.\]
+Hence the discriminant
+\[\Delta[1,\frac{1+\sqrt{5}}{2}]=\left|\begin{array}{cc}
+1&\dfrac{1+\sqrt{5}}{2}\\[8pt]
+1&\dfrac{1-\sqrt{5}}{2}
+\end{array}\right|^2=5\]
+Define a rational integer to be \textbf{squarefree} if it is not divisible by the square of a prime. For example, $5$ is squarefree, as are $6$, $7$, but not $8$ or $9$. Given a $\Q$-basis of $K$ consisting of integers, we compute the discriminant and then we have:
+\begin{proposition}\label{int basis nonsqure}
+Suppose that $\alpha_1,\dots,\alpha_n\in\mathfrak{O}$ form a $\Q$-basis for $K$. If $\Delta[\alpha_1,\dots,\alpha_n]$ is squarefree then $\{\alpha_1,\dots,\alpha_n\}$ is an integral basis.
+\end{proposition}
+\begin{proof}
+Let $\{\beta_1,\dots,\beta_n\}$ be an integral basis. Then there exist rational
+integers $c_{ij}$ such that $\alpha_i=\sum c_{ij}\beta_j$, and
+\[\Delta[\alpha_1,\dots,\alpha_n]=(\det(c_{ik}))^2\Delta[\beta_1,\dots,\beta_n]\]
+Since the left-hand side is squarefree, $\det c_{ij}=\pm 1$, so $(c_{ij})$ is unimodular. Hence $\{\alpha_1,\dots,\alpha_n\}$ is a $\Z$-basis for $\mathfrak{O}$, that is, an integral basis for $K$.
+\end{proof}
+For example, the $\Q$-basis $\{1,(1+\sqrt{5})/2\}$ for $\Q(\sqrt{5})$ consists of integers and has discriminant $5$ (calculated above). Since $5$ is squarefree, this is an integral basis. Later we show that there exist integral bases whose discriminants are not squarefree, so the converse of Proposition~\ref{int basis nonsqure} is false.\par
+For two integral bases $\{\alpha_1,\dots,\alpha_n\}$, $\{\beta_1,\dots,\beta_n\}$ of an algebraic number field $K$, we have
+\[\Delta[\alpha_1,\dots,\alpha_n]=(\pm 1)^2\Delta[\beta_1,\dots,\beta_n],\]
+because the matrix corresponding to the change of basis is unimodular. Hence the discriminant of an integral basis is independent of which integral basis we choose. This common value is called the \textbf{discriminant of $\bm{K}$} (or of $\mathfrak{O}$). It is always a non-zero rational integer. Obviously, isomorphic number fields have the same discriminant. The important role played by the discriminant will become apparent as the drama unfolds.
+\subsection{Norms and Traces}
+These important concepts often let us transform a problem about algebraic integers into one about rational integers. As usual, let $K=\Q(\theta)$ be a number field of degree $n$ and let $\sigma_1,\dots,\sigma_n$ be the monomorphisms $K\to\C$. The field polynomial is a power of the minimum polynomial by Theorem~\ref{field polonomial}$(a)$, so by Lemma~\ref{alg number int multiple} it follows that $\alpha\in K$ is an integer if and only if the field polynomial has rational integer coefficients. For any $\alpha\in K$ define the \textbf{norm}
+\[N_K(\alpha)=\prod_{i=1}^{n}\sigma_i(\alpha)\]
+and \textbf{trace}
+\[\tr_K(\alpha)=\sum_{i=1}^{n}\sigma_i(\alpha).\]
+Where the field $K$ is clear from the context, we abbreviate the norm and trace of $\alpha$ to $N(\alpha)$ and $\tr(\alpha)$ respectively.\par
+Since the field polynomial is
+\[f_\alpha(t)=\prod_{i=1}^{n}(t-\sigma_i(\alpha))\]
+The remark above implies that if $\alpha$ is an integer then the norm and trace of $\alpha$ are rational integers. Since the $\sigma_i$ are monomorphisms it is clear that
+\[N(\alpha\beta)=N(\alpha)N(\beta),\quad\tr(p\alpha+q\beta)=p\tr(\alpha)+q\tr(\beta).\]
+where $p,q$ are rational numbers.\par
+For instance, if $K=\Q(\sqrt{7})$ then the integers of $K$ are $\mathfrak{O}=\Z[\sqrt{7}]$. The maps $\sigma_i$ are
+\[\sigma_1(p+q\sqrt{7})=p+q\sqrt{7},\quad \sigma_2(p+q\sqrt{7})=p-q\sqrt{7}.\]
+Hence
+\[N(p+q\sqrt{7})=p^2-7q^2,\quad \tr(p+q\sqrt{7})=2p.\]
+Since norms are not too hard to compute whereas discriminants involve complicated work with determinants, the following result is sometimes useful
+\begin{proposition}\label{discriminant norm}
+Let $K=\Q(\theta)$ be a number field where $\theta$ has minimum polynomial $p$ of degree $n$. The $\Q$-basis $\{1,\theta,\dots,\theta^{n-1}\}$ has discriminant
+\[\Delta[1,\theta,\dots,\theta^{n-1}]=(-1)^{n(n-1)/2}N(p'(\theta))\]
+where $p'$ is the formal derivative of $p$.
+\end{proposition}
+\begin{proof}
+By definition we have
+\[\Delta[1,\theta,\dots,\theta^{n-1}]=\prod_{1\leq i<j\leq n}(\theta_i-\theta_j)^2\]
+where $\theta_1,\dots,\theta_n$ are the conjugates of $\theta$. Now
+\[p(t)=\prod_{i=1}^{n}(t-\theta_i),\]
+so
+\[p'(t)=\sum_{j=1}^{n}\prod_{i\neq j}(t-\theta_i)\]
+Multiply all these equations for $j=1,\dots,n$:
+\[N(p'(\theta))=\prod_{j=1}^{n}\sigma_j(p'(\theta))=\prod_{j=1}^{n}p'(\theta_j)=\prod_{i\neq j}(\theta_j-\theta_i).\]
+On the right, each factor $(\theta_i-\theta_j)$ for $i<j$ appears twice, and the product of these two factors is $-(\theta_i-\theta_j)^2$. Multiplying up, we get $\Delta$ multiplied by $(-1)^{1+2+\cdots+(n-1)}=(-1)^{n(n-1)/2}$.
+\end{proof}
+We close this section by noting the following simple identity linking the
+discriminant and trace:
+\begin{proposition}\label{discriminant trace}
+If $\{\alpha_1,\dots,\alpha_n\}$ is any $\Q$-basis of $K$, then
+\[\Delta[\alpha_1,\dots,\alpha_n]=\det(T(\alpha_i\alpha_j)).\]
+\end{proposition}
+\begin{proof}
+By definition we have $T(\alpha_i\alpha_j)=\sum_{r=1}^{n}\sigma_r(\alpha_i\alpha_j)=\sum_{r=1}^{n}\sigma_r(\alpha_i)\sigma_r(\alpha_j)$, thus
+\begin{align*}
+\Delta[\alpha_1,\dots,\alpha_n]&=(\det[\sigma_i(\alpha_j)])^2=(\det[\sigma_i(\alpha_j)])(\det[\sigma_j(\alpha_i)])\\
+&=\det(\sum_{r=1}^{n}\sigma_r(\alpha_i)\sigma_r(\alpha_j))=\det(T(\alpha_i\alpha_j)).
+\end{align*}
+as needed.
+\end{proof}
+\subsection{Rings of Integers}
+We now discuss how to find the ring of integers of a given number field.
+With the methods available to us, this involves moderately heavy calculation,
+but by taking advantage of short cuts the technique can be made reasonably efficient.\par
+The method is based on the following result:
+\begin{theorem}\label{alg int subgroup}
+Let $G$ be an additive subgroup of $\mathfrak{O}$ of rank equal to the degree of $K$, with $\Z$-basis $\{\alpha_1,\dots,\alpha_n\}$. Then $|\mathfrak{O}/G|^2$ divides $\Delta[\alpha_1,\dots,\alpha_n]$.
+\end{theorem}
+\begin{proof}
+By Proposition~\ref{PID submodule free} there exists a $\Z$-basis for $\mathfrak{O}$ of the form $\{\beta_1,\dots,\beta_n\}$ such that $G$ has a $\Z$-basis $\{\mu_1\beta_1,\dots,\mu_n\beta_n\}$ for suitable $\mu_i\in\Z$. Now
+\[\Delta[\alpha_1,\dots,\alpha_n]=\Delta[u_1\beta_1,\dots,u_n\beta_n]=(u_1\cdots u_n)^2\Delta[\beta_1,\dots,\beta_n]=(u_1\cdots u_n)^2\Delta\]
+where $\Delta$ is the discriminant of $K$ and so lies in $\Z$. But
+\[|\mathfrak{O}/G|=|u_1\cdots u_n|\]
+thus the claim follows.
+\end{proof}
+In the above situation we use the notation
+\[\Delta_G=\Delta[\alpha_1,\dots,\alpha_n]\]
+We then have a generalization of Proposition~\ref{int basis nonsqure}:
+\begin{proposition}\label{alg int proper sub}
+Suppose that $\mathfrak{O}\neq G$. Then there exists an algebraic integer of the form
+\[\frac{1}{p}(\lambda_1\alpha_1+\cdots+\lambda_n\alpha_n)\]
+where $\lambda_i\in\Z$ and and $p$ is a prime such that $p^2$ divides $\Delta_G$.
+\end{proposition}
+\begin{proof}
+If $\mathfrak{O}\neq G$ then $|\mathfrak{O}/G|>1$. Therefore (by the structure theory for finite abelian groups) there exists a prime $p$ dividing $|\mathfrak{O}/G|$ and an element $u\in\mathfrak{O}/G$ such that $g=pu\in G$. By Theorem~\ref{alg int subgroup}, $p^2$ divides $\Delta_G$. Further
+\[u=\frac{g}{p}=\frac{1}{p}(\lambda_1\alpha_1+\cdots+\lambda_n\alpha_n)\]
+since $\{\alpha_i\}$ forms a $\Z$-basis for $G$.
+\end{proof}
+Note that this really is a generalization of Proposition~\ref{int basis nonsqure}: if $\delta_G$ is squarefree then no such $p$ exists, so that $G=\mathfrak{O}$.
+\begin{corollary}\label{int basis not iff}
+Let $\alpha_1,\dots,\alpha_n$ be $n$ elements of $\mathfrak{O}$ which form a basis of $K$. Then $\{\alpha_1,\dots,\alpha_n\}$ is not an integral basis if and only if there exists a rational prime $p$ with $p^2\mid\Delta_G$ and $\lambda_1,\dots,\lambda_n\in\Z$ not all zero such that
+\[\frac{1}{p}(\lambda_1\alpha_1+\cdots+\lambda_n\alpha_n)\in\mathfrak{O}.\]
+\end{corollary}
+\begin{proof}
+If $\alpha_1,\dots,\alpha_n$ do not generate $\mathfrak{O}$, then by Proposition~\ref{alg int proper sub} there are $p$ and $\lambda_i$ satisfying the condition. Conversely, if there are $p$ and $\lambda_i$, then clearly $\alpha_1,\dots,\alpha_n$ do not generate $\mathfrak{O}$.
+\end{proof}
+\begin{proposition}\label{int basis if Eisenstein}
+Let $K=\Q(\theta)$, and $f(t)\in\Z[t]$ be its minimal polynomial. Assume that for each prime $p$ with $p^2\mid\Delta[1,\theta,\dots,\theta^{n-1}]$, there exists an integer $i$ such that $f(t+i)$ is an Eisenstein polynomial for $p$. Then $\mathfrak{O}=\Z[\theta]$.
+\end{proposition}
+Here, recall that a polynomial $f(t)=a_nt^n+a_{n-1}t^{n-1}+\cdots+a_0$ is called an Eisenstein polynomial for $p$ if
+\[p\mid a_i\text{ for all }0\leq i\leq n-1,\quad p\nmid a_n,\quad p^2\nmid a_0.\]
+\begin{proof}
+Note that $\Z[\theta]=\Z[\theta-i]$ for all integer $i\in\Z$. Up to replacing $\theta$ by $\theta-i$ and using Corollary~\ref{int basis not iff}, it suffices to show that if $f(t)=t^n+a_{n-1}t^{n-1}+\cdots+a_0$ is an Eisentein polynomial for some prime $p$, then \[\alpha=\frac{1}{p}\Big(\sum_{i=0}^{n-1}\lambda_i\theta^i\Big)\notin\mathfrak{O}\]for $\lambda_i\in\Z$ not all zero. Put $j=\min\{i:\lambda_i\neq 0\}$. Then
+\[N(\alpha)=\frac{N(\theta^j)}{p^n}N\Big(\sum_{i=j}^{n-1}\lambda_i\theta^{i-j}\Big)=\frac{N(\theta)^j}{p^n}N\Big(\sum_{i=j}^{n-1}\lambda_i\theta^{i-j}\Big)=\frac{(-1)^ja_0}{p^n}N\Big(\sum_{i=j}^{n-1}\lambda_i\theta^{i-j}\Big).\]
+We claim that $N\Big(\sum_{i=j}^{n-1}\lambda_i\theta^{i-j}\Big)\equiv \lambda_j^n$ mod $p$. Since $\lambda_j\neq 0$ and $p\mid a_0,p^2\nmid a_0$, it follows that $N(\alpha)\notin\Z$, and so $\alpha\notin\mathfrak{O}$.\par
+To prove the claim, let $\sigma_1,\dots,\sigma_n$ denote the embeddings of $K$ into $\C$. Then
+\[N\Big(\sum_{i=j}^{n-1}\lambda_i\theta^{i-j}\Big)=\prod_{k=1}^{n}(\lambda_j+\lambda_{j+1}\sigma_k(\theta)+\cdots+\lambda_{n-1}\sigma_k(\theta)^{n-1-j}).\]
+Since the norm is fixed under $\sigma_i$'s, its coefficients must be a sum of symmetric functions in $\sigma_1(\theta),\dots,\sigma_n(\theta)$, thus can be exxpressed as a linear combination of $(-1)^ka_k$ by Vieta's formula. Except the term $\lambda_j^n$, all the others are divisible by $p$, thus the claim follows.
+\end{proof}
+\section{Quadratic and Cyclotomic Fields}
+\subsection{Quadratic Fields}
+A \textbf{quadratic field} is a number field $K$ of degree $2$ over $\Q$. Then $K=\Q(\theta)$ where $\theta$ is an algebraic integer, and $\theta$ is a zero of
+\[t^2+at+b,\quad a,b\in\Z.\]
+Thus
+\[\theta=\frac{-a\pm\sqrt{a^2-4b}}{2}.\]
+Let $a^2-4d=r^2f$ where $r,d\in\Z$ and $d$ is squarefree. Then
+\[\theta=\frac{-a\pm r\sqrt{d}}{2}\]
+and so $\Q(\theta)=\Q(\sqrt{d})$. This proves:
+\begin{proposition}
+The quadratic fields are precisely those of the form $\Q(\sqrt{d})$ for $d$ a squarefree rational integer.
+\end{proposition}
+Next we determine the ring of integers of $\Q(\sqrt{d})$, for squarefree $d$. The answer, it turns out, depends on the arithmetic properties of $d$.
+\begin{theorem}\label{int ring quadratic}
+Let $d$ be a squarefree rational integer. Then the integers of $\Q(\sqrt{d})$ are:
+\begin{itemize}
+\item[$(a)$] $\Z[\sqrt{d}]$ if $d\not\equiv 1$ mod $4$.
+\item[$(b)$] $\Z[(1+\sqrt{d})/2]$ if $d\equiv 1$ mod $4$.
+\end{itemize}
+\end{theorem}
+\begin{proof}
+Every element $\alpha\in\Q(\sqrt{d})$ is of the form $\alpha=r+s\sqrt{d}$ for $r,s\in\Q$. Hence
+\[\alpha=\frac{a+b\sqrt{d}}{c},\]
+where $a,b,c\in\Z,c>0$, and no prime divides all of $a,b,c$. Now $\alpha$ is an integer if and only if the coefficients of the minimum polynomial
+\[\Big(t-\frac{a+b\sqrt{d}}{c}\Big)\Big(t-\frac{a-b\sqrt{d}}{c}\Big)=t^2-\frac{2a}{c}t+\frac{a^2-b^2d}{c^2}\]
+are integers. That is,
+\[\frac{a^2-b^2d}{c^2}\in\Z,\quad \frac{2a}{c}\in\Z.\]
+Since $a,c$ are coprime, from the second equality we conclude that $c=1,2$. The case $c=1$ is trivial, thus we may concenctrate on the case $c=2$. Now $a$ and $b$ must both be odd, and $(a^2-b^2d)/4\in\Z$. Hence
+\[a^2-b^2d\equiv0\mod 4.\]
+Now an odd number has square $4k^2+4k+1\equiv 1$ mod $4$, hence $a^2\equiv1\equiv b^2$ mod $4$, and this implies $d\equiv1$ mod $4$. Conversely, if $d\equiv1$ mod $4$ then for odd $a,b$ we have $\alpha$ an integer because the coefficients are rational integers.\par
+To sum up: if $d\equiv1$ mod $4$ then $c=1$ and so $(a)$ holds; whereas if $d\equiv1$ mod $4$ we can also have $c=2$ and $a,b$ odd, whence easily $(b)$ holds.
+\end{proof}
+The monomorphisms $K\to\C$ are
+\[\sigma_1(a+b\sqrt{d})=a+b\sqrt{d},\quad \sigma_2(a+b\sqrt{d})=a-b\sqrt{d}.\]
+We can therefore compute discriminants:
+\begin{theorem}
+If $d\not\equiv 1$ mod $4$ then $\Q(\sqrt{d})$ has an integral basis of the form $\{1,\sqrt{d}\}$ and discriminant $4d$. If $d\equiv 1$ mod $4$ then $\Q(\sqrt{d})$ has an integral basis of the form $\{1,(1+\sqrt{d})/2\}$ and discriminant $d$.
+\end{theorem}
+\begin{proof}
+The assertions regarding bases are clear from Theorem~\ref{int ring quadratic}. Compute discriminants:
+\[\left|\begin{array}{cc}
+1&\sqrt{d}\\
+1&-\sqrt{d}
+\end{array}\right|^2=4d,\quad \left|\begin{array}{cc}
+1&\dfrac{1+\sqrt{d}}{2}\\[8pt]
+1&\dfrac{1-\sqrt{d}}{2}
+\end{array}\right|^2=d.\]
+as needed.
+\end{proof}
+Since the discriminants of isomorphic fields are equal, the fields $\Q(\sqrt{d})$ are not isomorphic for distinct squarefree $d$. This completes the classification of quadratic fields.\par
+A special case, of historical interest as the first number field to be studied
+as such, is the \textbf{Gaussian field} $\Q(i)$. Since $-1\not\equiv1$ mod $4$, the ring of integers is $\Z[i]$, known as the \textbf{ring of Gaussian integers}, and the discriminant is $-4$.\par
+Incidentally, these results show that Proposition~\ref{int basis nonsqure} is not always applicable: an integral basis can have a discriminant that is not squarefree. For instance, the Gaussian integers themselves.\par
+For future reference we note the norms and traces:
+\[N(r+s\sqrt{d})=r^2-ds^2,\quad \tr(r+s\sqrt{d})=2r.\]
+We also note some useful terminology. A quadratic field $\Q(\sqrt{d})$ is said to be \textbf{real} if $d$ is positive, \textbf{imaginary} if $d$ is negative.
+\subsection{Cyclotomic Fields}
+A cyclotomic field is one of the form $\Q(\zeta)$ where $\zeta=e^{2\pi i/m}$ is a primitive complex $m$-th root of unity. We consider only the case $m=p$, a prime number. Further, if $p=2$ then $\zeta=-1$ so that $\Q(\zeta)=\Q$, hence we ignore this case and assume $p$ odd.
+\begin{lemma}
+The minimum polynomial of $\zeta=e^{2π\pi i/p}$, $p$ an odd prime, over $\Q$ is
+\[f(t)=t^{p-1}+t^{p-2}+\cdots+t+1.\]
+The degree of $\Q(\zeta)$ is $p-1$.
+\end{lemma}
+The powers $\zeta,\zeta^2,\dots,\zeta^{p-1}$ can be easily see to be the conjugates of $\zeta$. Therefore the monomorphisms from $\Q(\zeta)$ to $\C$ are
+\[\sigma_i(\zeta)=\zeta^i,\quad 1\leq i\leq p-1.\]
+Thus the norm and trace can be computed. In particular,
+\begin{proposition}
+With the notations above,
+\[N(\zeta^i)=1,\quad \tr(\zeta^i)=-1,\quad 1\leq i\leq p-1.\]
+and therefore
+\[N(\zeta^s)=1,\quad \tr(\zeta^s)=\begin{cases}
+-1&\text{if }s\not\equiv 0\mod p\\
+p-1&\text{if }s\equiv 0\mod p
+\end{cases}\]
+\end{proposition}
+\begin{proof}
+We have
+\[f(t)=t^{p-1}+t^{p-2}+\cdots+t+1=(t-\zeta)(t-\zeta^2)\cdots(t-\zeta^{p-1}).\]
+Thus
+\[N(\zeta)=\zeta\cdot\zeta^2\cdots\zeta^{p-1}=(-1)^{p-1}f(0)=1.\]
+and
+\[\tr(\zeta)=\zeta+\zeta^2+\cdots+\zeta^{p-1}=f(\zeta)-1=-1.\]
+Since $N(\zeta^i)=N(\zeta)$ and $\tr(\zeta^i)=\tr(\zeta)$, we get the claim.
+\end{proof}
+Because the minimum polynomial $f(t)$ has degree $p-1$, a basis for $\Q(\zeta)$ over $\Q$ is $1,\zeta,\cdots,\zeta^{p-2}$. A general element in $\Q(\zeta)$ can be expressed as
+\[\alpha=a_0+a_1\zeta+\cdots+a_{p-2}\zeta^{p-2},\quad a_i\in\Q.\]
+We have
+\begin{align*}
+\tr\Big(\sum_{i=0}^{p-2}a_i\zeta^i\Big)=\sum_{i=0}^{p-2}\tr(a_i\zeta^i)=\tr(a_0)+\sum_{i=1}^{p-2}a_i\tr(\zeta^i)=a_0(p-1)-\sum_{i=1}^{p-2}a_i=pa_0-\sum_{i=0}^{p-2}a_i.
+\end{align*}
+The norm is more complicated in general, but a useful special case is
+\[N(1-\zeta)=\prod_{i=1}^{p-1}(1-\zeta^i)=f(1)=p.\]
+We can put these computations to good use, first by showing that the integers of $\Q(\zeta)$ are what one naively might expect:
+\begin{theorem}
+The ring $\mathfrak{O}$ of integers of $\Q(\zeta)$ is $\Z[\zeta]$.
+\end{theorem}
+\begin{proof}
+We apply Proposition~\ref{int basis if Eisenstein}. First, we compute the discriminant of $\{1,\zeta,\dots,\zeta^{p-2}\}$. By Proposition~\ref{discriminant norm} it is
+\[(-1)^{(p-1)(p-2)/2}\cdot N(f'(\zeta))\]
+with $f(t)$ as above. Since $p$ is odd the first factor reduces to $(-1)^{(p-1)/2}$. To evaluate the second, recall that
+\[f(t)=\frac{t^p-1}{t-1}\]
+Therefore
+\[f'(t)=\frac{(t-1)pt^{p-1}-(t^p-1)}{(t-1)^2}.\]
+whence
+\[f'(\zeta)=\frac{(\zeta-1)p\zeta^{p-1}-(\zeta^p-1)}{(\zeta-1)^2}=\frac{p\zeta^{p-1}}{\zeta-1}.\]
+Hence
+\[N(f'(\zeta))=\frac{N(p)N(\zeta^{p-1})}{N(\zeta-1)}=\frac{p^{p-1}}{(-1)^{p-1}p}=(-1)^{p-1}p^{p-2}.\]
+and we conclude that
+\[\Delta[1,\theta,\dots,\theta^{p-2}]=(-1)^{(p-1)/2}p^{p-2}.\]
+Thus we only need to consider the prime $p$ in Proposition~\ref{int basis if Eisenstein}. Note that $f(t+1)=((t+1)^p-1)/t$ is an Eisenstein polynomial for $p$, so the claim follows.
+\end{proof}
+\begin{corollary}\label{cyclotomic disc}
+Let $p$ be an odd prime and $\zeta=e^{2\pi i/p}$. The discriminant of $\Q(\zeta)$ is
+\[\Delta=(-1)^{(p-1)/2}p^{p-2}.\]
+\end{corollary}
+\section{Factorization into Irreducibles}
+\subsection{Factorization into Irreducibles}
+\begin{proposition}
+The units $U(R)$ of a ring $R$ form a group under multiplication.
+\end{proposition}
+\begin{example}
+$R=\Z[i]$, the Gaussian integers. The element $a+ib$ is a unit if and only if there exists $c+id$ such that
+\[(a+ib)(c+id)=1,\]
+This implies $ac-bd=1,ad+bc=0$, whence $c=a/(a^2+b^2)$, $d=-b/(a^2+b^2)$. These have integer solutions only when $a^2+b^2=1$, so $a=\pm 1,b=0$, or $a=0,b=\pm1$. Hence the units are $\{\pm1,\pm i\}$ and $U(R)$ is cyclic of order $4$.
+\end{example}
+By using norms, we can extend this results to the more general case of the units in the ring of integers of $\Q(\sqrt{d})$ for $d$ negative and squarefree:
+\begin{proposition}
+The group of units $U$ of the integers in $\Q(\sqrt{d})$ where $d$ is negative and squarefree is as follows:
+\begin{itemize}
+\item For $d=-1$, $U=\{\pm1,\pm i\}$.
+\item For $d=-3$, $U=\{\pm1,\pm\omega,\pm\omega^2\}$ where $\omega=e^{2\pi i/3}$.
+\item For all other $d<0$, $U=\{\pm1\}$.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+Suppose $\alpha$ is a unit in the ring of integers of $\Q(\sqrt{d})$ with inverse $\beta$. Then $\alpha\beta=1$, so taking norms
+\[N(\alpha)N(\beta)=1.\]
+But $N(\alpha),N(\beta)$ are rational integers, so $N(\alpha)=\pm1$. Writing $\alpha=a+b\sqrt{d}$ $(a,b\in\Q)$ then we see that $N(\alpha)=a^2-db^2$ is positive (for negative $d$), so $N(\alpha)=1$. Hence we are reduced to solving the equation
+\[a^2-db^2=1.\]
+If $a,b\in\Z$, then for $d=-1$ this reduces to
+\[a^2+b^2=1\]
+which has the solutions $a=\pm 1,b=0$ or $a=0,b=\pm1$. This gives $(a)$. For $d<-1$ we immediately conclude that $b=0$ (otherwise $a^2-db^2$ would exceed $1$), so the only rational integer solutions are $a=\pm1,b=0$.\par
+For $d\equiv1$ mod $4$, however, we must also consider the additional possibility $a=A/2,b=B/2$ where both $A$ and $B$ are odd rational integers. In this case
+\[A^2-dB^2=4.\]
+For $d<-3$, we deduce $B=0$ and there are no additional solutions. This completes $(c)$. For $d=-3$, we find additional solutions $A=\pm1,B=\pm1$. The case $A=1,B=1$ gives $\omega$. The other three cases give $-\omega,\omega^2,-\omega^2$. These allied with the solutions already found give $(b)$.
+\end{proof}
+\begin{theorem}
+The ring of integers $\mathfrak{O}$ in a number field $K$ is noetherian.
+\end{theorem}
+\begin{proof}
+This follows from the fact that $(\mathfrak{O},+)$ is free abelian of rank $n$ equal to the degree of $K$ by Theorem~\ref{int basis rank}.
+\end{proof}
+\begin{corollary}
+Factorization into irreducibles is possible in $\mathfrak{O}$.
+\end{corollary}
+To get very far in the theory, we need an easy way to detect units and
+irreducibles in $\mathfrak{O}$. The norm proves to be a convenient tool:
+\begin{proposition}\label{alg int unit}
+Let $\mathfrak{O}$ be the ring of integers in a number field $K$, and let $x,y\in\mathfrak{O}$. Then
+\begin{itemize}
+\item[$(a)$] $x$ is a unit if and only if $N(x)=\pm1$.
+\item[$(b)$] If $x$ and $y$ are associates, then $N(x)=\pm N(y)$.
+\item[$(c)$] If $N(x)$ is a rational prime, then $x$ is irreducible in $\mathfrak{O}$.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+If $xu=1$, then $N(x)=\pm1$. Conversely, if $N(x)=\pm1$, then
+\[\sigma_1(x)\cdots\sigma_n(x)=\pm1.\]
+where the $\sigma_i$ are the monomorphisms $K\to\C$. One factor, without loss in generality $\sigma_1(x)$, is equal to $x$; all the other $\sigma_i(x)$ are integers. Put $u=\pm\sigma_2(x)\cdots\sigma_n(x)$, then $xu=1$, so $u=x^{-1}\in K$. Hence $u\in K\cap\mathbb{B}=\mathfrak{O}$.\par
+If $N(x)$ is prime, let $x=yz$. Then $N(y)N(z)=N(yz)=N(x)=p$, a rational prime; so one of $N(y)$ and $N(z)$ is $\pm p$ and the other is $\pm 1$. By $(a)$, one of $y$ and $z$ is a unit, so $x$ is irreducible.
+\end{proof}
+We have not asserted converses to parts $(b)$ and $(c)$ because these are generally false, as examples in the next subsection reveal.
+\subsection{Examples of Non-Unique Factorization into Irreducibles}
+\begin{example}
+Factorization into irreducibles is not unique in the ring of integers of $\Q(\sqrt{-5})$.\par
+In $\Q(\sqrt{-5})$ we have the factorizations
+\[6=2\cdot 3=(1-\sqrt{5})(1+\sqrt{5})\]
+We claim that $2,3,1\pm\sqrt{-5}$ are irreducible in the ring $\mathfrak{O}$ of integers of $\Q(\sqrt{-5})$. Since the norm is $N(a+b\sqrt{-5})=a^2+5b^2$, their norms are $4,9,6,6$, respectively. If $2=xy$ where $x,y\in\mathfrak{O}$ are non-units, then $4=N(2)=N(x)N(y)$ so that $N(x)=\pm2$, $N(y)=\pm2$. Similarly non-trivial divisors of $3$ must, if they exist, have norm $\pm 3$, and non-trivial divisors of $1\pm\sqrt{-5}$ have norm $ \pm 2$ or $\pm 3$. Since $-5\not\equiv1$ mod $4$, the integers in $\mathfrak{O}$ are of the form $a+b\sqrt{-5}$ for $a,b\in\Z$ so
+\[a^2+5b^2=\pm 2\text{ or }\pm 3.\]
+Now $|b|\geq1$ implies $|a^2+5b^2|\geq5$, so the only possibility is $|b|=0$; but then we have $a^2=\pm2$ or $\pm3$, which is impossible in integers. Thus the putative divisors do not exist, and the four factors are all irreducible. Since $N(2)=4,N(1\pm\sqrt{5})=6$, by Proposition~\ref{alg int unit}$(b)$, $2$ is not an associate of $1+\sqrt{-5}$ or $1-\sqrt{5}$, so factorization is not unique.
+\end{example}
+\subsection{Euclidean Quadratic Fields}
+\begin{theorem}\label{int ring ED}
+The ring of integers $\mathfrak{O}$ of $\Q(\sqrt{d})$ is Euclidean for $d=-1,-2,-3,-7,-11$, with Euclidean function
+\[\phi(\alpha)=|N(\alpha)|.\]
+\end{theorem}
+\begin{proof}
+To begin with we consider the suitability of the function φ defined
+in the theorem. For this to be a Euclidean function, the following two
+conditions must be satisfied for all $\alpha,\beta\in\mathfrak{O}-0$:
+\begin{itemize}
+\item[$(a)$] If $\alpha\mid\beta$ then $|N(\alpha)|\leq|N(\beta)|$.
+\item[$(b)$] There exist $\gamma,\delta\in\mathfrak{O}$ such that $\alpha=\beta\gamma+\delta$ where either $\delta=0$ or $|N(\delta)|<|N(\beta)|$.
+\end{itemize}
+It is clear that $(a)$ holds, for if $\alpha\mid\beta$ then $\beta=\lambda\alpha$ for $\lambda\in\mathfrak{O}$ and then
+\[|N(\beta)|=|N(\lambda\alpha)|=|N(\lambda)||N(\beta)|\leq|N(\beta)|.\]
+with rational integer values for the various norms. To prove $(b)$, we consider the alternative statement:
+\begin{itemize}
+\item[$(c)$] For any $\epsilon\in\Q(\sqrt{d})$ there exists $\kappa\in\mathfrak{O}$ such that
+\[|N(\epsilon-\kappa)|<1.\]
+\end{itemize}
+We prove that $(c)$ is equivalent to $(b)$. First, suppose $(b)$ holds. By Lemma~\ref{alg number int multiple}, $c\epsilon\in\mathfrak{O}$ for some $c\in\Z$. Applying $(b)$ with $\alpha=c\epsilon,\beta=c$ we get two possibilities:
+\begin{itemize}
+\item $\delta=0$ and $c\epsilon=c\gamma$ for $\gamma\in\mathfrak{O}$. Then $\epsilon=\gamma\in\mathfrak{O}$ and we may take $\kappa=\epsilon$.
+\item $c\epsilon=c\gamma+\delta$ where $|N(\delta)|<|N(c)|$. Now $c\neq0$, so this implies $|N(\delta/c)|<1$, which is the same as $|N(\epsilon-\gamma)|<1$. So we may take $\kappa=\gamma$.
+\end{itemize}
+Hence $(b)$ implies $(c)$. To prove that $(c)$ implies $(b)$ we put $\epsilon=\alpha/\beta$ and argue similarly.\par
+This allows us to concentrate on condition $(c)$, which is relatively easy to handle: in spirit it says that everything in $\Q(\sqrt{d})$ is near to an integer.\par
+Suppose $\epsilon=r+s\sqrt{d}$ $(r,s\in\Q)$. If $d\not\equiv 1$ mod $4$ we have to find $\kappa=x+y\sqrt{d}$ $(x,y\in\Z)$ with
+\[|(r-x)^2-d(s-y)^2|<1.\]
+For $d=-1,-2$ we may do this by taking $x$ and $y$ to be the rational integers
+nearest to $r$ and $s$ respectively, for then
+\[|(r-x)^2-d(s-y)^2|\leq|\frac{1}{4}+2\cdot\frac{1}{4}|=\frac{3}{4}<1.\]
+The remaining three values of $d$ to be considered have $d\equiv1$ mod $4$. In this case we must find
+\[\kappa=x+t\Big(\frac{1+\sqrt{d}}{2}\Big),\quad x,y\in\Z.\]
+such that
+\[|(r-x-\frac{1}{2}y)^2-d(s-\frac{1}{2}y)^2|<1.\]
+Certainly we can take $y$ to be the rational integer nearest to $2s$, so that $|2s-y|\leq1/2$; and then we may find $x\in\Z$ so that $|r-x-1/2y|\leq 1/2$. For $d=-3,-7$, or $-11$ this means that
+\[|(r-x-\frac{1}{2}y)^2-d(s-\frac{1}{2}y)^2|\leq|\frac{1}{4}+11\cdot\frac{1}{16}|=\frac{15}{16}<1.\]
+The theorem is proved.
+\end{proof}
+To complete the picture for negative $d$ we have:
+\begin{theorem}\label{int ring no ED}
+For square-free $d<-11$ the ring of integers of $\Q(\sqrt{d})$ is not Euclidean.
+\end{theorem}
+\begin{proof}
+Let $\mathfrak{O}$ be the ring of integers of $\Q(\sqrt{d})$ and suppose for a contradiction that there exists a Euclidean function $\phi$. Choose $\alpha\in\mathfrak{O}$ such that $\alpha\neq0$, $\alpha$ is not a unit, and $\phi(\alpha)$ is minimal subject to this. Let $\beta$ be any element of $\mathfrak{O}$. Now there exist $\gamma,\delta$ such that $\beta=\alpha\gamma+\delta$ with $\delta=0$ or $\phi(\delta)<\phi(\alpha)$. By choice of $\alpha$ the latter condition implies that either $\delta=0$ or $\delta$ is a unit.\par
+For $d<-11$, Proposition~\ref{alg int unit} shows that the only units of $\Q(\sqrt{d})$ are $\pm1$. Hence for every $\beta\in\mathfrak{O}$ we have
+\[\beta\equiv-1,0\text{ or }1\mod\langle\alpha\rangle\] 
+and so $|\mathfrak{O}/\langle\alpha\rangle|\leq3$. Now we compute $|\mathfrak{O}/\langle\alpha\rangle|$ using Corollary~\ref{abelian group quotient order}. By Theorem~\ref{int basis rank} $(\mathfrak{O},+)$ is free abelian of rank $2$. If $d\equiv1$ mod $4$ a $\Z$-basis for $\langle\alpha\rangle$ is $\{\alpha,\alpha\sqrt{d}\}$ since a $\Z$-basis for $\mathfrak{O}$ is $\{1,\sqrt{d}\}$. If $\alpha=a+b\sqrt{d}$ $(a,b\in\Z)$ the $\Z$-basis for $\langle\alpha\rangle$ is
+\[\{a+b\sqrt{d},bd+a\sqrt{d}\}.\]
+Hence by Corollary~\ref{abelian group quotient order}
+\[|\mathfrak{O}/\langle\alpha\rangle|=\left\|\begin{array}{cc}
+a&b\\
+bd&a
+\end{array}\right\|=|a^2-db^2|=|N(\alpha)|.\]
+Similar calculations apply for $d\equiv1$ mod $4$ with the same end result. It follows that $|N(\alpha)|\leq3$. Thus if $d\equiv1$ mod $4$ we have $|a^2-db^2|\leq3$ with $a,b\in\Z$. If $d\equiv1$ mod $4$ then $a=A/2,b=B/2$, for $A,B\in\Z$; and then $|A^2-dB^2|\leq12$. Since $d<-11$ the only solutions are $a=\pm1,b=0$; so $\alpha$ is a unit. This contradicts the choice of $\alpha$.
+\end{proof}
+These two theorems together show that for negative $d$ the ring of integers of $\Q(\sqrt{d})$ is Euclidean if and only if $d=-1,-2,-3,-7,-11$. Further, when it is Euclidean it has as Euclidean function the absolute value of the norm. For brevity call such fields \textbf{norm-Euclidean}.
+\begin{theorem}
+The ring of integers of $\Q(\sqrt{d})$, for positive $d$, is norm-Euclidean if and only if $d=2,3,5,6,7,11,13,17,19,21,29,33,37,41,55,73$.
+\end{theorem}
+\subsection{Consequences of Unique Factorization}
+When the integers in a number field have unique factorization, we can carry over many arguments of the type used in the factorization of integers.
+\begin{theorem}
+The only integer solutions of the equation
+\[y^2+4=z^3\]
+are $y=\pm11,z=5$ and $y=\pm2,z=2$.
+\end{theorem}
+\begin{proof}
+First suppose $y$ odd, and work in the ring $\Z[i]$, which is a unique factorization domain by Theorem~\ref{int ring ED}. Then 
+\[(2+iy)(2-iy)=z^3.\]
+A common factor $a+ib$ of $2+iy,2-iy$ is also a factor of their sum, $4$, and difference, $2y$, so taking norms
+\[a^2+b^2\mid 16,\quad a^2+b^2\mid 4y^2.\]
+These imply
+\[a^2+b^2\mid 4.\]
+The only solutions of this relation are 
+\[\left\{\begin{array}{ll}
+a=\pm1,&b=0\\
+a=0,&b=\pm1\\
+a=\pm1,&b=\pm1\\
+a=\pm2,&b=0\\
+a=0,&b=\pm2
+\end{array}\right. \]
+none of which turn out to give a proper factor $a+ib$ of $2+iy$. Hence $2+iy,2-iy$ are coprime. By unique factorization in $\Z[i]$, if their product is a cube then one is $\epsilon\alpha^3$ and the other is $\epsilon^{-1}\beta^3$ where $\epsilon$ is a unit, and $\alpha,\beta\in\Z[i]$. By Proposition~\ref{alg int unit} the units in $\Z[i]$ are $\pm i,\pm1$, which are all cubes, so
+\[(2+iy)=(a+bi)^3=a^3+3ia^2b-3ab^2-ib^3=a(a^2-3b^2)+i(3a^2-b^2)b.\]
+for some $a,b\in\Z$. Taking complex conjugates and adding the two equations, we get
+\[4=2a(a^2-3b^2).\]
+so $a(a^2-3b^2)=2$. Now $a$ divides $2$, so $a=\pm 1$ or $\pm2$; and the choice of $a$ determines $b$. It is easy to see that the only solutions are $a=-1,b=\pm1$, or $a=2,b=\pm1$. Then
+\[z^3=(a+bi)^3(a-bi)^3=(a^2+b^2)^3.\]
+so $z=a^2+b^2=2,5$ respectively. Then $y^2+4=8,125$, so $y=\pm2,\pm11$. This gives the solutions with $y=\pm11$ as the only ones for $y$ odd.\par
+Now suppose $y$ even, so that $y=2Y$. Then $z$ is even as well, say $z=2Z$, and
+\[Y^2+1=2Z^3.\]
+Then $Y$ must be odd, say $Y=2k+1$. The gcd of $Y+i$ and $Y-i$ divides the difference $2i=(1+i)^2$. Now $1+i$ divides $Y+i$ and $Y-i$ but $(1+i)^2$ does not, so $\gcd(Y+i,Y-i)=1+i$. But
+\[(1+iY)(1-iY)=2Z^3.\]
+and the common factor $1+i$ occurs twice on the left (bearing in mind that $1+iY=i(Y-i),1-iY=-i(Y+i)$). Hence there must be a factorization
+\[1+iY=(1+i)(a+bi)^3.\]
+whence as before
+\[1=(a+b)(a^2-4ab+b^2)\]
+so $a=\pm1,b=0$, or $a=0,b=\pm1$. These imply $y=\pm2$, which correspond to the other two solutions stated.
+\end{proof}
+\section{Ideals}
+\subsection{Prime Factorization of Ideals}
+Throughout this chapter $\mathfrak{O}$ is the ring of integers of a number field $K$ of degree $n$.
+\begin{theorem}\label{alg int dedekind}
+The ring of integers $\mathfrak{O}$ of a number field $K$ has the following
+properties:
+\begin{itemize}
+\item It is a domain, with field of fractions $K$.
+\item It is Noetherian.
+\item It is integrally closed.
+\item Every non-zero prime ideal of $\mathfrak{O}$ is maximal.
+\end{itemize}
+\end{theorem}
+\begin{proof}
+To prove the last part, let $\p$ be a prime ideal of $\mathfrak{O}$. Let $0\neq\alpha\in\p$. Then
+\[N=N(\alpha)=\alpha_1\cdots\alpha_n\in\p\]
+(the $\alpha_i$ being the conjugates of $\alpha$) since $\alpha_1=\alpha$. Therefore $(N)\sub\p$, so $\mathfrak{O}/\p$ is a quotient ring of $\mathfrak{O}/(N)$, which, being a finitely generated abelian group with every element of finite order, is finite. Since $\mathfrak{O}/\p$ is a domain and is finite, it is a field. Hence $\p$ is a maximal ideal.
+\end{proof}
+A ring that satisfies conditions above is called a \textbf{Dedekind ring}. The proof of unique factorization of ideals, which we give shortly, is valid for all Dedekind rings--although in applications we require only the special case when the ring is a ring $\mathfrak{O}$ of integers in a number field.\par
+An $\mathfrak{O}$-submodule $\a$ of $K$ is called a fractional ideal of $\mathfrak{O}$ if there exists some non-zero $c\in\mathfrak{O}$ such that $c\a\sub\mathfrak{O}$. In other words, the set $\b:=c\a$ is an ideal of $\mathfrak{O}$, and $\a=c^{-1}\b$; thus the fractional ideals of $\mathfrak{O}$ are subsets of $K$ of the form $c^{-1}\b$ where $\b$ is an ideal of $\mathfrak{O}$ and $c$ is a non-zero element of $\mathfrak{O}$.
+\begin{example}
+The fractional ideals of $\Z$ are of the form $r\Z$ where $r\in\Q$.
+\end{example}
+Of course if every ideal of $\mathfrak{O}$ is principal, then the fractional ideals are of the form $c^{-1}d\mathfrak{O}$ where $d$ is a generator. This means the fractional ideals in a principal ideal domain $\mathfrak{O}$ are just $\alpha\mathfrak{O}$ where $\alpha\in K$. The interest in fractional ideals is greater because $\mathfrak{O}$ need not be a principal ideal domain.\par
+In general, an ideal is clearly a fractional ideal and, conversely, a fractional
+ideal a is an ideal if and only if $\a\sub\mathfrak{O}$. The product of fractional ideals is once more a fractional ideal. The multiplication of fractional ideals is commutative and associative with $\mathfrak{O}$ acting as an identity.
+\begin{theorem}
+The non-zero fractional ideals of $\mathfrak{O}$ form an abelian group under multiplication.
+\end{theorem}
+\begin{theorem}
+Every non-zero ideal of $\mathfrak{O}$ can be written as a product of prime ideals, uniquely up to the order of the factors.
+\end{theorem}
+\begin{definition}
+By analogy with factorization of elements, for ideals $\a,\b$ we say that $\a$ divides $\b$, written $\a\mid\b$, if there is an ideal $\c$ such that $\b=\a\c$. This condition is equivalent to $\a\sups\b$ since we may then take $\c=\a^{-1}\b$. The definition of prime ideal $\p$ shows that if $\p\mid\a\b$ then either $\p\mid\a$ or $\p\mid\b$.
+\end{definition}
+In fact, the fractional ideals also factorize uniquely if we allow negative powers of prime ideals. Namely, if $\a$ is a fractional ideal with $0\neq c\in\mathfrak{O}$ such that $c\a$ is an ideal, we have
+\[(c)=\p_1\cdots\p_r,\quad c\a=\q_1\cdots\q_s,\]
+so that
+\[\a=\p_1^{-1}\cdots\p_r^{-1}\q_1\cdots\q_s.\]
+\subsection{The Norm of an Ideal}
+Once unique factorization is proved, several useful consequences follow in
+the usual way. In particular, any two non-zero ideals $\a$ and $\b$ have a \textbf{greatest common divisor} $\g$ and a \textbf{least common multiple} $\l$ with the following properties:
+\[\text{$\g\mid\a,\g\mid\b$ and if $\g'$ has the same properties then $\g'\mid\g$},\]
+\[\text{$\a\mid\l,\b\mid\l$ and if $\l'$ has the same properties then $\l\mid\l'$}.\]
+In fact, suppose we factorize $\a$ and $\b$ into primes as:
+\[\a=\prod\p_i^{e_i},\quad\b=\prod \q_i^{f_i}\]
+with distinct prime ideals $\p_i$. Then we clearly have
+\[\g=\prod\p_i^{\min(e_i,f_i)},\quad\l=\prod\p_i^{\max(e_i,f_i)}.\]
+There are useful alternative expressions:
+\begin{proposition}
+If $\a$ and $\b$ are ideals of $\mathfrak{O}$ and $\g,\l$ are their greatest common divisor and least common multiple, respectively, then
+\[\g=\a+\b,\quad,\l=\a\cap\b\]
+\end{proposition}
+\begin{proof}
+By definition $\a\mid\b$ if and only if $\a\sups\b$. Therefore $\gcd(\a,\b)$ is the smallest ideal containing $\a$ and $\b$, and $\mathrm{lcm}(\a,\b)$ is the largest ideal contained in $\a$ and $\b$. The rest is obvious.
+\end{proof}
+The proof of Theorem~\ref{alg int dedekind} shows that if $\a$ is a non-zero ideal of $\mathfrak{O}$ then the quotient ring $\mathfrak{O}/\a$ is finite. Define the norm of $\a$ to be
+\[N(\a)=|\mathfrak{O}/\a|.\]
+Then $N(a)$ is a positive integer. There is no reason to confuse this norm with the old norm of an element $N(a)$ since it applies only to ideals. But in fact there is a connection between the two norms, as we see in a moment.
+\begin{theorem}\label{alg int ideal norm}
+Every ideal $\a$ of $\mathfrak{O}$ with $\a\neq0$ has a $\Z$-basis $\{\alpha_1,\dots,\alpha_n\}$ where $n$ is the degree of $K$. Moreover, we have
+\[N(\a)=\Big|\frac{\Delta[\alpha_1,\dots,\alpha_n]}{\Delta}\Big|^{1/2}\]
+where $\Delta$ is the discriminant of $K$.
+\end{theorem}
+\begin{proof}
+$(\mathfrak{O},+)$ is free abelian of rank $n$. Since $\mathfrak{O}/\a$ is finite, Corollary~\ref{abelian group quotient order} shows that $(\a,+)$ is free abelian of rank $n$, hence has a $\Z$-basis $\{\alpha_1,\dots,a\lparen_n\}$.\par
+Let $\{\omega_1,\dots,\omega_n\}$ be a $\Z$-basis for $\mathfrak{O}$, and suppose that $\alpha_i=\sum_jc_{ij}\alpha_j$. By Corollary~\ref{abelian group quotient order},
+\[N(\a)=|\mathfrak{O}/\a|=|\det(c_{ij})|.\]
+Oh the other hand, note that
+\[\Delta[\alpha_1,\dots,\alpha_n]=[\det(c_{ij})]^2\Delta[\omega_1,\dots,\omega_n]=[\det(c_{ij})]^2\Delta.\]
+Combining these two equations gives the claim.
+\end{proof}
+\begin{corollary}\label{alg int prin ideal norm}
+If $\a=(a)$ is a principal ideal then $N(\a)=|N(a)|$.
+\end{corollary}
+\begin{proof}
+A $\Z$-basis for $\a$ is given by $\{a\omega_1,\dots,a\omega_n\}$. Therefore
+\begin{align*}
+\Delta[a\omega_1,\dots,a\omega_n]&=[\det(\sigma_i(a\omega_j))]^2=[\det(\sigma_i(a)\sigma_i(\omega_j))]^2\\
+&=\Big(\prod_{i=1}^{n}\sigma_i(a)\Big)^2\cdot[\det(\sigma_i(\omega_j))]^2\\
+&=|N(a)|^2\cdot\Delta.
+\end{align*}
+Now apply Theorem~\ref{alg int ideal norm}.
+\end{proof}
+This corollary helps us to perform a straightforward calculation of the norm of a principal ideal.
+\begin{example}
+If $\mathfrak{O}$ is the ring of integers of $\Q(\sqrt{d})$ for a squarefree rational integer $d$, then
+\[N((a+b\sqrt{d}))=|a^2-bd^2|.\]
+In particular in $\Z(\sqrt{-17})$, $N((18))=18^2$.
+\end{example}
+The new norm, like the old, is multiplicative:
+\begin{proposition}
+If $\a$ and $\b$ are non-zero ideals of $\mathfrak{O}$, then
+\[N(\a\b)=N(\a)N(\b).\]
+\end{proposition}
+\begin{proof}
+By uniqueness of factorization and induction on the number of factors, it is sufficient to prove
+\[N(\a\p)=N(\a)N(\p)\]
+where $\p$ is prime. We establish
+\[|\mathfrak{O}/\a\p|=|\mathfrak{O}/\a|\cdot|\a/\a\p|\And |\a/\a\p|=|\mathfrak{O}/\p|.\]
+Then the result follows immediately from the definition of the norm.\par
+The first equation is a consequence of the first isomorphism theorem for rings:
+\[\frac{\mathfrak{O}}{\a}=\frac{\mathfrak{O}/\a\p}{\a/\a\p}.\]
+For the second equation, first note that from the unique fractorization, $\a\neq\a\p$. Now we show that there is no ideal $\b$ strictly between $\a$ and $\a\p$, for if $\a\p\sub\b\sub\a$, then $\p\sub\a^{-1}\b\sub\mathfrak{O}$. Since $\p$ is maximal, this implies $\a^{-1}\b=\p$ or $\a^{-1}\b=\mathfrak{O}$. That is, $\b=\a\p$ or $\b=\p$.\par
+This means that for any element $a\in\a-\a\p$, we have $\a\p+(a)=\a$. Fix such an $a$ and define $\theta:\mathfrak{O}\to\a/\a\p$ by
+\[\theta(x)=\a\p+ax.\]
+Then $\theta$ is an $\mathfrak{O}$-module homomorphism, surjective, whose kernel
+is $(\a\p:a)$. Since $\p\sub(\a\p:a)$ and $(\a\p:a)\neq\mathfrak{O}$ (otherwise $a=1\cdot a\in\a\p$) we conclude that $\ker\theta=\p$. Therefore $\mathfrak{O}/\p\cong\a/\a\p$.
+\end{proof}
+It is convenient to introduce yet another usage for the word divides. If $\a$ is an ideal of $\mathfrak{O}$ and $\b$ an element of $\mathfrak{O}$ such that $\a|(b)$, then we also write $\a\mid b$ and say that $\a$ divides $b$. It is clear that $\a\mid b$ if and only if $b\in\a$; however, the new notation has certain distinct advantages. For example, if $\p$ is a prime ideal and $\p|(a)(b)$, then we must have $\p\mid(a)$ or $\p\mid(b)$. Thus for $\p$ prime, $\p\mid ab$ implies $\p\mid a$ or $\p\mid b$.\par
+This new notation allows us to emphasize the correspondence between factorization of elements and principal ideals which would otherwise be less evident.
+\begin{proposition}\label{alg int norm prop}
+Let $\a$ be an ideal of $\mathfrak{O}$, $\a\neq0$.
+\begin{itemize}
+\item If $N(\a)$ is prime, then so is $\a$.
+\item $N(\a)$ is an element of $\a$, or equivalently $\a\mid N(a)$.
+\item If $\a$ is prime it divides exactly one rational prime $p$, and then $N(\a)=p^m$ where $m\leq n$, the degree of $K$.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+For part $(a)$ write $\a$ as a product of prime ideals and equate norms. For part $(b)$ note that since $N(a)=|\mathfrak{O}/\a|$ it follows that for any $x\in\mathfrak{O}$ we have $N(a)x\in\a$. Now put $x=1$. For part $(c)$ we note that by part $(b)$
+\[\a\mid N(\a)=p_1^{m_1}\cdots p_r^{m_r}\]
+so, considering principal ideals in place of the $p_i$, we have $a\mid p_i$ for some rational prime $p_i$. If $p$ and $q$ are distinct rational primes, both divisible by $\a$, we can find integers $u,v$ such that $up+vq=1$, so $a\mid 1$ and $\a=\mathfrak{O}$, a contradiction. Then
+\[N(\a)\mid N((p))=p^n\]
+so $N(\a)=p^m$ for some $m\leq n$.
+\end{proof}
+\begin{example}
+If $\mathfrak{O}=\Z[\sqrt{-17}],\p=(2,1+\sqrt{-17})$, then because $\mathfrak{O}=\{\p,1+\p\}$ we immediately deduce that $N(\p)=2$ and $\p$ is prime. Note that $N(\p)=2\in\p$.
+\end{example}
+\begin{example}
+A prime ideal $\a$ can satisfy $N(\a)=p^m$ for $m>1$. For example, $\mathfrak{O}=\Z[i]$ and $\a=(3)$. We know that $\a$ is prime, but $N((3))=3^2$.
+\end{example}
+The next theorem collects together several useful finiteness assertions:
+\begin{proposition}\label{alg int finiteness}
+\mbox{}
+\begin{itemize}
+\item[$(1)$] Every non-zero ideal of $\mathfrak{O}$ has a finite number of divisors.
+\item[$(2)$] A non-zero rational integer belongs to only a finite number of ideals of $\mathfrak{O}$.
+\item[$(3)$] Only finitely many ideals of $\mathfrak{O}$ have given norm.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+$(1)$ is an immediate consequence of prime factorization, $(2)$ is a special case of $(1)$, and $(3)$ follows from $(2)$ using Theorem~\ref{alg int norm prop}$(2)$.
+\end{proof}
+We know that every ideal of $\mathfrak{O}$ is finitely generated. In fact, two generators suffice. First, we prove:
+\begin{lemma}
+If $\a,\b$ are non-zero ideals of $\mathfrak{O}$, there exists $\alpha\in a$ such that
+\[\alpha\a^{-1}+\b=\mathfrak{O}.\]
+\end{lemma}
+\begin{proof}
+First note that if $\alpha\in\a$ then $\alpha\a^{-1}$ is an ideal and not just a fractional ideal. Now $\alpha\a^{-1}+\b$ is the greatest common divisor of $\alpha\a^{-1}$ and $\b$, so it is sufficient to choose $\alpha\in\a$ so that
+\[\alpha\a^{-1}+\p_i=\mathfrak{O}\]
+where $\p_1,\dots,\p_r$ are the distinct prime ideals dividing $\b$. This follows if
+\[\p_i\nmid\alpha\a^{-1}\]
+since $\p_i$ is a maximal ideal. So it is sufficient to choose $\alpha\in\a-\a\p_i$ for all $i=1,\dots,r$.\par
+If $r=1$ this is easy, for unique factorization of ideals implies $\a\neq\a\p_i$. For $r>1$ let
+\[\a_i=\a\p_1\cdots\p_{i-1}\p_{i+1}\cdots\p_r.\]
+By the case $r=1$ we can choose $\alpha_i\in\a_i-\a_i\p_i$. Define 
+\[\alpha=\alpha_1+\cdots+\alpha_r.\]
+Then each $\alpha_i\in\a_i\sub\a$, so $\alpha\in\a$. Suppose if possible that $\alpha\in\a\p_i$. If $j\neq i$ then $\alpha_j\in\a_j\sub\a\p_i$, so
+\[\alpha_i=\alpha-\alpha_1-\cdots-\alpha_{i-1}-\alpha_{i+1}-\cdot-\alpha_r\in\a\p_i.\]
+Since $\alpha_i\in\a_i$, we then have $\alpha_i\in\a_i\p_i$. This contradicts the choice of $\alpha_i$.
+\end{proof}
+\begin{theorem}
+Let $\a\neq0$ be an ideal of $\mathfrak{O}$, and $0\neq\beta\in\a$. Then there exists $\alpha\in\a$ such that $\a=(\alpha,\beta)$.
+\end{theorem}
+\begin{proof}
+Let $\b=\beta\a^{-1}$. By the lemma there exists $\alpha\in\a$ such that
+\[\alpha\a^{-1}+\b=\alpha+\beta\a^{-1}=\mathfrak{O}\]
+Then we get $(\alpha)+(\beta)=\a$.
+\end{proof}
+We are now in a position to characterize those $\mathfrak{O}$ for which factorization of elements into irreducibles is unique:
+\begin{proposition}
+Factorization of elements of $\mathfrak{O}$ into irreducibles is unique if and only if every ideal of $\mathfrak{O}$ is principal.
+\end{proposition}
+Using this theorem we can nicely round off the relationship between factorization of elements and ideals. To do this, consider an element $\pi$ that
+is irreducible but not prime. Then the ideal $(\pi)$ is not prime, so it has a
+proper factorization into prime ideals:
+\[(\pi)=\p_1\cdots\p_r.\]
+\textbf{None of these $\p_i$ can be principal}, for if $\p_i=(a)$ then $(a)\mid(\pi)$, implying $a\mid\pi$. Since $\pi$ is irreducible, $a$ is either a unit, contradicting $(a)$ being prime, or an associate of $\pi$, whence $(\pi)=\p_i$, contradicting $(\pi)$ having a proper factorization.\par
+Tying up the loose ends, we see that if $\mathfrak{O}$ has unique factorization of elements into irreducibles then these irreducibles are all primes, and factorization of elements corresponds precisely to factorization of the corresponding principal ideals. On the other hand, if $\mathfrak{O}$ does not have unique factorization of elements, then not all irreducibles are prime, and any non-prime irreducible generates a principal ideal which has a proper factorization into non-principal ideals. We may add in the latter case that such non-principal ideals have precisely two generators.
+\begin{example}
+In $\Z[\sqrt{-17}]$, the elements $2,3$ are irreducible (proved by considering norms) and not prime, with
+\[(2)=(2,1+\sqrt{-17})^2,\quad (3)=(3,1+\sqrt{-17})(3,1-\sqrt{-17}).\]
+where $(2,1+\sqrt{17}),N(3,1\pm\sqrt{-17})$ are primes since they have norm $2,3$.
+\end{example}
+\begin{example}
+In $\Z[\sqrt{-5}]$, define the ideals
+\[\p=(2,1+\sqrt{-5}),\quad\q=(3,1+\sqrt{-5}),\quad\mathfrak{r}=(3,1-\sqrt{-5}).\]
+Then we have
+\[\p^2=(2),\quad \q\mathfrak{r}=(3),\quad\p\q=(1+\sqrt{-5}),\quad\p\mathfrak{r}=(1-\sqrt{-5})\]
+This implies that $\p,\q,\mathfrak{r}$ are prime. Consider the factorization of $6$,
+\[6=2\cdot 3=(1+\sqrt{-5})(1-\sqrt{-5}).\]
+This factorization comes from two different groupings of the factorization into prime ideals $(6)=\p^2\q\mathfrak{r}$.
+\end{example}
+\begin{example}
+In $\Z[\sqrt{-6}]$ we have
+\[6=2\cdot 3=(\sqrt{-6})(-\sqrt{-6})\]
+Factorize these elements further in the extension ring $\Z[\sqrt{2},\sqrt{-3}]$ as
+\[6=(-1)\cdot\sqrt{2}\cdot\sqrt{2}\cdot\sqrt{-3}\cdot\sqrt{-3}.\]
+Let $\p,\q$ be the principal ideal in $\Z[\sqrt{2},\sqrt{-3}]$ generated by $\sqrt{2},\sqrt{-3}$ respectively, then
+\[\p_1:=\p\cap\Z[\sqrt{-6}]=(2,\sqrt{-6}),\quad \q_1:=\q\cap\Z[\sqrt{-6}]=(3,\sqrt{-6}).\]
+Since $\p,\q$ are prime ideals in $\Z[\sqrt{2},\sqrt{-3}]$, $\p_1,\q_1$ are also prime. Moreover,
+\[\p_1^2=(2),\quad\q_1^2=(3),\quad\p_1\q_1=(\sqrt{-6}).\]
+Thus the factorization of $6$ in $\Z[\sqrt{-6}]$ comes from two different groupings of the factorization into prime ideals $(6)=\p_1^2\q_1^2$.
+\end{example}
+\section{Lattices}
+\subsection{Lattices}
+Let $e_1,\dots,e_m$ be a linearly independent set of vectors in $\R^n$. The additive subgroup of $(\R^n,+)$ generated by $e_1,\dots,e_m$ is called a \textbf{lattice} of dimension $m$, generated by $e_1,\dots,e_m$. Obviously, as
+regards the group-theoretic structure, a lattice of dimension $m$ is a free
+abelian group of rank $m$, so we can apply the terminology and theory of
+free abelian groups to lattices.\par
+We now give a topological characterization of lattices. Let $\R^n$ be equipped with the usual metric, where $\|x-y\|$ denotes the distance between $x$ and $y$, and denote the (closed) ball centre $x$ radius $r$ by $B_r(x)$. Recall that a subset $X\sub\R^n$ is bounded if $X\sub\B_r(0)$ for some $r$. We say that a subset of $\R^n$ is discrete if and only if it intersects every $\B_r(0)$ in a finite set.
+\begin{proposition}
+An additive subgroup of $\R^n$ is a lattice if and only if it is discrete.
+\end{proposition}
+\begin{proof}
+Suppose $L$ is a lattice. By passing to the subspace spanned by $L$ we may assume $L$ has dimension $n$. Let $L$ be generated by $e_1,\dots,e_n$, then these vectors form a basis for the space $\R^n$. Every $v\in\R^n$ has a unique representation
+\[v=\lambda_1e_1+\cdots+\lambda_ne_n,\quad\lambda_i\in\R.\]
+Define $f:\R^n\to\R^n$ by
+\[f(\lambda_1e_1+\cdots+\lambda_ne_n)=(\lambda_1,\dots,\lambda_n).\]
+Then $f(\B_r(0))$ is bounded, say
+\[\|f(v)\|\leq k\for v\in\B_r(0)\]
+If $\sum a_ie_i\in B_r(0),a_i\in\Z$, then certainly $\|(a_1,\dots,a_n)\|\leq k$. This implie 
+\[|a_i|\leq\|(a_1,\dots,a_n)\|\leq k.\]
+The number of integer solutions is finite and so $L\cap B_r(0)$, being a subset of the solutions, is also finite, and $L$ is discrete.\par
+Conversely, let $\Gamma$ be a discrete subgroup of $\R^n$. Let $V_0$ be the linear subspace of $V$ which is spanned by the set $\Gamma$, and let $m$ be its dimension. 
+Then we may choose a basis $u_1,\dots,u_m$ of $V_0$ which is contained in $\Gamma$, and form the lattice
+\[\Gamma_0=\Z u_1+\cdots+\Z u_m\sub\Gamma.\]
+We claim that the index $[\Gamma:\Gamma_0]$ is finite. To see this, let $\gamma_i\in\Gamma$ vary over a system of representatives of the cosets in $\Gamma/\Gamma_0$. 
+Since by the definition, the translates of the fundamentaldomain
+\[\varPhi_0=\{\lambda_1u_1+\cdots+\lambda_mu_m\mid 0\leq\lambda_i<1\}\]
+cover the entire space $V_0$. We may therefore write
+\[\gamma_i=\mu_i+\beta_i,\quad \mu_i\in\varPhi_0,\beta_i\in\Gamma_0\sub V_0.\]
+This means we can choose the representatives of $\Gamma/\Gamma_0$ such that they all lie in the domain $\varPhi_0$. As the intersection of $\Gamma$ with the 
+closure of $\varPhi_0$ is compact and discrete, hence finite, there must be only finitely many representatives.\par
+Putting now $q=[\Gamma:\Gamma_0]$, then the additive group $\Gamma/\Gamma_0$ has order $q$, so we have $q(\Gamma/\Gamma_0)=0$, that is, $q\Gamma\subseteq\Gamma_0$. 
+This implies that
+\[\Gamma\sub\Big(\frac{1}{q}\Big)\Gamma_0=\Z\Big(\frac{1}{q}u_1\Big)+\cdots+\Z\Big(\frac{1}{q}u_m\Big).\]
+By the main theorem on finitely generated abelian groups, $\Gamma$ therefore admits a $\Z$-basis $v_1,\dots,v_r$, $r\leq m$, i.e., $\Gamma=\Z v_1+\cdots+\Z v_r$. The
+vectors $v_1,\dots,v_r$ are also $\R$-linearly independent because they span the $m$-dimensional space $V_0$. This shows that $\Gamma$ is a lattice.
+\end{proof}
+If $L$ is a lattice generated by $\{e_1,\dots,e_n\}$ we define the \textbf{fundamental domain} $T$ to be the set $\{\sum a_ie_i\mid a_i\in\R,0\leq a_i<1\}$. Note that this depends on the choice of generators.
+\begin{lemma}
+Each element of $\R^n$ lies in exactly one of the sets $T+l$ for $l\in L$.
+\end{lemma}
+\begin{proof}
+Just chop off the integer coefficients.
+\end{proof}
+\subsection{The Quotient Torus}
+Let $L$ be a lattice in $\R^n$, and assume to start that $L$ has dimension $n$. We study the quotient group $\R^n/L$.
+Let $S$ denote the set of all complex numbers of modulus $1$. Under multiplication $S$ is a group, called for obvious reasons the circle group.
+\begin{lemma}
+The quotient group $\R/\Z$ is isomorphic to the circle group $S$.
+\end{lemma}
+Next let $\T^n$ denote the direct product of $n$ copies of $S$, and call this the
+$n$-dimensional \textbf{torus}.
+\begin{theorem}
+If $L$ is an $n$-dimensional lattice in $\R^n$ then $\R^n/L$ is isomorphic to the $n$-dimensional torus $\T^n$.
+\end{theorem}
+\begin{lemma}
+Let $\{e_1,\dots,e_n\}$ be generators for $L$. Then $\{e_1,\dots,e_n\}$ is a basis for $\R^n$. Define $\phi:\R^n\to\T^n$ by
+\[\phi(a_1e_1+\cdots+a_ne_n)=(e^{2\pi i a_1},\dots,e^{2\pi ia_n}).\]
+Then $\phi$ is a surjective homorphism, and the kernel of $\phi$ is $L$.
+\end{lemma}
+\begin{lemma}
+The map $\phi$ defined above, when restricted to the fundamental domain $T$, yields a bijection $T\to\T^n$.
+\end{lemma}
+If the dimension of $L$ is less than $n$, we have a similar result:
+\begin{theorem}
+Let $L$ be an $m$-dimensional lattice in $\R^n$. Then $\R^n/L$ is isomorphic to $\T^m\times\R^{n-m}$.
+\end{theorem}
+\begin{proof}
+Let$ V$ be the subspace spanned by $L$, and choose a complement $W$ so that $\R^n=V\oplus W$. Then $L\sub V$ and $V/L\cong\T^m$, thus $\R^n/L\cong \T^m\times\R^{n-m}$.
+\end{proof}
+The volume $v(X)$ of a subset $X\sub\R^n$ is defined in the usual way: for precision we take it to be the value of the multiple integral
+\[\int_Xdx_1\cdots dx_n\]
+where $(x_1,\dots,x_n)$ are coordinates. Of course the volume exists only when
+the integral does.\par
+Let $L\sub\R^n$ be a lattice of dimension $n$, so that $\R^n/L\cong\T^n$. Let $T$ be a fundamental domain of $L$. We have noted the existence of a bijection
+\[\widetilde{\phi}:T\to\T^n.\]
+For any subset $X$ of $\T^n$ we define the volume $v(X)$ by
+\[v(X)=v(\widetilde{\phi}^{-1}(X))\]
+which exists if and only if $\widetilde{\phi}^{-1}(X)$ has a volume in $\R^n$.\par
+Let $\phi:\R^n\to\T^n$ be the natural homomorphism with kernel $L$. It is intuitively clear that $\nu$ is locally volume-preserving, that is, for each $x\in\R^n$ there exists a ball $B_\eps(x)$ such that for all subsets $X\sub B_\eps(x)$ for which $v(X)$ exists we have 
+\[v(X)=v(\phi(X)).\]
+It is also intuitively clear that if an injective map is locally volume-preserving then it is volume-preserving. We prove a result that combines these two intuitive ideas:
+\begin{theorem}\label{volumn non injective}
+If $X$ is a bounded subset of $\R^n$ and $v(X)$ exists, and if $v(\phi(X))\neq v(X)$, then $\phi|_X$ is not injective
+\end{theorem}
+\begin{proof}
+Assume $\phi|_X$ is injective. Now $X$, being bounded, intersects only a finite number of the sets $T+l$, for $T$ a fundamental domain and $l\in L$. Put
+\[X_l=X\cap(T+l).\]
+Then 
+\[X=X_{l_1}\cup\cdots\cup X_{l_n}.\]
+For each $l_i$ define $Y_{l_i}=X_{l_i}-l_i$, so that $Y_{l_i}\sub T$. We claim that the $Y_{l_i}$ are disjoint. Since $\phi(x-l_i)=\phi(x)$ for all $x\in\R^n$ this follows from the assumed injectivity of $\phi$. Now 
+\[v(X_{l_i})=v(Y_{l_i}),\quad \phi(X_{l_i})=\widetilde{\phi}(Y_{l_i})\]
+where $\phi$ is the bijection $T\to\T^n$. We compute
+\begin{align*}
+v(\phi(X))&=v\Big(\phi\Big(\bigcup X_{l_i}\Big)\Big)=v\Big(\bigcup Y_{l_i}\Big)=\sum v(Y_{l_i})=\sum v(X_{l_i})=v(X).
+\end{align*}
+a contradiction.
+\end{proof}
+\subsection{Minkowski's Theorem}
+A subset $X\sub\R^n$ is (centrally) \textbf{symmetric} if $x\in X$ implies $-x\in X$.
+\begin{theorem}[\textbf{Minkowski's Theorem}]
+Let $L$ be an $n$-dimensional lattice in $\R^n$ with fundamental domain $T$, and let $X$ be a bounded symmetric convex subset of $\R^n$. If
+\[v(X)>2^nv(T)\]
+then $X$ contains a non-zero point of $L$.
+\end{theorem}
+\begin{proof}
+Double the size of $L$ to obtain a lattice $2L$ with fundamental domain $2T$ of volume $2^nv(T)$. Consider the torus
+\[\T^n=\R^n/2L.\]
+By definition, $v(\T^n)=v(2T)=2^nv(T)$. Now the natural map $\phi:\R^n\to\T^n$ cannot preserve the volume of $X$, since this is strictly larger than $v(\T^n)$: since $\phi(X)\sub\T^n$ we have
+\[v(\phi(X))\leq v(\T^n)=2^nv(T)<v(X)\]
+By Theorem~\ref{volumn non injective} $\phi|_X$ is not injective, so there exist distinct points $x_1,x_2\in X$ such that $\phi(x_1)=\phi(x_2)$, or equivalently
+\[x_1-x_2\in 2L.\]
+But $x_2\in X$, so $-x_2\in X$ by symmetry; and now by convexity
+\[\frac{1}{2}x_1+\frac{1}{2}(-x_2)\in X.\]
+That is, $(x_1-x_2)/2\in X$. Since $(x_1-x_2)/2$ is also in $L$, we conclude that
+\[0\neq\frac{1}{2}(x_1-x_2)\in X\cap L.\]
+\end{proof}
+\subsection{The two-squares theorem and the four-squres theorem}
+We use Minkowski's method to prove a wonderful theorem of Fermat:
+\begin{theorem}
+A positive odd prime integer $p$ is a sum of two integer squares if and only if it is congruent to $1$ modulo $4$. 
+\end{theorem}
+\begin{proof}
+One direction is trivial. Namely, if $p=a^2+b^2$ is a sum of squres, then from the observation
+\[a^2\equiv\begin{cases}
+0\mod 4&\text{ if $a$ is even};\\
+1\mod 4&\text{ if $a$ is odd}.
+\end{cases}\]
+we must have $p\equiv1$ mod $4$. Now we deal with the converse.\par
+Assume that $p=4k+1$. The multiplicative group $G$ of the field $\Z/p\Z$ is cyclic. It has order $p-1=4k$. It therefore contains an element $u$ of order $4$. Then $u^2\equiv-1$ mod $p$ since $-1$ is the only element of order $2$ in $G$. Let $L\sub\Z^2$ be the lattice in $\R^2$ consisting of all pairs $(a,b)$ such that
+\[b\equiv ua\mod p.\]
+This is a subgroup of $\Z^2$ of index $p$ so the volume of a fundamental domain for $L$ is $p$. By Minkowski's theorem any circle, centre the origin, of radius $r$, which has area
+\[\pi r^2>4p\]
+contains a non-zero point of $L$. This is the case for $r^2=3p/2$. So there exists a point $(a,b)\in L$, not the origin, for which
+\[0\neq a^2+b^2\leq r^2=3p/2<2p\]
+But modulo $p$,
+\[a^2+b^2\equiv a^2+u^2a^2\equiv a^2-a^2\equiv0.\]
+Therefore $a^2+b^2$ is a multiple of $p$ lying strictly between $0$ and $2p$, so it must equal $p$.
+\end{proof}
+Here is also another proof using purely algebraic method. If consists of two lemmas. We say that a prime integer $p$ \textbf{splits} in $\Z[i]$ if it is not a prime element of $\Z[i]$.
+\begin{lemma}
+A positive integer prime $p\in\Z$ splits in $\Z[i]$ if and only if it is the sum of two squares in $\Z$.
+\end{lemma}
+\begin{proof}
+First assume that $p=a^2+b^2$, with $a,b\in\Z$. Then $p=(a+bi)(a-bi)$ in $\Z[i]$, and since $N(a\pm bi)=a^2+b^2=p>1$, neither of the two factors is a unit in $\Z[i]$. Thus $p$ is not irreducible, hence not prime, in $\Z[i]$.\par
+Conversely, assume that $p$ is not irreducible in $\Z[i]$: then it has an irreducible factor $q\in\Z[i]$, which is not an associate of $p$. Then we have $N(q)\mid N(p)=p^2$, and hence $N(q)=p$ since $q$ and $p$ are not associates and $q$ is not a unit. If $q=a+bi$, then we find $N(q)=a^2+b^2=p$, verifying that $p$ is the sum of two squares and completing the proof.
+\end{proof}
+\begin{lemma}
+A positive odd prime integer $p$ splits in $\Z[i]$ if and only if it is congruent to $1$ modulo $4$.
+\end{lemma}
+\begin{proof}
+The question is whether $p$ is prime as an element of $\Z[i]$, that is, whether
+$\Z[i]/(p)$ is an integral domain. But we have isomorphisms
+\[\frac{\Z[i]}{(p)}\cong\frac{\Z[x]/(x^2+1)}{(p)}\cong\frac{\Z[x]}{(p,x^2+1)}\cong\frac{\Z/p\Z[x]}{(x^2+1)}\]
+Therefore,
+\begin{align*}
+\text{$p$ splits in $\Z[i]$}&\iff\text{$\Z/p\Z[x](x^2+1)$ is not an integral domain}\\
+&\iff\text{$x^2+1$ is not irreducible in $\Z/p\Z[x]$}\\
+&\iff\text{$x^2+1$ has a root in $\Z/p\Z$}\\
+&\iff\text{there is an integer $n$ such that $n^2\equiv-1$ mod $p$}.
+\end{align*}
+and we are reduced to verifying that this last condition is equivalent to $p\equiv1$ mod $4$, provided that $p$ is an odd prime.\par
+The multiplicative group $G$ of the field $\Z/p\Z$ is cyclic and has order $p-1$. Since $p$ is odd, $p-1$ is an even number. By solving the equation
+\[x^2\equiv 1\mod p\]
+we know that $-1$ is the unique element in $G$ having order $2$. Therefore
+\[n^2\equiv-1\mod p\iff \text{$n$ has order $4$ in $G$}\]
+By the property of cyclic group, the existence of such an element $n$ is equivalent to the condition $4\mid(p-1)$.
+\end{proof}
+\begin{proposition}
+The number $\mu(n)$ of pairs of integers $(x,y)$ with $x^2+y^2<n$ satisfies $\mu(n)/n\to\pi$ as $n\to\infty$.
+\end{proposition}
+\begin{proof}
+For each point $(a,b)$ in the region $R=\{(x,y)\in\Z^2\mid x^2+y^2<n\}$, we draw a squre with length $1$ centered at $(a,b)$. Then these squres are disjoint, and their total area is exactly the number $\mu(n)$. Now these squres are sandwiched between the cicires od radius $(\sqrt{n}-1/\sqrt{2})$ and $(\sqrt{n}+1/\sqrt{2})$, so we get
+\[\pi\Big(\sqrt{n}-\frac{1}{\sqrt{2}}\Big)^2\leq\mu(n)\leq\pi\Big(\sqrt{n}+\frac{1}{\sqrt{2}}\Big)^2\]
+This gives the desired limit.
+\end{proof}
+Refining this argument leads to another famous theorem, first proved by Lagrange:
+\begin{theorem}[\textbf{Four-Squares Theorem}]
+Every positive integer is a sum of four integer squares.
+\end{theorem}
+\begin{proof}
+We only need to prove the theorem for primes $p$, in view of the identity
+\begin{align*}
+(a^2+b^2+c^2+d^2)(A^2+B^2+C^2+D^2)&=(aA-bB-cC-dD)^2+(aB+bA+cD-dC)^2\\
+&+(aC-bD+cA+dB)^2+(aD+bC-cB+dA)^2.
+\end{align*}
+which comes from the multiplication of quaternions. Now
+\[2=1^1+1^2+0^2+0^2\]
+so we may assume $p$ is odd. We claim that the congruence
+\[u^2+v^2+1\equiv 0\mod p\]
+has a solution $u,v\in\Z$. This is because $(\Z/p\Z)^{\times}$ is cyclic and $((\Z/p\Z)^{\times})^2$ is a subgroup of index $2$, thus has $(p-1)/2$ elements. Therefore, $u^2$ takes exactly $(p+1)/2$ distinct values as $u$ runs through $0,\dots,p-1$; and $-1-v^2$ also takes on $(p+1)/2$ values. For the congruence to have no solution, all these values, $p+1$ in total, are distinct, but then $p+1\leq p$ which is absurd.\par
+For such a choice of $u,v$ consider the lattice $L\sub\Z^4$ consisting of $(a,b,c,d)$ such that
+\[c\equiv ua+vb,\quad d\equiv ub-va\mod p.\]
+Then $L$ has index $p^2$ in $\Z^4$ so the volume of a fundamental domain is $p^2$. Now a $4$-dimensional sphere, centre the origin, radius $r$, has volume
+\[\pi^2r^2/2\]
+and we choose $r$ to make this greater than $16p^2$; say $r^2=1.9p$.\par
+There exists a lattice point $0\neq(a,b,c,d)$ in this $4$-sphere, so
+\[0\neq a^2+b^2+c^2+d^2\leq r^2=1.9p<2p.\]
+Modulo $p$, it is easy to verify that $a^2+b^2+c^2+d^2\equiv0$, hence as before it must equal $p$.
+\end{proof}
+\subsection{The space \boldmath$\mathbb{L}^{st}$}
+Let $K=\Q(\theta)$ be a number field of degree $n$, where $\theta$ is an algebraic integer. Let $\sigma_1,\dots,\sigma_n$ be the set of all monomorphisms $K\to\C$. If $\sigma_i(K)\sub\R$, which happens if and only if $\sigma_i(\theta)\in\R$, we say that $\sigma_i$, is real; otherwise $\sigma_i$ is complex. As usual denote complex conjugation by bars and define
+\[\widebar{\sigma}_i(\alpha)=\widebar{\sigma_i(\alpha)}.\]
+Since complex conjugation is an automorphism of $\C$ it follows that $\widebar{\sigma}_i$ is a monomorphism $\K\to\C$, so equals $\sigma_j$ for some $j$. Now $\sigma_i=\widebar{\sigma}_i$ if and only if $\sigma_i$ is real, and $\widebar{\widebar{\sigma}}_i=\sigma_i$, so the complex monomorphisms come in conjugate pairs. Hence
+\[n=s+2t.\]
+where $s$ is the number of real monomorphisms and $2t$ is the number of complex ones. We standardize the numeration in such a way that the system of all monomorphisms $\K\to\C$ is
+\[\sigma_1,\dots,\sigma_s,\sigma_{s+1},\widebar{\sigma}_{s+1},\dots,\sigma_{s+t},\widebar{\sigma}_{s+t}.\]
+where $\sigma_1,\dots,\sigma_s$ are real and the rest complex.\par
+Further define
+\[\mathbb{L}^{st}=\R^s\times\C^t\]
+the set of all $(s+t)$-tuples
+\[x=(x_1,\dots,x_s;x_{s+1},\dots,x_{s+t})\]
+where $x_1,\dots,x_s\in\R$ and $x_{s+1},\dots,x_{s+t}\in\C$. Then $\mathbb{L}^{st}$ is a vector space over $\R$, and a ring (with coordinatewise operations): in fact it is an $\R$ algebra. As vector space over $\R$ it has dimension $s+2t=n$.\par
+For $x\in\mathbb{L}^{st}$, define the norm
+\[N(x)=x_1\cdots x_s|x_{s+1}|^2\cdots|x_{s+t}|^2.\]
+The norm has two obvious properties:
+\begin{itemize}
+\item[$(a)$] $N(x)$ is real for all $x$.
+\item[$(b)$] $N(xy)=N(x)N(y)$.
+\end{itemize}
+Define a map
+\[\sigma:K\to\mathbb{L}^{st}\]
+\[\sigma(\alpha)=(\sigma_1(\alpha),\dots,\sigma_s(\alpha);\sigma_{s+1}(\alpha),\dots,\sigma_{s+t}(\alpha)).\]
+for $\alpha\in K$. Clearly
+\[\sigma(\alpha+\beta)=\sigma(\alpha)+\sigma(\beta),\quad\sigma(\alpha\beta)=\sigma(\alpha)\sigma(\beta)\]
+for all $\alpha,\beta\in K$, so $\sigma$ is a ring homomorphism. If $r$ is a rational number then
+\[\sigma(r\alpha)=r\sigma(\alpha)\]
+so $\sigma$ is a $\Q$-algebra homomorphism. Furthermore,
+\[N(\sigma(\alpha))=N(\alpha).\]
+For example, let $K=\Q(\theta)$ where $\theta\in\R$ satisfies
+\[\theta^3=2=0\]
+Then the conjugates of $\theta$ are $\theta$, $\omega\theta$, $\omega^2\theta$ where $\omega$ is a complex cube root of unity. The monomorphisms $K\to\C$ are given by
+\[\sigma_1(\theta)=\theta,\quad\sigma_2(\theta)=\omega\theta,\quad\widebar{\sigma}_2(\theta)=\omega^2\theta\]
+Hence $s=t=1$.\par
+An element of $K$, say
+\[x=q+r\theta+s\theta^2\]
+where $q,r,s\in\Q$, maps into $\mathbb{L}^{1,1}$ according to
+\[\sigma(x)=(q+r\theta+s\theta^2,q+r\omega\theta+s\omega^2\theta^2)\]
+The kernel of $\sigma$ is an ideal of $K$ since $\sigma$ is a ring homomorphism. Since $K$ is a field, $\sigma$ is either identically zero or injective. But $\sigma(1)\neq 0$, so $\sigma$ must be injective. Much stronger is the following result:
+\begin{proposition}\label{alg int L^{st} inde}
+If $\alpha_1,\dots,\alpha_n$ is a basis for $K$ over $\Q$ then $\sigma(\alpha_1),\dots,\sigma(\alpha_n)$ are linearly independent over $\R$.
+\end{proposition}
+\begin{proof}
+Linear independence over $\Q$ is immediate since $\sigma$ is injective, but we need more than this. Let
+\[\sigma(\alpha_l)=(x_1^{(l)},\dots,x_s^{(l)};y_1^{(l)}+iz_1^{(l)},\dots,y_t^{(l)}+iz_t^{(l)})\]
+then it is sufficient to prove that the determinant
+\[D=\left|\begin{array}{cccccccc}
+x_1^{(1)}&\cdots&x_s^{(1)}&y_1^{(1)}&z_1^{(1)}&\cdots&y_t^{(1)}&z_t^{(1)}\\
+\vdots& &\vdots&\vdots&\vdots& &\vdots&\vdots\\
+x_1^{(n)}&\cdots&x_s^{(n)}&y_1^{(n)}&z_1^{(n)}&\cdots&y_t^{(n)}&z_t^{(n)}
+\end{array}\right|\]
+is non-zero. Put
+\[E=\left|\begin{array}{cccccccc}
+x_1^{(1)}&\cdots&x_s^{(1)}&y_1^{(1)}+iz_1^{(1)}&y_1^{(1)}-iz_1^{(1)}&\cdots\\
+\vdots& &\vdots&\vdots&\vdots&\vdots\\
+x_1^{(n)}&\cdots&x_s^{(n)}&y_1^{(n)}+iz_1^{(n)}&y_1^{(n)}-iz_1^{(n)}&\cdots
+\end{array}\right|\]
+Then $E^2=\Delta[\alpha_1,\dots,\alpha_n]\neq 0$. Now elementary properties of determinants (column operations) yield
+\[E=(-2i)^tD\]
+so $D\neq 0$ as required.
+\end{proof}
+\begin{corollary}
+$\Q$-linearly independent elements of the number field $K$ map under $\sigma$ to $\R$-linearly independent elements of $\mathbb{L}^{st}$.
+\end{corollary}
+\begin{corollary}\label{alg int subgroup lattice}
+Suppose that $G$ is a finitely generated subgroup of $(K,+)$ with $\Z$-basis $\{\alpha_1,\dots,\alpha_m\}$. Then the image of $G$ in $\mathbb{L}^{st}$ is a lattice witt generators $\sigma(\alpha_1),\dots,\sigma(\alpha_m)$.
+\end{corollary}
+Since $\mathbb{L}^{st}$ is isomorphic to $\R^{s+2t}$ as a real vector space, the natural idea is to transfer the usual Euclidean metric from $\R^{s+2t}$ to $\mathbb{L}^{st}$. This amounts to choosing a basis in $\mathbb{L}^{st}$ and defining an inner product with respect to which this basis is orthonormal. The natural basis to set the standard basis. Then the element
+\[(x_1,\dots,x_s;y_1+iz_1,\dots,y_t+iz_t)\]
+of Lst has coordinates
+\[(x_1,\dots,x_s,y_1,z_1,\dots,y_t,z_t).\]
+Changing notation slightly, if we take
+\[x=(x_1,\dots,x_s,y_1,z_1,\dots,y_t,z_t),\quad x'=(x'_1,\dots,x'_s,y'_1,z'_1,\dots,y'_t,z'_t)\]
+then the inner product is defined by
+\[(x,x')=x_1x'_1+\cdots+y_1y'_1+z_1z'_1+\cdots+y_ty'_t+z_tz'_t.\]
+The length of a vector $x$ is then
+\[\|x\|=\sqrt{(x,x)}.\]
+and the distance between $x$ and $x'$ is $\|x-x'\|$.
+\section{Class-Group and Class-Number}
+\subsection{The Class-Group}
+As usual let $\mathfrak{O}$ be the ring of integers of a number field $K$ of degree $n$. We know the prime factorization in $\mathfrak{O}$ is unique if and only if every ideal of $\mathfrak{O}$ is principal. Our aim here is to find a way of measuring how far prime factorization fails to be unique in the case where $\mathfrak{O}$ contains non-principal ideals, or equivalently how far away the ideals of $\mathfrak{O}$ are from being principal.\par
+To this end we use the group of fractional ideals. Say that a fractional ideal of $\mathfrak{O}$ is principal if it is of the form $(\alpha)$ where $\alpha\in K$. Let $\mathcal{F}$ be the group of fractional ideals under multiplication. It is easy to check that the set $\mathcal{P}$ of principal fractional ideals is a subgroup of $\mathcal{F}$. We define the class-group of $\mathfrak{O}$ to be the quotient group
+\[\mathcal{H}=\mathcal{F}/\mathcal{P}\]
+The class-number $h=h(\mathfrak{O})$ is defined to be the order of $\mathcal{H}$.\par
+Say that two fractional ideals are \textbf{equivalent} if they belong to the same coset of $\mathcal{P}$ in $\mathcal{F}$, or in other words if they map to the same element of $\mathcal{F}/\mathcal{P}$. If $\a$ and $\b$ are fractional ideals we write $\a\sim\b$ if $\a$ and $\b$ are equivalent, and use $[\a]$ to denote the equivalence class of $\a$.\par
+This leads to an alternative description of $\mathcal{H}$: on the set of all ideals of $\mathfrak{O}$, define a relation $\sim$ by $\a\sim\b$ if and only if there exist principal ideals $(c),(d)$ with $\a(c)=\b(d)$. This is an equivalence relation, and $\mathcal{H}$ is the set of equivalence classes $[\a]$ with group operation
+\[[\a][\b]=[\a\b]\]
+This is why $\mathcal{H}$ is called the class-group.\par
+The significance of the class-group is that it captures the extent to which
+factorization is not unique. In particular:
+\begin{theorem}
+Factorization in $\mathfrak{O}$ is unique if and only if the class-group $\mathcal{H}$ has order $1$, or equivalently the class-number $h=1$.
+\end{theorem}
+\subsection{An Existence Theorem}
+Let $K$ be a number field of degree $n$ as usual, with ring of integers $\mathfrak{O}$; and let $\a$ be an ideal of $\mathfrak{O}$. Then $(\a,+)$ is a free abelian group of rank $n$, so by Corollary~\ref{alg int subgroup lattice} its image $\sigma(\a)$ in $\mathbb{L}^{st}$ is a lattice of dimension $n$. We want to compute the volume of its fundamental domain. A useful general result is:
+\begin{lemma}
+Let $L$ be an $n$-dimensional lattice in $\R^n$ with basis $\{e_1,\dots,e_n\}$. Suppose that
+\[e_i=(a_{1i},\dots,a_{ni}).\]
+Then the volume of the fundamental domain $T$ of $L$ defined by this basis is
+\[v(T)=|\det(a_{ij})|.\]
+\end{lemma}
+\begin{proof}
+The fundamental domain $T$ is the set $\{\sum\lambda_ie_i\mid \lambda_i\in R,0\leq\lambda_i\leq 1\}$, thus its volumn is
+\begin{align*}
+v(T)=\int_T dx_1\cdots dx_n=\int_{[0,1]^n}|\det(a_{ij})|dy_1\cdots dy_n=|\det(a_{ij})|.
+\end{align*}
+where we use the change of variables $x_i=\sum_ja_{ij}y_j$.
+\end{proof}
+\begin{theorem}\label{alg int ideal lattice volumn}
+Let $K$ be a number field of degree $n$ as usual, with ring of integers $\mathfrak{O}$, and let $0\neq\a$ be an ideal of $\mathfrak{O}$. Then the volume of a fundamental domain for $\sigma(\a)$ in $\mathbb{L}^{st}$ is
+\[2^{-t}N(\a)\sqrt{\Delta}\]
+where $\Delta$ is the discriminant of $K$.
+\end{theorem}
+\begin{proof}
+Let $\{\alpha_1,\dots,\alpha_n\}$ be a $\Z$-basis for $\a$. Then, in the notation of Proposition~\ref{alg int L^{st} inde}, if $T$ is a fundamental domain for $\sigma(\a)$ then $v(T)=|D|$. In the notation of that proposition,
+\[E=(-2i)^tD\]
+so that $|D|=2^{-t}|E|$. Now $E^2=\Delta[\alpha_1,\dots,\alpha_n]$ and
+\[N(\a)=\Big|\frac{\Delta[\alpha_1,\dots,\alpha_n]}{\Delta}\Big|^{1/2}\]
+by Theorem~\ref{alg int ideal norm}.
+\end{proof}
+Theorem~\ref{alg int ideal lattice volumn} now yields the important:
+\begin{theorem}\label{alg int ideal element norm}
+If $\a\neq0$ is an ideal of $\mathfrak{O}$ then $\a$ contains an element $\alpha$ with
+\[|N(\alpha)|\leq\Big(\frac{4}{\pi}\Big)\cdot\frac{n!}{n^n}\sqrt{\Delta}N(\a)\]
+where $n$ is the degree of $K$ and $\Delta$ is the discriminant
+\end{theorem}
+\begin{proof}
+Let $X_c$ be the set of all $x\in\mathbb{L}^{st}$ such that
+\[|x_1|+\cdots+|x_s|+2\sqrt{y_1^2+z_1^2}+\cdots+2\sqrt{y_t^2+z_t^2}<c\]
+where $c$ is a positive real number. Then $X_c$ is convex and centrally symmetric, and 
+\[v(X_c)=2^s\Big(\frac{\pi}{2}\Big)^t\cdot\frac{c^n}{n!}.\]
+By Minkowski's theorem, $X_c$ contains a point $\alpha\neq0$ of $\sigma(\a)$ provided that
+\[v(X_c)>2^{2+2t}v(T)\]
+where $T$ is a fundamental domain for $\sigma(\a)$. By Theorem~\ref{alg int ideal lattice volumn},
+\[v(T)=2^{-t}N(\a)\sqrt{\Delta}\]
+so the condition on $X_c$ becomes
+\[2^s\Big(\frac{\pi}{2}\Big)^t\cdot\frac{c^n}{n!}>2^{s+2t}\cdot 2^{-t}N(\a)\sqrt{\Delta}\]
+which is
+\[c^n>\Big(\frac{4}{\pi}\Big)n!N(\a)\sqrt{\Delta}.\]
+For such an $\alpha$,
+\begin{align*}
+|N(\alpha)|&=|x_1|\cdots|x_s|\cdot(y_1^2+z_1^2)\cdots(y_t^2+z_t^2)\\
+&=|x_1|\cdots|x_s|\cdot\sqrt{y_1^2+z_1^2}\sqrt{y_1^2+z_1^2}\cdots\sqrt{y_t^2+z_t^2}\sqrt{y_t^2+z_t^2}\\
+&\leq\Big(\frac{|x_1|+\cdots+|x_s|+2\sqrt{y_1^2+z_1^2}+\cdots+2\sqrt{y_t^2+z_t^2}}{n}\Big)^n<\Big(\frac{c}{n}\Big)^n
+\end{align*}
+by the inequality between arithmetic and geometric means.\par
+Now for fixed but arbitrary $\eps>0$ choose positive real numbers $c$ with
+\[c^n=\Big(\frac{4}{\pi}\Big)n!N(\a)\sqrt{\Delta}+\eps.\]
+there exists $0\neq\alpha\in\a$ such that
+\[|N(\alpha)|<\Big(\frac{c}{n}\Big)^n=\Big(\frac{4}{\pi}\Big)^t\frac{n!}{n^n}N(\a)\sqrt{\Delta}+\frac{\eps}{n^n}.\]
+Since a lattice is discrete, the set $A_\eps$ of such $\alpha$ is finite. Also $A_\eps\neq\emp$, so $A=\bigcap_\eps A_\eps$. It we pick $\alpha\in A$ then
+\[|N(\alpha)|\leq\Big(\frac{4}{\pi}\Big)^t\frac{n!}{n^n}N(\a)\sqrt{\Delta}.\]
+\end{proof}
+\begin{corollary}\label{alg int ideal equiv}
+Every non-zero ideal $\a$ of $\mathfrak{O}$ is equivalent to an ideal $\b$ such that
+\[N(\b)\leq\Big(\frac{4}{\pi}\Big)^t\frac{n!}{n^n}\sqrt{\Delta}.\]
+\end{corollary}
+\begin{proof}
+The class of fractional ideals equivalent to $\a^{-1}$ contains an ideal $\c$, so $\a\c\sim\mathfrak{O}$. Use Theorem~\ref{alg int ideal element norm} to find an integer $\gamma\in\c$ such that
+\[|N(\gamma)|\leq\Big(\frac{4}{\pi}\Big)^t\frac{n!}{n^n}N(\c)\sqrt{\Delta}\]
+Since $\c\mid\gamma$ we have $(\gamma)=\c\b$ for some ideal $\b$. Then we get
+\[N(\b)=N(\gamma)/N(\c)\leq\Big(\frac{4}{\pi}\Big)^t\frac{n!}{n^n}\sqrt{\Delta}.\]
+We claim that $\b\sim\a$. This is clear since $\c\sim\a^{-1}$ and $\b\sim\c^{-1}$.
+\end{proof}
+This result suggests the introduction of Minkowski constants
+\[M_{st}=\Big(\frac{4}{\pi}\Big)^t\frac{(s+2t)!}{(s+2t)^{s+2t}}.\]
+For future use, we give a short table of their values. The numbers in the last column have all been rounded upwards in the third decimal place, to avoid underestimates.
+\begin{table}[h]
+\centering
+\begin{tabular}{ccc|c}
+\hline
+$n$&$s$&$t$&$M_{st}$\\
+\hline
+$2$&$0$&$1$&$0.637$\\
+$2$&$2$&$0$&$0.500$\\
+$3$&$1$&$1$&$0.283$\\
+$3$&$3$&$0$&$0.223$\\
+$4$&$0$&$2$&$0.152$\\
+$4$&$2$&$1$&$0.120$\\
+$4$&$4$&$0$&$0.094$\\
+$5$&$1$&$2$&$0.063$\\
+$5$&$3$&$1$&$0.049$\\
+$5$&$5$&$0$&$0.039$
+\end{tabular}
+\caption{Table of Minkowski constants.}
+\end{table}
+\begin{example}
+lf $K=\Q(\sqrt{-5})$, then $\mathfrak{O}=\Z[\sqrt{-5}]$ does not have unique factorization, so $h>1$. Because the monomorphisms $\sigma_i:\K\to\C$ are $\sigma_1,\widebar{\sigma}_1$, we have $t=1$. The discriminant $\Delta$ of $K$ is $\Delta=-20$, so
+\[M_{st}\sqrt{\Delta}=\frac{2\sqrt{20}}{\pi}<2.85.\]
+Every ideal of $\mathfrak{O}$ is then equivalent to an ideal of norm less than $2.85$, which means a norm of $1$ or $2$. An ideal of norm $1$ is the whole ring $\mathfrak{O}$, hence principal. An ideal $\a$ of norm $2$ satisfies $\a\mid2$ by Theorem~\ref{alg int ideal norm}$(b)$, so $\a$ is a factor of $(2)$. But
+\[(2)=(2,1+\sqrt{-5})^2\]
+So $(2,1+\sqrt{-5})$ is the only
+ideal of norm 2. Hence every ideal of $\mathfrak{O}$ is equivalent to $\mathfrak{O}$ or $(2,1+\sqrt{-5})$, which are themselves inequivalent, proving that $h=2$.
+\end{example}
+
+\subsection{Finiteness of the Class-Group}
+\begin{theorem}
+The class-group of a number field is a finite abelian group. The class-number $h$ is finite.
+\end{theorem}
+\begin{proof}
+Let $K$ be a number field of discriminant $\Delta$ and degree $n=s+2t$ as usual. The class-group $\mathcal{H}=\mathcal{F}/\mathcal{P}$ is abelian, so it remains to prove $\mathcal{H}$ finite. This is true if and only if the number of distinct equivalence classes of fractional ideals is finite. Let $[\c]$ be such an equivalence class. Then $[\c]$ contains an ideal $\a$, and by Corollary~\ref{alg int ideal equiv}, $\a$ is equivalent to an ideal $\b$ with bounded norm. Since only finitely many ideals have a given norm (Theorem~\ref{alg int finiteness}$(c)$) there are only finitely many choices for $\b$. Since $[\c]=[\a]=[\b]$ there are only finitely many equivalence classes $[\c]$, whence $\mathcal{H}$ is a finite group and $h=|\mathcal{H}|$ is finite.
+\end{proof}
+From simple group-theoretic facts we obtain the useful:
+\begin{proposition}\label{alg int ideal power}
+Let $K$ be a number field of class-number $h$, and $\a$ an ideal of the ring of integers $\mathfrak{O}$. Then
+\begin{itemize}
+\item[$(a)$] $\a^h$ is principal.
+\item[$(b)$] If $q$ is prime to $h$ and $\a^q$ is principal, then $\a$ is principal.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+Since $h=|\mathcal{H}|$ we have $[\a]^h=[\mathfrak{O}]$ for all $[\a]\in\mathcal{H}$, because $[\mathcal{O}]$ is the identity element of $\mathcal{H}$. Hence $[\a^h]=[\a]^h=[\mathfrak{O}]$, so $\a^h$ is principal. This proves $(a)$. For $(b)$ choose $u$ and $v\in\Z$ such that $uh+vq=1$. Then $[\a]^q=[\mathfrak{O}]$, so
+\[[\a]=[\a]^{uh+vq}=([\a]^h)^u([\a]^q)^v=[\mathfrak{O}]\]
+and again $\a$ is principal.
+\end{proof}
+\subsection{How to Make an Ideal Principal}
+Given an ideal $\a$ in the ring $\mathfrak{O}$ of integers of a number field $K$, we already know that $\a$ has at most two generators
+\[\a=(\alpha,\beta),\quad \alpha,\beta\in\mathfrak{O}.\]
+We demonstrate that there exists an extension number field $E\sups K$ with integers $\mathfrak{O}'$, such that the extended ideal $\mathfrak{O}'\a$ in $\mathfrak{O}'$ is principal. As standard notation we retain the symbols $(\alpha),(\alpha,\beta)$ to denote the ideals in $\mathfrak{O}$ generated by $\alpha$ and by $\alpha,\beta$. We write the ideal in $\mathfrak{O}'$ generated by $S\sub\mathfrak{O}'$ as $\mathfrak{O}'S$. 
+\begin{lemma}
+If $S_1,S_2$ are subsets of $\mathfrak{O}$', then
+\[\mathfrak{O}'(S_1S_2)=(\mathfrak{O}'S_1)(\mathfrak{O}'S_2).\]
+\end{lemma}
+The central result is:
+\begin{theorem}\label{alg int ext principal}
+Let $K$ be a number field, $\a$ an ideal in the ring of integers $\mathfrak{O}$ of $K$. Then there exists an algebraic integer $\kappa$ such that if $\mathfrak{O}'$ is the ring of integers of $K(\kappa)$, then
+\begin{itemize}
+\item[$(a)$] $\mathfrak{O}'=\mathfrak{O}'\a$.
+\item[$(b)$] $(\mathfrak{O}'\kappa)\cap\mathfrak{O}=\a$.
+\item[$(c)$] If $\mathbb{B}$ is the ring of all algebraic integers, then $(\mathbb{B}\kappa)\cap K=\a$.
+\item[$(d)$] If $\mathfrak{O}''\gamma=\mathfrak{O}''\a$ for any $\gamma\in\mathbb{B}$, and any ring $\mathfrak{O}''$ of integers, then $\gamma=u\kappa$ where $u$ is a unit of $\mathbb{B}$.
+\end{itemize}
+\end{theorem}
+\begin{proof}
+By Proposition~\ref{alg int ideal power}, $\a^h$ is principal, say $\a^h=(\omega)$. Let $\kappa=\omega^{1/h}\in\mathbb{B}$, and consider $E=K(\kappa)$. Let $\mathfrak{D}'=\mathbb{B}\cap E$ be the ring of integers in $E$; clearly $\kappa\in\mathfrak{O}'$. Since $\a^h=(\omega)$, we then have
+\[(\mathfrak{O}'\a)^h=\mathfrak{O}'\a^h=\mathfrak{O}'\omega=\mathfrak{O}'\kappa^h=(\mathfrak{O}'\kappa)^h.\]
+Uniqueness of factorization of ideals in $\mathfrak{O}'$ easily yields
+\[\mathfrak{O}'\a=\mathfrak{O}'\kappa.\]
+proving $(a)$.\par
+Since $(c)$ implies $(b)$, we now consider $(c)$. The inclusion $\a\sub\mathbb{B}\kappa\cap K$ is straightforward. Conversely, suppose $\gamma\in\mathbb{B}\kappa\cap K$. Then
+\[\gamma=\lambda\kappa,\quad\lambda\in\mathbb{B}\]
+and we must show that $\gamma\in\a$. Considering the equation \[\gamma^h=\lambda^h\kappa^h=\lambda^h\omega,\quad \gamma\in K,\lambda\in\mathbb{B},\omega\in\mathfrak{O}.\]
+First note that, since $\gamma\in K$ and $\lambda,\kappa\in\mathbb{B}$, we get $\gamma\in\mathbb{B}\cap K=\mathfrak{O}$. Also, we find
+\[\lambda^h=\gamma^h\omega^{-1}\in K\]
+so $\lambda^h\in K\cap\mathbb{B}=\mathfrak{O}$. Thus we finish up with
+\[\gamma^h=\lambda^h\kappa^h=\lambda^h\omega,\quad \gamma,\lambda^h,\omega\in\mathfrak{O}.\]
+Taking ideals in $\mathfrak{O}$,
+\[(\gamma)^h=(\lambda^h)(\omega)=(\lambda^h)\a^h\]
+Unique factorization in $\mathfrak{O}$ implies that $(\lambda^h)=\b^h$ for some ideal $\b$, so
+\[(\gamma)^h=\b^h\a^h.\]
+Unique factorization once more implies that $\gamma=\b\a$, so $\gamma\in\a$ as required.\par
+To prove $(d)$, write $\a=(\alpha,\beta)$ for $\alpha,\beta\in\mathfrak{O}$. Substituting in $(d)$ gives
+\[\mathfrak{O}''\gamma=\mathfrak{O}''(\alpha,\beta).\]
+Thus $\gamma=\lambda\alpha+\mu\beta$ for $\lambda,\mu\in\mathfrak{O}''\sub\mathbb{B}$. From $(a)$, $\alpha,\beta\in\mathfrak{O}'\kappa$, so
+\[\alpha=\eta\kappa,\quad\beta=\xi\kappa.\]
+Hence $\gamma=\lambda\eta\kappa+\mu\xi\kappa$ and $\kappa\mid\gamma$ in $\mathbb{B}$. Finally, interchange the roles of $\gamma,\kappa$ to prove $(d)$.
+\end{proof}
+Theorem~\ref{alg int ext principal} can be improved, for as it stands the extension ring $\mathfrak{O}'$ in which $\mathfrak{O}'\a$ is principal depends on $\a$. We can actually find a single extension ring in which the extension of every ideal is principal. This depends on the following lemma and the finiteness of the class-number:
+\begin{lemma}\label{alg int principal equiv}
+If $\a,\b$ are equivalent ideals in the ring $\mathfrak{O}$ of integers of a number field and $\mathfrak{O}'\a$ is principal, then so is $\mathfrak{O}'\b$.
+\end{lemma}
+\begin{proof}
+By the definition of equivalence, there exist $d,e\in\mathfrak{O}$ such that $\a(d)=\b(e)$. Hence
+\[(\mathfrak{O}'\a)(\mathfrak{O}'d)=(\mathfrak{O}'\b)(\mathfrak{O}'e).\]
+Since the set $\mathcal{P}$ of principal fractional ideals of $\mathfrak{O}'$ is a group, $\mathfrak{O}'\b$ is a principal fractional ideal which is also an ideal, so $\mathfrak{O}'\b$ is a principal ideal.
+\end{proof}
+\begin{theorem}
+Let $K$ be a number field with integers $\mathfrak{O}_K$. Then there exists a number field $L\sups K$ with ring $\mathfrak{O}_L$ of integers such that for every ideal a in $\mathfrak{O}_K$:
+\begin{itemize}
+\item[$(a)$] $\mathfrak{O}_L\a$ is a principal ideal.
+\item[$(b)$] $(\mathfrak{O}_L\a)\cap\mathfrak{O}_K=\a$.
+\end{itemize}
+\end{theorem}
+\begin{proof}
+Since $h$ is finite, select a representative set of ideals $\a_1,\dots,\a_h$, one from each class. Choose algebraic integers $\kappa_1,\dots,\kappa_h$ such that $\mathfrak{O}_i\a_i$ is principal where $\mathfrak{O}_i$ is the ring of integers of $K(\kappa_i)$. Let $L=K(\kappa_1,\dots,\kappa_h)$, its ring of integers $\mathfrak{O}_L$ contains all the $\mathfrak{O}_i$. Hence each ideal $\mathfrak{O}_L\a_i$ is principal in $\mathfrak{O}_L$. Since every ideal $\a$ in $\mathfrak{O}$ is equivalent to some $\a_i$, the ideal $\mathfrak{O}_L\a$ is principal by Lemma~\ref{alg int principal equiv}. That is, for some $\alpha\in\mathbb{B}$
+\[\mathfrak{O}_L\a=\mathfrak{O}_L\alpha.\]
+This proves $(a)$.\par
+Clearly $\a\sub(\mathfrak{O}_L\a)\cap\mathfrak{O}_K$. For the converse inclusion, Theorem~\ref{alg int ext principal}$(d)$ implies that $\alpha=i\kappa$ where $u$ is a unit in $\mathbb{B}$. Now
+\[(\mathfrak{O}_L\a)\cap\mathfrak{O}_K=(\mathfrak{O}_L\alpha)\cap\mathfrak{O}_K\sub(\mathbb{B}\alpha)\cap K=(\mathbb{B}\kappa)\cap K=\a.\]
+by Theorem~\ref{alg int ext principal}$(c)$.
+\end{proof}
+\subsection{Unique Factorization of Elements in an Extension Ring}
+\begin{theorem}
+Suppose $K$ is a number field with integers $\mathfrak{O}_K$. Then there exists an extension field $L\sups K$ with integers $\mathfrak{O}_L$ such that every non-zero, non-unit $a\in\mathfrak{O}_K$ has a factorization
+\[a=p_1\cdots p_r\]
+where the $p_i$ are non-units in $\mathfrak{O}_L$, and the following property is satisfied. Given any factorization in $\mathfrak{O}_K$:
+\[a=a_1\cdots a_s\]
+where the $a_i$ are non-units in $\mathfrak{O}_K$, there each $a_i$ factors into products of the $p_i$'s in $\mathfrak{O}_L$.
+\end{theorem}
+\begin{proof}
+There is a unique factorization of $(a)$ into prime ideals in $\mathfrak{O}_K$, say
+\[(a)=\p_1\cdots\p_r\]
+Since $a$ is a non-unit, $r\geq1$. Let $\mathfrak{O}_L$ be a ring of integers where every ideal of $\mathfrak{O}_K$ extends to a principal ideal, and suppose that $\mathfrak{O}_L\p_i=\mathfrak{O}_Lp_i$. Then $a=up_1\cdots p_r$ where $u$ is a unit in $\mathscr{O}_L$, and since $r\geq1$, we may replace $p_1$ by $up_1\in\mathfrak{O}_Lp_1$ to get a factorization of the form
+\[a=p_1\cdots p_r.\]
+Given any factorization of elements $a=a_1\cdots a_s$ where the $a_i$ are non-units in $\mathfrak{O}_K$, we obtain
+\[(a)=(a_1)\cdots(a_s)\]
+where all the $(a_i)$ are proper ideals. Unique factorization in $\mathfrak{O}_K$ implies that each $(a_i)$ is a product of the $\p_i$'s.
+\end{proof}
+\section{Computational Method}
+\subsection{Factorization of a Rational Prime}
+If $p$ is a prime number in $\Z$, it is not generally true that $(p)$ is a prime ideal in the ring of integers $\mathfrak{O}$ of a number field $K$. It is obviously useful to compute the prime factors of $(p)$. In the case where the ring of integers is generated by a single element, which includes quadratic and cyclotomic fields, the following theorem of Dedekind is decisive. 
+\begin{theorem}\label{alg int prime number factor}
+Let $K$ be a number field of degree $n$ with ring of integers $\mathfrak{O}=\Z[\theta]$ generated by $\theta\in\mathfrak{O}$. Given a rational prime $p$, suppose the minimum polynomial $f$ of $\theta$ over $\Q$ gives rise to the factorization into irreducibles over $\Z_p$:
+\[\widebar{f}=\widebar{f}_1^{e_1}\cdots\widebar{f}_r^{e_r}\]
+where the bar denotes the natural map $\Z[t]\to\Z_p[t]$. Then if $f_i\in\Z[t]$ is any polynomial mapping onto $\widebar{f}_i$, the ideal
+\[\p_i=(p)+(f_i(\theta))\]
+is prime and the prime factorization of $(p)$ in $\mathfrak{O}$ is
+\[(p)=\p_1^{e_1}\cdots\p_r^{e_r}.\]
+\end{theorem}
+\begin{proof}
+Let $\theta_i$ be a root of $\widebar{f}_i$ in $\Z_p[\theta_i]\cong\Z_p[t]/(\widebar{f}_i)$. There is a natural map $\phi_i:\Z[\theta]\to\Z_p[\theta_i]$ given by
+\[\phi_i(p(\theta))=\widebar{p}(\theta_i)\]
+The image of $\phi_i$ is $\Z_p[\theta_i]$, which is a field, so $\ker\phi_i$ is a prime ideal of $\Z[\theta]=\mathfrak{O}$. Clearly
+\[(p)+(f_i(\theta))\sub\ker\phi_i.\]
+But if $g(\theta)\in\ker\phi_i$, then $\widebar{g}(\theta_i)=0$, so $\widebar{f}_i\mid\widebar{g}$. This then implies $g\in(f_i(\theta))+(p)$, showing that 
+\[\ker\phi_i=(p)+(f_i(\theta)).\]
+Thus $\p_i=(p)+(f_i(\theta))$ is maximal, hence prime. Also, each $\p_i$ contains $(p)$, so $\p_i\mid(p)$.\par
+For any ideals $\a,\b_1,\b_2$,
+\[(\a+\b_1)(\a+\b_2)\sub\a+\b_1\b_2.\]
+so by induction
+\[\p_1^{e_1}\cdots\p_r^{e_r}\sub(p)+(f_1(\theta)^{e_1}\cdots f_r(\theta)^{e_r})\sub(p)+(f(\theta))=(p).\]
+Thus $(p)\mid\p_1^{e_1}\cdots\p_r^{e_r}$, and the only prime factors of $(p)$ are $\p_1,\dots,\p_r$, showing that 
+\[(p)=\p_1^{k_1}\cdots\p_r^{k_r},\quad 0<k_i\leq e_i.\]
+The norm of $\p_i$ is, by definition, $|\mathfrak{O}/\p_i|$, and the isomorphisms
+\[\mathfrak{O}/\p_i=\Z[\theta]/\p_i\cong\Z_p[\theta_i]\]
+imply that 
+\[N(\p_i)=|\Z_p[\theta_i]|=p^{d_i}\]
+where $d_i=\deg\widebar{f}_i=\deg f_i$. Also, we have
+\[N((p))=N(p)=p^n\]
+so, taking norms we get
+\[p^n=N((p))=N(\p_1^{k_1}\cdots\p_r^{k_r})=p^{d_1k_1+\cdots+d_rk_r}\]
+which implies that
+\[d_1k_1+\cdots+d_rk_r=n=d_1e_1+\cdots+d_re_r.\]
+This then implies $k_i=e_i$ for all $i$.
+\end{proof}
+\begin{example}
+Consider the factorization in $\Z[\sqrt{-1}]$ of a prime $p\in\Z$. There are three cases to consider:
+\begin{itemize}
+\item[$(1)$] $t^2+1$ irreducible over $\Z_p[t]$.
+\item[$(2)$] $t^2+1\equiv(t-\lambda)(t+\lambda)$, where $\lambda^2\equiv-1$ mod $p$ and $\lambda\neq-\lambda$ $($i.e. $p\neq 2$$)$.
+\item[$(3)$] $t^1+1\equiv(t+1)^2$ when $p=2$
+\end{itemize}
+In case $(1)$ the ideal $(p)$ is prime. In case $(2)$ we have $(p)=\p_1\p_2$ for distinct prime ideals; in case $(3)$ this becomes $(p)=\p_1^2$.
+\end{example}
+We can now give a criterion for a number field to have class-number 1,
+for which the calculations required are often practicable
+\begin{theorem}\label{class number 1 if}
+Let $\mathfrak{O}$ be the ring of integers of a number field $K$ of degree $n=s+2t$, and let$\Delta$ be the discriminant of $K$. Suppose that for every prime $p\in\Z$ with
+\[p\leq M_{st}\sqrt{\Delta}\]
+every prime ideal dividing $(p)$ is principal. Then $\mathfrak{O}$ has class-number $h=1$.
+\end{theorem}
+\begin{proof}
+Every class of fractional ideals contains an ideal $\a$ with $N(\a)\leq M_{st}\sqrt{\Delta}$. Now
+\[N(\a)=p_1\cdots p_k\]
+where $p_1,\dot,p_k\in\Z$ and $p_i\leq M_{st}\sqrt{\Delta}$. Further, $\a|N(\a)$, so $\a$ is a product of prime ideals, each dividing some $p_i$. By hypothesis these prime ideals are principal, so $\a$ is principal. Therefore every class of fractional ideals is equal to $[\mathfrak{O}]$, and $h=1$.
+\end{proof}
+Here we present some examples.
+\begin{example}
+\mbox{}
+\begin{itemize}
+\item $\Q(\sqrt{-19})$: The ring of integers is $\Z[\theta]$ where $\theta$ is a zero of
+\[f(t)=t^2-t+5.\]
+and the discriminant is $-19$. Then $M_{st}\sqrt{\Delta}\leq0.637\sqrt{19}<2.78$. Now Theorem~\ref{class number 1 if} applies if we know the factors of primes $\leq2$. We use Theorem~\ref{alg int prime number factor}: modulo $2$, $f(t)$ is irreducible, so $(2)$ is prime in $\mathfrak{O}$.
+\item $\Q(\sqrt{-43})$: This is similar, but now
+\[f(t)=t^2-t+11\]
+and $M_{st}\sqrt{\Delta}\leq0.637\sqrt{43}<4.18$, which involves looking at primes $\leq 4$. But $f(t)$ is irreducible modulo $2$ or $3$.
+\item $\Q(\sqrt{-67})$: For this,
+\[f(t)=t^2-t+17\]
+and $M_{st}\sqrt{\Delta}\leq0.637\sqrt{67}<5.22$, which involves looking at primes $\leq 5$. But $f(t)$ is irreducible modulo $2,3$ or $5$.
+\item $\Q(\sqrt{-163})$: Now
+\[f(t)=t^2-t+41\]
+and $M_{st}\sqrt{\Delta}\leq0.637\sqrt{163}<8.14$, which involves looking at primes $\leq 8$. But $f(t)$ is irreducible modulo $2,3,5,7$.
+\end{itemize}
+\end{example}
+Combining these results with Theorem~\ref{int ring ED} we have:
+\begin{proposition}
+The class-number of $\Q(\sqrt{d})$ is equal to $1$ for $d=-1$, $-2$, $-3$, $-7$, $-11$, $-19$, $-43$, $-67$, $-163$.
+\end{proposition}
+Comparing with Theorem~\ref{int ring no ED} we obtain the interesting:
+\begin{corollary}
+There exist rings with unique factorization that are not Euclidean; for example, the rings of integers of $\Q(\sqrt{d})$ for $d=-19$, $-43$, $-67$, $-163$.
+\end{corollary}
+We can also deal with a few cyclotomic fields by the same method. If $K=\Q(\zeta)$ where $\zeta^p=1$, $p$ prime, then the degree of $K$ is $p-1$, and the ring of integers is $\Z[\zeta]$. For $p=3$, $K=\Q(\sqrt{-3})$ and we already know $h=1$ in this case.
+\begin{example}
+\mbox{}
+\begin{itemize}
+\item $\Q(\zeta)$ where $\zeta^5=1$: Here $n=4,s=0,t=2$; and $\Delta=125$ by Theorem~\ref{cyclotomic disc}. Hence $M_{st}\leq 0.152\sqrt{125}<1.08$, so we must look at primes $\leq1$. Since there are no such primes, Theorem~\ref{class number 1 if} applies at once to give $h=1$.
+\item $\Q(\zeta)$ where $\zeta^7=1$: Here $n=6,s=0,t=3$; and $\Delta=-7^5$ by Theorem~\ref{cyclotomic disc}. We must look at primes $\leq3$. The ring of integers is $\Z[\zeta]$ where $\zeta$ is a zero of
+\[f(t)=t^6+t^5+\cdots+t+1.\]
+Modulo $2$, this factorizes as
+\[(t^3+t^2+1)(t^3+t+1)\]
+so $(2)=\p_1\p_2$ where $\p_1,\p_2$ are distinct prime ideals, by Theorem~\ref{alg int prime number factor}. In fact
+\[(2)=(\zeta^2+\zeta^2+1)(\zeta^3+\zeta+1)\]
+and $\p_1,\p_2$ are principal. Modulo $3$, $f(t)$ is irreducible, so $(3)$ is prime. Theorem~\ref{class number 1 if} applies to give $h=1$.
+\end{itemize}
+\end{example}

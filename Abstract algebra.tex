@@ -1,0 +1,125 @@
+\documentclass[11pt,a4paper]{book}
+\include{documentpre}
+%\usepackage{showkeys}
+\usepackage{adjustbox}
+\usepackage{indentfirst}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[section]
+\newtheorem{example}[theorem]{Example}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{remark}{Remark}[section]
+
+
+\setlength{\abovedisplayskip}{2mm}
+\setlength{\belowdisplayskip}{2mm}
+\allowdisplaybreaks
+\raggedbottom
+
+\special{xdvipdfmx:config z0}
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{4}
+%\setlist[itemize]{leftmargin=10mm}
+
+\title{Algebra}
+\author{Longer}
+\begin{document}
+\begin{titlepage}
+\vspace*{5em}{\centering\Huge\usefont{T1}{qzc}{m}{it}
+Algebra\\}
+\vspace*{2em}{\centering Long\\}
+\vspace*{1em}{\centering \today\\}
+\vspace*{8em}{\[\includegraphics{pictures/blowup_A2.png}\]}
+\end{titlepage}
+\tableofcontents
+
+
+\include{chapter/etale-space}
+%\include{chapter/naive-number-theory}
+%\include{chapter/Boolean}
+%\include{chapter/Group}
+%\include{chapter/Linear-algebra}
+%\include{chapter/linear-algebra-problems}
+%\include{chapter/ANT}
+%\include{chapter/alg-curve}
+%\include{chapter/rep-of-S_n}
+%\include{chapter/representation}
+%\include{chapter/group-representation}
+%\include{chapter/Lie-alg}
+%\include{chapter/Field}
+%\include{chapter/alg-structure}
+%\include{chapter/linear-algebra-2}
+%\include{chapter/category}
+%\include{chapter/homological-algebra}
+%\include{chapter/dim-theory}
+%\include{chapter/Lie-alg-grp}
+
+%\include{chapter/topo}
+%\include{chapter/ring}
+%\include{chapter/commutative-algebra}
+%\include{chapter/sheaf}
+%\include{chapter/scheme}
+
+\end{document}
+
+
+\subsection{Jacobson schemes}
+A scheme $X$ is called \textbf{Jacobson} if its underlying space $X$ is Jacobson, in other words, the set $X_0$ of its closed points is dense in $X$. We say a ring $A$ is Jacobson if the scheme $\Spec(A)$ is Jacobson. Since any closed subset of $X=\Spec(A)$ is of the form $Z=V(\a)$, where $\a$ is a radical ideal of $A$, and the set $X_0$ of closed points of $X$ is the set of maximal ideals of $A$, we see $Z\cap X_0$ is dense in $Z$ if and only if $\a$ is the intersection of maximal ideals containing it. As $\a$ is already the intersection of prime ideals containing it, we see $A$ is a Jacobson ring if and only if each prime ideal of $A$ is the intersection of maximal ideals, which means $A$ is Jacobson in the usual sense.
+\begin{proposition}\label{scheme Jacobson iff affine open}
+Let $X$ be a scheme and $(U_\alpha)$ be an affine open covering of $X$. Then for $X$ to be Jacobson, it is necessary and sufficient that the ring $\Gamma(U_\alpha,\mathscr{O}_X)$ of $U_\alpha$ is Jacobson for all $\alpha$.
+\end{proposition}
+\begin{proof}
+This is a concequence of Proposition~\ref{}.
+\end{proof}
+\begin{example}[\textbf{Example of Jacobson schemes}]
+\mbox{}
+\begin{itemize}
+\item[(a)] A discrete scheme is Jacobson; an Artianian ring is therefore Jacobson.
+\item[(b)] Any PID with infinitely many prime ideals is Jacobson (Proposition~\ref{Jacobson PID iff}).
+\item[(c)] A Noetherian local ring $A$ is Jacobson if and only if the maximal ideal is the unique prime ideal, which means $A$ is Artianian.
+\item[(d)] Any subscheme of a Jacobson scheme is again Jacobson, by Proposition~\ref{}.
+\end{itemize}
+\end{example}
+\begin{proposition}\label{ring integral fraction field finite type iff}
+Let $B$ be an integral domain. The following conditions are equivalent:
+\begin{itemize}
+\item[(\rmnum{1})] There exists $f\neq 0$ in $B$ such that $B_f$ is a field.
+\item[(\rmnum{2})] The fraction field of $B$ is a $B$-algebra of finite type.
+\item[(\rmnum{3})] There exists a field $K$ containing $B$ that is a $B$-algebra of finite type.
+\item[(\rmnum{4})] The generic point of $\Spec(B)$ is isolated in $\Spec(B)$.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+It is clear that (\rmnum{4}) is equivalent to (\rmnum{1}), since (\rmnum{4}) just means there exists $f\neq 0$ in $B$ such that $D(f)$ reduces to the generic point of $\Spec(B)$. It is also trivial that (\rmnum{1})$\Rightarrow$(\rmnum{2})$\Rightarrow$(\rmnum{3}). Finally, (\rmnum{3}) implies (\rmnum{1}), in view of Corollary~\ref{integral domain subfield of fraction finite algebra}.
+\end{proof}
+\begin{proposition}\label{scheme affine Jacobson iff nonclosed point}
+Let $A$ be a ring. The following conditions are equivalent:
+\begin{itemize}
+\item[(\rmnum{1})] $A$ is a Jacobson ring.
+\item[(\rmnum{2})] For any non maximal prime ideal $\p$ of $A$ and any $f\neq 0$ in $B=A/\p$, $B_f$ is not a field.
+\item[(\rmnum{3})] Any finite type $A$-algebra $K$ that is a field is a finite $A$-algebra.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+The equivalence of (\rmnum{1}) and (\rmnum{3}) is given in Theorem~\ref{Jacobson ring iff finite algebra field is finite}.
+\end{proof}
+\begin{corollary}\label{ring finite type over Jacobson is Jacobson}
+Any finite type algebra $B$ over a Jacobson ring $A$ is Jacobson, and the inverse image in $A$ of any maximal ideal of $B$ is a maximal ideal of $A$.
+\end{corollary}
+\begin{corollary}\label{scheme finite type over Jacobson is Jacobson}
+If $Y$ is a Jacobson scheme and $f:X\to Y$ is a morphism locally of finite type, then $X$ is a Jacobson scheme and the image under $f$ of any closed point of $Y$ is closed in $X$. 
+\end{corollary}
+\begin{example}
+A scheme $X$ that is locally of finite type over $\Z$ is Jacobson. Moreover, we shall see that a point $x\in X$ to be closed in $X$, it is necessary and sufficient that $\kappa(x)$ is finite.
+\end{example}
+
+
+\iffalse
+\bibliographystyle{plain}
+\bibliography{Bibtex}
+\fi
+

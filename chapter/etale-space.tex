@@ -1,0 +1,171 @@
+\subsection{Sheaves and \'Etal\'e Spaces}
+We now give a different description of sheaves via so-called \'etal\'e spaces.
+\begin{definition}
+Let $X$ be a topological space.
+\begin{itemize}
+\item[$(a)$] A pair $(E,\pi)$, where $E$ is a topological space and $\pi:E\to X$ is a local homeomorphism, is called an \textbf{\'etal\'e space over $\bm{X}$}.
+\item[$(b)$] Let $(E_1,\pi_1)$ and $(E_2,\pi_2)$ be \'etal\'e spaces over $X$. A morphism $\varphi:(E_1,\pi_1)\to(E_2,\pi_2)$ of \'etal\'e spaces is a continuous map $\varphi:E_1\to E_2$ such that $\pi_1=\pi_2\circ\varphi$.
+\[\begin{tikzcd}
+E_1\ar[rr,"\varphi"]\ar[rd,swap,"\pi_1"]&&E_2\ar[ld,"\pi_2"]\\
+&X&
+\end{tikzcd}\]
+\end{itemize}
+Denote by \'Et/$X$ the category of \'etal\'e spaces over $X$.
+\end{definition}
+\begin{definition}
+Let $(E,\pi)$ be an étalé space over $X$. For $U\sub X$ open, a \textbf{section} of $E$ over $U$ is a continuous map $s:U\to E$ with $\pi\circ s=\mathrm{id}_U$. The \textbf{fiber} of $E$ over $x\in X$ is the set $E_x=\pi^{-1}(x)$. A morphism of étalé spaces $f:(E_1,\pi_1)\to(E_2,\pi_2)$ gives rise to maps $f_x:(E_1)_x\to(E_2)_x$ for $x\in X$.
+\end{definition}
+\begin{proposition}
+Let $(E,\pi)$ be an étalé space over $X$. Then the following properties hold:
+\begin{itemize}
+\item[$(a)$] The map $\pi$ is an open map.
+\item[$(b)$] For any open subset $U$ of $X$ and any continuous section $s\in\Gamma(U,E)$, the subset $s(U)$ is open in $E$, such open subsets form a basis for the topology of $E$.
+\end{itemize}
+\end{proposition}
+Now we justify our notation on the element of $\mathscr{F}(U)$: we show how to construct a sheaf from a \'etal\'e space using sections.
+\begin{definition}
+Let $(E,\pi)$ be an étalé space over $X$. Define a presheaf $\Gamma E$ of $E$-valued functions by
+\[\Gamma E(U)=\{\text{sections }s:U\to E\}=\{s:U\to E:\text{$s$ is continuous and $\pi\circ s=\mathrm{id}_U$}\}.\]
+It is a sheaf of $E$-valued functions by Example~\ref{sheaf of function}.
+\end{definition}
+Let $\varphi:(E_1,\pi_1)\to(E_2,\pi_2)$ be a morphism of étalé spaces, we obtain a map of sheaves $\Gamma\varphi:\Gamma E_1\to\Gamma E_2$ defined as follows: For every open subset $U$ of $X$, the map $(\Gamma\varphi)_U$ is given by 
+\[(\Gamma\varphi)_U(s)=\varphi\circ s.\]
+It is immediately checked that $\Gamma\varphi$ is a map of sheaves. Also, if $\varphi:E_1\to E_2$ and $\psi:E_2\to E_3$ are two maps of \'etal\'e spaces, then
+\[\Gamma(\psi\circ\varphi)=\Gamma\psi\circ\Gamma\varphi\And \Gamma\mathrm{id}_E=\mathrm{id}_{\Gamma E}.\]
+This means that the construction $\Gamma:\text{\'Et/}X\to\mathsf{Sh}(X)$ is functorial.
+
+The next proposition tells us that the fibres of a \'etal\'e space are stalks of the sheaf $\Gamma E$.
+\begin{proposition}\label{etale fiber stalk}
+Let $(E,\pi)$ be a \'etal\'e space. For any $x\in X$, the stalk $(\Gamma E)_x$ is isomorphic to the fibre $E_x$ at $x$. Furthermore, as a subspace of $E$, the fibre $E_x$ has the discrete topology.
+\end{proposition}
+\begin{proof}
+For $x\in X$, the stalk $(\Gamma E)_x$ is the set of equivalence classes of pairs $(U,s)$, where $U$ is an open neighborhood of $x$ and $s:U\to E$ is a section of $\pi$. Here $(U,s)$ and $(V,t)$ are equivalent if there exists $x\in W\sub U\cap V$ open such that $s|_{W}=t|_{W}$.\par
+Fix a $x\in X$, for any open subset $x\in U\sub X$, we define a map $\tau_{U}:\Gamma E(U)\to E_x$ by
+\[\tau_{U}(s)=s(x)\for s\in\Gamma E(U).\]
+Then it is obvious that $\tau$ commute with the restriction map, hence we get a induced map $\tau_x:(\Gamma E)_x\to E_x$.\par
+For any $e\in E_x$, there exists an open neighborhood $e\in V\sub E$ such that $\pi|_V$ is a homeomorphism onto its open image. Then $(\pi|_V)^{-1}$ is obviously a section of $\pi$ with $(\pi|_V)^{-1}(x)=e$. This shows that $\tau_x$ is surjective for every $x\in X$. Note that $E_x\cap V=\{e\}$, so $E_x$ has the discrete topology.\par
+Let $s:U\to E$ and $s':U'\to E$ be sections with $s(x)=s'(x)=e$ for a point $x\in U\cap U'$. Then there exsits an open neighborhood $e\in V\sub E$ such that $\pi|_V:V\to\pi(V)$ is a homeomorphism. Let $W=\pi(V)\cap U\cap U'$, and replace $V$ by $(\pi|_V)^{-1}(W)$. Now $\pi|_V:V\to W$ is a homeomorphism and $s|_W,s'|_W$ are both inverse of it, so $s|_W=s'|_W$. This implies $(s,U)\sim(s',U')$, so $\tau_x$ is injective.
+\end{proof}
+Now we attach conversely to every presheaf an étalé space as follows. Let $\mathscr{F}$ be a presheaf on $X$. Define $S\mathscr{F}:=\coprod_{x\in X}\mathscr{F}_x$ to be 
+the disjoint union of all the stalks. We have a projection map 
+$\pi:S\mathscr{F}\to X$:
+\[\pi(s)=x\for s\in\mathscr{F}_x.\]
+For every open subset $U$ of $X$, we view each abstract section $s\in\mathscr{F}(U)$ as the actual function $\widetilde{s}:U\to S\mathscr{F}$ given by
+\[\widetilde{s}(x)=s_x\for s\in U.\]
+By definition, $\widetilde{s}$ is a section of $\pi$. We give $S\mathscr{F}$ the finest topology which makes all the functions $\widetilde{s}$ continuous. Consequently, a 
+subset $\Omega$ of $S\mathscr{F}$ is open if and only if for every open subset $U$ of $X$ and every $s\in\mathscr{F}(U)$, the subset
+\[\widetilde{s}^{-1}(\Omega)=\{x\in U\mid\widetilde{s}(x)=s_x\in\Omega\}\]
+is open in $X$. The space $S\mathscr{F}$ endowed with the above topology is called the \textbf{stalk space} of the presheaf $\mathscr{F}$.
+\begin{lemma}
+For any $U\sub X$ open and $s\in\mathscr{F}(U)$, the set $\widetilde{s}(U)$ is open in $S\mathscr{F}$. Moreover, 
+\[\{\widetilde{s}(U):\text{$U\sub X$ open, $s\in\mathscr{F}(U)$}\}\] 
+consists of a basis for $S\mathscr{F}$.
+\end{lemma}
+\begin{proof}
+It suffices to show that for any $x\in U$, any open subset $V$ containing $x$ and any $t\in\mathscr{F}(V)$, the subset
+\[\widetilde{t}^{-1}\big(\widetilde{s}(U)\big)=\{x\in V:\widetilde{t}(x)=t_x\in\widetilde{s}(U)\}=\{x\in U\cap V:t_x=s_x\}\]
+is open in $X$. However, $t_x=s_x$ means that there is some open subset $W\sub U\cap V$ containing $x$ such that $s|_W=t|_W$, which means that 
+$W\sub\widetilde{t}^{-1}\big(\widetilde{s}(U)\big)$. So $\widetilde{t}^{-1}(\widetilde{s}(U))$ is indeed open in $X$.\par
+Now let $U,V$ be open subsets of $X$ and $s\in\mathscr{F}(U),t\in\mathscr{F}(V)$, respectively. We consider the set $\widetilde{s}(U)\cap\widetilde{t}(V)$. By definition, 
+we have
+\[\widetilde{s}(U)\cap\widetilde{t}(V)=\{u\in S\mathscr{F}:\pi(u)\in U\cap V,s_{\pi(u)}=t_{\pi(u)}\}.\]
+Let $u\in\widetilde{s}(U)\cap\widetilde{t}(V)$, then $s_{\pi(u)}=t_{\pi(u)}$, so there is a neighborhood $W$ of $\pi(u)$ such that $s|_{W}=t|_{W}$. This then means 
+$\widetilde{s|_{W}}(W)\sub\widetilde{s}(U)\cap\widetilde{t}(V)$, so $\{\widetilde{s}(U)\}$ is a basis of $S\mathscr{F}$.
+\end{proof}
+Now by definition each $\widetilde{s}$ gives a local section of $\pi$. Since $\widetilde{s}$ is continuous by our topology, if we can show $\pi$ is continuous, then 
+$\pi$ is a local homeomorphism. This is ture because
+\[\pi^{-1}(U)=\bigcup_{s\in\mathscr{F}(V)\atop\text{$V$ is open},V\sub U}\widetilde{s}(V).\]
+\begin{proposition}
+For a presheaf $\mathscr{F}$, the stalk space $S\mathscr{F}$, together with the projection $\pi:S\mathscr{F}\to X$, give a \'etal\'e space $(S\mathscr{F},\pi)$.
+\end{proposition}
+Moreover, let $\varphi:\mathscr{F}\to\mathscr{G}$ be a morphism of presheaves, then the induced map $\varphi_x:\mathscr{F}_x\to\mathscr{G}_x$ gives a map between stalk spaces:
+\[S\varphi:S\mathscr{F}\to\mathscr{G},\quad S\varphi(e)=\varphi_x(e)\for e\in\mathscr{F}_x.\]
+It is clear that $\pi_{\mathscr{F}}=\pi_{\mathscr{G}}\circ S\varphi$, and for any open subset $U\sub X$ and $s\in\mathscr{F}(U)$, we have
+\[S\varphi\circ\widetilde{s}(x)=S\varphi(s_x)=\varphi_x(s_x)=\big(\varphi_U(s)\big)_x=\widetilde{\varphi_U(s)}(x).\]
+Therefore $S\varphi\circ\widetilde{s}=\widetilde{\varphi_U}(s)$. Since $\widetilde{s}$ and $\widetilde{\varphi_U}(s)$ are both local homeomorphisms, it follows that $S\varphi$ is continuous. We then obtain a functor $S:\mathsf{Psh}(X)\to\text{\'Et/}X$.
+\begin{theorem}\label{stalk section iso sheafification}
+There is a natural isomorphism from $\Gamma\circ S$ to the sheafification.
+\end{theorem}
+\begin{proof}
+Let $\mathscr{F}$ be a presheaf on $X$, $(S\mathscr{F},\pi)=S(\mathscr{F})$ and $\mathscr{F}'=\Gamma S\mathscr{F}$. By construction $\widetilde{s}:U\to E$ is a section of $(S\mathscr{F},\pi)$ and therefore an element of $\mathscr{F}'(U)$ for any open subset $U\sub X$ and $s\in\mathscr{F}(U)$. We define a morphism of presheaves $\kappa:\mathscr{F}\to\mathscr{F}'$ by $\mathscr{F}(U)\mapsto\mathscr{F}'(U),s\mapsto\widetilde{s}$.\par
+Let $x\in X$ be an arbitrary point. By construction $(S\mathscr{F})_x=\mathscr{F}_x$ and due to Proposition~\ref{etale fiber stalk} there is a bijective map 
+\[\tau_x:\mathscr{F}'_x\to(S\mathscr{F})_x=\mathscr{F}_x,\quad \widetilde{s}\mapsto\widetilde{s}(x).\]
+For $U\sub X$ open, $s\in\mathscr{F}(U)$ we have
+\[\tau_x\big(\kappa_x(s_x)\big)=\tau_x(\widetilde{s}_x)=\widetilde{s}(x)=s_x.\]
+so that $\tau_x\circ\kappa_x=\mathrm{id}_{\mathscr{F}_x}$ and $\kappa_x$ is bijective for every $x\in X$. It is straightforward to check that $\kappa$ defines a natural transformation and due to Example~\ref{sheaf iso sheafification} we attain an isomorphism from $\mathscr{F}'$ to the sheafification of $\mathscr{F}$ in a natural way making it a natural isomorphism.
+\end{proof}
+\begin{theorem}\label{section stalk iso identity}
+There is a natural isomorphism $S\circ\Gamma$ to the identity functor.
+\end{theorem}
+\begin{proof}
+Let $(E,\pi)$ be an étalé space over $X$, $(E',\pi')=S\circ\Gamma E$. By Proposition~\ref{etale fiber stalk} we have a bijection $\tau_x:(\Gamma E)_x\to E_x$ and by construction $E'=\coprod_{x\in X}(\Gamma E)_x$. This defines a bijective map $\tau:E'\to E$ with $\pi\circ\tau=\pi'$. For $U\sub X$ open and $s\in\Gamma E(U)$, we have 
+\[\tau(\widetilde{s}(x))=\tau(s_x)=s(x).\] 
+for every $x\in X$. The topology of $E'$ is the finest such that $\widetilde{s}:U\to E'$ is continuous for every $s,U$ and the topology of $E$ is the finest such that $s:U\to E$ is continuous for every $s,U$. This implies that $\tau$ is a homeomorphism:
+\begin{align*}
+W\sub E\text{ is open}&\iff s^{-1}(W)\sub X\text{ is open for every $s:U\to E$}\\
+&\iff(\tau\circ\widetilde{s})^{-1}(W)\sub X\text{ is open for every $s:U\to E$}\\
+&\iff\tau^{-1}(W)\text{ is open in $E'$}
+\end{align*}
+It is straightforward to check that this isomorphism is natural.
+\end{proof}
+As the sheafification of sheaf is the sheaf itself we deduce from Theorem\ref{stalk section iso sheafification} and Theorem~\ref{section stalk iso identity}:
+\begin{proposition}
+Let $X$ be a topological space. The functors $\Gamma$ and $S$ yield an equivalence between the category $\text{\'Et/}X$ of étalé spaces over $X$ and the category $\mathsf{Sh}(X)$ of sheaves on $X$.
+\end{proposition}
+\begin{example}[\textbf{\'Etal\'e Spaces of constant sheaves}]
+Let $E$ be a set that we also consider as a discrete topological space. Let $E_X$ be the constant sheaf with values in $E$ on a topological space $X$. Then the corresponding étalé space is $(X\times E,\pi_1)$ because as a set, $SE_X=X\times E$, and for $U\sub X$ open the sections of $\pi_1$ over $U$ are just the maps $x\mapsto(x,s(x))$, where $s:U\to E$ is locally constant.
+\end{example}
+Note that the map $\pi_1:X\times E\to X$ is a trivial covering map. More generally, every covering map is an étalé space that is locally on $X$ a trivial covering map. Hence we obtain the following result.
+\begin{proposition}[\textbf{Locally constant sheaves}]
+A sheaf $\mathscr{F}$ on $X$ is called \textbf{locally constant} if there exists an open covering $(U_i)_i$ of $X$ such that $F|_{U_i}$ is a constant sheaf.\par
+The equivalence of $\mathsf{Sh}(X)$ and $\text{\'Et/}X$ yields an equivalence between the full subcategory of locally constant sheaves on $X$ and the category of covering spaces of $X$.
+\end{proposition}
+\begin{example}
+Let $\mathcal{L}$ be the sheaf of complex logarithms on $\C-\{0\}$,
+\[\mathcal{L}(U):=\{L:U\to\C\text{ holomorphic}\mid \exp\circ L=\mathrm{id}_U\}\for U\sub\C-\{0\}.\]
+For every simply connected open subspace $U$ of $\C-\{0\}$ the choice of a logarithm $L_0$ on $U$ yields an isomorphism of sheaves of abelian groups 
+$(2\pi i\Z)_U\cong\mathcal{L}|_{U}$: one attaches to a locally constant function $t$ with values in $2\pi i\Z$ on an open subset $V$ of $U$ the logarithm $L_0|_V+t$. 
+Hence $\mathcal{L}$ is a locally constant sheaf of abelian groups. But it is not constant because $\mathcal{L}(\C-\{0\})=\emp$. The associated étalé space to 
+$\mathcal{L}$ is the covering map $\exp:\C\to\C-\{0\}$.
+\end{example}
+\subsubsection{Inverse image and \'etal\'e space}
+We have already seen that there is a natural correspondence between sheaves and étalé space and that it is possible to describe the sheafification of a presheaf in terms of associated étalé spaces. We will now show that the formation of the inverse image of a presheaf has a simple description in terms of étalé spaces: The corresponding étalé space is given by the fiber product. Hence let us consider continuous maps $f:X'\to X$ and $\pi:E\to X$ of topological spaces. We form the fiber product and obtain the following commutative diagram, where $g:E\times_XX'\to E$ and $\pi':E\times_XX'\to X'$ are the projections:
+\[\begin{tikzcd}
+E\times_XX'\ar[r,"\pi'"]\ar[d,"g"]&X'\ar[d,"f"]\\
+E\ar[r,"\pi"]&X
+\end{tikzcd}\]
+\begin{lemma}\label{pull back diagram prop}
+Suppose that $\pi$ has one of the following properties:
+\begin{itemize}
+\item[$(a)$] homeomorphism.
+\item[$(b)$] open topological embedding.
+\item[$(c)$] local homeomorphism.
+\end{itemize}
+Then $\pi'$ has the same property.
+\end{lemma}
+\begin{proof}
+Assertion $(a)$ is clear because $\pi\mapsto\pi'$ is functorial: the fiber product is given by
+\[E\times_XX'=\{(e,x'):\pi(e)=f(x')\},\]
+If $\omega$ is a continuous inverse of $\pi$, then we have $e=\omega\circ\pi(e)=\omega\circ f(x')$. So the map
+\[\omega:X'\to E\times_XX',\quad x'\mapsto(\omega\circ f(x'),x')\]
+is a continuous inverse of $\pi'$.\par
+If $\pi:E\to U$ is a homeomorphism for some $U\sub X$ open, then the restriction  $\pi':E'\to f^{-1}(U)$ is a homeomorphism by $(a)$. This shows $(b)$.\par
+Finally, if there exists an open covering $(W_i)_i$ of $E$ such that $\pi|_{W_i}$ is an open embedding for all $i$, then $(g^{-1}(W_i))_i$ is an open covering of $E'$ and $\pi'|_{g^{-1}(W_i)}$ is an open embedding by $(b)$. This proves $(c)$.
+\end{proof}
+The fiber product construction above yields a functor $\text{Ét/}X\to\text{Ét/}X'$ by sending a morphism $f:E_1\to E_2$ of étalé spaces over $X$ to the map $E_1\times_XX'\to E_2\times_XX'$ induced by $f\times\mathrm{id}_{X'}$.
+\begin{proposition}[\textbf{Inverse image via étalé spaces}]
+Let $f:X\to Y$ be a continuous map of topological spaces, $\mathscr{E}$ a presheaf on $Y$ and $(E,\pi)$ the étalé space over $Y$ associated to $\mathscr{E}$. The functor that sends $\mathscr{E}$ to the sheaf associated to the étalé space $(E\times_YX,\pi')$ is naturally isomorphic to the inverse image functor $f^{-1}$.
+\end{proposition}
+\begin{example}[\textbf{Inverse image of constant sheaves}]
+Let $f:X\to Y$ be a continuous map. Let $E$ be a set, let $E_Y$ be the sheaf of locally constant $E$-valued functions on $Y$. The corresponding étalé space is the projection $E\times Y\to Y$, where we consider $E$ as a discrete topological space. Then the projection $(E\times Y)\times_YX\to E\times X$ is a homeomorphism compatible with the projections to $X$. Hence $f^{-1}E_Y=E_X$.
+\end{example}
+\begin{definition}[\textbf{Pullback of sections}]
+Let $f:X\to Y$ be a continuous map, let $\mathscr{G}$ be a sheaf on $Y$, and let $t\in\mathscr{G}(V)$, $V\sub Y$ open. Let $\pi:G\to Y$ be the étalé space corresponding to $\mathscr{G}$ and consider $t$ as a continuous section $t:V\to G$ of $\pi$. Then
+\[f^{-1}(t):f^{-1}(V)\to G\times_YX,\quad x\mapsto\big(t\circ f(x),x\big)\]
+is a continuous section of $G\times_YX\to X$. Hence we obtain a pullback map
+\[f^{-1}:\mathscr{G}(V)\to(f^{-1}\mathscr{G})(f^{-1}(V)),\]
+which is functorial in $\mathscr{G}$ and compatible with restrictions to smaller open subsets of $Y$.
+\end{definition}
+\begin{example}
+Let $X$ be a topological space, let $S$ be a subspace of $X$, and denote by $i:S\to X$ the inclusion. If $\mathscr{F}$ is a sheaf on $X$ with corresponding étalé space $\pi:E\to X$, then the étalé space corresponding to $\mathscr{F}|_{S}$ is the usual restriction $\pi|_{\pi^{-1}(S)}:\pi^{-1}(S)\to S$. The pullback $i^{-1}(s)$ of a continuous section $s:U\to E$ of $\pi$ for $U\sub X$ is simply the restriction $s|_{S\cap U}$.
+\end{example}

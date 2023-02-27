@@ -1,0 +1,362 @@
+\chapter{Linear algebra, examples and exercises}
+\begin{exercise}\label{vector prop sub union}
+Let $V$ be a vector space. If $V_1,V_2$ are proper subspaces of $V$, prove that
+\[V_1\cup V_2\neq V\]
+\end{exercise}
+\begin{proof}
+We may assume $V_1\neq V_2$, and choose $\alpha,\beta$ such that
+\[\alpha\in V_1-V_2,\quad \beta\in V_2-V_1\]
+Then since $V_1$ and $V_2$ are subspace of $V$,
+\[\begin{array}{l}
+\alpha+\beta\in V_1\Rightarrow \beta=\alpha+\beta-\alpha\in V_1\\
+\alpha+\beta\in V_2\Rightarrow \alpha=\alpha+\beta-\beta\in V_2
+\end{array}\]
+Therefore $\alpha+\beta\notin V_1\cup V_2$, giving the claim.
+\end{proof}
+\begin{exercise}
+Let $V$ be a $k$-vector space where $k$ is an infinite field. Let $V_1,\cdots,V_s$ be proper subspaces of $V$, then
+\[\bigcup_{i=1}^{s}V_s\neq V\]
+\end{exercise}
+\begin{proof}
+We prove by induction. The case $s=1$ is trivial, so assume this holds for $s-1$. Exclude the trivial case, we may assume there is $\alpha$ and $\beta$ in $V$ such that
+\[\alpha\in V_s-\bigcup_{i=1}^{s-1}V_i,\quad \beta\in \bigcup_{i=1}^{s-1}V_i-V_s\]
+Now cosider the set
+\[B=\{k\alpha+\beta\mid k\in F\}\]
+Since $V_s$ is a subspace, we have $B\cap V_s=\emp$. But $\bigcup_{i=1}^{s-1}V_i$ is not a subspace so we can not apply the proof of Exercise~\ref{vector prop sub union} directly. But we observe that, for any fixed $1\leq i\leq s-1$, if there are $k_1\neq k_2\in F$ such that \[k_1\alpha+\beta\in V_i,\quad k_2\alpha+\beta\in V_i\]
+then
+\[(k_1-k_2)\alpha=k_1\alpha+\beta-(k_2\alpha+\beta)\in V_i\]
+which is a contradiction. Thus there is at most one $k_i$ for each $V_i$ such that $k_i\alpha+\beta\in V_i$. Since $F$ is infinite, we can find $k_0\in F$ such that $k_0\alpha+\beta\notin\bigcup_{i=1}^{s-1}V_i$. Now the claim follows.
+\end{proof}
+\begin{exercise}
+Let $a\in k$ and $a\neq 0$. Compute the Jordan canonical form of $J_2(a)^n$, where $n\geq 1$.
+\end{exercise}
+\begin{proof}
+We have 
+\begin{align*}
+J_2(a)^n=\begin{pmatrix}
+a^n&na^{n-1}\\
+0&a^n
+\end{pmatrix}
+\end{align*}
+Thus $J_2(a)^n\sim J_2(a^n)$.
+\end{proof}
+\begin{exercise}
+Let $\alpha$ be a complx number which is not zero, show that $J_2(a)$ has $n$-th root for all $n\geq 1$.
+\end{exercise}
+\begin{proof}
+By the previous exercise, $J_2(\sqrt[n]{a})^n\sim J_2(a)$, thus there is an invertible matrix $P$ such that \[P^{-1}J_2(\sqrt[n]{a})^nP^{-1}=J_2(a).\] 
+Thus we get
+\[(P^{-1}J_2(\sqrt[n]{a})P^{-1})^n=J_2(a)\]
+and so $P^{-1}J_2(\sqrt[n]{a})P^{-1}$ is a $n$-th root of $J_2(a)$.
+\end{proof}
+\section{Matrices}
+\subsection{Relationships Between \boldmath$AB$ and \boldmath$BA$}
+Let $A\in\mathcal{M}_{mn}(\R)$ and $B\in\mathcal{M}_{nm}(\R)$ with $m\leq n$. We know that $AB\neq BA$ in general. However, it is important to realize that $AB$ and $BA$ are not independent and, in fact, have much in common. In particular the two matrices have the same eigenvalues, counting multiplicities, with $BA$ having an additional $n-m$ eigenvalues equal to $0$.
+\begin{proposition}
+The following matrices are similar:
+\[\begin{pmatrix}
+AB&0\\
+B&0
+\end{pmatrix}\And\begin{pmatrix}
+0&0\\
+B&BA
+\end{pmatrix}\]
+\begin{proof}
+This follows from the elementry transformations:
+\begin{align*}
+\begin{pmatrix}
+AB&0\\
+B&0
+\end{pmatrix}\Longrightarrow\begin{pmatrix}
+AB&ABA\\
+B&BA
+\end{pmatrix}\Longrightarrow\begin{pmatrix}
+0&0\\
+B&BA
+\end{pmatrix}
+\end{align*}
+which can be written as
+\[\begin{pmatrix}
+AB&0\\
+B&0
+\end{pmatrix}\begin{pmatrix}
+I_m&A\\
+0&I_n
+\end{pmatrix}=\begin{pmatrix}
+AB&ABA\\
+B&BA
+\end{pmatrix}=\begin{pmatrix}
+I_m&A\\
+0&I_n
+\end{pmatrix}\begin{pmatrix}
+0&0\\
+B&BA
+\end{pmatrix}\]
+By the similarity, $AB$ and $BA$ must have the same nonzero eigenvalues (counting multiplicities) and the additional $n-m$ eigenvalues of $BA$ must all be $0$.
+\end{proof}
+\end{proposition}
+\begin{remark}
+The result above can also be derived by computing the characteristic polynomials of $AB$ and $BA$. We frist define
+\[X=\begin{pmatrix}
+\lambda I_m&A\\
+B&I_n
+\end{pmatrix}\quad Y=\begin{pmatrix}
+I_m&0\\
+-B&\lambda I_n
+\end{pmatrix}\]
+Then a computation gives
+\[XY=\begin{pmatrix}
+\lambda I_m-AB&\lambda A\\
+0&\lambda I_n
+\end{pmatrix}\quad\text{while}\quad YX=\begin{pmatrix}
+\lambda I_m&A\\
+0&\lambda I_n-BA
+\end{pmatrix}\]
+By taking determinant on both matrices, we get the formula
+\[\lambda^n|\lambda I_m-AB|=\lambda^m|\lambda I_n-BA|.\]
+\end{remark}
+\subsection{The Characteristic Polynomial of a Partitioned Matrix}
+\begin{lemma}
+Let $A,B,C,D\in\mathcal{M}_n(\R)$, consider the matrix
+\[X=\begin{pmatrix}
+A&B\\
+C&D
+\end{pmatrix}\]
+Then
+\begin{itemize}
+\item[$(a)$] If $A$ and $B$ commute, then $\det X=\det(DA-CB)$.
+\item[$(b)$] If $A$ and $C$ commute, then $\det X=\det(AD-CB)$.
+\item[$(c)$] If $B$ and $D$ commute, then $\det X=\det(DA-BC)$.
+\item[$(d)$] If $C$ and $D$ commute, then $\det X=\det(AD-BC)$.
+\end{itemize}
+\end{lemma}
+\begin{proof}
+Using the $I+\eps A$ method, we can assume the matrices are invertible.\par
+We have
+\[\begin{pmatrix}
+I_n&0\\
+-CA^{-1}&I_n
+\end{pmatrix}\begin{pmatrix}
+A&B\\
+C&D
+\end{pmatrix}=\begin{pmatrix}
+A&B\\
+0&D-CA^{-1}B
+\end{pmatrix}\]
+Thus if $AB=BA$, then
+\[\det X=\det(D-CA^{-1}B)(\det A)=\det(DA-CA^{-1}BA)=\det(DA-CB).\]
+and if $AC=CA$, then
+\[\det X=(\det A)(D-CA^{-1}B)=\det(AD-ACA^{-1}B)=\det(AD-CB).\]
+
+
+On the other hand,
+\[\begin{pmatrix}
+A&B\\
+C&D
+\end{pmatrix}\begin{pmatrix}
+I_n&0\\
+-D^{-1}C&I_n
+\end{pmatrix}\Longrightarrow\begin{pmatrix}
+A-BD^{-1}C&B\\
+0&D
+\end{pmatrix}\]
+Thus if $BD=DB$, then
+\[\det X=(\det D)\det(A-BD^{-1}C)=\det(DA-DBD^{-1}C)=\det(DA-BC)\]
+and if $CD=DC$, then
+\[\det X=\det(A-BD^{-1}C)(\det D)=\det(AD-BD^{-1}CD)=\det(AD-BC)\]
+\end{proof}
+From this lemma we immediately get the following proposition.
+\begin{proposition}
+Let $B,C\in\mathcal{M}_(\R)$, consider the matrix
+\[M=\begin{pmatrix}
+0&B\\
+C&0
+\end{pmatrix}\]
+we have
+\[p_M(x)=p_{BC}(x^2)=p_{CB}(x^2)\]
+\end{proposition}
+\begin{proof}
+The charcteristic matrix is
+\[\lambda I-M=\begin{pmatrix}
+\lambda I_n&-B\\
+-C&\lambda I_n
+\end{pmatrix}\]
+Since $\lambda I_n$ commutes with $B$ and $C$, by our lemma the determinant of it is given by
+\[\det(\lambda I-M)=\det(\lambda^2I_n-BC)=\det(\lambda^2I_n-CB)\]
+\end{proof}
+\begin{remark}
+When $C=B^*$, we get
+\[p_M(x)=p_{B^*B}(x^2)\]
+note that the eigenvalue of $B^*B$ is the singular value of $B$. This fact has many applications.
+\end{remark}
+\subsection{The Cauchy-Binet Formula}
+\begin{definition}
+If $A\in\mathcal{M}_{mn}(\R)$, $\alpha\sub\{1,2,\cdots,m\}$ and $\beta\sub\{1,2,\cdots,n\}$, then $A[\alpha,\beta]$ denotes the submatrix of $A$ with rows lying in $\alpha$ and columns lying in $\beta$.
+\end{definition}
+Now suppose that $A$ is an $m\times n$ matrix, $B$ is an $n\times m$ matrix, and let $C=AB$. Let $[n]=\{1,2,\cdots,n\}$. Then if $\alpha,\beta\sub\{1,2,\cdots,m\}$, it follows from the definition of matrix multiplication that
+\[C[\alpha,\beta]=A[\alpha,N]B[N,\beta]\]
+\begin{theorem}[\textbf{Cauchey-Binet Formula}]
+Let $A$ be an $m\times n$ matrix, $B$ be an $n\times m$ matrix and let $C=AB$. Given $\alpha,\beta\sub\{1,2,\cdots,m\}$ with $|\alpha|=|\beta|=r$, then
+\[\det(C[\alpha,\beta])=\sum_{\substack{K\sub [n]\\|K|=r}}\det(A[\alpha,K])\det(B[K,\beta])\]
+\end{theorem}
+\begin{proof}
+By the observation $C[\alpha,\beta]=A[\alpha,N]B[N,\beta]$, we only need to prove the case $M=\{1,2,\cdots,m\}$:
+\[\det(AB)=\sum_{K\sub N\atop|K|=m}\det A[M,K]\det B[K,M]\]
+Let $A=(a_{ij})$ and $B=(b_{k\ell})$, then $c_{ij}=\sum_{k=1}^{n}a_{ik}b_{kj}$. Thus
+\begin{align*}
+\det(C)&=\det\begin{pmatrix}
+\sum_{k_1=1}^{n}a_{1k_1}b_{k_11}&\cdots&\sum_{k_m=1}^{n}a_{1k_m}b_{k_mm}\\
+\vdots&&\vdots\\
+\sum_{k_1=1}^{n}a_{mk_1}b_{k_11}&\cdots&\sum_{k_m=1}^{n}a_{mk_m}b_{k_mm}
+\end{pmatrix}\\
+&=\sum_{k_1,\cdots,k_m=1}^{n}\det\begin{pmatrix}
+a_{1k_1}b_{k_11}&\cdots&a_{1k_m}b_{k_mm}\\
+\vdots&&\vdots\\
+a_{mk_1}b_{k_11}&\cdots&a_{mk_m}b_{k_mm}
+\end{pmatrix}\\
+&=\sum_{k_1,\cdots,k_m=1}^{n}\det\begin{pmatrix}
+a_{1k_1}&\cdots&a_{1k_m}\\
+\vdots&&\vdots\\
+a_{mk_1}&\cdots&a_{mk_m}
+\end{pmatrix}b_{k_11}\cdots b_{k_mm}
+\end{align*}
+Note that the terms in the last sum with any two $k's$ the same will make the minor of $A$ vanish. And, for $\{k_1,\cdots,k_m\}$'s that differ only by a permutation, the minor of $A$ will simply change sign according to the parity of the permutation. Hence the determinant of $C$ can be rewritten as
+\begin{align*}
+\det C&=\sum_{1\leq k_1<\cdots<k_m\leq n}\det A\Big(\begin{array}{llll}
+1&2&\cdots&m\\
+k_1&k_2&\cdots&k_m
+\end{array}\Big)\sum_{\sigma\in\mathfrak{S}_m}(-1)^{\sigma}b_{k_{\sigma(1)}1}\cdots b_{k_{\sigma(m)}m}\\
+&=\sum_{1\leq k_1<\cdots<k_m\leq n}\det A\Big(\begin{array}{llll}
+1&2&\cdots&m\\
+k_1&k_2&\cdots&k_m
+\end{array}\Big)\det B\Big(\begin{array}{llll}
+k_1&k_2&\cdots&k_m\\
+1&2&\cdots&m
+\end{array}\Big)
+\end{align*}
+\end{proof}
+\subsection{A sufficient and necessary condition for nilpotent matrix}
+\begin{proposition}\label{matrix nilpotent iff}
+A matrix $A\in\mathcal{M}_{n}(\R)$ is nilpotent if and only if $\tr(A^k)=0$ for all $k$.
+\end{proposition}
+\begin{proof}
+If $\lambda_1,\cdots,\lambda_n$ are the eigenvalues of $A$ (counting multiplicities), then $\lambda_1^k,\cdots,\lambda_n^k$ are the eigenvalues of $A^k$.\par
+If $A$ is nilpotent, then $A$ has eigenvalues all zero. If follows that $A^k$ has eigenvalues all zero for all $k$, so $\tr(A^k)=0$.\par
+Now assume $\tr(A^k)=0$ for $1\leq i\leq n$. Let's assume that $\lambda_1\cdots,\lambda_t$ are the nonzero eigenvalues of $A$ which are distinct from each other, and let $d_1,\cdots,d_t$ be the multiplicities of them. Then
+\[\tr(A^k)=d_1\lambda_1^k+\cdots+d_t\lambda_t^k=0,\for 1,2,\cdots\]
+That is, $d_1,\cdots,d_t$ fits into the equation
+\[\begin{pmatrix}
+\lambda_1&\cdots&\lambda_t\\
+\vdots&&\vdots\\
+\lambda_t^t&\cdots&\lambda^t_t
+\end{pmatrix}\begin{pmatrix}
+d_1\\
+\vdots\\
+d_t
+\end{pmatrix}=0\]
+Since $\lambda_i$'s are distinct, the determinant of this squre matrix is nonzero, so it follows that $d_1=\cdots=d_t=0$. This implies $A$ has only zero eigenvalues, thus $A$ is nilpotent.
+\end{proof}
+\begin{corollary}
+Let $A,B\in\mathcal{M}_n(\R)$, suppose that $AB-BA=B$, then $B$ is nilpotent.
+\end{corollary}
+\begin{proof}
+This proof is based on the observation
+\[[A,BC]=[A,B]C+B[A,C]\]
+where $[A,B]=AB-BA$. This can be showed by a direct computation
+\[[A,BC]=ABC-BCA=ABC-BAC+BAC-BCA=[A,B]C+B[A,C]\]
+Now using this and induction, we can show
+\[[A,B^k]=kB^{k}\quad\text{for all }k.\]
+For $k=1$ this is the given condition, while for $k=2$ we use the product rule:
+\[[A,B^2]=[A,B]B+B[A,B]=2B^2.\]
+Now assume this holds for $k$, we proceed to $k+1$:
+\[[A,B^{k+1}]=[A,B^k]B+B^k[A,B]=kB^{k+1}+B^{k+1}=(k+1)B^{k+1}\]
+With this claim, note that $\tr([A,B])=0$ for any $A,B$, we get $\tr(B^k)=0$ for all $k$, and by Proposition~\ref{matrix nilpotent iff} we conclude $B$ is nilpotent.
+\end{proof}
+In fact, this corollary has the following generazation:
+\begin{proposition}
+Let $A,B\in\mathcal{M}_n(\R)$, if $AB-BA$ commutes with $A$, then $AB-BA$ is nilpotent.
+\end{proposition}
+\begin{proof}
+Fix some matrix $M$, we define a derivative on $\mathcal{M}_n(\R)$ by 
+\[A':=[M,A],\quad A\in\mathcal{M}_n(\R)\]
+Then we have the product rule
+\[(AB)'=A'B+AB'\]
+Now suppose that we are given the condition $AA'=A'A$, we claim
+\[(A^k)'=kA^{k-1}A'\]
+Again, this follows from an induction
+\[(A^{k+1})'=A(A^k)'+A^kA'=A(kA^{k-1}A')+A^kA'=(k+1)A^kA'\]
+and the case $k=1$ is trivial. Hence for any polynomial $p(x)\in\R[x]$, we have
+\[(p(A))'=p'(A)A'\]
+where $p'(x)$ is the ordinary derivative for $p(x)$. We pick $p(x)=p_A(x)$, so that $p(A)=0$. Then by kepping differentiating at both side, we can show
+\[p^{(k)}(A)(A')^{2k-1}=0\quad\text{for all }k.\]
+In fact, we already have $k=1$, and assume the case $k$, we compute
+\[0=(p^{(k)}(A)(A')^{2k-1})'=p^{(k+1)}(A)(A')^{2k}+p^{(k)}(A)(2k-1)(A')^{2k-2}A''\]
+Thus by multiply $A'$ on right and using $A''A=AA''$ (this comes from $AA'=A'A$) we get
+\[0=(p^{(k)}(A)(A')^{2k-1})=p^{(k+1)}(A)(A')^{2k+1}+p^{(k)}(A)(2k-1)(A')^{2k-1}A''=p^{(k+1)}(A)(A')^{2k+1}.\]
+Now let $k=n$, since $p(x)$ has order $n$, the formula above becomes $n!(A')^{2n-1}=0$. This means $A'$ is nilpotent.
+\end{proof}
+\subsection{The products of positive semidefinite matrices}
+Let $A,B$ be positively semidefinite matrices, we want to know whether $AB$ is positively semidefinite matrices. Note that for this condition we must impose that $AB$ is symmetric. It turns out that this condition is sufficient.
+\begin{proposition}\label{PSD product two}
+Let $A,B\in\mathcal{M}_n(\R)$ be positively semidefinite matrices. Then the matrix $AB$ is positively semidefinite if $AB=BA$.
+\end{proposition}
+\begin{proof}
+Let $S$ be the squre root of $A$. We may assume that $A$ is positively definite so that $S$ is invertible.\par
+Observe that 
+\[S^{-1}ABS=SBS=S^TBS\]
+is positively semidefinite, so the eigenvalues of $AB$ are nonnegative. Therefore $AB$ is positively semidefinite if and only if $AB=BA$.\par
+For the general case, replace $A$ be $A_t=A+tI$. Then
+\[A_tB=AB+tB\]
+For $t>0$ the matrix $A_t$ is positively definite, so apply the argument above we find $A_tB$ has nonnegative eigenvalues. Let $t\to 0$ then we get the claim. 
+\end{proof}
+\begin{proposition}\label{PSD product three}
+Let $A,B,C\in\mathcal{M}_n(\R)$ be positively semidefinite matrices. Assume that $ABC=CBA$, then the matrix $ABC$ is also positively semidefinite.
+\end{proposition}
+\begin{proof}
+Let $S$ be the squre root of $A$, then $S$ is positively semidefinite. We may assume that $A$ is positive definite so that $S$ is invertible.\par
+Then 
+\[S^{-1}ABS=S^{-1}S^2BS=S^TBS\]
+is positively semidefinite, so that there exist an orthonormal matrix $P$ and a diagonal matrix $D$ with nonnegative entries such that
+\[P^{-1}S^{-1}ABSP=D.\]
+Set $Q=(SP)^{-1}$, we then get
+\[QABCQ^T=QABQ^{-1}\cdot QCQ^T=D\cdot QCQ^T.\]
+Since $C$ is positively semidefinite, the matrix $D\cdot QCQ^T$ has nonnegative eigenvalues (it is the product of two positive semidefinite matrices). Since $Q=SP$ is invertible, the eigen values of $ABC$ is then nonnegative.\par
+If $A$ is not positive definite, replace $A$ by $A_t=A+tC$. Then the matrix $A_t$ is positively semidefinite and we have
+\[A_tBC=ABC+tCBC=CBA_t.\]
+Since $\det(A+tC)$ is a polynomial of $t$ with finte degree, there exist at most finitely many $t\in\R$ such that $\det(A+tC)=0$. Exclude these $t$, then zero is not an eigenvalue of $A+tC$ so it is positively definite. Then we can apply the argument above for these $t$ to conclude that $A_tBC$ is positivelt semidefinite. Now let $t\to 0$ we get the claim.
+\end{proof}
+\subsection{Hadamard inequality}
+\begin{proposition}
+Let $A=(a_{ij})$ be a positively definite matrix, then $\det A\leq a_{11}\cdots a_{nn}$.
+\end{proposition}
+\begin{proof}
+By dividing we may assume that $a_{11}=\cdots=a_{nn}=1$. Let $\lambda_1,\dots,\lambda_n$ be the eigenvalues of $A$, then since they are all positive, we gave
+\[|A|=\prod_{i=1}^{n}\lambda_i\leq\Big(\frac{1}{n}\sum_{i=1}^{n}\lambda_i\Big)^n=\Big(\frac{1}{n}\tr(A)\Big)^n=1.\]
+If there is equality then each of the $\lambda_i$'s must all be equal and their sum is $n$, so they must all be $1$. Then it turns out that $A=I_n$ in this case. In general, the equality holds iff $A$ is diagonal.
+\end{proof}
+\begin{corollary}[\textbf{Hadamard inequality}]
+Let $\bm{a}_1,\dots,\bm{a}_n$ be vectors in $\R^n$ and let $A=(\bm{a}_1,\dots,\bm{a}_n)$, then
+\[|\det A|\leq\prod_{i=1}^{n}\|\bm{a}_i\|.\]
+\end{corollary}
+\begin{proof}
+If $A$ is singular this holds trivially, so we may assume that $A$ is nonsingular. Then $AA^T$ is positively definite, and from the proposition above we get
+\[|\det A|^2=|\det AA^T|\leq\prod_{i=1}^{n}(AA^T)_{nn}=\prod_{i=1}^{n}\|\bm{a}_i\|^2.\]
+Taking squre root we get the claim.
+\end{proof}
+\subsection{Direct sum of vector space}
+\begin{proposition}
+Let $V$ be a vector space and $V_1,\dots,V_n$ be subspaces of $V$. The following are equivalent.
+\begin{itemize}
+\item[$(1)$] $V_1+\cdots+V_n$ is a direct sum.
+\item[$(2)$] If $\sum_{i=1}^{n}\alpha_i=0$ with $\alpha_i\in V_i$, then $\alpha_i=0$ for all $i$.
+\item[$(3)$] $V_i\cap(\sum_{j\neq i}V_j)=\{0\}$.
+\item[$(4)$] $V_i\cap(\sum_{j=1}^{i-1}V_j)=\{0\}$.
+\item[$(5)$] $V_i\cap(\sum_{j=i+1}^{n}V_j)=\{0\}$.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+$(1)$ is clearly equivalent. For $(2)\Rightarrow(3)$, if $0\neq\alpha\in V_i\cap(\sum_{j\neq i}V_j)$, then $-\alpha\in　V_i$ and $\alpha=\sum_{j\neq i}\alpha_j$. Then
+\[0=-\alpha+\alpha=\sum_{j\neq i}\alpha_j-\alpha\]
+and by assumption $\alpha_j=0$ for all $j$, therefore $\alpha=0$.\par
+Clearly $(3)$ implies $(4)$, we show that $(4)\Rightarrow(2)$, and $(5)$ can be done similarly. Assume $(4)$, and $\sum_{i=1}^{n}\alpha_i=0$, then $\alpha_n=-(\alpha_1+\cdots+\alpha_{n-1})\in \sum_{j=1}^{i-1}V_j$ so that $\alpha_n=0$. Inductively we can show that $\alpha_i=0$ for all $i$, so $(2)$ holds.
+\end{proof}

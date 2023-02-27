@@ -1,0 +1,124 @@
+\chapter{Fundations}	
+\section{Set theory: Axiom of choice}
+In this section we will prove the equivalence of three important theorems, which is typically called: \textbf{axiom of choice}, \textbf{Zorn's lemma} and\textbf{well-ordering theorem}.\par
+First we review some basic definitions:
+\begin{definition}
+	An order relation on a set $S$ is a relation $\preceq$ which satisfies:
+	\begin{itemize}
+		\item$($reflexive$)$ $\forall\ a\in S$,\ $a\preceq a$.
+		\item$($transitive$)$ if $a\preceq b,\ b\preceq c $ then $a\preceq c$.
+		\item$($antisymmetric$)$ if $a\preceq b$ and $b\preceq a$, then necessarily $a=b$.
+	\end{itemize}
+\end{definition}
+And this is also called a \textbf{partial order} with respect to the definition of total order: a \textbf{total order} or a \textbf{linear order} is an order relation satisfying that any two elements can be compared. A set with a order is called a \textbf{partially ordered set}, or \textbf{poset}, and \textbf{totally ordered set} if a total order. Note that in a poset two elements are not necessarily comparable. For example the inclusion on a power set $\mathscr{P}(A)$ is a poset.\par
+Now we have some useful definitions in a poset:
+\begin{definition}
+	For a poset $S$.
+	\begin{itemize}
+		\item An element $a$ in $S$ is called a \textbf{maximal element} if 
+		there is no element bigger than $a$, that is, there is no element $b\in S$ such that $a\preceq b$.
+		\item An \textbf{minimal element} is of a similar definition, as you can guess.
+		\item A \textbf{chain} $C$ in $S$ is a subset of $S$ such that $C$ is totally ordered by the order $\preceq$.
+		\item An \textbf{upper bound} of a subset $A$ of $S$ is an element $u$ of $S$ such that forall $a\in A$ we have $a\preceq u$.
+		\item The \textbf{smallest} and \textbf{biggest elements} are defined in the obvious way, and do not mix them up with minimal and maximal.
+	\end{itemize}
+\end{definition}
+A typical example of poset is the set $\mathbb{Z}$ with the division order: $a\preceq b$ if and only if $a\mid b$.\par
+With these tools in hand, we give the prescription of the main purpose of this section:
+\begin{theorem}[\textbf{Zorn's Lemma}]
+Let $S$ be a nonempty poset. If every chain in $S$ has an upper bound in $S$, then $S$ has a maximal element.
+\end{theorem}
+This lemma is quite peculiar, and is not intuitive even for the finite case, and its proof in fact involves the axiom of choice, which is quite reasonable and will be given later. We will assume some basic set theoritical facts in the proof of it, but first let's give another theorem which is even more incredible.
+\begin{theorem}[\textbf{Well-ordering theorem}]
+A total set  $S$ is well-ordered if any subset of $S$ has a smallest element. The well-ordering theorem claims that every set can be wel-ordered, i.e. for any set $A$ there is an order on $A$ such that $A$ is a 
+well ordered set with respect to this order.
+\end{theorem}
+So from the well-ordering theorem we can find an order on any set $A$ such that $A$ is well ordered. But in fact we can't. This theorem claims the existence, but we have no way to construct a concrete order for almost any set. And the only well ordered set in our mind is just $\mathbb{N}$, the natural number. This is also why this theorem is queried by many mathematicians. But any way, it is still equivalent to the axiom of choice. So what is axoim of choice?\par
+Roughly speaking, the axiom of choice means we can do arbitraryly many times of choices. This is quite resonable and harmless for the finite cases but not so practical for the infinite ones. If one asks how to do infinitely many choices, nobody knows the answer. And in fact from the axiom of choice we can draw many bizarre conclusions, the most famous one is called the \textbf{Banach-Tarski Paradox}. Which says one can subdivied a solid ball of radius $1$ into finitely many pieces, then reassemble them after translations in $\mathbb{R}^3$ and obtain two balls of radius $1$.
+\begin{theorem}[\textbf{Axiom of choice}]
+For any given  family of nonempty sets $\mathscr{A}$, there is a function 
+\[f:\mathscr{A}\to \bigcup_{A\in\mathscr{A}}A\] 
+such that for any $A\in\mathscr{A},\ f(A)\in A$. Such a function $f$ is called the \textbf{choice function} of $\mathscr{A}$.
+\end{theorem}
+Now we claim that these three things are equivalent. The proof is not so difficult but still need some efforts. If we use ordinals and the concept of proper class we can simplify it, but that is another story.\par
+Before the whole proof we first give a generalization of the induction on $\mathbb{N}$.
+\begin{theorem}[\textbf{Principal of induction}]
+Let $Z$ be a well ordered set, $S\subseteq Z$ be a subset such that $\forall\ a\in Z$
+\[(\forall\ b\in Z,\ b\prec a\Rightarrow b\in S)\Rightarrow a\in S\]
+then $S=Z$ $($we use $a\prec b$ to mean $a\preceq b$ and $a\neq b$$)$.
+\end{theorem}
+If $Z=\mathbb{Z}$, then this is just the induction on natural numbers.
+\begin{proof}
+	Let $S\subseteq Z$ be a subset with the given property, and assume $S\subsetneq Z$. Then the complement $T$ of $S$ in $Z$ will have a smallset element $a$. Since $a$ is samllest, any element $b\prec a$ will be in $S$. But then from the property we have $a\in S$, a contradiction.
+\end{proof}
+Now we prove the first part:
+\begin{theorem}
+	Well-ordering theorem implies Zorn's lemma.
+\end{theorem}
+\begin{proof}
+Note that if we have the well-ordering theorem, we can use induction on arbitrary sets. So let's do this.\par
+Let $(Z,\leq)$ be a poset satisfying the conditions in Zorn's lemma. By the well-ordering theorem, we have another order $\prec$ on $Z$ such that $Z$ is well ordered by $\prec$. Now we define a function from $Z$ to $\mathscr{P}(Z)$:
+\[f(a)=\left\{\begin{array}{cl}
+\{a\} &\text{if }(\{a\}\cup \bigcup\limits_{b\prec a}f(b))\text{ is totally ordered by }\leq;\\
+\emp  &\text{if }(\{a\}\cup \bigcup\limits_{b\prec a}f(b))\text{ is not totally ordered by }\leq;
+\end{array}\right. \]
+so this function is just construting a chain from scratch. Let $S=\bigcup_{a\in Z}f(a)$, we claim that $S$ is totally ordered: 
+if $a,b\in S$, say $a\prec b$, then both $a$ and $b$ belongs to
+\[\{a\}\cup \bigcup\limits_{b\prec a}f(b)\]
+which is totally ordered by our construction.\par
+And we claim that $S$ is maximal: if $S\subseteq S'\subseteq Z$ and $S'$ is totally ordered by $\leq$, then $S=S'$. Indeed, if $a\in T$ where $T$ is the complement of $S$ in $Z$, then 
+\[\{a\}\cup \bigcup\limits_{b\prec a}f(b)\]
+is totally ordered by $\leq$, since it is a subset of $S'$, and then $f(a)=\{a\}$ and $a\in S$, a contradiction.\par
+With these observations, we let $m$ be a upper bound of $S$, which exists from the condition of Zorn's lemma since $S$ is a chain. Now $m$ must be maximal with respect to $\leq$: if $m\leq m'$, then $S\cup \{m'\}$ is totally ordered, hence $S=S\cup \{m'\}$ by our observations. But this implies $m'\leq m$ since $m$ is the upper bound, then $m=m'$.
+\end{proof}
+At the mean time, from this proof we get another fact which is also equivalent to the axiom of choice and it's called the \textbf{Hausdorff maximal principal}.
+\begin{theorem}[Hausdorff maximal principal]
+Every poset has a maximal chain.
+\end{theorem}
+This direction is not so difficult, so is another one:
+\begin{theorem}
+Zorn's lemma implies Axiom of choice.
+\end{theorem}
+\begin{proof}
+In the proof, we will regard a function $f:A\to B$ as a subset of the product set $A\times B$, so the domain of $f$ is just those $a\in A$ sucht that $\exists (a,b)\in f$. Then automatically we can define the inclusion order for functions. Now for $\mathscr{B}$ a family of sets, define
+\[Z=\{g\mid\ \text{there exists}\ \mathscr{A}\subseteq \mathscr{B}, g\ \text{is a choice function on}\ \mathscr{A}\}\]
+then we claim that $Z$ satisfies the conditions in Zorn's lemma: $Z$ is nonempty since we have $\{(B,b)\}\in Z$ for any $B\in\mathscr{B}$$($we can choose a element from a set$)$. If $X$ is a chain in $Z$, then the functions in $X$ is compatible and we can find $\bigcup\limits_{f\in X}f$ will also be a choice function on some set, hence is in $Z$, and obviously this is a upper bound of $X$.\par
+By Zorn's lemma $Z$ has a maximal element $f_0$, we claim that $f_0$ is a choice function of $\mathscr{B}$: otherwise, $\exists\,B\in\mathscr{B}-dom(f_0)$, and let $b\in B$, then $f_0\cup\{(B,b)\}\in Z$, which contradicts that $f_0$ is maximal.
+\end{proof}
+So only one direction is left, and this is also the most nontrivial one.
+\begin{theorem}
+Axiom of choice $\Rightarrow$ Well-ordering theorem.
+\end{theorem}
+\begin{proof}
+In this proof we will do some elaborate constructions, and this proof is not easy, really.\par
+First, we let $Z$ be a nonempte set. Use the axiom of choice to choose an element $f(S)\notin S$ for each proper subset $S\subsetneq Z$ $($this can be done 
+in such a way: first choose a choice function $g$ on the power set $\mathscr{P}(Z)$, and then define $f(S)=g(S^{c})$. Note that $f$ is then fixed$)$.\par
+We call a pair $(S,\leq)$ a \textbf{tower} if $S\subseteq Z$, $\leq$ is a well order on $S$ and for each $a\in S$, $a=f(\{b\in S, b<a\})$. Now 
+there are some observations: first we note that form the definition, if $(S,\leq)$ is a tower, then it has an smallest element, let's donote it by $s$. 
+From the property $a=f(\{b\in S, b<a\})$ we get $s=f(\{b\in S, b<s\})=f(\emp)$. But for the fixed function $f$, $f(\emp)$ is determined, so this shows all towers have a common smallest element. And use induction on well ordered set we can show all the towers have the following form:
+\[\{f(\emp),f(\{f(\emp)\}),f(\{f(\emp),f(\{f(\emp)\})\}),\cdots\}.\]
+In other words, the 'next' tower of a given tower $(S,\leq)$ is just $S\cup\{f(S)\}$ with the newly defined order $\leq'$ in an obvious way.\par
+So now we define a natural order on the set of towers in this way: two towers $(U,\leq')\preceq(V,\leq'')$ if and only if $U\subseteq V$ and $\leq'$ is the restriction 
+of $\leq''$ on $U$. We have the obvious properties that if $(U,\leq')\prec(V,\leq'')$ then $f(U)\in V$, and we can compare any two towers, i.e. $\preceq$ is a total order.\par
+Now with this construction, the proof is in hand. We prove that there is a maximal tower: consider the family of towers of $Z$, which we denote by $\mathscr{A}$, and let 
+	\[T=\bigcup_{a\in\mathscr{A}}T_a\]
+	It is clear that $T$ is a maximal tower, and then $T=Z$ since otherwise $f(T)$ is well defined and $T\cup\{f(T)\}$ is also a tower, which contradicts that $T$ is maximal.
+\end{proof}
+The last proof is really profound and have enlighted several important ideas in set theory, which we will not talk about. Now with these been done, we conclude:
+\begin{theorem}
+The following is equivalent:
+\begin{itemize}
+\item Axiom of choice.
+\item Zorn's lemma.
+\item Well-ordering theorem.
+\end{itemize}
+\end{theorem}
+Within these, however, Zorn's lemma is the most frequently used one due to its great convenience. Let's give some applications:
+\begin{theorem}
+Every vector space has a basis.
+\end{theorem}
+This is a famous theorem which involes Zorn's lemma, and is in fact easy to prove. You can try to show this by yourself. This will also give you a concept about how to use Zorn's lemma.
+\begin{proof}
+Let $V$ be a vector space and we want to extract a basis for it. So let $S$ be the family of linear independent vectors, that is, an element of $S$ will be a set of linear independent vectors. Now obviously $S$ is a poset under the inclusion order. If $S$ has a maximal element, say $\{a_1,a_2,\cdots\}$, then we claim that this is a basis of $V$: For any $a\in V$, $a\cup\{a_1,a_2,\cdots\}$ contains $\{a_1,a_2,\cdots\}$ so it is linearly dependent, which means $a$ can be reprensented as a linear combination of $\{a_1,a_2,\cdots\}$. This show that $\{a_1,a_2,\cdots\}$ is a basis.\par
+Now we prove that there is a maximal element in $S$ by Zorn's lemma. Let $T=\{B_i\}$ be a chain in $S$ where $i\in I$ is an index set. We observe that $B=\bigcup_{i\in I}B_i$ is a upper bound for $T$: First, $B_i\subset B$ for all $B_i$. Assume that $B$ is linear dependent, then there is a finite subset of $B$ which is linearly dependent. Let's denote this set as $C=\{\alpha_1,\alpha_2,\cdots,\alpha_n\}$, and assume all $\alpha_i$ belongs to some $B_{i_0}$ since $T$ is a chain. But then as a subset of $B_{i_0}$, $\{\alpha_1,\alpha_2,\cdots,\alpha_n\}$ must be linearly independent, which is a contradiction.
+\end{proof}

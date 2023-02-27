@@ -1,0 +1,2408 @@
+\chapter{Linear algebra}
+Throughout the main body of this chapter (but not necessarily in the exercises) $R$ will denote an \textit{integral domain}; most of the theory can be extended to arbitrary commutative rings without major difficulty.
+\section{Free modules}
+\subsection{$R$-$\mathsf{Mod}$}
+A module over $R$ is an abelian group $M$, endowed with an action of $R$. The action of $r\in R$ on $m\in M$ is denoted $rm$: there is a notational bias towards left-modules (but the distinction between left- and right-modules will be immaterial here as $R$ is commutative). The defining
+axioms of a module tell us that for all $r_1, r_2, r\in R$ and $m,m_1,m_2\in M$,
+\begin{itemize}
+\item $(r_1+r_2)m=r_1m+r_2m$.
+\item $1m=m$ and $(r_2r_1m)=r_2(r_1m)$.
+\item $r(m_1+m_2)=rm_1+rm_2$.
+\end{itemize}
+\subsection{Linear independence and bases}
+Recall the definition of free $R$-modules: $F^R(S)$ denotes an $R$-module containing a given set $S$ and universal with respect to the existence of a set-map from $S$. The module $R^{\oplus S}$ with one component for each element of $S$ gives an explicit realization of $F^R(S)$.\par
+Our main tool will be the famous concepts of linearly independent subsets and bases. It is easy to be imprecise in defining these notions. In order to avoid obvious traps, we will give the definitions for indexed sets, that is, for functions $i:I\to M$ from a (nonempty) indexing set $I$ to a given module $M$. The reader should think of $i$ as a selection of elements of $M$, allowing for the possibility that the elements $m_\alpha\in M$ corresponding to $\alpha\in I$ may not all be distinct.\par
+Recall that for all sets $I$ there is a canonical injection $j:I\to F^R(I)$ and any function $i:I\to M$ determines a unique $R$-module homomorphism $\varphi:F^R(I)\to M$ making the diagram
+\[\begin{tikzcd}
+F^R(S)\ar[rr,"\varphi"] && M\\
+&&\\
+I\ar[uu,"j"]\ar[rruu,swap,"i"]
+\end{tikzcd}\]
+commute: this is precisely the universal property satisfied by $F^R(I)$.
+\begin{definition}
+We say that the indexed set $i:I\to M$ is \textbf{linearly independent} if $\varphi$ is injective; $i$ is linearly dependent otherwise. We say that \textbf{$i$ generates $M$} if $\varphi$ is surjective.
+\end{definition}
+In other words, an indexed set $S=\{m_\alpha\}_{\alpha\in I}$ of elements of $M$ is linearly independent if the only vanishing linear combination
+\[\sum_{\alpha\in I}r_\alpha m_\alpha\]
+is obtained by choosing $r_\alpha=0,\forall \alpha\in I$; $S$ is linearly dependent otherwise. The
+indexed set generates $M$ if every element of $M$ may be written as $\sum_{\alpha\in I}r_\alpha m_\alpha$ for some choice of $r_\alpha$. (As a notational warning/reminder, keep in mind that only \textbf{finite sums} are defined in a module; therefore, in this context the notation $\sum$ stands for a finite sum. When writing $\sum_{\alpha\in I}m_\alpha$ in an ordinary module, one is implicitly
+assuming that $m_\alpha=0$ for all but finitely many $\alpha\in I$.)\par
+A simple application of Zorn's lemma shows that every module has maximal linearly independent subsets. In fact, it gives the following conveniently stronger statement:
+\begin{lemma}\label{Maximal lin inde}
+Let $M$ be an $R$-module, and let $S\sub M$ be a linearly independent subset. Then there exists a maximal linearly independent subset of $M$ containing $S$.
+\end{lemma}
+\begin{proof}
+Consider the family $\mathscr{S}$ of linearly independent subsets of $M$ containing $S$,
+ordered by inclusion. Since $S$ is linearly independent, $\mathscr{S}\neq\emp$. By Zorn's lemma, it
+suffices to verify that every chain in $\mathscr{S}$ has an upper bound. Indeed, the union of a chain of linearly independent subsets containing $S$ is also linearly independent: because any relation of linear dependence only involves finitely many elements and these elements would all belong to one subset in the chain.
+\end{proof}
+\begin{remark}
+This statement is in fact known to be equivalent to the axiom of choice; therefore, the use of Zorn's lemma in one form or another cannot be bypassed.
+\end{remark}
+Note that the singleton $\{2\}\sub\Z $ is a“maximal linearly independent subset”of $\Z$, but it does not generate $\Z$. In general this is an additional requirement, leading to the definition of a basis.
+\begin{definition}
+An indexed set $B\to M$ is a basis if it generates $M$ and is linearly independent.
+\end{definition}
+Again, one often talks of bases as‘subsets’of the module $M$; since the images of all $b\in B$ are necessarily distinct elements, this is rather harmless. When $B$ is finite (or at any rate countable), the extra information carried by the indexed set can be encoded by ordering the elements of $B$; to emphasize this, one talks about \textbf{ordered bases}.\par
+Bases are necessarily maximal linear independent subsets and minimal generating subsets; this holds over every ring. What will make modules over a field, i.e., vector spaces, so special is that the \textit{converse} will also hold.\par
+In any case, only very special modules admit bases:
+\begin{lemma}\label{free Modu lem}
+An $R$-module $M$ is free if and only if it admits a basis. In fact, $B\sub M$ is a basis if and only if the natural homomorphism $R^{\oplus B}\to M$ is an isomorphism.
+\end{lemma}
+By Lemma~\ref{free Modu lem}, the choice of a basis $B$ of a free module $M$ amounts to the choice of an isomorphism $R^{\oplus B}\cong M$; this will be an important observation in due time.
+\subsection{Vector spaces}
+Lemma~\ref{free Modu lem} is all that is needed to prove the fundamental observation that modules over a field are necessarily free. Recall that modules over a field $k$ are called $k$-vector spaces. Elements of a vector space are called \textbf{vectors}, while elements of the field are called \textbf{scalars}.
+By Lemma~\ref{free Modu lem}, proving that vector spaces are free modules amounts to proving
+that they admit bases; Lemma~\ref{Maximal lin inde} reduces the matter to the following:
+\begin{lemma}\label{Maxi lininde basis}
+Let $R=k$ be a field, and let $V$ be a $k$-vector space. Let $B$ be a maximal linearly independent subset of $V$, then $B$ is a basis of $V$.
+\end{lemma}
+Again, this should be contrasted with the situation over rings: $\{2\}$ is a maximal linearly independent subset of $\Z$, but it is not a basis.
+\begin{proof}
+Let $v\in V$, $v\notin B$. Then $B\cup\{v\}$ is not linearly independent, by the maximality of $B$; therefore, there exist $c_0,\cdots,c_t\in k$ and (distinct) $b_1,\cdots,b_t\in B$ such that
+\[c_0+c_1b_1+\cdots+c_tb_t=0\]
+with not all $c_0,\cdots,c_t$ equal to $0$. Now, $c_0\neq0$: otherwise we would get a linear
+dependence relation among elements of $B$. \textit{Since $k$ is a field}, $c_0$ is a unit; but then
+\[v=(-c_0^{-1}c_1)b_1+\cdots+(-c_0^{-1}c_t)b_t\]
+proving that $v$ is in the span of $B$. It follows that $B$ generates $V$, as needed.
+\end{proof}
+\vspace{5mm}
+\begin{proposition}\label{Vec basis}
+Let $R=k$ be a field, and let $V$ be a $k$-vector space. Let $S$ be a linearly independent set of vectors of $V$. Then there exists a basis $B$ of $V$ containing $S$.\par
+In particular, $V$ is free as a $k$-module.
+\end{proposition}
+\begin{lemma}\label{Mini gene basis}
+Let $R=k$ be a field, and let $V$ be a $k$-vector space. Let $B$ be a minimal generating set for $V$; then $B$ is a basis of $V$.\par
+Every set generating $V$ contains a basis of $V$.
+\end{lemma}
+\begin{proof}
+Suppose $B$ is linearly dependent, which means there is a nontrivial vanishing linear combination
+\[a_1b_1+\cdots+a_tb_t=0\]
+with $a_i\in k, b_i\in B$. In particular, this means $b_t$ is in the span of $b_1\cdots,b_{t-1}$ since $k$ is a field. So $B\setminus\{b_t\}$ also generates $V$, which contradicts the minimality of $B$.
+\end{proof}
+Lemma~\ref{Mini gene basis} also fails on more general rings. To reiterate, over fields (but not over general rings) a subset $B$ of a vector space is a basis $\iff$ it is a maximal linearly independent subset $\iff$ it is a minimal generating set.
+\vspace{5mm}
+\subsection{Recovering $B$ from $F^R(B)$}
+We are ready for the‘reconstruction’of a set $B$ (up to a bijection) from the corresponding free module $F^R(B)$. This is the result justifying the notion of \textbf{dimension} of a vector space, or, more generally, the \textbf{rank} of a free module. Again, we prove a somewhat stronger statement.
+\begin{proposition}\label{Free mod card}
+Let $R$ be an integral domain, and let $M$ be a free $R$-module. Let $B$ be a maximal linearly independent subset of $M$, and let $S$ be a linearly independent subset. Then $|S|\leqslant|B|$.\par
+In particular, any two maximal linearly independent subsets of a free module over an integral domain have the same cardinality.
+\end{proposition}
+\begin{proof}
+By taking fields of fractions, the general case over an integral domain is easily reduced to the case of vector spaces over a field. We may then assume that $R=k$ is a field and $M=V$ is a $k$-vector space.\par
+We have to prove that there is an injective map $j:S\to B$, and this can be done by an inductive process, replacing elements of $B$ by elements of $S$‘one-by-one’. For this, let $\leq$ be a well-ordering on $S$, let $v\in S$, and assume we have defined $j$ for all $w\in S$ with $w<v$. Let $B'$ be the set obtained from $B$ by replacing all $j(w)$ by $w$, for $w<v$, and assume (inductively) that $B'$ is still a maximal linearly independent subset of $V$. Then we claim that $j(v)\in B$ may be defined so that
+\begin{itemize}
+\item $j(v)\neq j(w)$ for all $w<v$.
+\item the set $B''$ obtained from $B'$ by replacing $j(v)$ by $v$ is still a maximal linearly
+independent subset.
+\end{itemize}
+(Transfinite) induction then shows that $j$ is defined and injective on $S$, as needed.\par
+To verify our claim, since $B'$ is a maximal linearly independent set, $B'\cup\{v\}$ is linearly dependent (as an indexed set), so that there exists a linear dependence relation
+\begin{align}\label{Maxi lininde-1}
+c_0v+c_1b_1+\cdots+c_tb_t
+\end{align}
+with not all $c_i$ equal to zero and the $b_i$ distinct in $B'$. Necessarily $c_0\neq0$ (because
+$B'$ is linearly independent); also, necessarily not all the $b_i$ with $c_i\neq0$ are elements
+of $S$ (because $S$ is linearly independent). Without loss of generality we may then assume that $c_1\neq0$ and $b_1\in B'\setminus S$. This guarantees that $b_1\neq j(w)$ for all $w<v$; we set $j(v)=b_1$.\par
+All that is left now is the verification that the set $B''$ obtained by replacing $b_1$ by $v$ in $B'$ is a maximal linearly independent subset. But by using $(\ref{Maxi lininde-1})$ to write
+\[v=-c_0^{-1}c_1b_1-\cdots-c_0^{-1}c_tb_t\quad\]
+this is an easy consequence of the fact that $B'$ is a maximal linearly independent subset.
+\end{proof}
+\begin{example}
+An uncountable subset of $\C[x]$ is necessarily linearly dependent. Indeed, $\C[x]$ has a countable basis over $\C$: for example, $\{1,x,x^2,x^3,\cdots\}$.
+\end{example}
+\begin{corollary}\label{Free mod basis card}
+Let $R$ be an integral domain, and let $A,B$ be sets. Then
+\[F^R(A)\cong F^R(B)\iff\text{ there is a bijection }A\cong B\]
+\end{corollary}
+\begin{proof}
+By the hypothesis, there is an isomorphism $i$ from $F^R(A)$ to $F^R(B)$. Clearly the image $i(A)$, which has the same cardinality with $A$, is a linear independent subset in $F^R(B)$, hence by Lemma~\ref{Free mod card}, we have $|A|=|i(A)|\leqslant |B|$. The converse also holds, so we get $|A|=|B|$.
+\end{proof}
+\begin{remark}
+We have learned in Lemma~\ref{Maximal lin inde} that we can complete every linearly independent subset $S$ to a maximal one. The argument used in the proof of Proposition~\ref{Free mod card} shows that we can in fact do this by borrowing elements of a given maximal linearly independent subset.
+\end{remark}
+\begin{remark}
+As a particular case of Corollary~\ref{Free mod basis card}, we see that if $R$ is an integral
+domain, then $R^m\cong R^n$ if and only if $m=n$. This says that integral domains satisfy the IBN (Invariant Basis Number) property .
+\end{remark}
+\vspace{5mm}
+Strange as it may seem, this obvious-looking fact does not hold over arbitrary rings: for example, the ring of endomorphisms of an infinite-dimensional vector space does not satisfy the IBN property. On the other hand, integral domains are a bit of an overshoot: all commutative rings satisfy the IBN property.
+\vspace{5mm}
+\begin{definition}
+Let $R$ be an integral domain. The rank of a free $R$-module $M$, denoted $\rank_RM$, is the cardinality of a maximal linearly independent subset of $M$. The rank of a vector space is called the dimension, denoted $\dim_kV$.
+\end{definition}
+Finite-dimensional vector spaces over a fixed field form a category. Since vector spaces are free modules (Proposition~\ref{Vec basis}), Corollary~\ref{Free mod basis card} implies that two finite dimensional vector spaces are isomorphic if and only if they have the same dimension.\par
+Proposition~\ref{Free mod card} tells us that every linearly independent subset $S$ of a free $R$ module $M$ must have cardinality lower than $\rank_RM$. Similarly, every generating set must have cardinality higher than the rank. Indeed,
+\begin{proposition}
+Let $R$ be an integral domain, and let $M$ be a free $R$-module; assume that $M$ is generated by $S$: $M=\langle S\rangle$. Then $S$ contains a maximal linearly independent subset of $M$.
+\end{proposition}
+\begin{proof}
+We may assume that $R$ is a field and $M=V$ is a vector space. Use Zorn's lemma to obtain a linearly independent subset $B\sub S$ which is maximal among subsets of $S$. Arguing as in the proof of Lemma~\ref{Maxi lininde basis} shows that $S$ is in the span of $B$, and it follows that $B$ generates $V$. Thus $B$ is a basis, and hence a maximal linearly independent subset of $V$, as needed.
+\end{proof}
+\begin{remark}
+We have used again the trick of switching from an integral domain to its field of fractions. The second part of the argument would not work over an arbitrary integral domain, since maximal linearly independent subsets over an integral domain are not generating sets in general.
+\end{remark}
+\vspace{5mm}
+\subsection{Exercise}
+\begin{exercise}
+Prove that $\R$ and $\C$ are isomorphic as $\Q$-vector spaces. $($In particular, $(\R,+)$ and $(\C,+)$ are isomorphic as groups.$)$ 
+\end{exercise}
+\begin{proof}
+$\R$ and $\C$ both have dimension $c$ (continum cardinality) as $\Q$ vector space, hence isomorphic. And are isomorphic as additive group.
+\end{proof}
+\begin{exercise}
+Let $R$ be an integral domain. Prove or disprove the following:
+\begin{itemize}
+\item Every linearly independent subset of a free $R$-module may be completed to a basis.
+\item Every generating subset of a free $R$-module contains a basis.
+\end{itemize}
+\end{exercise}
+\begin{proof}
+Any subset with element more than $1$ is linearly dependent in $\Z$.
+\begin{itemize}
+\item Consider the case $\{2\}$ in $\Z$.
+\item Consider the case $\{2,3\}$ in $\Z$, or in fact, any two coprime integers. Since their linear combination contains $1$ (Bezout lemma), they generates $\Z$.
+\end{itemize}
+\end{proof}
+\begin{exercise}
+Let $R$ be an integral domain, and let $M=R^{\oplus A}$ be a free $R$-module. Let $K$ be the field of fractions of $R$, and view $M$ as a subset of $V=K^{\oplus A}$ in the evident way. Prove that a subset $S\sub M$ is linearly independent in $M$ $($over $R$$)$ if and only if it is linearly independent in $V$ $($over $K$$)$. Conclude that the rank of $M$ $($as an $R$-module$)$ equals the dimension of $V$ $($as a $K$-vector space$)$. Prove that if $S$ generates $M$ over $R$, then it generates $V$ over $K$. Is the converse true?
+\end{exercise}
+\begin{proof}
+Clearly if a subset linearly independent in $V$ (over $K$), it is also linearly independent in $M$ (over $R$). Now suppose $S$ is linearly independent in $M$, and assume it is linearly dependent in $V$, then there is $c_1,\cdots,c_t\in K $ with $c_i=a_i/b_i$, $a_i,b_i\in K$ and $s_1,\cdots,s_k\in S$ such that
+\[c_1s_1+\cdots+c_ks_k=0\]
+now multiply $b_1b_2\cdots b_k$ on both sides yields
+\[(a_1b_2\cdots b_t)s_1+\cdots+(a_t b_1\cdots b_{t-1})s_t=0\]
+since the coefficient belongs to $R$, this is a contradiction.\par
+Any element in $V$, after multiply some coefficient in $R$, becomes an element in $M$, hence if $S$ generates $M$, it generates $V$. The converse is not true, for example, $\{n\}$ generates $\Q$ for any integer $n\in\Z$, but it does not generates $\Z$ unless $n=\pm 1$.
+\end{proof}
+\begin{exercise}
+Let $R$ be a commutative ring, and let $M$ be an $R$-module. Let $\mathfrak{m}$ be a maximal ideal in $R$, such that $\mathfrak{m}M=0$ $($that is, $rm=0$ for all $r\in\mathfrak{m},m\in M$$)$.
+Define in a natural way a vector space structure over $R/\mathfrak{m}$ on $M$.
+\end{exercise}
+\begin{proof}
+Define 
+\[R/\mathfrak{m}\times M\to M,\quad (r+\mathfrak{m},m)\mapsto rm\]
+since $\mathfrak{m}M=0$, this is well defined. Note that this definition is just like \textit{mod} $\mathfrak{m}$ over the module $M$. 
+\end{proof}
+\begin{exercise}\label{Free modu mod ideal}
+Let $R$ be a commutative ring, and let $F=R^{\oplus B}$ be a free module over $R$. Let $\mathfrak{m}$ be a maximal ideal of $R$, and let $k=R/\mathfrak{m}$ be the quotient field. Prove that $F/\mathfrak{m}F\cong k^{\oplus B}$ as $k$-vector spaces.
+\end{exercise}
+\begin{proof}
+Define a homomorphism 
+\[\varphi:F/\mathfrak{m}F\to k^{\oplus B},\quad a\mapsto\varphi(a)\]
+through
+\[\varphi(\sum r_ib_i)=\sum (r_i+\mathfrak{m})b_i\]
+obviously this map is surjective, since the map $\psi:r\mapsto(r+\mathfrak{m})$ is a surjection from $R$ to $k$. And the kernel is
+\[\ker\varphi=\big\{\sum r_ib_i: r_i\in\ker\psi\big\}=\big\{\sum r_ib_i:r_i\in\mathfrak{m}\big\}=\mathfrak{m}F\]
+so we obtain $F/\mathfrak{m}\cong k^{\oplus B}$.
+\end{proof}
+\begin{exercise}
+Prove that commutative rings satisfy the IBN property.
+\end{exercise}
+\begin{proof}
+Let $R$ be a commutative ring. As we know every ideal of $R$ is contained in some maximal ideal of $R$. Since every ring has a trivial ideal $(0)$, there always exists a maximal ideal in $R$ which we denote by $\mathfrak{m}$. Now for free module $M=R^{\oplus A}$, $N=R^{\oplus B}$ of $R$. We obtain by Exercise~\ref{Free modu mod ideal} that $M/\mathfrak{m}M\cong k^{\oplus B}$, $N/\mathfrak{m}\cong k^{\oplus B}$. If $M\cong N$, then we obtain a natural isomorphism between $M/\mathfrak{m}M$ and $N/\mathfrak{m}N$. Hence $k^{\oplus A}\cong k^{\oplus B}$. From the IBN property of the field $k:=R/\mathfrak{m}$, we obtain $|A|=|B|$, which proves the claim. 
+\end{proof}
+\begin{exercise}
+Let $V$ be a vector space over a field $k$, and let $R=\End_{k-\mathsf{Vect}}(V)$ be its ring of endomorphisms. (Note that $R$ is not commutative in general.)
+\begin{itemize}
+\item Prove that $\End_{k-\mathsf{Vect}}(V\oplus V)\cong R^4$ as an $R$-module.
+\item Prove that $R$ does not satisfy the IBN property if $V=k^{\oplus\N}$.
+\end{itemize}
+\end{exercise}
+\begin{proof}
+\mbox{}
+\begin{itemize}
+\item Let $f\in \End_{k-\mathsf{Vect}}(V\oplus V)$, since $\im f\in V\oplus V$, we can decompose $f$ into $f=f_1+f_2$ where $\im f_1\in V+0$, $\im f_2\in 0+V$. Now we have
+\[f(a+b)=f(a+0)+f(b+0)=f_1(a+0)+f_2(a+0)+f_1(0+b)+f_2(0+b)\]
+with $V+0\cong 0+V\cong V$, we obtain $\End_{k-\mathsf{Vect}}(V\oplus V)\cong R^4$.
+\item Note that $V=V\oplus V$ if $V=k^{\oplus\N}$ ( since $\N\times\N\cong\N$). So we get 
+\[R=\End_{k-\mathsf{Vect}}(V)\cong\End_{k-\mathsf{Vect}}(V\oplus V)\cong R^4\] 
+\end{itemize}
+\end{proof}
+\begin{exercise}
+Let $A$ be an abelian group such that $\End_{\mathsf{Ab}}(A)$ is a field of characteristic $0$. Prove that $A\cong\Q$.
+\end{exercise}
+\begin{proof}
+The homomorphism $g\mapsto ng$ has a unique inverse $g\mapsto \frac{1}{n}g$ since $\End_{\mathsf{Ab}}(A)$ is a field. So $A$ carries a $\Q$-vector space structure. Denote $B$ the basis of $A$. If $B$ has more than one element, say $a,b\in B$ with $a\neq b$, then the homomorphism
+\[\varphi(x):=\begin{cases}
+b &x=a\\
+a &x=b\\
+x &otherwise
+\end{cases}\]
+on $B$ defines a endomorphism which satisfies $\varphi^2=id$. Since $\End_{\mathsf{Ab}}(A)$ is a field of characteristic $0$, this is a contradiction. So $A$ has dimension $1$, which means $A\cong\Q$.
+\end{proof}
+\begin{exercise}\label{Kn=Kn+1}
+Let $V$ be a finite-dimensional vector space, and let $\varphi:V\to V$ be an homomorphism of vector spaces. Prove that there is an integer $n$ such that $\ker\varphi^{n+1}=\ker\varphi^n$ and $\im\varphi^{n+1}=\im\varphi^n$.\par
+Show that both claims may fail if $V$ has infinite dimension.
+\end{exercise}
+\begin{proof}
+We have $\ker\varphi^{n+1}\sups\ker\varphi^n$, and since $V$ is finite dimensional, we find an integer $n$ such that $\ker\varphi^{n+1}=\ker\varphi^n$, by the isomorphism $V=\ker\varphi\oplus\im\varphi$, we get the result.
+\end{proof}
+\begin{exercise}
+Consider the question of Exercise~\ref{Kn=Kn+1} for free $R$-modules $F$ of finite rank, where $R$ is an integral domain that is not a field. Let $\varphi:F\to F$ be an $R$-module homomorphism.\par
+What property of $R$ immediately guarantees that $\ker\varphi^{n+1}=\ker\varphi^n$ for $n\gg0$?
+Show that there is an $R$-module homomorphism $\varphi:F\to F$ such that $\im\varphi^{n+1}\subsetneq\im\varphi^n$ for all $n\geq 0$.
+\end{exercise}
+\begin{proof}
+Since every $\ker\varphi$ is a submodule of $R$, the sequence
+\[\{0\}\sub\ker\varphi\sub\ker\varphi^2\sub\cdots\sub\ker\varphi^n\sub\cdots\]
+is an ascending chain of ideals. If $R$ is Noetherian, then since $F$ has finite rank, it is also Noetherian, hence we have $\ker\varphi^{n+1}=\ker\varphi^n$ for sufficiently large $n$.\par
+Let $F=\Z$, and define $\varphi:m\mapsto 2m$. Then $\varphi^n:m\mapsto 2^nm$, and $\im\varphi^n=2^n\Z$. So we have $\im\varphi^{n+1}\subsetneq\im\varphi^n$ for all $n\geq 0$.
+\end{proof}
+\begin{exercise}
+Let $M$ be a module over a ring $R$. A finite \textbf{composition series} for $M$ $($if it exists$)$ is a decreasing sequence of submodules
+\[M=M_0\supsetneq M_1\supsetneq\cdots\supsetneq M_m=\{0\}\]
+in which all quotients $M_i/M_{i+1}$ are simple $R$-modules. The length of a series is the number of strict inclusions. The composition factors are the quotients $M_i/M_{i+1}$.\par
+Prove a Jordan-H\"older theorem for modules: any two finite composition series of a module have the same length and the same $($multiset of$)$ composition factors.\par
+We say that $M$ has length $m$ if $M$ admits a finite composition series of length $m$. This notion is well-defined as a consequence of the result.
+\end{exercise}
+\begin{proof}
+Let 
+\begin{align}\label{Comp se modu-1}
+M=M_0\supsetneq M_1\supsetneq\cdots\supsetneq M_n=\{0\}
+\end{align}
+be a composition series. Argue by induction on $n$: if $n=0$, then $G$ is trivial, and there is nothing to prove. Assume $n>0$, and let
+\begin{align}\label{Comp se modu-2}
+M=M_0\supsetneq M'_1\supsetneq\cdots\supsetneq M'_m=\{0\}
+\end{align}
+be another composition series for $M$. If $M_1=M'_1$, then the result follows from the induction hypothesis, since $M_1$ has a composition series of length $n-1<n$.\par
+We may then assume $M_1\neq M'_1$. Note that $M_1M'_1=M$: indeed, $M_1M'_1$ is normal in $M$, and $M_1\subsetneq M_1M'_1$; but there are no proper normal subgroups between $M_1$ and $M$ since $M/M_1$ is simple.\par
+Let $K=M_1\cap M'_1$, and let
+\[K\supsetneq K_1\supsetneq K_2\supsetneq\cdots\supsetneq K_r=\{0\}\]
+be a composition series for $K$. By the second isomorphism theorem,
+\[\dfrac{M_1}{K}=\dfrac{M_1}{M_1\cap M'_1}\cong \dfrac{M_1M'_1}{M'_1}=\dfrac{M}{M'_1}\And \dfrac{M'_1}{K}\cong\dfrac{M}{M_1}\]
+are simple. Therefore, we have two new composition series for $G$:
+\[\begin{array}{l}
+M\supsetneq M_1\supsetneq  K\supsetneq K_1\supsetneq \cdots\supsetneq \{0\}\\
+M\supsetneq M'_1\supsetneq  K\supsetneq K_1\supsetneq \cdots\supsetneq \{0\}\\
+\end{array}\]
+which only differ at the first step. These two series trivially have the same length and the same quotients (the first two quotients get switched from one series to the
+other).\par
+Now we claim that the first of these two series has the same length and quotients
+as the series $(\ref{Comp se modu-1})$. Indeed,
+\[M_1\supsetneq K\supsetneq K_1 \subsetneq\cdots\supsetneq K_r=\{0\}\]
+is a composition series for $M_1$: by the induction hypothesis, it must have the same length and quotients as the composition series
+\[M_1\supsetneq M_2\supsetneq \cdots\supsetneq M_n=\{0\}\]
+verifying our claim (and note that, in particular, $r=n-2$).\par
+By the same token, applying the induction hypothesis to the series of length $n-1$, i.e.,
+\[M'_1\supsetneq K\supsetneq K_1\supsetneq\cdots\supsetneq K_{n-2}=\{0\}\]
+shows that the second series has the same length and quotients as $(\ref{Comp se modu-2})$, and the
+statement follows.
+\end{proof}
+\begin{exercise}
+Prove that a $k$-vector space $V$ has finite length as a module over $k$ if and only if it is finite-dimensional and that in this case its length equals its dimension.
+\end{exercise}
+\begin{exercise}
+Let $M$ be an $R$-module of finite length $m$
+\begin{itemize}
+\item Prove that every submodule $N$ of $M$ has finite length $n\leqslant m$.
+\item Prove that the descending chain condition $($d.c.c.$)$ for submodules holds in $M$.
+\item Prove that if $R$ is an integral domain that is not a field and $F$ is a free $R$-module, then $F$ has finite length if and only if it is the $0$-module.
+\end{itemize}
+\end{exercise}
+\begin{proof}
+\mbox{}
+\begin{itemize}
+\item Assume that $M$ has a composition series
+\[M\supsetneq M_1\supsetneq M_2\cdots\supsetneq M_n=\{0\}\]
+and that $N$ is a normal subgroup of $M$. Intersecting the series with $N$ gives a sequence of subgroups of the latter:
+\[N\supsetneq M_1\cap N\cdots\supsetneq M_n\cap N=\{0\}\]
+such that $M_{i+1}\cap N$ is normal in $M_i\cap N$, for all $i$. We claim that this becomes a
+composition series for $N$ once repetitions are eliminated. Indeed, this follows once we establish that
+\[\dfrac{M_i\cap N}{M_{i+1}\cap N}\]
+is either trivial (so that $M_{i+1}\cap N=M_i\cap N$, and the corresponding inclusion may be omitted) or isomorphic to $M_i/M_{i+1}$ (hence simple, and one of the composition factors of $M$). To see this, consider the homomorphism
+\[M_i\cap N\hookrightarrow M_i\twoheadrightarrow\dfrac{M_i}{M_{i+1}}\]
+the kernel is clearly $M_{i+1}∩N$; therefore (by the first isomorphism theorem) we have an injective homomorphisms
+\[\dfrac{M_i\cap N}{M_{i+1}\cap N}\hookrightarrow\dfrac{M_i}{M_{i+1}}\]
+identifying $(M_i\cap N)/(M_{i+1}\cap N)$ with a subgroup of $M_i/M_{i+1}$. Now, this subgroup is normal (because $N$ is normal in $M$) and $M_i/M_{i+1}$ is simple; our claim follows.\par
+As for $M/N$, obtain a sequence of subgroups from a composition series for $M$:
+\[\dfrac{M}{N}\supseteq\dfrac{M_1N}{N}\supseteq\cdots\supseteq\dfrac{\{0\}N}{N}=\{0\}\]
+such that $(M_{i+1}N)/N$ is normal in $(M_iN)/N$. As above, we have to check that
+\[\dfrac{(M_iN)/N}{(M_{i+1}N)/N}\]
+is either trivial or isomorphic to $M_i/M_{i+1}$. By the third isomorphism theorem, this
+quotient is isomorphic to $(M_iN)/(M_{i+1}N)$. This time, consider the homomorphism
+\[M_i\hookrightarrow M_iN\twoheadrightarrow \dfrac{M_iN}{M_{i+1}N}\]
+this is surjective, and the subgroup $M_{i+1}$ of the source is sent to the identity element in the target; hence there is an onto homomorphism
+\[\dfrac{M_i}{M_{i+1}}\twoheadrightarrow\dfrac{M_iN}{M_{i+1}N}\]
+Since $M_i/M_{i+1}$ is simple, it follows that $(M_iN)/(M_{i+1}N)$ is either trivial or
+isomorphic to it, as needed.
+\item Every descending chain can be completed into a composition series of $M$.
+\item If $F$ is not $0$-module, it contains a copy of $R$, and $R$ has finite length if and only if it is a field (if $R$ has finite length, every element in $R$ is invertible), contradiction.
+\end{itemize}
+\end{proof}
+\begin{exercise}
+Let $k$ be a field, and let $f(x)\in k[x]$ be any polynomial. Prove that there exists a multiple of $f(x)$ in which all exponents of nonzero monomials are prime integers.\par
+Example: for $f(x)=1+x^5+x^6$,
+\[(1+x^5+x^6)(2x^2-x^3+x^5-x^8+x^9-x^{10}+x^{11})=2x^2-x^3+x^5+2x^7+2x^{11}-x^{13}+x^{17}\]
+\end{exercise}
+\begin{proof}
+Let $f$ be a polynomial such that some exponent of nonzero monomials are not prime otherwise the claim is clear. Consider the set $S$ consists of all polynomial with prime exponents, and suppose $(f(x))\cap S=\emp$. With the observation that $S$ is closed under addition, we see that there is an inclusion from $S$ to $k[x]/(f(x))$. Since $k[x]/(f(x))$ is a finite-dimensional $k$-vector space, while $S$ has infinite dimension over $k$, this is an contradiction.
+\end{proof}
+\begin{exercise}
+Let $A,B$ be sets. Prove that the free groups $F(A)$, $F(B)$ are isomorphic if and only if there is a bijection $A\cong B$.
+\end{exercise}
+\begin{proof}
+Since $F^{ab}(A)=F(A)/[F(A),F(A)]$, we have $F(A)\cong F(B)\Rightarrow F^{ab}(A)\cong F^{ab}(B)$. The group $F^{ab}(A)$ is a free-module over $\Z$. Since $Z$ is commutative, it has the IBN property, which implies $A\cong B$.
+\end{proof}
+\section{Homomorphisms of free modules, \Rmnum{1}}
+\subsection{Matrices}
+\begin{lemma}\label{Matr homo}
+For all $m\times n$ matrices $A$ with entries in $R$:
+\begin{itemize}
+\item The function $\varphi:R^n\to R^m$ defined by $\varphi(v)=A\cdot v$ is a homomorphism of $R$-modules.
+\item Every $R$-module homomorphism $R^n\to R^m$ is determined in this way by a unique $m\times n$ matrix.
+\end{itemize}
+\end{lemma}
+\begin{proof}
+Let $\varphi:\R^n\to\R^m$ be a homomorphism of $R$-modules; let $a_{ij}$ be the $i$-th component of $\varphi(\bm{e}_j)$, so that
+\[\varphi(\bm{e}_j)=\begin{pmatrix}
+a_{1j}\\
+\vdots\\
+a_{mj}
+\end{pmatrix}\]
+Then $A=(a_{ij})$ is an $m\times n$ matrix, and for $\bm{v}\in R^n$ with components $v_j$, 
+\[A\cdot\bm{v}=\begin{pmatrix}
+a_{11}v_1+\cdots+a_{1n}v_n\\
+\vdots\\
+a_{n1}v_1+\cdots+a_{nn}v_n
+\end{pmatrix}=\sum_{j=1}^{n}v_j\begin{pmatrix}
+a_{1j}\\
+\vdots\\
+a_{mj}
+\end{pmatrix}=\sum_{j=1}^{n}v_j\varphi(\bm{e}_j)=\varphi(\bm{v})\]
+as needed.
+\end{proof}
+\begin{corollary}
+The correspondence introduced in Lemma~\ref{Matr homo} gives an isomorphism of $R$-modules
+\[\mathcal{M}_{m,n}(R)\cong \Hom_R(R^n,R^m)\]
+and we have a commutative diagram
+\[\begin{tikzcd}
+\mathcal{M}_{m,p}(R)\times\mathcal{M}_{p,n}(R)\ar[d,"\cong"]\ar[rr]&&\mathcal{M}_{m,n}(R)\ar[d,"\cong"]\\
+\Hom_R(R^p,R^m)\times\Hom_R(R^n,R^p)\ar[rr]&&\Hom_R(R^n,R^m)
+\end{tikzcd}\]
+\end{corollary}
+\subsection{Change of basis}
+Let $F$ be a free module, and choose two bases $A, B$ for $F$; assume that $F$ is finitely generated, so that $A,B$ are finite sets, and further $|A|=|B|(=\rank F)$ by Proposition~\ref{Free mod basis card}. The two bases correspond to two isomorphisms
+\[R^{\oplus A}\stackrel{\varphi}{\longrightarrow}F,\quad R^{\oplus B}\stackrel{\psi}{\longrightarrow}F\]
+then
+\[R^{\oplus A}\stackrel{\psi^{-1}\circ\varphi}{\longrightarrow}R^{\oplus B}\]
+is an isomorphism, which corresponds to a matrix; we may call this matrix $N^B_A$. Explicitly, the $j$-th column of $N^B_A$ is the image of the $j$-th element of $A$, viewed as a column vector in $R^{\oplus B}$. That is, letting
+\[A=(\bm{a}_1,\cdots,\bm{a}_r),\quad B=(\bm{b}_1,\cdots,\bm{b}_r)\]
+we have $N^B_A=(n_{ij})$ with
+\[\psi^{-1}\circ\varphi(\bm{a}_j)=\sum_{i=1}^{r}n_{ij}\bm{b}_i\]
+This equality is written in $R^{\oplus B}$; in practice one views the basis vectors $a_j$, $b_i$ as
+vectors of $F$ and would therefore simply write
+\[\bm{a}_j=\sum_{i=1}^{r}n^i_j\bm{b}_i\]
+that is, the corresponding equality in $F$.
+\begin{definition}
+The matrix $N^B_A$ is called the matrix of the change of basis.
+\end{definition}
+let's work out the action of a change of basis on the matrix representation of a homomophism $\alpha:F\to G$ of two free modules. The diagram taking care of the needed manipulations is
+\[\begin{tikzcd}
+R^{\oplus A}\ar[dd,swap,"\nu_A^B"]\ar[rd,"\varphi"]&&&R^{\oplus B}\ar[dl,swap,"\rho"]\ar[dd,"\mu_C^D"]\\
+&F\ar[r,"\alpha"]&G&\\
+R^{\oplus B}\ar[ru,swap,"\psi"]&&&R^{\oplus D}\ar[ul,"\sigma"]
+\end{tikzcd}\]
+Let $N_A^B$ be the matrix of $\nu_A^B=\psi^{-1}\circ\psi$, as above, and let $M_C^D$ be the matrix for $\mu_C^D=\sigma^{-1}\circ\rho$.\par
+Choose the basis $A$ for $F$ and $C$ for $G$. Then the matrix representing $\alpha$ will be the matrix $P$ corresponding to
+\[\rho^{-1}\circ\alpha\circ\varphi:R^{\oplus A}\to R^{\oplus C}\]
+If on the other hand we choose the basis $B$ for $F$ and $D$ for $G$, then we represent $\alpha$ by the matrix $Q$ corresponding to
+\[\sigma^{-1}\circ\alpha\circ\psi:R^{\oplus B}\to R^{\oplus D}\]
+Now 
+\[\sigma^{-1}\circ\alpha\circ\psi=(\mu_C^D\circ\rho^{-1})\circ\alpha\circ(\varphi\circ(\nu_A^B)^{-1})=\mu_C^D\circ(\rho^{-1}\circ\alpha\circ\psi)\circ(\nu_A^B)^{-1}\]
+and by Lemma~\ref{Matr homo} this shows
+\[Q=M_C^D\cdot P\cdot(N_A^B)^{-1}=M_C^D\cdot P\cdot N_B^A\]
+This is hardly surprising, of course: starting from a vector expressed as a combination of $b$'s, $N_A^B$ converts it into a combination of $a$'s; $P$ acts on it by giving its image under $\alpha$ as a combination of $c$'s; and $M_D^C$ converts it into $d$'s. That accomplishes $Q$'s job, as it should.
+Summarizing this discussion,
+\begin{proposition}\label{Free mud change bas}
+Let $\alpha:F\to G$ be a homomorphism of finitely generated free modules, and let $P$ be a matrix representing it with respect to any choice of bases for $F$ and $G$. Then the matrices representing $\alpha$ with respect to any other choice of bases are all and only the matrices of the form
+\[M\cdot P\cdot N\]
+where $M$ and $N$ are invertible matrices.
+\end{proposition}
+\begin{definition}\label{Matr equi def}
+Two matrices $P,Q\in\mathcal{M}_{m,n}(R)$ are equivalent if they represent the same homomorphism of free modules $R^n\to R^m$ up to a choice of basis.
+\end{definition}
+\subsection{Elementary operations and Gaussian elimination}
+The idea is now to capitalize on Proposition~\ref{Free mud change bas} as follows: given a homomorphism $\alpha:F\to G$ between two free modules, find special bases in $F$ and $G$ so that the matrix of $\alpha$ takes a particularly convenient form. That is, look for a particularly convenient matrix in each equivalence class with respect to the relation introduced in Definition~\ref{Matr equi def}. For this, we can start with random bases in $F$ and $G$, consider the following three elementary (row/column) operations that can be performed on a matrix $P$:
+\begin{itemize}
+\item switch two rows (or two columns) of $P$.
+\item add to one row (resp., column) a multiple of another row (resp., column).
+\item multiply all entries in one row (or column) of $P$ by a unit of $R$.
+\end{itemize}
+\begin{proposition}\label{Elem change equi}
+Two matrices $P,Q\in\mathcal{M}_{m,n}(R)$ are equivalent if $Q$ may be obtained from $P$ by a sequence of elementary operations.
+\end{proposition}
+The matrices corresponding to the elementary operations are called \textbf{elementary matrices}. Linear algebra over arbitrary rings would be a great deal simpler if Proposition~\ref{Elem change equi} were an if and only if statement. This boils down to the question of whether every invertible matrix may be written as a product of elementary matrices, that is, whether elementary matrices generate the general linear group.
+\begin{definition}\label{GLn def}
+The $n$-th general linear group over the ring $R$, denoted $\GL_n(R)$, is the group of units in $\mathcal{M}_n(R)$, that is, the group of invertible $n\times n$ matrices with entries in $R$.
+\end{definition}
+The elementary matrices are elements of $GL_n(R)$; in fact, the inverse of an elementary matrix is (of course) again an elementary matrix. The following observation is surely known to the reader, in one form or another; in view of the foregoing considerations, it says that the relation introduced in Definition~\ref{GLn def} is under good control over \textit{fields}.
+\begin{proposition}
+Let $R=k$ be a field, and let $n\geq 0$ be an integer. Then $GL_n(k)$ is generated by elementary matrices.\par
+Thus, two matrices are equivalent over a field if and only if they are linked by a sequence of elementary operations.
+\end{proposition}
+When applied only to the rows of a matrix, the simplification of a matrix by means of elementary operations is called Gaussian elimination. This corresponds to multiplying the given matrix on the left by a product of elementary matrices, and it suffices in order to reduce any square invertible matrix to the identity.\par
+We will sloppily call Gaussian elimination the more drastic process including column operations as well as row operations; this is in line with our focus on equivalence rather than row-equivalence. Applied to any rectangular matrix, this process yields the following:
+\begin{proposition}\label{Matr equi class}
+Over a field, every $m\times n$ matrix is equivalent to a matrix of the form
+\[\begin{pmatrix}
+I_r&0\\
+0&0
+\end{pmatrix}\]
+$($where $r\leqslant\min(m,n)$ and $0$ stands for null matrices of appropriate sizes$)$.
+\end{proposition}
+Different matrices of the type displayed in Proposition~\ref{Matr equi class} are \textit{inequivalent}. Thus, Proposition~\ref{Matr equi class} describes all equivalence classes of matrices over a field and shows that for any given $m.n$ there are in fact only \textit{finitely many} such classes (over a field!).
+\subsection{Smith normal form on PIDs}
+With due care, Gaussian elimination may be performed over every \textit{Euclidean domain}. A $2\times 2$ example on $\Z$ should suffice to illustrate the general case: let
+\[\begin{pmatrix}
+a&b\\
+c&d
+\end{pmatrix}\in\mathcal{M}_2(R)\]
+After switching rows and columns, we may assume $a$ is the smallest non-zero element. By Euclidean division,
+\[b=aq+r\]
+with $r=0$ or $r<a$. Adding to the second column the $(-q)$-multiple of the first produces the matrix
+\[\begin{pmatrix}
+a&r\\
+c&d-qc
+\end{pmatrix}\]
+If $r\neq0$, so that $r<a$, we begin again and shuffle rows and columns so that the $(1,1)$ entry is smallest. This process may be repeated, but after a finite number of steps the $(1,2)$ entry will have to vanish, because at each stage the absolute value of $a$ is decreasing.\par
+Trivial variations of the same procedure will clear the $(2,1)$ entry as well, producing a matrix
+\[\begin{pmatrix}
+e&0\\
+0&f
+\end{pmatrix}\]
+Now (this is the cleverest part) we claim that we may assume that $e$ divides $f$ in $R$, with no remainder. Indeed, otherwise we can add the second row to the first,
+\[\begin{pmatrix}
+e &f\\
+0&f
+\end{pmatrix}\]
+and \textit{start all over} with this new matrix. Again, the effect of all the operations will be to decrease the valuation of the $(1,1)$ entry, so after a final number of steps we must reach the condition $e\mid f$.\par
+\begin{theorem}\label{Smith norm form}
+Let $R$ be a PID, and let $P\in\mathcal{M}_{m,n}(R)$. Then $P$ is equivalent to a matrix of the form
+\[\left(\begin{array}{ccc|c}
+d_1&\cdots&0&0\\
+\vdots&\ddots&\vdots&\vdots\\
+0&\cdots&d_r&0\\
+\hline
+0&\cdots&0&0
+\end{array}\right)\]
+with $d_i\mid d_j$ for $i\leq j$. This is called the \textbf{Smith normal form} of the matrix.
+\end{theorem}
+\begin{proof}
+First we prove for the case $R$ is a Euclidean domain. We assume that $R=\Z$, since the proof generalizes to arbitrary Euclidean domains. If $A=0$ there is nothing to prove. Otherwise, let $a_{ij}$ be a smallest non-zero element of $A$. Elementary row and column transformations will bring this element to the $(1,1)$ position. Assume now that it is there. Let $k>1$ and $a_{1k}=a_{11}b_k+r_{1k}$ where $r_{1k}<a_{11}$. Now subtract the first column times $b_k$ from the $k$-th. This elementary transformation replaces $a_{1k}$ by $r_{1k}$. If $r_{1k}\neq 0$ we obtain a matrix equivalent to $A$ whose smallest non-zero element is smaller than that of $A$. Repeting this process we can get a matrix $B$ equivalent to $A$ with the form
+\[B=\begin{bmatrix}
+b_{11}&0&\cdots&0\\
+0&c_{22}&\cdots&c_{2n}\\
+\vdots&\vdots&\ddots&\vdots\\
+0&c_{m2}&\cdots&c_{mn}
+\end{bmatrix}\]
+By repeting the same steps on the submatrix, we can get a matrix equivalent to $A$ which is of diagnoal form
+\[\left(\begin{array}{ccc|c}
+d_1&\cdots&0&0\\
+\vdots&\ddots&\vdots&\vdots\\
+0&\cdots&d_r&0\\
+\hline
+0&\cdots&0&0
+\end{array}\right)\]
+with our argument before the theorem, we can assume $d_i\mid d_j$ for $i\leq j$.\par
+The argument in the general case is quite similar to the foregoing. Here we use
+duction on the length of a non-zero element of $R$. We define length $l(a)$ of $a\neq0$ to be the number of prime factors occurring in a factorion $a=p_1p_2\cdots p_r$ where $p_i$ are primes and they can repete. We also use the convention that $l(u)=0$ if
+a unit.\par
+As in the previous case we may assume that $a_{11}\neq0$ and $l(a_{11})\leq l(a_{ij})$ for every $a_{ij}\neq 0$. Assume $a_{11}\nmid a_{ij}$. Interchanging row and column we may assume $a_{11}\nmid a_{12}$. Write $a=a_{11},b=a_{12}$ and ovserve that, if we let $d=\gcd(a,b)$ and $x,y\in R$ are such that $d=ax+by$, then
+\[\begin{pmatrix}
+a&b\\
+\times&\times
+\end{pmatrix}\begin{pmatrix}
+x&b/d\\
+y&-a/d
+\end{pmatrix}=\begin{pmatrix}
+d&0\\
+\times&\times
+\end{pmatrix}\]
+while $l(d)<l(a)$ and the second matrix is invertible since it has determinant 
+\[-\frac{xa}{d}-\frac{by}{d}=-1.\]
+Hence by multiplying the $n\times n$ matrix
+\[\begin{bmatrix}
+x&b/d&\\
+y&-a/d&\\
+&&I_{n-2}
+\end{bmatrix}\]
+on the right of $A$, we obtain a new matrix $B$ equivalent to $A$ whose first row is 
+\[(d,0,a_{13},\cdots,a_{1n})\] 
+and $l(d)<l(a_{11})$. Hence by repeting this process, the rest of the argument is essentially the same as in the Euclidean case.
+\end{proof}
+\begin{remark}
+As a consequence of the preceding considerations and arguing, we see that $\GL_n(R)$ is generated by elementary matrices if $R$ is a Euclidean domain. The reader may think that some cleverness in handling Gaussian elimination may extend this to more general rings, but this will not go too far: there are examples of PIDs $R$ for which $\GL_n(R)$ is not generated by elementary matrices.
+\end{remark}
+A matrix equivalent to $A$ having the diagonal form given in Theorem~\ref{Smith norm form} is called a normal form for $A$. The diagonal elements of a normal form are called
+\textbf{invariant factors} of $A$. Clearly any of these can be replaced by an associate
+(product by a unit). We shall now show that this is the only alteration which can be made in the invariant factors, that is, these are determined up to unit multipliers.\par 
+We shall obtain this result by deriving formulas for the invariant factors in terms of the elements of $A$. We recall that the matrix $A$ is said to be of rank $r$ if there exists a non-zero $r$-rowed minor in $A$ but every $(r+1)$-rowed minor of $A$ is $0$. Since the $i$-rowed minors are sums of products of $(i-1)$-rowed minors by elements of $R$ it is clear that if the rank is $r$, then for every $1\leq i\leq r-1$, $A$ has non-zero $i$-rowed minors. We now have the following result, which gives formulas for the invariant factors.
+\begin{theorem}\label{det factor}
+Let $A$ be an $m\times n$ matrix with entries in a PID $R$ and suppose the rank of $A$ to be $r$. For each $i\leq r$ let $\Delta_i$ be the greatest common divisor of $i$-rowed minor of $A$. Then any set of invariant factors for $A$ differ by unit multipliers from the elements
+\[d_i=\frac{\Delta_r}{\Delta_{r-1}},\ 1\leq i\leq r\]
+where $\Delta_0:=1$. The elements $\Delta_i$ is called the \textbf{determinant factor} of $A$.
+\end{theorem}
+\begin{proof}
+Let $Q=(q_{k\ell})$ be an $m\times m$ matrix with entries in $R$. Then the $(k,i)$-entry of $QA$ is $\sum_{j}q_{kj}a_{ji}$. This shows that the rows of $QA$ are linear combinations with efficients in $R$ of the rows of $A$. Hence the $i$-rowed minors of $QA$ are linear combinations of the $i$-rowed minors of $A$ and so the gcd of the $i$-rowed minors $A$ is a divisor of the gcd of the $i$-rowed minors of $QA$. Similarly, since the columns of $AP$, $P\in\mathcal{M}_{nn}(R)$, are linear combinations of the columns of $A$, the gcd of the $i$-rowed minors of $A$ is a divisor of the gcd of the $i$-rowed minors of $AP$. Combining these two facts and using symmetry of the relation of equivalence, we see that if $A$ and $B$ are equivalent the gcd of the $i$-rowed minors of $A$ and $B$ are the same. Now let 
+\[B=\left(\begin{array}{ccc|c}
+d_1&\cdots&0&0\\
+\vdots&\ddots&\vdots&\vdots\\
+0&\cdots&d_r&0\\
+\hline
+0&\cdots&0&0
+\end{array}\right)\] 
+be a normal form for $A$. Then the divisibility conditions $d_i\mid d_j$ if $i\leq j$ imply that a gcd of the $i$-rowed minors of $B$ is $\Delta_i=d_1d_2\cdots d_i$. Evidently the assertion of the theorem follows this.
+\end{proof}
+\vspace{5mm}
+\subsection{Exercise}
+\begin{exercise}
+A matrix with entries in a field is in \textbf{row echelon form} if
+\begin{itemize}
+\item its nonzero rows are all above the zero rows.
+\item the leftmost nonzero entry of each row is $1$, and it is strictly to the right of the leftmost nonzero entry of the row above it.
+\end{itemize}
+The matrix is further in \textbf{reduced row echelon form} if
+\begin{itemize}
+\item the leftmost nonzero entry of each row is the only nonzero entry in its column.
+\end{itemize}
+The leftmost nonzero entries in a matrix in row echelon form are called \textbf{pivots}.
+Prove that any matrix with entries in a field can be brought into reduced echelon form by a sequence of elementary operations on rows. $($This is what is more properly called Gaussian elimination.$)$
+\end{exercise}
+\begin{exercise}
+\mbox{}
+\begin{itemize}
+\item[$(a)$]Let $M$ be a matrix with entries in a field and in reduced row echelon form. Prove that if a row vector $\bm{r}$ is a linear combination $\sum a_bm{r}_i$ of the nonzero rows of $M$, then $a_i$ equals the component of $r$ at the position corresponding to the pivot on the $i$-th row of $M$. Deduce that the nonzero rows of $M$ are linearly independent.
+\item[$(b)$]Two matrices $M,N$ are row-equivalent if $M=PN$ for an invertible matrix $P$. Prove that this is indeed an equivalence relation, and that two matrices with entries in a field are row-equivalent if and only if one may be obtained from the other by a sequence of elementary operations on rows.
+\item[$(c)$]Let k be a field, and consider row-equivalence on the set of $m\times n$ matrices $\mathcal{M}_{m,n}(k)$. Prove that each equivalence class contains exactly one matrix in reduced row echelon form.\par
+The unique matrix in reduced row echelon form that is row-equivalent to a given matrix $M$ is called the reduced echelon form of $M$.
+\end{itemize}
+\end{exercise}
+\begin{exercise}\label{row col spa}
+The \textbf{row space} of a matrix $M$ is the span of its rows; the \textbf{column space} of $M$ is the span of its column. Prove that row-equivalent matrices have the same row space and isomorphic column spaces.
+\end{exercise}
+\begin{proof}
+It is clear that if $A$ is a linear combination of $B$, then $span(A)\sub span(B)$. Now if $M$ is row-equivalent to $N$, then $M=CN$ for some invertible matrix $C$. We write $M=(a_1,\cdots,a_r)$, $N=(b_1,\cdots,b_r)$ and
+\[M=\begin{pmatrix}
+a_1\\
+\vdots\\
+a_r
+\end{pmatrix}=\begin{pmatrix}
+c^1_1 &\cdots& c^1_r\\
+\vdots &\ddots&\vdots\\
+c^r_1 &\cdots &c^r_r
+\end{pmatrix}\begin{pmatrix}
+b_1\\
+\vdots\\
+b_r
+\end{pmatrix}=\begin{pmatrix}
+c^1_1b_1+c^1_2b_2+\cdots+c^1_rb_r\\
+\vdots\\
+c^r_1b_1+c^r_2b_2+\cdots+c^r_rb_r
+\end{pmatrix}\]
+which shows $M$ is a linear combination of $N$, hence $span(M)\sub span(N)$. The converse can also be obtained from $N=C^{-1}M$.\par
+We prove that the dimensions of row-space and column-space are the same for a matrix $M\in\mathcal{M}_{m,n}(R)$. First, we have $n=\dim(\ker M)+\dim(r(M))$ from the equation $Mx=0$. On the other hand, $Mx=0$ can be written as
+\[\begin{pmatrix}
+m^1_1 &\cdots& m^1_r\\
+\vdots &\ddots&\vdots\\
+m^r_1 &\cdots &m^r_r
+\end{pmatrix}\begin{pmatrix}
+x_1\\
+\vdots\\
+x_r
+\end{pmatrix}=\begin{pmatrix}
+m^1_1x_1+m^1_2x_2+\cdots+m^1_rx_r\\
+\vdots\\
+m^r_1x_1+m^r_2x_2+\cdots+m^r_rx_r
+\end{pmatrix}=\begin{pmatrix}
+a_1\cdot x\\
+\vdots\\
+a_r\cdot x
+\end{pmatrix}\]
+So $Ax=0$ means $x$ lies in the othonormal complement of the row-space of $M$, hence we also find
+\[\dim(\ker(M))=\dim(c(M))^{\bot}=n-\dim(c(M))\]
+from these we get $\dim(r(M))=\dim(c(M))$.
+\end{proof}
+\begin{exercise}\label{Row equi class}
+Let $k$ be a field, and consider row-equivalence on $Mm,n(k)$. By Exercise~\ref{row col spa}, row-equivalent matrices have the same row space. Prove that, conversely, there is exactly one row-equivalence class in $\mathcal{M}_{m,n}(k)$ for each subspace of $k^n$ of dimension $\leqslant m$.
+\end{exercise}
+\begin{exercise}
+The set of subspaces of given dimension in a fixed vector space is called a \textbf{Grassmannian}. In Exercise~\ref{Row equi class} you have constructed a bijection between the Grassmannian of $r$-dimensional subspaces of $k^n$ and the set of reduced row echelon matrices with $n$ columns and $r$ nonzero rows.\par
+For $r=1$, the Grassmannian is called the \textbf{projective space}. For a vector space $V$, the corresponding projective space $\P V$ is the set of lines ($1$-dimensional subspaces) in $V$. For $V=k^n$, $\P V$ may be denoted $\P^{n-1}_k$, and the field $k$ may be omitted if it is clear from the context. Show that $\P^{n-1}_k$ may be written as a union $k^{n-1}\cup k^{n-2}\cup\cdots\cup k^1\cup k^0$ and describe each of these subsets geometrically.\par
+Thus, $\P^{n-1}$ is the union of $n$ cells, the largest one having dimension $n-1$ $($accounting for the choice of notation$)$. Similarly, all Grassmannians may be written as unions of cells. These are called \textbf{Schubert cells}.
+Prove that the Grassmannian of $(n-1)$-dimensional subspaces of $k^n$ admits a cell decomposition entirely analogous to that of $\P^{n-1}_k$.
+\end{exercise}
+\begin{exercise}
+Show that the Grassmannian $Gr_k(2,4)$ of $2$-dimensional subspaces of $k^4$ is the union of $6$ Schubert cells: $k^4\cup k^3\cup k^2\cup k^2\cup k^1\cup k^0$.
+\end{exercise}
+\begin{proof}
+All the reduced echelon forms are
+\[\begin{bmatrix}
+1&0&*&*\\
+0&1&*&*
+\end{bmatrix}\quad\begin{bmatrix}
+0&1&0&*\\
+0&0&1&*
+\end{bmatrix}\quad\begin{bmatrix}
+0&0&1&0\\
+0&0&0&1
+\end{bmatrix}\]
+and
+\[\begin{bmatrix}
+1&*&0&*\\
+0&0&1&*
+\end{bmatrix}\quad
+\begin{bmatrix}
+0&1&*&0\\
+0&0&0&1
+\end{bmatrix}\]
+and
+\[\begin{bmatrix}
+1&*&*&0\\
+0&0&0&1
+\end{bmatrix}\]
+\end{proof}
+\section{Homomorphisms of free modules, \Rmnum{2}}
+The work in $\S2$ accomplishes the goal of describing $Hom_R(F,G)$, where $F$ and $G$ are free $R$-modules of finite rank; as we have seen, this can be done most explicitly if, for example, $R$ is a field or a Euclidean domain. We are not quite done, though: even over fields, it is important to understand the answer—that is, examine the classification of homomorphisms into finitely many classes, highlighted at the end of $\S2.3$. Also, the frequent appearance of invertible matrices makes it necessary to develop criteria to tell whether a given matrix is or is not in the general linear group. We begin by pointing out a straightforward application of the classification
+of homomorphisms.
+\subsection{Solving systems of linear equations}
+To describe a typical situation, suppose
+\[\left\{\begin{array}{c}
+a^1_1x_1+\cdots+a^1_nx_n=b_1\\
+\cdots\\
+a^m_1x_1+\cdots+a^m_nx_n=b_m
+\end{array}\right. \]
+is a system of $m$ equations in $n$ unknowns, with $a^i_j$ , $b_i$ in a Euclidean domain $R$.
+We want to find all solutions $x1,\cdots,x_n$ in $R$.\par
+Even without requiring anything special of the matrix of coefficients $A$, row and column operations will take it to the standard form presented in Proposition~\ref{Smith norm form}; that is, it will yield invertible matrices $M$, $N$ such that
+\[MAN=\left(\begin{array}{ccc|c}
+d_1&\cdots&0&0\\
+\vdots&\ddots&\vdots&\vdots\\
+0&\cdots&d_r&0\\
+\hline
+0&\cdots&0&0
+\end{array}\right)\]
+Gaussian elimination is a constructive procedure: watching yourself as you switch/combine rows or columns will produce $M$ and $N$ explicitly. Now, letting $\bm{y}=(y_j)$ and $\bm{c}=M\bm{b}$, the system
+\[(MAN)\cdot\bm{y}=\bm{c}\]
+solves itself:
+\[\left\{\begin{array}{c}
+d_1y_1=c_1\\
+\cdots\\
+d_ry_r=c_r\\
+0=c_{r+1}\\
+\cdots
+\end{array}\right. \]
+has solutions if and only if $d_j\mid c_j$ for all $j$ and $c_j=0$ for $j>r$; moreover, in this
+case $y_j=d_j^{-1}c_j$ for $j=1,\cdots,r$, and $y_j$ is arbitrary for $j>r$. This yields $\bm{y}$, and the reader will check that $\bm{x}=N\bm{y}$ gives all solutions to the original system.
+\subsection{The determinant}
+\begin{definition}
+Let $A=(a^i_j)\in\mathcal{M}_n(R)$ be a square matrix. Then the \textbf{determinant} of $A$ is the element
+\[\det(A)=\sum_{\sigma\in\mathfrak{S}_n}(-1)^{\sigma}\prod_{i=1}^{n}a^i_{\sigma(i)}\in R\]
+\end{definition}
+\begin{lemma}\label{Det prop}
+Let $A$ be a square matrix with entries in an integral domain $R$.
+\begin{itemize}
+\item Let $A'$be obtained from $A$ by switching two rows or two columns. Then $\det(A')=-\det(A)$.
+\item Let $A'$ be obtained from $A$ by adding to a row $($column$)$ a multiple of another row $($column$)$. Then $\det(A')=\det(A)$.
+\item Let $A'$ be obtained from $A$ by multiplying a row $($column$)$ by an element $c\in R$. Then $\det(A')=c\det(A)$.
+\end{itemize}
+\end{lemma}
+This observation simplifies the theory of determinants drastically. If $R=k$ is a field and $A\in\mathcal{M}_n(k)$, Gaussian elimination shows
+\[A=E_1\cdots E_a\begin{pmatrix}
+I_r&0\\
+0&0
+\end{pmatrix}\cdot E'_1\cdots E'_b\]
+where $r\leqslant n$ and $E_i,E'_j$ are elementary matrices. Then
+\[\det(A)=\prod_i\det(E_i)\,\prod_j\det(E'_j)\,\det\begin{pmatrix}
+I_r&0\\
+0&0
+\end{pmatrix}\]
+(In particular, $\det A\neq0$ only if $r=n$.) Useful facts about the determinant follow from this remark. For example,
+\begin{proposition}\label{Matr inver cri}
+Let $R$ be a commutative ring.
+\begin{itemize}
+\item A square matrix $A\in\mathcal{M}_n(R)$ is invertible if and only if $\det A$ is a unit in $R$.
+\item The determinant is a homomorphism $\GL_n(R)\to (R^*,\cdot)$. More generally, for $A,B\in\mathcal{M}_n(R)$,
+\[\det(A\cdot B)=\det(A)\det(B)\]
+\end{itemize}
+\end{proposition}
+\begin{proof}
+If \textit{$R=k$ is a field}, we can use the considerations immediately preceding the statement. The first point is reduced to the case of a block matrix 
+\[\det(A)=\prod_i\det(E_i)\,\prod_j\det(E'_j)\,\det\begin{pmatrix}
+I_r&0\\
+0&0
+\end{pmatrix}\]
+for which it is immediate. In fact, this shows that $\det A=0$ if and only if the linear map $k^n\to k^n$ corresponding to $A$ is not an isomorphism. In particular, for all $A,B$ we have $\det(AB)=0$ if and only if $AB$ is not an isomorphism, if and only if $A$ or $B$ is not an isomorphism, if and only if $\det(A)=0$ or $\det(B)=0$. So we only need to check the homomorphism property for invertible matrices. These are products of elementary matrices on the nose, and the homomorphism property then follows from Lemma~\ref{Det prop}.
+\end{proof}
+A submatrix obtained from a given matrix $A$ by removing a number of rows and columns is called a \textbf{minor} of $A$; more properly, this term refers to the determinants of square submatrices obtained in these ways. If $A\in\mathcal{M}_n(R)$, the cofactors of $A$ are the $(n-1)\times(n-1)$ minors of $A$, corrected by a sign. More precisely, for $A=(a^i_j)$ we will let
+\[A^{(ij)}:=(-1)^{i+j}\det\begin{pmatrix}
+a^1_1&\cdots &a^1_{j-1}&a^1_{j+1}&\cdots&a^1_n\\
+\vdots&\ddots&\vdots&\vdots&\ddots&\vdots\\
+a^{i-1}_1&\cdots&a^{i-1}_{j-1}&a^{i-1}_{j+1}&\cdots&a^{i-1}_{n}\\
+a^{i+1}_1&\cdots&a^{i+1}_{j-1}&a^{i+1}_{j+1}&\cdots&a^{i+1}_{n}\\
+\vdots&\ddots&\vdots&\vdots&\ddots&\vdots\\
+a^n_1&\cdots &a^n_{j-1}&a^n_{j+1}&\cdots&a^n_n
+\end{pmatrix}\]
+\begin{lemma}\label{det expan}
+With notation as above,
+\begin{itemize}
+\item for all $i=1,\cdots, n$, $\det(A)=\sum_{j=1}^{n}a^i_jA^{(ij)}$.
+\item for all $j=1,\cdots, n$, $\det(A)=\sum_{i=1}^{n}a^i_jA^{(ij)}$.
+\end{itemize}
+\end{lemma}
+\begin{corollary}\label{Matr adj}
+Let $R$ be a commutative ring and $A\in\mathcal{M}_n(R)$. Then
+\[A\cdot\begin{pmatrix}
+A^{(11)}&\cdots&A^{(n1)}\\
+\vdots&\ddots&\vdots\\
+A^{(1n)}&\cdots&A^{(nn)}
+\end{pmatrix}=\begin{pmatrix}
+A^{(11)}&\cdots& A^{(n1)}\\
+\vdots&\ddots&\vdots\\
+A^{(1n)}&\cdots&A^{(nn)}
+\end{pmatrix}\cdot A=\det(A)I_n\]
+Note the switch in the role of $i$ and $j$ in the matrix of cofactors. This matrix is called the \textbf{adjoint matrix} of $A$.
+\end{corollary}
+\begin{proof}
+Along the diagonal of the right-hand side, this is a restatement of Lemma~\ref{det expan}. Off the diagonal, one is evaluating (for example)
+\[\sum_{j=1}^{n}a^{i'}_jA^{(ij)}\]
+for $i'\neq i$. By Lemma~\ref{det expan}, this is the same as the determinant of the matrix obtained
+by replacing the $i$-th row with the $i'$-th row; the resulting matrix has two equal rows, so its determinant is $0$, as needed.
+\end{proof}
+In particular, Corollary~\ref{Matr adj} proves that we can invert a matrix if we can invert its determinant:
+\[A^{-1}=\det(A)^{-1}\begin{pmatrix}
+A^{(11)}&\cdots& A^{(n1)}\\
+\vdots&\ddots&\vdots\\
+A^{(1n)}&\cdots&A^{(nn)}
+\end{pmatrix}\]
+this holds over any commutative ring, as soon as $\det A$ is a unit.
+\begin{proof}\ref{Matr inver cri} for commutative rings. The first point follows from the second and from what we have just seen. Indeed, we have checked that $A\in\mathcal{M}_n(R)$ admits an inverse $A^{-1}\in\mathcal{M}_n(R)$ if $\det(A)$ is a unit in $R$; conversely, if $A$ admits an inverse $A^{-1}\in\mathcal{M}_n(R)$, then
+\[\det(A)\det(A)^{-1}=\det(AA^{-1})=1\]
+by the second statement, so that $\det(A^{-1})$ is the inverse of $\det(A)$ in $R$.\par
+Thus, we just need to verify the second point, that is, the homomorphism property of determinants. In order to verify this over every (commutative) ring, it suffices to verify the \textit{universal identity} obtained by writing out the claimed equality, for matrices with indeterminate entries. For example, for $n=2$ the statement is 
+\[\det\begin{pmatrix}
+x_1&x_2\\
+x_3&x_4
+\end{pmatrix}\det\begin{pmatrix}
+y_1&y_2\\
+y_3&y_4
+\end{pmatrix}=\det\begin{pmatrix}
+x_1y_1+x_2y_3&x_1y_2+x_2y_4\\
+x_3y_1+x_4y_3&x_3y_2+x_4y_4
+\end{pmatrix}\]
+which translates into the identity
+\[(x_1x_4-x_2x_3)(y_1y_4-y_2y_3)=(x_1y_1+x_2y_3)(x_3y_2+x_4y_4)-(x_1y_2+x_2y_4)(x_3y_1+x_4y_3)\]
+since this identity holds in $\Z[x_1,\cdots,y_4]$, it must hold in any commutative ring, for any choice of $x_1,\cdots,y_4$: indeed, $\Z$ is initial in $\mathsf{Ring}$.\par
+Now, we have verified that the homomorphism property holds over fields; in particular it holds over the field of fractions of $Z[x^1_1,\cdots,x^n_n,y^1_1,\cdots,y^n_n]$. It follows that it does hold in $Z[x^1_1,\cdots,x^n_n,y^1_1,\cdots,y^n_n]$, and we are done.
+\end{proof}
+The ‘universal identity’ argument extending the result from fields to arbitrary
+commutative rings is a useful device, and the reader is invited to contemplate it
+carefully.
+\begin{proposition}
+Assume $\det(A)$ is a unit, and let $A^{(j)}$ be the matrix obtained by replacing the $j$-th column of $A$ by the column vector $b$. Then
+\[x_j=\det(A)^{-1}\det(A^{(j)})\]
+\end{proposition}
+\subsection{Rank and nullity}
+According to Proposition~\ref{Matr equi class}, each equivalence class of matrices over a field has a representative of the type
+\[\begin{pmatrix}
+I_r&0\\
+0&0
+\end{pmatrix}\]
+The reason why two different $m\times n$ matrices of this type are surely inequivalent is that if $\alpha:V\to W$ (with $V$ and $W$ free modules, vector spaces in this case) is represented by a matrix of this form, then $r$ is the dimension of the image of $\alpha$. Therefore, matrices with different $r$ cannot represent the same $\alpha$.\par
+This integer $r$ is called the \textbf{rank} of the matrix and deserves some attention. The column $(row)$ space of a matrix $P$ over a field $k$ is the span of the columns $(rows)$ of $P$. The column $(row)$ rank of $P$ is the dimension of the column $(row)$ space of $P$.
+\begin{proposition}\label{c rank r rank}
+The row rank of a matrix over a field $k$ equals its column rank.
+\end{proposition}
+The result upgrades easily to matrices over an arbitrary integral domain $R$ (applying the usual trick of embedding R in its field of fractions).\par
+In view of Proposition~\ref{c rank r rank}, we can simply talk about the rank of a matrix:
+\begin{definition}
+Let $M\in\mathcal{M}_{m,n}(k)$ be a matrix over a field $k$. The rank of $M$ is the dimension of its column $($or, equivalently, row$)$ space.
+\end{definition}
+The foregoing considerations translate nicely in more abstract terms for a linear map $\alpha:V\to W$ between finite-dimensional vector spaces over a field $k$. Using the convenient language, note that each $\alpha$ determines an exact sequence of vector spaces
+\[\begin{tikzcd}
+0\ar[r]&\ker\alpha\ar[r]& V\ar[r]&\im\alpha\ar[r]&0
+\end{tikzcd}\]
+\begin{definition}
+The rank of $\alpha$, denoted $\rank\alpha$, is the dimension of $\im\alpha$. The nullity of $\alpha$ is $\dim(\ker\alpha)$.
+\end{definition}
+\begin{claim}\label{Rnk nul for}
+Let $\alpha:V\to W$ be a linear map of finite-dimensional vector spaces. Then
+\[\rank\alpha+\dim(\ker\alpha)=\dim V\]
+\end{claim}
+\vspace{5mm}
+Summarizing, $\rank\alpha$ equals the (column) rank of any matrix $P$ representing $\alpha$; similarly, the nullity of $\alpha$ equals $\dim V$ minus the (row) rank of $P$. Claim~\ref{Rnk nul for} is the abstract version of the equality of row rank and column rank.
+\subsection{Euler characteristic and the Grothendieck group}
+Against our best efforts, we cannot resist extending these simple observations to more general complexes. Claim~\ref{Rnk nul for} may be reformulated as follows:
+\begin{proposition}\label{Shor exa sqe dim for}
+Let
+\[\begin{tikzcd}
+0\ar[r]&U\ar[r]&V\ar[r]&W\ar[r]&0
+\end{tikzcd}\]
+be a short exact sequence of finite-dimensional vector spaces. Then
+\[\dim(V)=\dim(U)+\dim(W)\]
+Equivalently, this amounts to the relation $\dim(V/U)=\dim(V)-\dim(U)$.
+\end{proposition}
+Consider then a complex of finite-dimensional vector spaces and linear maps:
+\[\begin{tikzcd}
+V_{\bullet}:& 0\ar[r]&V_N\ar[r,"\alpha_N"]&V_{N-1}\ar[r,"\alpha_{N-1}"]&\cdots\ar[r,"\alpha_2"]&V_1\ar[r,"\alpha_1"]&V_0\ar[r]&0
+\end{tikzcd}\]
+Thus, $\alpha_{i-1}\circ\alpha_i=0$ for all $i$. This condition is equivalent to the requirement that $\im(\alpha_{i+1})\sub\ker(\alpha_i)$; recall that the \textbf{homology} of this complex is defined as the collection of spaces
+\[H_i(V_{\bullet})=\dfrac{\ker(\alpha_i)}{\im(\alpha_{i+1})}\]
+The complex is exact if $\im(\alpha_{i+1})\sub\ker(\alpha_i)$ for all $i$, that is, if $H_i(V_{\bullet})=0$ for all $i$.
+\begin{definition}
+The Euler characteristic of $V_{\bullet}$ is the integer
+\[\chi(V_{\bullet}):=\sum_{i}(-1)^i\dim(V_i)\]
+\end{definition}
+The original motivation for the introduction of this number is topological: with suitable positions, this Euler characteristic equals the Euler characteristic obtained by triangulating a manifold and then computing the number of vertices of the triangulation $(V)$, minus the number of edges $(E)$, plus the number of faces $(F)$, etc.\par
+The following simple result is then a straightforward (and very useful) generalization of Proposition~\ref{Shor exa sqe dim for}:
+\begin{proposition}\label{Eular char homo for}
+With notation as above,
+\[\chi(V_{\bullet})=\sum_{i=0}^{N}(-1)^i\dim(H_i(V_{\bullet}))\]
+In particular, if $V_{\bullet}$ is exact, then $\chi(V_{\bullet})=0$.
+\end{proposition}
+\begin{proof}
+There is nothing to show for $N=0$, and the result follows directly from Proposition~\ref{Rnk nul for} if $N=1$. Arguing by induction, given a complex
+\[\begin{tikzcd}
+V_{\bullet}:& 0\ar[r]&V_N\ar[r,"\alpha_N"]&V_{N-1}\ar[r,"\alpha_{N-1}"]&\cdots\ar[r,"\alpha_2"]&V_1\ar[r,"\alpha_1"]&V_0\ar[r]&0
+\end{tikzcd}\]
+we may assume that the result is known for shorter complexes. Consider then the truncation
+\[\begin{tikzcd}
+V'_{\bullet}:& 0\ar[r]&V_{N-1}\ar[r,"\alpha_{N-1}"]&\cdots\ar[r,"\alpha_2"]&V_1\ar[r,"\alpha_1"]&V_0\ar[r]&0
+\end{tikzcd}\]
+Then
+\[\chi(V_\bullet)=\chi(V'_\bullet)+(-1)^{N}\dim(V_N)\]
+and
+\[H_i(V_\bullet)=H_i(V'_\bullet)\for 0\leqslant i\leqslant N-2\]
+while
+\[H_{N-1}(V'_\bullet)=\ker(\alpha_{N-1}),\quad H_{N-1}(V_\bullet)=\dfrac{\ker(\alpha_{N-1})}{\im(\alpha_N)},\quad H_N(V_\bullet)=\ker(\alpha_{N})\]
+By Proposition~\ref{Shor exa sqe dim for} 
+\[\dim(V_N)=\dim(\im(\alpha_N))+\dim(\ker(\alpha_N))\]
+and
+\[\dim(H_{N-1}(V_\bullet))=\dim(\ker(\alpha_{N-1}))-\dim(\im(\alpha_N))\]
+therefore
+\[\dim(H_{N-1}(V'_\bullet))-\dim(V_N)=\dim(H_{N-1}(V_\bullet))-\dim(H_N(V_\bullet))\]
+Putting all of this together with the induction hypothesis,
+\[\chi(V'_\bullet)=\sum_{i=0}^{N-1}(-1)^i\dim(H_i(V'_\bullet))\]
+gives
+\begin{align*}
+\chi(V_\bullet)&=\chi(V'_\bullet)+(-1)^N\dim(V_N)=\sum_{i=0}^{N-1}(-1)^i\dim(H_i(V'_\bullet))+(-1)^N\dim(V_N)\\
+&=\sum_{i=0}^{N-2}(-1)^i\dim(H_i(V'_\bullet))+(-1)^{N-1}(\dim(H_{N-1}(V'_\bullet))-\dim(V_N))\\
+&=\sum_{i=0}^{N-2}(-1)^i\dim(H_i(V_\bullet))+(-1)^{N-1}(\dim(H_{N-1}(V_\bullet))-\dim(H_N(V_\bullet)))\\
+&=\sum_{i=0}^{N}(-1)^i\dim(H_i(V_\bullet))
+\end{align*}
+\end{proof}
+In terms of the topological motivation recalled above, Proposition~\ref{Eular char homo for} tells us that the Euler characteristic of a manifold may be computed as the alternating sum of the ranks of its homology, that is, of its \textbf{Betti numbers}.\par
+Having come this far, we cannot refrain from mentioning the next, equally simple-minded, generalization. The only tool used in the proof of Proposition~\ref{Eular char homo for} was the \textit{additivity} property of dimension, established in Proposition~\ref{Shor exa sqe dim for}. \textit{Proposition~\ref{Eular char homo for} is a formal consequence of this one property of} dim.\par
+With this in mind, we can reinterpret what we have just done in the following curious way. Consider the category $k$-$\mathsf{Vect}^{f}$ of finite-dimensional $k$-vector spaces. Each object $V$ of $k$-$\mathsf{Vect}^{f}$ determines an isomorphism class $[V]$. Let $F(\text{$k$-$\mathsf{Vect}^{f}$})$ be the free abelian group on the set of these isomorphism classes; further, let $E$ be the subgroup generated by the elements
+\[[V]-[U]-[W]\]
+for all short exact sequences
+\[\begin{tikzcd}
+0\ar[r]&U\ar[r]&V\ar[r]&W\ar[r]&0
+\end{tikzcd}\]
+in $k$-$\mathsf{Vect}^{f}$. The quotient group
+\[K(\text{$k$-$\mathsf{Vect}^{f}$}):=\dfrac{F(\text{$k$-$\mathsf{Vect}^{f}$})}{E}\]
+is called the \textbf{Grothendieck group} of the category $k$-$\mathsf{Vect}^{f}$. The element determined by $V$ in the Grothendieck group is still denoted $[V]$.\par
+More generally, a Grothendieck group may be defined for any category admitting a notion of exact sequence.\par
+Every complex $V_{\bullet}$ determines an element in $K(\text{$k$-$\mathsf{Vect}^{f}$})$, namely
+\[\chi_K(V_{\bullet}):=\sum_i(-1)^i[V_i]\in K(\text{$k$-$\mathsf{Vect}^{f}$})\]
+\begin{proposition}
+With notation as above, we have the following:
+\begin{itemize}
+\item $\chi_K$ is an Euler characteristic, in the sense that it satisfies the formula given in Proposition~\ref{Eular char homo for}:
+\[\chi_K=\sum_{i}(-1)^i[H_i(V_\bullet)]\]
+\item $\chi_K$ is a \textbf{universal Euler characteristic}, in the following sense. Let $G$ be an abelian group, and let $\delta$ be a function associating an element of $G$ to each finite dimensional vector space, such that $\delta(V)=\delta(V')$ if $V\cong V'$ and $\delta(V/U)=\delta(V)-\delta(U)$. For $V_\bullet$ a complex, define
+\[\chi_G(V_\bullet)=\sum_i(-1)^i\delta(V_i)\]
+Then $\delta$ induces a $($unique$)$ group homomorphism
+\[K(\text{$k$-$\mathsf{Vect}^{f}$})\to G\]
+mapping $\chi_K(V_\bullet)$ to $\chi_G(V_\bullet)$.
+\item In particular, $\delta=\dim$ induces a group homomorphism
+\[K(\text{$k$-$\mathsf{Vect}^{f}$})\to \Z\]
+such that $\chi_K(V_\bullet)\mapsto \chi(V_\bullet)$. This is in fact an isomorphism.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+By the construction of $K(\text{$k$-$\mathsf{Vect}^{f}$})$, we find
+\[[V]=[U]+[W]\]
+for any short exact sequence
+\[\begin{tikzcd}
+0\ar[r]&U\ar[r]&V\ar[r]&W\ar[r]&0
+\end{tikzcd}\]
+Now we can adapt the proof in Proposition~\ref{Eular char homo for} to obtain the formula.\par
+Since $\delta(V)=\delta(V')$ if $V\cong V'$, it induces a set-function on the set of all isomoephism classes $[V]$. By the universal property of $F(\text{$k$-$\mathsf{Vect}^{f}$})$, we get a unique group homomorphism from $F(\text{$k$-$\mathsf{Vect}^{f}$})$ to $G$, which we still denote by $\delta$. Now clearly $\delta$ maps the set $E$ to the identity of $G$, hence from the universal property of quptients, we find a unique group homomorphism from $K(\text{$k$-$\mathsf{Vect}^{f}$})$ to $G$. It is clear that this homomorphism maps $[V]$ to $\delta(V)$, hence the second claim follows.\par
+Clearly $\dim$ satisfies the condition. And from the fact $\dim(k)=1$, we see this is a surjection. The injectivity follows from the IBN property of $k$.
+\end{proof}
+The last point is, in fact, rather anticlimactic: if the impressively abstract Grothendieck group turns out to just be a copy of the integers, why bother defining it? The answer is, of course, that this only stresses how special the category $k$-$\mathsf{Vect}^f$ is. The definition of the Grothendieck group can be given in any context in which complexes and a notion of exactness are available (for example, in the category of finitely generated modules over any ring).
+\subsection{Exercise}
+\begin{exercise}
+Let $k$ be a field. Prove that a matrix $M\in\mathcal{M}_{m,n}(k)$ has rank $\leqslant r$ if and only if there exist matrices $P\in\mathcal{M}_{m,r}(k)$, $Q\in\mathcal{M}_{r,n}(k)$ such that $M=PQ$. (Thus the rank of $M$ is the smallest such integer.)
+\end{exercise}
+\begin{proof}
+One direction is trivial. For the other, suppose $\rank M\leqslant r$. Write $M$ into row vectors, and assume the rank is attained on its first $r$ vectors.
+\[M=\begin{pmatrix}
+a_1\\
+\vdots\\
+a_m
+\end{pmatrix}\]
+By assumption, we can write $a_{r+1},\cdots,a_n$ into
+\[a_{j}=\sum_{i=1}^{r}b^i_ja_i\for r+1\leqslant j\leqslant n\]
+Now consider the matrix expression
+\[M=\begin{pmatrix}
+a_1\\
+\vdots\\
+a_r\\
+a_{r+1}\\
+\vdots\\
+a_m
+\end{pmatrix}=\begin{pmatrix}
+1& &0\\
+&\ddots& \\
+0& &1\\
+b^1_{r+1}&\cdots& b^r_{r+1}\\
+\cdots&&\cdots\\
+b^1_{m}&\cdots&b^r_m
+\end{pmatrix}\cdot\begin{pmatrix}
+a_1\\
+\vdots\\
+a_r
+\end{pmatrix}\]
+which shows the claim.
+\end{proof}
+\begin{exercise}
+Extend the definition of Grothendieck group of vector spaces to the category of vector spaces of countable $($possibly infinite$)$ dimension, and prove that it is the trivial group.
+\end{exercise}
+\begin{proof}
+For any $n\in\N$, there exists a short exact sequence:
+\[\begin{tikzcd}
+0\ar[r]& k^n\ar[r]&k^{\N}\ar[r,"\cong"]& k^{\N}\ar[r]&0
+\end{tikzcd}\]
+Then we obtain $[k^{\N}]-[k^{\N}]-[k^n]=0$. \par
+On the other hand, there also exists a short exact sequence as:
+\[\begin{tikzcd}
+0\ar[r]& k^{\N}\ar[r,"\cong"]&k^{\N}\ar[r,"\cong"]& k^{\N}\ar[r]&0
+\end{tikzcd}\]
+from which we get $[k^{\N}]=0$. Hence this is a trivial group.
+\end{proof}
+\begin{exercise}
+Let $\mathsf{Ab}^{fg}$ be the category of finitely generated abelian groups. Define a Grothendieck group of this category in the style of the construction of $K(\text{$k$-$\mathsf{Vect}^{f}$})$, and prove that $K(\mathsf{Ab}^{fg})\cong\Z$.
+\end{exercise}
+\begin{exercise}
+Let $\mathsf{Ab}^{f}$ be the category of finite abelian groups. Prove that assigning to every finite abelian group its order extends to a homomorphism from the Grothendieck group $K(Abf)$ to the multiplicative group $(\Q^*,\cdot)$.
+\end{exercise}
+\begin{exercise}
+Let $R$-$\mathsf{Mod}^f$ be the category of modules of finite length over a ring $R$. Let $G$ be an abelian group, and let $\delta$ be a function assigning an element of $G$ to every simple $R$-module. Prove that $\delta$ extends to a homomorphism from the Grothendieck group of $R$-$\mathsf{Mod}^f$ to $G$.\par
+$($For another example, letting $\delta(M)=1\in\Z$ for every simple module $M$ shows that length itself extends to a homomorphism from the Grothendieck group of $R$-$\mathsf{Mod}^f$ to $\Z$.$)$
+\end{exercise}
+\section{Presentations and resolutions}
+After this excursion into the idyllic world of free modules, we can come back to earth and see if we have learned something that may be useful for more general situations. Modules over a field are necessarily free (Proposition~\ref{Vec basis}), not so for modules over more general rings. In fact, this property will turn out to be a characterization of fields.\par
+It is important that we develop some understanding of nonfree modules. In this section we will see that homomorphisms of free modules carry enough information to allow us to deal with many nonfree modules.
+\subsection{Torsion} 
+There are several ways in which a module $M$ may fail to be free: the most spectacular one is that $M$ may have \textbf{torsion}.
+\begin{definition}
+Let $M$ be an $R$-module. An element $m\in M$ is a torsion element if $\{m\}$ is linearly dependent, that is, if $\exists\,r\in R, r\neq0$, such that $rm=0$. The subset of torsion elements of $M$ is denoted $\Tor_R(M)$. A module $M$ is \textbf{torsion-free} if $\Tor_R(M)=\{0\}$. A \textbf{torsion module} is a module $M$ in which every element is a torsion element.
+\end{definition}
+The subscript $R$ is usually omitted if there is no uncertainty about the base ring.\par
+A commutative ring is torsion-free as a module over itself if and only if it is an integral domain; this is a good reason to limit the discussion to integral domains in this chapter. Also, the reader will check that if $R$ is an integral domain, then $\Tor(M)$ is a submodule of $M$. Equally easy is the following observation:
+\begin{lemma}\label{Modu tor fre obser}
+Submodules and direct sums of torsion-free modules are torsion-free. Free modules over an integral domain are torsion-free.
+\end{lemma}
+Lemma~\ref{Modu tor fre obser} gives a good source of torsion-free modules: for example, ideals
+in an integral domain $R$ are torsion-free (because they are submodules of the free module $R^1$). In fact, ideals provide us with examples of another mechanism in which a module may fail to be free.
+\begin{example}
+Let $R=\Z[x]$, and let $I=(2,x)$. Then $I$ is not a free $R$-module. More generally, let $I$ be any nonprincipal ideal of an integral domain $R$; then $I$ is a torsion-free module which is not free.\par
+Indeed, if $I$ were free, then its rank would have to be $1$ at most, by Proposition~\ref{Free mod card}(a basis for $I$ would be a linearly independent subset of $R$, and $R$ has rank $1$ over itself); thus one element would suffice to generate $I$, and $I$ would be principal.
+\end{example}
+\begin{definition}
+An $R$-module $M$ is \textbf{cyclic} if it is generated by a singleton.
+\end{definition}
+\begin{proposition}
+An $R$-module $M$ is cyclic if and only if $M\cong R/I$ for some ideal $I$ of $R$.
+\end{proposition}
+\begin{proof}
+Since $R/I$ is generated by $1+I$ if $1\notin I$ (if $1\in I$, then $I=R$, and we have $M\cong\{0\}$ which is cyclic), one direction is trivial. For the other, assume that $M$ is cyclic, so that $M=\langle m\rangle$. Define 
+\[I:=\{r\in R:rm=0\}=\Ann(m).\]
+Clearly this is an ideal of $R$, and we find that 
+\[R/I\to M,\quad r+I\mapsto rm\]
+is a module isomorphism.
+\end{proof}
+\begin{lemma}\label{tor free field}
+Let $R$ be an integral domain. Assume that every cyclic $R$-module is torsion-free. Then $R$ is a field.
+\end{lemma}
+\begin{proof}
+Let $c\in R$, $c\neq0$; then $M=R/(c)$ is a cyclic module. Note that $\Tor(M)=M$: indeed, the class of $1$ generates $R/(c)$ and belongs to $\Tor(M)$ since $c\cdot1$ is $0$ mod $(c)$ and $c\neq0$. However, by hypothesis $M$ is torsion-free; that is, $\Tor(M)=\{0\}$. Therefore $M=\Tor(M)$ is the zero module.\par
+This shows $R/(c)$ is the zero $R$-module; that is, $(c)=(1)$. Therefore, $c$ is a unit. Thus every nonzero element of $R$ is a unit, proving that $R$ is a field.
+\end{proof}
+\subsection{Finitely presented modules and free resolutions}
+The right way to think of a cyclic $R$-module $M$ is as a module which admits an epimorphism from $R$, viewing the latter as the free rank-$1$ $R$-module:
+\[\begin{tikzcd}
+R\ar[r]&M\ar[r]&0
+\end{tikzcd}\]
+The fact that $M$ is surjected upon by a free $R$-module is nothing special. In fact, every module $M$ admits such an epimorphism:
+\[\begin{tikzcd}
+R^{\oplus A}\ar[r]&M\ar[r]&0
+\end{tikzcd}\]
+We are now going to focus on a case which is also special, but not quite as special as cyclic modules: finitely generated modules are modules for which we can choose $A$ to be a finite set. Thus, we will assume that $M$ admits an epimorphism from a finite-rank free module:
+\[\begin{tikzcd}
+R^{m}\ar[r,"\varphi"]&M\ar[r]&0
+\end{tikzcd}\]
+for some integer $m$. The image by $\varphi$ of the $m$ vectors in a basis of $\R^m$ is a set of generators for $M$.
+\begin{definition}
+The \textbf{annihilator} of an $R$-module $M$ is
+\[\Ann_R(M):=\{r\in R:\,\forall\,m\in M, rm=0\}\]
+\end{definition}
+The subscript is usually omitted. It is clear that $\Ann(M)$ is an ideal of $R$ and that if $M$ is a finitely generated module and $R$ is an integral domain, then $M$ is torsion if and only if $\Ann(M)\neq0$.
+\begin{definition}
+An $R$-module $M$ is \textbf{finitely presented} if for some positive integers $m,n$ there is an exact sequence
+\[\begin{tikzcd}
+R^{m}\ar[r,"\varphi"]&R^{n}\ar[r]&M\ar[r]&0
+\end{tikzcd}\]
+Such a sequence is called a \textbf{presentation} of $M$.
+\end{definition}
+In other words, finitely presented modules are \textit{cokernels} of homomorphisms between finitely generated free modules. Everything about $M$ must be encoded in the homomorphism $\varphi$; therefore, we should be able to describe the module $M$ by studying the matrix corresponding to $\varphi$.
+\begin{lemma}\label{Noe fingene finpre}
+If $R$ is a Noetherian ring, then every finitely generated $R$-module is finitely presented.
+\end{lemma}
+\begin{proof}
+If $M$ is a finitely generated module, there is an exact sequence
+\[\begin{tikzcd}
+R^{m}\ar[r,"\pi"]&M\ar[r]&0
+\end{tikzcd}\]
+for some $m$. Since $R$ is Noetherian, $R^m$ is Noetherian as an $R$-module. Thus $\ker\pi$ is finitely generated; that is, there is an exact sequence
+\[\begin{tikzcd}
+R^{n}\ar[r]&\ker\pi\ar[r]&0
+\end{tikzcd}\]
+for some $n$. Putting together the two sequences gives a presentation of $M$.
+\end{proof}
+Once we have gone one step to obtain generators and two steps to get a presentation, we should hit upon the idea to keep going:
+\begin{definition}\label{resolution def}
+A \textbf{resolution} of an $R$-module $M$ by finitely generated free modules is an exact complex
+\[\begin{tikzcd}
+\cdots\ar[r]&R^{m_3}\ar[r]&R^{m_2}\ar[r]&R^{m_1}\ar[r]&R^{m_0}\ar[r]&M\ar[r]&0
+\end{tikzcd}\]
+\end{definition}
+Iterating the argument proving Lemma~\ref{Noe fingene finpre} shows that if $R$ is Noetherian, then
+every finitely generated module has a resolution as in Definition~\ref{resolution def}. It is an important conceptual step to realize that $M$ may be studied by studying an exact complex of free modules
+\[\begin{tikzcd}
+\cdots\ar[r]&R^{m_3}\ar[r]&R^{m_2}\ar[r]&R^{m_1}\ar[r]&R^{m_0}
+\end{tikzcd}\]
+resolving $M$, that is, such that $M$ is the cokernel of the last map. The $R^{m_0}$ piece keeps track of the generators of $M$; $R^{m_1}$ accounts for the relations among these generators; $R^{m_2}$ records relations among the relations; and so on.\par
+The first natural question of this type is, for which rings $R$ is it the case that every finitely generated $R$-module $M$ has a free resolution of length $0$, that is, stopping at $m_0$? That would mean that there is an exact sequence
+\[\begin{tikzcd}
+0\ar[r]&R^{m_0}\ar[r]&M\ar[r]&0
+\end{tikzcd}\]
+Therefore, $M$ itself must be free. What does this say about $R$?
+\begin{proposition}\label{resolution length 0 iff field}
+Let $R$ be an integral domain. Then $R$ is a field if and only if every finitely generated $R$-module is free.
+\end{proposition}
+\begin{proof}
+If $R$ is a field, then every $R$-module is free, by Proposition~\ref{Vec basis}. For the converse, assume that every finitely generated $R$-module is free; in particular, every cyclic module is free; in particular, every cyclic module is torsion-free. But then $R$ is a field, by Lemma~\ref{tor free field}.
+\end{proof}
+The next natural question concerns rings for which finitely generated modules admit free resolutions of length $1$. It is convenient to phrase the question in stronger terms, that is, to require that for every finitely generated $R$-module $M$ and every beginning of a free resolution
+\[\begin{tikzcd}
+R^{m_0}\ar[r,"\pi"]&M\ar[r]&0
+\end{tikzcd}\]
+the resolution can be completed to a length $1$ free resolution. This would amount to demanding that there exist an integer $m_1$ and an $R$-module homomorphism $R^{m_1}\to R^{m_0}$ such that the sequence
+\[\begin{tikzcd}
+0\ar[r]&R^{m_1}\ar[r]&R^{m_0}\ar[r,"\pi"]&M\ar[r]&0
+\end{tikzcd}\]
+is exact. Equivalently, this condition requires that the module $\ker\pi$ of relations among the $m_0$ generators necessarily be \textit{free}.
+\begin{proposition}\label{resolution length 1 is PID}
+Let $R$ be an integral domain satisfying this property. Then $R$ is a PID.
+\end{proposition}
+\begin{proof}
+Let $I$ be an ideal of $R$, and apply the condition to $M=R/I$. Since we have an epimorphism
+\[\begin{tikzcd}
+R^1\ar[r,"\pi"]&R/I\ar[r]&0
+\end{tikzcd}\]
+the condition says that $\ker\pi$ is free; that is, $I$ is free. Then $I$ is a free submodule of $R$, which is free of rank $1$, so $I$ must be free of rank $\leq1$ by Proposition~\ref{Free mod card}. Therefore $I$ is generated by one element, as needed.
+\end{proof}
+The classification result for finitely generated modules over PIDs, which we keep bringing up, will essentially be a converse to Proposition~\ref{resolution length 1 is PID}: the mysterious condition requiring free resolutions of finitely generated modules to have length at most $1$ turns out to be a characterization of PIDs, just as the length $0$ condition is a characterization of fields.
+\subsection{Reading a presentation}
+Let us return to the brilliant idea of studying a finitely presented module $M$ by studying a homomorphism of free modules
+\begin{align*}
+\varphi: R^n\to R^m
+\end{align*}
+such that $M=\mathrm{coker}\varphi$. As we know, we can describe $\varphi$ completely by considering
+a matrix $A$ representing it, and therefore we can describe any finitely presented module by giving a matrix corresponding to (a homomorphism corresponding to) it.\par
+\begin{lemma}\label{Matr bloc sum}
+Let $A$, $B$ be matrices with entries in an integral domain $R$, and let $M$, $N$ denote the corresponding $R$-modules. Then $M\oplus N$ corresponds to the block matrix
+\[\left(\begin{array}{c|c}
+A&0\\
+\hline
+0&B
+\end{array}\right)\]
+\end{lemma}
+\begin{proof}
+Since we have
+\[\dfrac{R^{m_1}}{\im\varphi}\oplus\dfrac{R^{m_2}}{\im\psi}\cong \dfrac{R^{m_1+m_2}}{\im\varphi\oplus\im\psi}\]
+the claim is clear.
+\end{proof}
+\begin{proposition}\label{Read pres}
+Let $A$ be a matrix with entries in an integral domain $R$, and let $B$ be obtained from $A$ by any sequence of the following operations:
+\begin{itemize}
+\item switch two rows or two columns;
+\item add to one row $($resp., column$)$ a multiple of another row $($resp., column$)$
+\item multiply all entries in one row $($or column$)$ by a unit of $R$.
+\item if a unit is the only nonzero entry in a row $($or column$)$, remove the row and column containing that entry.
+\end{itemize}
+Then $B$ represents the same $R$-module as $A$, up to isomorphism.
+\end{proposition}
+\begin{proof}
+The first three operations are the elementary operations, and they transform a matrix into an equivalent one. This does not affect the corresponding module, up to isomorphism.\par
+As for the fourth operation, if $u$ is a unit and the only nonzero entry in (say) a row, then by applications of the second elementary operation we may assume that $u$ is also the only nonzero entry in its column; without loss of generality we may assume that $u$ is in fact the $(1,1)$ entry of the matrix; that is, the matrix is in block form:
+\[\left(\begin{array}{c|c}
+u&0\\
+\hline
+0&A'
+\end{array}\right)\]
+now the claim follows from Lemma~\ref{Matr bloc sum}.
+\end{proof}
+\begin{example}
+The matrix with integer entries
+\[\begin{pmatrix}
+1&3\\
+2&3\\
+5&9
+\end{pmatrix}\]
+determines an abelian group $G$. By the elementry operations we find
+\[\begin{pmatrix}
+1&3\\
+2&3\\
+5&9
+\end{pmatrix}\longrightarrow\begin{pmatrix}
+1&3\\
+1&0\\
+5&9
+\end{pmatrix}\longrightarrow\begin{pmatrix}
+3\\
+9
+\end{pmatrix}\longrightarrow\begin{pmatrix}
+3\\
+0
+\end{pmatrix}\]
+Therefore $G$ is isomorphic to the cokernel of the homomorphism
+\[\varphi:\Z\to\Z\oplus\Z\]
+mapping $1$ to $(3,0)$. This homomorphism is injective and identifies $\Z$ with the subgroup $3\Z\oplus0$ of the target. Therefore
+\[G\cong\coker\varphi\cong\dfrac{\Z\oplus\Z}{3\Z\oplus 0}\cong\Z/3\Z\oplus\Z\]
+\end{example}
+\subsection{Exercise}
+\begin{exercise}
+Prove that an integral domain $R$ is a PID if and only if every submodule of $R$ itself is free. 
+\end{exercise}
+\begin{exercise}
+Let $R$ be a commutative ring and $M$ an $R$-module.
+\begin{itemize}
+\item Prove that $\Ann(M)$ is an ideal of $R$.
+\item If $R$ is an integral domain and $M$ is finitely generated, prove that $M$ is torsion if and only if $\Ann(M)\neq0$.
+\item Give an example of a torsion module $M$ over an integral domain, such that $\Ann(M)=0$.
+\end{itemize}
+\end{exercise}
+\begin{proof}
+Consider the $\Z$ module 
+\[\bigoplus_{n\geq 1}\Z/n\Z\]
+this is a torsion module with zero annihilator.
+\end{proof}
+\begin{exercise}
+Review the notion of presentation of a group, and relate it to the notion of presentation introduced in $\S4.2$.
+\end{exercise}
+\begin{proof}
+Consider a group $G$ presented by a relation $(A|\mathscr{R})$. Let $R$ be the smallset normal subgroup of $F(A)$ containg $\mathscr{R}$, and from the definition we have a exact sequence:
+\[\begin{tikzcd}
+R\ar[r,hook]&F(A)\ar[r]&G\ar[r]&\{e\}
+\end{tikzcd}\]
+\end{proof}
+\begin{exercise}\label{Kos comp-1}
+Let $R$ be a commutative ring. A tuple $(a_1,a_2,\cdots,a_n)$ of elements of $R$ is a \textbf{regular sequence} if $a_1$ is a non-zero-divisor in $R$, $a_2$ is a non-zero-divisor modulo\footnote{that is, the class of $a_2$ in $R/(a_1)$ is a non-zero-divisor in $R/(a_1)$} $(a_1)$, $a_3$ is a non-zero-divisor modulo $(a_1,a_2)$， and so on.\par
+For $a,b$ in $R$, consider the following complex of $R$-modules:
+\[\begin{tikzcd}
+0\ar[r]&R\ar[r,"d_2"]&R\oplus R\ar[r,"d_1"]&R\ar[r,"\pi"]&R/(a,b)\ar[r]&0
+\end{tikzcd}\]
+where $\pi$ is the canonical projection, $d_1(r,s)=ra+sb$, and $d_2(t)=(bt,-at)$. Put
+otherwise, $d_1$ and $d_2$ correspond, respectively, to the matrices
+\[\begin{pmatrix}
+a &b
+\end{pmatrix},\quad\begin{pmatrix}
+b\\
+-a
+\end{pmatrix}\]
+\begin{itemize}
+\item Prove that this is indeed a complex, for every $a$ and $b$.
+\item Prove that if $(a,b)$ is a regular sequence, this complex is exact.
+\end{itemize}
+The complex is called the \textbf{Koszul complex} of $(a,b)$. Thus, when $(a,b)$ is a regular sequence, the Koszul complex provides us with a free resolution of the module $R/(a,b)$.
+\end{exercise}
+\begin{proof}
+The first claim is easy. For the second, let $(a,b)$ be a exact sequence.
+\begin{itemize}
+\item We check that $\ker d_2=0$. Since $a$ is a nonzero divisor, we find $-at=0\iff t=0$, hence we are done.
+\item Assume $(r,s)\in\ker d_1$, that is, $ra+sb=0$. Mod $(a)$ on this equation yields $-sb+(a)=(a)$. Since $b$ is a nonzero divisor modulo $(a)$, we get $s\in (a)$. Let's write $s=ax$. Then it turns out to be $ra+xab=0$, and $r=-xb$ since $a$ is a nonzero divisor. Concluding we have
+\[(r,s)=(-bx,ax)=d_2(-x)\]
+hence we get $\ker d_1\sub \im d_2$, and then the exactness.
+\end{itemize}
+\end{proof}
+\begin{exercise}\label{Kos comp-2}
+A Koszul complex may be defined for any sequence $a_1,\cdots,a_n$ of elements of a commutative ring $R$. Here we deal with the case $n=3$.\par
+Let $a,b,c\in R$. Consider the following complex:
+\[\begin{tikzcd}
+0\ar[r]&R\ar[r,"d_3"]&R\oplus R\oplus R\ar[r,"d_2"]&R\oplus R\oplus R\ar[r,"d_1"]&R\ar[r,"\pi"]&R/(a,b,c)\ar[r]&0
+\end{tikzcd}\]
+where $\pi$ is the canonical projection and the matrices for $d_1,d_2,d_3$ are, respectively,
+\[\begin{pmatrix}
+a&b&c
+\end{pmatrix},\quad\begin{pmatrix}
+0&-c&-b\\
+-c&0&a\\
+b&a&0
+\end{pmatrix},\quad\begin{pmatrix}
+a\\
+-b\\
+c
+\end{pmatrix}\]
+\begin{itemize}
+\item Prove that this is indeed a complex, for every $a,b,c$.
+\item Prove that if $(a,b,c)$ is a regular sequence, this complex is exact.
+\end{itemize}
+\end{exercise}
+\begin{proof}
+First two verification is easy. Assume $ax+by+cz=0$, modding by $(a,b)$ at both sides yields $z=ar+bs$. From this we get $a(x+cr)+b(y+cs)=0$. Similarly operation gives $y+cs=at$. And finially we conclude $x=-cr-bt$. So
+\[\begin{pmatrix}
+x\\
+y\\
+z
+\end{pmatrix}=\begin{pmatrix}
+0-cr-bt\\
+-cs+0+at\\
+bs+ar+0
+\end{pmatrix}=\begin{pmatrix}
+0&-c&-b\\
+-c&0&a\\
+b&a&0
+\end{pmatrix}\cdot\begin{pmatrix}
+s\\
+r\\
+t
+\end{pmatrix}\]
+this finishes the proof.
+\end{proof}
+\section{Classification of finitely generated modules over PIDs}
+\subsection{Submodules of free modules}
+Recall (Lemma~\ref{Modu tor fre obser}) that a submodule of a free module over an arbitrary integral domain $R$ is necessarily torsion-free but need not be free. For example, the ideal $I=(x,y)$ of $R=k[x,y]$ (with $k$ a field, for example) is torsion-free as an $R$-module, but not free: for this to become really, really evident, it is helpful to rename $x=a$, $y=b$ when these
+are viewed as elements of $I$ and observe that $a$ and $b$ are not linearly independent over $k[x,y]$, since $ya-xb=0$.\par
+On the other hand, submodules of a free module over a field are automatically free: simply because every module over a field is free (Proposition~\ref{Vec basis}). It is reasonable to expect that some property in between being a field and being a friendly UFD such as $k[x,y]$ will guarantee that a submodule of a free module is free. We will now prove that this property is precisely that of being a \textit{principal ideal domain}.
+\begin{proposition}\label{PID submodule free}
+Let $R$ be a PID, $M$ be a free $R$-module of finite rank $n$, $K$ be a submodule of $M$. Then there exsits a basis $\{x_1,\cdots,x_n\}$ of $M$ and non-zero elements $d_i\in R$ such that \[K=(d_1x_1,\cdots,d_rx_r)\quad\text{and}\quad d_{i}\mid d_{i+1}.\]
+\end{proposition}
+\begin{proof}
+Since $M$ is finitely generated, it is Northerian, so $K$ is also finitely generated. Let $M=(a_1,\cdots,a_n)$, and $K=(b_1,\cdots,b_m)$. Then we can write for each $i$
+\[b_i=\sum_{j=1}^{n}a_{ij}a_j\]
+This gives a matrix $A=(a_{ij})$. By Theorem~\ref{Smith norm form} there exists invertible matrices $P\in\mathcal{M}_{mm}(R),Q\in\mathcal{M}_{nn}(R)$ such that
+\[PAQ=\begin{bmatrix}
+D&0\\
+0&0
+\end{bmatrix}\]
+where $D=\mathrm{diag}(d_1,d_2,\dots,d_r)$ with $d_i\mid d_j$. Let 
+\[\begin{bmatrix}
+x_1\\
+\vdots\\
+x_n
+\end{bmatrix}=Q^{-1}\begin{bmatrix}
+a_1\\
+\vdots\\
+a_n
+\end{bmatrix}\quad\text{and}\quad\begin{bmatrix}
+y_1\\
+\vdots\\
+y_m
+\end{bmatrix}=P\begin{bmatrix}
+b_1\\
+\vdots\\
+b_m
+\end{bmatrix}.\]
+Then we can see $y_i=d_ix_i$ for $1\leq i\leq r$ and $y_i=0$ for $i>r$. Hence
+\[K=(y_1,\cdots,y_r)=(d_1x_1,\cdots,d_rx_r)\quad\text{and}\quad d_i\mid d_{i+1}\]
+and $\{x_1,\dots,x_n\}$ is a basis of $M$.
+\end{proof}
+\begin{corollary}\label{abelian group quotient order}
+Let $G$ be a free abelian group of rank $r$, and $H$ a subgroup of $G$. Then $G/H$ is finite if and only if the ranks of $G$ and $H$ are equal. If this is the case, and if $G$ and $H$ have $\Z$-bases $x_1,\dots,x_n$ and $y_1,\dots,y_n$ with $y_i=\sum_{j}a_{ij}x_j$, then
+\[|G/H|=|\det(a_{ij})|.\]
+\end{corollary}
+\begin{proof}
+Let $s$ be the rank of $H$. Then by Proposition~\ref{PID submodule free} we can choose $\Z$-bases $u_1,\dots,u_r$ of $G$ and $v_1,\dots,v_s$ of $H$ with $v_i=\alpha_i u_i$ for $1\leq i\leq s$. Clearly $G/H$ is the direct product of finite cyclic groups of orders $\alpha_1,\dots,\alpha_s$ and $r-s$ infinite cyclic groups. Hence $|G/H|$ is finite if and only if $r=s$, and in that case
+\[|G/H|=\alpha_1\cdots\alpha_s=\left|\begin{array}{cccc}
+\alpha_1&&&\\
+&\alpha_2&&\\
+&&\ddots&\\
+&&&\alpha_s
+\end{array}\right|\]
+Note that an invertible matrix with integer elements must have determinant $\pm 1$, so the claim follows.
+\end{proof}
+\subsection{PIDs and resolutions}
+\begin{proposition}\label{resolution length 1 iff PID}
+Let $R$ be an integral domain. Then $R$ is a PID if and only if for every finitely generated $R$-module $M$ and every epimorphism
+\[\begin{tikzcd}
+R^{m_0}\ar[r,"\pi"]&M\ar[r]&0
+\end{tikzcd}\]
+there exist a free $R$-module $R^{m_1}$ and a homomorphism $\varphi:R^{m_1}\to R^{m_0}$ such that the sequence
+\[\begin{tikzcd}
+0\ar[r]&R^{m_1}\ar[r,"\varphi"]&R^{m_0}\ar[r]&M\ar[r]&0
+\end{tikzcd}\]
+\end{proposition}
+\begin{proof}
+The fact that the stated condition implies that $R$ is a PID was proved in Claim~\ref{reso leng 1 PID}. For the converse, let $\pi:R^{m_0}\to M$ be an epimorphism; then $\ker\pi$ is free by Proposition~\ref{PID submodule free}; the result follows by choosing any isomorphism $\pi:R^{m_1}\to\ker(\pi)$.
+\end{proof}
+\subsection{The classification theorem}
+The notion of the rank of a free module extends naturally to every finitely generated module $M$ over an integral domain $R$.
+\begin{definition}
+Let $R$ be an integral domain. The rank $\rank M$ of a finitely generated $R$-module $M$ is the maximum number of linearly independent elements in $M$.
+\end{definition}
+\begin{theorem}\label{PID fg modu class}
+Let $R$ be a PID, and let $M$ be a finitely generated $R$-module. Then the following hold:
+\begin{itemize}
+\item There exist distinct prime ideals $(p_1),\cdots,(p_n)\in R$, positive integers $r_{ij}$, and
+an isomorphism
+\[M\cong R^{\rank M}\oplus\Bigg(\bigoplus_{i,j}\dfrac{R}{(p_i)^{r_{ij}}}\Bigg)\]
+\item There exist nonzero, nonunit ideals $(a_1),\cdots,(a_m)$ of $R$, such that $(a_1)\supseteq(a_2)\supseteq\cdots\supseteq(a_m)$, and an isomorphism
+\[M\cong R^{\rank M}\oplus\dfrac{R}{(a_1)}\oplus\cdots\oplus\dfrac{R}{(a_m)}\]
+\end{itemize}
+These decompositions are unique $($in the evident sense$)$.
+\end{theorem}
+The two forms taken by the theorem go under the name of \textbf{invariant factors} and \textbf{elementary divisors}, as in the case of abelian groups.\par
+\begin{proof}
+As the two formulations are equivalent, it suffices to prove the existence and uniqueness of the decompositions for any one of the two.\par
+let $M$ be a finitely generated module; thus there is an epimorphism
+\[\begin{tikzcd}
+R^{n}\ar[r,"\pi"]&M\ar[r]&0
+\end{tikzcd}\]
+where $n$ is the number of generators of $M$. Apply Proposition~\ref{PID submodule free} to the submodule $\ker\pi\sub R^n$: there exist a basis $(x_1,\cdots,x_n)$ of $R^n$ and nonzero elements $a_1,\cdots,a_m$ of $R$ such that $(a_1x_1,\cdots,a_mx_m)$ is a basis of $\ker\pi$ and further $a_1\mid\cdots\mid a_m$.\par
+That is, $M$ is presented by the $n\times m$ matrix
+\[\begin{pmatrix}
+a_1&\cdots&0\\
+\vdots&\ddots&\vdots\\
+0&\cdots&a_m\\
+0&\cdots&0\\
+\vdots&\ddots&\vdots\\
+0&\cdots&0\\
+\end{pmatrix}\]
+By Proposition~\ref{Read pres}, we may assume that $a_1,\cdots,a_m$ are not units: if any one of
+them is, the corresponding row and column may be omitted from the matrix (and $n$ corrected accordingly). It follows that
+\[M\cong\dfrac{R}{(a_1)}\oplus\cdots\oplus\dfrac{R}{(a_m)}\oplus R^{(n-m)}\]
+with $a_1\mid\cdots\mid a_m$ nonzero nonunits, as prescribed by Theorem~\ref{PID submodule free}, and the existence is proved.\par
+As for the uniqueness of the representations, if
+\[M\cong R^r\oplus T\]
+with $T$ a torsion module, then $r=\rank M$ and $T\cong\Tor_R(M)$. Thus, the free part and the torsion part in the decompositions are determined uniquely.\par
+This reduces the uniqueness question to the structure of torsion modules: assuming that
+\begin{align}\label{Two compo modu}
+\bigoplus_{i,j}\dfrac{R}{(p_i)^{ij}}\cong\bigoplus_{k,\ell}\dfrac{R}{(q_k)^{k\ell}}
+\end{align}
+with $p_i,q_k$ irreducible elements of $R$, the task is to show that the range of the indices is the same and, up to reordering, $(p_i)=(q_i)$ and $r_{ij}=s_{ij}$ for all $i,j$. Since a finitely generated module is torsion if and only if its annihilator is nonzero, it is reasonable that $\Ann(M)$ will be of some use here.
+\begin{lemma}\label{Tor anni}
+Let $M$ be a torsion module, expressed as in Theorem~\ref{PID fg modu class}. Then $\Ann(M)=(a_m)$. Further, the prime ideals $(p_i)$ are precisely the prime ideals of $R$ containing $\Ann(M)$.
+\end{lemma}
+\begin{proof}
+By hypothesis
+\[M\cong\dfrac{R}{(a_1)}\oplus\cdots\oplus\dfrac{R}{(a_m)}\]
+with $a_1\mid\cdots\mid a_m$. If $r\in\Ann(M)$, then
+\[0=r(1,\cdots,1)=(r,\cdots,r)\]
+In particular $r\equiv0$ modulo $(a_m)$; that is, $r\in(a_m)$. Thus $\Ann(M)\sub(a_m)$.\par 
+For the reverse inclusion, assume $r\in(a_m)$ and $y\in M$. Identifying $M$ with its decomposition, write $y=(y_1,\cdots,y_m)$, with $y_i\in R/(a_i)$. Since $r\in(a_m)\sub(a_i)$, we have $ry_i=0$ for all $i$; therefore $ry=0$, and $r\in\Ann(M)$ as needed.\par
+For the second part of the statement, tracing the equivalence between the two decompositions in Theorem~\ref{PID fg modu class} shows that the $p_i$'s are precisely the irreducible factors of $a_m$, so the assertion follows from the first part.
+\end{proof}
+By Lemma~\ref{Two compo modu}, the sets $\{p_i\},\{q_k\}$ of irreducibles appearing in $(\ref{Two compo modu})$ must coincide (up to inessential units): the ideals they generate are precisely the prime ideals containing $\Ann(M)$. Therefore, uniqueness is reduced to the case of a single irreducible $q\in R:$ it suffices to show that if
+\[\dfrac{R}{(q^{r_1})}\oplus\cdots\oplus\dfrac{R}{(q^{r_1})}\cong\dfrac{R}{(q^{s_1})}\oplus\cdots\oplus\dfrac{R}{(q^{s_n})}\]
+with $r_1\geq \cdots\geq r_m$ and $s_1\geq\cdots\geq s_n$, then $m=n$ and $r_i=s_i$ for all $i$. And this is rather trivial.
+\end{proof}
+\subsection{Exercise}
+\begin{exercise}
+Let $R$ be an integral domain, and let $M$ be a finitely generated $R$-module. Prove that $M$ is torsion if and only if $\rank M=0$.
+\end{exercise}
+\begin{exercise}
+Let $R$ be an integral domain, and let $M$ be a finitely generated module over $R$. Prove that $\rank M=\rank(M/\Tor(M))$.
+\end{exercise}
+\begin{exercise}
+Let $R$ be an integral domain, and let $M$ be a finitely generated module over $R$. Prove that $\rank M=r$ if and only if $M$ has a free submodule $N\cong R^r$, such that $M/N$ is torsion.
+If $R$ is a PID, then $N$ may be chosen so that $0\to N\to M\to N/M\to 0$ splits.
+\end{exercise}
+\begin{exercise}
+Let $R$ be an integral domain, and let
+\[\begin{tikzcd}
+0\ar[r]&M_1\ar[r]&M\ar[r]&M_2\ar[r]&0
+\end{tikzcd}\]
+be an exact sequence of finitely generated $R$-modules. Prove that $\rank M=\rank M_1+\rank M_2$.\par
+Deduce that rank defines a homomorphism from the Grothendieck group of the category of finitely generated $R$-modules to $\Z$.
+\end{exercise}
+\begin{exercise}
+Let $M$ be a finitely generated module over an integral domain $R$.\par
+Prove that if $R$ is a PID, then $M$ is torsion-free if and only if it is free. Prove that this property characterizes PIDs.
+\end{exercise}
+\begin{exercise}
+Prove that the prime ideals appearing in the elementary divisor version of the classification theorem for a module $M$ over a PID are the associated primes of $M$.
+\end{exercise}
+\begin{exercise}
+Let $R$ be a PID. Prove that the Grothendieck group of the category of finitely generated $R$-modules is isomorphic to $\Z$.
+\end{exercise}
+\section{Linear transformations of a free module}
+One beautiful application of the classification theorem for finitely generated modules over PIDs is the determination of special forms for matrices of linear maps of a vector space to itself.
+\subsection{Endomorphisms and similarity}
+Let $R$ be an integral domain. We have considered in some detail the module $\Hom_R(F,G)$ of $R$-module homomorphisms
+\[F\to G\]
+between two free modules. We now shift the focus a little and consider the special case in which $F=G$, that is, the $R$-module $\End_R(F)$ of endomorphisms $\alpha$ of a fixed free R-module F:
+\[F\stackrel{\alpha}{\to}F\]
+Note that $\End_R(F)$ is in fact an $R$-algebra: the operation of composition makes it a ring, compatibly with the $R$-module structure.
+\begin{definition}
+Two square matrices $A,B\in\mathcal{M}_n(R)$ are \textbf{similar} if they represent the same homomorphism $F\to F$ of a free rank-$n$ module $F$ to itself, up to the choice of a basis for $F$.
+\end{definition}
+\begin{proposition}
+Two matrices $A,B\in\mathcal{M}_n(R)$ are similar if and only if there exists an invertible matrix $P$ such that
+\[B=PAP^{-1}\]
+\end{proposition}
+\begin{definition}
+Two $R$-module homomorphisms of a free module $F$ to itself,
+\[\alpha,\beta:F\to F\]
+are similar if there exists an automorphism $\pi:F\to F$ such that
+\[\alpha=\pi\circ\beta\circ\pi^{-1}\]
+\end{definition}
+In the finite rank case, similar endomorphisms are represented by similar matrices, and two endomorphisms $\alpha,\beta$ are similar if and only if they may be represented by the same matrix by choosing appropriate (possibly different) bases on $F$.
+\subsection{The characteristic and minimal polynomials of an endomorphism}
+Let $\alpha\in\End_R(F)$ be an endomorphism of a free $R$-module; henceforth we are often tacitly going to assume that $F$ is finitely generated. We want to identify \textit{invariants} of the similarity class of $\alpha$, that is, quantities that will not change if we replace $\alpha$ with a similar linear map $\beta\in\End_R(F)$.\par
+For example, the determinant is such a quantity:
+\begin{definition}
+Let $\alpha\in\End_R(F)$. The determinant of $\alpha$ is $\det\alpha:=\det A$, where $A$ is the matrix representing $\alpha$ with respect to any choice of basis of $F$.
+\end{definition}
+\begin{proposition}
+Let $\alpha$ be a linear transformation of a free $R$-module $F\cong R^n$. Then 
+\begin{itemize}
+\item $\alpha$ is injective if and only if $\det\alpha\neq 0$.
+\item $\alpha$ is surjective if and only if $\det\alpha$ is a unit.
+\end{itemize}
+In particular, $\alpha$ is surjective if and only if it is invertible.
+\end{proposition}
+\begin{proof}
+We may let $A$ be the matrix of $\alpha$ under some basis. Embed $R$ in its field of fractions $K$, and view $A$ as a linear transformation of $K^n$; note that the determinant of $A$ is the same whether it is computed over $R$ or over $K$. Then $\alpha$ is injective as a linear transformation $R^n\to R^n$ if and only if it is injective as a linear transformation $K^n\to K^n$, if and only if it is invertible as a linear transformation $K^n\to K^n$, if and only if $\det\alpha\neq 0$.\par
+If $\alpha$ is surjective, then there is a matrix $B\in\mathcal{M}_n(R)$ such that $AB=I_n$. Then $\det\alpha=\det A$ is a unit.
+\end{proof}
+Another quantity that is invariant under similarity is the trace. The trace of a square matrix $A=(a_{ij})\in\mathcal{M}_n(R)$ is
+\[\tr(A):=\sum_{i=1}^{n}a_{ii}\]
+\begin{definition}
+Let $\alpha\in\End_R(F)$. The \textbf{trace} of $\alpha$ is defined to be $\tr\alpha:=\tr A$, where $A$ is the matrix representing $\alpha$ with respect to any choice of basis of $F$.
+\end{definition}
+\begin{lemma}
+Let $A,B\in\mathcal{M}_n(R)$. Then $\tr(AB)=\tr(BA)$.
+\end{lemma}
+\begin{definition}
+Let $F$ be a free $R$-module, and let $\alpha\in\End_R(F)$. Denote by $I$ the identity map $F\to F$. The characteristic polynomial of $\alpha$ is the polynomial
+\[P_\alpha(t):=\det(tI-\alpha)\in k[t]\]
+\end{definition}
+\begin{proposition}
+Let $F$ be a free $R$-module of rank $n$, and let $\alpha\in\End_R(F)$.
+\begin{itemize}
+\item The characteristic polynomial $P_\alpha(t)$ is a monic polynomial of degree n.
+\item The coefficient of $t^{n-1}$ in $P_\alpha(t)$ equals $\tr(\alpha)$.
+\item The constant term of $P_\alpha(t)$ equals $(-1)^n\det(\alpha)$.
+\item If $\alpha$ and $\beta$ are similar, then $P_\alpha(t)=P_\beta(t)$.
+\end{itemize}
+\end{proposition}
+As $\End_R(F)$ is an $R$-algebra, we can evaluate every polynomial
+\[f(t)=r_mt^m+\cdots+r_1t+t_0\in R[t]\]
+at any $\alpha\in\End_R(F)$:
+\[f(\alpha)=r_m\alpha^m+\cdots+r_1\alpha+r_0\in\End_R(F)\]
+In other words, we can perform these operations in the ring $\End_R(F)$; multiplication by $r\in R$ amounts to composition with $rI\in\End_R(F)$, and $\alpha^k$ stands for the $k$-fold composition $\alpha\circ\cdots\circ\alpha$ of $\alpha$ with itself. The set of polynomials such that $f(\alpha)=0$ is an ideal of $R[t]$, which we will denote $\mathscr{I}_\alpha$ and call the \textbf{annihilator ideal} of $\alpha$.
+\begin{lemma}
+If $\alpha$ and $\beta$ are similar, then $\mathscr{I}_\alpha=\mathscr{I}_\beta$.
+\end{lemma}
+Going back to the simple example shown above, the polynomial $t-1$ is in the annihilator ideal of the identity, while it is not in the annihilator ideal of the matrix
+\[A=\begin{pmatrix}
+1&1\\
+0&1
+\end{pmatrix}\]
+In any case, even the simple example given above allows us to point out a remarkable fact. Note that the (common) characteristic polynomial $(t-1)^2$ of $I$ and $A$ annihilates both:
+\[(A-1)^2=\begin{pmatrix}
+0&1\\
+0&0
+\end{pmatrix}^2=\begin{pmatrix}
+0&0\\
+0&0
+\end{pmatrix}\]
+This is not a coincidence: $P_\alpha(t)\in\mathscr{I}_\alpha$ for all linear transformations $\alpha$. That is
+\begin{theorem}[Cayley-Hamilton]\label{Cayley Hamilton}
+Let $P_\alpha(t)$ be the characteristic polynomial of the linear transformation $\alpha\in\End_R(F)$. Then
+\[P_\alpha(\alpha)=0\]
+\end{theorem}
+If $R$ is an arbitrary integral domain, we cannot expect too much of $R[t]$, and it seems hard to say something a priori concerning $\mathscr{I}_\alpha$. However, consider the field of fractions $K$ of $R$; viewing $\alpha$ as an element of $\End_K(K^n)$, then $\alpha$ will have an annihilator ideal $\mathscr{I}^{(K)}_\alpha$ over $K$, and it is clear that
+\[\mathscr{I}_\alpha=\mathscr{I}^{(K)}_\alpha\cap R[t]\]
+The advantage of considering $\mathscr{I}^{(K)}_\alpha\sub K[t]$ is that $K[t]$ is a PID, and it follows that $\mathscr{I}^{(K)}_\alpha$ has a (unique) monic generator.
+\begin{definition}
+Let $F$ be a free $R$-module, and let $\alpha\in\End_R(F)$. Let $K$ be the field of fractions of $R$. The \textbf{minimal polynomial} of $\alpha$ is the monic generator $m_\alpha(t)\in K[t]$ of $\mathscr{I}^{(K)}_\alpha$.
+\end{definition}
+With this terminology, the Cayley-Hamilton theorem amounts to the assertion that the minimal polynomial divides the characteristic polynomial: $m_\alpha(t)\mid P_\alpha(t)$.\par
+Of course the situation is simplified, at least from an expository point of view, if $R$ is itself a field: then $K=R$, $m_\alpha(t)\in R[t]$, and $\mathscr{I}_\alpha=\big(m_\alpha(t)\big)$. 
+\subsection{Eigenvalues, eigenvectors, eigenspaces}
+\begin{definition}
+Let $F$ be a free $R$-module, and let $\alpha\in\End_R(F)$ be a linear transformation of $F$. A scalar $\lambda\in R$ is an eigenvalue for $\alpha$ if there exists $\bm{v}\in F$, $\bm{v}\neq0$, such that
+\[\alpha\bm{v}=\lambda\bm{v}\]
+\end{definition}
+\begin{lemma}
+Let $F$ be a finitely generated $R$-module, and let $\alpha\in\End_R(F)$. Then the set of eigenvalues of $\alpha$ is precisely the set of roots in $R$ of the characteristic
+polynomial $P_\alpha(t)$.
+\end{lemma}
+\begin{definition}
+The \textbf{algebraic multiplicity} of an eigenvalue of a linear transformation $\alpha$ of a finitely generated free module is its multiplicity as a root of the characteristic polynomial of $\alpha$.
+\end{definition}
+\begin{corollary}
+The number of eigenvalues of a linear transformation of $R^n$ is at most $n$. If the base ring $R$ is an algebraically closed field, then every linear transformation has exactly $n$ eigenvalues $($counted with algebraic multiplicity$)$.
+\end{corollary}
+There is a different notion of multiplicity of an eigenvalue, related to how big the corresponding \textbf{eigenspace} may be.
+\begin{definition}
+Let $\lambda$ be an eigenvalue of a linear transformation $\alpha$ of a free $R$-module $F$. Then a nonzero $\bm{v}\in F$ is an eigenvector for $\alpha$, corresponding to the eigenvalue $\lambda$, if $\alpha(\bm{v})=\lambda\bm{v}$, that is, if $\bm{v}\in\ker(\lambda I-\alpha)$. The submodule $\ker(\lambda I-\alpha)$ is the eigenspace corresponding to $\lambda$.
+\end{definition}
+\begin{definition}
+The \textbf{geometric multiplicity} of an eigenvalue $\lambda$ is the rank of its eigenspace.
+\end{definition}
+\subsection{Exercise}
+\begin{exercise}\label{Chara poly dire sum}
+Let $F_1$, $F_2$ be free $R$-modules of finite rank, and let $\alpha_1$, resp., $\alpha_2$, be linear transformations of $F_1$, resp., $F_2$. Let $F=F_1\oplus F_2$, and let $\alpha=\alpha_1\oplus\alpha_2$ be the linear transformation of $F$ restricting to $\alpha_1$ on $F_1$ and $\alpha_2$ on $F_2$.
+\begin{itemize}
+\item Prove that $P_\alpha(t)=P_{\alpha_1}(t)P_{\alpha_2}(t)$. That is, the characteristic polynomial is \textbf{multiplicative} under direct sums.
+\item Find an example showing that the minimal polynomial is not multiplicative under direct sums.
+\end{itemize}
+\end{exercise}
+\begin{exercise}
+Let $\alpha$ be a linear transformation of a finite-dimensional vector space $V$, and let $V_1$ be an invariant subspace, that is, such that $\alpha(V_1)\sub V_1$. Let $\alpha_1$ be the restriction of $\alpha$ to $V_1$, and let $V_2=V/V_1$. Prove that $\alpha$ induces a linear transformation $\alpha_2$ on $V_2$, and show that $P_\alpha(t)=P_{\alpha_1}(t)P_{\alpha_2}(t)$. Also, prove that $\tr\alpha^r=\tr\alpha^{r}_1+\tr\alpha^{r}_2$, for all $r\geq 0$.
+\end{exercise}
+\section{Canonical forms}
+\subsection{Linear transformations of free modules; actions of polynomial rings}
+\begin{lemma}\label{linear similar iff module}
+Let $\alpha,\beta$ be linear transformations of a free $R$-module $F$. Then the corresponding $R[t]$-module structures on $F$ are isomorphic if and only if $\alpha$ and $\beta$
+are similar.
+\end{lemma}
+\begin{proof}
+Denote by $F_\alpha$, $F_\beta$ the two $R[t]$-module sturctures defined by $\alpha$, $\beta$.\par
+Assume first that $\alpha$ and $\beta$ are similar. Then there exists an invertible $R$-linear
+transformation $\pi:F\to F$ such that
+\[\beta=\pi\circ\alpha\circ\pi^{-1}\]
+that is, $\pi\circ\alpha=\beta\circ\pi$. We can view $\pi$ as an $R$-linear map
+\[F_\alpha\to F_\beta\]
+We claim that it is $R[t]$-linear: indeed, multiplication by $t$ is $\alpha$ in $F_\alpha$ and $\beta$ in $F_\beta$, so
+\[\pi(t\bm{v})=\pi\circ\alpha(\bm{v})=\beta\circ\pi(\bm{v})=t\pi(\bm{v})\]
+Thus $\pi$ is an invertible $R[t]$-linear map $F_\alpha\to F_\beta$, proving that $F_\alpha$ and $F_\beta$ are isomorphic as $R[t]$-modules.\par
+The converse implication is obtained essentially by running this argument in reverse.
+\end{proof}
+\begin{corollary}\label{Corr simi modu}
+There is a one-to-one correspondence between the similarity classes of $R$-linear transformations of a free $R$-module $F$ and the isomorphism classes of $R[t]$-module structures on $F$.
+\end{corollary}
+\subsection{$k[t]$-modules and the rational canonical form}
+It is finally time to specialize to the case in which $R=k$ is a field and $F$ has finite rank; so $F=V$ is simply a finite-dimensional vector space. Let $n=\dim V$.\par
+Before going to the general case, lets first consider the linear transformation given by multiplication by $t$ on a cyclic $k[t]$-module
+\[V=\dfrac{k[t]}{(f(t))}\]
+where $f(t)$ is a nonconstant monic polynomial:
+\[f(t)=t^n+r_{n-1}t^{n-1}+\cdots+r_0\]
+It is worthwhile obtaining a good matrix representation of this poster case. We choose the basis
+\[1,t\cdots,t^{n-1}\]
+of $V$. Recall that the columns of the matrix corresponding to a transformation consist of the images of the chosen basis. Since multiplication by $t$ on $V$ acts as
+\[\left\{\begin{array}{l}
+1\mapsto t\\
+t\mapsto t^2\\
+\cdots\\
+t^{n-1}\mapsto t^n=-r_{n-1}t^{n-1}-\cdots-r_0
+\end{array}\right. \]
+the matrix corresponding to this linear transformation is
+\[\begin{pmatrix}
+0&0&0&\cdots&0&-r_0\\
+1&0&0&\cdots&0&-r_1\\
+0&1&0&\cdots&0&-r_2\\
+\vdots&\vdots&\vdots&\ddots&\vdots&\vdots\\
+0&0&0&\cdots&0&-r_{n-2}\\
+0&0&0&\cdots&1&-r_{n-1}\\
+\end{pmatrix}\]
+\begin{definition}
+This is called the \textbf{companion matrix} of the polynomial $f(t)$, denoted $C_{f(t)}$.
+\end{definition}
+Thus by Lemma~\ref{linear similar iff module}, we have proved the following result.
+\begin{proposition}
+Let $\alpha$ be a linear transformation on a finitely-dimensional vector space $V$. If there is a monic polynomial $f(t)\in k[t]$ such that
+\[V_\alpha\cong\frac{k[t]}{(f(t))}\]
+Then $\alpha$ attain a basis under which its matrix is $C_{f(t)}$, the companion matrix of $f(t)$.
+\end{proposition}
+Now with this result, Theorem~\ref{PID fg modu class} then tells us that every linear transformation
+admits a matrix representation into blocks, each of which is the companion matrix of a polynomial. Here is the statement of Theorem~\ref{PID fg modu class} in this context:
+\begin{theorem}\label{Lin tran decomp}
+Let $k$ be a field, and let $V$ be a finite-dimensional vector space. Let $\alpha$ be a linear transformation on $V$, and endow $V$ with the corresponding $k[t]$-module structure, which we denote by $V_\alpha$. Then the following hold:
+\begin{itemize}
+\item There exist distinct monic irreducible polynomials $p_1(t),\cdots,p_s(t)\in k[t]$ and
+positive integers $r_{ij}$ such that
+\[V_\alpha\cong \bigoplus_{i,j}\dfrac{k[t]}{(p_i(t)^{r_{ij}})}\]
+as $k[t]$-module.
+\item There exist monic nonconstant polynomials $f_1(t),\cdots,f_m(t)\in k[t]$ such that $f_1(t)\mid\cdots\mid f_m(t)$ and
+\[V_\alpha\cong\dfrac{k[t]}{(f_1(t))}\oplus\cdots\oplus\dfrac{k[t]}{(f_m(t))}\]
+\end{itemize}
+Via these isomorphisms, the action of $\alpha$ on $V$ corresponds to multiplication by $t$. The polynomials $p_i(t)^{r_{ij}}$ are called \textbf{elementary divisors} of $\alpha$, and $f_i(t)$ the \textbf{invariant factors} of $\alpha$.\par
+Therefore, two linear transformations $\alpha$ and $\beta$ is similar if and only if they have the same elementary divisors, if and only if they have the same invariant factors.
+\end{theorem}
+\begin{proof}
+Since dim $V$ is finite, $V$ is finitely generated as a $k$-module and a \textit{fortiori} as a $k[t]$-module. The two isomorphisms are then obtained by applying Theorem~\ref{PID fg modu class}.
+All the relevant polynomials may be chosen to be monic since every polynomial over a field is the associate of a (unique) monic polynomial. The fact that the action of $\alpha$ corresponds to multiplication by $t$ is precisely what defines the corresponding $k[t]$-module structure on $V$. The statement about similar transformations follows from Corollary~\ref{Corr simi modu}.
+\end{proof}
+\begin{definition}
+The \textbf{rational canonical form} of a linear transformation $\alpha$ of a vector space $V$ is the block matrix
+\[\begin{pmatrix}
+C_{f_1(t)}&&\\
+&\ddots&\\
+&&C_{f_m(t)}
+\end{pmatrix}\]
+where $f_1(t),\cdots,f_m(t)$ are the invariant factors of $\alpha$.
+\end{definition}
+\begin{corollary}
+Every linear transformation admits a rational canonical form. Two linear transformations have the same rational canonical form if and only if they are similar.
+\end{corollary}
+\begin{remark}
+The rational in rational canonical form has nothing to do with $\Q$; it is meant to remind the reader that this form can be found without leaving the base field. The other canonical form we will encounter will have entries in a possibly larger field, where the characteristic polynomial of the transformation factors completely.
+\end{remark}
+Now one may wonder how to compute the canonical form of a given matrix. Fortunately the following result deals with this.
+\begin{proposition}\label{linear tI-A}
+Let $k$ be a field. For a $k$-linear transform $\alpha$ on a finitely-dimensional vector space $V$ with matrix $A$, consider the matrix $tI-A\in\mathcal{M}_{nn}(k[t])$. Then the invariant factor of $tI-A$ coincides with that of $\alpha$.
+\end{proposition}
+\begin{proof}
+By changing of basis, we may assume that $A$ has the rational form
+\[\begin{pmatrix}
+C_{f_1(t)}&&\\
+&\ddots&\\
+&&C_{f_m(t)}
+\end{pmatrix}\]
+where $f_1(t),\cdots,f_m(t)$ are the invariant factors of $\alpha$.\par
+In view of this, we may to assume $A$ is a companion matries and check the claim for this case. So consider $f(t)=t^n+r_{n-1}t^{n-1}+\dots+r_0$ and 
+\[tI-C_{f(t)}=\begin{pmatrix}
+t&0&0&\cdots&0&r_0\\
+-1&t&0&\cdots&0&r_1\\
+0&-1&t&\cdots&0&r_2\\
+\vdots&\vdots&\vdots&\ddots&\vdots&\vdots\\
+0&0&0&\cdots&t&r_{n-2}\\
+0&0&0&\cdots&-1&t+r_{n-1}\\
+\end{pmatrix}\]
+By Theorem~\ref{det factor}, it is easy to know the Smith normal form of $C_{f(t)}$ is
+\[\left(\begin{array}{ccc|c}
+1&\cdots&0&0\\
+\vdots&\ddots&\vdots&\vdots\\
+0&\cdots&f(t)&0\\
+\hline
+0&\cdots&0&0
+\end{array}\right)\]
+Therefore, the claim holds for companion matrix, and thus for any matrices.
+\end{proof}
+\begin{proposition}\label{Mini chara poly}
+Let $f_1(t)\mid\cdots\mid f_m(t)$ be the invariant factors of a linear transformation $\alpha$ on a vector space $V$. Then the minimal polynomial $m_\alpha(t)$ equals $f_m(t)$, and the characteristic polynomial $P_\alpha(t)$ equals the product $f_1(t)\cdots f_m(t)$.
+\end{proposition}
+\begin{proof}
+Tracing definitions, $(m_\alpha(t))$ is the annihilator ideal of $V$ when this is viewed as a $k[t]$-module via $\alpha$. Therefore the equality of $m_\alpha(t)$ and $f_m(t)$ is a restatement of Lemma~\ref{Tor anni}. The claim about characteristic polynomial since determinant is invariant under similarity.
+\end{proof}
+\begin{corollary}[Cayley-Hamilton]
+The minimal polynomial of a linear transformation divides its characteristic polynomial.
+\end{corollary}
+\begin{remark}
+Major shortcuts may come to our aid. For example, if the minimal and characteristic polynomials coincide, then one knows a priori that the corresponding module is cyclic, and it follows that the rational canonical form is simply the companion matrix of the characteristic polynomial.
+\end{remark}
+In any case, the strength of a canonical form rests in the fact that it allows us to reduce general facts to specific, standard cases. For example, the following statement is somewhat mysterious if all one knows are the definitions, but it becomes essentially trivial with a pinch of rational canonical forms:
+\begin{proposition}
+Let $A\in\mathcal{M}_n(k)$ be a square matrix. Then $A$ is similar to its transpose.
+\end{proposition}
+\begin{proof}
+If $B$ is similar to $A$ and we can prove that $B$ is similar to its transpose $B^T$, then $A$ is similar to its transpose $A^T$: because $B=PAP^{-1}$, $B^T=QBQ^{-1}$ give
+\begin{align*}
+A^T&=(P^{-1}BP)^{T}=P^TB^T(P^{-1})^T=P^TQBQ^{-1}(P^{-1})^T\\
+&=P^TQPAP^{-1}Q^{-1}(P^T)^{-1}=(P^TQP)A(P^TQP)^{-1}
+\end{align*}
+Therefore, it suffices to prove the statement for matrices in rational canonical form.\par
+Further, to prove the statement for a block matrix, it clearly suffices to prove it for each block; so we may assume that $A$ is the companion matrix $C$ of a polynomial $f(t)$. Since the characteristic and minimal polynomials of the transpose $C^T$ coincide with those of $C$, they are both equal to $f(t)$. It follows that the rational canonical form of $C^T$ is again the companion matrix to $f(t)$; therefore $C^T$ and $C$ are similar, as needed.
+\end{proof}
+\begin{corollary}
+Let $k$ be a field, and let $K$ be a field containing $k$. Two square matrices $A,B\in\mathcal{M}_n(k)$ may be viewed as matrices with entries in the larger field $K$. Prove that $A$ and $B$ are similar over $k$ if and only if they are similar over $K$.
+\end{corollary}
+\begin{proof}
+By Corollary~\ref{linear tI-A} we only need to compute the invariant factors of $tI-A$ and $tI-B$. However, by Theorem~\ref{det factor} we can obtain them by computing the minor of $tI-A$ and $tI-B$, and find the gcd. Since gcd and determinant are not influenced by field extension, we conclude the claim.
+\end{proof}
+\subsection{Jordan canonical form}
+We have derived the rational canonical form from the invariant factors of the module corresponding to a linear transformation. A useful alternative can be obtained from the elementary divisors, at least in the case in which the \textit{characteristic polynomial factors completely over the field $k$} . If this is not the case, one can enlarge $k$ so as to include all the roots of the characteristic polynomial. The price to pay will be that the Jordan canonical form of a linear transformation $\alpha\in\End_k(V)$ may be a matrix with entries in a field larger than $k$. In any case, whether two transformations are similar or not is independent of the base field, so this does not affect the issue at hand.\par
+Given $\alpha\in\End_k(V)$, obtain the elementary divisor decomposition of the corresponding
+$k[t]$-module, as in Theorem~\ref{Lin tran decomp}:
+\[V\cong\bigoplus_{i,j}\dfrac{k[t]}{(p_i(t)^{r_{ij}})}\]
+It is an immediate consequence of Proposition~\ref{Mini chara poly} and the equivalence between
+the elementary divisor and invariant factor formulations that the characteristic polynomial $P_\alpha(t)$ equals the product
+\[\prod_{i,j}p_i^{r_{ij}}(t)\]
+\begin{lemma}
+Assume that the characteristic polynomial $P_\alpha(t)$ factors completely; that is,
+\[P_\alpha(t)=\prod_{i=1}^{s}(t-\lambda_i)^{m_i}\]
+where $\lambda_i$, $i=1,\cdots,s$, are the distinct eigenvalues of $\alpha$ $($and $m_i$ are their algebraic multiplicities$)$. Then $p_i(t)=(t-\lambda_i)$, and $m_i=\sum_{j}r_{ij}$.\par
+In this situation, the minimal polynomial of $\alpha$ equals
+\[m_\alpha(t)=\prod_{i=1}^{s}(t-\lambda_i)^{\min_j\{r_{ij}\}}\]
+\end{lemma}
+\begin{proof}
+The first statement follows from uniqueness of factorizations. The statement about the minimal polynomial is immediate from Proposition~\ref{Mini chara poly} and the bookkeeping giving the equivalence of the two formulations in Theorem~\ref{Lin tran decomp}.
+\end{proof}
+The elementary divisor decomposition splits $V$ into a different collection of cyclic modules than the decomposition in invariant factors: the basic cyclic bricks
+are now of the form $k[t]/(p(t)^r)$ for a monic prime $p(t)$; assuming that the characteristic polynomial factors completely over $k$, they are in fact of the form
+\[\dfrac{k[t]}{((t-\lambda)^r)}\]
+for some $\lambda\in k$ (which equals an eigenvalue of $\alpha$) and $r>0$. We now look for a basis with respect to which $\alpha$ ($=$ multiplication by $t$; keep in mind the fine print in Theorem~\ref{Lin tran decomp}) has a particularly simple matrix representation. This time we choose the basis
+\[(t-\lambda)^{r-1},(t-\lambda)^{r-2},\cdots,(t-\lambda)^0=1\]
+Multiplication by $t$ on $V$ acts (in the first line, use the fact that $(t-\lambda)^r=0$ in $V$) as
+\[\left\{\begin{array}{l}
+(t-\lambda)^{r-1}\mapsto t(t-\lambda)^{r-1}=\lambda(t-\lambda)^{r-1}+(t-\lambda)^r=\lambda(t-\lambda)^{r-1}\\
+(t-\lambda)^{r-2}\mapsto t(t-\lambda)^{r-2}=(t-\lambda)^{r-1}+\lambda(t-\lambda)^{r-2}\\
+\cdots\\
+1\mapsto t=(t-\lambda)+\lambda
+\end{array}\right. \]
+Therefore, with respect to this basis the linear transformation has matrix
+\[\begin{pmatrix*}[c]
+\lambda&1&\cdots&0&0\\
+0&\lambda&\cdots&0&0\\
+\vdots&\vdots&\ddots&\vdots&\vdots\\
+0&0&\cdots&\lambda&1\\
+0&0&\cdots&0&\lambda\\
+\end{pmatrix*}\]
+\begin{definition}
+This matrix is the \textbf{Jordan block} of size $r$ corresponding to $\lambda$, denoted $J_{r}(\lambda)$.
+\end{definition}
+We can put several blocks together for a given $\lambda$: for $(r)=(r_1,\cdots,r_\ell)$, let 
+\[J_{(r_j)}(\lambda):=\begin{pmatrix*}[c]
+J_{r_1}(\lambda)&&\\
+&\ddots&\\
+&&J_{r_\ell}(\lambda)
+\end{pmatrix*}\]
+With this notation in hand, we get new distinguished representatives of the similarity class of a given linear transformation:
+\begin{definition}
+The Jordan canonical form of a linear transformation α of a vector space $V$ is the block matrix
+\[\begin{pmatrix*}[c]
+J_{(r_{1j})}(\lambda_1)&&\\
+&\ddots&\\
+&&J_{(r_{sj})}(\lambda_s)
+\end{pmatrix*}\]
+where $(t-\lambda_i)^{r_{ij}}$ are the elementary divisors of $\alpha$.
+\end{definition}
+The Jordan canonical form clarifies the difference between algebraic and geometric multiplicities of an eigenvalue.
+\begin{proposition}\label{Jordan geometric multiplicity}
+The geometric multiplicity of $\lambda$ as an eigenvalue of $\alpha$ equals the number of Jordan blocks corresponding to $\lambda$ in the Jordan canonical form of $\alpha$.
+\end{proposition}
+\begin{proof}
+As the geometric multiplicity is clearly additive in direct sums, it suffices to show that the geometric multiplicity of $\lambda$ for the transformation corresponding to a single Jordan block
+\[\begin{pmatrix*}[c]
+\lambda&1&\cdots&0&0\\
+0&\lambda&\cdots&0&0\\
+\vdots&\vdots&\ddots&\vdots&\vdots\\
+0&0&\cdots&\lambda&1\\
+0&0&\cdots&0&\lambda\\
+\end{pmatrix*}\]
+is $1$.\par
+Let $\bm{v}=(v_1,\cdots,v_r)^T$ be an eigenvector corresponding to $\lambda$. Then
+\[\lambda\begin{pmatrix}
+v_1\\
+v_2\\
+\vdots\\
+v_r
+\end{pmatrix}=J\begin{pmatrix}
+v_1\\
+v_2\\
+\vdots\\
+v_r
+\end{pmatrix}=\begin{pmatrix}
+\lambda v_1+v_2\\
+\lambda v_2+v_3\\
+\vdots\\
+\lambda v_r
+\end{pmatrix}\]
+yielding
+\[v_2=\cdots=v_r=0\]
+That is, the eigenspace of $\lambda$ is generated by $\bm{v}=(1,0,\cdots,0)^T$, and has dimension $1$, as needed.
+\end{proof}
+\begin{corollary}
+Let $A\in\mathcal{M}_{n}(\C)$, and $\lambda$ be a eigenvalue of $A$. If $N(\lambda)$ is the number of Jordan matrixs corresponding to $\lambda$, then
+\[N(\lambda)=n-\rank(A-\lambda I)\]
+\end{corollary}
+\begin{proof}
+By Proposition~\ref{Jordan geometric multiplicity} we have
+\[N(\lambda)=\text{geometric multiplicity of $\lambda$}=n-\rank(A-\lambda I).\]
+\end{proof}
+\begin{proposition}
+Let $A\in\mathcal{M}_{n}(\C)$, and $\lambda$ be a eigenvalue of $A$. If $N_i(\lambda)$ is the number of Jordan matrixs corresponding to $\lambda$ which has order $i$, then
+\[N_i(\lambda)=\rank(A-\lambda I)^{i-1}+\rank(A-\lambda I)^{i+1}-2\rank(A-\lambda I)^{i}.\]
+\end{proposition}
+\subsection{Exercise}
+\begin{exercise}
+Let $R$ be an integral domain. Assume that $A\in\mathcal{M}_n(R)$ is diagonalizable, with distinct eigenvalues. Let $B\in\mathcal{M}_n(R)$ be such that $AB=BA$. Prove that $B$ is also diagonalizable, and in fact it is diagonal w.r.t. a basis of eigenvectors of $A$.
+\end{exercise}
+\begin{exercise}
+Prove that commuting transformations may be simultaneously diagonalized, in the following sense. Let $V$ be a finite-dimensional vector space, and let $\alpha,\beta\in\End_k(V)$ be diagonalizable transformations. Assume that $\alpha\beta=\beta\alpha$. Prove that $V$ has a basis consisting of eigenvectors of both $\alpha$ and $\beta$.
+\end{exercise}
+\section{Inner product spaces}
+\subsection{Adjoint of a linear transformation}
+\begin{proposition}[\textbf{Polarization identity}]
+Let $V$ be an inner product space.
+\begin{itemize}
+\item[$(a)$] If $V$ is a real inner product space, then for any $x,y\in V$,
+\[(x,y)=\frac{1}{4}(\|x+y\|^2-\|x-y\|^2)\]
+\item[$(b)$] If $V$ is a real inner product space, then for any $x,y\in V$,
+\[(x,y)=\frac{1}{4}\Big(\|x+y\|^2-\|x-y\|^2+i\|x+iy\|^2-i\|x-iy\|^2\Big)=\frac{1}{4}\sum_{\alpha=\pm 1,\pm i}\alpha\|x+\alpha y\|^2\]
+\end{itemize}
+\end{proposition}
+\begin{proof}
+We deal with the complex case:
+\[\|x+y\|^2-\|x-y\|^2=2(x,y)+2(y,x)\]
+\[i(\|x+iy\|^2-\|x-iy\|^2)=i(-2i(x,y)+2i(y,x))=2(x,y)-2(y,x)\]
+Thus we get the claim.
+\end{proof}
+\begin{definition}
+Let $A$ be an $m\times n$ matrix, its \textbf{adjoint} $A^*$ is defined by $A^*:=\widebar{A^T}$. In other words, the matrix $A^*$ is obtained from the transposed matrix $A^T$ by taking complex conjugate of each entry.
+\end{definition}
+The most important property of adjiont is described by the equality
+\[(A\bm{x},\bm{y})=(\bm{x},A^*\bm{y})\for \bm{x}\in\C^n,\bm{y}\in\C^m\]
+which follows from the observation
+\[(A\bm{x},\bm{y})=(A\bm{x})^*\bm{y}=\bm{x}^*A^*\bm{y}=\bm{x}^*(A^*\bm{y})=(\bm{x},A^*\bm{y}).\]
+\begin{theorem}
+Let $A:V\to W$ be an operator acting from one inner product
+space to another. Then
+\[\ker A^*=(\im A)^\bot,\quad\im A^*=(\ker A)^\bot\]
+\end{theorem}
+\begin{proof}
+Since for any subspace $W$ we have $(W^\bot)^\bot=W$, we only need to prove one equality. Here we show $\ker A^*=(\im A)^\bot$.\par
+The inclusion $x\in(\im A^*)^{\bot}$ means that $x$ is orthogonal to all vectors of the form $Ay$, i.e.
+\[(x,Ay)=0\for y\in V.\]
+Since $(x,Ay)=(A^*x,y)$, this identity is equivalent to
+\[(A^*x,y)=0\for y\in V,\]
+which happens if and only if $A^*x=0$.
+\end{proof}
+\subsection{Isometries and unitary operators}
+\begin{definition}
+An operator $U:V\to W$ is called an isometry if it preserves the norm
+\[\|Ux\|=\|x\|\for x\in V\]
+\end{definition}
+\begin{theorem}
+An operator $U:V\to W$ is an isometry if and only if it preserves the inner product, i.e if and only if
+\[(Ux,Uy)=(x,y)\for x\in V,y\in W\]
+\end{theorem}
+\begin{proof}
+The proof uses the polarization identities. For example, if $V$ is a complex space,
+\begin{align*}
+(Ux,Uy)&=\frac{1}{4}\sum_{\alpha=\pm 1,\beta=\pm i}\alpha\|Ux+\beta Uy\|^2=\frac{1}{4}\sum_{\alpha=\pm 1,\beta=\pm i}\alpha\|U(x+\beta y)\|^2\\
+&=\frac{1}{4}\sum_{\alpha=\pm 1,\beta=\pm i}\alpha\|x+\beta y\|^2=(x,y)
+\end{align*}
+\end{proof}
+\begin{lemma}
+An operator $U:V\to W$ is an isometry if and only if $U^*U=I$.
+\end{lemma}
+\begin{proof}
+From the definition of $U^*$, we have
+\[(Ux,Uy)=(x,U^*Uy)\]
+so $U$ is an isometry if and only if $U^*U=I$.
+\end{proof}
+The above lemma implies that an isometry is always left invertible with $U^*$ being a left inverse.
+\begin{definition}
+An isometry $U:V\to W$ is called a \textbf{unitary operator} if it is invertible. 
+\end{definition}
+\begin{proposition}
+An isometry $U:V\to W$ is a unitary operator if and only if $\dim V=\dim W$.
+\end{proposition}
+\begin{proof}
+Since $U$ already has a left inverse $U^*$, it is invertible if and only if $\dim V=\dim W$.
+\end{proof}
+\begin{definition}
+A square matrix $U$ is called \textbf{unitary} if $U^*U=I$, i.e. a unitary matrix is a matrix of a unitary operator acting in $\C^n$.
+\end{definition}
+Now we state some properties about unitary operators and unitary matrices.
+\begin{proposition}\label{unitary matrix prop}
+Let $U$ be a unitary matrix. Then
+\begin{itemize}
+\item[$(a)$] $|\det U|=1$.
+\item[$(b)$] If $\lambda$ is an eigenvalue of $U$, then $|\lambda|=1$.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+Let $\det U=z$. Since $\det(U^*)=\widebar{\det(U)}$, we have
+\[|z|^2=z\widebar{z}=\det(U)\det(U^*)=\det(UU^*)=1\]
+To prove $(b)$ let us notice that if $U\bm{x}=\lambda\bm{x}$ then
+\[\|\bm{x}\|=\|U\bm{x}\|=\|\lambda\bm{x}\|=|\lambda|\cdot \|\bm{x}\|\]
+hence $|\lambda=1|$.
+\end{proof}
+\begin{definition}
+Operators $A$ and $B$ are called \textbf{unitarily equivalent} if there exists a unitary operator $U$ such that $A=U^*BU$.
+\end{definition}
+\begin{theorem}\label{unitarily diagonal iff}
+A matrix $A$ is unitarily equivalent to a diagonal one if and only if it has an orthonormal basis of eigenvectors.
+\end{theorem}
+\begin{proof}
+Let $A$ be unitarily equivalent to a diagonal matrix $D$, i.e. let $A=UDU^*$. The vectors $\bm{e}_k$ of the standard basis are eigenvectors of $D$, so the vectors $U\bm{e}_k$ are eigenvectors of $A$. Since $U$ is unitary, the system $U\bm{e}_1,\cdots,U\bm{e}_n$ is an orthonormal basis.\par
+Now let $A$ has an orthonormal basis $\bm{u}_1,\cdots,\bm{u}_n$ of eigenvectors. Let $D$ be the matrix of $A$ in the basis $\mathcal{B}=\{\bm{u}_1,\cdots,\bm{u}_n\}$. Clearly, $D$ is a diagonal matrix. Denote by $U$ the matrix with columns $\bm{u}_1,\cdots,\bm{u}_n$. Since the columns
+form an orthonormal basis, $U$ is unitary. The standard change of coordinate formula implies
+\[D=[A]_{\mathcal{B}\mathcal{B}}=[I]_{\mathcal{B}\mathcal{S}}[A]_{\mathcal{S}\mathcal{S}}[I]_{\mathcal{S}\mathcal{B}}=U^*AU\]
+\end{proof}
+\section{Structure of operators in inner product spaces}
+\subsection{Upper triangular representation of an operator}
+\begin{theorem}\label{unitarily upper triangular}
+Let $A:V\to V$ be an operator acting in a complex inner product space. There exists an orthonormal basis $\bm{u}_1,\cdots,\bm{u}_n$ in $V$ such that the matrix of $A$ in this basis is upper triangular.\par
+In other words, any $n\times n$ matrix $A$ is unitarily equivalent to an upper triangular matrix.
+\end{theorem}
+\begin{proof}
+We prove the theorem using the induction in $\dim V$. If $\dim V=1$ the theorem is trivial.\par
+Suppose we proved that the theorem is true if $\dim V=n-1$, and we want to prove it for $\dim V=n$. Let $\lambda_1$ be an eigenvalue of $A$, and let $\bm{u}_1$ be a corresponding eigenvector such that $\|\bm{u}_1\|=1$. Write $E=\bm{u}_1^\bot$ and let $\bm{v}_2,\cdots,\bm{v}_n$ be an orthonormal basis of $E$, so that $\bm{u}_1,\bm{v}_2,\cdots,\bm{v}_n$ is an orthonormal basis of $V$. In this basis the matrix of $A$ has the form
+\[\begin{pmatrix}
+\lambda_1&*\\
+0&A_1
+\end{pmatrix}\]
+Then by the inductive hypothesis, these is a basis of $E$ under which the linear transformation defined by $A_1$ has an upper triangular form. Combining this basis with $\bm{u}_1$, we get the claim.
+\end{proof}
+The following theorem is a real-valued version of Theorem~\ref{unitarily upper triangular}.
+\begin{theorem}\label{orthogonal upper triangular}
+Let $A:V\to V$ be an operator acting in a real inner product space. Suppose that all eigenvalues of $A$ are real. Then there exists an orthonormal basis $\bm{u}_1,\cdots,\bm{u}_n$ in $V$ such that the matrix of $A$ in this basis is upper triangular.\par
+In other words, any real $n\times n$ matrix $A$ with all real eigenvalues can be represented as $T=UTU^*=UTU^T$, where $U$ is an orthogonal, and $T$ is a real upper triangular matrices.
+\end{theorem}
+\begin{proof}
+The proof is the same as that of Theorem~\ref{unitarily upper triangular}, except that we need to show the matrix $A_1$ has only real eigenvalues. This can be done by computing the characteristic polynomial:
+\[|\lambda I_n-A|=|\lambda-\lambda_1|\cdot|\lambda I_{n-1}-A_1|\]
+\end{proof}
+\subsection{Spectral theorem for self-adjoint and normal operators}
+\begin{definition}
+An operator $A$ is called \textbf{self-adjoint} if $A=A^*$. A matrix of a self-adjoint operator in some orthonormal basis, i.e. a matrix satisfying $A^*=A$ is called a \textbf{Hermitian matrix}.
+\end{definition}
+\begin{theorem}
+Let $A=A^*$ be a self-adjoint operator in an inner product space $V$ $($the space can be complex or real$)$. Then all eigenvalues of $A$ are real, and there exists an orthonormal basis of eigenvectors of $A$ in $V$.
+\end{theorem}
+This theorem can be restated in matrix form as follows
+\begin{theorem}
+Let $A=A^*$ be a self-adjoint matrix. Then $A$ can be represented as
+\[A=UDU^*\]
+where $U$ is a unitary matrix and $D$ is a diagonal matrix with real entries.\par
+Moreover, if the matrix $A$ is real, matrix $U$ can be chosen to be real.
+\end{theorem}
+\begin{proof}
+We first apply Theorem~\ref{unitarily upper triangular} to find an orthonormal basis in $V$ such that the matrix of $A$ in this basis is upper triangular. The from the self-ajointness we conclude that this upper triangular is in fact diagonal with real entries.\par
+With this, in the real case we can first show that $A$ has real eigenvalues and then apply Theorem~\ref{orthogonal upper triangular} to get the claim.
+\end{proof}
+\begin{remark}
+Let us give an independent proof to the fact that eigenvalues of a self-adjoint operators are real. Let $A=A^*$ and $Ax=\lambda x$, $x\neq 0$. Then
+\[(Ax,x)=\lambda(x,x)=\lambda\|x\|^2\]
+On the other hand,
+\[(Ax,x)=(x,A^*x)=(x,Ax)=(x,\lambda x)=\widebar{\lambda}\|x\|^2\]
+Since $\|x\|\neq 0$, we conclude $\lambda$ is real.
+\end{remark}
+\begin{proposition}
+Let $A=A^*$ be a self-adjoint operator, and let $u,v$ be its eigenvectors, $Au=\lambda u$, $Av=\mu v$. Then, if $\lambda\neq\mu$, the eigenvectors $u$ and
+$v$ are orthogonal.
+\end{proposition}
+\begin{proof}
+This proposition follows from the spectral theorem, but here we are giving a direct proof. Namely,
+\[(Au,v)=(\lambda u,v)=\lambda(u,v)\]
+On the other hand,
+\[(Au,v)=(u,A^*v)=(u,Av)=(u,\mu v)=\widebar{\mu}(u,v)=\mu(u,v)\]
+so $\lambda(u,v)=\mu(u,v)$. If $\lambda=\mu$ it is possible only if $(u,v)=0$.
+\end{proof}
+Now let us try to find what matrices are unitarily equivalent to a diagonal one. It is easy to check that for a diagonal matrix $D$,
+\[DD^*=D^*D\]
+Therefore $A^*A=AA^*$ if the matrix of $A$ in some orthonormal basis is diagonal.
+\begin{definition}
+An operator $N$ is called \textbf{normal} if $N^*N=NN^*$.
+\end{definition}
+Any self-adjoint operator is normal. Also, any unitary operator $U$ is normal since $U^*U=UU^*=I$.
+\begin{theorem}
+Any normal operator $N$ in a complex vector space has an orthonormal basis of eigenvectors.\par
+In other words, any matrix $N$ satisfying $N^*N=NN^*$ can be represented as
+\[N=UDU^*\]
+where $U$ is a unitary matrix, and $D$ is a diagonal one.
+\end{theorem}
+\begin{proof}
+We can apply Theorem~\ref{unitarily upper triangular} to get an orthonormal basis, such that the matrix of $N$ in this basis is upper triangular. To complete the proof of the theorem we only need to show that an upper triangular normal matrix must be diagonal.\par
+Let $A=(a_{ij})$ be an upper triangular normal matrix, then direct computation yields
+\[(AA^*)_{11}=|a_{11}|^2+\cdots+|a_{1n}|^2,\quad (A^*A)=|a_{11}|^2\]
+Then the normality of $A$ implies $a_{12}=\cdots=a_{1n}=0$. Thus $A$ has the form
+\[A=\begin{pmatrix}
+a_{11}&0\\
+0&A_1
+\end{pmatrix}\]
+and
+\[AA^*=\begin{pmatrix}
+|a_{11}|^2&0\\
+0&A_1A_1^*
+\end{pmatrix}\quad A^*A=\begin{pmatrix}
+|a_{11}|^2&0\\
+0&A_1^*A_1
+\end{pmatrix}\]
+This means $A_1$ is still a upper triangular normal matrix. By induction we conclude that $A$ is diagonal.
+\end{proof}
+The following proposition gives a very useful characterization of normal
+operators.
+\begin{proposition}
+An operator $A:V\to V$ is normal if and only if
+\[\|Ax\|=\|A^*x\|\for x\in V\]
+\end{proposition}
+\begin{proof}
+We have the following observation
+\[(Ax,Ax)=(x,A^*Ax),\quad (A^*x,A^*x)=(x,AA^*x)\]
+Thus if $A$ is normal, then $\|Ax\|=\|A^*x\|$.\par
+Conversely, if $\|Ax\|=\|A^*x\|$, then from the polarlization identity we have
+\begin{align*}
+(x,A^*Ay)=(Ax,Ay)&=\frac{1}{4}\sum_{\alpha=\pm 1,\beta=\pm i}\alpha\|Ax+\beta Ay\|^2=\frac{1}{4}\sum_{\alpha=\pm 1,\beta=\pm i}\alpha\|A(x+\beta y)\|^2\\
+&=\frac{1}{4}\sum_{\alpha=\pm 1,\beta=\pm i}\alpha\|A^*(x+\beta y)\|^2=\frac{1}{4}\sum_{\alpha=\pm 1,\beta=\pm i}\alpha\|A^*x+\beta A^*y\|^2\\
+&=(A^*x,A^*y)=(x,AA^*y)
+\end{align*}
+since this holds for all $x,y\in V$, we conclude $AA^*=A^*A$.
+\end{proof}
+\subsection{Polar and singular value decompositions}
+\subsubsection{Positive definite operators, Square roots}
+\begin{definition}
+A self-adjoint operator $A:V\to V$ is called \textbf{positive definite} if
+\[(Ax,x)>0\quad\forall x\neq 0\]
+and it is called \textbf{positive semidefinite} if
+\[(Ax,x)\geq 0\quad\forall x\in V\]
+\end{definition}
+We will use the notation $A>0$ for positive definite operators, and $A\geq0$ for positive semidefinite.\par
+The following theorem describes positive definite and semidefinite operators.
+\begin{proposition}
+Let $A=A^*$. Then
+\begin{itemize}
+\item[$(a)$] $A>0$ if and only if all eigenvalues of $A$ are positive.
+\item[$(b)$] $A\geq0$ if and only if all eigenvalues of $A$ are non-negative.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+Pick an orthonormal basis such that matrix of $A$ in this basis is diagonal. To finish the proof it remains to notice that a diagonal matrix is positive definite (positive semidefinite) if and only if all its diagonal entries are positive (non-negative).
+\end{proof}
+\begin{corollary}
+Let $A=A^*\geq0$ be a positive semidefinite operator. Then there exists a unique positive semidefinite operator $B$ such that $B^2=A$. Such $B$ is called $($positive$)$ \textbf{square root} of $A$ and is denoted as $\sqrt{A}$.
+\end{corollary}
+\begin{proof}
+Let $\bm{v}_1,\cdots,\bm{v}_n$ be an orthonormal basis of eigenvectors of $A$, and let $\lambda_1,\cdots,\lambda_n$ be the corresponding eigenvalues. Note, that since $A\geq0$, all $\lambda_k\geq0$.\par
+In the basis $\bm{v}_1,\cdots,\bm{v}_n$ the matrix of $A$ is a diagonal matrix $\mathrm{diag}(\lambda_1,\cdots,\lambda_n)$. Define the matrix of $B$ in the same basis as $B=\mathrm{diag}(\sqrt{\lambda_1},\cdots,\sqrt{\lambda_n})$, then $B=B^*\geq 0$ and $B^2=A$.\par
+To prove that such $B$ is unique, let us suppose that there exists an operator $C=C^*\geq 0$ such that $C^2=A$. Let $\bm{u}_1,\cdots,\bm{u}_n$ be an orthonormal basis of eigenvectors of $C$, and let $\mu_1,\cdots,\mu_n$ be the corresponding eigenvalues. The matrix of $C$ in the basis $\bm{u}_1,\cdots,\bm{u}_n$ is $\mathrm{diag}(\mu_1,\cdots,\mu_n)$, and therefore the matrix of $A=C^2$ in the same basis is $\mathrm{diag}(\mu_1^2,\cdots,\mu_n^2)$. This implies that any eigenvalue $\lambda$ of $A$ is of form $\mu_k^2$, and, moreover, if $Ax=\lambda x$, then $Cx=\sqrt{\lambda}x$. Therefore in the basis $\bm{v}_1,\cdots,\bm{v}_n$ above, the matrix of $C$ has the diagonal form $\mathrm{diag}(\sqrt{\lambda_1},\cdots,\sqrt{\lambda_n})$, i.e. $B=C$.
+\end{proof}
+\subsubsection{Modulus of an operator, Singular values}
+Consider an operator $A:V\to W$. Its \textbf{Hermitian square} $A^*A$ is a positive semidefinite operator acting in $V$. Indeed,
+\[(A^*A)^*=A^*A\]
+and
+\[(A^*Ax,x)=(Ax,Ax)=\|Ax\|^2\geq 0\]
+Therefore, there exists a (unique) positive semidefinite square root $R=\sqrt{A^*A}$. This operator $R$ is called the \textbf{modulus} of the operator $A$, and is often denoted as $|A|$.\par
+The modulus of $A$ shows how big the operator $A$ is:
+\begin{proposition}\label{modulus prop}
+For a linear operator $A:V\to W$,
+\[\||A|x\|=\|Ax\|\for x\in V\]
+\end{proposition}
+\begin{proof}
+For any $x\in V$,
+\[\||A|x\|=(|A|x,|A|x)=(|A|^*|A|x,x)=(|A|^2x,x)=(A^*Ax,x)=(Ax,Ax)=\|Ax\|\]
+\end{proof}
+\begin{corollary}\label{modulus coro}
+For a linear operator $A:V\to W$ we have
+\[\ker A=\ker|A|=(\im|A|)^\bot\]
+\end{corollary}
+\begin{proposition}[\textbf{Polar Decomposition}]
+Let $A:V\to V$ be an operator $($square matrix$)$. Then $A$ can be represented as
+\[A=U|A|\]
+where $U$ is a unitary operator. Moreover, the operator $U$ is unique if and only if $A$ is invertible.
+\end{proposition}
+\begin{proof}
+Consider a vector $x\in\im|A|$. Then vector $x$ can be represented as $x=|A|v$ for some vector $v\in V$. We want to define $U_0x:=Av$, so that by Proposition~\ref{modulus prop} $U_0$ is an isometry:
+\[\|U_0x\|=\|Av\|=\||A|v\|=\|x\|\] 
+But first we need to prove that $U_0$ is well defined. Let $v_1$ be another vector such that $x=|A|v_1$. But $x=|A|v=|A|v_1$ means that $v-v_1\in\ker|A|=\ker A$, so $Av=Av_1$, meaning that $U_0x$ is well defined, and by construction is a linear map.\par
+To extend $U_0$ to a unitary operator $U$, let us find some unitary transformation 
+\[U_1:\ker|A|=\ker A\to(\im A)^\bot=\ker A^*.\] 
+It is always possible to do this, since for square matrices $\dim\ker A=\dim\ker A^*$.\par
+It is easy to check that $U=U_0+U_1$ is a unitary operator, and that $A=U|A|$.\par
+Now, for the uniqueness, if $A$ is invertible, then the operator $U_0$ is uniquely defined on the whole sapce $V$, thus $U$ is unique.
+Now if $A$ is singular, first we observe that
+\[A=U|A|\iff Ax=U|A|x\quad\forall x\in V\]
+So when defining $U$ we only need to consider the action of $U$ on the subset $\im|A|$. Let $\bm{\alpha}_1,\cdots,\bm{\alpha}_r$ be an orthonormal basis for $\im|A|$, where $r=\rank|A|=\rank A$. Extend this to an orthonormal basis $\bm{\alpha}_1,\cdots,\bm{\alpha}_n$ of $V$. Let $U'$ be a unitary operator that, with respect to this basis, has the form
+\[\begin{pmatrix}
+I_r&0\\
+0&X
+\end{pmatrix}\]
+where $X$ is an arbitrary unitary matrix that is not the identity. Then for any $U_1$ such that $A=U_1|A|$, the operator $U_2=VU_1$ is also unitary and satisfies $A=U_1|A|$. Since $V\neq I_n$, we have $U_1\neq U_2$.
+\end{proof}
+\subsection{Structure of orthogonal matrices}
+An orthogonal matrix $U$ with $\det U=1$ is often called a rotation. The theorem below explains this name.
+\begin{theorem}\label{orthogonal det=1}
+Let $U$ be an orthogonal operator in $\R^n$ and let $\det U=1$. Then there exists an orthonormal basis $\bm{v}_1,\cdots,\bm{v}_n$ such that the matrix of $U$ in this basis has the block diagonal form
+\[\mathrm{diag}(R_{\varphi_1},\cdots,R_{\varphi_k},I_{n-2k})\]
+where $R_{\varphi_k}$ are $2$-dimensional rotations,
+\[R_{\varphi}=\begin{pmatrix}
+\cos\varphi&-\sin\varphi\\
+\sin\varphi&\cos\varphi
+\end{pmatrix}\]
+\end{theorem}
+\begin{proof}
+We split the complex eigenvalues of $A$ into pairs $\lambda_k,\widebar{\lambda_k}$. By Proposition~\ref{unitary matrix prop}, each $\lambda_k$ has module $1$, so it can be written as $\lambda_k=\cos\alpha_k+i\sin\alpha_k$.\par
+Now fix a pair of complex eigenvalues $\lambda$ and $\widebar{\lambda}$, and let $\bm{u}\in\C^n$ be the eigenvector of $\lambda$. Then $U\widebar{\bm{u}}=\widebar{\lambda}\widebar{\bm{u}}$. If we set 
+\[\bm{x}=\mathrm{Re}\,\bm{u}=\frac{\bm{u}+\widebar{\bm{u}}}{2},\quad \bm{y}=\mathrm{Im}\,\frac{\bm{u}-\widebar{\bm{u}}}{2i}.\]
+Then
+\[U\bm{x}=\frac{1}{2}(U\bm{u}+U\widebar{\bm{u}})=\frac{1}{2}(\lambda\bm{u}+\widebar{\lambda}\widebar{\bm{u}})=\mathrm{Re}\,(\lambda\bm{u}).\]
+\[U\bm{y}=\frac{1}{2i}(U\bm{u}-U\widebar{\bm{u}})=\frac{1}{2i}(\lambda\bm{u}-\widebar{\lambda}\widebar{\bm{u}})=\mathrm{Im}\,(\lambda\bm{u}).\]
+Since $\lambda=\cos\alpha+i\sin\alpha$, we have
+\[\lambda\bm{u}=(\cos\alpha+i\sin\alpha)(\bm{x}+i\bm{y})=\big((\cos\alpha)\bm{x}-(\sin\alpha)\bm{y}\big)+i\big((\sin\alpha)\bm{x}+(\cos\alpha)\bm{y}\big)\]
+Thus
+\[\mathrm{Re}\,(\lambda\bm{u})=(\cos\alpha)\bm{x}-(\sin\alpha)\bm{y},\quad\mathrm{Im}\,(\lambda\bm{u})=(\sin\alpha)\bm{x}+(\cos\alpha)\bm{y}.\]
+In other word, $U$ leaves the $2$-dimensional subspace $E_\lambda$ spanned by the vectors $\bm{x},\bm{y}$ invariant and the matrix of the restriction of $U$ onto this subspace is the rotation matrix
+\[R_{-\alpha}=\begin{pmatrix}
+\cos\alpha&\sin\alpha\\
+-\sin\alpha&\cos\alpha
+\end{pmatrix}\]
+Note, that the vectors $\bm{u}$ and $\widebar{\bm{u}}$ (eigenvectors of a unitary matrix, corresponding to different eigenvalues) are orthogonal, so by the Pythagorean Theorem
+\[\|\bm{x}\|=\|\bm{y}\|=\frac{\sqrt{2}}{2}\|\bm{u}\|\]
+It is easy to check that $\bm{x}\bot\bm{y}$, so $\bm{x},\bm{y}$ is an orthogonal basis in $E_\lambda$. By dividing the norm, we may assume that $\bm{x},\bm{y}$ is an orthonormal basis of $E_\lambda$.\par
+Let us complete the orthonormal system $\bm{v}_1=\bm{x},\bm{v}_2=\bm{y}$ to an orthonormal basis in $\R^n$. Since $E_\lambda$ is an invariant subspace of $U$, the matrix of $U$ in this basis has the block triangular form
+\[\begin{pmatrix}
+R_{-\alpha}&*\\
+0&U_1
+\end{pmatrix}\]
+Also, since $R_{-\alpha}$ is invertible, we must have $UE_\lambda=E_\lambda$. Therefore
+\[U^*E_\lambda=U^{-1}E_\lambda=E_\lambda\]
+This means $E_\lambda$ is also invariant under $U^*$, which means the matrix of $U$ has diagonal form
+\[\begin{pmatrix}
+R_{-\alpha}&0\\
+0&U_1
+\end{pmatrix}\]
+Since $U$ is unitary, the submatrix $U_1$ is also unitary, then it follows by induction that in some orthonormal basis $U$ has the form
+\[\mathrm{diag}(R_{\varphi_1},\cdots,R_{\varphi_k},-I_r,I_\ell)\]
+Since $\det U=1$, the multiplicity of the eigenvalue $-1$ must be even. Thus $r$ is even. Note, that the $2\times2$ matrix $-I_2$ can be interpreted as the rotation through the angle $\pi$. Therefore, the above matrix has the form given in the conclusion of the theorem.
+\end{proof}
+\begin{theorem}\label{orthogonal det=-1}
+Let $U$ be an orthogonal operator in $\R^n$, and let $\det U=-1$.Then there exists an orthonormal basis $\bm{v}_1,\cdots,\bm{v}_n$ such that the matrix of $U$ in this basis has block diagonal form
+\[\mathrm{diag}(R_{\varphi_1},\cdots,R_{\varphi_k},I_r,-1)\]
+where $r=n-2k-1$ and $R_{\varphi_k}$ are $2$-dimensional rotations
+\[R_{\varphi}=\begin{pmatrix}
+\cos\varphi&-\sin\varphi\\
+\sin\varphi&\cos\varphi
+\end{pmatrix}\]
+\end{theorem}
+Let us now fix an orthonormal basis, say the standard basis in $\R^n$. We use \textbf{elementary rotation} to mean a rotation in the $x_j-x_k$ plane, i.e. a linear transformation which changes only the coordinates $x_j$ and $x_k$, and it acts on these two coordinates as a plane rotation.
+\begin{lemma}
+Let $\bm{x}=(x_1,x_2)^T\in\R^2$. There exists a rotation $R_\alpha$ of $\R^2$ which moves the vector $\bm{x}$ to the vector $(r,0)^T$, where $r=\sqrt{x_1^2+x_2^2}$.
+\end{lemma}
+\begin{lemma}\label{rotation kill coordinate}
+Let $\bm{x}=(x_1,\cdots,x_n)^T\in\R^n$. There exist $n-1$ elementary rotations $R_1,\cdots,R_{n-1}$ such that $R_{n-1}\cdots R_1\bm{x}=(r,0,\cdots,0)^T$, where $r=\sqrt{x_1^2+\cdots+x_n^2}$.
+\end{lemma}
+\begin{proof}
+The idea of the proof of the lemma is very simple. We use an elementary rotation $R_k$ to kill the $k$-th coordinate of $\bm{x}$.
+\end{proof}
+\begin{lemma}\label{matrix real entries triangular}
+Let $A$ be an $n\times n$ matrix with real entries. There exist elementary rotations $R_1,\cdots,R_{N}$ with $N\leq n(n-1)/2$ such that the matrix 
+\[T=R_N\cdots R_1A\]
+is upper triangular, and, moreover, all its diagonal entries except the last one $T_{nn}$ are non-negative.
+\end{lemma}
+\begin{proof}
+We will use induction in $n$. The case $n=1$ is trivial, since we can say that any $1\times 1$ matrix is of desired form.\par
+Let us consider the case $n=2$. Let $\bm{\alpha}_1$ be the first column of $A$. By Lemma~\ref{rotation kill coordinate} there exists a rotation $R$ which kills the second coordinate of $\bm{\alpha}_1$, making the first coordinate non-negative. Then the matrix $B=RA$ is of desired form.\par
+Let us now assume that lemma holds for order $n-1$ matrices, and we want to prove it for $n$ matrices. For the $n\times n$ matrix $A$ let $\bm{\alpha}_1$ be its first column. By Lemma~\ref{rotation kill coordinate} we can find $n-1$ elementary rotations $R_1,\cdots,R_{n-1}$ which transform $\bm{\alpha}_1$ into $(r,0,\cdots,0)^T$. So, the matrix $R_1\cdots R_{n-1}A$ has the following block triangular form
+\[R_1\cdots R_{n-1}A=\begin{pmatrix}
+r&*\\
+0&A_1
+\end{pmatrix}\]
+We assumed that lemma holds for $n-1$, so $A_1$ can be transformed by at most $(n-1)(n-2)/2$ rotations into the desired upper triangular form. Note, that these rotations act in $\R^{n-1}$, but can be extended to $\R^n$ so that these rotations do not change the vector $(r,0,\cdots,0)^T$. Then the matrix $A$ can be transformed into the desired upper triangular form by at most 
+\[n-1+\frac{(n-1)(n-2)}{2}=\frac{n(n-1)}{2}\]
+elementary rotations.
+\end{proof}
+\begin{theorem}
+Any rotation $U$ $($i.e. an orthogonal transformation $U$ with $\det U=1$$)$ can be represented as a product at most $n(n-1)/2$ elementary rotations.
+\end{theorem}
+\begin{proof}
+By Lemma~\ref{matrix real entries triangular} there exist elementary rotations $R_1,\cdots,R_N$ such that the matrix $T=R_1\cdots R_NU$ is upper triangular, and all diagonal entries, except maybe the last one, are non-negative. Note, that the matrix $T$ is orthogonal. Any orthogonal matrix is normal, and we know that an upper triangular matrix can be normal only if it is diagonal. Therefore, $T$ is a diagonal matrix.\par
+We know that an eigenvalue of an orthogonal matrix can either be $1$ or $-1$, so we can have only $1$ or $-1$ on the diagonal of $T$. But, we know that all diagonal entries of $T$, except may be the last one, are non-negative, so all the diagonal entries of $T$, except may be the last one, are $1$. The last diagonal entry can be $-1$.\par
+Since elementary rotations have determinant $1$, we can conclude that $\det T=\det U=1$, so the last diagonal entry also must be $1$. So $T=I$ and therefore $U$ can be represented as a product of elementary rotations
+\[U=R_1^{-1}\cdots R_{N}^{-1}\]
+Here we use the fact that the inverse of an elementary rotation is an elementary rotation as well.
+\end{proof}
+\section{Bilinear and quadratic forms}
+\begin{definition}
+A bilinear form on an inner product space $V$ is a function $L=L(x,y)$ of two arguments $x,y\in V$ which is linear in each argument.
+\end{definition}
+\begin{definition}
+A quadratic form $Q$ on a complex inner product space $V$ is a function $Q[x]=(Ax,x)$ for $x\in V$ where $A$ is a self-adjoint transformation.
+\end{definition}
+\begin{lemma}
+Let $A$ be an operator in an inner product space $V$.
+\begin{itemize}
+\item[$(a)$] If $V$ is a complex space, then for any $x,y\n V$,
+\[(Ax,y)=\frac{1}{4}\sum_{\alpha=\pm 1,\pm i}\alpha(A(x+\alpha y),x+\alpha y)\]
+\item[$(b)$] If $V$ is a real space, then for any $x,y\n V$,
+\[(Ax,y)=\frac{1}{4}\Big[(A(x+y),x+y)-(A(x-y),x-y)\Big]\]
+\end{itemize}
+\end{lemma}
+\begin{proof}
+We verify that
+\begin{align*}
+(A(x+y),x+y)-(A(x-y),x-y)=2(Ax,y)+2(Ay,x)
+\end{align*}
+\begin{align*}
+i[(A(x+iy),x+iy)-(A(x-iy),x-iy)]=i(2(Ax,iy)+2(iAy,x))=2(Ax,y)-2(Ay,x)
+\end{align*}
+Hence the claim follows.
+\end{proof}
+\begin{lemma}
+Let $A:V\to V$ be a operator, then $(Ax,x)$ is real for all $x\in V$ if and only if $A=A^*$.
+\end{lemma}
+\begin{proof}
+If $A=A^*$, then 
+\[(Ax,x)=(x,A^*x)=\widebar{(A^*x,x)}=\widebar{(Ax,x)}\]
+Thus $(Ax,x)$ is real. Conversely, if $(Ax,x)$ is real, then we use the polarization identity
+\begin{align*}
+(A^*x,y)&=\frac{1}{4}\sum_{\alpha=\pm 1,\pm i}\alpha(A^*(x+\alpha y),x+\alpha y)=\frac{1}{4}\sum_{\alpha=\pm 1,\pm i}\alpha(x+\alpha y,A(x+\alpha y))\\
+&=\frac{1}{4}\sum_{\alpha=\pm 1,\pm i}\alpha\widebar{(A(x+\alpha y),x+\alpha y)}=\frac{1}{4}\sum_{\alpha=\pm 1,\pm i}\alpha(A(x+\alpha y),x+\alpha y)=(Ax,y)
+\end{align*}
+since thie holds for all $x,y\in V$, we conclude $A=A^*$.
+\end{proof}
+\subsection{Silvester's Law of Inertia}
+\begin{definition}
+Given an Hermitian matrix $A=A^*$, we call a subspace $E\sub\C^n$ positive $($resp. negative, resp. neutral$)$ if
+\[(A\bm{x},\bm{x})>0\quad(\text{resp.}\ (A\bm{x},\bm{x})<0,\quad\text{resp.}\ A(\bm{x},\bm{x})=0)\]
+for all $\bm{x}\in E$, $\bm{x}\neq0$.
+\end{definition}
+\begin{lemma}
+Let $D$ be a diagonal matrix $D=\mathrm{diag}(\lambda_1,\cdots,\lambda_n)$ where $\lambda_k$ are real numbers. Then the number of positive $($resp. negative$)$ diagonal entries of $D$ coincides with the maximal dimension of a $D$-positive $($resp. $D$-negative$)$ subspace.
+\end{lemma}
+\begin{proof}
+By rearranging the standard basis in $\C^n$ (changing the numeration) we can always assume without loss of generality that the positive diagonal entries of $D$ are the first $r_+$ diagonal entries.\par
+Consider the subspace
+\[E_+=L(\bm{e}_1,\cdots,\bm{e}_{r_+})\]
+Let us now show that for any other $D$-positive subspace $E$ we have $\dim E\leq r_+$. Consider the orthogonal projection $P:V\to E_+$:
+\[P(x_1,\cdots,x_n)=(x_1,\cdots,x_{r_+},0,\cdots,0)\for \bm{x}=(x_1,\cdots,x_n)^T\in\C^n\]
+For a $D$-positive subspace $E$ define an operator $T$ to be the restriction of $P$ on $E$, we claim that $T$ is injective: in fact, let for $(x^1,\cdots,x^n)\in E$ we have $T\bm{x}=P\bm{x}=0$, then
+\[x_1=\cdots=x_{r_+}=0\]
+And thus
+\[(D\bm{x},\bm{x})=\sum_{k=r_++1}^{n}\lambda_k|x_k|^2\leq 0\]
+But $\bm{x}$ belongs to a $D$-positive subspace $E$, so the inequality $(D\bm{x},\bm{x})\leq 0$ holds only for $\bm{x}=0$.\par
+Now we apply the rank theorem to get
+\[\dim E=\rank(T)=\dim\im T\leq\dim E_+\]
+To prove the statement about negative entries, we just apply the above reasoning to the matrix $-D$.
+\end{proof}
+\begin{theorem}
+Let $A$ be an $n\times n$ Hermitian matrix, and let $D=S^*AS$ be its diagonalization by an invertible matrix $S$. Then the number of positive $($resp. negative$)$ diagonal entries of $D$ coincides with the maximal dimension of an $A$-positive $($resp. $A$-negative$)$ subspace.
+\end{theorem}
+\begin{proof}
+Let $D=S^*AS$ be a diagonalization of $A$. Since
+\[(D\bm{x},\bm{x})=(S^*AS\bm{x},\bm{x})=(AS\bm{x},S\bm{x})\]
+it follows that for any $D$-positive subspace $E$, the subspace $SE$ is an $A$-
+positive subspace. The same identity implies that for any $A$-positive subspace
+$F$ the subspace $S^{-1}F$ is $D$-positive.\par
+Since $S$ and $S^{-1}$ are invertible transformations, $\dim E=\dim SE=\dim S^{-1}E$. Therefore, for any $D$ positive subspace $E$ we can find an $A$-positive subspace (namely $SE$) of the same dimension, and vice versa: for any $A$-positive subspace $F$ we can find a $D$-positive subspace (namely
+$S^{-1}F$) of the same dimension. Therefore the maximal possible dimensions of
+a $A$-positive and a $D$-positive subspace coincide, and the theorem is proved.
+\end{proof}
+\subsection{Minimax characterization of eigenvalues and the Silvester's criterion of positivity}
+A quadratic form $Q$ is called
+\begin{itemize}
+\item Positive definite if $Q[x]>0$ for all $x\neq0$.
+\item Positive semidefinite if $Q[x]>0$ for all $x$.
+\item Negative definite if $Q[x]<0$ for all $x\neq 0$.
+\item Negative semidefinite if $Q[x]<0$ for all $x$.
+\item Indefinite if it take both positive and negative values, i.e. if there
+exist vectors $x_1$ and $x_2$ such that $Q[x_1]>0$ and $Q[x_2]<0$.
+\end{itemize}
+\begin{proposition}
+Let $A=A^*$. Then
+\begin{itemize}
+\item $A$ is positive definite if and only if all eigenvalues of $A$ are positive.
+\item $A$ is positive semidefinite if and only if all eigenvalues of $A$ are non-negative.
+\item $A$ is negative definite if and only if all eigenvalues of $A$ are negative.
+\item $A$ is negative semidefinite if and only if all eigenvalues of $A$ are non-positive.
+\item $A$ is indefinite if and only if it has both positive and negative eigenvalues.
+\end{itemize}
+\end{proposition}
+\subsubsection{Silvester's criterion of positivity}
+For a matrix $A=(a_{ij})$, let's consider its all upper left submatrices
+\[A_1=(a_{11}),A_2=\begin{pmatrix}
+a_{11}&a_{12}\\
+a_{21}&a_{22}
+\end{pmatrix},\cdots,A_n=A\]
+\begin{theorem}[\textbf{Silvester's Criterion of Positivity}]\label{Silvester's Crit of Positivity}
+A matrix $A=A^*$ is positive definite if and only if
+\[\det A_k>0\quad\text{for all $k$}\]
+\end{theorem}
+\begin{theorem}[\textbf{Minimax characterization of eigenvalues}]\label{minimax char eigenvalue}
+Let $A=A^*$ be an $n\times n$ matrix, and let $\lambda_1\geq\cdots\geq\lambda_n$ be its eigenvalues taken in the decreasing order. Then
+\[\lambda_k=\max_{\dim E=k}\min_{x\in E\atop\|x\|=1}(Ax,x)=\min_{\codim F=k-1}\max_{x\in F\atop\|x\|=1}(Ax,x)\]
+Note that the maximum and minimum exist because the unit ball $\{x:\|x\|=1\}$ is compact and the function $(Ax,x)$ is continuous.
+\end{theorem}
+\begin{proof}
+First of all, by picking an appropriate orthonormal basis, we can assume without loss of generality that the matrix $A$ is diagonal, $A=\mathrm{diag}(\lambda_1,\cdots,\lambda_k)$.\par
+Pick subspaces $E$ and $F$, $\dim E=k$, $\codim F=k-1$, i.e. $\dim F=n-k+1$. Since $\dim E+\dim F>n$, there exists a non-zero vector $x_0\in E\cap F$. By normalizing it we can assume that $\|x_0\|=1$. We can always arrange the eigenvalues in decreasing order, so let us assume that $\lambda_1\geq\lambda_2\geq\cdots\geq\lambda_n$.\par
+Since $x$ belongs to the both subspaces $E$ and $F$
+\[\min_{x\in E\atop\|x\|=1}(Ax,x)\leq(Ax_0,x_0)\leq\max_{x\in F\atop\|x\|=1}(Ax,x)\]
+We did not assume anything except dimensions about the subspaces $E$ and $F$, so the above inequality
+\begin{align}\label{minimax char-1}
+\min_{x\in E\atop\|x\|=1}(Ax,x)\leq\max_{x\in F\atop\|x\|=1}(Ax,x).
+\end{align}
+holds for all pairs of $E$ and $F$ of appropriate dimensions.\par
+Define
+\[E_0:=L(\bm{e}_1,\cdots,\bm{e}_k),\quad F_0:=L(\bm{e}_k,\cdots,\bm{e}_n).\]
+Since for a self-adjoint matrix $B$, the maximum and minimum of $(Bx,x)$ over the unit sphere $\{x:\|x\|=1\}$ are the maximal and the minimal eigenvalue
+respectively (easy to check on diagonal matrices), we get that
+\[\min_{x\in E_0\atop\|x\|=1}(Ax,x)=\max_{x\in F_0\atop\|x\|=1}(Ax,x)=\lambda_k.\]
+It follows from $(\ref{minimax char-1})$ that for any subspace $E$, $\dim E=k$
+\[\min_{x\in E\atop\|x\|=1}(Ax,x)\leq\max_{x\in F_0\atop\|x\|=1}(Ax,x)=\lambda_k.\]
+and similarly, for any subspace $F$ of codimension $k-1$,
+\[\max_{x\in F\atop\|x\|=1}(Ax,x)\geq\min_{x\in E\atop\|x\|=1}(Ax,x)=\lambda_k.\]
+But on subspaces $E_0$ and $F_0$ both maximum and minimum are $\lambda_k$, so
+$\min\max=\max\min=\lambda_k$.
+\end{proof}
+\begin{corollary}[\textbf{Intertwining of eigenvalues}]\label{intertwining eigenvalue}
+Let $A=(a_{ij})$ be a self-adjoint matrix, and let $\widetilde{A}=(a_{ij})_{j,k=1}^{n-1}$ be its submatrix of size $(n-1)\times(n-1)$. Let $\lambda_1,\cdots,\lambda_n$ and $\mu_1,\cdots,\mu_n$ be the eigenvalues of $A$ and $\widetilde{A}$ respectively, taken in decreasing order. Then
+\[\lambda_1\geq\mu_1\geq\lambda_2\geq\mu_2\geq\cdots\geq\lambda_{n-1}\geq\mu_{n-1}\geq\lambda_n.\]
+i.e.
+\[\lambda_k\geq\mu_k\geq\lambda_{k+1},\quad k=1,\cdots,n-1.\]
+\end{corollary}
+\begin{proof}
+Let $\widetilde{V}=L(\bm{e}_1,\cdots,\bm{e}_{n-1})$. Since $(\widetilde{A}x,x) =(Ax,x)$ for all $x\in\widetilde{V}$, Theorem~\ref{minimax char eigenvalue} implies that
+\[\mu_k=\max_{E\sub\widetilde{V}\atop\dim E=k}\min_{x\in E\atop\|x\|=1}(Ax,x).\]
+Therefore $\mu_k\leq\lambda_k$.\par
+On the other hand, any subspace $E\sub\widetilde{V}$ of codimension $k-1$ (here
+we mean codimension in $\widetilde{V}$) has dimension $n-1-(k-1)=n-k$, so its
+codimension in $V$ is $k$. Therefore
+\[\mu_k=\min_{E\sub\widetilde{V}\atop\codim E=k}\max_{x\in E\atop\|x\|=1}(Ax,x)\geq\lambda_{k+1}.\]
+\end{proof}
+\begin{proof}[Proof of Theorem~\ref{Silvester's Crit of Positivity}]
+If $A>0$, then $A_k>0$ for $k=1,\cdots,n$ as well. Since all eigenvalues of a positive definite matrix are positive, $\det A_k>0$ for all $k$.\par
+Let us now prove the other implication. Let $\det A_k>0$ for all $k$. We will show, using induction in $k$, that all $A_k$ (and so $A=A_n$) are positive definite.\par
+Clearly $A_1$ is positive definite. Assuming that $A_{k-1}>0$ (and $\det A_k>0$) let us show that $A_k$ is positive definite. Let $\lambda_1,\cdots,\lambda_k$ and $\mu_1,\cdots,\mu_{k-1}$ be eigenvalues of $A_k$ and $A_{k-1}$ respectively. By Corollary~\ref{intertwining eigenvalue},
+\[\lambda_j\geq\mu_j>0\for j=1,\cdots,k-1\]
+Since $\det A_k=\lambda_1\cdots\lambda_k>0$, the last eigenvalue $\lambda_k$ must also be positive. Therefore, since all its eigenvalues are positive, the matrix $A_k$ is positive definite.
+\end{proof}
+\section{Dual space}
+\subsection{The Null Space and Range of the Dual map}
+Suppose $V$ is finite-dimensional vector space and $V'$ is its dual space.
+\begin{definition}
+For $U\sub V$, the \textbf{annihilator} of $U$, denoted by $\Ann(U)$, is defined by
+\[\Ann(U)=\{\omega\in V':\omega(u)=0\text{ for all }u\in U\}\]
+Dual to this definition, for a subspace $W\sub V'$ we define the \textbf{zero set} of $W$ to be
+\[Z(W)=\{v\in V:\omega(v)=0\text{ for all }\omega\in W\}\]
+By the canonical identification $V\cong V''$, this is just the annihilator in $V'$. Thus for any result about $\Ann(U)$, we have its counterpart for $Z(W)$.
+\end{definition}
+\begin{proposition}
+If $U$ is a subspace of $V$, then $\Ann(U)$ is a subspace of $V'$.
+\end{proposition}
+\begin{proof}
+Clearly $0\in\Ann(U)$. Let $\varphi,\psi\in\Ann(U)$, then for any $a,b\in\R$ we have 
+\[(a\varphi+b\psi)(u)=a\varphi(u)+b\psi(u)=0\for u\in U\]
+Thus $\Ann(U)$ is a subspace.
+\end{proof}
+\begin{proposition}\label{dual space ann dim}
+Suppose $V$ is finite-dimensional and $U$ is a subspace of $V$. Then
+\[\dim U+\dim\Ann(U)=\dim V.\]
+\end{proposition}
+\begin{proof}
+Let $i:U\hookrightarrow V$ be the inclusion map. Then $i'$ is a linear map from $V'$ to $U'$. The rank theorem applied to $i'$ shows that
+\[\dim\im i'+\dim\ker i'=\dim V'\]
+However, $\ker i'=\Ann(U)$ and $\dim V'=\dim V$, so we can rewrite the equation above as
+\[\dim\im i'+\dim\Ann(U)=\dim V\]
+If $\varphi\in U'$, then $\varphi$ can be extended to a linear functional $\psi$ on $V$. The definition of $i'$ shows that $i'(\psi)=\varphi$. Thus $\varphi\in\im i'$, which implies that $\im i'=U'$ (the reverse inclusion is obvious). Hence $\dim\im i'=\dim U'=\dim U$, and the displayed equation above becomes the desired result.
+\end{proof}
+\begin{proposition}
+Let $V$ be a finite-dimensional vector space with dimension $n$ and let $V^*$ be its dual space. Prove that the map
+\[W\mapsto \Ann(W):=\{\omega\in V':\omega(W)=0\}\]
+sets up a one-to-one, inclusion-reversing correspondence between the subspaces of $V$ and the subspaces of $V'$.
+\end{proposition}
+\begin{proof}
+In fact, as we have mensioned, we have a counterpart of Proposition~\ref{dual space ann dim}: let $W\sub V'$ be a subspace of $V'$, then
+\[\dim W+\dim Z(W)=\dim V'\]
+Now we claim that the map $W\mapsto Z(W)$ is the inverse of $U\mapsto\Ann(U)$. This can be shown by
+\[U\sub Z(\Ann(U))\And \dim Z(\Ann(U))=\dim V'-\dim\Ann(U)=\dim V-\dim\Ann(U)=\dim U\]
+where the first comes from the definition of $\Ann$. Thus the claim follows immediately.
+\end{proof}
+\begin{corollary}
+For a linear functional $\omega\in V'$, the kernel $\ker\omega$ is a hyperspace of $V$.
+\end{corollary}
+\begin{proof}
+In fact,
+\[\ker\omega=Z(\mathrm{span}(\omega))\]
+And by Proposition~\ref{dual space ann dim} we have
+\[\dim\ker\omega=\dim V'-\dim\mathrm{span}(\omega)=\dim V-1\]
+\end{proof}

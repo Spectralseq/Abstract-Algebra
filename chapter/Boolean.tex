@@ -1,0 +1,729 @@
+\chapter{Boolean algebras}
+\section{Boolean algebras}
+\subsection{The set $2^X$ as a Boolean algebra.}
+\begin{definition}
+A \textbf{Boolean algebra} (or a \textbf{Boolean ring}) is a ring $A$ in which each element is idempotent.
+\end{definition}
+The most important and elementry example of a Boolean algebra is the power set of a set nonempty $X$.
+\begin{example}\label{Bool ring 2^X}
+Let $X$ be a nonempty set, consider the set $2^X$ with the operations of symmetric difference and intersection. 
+To verify the distribution and association, we observe that
+\[(A\cap B)\cap C)=A\cap(B\cap C).\]
+and
+\begin{align*}
+A\Delta(B\Delta C)&=(A\cap(B\Delta C)^c)\cup(A^c\cap(B\Delta C))\\
+&=[A\cap((B\cup C)\cap(B^c\cup C^c))^c]\cup[A^c\cap((B\cap C^c)\cap(B^c\cap C))]\\
+&=[A\cap((B^c\cap C^c)\cup(B\cap C))]\cup[A^c\cap((B\cap C^c)\cap(B^c\cap C))]\\
+&=(A\cap B^c\cap C^c)\cup(A\cap B\cap C)\cup(A^c\cap B\cap C^c)\cup(A^c\cap B^c\cap C).
+\end{align*}
+Note that last equation is invariant under $\mathfrak{S}_3$, therefore we get
+\[A\Delta(B\Delta C)=(A\Delta B)\Delta C.\]
+Also,
+\begin{align*}
+(A\cap B)\Delta(A\cap C)&=(A\cap B\cap(A\cap C)^c)\cup(A\cap C\cap(A\cap B)^c)\\
+&=(A\cap B\cap(A^c\cup C^c))\cup(A\cap C\cap(A^c\cup B^c))\\
+&=(A\cap B\cap C^c)\cup(A\cap C\cap B^c)\\
+&=A\cap(B\Delta C).
+\end{align*} 
+Or we can use the characteristic function. We have
+\begin{align*}
+\chi_{A\Delta B}=\chi_A+\chi_{B},\quad \chi_{A\cap B}=\chi_A\chi_B.
+\end{align*}
+
+This means that $(2^X,\cap,\Delta)$ is a ring with $\cap$ being the multiplication and $\Delta$ the addition. In particular, the additive identity is $\emp$, while the multiplicative identity is $X$. 
+\end{example}
+\begin{proposition}
+The ring $2^X$ is commutative and the additive inverse of a subset $A$ is itself. That is, $2^X$ has character $2$. 
+\end{proposition}
+\begin{proposition}
+In the ring $2^X$, we have a order, namely the inclusion, such that for any subset $A,B$ we have
+\[A\leq B\iff A\sub B\iff A\cap B=A.\]
+Also, the upper and lower bounds of $A,B$ are given by
+\[A\cup B=(A\Delta B)\Delta(A\cap B),\quad A\cap B.\]
+Moreover, for any element $A$ we have a complement $A^c$ defined By $A^c:=X\Delta A$. It satisfies $A\cap A^c=\emp$.
+\end{proposition}
+\begin{remark}
+Note that
+\[\chi_{A\cup B}=\chi_A+\chi_B+\chi_A\chi_B,\quad \chi_{A^c}=1+\chi_A.\]
+These will be useful when we consider general Boolean rings.
+\end{remark}
+\begin{remark}
+The order in $2^X$ is compatible with multiplication, but not with addition.
+\end{remark}
+\subsection{Properties of a Boolean ring.}
+\begin{proposition}
+Let $A$ be a Boolean ring. Then 
+\begin{itemize}
+\item $2x=0$ for every $x\in A$.
+\item $A$ is commutative.
+\item every finitely generated ideal in $A$ is principal.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+Note that 
+\[x+y=(x+y)^2=x^2+y^2+xy+yx=x+y+xy+yx.\]
+Therefore $xy+yx=0$. Take $y=1$ we know that $\char A=2$, and therefore $xy=yx$.\par
+Let $I=(x,y)$ be an ideal in $A$, then clearly $(x+y+xy)\sub I$. We claim that $I=(x+y+xy)$. In fact, $x(x+y+xy)=x\in(x+y+xy)$ and $y(x+y+xy)=y\in(x+y+xy)$.
+\end{proof}
+\begin{proposition}\label{Bool ring cap cup}
+Let $A$ be a Boolean ring. Then we can defined an order on $A$ by
+\[x\leq y\iff xy=x\]
+This order satisfies the following properties.
+\begin{itemize}
+\item[$(1)$] The least upper bound and greatest lower bound for any two elements in $A$ exist.
+\item[$(2)$] Every non-empty finite subset $\{x_1,\dots,x_n\}$ of $A$ has a greatest lower bound $x_1\wedge\cdots\wedge x_n$ 
+and a least upper bound $x_1\vee\cdots\vee x_n$.
+\item[$(3)$] The operations $\wedge$ and $\vee$ thus defined on $A$ are associative and commutative. Moreover, $0$ is an identity element for the operation $\vee$ and 
+an absorbing element for the operation $\wedge$; while $1$ is an identity elementfor the operation $\wedge$ and an absorbing
+element for the operation $\vee$.
+\item[$(4)$] Each of the operations $\wedge$ and $\vee$ is distributive over the other.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+First we check that the definition above indeed gives an order. Let $x,y,z\in A$ such that $x\leq y$ and $y\leq z$, then $xy=x$ and $yz=y$, so that
+\[xz=xyz=xy=x.\]
+Therefore $x\leq z$. Also, if $x\leq y$ and $y\leq x$, then $x=yx=y$. Thus $\leq$ is indeed an order.\par
+One can check that
+\[x\wedge y=xy,\quad x\vee y=x+y+xy\]
+gives an lower bound and an upper buond of $x$ and $y$. Moreover, if $z$ is a common lower bound for $x$ and $y$, we have $zx=z$ and $zy=y$, hence 
+\[z(xy)=(zx)y=zy=z,\] 
+which means that $z\leq xy$; thus $xy$ is the greatest of the common lower bounds for $x$ and $y$. Similarly, if $x\leq z$ and $y\leq z$, then $xz=x$ and $yz=y$, and
+\[z(x+y+xy)=zx+zy+zxy=x+y+xy.\]
+Therefore $x+y+xy$ is the least upper bound of $x$ and $y$. Similarly we can show that $xy$ is the greatest lower bound.\par
+Finally, we have
+\begin{align*}
+x\wedge(y\vee z)&=x(y+z+yz)=xy+xz+xyz=xy+xz+xyxz\\
+&=(xy)\vee(xz)=(x\wedge y)\vee(x\wedge z).
+\end{align*}
+and
+\begin{align*}
+(x\vee y)\wedge(x\vee z)&=(x+y+xy)(x+z+xz)\\
+&=x+xz+xz+xy+yz+xyz+xy+xyz+xyz\\
+&=x+yz+xyz=x\vee(yz)\\
+&=x\vee(y\wedge z).
+\end{align*}
+Thus the claim follows.
+\end{proof}
+\begin{proposition}\label{Bool ring complement}
+For every element $x$ in $A$, there is an element $x^c$ in $A$ called the complement of $x$, such that $x^c\vee x=1$ and $x\wedge x^c=0$. The 
+map $x\mapsto 1+x$ from $A$ into $A$ is a involution that reverses the order.
+\end{proposition}
+\begin{proof}
+Define $x^c=1+x$. Then we can see that $x\vee x^c=1$ and $x\wedge x^c=0$.\par
+This map is an involution since, for every $x$, $1+(1+x)=x$. On the other hand, 
+for any elements $x$ and $y$, we have
+\[(1+x)\leq(1+y)\iff (1+x)(1+y)=1+x+y+xy=(1+x)\iff y=xy\iff y\leq x\]
+as claimed.
+\end{proof}
+\begin{proposition}
+We have the de Morgan's laws:
+\[(x\wedge y)^c=x^c\vee y^c.\]
+\[(x\vee y)^c=x^c\wedge y^c.\]
+\end{proposition}
+\begin{proof}
+We only prove the first equality. We have
+\[(x\wedge y)\wedge(x^c\vee y^c)=(x\wedge y\wedge x^c)\vee(x\wedge y\wedge y^c)=0\vee 0=0,\]
+and
+\[(x\wedge y)\vee(x^c\vee y^c)=(x\vee x^c\vee y^c)\wedge(y\vee x^c\vee y^c)=1\vee 1=1.\]
+Therefore $(x\wedge y)^c=x^c\vee y^c$.
+\end{proof}
+\begin{proposition}\label{Bool ring mult as cap cup}
+The multiplication in $A$ are given by
+\[x+y=(x^c\wedge y)\vee(x\wedge y^c)=(x\vee y)\wedge(x^c\vee y),\]
+\end{proposition}
+\begin{proof}
+We verify that
+\begin{align*}
+(x^c\wedge y)\vee(x\wedge y^c)&=((1+x)y)\vee(x(1+y))\\
+&=y+xy+x+xy+xy(1+x)(1+y)\\
+&=x+y+xy(1+x+y+xy)=x+y.
+\end{align*}
+Also,
+\begin{align*}
+(x\vee y)\wedge(x^c\vee y)&=(x+y+xy)(1+x+1+y+(1+x)(1+y))\\
+&=(x+y+xy)(1+xy)\\
+&=x+y+xy+xy+xy+xy=xy. 
+\end{align*}
+Therefore the claim holds.
+\end{proof}
+\begin{lemma}\label{Bool ring x leq 1+y}
+For any elements $x$ and $y$ of $A$, we have $x\leq 1+y$ if and only if $xy=0$.
+\end{lemma}
+\begin{proof}
+Note that
+\[x\leq(1+y)\iff x(1+y)=x\iff xy=0\]
+as claimed.
+\end{proof}
+\subsection{Boolean algebras as ordered sets}
+\begin{definition}
+An ordered set $(A,\leq)$ is called a \textbf{lattice} if 
+\begin{itemize}
+\item There is a least element (denoted by $0$)  and a greatest element (denoted by $1$) in $A$
+\item Any two elements $x$ and $y$ have a least upper bound (denoted by $x\vee y$) and a greatest lower bound (denoted by $x\wedge y$).
+\end{itemize}
+It is called a \textbf{distributive lattice} if $\wedge$ and $\vee$ is distrihutive over the other, and a \textbf{complemented lattice} if for every element $x$ in $A$, 
+there is at least one element $x^c$ in $A$ such that $x\vee x^c=1$ and $x\wedge x^c=0$.
+\end{definition}
+\begin{lemma}
+Let $A$ be a complemented lattice, then the complement of an element $x$ is the unique.
+\end{lemma}
+\begin{proof}
+Suppose that $x_1$ and $x_2$ are each complements of $x$ and consider the element $y=(x\wedge x_1)\vee x_2$. On one hand, $y$ is equal to $0\vee x_2=x_2$. 
+On the other hand, distributivity leads us to
+\[y=(x\vee x_2)\wedge(x_1\vee x_2)=1\wedge(x_1\vee x_2)=x_1\vee x_2.\]
+So we have $x_2=x_1\vee x_2$, which means $x_1\leq x_2$. By interchanging the roles of $x_1$ and $x_2$ in this argument, we naturally obtain $x_2\leq x_1$, 
+and, in the end, $x_1=x_2$.
+\end{proof}
+Now we can give our main theorem.
+\begin{theorem}\label{Bool ring lattice}
+Let $(A,\leq)$ be distributive and complemented lattice. Then $A$ can be given the structure of a Boolean algebra $(A,+,\times,0,1)$ in such a way that the 
+given order $\leq$ on $A$ will coincide with the order that is associated with its Boolean algebra structure.
+\end{theorem}
+\begin{proof}
+The multiplication and addition in $A$ are defined By
+\[x+y:=(x\wedge y^c)\vee(x^c\wedge y),\quad x\cdot y:=x\wedge y.\]
+Then $0$ is the identity of the addition:
+\[x+0=(x\wedge 1)\vee(x^c\wedge 0)=x\vee 0=x,\]
+and $1$ is the identity of multiplication:
+\[x\cdot 1=x\wedge 1=x.\]
+The association of the addition and the multiplication, together with the distribution can be verified just as in 
+Example~\ref{Bool ring 2^X}, so that $(A,+,\times,0,1)$ is a Boolean ring. Finally, we check that
+\[xy=x\iff x\wedge y=x\iff x\leq y\]
+Therefore the order $\leq$ on $A$ coincides with the order of the Boolean algebra.
+\end{proof}
+\subsection{Atoms in a Boolean algebra}
+\begin{definition}
+An element $A$ in a Boolean algebra is called an \textbf{atom} if and only if it is non-zero and has no non-zero strict lower bound.
+\end{definition}
+In other words, $a$ is an atom if and only if $a\neq0$ and, for every element $b$ in $A$, 
+if $b\leq a$, then either $b=a$ or $b=0$.
+\begin{example}
+In the Boolean algebra $2^X$ of subsets of the set $X$, the atoms are the singletons.
+\end{example}
+\begin{definition}
+A Boolean algebra is \textbf{atomic} and only if every non-zero element has at least one atom below it.
+\end{definition}
+This is the situation, for example, with the Boolean algebra of all subsets of a
+given set (every non-empty set contains at least one singleton).
+\begin{theorem}\label{Bool ring finite atomic}
+Every finite Boolean algebra is atomic.
+\end{theorem}
+\begin{proof}
+Let $A$ be a finite Boolean algebra and let $x$ be a non-zero element of $A$. Denote by $m(x)$ the set of 
+non-zero strict lower bounds of $x$ in $A$. If $m(x)$ is empty, then $x$ is an atom. If $m(x)$ is not empty, 
+then because it is finite, at least one of its elements is minimal in the ordering $\leq$, i.e. no element of $m(x)$ is strictly below it. 
+It is easy to see that such a minimal element is an atom of $A$ that is below $x$.
+\end{proof}
+Now we characterize atoms.
+\begin{theorem}\label{Bool ring atom iff}
+Let $A$ be a Boolean algebra. Then for every non-zero element $a$ of $A$ and for every integer $n\geq2$, the following properties are equivalent:
+\begin{itemize}
+\item[$(1)$] $a$ is a atom.
+\item[$(2)$] For every element $x$ in $A$, either $a\leq x$ or $a\leq 1+x$.
+\item[$(3)$] For all elements $x_1,\dots,x_n$ in $A$, if $a\leq x_1\vee\cdots\vee x_n$, then $a\leq x_i$ for some $i\in\{1,\dots,n\}$.
+\end{itemize}
+\end{theorem}
+\begin{proof}
+Note that $a\leq 1+x$ if and only if $ax=0$. Now if $a$ is a atom, then $ax\leq a$, so $ax=a$ or $ax=0$, which correspond to the two cases in $(2)$.\par
+Assume that $(2)$ holds. If there are elements $x_1,\dots,x_n\in A$ such that $a\leq x_1\vee\cdots\vee x_n$ and non of $a\leq x_i$ is ture. Then by $(2)$,
+\[a\leq(1+x_1)\wedge\cdots\wedge(1+x_n)=(x_1\vee\cdots\vee x_n)^c.\]
+Now $a$ is less than $x_1\vee\cdots\vee x_n$ and its complement, which is impossible since $a$ is nonzero. Hence $(3)$ holds.\par
+Now if $(3)$ holds and $b$ is a lower bound of $a$, then $a\leq b\vee(1+b)=1$, so that $a\leq b$ or $a\leq 1+b$. In the first case, we obtain $b=a$ and
+in the second case, $b=ab=0$ (Lemma~\ref{Bool ring x leq 1+y}). We have thereby proved that $a$ is an atom.
+\end{proof}
+\subsection{Homomorphisms of Boolean algebras}
+\begin{lemma}\label{Bool ring homomorphism prop}
+Let $\varphi::A\to B$ be a Homomorphism between Boolean rings, then
+\[\varphi(x\wedge y)=\varphi(x)\wedge\varphi(y),\quad \varphi(x\vee y)=\varphi(x)\vee\varphi(y),\quad \varphi(x^c)=\varphi(x)^c.\]
+And
+\[x\leq y\Rightarrow \varphi(x)\leq\varphi(y).\]
+\end{lemma}
+\begin{theorem}\label{Bool ring homomorphism iff}
+Let $\varphi:A\to B$ be a map between two Boolean algebras. For $\varphi$ to be a homomorphism of Boolean algebras, it is necessary 
+and sufficient that for all elements $x$ and $y$ in $A$, we have
+\[\varphi(x\wedge y)=\varphi(x)\wedge\varphi(y),\quad \varphi(x^c)=\varphi(x)^c.\]
+\end{theorem}
+\begin{proof}
+One direction is given in the previous lemma. Now assume that two equalities. We have
+\begin{align*}
+\varphi(xy)=\varphi(x\wedge y)=\varphi(x)\wedge\varphi(y)=\varphi(x)\varphi(y).
+\end{align*}
+To deal with the addition, we first note that
+\begin{align*}
+\varphi(x\vee y)&=\varphi((x^c)^c\vee (y^c)^c)=\varphi((x^c\wedge y^c)^c)\\
+&=\varphi(x^c\wedge y^c)^c=(\varphi(x^c)\wedge\varphi(y^c)^c)^c\\
+&=\varphi(x^c)^c\vee\varphi(y^c)^c=\varphi(x)\vee\varphi(y).
+\end{align*}
+Then
+\[\varphi(x+y)=\varphi((x\wedge y^c)\vee(x^c\wedge y))=(\varphi(x)\wedge\varphi(y)^c)\vee(\varphi(x)^c\wedge\varphi(y))=\varphi(x)+\varphi(y).\]
+With these, we can also get
+\[\varphi(0)=\varphi(x-x)=\varphi(x)-\varphi(x)=0,\quad \varphi(1)=\varphi(0^c)=1.\]
+Therefore $\varphi$ is a ring homomorphism.
+\end{proof}
+\begin{remark}
+It is clear that in the statement of the preceding theorem, we could replace the operation $\wedge$ by the operation $\vee$ everywhere.
+\end{remark}
+\begin{theorem}\label{Bool ring isomomorphism iff}
+Let $\varphi:A\to B$ be a surjective map between two Boolean algebras. For $\varphi$ to be an isomorphism 
+of Boolean algebras, it is necessary and sufficient that
+\begin{align}\label{Bool ring isomomorphism iff-1}
+x\leq y\iff \varphi(x)\leq\varphi(y).
+\end{align}
+\end{theorem}
+\begin{proof}
+First let us suppose that $\varphi$ is an isomorphism and let $x$ and $y$ be elements of 
+$A$. If $x\leq y$, then by Lemma~\ref{Bool ring homomorphism prop} $\varphi(x)\leq\varphi(y)$. If $\varphi(x)\leq\varphi(y)$, then 
+by the definition of $\leq$ and because $\varphi$ is a homomorphism, $\varphi(x)=\varphi(x)\varphi(y)=\varphi(xy)$.
+But since $\varphi$ is injective, this requires $x=xy$, which is to say, $x\leq y$. So $(\ref{Bool ring isomomorphism iff-1})$ is
+satisfied.\par
+For the converse, if $(\ref{Bool ring isomomorphism iff-1})$, then we can easily seen that
+\[\varphi(x\wedge y)=\varphi(x)\wedge\varphi(y),\quad \varphi(x\vee y)=\varphi(x)\vee\varphi(y).\]
+Let $u$ be an arbitrary element of $B$ and let $t$ be its unique preimage in $A$ under $\varphi$. In $A$, we have $0\leq t$ and $t\leq 1$. It 
+follows, using $(\ref{Bool ring isomomorphism iff-1})$, that, in $B$ we have $\varphi(0)\leq u\leq\varphi(1)$. This shows that $\varphi(0)$ and 
+$\varphi(1)$ are, respectively, the least and greatest elements of $B$, or in other words, that $\varphi(0)$ and $\varphi(1)$.\par
+So for every element $x$ in $A$, we have
+\[\varphi(x^c)\vee\varphi(x)=\varphi(x^c\vee x)=\varphi(1)=1,\quad \varphi(x^c)\wedge\varphi(x)=\varphi(x^c\wedge x)=\varphi(0)=0.\]
+Therefore
+\[\varphi(x^c)=\varphi(x)^c.\]
+Now apply Theorem~\ref{Bool ring homomorphism iff} we get the claim.
+\end{proof}
+As an application of the previous theorem, we consider finite Boolean algebras.
+\begin{theorem}\label{Bool ring finite}
+Every finite Boolean algebra is isomorphic to the Boolean algebra of subsets of some set.
+\end{theorem}
+\begin{proof}
+Let $A$ be a finite Boolean algebra and $E$ be the set of its atoms. We prove that $A\cong 2^E$ by define a map
+\[\varphi:A\to 2^E,\quad \varphi(x)=\{a\in E:a\leq x\}.\]
+\begin{itemize}
+\item $\varphi$ is surjective: indeed, we first of all have $\varphi(0)=\emp$; as well, let $X=\{a_1,\dots,a_n\}$ 
+be a non-empty subset of $E$ and set $M_X=a_1\vee\cdots\vee a_n$, we claim $\varphi(M_X)=X$: the inclusion $X\sub\varphi(M_x)$ 
+follows immediately; the reverse inclusion is shown using Theorem~\ref{Bool ring atom iff}: if $a$ is an element of $\varphi(M_x)$, 
+i.e. an atom which is below $M_X=a_1\vee\cdots\vee a_n$, then we have $a\leq a_i$ for at least one index $i$, but since $a$ and $a_i$ 
+are atoms, this entails $a=a_i$, and so $a\in X$.\par
+\item For all elements $x$ and $y$ of $A$, if $x\leq y$, then $\varphi(x)\leq\varphi(y)$. Conversely, if $\varphi(x)\leq\varphi(y)$, we show 
+that $x\leq y$: indeed, if $x$ is not less that or equal to $y$, then $x(1+y)\neq 0$ (Lemma~\ref{Bool ring x leq 1+y}). As $A$ is finite, it is
+atomic (Theorem~\ref{Bool ring finite atomic}) so we can find an atom $a\in E$ such that $a\leq x(1+y)$. The atom $a$ is thus below both $x$ and $1+y$; 
+it cannot be below $y$ as well since it is non-zero. So we have $a\in \varphi(x)$ and $a\notin\varphi(y)$, which shows that $\varphi(x)$ is not
+included in $\varphi(y)$.
+\end{itemize}
+We may now conclude, thanks to Theorem~\ref{Bool ring isomomorphism iff}, that $\varphi$ is an isomorphism of Boolean algebras from $A$ onto $2^E$.
+\end{proof}
+\subsection{Boolean subalgebras}
+\begin{definition}
+A subalgebra of a Boolean algebra is just a subring.
+\end{definition}
+\begin{proposition}
+A subset of a Boolean algerba is a Boolean algebra if and only if it is the image of a homomorphism bewteen Boolean algebras.
+\end{proposition}
+\begin{theorem}\label{Bool ring subalg iff}
+In a Boolean algebra $A$, for a subset $S$ to be a Boolean subalgebra, it is necessary and sufficient that $B$ contain $0$ and 
+be closed under the operations $x\mapsto x^c$ and $(x,y)\mapsto x\wedge y$.
+\end{theorem}
+\begin{proof}
+If $S$ is closed under the  operations, then the closure of $S$ under complementation and $\wedge$ guarantees its closure under $\vee$. 
+Moreover, $1=0^c$ must belong to $S$. Since the operations $+$ and $\times$ can be defined exclusively in terms of $\wedge,\vee$, and 
+complementation, we conclude that $S$ is closed under $+$ and $\times$ and that $S$ is a Boolean subalgebra of $A$.
+\end{proof}
+\begin{example}
+Let $X$ be a topological space and let $\mathcal{B}(X)$ be the subset of $2^X$ consisting of subsets of $X$ 
+that are both open and closed in the topology on $X$. This set $\mathcal{B}(X)$ is a Boolean subalgebra of 
+the Boolean algebra of subsets of $X$.
+\end{example}
+\begin{example}
+Let $A$ be a Boolean algebra and let $a$ be an atom in this algebra (we are assuming that one exists). Let us define 
+a map $\varphi_a$ from $A$ into $\{0,1\}$ by
+\[\varphi_a(x)=\begin{cases}
+1&a\leq x,\\
+0&a\leq 1+x.
+\end{cases}\]
+These two cases are mutually exclusive since $a$ is different from $0$, and there are no other cases since $a$ is an atom.\par
+Let $x$ and $y$ be two elements of $A$. We have 
+\begin{align*}
+\varphi_a(x\wedge y)=1&\iff a\leq x\wedge y\iff a\leq x,a\leq y\\
+&\iff \varphi_a(x)=\varphi_a(y)=1\\
+&\iff \varphi_a(x)\wedge\varphi_a(y)=1.
+\end{align*}
+It follows that
+\[\varphi_a(x\wedge y)=\varphi_a(x)\wedge\varphi_a(y).\]
+Also,
+\[\varphi_a(x^c)=1\iff a\leq x^c=1+x.\]
+Since $\varphi_a$ only assumes the values $0$ or $1$, this means that $\varphi_a(x^c)=\varphi(x)^c$. Therefore $\varphi_a$ is a homomorphism from $A$ to $\{0,1\}$.
+\end{example}
+\section{Idelas and filters}
+\subsection{Ideals}
+\begin{proposition}
+Let $A$ be a Boolean algebra and $I$ a subset of $A$. For $I$ to be an ideal, it is necessary and sufficient that the following three conditions be satisfied:
+\begin{itemize}
+\item $0\in I$, $1\notin I$.
+\item for all elements $x$ and $y$ of $I$, $x\vee y\in I$.
+\item for all $x\in I$ andfor all $y\in A$, if $y\leq x$, then $y\in I$.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+Assume that conditions holds. If $x\in I$ and $y\in I$, then $x\vee y\in I$, but since $x+y\leq x\vee y$ (this is trivial to check). Since $0\in I$, we have all we need for $I$ to be a subgroup. 
+Moreover, if $x\in I$ and $y\in A$, then since $xy\leq x$, we may conclude that $xy\in I$. The set $I$ is therefore an ideal.
+\end{proof}
+\begin{corollary}
+If $I$ is an ideal in a Boolean algebra $A$, there is no element $x$ in $A$ that can satisfy both $x\in I$ and $1+x\in I$.
+\end{corollary}
+Here is a collection of ways to characterize maximal ideals in a Boolean algebra:
+\begin{theorem}\label{Bool ring maximal ideal iff}
+For every Boolean ring $A$, for every ideal $I$ in $A$, the following properties are equivalent:
+\begin{itemize}
+\item[$(1)$] $I$ is maximal.
+\item[$(2)$] $A/I$ is isomorphic to $\{0,1\}$.
+\item[$(3)$] For every element $x$ in $A$, $x\in I$ or $1+x\in I$.
+\item[$(4)$] $I$ is prime.
+\end{itemize}
+\end{theorem}
+\begin{proof}
+Note that any Boolean integral domain is isomorphic to $\{0,1\}$ and hence a field.
+\end{proof}
+\subsection{Filters}
+\begin{definition}
+A \textbf{filter} in a Boolean algebra $A$ is a subset of $A$ such that $\{x\in A:x^c\in F\}$ is an ideal.
+\end{definition}
+\begin{proposition}
+Let $A$ be a Boolean algebra and $F$ a subset of $A$. For $F$ to be afilter, it is necessary and sufficient that the following three conditions be satisfied:
+\begin{itemize}
+\item $1\in F$, $0\notin F$.
+\item for all elements $x$ and $y$ of $F$, $x\wedge y\in F$.
+\item for all $x\in F$ andfor all $y\in A$, if $y\geq x$, then $y\in F$.
+\end{itemize}
+\end{proposition}
+\begin{definition}
+In a Boolean algebra, an \textbf{ultrafilter} is a maximal filter, i.e. a filter which is not strictly included in any other filter.
+\end{definition}
+Therefore $F$ is an ultrafilter if and only if $F^c$ is a maximal ideal.
+\begin{theorem}\label{Bool ring ultrafilter iff}
+For every Boolean ring $A$, for every filter $F$ in $A$, the following properties are equivalent:
+\begin{itemize}
+\item[$(1)$] $F$ is an ultrafilter.
+\item[$(2)$] there is a homomorphism $\varphi$ from $A$ into $\{0,1\}$ such that
+\[F=\{x\in A:\varphi(x)=1\}.\] 
+\item[$(3)$] for every element $x$ in $A$, $x\in F$ or $1+x\in F$.
+\item[$(4)$] for all elements $x$ and $y$ of $A$, if $x\vee y\in F$, then $x\in F$ or $y\in F$.
+\end{itemize}
+\end{theorem}
+\begin{example}
+Here are some examples of filters.
+\begin{itemize}
+\item If $E$ is an infinite set, the set of all cofinite subsets of $E$ is a filter in the Boolean algebra $2^E$. 
+This filter is called the \textbf{Frechet filter} on $E$. It is not an ultrafilter since there are subsets of $E$ 
+which are infinite and whose complements are also infinite, so condition $(3)$ of Theorem~\ref{Bool ring ultrafilter iff} is not satisfied.
+\item If $a$ is a non-zero element in a Boolean algebra $A$, the set $F_a=\{x\in A:x\geq a\}$ is a filter called the \textbf{principal filter generated by $\bm{a}$}. It is the dual
+filter of the ideal generated by $1+a$.
+\end{itemize}
+\end{example}
+\begin{theorem}
+Let $A$ be a Boolean algebra and let $a$ be a non-zero element of $A$. For the principal filter generated by $a$ to 
+be an ultrafilter, it is necessary and sufficient that $a$ be an atom.
+\end{theorem}
+\begin{proof}
+This comes from Theorem~\ref{Bool ring atom iff}$(2)$ and Theorem~\ref{Bool ring ultrafilter iff}$(3)$.
+\end{proof}
+When the principal filter Fa generated by a non-zero element $a$ of $A$ is an ultrafilter (thus, when $a$ is an atom), we 
+say that this is a \textbf{trivial ultrafilter}. The homomorphism $\varphi_a$ with values in $\{0,1\}$ that is associated with it is also called a trivial homomorphism.
+\begin{lemma}
+Let $A$ be a Boolean algebra and let $F$ be an ultrafilter on $A$. For $F$ to be trivial, it is necessary and sufficient that it contain at least one atom.
+\end{lemma}
+\begin{proof}
+If $F$ contains an atom $b$, it also contains all elements greater than or equal to $b$. It follows that the principal filter $F_b$ generated by $b$ is included in $F$. 
+But since $b$ is an atom, $F_b$ is maximal. Hence $F=F_b$ is a trivial ultrafilter.
+\end{proof}
+\begin{theorem}
+Let $E$ be an infinite set and let $\mathcal{F}$ be an ultrafilter in the Boolean algebra $2^E$. For $\mathcal{F}$ to be non-trivial, it is necessary and sufficient that it includes the Frechet filter on $E$.
+\end{theorem}
+\begin{proof}
+The atoms in $2^E$ are singletons, therefore if $\mathcal{F}$ is trivial, it clear does not include that Frechet filter. Conversely, If $\mathcal{F}$ does not include the Frechet filter, 
+we can choose a cofinite subset $X$ of $E$ that does not belong to $\mathcal{F}$, and hence whose complement $E-X$ does belong to $\mathcal{F}$. As $E$ is the identity element for the Boolean 
+algebra $2^E$, $E\in\mathcal{F}$; hence $X\neq E$. The complement of $X$ in $E$ is thus a non-empty finite subset of $E$: for example, $E-X=\{a_1,\cdots,a_n\}$. So we have 
+$\{a_1,\dots,a_n\}\in\mathcal{F}$, which is to also say:
+\[\{a_1\}\vee\cdots\vee\{a_n\}\in\mathcal{F}.\]
+Now by Theorem~\ref{Bool ring ultrafilter iff} we have $a_i\in\mathcal{F}$ for some $i\in\{1,\dots,n\}$. Therefore $\mathcal{F}$ is trivial by the preceding lemma.
+\end{proof}
+\subsection{Filterbases}
+\begin{definition}
+In a Boolean algebra $A$, a \textbf{basis for a filter} (filterbase) is a subset of A that has the following property, known as the finite intersection property: every non-empty finite 
+subset has a non-zero greatest lower bound.
+\end{definition}
+\begin{lemma}\label{Bool ring filter contain}
+Let $A$ be a Boolean algebra and let $X$ be a subset of $A$. For the existence of a filter on $A$ that includes $X$, it is necessary and sufficient that $X$ be a filter base.
+\end{lemma}
+\begin{proof}
+If $X$ is included in a filter $F$, and if $x_1,\dots,x_n$ are elements of $X$, then their greatest lower bound $x_1,\dots,x_n$ belongs to $F$, and as $0\notin F$, this greatest 
+lower bound is non-zero; thus $X$ is a filterbase.\par
+Now suppose that $X$ is a filterbase. We can use $X$ to generate a filter:
+\[F_X:=\{x\in A:(\exists n\in\N)((\exists x_1,\dots,x_n\in X)x\geq x_1\wedge\cdots\wedge x_n\}.\]
+\end{proof}
+In the particular case of Boolean algebras, we can state Krull's theorem in terms of filters. It is then known as the ultrafilter theorem:
+\begin{theorem}
+In a Boolean algebra, every filter is included in at least one ultrafilter.
+\end{theorem}
+\begin{lemma}\label{Bool ring ultrafilter contain}
+Let $A$ be a Boolean algebra and let $X$ be a subset of $A$. For the existence of an ultrafilter on $A$ that includes $X$, it is necessary and sufficient that $X$ be afilterbase.
+\end{lemma}
+\section{Boolean spaces}
+\begin{definition}
+Let $X$ be a topological space.
+\begin{itemize}
+\item We say $X$ is \textbf{totally disconnected} if the only connected subsets of $X$ are single points.
+\item We say $X$ is \textbf{totally separated} if, whenever $x$ and $y$ are distinct points of $X$, there is a clopen subset of $X$ containing $x$ but not $y$.
+\item We say $X$ is \textbf{zero-dimensional} if the clopen subsets of $X$ form a base for the topology.
+\end{itemize}
+\end{definition}
+The implications between these concepts and the separation axioms are trivial:
+\begin{lemma}
+\begin{itemize}
+\item A totally disconnected space is $T_1$.
+\item A totally separated space is Hausdorff and totally disconnected.
+\item A zero-dimensional $T_0$-space is regular and totally separated.
+\end{itemize}
+\end{lemma}
+Now we have the following equivalences.
+\begin{theorem}
+The following conditions on a space $X$ are equivalent:
+\begin{itemize}
+\item[$(1)$] $X$ is compact, Hausdorff and totally disconnected.
+\item[$(2)$] $X$ is compact and totally separated.
+\item[$(3)$] $X$ is compact, $T_0$ and zero-dimensional.
+\item[$(4)$] $X$ is Hausdorff and spectral.
+\end{itemize}
+\end{theorem}
+\begin{proof}
+The implication $(3)\Rightarrow(2)\Rightarrow(1)$ follows from the previous lemma.\par
+$(1)\Rightarrow(2)$: Let $x$ be a point of $X$, and consider the set $C(x)$ of all points of
+$X$ which cannot be separated from $x$ by a clopen set. First we note that $C(x)$ is closed, for if 
+$y\in X-C(x)$ then there is a clopen set $U$ containing $y$ but not $x$, and $U$ is then a neighbourhood 
+of $y$ contained in $X-C(x)$.\par
+Suppose $C(x)$ contains more than one point; then it is disconnected, i.e. we can write $C(x)=F_1\cup F_2$ 
+where $F_1$ and $F_2$ are disjoint closed subsets of $C(x)$ (and hence of $X$). Since $X$ is compact Hausdorff, 
+it is normal; so we can find an open set $U\sups F_1$ such that the closure of $U$ does not meet $F_2$. Consider the 
+boundary $\partial U=\widebar{U}\cap(X-U)$; it is clear that $\partial U$ does not meet $C(x)$, since $X-U$ does not 
+meet $F_1$ and $\widebar{U}$ does not meet $F_2$. So for each $y\in\partial U$, we can find a clopen set $V_y$ 
+containing $y$ but not $x$. But $\partial U$ is closed in $X$ and therefore compact; so we can cover it by a
+finite number of sets $V_{y_1},\dots,V_{y_n}$. Let $V$ be the clopen set $V=\bigcup_{i=1}^{n}V_{y_i}$, then
+$V$ contains $\partial U$, but $x\notin V$ and so $V$ does not meet $C(x)$. Now it is clear that the set
+\[W:=U-V=\widebar{U}-V\]
+is both open and closed; but $W\cap C(x)=U\cap C(x)=F_1$, so both $W$ and $X-W$ meet $C(x)$. But this contradicts 
+the definition of $C(x)$, since they cannot both contain $x$. So $C(x)$ consists of the single point $x$, i.e. $X$ is
+totally separated.\par
+$(2)\Rightarrow(3)$: Let $U$ be open in $X$, $x\in U$. We have to find a clopen $V$ with $x\in V\sub U$. But for each $y\in X-U$ 
+we can find a clopen $V_y$ with $x\in V_y$ and $y\notin V_y$; now the sets $\{X-V_y:y\in X-U\}$ form an open cover of the closed 
+(hence compact) set $X-U$, so there is a finite subcover $X-V_{y_1},\dots,X-V_{y_n}$. Then $V:=\bigcap_{i=1}^{n}V_{y_i}$ is the required
+clopen set.\par
+$(3)\Rightarrow(4)$: In a compact Hausdorff space, the compact open subsets are precisely the clopen subsets; so they are automatically 
+closed under finite intersections, and they form a base for the topology iff the clopen sets do. And any Hausdorff space is sober.\par
+$(4)\Rightarrow(1)$: If $X$ is spectral then it is compact. If it is Hausdorff, then it is totally disconnected.
+\end{proof}
+A space satisfying the conditions of the Theorem will be called a \textbf{Boolean space}.
+\section{Stone's duality}
+We will refer to the duality Stone established between Boolean algebras and certain topological spaces as Stone duality. In the following when we speak of a clopen
+set, we will mean of course a closed and open set.
+\subsection{Stone space of a Boolean algebra}
+\begin{definition}
+Let $A$ be a Boolean algebra. The set of homomorphisms of a Boolean algebra $A$ into $\{0,1\}$ is denoted 
+by $\mathcal{S}(A)$ and is called the \textbf{Stone space} of $A$. We endow $\mathcal{S}(A)$ with the subspace topology of $\{0,1\}^A$.
+\end{definition}
+Since any homomorphism from $A$ to $\{0,1\}$ is associated with an ultrafilter of $A$, $\mathcal{S}(A)$ can also be regarded as the collection of all ultrafilter of $A$. With this in mind, we define
+\[\Delta_a=\{\varphi\in\mathcal{S}(A):\varphi(a)=1\}=\{\varphi\in\mathcal{S}(A):a\in F_\varphi\}\]
+where $F_\varphi$ is the ultrafilter associated with $\varphi$. First we observe that
+\begin{lemma}\label{Bool ring delta_a}
+For any $a,b\in A$, we have
+\[\Delta_a\cup\Delta_b=\Delta_{a\vee b},\quad \Delta_a\cap\Delta_b=\Delta_{a\wedge b},\quad \Delta_{1+a}=(\Delta_a)^c.\]
+Moreover, if $a\neq b$, then $\Delta_a\neq\Delta_b$.
+\end{lemma}
+\begin{proof}
+We have
+\begin{align*}
+\varphi\in\Delta_a\cup\Delta_{b}\iff \varphi(a)=1\text{ or }\varphi(b)=1\iff\varphi(a\vee b)=\varphi(a)\vee\varphi(b)=1.
+\end{align*}
+Therefore $\Delta_{a}\cup\Delta_b=\Delta_{a\vee b}$. The rest are proved similarly.\par
+Now if $a\neq b$, then $a+b\neq 0$, so we may consider the principal filter generated by $a+b$ and, in view of the ultrafilter theorem, 
+an ultrafilter that includes this filter. To such an ultrafilter, there is an associated homomorphism $\varphi$ from $A$ into to $\{0,1\}$ 
+that satisfies $\varphi(a+b)=1$, or again, $\varphi(a)+\varphi(b)=1$, which in particular means that one and only one of the two elements
+$\varphi(a)$ and $\varphi(b)$ is equal to $1$. This proves that $\Delta_a\neq\Delta_b$.
+\end{proof}
+With these observations, we can show that $\{\Delta_a:a\in A\}$ forms a basis of $\mathcal{S}(A)$.
+\begin{proposition}\label{Bool ring basic open}
+For a subset $U$ of $\mathcal{S}(A)$ to be a basic open set, it is necessary and sufficient that there exist an element $a$ in $A$ such that $U=\Delta_a$. 
+In particular, $\{\Delta_a:a\in A\}$ is a basis for $\mathcal{S}(A)$.
+\end{proposition}
+\begin{proof}
+A basic open set in $\mathcal{S}(A)$ is of the forms
+\[U=\{0,1\}^{A-\{i_1,\dots,i_n\}}\times\{\eps_{i_1}\}\times\cdots\times\{\eps_{i_n}\}\cap\mathcal{S}(A)=\{\varphi\in\mathcal{S}(A):\varphi(a_1)=\eps_1,\dots,\varphi(a_n)=\eps_n.\}\]
+For each $i\in\{1,\dots,n\}$ we set
+\[b_i=\begin{cases}
+a_i&\eps_i=1,\\
+1+a_i&\eps_i=0.
+\end{cases}\]
+Then $U$ can be written as
+\[U=\{\varphi\in\mathcal{S}(A):\varphi(b_1)=\cdots=\varphi(b_n)=1\}=\Delta_{b_1}\cap\cdots\cap\Delta_{b_n}=\Delta_{b_1\wedge\cdots\wedge b_n}.\]
+Therefore the claim follows.
+\end{proof}
+Now we prove an important result.
+\begin{proposition}
+The space $\mathcal{S}(A)$ is a Boolean space.
+\end{proposition}
+\begin{proof}
+Since $\{0,1\}^A$ is Hausdorff, $\mathcal{S}(A)$ is also Hausdorff. From corollary~\ref{Bool ring S(A) clopen} we see that $\mathcal{S}(A)$ has a basis of 
+clopen subsets, so we only need to show that $\mathcal{S}(A)$ is compact.\par
+We must show that from any family of closed subsets of $\mathcal{S}(A)$ whose intersection is empty, we can extract a finite subfamily whose intersection is already
+empty. But we have seen that it suffices to do this for families of basic closed sets.\par
+Now, as we have just seen, the basic closed sets coincide with the basic open sets. So consider an family $\{\Gamma_i\}_{i\in I}$ of basic open subsets 
+of $\mathcal{S}(A)$ such that $\bigcap_{i\in I}\Gamma_i=\emp$. By the preceding corollary, there exists, for each $i\in I$, a unique element $x_i$ in $A$ such 
+that $\Gamma_i=\Delta_{x_i}$. Set $X=\{x_i:i\in I\}$. To say that the intersection of the family $\{\Gamma_i\}_{i\in I}$ is empty is to say that there is no 
+homomorphism of Boolean algebras from $A$ into $\{0,1\}$ that assumes the value $1$ for all elements of $X$, or again, that there is no ultrafilter on $A$ that 
+contains $X$. This means (Lemma~\ref{Bool ring ultrafilter contain}) that $X$ is not a filterbase. So there exists a finite subset $\{x_{i_1},\dots,x_{i_n}\}\sub X$ 
+such that
+\[x_{i_1}\wedge\cdots\wedge x_{i_n}=0.\]
+Then no ultrafilter on $A$ could simultaneously contain $x_{i_1},\dots,x_{i_n}$. In other words, no homomorphism from $A$ into $\{0,1\}$ can simultaneously assume the value $1$ at the points $x_{i_1},\dots,x_{i_n}$. 
+This amounts to saying that
+\[\Gamma_{i_1}\cap\cdots\cap\Gamma_{i_n}=\emp.\]
+We thus have a finite subfamily of the family $\{\Gamma_{i}\}_{i\in I}$ whose intersection is empty.
+\end{proof}
+\begin{corollary}\label{Bool ring S(A) clopen}
+The set of clopen subsets of $\mathcal{S}(A)$ coincides with the set of its basic open sets.
+\end{corollary}
+\begin{proof}
+A clopen subset $\Gamma$ of $\mathcal{S}(A)$ is compact, hence is a finite union of basic open subsets. But by Proposition~\ref{Bool ring basic open} and Lemma~\ref{Bool ring delta_a} we see that $\Gamma$ is itself 
+a basic open set.
+\end{proof}
+Now we are ready to state the Stone's theorem.
+\begin{definition}
+Let $X$ be a Boolean space, the Boolean subalgebra of clopen subsets of $X$ is denoted by $\mathcal{B}(X)$. 
+\end{definition}
+\begin{theorem}[\textbf{Stone}]
+Let $A$ be a Boolean algebra. Then $A$ is isomorphic to $\mathcal{B}\mathcal{S}(A)$ under the mapping
+\[a\mapsto\Delta_a.\]
+\end{theorem}
+\begin{proof}
+We already see that this map is surjective (Corollary~\ref{Bool ring S(A) clopen}), so we only need to show that
+\[x\leq y\iff \Delta_x\sub\Delta_y\]
+in view of Theorem~\ref{Bool ring isomomorphism iff}.\par
+So let $x$ and $y$ be two elements of $A$. If $x$ is less than or equal to $y$, then for any homomorphism $\varphi(x)$ that satisfies $\varphi(x)=\varphi(xy)=1$, we must also have $\varphi(y)=1$, 
+which means that $\Delta_x$ is a subset of $\Delta_y$. If $x$ is not less than or equal to $y$, then $x(1+y)\neq0$ (Lemma~\ref{Bool ring x leq 1+y}). So we may consider the 
+principal filter generated by $x(1+y)$, an ultrafilter that includes it (by the ultrafilter theorem) and the homomorphism $\varphi$ associated with this ultrafilter. We have $\varphi(x(1+y))=1$,
+hence $\varphi(x)=1$ and $\varphi(1+y)=1$, i.e. $\varphi(y)=0$. We conclude that $\varphi\in\Delta_x-\Delta_y$, and so $\Delta_x$ is not included in $\Delta_y$.
+\end{proof}
+Stone's theorem allows us to give a very simple proof of Theorem~\ref{Bool ring finite}.
+\begin{corollary}
+Everyfinite Boolean algebra is isomorphic to a Boolean algebra of subsets of some set.
+\end{corollary}
+\begin{proof}
+If $A$ is a finite Boolean algebra, then the space $\{0,1\}^A$ is discrete, hence so is $\mathcal{S}(A)$. Therefore $\mathcal{B}\mathcal{S}(A)$ coincides with $2^{\mathcal{S}(A)}$ and $A$ is isomorphic to $2^{\mathcal{S}(A)}$.
+\end{proof}
+\subsection{Boolean spaces are Stone spaces}
+With each Boolean algebra, we have associated a Boolean topological space: its Stone space $\mathcal{S}(A)$, and we have seen that $A$ is isomorphic to the Boolean algebra
+of clopen subsets of this Boolean space. It is therefore natural to study the case in which $A$ is given as the Boolean algebra of clopen subsets of some Boolean topollogical 
+space $X$. The problem that then arises is to compare $X$ and $\mathcal{S}\mathcal{B}(X)$.
+Let $X$ be a Boolean space. For each $x\in X$, let $\varphi_x$ denote the map from $\mathcal{B}(X)$ into $\{0,1\}$ defined by
+\[\varPhi_x(\Omega)=\begin{cases}
+1&x\in\Omega\\
+0&x\notin\Omega
+\end{cases}\]
+\begin{lemma}
+The map $\varPhi_x$ is a homomorphism from $\mathcal{B}(X)$ to $\{0,1\}$, and for $x\neq y$ we have $\varPhi_x\neq\varPhi_y$.
+\end{lemma}
+\begin{proof}
+For any clopen subsets $U$ and $V$ of $X$, we have $\varPhi_x(U\cap V)=1$ if and only if $x\in U\cap V$, i.e. $x\in U$ and $x\in V$. We conclude from this that 
+$\varPhi_x(U\cap V)=\varPhi_x(U)\wedge\varPhi_x(V)$. Also, $\varPhi_x(\Omega^c)=1+\varPhi_x(\Omega)$. 
+Therefore $\varPhi_x$ is a homomorphism.\par
+For $x\neq y$, since $X$ is Hausdorff, we see that $\varPhi_x\neq\varPhi_y$.
+\end{proof}
+\begin{lemma}
+Every homomorphism from $\mathcal{B}(X)$ to $\{0,1\}$ is of the form $\varPhi_x$ for some $x\in X$.
+\end{lemma}
+\begin{proof}
+Let $\psi$ be a homomorphism from $\mathcal{B}(X)$ into $\{0,1\}$. The ultrafilter on $\mathcal{B}(X)$ associated with $\varphi$ is
+\[\mathcal{U}=\{\Omega\in\mathcal{B}(X):\varphi(\Omega)=1\}.\]
+Since $\mathcal{U}$ has the finite intersection property, and the elements of $\mathcal{U}$ are closed, and since the topological space $X$ is compact, we may assert that the intersection 
+of all the elements of $\mathcal{U}$ is non-empty. Let $x$ be an element of this intersection. We claim that $\varphi=\varPhi_x$.\par
+For every clopen set $\Omega\in\mathcal{S}$, we have: either $\Omega\in\mathcal{U}$, in which case $\varPhi_x(\Omega)=1$ and $\varphi(\Omega)=1$, or else $\Omega^c\in\mathcal{U}$, 
+in which case $\varPhi_x(\Omega)=0$ and $\varphi(\Omega)=0$. Thus it follows that $\varphi=\varPhi_x$.
+\end{proof}
+\begin{lemma}
+The map $\varPhi:X\to\mathcal{S}\mathcal{B}(X)$ is open and continuous.
+\end{lemma}
+\begin{proof}
+Let $G$ be an open set belonging to the basis of clopen subsets of $\mathcal{S}\mathcal{B}(X)$. According to Lemma~\ref{Bool ring basic open}, there exists a unique element $\Omega$ in 
+$\mathcal{B}(X)$ such that
+\[G=\Delta_{\Omega}=\{\varphi\in\mathcal{S}\mathcal{B}(X):\varphi(\Omega)=1\}.\]
+Note that
+\begin{align*}
+\varPhi^{-1}(G)=\{x\in X:\varPhi_x\in G\}=\{x\in X:\varPhi_x(\Omega)=1\}=\{x\in X:x\in\Omega\}=\Omega.
+\end{align*}
+Therefore the map $\varPhi$ is continuous. Moreover,
+\begin{align*}
+\varPhi(\Omega)=\{\varphi\in\mathcal{S}\mathcal{B}(X):\varphi=\varPhi_x\text{ for some }x\in\Omega\}.
+\end{align*}
+Now for every $x\in\Omega$ we have $\varPhi_x(\Omega)=1$, so $\varPhi(\Omega)\sub\Delta_{\Omega}$. On the other hand, by the previous lemma we have $\varphi=\varPhi_x$ with some $x\in X$ for each $\varphi\in\mathcal{S}\mathcal{B}(X)$. If $\varphi\in\Delta_{\Omega}$, then $x\in\Omega$, so 
+$\varphi\in\varPhi(\Omega)$. This proves $\Delta_{\Omega}=\varPhi(\Omega)$ and therefore $\varPhi$ is open.
+\end{proof}
+The therorem is now obvious.
+\begin{theorem}
+Every Boolean topological space $X$ is homeomorphic to the Stone space $\mathcal{S}\mathcal{B}(X)$ of the Boolean algebra of clopen subsets of $X$.
+\end{theorem}
+\subsection{Equivalence of the category of Boolean spaces and algebras}
+Let $\mathsf{Ring}_{Bool}$ and $\mathsf{Top}_{Bool}$ be the categories of Boolean spaces and algebras, respectively. We now define two functors
+\[\mathcal{S}:\mathsf{Ring}_{Bool}\to\mathsf{Top}_{Bool},\quad \mathcal{B}:\mathsf{Top}_{Bool}\to\mathsf{Ring}_{Bool}\]
+and show that they gives an Equivalence of categories. Since we already have the isomorphisms $X\cong\mathcal{S}\mathcal{B}(X)$ and $A\cong\mathcal{B}\mathcal{S}(A)$, we only need to consider the morphisms.
+\begin{definition}
+Let $\varphi:A\to B$ be a homomorphism between Boolean algerbas, we define 
+\[\mathcal{S}(\varphi):\mathcal{S}(B)\to\mathcal{S}(A),\quad \psi\mapsto\psi\circ\varphi\]
+to be the included map between stone spaces.
+\end{definition}
+\begin{definition}
+Let $f:X\to Y$ be a continuous map between Boolean spaces, we define
+\[\mathcal{B}(f):\mathcal{B}(Y)\to\mathcal{B}(X),\quad U\mapsto f^{-1}(U)\]
+to be the included map between stone spaces.
+\end{definition}
+First we check that
+\begin{lemma}
+The map $\mathcal{S}(\varphi)$ is continuous, and the map $\mathcal{B}(f)$ is a homomorphism.
+\end{lemma}
+\begin{proof}
+Note that for $b\in B$,
+\[\mathcal{S}(\varphi)^{-1}(\Delta_b)=\{\psi\in\mathcal{S}(A)\mid\psi\circ\varphi(b)=1\}=\Delta_{\varphi(b)}.\]
+Therefore $\mathcal{S}(\varphi)$ is continuous. Also,
+\[\mathcal{B}(f)(U\cap V)=f^{-1}(U\cap V)=f^{-1}(U)\cap f^{-1}(V)=\mathcal{B}(f)(U)\cap\mathcal{B}(f)(V),\]
+\[\mathcal{B}(f)(U\Delta V)=f^{-1}(U\Delta V)=f^{-1}(U)\Delta f^{-1}(V)=\mathcal{B}(f)(U)\Delta\mathcal{B}(f)(V)\]
+so $\mathcal{B}(f)$ is a homomorphism.
+\end{proof}
+\begin{theorem}
+The functor $\mathcal{S}:\mathsf{Ring}_{Bool}\to\mathsf{Top}_{Bool}$ is an equivalence of categories, so is the functor $\mathcal{B}:\mathsf{Top}_{Bool}\to\mathsf{Ring}_{Bool}$.
+\end{theorem}
+\begin{proof}
+We verify the naturality of the isomorphisms $\Delta:A\to\mathcal{B}\mathcal{S}(A)$ and $\varPhi:X\to\mathcal{S}\mathcal{B}(X)$.\par
+First, let $\varphi:A\to B$ be a homomorphism 
+of Boolean algebras. We need to establish the commutativity of the diagram
+\[\begin{tikzcd}
+A\ar[r,"\Delta"]\ar[d,swap,"\varphi"]&\mathcal{B}\mathcal{S}(A)\ar[d,"\mathcal{B}\mathcal{S}(f)"]\\
+B\ar[r,"\Delta"]&\mathcal{B}\mathcal{S}(B)
+\end{tikzcd}\]
+For any $a\in A$ we see that
+\[\mathcal{B}\mathcal{S}(\varphi)(\Delta_a)=\mathcal{S}(\varphi)^{-1}(\Delta_a)=\Delta_{\varphi(a)}.\]
+
+Then, let $f:X\to Y$ be a continuous map between Boolean spaces, consider the diagram
+\[\begin{tikzcd}
+X\ar[r,"\varPhi"]\ar[d,swap,"f"]&\mathcal{S}\mathcal{B}(Y)\ar[d,"\mathcal{S}\mathcal{B}(f)"]\\
+Y\ar[r,"\varPhi"]&\mathcal{S}\mathcal{B}(Y)
+\end{tikzcd}\]then
+\[\mathcal{S}\mathcal{B}(f)(\varPhi_x)(\Omega)=(\varPhi_x\circ\mathcal{B}(f))(\Omega)=\varPhi_x(f^{-1}(\Omega))=\begin{cases}
+1&x\in f^{-1}(\Omega)\\
+0&x\notin f^{-1}(\Omega)
+\end{cases}=\varPhi_{f(x)}(\Omega).\]
+Therefore the claim follows.
+\end{proof}
+Next we establish some properties of the functors $\mathcal{S}$ and $\mathcal{B}$.
+\begin{lemma}
+Let $\varphi:A\to B$ be a homomorphism between Boolean algebras. Then $\varphi$ is injective (respectively, surjective) if and only if $\mathcal{S}(\varphi)$ is surjective 
+(respectively, injective).
+\end{lemma}
+\begin{lemma}
+Let $f:X\to Y$ be a continuous map between Boolean spaces. If $f$ is injective (respectively, surjective), then $\mathcal{B}(f)$ is surjective (respectively, injective).
+\end{lemma}
+\subsection{Spectra of a Boolean ring}
+\begin{proposition}
+Let $A$ be a Boolean ring. Then the space $\Spec(A)$ is homeomorphic to $\mathcal{S}(A)$.
+\end{proposition}

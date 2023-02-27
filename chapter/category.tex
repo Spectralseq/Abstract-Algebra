@@ -1,0 +1,886 @@
+\chapter{Category}
+\section{Functors}
+\subsection{Definition of Functors}
+\begin{definition}
+Let $\mathcal{C},\mathcal{D}$ be two categories. A \textbf{covariant functor}
+\[\mathscr{F}:\mathcal{C}\to\mathcal{D}\]
+is an assignment of an object $F\mathscr{F}(A)\in\mathrm{Obj}(\mathcal{D})$ for every $A\in\mathrm{Obj}(\mathcal{C})$ and of a function
+\[\Mor_{\mathcal{C}}(A,B)\to\Mor_{\mathcal{D}}(\mathscr{F}(A),\mathscr{F}(B))\]
+for every pair of objects $A,B$ in $\mathcal{C}$ such that $\forall f\in\Mor_{\mathcal{C}}(A,B),g\in\Mor_{\mathcal{C}}(B,C)$ we have
+\[\mathscr{F}(\id_A)=\id_{\mathscr{F}_{A}},\quad\mathscr{F}(g\circ f)=\mathscr{F}(g)\circ\mathscr{F}(f).\]
+\end{definition}
+We have already mentioned briefly a few slightly more imaginative examples; here they are again.
+\begin{example}
+If $R$ is a ring, we have denoted by $R^{\times}$ the group of units in $R$; every ring homomorphism $R\to S$ induces a group homomorphism $R^{\times}\to S^{\times}$, and this assignment is compatible with compositions; therefore this operation defines a covariant functor $\mathsf{Ring}\to\mathsf{Ab}$.
+\end{example}
+\subsection{Equivalence of Category}
+The structure of an object in a category is adequately carried by its isomorphism class, and a natural notion of equivalence of categories should aim at matching isomorphism classes, rather than individual objects. The \textit{morphisms} are a more essential piece of information; the quality of a functor is first of all measured on how it acts on morphisms.
+\begin{definition}
+Let $\mathcal{C},\mathcal{D}$ be two categories. Let $\mathscr{F}:\mathcal{C}\to\mathcal{D}$ be a covariant functor.
+\begin{itemize}
+\item[$(a)$] $\mathscr{F}$ is \textbf{faithful} if for all objects $A,B$ of $\mathcal{C}$, the induced function
+\[\Mor_{\mathcal{C}}(A,B)\to\Mor_{\mathcal{D}}(\mathscr{F}(A),\mathscr{F}(D))\]
+is injective.
+\item[$(b)$] $\mathscr{F}$ is \textbf{full} if this function is surjective, for all objects $A,B$.
+\item[$(c)$] $\mathscr{F}$ is called essentially surjective if for any object $B\in\mathrm{Obj}(\mathcal{B})$ there exists an object $A\in\mathrm{Obj}(\mathcal{A})$ such that $\mathscr{F}(A)$ is isomorphic to $B$ in $\mathcal{B}$.
+\end{itemize}
+\end{definition}
+\begin{lemma}\label{fully faithful fuctor}
+Let $\mathscr{F}:\mathcal{C}\to\mathcal{D}$ be a fully faithful functor. If $A,B$ are objects in $\mathcal{C}$, then $A\cong B$ in $\mathcal{C}$ if and only if $\mathscr{F}(A)\cong\mathscr{F}(B)$ in $\mathcal{D}$.
+\end{lemma}
+\begin{proof}
+Assume $\mathscr{F}$ is covariant. Since we have $\mathscr{F}(f\circ g)=\mathscr{F}(f)\circ\mathscr{G}(g)$, if $A\cong B$, we have $\mathscr{F}(A)\cong\mathscr{B}$.\par
+Conversely, if $\mathscr{F}(A)\cong\mathscr{F}(B)$, assume $f$, $g$ are isomorphisms between them with $g=f^{-1}$. Since $\mathscr{F}$ is full, there are two morphisms $f',g'$ such that $\mathscr{F}(f')=f,\mathscr{F}(g')=g$. Then we have
+\[\mathscr{F}(f'\circ g')=f\circ g=\mathrm{id},\quad \mathscr{F}(g'\circ f')=g\circ f=\id\]
+Since $\mathscr{F}(\id)=\id$, and $\mathscr{F}$ is faithful, we get $f'\circ g'=g'\circ f'=\id$, so $A\cong B$ follows.
+\end{proof}
+\begin{definition}
+Let $\mathcal{C}, \mathcal{D}$ be categories, and let $\mathscr{F}$, $\mathscr{G}$ be functors $\mathcal{C}\to\mathcal{D}$. A \textbf{natural transformation} $\nu:\mathscr{F}\to\mathscr{G}$ is the datum of a morphism $\nu_X:\mathscr{F}(X)\to\mathscr{G}(X)$ in $\mathcal{D}$ for every object $X$ in $\mathcal{C}$, such that $\forall\alpha:X\to Y$ in $\mathcal{C}$ the diagram
+\[\begin{tikzcd}
+\mathscr{F}(X)\ar[r,"\nu_X"]\ar[d,swap,"\mathscr{F}(\alpha)"]&\mathscr{G}(X)\ar[d,"\mathscr{G}(\alpha)"]\\
+\mathscr{F}(Y)\ar[r,"\nu_Y"]&\mathscr{G}(Y)
+\end{tikzcd}\]
+commutes. A \textbf{natural isomorphism} is a natural transformation $\mu$ such that $\mu_X$ is an isomorphism for every $X$.
+\end{definition}
+A natural transformation is often written as
+\[\begin{tikzcd}
+\mathcal{C}\ar[r,bend left=50,"\mathscr{F}",""'{name=F,below}]\ar[r,bend right=50,swap,"\mathscr{G}",""'{name=G,above}]&\mathcal{D}
+\arrow[Rightarrow,from=F,to=G,"\nu"]
+\end{tikzcd}\]
+In addition, given a morphism of functors $\mu:\mathscr{F}\to\mathscr{G}$ and a morphism of functors $\nu:\mathscr{E}\to\mathscr{F}$ then the composition $\nu\circ\mu$ is defined by the rule
+\[(\nu\circ\mu)_X:=\nu_X\circ\mu_X.\]
+for $X\in\mathrm{Obj}(\mathcal{A})$. It is easy to verify that this is indeed a morphism of functors from $\mathscr{E}$ to $\mathscr{G}$. In this way, given categories $\mathcal{A}$ and $\mathcal{B}$ we obtain a new category, namely
+the category of functors between $\mathcal{A}$ and $\mathcal{B}$.
+\begin{definition}
+An \textbf{equivalence of categories} $\mathscr{F}:\mathcal{A}\to\mathcal{B}$ is a functor such that there exists a functor $\mathscr{G}:\mathcal{B}\to\mathcal{A}$ such that the compositions $\mathscr{F}\circ\mathscr{G}$ and $\mathscr{G}\circ\mathscr{F}$ are isomorphic to the identity functors $\id_{\mathcal{B}}$, respectively $\id_{\mathcal{A}}$. In this case we say that $\mathscr{G}$ is a \textbf{quasi-inverse} to $\mathscr{F}$.
+\end{definition}
+\begin{proposition}\label{equiv category iff}
+Let $\mathscr{F}:\mathcal{A}\to\mathcal{B}$ be a fully faithful functor. Suppose for every $X\in\mathrm{Obj}(\mathcal{B})$ we are given an object $\mathscr{G}(X)$ of $A$ and an isomorphism $i_X:X\to\mathscr{F}(\mathscr{G}(X))$. Then there is a unique functor $\mathscr{G}:\mathcal{B}\to\mathcal{A}$ such that $\mathscr{G}$ extends the rule on objects, and the isomorphisms $i_X$ define an isomorphism of functors $\id_{\mathcal{B}}\to\mathscr{F}\circ\mathscr{G}$. Moreover, $\mathscr{G}$ and $\mathscr{F}$ are quasi-inverse equivalences of categories.
+\end{proposition}
+\begin{proof}
+The action of $\mathscr{G}$ on objects is defined. For $X,Y\in\mathrm{Obj}(\mathcal{B})$ and $f\in\Mor_{\mathcal{B}}(X,Y)$, we have the diagram
+\[\begin{tikzcd}
+X\ar[r,"f"]\ar[d,"i_X"]&Y\ar[d,"i_Y"]\\
+\mathscr{F}(\mathscr{G}(X))\ar[r,"i_Y\circ f\circ i_X^{-1}"]&\mathscr{F}(\mathscr{G}(Y))\\
+\mathscr{G}(X)\ar[r,dashed]\ar[u,"\mathscr{F}"]&\mathscr{G}(Y)\ar[u,"\mathscr{F}"]
+\end{tikzcd}\]
+where the dashed map is induced by the bijection
+\[\Mor_{\mathcal{A}}(X,Y)\cong\Mor_{\mathcal{B}}(\mathscr{F}(X),\mathscr{F}(Y))\]
+by the functoriality, this defines a functor $\mathscr{G}:\mathcal{B}\to\mathcal{A}$. Moreover, the upper half of the diagram means $i_X$ define an isomorphism of functors $\id_{\mathcal{B}}\to\mathscr{F}\circ\mathscr{G}$.\par
+For $X\in\mathrm{Obj}(\mathcal{A})$, we have an isomorphism $i_{\mathscr{F}(X)}:\mathscr{F}(X)\to\mathscr{F}\circ\mathscr{G}\circ\mathscr{F}(X)$. Since $\mathscr{F}$ is full and faithful, there is an isomorphism $\mu_{X}:X\to\mathscr{G}\circ\mathscr{F}(X)$ by Lemma~\ref{fully faithful fuctor}. The naturality of $\mu_X$ follows from that of $i_{\mathscr{F}(X)}$ and the faithfulness of $\mathscr{F}$. Thus $\mu$ is an isomorphism $\id_{\mathcal{A}}\to\mathscr{G}\circ\mathscr{F}$.
+\end{proof}
+\begin{corollary}
+A functor is an equivalence of categories if and only if it is both fully faithful and essentially surjective.
+\end{corollary}
+\begin{proof}
+Let $\mathscr{F}:\mathcal{A}\to\mathcal{B}$ be essentially surjective and fully faithful. As by convention all categories are small and as $\mathscr{F}$ is essentially surjective we can, using the axiom of choice, choose for every $X\in\mathrm{Obj}(\mathcal{B})$ an object $\mathscr{G}(X)$ of $\mathcal{A}$ and an isomorphism $i_X:X\to\mathscr{F}(\mathscr{G}(X))$. Then we apply Proposition~\ref{equiv category iff}.
+\end{proof}
+\subsection{Yoneda's Lemma}
+\begin{definition}
+Given a category $\mathcal{C}$ the opposite category $\mathcal{C}^{op}$ is the category with the same objects as $\mathcal{C}$ but all morphisms reversed.
+\end{definition}
+\begin{definition}
+Let $\mathcal{A},\mathcal{B}$ be categories. A contravariant functor $\mathscr{F}$ from $\mathcal{A}$ to $\mathcal{B}$ is a functor $\mathcal{A}^{op}\to\mathcal{B}$.\par
+Concretely, a contravariant functor $\mathscr{F}$ satisfies the property that, given another morphism $f:X\to Y$ and $g:Y\to Z$, we have 
+\[\mathscr{F}(g\circ f)=\mathscr{F}(g)\circ\mathscr{F}(f)\]
+as morphism from $\mathscr{F}(Z)$ to $\mathscr{F}(X)$.
+\end{definition}
+\begin{definition}
+Let $\mathcal{C}$ be a category. A \textbf{presheaf of sets on $\mathcal{C}$} or simply a presheaf is a contravariant functor $\mathscr{F}$ from $\mathcal{C}$ to $\mathsf{Set}$. The category of presheaves is denoted $\mathsf{Psh}(\mathcal{C})$.
+\end{definition}
+\begin{example}[\textbf{Functor of points}]
+For any $U\in\mathrm{Obj}(\mathcal{C})$ there is a contravariant functor
+\[h_X:\mathcal{C}\to\mathsf{Set},\quad Y\mapsto\Mor_{\mathcal{C}}(Y,X).\]
+In other words $h_X$ is a presheaf. We will always denote this presheaf $h_X:\mathcal{C}^{op}\to\mathsf{Set}$. It is called the \textbf{representable presheaf} associated to $X$.\par
+Note that given a morphism $s:X\to Y$ in $\mathcal{C}$ we get a corresponding natural transformation of functors $h(s):h_X\to h_Y$ defined simply by composing with the morphism $U\to V$. It is trivial to see that this turns composition of morphisms in $\mathcal{C}$ into composition of transformations of functors. In other words we get a functor
+\[h:\mathcal{C}\to\mathrm{Func}(\mathcal{C}^{op},\mathsf{Set})=:\widehat{\mathcal{C}}.\]
+\end{example}
+\begin{lemma}[\textbf{Yoneda lemma}]
+The functor $h$ is fully faithful. More generally, given any contravariant functor $\mathscr{F}$ and any object $X$ of $\mathcal{C}$ we have a natural bijection
+\[\Mor_{\widehat{\mathcal{C}}}(h_X,\mathscr{F})\to\mathscr{F}(X),\quad \alpha\mapsto \alpha_X(\id_X).\]
+\end{lemma}
+\begin{proof}
+An element $f\in h_X(Y)=\Mor_{\mathcal{C}}(Y,X)$ can be viewed as a morphism $f^*:\Mor_{\mathcal{C}}(X,X)\to\Mor_{\mathcal{C}}(Y,X)$. Note that $f^*(\id_X)=f$, so if there is a natural transformation $\alpha:h_X\to\mathscr{F}$, then from the diagram
+\[\begin{tikzcd}
+\Mor_{\mathcal{C}}(X,X)\ar[r,"\alpha_X"]\ar[d,"f^*"]&\mathscr{F}(X)\ar[d,"\mathscr{F}(f)"]\\
+\Mor_{\mathcal{C}}(Y,X)\ar[r,"\alpha_X"]&\mathscr{F}(Y)
+\end{tikzcd}\]
+we obtain
+\[\alpha_Y(f)=\alpha_Y\big(f^*(\id_X)\big)=\mathscr{F}(f)\big(\alpha_X(\id_X)\big).\]
+That is, $\alpha$ is simply determined by $\alpha_X(\id_X)$. Conversely, given $\xi\in\mathscr{F}(X)$, we can define a natural transformation by the formula above:
+\[\beta_Y:h_X(Y)\to\mathscr{F}(Y),\quad \beta_Y(f)=\mathscr{F}(f)(\xi).\]
+It follows that these two map are inverse of each other.
+\end{proof}
+\begin{definition}
+A contravariant functor $\mathscr{F}:\mathcal{C}\to\mathsf{Set}$ is said to be \textbf{representable} if it is isomorphic to the functor of points $h_X$ for some object $X$ of $\mathcal{C}$.
+\end{definition}
+Let $\mathcal{C}$ be a category and let $\mathscr{F}:\mathcal{C}^{op}\to\mathscr{Set}$ be a representable functor. Choose an object $X$ of $\mathcal{C}$ and an isomorphism $\alpha:h_X\to\mathscr{F}$. The Yoneda lemma guarantees that the pair $(X,\alpha)$ is unique up to unique isomorphism. The object $X$ is called an object representing $\mathscr{F}$.
+\subsection{Limits and colimits}
+The various universal properties encountered along the way are all particular cases of the notion of categorical \textbf{limit}, which is worth mentioning explicitly. Let $\mathscr{F}:I\to C$ be a \textit{covariant functor}, where one thinks of $\mathcal{I}$ as a category of indices. The \textbf{limit} of $\mathscr{F}$ is an object $L$ of $\mathcal{C}$, endowed with morphisms $\lambda_I:L\to\mathscr{F}(I)$ for all objects $I$ of $\mathcal{I}$, satisfying the
+following properties:
+\begin{itemize}
+\item If $\alpha:I\to J$ is a morphism in $\mathcal{I}$, then $\lambda_J=\mathscr{F}(\alpha)\circ\lambda_I$:
+\[\begin{tikzcd}
+&L\ar[ld,swap,"\lambda_I"]\ar[rd,"\lambda_J"]&\\
+\mathscr{F}(I)\ar[rr,swap,"\mathscr{F}(\alpha)"]&&\mathscr{F}(J)
+\end{tikzcd}\]
+\item $L$ is final with respect to this property: that is, if $M$ is another object, endowed with morphisms $\mu_I$, also satisfying the previous requirement, then there exists a unique morphism $M\to L$ making all relevant diagrams commute
+\end{itemize}
+\begin{example}[\textbf{Products}]
+Let $\mathcal{I}$ be the discrete category consisting of two objects $\bm{1}$, $\bm{2}$, with only identity morphisms, and let $\mathscr{A}$ be a functor from $\mathcal{I}$ to any category $\mathcal{C}$; let $A_1=\mathscr{A}(\bm{1})$, $A_2=\mathscr{A}(\bm{2})$ be the two objects of $\mathcal{C}$ indexed by $\mathcal{I}$. Then $\llim\mathscr{A}$ is nothing but the product of $A_1$ and $A_2$ in $\mathcal{C}$: a limit exists if and only if a product of $A_1$ and $A_2$ exists in $\mathcal{C}$.\par 
+We can similarly define the product of any $($possibly infinite$)$ family of objects in a category as the limit over the corresponding discrete indexing category, provided of course that this limit exists.
+\end{example}
+The limit notion is a little more interesting if the indexing category $\mathcal{I}$ carries more structure.
+\begin{example}[\textbf{Equalizers and kernels}]
+Let $\mathcal{I}$ again be a category with two objects $\bm{1}$, $\bm{2}$, but assume that morphisms look like this:
+\[\begin{tikzcd}
+\bm{1}\ar[in=210, out=150,looseness=8]\ar[r,bend left,"\alpha"]\ar[r,swap,bend right,"\beta"]&\bm{2}\ar[in=-30, out=30,looseness=8]
+\end{tikzcd}\]
+That is, add to the discrete category two parallel morphisms $\alpha,\beta$ from one of the objects to the other. A functor $\mathscr{K}:\mathcal{I}\to\mathcal{C}$ amounts to the choice of two objects $A_1$, $A_2$ in $\mathcal{C}$ and two parallel morphisms between them. Limits of such functors are called \textbf{equalizers}. For a concrete example, assume $\mathcal{C}=R$-$\mathsf{Mod}$ is the category of $R$-modules for some ring $R$; let $\varphi:A_2\to A_1$ be a homomorphism, and choose $\mathscr{K}$ as above, with $\mathscr{K}(\alpha)=\varphi$ and $\mathscr{K}(\beta)=$ the zero-morphism. Then $\llim\mathscr{K}$ is nothing but the kernel of $\varphi$.
+\end{example}
+\begin{example}[\textbf{Limits over chains}]
+In another typical situation, $\mathcal{I}$ may consist of a totally ordered set, for example:
+\[\begin{tikzcd}
+\cdots\ar[r]&\bm{4}\ar[r]&\bm{3}\ar[r]&\bm{2}\ar[r]&\bm{1}
+\end{tikzcd}\]
+$($that is, the objects are $\bm{i}$, for all positive integers $i$, and there is a unique morphism
+$\bm{i}\to \bm{j}$ whenever $i\geq j$; we are only drawing the morphisms $\bm{j}+\bm{1}\to \bm{j}$$)$. Choosing $\mathscr{F}:\mathcal{I}\to\mathcal{C}$ is equivalent to choosing objects $A_i$ of $\mathcal{C}$ for all positive integers $i$ and morphisms $\varphi_{ji}:A_i\to A_j$ for all $i\geq j$, with the requirement that $\varphi_{ii}=1_{A_i}$, and $\varphi_{kj}\circ\varphi_{ji}=\varphi_{ki}$ for all $i\geq j\geq k$. That is, the choice of $\mathscr{F}$ amounts to the choice of a diagram
+\[\begin{tikzcd}
+\cdots\ar[r,"\varphi_{45}"]&A_4\ar[r,"\varphi_{34}"]&A_3\ar[r,"\varphi_{23}"]&A_2\ar[r,"\varphi_{12}"]&A_1
+\end{tikzcd}\]
+in $\mathcal{C}$. An inverse limit $\llim\mathscr{F}$ $($which may also be denoted $\llim_iA_i$, when the morphisms $\varphi_{ji}$ are evident from the context$)$ is then an object $A$ endowed with morphisms $\varphi_i:A\to A_i$ such that the whole diagram
+\[\begin{tikzcd}
+&&&&A\ar[lllldd,swap,dashed,"\cdots"]\ar[lldd,"\varphi_4"]\ar[dd,"\varphi_3" description]\ar[rrdd,swap,"\varphi_2"]\ar[rrrrdd,"\varphi_1"]&&&&\\
+&&&&\\
+\cdots\ar[rr,"\varphi_{45}"]&&A_4\ar[rr,"\varphi_{34}"]&&A_3\ar[rr,"\varphi_{23}"]&&A_2\ar[rr,"\varphi_{12}"]&&A_1
+\end{tikzcd}\]
+commutes and such that any other object satisfying this requirement factors uniquely through $A$.\par
+Such limits exist in many standard situations. For example, let $C=R$-$\mathsf{Mod}$ be
+the category of left-modules over a fixed ring $R$, and let $A_i$, $\varphi_{ji}$ be as above.
+\begin{proposition}
+The limit $\llim_iA_i$ exists in $R$-$\mathsf{Mod}$.
+\end{proposition}
+\begin{proof}
+The product $\prod_iA_i$ consists of arbitrary sequences $(a_i)_{i>0}$ of elements $a_i\in A_i$. Say that a sequence $(a_i)_{i>0}$ is \textit{coherent} if for all $i>0$ we have $a_i=\varphi_{i,i+1}(a_{i+1})$. Coherent sequences form an $R$-submodule $A$ of $\prod_iA_i$; the canonical projections restrict to $R$-module homomorphisms $\varphi_i:A\to A_i$. The reader will check that $A$ is a limit $\llim_iA_i$.
+\end{proof}
+This example easily generalizes to families indexed by more general posets.
+\end{example}
+The dual notion to limit is the \textbf{colimit} of a functor $\mathscr{F}:\mathcal{I}\to\mathcal{C}$. The colimit is an object $C$ of $\mathcal{C}$, endowed with morphisms $\gamma_I:\mathscr{F}(I)\to\mathcal{C}$ for all objects $I$ of $\mathcal{I}$, such that $\gamma_I=\gamma_J\circ\mathscr{F}(\alpha)$ for all $\alpha:I\to J$ and that $C$ is \textit{initial} with respect to this requirement.\par
+\begin{example}
+
+For a typical situation consider again the case of a totally ordered set $\mathcal{I}$, for example:
+\[\begin{tikzcd}
+\bm{1}\ar[r]&\bm{2}\ar[r]&\bm{3}\ar[r]&\bm{4}\ar[r]&\cdots
+\end{tikzcd}\]
+A functor $\mathscr{F}:\mathcal{I}\to\mathcal{C}$ consists of the choice of objects and morphisms
+\[\begin{tikzcd}
+A_1\ar[r,"\psi_{12}"]&A_2\ar[r,"\psi_{23}"]&A_3\ar[r,"\psi_{34}"]&A_4\ar[r,"\psi_{45}"]&\cdots
+\end{tikzcd}\]
+and the direct limit $\rlim_iA_i$ will be an object $A$ with morphisms $\psi_i:A_i\to A$ such
+that the diagram
+\[\begin{tikzcd}
+A_1\ar[rrrrdd,"\psi_1"]\ar[rr,"\psi_{12}"]&&A_2\ar[rr,"\psi_{23}"]\ar[rrdd,"\psi_2"]&&A_3\ar[dd,"\psi_3" description]\ar[rr,"\psi_{34}"]&&A_4\ar[rr,"\psi_{45}"]\ar[lldd,swap,"\psi_4"]&&\cdots\ar[lllldd,dashed,swap,"\cdots"]\\
+&&&&\\
+&&&&A&&&&
+\end{tikzcd}\]
+commutes and such that $A$ is initial with respect to this requirement.
+\end{example}
+\begin{example}
+If $\mathcal{C }=\mathsf{Set}$ and all the $\psi_{ij}$ are injective, we are talking about a nested sequence of sets:
+\[A_1\sub A_2\sub A_3\sub\cdots\]
+the direct limit of this sequence would be the infinite union $\bigcup_iA_i$.
+\end{example}
+\subsection{Exact functors}
+\begin{definition}
+Let $\mathscr{F}:\mathcal{A}\to\mathcal{B}$ be a functor
+\begin{itemize}
+\item[$(a)$] Suppose all finite limits exist in $\mathcal{A}$. We say $\mathscr{F}$ is \textbf{left exact} if it commutes with all finite limits.
+\item[$(b)$] Suppose all finite colimits exist in $\mathcal{A}$. We say $\mathscr{F}$ is \textbf{right exact} if it commutes with all finite colimits.
+\item[$(c)$] We say $\mathscr{F}$ is \textbf{exact} if it is both left and right exact.
+\end{itemize}
+\end{definition}
+\begin{proposition}
+Let $\mathscr{F}:\mathcal{A}\to\mathcal{B}$ be a functor. Suppose all finite limits exist in $\mathcal{A}$. The following are equivalent:
+\begin{itemize}
+\item[$(a)$] $\mathscr{F}$ is left exact,
+\item[$(b)$] $\mathscr{F}$ commutes with finite products and equalizers.
+\item[$(c)$] $\mathscr{F}$ transforms a final object of $\mathcal{A}$ into a final object of $\mathcal{B}$, and commutes with fibre products.
+\end{itemize}
+\end{proposition}
+\subsection{Adjunction}
+\begin{definition}
+Let $\mathcal{C},\mathcal{D}$ be categories, and let $\mathscr{F}:\mathcal{C}\to\mathcal{D}$, $\mathscr{G}:\mathcal{D}\to\mathcal{C}$ be functors. We say that $\mathscr{F}$ and $\mathscr{G}$ are \textbf{adjoint} $($and we say that $\mathscr{G}$ is right-adjoint to $\mathscr{F}$ and $\mathscr{F}$ is left-adjoint to $\mathscr{G}$$)$ if there are natural isomorphisms
+\[\tau_{XY}:\Mor_{\mathcal{C}}(X,\mathscr{G}(Y))\stackrel{\sim}{\longrightarrow}\Mor_{\mathcal{D}}(\mathscr{F}(X),Y)\]
+for all objects $X$ of $\mathcal{C}$ and $Y$ of $\mathcal{D}$. More precisely, there should be a natural isomorphism of bifunctors \[\mathcal{C}^{op}\times\mathcal{D}\to\mathsf{Set}:\Mor_{\mathcal{C}}(-,\mathscr{G}(-))\stackrel{\sim}{\to}\Mor_{\mathcal{D}}(\mathscr{F}(-),-)\]
+\end{definition}
+\begin{proposition}
+For each $Y$ there is a map $\eta_Y:\mathscr{F}\mathscr{G}(Y)\to Y$ so that for any for any $f:X\to \mathscr{G}(Y)$, the corresponding map $\tau_{XY}(f):\mathscr{F}(X)\to Y$ is given by the composition
+\[\begin{tikzcd}
+\mathscr{F}(X)\ar[r,"\mathscr{F}(f)"]&\mathscr{F}\mathscr{G}(Y)\ar[r,"\eta_Y"]&Y
+\end{tikzcd}\]
+Similarly, there is a map $\theta_X:X\to\mathscr{G}\mathscr{F}(X)$ for each $X$ so that $g:\mathscr{F}(X)\to Y$, the corresponding $\tau^{-1}_{XY}(g):X\to \mathscr{G}(Y)$ is given by the composition
+\[\begin{tikzcd}
+X\ar[r,"\theta_X"]&\mathscr{G}\mathscr{F}(Y)\ar[r,"\mathscr{G}(g)"]&\mathscr{G}(Y)
+\end{tikzcd}\]
+So the information of $\tau_{XY}$ is the same as these two maps.
+\end{proposition}
+\begin{proof}
+We deal with the first case. Let $f:X\to\mathscr{G}(Y)$ be a map, consider the follwing diagram
+\[\begin{tikzcd}
+\Mor_{\mathcal{C}}(X,\mathscr{G}(Y))\ar[r,"\tau_{XY}"]&\Mor_{\mathcal{D}}(\mathscr{F}(X),Y)\\
+\Mor_{\mathcal{C}}(\mathscr{G}(Y),\mathscr{G}(Y))\ar[r,"\tau_{\mathscr{G}(Y)Y}"]\ar[u,"f^*"]&\Mor_{\mathcal{D}}(\mathscr{F}\mathscr{G}(Y),Y)\ar[u,"\mathscr{F}(f)^*"]
+\end{tikzcd}\]
+Set $\eta_Y$ to be the image of $\mathrm{id}_{\mathscr{G}(Y)}$ under $\tau_{\mathscr{G}(Y)Y}$ we get the claim. The second can be done similarly.
+\end{proof}
+\begin{proposition}
+Let $\mathscr{F}$ be a left adjoint to $\mathscr{G}$. Then
+\begin{itemize}
+\item[$(a)$] $\mathscr{F}$ is fully faithful $\iff\id_{\mathcal{C}}\cong\mathscr{G}\circ\mathscr{F}$.
+\item[$(b)$] $\mathscr{G}$ is fully faithful $\iff\mathscr{F}\circ\mathscr{G}\cong\id_{\mathcal{D}}$.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+Assume $\mathscr{F}$ is fully faithful. We have to show the adjunction map $X\to\mathscr{G}\circ\mathscr{F}(X)$ is an isomorphism. Let $X'\to\mathscr{G}\circ\mathscr{F}(X)$ be any morphism. By adjointness this corresponds to a morphism $\mathscr{F}(X')\to\mathscr{F}(X)$. By fully faithfulness of $\mathscr{F}$ this corresponds to a morphism $X'\to X$. Thus we see that $X\mapsto\mathscr{F}\circ\mathscr{G}(X)$ defines a bijection \[\Mor_{\mathcal{C}}(X',X)\to\Mor(X',\mathscr{G}\mathscr{F}(X))\]
+Hence it is an isomorphism. Conversely, if $\id_{\mathcal{C}}\cong\mathscr{G}\circ\mathscr{F}$ then $\mathscr{F}$ has to be fully faithful, as $\mathscr{G}$ defines an left-inverse on morphism sets. The other case is the dual part.
+\end{proof}
+\begin{proposition}
+Let $\mathscr{F}:\mathcal{C}\to\mathcal{D}$ be a functor between categories. If for each $Y\in\Obj(\mathcal{D})$ the functor $\Mor_{\mathcal{D}}(\mathscr{F}(-),Y)$ is representable, then $\mathscr{F}$ has a right adjoint.
+\end{proposition}
+\begin{proof}
+For each $Y$ choose an object $\mathscr{G}(Y)$ and an isomorphism $\Mor_{\mathcal{C}}(-,\mathscr{G}(Y))\to\Mor_{\mathcal{D}}(\mathscr{F}(-),Y)$ of functors. By Yoneda's lemma for any morphism $g:Y\to Y'$ the transformation of functors
+\[\begin{tikzcd}
+\Mor_{\mathcal{C}}(-,\mathscr{G}(Y))\ar[r,"\sim"]&\Mor_{\mathcal{D}}(\mathscr{F}(-),Y)\ar[r]&\Mor_{\mathcal{D}}(\mathscr{F}(-),Y')\ar[r,"\sim"]&\Mor_{\mathcal{C}}(-,\mathscr{G}(Y'))
+\end{tikzcd}\]
+corresponds to a unique morphism $\mathscr{G}(g):\mathscr{G}(Y)\to\mathscr{G}(Y')$. The functoriality of $\mathscr{G}$ comes from that of $\mathscr{F}$.
+\end{proof}
+\begin{example}
+The construction of the free group on a given set is concocted so that giving a set-function from a set $A$ to a group $G$ is the same as giving a group homomorphism from $F(A)$ to $G$. What this really means is that for all sets $A$ and all groups $G$ there are natural identifications
+\[\Mor_{\mathsf{Set}}(A,S(G))\stackrel{\sim}{\longrightarrow}\Mor_{\mathsf{Grp}}(F(A),G)\]
+where $S(G)$ forgets the group structure of $G$. That is, the functor $F:\mathsf{Set}\to\mathsf{Grp}$ constructing free groups is left-adjoint to the forgetful functor $S:\mathsf{Grp}\to\mathsf{Set}$. This of course applies to every other construction of free objects we have encountered: the free functor is, as a rule, left-adjoint to the forgetful functor.
+\end{example}
+In fact, the very fact that a functor has an adjoint will endow that functor with convenient features. We say that $\mathscr{F}$ is a \textbf{left-adjoint functor} if it has a right adjoint, and that $\mathscr{G}$ is a \textbf{right-adjoint functor} if it has a left-adjoint.
+\begin{theorem}\label{radjoint limit}
+Let $\mathscr{F}$ be a left adjoint to $\mathscr{G}$.
+\begin{itemize}
+\item[$(a)$] Suppose that $\mathscr{A}:\mathcal{I}\to\mathcal{C}$ is a diagram, and suppose that $\llim\mathscr{A}$ exists in $\mathcal{C}$. Then 
+\[\mathscr{G}(\llim\mathscr{A})=\llim(\mathscr{G}\circ\mathscr{A})\]
+In other words, $\mathscr{G}$ commutes with limits.
+\item[$(b)$] Suppose that $\mathscr{A}:\mathcal{I}\to\mathcal{C}$ is a diagram, and suppose that $\rlim\mathscr{A}$ exists in $\mathcal{C}$. Then 
+\[\mathscr{F}(\rlim\mathscr{A})=\rlim(\mathscr{F}\circ\mathscr{A})\]
+In other words, $\mathscr{F}$ commutes with colimits.
+\end{itemize}
+\end{theorem}
+\begin{proof}
+A morphism from a colimit into an object is the same as a compatible system of morphisms from the constituents of the limit into the object, so
+\begin{align*}
+\Mor_{\mathcal{C}}(X,\mathscr{G}(\llim\mathscr{A}))&\cong\Mor_{\mathcal{D}}(\mathscr{F}(X),\llim\mathscr{A})=\llim\Mor_{\mathcal{D}}(\mathscr{F}(X),\mathscr{A}_i)=\llim\Mor_{\mathcal{D}}(X,\mathscr{G}(\mathscr{A}_i))
+\end{align*}
+proves that $\mathscr{G}(\llim\mathscr{A})$ is the limit we are looking for. A similar argument works for the other statement.
+\end{proof}
+\begin{corollary}
+Let $\mathscr{F}$ be a left adjoint to $\mathscr{G}$.
+\begin{itemize}
+\item[$(a)$] If $\mathcal{C}$ has finite colimits, then $\mathscr{F}$ is right exact. 
+\item[$(b)$] If $\mathcal{D}$ has finite limits, then $\mathscr{G}$ is right exact. 
+\end{itemize}
+\end{corollary}
+\subsection{Exercise}
+\begin{exercise}
+Let $\mathscr{F}:\mathcal{C}\to\mathcal{D}$ be a covariant functor, and assume that both $\mathcal{C}$ and $\mathcal{D}$ have products. Prove that for all objects $A$, $B$ of $\mathcal{C}$, there is a unique morphism $\mathscr{F}(A\times B)\to\mathscr{F}(A)\times\mathscr{F}(B)$ such that the relevant diagram involving natural
+projections commutes.\par
+If $\mathcal{D}$ has coproducts $($denoted $\amalg$$)$ and $\mathscr{G}:\mathcal{C}\to\mathcal{D}$ is contravariant, prove that there is a unique morphism $\mathscr{G}(A)\amalg\mathscr{G}(B)\to \mathscr{G}(A\times B)$ $($again, such that an appropriate diagram commutes$)$.
+\end{exercise}
+\begin{proof}
+Apply the functor $\mathscr{F}$ yields:
+\[\begin{tikzcd}
+&A\times B\ar[ld]\ar[rd]&\\
+A&&B
+\end{tikzcd}\stackrel{\mathscr{F}}{\Longrightarrow}\begin{tikzcd}
+&\mathscr{F}(A\times B)\ar[ld]\ar[rd]&\\
+\mathscr{F}(A)&&\mathscr{F}(B)
+\end{tikzcd}\]
+by the universal property of $\mathscr{F}(A)\times\mathscr{F}(B)$, there is a unique morphism:
+\[\mathscr{F}(A\times B)\stackrel{\exists !}{\longrightarrow}\mathscr{F}(A)\times\mathscr{F}(B)\]
+Similar for coproducts:
+\[\begin{tikzcd}
+&A\times B\ar[ld]\ar[rd]&\\
+A&&B
+\end{tikzcd}\stackrel{\mathscr{G}}{\Longrightarrow}\begin{tikzcd}
+&\mathscr{G}(A\times B)&\\
+\mathscr{G}(A)\ar[ru]&&\mathscr{G}(B)\ar[lu]
+\end{tikzcd}\]
+By the universal property of $\mathscr{G}(A)\amalg\mathscr{G}(B)$, we get
+\[\mathscr{G}(A)\amalg\mathscr{G}(B)\to\mathscr{G}(A\times B)\]
+\end{proof}
+\begin{exercise}
+Let $\mathcal{C}$ be a small category. Prove that $\mathcal{C}$ is equivalent to the subcategory
+of representable functors in $\mathsf{Set}^{\mathcal{C}^{\circ}}$.\par
+Thus, every $(small)$ category is equivalent to a subcategory of a functor category.
+\end{exercise}
+\begin{proof}
+For $\varphi:A\to B$, there is an induced natural transformation:
+\[\varphi:\Hom_{\mathcal{C}}(-,A)\to\Hom_{\mathcal{C}}(-,B)\]
+from Yoneda lemma, there is a bijection from $\Hom(h_A,h_B)$ to $h_B(A)=\Hom(A,B)$. So $h$ is a fully faithful covariant functor. For any representable $\mathscr{F}$, there is a functor $h_X$ and a natural isomorphism $\mathscr{F}\cong h_X$. This shows $h$ is a equivalence of categories. 
+\end{proof}
+\begin{exercise}\label{adic comple}
+Let $R$ be a commutative ring, and let $I\sub R$ be an ideal. Note that $I^n\sub I^m$ if $n\geq m$, and hence we have natural homomorphisms $\varphi_{mn}:R/I^n\to R/I^m$ for $n\geq m$.
+\begin{itemize}
+\item Prove that the inverse limit $\widehat{R}_I:=\llim_nR/I^n$ exists as a commutative ring. This
+is called the $I$-adic completion of $R$.
+\item By the universal property of inverse limits, there is a unique homomorphism $R\to\widehat{R}_I$. Prove that the kernel of this homomorphism is $\bigcap_nI^n$.
+\item Let $I=(x)$ in $R[x]$. Prove that the completion $\widehat{R[x]}_I$ is isomorphic to the power series ring $R[[x]]$.
+\end{itemize}
+\end{exercise}
+\begin{proof}
+We first prove that limit exists in $\mathsf{Ring}$. Let $\mathcal{I}$ be a poset $(\mathcal{I},\leq)$. Choose $\{R_i\}_{i\in\mathcal{I}}$ and $\{\varphi_{ij}:R_i\to R_j\}$ such that
+\[i\geq j\geq k\Rightarrow\varphi_{jk}\circ\varphi_{ij}=\varphi_{ik}\]
+A sequence $(r_i)_{i\in\mathcal{I}}$ is coherent if $\varphi_{ij}(r_i)=r_j$. Define the limit $\llim_{i}R_i$ to be
+\[\llim_iR_i:=\{(r_i)_{i\in\mathcal{I}}\mid (r_i)\text{ is coherent}\}.\]
+
+Since $I^n\sub I^m$ for $n\geq m$, there is a well defined quotient homomorphism:
+\[\varphi_{nm}:R/I^n\to R/I^m,\quad a+I^n\mapsto a+I^m\]
+So the limit $\llim_iR/I^n$ is well defined.\par
+For the homomorphism $\psi_n:R\to R/I^n$, it is clear that
+\[\varphi_{nm}\circ\psi_n=\psi_m\]
+so we get the unique homomorphsim $\psi:R\to\widehat{R}_I$, defined by $\psi(r)=(\psi_i(r))_{i\in\mathcal{I}}$. It follows that
+\[\psi(r)=0\iff \psi_i(r)=0\iff r\in\bigcap_nI^n.\]
+
+Finally, if $I=(x)$, then $i^n=(x^n)$. So 
+\[\widehat{R[x]}_I=\{(r_i)_{i\in\N}:\deg r_i<i,r_i=r_{i-1}+a_{i-1}x^{i-1}\}\]
+this set equals $R[[x]]$.
+\end{proof}
+\begin{exercise}
+An important example of the construction presented in Exercise~\ref{adic comple} is the ring $\Z_p$ of $p$-adic integers: this is the limit $\llim_r\Z/p^r\Z$, for a positive prime integer $p$.\par
+The field of fractions of $\Z_p$ is denoted $\Q_p$; elements of $\Q_p$ are called \textbf{$p$-adic numbers}.
+\begin{itemize}
+\item Show that giving a $p$-adic integer $A$ is equivalent to giving a sequence of integers $A_r, r\geq 1$, such that $0\leq A_r<p^r$, and that $A_s\equiv A_r$ mod $p^s$ if $s\leq r$.
+\item Equivalently, show that every $p$-adic integer has a unique infinite expansion $A=a_0+a_1\cdot p+a_2\cdot p^2+a_3\cdot p^3+\cdots$, where $0\leq a_i\leq p-1$. The arithmetic of $p$-adic integers may be carried out with these expansions in precisely the same way as ordinary arithmetic is carried out with ordinary decimal expansions.
+\item With notation as in the previous point, prove that $A\in\Z_p$ is invertible if and only if $a_0\neq 0$.
+\item Prove that $\Z_p$ is a local domain, with maximal ideal generated by $($the image in $\Z_p$ of$)$ $p$.
+\item Prove that $\Z_p$ is a DVR. $($There is an evident valuation on $\Q_p$.$)$
+\end{itemize}
+\end{exercise}
+\begin{proof}
+Every $A_r$ is in $\Z/p^r\Z$, so $0\leq A_r<p^r$. From the construction, $A_s+p^s=\varphi_{rs}(A_r+p^r)=A_r+p^s$ for $s\leq r$, we see that $A_r\equiv A_s$ mod $p^s$ if $s\leq r$.\par
+Similar to the example $R[[x]]$. Giving a sequence is the same as giving a truncation of a series. And the third point is the same as series $R[[x]]$. From the previous point, we find that $\Z_p/p\Z_p$ is a field, so $p\Z_p$ is a maximal ideal.\par
+Define a function $v_p(x):=\sup\{n:x\in p^n\Z_p\}=\inf\{n:x_n\neq 0\}$. Then for any ideal $I\sub\Z_p$, let $n:=\min\{v_p(x):x\in I\}$, then $I\sub p^n\Z_p$. Now let $y=p^nx\in I$, then $x$ is invertible, so $(p^nx)=p^n\Z_p\sub I$. This shows every ideal in $\Z_p$ has the form $p^n\Z_p$, and $p\Z_p$ is the unique maximal ideal.
+\end{proof}
+\begin{exercise}\label{completion of Z}
+If $m,n$ are positive integers and $m\mid n$, then $(n)\sub (m)$, and there is an onto ring homomorphism $\Z/n\Z\twoheadrightarrow\Z/m\Z$. The limit ring $\llim\Z/n\Z$ exists and is denoted by $\widehat{\Z}$. Prove that $\widehat{\Z}=\End_{\mathsf{Ab}}(\Q/\Z)$. 
+\end{exercise}
+\begin{proof}
+Every $f\in\End_{\mathsf{Ab}}(\Q/\Z)$ is uniquely determined by $f(\frac{1}{n})$. Since $n\cdot f(\frac{1}{n})=f(1)=f(0)=0$, $f(\frac{1}{n})=\frac{g(n)}{n}$ for some integer $g(n)$. Since we are deal with $\Q/\Z$, we may choose $0\leq g(n)<n$.\par
+For $m\mid n$, we have $n=am$, so
+\[f(\dfrac{1}{n})=f(\dfrac{1}{am})=\dfrac{g(n)}{am},\quad f(\dfrac{1}{m})=\dfrac{g(m)}{m}\]
+and
+\[a\cdot f(\dfrac{1}{n})=\dfrac{g(n)}{m}=f(\dfrac{1}{m})=\dfrac{g(m)}{m}\]
+so we have $g(n)\equiv g(n)$ mod $m$. This means the sequence
+\[(f(\dfrac{1}{n}))_{i\in\N}\]
+is an element of $\widehat{\Z}$. Conversely, any element in $\widehat{\Z}$ uniquely defines an endomorphism of $\Q/\Z$. So we have $\widehat{\Z}=\End_{\mathsf{Ab}}(\Q/\Z)$.
+\end{proof}
+\begin{exercise}
+Let $\widehat{\Z}$ be as in Exercise~\ref{completion of Z}.
+\begin{itemize}
+\item If $R$ is a commutative ring endowed with homomorphisms $R\to\Z/p^r\Z$ for all primes $p$ and all $r$, compatible with all projections $\Z/p^r\Z\to\Z/p^s\Z$ for $s\leq r$, prove that there are ring homomorphisms $R\to\Z/n\Z$ for all $n$, compatible with all projections $\Z/n\Z\to\Z/m\Z$ for $m\mid n$.
+\item Deduce that $\widehat{\Z}$ satisfies the universal property for the product of $\Z_p$, as $p$ ranges over all positive prime integers.
+\end{itemize}
+It follows that $\prod_p\Z_p\cong\widehat{\Z}\cong\End_{\mathsf{Ab}}(\Q/\Z)$.
+\end{exercise}
+\begin{proof}
+For any $n=p_1^{r_1}\cdots p_i^{r_i}$, $m=p_1^{r'_1}\cdots p_i^{r'_i}$ with $m\mid n$, by Chinese remainder theorem we have a commutative diagram
+\[\begin{tikzcd}
+\prod_{i}\Z/p_i^{r_i}\Z\ar[r,"\sim"]\ar[d, twoheadrightarrow]&\Z/n\Z\ar[d, twoheadrightarrow]\\
+\prod_{i}\Z/p_i^{r'_i}\Z\ar[r,"\sim"]&\Z/m\Z
+\end{tikzcd}\]
+so we get the first result.\par
+Note that giving a morphism from $R$ to $\Z_p$ is the same as giving morphisms from $R$ to $\Z/p^r\Z$ fro all $r$. So if there is a ring $R$ with morphisms to $\Z_p$ for all prime $p$, then we get morphisms to $\Z/p^r\Z$ for all prime $p$, all $r$. From the previous point, there are morphisms $R\to\Z/n\Z$ for all $n$, compatible with all projection $\Z/n\Z\to\Z m\Z$. From the definition of $\widehat{\Z}$, there is a unique morphism from $R$ to $\widehat{\Z}$. So $\widehat{\Z}$ satisfies the universal property of $\prod_p\Z_p$.
+\end{proof}
+\begin{exercise}
+Let $R,S$ be rings. An additive covariant functor $\mathscr{F}:R$-$\mathsf{Mod}\to S$-$\mathsf{Mod}$ is \textbf{faithfully exact} if \[\begin{tikzcd}
+\mathscr{F}(A)\ar[r,"\mathscr{F}(\varphi)"]&\mathscr{F}(B)\ar[r,"\mathscr{F}(\psi)"]&\mathscr{F}(C)
+\end{tikzcd}\] 
+is exact in $S$-$\mathsf{Mod}$ if and only if 
+\[\begin{tikzcd}
+A\ar[r,"\varphi"]&B\ar[r,"\psi"]&C
+\end{tikzcd}\]
+is exact in $R$-$\mathsf{Mod}$. Prove that an exact functor $\mathscr{F}:R$-$\mathsf{Mod}\to S$-$\mathsf{Mod}$ is faithfully exact if and only if $\mathscr{F}(M)\neq0$ for every nonzero $R$-module $M$, if and only if $\mathscr{F}(\varphi)\neq0$ for every nonzero morphism $\varphi$ in $R$-Mod.
+\end{exercise}
+\begin{proof}
+\mbox{}
+\begin{itemize}
+\item One direction is easy: If $\mathscr{F}$ is faithfully exact. Assume $\mathscr{F}(M)=0$, then the sequence $0\to\mathscr{F}(M)\to0$ is exact, but $0\to M\to 0$ is not exact unless $M=0$, so we find $M=0$. If $\mathscr{F}(\varphi)=0$, then 
+\[\begin{tikzcd}
+\mathscr{F}(M)\ar[r,"\mathscr{F}(\varphi)"]&\mathscr{F}(N)\ar[r,"id_{\mathscr{F}(N)}"]&\mathscr{F}(N)
+\end{tikzcd}\] 
+is exact, but 
+\[\begin{tikzcd} 
+M\ar[r,"\varphi"]&N\ar[r,"id_N"]&N 
+\end{tikzcd}\] 
+is exact only if $\varphi=0$.
+\item Then we show that $\mathscr{F}$ reflects zero objects if and only if $\mathscr{F}$ reflects zero morphisms: If $\mathscr{F}$ reflects zero morphisms, assume $\mathscr{F}(X)=0$, then $\id_{\mathscr{F}(X)}=0$, so $\id_X=0$. But $id_X=0\iff X=0$, so $X=0$.\par 
+Now assume $\mathscr{F}$ reflects zero objects. For $\varphi:A\to B$ such that $\mathscr{F}(\varphi)=0$. Consider the exact sequence:
+\[\begin{tikzcd}
+A\ar[r,"\varphi"]&\im\varphi\ar[r,"\psi"]&\coker\varphi
+\end{tikzcd}\]
+since $\mathscr{F}$ is exact, we also have a exact sequence
+\[\begin{tikzcd}
+\mathscr{F}(A)\ar[r,"\mathscr{F}(\varphi)"]&\mathscr{F}(\im\varphi)\ar[r,"\mathscr{F}(\psi)"]&\mathscr{F}(\coker\varphi)
+\end{tikzcd}\]
+Note that $\mathscr{F}(\varphi)=0$, so $\mathscr{F}(\psi)$ is monic. But $\psi=0$ so $\mathscr{F}(\psi)=0$, we conclude that $\mathscr{F}(\im\varphi)=0$. This means $\im\varphi=0$, so we have $\varphi=0$.
+\item Now we show the last direction. Let $\mathscr{F}$ reflects zero morphisms, first we show that $\mathscr{F}$ reflects monomorphisms and epimorphisms. In deed, suppose
+\[\begin{tikzcd}
+0\ar[r]&X\ar[r]&Y\ar[r]&Z
+\end{tikzcd}\]
+is exact; then
+\[\begin{tikzcd}
+0\ar[r]&\mathscr{F}(X)\ar[r]&\mathscr{F}(Y)\ar[r]&\mathscr{F}(Z)
+\end{tikzcd}\]
+is exact. If $\mathscr{F}(Y)\to\mathscr{F}(Z)$ is monic, then $\mathscr{F}(X)=0$, so $X=0$. This shows $\mathscr{F}$ reflects monomorphisms, the dual argument shows that $\mathscr{F}$ reflects epimorphisms. Now, in an abelian category, $f$ is an isomorphism if and only if $f$ is both monic and epic, so this implies $\mathscr{F}$ reflects isomorphisms. Now suppose $X\to Y\to Z$ is given and
+\[\begin{tikzcd}
+0\ar[r]&\mathscr{F}(X)\ar[r,"\mathscr{F}(f)"]&\mathscr{F}(Y)\ar[r,"\mathscr{F}(g)"]&\mathscr{F}(Z)
+\end{tikzcd}\]
+is exact. Since $\mathscr{F}(X)\to\ker\mathscr{F}(g)$ is an isomorphism, and $\ker\mathscr{F}(g)=\mathscr{F}(\ker g)$, $X\to\ker g$ is also an isomorphism, so $X\to Y\to Z$ is exact.
+\end{itemize}
+\end{proof}
+\begin{exercise}\label{locali exact}
+Prove that localization is an exact functor.\par
+In fact, prove that localization preserves homology: if
+\[\begin{tikzcd}
+M_{\bullet}:&\cdots\ar[r]&M_{i+1}\ar[r,"d_{i+1}"]&M_i\ar[r,"d_i"]&M_{i-1}\ar[r]&\cdots
+\end{tikzcd}\]
+is a complex of $R$-modules and $S$ is a multiplicative subset of $R$, then the localization of the $i$-th homology of $M_{\bullet}$ is the $i$-th homology $H_i(S^{-1}M_{\bullet})$ of the localized complex
+\[\begin{tikzcd}
+S^{-1}M_{\bullet}:&\cdots\ar[r]&S^{-1}M_{i+1}\ar[r,"S^{-1}d_{i+1}"]&S^{-1}M_i\ar[r,"S^{-1}d_i"]&S^{-1}M_{i-1}\ar[r]&\cdots
+\end{tikzcd}\]
+\end{exercise}
+\begin{proof}
+Since 
+\[d_i(\dfrac{m}{s})=d(\dfrac{ms'}{ss'})\]
+we have
+\[\ker S^{-1}d_i=\{\dfrac{m}{s}\mid \exists r\in S, rm\in\ker d_i\},\quad\im S^{-1}d_{i+1}=\{\dfrac{m}{s}\mid\exists r\in s, rm\in\im d_{i+1}\}\]
+Concerning the quotient, first we observet that, in the construction of $S^{-1}H_i(M_{\bullet})$:
+\begin{align*}
+\dfrac{a+\im d_{i+1}}{s}=\dfrac{a'+\im d_{i+1}}{s'}&\iff (\exists r\in S)\quad r[(a+\im d_{i+1})s'-(a'+\im d_{i+1})s]=0\text{ in $H_i(M_{\bullet})$ }\\
+&\iff (\exists r\in S)\quad r(as'-a's)\in\im d_{i+1}\end{align*}
+While in the quotient $H_i(S^{-1}M_{\bullet})$:
+\[\dfrac{a}{s}+\im S^{-1}d_{i+1}=\dfrac{a'}{s'}+\im S^{-1}d_{i+1}\iff \dfrac{a}{s}-\dfrac{a'}{s'}\in\im S^{-1}d_{i+1}\iff (\exists r\in S)\  r(as'-a's)\in\in d_{i+1}\]
+So there is a natural homomorphism:
+\[\psi:S^{-1}H_i(M_{\bullet})\to H_i(S^{-1}M_{\bullet}),\quad \dfrac{a+\im d_{i+1}}{s}\mapsto\dfrac{a}{s}+\im S^{-1}d_{i+1}\]
+this is an isomorphism from the observation above.
+\end{proof}
+\begin{exercise}
+Suppose $M$ is a finitely presented $R$-module and $N$ is an arbitrary $R$-module. Show the followsing holds
+\[S^{-1}\Hom_R(M,N)\stackrel{\sim}{\longrightarrow}\Hom_{S^{-1}R}(S^{-1}M,S^{-1}N)\]
+But note that this does not holds for any module.
+\end{exercise}
+\begin{proof}
+First we have
+\[S^{-1}\Hom_R(R,N)\stackrel{\sim}{\longrightarrow}\Hom_{S^{-1}R}(S^{-1}R,S^{-1}N)\]
+for any $N$. And we have a natural homomorphism 
+\[S^{-1}\Hom_A(M,N)\to \Hom_{S^{-1}A}(S^{-1}M,S^{-1}N).\] 
+Consider the diagram:
+\[\begin{tikzcd}[column sep=small]
+0\ar[r]&S^{-1}\Hom_{R}(M,N)\ar[r]\ar[d]&S^{-1}\Hom_{R}(R^m,N)\ar[d]\ar[r]&S^{-1}\Hom_{R}(R^n,N)\ar[d]\\
+0\ar[r]&\Hom_{S^{-1}R}(S^{-1}M,S^{-1}N)\ar[r]&\Hom_{S^{-1}R}(S^{-1}R^m,S^{-1}N)\ar[r]&\Hom_{S^{-1}R}(S^{-1}R^n,S^{-1}N)
+\end{tikzcd}\]
+The right two vertical maps are isomorphisms, so we get the isomorphism.\par
+For $R=N=\Z$, $M=\Q$, $S=\Z-\{0\}$, we have
+\[S^{-1}\Hom_\Z(\Q,\Z)=S^{-1}\{0\}=0,\quad \Hom_{S^{-1}\Z}(S^{-1}\Q,S^{-1}\Z)=\Hom_{\Q}(\Q,\Q)=\Q\]
+\end{proof}
+\begin{exercise}
+Suppose $F:\mathcal{A}\to\mathcal{B}$ is a covariant functor of abelian categories, and $C^\bullet$ is a complex in $\mathcal{A}$.
+\begin{itemize}
+\item[$(a)$]If $F$ is right-exact, describe a natural morphism $FH^\bullet\to H^\bullet F$.
+\item[$(b)$]If $F$ is right-exact, describe a natural morphism $FH^\bullet\leftarrow H^\bullet F$.
+\item[$(c)$]If $F$ is exact, show that the morphisms of $(a)$ and $(b)$ are inverses and thus isomorphisms.
+\end{itemize}
+\end{exercise}
+\begin{proof}
+First we recall that if $F$ is right-exact, then $F$ commutes with cokernels: For we have the following exact sequence
+\[\begin{tikzcd}
+0\ar[r]&F(C^i)\ar[r,"F(d^{i})"]&F(C^{i+1})\ar[r]&F(\coker d^i)\ar[r]&0
+\end{tikzcd}\]
+which is obtained from the corresponding short exact sequence. Hence
+\[F(\coker d^i)\cong \coker F(d^i)\]
+\begin{itemize}
+\item[$(a)$]Consider the exact sequence
+\[\begin{tikzcd}
+0\ar[r]&\im d^i\ar[r]&C^{i+1}\ar[r]&\coker d^i\ar[r]&0
+\end{tikzcd}\]
+Applying $F$ on this gives us
+\[\begin{tikzcd}
+F\im d^i\ar[r]&F(C^{i+1})\ar[r]&F\coker d^i\ar[r]&0
+\end{tikzcd}\]
+Together with the similar sequence in $F(C^\bullet)$ we get a diagram
+\[\begin{tikzcd}
+&F\im d^i\ar[r]\ar[d,dashed,"\alpha"]&F(C^{i+1})\ar[r]\ar[d,equal]&F\coker d^i\ar[d,"\cong"]\ar[r]&0\\
+0\ar[r]&\im F(d^i)\ar[r]&F(C^{i+1})\ar[r]&F\coker d^i\ar[r]&0
+\end{tikzcd}\]
+Then we can show there is an induced map $\alpha:F\im d^i\to\im f(d^i)$. Further, by the snake lemma, this induced map $\alpha$ is an epimorphism.
+Now consider another sequence 
+\[\begin{tikzcd}
+0\ar[r]&H^i(C^\bullet)\ar[r]&\coker d^{i-1}\ar[r]&\im d^i\ar[r]&0
+\end{tikzcd}\]
+Applying $F$ gives 
+\[\begin{tikzcd}
+FH^i(C^\bullet)\ar[r]&F\coker d^{i-1}\ar[r]&F\im d^i\ar[r]&0
+\end{tikzcd}\]
+Similarly, with the counterpart in $F(C^\bullet)$, there is a diagram
+\[\begin{tikzcd}
+&FH^i(C^\bullet)\ar[r]\ar[d,dashed,"\beta"]&F\coker d^{i-1}\ar[r]\ar[d,"\cong"]&F\im d^i\ar[r]\ar[d,"\alpha"]&0\\
+0\ar[r]&H^iF(C^\bullet)\ar[r]&\coker F(d^{i-1})\ar[r]&\im F(d^i)\ar[r]&0
+\end{tikzcd}\]
+Together with $\alpha$, we get our desired map 
+\[\beta:FH^i(C^\bullet)\to H^iF(C^\bullet)\]
+\item[$(b)$]Instead of $(a)$, we may use the sequence for kernels:
+\[\begin{tikzcd}
+0\ar[r]&\ker d^i\ar[r]&C^i\ar[r]&\im d^i\ar[r]&0
+\end{tikzcd}\]
+and
+\[\begin{tikzcd}
+0\ar[r]&\im d^{i-1}\ar[r]&\ker d^i\ar[r]&H^i(C^\bullet)\ar[r]&0
+\end{tikzcd}\]
+with the identification
+\[\ker F(d^i)\cong F(\ker d^i)\]
+\item[$(c)$]With the exactness hypothesis, the map we obtained all becomes isomorphisms.
+\end{itemize}
+\end{proof}
+\section{Abelian Category}
+\subsection{Preadditive and additive categories}
+\subsubsection{Preaditive category}
+\begin{definition}
+A category $\mathcal{A}$ is called \textbf{preadditive} if each morphism set $\Mor_{\mathcal{A}}(X,Y)$ is endowed with the structure of an abelian group such that the compositions
+\[\Mor_{\mathcal{A}}(X,Y)\times \Mor_{\mathcal{A}}(Y,Z)\to\Mor_{\mathcal{A}}(X,Z)\]
+are bilinear. A functor $\mathscr{F}:\mathcal{A}\to\mathcal{B}$ of preadditive categories is called an \textbf{additive functor} if and only if 
+\[\mathscr{F}:\Mor_{\mathcal{A}}(X,Y)\to\Mor_{\mathcal{B}}(\mathscr{F}(X),\mathscr{F}(Y))\] 
+is a homomorphism of abelian groups for all $X,Y\in\Obj(\mathcal{A})$.
+\end{definition}
+In particular for every $X,Y$ there exists at least one morphism $X\to Y$, namely the \textbf{zero map}.
+\begin{lemma}\label{preadd cat id=0}
+Let $\mathcal{A}$ be a preadditive category. Let $X$ be an object of $\mathcal{A}$. The following are equivalent:
+\begin{itemize}
+\item[$(a)$] $X$ is a initial object.
+\item[$(b)$] $X$ is a final object.
+\item[$(c)$] $\id_X=0$ in $\Mor_{\mathcal{A}}(X,X)$.
+\end{itemize}
+Furthermore, if such an object $0$ exists, then a morphism $f:X\to Y$ factors through $0$ if and only if $f=0$.
+\end{lemma}
+\begin{proof}
+Clearly if $X$ is a final or initial object, then $\id_X=0$ is the unique morphism $X\to X$. Now assume $\id_X=0$ holds, then \[f\in\Mor_{\mathcal{A}}(X,Y)\Rightarrow f=f\circ\id_X=0,\And g\in\Mor_{\mathcal{A}}(Y,X)\Rightarrow g=\id_X\circ g=0.\] 
+Thus $X$ is final and initial.
+\end{proof}
+\begin{definition}
+In a preadditive category $\mathcal{A}$ we call \textbf{zero object}, and we denote it $0$ any final and initial object as in Lemma~\ref{preadd cat id=0} above.
+\end{definition}
+\begin{proposition}\label{preadd cat prod coprod}
+Let $\mathcal{A}$ be a preadditive category. Let $X,Y\in\Obj(\mathcal{A})$. Then the product $X\times Y$ exists if and only if the coproduct $X\amalg Y$ exists. In this case $X\times Y\cong X\amalg Y$.
+\end{proposition}
+\begin{proof}
+Suppose that $X\times Y$ exists with projections $\pi_1:X\times Y\to X$ and $\pi_2:X\times Y\to Y$. Denote $i_1:X\to X\times Y$ the morphism corresponding to $(0,1)$:
+\[\begin{tikzcd}
+&X\ar[ldd,bend right=20pt,swap,"1"]\ar[d,dashed,"i_1"]\ar[rdd,bend left=20pt,"0"]&\\
+&X\times Y\ar[ld,swap,"\pi_1"]\ar[rd,"\pi_2"]&\\
+X&&Y
+\end{tikzcd}\]
+Similarly, denote $i_2:Y\to X\times Y$ the morphism corresponding to $(0,1)$. Thus we have the commutative diagram
+\[\begin{tikzcd}
+X\ar[rr,"1"]\ar[rd,"i_1"]&&X\\
+&X\times Y\ar[ru,"\pi_1"]\ar[rd,"\pi_2"]&\\
+Y\ar[rr,"1"]\ar[ru,"i_2"]&&Y
+\end{tikzcd}\]
+where the diagonal compositions are zero. It follows that $i_1\circ \pi_1+i_2\circ\pi_2$ is the identity since it is a morphism which upon composing with $\pi_1$ gives $\pi_1$ and upon composing with $\pi_2$ gives $\pi_2$. Suppose given morphisms $f:X\to Z$ and $g:Y\to Z$. Then we can form the map $f\circ\pi_1+g\circ\pi_2:X\times Y\to Z$. In this way we get a bijection $\Mor_{\mathcal{A}}(X\times Y,Z)=\Mor_{\mathcal{A}}(X,Z)\times\Mor_{\mathcal{A}}(Y,Z)$ which show that $X\times Y\cong X\amalg Y$. The coproduet case can be done similarly.
+\end{proof}
+
+\begin{definition}
+Given a pair of objects $X,Y$ in a preadditive category $\mathcal{A}$ we call \textbf{direct sum}, and we denote it $X\oplus Y$ the product $X\times Y$ endowed with the morphisms $\pi_1,\pi_2,i_1,i_2$ as in Proposition~\ref{preadd cat prod coprod} above.
+\end{definition}
+\begin{proposition}
+Let $\mathcal{A},\mathcal{B}$ be preadditive categories. Let $\mathscr{F}:\mathcal{A}\to\mathcal{B}$ be an additive functor. Then $\mathscr{F}$ transforms direct sums to direct sums and zero to zero.
+\end{proposition}
+\begin{proof}
+Suppose $\mathscr{F}$ is additive. A direct sum $Z$ of $X$ and $Y$ is characterized by having morphisms 
+\[i_1:X\to Z,\ i_2:Y\to Z,\ \pi_1:Z\to X,\ \pi_2:Z\to Y\]
+such that
+\[\pi_1\circ i_1=\id_X,\pi_2\circ i_2=\id_Y,\pi_2\circ i_1=0,\pi_1\circ i_2=0\And i_1\circ\pi_1+i_2\circ\pi_2=\id_Z.\]
+Clearly $\mathscr{F}(X)$, $\mathscr{F}(Y)$, $\mathscr{F}(Z)$ and the morphisms $\mathscr{F}(i_1),\mathscr{F}(i_2),\mathscr{F}(\pi_1),\mathscr{F}(\pi_1)$ satisfy exactly the same relations (by additivity) and we see that $\mathscr{F}(Z)$ is a direct sum of $\mathscr{F}(X)$ and $\mathscr{F}(Y)$.
+\end{proof}
+\subsubsection{Additive category}
+\begin{definition}
+A category $\mathcal{A}$ is called \textbf{additive} if it is preadditive and finite
+products exist, in other words it has a zero object and direct sums.
+\end{definition}
+Namely the empty product is a finite product and if it exists, then it is a final object.
+\begin{definition}
+Let $\varphi:A\to B$ be a morphism in an additive category $\mathcal{A}$. A morphism $\iota:K\to A$ is a \textbf{kernel} of $\varphi$ if $\varphi\circ\iota=0$ and for all morphisms $\zeta:Z\to A$ such that $\varphi\circ\zeta=0$ there exists a unique $\widetilde{\zeta}:Z\to K$ making the diagram
+\[\begin{tikzcd}
+Z\ar[rd,dashed,swap,"\exists !\widetilde{\zeta}"]\ar[r,swap,"\zeta"]\ar[rr,bend left,"0"]&A\ar[r,swap,"\varphi"]&B\\
+&K\ar[u,"\iota"]&
+\end{tikzcd}\]
+commute.\par
+A morphism $\psi:B\to C$ is a \textbf{cokernel} of $\varphi$ if $\psi\circ\varphi=0$ and for all morphisms $\beta:B\to Z$ such that $\beta\circ\varphi=0$ there exists a unique $\widetilde{\beta}:C\to Z$ making the diagram
+\[\begin{tikzcd}
+&C\ar[rd,dashed,"\exists !\widetilde{\beta}"]&\\
+A\ar[r,"\varphi"]\ar[rr,swap,bend right,"0"]&B\ar[r,"\beta"]\ar[u,"\psi"]&Z
+\end{tikzcd}\]
+commute.
+\end{definition}
+\begin{definition}
+If a kernel of $\varphi:A\to B$ exists, then a \textbf{coimage} of $\varphi$ is a cokernel for the morphism $\ker\varphi\to A$. If a cokernel of $\varphi:A\to B$ exists, then the \textbf{image} of $\varphi$ is a kernel of the morphism $B\to\coker\varphi$.
+\end{definition}
+\begin{lemma}\label{ker is mono}
+In any additive category, kernels are monomorphisms and cokernels are epimorphisms.
+\end{lemma}
+\begin{proof}
+Let $\varphi:A\to B$ be a morphism in an additive category $\mathcal{A}$, and let $\ker\varphi:K\to A$ be its kernel. Let $\zeta:Z\to K$ be a morphism such that $\ker\varphi\circ\zeta=0$. Then the composition $\varphi\circ(\ker\varphi\circ\zeta)$ is $0$ and by definition of kernel, $\ker\varphi\circ\zeta$ factors uniquely through $K$:
+\[\begin{tikzcd}
+Z\ar[r,bend left=20,"\zeta"]\ar[r,dashed,swap,bend right=20,"\exists !"]&K\ar[r,"\ker\varphi"]&A\ar[r,"\varphi"]&B
+\end{tikzcd}\]
+since $\ker\varphi\circ\zeta=0=\ker\varphi\circ 0$, the uniqueness of the decomposition gives $\zeta=0$.\par
+The proof that cokernels are epimorphisms is analogous.
+\end{proof}
+Now we relate the direct sum to kernels as follows.
+\begin{proposition}
+Let $\mathcal{A}$ be a preadditive category. Let $X\oplus Y$ with morphisms as in Propostion~\ref{preadd cat prod coprod} be a direct sum in $\mathcal{A}$. Then $i_1:X\to X\oplus Y$ is a kernel of $\pi_2:X\oplus Y\to Y$. Dually, $\pi_1$ is a cokernel for $i_2$.
+\end{proposition}
+\begin{proof}
+Let $f:Z\to X\oplus Y$ be a morphism such that $\pi_2\circ f=0$. We have to show that there exists a unique morphism $g:Z\to X$ such that $f=i_1\circ g$:
+\[\begin{tikzcd}
+X\ar[rr,"1"]\ar[rd,"i_1"]&&X\\
+Z\ar[r,"f"]&X\times Y\ar[ru,"\pi_1"]\ar[rd,"\pi_2"]&\\
+Y\ar[rr,"1"]\ar[ru,"i_2"]&&Y
+\end{tikzcd}\] Since $i_1\circ\pi_1+i_2\circ\pi_2$ is the identity on $X\oplus Y$ we see that
+\[f=(i_1\circ\pi_1+i_2\circ\pi_2)\circ f=i_1\circ\pi_1\circ f\]
+and hence $g=\pi_1\circ f$ works. Uniquess holds because $\pi_1\circ i_1$ is the identity on $X$. The proof of the second statement is dual.
+\end{proof}
+\begin{theorem}\label{preadditive coim im}
+Let $\varphi:A\to B$ be a morphism in a preadditive category such that
+the kernel, cokernel, image and coimage all exist. Then $\varphi$ can be factored uniquely
+\[\begin{tikzcd}
+A\ar[rrr,bend left=20pt,"\varphi"]\ar[r]&\coim\varphi\ar[r]&\im\varphi\ar[r]&B
+\end{tikzcd}\]
+\end{theorem}
+\begin{proof}
+There is a canonical morphism $\coim\varphi\to B$ because $\ker\varphi\to A\to B$ is zero,
+\[\begin{tikzcd}
+&&\im\varphi&\\
+\ker\varphi\ar[r]&A\ar[r,"\varphi"]\ar[d]&B\ar[r]&\coker\varphi\\
+&\coim\varphi\ar[ru,dashed]
+\end{tikzcd}\]
+The composition $\coim\varphi\to B\to\coker\varphi$ is zero, because it is the unique morphism which gives rise to the morphism $A\to B\to\coker\varphi$ which is zero. Hence $\coim\varphi\to B$ factors uniquely through $\im\varphi\to B$, which gives us the desired map.
+\end{proof}
+\subsection{Abelian categories}
+An abelian category is a category satisfying just enough axioms so the snake lemma holds. An axiom is that the canonical map $\coim\varphi\to\im\varphi$ of Theorem~\ref{preadditive coim im} is always an isomorphism.
+\begin{definition}\label{ab cat def}
+A category $\mathcal{A}$ is \textbf{abelian} if it is additive, if all kernels and cokernels exist, and if the natural map $\coim\varphi\to\im\varphi$ is an isomorphism for all morphisms $\varphi$ of $\mathcal{A}$.
+\end{definition}
+\begin{definition}
+Let $\varphi:A\to B$ be a morphism in an abelian category.
+\begin{itemize}
+\item[$(a)$] We say $\varphi$ is \textbf{injective} if $\ker\varphi=0$.
+\item[$(b)$] We say $\varphi$ is \textbf{surjective} if $\coker\varphi=0$.
+\end{itemize}
+\end{definition}
+\begin{proposition}\label{mono epi iff ker coker}
+Let $\varphi:A\to B$ be a morphism in an abelian category. Then
+\begin{itemize}
+\item[$(a)$] $\varphi$ is \textbf{injective} if and only if $f$ is a monomorphism.
+\item[$(b)$] $\varphi$ is \textbf{surjective} if and only if $f$ is a epimorphism.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+The condition for monomorphism can be interpreted as: If $\psi:Z\to A$ is any morphism such that $\varphi\circ\psi=0$, then $\psi$ factors through $0\to A$. So $\varphi$ is a monomorphism if and only if $0\to A$ is its kernel. The same holds for epimorphism.
+\end{proof}
+\begin{proposition}
+Let $\mathcal{A}$ be an abelian category. All finite limits and finite colimits
+exist in $\mathcal{A}$.
+\end{proposition}
+\begin{proof}
+To show that finite limits exist it suffices to show that finite products and
+equalizers exist. Finite products exist by definition and the equalizer of $f,g:X\to Y$ is the kernel of $a-b$. The argument for finite colimits is similar but dual to this.
+\end{proof}
+\begin{example}
+Let $\mathcal{A}$ be an abelian category. Pushouts and fibre products in $\mathcal{A}$ have the following simple descriptions:
+\begin{itemize}
+\item[$(a)$] If $f:X\to Y,g:Z\to Y$ are morphisms in $\mathcal{A}$, then we have the fibre product: $X\times_YZ=\ker((f,-g):X\oplus Z\to Y)$.
+\item[$(b)$] If $f:Y\to X,g:Y\to Z$ are morphisms in $\mathcal{A}$, then we have the pushout: $X\amalg_YZ=\coker((f,-g):Y\oplus X\to Z)$.
+\end{itemize}
+\end{example}
+\begin{lemma}\label{ker is ker of coker}
+In an abelian category $\mathcal{A}$, every kernel is the kernel of its cokernel; every cokernel is the cokernel of its kernel.
+\end{lemma}
+\begin{proof}
+Let $\varphi:K\to A$ be the kernel of some morphism $A\to B$; since $\mathcal{A}$ is abelian, $\varphi$ has a cokernel $\psi:A\to C$. The composition $K\to A\to B$ is $0$, so $A\to B$ factors
+through $\psi$ by definition of cokernel:
+\[\begin{tikzcd}
+C\ar[rd,dashed]&\\
+A\ar[r]\ar[u,"\psi"]&B\\
+K\ar[u,"\varphi"]&
+\end{tikzcd}\]
+Now let $Z\to A$ be a morphism such that the composition $Z\to A\to C$ is the zero-morphism; then so is the composition $Z\to A\to B$. Therefore $Z\to A$ factors through a unique morphism $Z\to K$,
+\[\begin{tikzcd}
+&C\ar[rd,dashed]&\\
+Z\ar[r]\ar[rd,dashed]&A\ar[r]\ar[u,"\psi"]&B\\
+&K\ar[u,"\varphi"]&
+\end{tikzcd}\]
+since $\varphi$ is the kernel of $A\to B$. But this shows that $\varphi:A\to B$ satisfies the property defining the kernel of its cokernel $A\to C$, as stated.
+\end{proof}
+\begin{proposition}\label{mono epi iff inverse}
+Let $\varphi:A\to B$ be a morphism in an abelian category $\mathcal{A}$.
+\begin{itemize}
+\item[$(a)$] $\varphi$ is a monomorphism if and only if $\varphi$ has a left-invere.
+\item[$(b)$] $\varphi$ is a epimorphism if and only if $\varphi$ has a right-invere.
+\end{itemize}
+Thus $\varphi$ is an isomorphism if and only if it is a monomorphism and a epimorphism.
+\end{proposition}
+\begin{proof}
+If $\varphi$ has a left-inverse, then clearly it is monic. Conversely, if $\varphi$ is a monomorphis, then the kernel of $\varphi$ is $0\to A$. Further, $\varphi$ is the cokernel of $0\to A$. Now consider the identity $A\to A$:
+\[\begin{tikzcd}
+0\ar[r]&A\ar[r,"\varphi"]\ar[d,swap,"\id_A"]&B\\
+&A
+\end{tikzcd}\]
+Since $0\to A\to A$ is the zero morphism and $\varphi$ is the cokernel of $0\to A$, we obtain a unique morphism $\psi:B\to A$ making the diagram commute:
+\[\begin{tikzcd}
+0\ar[r]&A\ar[r,"\varphi"]\ar[d,swap,"\id_A"]&B\ar[ld,"\psi"]\\
+&A
+\end{tikzcd}\]
+As $\psi\circ\varphi=\id_A$, this shows that $\varphi$ has a right-inverse. The part $(b)$ can be done similarly.
+\end{proof}
+\subsection{Exact sequence in Abelian category}
+\begin{definition}
+Let $\mathcal{A}$ be an additive category. We say a sequence of morphisms
+\[\begin{tikzcd}
+\cdots\ar[r]&A\ar[r,"\varphi"]&B\ar[r,"\psi"]&C\ar[r]&\cdots
+\end{tikzcd}\]
+in $\mathcal{A}$ is a \textbf{complex} if the composition of any two arrows is zero. If $\mathcal{A}$ is abelian then we say a sequence as above is \textbf{exact at $\bm{B}$} if $\im\psi=\ker\varphi$. We say it is exact if it is exact at every object. A \textbf{short exact sequence} is an exact complex of the form
+\[\begin{tikzcd}
+0\ar[r]&A\ar[r,"\varphi"]&B\ar[r,"\psi"]&C\ar[r]&0
+\end{tikzcd}\]
+\end{definition}
+\begin{proposition}
+Let $\mathcal{A}$ be an abelian category. Let $0\to M_1\to M_2\to M_3\to0$ be a complex of $\mathcal{A}$.
+\begin{itemize}
+\item[$(a)$] $M_1\to M_2\to M_3\to 0$ is exact if and only if
+\[\begin{tikzcd}
+0\ar[r]&\Hom_{\mathcal{A}}(M_3,N)\ar[r]&\Hom_{\mathcal{A}}(M_2,N)\ar[r]&\Hom_{\mathcal{A}}(M_1,N)
+\end{tikzcd}\]
+is an exact sequence of abelian groups for all objects $N$ of $\mathcal{A}$.
+\item[$(b)$] $0\to M_1\to M_2\to M_3$ is exact if and only if
+\[\begin{tikzcd}
+\Hom_{\mathcal{A}}(N,M_1)\ar[r]&\Hom_{\mathcal{A}}(N,M_2)\ar[r]&\Hom_{\mathcal{A}}(N,M_3)\ar[r]&0
+\end{tikzcd}\]
+is an exact sequence of abelian groups for all objects $N$ of $\mathcal{A}$.
+\end{itemize}
+\end{proposition}
+\begin{example}\label{fibered diagram}
+For a slightly more interesting example, consider a diagram
+\[\begin{tikzcd}
+D\ar[d,swap,"\psi'"]\ar[r,"\varphi'"]&B\ar[d,"\psi"]\\
+A\ar[r,swap,"\varphi"]&C
+\end{tikzcd}\]
+and the associated sequence
+\[\begin{tikzcd}
+D\ar[r,"{(\psi',\varphi')}"]&A\oplus B\ar[r,"{(\varphi,-\psi)}"]&C
+\end{tikzcd}\]
+obtained by letting $A\oplus B$ play both roles of product and coproduct. Then
+\begin{itemize}
+\item the diagram is commutative if and only if this sequence is a complex;
+\item the sequence obtained by adding a $0$ to the left,
+\[\begin{tikzcd}
+0\ar[r]&D\ar[r]&A\oplus B\ar[r]&C
+\end{tikzcd}\]
+is exact if and only if $D$ may be identified with the fibered product $A\times_{C}B$. If this holds, we say the diagram is \textbf{cartesian}.
+\item likewise, the sequence
+\[\begin{tikzcd}
+D\ar[r]&A\oplus B\ar[r]&C\ar[r]&0
+\end{tikzcd}\]
+is exact if and only if $C$ may be identified with the fibered coproduct $A\amalg_DB$. If this holds, we say the diagram is \textbf{cocartesian}.
+\end{itemize}
+\end{example}
+\begin{lemma}\label{pull bak lem}
+Let $\mathcal{A}$ be an abelian category. Let
+\[\begin{tikzcd}
+D\ar[d,swap,"\psi'"]\ar[r,"\varphi'"]&B\ar[d,"\psi"]\\
+A\ar[r,swap,"\varphi"]&C
+\end{tikzcd}\]
+be a commutative diagram.
+\begin{itemize}
+\item[$(a)$] If the diagram is cartesian, then the morphism $\ker\varphi'\to\ker\varphi$ induced by $\psi'$ is an isomorphism.
+\item[$(b)$] If the diagram is cocartesian, then the morphism $\coker\varphi'\to\coker\varphi$ induced by $\psi$ is an isomorphism.
+\end{itemize}
+\end{lemma}
+\begin{proof}
+Suppose the diagram is cartesian. Let $\epsilon:\ker\varphi'\to\ker\varphi$ be induced by $\psi'$. Let $i:\ker\varphi\to A$ and $j:\ker\varphi'\to D$ be the canonical injections. Consider the map $\alpha:\ker\varphi\to D$ determined by the morphisms $(i,0)$:
+\[\psi'\circ\alpha=i,\quad \varphi'\circ\alpha=0.\]
+Then there is an induced morphism $\gamma:\ker\varphi\to\ker\varphi'$:
+\[\begin{tikzcd}
+\ker\varphi'\ar[r,"j"]\ar[d,"\epsilon"]&D\ar[d,swap,"\psi'"]\ar[r,"\varphi'"]&B\ar[d,"\psi"]\\
+\ker\varphi\ar[r,"i"]\ar[ru,"\alpha"]\ar[u,bend left=30pt,"\gamma"]&A\ar[r,swap,"\varphi"]&C
+\end{tikzcd}\]
+It follows that
+\[\psi'\circ j\circ\gamma\circ\epsilon=\psi'\circ\alpha\circ\epsilon=i\circ\epsilon=\psi'\circ j\And\varphi'\circ j\circ\gamma\circ\epsilon=\varphi'\circ\alpha\circ\epsilon=0=\psi'\circ j.\]
+By the universal property of pull back, we claim $j\circ\gamma\circ\epsilon=j$. Since $j$ is a monomorphism, this means $\gamma\circ\eps=\id_{\ker\varphi'}$.\par
+Furthermore, we have 
+\[i\circ\epsilon\circ\gamma=\psi'\circ j\circ\gamma=\psi'\circ\alpha=i.\]
+Since $i$ is a monomorphism this implies $\epsilon\circ\gamma=\id_{\ker\varphi}$. This proves $(a)$. Now, $(b)$ follows by duality.
+\end{proof}
+\begin{lemma}
+Let $\mathcal{A}$ be an abelian category. Let
+\[\begin{tikzcd}
+D\ar[d,swap,"\psi'"]\ar[r,"\varphi'"]&B\ar[d,"\psi"]\\
+A\ar[r,swap,"\varphi"]&C
+\end{tikzcd}\]
+be a commutative diagram.
+\begin{itemize}
+\item[$(a)$] If the diagram is cartesian and $\varphi$ is an epimorphism, then the diagram is cocartesian and $\varphi'$ is an epimorphism.
+\item[$(b)$] If the diagram is cocartesian and $\varphi'$ is an monomorphism, then the diagram is cartesian and $\varphi$ is an epimorphism.
+\end{itemize}
+\end{lemma}
+\begin{proof}
+Suppose the diagram is cartesian and $\varphi$ is an epimorphism. Let $\alpha=(\psi',\varphi'):D\to A\oplus B$ and let $\beta=(\varphi,-\psi):A\oplus B\to C$. As $\varphi$ is an epimorphism, $\alpha$ is an epimorphism, too. Therefore by Example~\ref{fibered diagram} the diagram is cocartesian. Finally, $\varphi'$ is an epimorphism by Lemma~\ref{pull bak lem}. This proves $(1)$, and $(2)$ follows by duality.
+\end{proof}
+\begin{corollary}
+Let $\mathcal{A}$ be an abelian category.
+\begin{itemize}
+\item[$(a)$] If $X\to Y$ is surjective, then for every $Z\to Y$ the projection $X\times_YZ\to Z$ is surjective.
+\item[$(b)$] If $X\to Y$ is injective, then for every $X\to Z$ the morphism $Z\to Z\amalg_XY$ is injective.
+\end{itemize}
+\end{corollary}
+\begin{lemma}\label{exact iff}
+Let \begin{tikzcd}X'\ar[r,"f"]&X\ar[r,"g"]&X''\end{tikzcd} be a complex. Then the conditions below are equivalent:
+\begin{itemize}
+\item[$(\rmnum{1})$] the complex \begin{tikzcd}X'\ar[r,"f"]&X\ar[r,"g"]&X''\end{tikzcd} is exact.
+\item[$(\rmnum{2})$] the induced morphism $X'\to\ker g$ is an epimorphism.
+\item[$(\rmnum{3})$] for any morphism $h:S\to X$ such that $g\circ h=0$, there exist an epimorphism $f':S'\twoheadrightarrow S$ and a commutative diagram
+\[\begin{tikzcd}
+S'\ar[d]\ar[r,twoheadrightarrow,"f'"]&S\ar[d,"h"]\ar[rd,"0"]&\\
+X'\ar[r,"f"]&X\ar[r,"g"]&X''
+\end{tikzcd}\]
+\end{itemize}
+\end{lemma}
+\begin{proof}
+$(\rmnum{1})\iff(\rmnum{2})$: the exactness is saying $\ker g=\im f$. If $X'\to\ker g$ is epic, by Exercise~\ref{epi mono decop}, $\ker g=\im f$ as needed. Conversely, if $\ker g=\in f$, by Lemma~\ref{im decomp}, $X'\to\ker g$ is epic.\par
+$(\rmnum{1})\Rightarrow(\rmnum{3})$: It is enough to choose $X'\times_{\ker g}S$ as $S'$. Since $X'\to\ker g$ is an epimorphism, $S'\to S$ is an epimorphism by Lemma~\ref{pull bak lem}.\par
+$(\rmnum{3})\Rightarrow(\rmnum{2})$: Choose $S=\ker g$. Then the diagram becomes
+\[\begin{tikzcd}
+S'\ar[d]\ar[r,twoheadrightarrow,"f'"]&\ker g\ar[d]\ar[rd,"0"]&\\
+X'\ar[ru,dashed]\ar[r,"f"]&X\ar[r,"g"]&X''
+\end{tikzcd}\]
+since $g\circ f=0$, by the universal property of $\ker g$, there is a unique morphism $X'\to\ker g$. It follows that the composition $S'\to X'\to\ker g$ is an epimorphism. Hence $X'\to\ker g$ is an epimorphism.
+\end{proof}
+\subsection{Exercise}
+\begin{exercise}\label{epi mono decop}
+Let $\varphi:A\to B$ be a morphism in an abelian category, and assume $\varphi$ decomposes as an epimorphism $\pi$ followed by a monomorphism $i$:
+\[\begin{tikzcd}
+A\ar[rr,swap,bend right,"\varphi"]\ar[r,twoheadrightarrow,"\pi"]&C\ar[r,rightarrowtail,"i"]&B
+\end{tikzcd}\]
+Prove that necessarily $\pi=\coim\varphi$ and $i=\im\varphi$.
+\end{exercise}
+\begin{proof}
+From the universal property of image and coimage, we have the following commutative diagram:
+\[\begin{tikzcd}
+&\coim\varphi\ar[rd,bend left,rightarrowtail]&\\
+A\ar[ru,twoheadrightarrow,bend left]\ar[rd,twoheadrightarrow,bend right]\ar[r,twoheadrightarrow,"\pi"]&C\ar[u,dashed,"\exists!\nu"]\ar[r,rightarrowtail,"i"]&B\\
+&\im\varphi\ar[u,dashed,"\exists!\mu"]\ar[ru,bend right,rightarrowtail]&
+\end{tikzcd}\]
+By simple observation, we find $\mu$ and $\nu$ are both monomorphic and epimorphic, hence are isomorphisms.
+\end{proof}

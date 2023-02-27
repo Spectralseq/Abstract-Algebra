@@ -1,0 +1,479 @@
+\chapter{Algebraic structures and constructions}
+\section{Tensor algebras, symmetric algebras, and exterior algebras}
+\subsection{Cogebras and duality}
+In this paragraph, $A$ is a commutative ring with the trivial graduation. For a graded $A$-modole $M$ of type $\N$, $M^{*\gr}$ will denote the graded $A$-module $\Homgr_A(M,A)$, whose homogeneous elements of degrees $n$ are the $A$-linear forms which are zero on $M_k$ for all $k\neq n$.
+\subsubsection{Cogebras}
+A \textbf{cogebra} over $A$ (or $A$-cogebra, or simply cogebra if no confasion can arise) is a set $E$ with a structure defined by giving the following:
+\begin{itemize}
+\item an $A$-module structure on $E$;
+\item an $A$-linear map $c:E\to E\otimes_AE$ called the \textbf{coproduct} of $E$.
+\end{itemize}
+Given two cogebras $E,\tilde{E}$ whose coproducts are denoted respectively by $c$ and $\tilde{c}$, a morphism of $E$ into $\tilde{E}$ is an $A$-linear map $\phi:E\to\tilde{E}$ such that
+\[(\phi\otimes\phi)\circ c=\tilde{c}\circ\phi.\]
+In other words, it renders commutalive the diagram of $A$-linear maps
+\[\begin{tikzcd}
+E\ar[d,"c"]\ar[r,"\phi"]&\tilde{E}\ar[d,"\tilde{c}"]\\
+E\otimes_AE\ar[r,"\phi\otimes\phi"]&\tilde{E}\otimes_A\tilde{E}
+\end{tikzcd}\]
+It is immediately verified that the identity map is a morphism, that the composition of two morphisms is a morphism and that every bijective morphism is an isomorphism.
+\begin{example}[\textbf{Examples of cogebras}]
+\mbox{}
+\begin{itemize}
+\item[(a)] The canonical isomorphism $A\to A\otimes_AA$ defines an $A$-cogebra structure on $A$.
+\item[(b)] Let $E$ be a cogebra, $c$ its coproduct and $\sigma$ the canonical automorphism of the $A$-module $E\otimes_AE$ such that $\sigma(x\otimes y)=y\otimes x$ for $x,y\in E$; the $A$-linear map $\sigma\circ c$ defines a new cogebra structure on $E$. With this structure $E$ is called the \textbf{opposite cogebra} to the given cogebra $E$.
+\item[(c)] Let $B$ be an $A$-algebra and $m:B\otimes_AB\to B$ the $A$-linear map defining multiplication on $B$. The transpose $m^t$ is then an $A$-linear map of the dual $B^*$ of the $A$-module $B$ into the dual $(B\otimes_AB)^*$ of the $A$-module $B\otimes_AB$. If also $B$ is a finitely generated projective $A$-module, the canonical map $\mu:B^*\otimes_AB^*\to(B\otimes_AB)^*$ is an $A$-module isomorphism (Proposition~\ref{}); the map $c=\mu^{-1}\circ m^t$ is then a coproduct defining a cogebra structure on the dual $B^*$ of the $A$-module $B$.
+\item[(d)] Let $X$ be a set, $A^{\oplus X}$ the free $A$-module over $A$, and $(e_x)_{x\in X}$ the canonical basis for $A^{\oplus X}$. An $A$-linear map $c:A^{\oplus X}\to A^{\oplus X}\otimes_A A^{\oplus X}$ is defined by the condition $c(e_x)=e_x\otimes e_x$ and a canonical cogebra structure is thus obtained on $A^{\oplus X}$.
+\item[(e)] Let $M$ be an $A$-module and $T(M)$ the tensor algebra of $M$. Then there exists a unique $A$-linear map $c_0$ of the $A$-module $T(M)$ into $T(M)\otimes_AT(M)$ such that, for all $n\geq 0$,
+\begin{align}\label{tensor algebra weak coproduct}
+c(x_1\cdots x_n)=\sum_{i=0}^{n}(x_1\cdots x_i)\otimes(x_{i+1}\cdots x_n)
+\end{align}
+for all $x_i\in M$ (here $x_1\cdots x_n$ denotes the product in the algebra $T(M)$). Thus $T(M)$ is given a cogebra structure. Note that $c$ is not a homomophism of algebras: for example, for $x,y\in M$ we have
+\[c(x)c(y)=(1\otimes x+x\otimes 1)(1\otimes y+y\otimes 1)=1\otimes xy+x\otimes y+y\otimes x+y\otimes 1\neq c(xy).\]
+\item[(f)] Let $M$ be an $A$-module and $S(M)$ the symmetric algebra of $M$; the diagonal map $\Delta:x\mapsto(x,x)$ of $M$ into $M\times M$ is an $A$-linear map to which there therefore correspoods a homomorphism $S(\Delta)$ of the $A$-algebra $S(M)$ into the $A$-algebra $S(M\times M)$ (Proposition~\ref{}). On the other hand, in Proposition~\ref{} we defined a canonical graded algebra isomorphism $\tau:S(M\times M)\to S(M)\otimes_AS(M)$; by composition we therefore obtain an $A$-algebra homomorphism
+\[c=\tau\circ S(\Delta):S(M)\to S(M)\otimes_AS(M),\]
+thus defining on $S(M)$ a cogebra structure. For all $x\in M$, by definition we have $S(\Delta)(x)=(x,x)$ and the definition of $\tau$ in (\ref{}) shows that
+\[\tau(x,x)=x\otimes 1+1\otimes x.\]
+It follows that $c$ is the unique algebra homomorphism such that, for all $x\in M$,
+\begin{align}\label{symmetric algebra coproduct-1}
+c(x)=x\otimes 1+1\otimes x.
+\end{align}
+As $c$ is an algebra homomorphism, it follows that, for every elements $x_1,\dots,x_n$ of $M$,
+\begin{equation}
+\begin{aligned}\label{symmetric algebra coproduct-2}
+c(x_1\cdots x_n)&=\prod_{i=1}^{n}(x_i\otimes 1+1\otimes x_i)=\sum_{p=0}^{n}(x_1\cdots x_p)\shuffle(x_{p+1}\cdots x_n)\\
+&=\sum_{p=0}^{n}\sum_{\sigma\in\Sh(p,n-p)}(x_{\sigma(1)}\cdots x_{\sigma(p)})\otimes(x_{\sigma(p+1)}\cdots x_{\sigma(n)})
+\end{aligned}
+\end{equation}
+where the $\shuffle$ symbol denotes the shuffle product. This is expressed in the second summation, which is taken over all $(p,n-p)$-shuffles. The shuffle is
+\[\Sh(p,q)=\{\sigma\in\mathfrak{S}_{p+q}:\text{$\sigma(1)<\cdots<\sigma(p)$ and $\sigma(p+1)<\cdots<\sigma(p+q)$}\}.\]
+The element $c(x_1\cdots x_n)$ is an element of total degree $n$ in $S(M)\otimes_AS(M)$ and its component of bidegree $(p,n-p)$ is
+\begin{align}\label{symmetric algebra coproduct-3}
+\sum_{\sigma\in\Sh(p,n-p)}(x_{\sigma(1)}\cdots x_{\sigma(p)})\otimes(x_{\sigma(p+1)}\cdots x_{\sigma(n)}).
+\end{align}
+\item[(g)] Let $M$ be an $A$-module and proceed with the exterior algebra $\bigw(M)$ as with $S(M)$; the diagonal map $\Delta:M\to M\times M$ this time defines a homomorphism $\bigw(\Delta)$ of the $A$-algebra $\bigw(M)$ into $\bigw(M\times M)$ (Proposition~\ref{}); on the other hand, there is a canonical graded algebra isomorphism (Proposition~\ref{})
+\[\tau:\bigw(M\times M)\to\bigw(M)\otimes_A^g\bigw(M)\]
+whence by composition there is an algebra homomophism $c=\tau\circ\bigw(\Delta)$ from $\bigw(M)$ to $\bigw(M)\otimes_A^g\bigw(M)$, which can be considered as an $A$-module homomophism from $\bigw(M)$ to $\bigw(M)\otimes_A\bigw(M)$ and therefore defines on $\bigw(M)$ a cogebra structure. It can be proved similarly that $c$ is the unique algebra homomophism such that, for all $x\in M$,
+\begin{align}\label{exterior algebra coproduct-1}
+c(x)=x\otimes 1+1\otimes x,
+\end{align}
+whence, for every elements $x_1,\dots,x_n$ of $M$,
+\begin{align}\label{exterior algebra coproduct-2}
+c(x_1\wedge\cdots\wedge x_n)=\bigwedge_{i=1}^{n}(x_i\otimes 1+1\otimes x_i)
+\end{align}
+where the product on the right hand side is taken in the algebra $\bigw(M)\otimes_A^g\bigw(M)$. To calculate this product, consider, for every $\sigma\in\Sh(p,n-p)$, the product $y_1\cdots y_n$, where $y_{\sigma(i)}=x_{\sigma(i)}\otimes 1$ for $1\leq i\leq p$ and $y_{\sigma(i)}=1\otimes x_{\sigma(i)}$ for $p+1\leq i\leq n$; the sum is taken over all these products. As the graded algebra $\bigw(M)\otimes_A^g\bigw(M)$ is anticommutative and the elements $x_i\otimes 1$ and $1\otimes x_i$ are of total degree $1$, by Lemma~\ref{} and Lemma~\ref{},
+\begin{align}\label{exterior algebra coproduct-3}
+c(x_1\wedge\cdots x_n)=\sum_{p=0}^{n}\sum_{\sigma\in\Sh(p,n-p)}(-1)^\sigma(x_{\sigma(1)}\wedge\cdots\wedge x_{\sigma(p)})\otimes(x_{\sigma(p+1)}\wedge\cdots\wedge x_{\sigma(n)})
+\end{align}
+where $\nu$ is the number of ordered pairs $(j,k)$ such that  and the summation being taken over the same set as in (\ref{symmetric algebra coproduct-2}). The element $c(x_1\wedge\cdots x_n)$ is of total degree $n$ in $\bigw(M)\otimes_A^g\bigw(M)$ and its homogeneous component of bidegree $(p,n-p)$ is equal to
+\begin{align}\label{exterior algebra coproduct-4}
+\sum_{\sigma\in\Sh(p,n-p)}(-1)^\sigma(x_{\sigma(1)}\wedge\cdots\wedge x_{\sigma(p)})\otimes(x_{\sigma(p+1)}\wedge\cdots\wedge x_{\sigma(n)})
+\end{align}
+\item[(h)] Let $E$, $F$ be two $A$-cogebras and $c_E$, $c_F$ their respective coproducts. Let $\tau:(E\otimes_AE)\otimes_A(F\otimes_AF)\to (E\otimes_AF)\otimes_A(E\otimes_AF)$ denote the associativity isomorphism such that
+\[\tau((x_1\otimes x_2)\otimes(y_1\otimes y_2))=(x_1\otimes y_1)\otimes(x_2\otimes y_2)\]
+for $x_1,x_2$ in $E$ and $y_1,y_2$ in $F$. Then the composite linear map
+\[\begin{tikzcd}
+E\otimes_AF\ar[r,"c_E\otimes c_F"]&(E\otimes_AF)\otimes_A(F\otimes_AF)\ar[r,"\tau"]&(E\otimes_AF)\otimes_A(E\otimes_AF)
+\end{tikzcd}\]
+defines a cogebra structure on the $A$-module $E\otimes_AF$, called the tensor product of the cogebras $E$ and $F$.
+\end{itemize}
+\end{example}
+Let $E$ be a cogebra and $\Delta$ a commutative monoid. A graduation $(E_\lambda)_{\lambda\in\Delta}$ on the $A$-module $E$ is said to be \textbf{compatible} with the coproduct $c$ of $E$ if $c$ is a graded homomorphism of degree $0$ of the graded $A$-module $E$ into the graded $A$-module (of type $\Delta$) $E\otimes_AE$, in other words, if
+\begin{align}\label{cogebra compatible with graduation def}
+c(E_\lambda)\sub\sum_{\mu+\nu=\lambda}E_\mu\otimes_A E_\nu.
+\end{align}
+In what follows, we shall most often limit our attention to graduations of type $\N$ compatible with the coproduct; a cogebra with such a graduation will also be called a \textbf{graded cogebra}. If $F$ is another graded cogebra, a graded cogebra morphism $\phi:E\to F$ is by definition a cogebra morphism which is also a graded homomorphism of degree $0$ of graded $A$-modules.
+\begin{example}
+It is immediate that the cogebras $T(M)$, $S(M)$ and $\bigw(M)$ defined above are graded cogebras.
+\end{example}
+Let $E$ be a cogebra, $c_E$ its coproduct, $N_1,N_2,N_3$ three $A$-modules and $m$ a bilinear map of $N_1\times N_2$ into $N_3$. Let $\tilde{m}:N_1\otimes_AN_2\to N_3$ denote the $A$-linear map corresponding to $m$. If $u:E\to N_1$ and $v:E\to N_2$ are two $A$-linear maps, we derive an $A$-linear map $u\otimes v:E\otimes_AE\to N_1\otimes_AN_2$ and a composite $A$-linear map of $E$ into $N_3$:
+\[\begin{tikzcd}
+m(u,v):E\ar[r,"c"]&E\otimes_AE\ar[r,"u\otimes v"]&N_1\otimes_AN_2\ar[r,"\tilde{m}"]&N_3
+\end{tikzcd}\]
+Clearly we have thus defined an $A$-bilinear map $(u,v)\mapsto m(u,v)$ of $\Hom_A(E,N_1)\times\Hom_A(E,N_2)$ into $\Hom_A(E,N_3)$. When $E$ is a graded cogebra, $N_1,N_2,N_3$ graded $A$-modules of the same type and $m$ a graded homomorphism of degree $k$ of $N_1\otimes_AN_2$ into $N_3$, then, if $u$ (resp. $v$) is a graded homomorphism of degree $p$ (resp. $q$), $m(u,v)$ is a graded homomorphism of degree $p+q+k$.
+\begin{example}
+Take $E$ to be the graded cogebra $T(M)$ and suppose that  have the trivial graduation. A graded homomorphism of degree $-p$ of $T(M)$ into $N_1$ (resp. $N_2$, $N_3$) then corresponds to a multilinear map of $M^p$ into $N_1$ (resp. $N_2$, $N_3$). Given a multilinear map $u:M^p\to N_1$ and a multilinear map $v:M^q\to N_2$, the above method allows us to deduce a multilinear map $m(u,v):M^{p+q}\to N_3$ called the \textbf{product} (relative to $m$) of $u$ and $v$. For $x_1,\dots,x_n$ in $M$, we have
+\[m(u,v)=m(u(x_1,\dots,x_p),v(x_{p+1},\dots,x_{p+q})).\] 
+\end{example}
+\begin{example}
+Take $E$ to be the graded cogebra $S(M)$, preserving the same hypotheses on $N_1$, $N_2$, $N_3$. A graded homomorphism of degree $-p$ of $S(M)$ into $N_1$ then corresponds to a symmetric multilinear map of $M^p$ into $N_1$. Then we derive from a symmetric multilinear map $u:M^p\to N_1$ and a symmetric multilinear map $v:M^q\to N_2$ a symmetric multilinear map $m(u,v):M^{p+q}\to N_3$, also denoted (to avoid confusion) by $u\cdot_m v$ (or even $u\cdot v$) and called the \textbf{symmetric product} (relative to $m$) of $u$ and $v$. For $x_1,\dots,x_{p+q}$ in $M$,
+\[(u\cdot_m v)(x_1,\dots,x_{p+q})=\sum_\sigma m(u(x_{\sigma(1)},\dots,x_{\sigma(p)}),v(x_{\sigma(p+1)},\dots,x_{\sigma(p+q)}))\]
+the summation being taken over permutations $\sigma\in\mathfrak{S}_{p+q}$ which are increasing on each of the intervals $\{1,\dots,p\}$ and $\{p+1,\dots,p+q\}$.
+\end{example}
+\begin{example}
+Take $E$ to be the graded cogebra $\bigw(M)$, preserving the same hypotheses on $N_1$, $N_2$, $N_3$. A graded homomorphism of degree $-p$ of $\bigw(M)$ into $N_1$ then corresponds to an alternating multilinear map of $M^p$ into $N_1$. Then we derive from an alternating multilinear map $u:M^p\to N_1$ and an alternating multilinear map $v:M^q\to N_2$ an alternating multilinear map $m(u,v):M^{p+q}\to N_3$, also denoted by $u\wedge_m v$ (or $u\wedge v$) and called the \textbf{alternating product} (relative to $m$) of $u$ and $v$. For $x_1,\dots,x_{p+q}$ in $M$,
+\[(u\cdot_m v)(x_1,\dots,x_{p+q})=\sum_\sigma(-1)^\sigma m(u(x_{\sigma(1)},\dots,x_{\sigma(p)}),v(x_{\sigma(p+1)},\dots,x_{\sigma(p+q)}))\]
+the summation being taken over permutations $\sigma\in\mathfrak{S}_{p+q}$ which are increasing on each of the intervals $\{1,\dots,p\}$ and $\{p+1,\dots,p+q\}$.
+\end{example}
+We return to the case where $E$ is an arbitrary graded cogebra (of type $\N$) and assume that the three modules $N_1,N_2,N_3$ are all equal to the underlying $A$-module of a graded $A$-algebra $B$ of type $\Z$, the map $m$ being multiplication in $B$, so that $m:B\otimes_AB\to B$ is a graded $A$-linear map of degree $0$. Thus a graded $A$-algebra structure is obtained on the graded $A$-module $\Homgr_A(E,B)$. In particular, suppose that $B=A$ (with the trivial graduation), so that $\Homgr_A(E,A)$ is the graded dual $E^{*\gr}$, which thus has a graded $A$-algebra structure.
+\begin{example}
+Let $E,F$ be graded cogebras, $c_E,c_F$ be their coproducts, and $\phi:E\to F$ a graded cogebra morphism; then the canonical graded morphism
+\[\tilde{\phi}=\Hom(\phi,1_B):\Homgr_A(F,B)\to\Homgr_A(E,B)\]
+is a graded algebra homomorphism: For $u,v$ in $\Homgr_A(F,B)$ and $x\in E$,
+\[\tilde{\phi}(uv)(x)=(uv)(\phi(x))=m(u\otimes v)(c_F(\phi(x))).\]
+But by hypothesis $c_F(\phi(x)=(\phi\otimes\phi)(c_E(x))$, hence\
+\[(u\otimes v)(c_F(x))=(\tilde{\phi}(u)\otimes\tilde{\phi}(v))(c_E(x))\]
+and therefore $\tilde{\phi}(uv)=\tilde{\phi}(u)\tilde{\phi}(v)$, which proves our assertion. In particular, the graded transpose $\phi^t:F^{*\gr}\to E^{*\gr}$ is a graded algebra homomorphism.
+\end{example}
+\begin{remark}
+Suppose that the $E_k$ are finitely generated projective $A$-modules, so that the graded $A$-modules $(E\otimes_AE)^{*\gr}$ and $E^{*\gr}\otimes_AE^{*\gr}$ can be canonically identified (Corollary~\ref{}). If also the $A$-modules $A\otimes_AA$ and $A$ are then canonically identified, the linear map $E^{*\gr}\otimes_AE^{*\gr}\to E^{*\gr}$ which defines multiplication in $E^{*\gr}$ can be called the \textbf{graded transpose} of the coproduct $c_E$.
+\end{remark}
+\begin{proposition}\label{cogebra coassociativity and dual}
+Let $E$ be a cogebra over $A$. In order that, for every associative $A$-algebra $B$, the $A$-algebra $\Hom_A(E,B)$ be associative, it is necessary and sufficient that the coproduct $c:E\to E\otimes_AE$ be such that the diagram
+\begin{equation}\label{cogebra coassociative diagram}
+\begin{tikzcd}
+E\ar[r,"c"]\ar[d,"c"]&E\otimes_AE\ar[d,"1_E\otimes c"]\\
+E\otimes_AE\ar[r,"c\otimes 1_E"]&E\otimes_AE\otimes_AE
+\end{tikzcd}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Let $B$ be an associative $A$-algebra and $u,v,w$ three elements of $C=\Hom_A(E,B)$. Let $m_3$ denote the $A$-linear map $B\otimes_AB\otimes_AB$ which maps $b_1\otimes b_2\otimes b_3$ to $b_1b_2b_3$. By definition of the product on the algebra $C$, $(uv)w$ is the composite map
+\[\begin{tikzcd}
+E\ar[r,"c"]&E\otimes_AE\ar[r,"c\otimes 1_E"]&E\otimes E\otimes E\ar[r,"u\otimes v\otimes w"]&B\otimes_AB\otimes_AB\ar[r,"m_3"]&B
+\end{tikzcd}\]
+whilst $u(vw)$ is the composite map
+\[\begin{tikzcd}
+E\ar[r,"c"]&E\otimes_AE\ar[r,"1_E\otimes c"]&E\otimes E\otimes E\ar[r,"u\otimes v\otimes w"]&B\otimes_AB\otimes_AB\ar[r,"m_3"]&B
+\end{tikzcd}\]
+It follows that if diagram (\ref{cogebra coassociative diagram}) is commutative, the algebra $\Hom_A(E,B)$ is associative for every associative $A$-algebra $B$. To establish the converse, it suffices to show that there exists an associative $A$-algebra $B$ and three $A$-linear maps $u,v,w$ of $E$ into $B$ such that the map $m_3\circ(u\otimes v\otimes w)$ of $E\otimes_AE\otimes_AE$ into $B$ is injedive. Take $B$ to be the $A$-algebra $T(E)$ and $u,v,w$ the canonical map of $E$ into $T(E)$. The map $m_3\circ(u\otimes v\otimes w)$ is then the canonical map $E\otimes_AE\otimes_AE=T^3(E)$ to $T(E)$, which is injective.
+\end{proof}
+When the cogebra $E$ satisfies the condition of Proposition~\ref{cogebra coassociativity and dual}, it is said to be \textbf{coassociative}.
+\begin{example}
+It is immediately verified that the cogebra $A$, the cogebra $A^{\oplus X}$ and the cogebra $T(M)$ are coassociative. If $B$ is an associative $A$-algebra which is a finitely generated projective $A$-module, the cogcbra $B^*$ is coassociative: for the commutativity of diagram (\ref{cogebra coassociative diagram}) then follows by transposition from that of the diagram which expresses the associativity of $B$ (we have $B^*\otimes B^*\cong(B\times B)^*$). Conversely, the same argument and the canonical identification of the $A$-module $B$ with its bidual (Corollary~\ref{}) show that if the cogebra $B^*$ is coassociative, the algebra $B$ is associative. Finally, the cogebras $S(M)$ and $\bigw(M)$ are coassociative; this follows from the commutativity of the diagram
+\[\begin{tikzcd}
+M\ar[r,"\Delta"]\ar[d,"\Delta"]&M\times M\ar[d,"1_M\times\Delta"]\\
+M\times M\ar[r,"\Delta\times 1_M"]&M\times M\times M
+\end{tikzcd}\]
+and the functorial properties of $S(M)$ and $\bigw(M)$.
+\end{example}
+\begin{proposition}\label{cogebra cocommutativity and opposite}
+Let $E$ be a cogebra over $A$. In order that, for every commutative $A$-algebra $B$, the $A$-algebra $\Hom_A(E,B)$ be commutative, it is necessary and sufficient that the coproduct $c:E\to E\otimes_AE$ be such that the diagram
+\begin{equation}\label{cogebra cocommutativity diagram}
+\begin{tikzcd}
+&E\ar[ld,swap,"c"]\ar[rd,"c"]&\\
+E\otimes_AE\ar[rr,"\sigma"]&&E\otimes_AE
+\end{tikzcd}
+\end{equation}
+(where $\sigma$ is the symmetry homomorpbiesn such that $\sigma(x\otimes y)=y\otimes x$) is commutative (in other words, it suffices that the cogebra $E$ be identical with its opposite.
+\end{proposition}
+\begin{proof}
+Let $B$ be a commutative $A$-algebra and $u,v$ two eleemnts of $C=\Hom_A(E,B)$. By definition of the product in $C$, $uv$ and $vu$ are respectively equal to the composite maps
+\[\begin{tikzcd}
+E\ar[r,"c"]&E\otimes_AE\ar[r,"u\otimes v"]&B\otimes_AB\ar[r,"m"]&B
+\end{tikzcd}\]
+and
+\[\begin{tikzcd}
+E\ar[r,"c"]&E\otimes_AE\ar[r,"v\otimes u"]&B\otimes_AB\ar[r,"m"]&B
+\end{tikzcd}\]
+It follows that if diagram (\ref{cogebra cocommutativity diagram}) is commutative the algebra $\Hom_A(E,B)$ is commutative for every commutative $A$-algebra $B$. To establish the converse, it suffices to show that there exist a commutative $A$-algebra $B$ and two $A$-linear maps $u,v$ of $E$ into $B$ such that $m\circ(u\otimes v):E\otimes_AE\to B$ is injective. Take $B$ to be the algebra $S(E\oplus E)$ and $u$ (resp. $v$) the composition of the canonical map $E\oplus E\to S(E\oplus E)$ and the map $x\mapsto (x,0)$ (resp. $x\mapsto (0,x)$) of $E$ into $E\oplus E$. If $\tau:S(E)\otimes S(E)\to S(E\oplus E)$ is the canonical isomorphism (Proposition~\ref{}) and $\iota:E\to S(E)$ is the canonical map, then $\tau^{-1}\circ m\circ(u\otimes v)=\tau\otimes\tau$. Now $\iota\otimes\iota$ is injective, for $\iota(E)$ is a direct factor of $S(E)$ (Corollary~\ref{}).
+\end{proof}
+When the cogebra $E$ satisfies the condition of Proposition~\ref{cogebra cocommutativity and opposite}, it is said to be \textbf{cocommutative}.
+\begin{example}
+It is immediate that the cogebra $A$ and the cogebra $A^{\oplus X}$ are cocommutative. It follows from formula (\ref{symmetric algebra coproduct-2}) that the cogebra $S(M)$ is cocommutative. Finally, for an $A$-algebra $B$ such that the $A$-module $B$ is prajective and finitely generated to have the property that the cogebra $B^*$ is cocommutative, it is necessary and sufficient that $B$ be commutative; for (using the canonical identification of the $A$-module $B$ with its bidual, this follows from the fact that the commutativity of diagram (\ref{cogebra cocommutativity diagram}) is equivalent by transposition to that of the diagram which expressed the commutativity of $B$.
+\end{example}
+\begin{proposition}\label{cogebra counital and dual}
+Let $E$ be a cogebra over $A$. In order that, for every unital $A$-algebra $B$, the $A$-algebea $\Hom_A(E,B)$ be unital, it is necessary and sufficient that there exist a linear form $\eps$ on $E$ rendering commutative the diagrams
+\begin{equation}\label{cogebra counital diagram}
+\begin{tikzcd}
+E\ar[r,"c"]\ar[rd,swap,"\tau_1"]&E\otimes E\ar[d,"\eps\otimes 1_E"]\\
+&A\otimes_AE
+\end{tikzcd}\quad\quad\begin{tikzcd}
+E\ar[r,"c"]\ar[rd,swap,"\tau_2"]&E\otimes E\ar[d,"1_E\otimes\eps"]\\
+&E\otimes_AA
+\end{tikzcd}
+\end{equation}
+where $c:E\to E\otimes_AE$ is the coproduct and $\tau_1$ and $\tau_2$ the canonical isomorphisms. The unit of $\Hom_A(E,B)$ is then the linear map $x\mapsto\eps(x)1$ (where $1$ denotes the unit element of $B$).
+\end{proposition}
+\begin{proof}
+Let $\eps$ be a linear form on $E$ rendering diagram (\ref{cogebra counital diagram}) commutative. Let $B$ be a unital $A$-algebra with unit element $1$, $\rho:A\to B$ the canonical mapping and $v=\rho\circ\eps$ the element of the $A$-algebra $C=\Hom_A(E,B)$. For every element $u\in C$, $uv$ is the composite map
+\begin{equation}\label{cogebra counital and dual-1}
+\begin{tikzcd}
+E\ar[r,"c"]&E\otimes_AE\ar[r,"1_E\otimes\eps"]&E\otimes_AA\ar[r,"u\otimes\rho"]&B\otimes_AB\ar[r,"m"]&B
+\end{tikzcd}
+\end{equation}
+Then $uv=m\circ(u\otimes\rho)\circ\tau_2=u$. It is similarly proved that $vu=u$ and hence $v$ is unit element of $C$. Conversely, let the $A$-module $A\oplus E$ be given a unital algebra structure such that
+\[(a,x)(b,y) = (ab,ay+bx)\]
+for $a,b$ in $A$ and $x,y$ in $E$. Let $B$ denote the $A$-algebra thus defined and let $C$ be the $A$-algebra $\Hom_A(E,B)$. Suppose that $C$ is unital and let $e:x\mapsto(\eps(x),\lambda(x))$ be its unit element (where $\eps(x)\in A$ and $\lambda(x)\in E$). On the other hand, let $\iota$ be the element $x\mapsto(0,x)$ of $C$. An immediate calculation shows that $\iota e$ is the element
+\[x\mapsto(0,\tau_2^{-1}(1_E\otimes\eps)(c(x)))\]
+of $C$. The condition $\iota e=\iota$ implies the commutativity of the second diagram of (\ref{cogebra counital diagram}) and it is similarly seen that the condition $e\iota=\iota$ implies the commutativity of the first diagram of (\ref{cogebra counital diagram}).
+\end{proof}
+A linear form $\eps$ on $E$ rendering diagrams (\ref{cogebra counital diagram}) commutative is called a counit of the cogebra $E$. A cogebra admits at most one counit: for it is the unit element of the algebra $\Hom_A(E,A)$. A cogebra with a counit is called \textbf{counital}.
+\begin{example}
+The identity map is the counit of the cogebra $A$; on the cogebra $A^{\oplus X}$, the linear form $\eps$ sueh that $\eps(e_x)=1$ for all $x\in X$ is the counit. On the cogebra $T(M)$ (resp. $S(M)$, $\bigw(M)$) the linear form $\eps$ such that $\eps(1)=1$ and $\eps(z)=0$ for $z$ in the $T^n(M)$ (resp. $S^n(M)$, $\bigw^n(M)$) for $n\geq 1$ is the counit. Finally, let $B$ be an $A$-algebra which is a finitely generated projective A-module and has a unit element $e$; then on the cogebra $B^*$ the linear form $\eps:x^*\mapsto\langle e,x^*\rangle$ is the counit, for this form is just the transpose of the $A$-linear mapping $\rho_e:\xi\mapsto\xi e$ of $A$ into $B$ and by transposition the commutativity of diagrams (\ref{cogebra counital diagram}) follows from that of the diagrams which express (using $\rho_e$) the fact that $e$ is unit element of $B$; the same argument moreover shows that conversely, if the cogebra $B^*$ admits a counit $\eps$, the transpose of $\eps$ defines a unit element $e=\eps^t(1)$ of $B$.
+\end{example}
+\begin{proposition}\label{cogebra counit image 1 mod relation}
+Let $E$ be a cogebra admitting a counit $\eps$ and suppose that there exists in $E$ an element $e$ that $\eps(e)=1$; then $E$ is the direct sum of the sub-$A$-modules $Ae$ and $E_\eps=\ker\eps$ and
+\begin{equation}\label{cogebra counit image 1 mod relation-1}
+\begin{aligned}
+c(e)&\equiv e\otimes e\mod E_\eps\otimes E_\eps\\
+c(x)&\equiv x\otimes e+e\otimes x\mod E_\eps\otimes E_\eps\for x\in E_\eps.
+\end{aligned}
+\end{equation}
+\end{proposition}
+\begin{proof}
+The first assertion is immediate, for $\eps(x-\eps(x)e)=0$ and the relation $\eps(\alpha e)=0$ implies $\alpha=0$. Let $c(e)=\sum_is_i\otimes t_i$, so that
+\[e=\sum_i\eps(s_i)t_i=\sum_i\eps(t_i)s_i\]
+by (\ref{cogebra counital diagram}) and $1=\eps(e)=\sum_i\eps(s_i)\eps(t_i)$. Therefore
+\begin{align*}
+\sum_i(s_i-\eps(s_i)e)\otimes(t_i-\eps(t_i)e)&=\sum_is_i\otimes t_i-\sum_i e\otimes \eps(s_i)t_i-\sum_i\eps(t_i)s_i\otimes e+\sum_i\eps(s_i)e\otimes\eps(t_i)e\\
+&=c(e)-e\otimes e-e\otimes e+e\otimes e=c(e)-e\otimes e
+\end{align*}
+this therefore proves the first relation of (\ref{cogebra counit image 1 mod relation-1}). On the other hand the decomposition of $E\otimes E$ as a direct sum
+\[E\otimes E=A(e\otimes e)\oplus((Ae)\otimes E_\eps)\oplus(E_\eps\otimes(Ae))\oplus(E_\eps\otimes E_\eps)\]
+allows us to write, for $x\in E_\eps$, $c(x)=\lambda(e\otimes e)+(e\otimes y+z\otimes e)+u$) where $u=\sum_jv_j\otimes w_j$, $y,z$ and the $v_j$ and $w_j$ belong to $E_\eps$. The definition of the counit $\eps$ then gives $x=\lambda(e)+y=\lambda e+z$ and, as $\eps(x)=0$, necessarily $\lambda=0$, $x=y=z$, whence the second relation of (\ref{cogebra counit image 1 mod relation-1}).
+\end{proof}
+\begin{remark}
+Let $E$ be a counital coassociative $A$-coalgebra and $B$ a unital associative $A$-algebra. We have seen that the $A$-algebra $\Hom_A(C,B)$ is unital and associative. Let $M$ be a $B$-module. Then the $A$-bilinear map $(b,m)\mapsto bm$ of $B\times M$ into $M$ defines an $A$-bilinear map
+\[\Hom_A(C,B)\times\Hom_A(C,M)\to \Hom_A(C,M)\]
+It is immediately verified that this map defines on $\Hom_A(C,M)$ a left module structure over the ring $\Hom_A(C,B)$.
+\end{remark}
+\begin{proposition}\label{cogebra graded counit prop}
+Let $E$ be a graded cogebra admitting a counit $\eps$; then $\eps$ is a homogeneous linear form of degree $0$. Suppose further that there exists an element $e\in E$ such that $E_0=Ae$ and $\eps(e)=1$. Then the kernel $E_\eps$ of $\eps$ is equal to $E_+=\sum_{n\geq 1}E_n$, $c(e)=e\otimes e$ and
+\begin{align}
+c(x)\equiv x\otimes e+e\otimes x\mod E_+\otimes E_+
+\end{align}
+for all $x\in E_+$.
+\end{proposition}
+\begin{proof}
+It suffices to verify that $\eps(x)=0$ for $x\in E_n$, for all $n\geq 1$. Since $c$ is a graded homomorphism of degree $0$,
+\begin{align}
+c(x)=\sum_{j=0}^{n}\sum_iy_{ij}\otimes z_{i,n-j}
+\end{align}
+with $y_{ij}$ and $z_{ij}$ in $E_j$; applying (\ref{cogebra counital diagram}) we obtain
+\[x=\sum_{j=0}^{n}\sum_i\eps(y_{ij}z_{i,n-j})=\sum_{j=0}^{n}\sum_i\eps(z_{i,n-j}y_{ij})\]
+whence, equating the components of degree $0$ and degree $n$ on the two sides
+\[x=\sum_i\eps(y_{i0})z_{in}=\sum_i\eps(z_{i0})y_{in}\]
+\[0=\sum_i\eps(y_{in})z_{i0}=\sum_i\eps(z_{in})y_{i0}\]
+and therefore $\eps(x)=\sum_i\eps(y_{in})\eps(z_{i0})=\eps(0)=0$.\par
+Assume further that $\eps(e)=1$ and $E_0=Ae$. Then since $\ker\eps$ and $E_+$ are both supplementary sub-$A$-modules of $Ae=E_0$ and $E_+\sub\ker\eps$, $E_+=\ker\eps$. The other assertions follow from Proposition~\ref{cogebra counit image 1 mod relation}.
+\end{proof}
+\begin{proposition}\label{cogebra graded anticocommutative and sign opposite}
+Let $E$ be a graded cogebra over $A$. In order that, for every commutative $A$-algebra $B$ with the trivial graduation, the graded $A$-algebra (of type $\Z$) $\Homgr_A(E,B)$ be anticommutative, it is necessary and sufficient that, if $\sigma$ denotes the automorphism of the $A$-module $E\otimes_AE$ such that
+\[\sigma(x_p\otimes x_q)=(-1)^{pq}x_q\otimes x_p\]
+for $x_p\in E_p$, $x_q\in E_q$, where $p$ and $q$ are arbitrary elements of $\N$, the diagram
+\[\begin{tikzcd}
+&E\ar[ld,swap,"c"]\ar[rd,"c"]&\\
+E\otimes_AE\ar[rr,"\sigma"]&&E\otimes_AE
+\end{tikzcd}\]
+be commutative.
+\end{proposition}
+\begin{proof}
+The proof is analogous to that of Proposition~\ref{cogebra cocommutativity and opposite}
+\end{proof}
+When the graded cogebra $E$ satisfies the condition of Proposition~\ref{cogebra graded anticocommutative and sign opposite}, it is said to be anticocommutative.
+\begin{example}
+It follows immediately from formula (\ref{exterior algebra coproduct-3}) that for every $A$-module $M$, the graded cogebra $\bigw(M)$ is anticocommutative.
+\end{example}
+\subsubsection{Bigebras and skew bigebras}
+Let $M$ be a $A$-module, we have seen that the algebras $T(M)$, $S(M)$, and $\bigw(M)$ are cogebras and the algebra structure and cogebra structure on these $A$-modules interact in a compatible manner. Motivated by these examples, we make the following definition.
+\begin{definition}
+A \textbf{graded bigebra} (resp. \textbf{skew graded bigebra}) over a ring $A$ is a set $E$ with a graded $A$-algebra structure of type $\N$ and a graded $A$-cogebra structure of type $\N$, with the same underlying graded $A$-module structure and such that:
+\begin{itemize}
+\item The $A$-algebra $E$ is associative and unital.
+\item The $A$-cogebra $E$ is coassociative and counital.
+\item The coproduct $c:E\to E\otimes_AE$ is a homomorphism of the graded algebra $E$ into the graded algebra $E\otimes_AE$ (resp. graded algebra $E\otimes_A^gE$).
+\item The counit $\eps$ of $E$ is a homomorphism of the graded algebra $E$ into the algebra $A$ (with the trivial groduation) such that $\eps(e)=1$, where $e$ denotes the unit element of the $A$-algebra $E$.
+\end{itemize}
+\end{definition}
+If $E$ is a graded bigebra with trivial graduation, $E$ is called simply a \textbf{bigebra}. A graded bigebra is called commutative (resp. cocommutative) if the underlying algebra is commutative (resp. if the underlying cogebra is cocommutative); a skew graded bigebra is called anticommutative (resp. anticocommutative) if the underlying graded algebra is anticommutative (resp. if the underlying graded cogebra is anticocommutative).\par
+It follows from the definition and Proposition~\ref{cogebra graded counit prop} that, for a graded bigebra or a skew graded bigebra $E$,
+\begin{equation}\label{bigebra graded unit element under coproduct prop}
+\begin{aligned}
+c(e)&=e\otimes e\\
+c(x)&\equiv x\otimes e+e\otimes x\mod E_+\otimes E_+\for x\in E_+=\bigoplus_{n\geq 1}E_n.
+\end{aligned}
+\end{equation}
+If $E$ and $F$ are two graded bigebras (resp. two skew graded bigebras), a mapping $\phi:E\to F$ is called a \textbf{graded bigebra morphism} (resp. \textbf{skew graded bigebra morphism}) if
+\begin{itemize}
+\item[(1)] $\phi$ is a graded algebra morphism (and hence maps the unit element of $E$ to the unit element of $F$);
+\item[(2)] $\phi$ is a graded cogebra morphism such that, if $\eps_E$ and $\eps_F$ are the respective counits of $E$ and $F$, then $\eps_E=\eps_F\circ\phi$.
+\end{itemize}
+\begin{example}[\textbf{Examples of bigebras}]\label{bigebra example}
+\mbox{}
+\begin{itemize}
+\item[(a)] Let $X$ be a monoid with identity element $u$, so that the algebra $E=A^{\oplus X}$ of the monoid $X$ over $A$ admits the unit element $e_u$; it has been seen on the other hand that $E$ has canonically coassociative cocommutative $A$-cogebra structure with a counit $\eps$ such that $\eps(e_x)=1$ for all $x\in X$. The formula $c(e_x)=e_x\otimes e_x$ giving the coproduct shows also immediately that $c$ is an algebra homomorphism. Thus a cocommutative bigebra structure has been defined on $E$ and $E$, with this structure, is called the \textbf{bigebra of the monoid $\bm{X}$ over $\bm{A}$}.\par
+If $Y$ is another monoid with unit element $v$, $f:X\to Y$ a homomorphism such that $f(u)=v$ and $f_{(A)}:A^{\oplus X}\to A^{\oplus T}$ the $A$-algebra homomorphism derived from $f$, it is immediately verified that $f_{(A)}$ is a bigebra homomorphism.
+\item[(b)] Let $M$ be an $A$-module. The graded $A$-algebra and graded $A$-cogebra structures defined on $S(M)$ define on this set a commutative and cocommutative graded bigebra structure: for we have seen that the coproduct on $S(M)$ is an algebra homomorphism and it follows from the definition of the counit $\eps$ that $\eps(1)=1$ and that $\eps$ is an algebra homomorphism of $E$ into $A$.
+\item[(c)] Let $M$ be an $A$-module. We see that the graded $A$-algebra and graded $A$-cogebra structures on $\bigw(M)$ define on this set an anticommutative anticocommutative skew graded bigebra structure.
+\end{itemize}
+\end{example}
+\begin{remark}
+Let $E$ be a bigebra over $A$, $m$ its product, $c$ its coproduct, and $\eps$ its counit. Let $\rho:A\to E$ be the canonical map from $A$ to $E$. Then the bigebra axioms can be expressed by the following commutative diagrams:
+\begin{itemize}
+\item[(\rmnum{1})] Product and coproduct:
+\[\begin{tikzcd}
+E\otimes_AE\ar[r,"m"]\ar[d,"c\otimes c"]&E\ar[r,"c"]&E\otimes_AE\\
+E\otimes_AE\otimes_AE\otimes_AE\ar[rr,"1\otimes\sigma\otimes 1"]&&E\otimes_AE\otimes_AE\otimes_AE\ar[u,"m\otimes m"]
+\end{tikzcd}\]
+where $\sigma:E\otimes_AE\to E\otimes_AE$ is the $A$-linear map such that $\sigma(x\otimes y)=y\otimes x$ for $x,y\in E$.
+\item[(\rmnum{2})] Product and counit:
+\[\begin{tikzcd}
+E\otimes_AE\ar[r,"m"]\ar[d,swap,"\eps\otimes\eps"]&E\ar[d,"\eps"]\\
+A\otimes_AA\ar[r,"\tau"]&A
+\end{tikzcd}\]
+where $\tau:A\otimes_AA\to A$ is the canonical isomorphism.
+\item[(\rmnum{3})] Coproduct and unit:
+\[\begin{tikzcd}
+A\otimes_AA\ar[r,"\tau"]\ar[d,swap,"\rho\otimes\rho"]&A\ar[d,"\rho"]\\
+E\otimes_AE&E\ar[l,swap,"c"]
+\end{tikzcd}\]
+\item[(\rmnum{4})] Unit and counit:
+\[\begin{tikzcd}
+A\ar[r,"\rho"]\ar[rd,swap,"\id"]&E\ar[d,"\eps"]\\
+&A
+\end{tikzcd}\] 
+\end{itemize}
+That is, giving a bialgebra $E$ is equivalent to given maps
+\[m:E\otimes_AE\to E,\quad c:E\to E\otimes_AE,\quad \eps:E\to A,\quad\rho:A\to E\]
+which fit into the diagrams above.
+\end{remark}
+\subsubsection{Graded duals of tensor algebras}
+From now on we return to the general assumption on algebras, which are associative and unital. Let $M$ be an $A$-module; the graded $A$-cogebra structures defined on $T(M)$, $S(M)$ and $\bigw(M)$ allow us to define canonically on the graded duals $T(M)^{*\gr}$, $S(M)^{*\gr}$, and $\bigw(M)^{*\gr}$ graded algebra structures of type $\N$, by virtue of Proposition~\ref{cogebra coassociativity and dual} and \ref{cogebra counital and dual} and the convention made on the graduation of the graded dual of a graded module. Moreover, the graded algebra $S(M)^{*\gr}$ is commutative and the graded algebra $\bigw(M)^{*\gr}$ is anticocommutative. In $\bigw(M)^{*\gr}$ every element of degree $1$ is of zero square; such an element is identified with a linear form $f$ on $M$ and its square is the alternating bilinear form $f\wedge f$ on $M^2$ such that
+\[(f\wedge f)(x,y)=f(x)f(y)-f(y)f(x).\]
+
+Let $N$ be another $A$-module and $u$ an $A$-linear mapping of $M$ into $N$. We know that $u$ defines canonically graded algebra homomorphisms
+\[T(u):T(M)\to T(N),\quad S(u):S(M)\to S(N),\quad \bigw(u):\bigw(M)\to\bigw(N).\]
+It is immediately verified that $T(u)$ is also a cogebra morphism. On the other hand, if $\Delta_M$ (resp. $\Delta_N$) denotes the diagonal mapping $M\to M\times M$ (resp. $N\to N\times N$), there is the relation $(u\times u)\circ\Delta_M=\Delta_N\circ u$; it follows that
+\[S(u\times u)\circ S(\Delta_M)=S(\Delta_N)\circ S(u),\quad \bigw(u\times u)\circ\bigw(\Delta_M)=\bigw(\Delta_N)\circ\bigw(u).\]
+Using the definition ofcoproduct in $S(M)$ and $\bigw(M)$ and the functorial character of the canonical isomorphisms
+\[S(M\times M)\cong S(M)\otimes_AS(M),\quad \bigw(M\times M)\to\bigw(M)\otimes_A^g\bigw(M)\]
+it is seen that $S(u)$ and $\bigw(u)$ are also cogebra morphisms (and hence in this case bigebra morphisms). It follows immediately that the graded transposes  of the homomorphisms
+\begin{equation}\label{cogebra homomorphism on dual of T,S,w}
+\begin{aligned}
+T(u)^t&:T(N)^{*\gr}\to T(M)^{*\gr}\\
+S(u)^t&:S(N)^{*\gr}\to S(M)^{*\gr}\\
+\bigw(u)^t&:\bigw(N)^{*\gr}\to\bigw(M)^{*\gr}
+\end{aligned}
+\end{equation}
+are graded algebra homomophisms.\par
+We now note that the dual $M^*$ of $M$ is identified with the submodule of elements of degree $1$ in $T(M)^{*\gr}$ (resp. $S(M)^{*\gr}$, $\bigw(M)^{*\gr}$). It therefore follows from the universal property of the tensor algebra and the universal property of the symmetric algebra that there exists a unique graded algebra homomorphism
+\[\theta_T:T(M^*)\to T(M)^{*\gr}\]
+which extends the canonical injection $M^*\to T(M)^{*\gr}$, and a unique graded algebra homomorphism
+\[\theta_S:S(M^*)\to S(M)^{*\gr}\]
+which extends the canonical injection $M^*\to S(M)^{*\gr}$. On the other hand, the canonical injection of $M^*$ in the opposite algebra to $\bigw(M)^{*\gr}$ is such that the square of every element of $M^*$ is zero; hence (Proposition~\ref{}) there exists a unique graded algebra homomorphism
+\[\theta_{\wedge}:\bigw(M^*)\to(\bigw(M)^{*\gr})^{\text{op}}\]
+whuh extends the canonical injection $M^*\to\bigw(M)^{*\gr}$.\footnote{This injection is extended to a homomorphism into the opposite algebra to $\bigw(M)^{*\gr}$ instead of a homomorphism into $\bigw(M)^{*\gr}$ for reasons of convenience in the calculations.} These homomorphisms are functorial: for example, for every $A$-module homomorphism $u:M\to N$, the diagram
+\[\begin{tikzcd}
+T(N^*)\ar[d,"\theta_T"]\ar[r,"T(u^t)"]&T(M^*)\ar[d,"\theta_T"]\\
+T(N)^{*\gr}\ar[r,"T(u)^t"]&T(M)^{*\gr}
+\end{tikzcd}\]
+is commutative, as follows immediately from the universal property of the tensor algebra; there are analogous commutative diagrams for $\theta_S$ and $\theta_{\wedge}$.\par
+We shall find the homomorphisms $\theta_T$, $\theta_S$ and $\theta_{\wedge}$ explicitly. For this we consider more generally a coassociative $A$-cogebra $E$ with coproduct $c$ and define by induction the linear mapping $c_n$ of $E$ into $E^{\otimes n}$ by $c_2=c$ and
+\begin{align}\label{cogebra coproduct n-th order}
+c_n=(c_{n-1}\otimes 1_E)\circ c.
+\end{align}
+On the other hand we denote by $m_n:A^{\otimes n}\to A$ the canonical linear mapping such that $m_n(\xi_1\otimes\cdots\otimes\xi_n)=\xi_1\cdots\xi_n$ and note that, for $n\geq 2$,
+\begin{align}\label{cogebra product n-th order}
+m_n=m\circ(m_{n-1}\otimes 1_A)
+\end{align}
+with $m_2=m$. With this notation, we have the following lemma:
+\begin{lemma}\label{cogebra product in dual module formula}
+Let $c_n$ and $m_n$ be defined above.
+\begin{itemize}
+\item[(a)] In the associative algebra $E^*=\Hom_A(E,A)$, the product of $n$ elements $u_1,\dots,u_n$ of degree $1$ is given by
+\begin{align}\label{cogebra product on dual formula}
+u_1\cdots u_n=m_n\circ(u_1\otimes\cdots\otimes u_n)\circ c_n.
+\end{align} 
+\item[(b)] Suppose also that the cogebra $E$ is graded. Then in the graded associative algebra $E^{*\gr}=\Homgr_A(E,A)$, the product of $n$ elements $u_1,\dots,u_n$ of degree $1$ is given by
+\begin{align}\label{cogebra product on graded dual formula}
+u_1\cdots u_n=m_n\circ(u_1\otimes\cdots\otimes u_n)\circ \delta_n
+\end{align} 
+whsre $\delta_n:E\to E^{\otimes n}$ is the linear map which maps each $x\in E$ to the component of $c_n(x)$ of multidegree $(1,\dots,1)$.
+\end{itemize}
+\end{lemma}
+\begin{proof}
+When $n=2$, formula (\ref{cogebra product on dual formula}) is just the definition of the product in $E^*$. To prove it by induction on $n$, observe that
+\begin{align*}
+u_1\cdots u_n&=m\circ((u_1\cdots u_{n-1})\otimes u_n)\circ c\\
+&=m\circ((m_{n-1}\circ(u_1\otimes\cdots\otimes u_{n-1})\circ c_{n-1})\otimes u_n)\circ c\\
+&=m\circ (m_{n-1}\otimes 1_A)\circ(u_1\otimes\cdots u_{n-1}\otimes u_n)\circ(c_{n-1}\circ 1_E)\circ c\\
+&=m_n\circ(u_1\otimes\cdots\otimes u_n)\circ c_n
+\end{align*}
+by virtue of (\ref{cogebra coproduct n-th order}), (\ref{cogebra product n-th order}), and the relation $u_n=1_A\circ u_n\circ 1_E$.\par
+When $E$ is graded and the elements $u_i\in E^{*\gr}$ homogeneous of degree $1$, then by definition for homogeneous elements $x_i\in E$,
+\[(u_1\otimes\cdots\otimes u_n)(x_1\otimes\cdots\otimes x_n)=0\]
+unless all the $x_i$ are of degree $1$, whence formula (\ref{cogebra product on graded dual formula}).
+\end{proof}
+It follows from formula (\ref{cogebra coproduct n-th order}) that when $E$ is taken to be one of the three graded cogebras $T(M)$, $S(M)$ and $\bigwedge(M)$, we obtain respectively by induction on $n$ (using the fact that the coproduct is a graded homomorphism of degree $0$), for $x_1,\dots,x_n$ in $M$:
+\begin{alignat*}{3}
+E&=T(M),&\quad&&\delta_n(x_1\cdots x_n)&=x_1\otimes\cdots\otimes x_n\\
+E&=S(M),&\quad&&\delta_n(x_1\cdots x_n)&=\sum_{\sigma\in\mathfrak{S}_n}x_{\sigma(1)}\otimes\cdots\otimes x_{\sigma(n)}\\
+E&=\bigw(M),&\quad&&\delta_n(x_1\cdots x_n)&=\sum_{\sigma\in\mathfrak{S}_n}(-1)^\sigma x_{\sigma(1)}\otimes\cdots\otimes x_{\sigma(n)}
+\end{alignat*}
+It suffices to note, for example when $E=\bigw(M)$, that in the expression
+\[c_n(x_1\cdots x_n)=(c_{n-1}\otimes 1_E)\Big(\sum_{\sigma\in\Sh(p,n-p)}(x_{\sigma(1)}\wedge\cdots\wedge x_{\sigma(p)})\otimes(x_{\sigma(p+1)}\wedge\cdots\wedge x_{\sigma(p+q)})\Big)\]
+the only terms which can give a term of multidegree $(1,\dots,1)$ are those for which $n-p=1$ and hence $\delta_n(x_1\dots x_n)$ is the term of multidegree $(1,\dots,1)$ in the sum
+\[\sum_{i=1}^{n}(-1)^{n-i}c_{n-1}(x_1\wedge\cdots\wedge\widehat{x_i}\wedge\cdots\wedge x_n)\otimes x_i\]
+and this term is necessarily equal to
+\[\sum_{i=1}^{n}(-1)^{n-i}\delta_{n-1}(x_1\wedge\cdots\wedge\widehat{x_i}\wedge\cdots\wedge x_n)\otimes x_i\]
+whence the result by the induction hypothesis.\par
+Using Lemma~\ref{cogebra product in dual module formula}, the product in $T(M)^{*\gr}$ of $n$ linear forms $x_1^*,\dots,x_n^*$ of $M^*$ is given by
+\begin{align}\label{cogebra product on dual of T(M)}
+\langle x_1^*\cdots x_n^*,x_1\cdots x_n\rangle=\prod_{i=1}^{n}\langle x_i^*,x_i\rangle
+\end{align}
+for $x_i\in M$; the product of these $n$ forms in $S(M)^{*\gr}$ is given by
+\begin{align}\label{cogebra product on dual of S(M)}
+\langle x_1^*\cdots x_n^*,x_1\cdots x_n\rangle=\sum_{\sigma\in\mathfrak{S}_n}\prod_{i=1}^{n}\langle x_{\sigma(i)}^*,x_i\rangle.
+\end{align}
+Finally, the product of these forms in $\bigw(M)^{*\gr}$ is giveo by
+\begin{align}\label{cogebra product on dual of w(M)}
+\langle x_1^*\cdots x_n^*,x_1\cdots x_n\rangle=\det(\langle x_i^*,x_j\rangle).
+\end{align}
+In each of the three cases, we have respectively
+\begin{align*}
+\theta_T(x_1^*\otimes\cdots\otimes x_n^*)&=x_1^*\cdots x_n^*\\
+\theta_S(x_1^*\cdots x_n^*)&=x_1^*\cdots x_n^*\\
+\theta_{\wedge}(x_1^*\wedge\cdots\wedge x_n^*)=x_n^*\cdots x_1^*&=(-1)^{\frac{n(n-1)}{2}}x_1^*\cdots x_n^*
+\end{align*}
+and hence we deduce from (\ref{cogebra product on dual of T(M)}), (\ref{cogebra product on dual of S(M)}) and (\ref{cogebra product on dual of w(M)}) the relations
+\begin{align}
+\langle\theta_T(x_1^*\otimes\cdots\otimes x_n^*),x_1\otimes\cdots\otimes x_n\rangle&=\prod_{i=1}^{n}\langle x_i^*,x_i\rangle\label{cogebra theta map on T(M) formula}\\
+\langle\theta_S(x_1^*\cdots x_n^*),x_1\cdots x_n\rangle&=\sum_{\sigma\in\mathfrak{S}_n}\prod_{i=1}^{n}\langle x_{\sigma(i)}^*,x_i\rangle\label{cogebra theta map on S(M) formula}\\
+\langle\theta_{\wedge}(x_1^*\wedge\cdots\wedge x_n^*),x_1\wedge\cdots\wedge x_n\rangle&=(-1)^{\frac{n(n-1)}{2}}\det(\langle x_i^*,x_j\rangle)\label{cogebra theta map on w(M) formula}
+\end{align}
+\begin{proposition}\label{cogebra dual of T and w finite projective module}
+Let $M$ be a finitely generated projective $A$-module. Then the canonical homomorphisms $\theta_T:T(M^*)\to T(M)^{*\gr}$ and $\theta_{\wedge}:\bigw(M^*)\to(\bigw(M)^{*\gr})^{\text{op}}$ are bijective. Also the graded dual $\bigw(M)^{*\gr}$ is then equal to the dual of the $A$-module $\bigw(M)$.
+\end{proposition}
+\begin{proof}
+Suppose first that $M$ has a finite basis $(e_i)_{1\leq i\leq d}$ and let $(e_i^*)_{1\leq i\leq d}$ be the dual basis for $M^*$. Formula (\ref{cogebra theta map on T(M) formula}) shows that, for every sequence $s=(j_k)_{1\leq k\leq n}$ of $n$ elements in $\{1,\dots,d\}$,
+\[\theta_T(e_{j_1}^*\otimes\cdots\otimes e_{j_n}^*)\]
+is the element of index $s$ in the basis of $(T^n(M))^*$, dual to the basis of $T^n(M)$ consisting of the $e_s=e_{j_1}\otimes\cdots\otimes e_{j_n}$. Hence $\theta_T$ is bijective.\par
+Similarly, formula (\ref{cogebra theta map on w(M) formula}) shows that, for every finite sequence $s=(j_k)$ of $n$ elements of $\{1,\dots,d\}$, $(-1)^{\frac{n(n-1)}{2}}\theta_{\wedge}(e_s^*)$ is the element of index $s$ in the basis of $\bigw^n(M)^*$, dual to the basis of $\bigw^n(M)$ consisting of the $e_s$. Hence $\theta_{\wedge}$ is bijective.\par
+Suppose now only that $M$ is finitely generated and projective; then $M$ is a direct factor of a finitely generated free $A$-module $L$, so that there exist two $A$-linear maps $M\to L\to M$ whose composition is the identity $1_M$. We deduce a commutative diagram
+\[\begin{tikzcd}
+T(M^*)\ar[d,"\theta_T"]\ar[r]&T(L^*)\ar[d,"\theta_T"]\ar[r]&T(M^*)\ar[d,"\theta_T"]\\
+T(M)^{*\gr}\ar[r]&T(L)^{*\gr}\ar[r]&T(M)^{*\gr}
+\end{tikzcd}\]
+and an analogous commutative diagram where $T$ is replaced by $\bigw$. The
+proposition then follows from a diagram chasing. The last assertion of Proposition~\ref{cogebra dual of T and w finite projective module} follows from the fact that $\bigw(M)$ is then a finitely generated $A$-module (Proposition~\ref{} and Remark~\ref{}).
+\end{proof} 
+We now examine what can be said concerning the homomorphism $\theta_S$ when $M$ is projective and finitely generated. Suppose first that $M$ admits a finite basis $(e_i)_{1\leq i\leq d}$. Then $A$-module $S^n(M)$ admits as hasis the family of elements $e^\alpha$ such that $|\alpha|=n$. Let $u_\alpha$ (for $|\alpha|=n$) denote the element of index $\alpha$ in the hasis of $(S^n(M))^*$ dual to $(e^\alpha)$. The elements $u_\alpha$, for $\alpha\in\N^d$, therefore form a basis of the algebra $S(M)^{*\gr}$ and we shall obtain the multiplication table of this basis explicitly. We write
+\[u_\alpha u_\beta=\sum_{\eps\in\N^d}a_{\alpha\beta\eps}u_\eps\quad\text{with $a_{\alpha\beta\eps}\in A$}.\]
+Then by definition
+\[a_{\alpha\beta\eps}=\langle u_\alpha u_\beta,e^\eps\rangle=m((u_\alpha\otimes u_\beta)(c(e^\eps))),\]
+where $m:A\otimes_AA\to A$ defines the multiplication on $A$ and $c$ is the coproduct of $S(M)$. In other words, $a_{\alpha\beta\eps}$ is just the coefficient of $e^\alpha\otimes e^\beta$ when $c(e^\eps)$ is written in terms of the basis of $S(M)\otimes S(M)$ consisting of the $e^\xi\otimes e^\eta$, where $\xi$ and $\eta$ run through $\N^d$. But since $c$ is an algebra homomorphism,
+\[c(e^\eps)=\prod_{i=1}^{n}c(e_i)^{\eps_i}=\prod_{i=1}^{n}(e_i\otimes 1+1\otimes e_i)^{\eps_i};\]
+this gives
+\begin{align}\label{cogebra S(M) coproduct on basis formula-1}
+c(e^\eps)=\sum_{\xi+\eta=\eps}(\xi,\eta)e^\xi\otimes e^\eta
+\end{align}
+where we write
+\begin{align}\label{cogebra S(M) coproduct coefficient def}
+(\xi,\eta)=\prod_{i=1}^{n}\frac{(\xi_i+\eta_i)}{\xi_i!\eta_i!}.
+\end{align}
+Hence we obtain the multiplication table
+\begin{align}\label{cogebra S(M) coproduct on basis formula-2}
+u_\alpha u_\beta=(\alpha,\beta)u_{\alpha+\beta}.
+\end{align}
+On the other hand, if $(e_i^*)_{1\leq i\leq m}$ is the basis of $M^*$, dual to $(e_i)$, it follows from formula (\ref{cogebra theta map on S(M) formula}) that, for all $\alpha\in\N^d$,
+\begin{align}
+\theta_S(e^{*\alpha})=\alpha!u_\alpha
+\end{align}
+Hence the homomorphism $\theta_S$ is bijective if and only if the $\alpha!u_\alpha$ form a basis of $S(M)^{*\gr}$, or also if the elements $\alpha!1$ are invertible.
+\begin{proposition}\label{cogebra dual of S finite projective module}
+Suppose that the ring $A$ is an algebra over the field $\Q$ of rational numbers; then, for every finitely generated projective $A$-module $M$, the homomorphism $\theta_S:S(M^*)\to S(M)^{*\gr}$ is bijective.
+\end{proposition}
+\begin{proof}
+It amounts to proving this when $M$ is finitely generated and free; we pass from this to the general case as in the proof of Proposition~\ref{cogebra dual of T and w finite projective module}.
+\end{proof}
+\subsubsection{Interior product}
