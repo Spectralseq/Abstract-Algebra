@@ -327,9 +327,9 @@ First we establish some basic properties of embeddings. If $f(X)=\sum_ia_iX^i\in
 \begin{proposition}[\textbf{Properties of embeddings}]\label{field embedding prop}
 \mbox{}
 \begin{itemize}
-\item[(\rmnum{1})] (\textbf{Embeddings preserve factorizations and roots}) If $\sigma:K\to L$ is an embedding and $f(X),p(X),q(X)$ are polynomials in $K[X]$, then $f(X)=p(X)q(X)$ if and only if $f^\sigma(X)=p^\sigma(X)q^\sigma(X)$. Also, $\alpha\in K$ is a root of $f(X)$ if and only if $\sigma(\alpha)$ is a root of $f^\sigma(X)$.
+\item[(\rmnum{1})] (\textbf{Embeddings preserve factorizations and roots}) If $\sigma:K\to L$ is an embedding and $f(X)$, $p(X)$, $q(X)$ are polynomials in $K[X]$, then $f(X)=p(X)q(X)$ if and only if $f^\sigma(X)=p^\sigma(X)q^\sigma(X)$. Also, $\alpha\in K$ is a root of $f(X)$ if and only if $\sigma(\alpha)$ is a root of $f^\sigma(X)$.
 \item[(\rmnum{2})] (\textbf{Embeddings preserve the lattice structure}) If $\sigma:F\to L$ is an embedding and $\{E_i:i\in I\}$ is a family of subfields of $F$, then
-\[\sigma\Big(\bigcap_iE_i\Big)=\bigcap_i\sigma(E_i),\quad \sigma\Big(\bigvee E_i\Big)=\bigvee\sigma(E_i).\] 
+\[\sigma\Big(\bigcap_iE_i\Big)=\bigcap_i\sigma(E_i),\quad \sigma\Big(\bigvee_i E_i\Big)=\bigvee_i\sigma(E_i).\] 
 \item[(\rmnum{3})] (\textbf{Embeddings preserve adjoining}) If $\sigma:E\to F$ is an embedding and if $K\sub E$ and $S\sub E$, then
 \[\sigma(K(S))=\sigma(K)(\sigma(S)).\] 
 \item[(\rmnum{4})] (\textbf{Embeddings preserve being algebraic}) Let $\sigma:K\to L$ is an embedding and let $E/K$ be an algebraic extension. If $\bar{\sigma}:E\to L$ is an extension of $\sigma$, then $\sigma(K)\sub\bar{\sigma}(E)$ is algebraic.
@@ -1366,7 +1366,7 @@ Let $(\Pi,\Omega)$ be a Galois connection on $(P,Q)$, we say that $P$ is \textbf
 \end{definition}
 We have remarked that the top elements $1_P$ and $0_Q$, if they exist, are always closed, but the bottom elements $0_P$ and $0_Q$ need not be closed. However, the most important example of a Galois connection, namely, the
 Galois correspondence of a field extension $E/K$, which is the subject of our investigations, has the property that $0_Q$ is closed. So let us assume that $0_Q$ is closed and see what we can deduce.\par
-\begin{theorem}[\textbf{$\bm{0_Q}$ is closed}]\label{Galois connection 0_Q is closed}
+\begin{theorem}[\textbf{$\bm{0_{Q}}$ is closed}]\label{Galois connection 0_Q is closed}
 Let $(\Pi,\Omega)$ be an indexed Galois connection on $(P,Q)$, where $P$ and $Q$ have top and bottom elements. Assume that $0_Q$ is closed. Then 
 \[\mathrm{index}(Q)\leq\mathrm{index}(P).\]
 Also,
@@ -1523,7 +1523,7 @@ Let $E/K$ be algebraic and consider the Galois correspondence on $E/K$.
 \begin{proof}
 First, suppose that $K$ is closed and let $\alpha\in E\setminus K$. Then the finite extension $K(\alpha)\sub K$ of $K$ is also closed and so
 \[d:=[\Gal(E/K):\Gal(E/K(\alpha))]=[K(\alpha):K]<\infty.\]
-Let $S=\{\sigma_1,\dots,\sigma_d\}$ be a complete system of distinct coset representatives for the coset $\Gal(E/K)/\Gal(E/K(\alpha))$. Each element of $S$ gives a distinct value on $\alpha$, that is, a distinct root of $\min(\alpha,K)$, for if $\sigma_i(\alpha)=\sigma_j(\alpha)$, then $\sigma_i\circ\sigma_j^{-1}\in\Gal(E/K(\alpha))$, which is not possible for $i\neq j$. Hence, the $d$ roots of $\min(\alpha,K)$ are $\{\sigma_1(\alpha),\dots,\sigma_d(\alpha)\}$, which are distinct and lie in $E$. Thus, $\alpha$ is separable and $\min(\alpha,K)$ splits in $E$, implying that $E/K$ is a Galois extension.\par
+Let $S=\{\sigma_1,\dots,\sigma_d\}$ be a representatives for the coset $\Gal(E/K)/\Gal(E/K(\alpha))$. Each element of $S$ gives a distinct value on $\alpha$, that is, a distinct root of $\min(\alpha,K)$, for if $\sigma_i(\alpha)=\sigma_j(\alpha)$, then $\sigma_i\circ\sigma_j^{-1}\in\Gal(E/K(\alpha))$, which is not possible for $i\neq j$. Hence, the $d$ roots of $\min(\alpha,K)$ are $\{\sigma_1(\alpha),\dots,\sigma_d(\alpha)\}$, which are distinct and lie in $E$. Thus, $\alpha$ is separable and $\min(\alpha,K)$ splits in $E$, implying that $E/K$ is a Galois extension.\par
 For the converse, suppose that $E/K$ is Galois. If $\alpha\in\cl(K)=E^{\Gal(E/K)}$ has minimal polynomial $f(X)=\min(\alpha,K)$, then $f(X)$ can have no roots other than $\alpha$. For if $\beta$ is a root of $f(X)$ in some extension, then there is an embedding $\sigma:E\to\widebar{K}$ over $K$ for which $\sigma(\alpha)=\beta$. But since $E$ is normal over $K$, it follows that $\sigma\in\Gal(E/K)$ and so $\beta=\sigma(\alpha)=\alpha$. Thus $f(X)$ has only one distinct root. Since $E/K$ is separable, it must be linear, which implies that $\alpha\in K$. Thus, $\cl(K)=K$ and $K$ is closed.\par
 Now let $K$ be a closed intermediate field, so that $E/K$ is Galois. If $L$ is an arbitrary extension of $K$ (not necessarily finite), then by Proposition~\ref{Galois extension prop} the extension $E/L$ is also Galois, and therefore $L$ is closed.
 \end{proof}
@@ -2128,7 +2128,7 @@ Let $f(X)\in K[X]$ have degree $n$ and splitting field $E$. Let $\sqrt{D}$ be an
 \end{itemize}
 \end{proposition}
 \begin{proof}
-Let $\Delta=\sqrt{D}$. Each transposition of the roots sends $\Delta$ to $-\Delta$, and so for any $\sigma\in\Gal_K(f(X))$,
+Let $\Delta=\sqrt{D}$. Each transposition of the roots sends $\Delta$ to $-\Delta$, so for any $\sigma\in\Gal_K(f(X))$,
 \[\sigma(\Delta)=(-1)^\sigma\Delta.\]
 If $\char(K)=2$, then $\sigma(\Delta)=\Delta$ for all $\sigma\in\Gal_K(f(X))$ and so $\Delta$ is always in the base field $K$. If $\char(K)\neq 2$, then $\sigma\in\Gal_K(f(X))$ fixes $\Delta$ if and only if $\sigma$ is an even permutation. Put another way, $\Delta\in E^{\Gal_K(f(X))}$ if and only if $\Gal_K(f(X))$ contains only even permutations, that is, $\Gal_K(f(X))\sub\mathfrak{A}_n$.\par
 If $\Delta\notin K$ then $\Gal_K(f(X))$ must contain an odd permutation, and thus exactly half of its elements are even. Hence, if $\Delta\notin K$ then $G=\Gal_K(f(X))$ has even order and $|G\cap\mathfrak{A}_n|=|G|/2$, that is,

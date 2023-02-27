@@ -2149,7 +2149,7 @@ Suppose that $\rho:A\to B$ is a local homomorphism of local rings and that there
 Let $\rho:A\to B$ be a ring homomorphism satisfying condition (PM).
 \begin{itemize}
 \item[(a)] Let $\nu:A\to A'$ be a ring homomorphism, then the homomorphism $\rho':A'\to A'\otimes_AB$ satisfies condition (PM).
-\item[(b)] Let $\mathfrak{P}$ be a prime ideal of $A$ and $\p=\mathfrak{P}^c$, then the canonical homomorphism $\rho_\p:A_\p\to B_\mathfrak{P}$ satisfies (PM).
+\item[(b)] Let $\mathfrak{P}$ be a prime ideal of $A$ and $\p=\mathfrak{P}^c$, then the canonical homomorphism $\rho_\p:A_\p\to B_{\mathfrak{P}}$ satisfies (PM).
 \item[(c)] The going-down property holds for $\rho$.
 \end{itemize}
 \end{proposition}
@@ -2157,7 +2157,7 @@ Let $\rho:A\to B$ be a ring homomorphism satisfying condition (PM).
 Let $E$ be a $B$-module such that $\rho^*(E)$ is a faithfully flat $A$-module and for any prime ideal $\mathfrak{P}$ of $B$, we have $E\otimes_B\kappa(\mathfrak{P})\neq 0$. For (a), the $A'$-module $E'=A'\otimes_AE$ is faithfully flat by Proposition~\ref{module tensor faithfully flat iff}. Let $\mathfrak{P}'$ be a prime ideal of $B'=A'\otimes_AB$ and $\mathfrak{P}$ its contraction in $B$. Then we have canonical isomomorphisms
 \[E'\otimes_{B'}\kappa(\mathfrak{P}')=E\otimes_B\kappa(\mathfrak{P}')=(E\otimes_B\kappa(\mathfrak{P}))\otimes_{\kappa(\mathfrak{P})}\kappa(\mathfrak{P}')\]
 since $E\otimes_A\kappa(\mathfrak{P})\neq 0$, we see $E'\otimes_{B'}\kappa(\mathfrak{P}')\neq 0$, whence $\rho'$ satisfies condition (PM).\par 
-Let $\p$ and $\mathfrak{P}$ be as in (b). By Proposition~\ref{localization and flatness}, the $A_\p$ module $E_\mathfrak{P}$ is flat. On the other hand, every prime ideal of $B_\mathfrak{P}$ is of the form $\mathfrak{Q}B_\mathfrak{P}$ where $\mathfrak{Q}$ is a prime ideal of $B$ contained in $\mathfrak{P}$. We have $E\otimes_B\kappa(\mathfrak{Q})\neq 0$ given the hypothesis made on $E$, and since $E_\mathfrak{P}\otimes_{B_\mathfrak{P}}\kappa(\mathfrak{Q}B_\mathfrak{P})$ is isomorphic to $E\otimes_B\kappa(\mathfrak{Q}B_\mathfrak{P})$, we have $E_\mathfrak{P}\otimes_{B_\mathfrak{P}}\kappa(\mathfrak{Q}B_\mathfrak{P})\neq 0$, whence (c) by Example~\ref{local ring local homomorphism condition PM}. Now (c) follows from (b) by Proposition~\ref{prime ideal is contraction iff exist faithfully flat module}.
+Let $\p$ and $\mathfrak{P}$ be as in (b). By Proposition~\ref{localization and flatness}, the $A_\p$ module $E_{\mathfrak{P}}$ is flat. On the other hand, every prime ideal of $B_{\mathfrak{P}}$ is of the form $\mathfrak{Q}B_{\mathfrak{P}}$ where $\mathfrak{Q}$ is a prime ideal of $B$ contained in $\mathfrak{P}$. We have $E\otimes_B\kappa(\mathfrak{Q})\neq 0$ given the hypothesis made on $E$, and since $E_{\mathfrak{P}}\otimes_{B_{\mathfrak{P}}}\kappa(\mathfrak{Q}B_{\mathfrak{P}})$ is isomorphic to $E\otimes_B\kappa(\mathfrak{Q}B_{\mathfrak{P}})$, we have $E_{\mathfrak{P}}\otimes_{B_{\mathfrak{P}}}\kappa(\mathfrak{Q}B_{\mathfrak{P}})\neq 0$, whence (c) by Example~\ref{local ring local homomorphism condition PM}. Now (c) follows from (b) by Proposition~\ref{prime ideal is contraction iff exist faithfully flat module}.
 \end{proof}
 \begin{proposition}\label{module faithfully flat iff linear relation}
 Let $A$ be a subring of a ring $B$. For $B$ be a faithfully flat $A$-module, it is necessary and sufficient that the following condition holds:

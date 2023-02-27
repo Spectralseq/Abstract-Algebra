@@ -4207,7 +4207,7 @@ In this part, $E$ denotes a real affine space of finite dimension $d$ and $T$ th
 Let $H$ be a hyperplane of $E$. Recall that $E\setminus H$ has two connected components, called the \textbf{open half-spaces} bounded by $H$. Their closures are called the \textbf{closed half-spaces} bounded by $H$. Let $x,y\in E$. Then $x$ and $y$ are said to be \textbf{strictly on the same side} of $H$ if they are contained in the same open half-space bounded by $H$, or equivalently, if the closed segment with extremities $x$ and $y$ does not meet $H$; $x$ and $y$ are said to be \textbf{on opposite sides} of $H$ if $x$ belongs to one of the open half-spaces bounded by $H$ and $y$ to the other. If $x\in E$ and $t\in T$, then $x$ and $t$ are said to be \textbf{strictly on the same side} of $H$ if this is so for $x$ and $h+t$ for all $h\in H$.\par
 Let $A$ be a non-empty connected subset of $E$. For any hyperplane $H$ of $E$ that does not meet $A$, $D_H(A)$ denotes the unique open half-space bounded by $H$ that contains $A$. If $\mathcal{H}$ is a set of hyperplanes of $E$, none of which meet $A$, put
 \[D_{\mathcal{H}}(A)=\bigcap_{H\in\mathcal{H}}D_H(A).\]
-If $A$ consists of a single point $a$, we write $D_H(a)$ and $D_\mathcal{H}(a)$ instead of $D_H(\{a\})$ and $D_\mathcal{H}(\{a\})$.
+If $A$ consists of a single point $a$, we write $D_H(a)$ and $D_{\mathcal{H}}(a)$ instead of $D_H(\{a\})$ and $D_{\mathcal{H}}(\{a\})$.
 \subsection{Facets and chambers}
 Let $\mathcal{H}$ be a locally finite subset of hyperplanes of $E$. Then since each hyperplane is closed, the union of $\mathcal{H}$ is closed. In other words, the set of points of $E$ that do not belong to any hyperplane $H$ of the set $\mathcal{H}$ is open since $\mathcal{H}$ is locally finite. More precisely, we have the following result:
 \begin{proposition}\label{hyperplanes locally finite connected nbhd}
@@ -4261,7 +4261,7 @@ Let $F$ be a facet, and let $L$ be an affine subspace of $E$ that is an intersec
 \item[(\rmnum{2})] There exists a facet $\tilde{F}$ with support $L$ contained in $\widebar{F}$.
 \item[(\rmnum{3})] There exists a point $x$ in $L\cap\widebar{F}$ that does not belong to any of the hyperplanes of $\mathcal{R}$. 
 \end{itemize}
-If these conditions are satisfied, $L\cap D_\mathcal{R}(F)$ is the unique facet with support $L$ contained in $\widebar{F}$.
+If these conditions are satisfied, $L\cap D_{\mathcal{R}}(F)$ is the unique facet with support $L$ contained in $\widebar{F}$.
 \end{proposition}
 \begin{proof}
 Since $\widebar{F}$ is a union of facets (Proposition~\ref{reflection group facet affine support prop}(b)), every facet that meets $\widebar{F}$ meets a facet contained in $\widebar{F}$, and so is equal to it. This shows (\rmnum{1})$\Rightarrow$(\rmnum{2}). Moreover, in this case every point $x$ of $\tilde{F}$ satisfies (c) since every hyperplane of $\mathcal{H}$ containing $x$ contains $\tilde{F}$, and hence $L$, so (\rmnum{3}) is fullfilled.\par
@@ -4273,7 +4273,7 @@ A \textbf{chamber} of $E$ relative to $\mathcal{H}$ (or simply a chamber if ther
 \end{definition}
 Let $U$ be the open set in $E$ consisting of the points that do not belong to any hyperplane of $\mathcal{H}$. Since a hyperplane of $\mathcal{H}$ must contain any facet that it meets, the chambers of $E$ are exactly the facets contained in $U$. Every chamber is a convex (hence connected) open subset of E by Proposition~\ref{reflection group facet affine support prop}(a). Since the chambers form a partition of $U$, they are exactly the connected components of $U$. Every convex subset $A$ of $U$ is connected, and thus contained in a chamber, which is unique if $A$ is non-empty. It is clear that the chambers are the facets with support $E$, and Proposition~\ref{reflection group facet affine support prop}(c) shows that every chamber is the interior of its closure. Finally, let $C$ be a chamber and $A$ a non-empty subset of $C$; formulas (\ref{reflection group facet intersection of affine-1}) and (\ref{reflection group facet intersection of affine-2}) imply that
 \begin{align}\label{reflection group chamber formula}
-C=\bigcap_{H\in\mathcal{H}}D_H(A)=D_\mathcal{H}(A),\quad \widebar{C}=\bigcap_{H\in\mathcal{H}}\widebar{D_H(A)}.
+C=\bigcap_{H\in\mathcal{H}}D_H(A)=D_{\mathcal{H}}(A),\quad \widebar{C}=\bigcap_{H\in\mathcal{H}}\widebar{D_H(A)}.
 \end{align}
 since $D_H(A)=D_H(a)$ for all $a\in A$.
 \begin{proposition}\label{reflection group chamber if}
@@ -4285,7 +4285,7 @@ Let $C$ be a non-empty subset of $E$. Assume that there exists a subset $\mathca
 Under these conditions, $C$ is a chamber defined by $\mathcal{H}$ in $E$, and $D_H=D_H(C)$ for all $H\in\mathcal{H}$.
 \end{proposition}
 \begin{proof}
-Properties (a) and b) show that $C$ is a convex subset of $U$; hence there is a chamber $\tilde{C}$ with $C\sub \tilde{C}$. Since $C\sub D_H$, we have $D_H=D_H(C)$ for all $H$ in $\mathcal{R}$, hence $C=D_\mathcal{R}(C)\supseteq D_\mathcal{H}(C)$. We have $D_\mathcal{H}(C)=\tilde{C}$ by (\ref{reflection group chamber formula}), hence $C\supseteq \tilde{C}$ and therefore $C=\tilde{C}$.
+Properties (a) and b) show that $C$ is a convex subset of $U$; hence there is a chamber $\tilde{C}$ with $C\sub \tilde{C}$. Since $C\sub D_H$, we have $D_H=D_H(C)$ for all $H$ in $\mathcal{R}$, hence $C=D_{\mathcal{R}}(C)\supseteq D_{\mathcal{H}}(C)$. We have $D_{\mathcal{H}}(C)=\tilde{C}$ by (\ref{reflection group chamber formula}), hence $C\supseteq \tilde{C}$ and therefore $C=\tilde{C}$.
 \end{proof}
 \begin{proposition}\label{reflection group point in closure of chamber}
 Every point of $E$ is in the closure of at least one chamber.
@@ -4324,18 +4324,18 @@ By Proposition~\ref{reflection group open subset of affine subspace chamber}(c),
 Let $C$ be a chamber and $\mathcal{W}$ the set of walls of $C$. Then $C= D_{\mathcal{W}}(C)$ and every subset $\mathcal{L}$ of $\mathcal{H}$ such that $C=D_{\mathcal{W}}(C)$ contains $\mathcal{W}$. A subset $F$ of $\widebar{C}C$ is a facet if and only if it is a facet of $E$ relative to the family $\mathcal{W}$.
 \end{proposition}
 \begin{proof}
-Let $\mathcal{L}$ be a subset of $\mathcal{H}$ such that $C=D_\mathcal{L}(C)$. Consider a hyperplane $L\in\mathcal{H}\setminus\mathcal{L}$ and let $\mathcal{R}=\mathcal{H}\setminus\{L\}$. Then $\mathcal{L}\sub\mathcal{R}$, and we get $C=D_\mathcal{R}(C)$ because
-\[C\sub D_\mathcal{R}(C)\sub D_\mathcal{L}(C).\]
-In particular, $L$ does not meet $D_\mathcal{R}(C)$ since it does not meet $C$. By Proposition~\ref{reflection group affine intersection of hyperplanes prop}, this implies $L$ is not a wall. Consequently, every wall of $C$ belongs to $\mathcal{L}$.\par
-Now let $H$ be a hyperplane belonging to $\mathcal{L}$ that is not a wall of $C$. Since $C=D_\mathcal{L}(C)$, by applying Proposition~\ref{reflection group affine intersection of hyperplanes prop} to $\mathcal{L}$ and $H$, we see the convex set $D_{\mathcal{L}\setminus\{H\}}(C)$ does not meet $H$, so $D_{\mathcal{L}\setminus\{H\}}(C)\sub D_H(C)$ and $C=D_{\mathcal{L}\setminus\{H\}}(C)$. If $\mathcal{F}$ is a finite subset of $\mathcal{L}$ that does not contain any wall of $C$, we conclude by induction on the cardinal of $\mathcal{F}$ that $C=D_{\mathcal{L}\setminus\mathcal{F}}(C)$.\par
-Let $a$ be a point of $C$ and $b$ be a point of $D_\mathcal{W}(a)$. Since the closed segment $[a,b]$ is compact, the set $\mathcal{S}$ of hyperplanes $H\in\mathcal{H}$ that meet $[a,b]$ is finite. Since $a$ and $b$ are strictly on the same side of every wall of $C$, no wall of $C$ belongs to $\mathcal{S}$, so by the preceding paragraph we have $C=D_{\mathcal{L}\setminus\mathcal{S}}(C)$, whence $b\in D_{\mathcal{L}\setminus\mathcal{S}}(C)=C$. We have therefore proved that $D_\mathcal{W}(a)\sub C$, whence $C=D_\mathcal{W}(a)$ and the first part of the proposition is established.\par
+Let $\mathcal{L}$ be a subset of $\mathcal{H}$ such that $C=D_{\mathcal{L}}(C)$. Consider a hyperplane $L\in\mathcal{H}\setminus\mathcal{L}$ and let $\mathcal{R}=\mathcal{H}\setminus\{L\}$. Then $\mathcal{L}\sub\mathcal{R}$, and we get $C=D_{\mathcal{R}}(C)$ because
+\[C\sub D_{\mathcal{R}}(C)\sub D_{\mathcal{L}}(C).\]
+In particular, $L$ does not meet $D_{\mathcal{R}}(C)$ since it does not meet $C$. By Proposition~\ref{reflection group affine intersection of hyperplanes prop}, this implies $L$ is not a wall. Consequently, every wall of $C$ belongs to $\mathcal{L}$.\par
+Now let $H$ be a hyperplane belonging to $\mathcal{L}$ that is not a wall of $C$. Since $C=D_{\mathcal{L}}(C)$, by applying Proposition~\ref{reflection group affine intersection of hyperplanes prop} to $\mathcal{L}$ and $H$, we see the convex set $D_{\mathcal{L}\setminus\{H\}}(C)$ does not meet $H$, so $D_{\mathcal{L}\setminus\{H\}}(C)\sub D_H(C)$ and $C=D_{\mathcal{L}\setminus\{H\}}(C)$. If $\mathcal{F}$ is a finite subset of $\mathcal{L}$ that does not contain any wall of $C$, we conclude by induction on the cardinal of $\mathcal{F}$ that $C=D_{\mathcal{L}\setminus\mathcal{F}}(C)$.\par
+Let $a$ be a point of $C$ and $b$ be a point of $D_{\mathcal{W}}(a)$. Since the closed segment $[a,b]$ is compact, the set $\mathcal{S}$ of hyperplanes $H\in\mathcal{H}$ that meet $[a,b]$ is finite. Since $a$ and $b$ are strictly on the same side of every wall of $C$, no wall of $C$ belongs to $\mathcal{S}$, so by the preceding paragraph we have $C=D_{\mathcal{L}\setminus\mathcal{S}}(C)$, whence $b\in D_{\mathcal{L}\setminus\mathcal{S}}(C)=C$. We have therefore proved that $D_{\mathcal{W}}(a)\sub C$, whence $C=D_{\mathcal{W}}(a)$ and the first part of the proposition is established.\par
 To prove the last assertion of the proposition, it clearly suffices to show that a subset $F$ of $\widebar{C}$ that is a facet of $E$ relative to $\mathcal{W}$ is a facet of $E$ relative to $\mathcal{H}$, or that every hyperplane $H\in\mathcal{H}$ that meets $F$ contains $F$. So let $H$ be a hyperplane that meets $F$ but does not contain it. Since $F$ is open in its affine support, it is not completely on one side of $H$. It follows that $\widebar{C}$ is not completely on one side of $H$ and hence that the hyperplane $H$ does not belong to $\mathcal{H}$, which completes the proof.
 \end{proof}
 \begin{remark}
 It follows from formula (\ref{reflection group facet intersection of affine-2}) and Proposition~\ref{reflection group wall of chamber prop} that the closure of a chamber $C$ is the intersection of the closed half-spaces that are bounded by a wall of $C$ and contain $C$.
 \end{remark}
-Let $F$ be a facet whose support is a hyperplane $L$; then $F$ is a face of two chambers. In fact, let $\mathcal{R}=\mathcal{H}\setminus\{L\}$ and denote by $D^+$ and $D^-$ the two open half-spaces bounded by $L$. The set $D_\mathcal{R}(F)$ is open and contains $F\sub L$, and since every point of $F$ is in the closure of $D^+$ and $D^-$, the sets $C^+=D_\mathcal{R}(F)\cap D^+$ and $C^-=D_\mathcal{R}(F)\cap D^-$ are nonempty, so by Proposition~\ref{reflection group chamber if} they are chambers. Moreover, the hyperplane $L$ meets $D_\mathcal{R}(F)=D_\mathcal{R}(C^+)$; Proposition~\ref{reflection group affine intersection of hyperplanes prop} shows that $L$ is a wall of $C^+$ and that $F$, which meets $L\cap D_\mathcal{R}(F)$, is a face of $C^+$; similarly, $F$ is a face of $C^-$. Finally, let $C$ be a chamber of which $F$ is a face, and suppose for example that $D^+=D_L(C)$. By Proposition~\ref{reflection group affine intersection of hyperplanes prop}, the set $D_\mathcal{R}(C)$ meets $F$, and hence is equal to $D_\mathcal{R}(F)$, and we have
-\[C=D_\mathcal{H}(C)=D_L(C)\cap D_\mathcal{R}(C)=D^+\cap D_\mathcal{R}(F)=C^+.\]
+Let $F$ be a facet whose support is a hyperplane $L$; then $F$ is a face of two chambers. In fact, let $\mathcal{R}=\mathcal{H}\setminus\{L\}$ and denote by $D^+$ and $D^-$ the two open half-spaces bounded by $L$. The set $D_{\mathcal{R}}(F)$ is open and contains $F\sub L$, and since every point of $F$ is in the closure of $D^+$ and $D^-$, the sets $C^+=D_{\mathcal{R}}(F)\cap D^+$ and $C^-=D_{\mathcal{R}}(F)\cap D^-$ are nonempty, so by Proposition~\ref{reflection group chamber if} they are chambers. Moreover, the hyperplane $L$ meets $D_{\mathcal{R}}(F)=D_{\mathcal{R}}(C^+)$; Proposition~\ref{reflection group affine intersection of hyperplanes prop} shows that $L$ is a wall of $C^+$ and that $F$, which meets $L\cap D_{\mathcal{R}}(F)$, is a face of $C^+$; similarly, $F$ is a face of $C^-$. Finally, let $C$ be a chamber of which $F$ is a face, and suppose for example that $D^+=D_L(C)$. By Proposition~\ref{reflection group affine intersection of hyperplanes prop}, the set $D_{\mathcal{R}}(C)$ meets $F$, and hence is equal to $D_{\mathcal{R}}(F)$, and we have
+\[C=D_{\mathcal{H}}(C)=D_L(C)\cap D_{\mathcal{R}}(C)=D^+\cap D_{\mathcal{R}}(F)=C^+.\]
 This shows the uniqueness of the chambers $C^+$ and $C^-$.
 \subsection{Intersection hyperplanes}
 Recall that two affine subspaces $P_1$ and $P_2$ of $E$ are said to be \textbf{parallel} if they have the same direction, or equivalently there exists a vector $t$ in $T$ such that $P_2=t+P_1$. It is clear that the relation "$P_1$ and $P_2$ are parallel" is an equivalence relation on the set of affine subspaces of $E$.
@@ -4614,10 +4614,10 @@ By Proposition~\ref{reflection group transitive on chambers}, it suffices to pro
 \begin{equation}\label{reflection group closure of chamber is fundamental domain-1}
 \parbox{\dimexpr\linewidth-6em}
 {\strut
-Let $C$ be a chamber, let $x$ and $y$ be two points of $C$ and let $w\in W$ be such that $w(x)=y$. Then $x=y$ and $w$ belongs to the subgroup $W_\mathcal{W}$, where $\mathcal{W}$ is the set of walls of $C$ containing $x$.
+Let $C$ be a chamber, let $x$ and $y$ be two points of $C$ and let $w\in W$ be such that $w(x)=y$. Then $x=y$ and $w$ belongs to the subgroup $W_{\mathcal{W}}$, where $\mathcal{W}$ is the set of walls of $C$ containing $x$.
 \strut}
 \end{equation}
-We argue by induction on the length $p$ of $w$ (relative to the set $S$ of reflections with respect to the walls of $C$), the case $p=0$ being obvious. If $p\geq 1$, there exist a wall $H$ of $C$ and an element $\tilde{w}\in W$ such that $w=s_H\tilde{w}$ and $\ell(s_H\tilde{w})=p-1$. Since $\ell(s_Hw)<\ell(w)$, the chambers $C$ and $w(C)$ are on opposite sides of $H$ by Theorem~\ref{reflection group is Coxeter system}. Thus, $\widebar{C}\cap w(\widebar{C})\sub H$, so $y\in H$. Thus $y=\tilde{w}(x)$ and the induction hypothesis implies that $x=y$ and $\tilde{w}\in W_\mathcal{W}$. Since $y\in H$, it follows that $H\in\mathcal{W}$, and hence that $w=s_H\tilde{w}\in W_\mathcal{W}$, completing the proof.
+We argue by induction on the length $p$ of $w$ (relative to the set $S$ of reflections with respect to the walls of $C$), the case $p=0$ being obvious. If $p\geq 1$, there exist a wall $H$ of $C$ and an element $\tilde{w}\in W$ such that $w=s_H\tilde{w}$ and $\ell(s_H\tilde{w})=p-1$. Since $\ell(s_Hw)<\ell(w)$, the chambers $C$ and $w(C)$ are on opposite sides of $H$ by Theorem~\ref{reflection group is Coxeter system}. Thus, $\widebar{C}\cap w(\widebar{C})\sub H$, so $y\in H$. Thus $y=\tilde{w}(x)$ and the induction hypothesis implies that $x=y$ and $\tilde{w}\in W_{\mathcal{W}}$. Since $y\in H$, it follows that $H\in\mathcal{W}$, and hence that $w=s_H\tilde{w}\in W_{\mathcal{W}}$, completing the proof.
 \end{proof}
 \begin{corollary}\label{reflection group transform facet to chamber}
 If $C$ is a chamber and $F$ a facet, there exists a unique facet $\tilde{F}$ contained in $C$ that is transformed into $F$ by an element of $W$.
@@ -4798,17 +4798,17 @@ and the set $A$ is finite by Lemma~\ref{reflection group inner product leq 1 set
 Now let $w\in W$ be such that $U(w)\cdot a=a$ for all $a\in A$. Then $U(w)\cdot t=t$ for all $t$ belonging to the subspace of $T$ generated by $A$. On the other hand, if $t\in T$ is orthogonal to $A$, we have $U(s_H)\cdot t=t$ for all $H\in\mathcal{H}$, hence $U(w)\cdot t=t$ and therefore $U(w)=1$. Since $U(w)(A)=A$ for all $w\in W$, we deduce that $U(W)$ is isomorphic to a group of permutations of the finite set $A$, hence (c).
 \end{proof}
 \begin{proposition}\label{reflection group subgroup of walls finite iff}
-Let $C$ be a chamber and $\mathcal{R}$ a set of walls of $C$. Let $W_\mathcal{R}$ be the subgroup of $W$ generated by the orthogonal reflections with respect to the elements of $\mathcal{R}$. For $H\in\mathcal{R}$, denote by $e_H$ the unit vector orthogonal to $H$ on the same side of $H$ as $C$. Then the following conditions are equivalent:
+Let $C$ be a chamber and $\mathcal{R}$ a set of walls of $C$. Let $W_{\mathcal{R}}$ be the subgroup of $W$ generated by the orthogonal reflections with respect to the elements of $\mathcal{R}$. For $H\in\mathcal{R}$, denote by $e_H$ the unit vector orthogonal to $H$ on the same side of $H$ as $C$. Then the following conditions are equivalent:
 \begin{itemize}
-\item[(\rmnum{1})] The group $W_\mathcal{R}$ is finite.
-\item[(\rmnum{2})] There exists a point of $E$ invariant under every element of $W_\mathcal{R}$. 
+\item[(\rmnum{1})] The group $W_{\mathcal{R}}$ is finite.
+\item[(\rmnum{2})] There exists a point of $E$ invariant under every element of $W_{\mathcal{R}}$. 
 \item[(\rmnum{3})] The hyperplanes belonging to $\mathcal{R}$ have non-empty intersection.
 \item[(\rmnum{4})] The family of vectors $(e_H)_{H\in\mathcal{R}}$ is free in $T$.
 \end{itemize}
 \end{proposition}
 \begin{proof}
-If $W_\mathcal{R}$ is finite, then the element $\sum_{w\in W_{\mathcal{R}}}w(x)$ is invariant under $W_{\mathcal{R}}$, so $W_{\mathcal{R}}$ has a fixed point. Converselt, by property (D2) at the beginning of this paragraph, the stabiliser in $W$ of every point of $E$ is finite, so (\rmnum{2}) implies (\rmnum{1}).\par
-Since the group $W_\mathcal{R}$ is generated by the set of reflections with respect to the hyperplanes belonging to $\mathcal{R}$, the fixed points of $W_\mathcal{R}$ are the points of $E$ belonging to every hyperplane $H\in\mathcal{R}$, hence the equivalence of (\rmnum{2}) and (\rmnum{3}).\par
+If $W_{\mathcal{R}}$ is finite, then the element $\sum_{w\in W_{\mathcal{R}}}w(x)$ is invariant under $W_{\mathcal{R}}$, so $W_{\mathcal{R}}$ has a fixed point. Converselt, by property (D2) at the beginning of this paragraph, the stabiliser in $W$ of every point of $E$ is finite, so (\rmnum{2}) implies (\rmnum{1}).\par
+Since the group $W_{\mathcal{R}}$ is generated by the set of reflections with respect to the hyperplanes belonging to $\mathcal{R}$, the fixed points of $W_{\mathcal{R}}$ are the points of $E$ belonging to every hyperplane $H\in\mathcal{R}$, hence the equivalence of (\rmnum{2}) and (\rmnum{3}).\par
 Assume that there exists a point $a$ of $E$ such that $a\in H$ for all $H\in\mathcal{R}$ and let $t\in T$ be such that $a+t\in C$. Since $(e_{H_1},e_{H_2})\leq 0$ for $H_1,H_2\in\mathcal{R}$ such that $H_1\neq H_3$ (Proposition~\ref{reflection group Coexter matrix angle prop}), and since $(t,e_H)>0$ for all $H\in\mathcal{R}$, Lemma~\ref{reflection group obtuse subset linera dependence}(b) implies that the $e_H$ for $H\in\mathcal{R}$ are linearly independent. Consequently, (\rmnum{3}) implies (\rmnum{4}).\par
 Suppose finally that the family $(e_H)_{H\in\mathcal{R}}$ is free. Let $a$ be a point of $E$. For any hyperplane $H\in\mathcal{R}$, there exists a real number $c_H$ such that $H$ consists of the points $a+t$ of $E$ with $(t,e_H)=c_H$. Since the family $(e_H)$ is free, there exists $t\in T$ such that $(t,e_H)=c_H$ for all $H\in\mathcal{R}$, and the point $a+t$ of $E$ belongs to all the hyperplanes $H\in\mathcal{R}$. Thus, (\rmnum{4}) implies (\rmnum{3}).
 \end{proof}
@@ -5227,15 +5227,15 @@ It is then immediate that $\psi(L_s)=N_s$ for all $s\in S$ and that $\psi$ trans
 \subsection{Poincar\'e series of graded algebras}
 Let $\mathbbb{k}$ be a field. Let $M$ be a graded $\mathbbb{k}$-module of type $\Z$, and $M_n$ the set of homogeneous elements of $M$ of degree $n$. Assume that each $M_n$ is finite-dimensional. Recall that the filtration on $M$ is called bounded below if there exist an integer $n_0$ such that $M_n=0$ for $n\leq n_0$.
 \begin{definition}
-If the filtration on $M$ is bounded below, the formal series $\sum_n\dim_\mathbbb{k}(M_n)T^n$, which is an element of $\Q((T))$, is called the \textbf{Poincar\'e series} of $M$ and denoted by $P_M(T)$.
+If the filtration on $M$ is bounded below, the formal series $\sum_n\dim_{\mathbbb{k}}(M_n)T^n$, which is an element of $\Q((T))$, is called the \textbf{Poincar\'e series} of $M$ and denoted by $P_M(T)$.
 \end{definition}
 Let $N$ be another graded $\mathbbb{k}$-module of type $\Z$, and $(N_n)_{n\in\Z}$ its grading. Assume that $N_n$. Then
 \begin{align}\label{Poincare series add}
 P_{M\oplus N}(T)=P_M(T)+P_N(T),
 \end{align}
-and, if $M\otimes_\mathbbb{k} N$ is provided with the total grading, then
+and, if $M\otimes_{\mathbbb{k}} N$ is provided with the total grading, then
 \begin{align}\label{Poincare series multiply}
-P_{M\otimes_\mathbbb{k} N}(T)=P_M(T)P_N(T).
+P_{M\otimes_{\mathbbb{k}}N}(T)=P_M(T)P_N(T).
 \end{align}
 \begin{proposition}\label{Poincare series of graded free K-algebra}
 Let $S=\bigoplus_{n\in\N}S_n$ be a commutative graded $\mathbbb{k}$-algebra with a system of generators $(x_1,\dots,x_l)$ consisting of homogeneous and algebraically independent elements. Let $d_i$ be the degree of $x_i$ and assume that $d_i>0$ for all $i$. Then the $S_n$ are free and of finite rank over $\mathbbb{k}$, and
@@ -5254,7 +5254,7 @@ The degrees $d_i$ are determined up to order by $S$.
 Indeed, the inverse of $P_S(T)$ is the polynomial $N(T)=\prod_{i=1}^{l}(1-T^{d_i})$, which is thus uniquely determined. If $q$ is an integer $\geq 1$ and if $\zeta\in\C$ is a primitive $q$-th root of unity, the multiplicity of the root $\zeta$ of $N(T)$ is equal to the number of $d_i$ that are multiples of $q$. This number is zero for $q$ sufficiently large. The number of $d_i$ equal to $q$ is thus determined uniquely by descending induction.
 \end{proof}
 The integers $d_i$ are called the \textbf{characteristic degrees} of $S$. The number of them is equal to the transcendence degree of $S$ over $\mathbbb{k}$. It is the multiplicity of the root $1$ of the polynomial $N(T)$.\par
-Let $S=\bigoplus_{n\in\N}S_n$ be a commutative graded $\mathbbb{k}$-algebra, and $R=\bigoplus_{n\in\N}R_n$ a graded subalgebra of $S$. Assume that each $R_n$ is finite-dimensional and that the $R$-module $S$ admits a finite basis consisting of homogeneous elements $z_1,\dots,z_s$ of degrees $f_1,\dots,f_s$. Then, if $M$ denotes the graded $\mathbbb{k}$-module $\sum_i\mathbbb{k}z_i$, the graded $\mathbbb{k}$-module $S$ is isomorphic to $R\otimes_\mathbbb{k} M$, so each $S_n$ is free and of finite type and
+Let $S=\bigoplus_{n\in\N}S_n$ be a commutative graded $\mathbbb{k}$-algebra, and $R=\bigoplus_{n\in\N}R_n$ a graded subalgebra of $S$. Assume that each $R_n$ is finite-dimensional and that the $R$-module $S$ admits a finite basis consisting of homogeneous elements $z_1,\dots,z_s$ of degrees $f_1,\dots,f_s$. Then, if $M$ denotes the graded $\mathbbb{k}$-module $\sum_i\mathbbb{k}z_i$, the graded $\mathbbb{k}$-module $S$ is isomorphic to $R\otimes_{\mathbbb{k}} M$, so each $S_n$ is free and of finite type and
 \begin{align}\label{Poincare series of graded polynomial subalgebra}
 P_S(T)=P_M(T)P_R(T)=\Big(\sum_{i=1}^{s}T^{f_i}\Big)P_R(T).
 \end{align}
@@ -6609,7 +6609,7 @@ Let $\rho$ be half the sum of positive roots of $\check{\Phi}$ (for $\check{\Del
 Interchanging the roles of $\Phi$ and $\check{\Phi}$ above, we have $\langle\alpha,\rho\rangle=1$ for all $\alpha\in\Delta$, hence the corollary.
 \end{proof}
 From the description (\ref{root system fundamental weight projection on root prop}), it is easy to determine the fundamental weights for rank $2$ root systems, and the Weyl vector $\delta$ can be then computed using Proposition~\ref{root system half sum of positive prop}(a). We now give the precise result for these root systems.
-\begin{example}[\textbf{The weight lattice of $\bm{A_2}$}]
+\begin{example}[\textbf{The weight lattice of $\bm{A_{2}}$}]
 Consider the root system $A_2$, which is given in Figure~\ref{root system highest root A_2}. We know that $\widehat{(\alpha,\beta)}=2\pi/3$, so the fundamental weights $\varpi_\alpha$ and $\varpi_\beta$ satisfy $\widehat{(\varpi_\alpha,\alpha)}=\widehat{(\varpi_\beta,\beta)}=\pi/6$. By some geometric computations, we find that
 \[\varpi_\alpha=\frac{1}{3}(2\alpha+\beta),\quad \varpi_\beta=\frac{1}{3}(\alpha+2\beta).\]
 The weight lattice of $A_2$ is presented in Figure~\ref{root system weight lattice for A2}.
@@ -6663,7 +6663,7 @@ The weight lattice of $A_2$ is presented in Figure~\ref{root system weight latti
 \end{figure}
 \end{example}
 
-\begin{example}[\textbf{The weight lattice of $\bm{B_2}$}]
+\begin{example}[\textbf{The weight lattice of $\bm{B_{2}}$}]
 Now consider the root system $B_2$, which is given in Figure~\ref{root system highest root B_2}. The basis $\{\alpha,\beta\}$ of $B_2$ satisfies $\widehat{(\alpha,\beta)}=3\pi/4$ and $\|\beta\|=\sqrt{2}\|\alpha\|$, so the fundamental weights $\varpi_\alpha$ and $\varpi_\beta$ satisfy $\widehat{(\varpi_\alpha,\alpha)}=\widehat{(\varpi_\beta,\beta)}=\pi/4$. It is then easy to compute that
 \[\varpi_\alpha=\frac{1}{2}(2\alpha+\beta),\quad \varpi_\beta=\alpha+\beta.\]
 The weight lattice of $B_2$ is presented in Figure~\ref{root system weight lattice for B2}.
@@ -10715,7 +10715,7 @@ It is easy to verify that these elements form a basis of a complement of $\h$ in
 for all $\alpha\in\Phi$, where $\Phi$ is the set
 \[\Phi=\{\pm\eps_i,\pm\eps_i\pm\eps_j:1\leq i<j\leq l\}.\]
 It follows that $\h$ is equal to its normalizer in $\g$, and hence is a Cartan subalgebra of $\g$, that $\h$ is splitting, and that the roots of $(\g,\h)$ are the elements of $\Phi$. The root system $\Phi$ of $(\g,\h)$ is of type $B_l$ for $l\geq 2$, and of type $A_1$ (also said to be of type $B_1$) for $l=1$. Consequently, $\g$ is a splittable simple Lie algebra of type $B_l$.\par
-Every splitting Cartan subalgebra of $\o(\beta)$ is a transform of $\h$ by an elementary automorphism of $\o(\beta)$, and hence by an element of $\O(\beta)$, and consequently is the set $\h_\mathcal{B}$ of elements of $\g$ whose matrix with respect to a Witt basis $\mathcal{B}$ of $V$ is diagonal. We verify immediately that the only vector subspaces invariant under $\h_\mathcal{B}$ are those generated by a subset of $\mathcal{B}$. If $l=1$, the algebras $\o(\beta)$ and $\sl(2,\K)$ have the same root systems, and are thus isomorphic. From now on, we assume that $l\geq 2$.\par
+Every splitting Cartan subalgebra of $\o(\beta)$ is a transform of $\h$ by an elementary automorphism of $\o(\beta)$, and hence by an element of $\O(\beta)$, and consequently is the set $\h_{\mathcal{B}}$ of elements of $\g$ whose matrix with respect to a Witt basis $\mathcal{B}$ of $V$ is diagonal. We verify immediately that the only vector subspaces invariant under $\h_{\mathcal{B}}$ are those generated by a subset of $\mathcal{B}$. If $l=1$, the algebras $\o(\beta)$ and $\sl(2,\K)$ have the same root systems, and are thus isomorphic. From now on, we assume that $l\geq 2$.\par
 The root system $\check{\Phi}$ is determined, and we find that
 \[h_{\eps_i}=2h_i,\quad h_{\eps_i-\eps_j}=h_i-h_j,\quad h_{\eps_i+\eps_j}=h_i+h_j.\]
 Put $\alpha_1=\eps_1-\eps_2,\dots,\alpha_{l-1}=\eps_{l-1}-\eps_l$, $\alpha_l=\eps_l$. Then $(\alpha_1,\dots,\alpha_l)$ is a basis $\Delta$ of $\Phi$; the positive roots relative to $\Delta$ are the $\eps_i$ and the $\eps_i\pm\eps_j$ ($i<j$). The corresponding Borel subalgebra $\b$ is the set of upper triangular matrices in $\g$.\par

@@ -3,8 +3,7 @@
 \section{Representations, Maschke's theorem, and semisimplicity}
 \subsection{Definitions and examples}
 Informally, a representation of a group is a collection of invertible linear transformations of a vector space (or, more generally, of a module for a ring) that multiply together in the same way as the group elements. The collection of linear transformations thus establishes a pattern of symmetry of the vector space, which copies the symmetry encoded by the group. Because symmetry is observed and understood so widely, and is even one of the fundamental notions of mathematics, there are applications of representation theory across the whole of mathematics as well as in other disciplines.\par
-For many applications, especially those having to do with the natural world,
-it is appropriate to consider representations over fields of characteristic zero such as $\C$, $\R$, or $\Q$. In other situations that might arise in topology or combinatorics or number theory, for instance, we find ourselves considering representations over fields of positive characteristic, such as the field with $p$ elements $\F_p$, or over rings that are not fields, such as the ring of integers $\Z$. Many aspects of representation theory do change as the ring varies, but there are also parts of the theory that are similar regardless of the field characteristic or even if the ring is not a field. We develop the theory independently of the choice of ring where possible so as to be able to apply it in all situations and to establish a natural context for the results.\par
+For many applications, especially those having to do with the natural world, it is appropriate to consider representations over fields of characteristic zero such as $\C$, $\R$, or $\Q$. In other situations that might arise in topology or combinatorics or number theory, for instance, we find ourselves considering representations over fields of positive characteristic, such as the field with $p$ elements $\F_p$, or over rings that are not fields, such as the ring of integers $\Z$. Many aspects of representation theory do change as the ring varies, but there are also parts of the theory that are similar regardless of the field characteristic or even if the ring is not a field. We develop the theory independently of the choice of ring where possible so as to be able to apply it in all situations and to establish a natural context for the results.\par
 Let $G$ denote a \textit{finite} group, and let $R$ be a commutative ring. If $V$ is an $R$-module, we denote it by $\GL(V)$ the group of all invertible $R$-module homomorphisms $V\to V$. In case, $V\cong R^n$ is a free module of rank $n$, this group is isomorphic to the group of all nonsingular $n\times n$ matrices over $R$, and we denote it by $\GL(n,R)$ or $\GL_n(R)$, or in case $R=\F_q$ is the finite field with $q$ elements by $\GL(n,q)$ or $\GL_n(q)$. We point out also that unless otherwise stated, modules will be left modules and morphisms will be composed reading from right to left so that matrices in $\GL(n,R)$ are thought of as acting from the left on column vectors.\par
 A (\textbf{linear}) \textbf{representation} of $G$ (over $R$) is a group homomorphism
 \[\rho:G\to\GL(V)\]
@@ -554,7 +553,7 @@ If $\chi$ is the character of a complex representation $V$ then $\langle\chi,\ch
 \begin{proof}
 We may write $V\cong S_1^{n_1}\oplus\cdots\oplus S_r^{n_r}$ and then $\langle\chi,\chi\rangle=\sum_{i=1}^{r}n_i^2$ is a positive integer, which equals $1$ precisely if one $n_i$ is $1$ and the others are $0$.
 \end{proof}
-\begin{example}[\textbf{Character table of $\bm{\mathfrak{S}_4}$}]\label{representation of S_4}
+\begin{example}[\textbf{Character table of $\bm{\mathfrak{S}_{4}}$}]\label{representation of S_4}
 We construct the character table of $\mathfrak{S}_4$, since it illustrates some techniques in finding simple characters.\par
 We will exploit the isomorphism between $\mathfrak{S}_4$ and the group of rotations of $\R^3$ that preserve a cube. We may see that these groups are isomorphic from the fact that the group of such rotations permutes the four diagonals of the cube. This action on the diagonals is faithful, and since every transposition of diagonals may be realized through some rotation, so can every permutation of the diagonals. Hence the full group of such rotations is isomorphic to $\mathfrak{S}_4$.\par
 There is a homomorphism $\sigma:\mathfrak{S}_4\to\mathfrak{S}_3$ which sends
@@ -611,7 +610,7 @@ $\chi_{3b}$&$3$&$1$&$-1$&$-1$&$0$\\
 
 We now need to know that there are no more simple characters. This will follow from the fact that the character table is always square, but we do not need this result here: the simple characters are independent functions in $\C^{\Cl(G)}$, by orthogonality, and since we have five of them in a $5$-dimensional space there can be no more.
 \end{example}
-\begin{example}[\textbf{Character table of $\bm{\mathfrak{A}_4}$}]
+\begin{example}[\textbf{Character table of $\bm{\mathfrak{A}_{4}}$}]
 Now we consider the character table of $\mathfrak{A}_4$. Recall that $\mathfrak{A}_4$ has four conjugate classes: the types
 \[[1,1,1,1],\quad [2,2].\]
 are preserved in $\mathfrak{A}_4$; while the type $[3,1]$ splits into two conjugation classes in $\mathfrak{A}_4$. Let $K$ be the subgroup of $\mathfrak{A}_4$ consists of premutations of type $[3,1]$ (we have encountered it in Example~\ref{representation of S_4}),
@@ -655,7 +654,7 @@ $\psi$&$3$&$-1$&$0$&$0$\\
 \label{char table of A_4}
 \end{table}
 \end{example}
-\begin{example}[\textbf{Character table of $\bm{Q_8}$}]\label{character table Q_8}
+\begin{example}[\textbf{Character table of $\bm{Q_{8}}$}]\label{character table Q_8}
 Let $Q_8$ be the group of quaternions. We now present the character table of $Q_8$. First, note that the subgroup $N=\{\pm 1\}$ is normal in $Q_8$ and we have $Q_8/N\cong\Z/2\Z\times\Z/2\Z$, so by lifting the representations of $Q_8/N$ we can get four simple representations of $Q_8$.\par
 One more representation can be obtained from Example~\ref{representation of Q_8 is H}. The representation of $\H$ as complex matrices
 \[a+b\mathbf{i}+c\mathbf{j}+d\mathbf{k}\mapsto\begin{pmatrix}
@@ -1446,7 +1445,7 @@ With these definitions the formulas of Corollary~\ref{character base change prop
 \begin{example}
 Frobenius reciprocity is a most useful tool in calculating with induced characters. In the special case that $V$ and $W$ are simple representations over $\C$ of $H$ and $G$, respectively, where $H\leq G$, it says that the multiplicity of $W$ as a summand of $\Ind^G_HV$ equals the multiplicity of $V$ as a summand of $\Res^G_HW$. As an example, we may take both $V$ and $W$ to be the trivial representations of their respective groups. As explained in Example~\ref{representation action is induced}, $\Ind^G_H\C$ is a permutation module. We deduce from Frobenius reciprocity that as representations of $G$, $\C$ is a direct summand of $\Ind^G_H\C$ with multiplicity one.
 \end{example}
-\begin{example}[\textbf{Character table of $\bm{D_n}$}]
+\begin{example}[\textbf{Character table of $\bm{D_{n}}$}]
 Let $G=\langle x,y\mid x^n=y^1=1,yxy^{-1}=x^{-1}\rangle=D_{n}$, the dihedral group of regular $n$-gon. We compute that the commutator $[y,x]=x^{n-2}$, and so
 \[G'=\langle x^{n-2}\rangle=\begin{cases}
 \langle x\rangle&\text{$n$ is odd},\\

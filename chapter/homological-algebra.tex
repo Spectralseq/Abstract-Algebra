@@ -760,7 +760,7 @@ A particular case of Proposition~\ref{quasi iso factor} is the fact that the coh
 \subsection{Complexes of projective and injective objects}
 Recall that an $R$-module $M$ is projective if the functor $\Hom_R(M,-)$ is exact and it is injective if $\Hom_R(-,M)$ is exact. We can adopt these definitions in any abelian category:
 \begin{definition}
-Let $\mathcal{A}$ be an abelian category. An object $P$ of $\mathcal{A}$ is projective if the functor $\Hom_\mathcal{A}(P,-)$ is exact. An object $Q$ is injective if the functor $\Hom_\mathcal{A}(-,Q)$ is
+Let $\mathcal{A}$ be an abelian category. An object $P$ of $\mathcal{A}$ is projective if the functor $\Hom_{\mathcal{A}}(P,-)$ is exact. An object $Q$ is injective if the functor $\Hom_{\mathcal{A}}(-,Q)$ is
 exact.
 \end{definition}
 We will denote by $\mathcal{P}$, resp., $\mathcal{I}$, the full subcategories of $\mathcal{A}$ determined by the projective, resp., injective, objects. Of course these are not abelian categories in
@@ -1309,7 +1309,7 @@ Assuming that $\mathcal{A}$ has enough projectives, prove that the full subcateg
 \end{exercise}
 \begin{proof}
 We need to check
-\[\Hom_{\widehat{\mathcal{A}}}(P_0^\bullet,P_1^\bullet)\cong\Hom_\mathcal{A}(H^0(P_0^\bullet),H^0(P_1^\bullet))\]
+\[\Hom_{\widehat{\mathcal{A}}}(P_0^\bullet,P_1^\bullet)\cong\Hom_{\mathcal{A}}(H^0(P_0^\bullet),H^0(P_1^\bullet))\]
 but this follows from Lemma~\ref{pro reso initial}.
 \end{proof}
 \begin{exercise}
@@ -3270,7 +3270,7 @@ a\ar[u]\ar[r]&{}&{}&\\
 then
 \[d_2(a)=[d_h(b_0)]_2=[[d_h(b_0)]_1]_2=[[-\delta_v(b_1)]_1]_2=0.\]
 In general, if there is a zig-zag of legnth $r$ for $a$, then we can show $d_1(a)=d_2(a)=\cdots=d_{r-1}(a)=0$.\par
-We say that an element $a$ in $E_0$ \textbf{lives to $\bm{E_r}$} if it represents a nontraivial cohomology class in $E_r$; equivalently, $a$ is a cocycle in $E_1,\dots,E_{r-1}$. From 
+We say that an element $a$ in $E_0$ \textbf{lives to $\bm{E_{r}}$} if it represents a nontraivial cohomology class in $E_r$; equivalently, $a$ is a cocycle in $E_1,\dots,E_{r-1}$. From 
 the discussion above we see that $a$ lives to $E_r$ if and only if it can be extended to a zig-zag of length $r$:
 \[\begin{tikzcd}[column sep=1.0 em,row sep=1.0 em]
 0&{}&{}&{}&{}&{}&{}\\
