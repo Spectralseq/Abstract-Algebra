@@ -180,43 +180,43 @@ which coincides with usual definition of the support of a continuous function.
 \subsection{Sheafification}
 In this part, we give a functorial way to attach to a presheaf a sheaf. This can be seen as the left adjoint of the forgetful functor from $\mathbf{Shv}(X)$ to $\mathbf{Psh}(X)$.
 \begin{definition}[\textbf{Universal property of sheafification}]
-If $\mathscr{F}$ is a presheaf on $X$, then a morphism of presheaves $\iota_{\mathscr{F}}:\mathscr{F}\to\mathscr{F}^{\hash}$ on $X$ is called a \textbf{sheafification} of $\mathscr{F}$ if $\mathscr{F}^{\hash}$ is a sheaf, and for any sheaf $\mathscr{G}$, and any presheaf morphism $\varphi:\mathscr{F}\to\mathscr{G}$, there exists a unique morphism of sheaves $\tilde{\varphi}:\mathscr{F}^{\hash}\to\mathscr{G}$ making the diagram
+If $\mathscr{F}$ is a presheaf on $X$, then a morphism of presheaves $\iota_{\mathscr{F}}:\mathscr{F}\to\mathscr{F}^{\#}$ on $X$ is called a \textbf{sheafification} of $\mathscr{F}$ if $\mathscr{F}^{\#}$ is a sheaf, and for any sheaf $\mathscr{G}$, and any presheaf morphism $\varphi:\mathscr{F}\to\mathscr{G}$, there exists a unique morphism of sheaves $\tilde{\varphi}:\mathscr{F}^{\#}\to\mathscr{G}$ making the diagram
 \[\begin{tikzcd}
-\mathscr{F}\ar[rd,swap,"\varphi"]\ar[r,"\iota_{\mathscr{F}}"]&\mathscr{F}^{\hash}\ar[d,"\tilde{\varphi}"]\\
+\mathscr{F}\ar[rd,swap,"\varphi"]\ar[r,"\iota_{\mathscr{F}}"]&\mathscr{F}^{\#}\ar[d,"\tilde{\varphi}"]\\
 &\mathscr{G}
 \end{tikzcd}\]
 commute.\par
-As a universal construction, the sheafification functor $\mathscr{F}\to\mathscr{F}^{\hash}$ is left-adjoint to the forgetful functor from sheaves on $X$ to presheaves on $X$: there is a canonical isomorphism
-\[\Mor_{\mathbf{Shv}(X)}(\mathscr{F}^{\hash},\mathscr{G})\cong\Mor_{\mathbf{Psh}(X)}(\mathscr{F},\mathscr{G})\]
+As a universal construction, the sheafification functor $\mathscr{F}\to\mathscr{F}^{\#}$ is left-adjoint to the forgetful functor from sheaves on $X$ to presheaves on $X$: there is a canonical isomorphism
+\[\Mor_{\mathbf{Shv}(X)}(\mathscr{F}^{\#},\mathscr{G})\cong\Mor_{\mathbf{Psh}(X)}(\mathscr{F},\mathscr{G})\]
 for any presheaf $\mathscr{F}$ and sheaf $\mathscr{G}$.
 \end{definition}
 In Proposition~\ref{Goement construction image of sheaf char} we see that if $\mathscr{F}$ is a sheaf, then $\mathscr{F}(U)$ can be identified as elements in $\prod_{x\in U}\mathscr{F}_x$ consists of compatible germs. This turns out to be a appropriate way to define the sheafification.
 \begin{proposition}\label{sheaf sheafification construction}
-Let $\mathscr{F}$ be a presheaf on a topological space $X$. Then there exists a sheafification $\iota_{\mathscr{F}}:\mathscr{F}\to\mathscr{F}^{\hash}$ such that the following properties hold:
+Let $\mathscr{F}$ be a presheaf on a topological space $X$. Then there exists a sheafification $\iota_{\mathscr{F}}:\mathscr{F}\to\mathscr{F}^{\#}$ such that the following properties hold:
 \begin{itemize}
-\item[(a)] For all $x\in X$ the map on stalks $\iota_{\mathscr{F},x}:\mathscr{F}_x\to\mathscr{F}^{\hash}_x$ is bijective.
+\item[(a)] For all $x\in X$ the map on stalks $\iota_{\mathscr{F},x}:\mathscr{F}_x\to\mathscr{F}^{\#}_x$ is bijective.
 \item[(b)] For every presheaf $\mathscr{G}$ on $X$ and every morphism of presheaves $\varphi:\mathscr{F}\to\mathscr{G}$ there exists
-a unique morphism $\tilde{\varphi}:\mathscr{F}^{\hash}\to\mathscr{G}^{\hash}$ making the diagram commutes:
+a unique morphism $\tilde{\varphi}:\mathscr{F}^{\#}\to\mathscr{G}^{\#}$ making the diagram commutes:
 \begin{equation}\label{sheafification-1}
 \begin{tikzcd}
-\mathscr{F}\ar[r,"\iota_{\mathscr{F}}"]\ar[d,swap,"\varphi"]&\mathscr{F}^{\hash}\ar[d,"\tilde{\varphi}"]\\
-\mathscr{G}\ar[r,"\iota_{\mathscr{G}}"]&\mathscr{G}^{\hash}
+\mathscr{F}\ar[r,"\iota_{\mathscr{F}}"]\ar[d,swap,"\varphi"]&\mathscr{F}^{\#}\ar[d,"\tilde{\varphi}"]\\
+\mathscr{G}\ar[r,"\iota_{\mathscr{G}}"]&\mathscr{G}^{\#}
 \end{tikzcd}
 \end{equation}
-In particular, $\mathscr{F}\to\mathscr{F}^{\hash}$ is a functor from the category of presheaves on $X$ to the category of sheaves on $X$. The sheafification $\iota_{\mathscr{F}}:\mathscr{F}\to\mathscr{F}^{\hash}$ is unique up to isomorphism. 
+In particular, $\mathscr{F}\to\mathscr{F}^{\#}$ is a functor from the category of presheaves on $X$ to the category of sheaves on $X$. The sheafification $\iota_{\mathscr{F}}:\mathscr{F}\to\mathscr{F}^{\#}$ is unique up to isomorphism. 
 \end{itemize}
 \end{proposition}
 \begin{proof}
-Suppose $\mathscr{F}$ is a presheaf. Define $\mathscr{F}^{\hash}$ by declearing $\mathscr{F}^{\hash}(U)$ as the set of compatible germs of the presheaf $\mathscr{F}$ over $U$. Explicitly:
+Suppose $\mathscr{F}$ is a presheaf. Define $\mathscr{F}^{\#}$ by declearing $\mathscr{F}^{\#}(U)$ as the set of compatible germs of the presheaf $\mathscr{F}$ over $U$. Explicitly:
 \begin{align*}
-\mathscr{F}^{\hash}(U)&=\{(s_x)_{x\in U}\in\prod_{x\in U}\mathscr{F}_x:\text{$(s_x)_{x\in U}$ consists of compatible germs}\}\\
+\mathscr{F}^{\#}(U)&=\{(s_x)_{x\in U}\in\prod_{x\in U}\mathscr{F}_x:\text{$(s_x)_{x\in U}$ consists of compatible germs}\}\\
 &=\{(s_x)_{x\in U}\in\prod_{x\in U}\mathscr{F}_x:\text{$\forall x\in U$, $\exists V\sub U$ and $\tilde{s}\in\mathscr{F}(V)$ s.t. $\tilde{s}_{y}=s_x$ for all $y\in V$}\}.
 \end{align*}
-For $U\sub V$ the restriction map $\mathscr{F}^{\hash}(V)\to\mathscr{F}^{\hash}(U)$ is induced by the natural projection. With this, for any covering $U=\bigcup_iU_i$ and sections $(s_x)_{x\in U_i}$ in $\mathscr{F}^{\hash}$, the condition
+For $U\sub V$ the restriction map $\mathscr{F}^{\#}(V)\to\mathscr{F}^{\#}(U)$ is induced by the natural projection. With this, for any covering $U=\bigcup_iU_i$ and sections $(s_x)_{x\in U_i}$ in $\mathscr{F}^{\#}$, the condition
 \[\big((s_x)_{x\in U_i}\big)|_{U_i\cap U_j}=\big((s_x)_{x\in U_j}\big)|_{U_i\cap U_j}\]
-implies that $(s_x)_{x\in U_i}$ and $(s_x)_{x\in U_j}$ have common germs on their common domains. Thus we can construct a unique section $(s_x)_{x\in U}$ by just gathering their germs. It is clear that such a section $(s_x)_{x\in U}$ has compatible germs, hence belongs to $\mathscr{F}^{\hash}$. This shows $\mathscr{F}^{\hash}$ is a sheaf. For $U\sub X$ open, we define $\iota_{\mathscr{F},U}:\mathscr{F}(U)\to\mathscr{F}^{\hash}(U)$ by $s\mapsto(s_x)_{x\in U}$. The definition of $\mathscr{F}^{\hash}$ shows that, for $x\in X$, $\mathscr{F}^{\hash}_x=\mathscr{F}_x$ and that $\iota_{\mathscr{F},x}$ is the identity.\par
-Now let $\mathscr{G}$ be a presheaf on $X$ and let $\varphi:\mathscr{F}\to\mathscr{G}$ be a morphism. Sending $(s_x)_{x\in U}$ to $\big(\varphi_x(s_x)\big)_{x\in U}$ defines a morphism $\mathscr{F}^{\hash}\to\mathscr{G}^{\hash}$. By Proposition~\ref{sheaf morphism prop iff stalk prop}(c) this is the unique morphism making the diagram $(\ref{sheafification-1})$ commutative.\par
-If we assume in addition that $\mathscr{G}$ is a sheaf, then the morphism of sheaves $\iota_{\mathscr{G}}$, which is bijective on stalks, is an isomorphism by Proposition~\ref{sheaf morphism prop iff stalk prop}(b). Composing the morphism $\mathscr{F}^{\hash}\to\mathscr{G}^{\hash}$ with $\iota_{\mathscr{G}}^{-1}$, we obtain the morphism $\tilde{\varphi}:\mathscr{F}^{\hash}\to\mathscr{G}$. Finally, the uniqueness of $\iota_{\mathscr{F}}:\mathscr{F}\to\mathscr{F}^{\hash}$ is a formal consequence of universal property.
+implies that $(s_x)_{x\in U_i}$ and $(s_x)_{x\in U_j}$ have common germs on their common domains. Thus we can construct a unique section $(s_x)_{x\in U}$ by just gathering their germs. It is clear that such a section $(s_x)_{x\in U}$ has compatible germs, hence belongs to $\mathscr{F}^{\#}$. This shows $\mathscr{F}^{\#}$ is a sheaf. For $U\sub X$ open, we define $\iota_{\mathscr{F},U}:\mathscr{F}(U)\to\mathscr{F}^{\#}(U)$ by $s\mapsto(s_x)_{x\in U}$. The definition of $\mathscr{F}^{\#}$ shows that, for $x\in X$, $\mathscr{F}^{\#}_x=\mathscr{F}_x$ and that $\iota_{\mathscr{F},x}$ is the identity.\par
+Now let $\mathscr{G}$ be a presheaf on $X$ and let $\varphi:\mathscr{F}\to\mathscr{G}$ be a morphism. Sending $(s_x)_{x\in U}$ to $\big(\varphi_x(s_x)\big)_{x\in U}$ defines a morphism $\mathscr{F}^{\#}\to\mathscr{G}^{\#}$. By Proposition~\ref{sheaf morphism prop iff stalk prop}(c) this is the unique morphism making the diagram $(\ref{sheafification-1})$ commutative.\par
+If we assume in addition that $\mathscr{G}$ is a sheaf, then the morphism of sheaves $\iota_{\mathscr{G}}$, which is bijective on stalks, is an isomorphism by Proposition~\ref{sheaf morphism prop iff stalk prop}(b). Composing the morphism $\mathscr{F}^{\#}\to\mathscr{G}^{\#}$ with $\iota_{\mathscr{G}}^{-1}$, we obtain the morphism $\tilde{\varphi}:\mathscr{F}^{\#}\to\mathscr{G}$. Finally, the uniqueness of $\iota_{\mathscr{F}}:\mathscr{F}\to\mathscr{F}^{\#}$ is a formal consequence of universal property.
 \end{proof}
 \begin{proposition}\label{sheaf sheafification on morphism prop}
 The sheafification of an injection (resp. surjection) of presheaves of sets is an injection (resp. surjection).
@@ -229,17 +229,17 @@ From Proposition~\ref{sheaf morphism prop iff stalk prop}, we get the following 
 Let $\mathscr{F}$ be a presheaf and $\mathscr{G}$ be a sheaf. Then $\mathscr{G}$ is isomorphic to the sheafification of $\mathscr{F}$ if and only and if there exists a morphism $\iota:\mathscr{F}\to\mathscr{G}$ such that $\iota_x$ is bijective for all $x\in X$.
 \end{proposition}
 \begin{proof}
-One direction is trivial, assume the converse. Then there is a $\tilde{\iota}:\mathscr{F}^{\hash}\to\mathscr{G}$ such that the following diagram commutes
+One direction is trivial, assume the converse. Then there is a $\tilde{\iota}:\mathscr{F}^{\#}\to\mathscr{G}$ such that the following diagram commutes
 \[\begin{tikzcd}
-\mathscr{F}^{\hash}\ar[r,"\tilde{\iota}"]&\mathscr{G}\\
+\mathscr{F}^{\#}\ar[r,"\tilde{\iota}"]&\mathscr{G}\\
 \mathscr{F}\ar[ru,swap,"\iota"]\ar[u]
 \end{tikzcd}\]
-By Proposition~\ref{sheaf morphism prop iff stalk prop} $\tilde{\iota}$ induced isomorphisms on stalks, hence is an isomorphism $\mathscr{F}^{\hash}\cong\mathscr{G}$.
+By Proposition~\ref{sheaf morphism prop iff stalk prop} $\tilde{\iota}$ induced isomorphisms on stalks, hence is an isomorphism $\mathscr{F}^{\#}\cong\mathscr{G}$.
 \end{proof}
 \begin{example}\label{sheafification presheaf of function}
 Let $E$ be a set and let $\mathscr{F}$ be a presheaf of functions with values in $E$. Then its sheafification is given by
-\[\mathscr{F}^{\hash}(U)=\{f:U\to E\mid\exists\text{ open covering $(U_i)_i$ of $U$ such that $f|_{U_i}\in\mathscr{F}(U_i)$ for all $i$}\}.\]
-Indeed, this is a sheaf by Example~\ref{sheaf of E-valued function eg} and the inclusions $\mathscr{F}(U)\hookrightarrow\mathscr{F}^{\hash}(U)$ for $U$ open define a morphism of presheaves $\mathscr{F}\to\mathscr{F}^{\hash}$ that is bijective on stalks. Hence we can apply Proposition~\ref{sheaf iso to sheafification iff stalk iso}.
+\[\mathscr{F}^{\#}(U)=\{f:U\to E\mid\exists\text{ open covering $(U_i)_i$ of $U$ such that $f|_{U_i}\in\mathscr{F}(U_i)$ for all $i$}\}.\]
+Indeed, this is a sheaf by Example~\ref{sheaf of E-valued function eg} and the inclusions $\mathscr{F}(U)\hookrightarrow\mathscr{F}^{\#}(U)$ for $U$ open define a morphism of presheaves $\mathscr{F}\to\mathscr{F}^{\#}$ that is bijective on stalks. Hence we can apply Proposition~\ref{sheaf iso to sheafification iff stalk iso}.
 \end{example}
 \begin{example}
 From the previous example, let's consider the constant presheaves. Let $E_{X}$ be the sheaf of locally constant functions with values in $E$:
@@ -252,11 +252,11 @@ Let $U\sub X$ be an open subset, then we can define a presheaf $\mathscr{U}$
 \{i_V\}&\text{if }V\sub U\\
 \emp&\text{otherwise}
 \end{cases}\]
-where $i_V:V\hookrightarrow U$ is the inclusion map. Let $\mathscr{U}^{\hash}$ be its sheafification.\par
+where $i_V:V\hookrightarrow U$ is the inclusion map. Let $\mathscr{U}^{\#}$ be its sheafification.\par
 Let $\mathscr{F}$ be a sheaf and $s\in\mathscr{F}(U)$, then we can define a morphism $\varphi_s$ by setting $\varphi_{s,U}(\mathbf{1}_U)=s$ and others by restriction. Then we get a map
 \[\mathscr{F}(U)\to\Mor_{\mathbf{Psh}(X)}(\mathscr{U},\mathscr{F})\]
 which can be shown is an isomorphism. Together with the adjointness of sheafification, we get isomorphisms
-\[\mathscr{F}(U)\cong\Mor_{\mathbf{Psh}(X)}(\mathscr{U},\mathscr{F})\cong\Mor_{\mathbf{Shv}(X)}(\mathscr{U}^{\hash},\mathscr{F}).\]
+\[\mathscr{F}(U)\cong\Mor_{\mathbf{Psh}(X)}(\mathscr{U},\mathscr{F})\cong\Mor_{\mathbf{Shv}(X)}(\mathscr{U}^{\#},\mathscr{F}).\]
 \end{example}
 \subsection{Direct and inverse images of sheaves}
 In this part $f:X\to Y$ denotes a continuous map of topological spaces. We will now see how to use $f$ in order to attach to a sheaf on $X$ a sheaf on $Y$ (direct image) and to a sheaf on $Y$ a sheaf an $X$ (inverse image).
@@ -348,10 +348,10 @@ This is obtained as follows
 Here we have used the fact that any $V$ open in $Y$ containing $f(x)$ occurs in the description above. The case for sheaves is obtained from Proposition~\ref{sheaf sheafification construction}.
 \end{proof}
 Let $\mathscr{G}$ be a sheaf of sets on $Y$. The \textbf{pullback sheaf} $f^{-1}\mathscr{G}$ is defined by the formula
-\[f^{-1}\mathscr{G}=(f^{p}\mathscr{G})^{\hash}.\]
+\[f^{-1}\mathscr{G}=(f^{p}\mathscr{G})^{\#}.\]
 Sheafification is a left adjoint to the inclusion of sheaves in presheaves, and $f^{p}$ is a left adjoint to $f_*$ on presheaves. As a formal consequence we obtain that $f^{-1}$ is a left adjoint of pushforward on sheaves: for sheaves $\mathscr{F}$ and $\mathscr{G}$, we have
 \begin{align*}
-\Mor_{\mathbf{Shv}(X)}(f^{-1}\mathscr{G},\mathscr{F})&=\Mor_{\mathbf{Shv}(X)}\big((f^{p}\mathscr{G})^{\hash},\mathscr{F}\big)\cong\Mor_{\mathbf{Psh}(X)}\big(f^{p}\mathscr{G},\mathscr{F}\big)\\
+\Mor_{\mathbf{Shv}(X)}(f^{-1}\mathscr{G},\mathscr{F})&=\Mor_{\mathbf{Shv}(X)}\big((f^{p}\mathscr{G})^{\#},\mathscr{F}\big)\cong\Mor_{\mathbf{Psh}(X)}\big(f^{p}\mathscr{G},\mathscr{F}\big)\\
 &\cong\Mor_{\mathbf{Psh}(X)}(\mathscr{G},f_*\mathscr{F})=\Mor_{\mathbf{Shv}(X)}(\mathscr{G},f_*\mathscr{F})
 \end{align*}
 \begin{proposition}
@@ -705,17 +705,17 @@ and we have $\psi_f\circ\varphi_U=\psi_g\circ\varphi_U$, which implies $f=g$, so
 We have already seen that limits and colimits exist in the category of presheaves. Now we consider them in the category of sheaves.
 \begin{proposition}
 Let $\mathcal{I}$ be a small category and let $\mathscr{F}:\mathcal{I}\to\mathbf{Psh}(X)$ be an $\mathcal{I}$-diagram of sheaves on $X$. Then the limit and colimit of $\mathscr{F}$ both exist, whichi are given by
-\[\llim_{i,\mathbf{Shv}(X)}\mathscr{F}_i=\llim_{i,\mathbf{Psh}(X)}\mathscr{F}_i,\quad \rlim_{i,\mathbf{Shv}(X)}\mathscr{F}_i:=(\rlim_{i,\mathbf{Psh}(X)}\mathscr{F}_i)^{\hash}.\]
+\[\llim_{i,\mathbf{Shv}(X)}\mathscr{F}_i=\llim_{i,\mathbf{Psh}(X)}\mathscr{F}_i,\quad \rlim_{i,\mathbf{Shv}(X)}\mathscr{F}_i:=(\rlim_{i,\mathbf{Psh}(X)}\mathscr{F}_i)^{\#}.\]
 \end{proposition}
 \begin{proof}
 Since the limit and colimit exist in $\mathbf{Psh}(X)$, we can define
-\[\llim_{i,\mathbf{Shv}(X)}\mathscr{F}_i:=(\llim_{i,\mathbf{Psh}(X)}\mathscr{F}_i)^{\hash},\quad \rlim_{i,\mathbf{Shv}(X)}\mathscr{F}_i:=(\rlim_{i,\mathbf{Psh}(X)}\mathscr{F}_i)^{\hash}.\]
+\[\llim_{i,\mathbf{Shv}(X)}\mathscr{F}_i:=(\llim_{i,\mathbf{Psh}(X)}\mathscr{F}_i)^{\#},\quad \rlim_{i,\mathbf{Shv}(X)}\mathscr{F}_i:=(\rlim_{i,\mathbf{Psh}(X)}\mathscr{F}_i)^{\#}.\]
 Using the universal property of sheafification, we can show that the construction above indeed gives the colimits in the category of sheaves. Now we note that, since the forgetful functor $\iota:\mathbf{Shv}(X)\to\mathbf{Psh}(X)$ has a left adjoint given by the sheafification, it commutes with limits. In other words, if $\mathcal{I}$ is a small category and $\mathscr{F}:\mathcal{I}\to\mathbf{Psh}(X)$ be an $\mathcal{I}$-diagram of sheaves on $X$. Then the limit $\llim_i\mathscr{F}_i$ satisfies
 \[\iota(\llim_{i,\mathbf{Shv}(X)}\mathscr{F}_i)=\llim_{i,\mathbf{Psh}(X)}\iota(\mathscr{F}_i).\]
 But the forgetful functor does nothing actually, so the limit $\llim_i\mathscr{F}_i$ is in fact given by the limit in $\mathbf{Psh}(X)$, i.e.,
 \[\llim_{i,\mathbf{Shv}(X)}\mathscr{F}_i=\llim_{i,\mathbf{Psh}(X)}\mathscr{F}_i.\]
 However, since $\iota$ may not commutes with colimits, the colimit of $\mathscr{F}$ should be defined as the sheafification of that in $\mathbf{Psh}(X)$:
-\[\rlim_{i,\mathbf{Shv}(X)}\mathscr{F}_i:=(\rlim_{i,\mathbf{Psh}(X)}\mathscr{F}_i)^{\hash}.\]
+\[\rlim_{i,\mathbf{Shv}(X)}\mathscr{F}_i:=(\rlim_{i,\mathbf{Psh}(X)}\mathscr{F}_i)^{\#}.\]
 This completes the proof.
 \end{proof}
 \begin{proposition}
@@ -741,7 +741,7 @@ If these conditions hold, we say that $\mathscr{F}$ is a \textbf{subsheaf} of $\
 \end{proposition}
 \begin{proof}
 The last two statements are equivalent by Proposition~\ref{sheaf morphism prop iff stalk prop}, and the implication (c)$\Rightarrow$(a) is immediate, since a monomorphism in $\mathbf{Psh}(X)$ is clearly monic in $\mathbf{Shv}(X)$.\par 
-Now assume that $\varphi$ is a monomorphism, and let $s,t\in\mathscr{F}(U)$ be such that $\varphi_U(s)=\varphi_U(t)$. Then by Example~\ref{sheaf by open subset} there are morphisms $\psi_s,\psi_t:\mathscr{U}^{\hash}\to\mathscr{F}$. From $\varphi_U(s)=\varphi_U(t)$ we see $\varphi\circ\psi_s=\varphi\circ\psi_t$, which implies $\psi_s=\psi_t$. By the isomorphism in Example~\ref{sheaf by open subset}, we conclude $s=t$, so $\varphi_U$ is injective.
+Now assume that $\varphi$ is a monomorphism, and let $s,t\in\mathscr{F}(U)$ be such that $\varphi_U(s)=\varphi_U(t)$. Then by Example~\ref{sheaf by open subset} there are morphisms $\psi_s,\psi_t:\mathscr{U}^{\#}\to\mathscr{F}$. From $\varphi_U(s)=\varphi_U(t)$ we see $\varphi\circ\psi_s=\varphi\circ\psi_t$, which implies $\psi_s=\psi_t$. By the isomorphism in Example~\ref{sheaf by open subset}, we conclude $s=t$, so $\varphi_U$ is injective.
 \end{proof}
 \begin{proposition}\label{sheaf cat epimorphism iff}
 Suppose $\varphi:\mathscr{F}\to\mathscr{G}$ is a morphism of sheaves of sets on a topological space $X$. Then the following are equivalent.
@@ -825,18 +825,18 @@ Let $X$ be a topological space. Let $\mathscr{O}$ be a sheaf of rings on $X$.
 \end{definition}
 \subsection{Sheafification of presheaves of modules}
 \begin{proposition}\label{sheafification module}
-Let $X$ be a topological space. Let $\mathscr{O}$ be a presheaf of rings on $X$. Let $\mathscr{F}$ be a presheaf $\mathscr{O}$-modules. Let $\mathscr{O}^{\hash}$ be the sheafification of $\mathscr{O}$. Let $\mathscr{F}^{\hash}$ be the sheafification of $\mathscr{F}$ as a presheaf of abelian groups. There exists a map of sheaves of sets
-\[\mathscr{O}^{\hash}\times\mathscr{F}^{\hash}\to\mathscr{F}^{\hash}.\]
+Let $X$ be a topological space. Let $\mathscr{O}$ be a presheaf of rings on $X$. Let $\mathscr{F}$ be a presheaf $\mathscr{O}$-modules. Let $\mathscr{O}^{\#}$ be the sheafification of $\mathscr{O}$. Let $\mathscr{F}^{\#}$ be the sheafification of $\mathscr{F}$ as a presheaf of abelian groups. There exists a map of sheaves of sets
+\[\mathscr{O}^{\#}\times\mathscr{F}^{\#}\to\mathscr{F}^{\#}.\]
 which makes the diagram
 \[\begin{tikzcd}
 \mathscr{O}\times\mathscr{F}\ar[r]\ar[d]&\mathscr{F}\ar[d]\\
-\mathscr{O}^{\hash}\times\mathscr{F}^{\hash}\ar[r]&\mathscr{F}^{\hash}
+\mathscr{O}^{\#}\times\mathscr{F}^{\#}\ar[r]&\mathscr{F}^{\#}
 \end{tikzcd}\]
-commute and which makes $\mathscr{F}^{\hash}$ into a sheaf of $\mathscr{O}^{\hash}$-modules. In addition, if $\mathscr{G}$ is a presheaf of $\mathscr{O}$-modules, then any morphism of presheaves of $\mathscr{O}$-modules $\mathscr{F}\to\mathscr{G}$ induced a unique morphism $\mathscr{F}^{\hash}\to\mathscr{G}^{\hash}$ of sheaf of $\mathscr{O}^{\hash}$-modules.
+commute and which makes $\mathscr{F}^{\#}$ into a sheaf of $\mathscr{O}^{\#}$-modules. In addition, if $\mathscr{G}$ is a presheaf of $\mathscr{O}$-modules, then any morphism of presheaves of $\mathscr{O}$-modules $\mathscr{F}\to\mathscr{G}$ induced a unique morphism $\mathscr{F}^{\#}\to\mathscr{G}^{\#}$ of sheaf of $\mathscr{O}^{\#}$-modules.
 \end{proposition}
 \begin{proof}
 Since finite product and coproduct coincide in the category of modules, the sheafification commutes with both of them. Thus we can apply the universal property of sheafification on the map $\mathscr{O}\times\mathscr{F}\to\mathscr{F}$ to get a map
-\[\mathscr{O}^{\hash}\times\mathscr{F}^{\hash}\to\mathscr{F}^{\hash}\]
+\[\mathscr{O}^{\#}\times\mathscr{F}^{\#}\to\mathscr{F}^{\#}\]
 Moreover, for a morphism of $\mathscr{O}$-modules $\mathscr{F}\to\mathscr{G}$, apply sheafification on the diagram
 \[\begin{tikzcd}
 \mathscr{O}\times\mathscr{F}\ar[r]\ar[d]&\mathscr{F}\ar[d]\\
@@ -844,12 +844,12 @@ Moreover, for a morphism of $\mathscr{O}$-modules $\mathscr{F}\to\mathscr{G}$, a
 \end{tikzcd}\]
 we get the desired morphism.
 \end{proof}
-This actually means that the functor $\iota:\mathbf{Mod}(\mathscr{O}^{\hash})\to\mathbf{PMod}(\mathscr{O})$ and the sheafification functor of the lemma $\#:\mathbf{PMod}(\mathscr{O})\to\mathbf{Mod}(\mathscr{O}^{\hash})$ are adjoint. In a formula
-\[\Hom_{\mathbf{Mod}(\mathscr{O}^{\hash})}(\mathscr{F}^{\hash},\mathscr{G})=\Hom_{\mathbf{PMod}(\mathscr{O})}(\mathscr{F},\iota\mathscr{G}).\]
+This actually means that the functor $\iota:\mathbf{Mod}(\mathscr{O}^{\#})\to\mathbf{PMod}(\mathscr{O})$ and the sheafification functor of the lemma $\#:\mathbf{PMod}(\mathscr{O})\to\mathbf{Mod}(\mathscr{O}^{\#})$ are adjoint. In a formula
+\[\Hom_{\mathbf{Mod}(\mathscr{O}^{\#})}(\mathscr{F}^{\#},\mathscr{G})=\Hom_{\mathbf{PMod}(\mathscr{O})}(\mathscr{F},\iota\mathscr{G}).\]
 Let $X$ be a topological space. Let $\mathscr{O}_1\to\mathscr{O}_2$ be a morphism of sheaves of rings on $X$. We defined a restriction functor and a change of rings functor on presheaves of modules associated to this situation. If $\mathscr{F}$ is a sheaf of $\mathscr{O}_2$-modules then the restriction $\mathscr{F}_{\mathscr{O}_2}$ of $\mathscr{F}$ is clearly a sheaf of $\mathscr{O}_1$-modules. We obtain the restriction functor
 \[\mathbf{Mod}(\mathscr{O}_2)\to\mathbf{Mod}(\mathscr{O}_1).\]
 On the other hand, given a sheaf of $\mathscr{O}_1$-modules $\mathscr{G}$ the presheaf of $\mathscr{O}_2$-modules $\mathscr{O}_2\otimes_{p,\mathscr{O}_1}\mathscr{G}$ is in general not a sheaf. Hence we define the tensor product sheaf $\mathscr{O}_2\otimes_{\mathscr{O}_1}\mathscr{G}$ by the formula
-\[\mathscr{O}_2\otimes_{\mathscr{O}_1}\mathscr{G}=(\mathscr{O}_2\otimes_{p,\mathscr{O}_1}\mathscr{G})^{\hash}.\]
+\[\mathscr{O}_2\otimes_{\mathscr{O}_1}\mathscr{G}=(\mathscr{O}_2\otimes_{p,\mathscr{O}_1}\mathscr{G})^{\#}.\]
 \begin{proposition}\label{sheaf module restrict adj}
 With $X$, $\mathscr{O}_1,\mathscr{O}_2$, $\mathscr{F}$ and $\mathscr{G}$ as above there exists a canonical bijection
 \[\Hom_{\mathscr{O}_1}(\mathscr{G},\mathscr{F}_{\mathscr{O}_1})=\Hom_{\mathscr{O}_2}(\mathscr{O}_2\otimes_{\mathscr{O}_1}\mathscr{G},\mathscr{F}).\]
@@ -1023,7 +1023,7 @@ Let $(X,\mathscr{O}_X)$ be a ringed space. Let $\mathscr{F}$ be a sheaf of $\mat
 \[\bigoplus_{i\in I}\mathscr{O}_U\to\mathscr{F}|_U\]
 is surjective.
 \begin{proposition}\label{pull back local generated section}
-Let $(f,f^{\hash}):(X,\mathscr{O}_X)\to(Y,\mathscr{O}_Y)$ be a morphism of ringed spaces. Let $\mathscr{G}$ be a $\mathscr{O}_Y$-module. The pullback $f^*\mathscr{G}$ is locally generated by sections if $\mathscr{G}$ is locally generated by sections.
+Let $(f,f^{\#}):(X,\mathscr{O}_X)\to(Y,\mathscr{O}_Y)$ be a morphism of ringed spaces. Let $\mathscr{G}$ be a $\mathscr{O}_Y$-module. The pullback $f^*\mathscr{G}$ is locally generated by sections if $\mathscr{G}$ is locally generated by sections.
 \end{proposition}
 \begin{proof}
 Given an open subspace $V$ of $Y$ we may consider the commutative diagram
@@ -1040,7 +1040,7 @@ This implies the assertion.
 Let $(X,\mathscr{O}_X)$ be a ringed space. Let $\mathscr{F},\mathscr{G}$ be $\mathscr{O}_X$-modules. We define first the tensor product presheaf
 \[\mathscr{F}\otimes_{p,\mathscr{O}_X}\mathscr{G}\]
 as the rule which assigns to $U\sub X$ open the $\mathscr{O}_X(U)$-module $\mathscr{F}(U)_{\mathscr{O}_X(U)}\mathscr{G}(U)$. Having defined this we dene the tensor product sheaf as the sheafification of the above:
-\[\mathscr{F}\otimes_{\mathscr{O}_X}\mathscr{G}=(\mathscr{F}\otimes_{p,\mathscr{O}_X}\mathscr{G})^{\hash}\]
+\[\mathscr{F}\otimes_{\mathscr{O}_X}\mathscr{G}=(\mathscr{F}\otimes_{p,\mathscr{O}_X}\mathscr{G})^{\#}\]
 This can be characterized as the sheaf of $\mathscr{O}_X$-modules such that for any third sheaf of $\mathscr{O}_X$-modules $\mathscr{H}$ we have
 \[\Hom_{\mathscr{O}_X}(\mathscr{F}\otimes_{\mathscr{O}_X}\mathscr{G},\mathscr{H})=\mathrm{Bilin}_{\mathscr{O}_X}(\mathscr{F}\times\mathscr{G},\mathscr{H}).\]
 Here the right hand side indicates the set of bilinear maps of sheaves of $\mathscr{O}_X$-modules.\par
@@ -1055,7 +1055,7 @@ Let $(X,\mathscr{O}_X)$ be a ringed space. Let $\mathscr{F}$, $\mathscr{G}$ be $
 functorial in $\mathscr{F}$ and $\mathscr{G}$.
 \end{proposition}
 \begin{proposition}
-Let $(X,\mathscr{O}_X)$ be a ringed space. Let $\mathscr{F}',\mathscr{G}'$ be presheaves of $\mathscr{O}_X$-modules with sheafifications $\mathscr{F},\mathscr{G}$. Then $\mathscr{F}\otimes_{\mathscr{O}_{X}}\mathscr{G}=(\mathscr{F}'\otimes_{p,\mathscr{O}_{X}}\mathscr{G}')^{\hash}$.
+Let $(X,\mathscr{O}_X)$ be a ringed space. Let $\mathscr{F}',\mathscr{G}'$ be presheaves of $\mathscr{O}_X$-modules with sheafifications $\mathscr{F},\mathscr{G}$. Then $\mathscr{F}\otimes_{\mathscr{O}_{X}}\mathscr{G}=(\mathscr{F}'\otimes_{p,\mathscr{O}_{X}}\mathscr{G}')^{\#}$.
 \end{proposition}
 \begin{proof}
 On stalks we have 
@@ -1238,12 +1238,12 @@ Thus by the sheaf condition of $\mathscr{G}$, we conclude $\varphi_U(s)=0$. This
 For the cokernel, given any sheaf $\mathscr{E}$ and a diagram
 \[\begin{tikzcd}
 \mathscr{F}\ar[r,"\varphi"]&\mathscr{G}\ar[d]\ar[r,"\psi"]&\mathscr{E}\\
-&\mathrm{coker}_p\varphi\ar[r]\ar[ru]&(\mathrm{coker}_p\varphi)^{\hash}\ar[u,dashed,swap,"\tilde{\psi}"]
+&\mathrm{coker}_p\varphi\ar[r]\ar[ru]&(\mathrm{coker}_p\varphi)^{\#}\ar[u,dashed,swap,"\tilde{\psi}"]
 \end{tikzcd}\]
 we construct the map $\tilde{\psi}$ by using the universal property of $\mathrm{coker}_p\varphi$ and that of sheafification.
 \end{proof}
 In view of Proposition~\ref{presheaf ker and coker universal property}, for a morphism $\varphi:\mathscr{F}\to\mathscr{G}$, we define the kernel and cokernel of $\varphi$ by
-\[\ker\varphi=\mathrm{ker}_p\varphi,\quad \coker\varphi=(\mathrm{coker}_p\varphi)^{\hash}.\]
+\[\ker\varphi=\mathrm{ker}_p\varphi,\quad \coker\varphi=(\mathrm{coker}_p\varphi)^{\#}.\]
 Since taking stalks commutes with taking sheafification, the following result is immediate.
 \begin{proposition}\label{sheaf ker coker and stalk prop}
 Suppose $\mathscr{F}\to\mathscr{G}$ is a morphism of sheaves of $\mathscr{O}_X$-modules, then for all $x\in X$, we have canonical isomorphisms
@@ -1296,7 +1296,7 @@ For an arbitrary direct sum $\bigoplus_{i\in I}\mathscr{O}_X$, by the constructi
 \end{remark}
 The existence of limits and colimits allows us to consider exactness properties of functors defined on the category of $\mathscr{O}_X$-modules in terms of limits and colimits.
 \begin{proposition}\label{ringed space morphism pullback pushforward exactness}
-Let $(f,f^{\hash}):(X,\mathscr{O}_X)\to(Y,\mathscr{O}_Y)$ be a morphism of ringed spaces.
+Let $(f,f^{\#}):(X,\mathscr{O}_X)\to(Y,\mathscr{O}_Y)$ be a morphism of ringed spaces.
 \begin{itemize}
 \item[(a)] The functor $f_*:\mathbf{Mod}(\mathscr{O}_X)\to\mathbf{Mod}(\mathscr{O}_Y)$ is left exact. In fact it commutes with all limits.
 \item[(b)] The functor $f^*:\mathbf{Mod}(\mathscr{O}_X)\to\mathbf{Mod}(\mathscr{O}_Y)$ is right exact. In fact it commutes with all colimits.
@@ -1324,13 +1324,13 @@ is not needed.
 \section{Ringed spaces}
 \subsection{Ringed spaces, \texorpdfstring{$\mathscr{A}$}{A}-modules, and \texorpdfstring{$\mathscr{A}$}{A}-algebras}
 A \textbf{ringed space} (resp. \textbf{topologically ringed space}) is defiend to be a couple $(X,\mathscr{A})$ formed by a topological space $X$ and a sheaf of rings (resp. a sheaf of topological rings) $\mathscr{A}$ on $X$. We call $X$ the topological space underling the ringed space $(X,\mathscr{A})$, and $\mathscr{A}$ is the structural sheaf. We only denote by $\mathscr{O}_X$ the structural sheaf, and for $x\in X$, $\mathscr{O}_{X,x}$ denotes the stalk of $\mathscr{O}_X$ at $x$. If $\mathscr{A}$ is a sheaf of commutative rings, we say $(X,\mathscr{A})$ is a \textbf{commutative ringed space}. Without further specifications, we only consider commutative ringed spaces.\par
-The ringed spaces (resp. topologically ringed spaces) form a category, if we define a morphism $(X,\mathscr{A})\to(Y,\mathscr{B})$ as a couple $(f,f^{\hash})$ formed by a continuous map $f:X\to Y$ and a $f$-morphism $f^{\hash}:\mathscr{B}\to\mathscr{A}$ (that is, a morphism from $\mathscr{B}$ to $f_*(\mathscr{A})$) of sheaf of rings (resp. sheaf of topological rings). As the category of rings admits inductive limits, for any $x\in X$ we have a homomorphism $f^{\hash}_x:\mathscr{B}_{f(x)}\to\mathscr{A}_x$. The composition of two morphisms $(f,f^{\hash}):(X,\mathscr{A})\to(Y,\mathscr{B})$ and $(g,g^{\hash}):(Y,\mathscr{B})\to(Z,\mathscr{C})$ is then defined to be the couple $(h,h^{\hash})$, where $h=g\circ f$ and $g^{\hash}$ is the composition of $f^{\hash}$ and $g^{\hash}$ (which equals to $g_*(f^{\hash})\circ g^{\hash}$). For any $x\in X$, we then have $h^{\hash}_x=g^{\hash}_{f(x)}\circ f^{\hash}_x$, so if the homomorphisms $f^{\hash}$ and $f^{\hash}$ are injective (resp. surjective), then so is $h^{\hash}$. We then verify that, if $f$ is a injective continuous map and $f^{\hash}$ is a surjective homomorphism of sheaf of rings, then the morphism $(f,f^{\hash})$ is a monomorphism of category of ringed spaces.\par
-By abuse of language, we only replace $(f,f^{\hash})$ by $f$, and say that $f:(X,\mathscr{A})\to(Y,\mathscr{B})$ is a morphism of ringed spaces. In this case, it is understood that the homomorphism $f^{\hash}$ is also given.\par
-For any subset $U$ of $X$, the couple $(U,\mathscr{A}|_U)$ is clearly a ringe space, called induced over $U$ by $(X,\mathscr{A})$, or the restriction of $(X,\mathscr{A})$ to $U$. If $j:U\to X$ is the injection and $j^{\hash}:\mathscr{A}\to j_*(\mathscr{A}|_U)$ is the canonical homomorphism, we then have a \textit{monomorphism} $(j,j^{\hash}):(U,\mathscr{A}|_U)\to(X,\mathscr{A})$ of ringed spaces, called the \textbf{canonical injection}. The composition of a morphism $f:(X,\mathscr{A})\to(Y,\mathscr{B})$ with this canonical injection is said to be the restriction of $f$ to $U$, and denoted by $f|_U$.
+The ringed spaces (resp. topologically ringed spaces) form a category, if we define a morphism $(X,\mathscr{A})\to(Y,\mathscr{B})$ as a couple $(f,f^{\#})$ formed by a continuous map $f:X\to Y$ and a $f$-morphism $f^{\#}:\mathscr{B}\to\mathscr{A}$ (that is, a morphism from $\mathscr{B}$ to $f_*(\mathscr{A})$) of sheaf of rings (resp. sheaf of topological rings). As the category of rings admits inductive limits, for any $x\in X$ we have a homomorphism $f^{\#}_x:\mathscr{B}_{f(x)}\to\mathscr{A}_x$. The composition of two morphisms $(f,f^{\#}):(X,\mathscr{A})\to(Y,\mathscr{B})$ and $(g,g^{\#}):(Y,\mathscr{B})\to(Z,\mathscr{C})$ is then defined to be the couple $(h,h^{\#})$, where $h=g\circ f$ and $g^{\#}$ is the composition of $f^{\#}$ and $g^{\#}$ (which equals to $g_*(f^{\#})\circ g^{\#}$). For any $x\in X$, we then have $h^{\#}_x=g^{\#}_{f(x)}\circ f^{\#}_x$, so if the homomorphisms $f^{\#}$ and $f^{\#}$ are injective (resp. surjective), then so is $h^{\#}$. We then verify that, if $f$ is a injective continuous map and $f^{\#}$ is a surjective homomorphism of sheaf of rings, then the morphism $(f,f^{\#})$ is a monomorphism of category of ringed spaces.\par
+By abuse of language, we only replace $(f,f^{\#})$ by $f$, and say that $f:(X,\mathscr{A})\to(Y,\mathscr{B})$ is a morphism of ringed spaces. In this case, it is understood that the homomorphism $f^{\#}$ is also given.\par
+For any subset $U$ of $X$, the couple $(U,\mathscr{A}|_U)$ is clearly a ringe space, called induced over $U$ by $(X,\mathscr{A})$, or the restriction of $(X,\mathscr{A})$ to $U$. If $j:U\to X$ is the injection and $j^{\#}:\mathscr{A}\to j_*(\mathscr{A}|_U)$ is the canonical homomorphism, we then have a \textit{monomorphism} $(j,j^{\#}):(U,\mathscr{A}|_U)\to(X,\mathscr{A})$ of ringed spaces, called the \textbf{canonical injection}. The composition of a morphism $f:(X,\mathscr{A})\to(Y,\mathscr{B})$ with this canonical injection is said to be the restriction of $f$ to $U$, and denoted by $f|_U$.
 \begin{example}
-Let $f:X\to Y$ be a continuous map of topological spaces. Consider the sheaves of continuous real valued functions $C^0_X$ on $X$ and $C^0_Y$ on $Y$. We claim that there is a natural $f$-map $f^{\hash}:C^0_Y\to C^0_X$ associated to $f$. Namely, we simply define it by the rule
+Let $f:X\to Y$ be a continuous map of topological spaces. Consider the sheaves of continuous real valued functions $C^0_X$ on $X$ and $C^0_Y$ on $Y$. We claim that there is a natural $f$-map $f^{\#}:C^0_Y\to C^0_X$ associated to $f$. Namely, we simply define it by the rule
 \[C^0_Y(V)\to C^0_X(f^{-1}(V)),\quad h\mapsto h\circ f\]
-Strictly speaking we should write $f^{\hash}(h)=h\circ f|_{f^{-1}(V)}$. It is clear that this is an $f$-map of sheaves of $\R$-algebras.\par
+Strictly speaking we should write $f^{\#}(h)=h\circ f|_{f^{-1}(V)}$. It is clear that this is an $f$-map of sheaves of $\R$-algebras.\par
 Of course there are lots of other situations where there is a canonical morphism of ringed spaces associated to a geometrical type of morphism. For example, if $M,N$ are $C^\infty$-manifolds and $f:M\to N$ is a smooth map, then $f$ induces a canonical morphism of ringed spaces $(M,C^\infty_M)\to(N,C^\infty_N)$.
 \end{example}
 We will not review the definition of the $\mathscr{A}$-modules for a ringed space $(X,\mathscr{A})$. If $\mathscr{A}$ is a sheaf of commutative rings, and we replace the module structure by the algebra structure in the definition of $\mathscr{A}$-modules, we obtain the definition of an $\mathscr{A}$-algebra over $X$. In other words, an $\mathscr{A}$-algebra (not necessarily commutative) is an $\mathscr{A}$-module $\mathscr{C}$ endowed with a homomorphism of $\mathscr{A}$-modules $\varphi:\mathscr{C}\otimes_{\mathscr{A}}\mathscr{C}\to\mathscr{C}$ and of a section $e$ above $X$, such that:
@@ -1359,7 +1359,7 @@ Finally, if $\mathscr{A}$ is a sheaf of rings and $\mathscr{F}$ is an $\mathscr{
 Let $\mathscr{I}$ be an ideal of $\mathscr{A}$ and $\mathscr{F}$ be an $\mathscr{A}$-module. Then we note that $\mathscr{I}\mathscr{F}$, the image of $\mathscr{I}\otimes_{\mathscr{A}}\mathscr{F}$ by the canonical map $\mathscr{I}\otimes_{\Z}\mathscr{F}\to\mathscr{F}$, is a sub-$\mathscr{A}$-module of $\mathscr{F}$. It is clear that for any $x\in X$, we have $(\mathscr{I}\mathscr{F})_x=\mathscr{I}_x\mathscr{F}_x$. It is immediate that $\mathscr{I}\mathscr{F}$ is also the $\mathscr{A}$-module associated sheaf of the presheaf $U\mapsto\Gamma(U,\mathscr{I})\Gamma(U,\mathscr{F})$. If $\mathscr{I}_1$, $\mathscr{I}_2$ are ideals of $\mathscr{A}$, we have $\mathscr{I}_1(\mathscr{I}_2\mathscr{F})=(\mathscr{I}_1\mathscr{I}_2)\mathscr{F}$.\par
 Let $(X_\lambda,\mathscr{A}_\lambda)_{\lambda\in L}$ be a family of ringed spaces; for each couple $(\lambda,\mu)$, suppose that we are given an open subset $V_{\lambda\mu}\sub X_\lambda$, and an isomorphism $\varphi_{\lambda\mu}:(V_{\mu\lambda},\mathscr{A}_\mu|_{V_{\mu\lambda}})\to(V_{\lambda\mu},\mathscr{A}_{\lambda}|_{V_{\lambda\mu}})$ of ringed spaces, with $V_{\lambda\lambda}=X_\lambda$ and $\varphi_{\lambda\lambda}$ being the identity. Suppose moreover that, for any triple $(\lambda,\mu,\nu)$, we have $\varphi_{\lambda\nu}=\varphi_{\lambda\mu}\circ\varphi_{\mu\nu}$ on the open subset $V_{\lambda\mu}\cap V_{\lambda\nu}$ (glueing condition for $\varphi_{\lambda\mu}$). We can then consider the topological space obtained by glueing (via the morphism $\varphi_{\lambda\mu}$) the $X_\lambda$ along $V_{\lambda\mu}$. If we identify $X_\lambda$ with the corresponding open subset $X_\lambda'$ of $X$, the hypotheses implies that $V_{\lambda\mu}\cap V_{\lambda\nu}$, $V_{\mu\nu}\cap V_{\mu\lambda}$, $V_{\nu\lambda}\cap V_{\nu\mu}$ are identified with $X_\lambda'\cap X_\mu'\cap X_\nu'$. We an then transport the ringed space structure of $X_\lambda$ to $X_\lambda'$, and if $\mathscr{A}_\lambda'$ is the sheaf of rings transported by $\mathscr{A}_\lambda$, the $\mathscr{A}_\lambda'$ satisfies the glueing condition for sheaves and define a sheaf of rings $\mathscr{A}$ over $X$. We say that $(X,\mathscr{A})$ is the ringed space obtained by glueing $(X_\lambda,\mathscr{A}_\lambda)$ along $V_{\lambda\mu}$ via the morphisms $\varphi_{\lambda\mu}$.\par
 Let $(X,\mathscr{O}_X)$ be a ringed space. For a section $s\in\Gamma(U,\mathscr{I}_X)$ over an open subset $U$ of $X$ to be \textbf{invertible}, it is necessary and sufficient that for any open cover $(U_\alpha)$ of $U$, the restriction of $s$ to $U_\alpha$ is invertible in $\Gamma(U_\alpha,\mathscr{O}_X)$, in view of the uniqueness of inverse element. There then exists a sub-sheaf of multiplication groups $\mathscr{O}_X^{\times}$ of $\mathscr{O}_X$ such that, for any open subset $U$ of $X$, $\Gamma(U,\mathscr{O}_X^{\times})$ is the group of invertible elements of the ring $\Gamma(U,\mathscr{O}_X)$. For any $x\in X$, the stalk $(\mathscr{O}_X^{\times})_x$ is the set of invertible elements of the ring $\mathscr{O}_{X,x}$, because if $s_x\in\mathscr{O}_{X,x}$ admits an inverse $t_x$ in this ring, $s_x$ and $t_x$ are the germs of two sections $s,t$ of $\mathscr{O}_X$ over a neighborhood $V$ of $x$, and the relation $(st)_x=1_x$ implies $st|_W=1$ over a smaller neighborhood $W\sub V$ of $x$.\par
-On the other hand, with the same notations, if $s$ is a regular element of $\Gamma(U,\mathscr{O}_X)$ and $V$ is an open subset of $U$, $s|_V$ is not necessarily regular in $\Gamma(V,\mathscr{O}_X)$, because if $(s|_V)t=0$ for a section $t\in\Gamma(V,\mathscr{O}_X)$, $t$ does not necessarily admits an extension to $U$. We denote by $\mathscr{S}(\mathscr{O}_X)$ the presheaf of sets such that $\mathscr{S}(\mathscr{O}_X)(U)$, for each open subset $U$ of $X$, is the set of sections $s\in\Gamma(U,\mathscr{O}_X)$ whose restriction to \textit{any} open subset $V\sub U$ is a regular element of the ring $\Gamma(V,\mathscr{O}_X)$. From this definition, it is clear that $\mathscr{S}(\mathscr{O}_X)$ is a sheaf, since if $s$ is a section of $\mathscr{O}_X$ over $U$ and $s|_V$ is regular in $\Gamma(V,\mathscr{O}_X)$ is regular for some open subset $V\sub U$, then $s$ is regular in $\Gamma(U,\mathscr{O}_X)$. For a section $s\in\Gamma(U,\mathscr{O}_X)$, to be in $\mathscr{S}(\mathscr{O}_X)(U)$ amount to saying that for any open subset $V\sub U$, the map $t\mapsto(s|_V)$ on $\Gamma(V,\mathscr{O}_X)$ is injective (recall that we always assume that $\mathscr{O}_X$ is commutative). In this case, by the exactness of the functor $\rlim$ on the category of modules, it follows that for any $x\in U$, the germ $s_x$ is regular in $\mathscr{O}_{X,x}$. Conversely, if this does not hold, then for some $x\in U$, then there exists a section $t\in\Gamma(V,\mathscr{O}_X)$ for some open subset $V\sub U$ such that $(s|_V)t=0$, so $s\notin\mathscr{S}(\mathscr{O}_X)(U)$. We then say that $\mathscr{S}(\mathscr{O}_X)$ is the sheaf of sets defined by the condition that $\Gamma(U,\mathscr{O}_X)$ is the set of sections of $\Gamma(U,\mathscr{O}_X)$ whose germ at every point $x\in U$ is regular. We also note that the stalk $(\mathscr{S}(\mathscr{O}_X))_x$, which is contained in the set of regular elements of $\mathscr{O}_{X,x}$, does not necessarily equal to this set.\par
+On the other hand, with the same notations, if $s$ is a regular element (that is, not a zero divisor) of $\Gamma(U,\mathscr{O}_X)$ and $V$ is an open subset of $U$, $s|_V$ is not necessarily regular in $\Gamma(V,\mathscr{O}_X)$, because if $(s|_V)t=0$ for a section $t\in\Gamma(V,\mathscr{O}_X)$, $t$ does not necessarily admits an extension to $U$. We denote by $\mathscr{S}(\mathscr{O}_X)$ the presheaf of sets such that $\mathscr{S}(\mathscr{O}_X)(U)$, for each open subset $U$ of $X$, is the set of sections $s\in\Gamma(U,\mathscr{O}_X)$ whose restriction to \textit{any} open subset $V\sub U$ is a regular element of the ring $\Gamma(V,\mathscr{O}_X)$. From this definition, it is clear that $\mathscr{S}(\mathscr{O}_X)$ is a sheaf, since if $s$ is a section of $\mathscr{O}_X$ over $U$ and $s|_V$ is regular in $\Gamma(V,\mathscr{O}_X)$ is regular for some open subset $V\sub U$, then $s$ is regular in $\Gamma(U,\mathscr{O}_X)$. For a section $s\in\Gamma(U,\mathscr{O}_X)$, to be in $\mathscr{S}(\mathscr{O}_X)(U)$ amount to saying that for any open subset $V\sub U$, the map $t\mapsto(s|_V)$ on $\Gamma(V,\mathscr{O}_X)$ is injective (recall that we always assume that $\mathscr{O}_X$ is commutative). In this case, by the exactness of the functor $\rlim$ on the category of modules, it follows that for any $x\in U$, the germ $s_x$ is regular in $\mathscr{O}_{X,x}$. Conversely, if this does not hold, then for some $x\in U$, then there exists a section $t\in\Gamma(V,\mathscr{O}_X)$ for some open subset $V\sub U$ such that $(s|_V)t=0$, so $s\notin\mathscr{S}(\mathscr{O}_X)(U)$. We then say that $\mathscr{S}(\mathscr{O}_X)$ is the sheaf of sets defined by the condition that $\Gamma(U,\mathscr{O}_X)$ is the set of sections of $\Gamma(U,\mathscr{O}_X)$ whose germ at every point $x\in U$ is regular. We also note that the stalk $(\mathscr{S}(\mathscr{O}_X))_x$, which is contained in the set of regular elements of $\mathscr{O}_{X,x}$, does not necessarily equal to this set.\par
 We say a ringed space $(X,\mathscr{O}_X)$ is \textbf{local} if for each $x\in X$, the stalk $\mathscr{O}_{X,x}$ is a local ring. In this case, we say $(X,\mathscr{O}_X)$ is a \textbf{locally ringed space}. We denote by $\m_x$ the maximal idea lof $\mathscr{O}_{X,x}$ and $\kappa(x)=\mathscr{O}_{X,x}/\m_x$ the residue field. For any $\mathscr{O}_X$-module $\mathscr{F}$, any open subset $U\sub X$, any point $x\in U$ and any section $f\in\Gamma(U,\mathscr{F})$, we denote by $f(x)\in\kappa(x)$ the class of the germ $f_x\in\mathscr{F}_x$ modulo $\m_x\mathscr{F}_x$, and we say $f(x)$ is the \textbf{value} of $f$ at $x$. The relation $f(x)=0$ then signifies $f_x\in\m_x\mathscr{F}_x$ (do not confuse with the condition $f_x=0_x$). We denote by $U_f$ the set of $x\in U$ such that $f(x)\neq 0$ (or equivalently $f_x\notin\m_x\mathscr{F}_x$). We note that if $f\in\Gamma(X,\mathscr{F})$, then $X_f$ is contained in $\supp(\mathscr{F})$.
 \begin{proposition}\label{ringed space local residue of tensor char}
 Let $(X,\mathscr{O}_X)$ be a locally ringed space, $\mathscr{F}$ and $\mathscr{F}$ be two $\mathscr{O}_X$-module. For any $x\in X$, $(\mathscr{F}\otimes_{\mathscr{O}_X}\mathscr{G})_x/\m_x(\mathscr{F}\otimes_{\mathscr{O}_X}\mathscr{G})_x$ is canonically identified with $(\mathscr{F}_x/\m_x\mathscr{F}_x)\otimes_{\kappa(x)}(\mathscr{G}_x/\m_x\mathscr{G}_x)$. If $s$ (resp. $t$) is a section of $\mathscr{F}$ (resp. $\mathscr{G}$) over $X$, $(s\otimes t)(x)$ is identified with $s(x)\otimes t(x)$ and we have $X_{s\otimes t}=X_s\cap X_t$.
@@ -1373,7 +1373,7 @@ Let $(X,\mathscr{O}_X)$ be a locally ringed space. The set of idempotents of the
 \begin{proof}
 Let $U$ be a clopen subset of $X$. Then it corresponds to the section $s\in\Gamma(X,\mathscr{O}_X)$ such that $s|_V=1$ for any open subset $V\sub U$ and $s|_V=0$ for any open subset $V\sub X-U$; these open subsets by hypotheses form a base for the topology of $X$, so we define a section $s=e_U$ of $\mathscr{O}_X$ over $X$, which is an idempotent of $\Gamma(X,\mathscr{O}_X)$. Conversely, if $s$ is an idempotent, for any $x\in X$, $s_x$ is an idempotent of $\mathscr{O}_{X,x}$, hence equal to $0_x$ or $1_x$ because $\mathscr{O}_{X,x}$ is a local ring ($s_x(1-s_x)=0$, and if $s_x\in\m_x$, then $1-s_x$ is invertible so $s_x=0$). It is clear that the set $U$ of $x\in X$ such that $s_x=1_x$ is open, and so is the set $X-U$ of $x\in X$ such that $s_x=0_x$, so $U$ is a clopen subset of $X$ and we have $s=e_U$. 
 \end{proof}
-A morphism of locally ringed space $f:(X,\mathscr{O}_X)\to(Y,\mathscr{O}_Y)$ is defined to be a morphism of ringed spaces such that for each $x\in X$ the homomorphism $f_{x}^{\hash}:\mathscr{O}_{Y,f(x)}\to\mathscr{O}_{X,x}$ is local. Note that by this definition, the category of locally ringed spaces is not a full subcategory of that of ringed spaces.
+A morphism of locally ringed space $f:(X,\mathscr{O}_X)\to(Y,\mathscr{O}_Y)$ is defined to be a morphism of ringed spaces such that for each $x\in X$ the homomorphism $f_{x}^{\#}:\mathscr{O}_{Y,f(x)}\to\mathscr{O}_{X,x}$ is local. Note that by this definition, the category of locally ringed spaces is not a full subcategory of that of ringed spaces.
 \begin{proposition}\label{ringed space local residue of pullback char}
 Let $f:X\to Y$ be a morphism of locally ringed spaces, $x$ be a point of $X$, and $y=f(x)$. For any $\mathscr{O}_Y$-module $\mathscr{G}$, $(f^*(\mathscr{G}))_x/\m_x(f^*(\mathscr{G}))_x$ is canonically identified with $(\mathscr{G}_y/\m_y\mathscr{G}_y)\otimes_{\kappa(y)}\kappa(x)$. If $t$ is a section of $\mathscr{G}$ over $Y$ and $s=\rho_{\mathscr{G}}(t)$ is the corresponding section of $f^*(\mathscr{G})$ over $X$, then $s(x)$ is identified with $t(y)\otimes 1$ and we have $X_s=f^{-1}(Y_t)$.
 \end{proposition}
@@ -1381,9 +1381,9 @@ Let $f:X\to Y$ be a morphism of locally ringed spaces, $x$ be a point of $X$, an
 We have $(f^*(\mathscr{G}))_x=\mathscr{G}_y\otimes_{\mathscr{O}_{Y,y}}\mathscr{O}_X$, so $(f^*(\mathscr{G}))_x/\m_x(f^*(\mathscr{G}))_x$ is identified with $\mathscr{G}_y\otimes_{\mathscr{O}_{Y,y}}\kappa(x)$. The homomorphism $\mathscr{O}_{Y,y}\to\mathscr{O}_{X,x}$ is local by hypotheses, so $\m_y$ annihilates $\kappa(x)$ and $\mathscr{G}_y\otimes_{\mathscr{O}_{Y,y}}\kappa(x)$ is isomorphic to $(\mathscr{G}_y/\m_y\mathscr{G}_y)\otimes_{\kappa(y)}\kappa(x)$. The last assertion follows from the fact that $t(y)\otimes 1=0$ is equivalent to $t(y)=0$.
 \end{proof}
 \subsection{Direct image of \texorpdfstring{$\mathscr{A}$}{A}-modules}
-Let $(X,\mathscr{A})$ and $(Y,\mathscr{B})$ be ringed spaces, $f$ be a morphism $(X,\mathscr{A})\to(Y,\mathscr{B})$. Then $f_*(\mathscr{A})$ is a sheaf of rings over $Y$, and $f^{\hash}$ is a homomorphism $\mathscr{B}\to f_*(\mathscr{A})$ of sheaf of rings. Let $\mathscr{F}$ be an $\mathscr{A}$-module; the direct image $f_*(\mathscr{F})$ is then a sheaf of abelian groups over $Y$. Moreover, for any open subset $U\sub Y$,
+Let $(X,\mathscr{A})$ and $(Y,\mathscr{B})$ be ringed spaces, $f$ be a morphism $(X,\mathscr{A})\to(Y,\mathscr{B})$. Then $f_*(\mathscr{A})$ is a sheaf of rings over $Y$, and $f^{\#}$ is a homomorphism $\mathscr{B}\to f_*(\mathscr{A})$ of sheaf of rings. Let $\mathscr{F}$ be an $\mathscr{A}$-module; the direct image $f_*(\mathscr{F})$ is then a sheaf of abelian groups over $Y$. Moreover, for any open subset $U\sub Y$,
 \[\Gamma(U,f_*(\mathscr{F}))=\Gamma(f^{-1}(U),\mathscr{F})\]
-is endowed with a module structure over the ring $\Gamma(U,f_*(\mathscr{A}))=\Gamma(f^{-1}(U),\mathscr{A})$. These bilinear maps are compatible with restrictions, so $f_*(\mathscr{F})$ becomes an $f_*(\mathscr{A})$-module. The homomorphism $f^{\hash}:\mathscr{B}\to f_*(\mathscr{A})$ then makes $f_*(\mathscr{F})$ a $\mathscr{B}$-module. We say that this $\mathscr{B}$-module is the direct image of $\mathscr{F}$ under the morphism $f$, still denoted by $f_*(\mathscr{F})$. If $\mathscr{F}_1$, $\mathscr{F}_2$ are two $\mathscr{A}$-modules over $X$ and $u:\mathscr{F}_1\to\mathscr{F}_2$ is an $\mathscr{A}$-homomorphism, it is immediate that $f_*(u)$ is an $f_*(\mathscr{A})$-homomorphism $f_*(\mathscr{F}_1)\to f_*(\mathscr{F}_2)$, and a fortiori a $\mathscr{B}$-homomorphism, also denoted by $f_*(u)$. We then see that $f_*$ is a covariant funtor from the category of $\mathscr{A}$-modules to that of $\mathscr{B}$-modules. Moreover, it is immediate that this functor is left exact.\par
+is endowed with a module structure over the ring $\Gamma(U,f_*(\mathscr{A}))=\Gamma(f^{-1}(U),\mathscr{A})$. These bilinear maps are compatible with restrictions, so $f_*(\mathscr{F})$ becomes an $f_*(\mathscr{A})$-module. The homomorphism $f^{\#}:\mathscr{B}\to f_*(\mathscr{A})$ then makes $f_*(\mathscr{F})$ a $\mathscr{B}$-module. We say that this $\mathscr{B}$-module is the direct image of $\mathscr{F}$ under the morphism $f$, still denoted by $f_*(\mathscr{F})$. If $\mathscr{F}_1$, $\mathscr{F}_2$ are two $\mathscr{A}$-modules over $X$ and $u:\mathscr{F}_1\to\mathscr{F}_2$ is an $\mathscr{A}$-homomorphism, it is immediate that $f_*(u)$ is an $f_*(\mathscr{A})$-homomorphism $f_*(\mathscr{F}_1)\to f_*(\mathscr{F}_2)$, and a fortiori a $\mathscr{B}$-homomorphism, also denoted by $f_*(u)$. We then see that $f_*$ is a covariant funtor from the category of $\mathscr{A}$-modules to that of $\mathscr{B}$-modules. Moreover, it is immediate that this functor is left exact.\par
 Over $f_*(\mathscr{A})$, the $\mathscr{B}$-module structure and the sheaf of rings structure define a structure of $\mathscr{B}$-algebras; we denote by $f_*(\mathscr{A})$ this $\mathscr{B}$-algebra. Let $(Z,\mathscr{C})$ be a third ringed space, $g:(Y,\mathscr{B})\to(Z,\mathscr{C})$ be a morphism; if $h=g\circ f$ is the composition morphism, then we have $h_*=g_*\circ f_*$.\par
 Let $\mathscr{M},\mathscr{N}$ be two $\mathscr{A}$-modules. For any open subset $U$ of $Y$, we have a canonical map
 \[\Gamma(f^{-1}(U),\mathscr{M})\times\Gamma(f^{-1}(U),\mathscr{N})\to\Gamma(f^{-1}(U),\mathscr{M}\otimes_{\mathscr{A}}\mathscr{N})\]
@@ -1416,10 +1416,10 @@ We can define $\mathscr{A}(X)$ as a contravariant functor on $X$, from the categ
 X\ar[rd,swap,"f"]\ar[rr,"h"]&&Y\ar[ld,"g"]\\
 &S
 \end{tikzcd}\]
-is commutative. Then by definition $h^{\hash}:\mathscr{O}_Y\to h_*(\mathscr{O}_X)$ is a homomorphism of sheaves of rings; we also deduce a homomorphism $g_*(h^{\hash}):g_*(\mathscr{O}_Y)\to g_*(h_*(\mathscr{O}_X))=f_*(\mathscr{O}_X)$ of $\mathscr{O}_S$-algebras, which is a homomorphism $\mathscr{A}(Y)\to\mathscr{A}(X)$, denoted by $\mathscr{A}(h)$. If $h':Y\to Z$ is a second $S$-morphism, then we have $\mathscr{A}(h'\circ h)=\mathscr{A}(h)\circ\mathscr{A}(h')$.\par
+is commutative. Then by definition $h^{\#}:\mathscr{O}_Y\to h_*(\mathscr{O}_X)$ is a homomorphism of sheaves of rings; we also deduce a homomorphism $g_*(h^{\#}):g_*(\mathscr{O}_Y)\to g_*(h_*(\mathscr{O}_X))=f_*(\mathscr{O}_X)$ of $\mathscr{O}_S$-algebras, which is a homomorphism $\mathscr{A}(Y)\to\mathscr{A}(X)$, denoted by $\mathscr{A}(h)$. If $h':Y\to Z$ is a second $S$-morphism, then we have $\mathscr{A}(h'\circ h)=\mathscr{A}(h)\circ\mathscr{A}(h')$.\par
 Now let $\mathscr{F}$ be an $\mathscr{O}_X$-module, $\mathscr{G}$ be an $\mathscr{O}_Y$-module, and $u:\mathscr{G}\to h_*(\mathscr{F})$ be a homomorphism of $\mathscr{O}_Y$-modules. Then $g_*(u):g_*(\mathscr{G})\to g_*(h_*(\mathscr{F}))=f_*(\mathscr{F})$ is a homomorphism $\mathscr{A}(\mathscr{G})\to\mathscr{A}(\mathscr{F})$ of $\mathscr{O}_S$-modules, which we denote by $\mathscr{A}(u)$. Moreover, the couple $(\mathscr{A}(h),\mathscr{A}(u))$ is a bi-homomorphism from $\mathscr{A}(Y)$-module $\mathscr{A}(\mathscr{G})$ to the $\mathscr{A}(X)$-module $\mathscr{A}(\mathscr{F})$. The ringed space $S$ being fixed, we can consider the couples $(X,\mathscr{F})$, where $X$ is a $S$-ringed space and $\mathscr{F}$ is an $\mathscr{O}_X$-module, which form a category, and define a morphism $(X,\mathscr{F})\to(Y,\mathscr{G})$ to be a couple $(h,u)$, where $h:X\to Y$ is an $S$-morphism and $u:\mathscr{G}\to h_*(\mathscr{F})$ is a homomorphism of $\mathscr{O}_Y$-modules. We can then say that $(X,\mathscr{F})\mapsto(\mathscr{A}(X),\mathscr{A}(\mathscr{F}))$ is a contravariant functor from this category to the cateogry of couples formed by an $\mathscr{O}_S$-algebra and a module of this algebra.
 \subsection{Inverse image of a \texorpdfstring{$\mathscr{B}$}{B}-module}
-Let $f:(X,\mathscr{A})\to(Y,\mathscr{B})$ be a morphism of ringed spaces. Let $\mathscr{G}$ be a $\mathscr{B}$-module and $f^{-1}(\mathscr{G})$ be the inverse image of $\mathscr{G}$, which is a sheaf of abelian groups over $X$. The definition of sections of $f^{-1}(\mathscr{G})$ and of $f^{-1}(\mathscr{B})$ shows that $f^{-1}(\mathscr{G})$ is canonically endowed with an $f^{-1}(\mathscr{B})$-module structure. On the other hand, the homomorphism $f^{\sharp}:f^{-1}(\mathscr{B})\to\mathscr{A}$ endows $\mathscr{A}$ with an $f^{-1}(\mathscr{B})$-module structure. The tensor product $f^{-1}(\mathscr{G})\otimes_{f^{-1}(\mathscr{B})}\mathscr{A}$ is then an $\mathscr{A}$-module, called the inverse image of $\mathscr{G}$ under the morphism $(f,f^{\hash})$ and denoted by $f^*(\mathscr{G})$. If $\mathscr{G}_1$, $\mathscr{G}_2$ are two $\mathscr{B}$-modules over $Y$ and $v:\mathscr{G}_1\to\mathscr{G}_2$ is a $\mathscr{B}$-homomorphism, $f^{-1}(v)$ is then an $f^{-1}(\mathscr{B})$-homomorphism from $f^{-1}(\mathscr{G}_1)$ to $f^{-1}(\mathscr{G}_2)$; therefore $f^{-1}(v)\otimes 1_{\mathscr{A}}$ is an $\mathscr{A}$-homomorphism $f^*(\mathscr{G}_1)\to f^*(\mathscr{G}_2)$, which we denote by $f^*(v)$. We then define $f^*$ as a covariant functor from the category of $\mathscr{B}$-modules to that of $\mathscr{A}$-modules. Note that this functor (contrary to $f^{-1}$) is not in general exact, and is only right exact, since the tensor product with $\mathscr{A}$ is only right exact. We will see that $f^*$ is the left adjoint of the functor $f_*$. For any $x\in X$, we have $(f^*(\mathscr{G}))_x=\mathscr{G}_{f(x)}\otimes_{\mathscr{B}_{f(x)}}\mathscr{A}_x$ in view of the formula for the stalk of tensor products. The support of $f^*(\mathscr{G})$ is tens contained in $f^{-1}(\supp(\mathscr{G}))$.\par
+Let $f:(X,\mathscr{A})\to(Y,\mathscr{B})$ be a morphism of ringed spaces. Let $\mathscr{G}$ be a $\mathscr{B}$-module and $f^{-1}(\mathscr{G})$ be the inverse image of $\mathscr{G}$, which is a sheaf of abelian groups over $X$. The definition of sections of $f^{-1}(\mathscr{G})$ and of $f^{-1}(\mathscr{B})$ shows that $f^{-1}(\mathscr{G})$ is canonically endowed with an $f^{-1}(\mathscr{B})$-module structure. On the other hand, the homomorphism $f^{\sharp}:f^{-1}(\mathscr{B})\to\mathscr{A}$ endows $\mathscr{A}$ with an $f^{-1}(\mathscr{B})$-module structure. The tensor product $f^{-1}(\mathscr{G})\otimes_{f^{-1}(\mathscr{B})}\mathscr{A}$ is then an $\mathscr{A}$-module, called the inverse image of $\mathscr{G}$ under the morphism $(f,f^{\#})$ and denoted by $f^*(\mathscr{G})$. If $\mathscr{G}_1$, $\mathscr{G}_2$ are two $\mathscr{B}$-modules over $Y$ and $v:\mathscr{G}_1\to\mathscr{G}_2$ is a $\mathscr{B}$-homomorphism, $f^{-1}(v)$ is then an $f^{-1}(\mathscr{B})$-homomorphism from $f^{-1}(\mathscr{G}_1)$ to $f^{-1}(\mathscr{G}_2)$; therefore $f^{-1}(v)\otimes 1_{\mathscr{A}}$ is an $\mathscr{A}$-homomorphism $f^*(\mathscr{G}_1)\to f^*(\mathscr{G}_2)$, which we denote by $f^*(v)$. We then define $f^*$ as a covariant functor from the category of $\mathscr{B}$-modules to that of $\mathscr{A}$-modules. Note that this functor (contrary to $f^{-1}$) is not in general exact, and is only right exact, since the tensor product with $\mathscr{A}$ is only right exact. We will see that $f^*$ is the left adjoint of the functor $f_*$. For any $x\in X$, we have $(f^*(\mathscr{G}))_x=\mathscr{G}_{f(x)}\otimes_{\mathscr{B}_{f(x)}}\mathscr{A}_x$ in view of the formula for the stalk of tensor products. The support of $f^*(\mathscr{G})$ is tens contained in $f^{-1}(\supp(\mathscr{G}))$.\par
 Let $(Z,\mathscr{C})$ be a third ringed space and $g:(Y,\mathscr{B})\to(Z,\mathscr{C})$ be a morphism. Then if $h=g\circ f$ is the composition morphism, then it follows from the definitions that $h^*=f^*\circ g^*$.\par
 Let $(\mathscr{G}_\lambda)$ be a inductive system of $\mathscr{B}$-modules, and $\mathscr{G}=\rlim\mathscr{G}_\lambda$ be the inductive limit. The canonical homomorphisms $\mathscr{G}_\lambda\to\mathscr{G}$ define an $f^{-1}(\mathscr{B})$-homomorphism $f^{-1}(\mathscr{G}_\lambda)\to f^{-1}(\mathscr{G})$, which gives a canonical homomorphism $\rlim f^{-1}(\mathscr{G}_\lambda)\to f^{-1}(\mathscr{G})$. As taking stalk commutes with inductive limits, this canonical homomorphism is bijective. Moreover, tensor product also commutes with inductive limits, and we then have a canonical functorial isomorphism $\rlim f^*(\mathscr{G}_\lambda)\cong f^*(\rlim\mathscr{G}_\lambda)$ of $\mathscr{A}$-modules.\par
 On the other hand, for a finite direct sum $\bigoplus_i\mathscr{G}_i$ of $\mathscr{B}$-modules, it is clear that
@@ -1437,7 +1437,7 @@ Let $\mathscr{I}$ be an ideal of $\mathscr{B}$; as the functor $f^{-1}$ is exact
 \[f^*(\mathscr{I})=f^{-1}(\mathscr{I})\otimes_{f^{-1}(\mathscr{B})}\mathscr{A}\to\mathscr{A};\]
 we denote by $f^*(\mathscr{I})\mathscr{A}$, or simply $\mathscr{I}\mathscr{A}$ if there is no confusion, the image of $f^*(\mathscr{I})$ under this hommorphism. We then have $\mathscr{I}\mathscr{A}=f^{\sharp}(f^{-1}(\mathscr{I}))\mathscr{A}$ and in particular, for any $x\in X$, $(\mathscr{I}\mathscr{A})_x=f^{\sharp}_x(\mathscr{I}_{f(x)})\mathscr{A}_x$, in view of the canonical identification of the stalk $f^{-1}(\mathscr{I})$. If $\mathscr{I}_1,\mathscr{I}_2$ are two ideals of $\mathscr{B}$, we have $(\mathscr{I}_1\mathscr{I}_2)\mathscr{A}=\mathscr{I}_1(\mathscr{I}_2\mathscr{A})=(\mathscr{I}_1\mathscr{A})(\mathscr{I}_2\mathscr{A})$. If $\mathscr{F}$ is an $\mathscr{A}$-module, we put $\mathscr{I}\mathscr{F}=(\mathscr{I}\mathscr{A})\mathscr{F}$.
 \begin{remark}
-Over any topological space, we can define a canonical sheaf of rings $\Z_X$, which is the constant sheaf associated the presheaf $U\mapsto\Z$. It is clear thet the sheaves of abelian groups over $X$ are identified with the $\Z_X$-modules over the ringed space $(X,\Z_X)$, and we can in particular consider the tensor product $\mathscr{F}\otimes_{\Z_X}\mathscr{G}$ of two sheaves of rings $\mathscr{F},\mathscr{G}$ over $X$. If $f:X\to Y$ is a continuous map, for any open subset $V$ of $Y$, we have a canonical homomorphism $\Z\to\Gamma(f^{-1}(V),\Z_X)$ of rings and this defines a homomorphism $f^{\hash}:\Z_Y\to f_*(\Z_X)$ of sheaves of rings over $Y$. We then obtain a morphism $(f,f^{\hash}):(X,\Z_X)\to(Y,\Z_Y)$ of ringed spaces. If $\mathscr{F}$ is a sheaf of abelian groups over $Y$, $f^*(\mathscr{F})$ is canonically identified with $f^{-1}(\mathscr{F})$; if $\mathscr{F}$, $\mathscr{G}$ are two sheves of abelian groups over $Y$, we then have a canonical isomorphism $f^{-1}(\mathscr{F}\otimes_{\Z_Y}\mathscr{G})=f^{-1}(\mathscr{F})\otimes_{\Z_X}f^{-1}(\mathscr{G})$. We then deduce that if $f$ is a quasi-homeomorphism, $f^{-1}$ is not only an equivalence from the category of sheaf of abelian groups over $Y$ to that of sheaf of abelian groups over $X$, but also an equivalence from the category of sheaf of rings over $Y$ to that of sheaf of rings over $X$.\par
+Over any topological space, we can define a canonical sheaf of rings $\Z_X$, which is the constant sheaf associated the presheaf $U\mapsto\Z$. It is clear thet the sheaves of abelian groups over $X$ are identified with the $\Z_X$-modules over the ringed space $(X,\Z_X)$, and we can in particular consider the tensor product $\mathscr{F}\otimes_{\Z_X}\mathscr{G}$ of two sheaves of rings $\mathscr{F},\mathscr{G}$ over $X$. If $f:X\to Y$ is a continuous map, for any open subset $V$ of $Y$, we have a canonical homomorphism $\Z\to\Gamma(f^{-1}(V),\Z_X)$ of rings and this defines a homomorphism $f^{\#}:\Z_Y\to f_*(\Z_X)$ of sheaves of rings over $Y$. We then obtain a morphism $(f,f^{\#}):(X,\Z_X)\to(Y,\Z_Y)$ of ringed spaces. If $\mathscr{F}$ is a sheaf of abelian groups over $Y$, $f^*(\mathscr{F})$ is canonically identified with $f^{-1}(\mathscr{F})$; if $\mathscr{F}$, $\mathscr{G}$ are two sheves of abelian groups over $Y$, we then have a canonical isomorphism $f^{-1}(\mathscr{F}\otimes_{\Z_Y}\mathscr{G})=f^{-1}(\mathscr{F})\otimes_{\Z_X}f^{-1}(\mathscr{G})$. We then deduce that if $f$ is a quasi-homeomorphism, $f^{-1}$ is not only an equivalence from the category of sheaf of abelian groups over $Y$ to that of sheaf of abelian groups over $X$, but also an equivalence from the category of sheaf of rings over $Y$ to that of sheaf of rings over $X$.\par
 Given two ringed spaces $(X,\mathscr{O}_X)$, $(Y,\mathscr{O}_Y)$, we say a morphism $f:(X,\mathscr{O}_X)\to(Y,\mathscr{O}_Y)$ is a \textbf{quasi-isomorphism} if $f$ is a quasi-homeomorphism and $f^{\sharp}:f^{-1}(\mathscr{O}_Y)\to\mathscr{O}_X$ is an isomorphism of sheaf of rings. If this is the case, the ringed space $(X,\mathscr{O}_X)$ is entirely determined up to isomorphism, by $(Y,\mathscr{O}_Y)$, the space $X$, and the quasi-homeomorphism.\par
 If $f$ is a quasi-isomorphism of ringed spaces, the functor $\mathscr{F}\to f^*(\mathscr{F})$ is an equivalence from category of $\mathscr{O}_Y$-modules to the category of $\mathscr{O}_X$-modules, since $f^*(\mathscr{F})$ is identified with $f^{-1}(\mathscr{F})$. We then conclude for example the isomorphisms of bi-$\partial$-functors
 \[\Ext^i_{\mathscr{O}_Y}(\mathscr{F},\mathscr{G})\stackrel{\sim}{\to}\Ext^i_{\mathscr{O}_X}(f^*(\mathscr{F}),f^*(\mathscr{G})).\]
@@ -1523,7 +1523,7 @@ A^{\oplus J}\ar[r]&A^{\oplus I}\ar[r]&M\ar[r]&0
 \end{tikzcd}\]
 where $I$ and $J$ are arbitrary index sets (and in particular may not be finite). Therefore, quasi-coherent sheaves can be seen as a "real module" over the ringed space $(X,\mathscr{O}_X)$, and this idea really makes sense in the realm of algebraic geometry.
 \begin{proposition}\label{sheaf of module qcoh under inverse image}
-Let $(f,f^{\hash}):(X,\mathscr{O}_X)\to(Y,\mathscr{O}_Y)$ be a morphism of ringed spaces. Then the pullback $f^*(\mathscr{G})$ of a quasi-coherent $\mathscr{O}_Y$-module $\mathscr{G}$ is quasi-coherent.
+Let $(f,f^{\#}):(X,\mathscr{O}_X)\to(Y,\mathscr{O}_Y)$ be a morphism of ringed spaces. Then the pullback $f^*(\mathscr{G})$ of a quasi-coherent $\mathscr{O}_Y$-module $\mathscr{G}$ is quasi-coherent.
 \end{proposition}
 \begin{proof}
 Since the question is local, we may assume that $\mathscr{G}$ has a global presentation by $\mathscr{O}_Y$. We have seen that $f^*$ commutes with all colimits, and is right exact, so if we have an exact sequence
@@ -1539,7 +1539,7 @@ This implies the assertion.
 \begin{proposition}\label{qcoh module associated with a module}
 Let $(X,\mathscr{O}_X)$ be ringed space. Let $\rho:A\to\Gamma(X,\mathscr{O}_X)$ be a ring homomorphism from a ring $A$ into the ring of global sections on $X$ and $M$ be an $A$-module. Then the following three constructions give canonically isomorphic $\mathscr{O}_X$-modules:
 \begin{itemize}
-\item[(\rmnum{1})] Let $(\pi,\pi^{\hash}):(X,\mathscr{O}_X)\to(\{\ast\},A)$ be the morphism of ringed spaces where $\pi:X\to\{\ast\}$ is the unique map and $\pi^{\hash}$ is the given homomorphism $\rho:A\to\Gamma(X,\mathscr{O}_X)$. Set $\mathscr{F}_1=\pi^*(M)$.
+\item[(\rmnum{1})] Let $(\pi,\pi^{\#}):(X,\mathscr{O}_X)\to(\{\ast\},A)$ be the morphism of ringed spaces where $\pi:X\to\{\ast\}$ is the unique map and $\pi^{\#}$ is the given homomorphism $\rho:A\to\Gamma(X,\mathscr{O}_X)$. Set $\mathscr{F}_1=\pi^*(M)$.
 \item[(\rmnum{2})] Choose a presentation $A^{\oplus J}\to A^{\oplus I}\to M\to 0$ and set
 \[\mathscr{F}_2=\coker(\mathscr{O}_X^{\oplus J}\to\mathscr{O}_X^{\oplus I})\]
 where the homomorphism is induced by $\rho$ and the matrix coefficients of the homomorphism in the presentation of $M$.
@@ -1565,13 +1565,13 @@ Now assertion (a) is clear from construction (\rmnum{2}), so is (b) since $\pi^*
 \end{proof}
 In the situation of Proposition~\ref{qcoh module associated with a module} we say $\mathscr{F}_M$ is the \textbf{sheaf associated to the module $\bm{M}$ and the ring map $\bm{\rho}$}. If $A=\Gamma(X,\mathscr{O}_X)$ and $\rho=1_A$, we simply say that $\mathscr{F}_M$ is the sheaf associated to the $A$-module $M$.
 \begin{proposition}\label{qcoh module associated with a module and pull back}
-Let $(X,\mathscr{O}_X)$ be a ringed space and $A=\Gamma(X,\mathscr{O}_X)$. Let $M$ be an $A$-module and $\mathscr{F}_M$ be the quasi-coherent sheaf of $\mathscr{O}_X$-modules associated to $M$. If $(f,f^{\hash}):(Y,\mathscr{O}_Y)\to(X,\mathscr{O}_X)$ is a morphism of ringed spaces, then $f^*(\mathscr{F}_M)$ is the sheaf associated to the $\Gamma(Y,\mathscr{O}_Y)$-module $\Gamma(Y,\mathscr{O}_Y)\otimes_AM$.
+Let $(X,\mathscr{O}_X)$ be a ringed space and $A=\Gamma(X,\mathscr{O}_X)$. Let $M$ be an $A$-module and $\mathscr{F}_M$ be the quasi-coherent sheaf of $\mathscr{O}_X$-modules associated to $M$. If $(f,f^{\#}):(Y,\mathscr{O}_Y)\to(X,\mathscr{O}_X)$ is a morphism of ringed spaces, then $f^*(\mathscr{F}_M)$ is the sheaf associated to the $\Gamma(Y,\mathscr{O}_Y)$-module $\Gamma(Y,\mathscr{O}_Y)\otimes_AM$.
 \end{proposition}
 \begin{proof}
 In view of the following diagram of ringed spaces
 \begin{equation*}
 \begin{tikzcd}
-(Y,\mathscr{O}_Y)\ar[r,"\pi"]\ar[d,swap,"f"]&(\{\ast\},\Gamma(Y,\mathscr{O}_Y))\ar[d,"\text{induced by $f^{\hash}$}"]\\
+(Y,\mathscr{O}_Y)\ar[r,"\pi"]\ar[d,swap,"f"]&(\{\ast\},\Gamma(Y,\mathscr{O}_Y))\ar[d,"\text{induced by $f^{\#}$}"]\\
 (X,\mathscr{O}_X)\ar[r,"\pi"]&(\{\ast\},\Gamma(X,\mathscr{O}_X))
 \end{tikzcd}
 \end{equation*}
@@ -1590,7 +1590,7 @@ with matrix given by the $(f_{ij})$. By construction (\rmnum{2}) of Proposition~
 \subsection{Sheaves of finite type}
 Let $(X,\mathscr{O}_X)$ be a ringed space and $\mathscr{F}$ be an $\mathscr{O}_X$-modules. We say that $\mathscr{F}$ is \textbf{of finite type} if for every point $x\in X$ there exists an open neighbourhood $U$ of $x$ such that $\mathscr{F}|_U$ is generated by a finite family of sections over $U$, whence isomorphic to a quotient sheaf of a sheaf of the form $\mathscr{O}_X^n|_U$. It is clear that any quotient of a sheaf of finite type is of finite type, and a finite direct sum of sheaves of finite type is of finite type. 
 \begin{proposition}\label{sheaf of module ft inverse image is ft}
-Let $(f,f^{\hash}):(X,\mathscr{O}_X)\to(Y,\mathscr{O}_Y)$ be a morphism of ringed spaces. The pullback $f^*\mathscr{G}$ of a finite type $\mathscr{O}_Y$-module is a finite type $\mathscr{O}_X$-module.
+Let $(f,f^{\#}):(X,\mathscr{O}_X)\to(Y,\mathscr{O}_Y)$ be a morphism of ringed spaces. The pullback $f^*\mathscr{G}$ of a finite type $\mathscr{O}_Y$-module is a finite type $\mathscr{O}_X$-module.
 \end{proposition}
 \begin{proof}
 Since the question is local, we may assume $\mathscr{G}$ is globally generated by finitely many sections. We have seen that $f^*$ commutes with all colimits, and is right exact, so if we have a surjection $\bigoplus_{i=1}^{n}\mathscr{O}_Y\to\mathscr{G}\to 0$, then by applying $f^*$ we obtain the surjection $\bigoplus_{i=1}^{n}\mathscr{O}_X\to f^*\mathscr{G}\to 0$.
@@ -1837,12 +1837,12 @@ Let $f:X'\to X$ be a morphism of ringed spaces. If $\mathscr{L}_1$, $\mathscr{L}
 \[\Pic(f):\Pic(X)\to\Pic(X').\]
 On the other hand, we have a canonical homomorphism
 \[H^1(f):H^1(X,\mathscr{O}_X^{\times})\to H^1(X',\mathscr{O}_{X'}^{\times})\]
-corresponds the restriction of the homomorphism $f^{\hash}:\mathscr{O}_X\to f_*(\mathscr{O}_{X'})$ to $\mathscr{O}_X^{\times}$. We claim that the diagram
+corresponds the restriction of the homomorphism $f^{\#}:\mathscr{O}_X\to f_*(\mathscr{O}_{X'})$ to $\mathscr{O}_X^{\times}$. We claim that the diagram
 \[\begin{tikzcd}
 H^1(X,\mathscr{O}_X^{\times})\ar[r,"H^1(f)"]\ar[d,swap,"\varphi_X","\sim"']&H^1(X',\mathscr{O}_{X'}^{\times})\ar[d,"\varphi_{X'}","\sim"']\\
 \Pic(X)\ar[r,"\Pic(f)"]&\Pic(X')
 \end{tikzcd}\]
-is commutative. In fact, if $\mathscr{L}$ is given by the cocycle $(\eps_{\lambda\mu})$ of an open covering $(U_\lambda)$ of $X$, it suffices to prove that $f^*(\mathscr{L})$ is defined by a cocycle whose class is cohomologous to the image of $(\eps_{\lambda\mu})$ under $H^1(f)$. But if $\theta_{\lambda\mu}$ is the automorphism of $\mathscr{O}_X|_{U_\lambda\cap U_\mu}$ corresponding to $\eps_{\lambda\mu}$, it is clear that $f^*(\mathscr{L})$ is obtained by glueing $\mathscr{O}_{X'}|_{\psi^{-1}(U_\lambda)}$ with the automorphisms $g^*(\theta_{\lambda\mu})$, and it sufficies to verify that this corresponds to the cocycle $(f^{\hash}(\eps_{\lambda\mu}))$; this follows also from the definition by identify $\eps_{\lambda\mu}$ with its image under $\rho_{\mathscr{O}_X}$, which is a section of $\psi^{-1}(\mathscr{O}_X)$ over $\psi^{-1}(U_\lambda\cap U_\mu)$.
+is commutative. In fact, if $\mathscr{L}$ is given by the cocycle $(\eps_{\lambda\mu})$ of an open covering $(U_\lambda)$ of $X$, it suffices to prove that $f^*(\mathscr{L})$ is defined by a cocycle whose class is cohomologous to the image of $(\eps_{\lambda\mu})$ under $H^1(f)$. But if $\theta_{\lambda\mu}$ is the automorphism of $\mathscr{O}_X|_{U_\lambda\cap U_\mu}$ corresponding to $\eps_{\lambda\mu}$, it is clear that $f^*(\mathscr{L})$ is obtained by glueing $\mathscr{O}_{X'}|_{\psi^{-1}(U_\lambda)}$ with the automorphisms $g^*(\theta_{\lambda\mu})$, and it sufficies to verify that this corresponds to the cocycle $(f^{\#}(\eps_{\lambda\mu}))$; this follows also from the definition by identify $\eps_{\lambda\mu}$ with its image under $\rho_{\mathscr{O}_X}$, which is a section of $\psi^{-1}(\mathscr{O}_X)$ over $\psi^{-1}(U_\lambda\cap U_\mu)$.
 \subsection{Locally free sheaves over locally ringed spaces}
 \begin{proposition}\label{sheaf of module local free section principal open}
 Let $X$ be a locally ringed space and $\mathscr{E}$ be a locally free $\mathscr{O}_X$-module of finite rank. Then for any section $s$ of $\mathscr{E}$ over $X$, the set $X_s$ of $x\in X$ such that $s(x)\neq 0$ is open in $X$ and $s$ is invertible over $X_s$.
@@ -1884,7 +1884,7 @@ With the hypotheses in Proposition~\ref{sheaf of module homomorphism ft to local
 Moreover, if the conditions are satisfied, $\mathscr{F}$ is a locally free $\mathscr{O}_X$-module of finite rank.
 \end{corollary}
 \begin{proof}
-The equivalence of (\rmnum{2}) and (\rmnum{3}) follows from Proposition~\ref{sheaf of module homomorphism ft to local free prop}, so does the last one. The fact that (\rmnum{3}) implies (\rmnum{1}) follows from follows from the fact that we can reduce ourselves to the case where $\mathscr{E}=\mathscr{O}_X^n$ and $\mathscr{F}=\mathscr{O}_X^m$ and that $g^*$ is left exact, since the question is local on $X$. Finally, we show that (\rmnum{2}) is a particular case of (\rmnum{1}): it suffices to consider the locally ringed space $X'$ reduced to a point $x$, with sheaf of rings $\kappa(x)$ (that is, $\Spec(\kappa(x))$). We let $g:X'\to X$ be the canonical morphism which maps $x$ to $x$ and $g^{\hash}:\mathscr{O}_X\to\kappa(x)$ is the cannical homomorphism $\Gamma(U,\mathscr{O}_X)\to\mathscr{O}_{X,x}\to\kappa(x)$ for any open neigbourhood $U$ of $x$. It is then easily verified that $g^*(u)$ is the homomorphism $u_x\otimes 1$. 
+The equivalence of (\rmnum{2}) and (\rmnum{3}) follows from Proposition~\ref{sheaf of module homomorphism ft to local free prop}, so does the last one. The fact that (\rmnum{3}) implies (\rmnum{1}) follows from follows from the fact that we can reduce ourselves to the case where $\mathscr{E}=\mathscr{O}_X^n$ and $\mathscr{F}=\mathscr{O}_X^m$ and that $g^*$ is left exact, since the question is local on $X$. Finally, we show that (\rmnum{2}) is a particular case of (\rmnum{1}): it suffices to consider the locally ringed space $X'$ reduced to a point $x$, with sheaf of rings $\kappa(x)$ (that is, $\Spec(\kappa(x))$). We let $g:X'\to X$ be the canonical morphism which maps $x$ to $x$ and $g^{\#}:\mathscr{O}_X\to\kappa(x)$ is the cannical homomorphism $\Gamma(U,\mathscr{O}_X)\to\mathscr{O}_{X,x}\to\kappa(x)$ for any open neigbourhood $U$ of $x$. It is then easily verified that $g^*(u)$ is the homomorphism $u_x\otimes 1$. 
 \end{proof}
 \begin{remark}
 If $u$ satisfies the conditions of Corollary~\ref{sheaf of module local free inverse image injective iff}, then we say that it is \textbf{universally injective}.
