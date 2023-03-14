@@ -51,13 +51,18 @@ root-radius=.06cm]{dynkin-diagrams}
 \usepackage{scalerel} %放大数学字体
 \usepackage{calligra,mathrsfs}%for sheaf Hom
 \usepackage{mathtools}%def new widetilde
+\usepackage{calc}%定义箭头不同样式symbol
+\usepackage{ulem}%定义合适的下划线
 
-\usetikzlibrary{calc}
+
 \linespread{1.15}
 \SetSymbolFont{stmry}{bold}{U}{stmry}{m}{n}
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{bending}
-\geometry{left=2.5cm,right=2.5cm,top=3cm,bottom=3cm}
+
+%设置页面样式
+%\geometry{left=3.5cm,right=3.5cm,top=3cm,bottom=3cm}
+\geometry{hcentering}
 \pagestyle{fancy}
 \setlength{\headheight}{15.0pt}
 \fancyhf{}
@@ -66,7 +71,8 @@ root-radius=.06cm]{dynkin-diagrams}
 \fancyhead[LO]{\bf\nouppercase{\leftmark}}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
-\renewcommand{\sectionautorefname}{\S}
+
+\renewcommand{\sectionautorefname}{\S}%修改section的引用名
 
 \makeatletter%define roman numbers
 \newcommand{\rmnum}[1]{\romannumeral #1}
@@ -75,6 +81,9 @@ root-radius=.06cm]{dynkin-diagrams}
 
 \DeclareMathAlphabet{\mathbbb}{U}{bbold}{m}{n}
 \DeclareMathAlphabet{\mathbb}{U}{msb}{m}{n}
+
+\chapterfont{\centering}%chapter居中
+\sectionfont{\centering}%section居中
 
 %\titlecontents{chapter}% <section-type>增加Chapter到目录中
 %  [0pt]% <left>
@@ -89,23 +98,28 @@ root-radius=.06cm]{dynkin-diagrams}
   commutative diagrams/.cd,
   arrow style=tikz,
   diagrams={>={Computer Modern Rightarrow[length=4pt,width=3pt]}},
-  diagrams={nodes={inner sep=2pt}}
+  diagrams={nodes={inner sep=3pt}}
+}
+\tikzset{
+  symbol/.style={
+    draw=none,
+    every to/.append style={
+      edge node={node [sloped, allow upside down, auto=false]{$#1$}}}
+  }
 }
 %------------------------------------------------
 
 %改变下标基线--------------------------------------
-\usepackage{subdepth}
-\begingroup
-  \catcode`\_=\active
-  \gdef_#1{\ensuremath{\sb{\smash{#1}}}}
-\endgroup
-\mathcode`\_=\string"8000
-\catcode`\_=12
-%%--------------------------------------------------
+%\usepackage{subdepth}
+%\begingroup
+%  \catcode`\_=\active
+%  \gdef_#1{\ensuremath{\sb{\smash{#1}}}}
+%\endgroup
+%\mathcode`\_=\string"8000
+%\catcode`\_=12
+%%-------------------------------------------------
 
-\chapterfont{\centering}%chapter居中
-\sectionfont{\centering}%section居中
-
+%-------------------mathbb大写
 \def\C{\mathbb{C}}
 \def\F{\mathbb{F}}
 \def\K{\mathbb{K}}
@@ -115,15 +129,22 @@ root-radius=.06cm]{dynkin-diagrams}
 \def\Q{\mathbb{Q}}
 \def\Z{\mathbb{Z}}
 \def\N{\mathbb{N}}
-\def\E{\mathrm{E}}
 \def\T{\mathbb{T}}
 \def\H{\mathbb{H}}
 \def\V{\mathbb{V}}
 \def\RP{\mathbb{RP}}
 \def\CP{\mathbb{CP}}
 \def\P{\mathbb{P}}
+%------------------------------
+
+
+%-------------------mathfrak大写
 \def\X{\mathfrak{X}}
 \def\Y{\mathfrak{Y}}
+%------------------------------
+
+
+%------------------mathfrak小写
 \def\m{\mathfrak{m}}
 \def\n{\mathfrak{n}}
 \def\p{\mathfrak{p}}
@@ -141,11 +162,24 @@ root-radius=.06cm]{dynkin-diagrams}
 \def\t{\mathfrak{t}}
 \def\f{\mathfrak{f}}
 \def\x{\mathfrak{x}}
-
 \def\k{\mathfrak{k}}
-
 \def\st{\mathfrak{st}}
 \def\aff{\mathfrak{aff}}
+\def\gl{\mathfrak{gl}}
+\def\sl{\mathfrak{sl}}
+\def\o{\mathfrak{o}}
+\def\so{\mathfrak{so}}
+\def\u{\mathfrak{u}}
+\def\su{\mathfrak{su}}
+\def\Lie{\mathfrak{Lie}}
+\def\nil{\mathfrak{nil}}
+\def\rad{\mathfrak{rad}}
+\def\eff{\mathfrak{eff}}
+%-----------------------------
+
+
+%------------------mathrm大小写
+\def\E{\mathrm{E}}
 \def\GL{\mathrm{GL}}
 \def\PGL{\mathrm{PGL}}
 \def\SL{\mathrm{SL}}
@@ -154,13 +188,6 @@ root-radius=.06cm]{dynkin-diagrams}
 \def\Sp{\mathrm{Sp}}
 \def\U{\mathrm{U}}
 \def\SU{\mathrm{SU}}
-\def\gl{\mathfrak{gl}}
-\def\sl{\mathfrak{sl}}
-\def\o{\mathfrak{o}}
-\def\so{\mathfrak{so}}
-\def\u{\mathfrak{u}}
-\def\su{\mathfrak{su}}
-
 \def\dom{\mathrm{dom}}
 \def\codom{\mathrm{codom}}
 \def\End{\mathrm{End}}
@@ -169,27 +196,16 @@ root-radius=.06cm]{dynkin-diagrams}
 \def\Obj{\mathrm{Obj}}
 \def\Aut{\mathrm{Aut}}
 \def\det{\mathrm{det}}
-\def\ker{\operatorname{ker}}
-\def\coker{\operatorname{coker}}
-\def\im{\operatorname{im}}
-\def\coim{\operatorname{coim}}
-\def\id{\operatorname{id}}
 \def\supp{\mathrm{supp}}
 \def\conv{\mathrm{conv}}
 \def\mult{\mathrm{mult}}
-\def\Int{\operatorname{Int}}
 \def\Homgr{\mathrm{Homgr}}
 \def\Sh{\mathrm{Sh}}
 \def\Lib{\mathrm{Lib}}
-\def\Lie{\mathfrak{Lie}}
 \def\Ad{\mathrm{Ad}}
 \def\ad{\mathrm{ad}}
 \def\Der{\mathrm{Der}}
-\def\nil{\mathfrak{nil}}
-\def\rad{\mathfrak{rad}}
-\def\eff{\mathfrak{eff}}
 \def\reg{\mathrm{reg}}
-\def\aff{\mathfrak{aff}}
 \def\div{\mathrm{div}}
 \def\Sym{\mathrm{Sym}}
 \def\Stab{\mathrm{Stab}}
@@ -210,6 +226,7 @@ root-radius=.06cm]{dynkin-diagrams}
 \def\depth{\mathrm{depth}}
 \def\sgn{\mathrm{sgn}}
 \def\res{\mathrm{res}}
+\def\Rees{\mathrm{Rees}}
 \def\Res{\mathrm{Res}}
 \def\Alt{\mathrm{Alt}}
 \def\Gal{\mathrm{Gal}}
@@ -237,7 +254,25 @@ root-radius=.06cm]{dynkin-diagrams}
 \def\Cone{\mathrm{Cone}}
 \def\Aff{\mathrm{Aff}}
 \def\rat{\mathrm{rat}}
+\def\Sing{\mathrm{Sing}}
+\def\op{\mathrm{op}}
+\def\inj{\mathrm{inj}}
+\def\Fun{\mathrm{Fun}}
+\def\sk{\mathrm{sk}}
+\def\ev{\mathrm{ev}}
+%-----------------------------
 
+
+%------------------operatorname定义
+\def\ker{\operatorname{ker}}
+\def\coker{\operatorname{coker}}
+\def\im{\operatorname{im}}
+\def\coim{\operatorname{coim}}
+\def\id{\operatorname{id}}
+\def\Int{\operatorname{Int}}
+%-----------------------------
+
+%--------------------其他定义
 \def\sub{\subseteq}
 \def\sups{\supseteq}
 \def\emp{\varnothing}
@@ -247,17 +282,21 @@ root-radius=.06cm]{dynkin-diagrams}
 \def\rlim{\varinjlim\limits}
 \def\And{\hspace{8pt}\text{and}\hspace{8pt}}
 \def\for{\hspace{8pt}\text{for}\hspace{6pt}}
+%------------------------------
 
-
+%------------------------------
+\newcommand{\hash}{\raisebox{\depth}{\#}}
 \renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
 \renewcommand{\i}{\mathrm{i}}
-\newcommand{\hash}{\raisebox{\depth}{\#}}
+%------------------------------
 
+%------------------------------花写Hom,Ext,End,Proj
 \DeclareMathOperator{\sHom}{\mathscr{H}\hspace*{-4.25pt}\mathscr{o\!m}}
 \DeclareMathOperator{\sExt}{\mathscr{E}\hspace*{-2.6pt}\mathscr{x}\hspace*{-1pt}\mathscr{t}}
 \DeclareMathOperator{\sEnd}{\mathscr{E}\hspace*{-2pt}\mathscr{n}\hspace*{-2.4pt}\mathscr{d}}
 \DeclareMathOperator{\sProj}{\mathscr{P}\hspace*{-0.5pt}\textit{roj}}
+%------------------------------
 
 
 \newcommand{\intprod}{\mathbin{\raisebox{\depth}{\scalebox{1}[-1]{$\lnot$}}}}%defining interior product
@@ -265,7 +304,7 @@ root-radius=.06cm]{dynkin-diagrams}
 \newcommand{\bigw}{\scalebox{.95}[1]{\boldmath{$\bigwedge$}\hspace{-1pt}}}%define a nice wedge product
 
 
-%调整图片和方程编号方式
+%调整图片和方程编号方式----------------------
 \makeatletter
 \@addtoreset{figure}{subsection}
 \makeatother
@@ -274,7 +313,7 @@ root-radius=.06cm]{dynkin-diagrams}
 
 \renewcommand{\theequation}{\arabic{section}.\arabic{subsection}.\arabic{equation}}
 \counterwithin*{equation}{subsection}
-
+%-------------------------------------------
 
 
 %---------------------------------------------------------
@@ -349,6 +388,7 @@ root-radius=.06cm]{dynkin-diagrams}
 \makeatother
 %---------------------------------------------------------
 
+
 %---------------------------------------------------------
 \ExplSyntaxOn%defining shuffle prodcut
 \fp_new:N \l__expl_shuffle_fp
@@ -421,9 +461,4 @@ root-radius=.06cm]{dynkin-diagrams}
         {\accentset{\scriptscriptstyle\lowerwidehatsym}{#1}}
 }
 %--------------------------------------------------------------
-
-%定义graded ring的正部和负部-------------------------------------------------------
-\newcommand\lpar[2]{{{#1}_{\!#2}}^{\hspace*{-5pt}\substack{\leqslant\\[-0.6ex]~}}}
-\newcommand\rpar[2]{{{#1}_{\!#2}}^{\hspace*{-5pt}\substack{\geqslant\\[-0.6ex]~}}}
-%---------------------------------------------------------------------------------
 

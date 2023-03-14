@@ -1729,64 +1729,65 @@ More general (connected) covers correspond to more general algebraic extensions.
 In algebraic geometry this analogy is carried out to its natural consequences. A covering map of algebraic varieties $X\to Y$ determines a field extension $K(Y)\sub K(X)$, where $K(X)$, $K(Y)$ are the fields of rational functions $($in the affine case, these are just the fields of fractions of the corresponding coordinate rings$)$. One can then use Galois theory to transfer to the algebra-geometric environment notions such as the fundamental group, without appealing to topological notions $($such as continuous maps from $S^1$$)$, which would be problematic in 
 e.g., positive characteristic.
 \end{remark}
-\begin{example}
-The extension $\Q\sub\Q(\sqrt[4]{2},i)$ is a spliting field of $X^4+2$, and has degree $8$, as we have seen in Example~\ref{field splitting of x^4+2}. The roots of this polynomial are $r=\sqrt[4]{2}$, $-r$, $ri$ and $-ri$, and so any member of the Galois group $G$ is a permutation of these roots. One way to help find the Galois group is to look for an intermediate field $N$ that is normal, because the elements of $\Gal(N/\Q)$ are precisely the restrictions of the members of $G$. Since any extension of degree $2$ is normal, we have $\Q\lhd\Q(i)$. The elements of $\Gal(\Q(i)/\Q)$ are the identity $1=\id$ and the map $\tau:i\to-i$. Since $[\Q(r,i):\Q(i)]=4$, we have $\min(r,\Q(i))=X^4-2$ and so each of the automorphisms $1$ and $\tau$ can be extended to an element of $G$ by sending $r$ to any of the roots of $X^4-2$. This gives all elements of $G$:
+\begin{example}[\textbf{Galois group of $\bm{X^4-2}$}]
+The extension $\Q\sub\Q(\sqrt[4]{2},\i)$ is a spliting field of $X^4-2$, and has degree $8$, as we have seen in Example~\ref{field splitting of x^4+2}. The roots of this polynomial are $\alpha=\sqrt[4]{2}$, $-\alpha$, $i\alpha$ and $-\i\alpha$, and so any member of the Galois group $G$ is a permutation of these roots. One way to help find the Galois group is to look for an intermediate field $N$ that is normal, because the elements of $\Gal(N/\Q)$ are precisely the restrictions of the members of $G$. Now since any extension of degree $2$ is normal, we have $\Q\lhd\Q(\i)$; the elements of $\Gal(\Q(\i)/\Q)$ are the identity $1$ and the map $\tau:\i\to-\i$. Since $[\Q(\alpha,\i):\Q(\i)]=4$, we have $\min(\alpha,\Q(i))=X^4-2$ and so each of the automorphisms $1$ and $\tau$ can be extended to an element of $G$ by sending $\alpha$ to any of the roots of $X^4-2$. This gives all elements of $G$:
 \begin{table}[htbp]
 \centering
 \begin{tabular}{l|l}
 \hline
-The extensions of $1$&The extensions of $\tau$\\
+The extensions of $1$& The extensions of $\tau$\\
 \hline
-$1:i\mapsto i,r\mapsto r$&$\tau:i\mapsto-i,r\mapsto r$\\
-$\sigma:i\mapsto i,r\mapsto ri$&$\tau\sigma:i\mapsto-i,r\mapsto -ri$\\
-$\sigma^2:i\mapsto i,r\mapsto-r$&$\tau\sigma^2:i\mapsto-i,r\mapsto-r$\\
-$\sigma^3:i\mapsto i,r\mapsto-ri$&$\tau\sigma^3:i\mapsto-i,r\mapsto ri$\\
+$1:\i\mapsto \i,\alpha\mapsto\alpha$&$\tau:\i\mapsto-\i,\alpha\mapsto \alpha$\\
+$\sigma:\i\mapsto \i,\alpha\mapsto \i\alpha$&$\tau\sigma:\i\mapsto-\i,\alpha\mapsto -\i\alpha$\\
+$\sigma^2:\i\mapsto \i,\alpha\mapsto-\alpha$&$\tau\sigma^2:\i\mapsto-\i,\alpha\mapsto-\alpha$\\
+$\sigma^3:\i\mapsto \i,\alpha\mapsto-\i\alpha$&$\tau\sigma^3:\i\mapsto-\i,\alpha\mapsto \i\alpha$\\
 \hline
 \end{tabular}
 \end{table}
 
-Note that $G$ can not be abelian, because otherwise any subgroup of $G$ is normal, and thus any intermediate field of $\Q\sub\Q(r,i)$ is normal. However, the extension $\Q\sub\Q(r)$ is not normal. Since $|G|=8$, this then implies $G=Q_8$ or $G=D_4$. Note that $G$ has a normal subgroup $\langle\sigma\rangle=\{1,\sigma,\sigma^2,\sigma^3\}$, where $\tau\sigma\tau=\sigma^3$. Therefore $G\cong D_4$.\par
-Now we determine all subgroups of $G$. All nontrivial subgroups of $G$ have order $2$ or $4$. The subgroups of order $2$ correspond to the elements of order $2$:
+Note that $G$ can not be abelian, because otherwise any subgroup of $G$ is normal, and thus any intermediate field of $\Q\sub\Q(\alpha,\i)$ is normal. However, the extension $\Q\sub\Q(\alpha)$ is not normal. Since $|G|=8$, this then implies $G=Q_8$ or $G=D_4$. Note that $G$ has a normal subgroup $\langle\sigma\rangle=\{1,\sigma,\sigma^2,\sigma^3\}$ of order $4$, and we have $\tau\sigma\tau=\sigma^3$. These together imply that $G\cong D_4$.\par
+Now we want to determine all subgroups of $G$. All nontrivial subgroups of $G$ have order $2$ or $4$. The subgroups of order $2$ correspond to the elements of order $2$:
 \[\{1,\sigma^2\},\quad\{1,\tau\},\quad\{1,\tau\sigma\},\quad\{
 1,\tau\sigma^2\},\quad\{1,\tau\sigma^3\}.\]
 The subgroups of order $4$ are
 \[\{1,\sigma,\sigma^2,\sigma^3\},\quad\{1,\tau,\tau\sigma^2,\sigma^2\},\quad\{1,\tau\sigma,\tau\sigma^3,\sigma^2\}.\]
 Therefore the lattice of subgroups of $G$ is
-\[\begin{tikzcd}[row sep=8pt,column sep=8pt]
+\[\begin{tikzcd}[row sep=10pt,column sep=10pt]
 &&G\ar[d,no head]\ar[rd,no head]\ar[ld,no head]&&\\
 &\{1,\tau,\tau\sigma^2,\sigma^2\}\ar[d,no head]\ar[rd,no head]\ar[ld,no head]&\{1,\sigma,\sigma^2,\sigma^3\}\ar[d,no head]&\{1,\tau\sigma,\tau\sigma^3,\sigma^2\}\ar[d,no head]\ar[rd,no head]\ar[ld,no head]&\\
 \{1,\tau\}&\{1,\tau\sigma^2\}&\{1,\sigma^2\}&\{1,\tau\sigma\}&\{1,\tau\sigma^3\}\\
 &&\{1\}\ar[u,no head]\ar[ru,no head]\ar[rru,no head]\ar[lu,no head]\ar[llu,no head]&&
 \end{tikzcd}\]
-Of course, the lattice of intermediate (fixed) fields is a reflection of this. To compute fixed fields, we use the fact that $\{1,i\}$ is a basis for $\Q(i)$ over $\Q$ and $\{1,r,r^2,r^3\}$ is a basis for $\Q(i,r)$ over $\Q(i)$ and so the products form a basis for $\Q(r,i)$ over $\Q$. Hence, each $\alpha\in E$ has the form
-\[\alpha=a+b_1r+b_2r^2+b_3r^3+d_1i+d_2ri+d_3r^2i+d_4r^3i.\]
+
+Of course, the lattice of intermediate (fixed) fields is a reflection of this. To compute fixed fields, we use the fact that $\{1,\i\}$ is a basis for $\Q(\i)$ over $\Q$ and $\{1,\alpha,\alpha^2,\alpha^3\}$ is a basis for $\Q(\i,\alpha)$ over $\Q(i)$ and so the products form a basis for $\Q(r,i)$ over $\Q$. Hence, each $\xi\in E=\Q(\alpha,\i)$ has the form
+\[\xi=a+b_1\alpha+b_2\alpha^2+b_3\alpha^3+d_1\i+d_2\i\alpha+d_3\i\alpha^2+d_4\i\alpha^3.\]
 Using this, the fixed fields are easy to compute:
 \begin{table}[htbp]
 \renewcommand\arraystretch{1.3}
 \centering
 \begin{tabular}{l|l}
 \hline
-$E^{\{1,\tau\}}=\Q(r)$&$E^{\{1,\tau,\tau\sigma^2,\sigma^2\}}=\Q(r^2)$\\
-$E^{\{1,\tau\sigma^2\}}=\Q(ri)$&$E^{\{1,\sigma,\sigma^2,\sigma^3\}}=\Q(i)$\\
-$E^{\{1,\sigma^2\}}=\Q(r^2,i)$&$E^{\{1,\tau\sigma,\tau\sigma^3,\sigma^2\}}=\Q(r^2i)$\\
-$E^{\{1,\tau\sigma\}}=\Q(r(1-i))$&\\
-$E^{\{1,\tau\sigma^3\}}=\Q(r(1+i))$&\\
+$E^{\{1,\tau\}}=\Q(\alpha)$&$E^{\{1,\tau,\tau\sigma^2,\sigma^2\}}=\Q(\alpha^2)$\\
+$E^{\{1,\tau\sigma^2\}}=\Q(\i\alpha)$&$E^{\{1,\sigma,\sigma^2,\sigma^3\}}=\Q(\i)$\\
+$E^{\{1,\sigma^2\}}=\Q(\alpha^2,\i)$&$E^{\{1,\tau\sigma,\tau\sigma^3,\sigma^2\}}=\Q(\i\alpha^2)$\\
+$E^{\{1,\tau\sigma\}}=\Q((1-\i)\alpha)$&\\
+$E^{\{1,\tau\sigma^3\}}=\Q((1+\i)\alpha)$&\\
 \hline
 \end{tabular}
 \end{table}
 
-We conclude this result into the following diagram
+We collect these results into the following diagram
 \[\begin{tikzcd}[row sep=small,column sep=small]
 &&\Q\ar[d,no head]\ar[rd,no head]\ar[ld,no head]&&\\
-&\Q(r^2)\ar[d,no head]\ar[rd,no head]\ar[ld,no head]&\Q(i)\ar[d,no head]&\Q(r^2i)\ar[d,no head]\ar[rd,no head]\ar[ld,no head]&\\
-\Q(r)&\Q(ri)&\Q(r^2,i)&\Q(r(1+i))&\Q(r(1-i))\\
-&&\Q(r,i)\ar[u,no head]\ar[ru,no head]\ar[rru,no head]\ar[lu,no head]\ar[llu,no head]&&
+&\Q(\alpha^2)\ar[d,no head]\ar[rd,no head]\ar[ld,no head]&\Q(\i)\ar[d,no head]&\Q(\i\alpha^2)\ar[d,no head]\ar[rd,no head]\ar[ld,no head]&\\
+\Q(\alpha)&\Q(\i\alpha)&\Q(\alpha^2,\i)&\Q((1+\i)\alpha)&\Q((1-\i)\alpha)\\
+&&\Q(\alpha,\i)\ar[u,no head]\ar[ru,no head]\ar[rru,no head]\ar[lu,no head]\ar[llu,no head]&&
 \end{tikzcd}\]
-Note that in the diagram, $\Q(r^2,i)=\Q(\sqrt{2},i)=\Q(\sqrt{2}+i)$ is the spliting field of $X^4-X^2-2$ over $\Q$. This justify the fact that $\Gal(\Q(r,i)/\Q(r^2,i))=\langle\sigma\rangle$ is a normal subgroup.
+
+Note that in the diagram, $\Q(\alpha^2,\i)=\Q(\sqrt{2},\i)=\Q(\sqrt{2}+\i)$ is the spliting field of $X^4-X^2-2$ over $\Q$. This justify the fact that $\Gal(\Q(\alpha,\i)/\Q(\alpha^2,i))=\langle\sigma^2\rangle$ is a normal subgroup.
 \end{example}
-\subsection{More on Galois groups}
-We now examine the behavior of Galois groups under lifting and under
-composites. As usual, we assume that all composites mentioned are defined.\par
+\subsection{Galois groups of lifting and composites}
+We now examine the behavior of Galois groups under lifting and under composites. As usual, we assume that all composites mentioned are defined.\par
 Let $K\sub E$ be normal and let $K\sub F$. Any $\sigma\in\Gal(EF/F)$, the Galois group of the lifting, is uniquely determined by what it does to $E$ (since it fixes $F$) and so the restriction map $\sigma\mapsto\sigma|_E$ is an injection. Since $E/K$ is normal, it follows that $\sigma|_E\in\Gal(E/K)$. But $\sigma|_E$ may fix more than $K$: It also fixes every element of $E$ that is fixed by $\sigma$, that is,
 \[\sigma|_E\in\Gal(E/E\cap EF^{\Gal(EF/F)})=\Gal(E/E\cap\cl(F)).\]
 Note that the restriction map is a homomorphism, and hence an embedding of $\Gal(EF/F)$ into $\Gal(E/E\cap\cl(F))$. We will show that this embedding is actually an isomorphism and

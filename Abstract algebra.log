@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.12.14)  1 MAR 2023 23:07
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.12.14)  14 MAR 2023 20:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1697,30 +1697,39 @@ Package: scalerel 2016/12/29 v1.8 Routines for constrained scaling and stretchin
 \LMpt=\skip258
 ) (d:/texlive/2019/texmf-dist/tex/latex/fundus-calligra/calligra.sty
 Package: calligra 2012/04/10 v1.9 LaTeX package calligra
+) (d:/texlive/2019/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box130
+\UL@hyphenbox=\box131
+\UL@skip=\skip259
+\UL@hook=\toks60
+\UL@height=\dimen470
+\UL@pe=\count396
+\UL@pixel=\dimen471
+\ULC@box=\box132
+Package: ulem 2012/05/18
+\ULdepth=\dimen472
 )
 LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
-(Font)                  U/stmry/b/n --> U/stmry/m/n on input line 57.
+(Font)                  U/stmry/b/n --> U/stmry/m/n on input line 59.
  (d:/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybending.code.tex
 File: tikzlibrarybending.code.tex 2019/08/03 v3.1.4b (3.1.4b)
  (d:/texlive/2019/texmf-dist/tex/generic/pgf/modules/pgfmodulebending.code.tex
 File: pgfmodulebending.code.tex 2019/08/03 v3.1.4b (3.1.4b)
  (d:/texlive/2019/texmf-dist/tex/generic/pgf/modules/pgfmodulenonlineartransformations.code.tex
 File: pgfmodulenonlineartransformations.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-\pgftransformnonlinearflatness=\dimen470
+\pgftransformnonlinearflatness=\dimen473
 ) (d:/texlive/2019/texmf-dist/tex/generic/pgf/libraries/pgflibrarycurvilinear.code.tex
 File: pgflibrarycurvilinear.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-\pgf@curvilinear@time@a=\dimen471
-\pgf@curvilinear@length@a=\dimen472
-\pgf@curvilinear@length@b=\dimen473
-\pgf@curvilinear@length@c=\dimen474
-\pgf@curvilinear@length@d=\dimen475
+\pgf@curvilinear@time@a=\dimen474
+\pgf@curvilinear@length@a=\dimen475
+\pgf@curvilinear@length@b=\dimen476
+\pgf@curvilinear@length@c=\dimen477
+\pgf@curvilinear@length@d=\dimen478
 )
-\pgf@arrows@the@rigidity=\dimen476
+\pgf@arrows@the@rigidity=\dimen479
 ))
-LaTeX Font Info:    Redeclaring math alphabet \mathbb on input line 77.
- (d:/texlive/2019/texmf-dist/tex/latex/subdepth/subdepth.sty
-Package: subdepth 2007/09/02 v0.1 Unify subscript depths
-)) (d:/texlive/2019/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+LaTeX Font Info:    Redeclaring math alphabet \mathbb on input line 83.
+) (d:/texlive/2019/texmf-dist/tex/latex/adjustbox/adjustbox.sty
 Package: adjustbox 2019/01/04 v1.2 Adjusting TeX boxes (trim, clip, ...)
  (d:/texlive/2019/texmf-dist/tex/latex/adjustbox/adjcalc.sty
 Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back-ends (calc, etex, pgfmath)
@@ -1728,103 +1737,92 @@ Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back-
 Package: trimclip 2018/04/08 v1.1 Trim and clip general TeX material
  (d:/texlive/2019/texmf-dist/tex/latex/collectbox/collectbox.sty
 Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
-\collectedbox=\box130
+\collectedbox=\box133
 )
-\tc@llx=\dimen477
-\tc@lly=\dimen478
-\tc@urx=\dimen479
-\tc@ury=\dimen480
+\tc@llx=\dimen480
+\tc@lly=\dimen481
+\tc@urx=\dimen482
+\tc@ury=\dimen483
 Package trimclip Info: Using driver 'tc-xetex.def'.
  (d:/texlive/2019/texmf-dist/tex/latex/adjustbox/tc-xetex.def
 File: tc-xetex.def 2019/01/04 v2.2 Clipping driver for xetex
 ))
-\adjbox@Width=\dimen481
-\adjbox@Height=\dimen482
-\adjbox@Depth=\dimen483
-\adjbox@Totalheight=\dimen484
-\adjbox@pwidth=\dimen485
-\adjbox@pheight=\dimen486
-\adjbox@pdepth=\dimen487
-\adjbox@ptotalheight=\dimen488
+\adjbox@Width=\dimen484
+\adjbox@Height=\dimen485
+\adjbox@Depth=\dimen486
+\adjbox@Totalheight=\dimen487
+\adjbox@pwidth=\dimen488
+\adjbox@pheight=\dimen489
+\adjbox@pdepth=\dimen490
+\adjbox@ptotalheight=\dimen491
  (d:/texlive/2019/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count396
+\c@checkoddpage=\count397
 ) (d:/texlive/2019/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box131
-\sift@deathcycles=\count397
-\@vwid@loff=\dimen489
-\@vwid@roff=\dimen490
+\@vwid@box=\box134
+\sift@deathcycles=\count398
+\@vwid@loff=\dimen492
+\@vwid@roff=\dimen493
 )) (d:/texlive/2019/texmf-dist/tex/latex/tools/indentfirst.sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
-\c@theorem=\count398
-\c@exercise=\count399
-\c@remark=\count400
- (./Abstract algebra.aux (./chapter/commutative-algebra.aux
-
-LaTeX Warning: Label `filtration and graded endomorphism Hilbert-Samuel series relation-2' multiply defined.
-
-) (./chapter/sheaf.aux) (./chapter/scheme.aux
-
-LaTeX Warning: Label `scheme over Noe Chow lemma-2' multiply defined.
-
-
-LaTeX Warning: Label `scheme affine cone over Proj isomorphic to Proj-2' multiply defined.
-
-))
+\c@theorem=\count399
+\c@exercise=\count400
+\c@remark=\count401
+ (./Abstract algebra.aux (./chapter/inf-category.aux))
 \openout1 = `"Abstract algebra.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/npxmi/m/it on input line 30.
-LaTeX Font Info:    Trying to load font information for OML+npxmi on input line 30.
+LaTeX Font Info:    Checking defaults for OML/npxmi/m/it on input line 33.
+LaTeX Font Info:    Trying to load font information for OML+npxmi on input line 33.
  (d:/texlive/2019/texmf-dist/tex/latex/newpx/omlnpxmi.fd
 File: omlnpxmi.fd 2013/03/21 Fontinst v1.933 font definitions for OML/npxmi.
 )
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/npxexa/m/n on input line 30.
-LaTeX Font Info:    Trying to load font information for U+npxexa on input line 30.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/npxexa/m/n on input line 33.
+LaTeX Font Info:    Trying to load font information for U+npxexa on input line 33.
  (d:/texlive/2019/texmf-dist/tex/latex/newpx/unpxexa.fd
 File: unpxexa.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxexa.
 )
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 30.
-LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 30.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 33.
+LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 33.
  (d:/texlive/2019/texmf-dist/tex/latex/cbfonts-fd/lgrcmr.fd
 File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
 )
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for LMS/npxsy/m/n on input line 30.
-LaTeX Font Info:    Trying to load font information for LMS+npxsy on input line 30.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for LMS/npxsy/m/n on input line 33.
+LaTeX Font Info:    Trying to load font information for LMS+npxsy on input line 33.
  (d:/texlive/2019/texmf-dist/tex/latex/newpx/lmsnpxsy.fd
 File: lmsnpxsy.fd 2016/07/04 Fontinst v1.933 font definitions for LMS/npxsy.
 )
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for LMX/npxexx/m/n on input line 30.
-LaTeX Font Info:    Trying to load font information for LMX+npxexx on input line 30.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for LMX/npxexx/m/n on input line 33.
+LaTeX Font Info:    Trying to load font information for LMX+npxexx on input line 33.
  (d:/texlive/2019/texmf-dist/tex/latex/newpx/lmxnpxexx.fd
 File: lmxnpxexx.fd 2016/07/04 Fontinst v1.933 font definitions for LMX/npxexx.
 )
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Trying to load font information for T1+ppl on input line 30.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Trying to load font information for T1+ppl on input line 33.
  (d:/texlive/2019/texmf-dist/tex/latex/psnfss/t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 )
-\AtBeginShipoutBox=\box132
-Package hyperref Info: Link coloring ON on input line 30.
+\AtBeginShipoutBox=\box135
+Package hyperref Info: Link coloring ON on input line 33.
  (d:/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (d:/texlive/2019/texmf-dist/tex/latex/oberdiek/refcount.sty
@@ -1832,11 +1830,11 @@ Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
 ) (d:/texlive/2019/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count401
+\c@section@level=\count402
 )
-LaTeX Info: Redefining \ref on input line 30.
-LaTeX Info: Redefining \pageref on input line 30.
-LaTeX Info: Redefining \nameref on input line 30.
+LaTeX Info: Redefining \ref on input line 33.
+LaTeX Info: Redefining \pageref on input line 33.
+LaTeX Info: Redefining \nameref on input line 33.
  (./Abstract algebra.out) (./Abstract algebra.out)
 \@outlinefile=\write6
 \openout6 = `"Abstract algebra.out"'.
@@ -1849,16 +1847,17 @@ LaTeX Info: Redefining \nameref on input line 30.
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
+* hratio: 1:1
 * modes: twoside 
-* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
-* v-part:(T,H,B)=(85.35826pt, 674.33032pt, 85.35826pt)
+* h-part:(L,W,R)=(72.26999pt, 452.9679pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=455.24411pt
-* \textheight=674.33032pt
-* \oddsidemargin=-1.1381pt
-* \evensidemargin=-1.1381pt
-* \topmargin=-18.78552pt
+* \textwidth=452.9679pt
+* \textheight=700.50687pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-31.8738pt
 * \headheight=15.0pt
 * \headsep=19.8738pt
 * \topskip=11.0pt
@@ -1876,7 +1875,7 @@ LaTeX Info: Redefining \nameref on input line 30.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 30.
+LaTeX Info: Redefining \microtypecontext on input line 33.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: No adjustment of tracking.
@@ -1885,7 +1884,7 @@ Package microtype Info: No adjustment of kerning.
 (d:/texlive/2019/texmf-dist/tex/latex/microtype/mt-ppl.cfg
 File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
 )
-LaTeX Font Info:    Trying to load font information for T1+qzc on input line 32.
+LaTeX Font Info:    Trying to load font information for T1+qzc on input line 35.
  (d:/texlive/2019/texmf-dist/tex/latex/tex-gyre/t1qzc.fd
 File: t1qzc.fd 2009/09/25 v1.2 font definition file for T1/qzc
 )
@@ -1893,17 +1892,17 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `qzc' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 36.
+LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 39.
  (d:/texlive/2019/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 36.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 39.
  (d:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (d:/texlive/2019/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 39.
  (d:/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (d:/texlive/2019/texmf-dist/tex/latex/microtype/mt-msb.cfg
@@ -1913,22 +1912,135 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (
 ) (d:/texlive/2019/texmf-dist/tex/latex/microtype/mt-eur.cfg
 File: mt-eur.cfg 2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 36.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 39.
  (d:/texlive/2019/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 36.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 39.
  (d:/texlive/2019/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
-LaTeX Font Info:    Trying to load font information for U+npxmia on input line 36.
+LaTeX Font Info:    Trying to load font information for U+npxmia on input line 39.
  (d:/texlive/2019/texmf-dist/tex/latex/newpx/unpxmia.fd
 File: unpxmia.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxmia.
 )
-LaTeX Font Info:    Trying to load font information for U+npxsym on input line 36.
+LaTeX Font Info:    Trying to load font information for U+npxsym on input line 39.
  (d:/texlive/2019/texmf-dist/tex/latex/newpx/unpxsym.fd
 File: unpxsym.fd 2015/03/21 Fontinst v1.933 font definitions for U/npxsym.
 )
-LaTeX Font Info:    Trying to load font information for U+npxsyc on input line 36.
+LaTeX Font Info:    Trying to load font information for U+npxsyc on input line 39.
  (d:/texlive/2019/texmf-dist/tex/latex/newpx/unpxsyc.fd
 File: unpxsyc.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxsyc.
 )
-File: pictures/blowup_A2.png Graphic file (ty
+File: pictures/blowup_A2.png Graphic file (type bmp)
+<pictures/blowup_A2.png>
+ (d:/texlive/2019/texmf-dist/tex/generic/stringenc/se-ascii-print.def
+File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
+) [1
+
+
+
+
+]
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <24.88> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 41.
+ (./Abstract algebra.toc
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 2.
+)
+\tf@toc=\write7
+\openout7 = `"Abstract algebra.toc"'.
+
+ [2]
+\openout2 = `chapter/inf-category.aux'.
+
+ (./chapter/inf-category.tex
+Chapter 1.
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <20.74> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 1.
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <18.2> not available
+(Font)              size <17.28> substituted on input line 1.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <13.7> not available
+(Font)              size <14.4> substituted on input line 1.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <18.2> not available
+(Font)              size <17.28> substituted on input line 1.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <13.7> not available
+(Font)              size <14.4> substituted on input line 1.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <18.2> not available
+(Font)              size <17.28> substituted on input line 1.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <13.7> not available
+(Font)              size <14.4> substituted on input line 1.
+
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <18.2> not available
+(Font)              size <17.28> substituted on input line 1.
+
+
+LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <13.7> not available
+(Font)              size <14.4> substituted on input line 1.
+
+
+LaTeX Font Warning: Font shape `U/stmry/m/n' in size <18.2> not available
+(Font)              size <17.28> substituted on input line 1.
+
+
+LaTeX Font Warning: Font shape `U/stmry/m/n' in size <13.7> not available
+(Font)              size <14.4> substituted on input line 1.
+
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 2.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 7.
+(d:/texlive/2019/texmf-dist/tex/latex/psnfss/t1phv.fd
+File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `phv' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ [3
+
+
+]
+LaTeX Font Info:    Trying to load font information for OMS+ppl on input line 33.
+ (d:/texlive/2019/texmf-dist/tex/latex/psnfss/omsppl.fd
+File: omsppl.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 33.
+ [4]
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 41.
+ [5] [6] [7] [8] [9] [10] [11] [12] [13]) [14]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 70.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 70.
+ (./Abstract algebra.aux (./chapter/inf-category.aux))
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 70.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 70.
+Package rerunfilecheck Info: File `"Abstract algebra".out' has not changed.
+(rerunfilecheck)             Checksum: <no file>.
+
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 1.64499pt have occurred.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 70.
+ ) 
+Here is how much of TeX's memory you used:
+ 49060 strings out of 492473
+ 956130 string characters out of 6132687
+ 1107588 words of memory out of 5000000
+ 52667 multiletter control sequences out of 15000+600000
+ 636870 words of font info for 255 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 64i,15n,99p,1624b,1132s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on Abstract algebra.pdf (14 pages).

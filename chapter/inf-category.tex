@@ -1,0 +1,302 @@
+\chapter{The language of \boldmath\texorpdfstring{$\infty$}{inf}-category}
+\section{Simplicial sets}
+For each integer $n\geq 0$, we define the \textbf{$n$-simplex}
+\[|\Delta^n|=\{(t_0,\dots,t_n)\in[0,1]^{n+1}:t_0+\cdots+t_n=1\}.\]
+as a topological simplex of dimension $n$. For any topological space $X$, a continuous map $\sigma:|\Delta^n|\to X$ is called a \textbf{singular $\bm{n}$-simplex} in $X$. Every singular $n$-simplex $\sigma$ determines a finite collection of singular $(n-1)$-simplices $\{d_i\sigma\}_{0\leq i\leq n}$, called the faces of $\sigma$, which are given explicitly by the formula
+\[(d_i\sigma)(t_0,\dots,t_{n-1})=\sigma(t_0,t_1,\dots,t_{i-1},0,t_i,\dots,t_{n-1}).\]
+Let $\Sing_n(X)=\Hom_{\mathsf{Top}}(|\Delta^n|,X)$ denote the set of singular $n$-simplices of $X$. Many important algebraic invariants of $X$ can be directly extracted from the sets $\{\Sing_n(X)\}_{n\geq 0}$ and the face maps $\{d_i:\Sing_n(X)\to\Sing_{n-1}(X)\}_{0\leq i\leq n}$.
+\begin{example}[\textbf{Singular Homology}]\label{simplicial set singular homology from Sing}
+For any topological space $X$, the singular homology groups $H_*(X,\Z)$ are defined as the homology groups of a chain complex
+\[\begin{tikzcd}
+\cdots\ar[r,"\partial"]&\Z[\Sing_2(X)]\ar[r,"\partial"]&\Z[\Sing_1(X)]\ar[r,"\partial"]&\Z[\Sing_0(X)]
+\end{tikzcd}\]
+where $\Z[\Sing_n(X)]$ is the free abelian group over $\Sing_n(X)$ and the boundary map $\partial$ is defined by
+\[\partial(\sigma)=\sum_{i=0}^{n}(-1)^id_i\sigma.\]
+\end{example}
+For some other algebraic invariants, it is convenient to keep track of a bit more structure. A singular $n$-simplex $\sigma:|\Delta^n|\to X$ also determines a collection of singular $(n+1)$-simplices $\{s_i\sigma\}_{0\leq i\leq n}$, given by the formula
+\[(s_i\sigma)(t_0,\dots,t_{n+1})=\sigma(t_0,t_1,\dots,t_{i-1},t_i+t_{i+1},t_{i+2},\dots,t_{n+1}).\]
+The resulting constructions $s_i:\Sing_n(X)\to\Sing_{n+1}(X)$ are called \textbf{degeneracy maps}, because singular $(n+1)$-simplices of the form $s_i\sigma$ factor through the linear projection $|\Delta^{n+1}|\to|\Delta^n|$. For example, the map $s_0:\Sing_0(X)\to\Sing_1(X)$ carries each point $x\in X\cong\Sing_0(X)$ to the constant map $\uline{x}:\Delta^1\to X$ taking the value $x$. In general, one can view the map $s_i$ as obtained by "squashing" the simplex $|\Delta^{n+1}|$ along the direction of one of its face to obtain a $|\Delta^n|$.
+\begin{example}[\textbf{Fundamental Group}]\label{simplicial set pi_1 from Sing}
+Let $X$ be a topological space equipped with a base point $x\in X\cong\Sing_0(X)$. Then continuous paths $p:[0,1]\to X$ satisfying $p(0)=p(1)=x$ can be identified with elements of the set $\{\sigma\in\Sing_1(X):d_0\sigma=d_1\sigma=x\}$. The fundamental group $\pi_1(X,x)$ can then be described as the quotient
+\[\{\sigma\in\Sing_1(X):d_0(\sigma)=d_1(\sigma)=x\}/\sim\]
+where $\sim$ is the equivalence relation on $\Sing_1(X)$ described by $\sigma\sim\sigma'$ if and only if there exists $\tau\in\Sing_2(X)$ such that $d_0(\tau)=s_0(x)$, $d_1(\tau)=\sigma$ and $d_2(\tau)=\sigma'$. The datum of a $2$-simplex $\tau$ satisfying these conditions is equivalent to the datum of a continuous map $|\Delta^2|\to X$ with boundary behavior as indicated in the following diagram
+\[\begin{tikzcd}
+&x\ar[rd,"\uline{x}"]&\\
+x\ar[ru,"\sigma'"]\ar[rr,"\sigma"]&&x
+\end{tikzcd}\]
+It is easy to see that such a map can be identified with a homotopy between the paths determined by $\sigma$ and $\sigma'$.
+\end{example}
+Motivated by the preceding examples, we can ask the following question: given a topological space $X$, what can we say about the collection of sets $\{\Sing_n(X)\}_{n\geq 0}$, together with the face and degeneracy maps
+\[d_i:\Sing_n(X)\to\Sing_{n-1}(X),\quad s_i:\Sing_n(X)\to\Sing_{n+1}(X).\]
+Eilenberg and Zilber supplied an answer to this by introducing what they called \textit{complete semi-simplicial complexes}, which are now more commonly known as \textit{simplicial sets}. Roughly speaking, a simplicial set $S_\bullet$ is a collection of sets $\{S_n\}_{n\geq 0}$ indexed by the nonnegative integers, equipped with face and degeneracy operators $\{d_i:S_n\to S_{n-1},s_i:S_n\to S_{n+1}\}_{0\leq i\leq n}$ satisfying a short list of identities. These identities can be summarized conveniently by saying that a simplicial set is a presheaf on the simplex category $\Delta$, which we will define later. Simplicial sets are connected to algebraic topology by two closely related constructions
+\begin{itemize}
+\item For every topological space $X$, the face and degeneracy operators defined above endow the collection $\{\Sing_n(X)\}_{n\geq 0}$ with the structure of a simplicial set. We denote this simplicial set by $\Sing_\bullet(X)$ and refer to it as the \textbf{singular simplicial set of $X$}. These simplicial sets tend to be quite large: in any nontrivial example, the sets $\Sing_n(X)$ will be uncountable for every nonnegative integer $n$.
+\item Any simplicial set $S_\bullet$ can be regarded as a "blueprint" for constructing a topological space $|S_\bullet|$ called the \textbf{geometric realization} of $S_\bullet$, which can be obtained as a quotient of the disjoint union $\coprod_{n\geq 0}S_n\times|\Delta^n|$ by an equivalence relation determined by the face and degeneracy operators on $S_\bullet$. Many topological spaces of interest (for example, any space which admits a finite triangulation) can be realized as a geometric realization of a simplicial set $S_\bullet$ having only finitely many nondegenerate simplices.
+\end{itemize}
+These constructions determine adjoint functors
+\[\begin{tikzcd}
+\mathbf{Set}_{\Delta}\ar[r,shift left=1mm,"|\ |"]&\mathbf{Top}\ar[l,shift left=1mm,"\Sing_\bullet"]
+\end{tikzcd}\]
+relating the category $\mathbf{Set}_\Delta$ of simplicial sets to the category $\mathbf{Top}$ of topological spaces. For any (pointed) topological space $X$, Example~\ref{simplicial set singular homology from Sing} and Example~\ref{simplicial set pi_1 from Sing} the singular homology and fundamental group of $X$ can be recovered from the simplicial set $\Sing_\bullet(X)$. In fact, one can say more: under mild assumptions, the entire homotopy type of $X$ can be recovered from $\Sing_\bullet(X)$. More precisely, there is always a canonical map $|\Sing_\bullet(X)|\to X$ (given by the counit of the adjunction described above), and Giever proved that it is always a weak homotopy equivalence (hence a homotopy equivalence when $X$ has the homotopy type of a CW complex). Consequently, for the purpose of studying homotopy theory, nothing is lost by replacing $X$ by $\Sing_\bullet(X)$ and working in the setting of simplicial sets, rather than topological spaces. In fact, it is possible to develop the theory of algebraic topology in entirely combinatorial terms, using simplicial sets as surrogates for topological spaces. However, not every simplicial set $S_\bullet$ behaves like the singular complex of a space, and it is therefore necessary to single out a class of "good" simplicial sets to work with. Later we will introduce a special class of simplicial sets, called \textit{Kan complexes}. By a theorem of Milnor, the homotopy theory of Kan complexes is equivalent to the classical homotopy theory of CW complexes.
+\subsection{Simplicial and cosimplicial objects}
+For every nonnegative integer $n$, we let $[n]$ denote the linearly ordered $\{0,1,\dots,n\}$. We define a category $\Delta$ (called the \textbf{simplex category}) over the ordered sets $[n]$ for $n\geq 0$: a morphism from $[m]$ to $[n]$ in the category $\Delta$ is a \textit{nondecreasing} function $\alpha:[m]\to[n]$. We note that the category $\Delta$ is equivalent to the category of all nonempty finite linearly ordered sets, with morphisms given by nondecreasing maps. In fact, we can say something even better: for every nonempty finite linearly ordered set $I$, there is a unique order-preserving bijection $I\cong[n]$, for some $n\geq 0$.\par
+Now let $\mathcal{C}$ be an arbitray category. A \textbf{simplicial object} (resp. \textbf{cosimplicial object}) of $\mathcal{C}$ is defined to be a contravariant functor $\Delta\to\mathcal{C}$ (resp. convariant functor $\Delta\to\mathcal{C}$). We often use the notation $C_\bullet$ to denote a simplicial object of $\mathcal{C}$. In this case, we use $C_n$ (resp. $C^n$) to denote the value of $C_\bullet$ (resp. $C^\bullet$) on $[n]\in\Delta$.\par
+As a variant of the category $\Delta$, we define $\Delta_{\inj}$ to be the category whose objects are sets of the form $[n]$ (where $n$ is a nonnegative integer) and whose morphisms are strictly increasing functions $\alpha:[m]\to[n]$. If $\mathcal{C}$ is a category, a contravariant functor $\Delta_{\inj}\to\mathcal{C}$ (resp. covariant functor) as a \textbf{semi-simplicial object} (\textbf{semi-cosimplicial object}) of $\mathcal{C}$. We use the notation $C_\bullet$ to indicate a semi-simplicial object of $\mathcal{C}$, whose value on an object $[n]\in\Delta_{\inj}$ we denote by $C_n$.
+\begin{remark}
+The category $\Delta_{\inj}$ can be regarded as a (non-full) subcategory of the category $\Delta$. Consequently, any simplicial object $C_\bullet$ of a category $\mathcal{C}$ determines a semisimplicial object of $\mathcal{C}$, given by the composition
+\[\begin{tikzcd}
+\Delta_{\inj}^{\op}\ar[r,hook]&\Delta^{\op}\ar[r,"C_\bullet"]&\mathcal{C}
+\end{tikzcd}
+\]
+We will often abuse notation by identifying a simplicial object $C_\bullet$ of $\mathcal{C}$ with the underlying semisimplicial object of $\mathcal{C}$.
+\end{remark}
+To a first degree of approximation, a simplicial object $C_\bullet$ of a category $\mathcal{C}$ can be identified with the collection of objects $\{C_n\}_{n\geq 0}$. However, these objects are equipped with additional structure, arising from the morphisms in the simplex category $\Delta$. We now spell this out more concretely.\par
+Let $n$ be a positive integer. For $0\leq i\leq n$, we let $\delta^i:[n-1]\to[n]$ be the unique strictly increasing function whose image does not contain the element $i$, given concretely by the formula
+\[\delta^i(j)=\begin{cases}
+j&\text{if $j<i$},\\
+j+1&\text{if $j\geq i$}.
+\end{cases}\]
+If $C_\bullet$ is a (semi-)simplicial object of $\mathcal{C}$, then we can evaluate $C_\bullet$ on the morphism $\delta^i$ to obtain a morphism $d_i:C_n\to C_{n-1}$, called the $i$-th \textbf{face map} of $C_\bullet$. Dually, if $C^\bullet$ is a cosimplicial object of $\mathcal{C}$, then the evaluation of $C^\bullet$ on the morphism $d^i:C^{n-1}\to C^n$ determines a map $d^i:C^{n-1}\to C^n$, called the $i$-th \textbf{coface map}.\par
+Smilarly, for $0\leq i\leq n$, let $\sigma^i:[n+1]\to[n]$ denote the function given by the formula
+\[\sigma^i(j)=\begin{cases}
+j&\text{if $j\leq i$},\\
+j-1&\text{if $j>i$}.
+\end{cases}\]
+If $C_\bullet$ is a simplicial object of a category $\mathcal{C}$, then we can evaluate $C_\bullet$ on the morphism $\sigma_i$ to obtain a morphism $s_i:C_n\to C_{n+1}$, called the $i$-th \textbf{degeneracy map}. Dually, if $C^\bullet$ is a cosimplicial object of $\mathcal{C}$, then the evaluation on $C^\bullet$ on the morphism $\sigma_i$ determines a map $s^i:C^{n+1}\to C^n$, which is called the $i$-th \textbf{codegeneracy map}.
+\begin{proposition}\label{simplicial set face degeneracy map char}
+Let $C_\bullet$ be a simplicial object of a category $\mathcal{C}$. Then the face maps and degeneracy maps satisfy the following simplicial identities:
+\begin{itemize}
+\item[(S1)] For $0\leq i<j\leq n$, we have $d_i\circ d_j=d_{j-1}\circ d_i$.
+\item[(S2)] For $0\leq i\leq j\leq n$, we have $s_i\circ s_j=s_{j+1}\circ s_i$.
+\item[(S3)] For $0\leq i,j\leq n$, we have
+\[d_i\circ s_j=\begin{cases}
+s_{j-1}\circ d_i&\text{if $i<j$},\\
+1_{C_n}&\text{if $i=j$ or $i=j+1$},\\
+s_j\circ d_{i-1}&\text{if $i>j+1$}.
+\end{cases}\] 
+\end{itemize}
+Conversely, any collection of objects $\{C_n\}_{n\geq 0}$ and morphisms $\{d_i:C_n\to C_{n-1},s_i:C_n\to C_{n+1}\}_{0\leq i\leq n}$ satisfying these conditions determine a unique simplicial object of $\mathcal{C}$.
+\end{proposition}
+\begin{proof}
+The above conditions in fact hold for the maps $\delta^i$ and $\sigma^i$, so the first assertion follows from the functoriality. Conversely, let $\{d_i:C_n\to C_{n-1},s_i:C_n\to C_{n+1}\}_{0\leq i\leq n}$ be a family of morphisms satisfying the simplicial identities. In order to define a contravariant functor $C_\bullet:\Delta\to\mathcal{C}$ such that $C_\bullet([n])=C_n$, we show that any nondecreasing map $\alpha:[m]\to[n]$, where $m\leq n$, can be written as a composition of the $d_i$ and $s_i$. For this, let $\alpha_1\leq\alpha_2\leq\cdots\leq\alpha_m$ be the image of $\alpha$. First, we consider the map $(\delta^1)^{\alpha_1-1}:[m]\to[m+\alpha_1]$, which maps $[m]$ to the sequence
+\[(\alpha_1,\alpha_1+1,\dots,\alpha_1+m-1).\]
+We divide into two cases: if $\alpha_1=\alpha_2$, then the composition $\sigma^{\alpha_1}\circ(\delta^1)^{\alpha_1-1}$ sends $[m]$ to the sequence
+\[(\alpha_1,\alpha_2,\alpha_2+1,\dots,\alpha_1+m-2).\]
+On the other hand, if $\alpha_1<\alpha_2$, then $(\delta^{\alpha_1+1})^{\alpha_2-\alpha_1-1}\circ (\delta^1)^{\alpha_1-1}$ sends $[m]$ to the sequence
+\[(\alpha_1,\alpha_2,\alpha_2+1,\dots,\alpha_2+m-2).\]
+Repeating this procedure, it is clear that we can obtain a map which sends $[m]$ onto the sequence $(\alpha_1,\dots,\alpha_n)$. This map then necessarily coincides with $\alpha$, after we apply $d_i$ or $s_i$ to adjusting its codomain. 
+\end{proof}
+\begin{corollary}\label{semi-simplicial set face map char}
+Let $C_\bullet$ be a semi-simplicial object of a category $\mathcal{C}$. Then the face maps satisfy the condition (S1). Conversely, any collection of objects $\{C_n\}_{n\geq 0}$ and morphisms $\{d_i:C_n\to C_{n-1}\}_{0\leq i\leq n}$ satisfying (S1) determine a unique semisimplicial object of $\mathcal{C}$.
+\end{corollary}
+\begin{proof}
+This follows from the fact that any increasing map $\alpha:[m]\to[n]$ can be written as a composition of the $d_i$.
+\end{proof}
+Let $\mathbf{Set}$ denote the category of sets. A \textbf{simplicial set} is then by definition a simplicial object of $\mathbf{Set}$: that is, a contravariant functor $\Delta\to\mathbf{Set}$. Similarly, a \textbf{semi-simplicial set} is a convariant functor $\Delta\to\mathbf{Set}$. If $S_\bullet$ is a (semi-)simplicial set, then the elements of $S_n$ are called the \textbf{$\bm{n}$-simplices} of $S_\bullet$. The elements of $S_0$ and $S_1$ are also called the \textbf{vertices} and \textbf{edges} of $S_\bullet$ of $S_\bullet$, respectively. The category of contravariant functors from $\Delta$ to $\mathbf{Set}$ is denoted by $\mathbf{Set}_\Delta=\Fun(\Delta^{\op},\mathbf{Set})$ and called the \textbf{category of simplicial sets}.
+\begin{remark}
+Since the category of sets has all (small) limits and colimits, the category of (semi-)simplicial sets also has all (small) limits and colimits. Moreover, these limits and colimits are computed levelwise: for any functor
+\[S_\bullet:\mathcal{C}\to\mathbf{Set}_{\Delta},\quad \mathcal{C}\ni C\mapsto S_\bullet(C)\]
+and any nonnegative integer $n$, we have canonical bijections
+\[(\rlim_{C\in\mathcal{C}}S(C))_n=\rlim_{C\in\mathcal{C}}S_n(C),\quad (\llim_{C\in\mathcal{C}}S(C))_n=\llim_{C\in\mathcal{C}}S_n(C).\]
+\end{remark}
+\begin{example}
+Let $S_\bullet$ be a simplicial set. Suppose that, for every integer $n\geq 0$, we are given a subset $T_n\sub S_n$, and that the face and degeneracy maps $d_i:S_n\to S_{n-1}$, $s_i:S_n\to S_{n+1}$ send $T_n$ into $T_{n-1}$ and $T_{n+1}$, respectively. Then by Proposition~\ref{simplicial set face degeneracy map char}, the collection $\{T_n\}_{n\geq 0}$ inherits the structure of a simplicial set $T_\bullet$. In this case, we say that $T_\bullet$ is a simplicial subset of $S_\bullet$ and write $T_\bullet\sub S_\bullet$.
+\end{example}
+We now consider some elementary examples of simplicial sets. First, for any integer $n\geq 0$, the object $[n]$ itself determines a simplicial set $\Delta^n=h^{[n]}$: that is, the simplicial set which send $[m]\in\Delta$ to $\Hom_\Delta([m],[n])$. The simplicial set $\Delta^n$ is called the \textbf{standard $\bm{n}$-simplex}, and by convention, we set $\Delta^{-1}=\emp$ for $n=-1$.\par
+Since any set can be mapped onto $[0]$ in a unique way, it is clear that the standard $0$-simplex $\Delta^0$ is a final object of the category of simplicial sets; note that $\Delta^0$ carries each $[n]$ to a set having a single element.\par
+For each $n\geq 0$, the standard $n$-simplex $\Delta^n$ is characterized by the following universal property: for every simplicial set $S_\bullet$, Yoneda's lemma supplies a bijection
+\[\Hom_{\mathbf{Set}_{\Delta}}(\Delta^n,S_\bullet)\cong S_n.\]
+We often invoke this bijection implicitly to identify $n$-simplices of $S_\bullet$ with maps of simplicial sets $\sigma:\Delta^n\to S_\bullet$.
+\begin{example}
+Let $S_\bullet$ be a simplicial set and let $v$ be a vertex of $S_\bullet$. Then $v$ can be identified with a map of simplicial sets $\Delta^0\to S_\bullet$. This map is automatically a monomorphism (note that $\Delta^0$ has only a single $n$-simplex for every $n\geq 0$), whose image is a simplicial subset of $S_\bullet$. It will often be convenient to denote this simplicial subset by $\{v\}$. For example, since $\Delta^n([0])=\Hom_{\Delta}([0],[n])$, we can identify the vertices of the standard $n$-simplex $\Delta^n$ with the set $[n]$: every integer $0\leq i\leq n$ determines a simplicial subset $\{i\}\sub\Delta^n$ whose $k$-simplices are the constant maps $[k]\to[n]$ taking the value $i$.
+\end{example}
+Let $n\geq 0$ be an integer. We define a simplicial set $(\partial\Delta^n)$ by the formula
+\[(\partial\Delta^n)([m])=\{\alpha\in\Hom_{\Delta}([m],[n]):\text{$\alpha$ is not surjective}\}.\]
+Note that we can regard $\partial\Delta^n$ as a simplicial subset of the standard $n$-simplex $\Delta^n$. It is called the \textbf{boundary} of $\partial\Delta^n$. 
+\begin{example}
+We can think of the boundary $\partial\Delta^n$ as obtained from the $n$-simplex $\Delta^n$ by removing its interior. It is clear that $\partial\Delta^0=\emp$. Now for $0\leq i\leq n$, the map $\delta^i:[n-1]\to[n]$ determines a map of simplicial sets $\Delta^{n-1}\to\Delta^n$ which factors through the simplicial subset $\partial\Delta^n\sub\Delta^n$. We therefore obtain a map of simplicial sets $\Delta^{n-1}\to\partial\Delta^n$, which is also denoted by $\delta^i$. Now let $S_\bullet$ be a simplicial set, and consider the injective map
+\[\Hom_{\mathbf{Set}_\Delta}(\partial\Delta^n,S_\bullet)\to\prod_{i\in[n]}S_{n-1},\quad (f:\partial\Delta^n\to S_\bullet)\mapsto\{f\circ\delta^i\}_{0\leq i\leq n}\]
+where we use Yoneda's lemma to identify $\Hom_{\mathbf{Set}_\Delta}(\Delta^{n-1},S_\bullet)$ with $S_{n-1}$. The image of this map is the collection of sequences of $(n-1)$-simplicies $(\sigma_0,\sigma_1,\dots,\sigma_n)$ satisfying the identities $d_i(\sigma_j)=d_{j-1}(\sigma_i)$ for $0\leq i<j\leq n$.
+\end{example}
+Suppose we are given integers $0\leq i\leq n$. We define a simplicial set $\Lambda_i^n$ by the formula
+\[(\Lambda_i^n)([m])=\{\alpha\in\Hom_{\Delta}([m],[n]):\alpha([m])\cup\{i\}\neq[n]\}.\]
+We can consider $\Lambda_i^n$ as a simplicial subset of the boundary $\partial\Delta^n\sub\Delta^n$. It is called the $i$-th \textbf{horn} in $\Delta^n$. We say that $\Lambda_i^n$ is an \textbf{inner horn} if $0<i<n$, and an \textbf{outer horn} if $i=0$ or $n$.
+\begin{example}
+Roughly speaking, one can think of the horn $\Lambda_i^n$ as obtained from the $n$-simplex $\Delta^n$ by removing its interior together with the face opposite its $i$-th vertex. For example, the horns contained in $\Delta^2$ are depicted in the following diagram
+\[\begin{tikzcd}[row sep=12mm,column sep=8mm]
+&\{1\}\ar[d,phantom,"\Lambda_0^2"]\ar[rd,dashed]&\\
+\{0\}\ar[ru]\ar[rr]&{}&\{2\}
+\end{tikzcd}\quad \begin{tikzcd}[row sep=12mm,column sep=8mm]
+&\{1\}\ar[d,phantom,"\Lambda_1^2"]\ar[rd]&\\
+\{0\}\ar[ru]\ar[rr,dashed]&{}&\{2\}
+\end{tikzcd}\quad \begin{tikzcd}[row sep=12mm,column sep=8mm]
+&\{1\}\ar[d,phantom,"\Lambda_2^2"]\ar[rd]&\\
+\{0\}\ar[ru,dashed]\ar[rr]&{}&\{2\}
+\end{tikzcd}\]
+Here the dotted arrows indicate edges of $\Delta^2$ which are not contained in the corresponding horn.\par
+Now let $0\leq i\leq n$ be integers. For $j\in[n]\setminus\{i\}$, the map $\delta^j$ can be regarded as a map of simplicial sets from $\Delta^{n-1}$ to $\Lambda_i^n\sub\Delta^n$. For any simplicial set $S_\bullet$, we can therefore consider the injective map
+\[\Hom_{\mathbf{Set}_\Delta}(\Lambda_i^n,S_\bullet)\to\prod_{j\in[n]\setminus\{i\}}S_{n-1},\quad (f:\Lambda_i^n,S_\bullet)\mapsto\{f\circ\delta^j\}_{j\in[n]\setminus\{i\}}.\]
+It is not hard to see that the image of this map is the collection of "imcomplete" sequences $(\sigma_0,\dots,\sigma_{i-1},\ast,\sigma_{i+1},\dots,\sigma_n)$ satisfying $d_j(\sigma_k)=d_{k-1}(\sigma_j)$ for $j,k\in[n]\setminus\{i\}$, $j<k$.
+\end{example}
+\subsection{The skeletal filtration}
+Roughly speaking, one can think of the simplicial sets $\Delta^n$ as  elementary building blocks out of which more complicated simplicial sets can be constructed. In this subsection, we make this idea more precise by introducing the skeletal filtration of a simplicial set. This filtration allows us to write every simplicial set $S_\bullet$ as the union of an increasing sequence of simplicial subsets
+\[\sk_0(S_\bullet)\sub \sk_1(S_\bullet)\sub\cdots\sub \sk_n(S_\bullet)\sub\cdots\]
+where each $\sk_n(S_\bullet)$ is obtained from $\sk_{n-1}(S_\bullet)$ by attaching copies of $\Delta^n$. Before doing this, we need some preparations.
+\begin{proposition}\label{simplicial set n-simplex image of n-1 iff}
+Let $S_\bullet$ be a simplicial set and $\tau\in S_n$ be an $n$-simplex of $S_\bullet$ for $n>0$, which is also considered as a map $\tau:\Delta^n\to S_\bullet$. Then the following are equivalent:
+\begin{itemize}
+\item[(\rmnum{1})] The simplex $\tau$ belongs to the image of the degeneracy map $s_i:S_{n-1}\to S_n$ for some $0\leq i\leq n-1$.
+\item[(\rmnum{2})] The map $\tau$ factors as a composition $\Delta^{n}\stackrel{f}{\to}\Delta^{n-1}\to S_\bullet$, where $f$ corresponds to a surjective map of linearly ordered sets $[n]\to[n-1]$.
+\item[(\rmnum{3})] The map $\tau$ factors as a composition $\Delta^{n}\stackrel{f}{\to}\Delta^{m}\to S_\bullet$, where $f$ corresponds to a surjective map of linearly ordered sets $[n]\to[m]$.
+\item[(\rmnum{4})] The map $\tau$ factors as a composition $\Delta^n\to\Delta^m\to S_\bullet$ where $m<n$.
+\item[(\rmnum{5})] The map $\tau$ factors as a composition $\Delta^{n}\stackrel{\tau'}{\to}\Delta^{m}\to S_\bullet$, where $\tau'$ is not injective on vertices.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+The implications (\rmnum{1})$\Leftrightarrow$(\rmnum{2})$\Rightarrow$(\rmnum{3})$\Rightarrow$(\rmnum{4})$\Rightarrow$(\rmnum{5}) are immediate. We now show that (\rmnum{5})$\Rightarrow$(\rmnum{1}). Assume that $\tau$ factors into $\Delta^{n}\stackrel{\tau'}{\to}\Delta^{m}\to S_\bullet$, where $\tau'$ is not injective on vertices. Then there exists some integer $0\leq i<n$ satisfying $\tau'(i)=\tau'(i+1)$. It follows that $\tau'$ factors through the map $\sigma^i:\Delta^n\to\Delta^{n-1}$ of, so that $\tau$ belongs to the image of the degeneracy map $s_i$.
+\end{proof}
+Let $S_\bullet$ be a simplicial set and let $\sigma:\Delta^n\to S_\bullet$ be an $n$-simplex of $S_\bullet$. We say that $\sigma$ is \textbf{degenerate} if $n>0$ and $\sigma$ satisfies the equivalent conditions of Proposition~\ref{simplicial set n-simplex image of n-1 iff}; otherwise $\sigma$ is said to be \textbf{nondegenerate} (in particular, every $0$-simplex of $S_\bullet$ is nondegenerate).
+\begin{example}
+Let $f:S_\bullet\to T_\bullet$ be a map of simplicial sets. If $\sigma$ is a degenerate $n$-simplex of $S_\bullet$, then $f(\sigma)$ is a degenerate $n$-simplex of $T_\bullet$. The converse holds if $f$ is a monomorphism of simplicial sets (for example, if $S_\bullet$ is a simplicial subset of $T_\bullet$).
+\end{example}
+\begin{proposition}\label{simplicial set map from Delta^n factorization}
+Let $\sigma:\Delta^n\to S_\bullet$ be a map of simplicial sets. Then $\sigma$ can be factored uniquely as a composition
+\[\begin{tikzcd}
+\Delta^n\ar[r,"\alpha"]&\Delta^m\ar[r,"\tau"]&S_\bullet
+\end{tikzcd}\]
+where $\alpha$ corresponds to a surjective map of linearly ordered sets $[n]\to[m]$ and $\tau$ is a nondegenerate $m$-simplex of $S_\bullet$.
+\end{proposition}
+\begin{proof}
+Let $m$ be the smallest nonnegative integer for which $\sigma$ can be factored as a composition $\Delta^n\stackrel{\alpha}{\to}\Delta^m\stackrel{\tau}{\to}S_\bullet$. It follows from the minimality of $m$ that $\alpha$ must induce a surjection of linearly ordered sets $[n]\to[m]$ (otherwise, we could replace $[m]$ by the image of $\alpha$) and that the $m$-simplex $\tau$ is nondegenerate. This proves the existence of the desired factorization.\par
+Suppose we are given another factorization of $\sigma$ as a
+composition $\Delta^n\stackrel{\alpha'}{\to}\Delta^{m'}\stackrel{\tau'}{\to}S_\bullet$, and assume that $\alpha'$ induces a surjection $[n]\to[m']$. We first prove that for any pair of integers $0\leq i<j\leq n$ satisfying $\alpha'(i)=\alpha'(j)$, we also have $\alpha(i)=\alpha(j)$. Assume otherwise; then $\alpha$ admits a section $\beta:\Delta^m\hookrightarrow\Delta^n$ whose images include $i$ and $j$, and we have
+\[\tau=\tau\circ\alpha\circ\beta=\sigma\circ\beta=\tau'\circ\alpha'\circ\beta.\]
+Our assumption that $\alpha'(i)=\alpha'(j)$ guarantees that the map $(\alpha'\circ\beta):\Delta^m\to\Delta^{m'}$ is not injective on vertices, contradicting to the fact that $\tau$ is nondegenerate.\par
+Now it follows from the preceding argument that $\alpha$ factors uniquely as a composition $\Delta^n\stackrel{\alpha'}{\to}\Delta^{m'}\stackrel{\eta}{\to}\Delta^m$, for some morphism $\eta:\Delta^{m'}\to\Delta^m$ (which is also surjective on vertices). Let $\beta'$ be a section of $\alpha'$, and note that we have
+\[\tau'=\tau'\circ\alpha'\circ\beta'=\sigma\circ\beta'=\tau\circ\alpha\circ\beta'=\tau\circ\eta\circ\alpha'\circ\beta'=\tau\circ\eta.\]
+Consequently, if the simplex $\tau'$ is nondegenerate, then $\eta$ must also be injective on vertices. It follows that $m'=m$ and $\eta$ is the identity map, so $\alpha=\alpha'$ and $\tau=\tau'$.
+\end{proof}
+Let $S_\bullet$ be a simplicial set, $k\geq-1$ be an integer, and $\sigma:\Delta^n\to S_\bullet$ be an $n$-simplex of $S_\bullet$. The proof of Proposition~\ref{simplicial set map from Delta^n factorization} shows that the following conditions are equivalent:
+\begin{itemize}
+\item[(a)] Let $\Delta^n\stackrel{\alpha}{\to}\Delta^m\stackrel{\tau}{\to}S_\bullet$ be the factorization of Proposition~\ref{simplicial set map from Delta^n factorization} (so that $\alpha$ induces a surjection $[n]\to[m]$, the map $\tau$ is nondegenerate, and $\sigma=\tau\circ\alpha$). Then $m\leq k$.
+\item[(b)] There exists a factorization $\Delta^n\to\Delta^{m'}\to S_\bullet$ of $\sigma$ for which $m'\leq k$.
+\end{itemize}
+For each positive integer $n\geq 0$, we denote by $\sk_k(S_n)$ the subset of $S_n$ consisting of those $n$-simplices which satisfy the equivalent conditions above. In view of condition (b), the collection of subsets $\{\sk_k(S_n)\}_{n\geq 0}$ is stable under the face and degeneracy operators of $S_\bullet$, and therefore determine a simplicial subset of $S_\bullet$. This simplicial subset is denoted by $\sk_k(S_\bullet)$ and called the \textbf{$\bm{k}$-skeleton} of $S_\bullet$.\par
+By definition, it is clear that $\sk_k(S_n)$ contains every $n$-simplex of $S_\bullet$ if $n\leq k$. In particular, $\bigcup_{k\geq 0}\sk_k(S_\bullet)$ is equal to $S_\bullet$, so the collection $\{\sk_k(S_\bullet)\}_{k\geq-1}$ is a filtration of $S_\bullet$. We also note that a nondegenerate $n$-simplex $\sigma$ of $S_\bullet$ is contained in a skeleton $\sk_k(S_\bullet)$ if and only if $n\leq k$.\par
+We define the \textbf{dimension} of a simpliciat set $S_\bullet$ to be the smallest integer $k$ such that for every integer $n>k$, every $n$-simplex of $S_\bullet$ is degenerate. A simplicial set $S_\bullet$ is said to be \textbf{finite-dimensional} if it has dimension $\leq k$ for some $k\gg 0$. Using the dimension of $S_\bullet$, we can now prove the following universal property for skeletons of $S_\bullet$.
+\begin{proposition}\label{simplicial set skeleton universal prop}
+Let $S_\bullet$ be a simplicial set and $k\geq -1$ be an integer.
+\begin{itemize}
+\item[(a)] The simplicial set $\sk_k(S_\bullet)$ has dimension $\leq k$.
+\item[(b)] For every simplicial set $T_\bullet$ of dimension $\leq k$, composition with the inclusion map $\sk_k(S_\bullet)\hookrightarrow S_\bullet$ induces a bijection
+\[\Hom_{\mathbf{Set}_\Delta}(T_\bullet,\sk_k(S_\bullet))\to\Hom_{\mathbf{Set}_\Delta}(T_\bullet,S_\bullet).\]
+In other words, any map of simplicial sets $T_\bullet\to S_\bullet$ factors through $\sk_k(S_\bullet)$.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+The first assertion is clear. To prove (b), suppose that $f:T_\bullet\to S_\bullet$ is a map of simplicial sets, where $T_\bullet$ has dimension $\leq k$. We wish to show that $f$ carries every $n$-simplex $\sigma$ of $T_\bullet$ to an $n$-simplex of $\sk_k(S_\bullet)$. Using Proposition~\ref{simplicial set map from Delta^n factorization}, we can reduce to the case where $\sigma$ is a nondegenerate $n$-simplex of $T_\bullet$. In this case, our assumption that $T_\bullet$ has dimension $\leq k$ guarantees that $n\leq k$, so that $f(\sigma)$ belongs to $\sk_k(S_\bullet)$ be the definition of $\sk_k(S_\bullet)$.
+\end{proof}
+\begin{proposition}\label{simplicial set dimension product}
+Let $S_\bullet$ and $S'_\bullet$ be simplicial sets of dimension $k$ and $k'$, respectively. Then the product $S_\bullet\times S'_\bullet$ is of dimension $k+k'$.
+\end{proposition}
+\begin{proof}
+Let $(\sigma,\sigma')$ be a nondegenerate $n$-simplex of the product $S_\bullet\times S'_\bullet$. Using Proposition~\ref{simplicial set map from Delta^n factorization}, we see that $\sigma$ and $\sigma'$ admit factorizations
+\[\begin{tikzcd}
+\Delta^n\ar[r,"\alpha"]&\Delta^{m}\ar[r,"\tau"]&S_\bullet
+\end{tikzcd}\quad \begin{tikzcd}
+\Delta^n\ar[r,"\alpha'"]&\Delta^{m'}\ar[r,"\tau'"]&S'_\bullet
+\end{tikzcd}\]
+where $\tau$ and $\tau'$ are nondegenerate, so that $m\leq k$, $m'\leq k'$. It follows that $(\sigma,\sigma')$ factors as a composition
+\[\begin{tikzcd}
+\Delta^n\ar[r,"{(\alpha,\alpha')}"]&\Delta^m\times\Delta^{m'}\ar[r,"{\tau\times\tau'}"]&S_\bullet\times S'_\bullet
+\end{tikzcd}\]
+The nondegeneracy of $\eta$ guarantees that the map of partially ordered sets $[n]\stackrel{(\alpha,\alpha')}{\to}[m]\times[m']$ is a monomorphism, so that $n\leq m+m'\leq k+k'$. Thus we have shown that the dimension of $S_\bullet\times S_\bullet'$ is $\leq k+k'$.\par
+On the other hand, since $\dim(S_\bullet)=k$, $\dim(S_\bullet')=k'$, there exists nondegenerate simplicies $\sigma:\Delta^k\to S_\bullet$ and $\sigma':\Delta^{k'}\to S_\bullet'$. We consider the unique factorization
+\[\begin{tikzcd}
+\Delta^k\times\Delta^{k'}\ar[r,"\beta"]&\Delta^m\ar[r,"\gamma"]&S_\bullet\times S_\bullet'
+\end{tikzcd}\]
+of $\sigma\times\sigma'$, where $\gamma$ is nondegenerate. By projecting onto $S_\bullet$ and $S'_\bullet$, we obtain factorizations
+\[\begin{tikzcd}
+\Delta^k\ar[r,"\beta_1"]&\Delta^m\ar[r,"\gamma_1"]&S_\bullet
+\end{tikzcd},\quad\begin{tikzcd}
+\Delta^{k'}\ar[r,"\beta_2"]&\Delta^m\ar[r,"\gamma_2"]&S'_\bullet
+\end{tikzcd}\]
+of $\sigma$ and $\sigma'$, respectively. Since $\sigma$ and $\sigma'$ are nondegenerate, the maps $\beta_1$ and $\beta_2$ are necessarily monomorphisms, and thus so is their product $\beta:\Delta^k\times\Delta^{k'}\to\Delta^m$. This implies $m\geq k+k'$, and so $\sigma\times\sigma'$ is nondegenerate. We then conclude that $\dim(S_\bullet\times S'_\bullet)=k+k'$.
+\end{proof}
+Let $S_\bullet$ be a simplicial set. For each $k\geq 0$, we let $S_k^{\circ}$ denote the collection of all \textit{nondegenerate} $k$-simplices of $S_\bullet$. Every element $\sigma\in S_k^{\circ}$ determines a map of simplicial sets $\Delta^k\to\sk_k(S_\bullet)$. Since the boundary $\partial\Delta^k\sub\Delta^k$ has dimension $\leq k-1$, this map carries $\partial\Delta^k$ into the $(k-1)$-skeleton $\sk_{k-1}(S_\bullet)$.
+\begin{proposition}\label{simplicial set pushout square}
+Let $S_\bullet$ be a simplicial set and let $k\geq 0$. Then we have a pushout square
+\[\begin{tikzcd}
+\coprod_{\sigma\in S_k^{\circ}}\partial\Delta^k\ar[r]\ar[d]&\coprod_{\sigma\in S_k^{\circ}}\Delta^k\ar[d]\\
+\sk_{k-1}(S_\bullet)\ar[r]&\sk_k(S_\bullet)
+\end{tikzcd}\]
+in the category $\mathbf{Set}_\Delta$ of simplicial sets.
+\end{proposition}
+\begin{proof}
+Unwinding the definitions, we only need to prove the following: Let $\tau$ be an $n$-simplex of $\sk_k(S_\bullet)$ which is not contained in $\sk_{k-1}(S_\bullet)$. Then $\tau$ factors uniquely as a composition
+\[\begin{tikzcd}
+\Delta^n\ar[r,"\alpha"]&\Delta^k\ar[r,"\sigma"]&S_\bullet
+\end{tikzcd}\]
+where $\sigma$ is a nondegenerate simplex of $S_\bullet$ and $\alpha$ does not factor through the boundary $\partial\Delta^k$ (in other words, $\alpha$ induces a surjection of linearly ordered sets $[n]\to[k]$). Now Proposition~\ref{simplicial set map from Delta^n factorization} implies that any $n$-simplex of $S_\bullet$ admits a unique factorization $\Delta^n\stackrel{\alpha}{\to}\Delta^m\stackrel{\sigma}{\to}S_\bullet$, where $\alpha$ is surjective and $\sigma$ is nondegenerate. Our assumption that $\tau$ belongs to the $\sk_k(S^\bullet)$ guarantees that $m\leq k$, and our assumption that $\tau$ does not belong to $\sk_{k-1}(S_\bullet)$ guarantees that $m\geq k$.
+\end{proof}
+\subsection{Discrete simplicial sets}
+Let $\mathcal{C}$ be a category. For each object $C\in\mathcal{C}$, we let $\uline{C}_\bullet$ denote the constant functor $\Delta\to\{C\}\hookrightarrow\mathcal{C}$ taking the value $C$ on objects and identity morphism $1_C$ on morphisms. We regard $C_\bullet$ as a simplicial object of $\mathcal{C}$, which is called the \textbf{constant simplicial object with value $\bm{C}$}. The constant simplicial object $\uline{C}_\bullet$ can be characterized by a universal property:
+\begin{proposition}\label{simplicial set constant universal prop}
+Let $\mathcal{C}$ be a category and let $C$ be an object of $\mathcal{C}$. For any simplicial object $S_\bullet$ of $\mathcal{C}$, the canonical map
+\[\Hom_{\Fun(\Delta^{\op},\mathcal{C})}(\uline{C}_\bullet,S_\bullet)\to\Hom_{\mathcal{C}}(C,S_0)\]
+is a bijection.
+\end{proposition}
+\begin{proof}
+Let $f:C\to S_0$ be a morphism in $\mathcal{C}$; we want to show that $f$ can be extended uniquely to a map of simplicial sets $f_\bullet:\uline{C}_\bullet\to S_\bullet$. For this, we define $f_\bullet$ be the natural transformation whose value on an object $[n]\in\Delta$ is given by the composite map
+\[\begin{tikzcd}
+\uline{C}_n=C\ar[r,"f"]&S_0\ar[r,"S_{\alpha(n)}"]&S_n
+\end{tikzcd}\]
+where $\alpha(n)$ denotes the unique morphism in $\Delta$ from $[n]$ to $[0]$. To prove the naturality of $f_\bullet$, we observe that for any nondecreasing map $\beta:[m]\to[n]$, we have a commutative diagram
+\[\begin{tikzcd}
+\uline{C}_n\ar[r,equal]\ar[d,"\uline{C}_\beta"]&C\ar[r,"f"]\ar[d,equal]&S_0\ar[r,"S_{\alpha(n)}"]\ar[d,equal]&S_n\ar[d,"S_\beta"]\\
+\uline{C}_m\ar[r,equal]&C\ar[r,"f"]&S_0\ar[r,"S_{\alpha(m)}"]&S_m
+\end{tikzcd}\]
+where the commutativity of the square on the right follows from the observation that $\alpha(m)$ is equal to the composition $[m]\stackrel{\beta}{\to}[n]\stackrel{\alpha(n)}{\to}[0]$.
+\end{proof}
+\begin{corollary}\label{simplicial set limit of S_n isomorphic to S_0}
+Let $\mathcal{C}$ be a category. Then for any simplicial object $S_\bullet$ of $\mathcal{C}$, the limit $\llim_{[n]\in\Delta}S_n$ exists in the category $\mathcal{C}$ and is isomorphic to $S_0$.
+\end{corollary}
+\begin{proof}
+This follows from Proposition~\ref{simplicial set constant universal prop} by noting that a map $\uline{C}_\bullet\to S_\bullet$ consists of morphisms $C\to S_n$ satisfying compatible conditions. Alternatively, this can be deduced formally from the observation that $[0]$ is a final object of the category $\Delta$ (and therefore an initial object of the category $\Delta^{\op}$).
+\end{proof}
+\begin{corollary}\label{simplicial set evaluation adjoint to constant functor}
+Let $\mathcal{C}$ be a category. Then the evaluation functor
+\[\ev_0:\Fun(\Delta^{\op},\mathcal{C})\to\mathcal{C},\quad S_\bullet\to S_0\]
+admits a left adjoint, given on objects by the formation of constant simplicial objects $C\mapsto\uline{C}_\bullet$.
+\end{corollary}
+\begin{corollary}\label{simplicial set constant functor is embedding}
+Let $\mathcal{C}$ be a category. Then the construction $C\mapsto\uline{C}_\bullet$ determines a fully faithful embedding from $\mathcal{C}$ to the category $\Fun(\Delta^{\op},\mathcal{C})$ of simplicial objects of $\mathcal{C}$.
+\end{corollary}
+\begin{proof}
+If $C$ and $D$ are objects of $\mathcal{C}$, we want to show that the canonical map
+\[\theta:\Hom_{\mathcal{C}}(C,D)\to\Hom_{\Fun(\Delta^{\op},\mathcal{C})}(\uline{C}_\bullet,\uline{D}_\bullet)\]
+is bijective. This is clear since $\theta$ is the right inverse to the evaluation map
+\[\Hom_{\Fun(\Delta^{\op},\mathcal{C})}(\uline{C}_\bullet,\uline{D}_\bullet)\to\Hom_{\mathcal{C}}(C,D)\]
+which is bijective in view of Proposition~\ref{simplicial set constant universal prop}.
+\end{proof}
+In particular, if we take $\mathcal{C}=\mathbf{Set}$, then there is an embedding of $\mathbf{Set}$ to $\mathbf{Set}_{\Delta}$ given by $X\mapsto\uline{X}_\bullet$. Given this, we say that a simplicial set $S_\bullet$ is \textbf{discrete} if there exists a set $X$ such that $S_\bullet\cong\uline{X}_\bullet$. It is clear that the following corollary is true.
+\begin{corollary}\label{simplicial set constant functor image is discrete}
+The functor $X\mapsto\uline{X}_\bullet$ determines a fully faithful embedding $\mathbf{Set}\to\mathbf{Set}_{\Delta}$ whose essential image is the full subcategory of $\mathbf{Set}_\Delta$ spanned by the discrete simplicial sets.
+\end{corollary}
+Let $S$ be a set. We will often abuse notation by identifying $S$ with the constant simplicial set $\uline{S}_\bullet$. This abuse will occur most frequently in the special case where $S=\{v\}$ consists of a single vertex $v$ of some other simplicial set $X_\bullet$. In this case, we view $\{v\}$ as a simplicial subset of $X_\bullet$ which is abstractly isomorphic to $\Delta^0$.
+\begin{remark}
+The fully faithful embedding $\mathbf{Set}\to\mathbf{Set}_\Delta,S\mapsto\uline{S}_\bullet$ preserves (small) limits and colimits (since limits and colimits of simplicial sets are computed levelwise). It follows that the collection of discrete simplicial sets is closed under the formation of (small) limits and colimits in $\mathbf{Set}_\Delta$.
+\end{remark}
+\begin{proposition}\label{simplicial set discrete iff}
+Let $S_\bullet$ be a simplicial set. The following conditions are equivalent:
+\begin{itemize}
+\item[(\rmnum{1})] $S_\bullet$ is discrete.
+\item[(\rmnum{2})] For every morphism $\alpha:[m]\to[n]$ in the category $\Delta$, the induced map $S_n\to S_m$ is a bijection.
+\item[(\rmnum{3})] For every positive integer $n$, the $0$-th face map $d_0:S_n\to S_{n-1}$ is a bijection.
+\item[(\rmnum{4})] $S_\bullet$ is of zero dimension.   
+\end{itemize}
+\end{proposition}
+\begin{proof}
+The implication (\rmnum{1})$\Rightarrow$(\rmnum{2}) follows from the definition of $\uline{X}_\bullet$, and the implication (\rmnum{2})$\Rightarrow$(\rmnum{3}) is immediate. To prove that (\rmnum{3})$\Rightarrow$(\rmnum{4}), we observe that if the face map $d_0:S_n\to S_{n-1}$ is bijective, then the degeneracy operator $s_0:S_{n-1}\to S_n$ is also bijective (since it is a right inverse of $d_0$). In particular, $s_0$ is surjective, so every $n$-simplex of $S_\bullet$ is degenerate by Proposition~\ref{simplicial set n-simplex image of n-1 iff}.\par
+We complete the proof by showing that (\rmnum{4})$\Rightarrow$(\rmnum{1}). If $S_\bullet$ is a simplicial set of dimension $0$ and $X=S_0$ is the set of vertices of $S_\bullet$, then Proposition~\ref{simplicial set pushout square} supplies an isomorphism of simplicial sets $\amalg_{v\in X}\Delta^0\cong S_\bullet$, whose domain can be identified with the constant simplicial set $\uline{X}_\bullet$.
+\end{proof}
