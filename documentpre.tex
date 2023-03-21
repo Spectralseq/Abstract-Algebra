@@ -3,6 +3,7 @@
 \usepackage{graphicx}
 \usepackage{multicol}
 \usepackage{amsmath,amssymb,amsthm,amsfonts}
+\usepackage[capitalize,nameinlink]{cleveref}%动态ref定理，推论，引理等
 \usepackage{textgreek,bm,upgreek,mathrsfs}
 \usepackage{array} %表格列宽操作
 \usepackage{longtable} %表格列宽对齐
@@ -72,7 +73,11 @@ root-radius=.06cm]{dynkin-diagrams}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-\renewcommand{\sectionautorefname}{\S}%修改section的引用名
+%--------------------------------
+%修改section的自动引用名
+\renewcommand{\sectionautorefname}{\S}
+\renewcommand{\chapterautorefname}{Chapter}
+%--------------------------------
 
 \makeatletter%define roman numbers
 \newcommand{\rmnum}[1]{\romannumeral #1}
@@ -98,9 +103,7 @@ root-radius=.06cm]{dynkin-diagrams}
   commutative diagrams/.cd,
   arrow style=tikz,
   diagrams={>={Computer Modern Rightarrow[length=4pt,width=3pt]}},
-  diagrams={nodes={inner sep=3pt}}
-}
-\tikzset{
+  diagrams={nodes={inner sep=3pt}},
   symbol/.style={
     draw=none,
     every to/.append style={
@@ -260,6 +263,7 @@ root-radius=.06cm]{dynkin-diagrams}
 \def\Fun{\mathrm{Fun}}
 \def\sk{\mathrm{sk}}
 \def\ev{\mathrm{ev}}
+\def\Ob{\mathrm{Ob}}
 %-----------------------------
 
 
@@ -278,8 +282,8 @@ root-radius=.06cm]{dynkin-diagrams}
 \def\emp{\varnothing}
 \def\dcheck{\check{ }\hspace{4pt}\check{}}
 \def\eps{\varepsilon}
-\def\llim{\varprojlim\limits}
-\def\rlim{\varinjlim\limits}
+\def\llim{\varprojlim}
+\def\rlim{\varinjlim}
 \def\And{\hspace{8pt}\text{and}\hspace{8pt}}
 \def\for{\hspace{8pt}\text{for}\hspace{6pt}}
 %------------------------------

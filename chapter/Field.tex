@@ -2,9 +2,9 @@
 \section{Field extensions}
 We first deal with several basic notions in field theory, mostly inspired by easy linear algebra considerations. The keywords here are finite, simple, finitely generated, algebraic.
 \subsection{Basic definitions of field extensions}
-The study of fields is (of course) the study of the category $\mathsf{Fld}$ of fields, with ring homomorphisms as morphisms. The task is to understand what fields are and above all what they are in relation to one
-another. The place to start is a reminder from elementary ring theory: every ring homomorphisms from a field to a nonzero ring is injective. Indeed, the kernel of a ring homomorphism to a nonzero ring is a proper ideal (because a homomorphism maps $1$ to $1$ by definition and $1\neq 0$ in nonzero rings), and the only proper ideal in a field is $(0)$. In particular, every ring homomorphism of fields is injective (fields are nonzero rings by definition!); every morphism in $\mathsf{Fld}$ is a monomorphism.\par
-The coarsest invariant of a field $K$ is its \textbf{characteristic}. We have a unique ring homomorphisms $\iota:\Z\to K$ (recall that $\Z$ is initial in $\mathsf{Ring}$: $1$ must go to $1$ by definition of homomorphism, and this fixes the value of $\iota(n)$ for all $n\in\Z$); the characteristic of $K$, $\char(K)$, is defined to be the nonnegative generator of the ideal $\ker\iota$; that is, $\char(K)=0$ if $\iota$ is injective, and $\char(K)=p>0$ if $\ker\iota=(p)\neq(0)$. Since $\iota(\Z)$ must be an integral domain, $(p)$ is a prime ideal in $\Z$. Therefore, the characteristic of a field is either $0$ or a prime number.
+The study of fields is (of course) the study of the category $\mathbf{Fld}$ of fields, with ring homomorphisms as morphisms. The task is to understand what fields are and above all what they are in relation to one
+another. The place to start is a reminder from elementary ring theory: every ring homomorphisms from a field to a nonzero ring is injective. Indeed, the kernel of a ring homomorphism to a nonzero ring is a proper ideal (because a homomorphism maps $1$ to $1$ by definition and $1\neq 0$ in nonzero rings), and the only proper ideal in a field is $(0)$. In particular, every ring homomorphism of fields is injective (fields are nonzero rings by definition!); every morphism in $\mathbf{Fld}$ is a monomorphism.\par
+The coarsest invariant of a field $K$ is its \textbf{characteristic}. We have a unique ring homomorphisms $\iota:\Z\to K$ (recall that $\Z$ is initial in $\mathbf{Ring}$: $1$ must go to $1$ by definition of homomorphism, and this fixes the value of $\iota(n)$ for all $n\in\Z$); the characteristic of $K$, $\char(K)$, is defined to be the nonnegative generator of the ideal $\ker\iota$; that is, $\char(K)=0$ if $\iota$ is injective, and $\char(K)=p>0$ if $\ker\iota=(p)\neq(0)$. Since $\iota(\Z)$ must be an integral domain, $(p)$ is a prime ideal in $\Z$. Therefore, the characteristic of a field is either $0$ or a prime number.
 \begin{definition}
 A field $E$ containing a field $K$ is called an \textbf{extension field of $\bm{K}$} (or simply an \textbf{extension} of $K$, and we speak of an extension $E/K$). The dimension of $E$ as an $K$-vector space is called the \textbf{degree of $\bm{E}$ over $\bm{K}$}, and is denote by $[E:K]$. We say that $E$ is \textbf{finite} over $K$ when it has finite degree over $K$.
 \end{definition}
@@ -95,7 +95,7 @@ is an isomorphism. In this case $[K(\alpha):K]=\deg p(X)$, and in particular the
 \begin{example}
 Consider the extension $\Q\sub\R$. The polynomial $X^2-2\in\Q[X]$ has roots in $\R$; therefore, there exists a homomorphism (hence a field extension)
 \[\epsilon:\dfrac{\Q[X]}{(X^2-2)}\to\R\]
-such that the image of (the coset of) $x$ is a root $\alpha$ of $X^2-2$. Proposition~\ref{field simple ext char} simply identifies the image of this homomorphism with $\Q(\alpha)\sub\R$.\par
+such that the image of (the coset of) $x$ is a root $\alpha$ of $X^2-2$. \cref{field simple ext char} simply identifies the image of this homomorphism with $\Q(\alpha)\sub\R$.\par
 This is hopefully crystal clear; however, note that even this simple example shows that the induced morphism $\epsilon$ is not unique: because there are more than one root of $X^2-2$ in $\R$. Concretely, there are two possible choices for $\alpha:\alpha=+\sqrt{2}$ and $\alpha=-\sqrt{2}$. The choice of $\alpha$ determines the evaluation map $\epsilon$ and therefore the specific realization of $\Q[X]/(X^2-2)$ as a subfield of $R$.\end{example}
 \begin{definition}
 Let $E/K$ be a field extension. The \textbf{group of automorphisms} of the extension, denoted $\Aut_K(E)$, is the group of field automorphisms $\sigma:E\to E$ such that $\sigma|_K=\id_K$.
@@ -136,7 +136,7 @@ Now we consider more complicated cases. The finite extension and algebraic exten
 \begin{definition}
 Let $E/K$ be a field extension, and let $\alpha\in E$. Then $\alpha$ is \textbf{algebraic} over $K$ of degree $n$ if $n=[K(\alpha):K]$ is finite; $\alpha$ is \textbf{transcendantal} over $K$ otherwise. The extension $E/K$ is \textbf{algebraic} if every $\alpha\in E$ is algebraic over $K$.
 \end{definition}
-By Proposition~\ref{field simple ext char}, $\alpha\in E$ is algebraic over $K$ if and only if there exists a nonzero polynomial $f(X)\in K[X]$ such that $f(\alpha)=0$. The minimal polynomial of $\alpha$ is the monic polynomial of smallest degree satisfying this condition; as we have seen, it is necessarily irreducible. Also note that if $\alpha$ is algebraic over $K$, then every element of $K(\alpha)$ may in fact
+By \cref{field simple ext char}, $\alpha\in E$ is algebraic over $K$ if and only if there exists a nonzero polynomial $f(X)\in K[X]$ such that $f(\alpha)=0$. The minimal polynomial of $\alpha$ is the monic polynomial of smallest degree satisfying this condition; as we have seen, it is necessarily irreducible. Also note that if $\alpha$ is algebraic over $K$, then every element of $K(\alpha)$ may in fact
 be written as a polynomial with coefficients in $K$.\par
 It is clear that a finite extension must be algebraic.
 \begin{proposition}\label{field extension finite is algebraic}
@@ -171,7 +171,7 @@ Let $L/K$ be a finite extension, and let $E$ be an intermediate field (that is, 
 \begin{example}
 Let $E/K$ be a field extension, and let $\alpha\in E$ be an algebraic element over $K$, of odd order. Then we claim that $\alpha$ may be written as a polynomial in $\alpha^2$, with coefficients in $K$. Indeed, $K(\alpha^2)$ is intermediate between $K$ and $K(\alpha)$: 
 \[K\sub K(\alpha^2)\sub K(\alpha)\]
-Let $d=[K(\alpha):K(\alpha^2)]$. Since $\alpha$ satisfies the polynomial $X^2-\alpha^2\in K(\alpha^2)[X]$, we get $d\leq 2$. On the other hand, $d$ divides $[K(\alpha):K]$ by Corollary~\ref{field ext intermediate field degree divide}, and $[K(\alpha):K]$ is odd, so $d\neq 2$. Therefore $d=1$, proving $K(\alpha)=K(\alpha^2)$, and in particular $\alpha\in K(\alpha^2)$, which is the claim.
+Let $d=[K(\alpha):K(\alpha^2)]$. Since $\alpha$ satisfies the polynomial $X^2-\alpha^2\in K(\alpha^2)[X]$, we get $d\leq 2$. On the other hand, $d$ divides $[K(\alpha):K]$ by \cref{field ext intermediate field degree divide}, and $[K(\alpha):K]$ is odd, so $d\neq 2$. Therefore $d=1$, proving $K(\alpha)=K(\alpha^2)$, and in particular $\alpha\in K(\alpha^2)$, which is the claim.
 \end{example}
 Here is something else that should evoke fond memories for the reader. An algebra is \textbf{finite} over the base ring if it is finitely generated as a \textit{module}, that is, if it admits an onto homomorphism (of modules) from a finitely generated free module; a commutative algebra is of \textbf{finite type} if it admits an onto homomorphism (of algebras) from a polynomial ring in finitely many variables.\par
 Something along the same lines is going to occur here. First, it is easy to see that an extension $E/K$ is finite if and only if $\dim_KE$ is finite, that is, if and only if $E$ is a finite $K$-algebra. The other finiteness condition takes the following form.
@@ -191,13 +191,13 @@ If these conditions are satisfied, then
 \[[E:K]\leq\prod_{i=1}^{n}[K(\alpha_i):K].\]
 \end{proposition}
 \begin{proof}
-Proposition~\ref{field extension finite is algebraic} show that $(\rmnum{1})\Rightarrow(\rmnum{2})$, $(\rmnum{2})\Rightarrow(\rmnum{3})$ tivially, so we prove the implication $(\rmnum{3})\Rightarrow(\rmnum{1})$. Assume that each $\alpha_i$ is algebraic over $K$, and let $d_i$ be the degree of $\alpha_i$ over $K$. By definition, $K\sub K(\alpha_i)$ is finite, of degree $d_i$. Since each extension
+\cref{field extension finite is algebraic} show that $(\rmnum{1})\Rightarrow(\rmnum{2})$, $(\rmnum{2})\Rightarrow(\rmnum{3})$ tivially, so we prove the implication $(\rmnum{3})\Rightarrow(\rmnum{1})$. Assume that each $\alpha_i$ is algebraic over $K$, and let $d_i$ be the degree of $\alpha_i$ over $K$. By definition, $K\sub K(\alpha_i)$ is finite, of degree $d_i$. Since each extension
 \[K(\alpha_1,\dots,\alpha_{i-1})\sub K(\alpha_1,\dots,\alpha_i)\]
-is finite, of degree $\leq d_i$, Applying Proposition~\ref{field ext intermediate field degree divide} to the composition of extensions
+is finite, of degree $\leq d_i$, Applying \cref{field ext intermediate field degree divide} to the composition of extensions
 \[K\sub K(\alpha_1)\sub K(\alpha_1,\alpha_2)\sub\cdots\sub K(\alpha_1,\dots,\alpha_n)=E\]
 proves that $E/K$ is finite and $[E:K]\leq d_1\cdots d_n$, as needed.
 \end{proof}
-While rather straightforward, Proposition~\ref{field ext finitely generated finite iff} has always seemed remarkable to us: it says (in particular) that if $\alpha$ and $\beta$ are algebraic over a field $K$, then so are $\alpha\pm\beta,\alpha\beta,\alpha\beta^{-1}$ and any other rational function of $\alpha$ and $\beta$. One immediate consequence of this observation is that the set of algebraic elements of any extension forms a field:
+While rather straightforward, \cref{field ext finitely generated finite iff} has always seemed remarkable to us: it says (in particular) that if $\alpha$ and $\beta$ are algebraic over a field $K$, then so are $\alpha\pm\beta,\alpha\beta,\alpha\beta^{-1}$ and any other rational function of $\alpha$ and $\beta$. One immediate consequence of this observation is that the set of algebraic elements of any extension forms a field:
 \begin{corollary}\label{field ext algebraic elements form field}
 Let $E/K$ be a field extension. Let
 \[\widebar{K}=\{\alpha\in E:\alpha\text{ is algebraic over $K$}\}.\]
@@ -212,7 +212,7 @@ If $E$ is algebraic over $K$, then every subring of $E$ containing $K$ is a fiel
 \begin{proof}
 Let $A$ be a ring with $K\sub A\sub E$. If $\alpha\in A$, then $K[\alpha]\sub A$. But $K[\alpha]$ is a field because $\alpha$ is algebraic, and so $A$ contains $\alpha^{-1}$. This implies $A$ is a field.
 \end{proof}
-Another consequence of Proposition~\ref{field ext finitely generated finite iff} is the important fact that compositions of algebraic extensions are algebraic (whether finitely generated or not):
+Another consequence of \cref{field ext finitely generated finite iff} is the important fact that compositions of algebraic extensions are algebraic (whether finitely generated or not):
 \begin{corollary}\label{field ext intermediate algebraic iff}
 Let $K\sub E\sub F$ be field extensions. Then $F/K$ is algebraic if and only if both $F/E$ and $E/K$ are algebraic.
 \end{corollary}
@@ -224,7 +224,7 @@ such that $f(\alpha)=0$. This implies that $\alpha$ is already algebraic over th
 \[K(e_0,\dots,e_{n-1})\sub K(e_0,\dots,e_{n-1},\alpha)\]
 is a finite extension. On the other hand, since each $e_i$ is in $E$ and therefore algebraic over $K$, the extension
 \[K\sub K(e_0,\dots,e_{n-1})\]
-is finite by Proposition~\ref{field ext finitely generated finite iff}. By Proposition~\ref{field ext degree multiplicative} the extension
+is finite by \cref{field ext finitely generated finite iff}. By \cref{field ext degree multiplicative} the extension
 \[K\sub K(e_0,\dots,e_{n-1},\alpha)\]
 is finite. This implies that $\alpha$ is algebraic over $K$.
 \end{proof}
@@ -232,9 +232,9 @@ is finite. This implies that $\alpha$ is algebraic over $K$.
 Let $E$ be an extension of $K$ and $X$ a subset of $E$ such that $E=K(X)$ and every element of $X$ is algebraic over $K$. Then $E$ is an algebraic extension of $K$. If $X$ is a finite set, then $E$ is a finite extension of $K$.
 \end{theorem}
 \begin{proof}
-If $\beta\in E$, then $\beta\in K(\alpha_1,\dots,\alpha_n)$ for some $\alpha_1,\dots,\alpha_n\in X$. By Proposition~\ref{field ext finitely generated finite iff}, since $K(\alpha_1,\dots,\alpha_n)$ is finitely generated, we conclude that it is finite. Hence by Proposition~\ref{field extension finite is algebraic} $\beta$ is algebraic over $K$.
+If $\beta\in E$, then $\beta\in K(\alpha_1,\dots,\alpha_n)$ for some $\alpha_1,\dots,\alpha_n\in X$. By \cref{field ext finitely generated finite iff}, since $K(\alpha_1,\dots,\alpha_n)$ is finitely generated, we conclude that it is finite. Hence by \cref{field extension finite is algebraic} $\beta$ is algebraic over $K$.
 \end{proof}
-We will essentially deal only with finitely generated extensions, and Proposition~\ref{field ext finitely generated finite iff} will simplify our work considerably. Also, since finitely generated extensions are compositions of simple extensions, the reader should expect that we will
+We will essentially deal only with finitely generated extensions, and \cref{field ext finitely generated finite iff} will simplify our work considerably. Also, since finitely generated extensions are compositions of simple extensions, the reader should expect that we will
 give a careful look at automorphisms of such extensions.\par
 It may in fact come as a surprise that, in many cases, finitely generated extensions turn out to be simple to begin with; we will prove a precise statement to this effect in due time. The reader already has enough tools to contemplate easy (but interesting) examples, such as the following. This should serve as an encouragement to look at many more.
 \begin{example}
@@ -247,13 +247,13 @@ is satisfied when $q_0=1,q_1=0,q_2=-10,q_3=0$: that is, $(\sqrt{2}+\sqrt{3})$ is
 It follows that $\sqrt{2}+\sqrt{3}$ has degree $4$ over $\Q$, therefore $[\Q(\sqrt{2},\sqrt{3}):\Q]=4$.\par
 Consider the composition of extensions
 \[\Q\sub\Q(\sqrt{2}+\sqrt{3})\sub\Q(\sqrt{2},\sqrt{3})\]
-By Corollary~\ref{field ext intermediate field degree divide}, we have
+By \cref{field ext intermediate field degree divide}, we have
 \[4=[\Q(\sqrt{2}+\sqrt{3}):\Q]\leq[\Q(\sqrt{2},\sqrt{3}):\Q],\]
 thus we conclude that $[\Q(\sqrt{2},\sqrt{3}):\Q]=[\Q(\sqrt{2}+\sqrt{3})]$, and it follows that
 \[\Q(\sqrt{2},\sqrt{3})=\Q(\sqrt{2}+\sqrt{3}).\]
 Staring now at the composition
 \[\Q\sub\Q(\sqrt{2})\sub\Q(\sqrt{2},\sqrt{3}),\]
-Proposition~\ref{field ext intermediate field degree divide} tells us that $[\Q(\sqrt{2},\sqrt{3}):\Q(\sqrt{2})]=2$. That is, a side-effect of the computation carried out above is that the polynomial $t^2-3$ must be irreducible over $\Q(\sqrt{2})$.\par
+\cref{field ext intermediate field degree divide} tells us that $[\Q(\sqrt{2},\sqrt{3}):\Q(\sqrt{2})]=2$. That is, a side-effect of the computation carried out above is that the polynomial $t^2-3$ must be irreducible over $\Q(\sqrt{2})$.\par
 The fact that the other roots of the minimal polynomial of $\sqrt{2}+\sqrt{3}$ looked so much like $\sqrt{2}+\sqrt{3}$ is not surprising. Indeed, since $\Q(\sqrt{2})\sub\Q(\sqrt{2}+\sqrt{3})$ is a simple extension, we know that there is an automorphism of $\Q(\sqrt{2},\sqrt{3})$ fixing $\Q(\sqrt{2})$ and swappint $\sqrt{3}$ and $-\sqrt{3}$. Similarly, there is an automorphism fixing $\Q(\sqrt{3})$ and swapping $\sqrt{2}$ and $-\sqrt{2}$. These automorphisms must act on the set of roots of $f(X)$: applying them and their composition to $\sqrt{2}+\sqrt{3}$ produces the other three roots of $f(X)$.\par
 In fact, at this point we know that $G=\Aut_{\Q}(\Q(\sqrt{2},\sqrt{3}))$ must consist of $4$ elements and has at least two elements of order $2$ (both automorphisms found above have order $2$). This is enough to conclude that $G$ is not a cyclic group, and hence it must be isomorphic to the group $\Z/2\Z\times\Z/2\Z$.
 \end{example}
@@ -298,10 +298,10 @@ Let $K\sub L$ be a field extension where $L$ is algebraically closed. Let
 Then $\widebar{K}$ is the only algebraic closure of $K$ that is contained in $L$. Thus, any field has an algebraic closure.
 \end{theorem}
 \begin{proof}
-By Corollary~\ref{field ext algebraic elements form field}, $\widebar{K}$ is a field, and the extension $K\sub\widebar{K}$ is tautologically algebraic. To verify that $\widebar{K}$ is algebraically closed, let $\alpha$ be algebraic over $\widebar{K}$; then
+By \cref{field ext algebraic elements form field}, $\widebar{K}$ is a field, and the extension $K\sub\widebar{K}$ is tautologically algebraic. To verify that $\widebar{K}$ is algebraically closed, let $\alpha$ be algebraic over $\widebar{K}$; then
 \[K\sub\widebar{K}\sub\widebar{K}(\alpha)\]
-is a composition of algebraic extensions, so $\widebar{K}\sub\widebar{K}(\alpha)$ is algebraic, and in particular $\alpha$ is algebraic over $K$. But then $\alpha\in\widebar{K}$, by definition of the latter. It follows that $\widebar{K}$ is algebraically closed, by Lemma~\ref{field algebraically closed iff}.\par
-As to uniqueness, if $K\sub E\sub L$ with $E$ an algebraic closure of $K$, then since $K\sub E$ is algebraic, we have $E\sub\widebar{K}$. But if the inclusion is proper, then there is an $\alpha\in\widebar{K}\setminus E$. It follows that $\min(\alpha,E)$ does not split over $E$, a contradiction to the fact that $E$ is algebraically closed. Hence $\widebar{K}=E$. The final statement comes from Theorem~\ref{field ext algebraically closed exist}.
+is a composition of algebraic extensions, so $\widebar{K}\sub\widebar{K}(\alpha)$ is algebraic, and in particular $\alpha$ is algebraic over $K$. But then $\alpha\in\widebar{K}$, by definition of the latter. It follows that $\widebar{K}$ is algebraically closed, by \cref{field algebraically closed iff}.\par
+As to uniqueness, if $K\sub E\sub L$ with $E$ an algebraic closure of $K$, then since $K\sub E$ is algebraic, we have $E\sub\widebar{K}$. But if the inclusion is proper, then there is an $\alpha\in\widebar{K}\setminus E$. It follows that $\min(\alpha,E)$ does not split over $E$, a contradiction to the fact that $E$ is algebraically closed. Hence $\widebar{K}=E$. The final statement comes from \cref{field ext algebraically closed exist}.
 \end{proof}
 We will show a bit later that all algebraic closures of a field $K$ are isomorphic, which is one reason why the notation $\widebar{K}$ is (at least partially) justified.\par
 Here is a characterization of algebraic closures.
@@ -315,8 +315,8 @@ Let $K\sub E$ be a field extension. The following are equivalent.
 \end{itemize}
 \end{proposition}
 \begin{proof}
-To see that (\rmnum{1}) implies (\rmnum{2}), suppose that $E$ is an algebraic closure of $K$. Then $E/K$ is algebraic by definition. If $E\sub F$ is another algebraic extension, then by Lemma~\ref{field algebraically closed iff} we have $F=E$. Therefore $E$ is a maximal algebraic extension of $K$. Conversely, let $E$ be a maximal algebraic extension of $K$ and let $f(X)\in E[X]$. Let $L$ be the splitting field for $f(X)$ over $E$. Then $K\sub E\sub L$ is an algebraic tower, since $L$ is generated over $E$ by the finite set of roots of $f(X)$. Hence, the maximality of $E$ implies that $E=L$, and so $f(X)$ splits in $E$, which says that $E$ is algebraically closed and therefore an algebraic closure of $K$.\par
-To see that (\rmnum{1}) implies (\rmnum{3}), suppose that $E$ is an algebraic closure of $K$ and $K\sub E'\sub E$, where $E'$ is algebraically closed. Since $E'\sub E$ is algebraic, it follows that $E'=E$, by Lemma~\ref{field algebraically closed iff}. Conversely, suppose that $E$ is a minimal algebraically closed extension of $K$. Let $\widebar{K}$ be the algebraic closure of $K$ in $E$. Thus, $K\sub\widebar{K}\sub E$, with $K\sub\widebar{K}$ algebraic. By hypothesis, since $\widebar{K}$ is algebraic closed, we conclude $\widebar{K}=E$, so $E$ is an algebraic closure of $K$.\par
+To see that (\rmnum{1}) implies (\rmnum{2}), suppose that $E$ is an algebraic closure of $K$. Then $E/K$ is algebraic by definition. If $E\sub F$ is another algebraic extension, then by \cref{field algebraically closed iff} we have $F=E$. Therefore $E$ is a maximal algebraic extension of $K$. Conversely, let $E$ be a maximal algebraic extension of $K$ and let $f(X)\in E[X]$. Let $L$ be the splitting field for $f(X)$ over $E$. Then $K\sub E\sub L$ is an algebraic tower, since $L$ is generated over $E$ by the finite set of roots of $f(X)$. Hence, the maximality of $E$ implies that $E=L$, and so $f(X)$ splits in $E$, which says that $E$ is algebraically closed and therefore an algebraic closure of $K$.\par
+To see that (\rmnum{1}) implies (\rmnum{3}), suppose that $E$ is an algebraic closure of $K$ and $K\sub E'\sub E$, where $E'$ is algebraically closed. Since $E'\sub E$ is algebraic, it follows that $E'=E$, by \cref{field algebraically closed iff}. Conversely, suppose that $E$ is a minimal algebraically closed extension of $K$. Let $\widebar{K}$ be the algebraic closure of $K$ in $E$. Thus, $K\sub\widebar{K}\sub E$, with $K\sub\widebar{K}$ algebraic. By hypothesis, since $\widebar{K}$ is algebraic closed, we conclude $\widebar{K}=E$, so $E$ is an algebraic closure of $K$.\par
 Finally, it is clear that (\rmnum{1}) implies (\rmnum{4}). If (\rmnum{4}) holds, then $E/K$ is algebraic and if $K\sub E\sub L$ is algebraic, then let $\alpha\in L\setminus E$ have minimal polynomial $f(X)$ over $K$. This polynomial splits over $E$ and so $\alpha\in E$, which implies that $E=L$, whence $E$ is a maximal algebraic extension of $K$ and so (\rmnum{2}) holds.
 \end{proof}
 \subsection{Embeddings and their extensions}
@@ -343,7 +343,7 @@ Part (\rmnum{1}) is easy to prove, and part (\rmnum{2}) follows from the followi
 &=\bigcap\{H':\sigma(E_i)\sub H'\sub\sigma(F)\text{ for all $i\in I$}\}=\bigvee\sigma(E_i).
 \end{align*}
 Also, part (\rmnum{3}) follows from (\rmnum{2}).\par
-For (\rmnum{4}), let $\alpha\in E$, then $\alpha$ is algebraic over $K$, so there is a polynomial $f(X)\in K[X]$ such that $f(\alpha)=0$. By (\rmnum{1}) we know that $\bar{\sigma}(\alpha)$ is a root of $f^{\bar{\sigma}}$, so it is algebraic over $\sigma(K)$, since $\alpha$ is arbitrary, this implies $\bar{\sigma}(E)$ is algebraic over $\sigma(K)$. Finally we prove (\rmnum{5}). Since $E/K$ is algebraic, by (\rmnum{4}) the extension $\bar{\sigma}(E)$ is algebraic over $\sigma(K)$. Let $f^\sigma$ be a polynomial in $\sigma(K)[X]$. Then $f(X)\in K[X]$ so $f(X)$ split in $E$, since $E$ is algebraic closed. It follows that $f^\sigma$ split in $\bar{\sigma}(E)$, in view of (\rmnum{1}), and therefore $\bar{\sigma}(E)$ is an algebraic closure of $\sigma(K)$, by Proposition~\ref{field algebraic closure char}. 
+For (\rmnum{4}), let $\alpha\in E$, then $\alpha$ is algebraic over $K$, so there is a polynomial $f(X)\in K[X]$ such that $f(\alpha)=0$. By (\rmnum{1}) we know that $\bar{\sigma}(\alpha)$ is a root of $f^{\bar{\sigma}}$, so it is algebraic over $\sigma(K)$, since $\alpha$ is arbitrary, this implies $\bar{\sigma}(E)$ is algebraic over $\sigma(K)$. Finally we prove (\rmnum{5}). Since $E/K$ is algebraic, by (\rmnum{4}) the extension $\bar{\sigma}(E)$ is algebraic over $\sigma(K)$. Let $f^\sigma$ be a polynomial in $\sigma(K)[X]$. Then $f(X)\in K[X]$ so $f(X)$ split in $E$, since $E$ is algebraic closed. It follows that $f^\sigma$ split in $\bar{\sigma}(E)$, in view of (\rmnum{1}), and therefore $\bar{\sigma}(E)$ is an algebraic closure of $\sigma(K)$, by \cref{field algebraic closure char}. 
 \end{proof}
 Even though the next result has a simple proof, the result is of major
 importance.
@@ -381,7 +381,7 @@ As a corollary, we can establish the essential uniqueness of algebraic closures.
 Every field $K$ admits an algebraic closure $K\sub\widebar{K}$; this extension is unique up to isomorphism.
 \end{theorem}
 \begin{proof}
-We only need to show the second point. Let $L_1$ and $L_2$ be algebraic closures of $K$. The identity map $\id:K\to K$ can be extended to an embedding $\tau:L_1\to L_2$. Since $L_1$ is algebraically closed so is $\sigma(L_1)$ (Properties~\ref{field embedding prop}). But $L_2$ is an algebraic extension of $\sigma(L_1)$ and so $\sigma(L_1)=L_2$. Hence, $\sigma$ is an isomorphism.
+We only need to show the second point. Let $L_1$ and $L_2$ be algebraic closures of $K$. The identity map $\id:K\to K$ can be extended to an embedding $\tau:L_1\to L_2$. Since $L_1$ is algebraically closed so is $\sigma(L_1)$ (\cref{field embedding prop}). But $L_2$ is an algebraic extension of $\sigma(L_1)$ and so $\sigma(L_1)=L_2$. Hence, $\sigma$ is an isomorphism.
 \end{proof}
 To conclude, we introduce the independence of embedding and prove a very useful result. We choose a somewhat more general setting, however. A \textbf{monoid} is a nonempty set $M$ with an associative binary operation and an identity element. If $M$ and $N$ are monoids, a homomorphism of $M$ into $N$ is a map $\varphi:M\to N$ such that $\varphi(\alpha\beta)=\varphi(\alpha)\varphi(\beta)$ and $\varphi(1)=1$.
 \begin{definition}
@@ -457,7 +457,7 @@ Consider the polynomial $X^6+X^3+1$ over $\Q$. Let $\omega:=(-1+\sqrt{3}i)/2$. T
 So the splitting field of $X^6+X^3+1$ is $\Q(\omega^{1/3})$, which has degree $9$ over $\Q$.
 \end{example}
 Splitting fields will play an important role in the rest of the story. They are even more special than they may appear to be at first: it turns out that not only do they split the given polynomial, but they also automatically split any irreducible polynomial which dares touch them with a root. To make this property crystal clear, we introduce the following terminology.\par
-Suppose that $K\sub E\sub\widebar{K}$ is algebraic and that $\sigma:E\to\widebar{K}$ is an embedding over $K$ of $E$ into the algebraic closure $\widebar{K}$. Then $E$ is said to be \textbf{$\bm{\sigma}$-invariant} if $\sigma(E)\sub E$. However, since $E/K$ is algebraic, any embedding of $E$ into itself is an automorphism of $E$ (Theorem~\ref{field ext algebraic Hom=Aut}) and so $E$ is $\sigma$-invariant if and only if $\sigma(E)=E$, that is, if and only if $\sigma$ is an automorphism of $E$.\par
+Suppose that $K\sub E\sub\widebar{K}$ is algebraic and that $\sigma:E\to\widebar{K}$ is an embedding over $K$ of $E$ into the algebraic closure $\widebar{K}$. Then $E$ is said to be \textbf{$\bm{\sigma}$-invariant} if $\sigma(E)\sub E$. However, since $E/K$ is algebraic, any embedding of $E$ into itself is an automorphism of $E$ (\cref{field ext algebraic Hom=Aut}) and so $E$ is $\sigma$-invariant if and only if $\sigma(E)=E$, that is, if and only if $\sigma$ is an automorphism of $E$.\par
 If the field $E$ is $\sigma$-invariant for all embeddings $\sigma:E\to\widebar{K}$ over $K$, then it is not hard to see that any irreducible polynomial $f(X)$ over $K$ that has one root $\alpha$ in $E$ must split over $K$. For if $\beta$ is also a root of $f(X)$ in $\widebar{K}$, then there is an embedding $\sigma\in\Hom_K(E,\widebar{K})$ for which $\sigma(\alpha)=\beta$. Hence, the $\sigma$-invariance of $E$ implies that $\beta\in E$. Put another way, we can say that $E$ is the splitting field for the family
 \[\min(E,K):=\{\min(\alpha,K):\alpha\in E\}.\]
 We now formulate the observation above into the following theorem.
@@ -534,7 +534,7 @@ Let $K\sub E\sub\widebar{K}$ be algebraic extensions, with normal closure $N=\la
 Let $N'$ be the composition field in (a). If $\sigma\in\Hom_{K}(E,\widebar{K})$ then $\sigma$ can be extended to a $K$-embedding of $N$ to $\widebar{K}$, denoted by $\bar{\sigma}$. Since $N$ normal, we have $\bar{\sigma}(N)=N$, and thus
 \[\sigma(E)=\bar{\sigma}(E)\sub\bar{\sigma}(N)=N.\]
 This shows $N'\sub N$. Conversely, we show that $N'/K$ is normal, so that $N\sub N'$.\par
-Let $\tau:N'\to\widebar{K}$ be an $K$-embedding. Then by Theorem~\ref{field embedding ext algebraic case} $\tau$ extends to an automorphism $\varphi$ of $\widebar{K}$. Both of the inclusions of $N'$ into $\widebar{K}$ are $K$-embeddings, so $\varphi$ must be a $K$-automorphism. Now for $\sigma\in\Hom_K(E,\widebar{K})$, we see $\varphi\circ\sigma\in\Hom_K(E,\widebar{K})$, therefore
+Let $\tau:N'\to\widebar{K}$ be an $K$-embedding. Then by \cref{field embedding ext algebraic case} $\tau$ extends to an automorphism $\varphi$ of $\widebar{K}$. Both of the inclusions of $N'$ into $\widebar{K}$ are $K$-embeddings, so $\varphi$ must be a $K$-automorphism. Now for $\sigma\in\Hom_K(E,\widebar{K})$, we see $\varphi\circ\sigma\in\Hom_K(E,\widebar{K})$, therefore
 \[\varphi(N')=\varphi(\bigvee_{\sigma\in\Hom_K(E,\widebar{K})}\sigma(E))=\bigvee_{\sigma\in\Hom_K(E,\widebar{K})}\varphi(\sigma(E))\sub N'.\]
 Since $\varphi$ coincides with $\tau$ on $N'$, it follows that $\tau(N')=N'$ and thus $N'$ is normal. This completes the proof of (a). The rest part are easy.
 \end{proof}
@@ -543,7 +543,7 @@ Our intuition may lead us to think that if a polynomial factors as a product of 
 \begin{example}\label{irr insepara eg}
 Let $p$ be a prime, and consider the field $\F_p(X)$ of rational functions over $\F_p$. Then the polynomial
 \[X^p-t\in \F_p(t)[X]\]
-is irreducible: by Eisenstein's criterion it is irreducible in $\F_p[t][X]$ (since $(t)$ is prime in $\F_p[t]$), hence in $\F_p(t)[X]$ by Proposition~\ref{UFD irreducible in field of fraction iff}. Let $\alpha$ be a root of this polynomial in an extension $L$ of $\F_p(X)$ (for example $L$ could be the algebraic closure of $\F_p(X)$, or more modestly a splitting field for the polynomial). Then
+is irreducible: by Eisenstein's criterion it is irreducible in $\F_p[t][X]$ (since $(t)$ is prime in $\F_p[t]$), hence in $\F_p(t)[X]$ by \cref{UFD irreducible in field of fraction iff}. Let $\alpha$ be a root of this polynomial in an extension $L$ of $\F_p(X)$ (for example $L$ could be the algebraic closure of $\F_p(X)$, or more modestly a splitting field for the polynomial). Then
 \[X^p-t=(X-\alpha)^p\]
 in $L[X]$; that is, $\alpha$ has multiplicity $p$ as a root of $f(X)$.\par
 In other words, the minimal polynomial over $\F_p(X)$ of $\alpha\in L$ vanishes $p$ times at $\alpha$, and there is nothing to do about this: no smaller power of $(X-\alpha)$ than $(X-\alpha)^p=X^p-t$ has coefficients in $\F_p(X)$ (a smaller power would give a nontrivial factor of $X^p-t$, and $X^p-t$ is irreducible).
@@ -577,9 +577,9 @@ Since $\deg(f'(X))<\deg (f(X))$ and $f$ is irreducible, it follows that $f(X)$ a
 \begin{corollary}
 All irreducible polynomials over a field of characteristic $0$ are separable.
 \end{corollary}
-In fact, Corollary~\ref{insepara zero} gives us a precise picture of what inseparable irreducible polynomials must look like. If
+In fact, \cref{insepara zero} gives us a precise picture of what inseparable irreducible polynomials must look like. If
 \[f(X)=\sum_{i=0}^{n}a_iX^i\]
-is irreducible and inseparable, then the characteristic of the field must be a positive prime $p$, and by Corollary~\ref{insepara zero} we must have
+is irreducible and inseparable, then the characteristic of the field must be a positive prime $p$, and by \cref{insepara zero} we must have
 \[f'(X)=\sum_{i=0}^{n}ia_iX^{i-1}=0.\]
 That is, $ia_i=0$ for all $i$. Now $ia_i=0$ is automatic if $i$ is a multiple of $p$, and it implies $a_i=0$ for all the indices $i$ which are not multiples of $p$. Therefore, the only nonvanishing coefficients in $f(X)$ must be those corresponding to indices which are multiples of $p$:
 \[f(X)=a_0+a_pX^p+a_{2p}X^{2p}+\cdots,\]
@@ -623,7 +623,7 @@ and so
 Hence, $K(S)=K(S^{p^n})$ for all $n\geq 1$. The converse part is obvious.\par
 For part (\rmnum{2}), we observe that $K^{p^n}\sub K^p\sub K$ and so $K=K^{p^n}$ holds for some $n\geq 1$ if and only if $K=K^p$, which holds if and only if $K=K^{p^n}$ for all $n\geq 1$.
 \end{proof}
-According to Proposition~\ref{field embedding ext simple case}, the number of extensions of an embedding $\sigma:K\to L$ to $K(\alpha)$, where $L$ is algebraically closed, is equal to the number of distinct roots of $\min(\alpha,K)$. Hence, as we remarked earlier, the size of $\Hom_{\sigma}(K(\alpha),K)$ does not depend on either $\sigma$ or $L$. The same is true for extensions of $\sigma$ to any algebraic extension.
+According to \cref{field embedding ext simple case}, the number of extensions of an embedding $\sigma:K\to L$ to $K(\alpha)$, where $L$ is algebraically closed, is equal to the number of distinct roots of $\min(\alpha,K)$. Hence, as we remarked earlier, the size of $\Hom_{\sigma}(K(\alpha),K)$ does not depend on either $\sigma$ or $L$. The same is true for extensions of $\sigma$ to any algebraic extension.
 \begin{theorem}\label{field ext algebraic embedding to algebraically closed inv card}
 If $E/K$ is algebraic and $\sigma:K\to L$, where $L$ is algebraically closed, then the cardinality of $\Hom_{\sigma}(E,L)$ depends only on the extension $E/K$ and not on $\sigma$ or $L$. In other words, if $\tau:K\to L'$, with $L'$ algebraically closed, then
 \[|\Hom_{\sigma}(E,L)|=|\Hom_{\tau}(E,L')|\]
@@ -643,7 +643,7 @@ Now, if $\bar{\sigma}\in\Hom_{\sigma}(E,L)$, then the map $\lambda\circ\bar{\sig
 By a symmetric argument, we have the reverse inequality and so equality
 holds.
 \end{proof}
-In view of Theorem~\ref{field ext algebraic embedding to algebraically closed inv card}, we may make the following definition.
+In view of \cref{field ext algebraic embedding to algebraically closed inv card}, we may make the following definition.
 \begin{definition}
 Let $E/K$ be algebraic and let $\sigma:K\to L$, where $L$ is algebraically closed. The cardinality of the set $\Hom_{\sigma}(E,L)$ is called the \textbf{separable degree} of $E$ over $K$ and is denoted by $[E:K]_s$.
 \end{definition}
@@ -659,7 +659,7 @@ and then extension $K(\alpha^{p^d})$ is separable over $K$.
 \end{itemize}
 \end{theorem}
 \begin{proof}
-This comes from Proposition~\ref{field embedding ext simple case} and Corollary~\ref{field inseparable irreducible polynomial}.
+This comes from \cref{field embedding ext simple case} and \cref{field inseparable irreducible polynomial}.
 \end{proof}
 We would like to recast separability of simple and finite extensions entirely in the light of separable degree. First of all, we need to establish that the separable degree is multiplicative.
 \begin{theorem}\label{field ext separable degree multiplicative}
@@ -683,12 +683,12 @@ If $\alpha$ is inseparable with radical exponent $d$, then
 \[[K(\alpha):K]_s=\frac{1}{p^d}[K(\alpha):K].\]
 \end{proposition}
 \begin{proof}
-By Theorem~\ref{field simple ext separable degree} we now that $(\rmnum{1})\Leftrightarrow(\rmnum{3})$. Let $\alpha$ be separable and $\beta\in K(\alpha)$, then we have the tower
+By \cref{field simple ext separable degree} we now that $(\rmnum{1})\Leftrightarrow(\rmnum{3})$. Let $\alpha$ be separable and $\beta\in K(\alpha)$, then we have the tower
 \[K\sub K(\beta)\sub K(\alpha).\]
 The separable degree and the ordinary (vector space) degree are multiplicative and, at least for simple extensions, the separable degree does not exceed the ordinary degree. Hence, $[K(\alpha):K]_s=[K(\alpha):K]$ implies that the same is true for each step in the tower, and so $[K(\beta):K]_s=[K(\beta):K]$, which means $\beta$ is separable over $K$.\par
 Now we prove $(\rmnum{1})\Rightarrow(\rmnum{4})$. Assume that $\alpha$ is separable. Note that $\alpha$ is a root of the polynomial $f(X)=X^{p}-\alpha^{p}=(X-\alpha)^{p}$ over $K(\alpha^{p})$, and so $\min(\alpha,K(\alpha^{p}))$ divides $(X-\alpha)^{p}$. Since $\alpha$ is separable over $K$, it is also separable over $K(\alpha^p)$, which the implies
 \[\min(\alpha,K(\alpha^{p}))=x-\alpha.\]
-Hence $\alpha\in K(\alpha^p)$. By Lemma~\ref{field ext frobenius homo lemma} we conclude that (\rmnum{3}) holds.\par
+Hence $\alpha\in K(\alpha^p)$. By \cref{field ext frobenius homo lemma} we conclude that (\rmnum{3}) holds.\par
 Conversely, assume that $K(\alpha^{p^n})=K(\alpha)$ for all $n\geq 1$. Let $d$ be the radical exponent of $\alpha$, then $K(\alpha^{p^d})=K(\alpha)$. But $K(\alpha^{p^d})$ is a separable extension, therefore $\alpha$ is separable. This completes the proof. 
 \end{proof}
 \begin{proposition}[\textbf{Separability of finite extensions}]\label{field ext finite separable iff}
@@ -704,20 +704,20 @@ If $E/K$ is not separable, then
 for some integer $e\geq 1$.
 \end{proposition}
 \begin{proof}
-Since $E$ is finite over $K$, it is finitely generated. Let $F=K(\alpha_1,\dots,\alpha_r)$. Then using Theorem~\ref{field simple ext separable degree}, Theorem~\ref{field ext separable degree multiplicative}, and Proposition~\ref{field ext finitely generated finite iff}, 
+Since $E$ is finite over $K$, it is finitely generated. Let $F=K(\alpha_1,\dots,\alpha_r)$. Then using \cref{field simple ext separable degree}, \cref{field ext separable degree multiplicative}, and \cref{field ext finitely generated finite iff}, 
 \begin{align*}
 [E:K]_s&=[K(\alpha_1,\dots,\alpha_{r-1})(\alpha_r):K(\alpha_1,\dots,\alpha_{r-1})]_s\cdots[K(\alpha_1):K]_s\\
 &\leq [K(\alpha_1,\dots,\alpha_{r-1})(\alpha_r):K(\alpha_1,\dots,\alpha_{r-1})]\cdots[K(\alpha_1):K]=[E:K].
 \end{align*}
 This proves the stated inequality.\par
-First we show (\rmnum{1})$\Rightarrow$(\rmnum{3}). If each $\alpha_i$ is separable over $K$, then it is separable over the field $K(\alpha_1,\dots,\alpha_{i-1})$, so the inequality above is an equality. For (\rmnum{3})$\Rightarrow$(\rmnum{2}), assume $[E:K]_s=[E:K]$, and let $\alpha\in E$. We have $K\sub K(\alpha)\sub E$; hence by Theorem~\ref{field ext separable degree multiplicative}
+First we show (\rmnum{1})$\Rightarrow$(\rmnum{3}). If each $\alpha_i$ is separable over $K$, then it is separable over the field $K(\alpha_1,\dots,\alpha_{i-1})$, so the inequality above is an equality. For (\rmnum{3})$\Rightarrow$(\rmnum{2}), assume $[E:K]_s=[E:K]$, and let $\alpha\in E$. We have $K\sub K(\alpha)\sub E$; hence by \cref{field ext separable degree multiplicative}
 \[[E:K(\alpha)]_s[K(\alpha):K]_s=[E:K]_s=[E:K]=[E:K(\alpha)][K(\alpha):K].\]
 Since both separable degrees are less than or equal to their plain counterparts, the equality implies
 \[[K(\alpha):K]_s=[K(\alpha):K]\]
-proving that $\alpha$ is separable, by Theorem~\ref{field simple ext separable degree}. Therefore the extension $E/K$ is separable. Now if $[E:K]_s=[E:K]$ and $E=K(\alpha_1,\dots,\alpha_n)$, then the inequality becomes an equality, and so each $\alpha_i$ is separable over $K$, so (\rmnum{1}) holds.\par
+proving that $\alpha$ is separable, by \cref{field simple ext separable degree}. Therefore the extension $E/K$ is separable. Now if $[E:K]_s=[E:K]$ and $E=K(\alpha_1,\dots,\alpha_n)$, then the inequality becomes an equality, and so each $\alpha_i$ is separable over $K$, so (\rmnum{1}) holds.\par
 Finnaly, we prove $(\rmnum{2})\Leftrightarrow(\rmnum{4})$. Let $E=K(S)$ where $S$ is a finite set. If $E$ is separable, then any $\alpha\in E$ is separable over $K$ and so
 \[K(\alpha)=K(\alpha^{p^n})\sub K(S^{p^n}).\]
-for any $n\geq 1$. Thus, $K(S)=K(S^{p^n})$, for any $n\geq 1$. Conversely, if $K(S^{p^n})=K(S)$ for some $n\geq 1$, then Lemma~\ref{field ext frobenius homo lemma} implies that $K(S)=K(S^{p^n})$ for all $n\geq 1$. Since $S$ is a finite set, we can take $p^n$ to be the maximum of the numbers $p^d$, where $d$ varies over all radical exponents of the elements of $S$, in which case each $\alpha^{p^d}$ is separable, and so $K(S^{p^n})$ is separable. Since $K(S)=K(S^{p^d})$, it is also separable.
+for any $n\geq 1$. Thus, $K(S)=K(S^{p^n})$, for any $n\geq 1$. Conversely, if $K(S^{p^n})=K(S)$ for some $n\geq 1$, then \cref{field ext frobenius homo lemma} implies that $K(S)=K(S^{p^n})$ for all $n\geq 1$. Since $S$ is a finite set, we can take $p^n$ to be the maximum of the numbers $p^d$, where $d$ varies over all radical exponents of the elements of $S$, in which case each $\alpha^{p^d}$ is separable, and so $K(S^{p^n})$ is separable. Since $K(S)=K(S^{p^d})$, it is also separable.
 \end{proof}
 Finally, we consider the separability of algebraic extensions.\
 \begin{proposition}[\textbf{Separability of algebraic extensions}]\label{field ext algebraic separable iff}
@@ -728,7 +728,7 @@ Let $E/K$ be algebraic and $\char(K)=p\neq 0$.
 \end{itemize}
 \end{proposition}
 \begin{proof}
-For part $(a)$, if $E/K$ is separable then $E$ is generated by itself over $K$. For the converse, assume that $E=K(S)$ where each $\alpha\in S$ is separable over $K$ and let $\beta\in E$. Then $\beta\in K(S_0)$ for some finite subset $S_0\sub S$. Since $K(S_0)$ is finitely generated and algebraic, it is finite. Thus, Proposition~\ref{field ext finite separable iff} implies that $K(S_0)$ is separable. Hence $\beta$ is separable over $K$ and so $E$ is separable. As to part $(b)$, we have for any $\alpha\in S$ $n\geq 1$
+For part $(a)$, if $E/K$ is separable then $E$ is generated by itself over $K$. For the converse, assume that $E=K(S)$ where each $\alpha\in S$ is separable over $K$ and let $\beta\in E$. Then $\beta\in K(S_0)$ for some finite subset $S_0\sub S$. Since $K(S_0)$ is finitely generated and algebraic, it is finite. Thus, \cref{field ext finite separable iff} implies that $K(S_0)$ is separable. Hence $\beta$ is separable over $K$ and so $E$ is separable. As to part $(b)$, we have for any $\alpha\in S$ $n\geq 1$
 \[K(\alpha)=K(\alpha^{p^n})\sub K(S^{p^n})\]
 which implies that $K(S)\sub K(S^{p^n})$ and so $K(S)=K(S^{p^n})$. 
 \end{proof}
@@ -741,7 +741,7 @@ For the tower property, if the full extension in $K\sub E\sub F$ is separable, t
 \[\min(\alpha,K)\mid\min(\alpha,E),\]
 and so $\alpha$ separable over $K$ implies $\alpha$ separable over $E$, hence $E\sub F$ is separable. Conversely, suppose now that $K\sub E$ and $E\sub F$ are separable and let $\alpha\in F$. Let $S\sub E$ be the set of coefficients of $\min(\alpha,E)$. Then $\min(\alpha,E)=\min(\alpha,K(S))$ and so $\alpha$ is separable over $K(S)$. It follows that each step in the
 tower  $K\sub K(S)\sub K(S,\alpha)$ is finite and separable, implying that $\alpha$ is separable over $K$. Hence, $F$ is separable.\par
-For the lifting property, let $K\sub E$ be separable and let $K\sub F$. Since every element of $E$ is separable over $K$, it is also separable over the larger field $F$. Hence $EF=F(E)$ is separably generated and is therefore separable (Proposition~\ref{field ext algebraic separable iff}).\par
+For the lifting property, let $K\sub E$ be separable and let $K\sub F$. Since every element of $E$ is separable over $K$, it is also separable over the larger field $F$. Hence $EF=F(E)$ is separably generated and is therefore separable (\cref{field ext algebraic separable iff}).\par
 The fact that separable extensions are closed under the taking of arbitrary
 composites follows from the finitary property of arbitrary composites. That is, each element of an arbitrary composite involves elements from only a finite number of the fields in the composite and so is an element of a finite composite, which is separable.
 \end{proof}
@@ -775,13 +775,13 @@ Let $K$ be a field with characteristic $p>0$. The following are equivalent.
 \begin{proof}
 Suppose $K$ is perfect. Let $\alpha\in K$ and consider the polynomial $f(X)=X^p-\alpha$. If $\beta$ is a root of $f(X)$ in a splitting field then $\beta^p=\alpha$ and so
 \[f(X)=X^p-\beta^p=(X-\beta)^p\]
-Now, if $g(X)=(X-\beta)^e$ is an irreducible factor of $f(X)$ over $K$, then it must be separable and so $e=1$. Thus $\beta\in K$, that is, $\alpha=\beta^p\in K^p$ and so $K\sub K^p$. Since the reverse inclusion is manifest, we have $K=K^p$. Then (\rmnum{2}) follows from Lemma~\ref{field ext frobenius homo lemma}.\par
-Now assume that (\rmnum{2}) holds. Then Lemma~\ref{field ext frobenius homo lemma} implies that $K=K^p$. Suppose that $f(X)\in K[X]$ is irreducible. If $f(X)$ is not separable, then
+Now, if $g(X)=(X-\beta)^e$ is an irreducible factor of $f(X)$ over $K$, then it must be separable and so $e=1$. Thus $\beta\in K$, that is, $\alpha=\beta^p\in K^p$ and so $K\sub K^p$. Since the reverse inclusion is manifest, we have $K=K^p$. Then (\rmnum{2}) follows from \cref{field ext frobenius homo lemma}.\par
+Now assume that (\rmnum{2}) holds. Then \cref{field ext frobenius homo lemma} implies that $K=K^p$. Suppose that $f(X)\in K[X]$ is irreducible. If $f(X)$ is not separable, then
 \[f(X)=g(X^p)=\sum_ia_i(X^p)^i=\sum_ib_i^p(X^i)^p=\sum_i(b_iX^i)^p\]
 contradicting the fact that $f(X)$ is irreducible. Hence, every irreducible polynomial is separable and so $K$ is perfect. Thus, (\rmnum{2}) implies (\rmnum{1}). Since the Frobenius map is a monomorphism, statement (\rmnum{2}), which says that $\sigma^n$ is surjective, is equivalent to statement (\rmnum{3}).
 \end{proof}
 \begin{example}
-Let $p$ be a prime. Then the field $\F_p$ is finite and hence perfect. However, if $t$ is an independent variable, then the field $\F_p(t)$ is not perfect, as we have seen in Example~\ref{irr insepara eg}.
+Let $p$ be a prime. Then the field $\F_p$ is finite and hence perfect. However, if $t$ is an independent variable, then the field $\F_p(t)$ is not perfect, as we have seen in \cref{irr insepara eg}.
 \end{example}
 While it is true that any algebraic extension of a perfect field is perfect, not all subfields of a perfect field need be perfect.
 \begin{proposition}
@@ -792,7 +792,7 @@ Let $K\sub E$ be an algebraic extension.
 \end{itemize}
 \end{proposition}
 \begin{proof}
-Part $(a)$ follows from Proposition~\ref{field perfect iff algebraic ext is separable} and the fact that every algebraic extension of $E$ is an algebraic extension of $K$.\par
+Part $(a)$ follows from \cref{field perfect iff algebraic ext is separable} and the fact that every algebraic extension of $E$ is an algebraic extension of $K$.\par
 For part (\rmnum{2}), let $p=\char(K)$ and suppose first that $K\sub E$ is simple. Thus, $E=K(\alpha)$ is perfect and $\alpha$ is algebraic over $K$. Since $K(\alpha)$ is perfect, we have $K(\alpha)=[K(\alpha)]^p=K^p(\alpha^p)$. Consider the tower
 \[K^p\sub K\sub K(\alpha)=K^p(\alpha^p).\]
 If $f(X)=\sum_ia_iX^i$ is the minimal polynomial of $\alpha$ over $K$, then
@@ -825,7 +825,7 @@ Let $\char(K)=p$. If $t$ is transcendental over $K$, then $t$ is purely insepara
 \begin{example}\label{field ext inseparable not pure}
 Here we present an example of an element that is neither separable nor purely inseparable over a field $K$. Let $\char(K)=p$ and let $\alpha\in K$ be nonzero. Let $t$ be transcendental over $K$ and let
 \[s=\frac{t^{p^2}}{t^p+\alpha}.\]
-According to Proposition~\ref{field simple transcendental ext minimal poly of elements}, $K(s)\sub K(t)$ is algebraic and has degree equal to $p^2$, and the  monic polynomial
+According to \cref{field simple transcendental ext minimal poly of elements}, $K(s)\sub K(t)$ is algebraic and has degree equal to $p^2$, and the  monic polynomial
 \[p(X)=X^{p^2}-sX^p-s\alpha\]
 is the minimal polynomial for $t$ over $K(s)$. Since $p(X)=q(X^p)$, we deduce that $t$ is not separable over $K(s)$. On the other hand, if $t$ were purely inseparable over $K(s)$, we would have
 \[X^{p^2}-sX^p-s\alpha=(X-t)^{p^2}=X^{p^2}-t^{p^2}\]
@@ -867,8 +867,8 @@ If (\rmnum{1}) holds, then $\min(\alpha,K)=X^{p^d}-\alpha^{p^d}$, which implies 
 \end{proof}
 One may translate our results into the following remark. Let $\alpha$ be  element in $E$, then we have the following tower of extensions:
 \[K(\alpha)\sups K(\alpha^p)\sups\cdots\sups K(\alpha^{p^n})\sups\cdots\sups K.\]
-Then Proposition~\ref{field simple ext separable degree} says that if $\alpha$ is separable, then this tower is trivial, with the field all being $K(\alpha)$; and if $\alpha$ is inseparable, then this tower is descending. Now Proposition~\ref{field ext pure inseparable element iff} tells us $\alpha$ is purely inseparability condition if and only if this twoer arrives at $K$. Note that Example~\ref{field ext inseparable not pure} shows that there are cases where the tower is descending but never arrives at $K$.\par
-The following result is the analogue of Proposition~\ref{field ext algebraic separable iff}.
+Then \cref{field simple ext separable degree} says that if $\alpha$ is separable, then this tower is trivial, with the field all being $K(\alpha)$; and if $\alpha$ is inseparable, then this tower is descending. Now \cref{field ext pure inseparable element iff} tells us $\alpha$ is purely inseparability condition if and only if this twoer arrives at $K$. Note that \cref{field ext inseparable not pure} shows that there are cases where the tower is descending but never arrives at $K$.\par
+The following result is the analogue of \cref{field ext algebraic separable iff}.
 \begin{proposition}[\textbf{Purely inseparable extensions}]\label{field ext algebraic purely inseparable iff}
 Let $E/K$ be algebraic. The following are equivalent.
 \begin{itemize}
@@ -879,7 +879,7 @@ Let $E/K$ be algebraic. The following are equivalent.
 \end{proposition}
 \begin{proof}
 To prove that (\rmnum{1}) implies (\rmnum{2}), suppose that $E=K(I)$, where all elements of $I$ are purely inseparable over $K$. Let $\sigma:K\to L$ be an embedding to an algebraic closed field $L$. Then any $\tau\in\Hom_\sigma(E,L)$ is uniquely determined by its values on the elements of $I$. But if $\alpha\in I$ then $\tau(\alpha)$ is a root of the minimal polynomial $\min(\alpha,K)=(X-\alpha)^n$ and so $\tau(\alpha)=\alpha$. Hence $\tau$ must be the identity and therefore $[E:K]_s=1$.\par
-To show that (\rmnum{2}) implies (\rmnum{3}), let $\alpha\in E$ and suppose that $\beta$ is a root of $\min(\alpha,K)$ in $\widebar{K}$. Then by Proposition~\ref{field embedding ext algebraic case} the identity on $K$ can be extended to an embedding $\sigma:E\to\widebar{K}$, for which $\sigma(\alpha)=\beta$. Since $[E:K]_s=1$, we must have $\sigma=\id$ and so $\beta=\alpha$. Thus, $\min(\alpha,K)$ has only one distinct root in $\widebar{K}$ and so $E$ is purely inseparable. It is clear that (\rmnum{3}) implies (\rmnum{1}).
+To show that (\rmnum{2}) implies (\rmnum{3}), let $\alpha\in E$ and suppose that $\beta$ is a root of $\min(\alpha,K)$ in $\widebar{K}$. Then by \cref{field embedding ext algebraic case} the identity on $K$ can be extended to an embedding $\sigma:E\to\widebar{K}$, for which $\sigma(\alpha)=\beta$. Since $[E:K]_s=1$, we must have $\sigma=\id$ and so $\beta=\alpha$. Thus, $\min(\alpha,K)$ has only one distinct root in $\widebar{K}$ and so $E$ is purely inseparable. It is clear that (\rmnum{3}) implies (\rmnum{1}).
 \end{proof}
 Similarly to separable extensions, We can show that the class of purely inseparable extensions is distinguished.
 \begin{proposition}
@@ -910,21 +910,21 @@ Let $E/K$ be algebraic.
 \end{itemize}
 \end{proposition}
 \begin{proof}
-For $(a)$, if $\alpha\in E\setminus K$ has radical exponent $d$, then $\alpha^{p^d}$ has a separable minimal polynomial and is therefore in $K^{\sep}$. Thus, Proposition~\ref{field ext pure inseparable element iff} implies that $\alpha$ is purely inseparable over $K^{\sep}$. For $(b)$, let $\alpha$ be purely inseparable over $K$, then any automorphism $\sigma$ of $E$ must send $\alpha$ to a root of $\min(\alpha,K)=(X-\alpha)^{n}$, and so $\sigma|_{K^{\isep}}$ is the identify.
+For $(a)$, if $\alpha\in E\setminus K$ has radical exponent $d$, then $\alpha^{p^d}$ has a separable minimal polynomial and is therefore in $K^{\sep}$. Thus, \cref{field ext pure inseparable element iff} implies that $\alpha$ is purely inseparable over $K^{\sep}$. For $(b)$, let $\alpha$ be purely inseparable over $K$, then any automorphism $\sigma$ of $E$ must send $\alpha$ to a root of $\min(\alpha,K)=(X-\alpha)^{n}$, and so $\sigma|_{K^{\isep}}$ is the identify.
 \end{proof}
 \begin{corollary}\label{field ext separable closure separable degree}
 Let $E/K$ be finite, then $[E:K]_s=[K^{\sep}:K]$ and $[E:K]_i=[E:K^{\isep}]$.
 \end{corollary}
 \begin{proof}
-The first equality follows from part $(b)$ of Proposition~\ref{field ext separable closure prop}, and the second follows from the definition of $[E:K]_i$.
+The first equality follows from part $(b)$ of \cref{field ext separable closure prop}, and the second follows from the definition of $[E:K]_i$.
 \end{proof}
 \begin{corollary}\label{field normal ext separable closure is normal}
 If $E/K$ is normal, then $K^{\sep}/K$ is also normal.
 \end{corollary}
 \begin{proof}
-Let $\sigma$ be an embedding of $K^{\sep}$ in $\widebar{K}$ over $K$ and extend $\sigma$ to an embedding of $E$. Then $\sigma$ is an automorphism of $E$ by Proposition~\ref{field ext algebraic Hom=Aut}. Furthermore, $\sigma(K^{\sep})$ is separable over $K$, hence is contained in $K^{\sep}$. Hence $\sigma(K^{\sep})=K^{\sep}$, as contended.
+Let $\sigma$ be an embedding of $K^{\sep}$ in $\widebar{K}$ over $K$ and extend $\sigma$ to an embedding of $E$. Then $\sigma$ is an automorphism of $E$ by \cref{field ext algebraic Hom=Aut}. Furthermore, $\sigma(K^{\sep})$ is separable over $K$, hence is contained in $K^{\sep}$. Hence $\sigma(K^{\sep})=K^{\sep}$, as contended.
 \end{proof}
-Proposition~\ref{field ext separable closure prop} shows that any algebraic extension can be decomposed into a separable extension followed by a purely inseparable extension. In general, the reverse is not possible: an algebraic extension can not be decomposed into a purely inseparable extension followed by a separable extension. This is because, although $K\sub K^{\isep}$ is purely inseparable, the elements of $E\setminus K^{\isep}$ need not be separable over $K^{\isep}$; they are simply not purely inseparable over $K$. However, we do have a characterization for the extension $K^{\isep}\sub E$ to be separable. For this we need a lemma.
+\cref{field ext separable closure prop} shows that any algebraic extension can be decomposed into a separable extension followed by a purely inseparable extension. In general, the reverse is not possible: an algebraic extension can not be decomposed into a purely inseparable extension followed by a separable extension. This is because, although $K\sub K^{\isep}$ is purely inseparable, the elements of $E\setminus K^{\isep}$ need not be separable over $K^{\isep}$; they are simply not purely inseparable over $K$. However, we do have a characterization for the extension $K^{\isep}\sub E$ to be separable. For this we need a lemma.
 \begin{lemma}\label{field ext composition of sep and p isep}
 Let $E,F$ be two finite extensions of $K$, and assume that $E/K$ is separable, $F/K$ is purely inseparable. Assume $E,F$ are subfields of a common field. Then
 \begin{align*}
@@ -938,7 +938,7 @@ In fact, we have the following picture:
 E\ar[ru,no head,"\text{p isep}"description]&&F\ar[lu,swap,no head,"\text{sep}"description]\\
 &K\ar[ru,swap,no head,"\text{p isep}"description]\ar[lu,no head,"\text{sep}"description]&
 \end{tikzcd}\]
-Since separable and purely inseparable extensions are distinguished, the extension $EF/E$ is purely insepara and $EF/F$ is separable. Therefore, by Proposition~\ref{field ext algebraic separable iff} and Proposition~\ref{field ext algebraic purely inseparable iff}, we have
+Since separable and purely inseparable extensions are distinguished, the extension $EF/E$ is purely insepara and $EF/F$ is separable. Therefore, by \cref{field ext algebraic separable iff} and \cref{field ext algebraic purely inseparable iff}, we have
 \[[EF:K]_s=[EF:F]_s[F:K]_s=[EF:F]_s=[EF:F],\]
 and the claim for inseparable degree can be proved similarly.
 \end{proof}
@@ -955,13 +955,13 @@ K^{\sep}\ar[ru,no head,"\text{p isep}"description]&&K^{\isep}\ar[lu,swap,no head
 \end{tikzcd}\]
 We already know that $E/K^{\sep}$ is purely inseparable, and so $E/K^{\sep}K^{\isep}$ is also purely inseparable. If $E/K^{\isep}$ is separable, then $E/K^{\sep}K^{\isep}$ is also separable, hence we get $E=K^{\sep}K^{\isep}$. The converse is trivial from the diagram above.
 \end{proof}
-We can obtain further results in the setting of Proposition~\ref{field ext inseparable closure is separable extended iff} when $E/K$ is a normal extension, which includes the case $E=\widebar{K}$. Let $G=\Aut_K(E)$ be the set of all automorphisms of $E$ over $K$. Since $E$ is normal, $G$ is also the set of all embeddings of $E$ into $\widebar{K}$ over $K$. We define the \textbf{fixed field} of $G$ in $E$ by
+We can obtain further results in the setting of \cref{field ext inseparable closure is separable extended iff} when $E/K$ is a normal extension, which includes the case $E=\widebar{K}$. Let $G=\Aut_K(E)$ be the set of all automorphisms of $E$ over $K$. Since $E$ is normal, $G$ is also the set of all embeddings of $E$ into $\widebar{K}$ over $K$. We define the \textbf{fixed field} of $G$ in $E$ by
 \[E^G=\{\alpha\in E:\sigma(\alpha)=\alpha\text{ for all }\sigma\in G\}.\]
 \begin{proposition}\label{field ext normal inseparable closure is fixed field}
 Let $E$ be normal over $K$, $G$ its group of automorphisms over $K$, and $E^G$ the fixed field of $G$. Then $E^G=K^{\isep}$, the extension $E/K^{\isep}$ is separable, and we have $E=K^{\sep}K^{\isep}$.
 \end{proposition}
 \begin{proof}
-Let $\alpha\in E^G$. If $\beta\in\widebar{K}$ is conjugate to $\alpha$ then there exists an embedding $\sigma:E\to \widebar{K}$ over $K$ for which $\sigma(\alpha)=\beta$. But $\sigma(\alpha)=\alpha$ by the definition of $E^G$, and so $\beta=\alpha$. Hence the minimal polynomial of $\alpha$ has only one root and $\alpha\in K^{\isep}$. On the other hand, if $\alpha\in K^{\isep}$ then any $\sigma\in G$ must map $\sigma$ to itself (Proposition~\ref{field ext separable closure prop}). Hence $\alpha\in E^G$. This proves that $E^G=K^{\isep}$.\par
+Let $\alpha\in E^G$. If $\beta\in\widebar{K}$ is conjugate to $\alpha$ then there exists an embedding $\sigma:E\to \widebar{K}$ over $K$ for which $\sigma(\alpha)=\beta$. But $\sigma(\alpha)=\alpha$ by the definition of $E^G$, and so $\beta=\alpha$. Hence the minimal polynomial of $\alpha$ has only one root and $\alpha\in K^{\isep}$. On the other hand, if $\alpha\in K^{\isep}$ then any $\sigma\in G$ must map $\sigma$ to itself (\cref{field ext separable closure prop}). Hence $\alpha\in E^G$. This proves that $E^G=K^{\isep}$.\par
 Now let $\alpha\in E$ and $f(X)=\min(\alpha,E^G)$. Let $g(X)=\prod(X-r_i)$ where $R=\{r_1,\dots,r_n\}$ is the set of \textit{distinct} roots of $f(X)$ in $E$. Since any $\sigma\in G$ is a permutation of $R$, we deduce that $g^\sigma(X)=g(X)$ and so the coefficients of $g(X)$ lie in $E^G$. Hence $f(X)=g(X)$ and $\alpha$ is separable over $E^G$.
 \end{proof}
 \subsubsection{Existence of primitive elements}
@@ -998,7 +998,7 @@ and so $\alpha_1=i,\alpha_2=-i$, and $\beta_1=\sqrt{2},\beta_2=-\sqrt{2}$.  Acco
 \[c\notin\Big\{\frac{\beta_i-\beta}{\alpha-\alpha_2}:i=1,2\Big\}=\{0,\sqrt{2}i\}.\]
 In particular, we can choose any nonzero $c\in\Q$.
 \end{example}
-Theorem~\ref{field ext primitive element} is a good illustration of why separability is a technically desirable condition. One may wonder if there is an example of nonsimple extension. To give an example of this, we first provide a nice criterion for simplicity of algebraic extensions.
+\cref{field ext primitive element} is a good illustration of why separability is a technically desirable condition. One may wonder if there is an example of nonsimple extension. To give an example of this, we first provide a nice criterion for simplicity of algebraic extensions.
 \begin{proposition}\label{field ext finite is simple iff radical exponent}
 Let $E/K$ be a finite extension with $[E:K]_i=p^d$. Then $E/K$ is simple if and only if $d$ is the smallest nonnegative integer for which $E^{p^d}\sub K^{\sep}$.
 \end{proposition}
@@ -1010,12 +1010,12 @@ If for some $e\leq d$, we have $\beta_i^{p^e}\in K^{\sep}$ for all $i$, then $E^
 It follows that
 \[[K^{\sep}(\beta):K^{\sep}]_i=p^d=[E:K]_i\geq[E:K^{\sep}]_i.\]
 Since $K^{\sep}(\beta)\sub E$, we conclude $[K^{\sep}(\beta):K^{\sep}]_i=[E:K^{\sep}]_i$, and since the extensions involved are purely inseparable, we get $[K^{\sep}(\beta):K^{\sep}]=[E:K^{\sep}]$. Hence $E=K^{\sep}(\beta)$.\par
-Our tower now has the form $K\sub K^{\sep}\sub K^{\sep}(\beta)$ where $\beta$ is purely inseparable over $K^{\sep}$. In addition, $K^{\sep}/K$ is finite and separable and therefore simple. Thus there exist $\alpha\in K^{\sep}$ such that $K^{\sep}=K(\alpha)$ and therefore $E=K(\alpha,\beta)$, where $\alpha$ is separable over $K$ and $\beta$ is purely inseparable over $K(\alpha)$. By Theorem~\ref{field ext primitive element}, the extension $K\sub K(\alpha,\beta)$ is simple.
+Our tower now has the form $K\sub K^{\sep}\sub K^{\sep}(\beta)$ where $\beta$ is purely inseparable over $K^{\sep}$. In addition, $K^{\sep}/K$ is finite and separable and therefore simple. Thus there exist $\alpha\in K^{\sep}$ such that $K^{\sep}=K(\alpha)$ and therefore $E=K(\alpha,\beta)$, where $\alpha$ is separable over $K$ and $\beta$ is purely inseparable over $K(\alpha)$. By \cref{field ext primitive element}, the extension $K\sub K(\alpha,\beta)$ is simple.
 \end{proof}
 \begin{example}
-By Proposition~\ref{field ext primitive element}, if we want to construct a nonsimple finite extension, we have to use inseparable elements. Consider the extension $E/K$, where
+By \cref{field ext primitive element}, if we want to construct a nonsimple finite extension, we have to use inseparable elements. Consider the extension $E/K$, where
 \[K=\F_p(u^p,v^p),\quad E=\F_p(u,v).\]
-The minimal polynomial of $s$ over $K$ is $X^p-u^p$ and the minimal polynomial of $t$ over $\F_p(u,v^p)$ is $y^p-v^p$, so it follows that $E/K$ is purely inseparable and $[E:K]_i=[E:K]=p^2$. Since $E^p\sub\F_p(u,v)=K$, by Proposition~\ref{field ext finite is simple iff radical exponent} the extension $E/K$ is not simple.\par
+The minimal polynomial of $s$ over $K$ is $X^p-u^p$ and the minimal polynomial of $t$ over $\F_p(u,v^p)$ is $y^p-v^p$, so it follows that $E/K$ is purely inseparable and $[E:K]_i=[E:K]=p^2$. Since $E^p\sub\F_p(u,v)=K$, by \cref{field ext finite is simple iff radical exponent} the extension $E/K$ is not simple.\par
 Note that $E/K$ has infinitely many intermediate fields: if there are $c,c'\in K$ such that $K(cu+v)=K(c'u+v)$, then we may conclude that $K(u,v)=K(cu+v)$, and in particular
 \[[K(cu+v):K]=p^2.\]
 But this is not the case, since $(cu+v)^p=c^pu^p+v^p\in K(u^p,v^p)=K$; hence the minimal polynomial of $cu+v$ over $K$ has degree at most $p$. Since $K=\F_p(u^p,v^p)$ is infinite, there are infinitely many intermediate fields, and it follows that $E$ is not a simple extension of $K$.
@@ -1154,7 +1154,7 @@ Let $E/K$ be a finite extension, and let $\alpha\in E$. Assume $[E:K(\alpha)]=r$
 \[\tr_{E/K}(\alpha)=r\,\tr_{K(\alpha)/K}(\alpha),\quad N_{E/K}(\alpha)=N_{K(\alpha)/K}(\alpha)^r.\]
 \end{exercise}
 \begin{proof}
-If $f_1,\dots,f_r$ is a basis of $E$ over $K(\alpha)$ and $\alpha$ has degree $d$ over $K$, then $(f_i\alpha^j)$ is a basis of $E$ over $K$ by Proposition~\ref{field ext degree multiplicative}. The matrix
+If $f_1,\dots,f_r$ is a basis of $E$ over $K(\alpha)$ and $\alpha$ has degree $d$ over $K$, then $(f_i\alpha^j)$ is a basis of $E$ over $K$ by \cref{field ext degree multiplicative}. The matrix
 corresponding to multiplication by $\alpha$ with respect to this basis consists of $r$ identical square blocks. Hence we get the result from simple linear algebra.
 \end{proof}
 \begin{exercise}
@@ -1165,7 +1165,7 @@ Prove that an analogous statement for $\sqrt[4]{2}$ is false.
 \begin{proof}
 Consider the extension
 \[\Q\sub\Q(g(\alpha))\sub\Q(\alpha).\]
-Since $H(X)=g(X)-g(\alpha)\in \Q(g(\alpha))[X]$ satisfies $h(\alpha)=0$, we see $[\Q(\alpha):\Q(g(\alpha))]<p$. Since $p$ is a prime, this implies $[\Q(\alpha):\Q(g(\alpha))]=1$ by Proposition~\ref{field ext intermediate field degree divide}, which means $\Q(\alpha)=\Q(g(\alpha))$. Now the claim follows.\par
+Since $H(X)=g(X)-g(\alpha)\in \Q(g(\alpha))[X]$ satisfies $h(\alpha)=0$, we see $[\Q(\alpha):\Q(g(\alpha))]<p$. Since $p$ is a prime, this implies $[\Q(\alpha):\Q(g(\alpha))]=1$ by \cref{field ext intermediate field degree divide}, which means $\Q(\alpha)=\Q(g(\alpha))$. Now the claim follows.\par
 For $\sqrt[4]{2}$, consider $g(X)=X^2$. Since any polynomial of $\sqrt{2}$ can be written into $a+b\sqrt{2}$. We see the claim is false in this case
 \end{proof}
 \begin{exercise}\label{field ext eg sqrt(2+sqrt(2))}
@@ -1175,7 +1175,7 @@ Let $\xi=\sqrt{2+\sqrt{2}}$.
 $\Q$.
 \item Prove that $\sqrt{2-\sqrt{2}}$ is another root of the minimal polynomial of $\xi$.
 \item Prove that $\sqrt{2-\sqrt{2}}\in\Q(\xi)$.
-\item By Proposition~\ref{field simple ext order of Aut}, sending $\xi$ to $\sqrt{2-\sqrt{2}}$ defines an automorphism of $\Q(\xi)$ over $\Q$. Find the matrix of this automorphism w.r.t. the basis $1,\xi,\xi^2,\xi^3$.
+\item By \cref{field simple ext order of Aut}, sending $\xi$ to $\sqrt{2-\sqrt{2}}$ defines an automorphism of $\Q(\xi)$ over $\Q$. Find the matrix of this automorphism w.r.t. the basis $1,\xi,\xi^2,\xi^3$.
 \item Prove that $\Aut_\Q(\Q(\xi))$ is cyclic of order $4$.
 \end{itemize}
 \end{exercise}
@@ -1356,7 +1356,7 @@ Let $(\Pi,\Omega)$ be an indexed Galois connection on $(P,Q)$. If $p,q\in P$, $\
 then $p$ is closed.
 \end{proposition}
 \begin{proof}
-Suppose that $(q:\cl(p))<\infty$. Then $q$ is closed by Theorem~\ref{Galois connection indexed prop} and since $\cl(p)^e=p^e$, we have
+Suppose that $(q:\cl(p))<\infty$. Then $q$ is closed by \cref{Galois connection indexed prop} and since $\cl(p)^e=p^e$, we have
 \[(q:\cl(p))=(p^e:q^e).\]
 Now if $(p^e:q^e)=(q:p)$, then we have $(q:\cl(p))=(q:p)$. This implies $(\cl(p):p)=1$ if either $(q:\cl(p))<\infty$ or $(q:p)<\infty$, and so $p=\cl(p)$ is closed.
 \end{proof}
@@ -1376,19 +1376,19 @@ Also,
 \end{itemize}
 \end{theorem}
 \begin{proof}
-Since $0_Q$ is closed, by Proposition~\ref{Galois connection closedness of top and bottom} we have $1_P^e=0_Q$, and therefore
+Since $0_Q$ is closed, by \cref{Galois connection closedness of top and bottom} we have $1_P^e=0_Q$, and therefore
 \[\mathrm{index}(P)=(1_P:0_P)\geq(0_P^e:1_P^e)=(1_Q:1_P^e)=(1_Q:0_Q)=\mathrm{index}(Q)\]
 it follows that if $P$ has finite index, then so does $Q$. Hence, if either $P$ or $Q$ has finite index, then $Q$ is completely closed.\par
-Finally, if $P$ has finite index and $0_P$ is also closed, then the connection is completely closed by Theorem~\ref{Galois connection indexed prop}.
+Finally, if $P$ has finite index and $0_P$ is also closed, then the connection is completely closed by \cref{Galois connection indexed prop}.
 \end{proof}
 \subsection{The Galois correspondence}
 Now we describe the main theme of this chapter.
 \begin{definition}
 The \textbf{Galois group} of a field extension $E/K$, denoted by $\Gal(E/K)$, is the group $\Aut_K(E)$ of all automorphisms of $E$ over $K$. The group $\Gal(E/K)$ is also called the Galois group of $E$ over $K$.
 \end{definition}
-Note that when the extension $E/K$ is algebraic, by Theorem~\ref{field ext algebraic Hom=Aut}
+Note that when the extension $E/K$ is algebraic, by \cref{field ext algebraic Hom=Aut}
 \[\Gal(E/K)=\Aut_K(E)=\Hom_{K}(E,E),\]
-and when $E$ is normal over $K$, by Theorem~\ref{field ext is a spliting iff}
+and when $E$ is normal over $K$, by \cref{field ext is a spliting iff}
 \[\Gal(E/K)=\Hom_{K}(E,\widebar{E}).\]
 Let $E/K$ be a field extension and let $\mathcal{F}$ be the complete lattice of all intermediate fields of $K\sub E$, ordered by set inclusion. Let $\mathcal{G}$ be the complete lattice of all subgroups of the Galois group $\Gal(E/K)$, ordered by set inclusion. We define two maps $\Pi:\mathcal{F}\to\mathcal{G}$ and $\Omega:\mathcal{G}\to\mathcal{F}$ by
 \[\Pi(K)=\Gal(E/K),\quad \Omega(H)=E^H\]
@@ -1401,7 +1401,7 @@ is a Galois connection on $(\mathcal{F},\mathcal{G})$, called the Galois corresp
 \begin{proof}
 It is clear from the definition that $\Pi$ and $\Omega$ are inclusion-reversing. Also, any element of $K$ is fixed by every element of $\Gal(E/K)$, that is, $K\sub E^{\Gal(E/K)}$. Finally, any $\sigma\in H$ fixes every element in $E^H$, that is, $H\sub\Gal(E/E^H)$. Thus the claim follows.
 \end{proof}
-Since $\mathcal{F}$ and $\mathcal{G}$ are complete lattices, Theorem~\ref{Galois connection on complete lattice} provides the following corollary.
+Since $\mathcal{F}$ and $\mathcal{G}$ are complete lattices, \cref{Galois connection on complete lattice} provides the following corollary.
 \begin{corollary}
 The set $\Cl(\mathcal{F})$ of closed intermediate fields and the set $\Cl(\mathcal{G})$ of closed subgroups of $\Gal(E/K)$ are complete lattices, where meet is intersection. In particular, the intersection of closed intermediate fields is closed and the intersection of closed subgroups is closed.
 \end{corollary}
@@ -1480,7 +1480,7 @@ and
 \end{theorem}
 We should note that the joins in the previous theorem are joins in the
 corresponding lattices. Thus, for instance, $\bigvee \Gal(E/K_i)$ is the smallest closed subgroup of $\Gal(E/K)$ containing all of the subgroups $\Gal(E/K_i)$, and this need not be the smallest subgroup of $\Gal(E/K)$ containing these groups.\par
-As a result of the closedness of $0_Q=\{1\}=\Gal(E/E)$, Theorem~\ref{Galois connection 0_Q is closed} gives the following.
+As a result of the closedness of $0_Q=\{1\}=\Gal(E/E)$, \cref{Galois connection 0_Q is closed} gives the following.
 \begin{corollary}
 Let $(\Pi,\Omega)$ be the Galois correspondence of $E/K$. Then
 \[|\Gal(E/K)|\leq[E:K].\]
@@ -1525,13 +1525,13 @@ First, suppose that $K$ is closed and let $\alpha\in E\setminus K$. Then the fin
 \[d:=[\Gal(E/K):\Gal(E/K(\alpha))]=[K(\alpha):K]<\infty.\]
 Let $S=\{\sigma_1,\dots,\sigma_d\}$ be a representatives for the coset $\Gal(E/K)/\Gal(E/K(\alpha))$. Each element of $S$ gives a distinct value on $\alpha$, that is, a distinct root of $\min(\alpha,K)$, for if $\sigma_i(\alpha)=\sigma_j(\alpha)$, then $\sigma_i\circ\sigma_j^{-1}\in\Gal(E/K(\alpha))$, which is not possible for $i\neq j$. Hence, the $d$ roots of $\min(\alpha,K)$ are $\{\sigma_1(\alpha),\dots,\sigma_d(\alpha)\}$, which are distinct and lie in $E$. Thus, $\alpha$ is separable and $\min(\alpha,K)$ splits in $E$, implying that $E/K$ is a Galois extension.\par
 For the converse, suppose that $E/K$ is Galois. If $\alpha\in\cl(K)=E^{\Gal(E/K)}$ has minimal polynomial $f(X)=\min(\alpha,K)$, then $f(X)$ can have no roots other than $\alpha$. For if $\beta$ is a root of $f(X)$ in some extension, then there is an embedding $\sigma:E\to\widebar{K}$ over $K$ for which $\sigma(\alpha)=\beta$. But since $E$ is normal over $K$, it follows that $\sigma\in\Gal(E/K)$ and so $\beta=\sigma(\alpha)=\alpha$. Thus $f(X)$ has only one distinct root. Since $E/K$ is separable, it must be linear, which implies that $\alpha\in K$. Thus, $\cl(K)=K$ and $K$ is closed.\par
-Now let $K$ be a closed intermediate field, so that $E/K$ is Galois. If $L$ is an arbitrary extension of $K$ (not necessarily finite), then by Proposition~\ref{Galois extension prop} the extension $E/L$ is also Galois, and therefore $L$ is closed.
+Now let $K$ be a closed intermediate field, so that $E/K$ is Galois. If $L$ is an arbitrary extension of $K$ (not necessarily finite), then by \cref{Galois extension prop} the extension $E/L$ is also Galois, and therefore $L$ is closed.
 \end{proof}
 Now we give some examples of non Galois extensions to show that in the general algebraic case, not all subgroups need be closed.
 \begin{example}\label{field ext no Galois eg}
 Consider the extension $\Q\sub\Q(\sqrt[3]{2})$. Since
 \[[\Q:\Q(\sqrt[3]{2})]=3\]
-is prime, the only intermediate fields are $\Q$ and $\Q(\sqrt[3]{2})$ $($by Corollary~\ref{field ext intermediate field degree divide}$)$. Concerning $\Aut_\Q(\Q(\sqrt[3]{2}))$, since $\sqrt[3]{2}\in\R$, we have an extension $\Q(\sqrt[3]{2})\sub\R$; since $\sqrt[3]{2}$ is the only cube root of $2$ in $\R$, we see that the minimal polynomial $X^3-2$ of $\sqrt[3]{2}$ has a single root in $\Q(\sqrt[3]{2})$. By Corollary~\ref{field simple ext order of Aut}, $\Aut_\Q(\Q(\sqrt[3]{2}))$ consists of a single element: it is trivial. Thus, in this example the Galois correspondence acts between a set with two elements and a singleton:
+is prime, the only intermediate fields are $\Q$ and $\Q(\sqrt[3]{2})$ $($by \cref{field ext intermediate field degree divide}$)$. Concerning $\Aut_\Q(\Q(\sqrt[3]{2}))$, since $\sqrt[3]{2}\in\R$, we have an extension $\Q(\sqrt[3]{2})\sub\R$; since $\sqrt[3]{2}$ is the only cube root of $2$ in $\R$, we see that the minimal polynomial $X^3-2$ of $\sqrt[3]{2}$ has a single root in $\Q(\sqrt[3]{2})$. By \cref{field simple ext order of Aut}, $\Aut_\Q(\Q(\sqrt[3]{2}))$ consists of a single element: it is trivial. Thus, in this example the Galois correspondence acts between a set with two elements and a singleton:
 \[\begin{tikzcd}
 \{\Q,\Q(\sqrt[3]{2})\}\ar[r,shift left=0.5ex]&\{\Aut_\Q(\Q(\sqrt[3]{2}))\}=\{e\}\ar[l,shift left=0.5ex]
 \end{tikzcd}\]
@@ -1564,7 +1564,7 @@ E&\Gal(E/E^G)\\
 K=E^G\ar[uu,no head]\ar[ruu]&\{1\}\ar[u,no head]
 \end{tikzcd}\]
 \begin{proof}
-Suppose $E/E^G$ is algebraic. Then since the base field $E^G$ is closed,  $E/E^G$ is a Galois extension. If moreover $[E:E^G]<\infty$, then the correspondence is completely closed by Theorem~\ref{Galois fundamental theorem-2}. If $G$ is closed, then $G=\Gal(E/E^G)$, so it is the top group.
+Suppose $E/E^G$ is algebraic. Then since the base field $E^G$ is closed,  $E/E^G$ is a Galois extension. If moreover $[E:E^G]<\infty$, then the correspondence is completely closed by \cref{Galois fundamental theorem-2}. If $G$ is closed, then $G=\Gal(E/E^G)$, so it is the top group.
 \end{proof}
 \subsection{The Krull topology on Galois group}
 Let $E/K$ be algebraic. The closure $\cl(H)$ of a subgroup $H$ of the Galois group $\Gal(E/K)$ can be characterized in a useful way. The following nonstandard definition will help.
@@ -1714,7 +1714,7 @@ which is an homeomorphism if $K\lhd L$.
 The map $\varPhi$ is continuous since for any finite subset $S\sub E$ we have
 \[\varPhi^{-1}(\Gal(E/K)_{S})=\{\sigma\in\Gal(L/K):(\sigma|_E)(s)=s\text{ for all }s\in S\}=\Gal(L/K)_{S}\]
 which is open in $\Gal(L/K)$. Note that $\varPhi$ is then closed, beging a continuous map from a compact space to a Hausdorff space.\par
-If $K\lhd E$, then the restriction map $\varPhi$ has image in $\Hom_K(E,E)=\Gal(E/K)$. Now, by Proposition~\ref{Galois group of conjugation}, since $E/K$ is normal, for any $\sigma\in\Gal(L/K)$ we have
+If $K\lhd E$, then the restriction map $\varPhi$ has image in $\Hom_K(E,E)=\Gal(E/K)$. Now, by \cref{Galois group of conjugation}, since $E/K$ is normal, for any $\sigma\in\Gal(L/K)$ we have
 \begin{align}\label{Galois normal subgroup-1}
 \sigma\Gal(L/E)\sigma^{-1}=\Gal(\sigma(L)/\sigma(E))=\Gal(L/\sigma(E))=\Gal(L/E),
 \end{align}
@@ -1724,13 +1724,13 @@ If $L$ is also normal over $K$, then $\varPhi$ is surjective, since any $\sigma\
 Conversely, if $\Gal(E/K)\lhd\Gal(L/K)$ and $L/E$ is Galois, then taking fixed fields in $(\ref{Galois normal subgroup-1})$ gives $\cl(\sigma(E))=\cl(E)$. Thus, if $E$ is closed, then $\sigma(E)\sub E$ for all $\sigma\in\Gal(L/K)$. If in addition $K\lhd L$, then $\sigma(E)\sub E$ for all $\sigma\in\Hom_K(L,\widebar{L})$, that is, $E$ is normal over $K$.
 \end{proof}
 \begin{remark}
-There is a parallel between Galois theory and the theory of \textbf{covering spaces} in topology. In this analogy, Galois extensions correspond to \textbf{regular covers}; the Galois group of an extension corresponds to the group of \textbf{deck transformations}; and Theorem~\ref{Galois fundamental theorem-3} corresponds to the fact that the quotient of a regular cover by a normal subgroup of the group of deck transformations is again a regular cover.\par
+There is a parallel between Galois theory and the theory of \textbf{covering spaces} in topology. In this analogy, Galois extensions correspond to \textbf{regular covers}; the Galois group of an extension corresponds to the group of \textbf{deck transformations}; and \cref{Galois fundamental theorem-3} corresponds to the fact that the quotient of a regular cover by a normal subgroup of the group of deck transformations is again a regular cover.\par
 More general (connected) covers correspond to more general algebraic extensions. A space is \textbf{simply connected} if and only if it admits no nontrivial connected covers, so this notion corresponds in field theory to the condition that a field $K$ admits no nontrivial algebraic extensions, that is, that $K$ is \textbf{algebraically closed}. Viewing the fundamental group of a space as the group of deck transformations of its fundamental cover suggests that we should think of the Galois group of the algebraic closure $K\sub\widebar{K}$ as the fundamental group of a field $K$.\par
 In algebraic geometry this analogy is carried out to its natural consequences. A covering map of algebraic varieties $X\to Y$ determines a field extension $K(Y)\sub K(X)$, where $K(X)$, $K(Y)$ are the fields of rational functions $($in the affine case, these are just the fields of fractions of the corresponding coordinate rings$)$. One can then use Galois theory to transfer to the algebra-geometric environment notions such as the fundamental group, without appealing to topological notions $($such as continuous maps from $S^1$$)$, which would be problematic in 
 e.g., positive characteristic.
 \end{remark}
 \begin{example}[\textbf{Galois group of $\bm{X^4-2}$}]
-The extension $\Q\sub\Q(\sqrt[4]{2},\i)$ is a spliting field of $X^4-2$, and has degree $8$, as we have seen in Example~\ref{field splitting of x^4+2}. The roots of this polynomial are $\alpha=\sqrt[4]{2}$, $-\alpha$, $i\alpha$ and $-\i\alpha$, and so any member of the Galois group $G$ is a permutation of these roots. One way to help find the Galois group is to look for an intermediate field $N$ that is normal, because the elements of $\Gal(N/\Q)$ are precisely the restrictions of the members of $G$. Now since any extension of degree $2$ is normal, we have $\Q\lhd\Q(\i)$; the elements of $\Gal(\Q(\i)/\Q)$ are the identity $1$ and the map $\tau:\i\to-\i$. Since $[\Q(\alpha,\i):\Q(\i)]=4$, we have $\min(\alpha,\Q(i))=X^4-2$ and so each of the automorphisms $1$ and $\tau$ can be extended to an element of $G$ by sending $\alpha$ to any of the roots of $X^4-2$. This gives all elements of $G$:
+The extension $\Q\sub\Q(\sqrt[4]{2},\i)$ is a spliting field of $X^4-2$, and has degree $8$, as we have seen in \cref{field splitting of x^4+2}. The roots of this polynomial are $\alpha=\sqrt[4]{2}$, $-\alpha$, $i\alpha$ and $-\i\alpha$, and so any member of the Galois group $G$ is a permutation of these roots. One way to help find the Galois group is to look for an intermediate field $N$ that is normal, because the elements of $\Gal(N/\Q)$ are precisely the restrictions of the members of $G$. Now since any extension of degree $2$ is normal, we have $\Q\lhd\Q(\i)$; the elements of $\Gal(\Q(\i)/\Q)$ are the identity $1$ and the map $\tau:\i\to-\i$. Since $[\Q(\alpha,\i):\Q(\i)]=4$, we have $\min(\alpha,\Q(i))=X^4-2$ and so each of the automorphisms $1$ and $\tau$ can be extended to an element of $G$ by sending $\alpha$ to any of the roots of $X^4-2$. This gives all elements of $G$:
 \begin{table}[htbp]
 \centering
 \begin{tabular}{l|l}
@@ -1826,7 +1826,7 @@ E\ar[ru,no head]&&F\ar[lu,no head,swap,"\Gal"]\\
 \end{tikzcd}\]
 \end{proposition}
 \begin{proof}
-If $E/K$ is Galois, then $EF/F$ is Galois, implying that $F$ is closed. Therefore the statement in Proposition~\ref{Galois group of lifting normal case} simplifies to (a). As for (b), since all is finite, if $\Gal(E/K)=\Gal(E/E\cap F)$ then taking fixed fields gives the claim.
+If $E/K$ is Galois, then $EF/F$ is Galois, implying that $F$ is closed. Therefore the statement in \cref{Galois group of lifting normal case} simplifies to (a). As for (b), since all is finite, if $\Gal(E/K)=\Gal(E/E\cap F)$ then taking fixed fields gives the claim.
 \end{proof}
 \begin{corollary}\label{Galois lifting degree}
 Suppose that $K\sub E_i$ is a finite Galois extension for $i=1,\dots,n-1$ and $K\sub E_n$ is a finite extension. then
@@ -1834,21 +1834,21 @@ Suppose that $K\sub E_i$ is a finite Galois extension for $i=1,\dots,n-1$ and $K
 where $E_n\cap(E_{n+1}):=K$.
 \end{corollary}
 \begin{proof}
-The case $n=2$ comes from Proposition~\ref{Galois group of lifting}, and the general case follows by induction.
+The case $n=2$ comes from \cref{Galois group of lifting}, and the general case follows by induction.
 \end{proof}
 \begin{corollary}\label{field embedding to algebraically closed extend if coincide on intersect}
 Let $E$ and $F$ be field extensions of $K$ and let $L$ be an algebraically closed field containing $K$. Moreover let $E/K$ be Galois. If $\rho:E\to L$ and $\sigma:F\to L$ are $K$-homomorphisms such that $\rho|_{E\cap F}=\sigma|_{E\cap F}$, then there exists an $K$-homomorphism $\tau$ such that $\tau|_{E}=\rho$ and $\tau|_{F}=\sigma$.
 \end{corollary}
 \begin{proof}
-By Proposition~\ref{field embedding ext algebraic case}, $\sigma$ can be extended to a $K$-homomorphism $\widetilde{\sigma}:EF\to L$. As $\widetilde{\sigma}|_{E\cap F}=\rho|_{E\cap F}$, we have
-\[\rho^{-1}\circ(\widetilde{\sigma}|_{E})=:\epsilon\in\Gal(E/E\cap F).\] According to Proposition~\ref{Galois group of lifting}, there exists a unique $\eta\in\Gal(EF/F)$ such that $\epsilon=\eta|_{E}$. Define $\tau=\widetilde{\sigma}\circ\eta^{-1}$, we see that $\tau:EF\to L$ is a $K$-homomorphism such that $\tau|_{E}=\rho$ and $\tau|_{F}=\sigma$.
+By \cref{field embedding ext algebraic case}, $\sigma$ can be extended to a $K$-homomorphism $\widetilde{\sigma}:EF\to L$. As $\widetilde{\sigma}|_{E\cap F}=\rho|_{E\cap F}$, we have
+\[\rho^{-1}\circ(\widetilde{\sigma}|_{E})=:\epsilon\in\Gal(E/E\cap F).\] According to \cref{Galois group of lifting}, there exists a unique $\eta\in\Gal(EF/F)$ such that $\epsilon=\eta|_{E}$. Define $\tau=\widetilde{\sigma}\circ\eta^{-1}$, we see that $\tau:EF\to L$ is a $K$-homomorphism such that $\tau|_{E}=\rho$ and $\tau|_{F}=\sigma$.
 \end{proof}
 \begin{example}
-We have studied cyclotomic fields $\Q(\zeta_n)$ as extensions of $\Q$; $\Q(\zeta_n)$ is the splitting field of $X^n-1$, so these extensions are Galois; we have proved (Proposition~\ref{Galois group of cyclotomic field}) that $\Gal(\Q(\zeta_n)/\Q)$ is isomorphic to the group of units in $\Z/n\Z$.\par
-Now let $K$ be any field of characteristic zero. The splitting field of $X^n-1$ over $K$ is the composite $K(\zeta_n)$ of $K$ and $\Q(\zeta_n)$. By Proposition~\ref{Galois group of lifting} the extension $K\sub K(\zeta_n)$ is Galois, and $\Aut_K(K(\zeta_n))$ is isomorphic to a subgroup of the group of units of $\Z/n\Z$.
+We have studied cyclotomic fields $\Q(\zeta_n)$ as extensions of $\Q$; $\Q(\zeta_n)$ is the splitting field of $X^n-1$, so these extensions are Galois; we have proved (\cref{Galois group of cyclotomic field}) that $\Gal(\Q(\zeta_n)/\Q)$ is isomorphic to the group of units in $\Z/n\Z$.\par
+Now let $K$ be any field of characteristic zero. The splitting field of $X^n-1$ over $K$ is the composite $K(\zeta_n)$ of $K$ and $\Q(\zeta_n)$. By \cref{Galois group of lifting} the extension $K\sub K(\zeta_n)$ is Galois, and $\Aut_K(K(\zeta_n))$ is isomorphic to a subgroup of the group of units of $\Z/n\Z$.
 \end{example}
 \begin{example}
-We return to Example~\ref{Galois correspondence nonclosed subgroup eg}, where we consider the extension $\F_p\sub\widebar{\F}_p$ and found a dense proper subgroup in $\Gal(\widebar{\F}_p/\F_p)$: the subgroup $H$ generated by the Frobenius homomorphism $\sigma$. We now use this to determine the structure of $G$.\par
+We return to \cref{Galois correspondence nonclosed subgroup eg}, where we consider the extension $\F_p\sub\widebar{\F}_p$ and found a dense proper subgroup in $\Gal(\widebar{\F}_p/\F_p)$: the subgroup $H$ generated by the Frobenius homomorphism $\sigma$. We now use this to determine the structure of $G$.\par
 Recall that $\widehat{\Z}$ is the limit ring of the homomorphisms $\Z/n\Z\to\Z/m\Z$ for $m\mid n$. It is isomorphic to the direct product of $p$-adic intergers, where $p$ is a positive prime. Let $\alpha\in\widehat{\Z}$ be represented by the sequence $(a_i)$. Since $\F_{p^m}\sub\F_{p^{n}}$ if $m\mid n$, it is easy to see how to define the automorphism $\sigma^\alpha\in\Gal(\widebar{\F}_p/\F_p)$: Just let $\sigma^{\alpha}$ be $(\sigma|_{\F_{p^n}})^{a_n}$ on $\F_{p^n}$. If $m\mid n$, since $\sigma|_{\F_{p^m}}$ has order $m$ and $a_m\equiv a_n$ mod $n$, we see that
 \[(\sigma|_{\F_{p^n}})^{a_n}|_{\F_{p^m}}=(\sigma|_{\F_{p^m}})^{a_n}=(\sigma|_{\F_{p^m}})^{a_m}\]
 so this is well-defined. The map $\sigma\mapsto\sigma^\alpha$ gives an isomorphism from $\widehat{\Z}$ to $\Gal(\widebar{\F}_p/\F_p)$.
@@ -1870,9 +1870,9 @@ for all $i=1,\dots,n$.
 \end{itemize}
 \end{proposition}
 \begin{proof}
-Since $K\lhd E_i$, by Theorem~\ref{Galois fundamental theorem-3}, each individual restriction map $\varPhi_j:\sigma\mapsto\sigma|_{E_j}$ is a surjective homomorphism from $\Gal(\bigvee E_i/K)$ onto $\Gal(E_j/K)$, with kernel $\Gal(\bigvee E_i/E_j)$. Hence, $\varPhi$ is a homomorphism from $\Gal(\bigvee E_i/K)\to\prod\Gal(E_i/K)$. As to the kernel of $\varPhi$, if $\varPhi(\sigma)=1$, then
+Since $K\lhd E_i$, by \cref{Galois fundamental theorem-3}, each individual restriction map $\varPhi_j:\sigma\mapsto\sigma|_{E_j}$ is a surjective homomorphism from $\Gal(\bigvee E_i/K)$ onto $\Gal(E_j/K)$, with kernel $\Gal(\bigvee E_i/E_j)$. Hence, $\varPhi$ is a homomorphism from $\Gal(\bigvee E_i/K)\to\prod\Gal(E_i/K)$. As to the kernel of $\varPhi$, if $\varPhi(\sigma)=1$, then
 \[\sigma|_{E_j}=\varPhi_j(\sigma)=\pi_j(\varPhi(\sigma))=1\]
-and so $\sigma=1$ on each $E_j$, which implies that $\sigma=1$. Hence, $\ker\varPhi=\{1\}$ and $\varPhi$ is an embedding. If moreover $E_j\cap(\bigvee_{i\neq j}E_j)=K$, then by Proposition~\ref{Galois group of lifting} we have
+and so $\sigma=1$ on each $E_j$, which implies that $\sigma=1$. Hence, $\ker\varPhi=\{1\}$ and $\varPhi$ is an embedding. If moreover $E_j\cap(\bigvee_{i\neq j}E_j)=K$, then by \cref{Galois group of lifting} we have
 \[\Gal(E_j/K)\cong\Gal(\bigvee E_i/\bigvee_{i\neq j}E_i),\]
 where the isomorphism is given by restriction. This implies the direct summand $\Gal(E_j/K)$ is contained in $\im\varPhi$. Since this holds for all $j$, it follows that $\varPhi$ is surjective, and hence an isomorphism.\par
 When $\mathcal{E}$ is a finite family of finite Galois extensions, all Galois groups are finite and all subgroups and intermediate fields are closed. Since $\varPhi$ is injective, we have
@@ -1895,13 +1895,13 @@ where $\{1\}$ is in the $i$-th coordinate and if $E_i=E^{H_i}$, then
 \end{itemize}
 \end{corollary}
 \begin{proof}
-Since $G_i\lhd G$, $K\sub E$ is normal, and $E_i=E^{H_i}$ is closed, it follows from Theorem~\ref{Galois fundamental theorem-3}$(b)$ that $K\lhd E_i$ and
+Since $G_i\lhd G$, $K\sub E$ is normal, and $E_i=E^{H_i}$ is closed, it follows from \cref{Galois fundamental theorem-3}$(b)$ that $K\lhd E_i$ and
 \[\Gal(E_i/K)\cong\frac{\Gal(E/K)}{\Gal(E/E_i)}=\frac{G}{H_i}\cong G_i.\]
 In addition, $E_1\cdots E_n/K$ is Galois and since
 \[\Gal(E/\bigvee E_i)=\bigcap\Gal(E/E_i)=\bigcap H_i=\{1\}=\Gal(E/E)\]
 taking fixed fields gives $E=\bigvee E_i$. Hence,
 \[\Gal(\bigvee E_i/K)=\Gal(E/K)=\prod G_i\cong\prod\Gal(E_i/K)\]
-and Proposition~\ref{Galois group of a composite} implies that $E_i\cap(E_{i+1}\cdots E_n)=K$ for all $i=1,\dots,n$.
+and \cref{Galois group of a composite} implies that $E_i\cap(E_{i+1}\cdots E_n)=K$ for all $i=1,\dots,n$.
 \end{proof}
 \subsection{Exercise}
 \begin{exercise}
@@ -1964,7 +1964,7 @@ Let $E/K$ be a Galois extension, and let $\alpha\in K$. Prove that
 Use Hilbert's theorem $90$ to find all rational roots $a,b$ of the equation $a^2+b^2d=1$, where $d$ is a positive integer that is not a square.
 \end{exercise}
 \begin{proof}
-Consider the extension $D=\Q(\sqrt{d}i)$, then by Exercise~\ref{Galois norm}, we know that
+Consider the extension $D=\Q(\sqrt{d}i)$, then by \cref{Galois norm}, we know that
 \[N_{D/\Q}(a+b\sqrt{d})=(a+\sqrt{d}i)(a-\sqrt{d}i)=a^2+db^2\]
 Then
 \[a^2+db^2=1\Leftrightarrow N_{D/\Q}(a+b\sqrt{d}i)=1\Leftrightarrow a+b\sqrt{d}=\beta/\varphi(\beta)\]
@@ -2008,7 +2008,7 @@ has roots $r_1,\dots,r_n$ in a splitting field, then
 The elementary symmetric polynomials $s_1,\dots,s_n$ are algebraically independent over $K$.
 \end{proposition}
 \begin{proof}
-Since $K\sub K(s_1,\dots,s_n)\sub K(t_1,\dots,t_n)$, where the upper step is algebraic (each $t_i$ is a root of the general polynomial, which has coefficients in $K(s_1,\dots,s_n)$), Proposition~\ref{field ext transcendental basis iff} implies that $S=\{s_1,\dots,s_n\}$ contains a transcendental basis for $K(t_1,\dots,t_n)$ over $K$. But $\{t_1,\dots,t_n\}$ is a transcendental basis and so $\tr.\deg(K(t_1,\dots,t_n)/K)=n$. Hence, $S$ is a transcendental basis.
+Since $K\sub K(s_1,\dots,s_n)\sub K(t_1,\dots,t_n)$, where the upper step is algebraic (each $t_i$ is a root of the general polynomial, which has coefficients in $K(s_1,\dots,s_n)$), \cref{field ext transcendental basis iff} implies that $S=\{s_1,\dots,s_n\}$ contains a transcendental basis for $K(t_1,\dots,t_n)$ over $K$. But $\{t_1,\dots,t_n\}$ is a transcendental basis and so $\tr.\deg(K(t_1,\dots,t_n)/K)=n$. Hence, $S$ is a transcendental basis.
 \end{proof}
 Let us compute the Galois group $G$ of $K(t_1,\dots,t_n)$ over $K(s_1,\dots,s_n)$. Since $K(t_1,\dots,t_n)$ is a splitting field for $g(X)$ over $K(s_1,\dots,s_n)$, and since has $g(X)$ no multiple roots, the extension
 \[K(s_1,\dots,s_n)\sub K(t_1,\dots,t_n)\]
@@ -2048,7 +2048,7 @@ for some polynomial $p(t_1,\dots,t_n)$ over $K$. Moreover, if $f(t_1,\dots,t_n)$
 \end{itemize}
 \end{theorem}
 \begin{proof}
-Statements $(b)$ and $(c)$ follow from statement $(a)$ and Lemma~\ref{polynomial coefficient in roots}. If $f(t_1,\dots,t_n)$ has the form $p(s_1,\dots,s_n)$, then it is clearly symmetric. For the converse, the proof consists of a procedure that can be used to construct the polynomial $p(t_1,\dots,t_n)$. Unfortunately, while the procedure is quite straightforward, it is recursive in nature and not at all practical.\par
+Statements $(b)$ and $(c)$ follow from statement $(a)$ and \cref{polynomial coefficient in roots}. If $f(t_1,\dots,t_n)$ has the form $p(s_1,\dots,s_n)$, then it is clearly symmetric. For the converse, the proof consists of a procedure that can be used to construct the polynomial $p(t_1,\dots,t_n)$. Unfortunately, while the procedure is quite straightforward, it is recursive in nature and not at all practical.\par
 We use induction on $n$. The theorem is true for $n=1$, since $s_1=t_1$. Assume that the theorem is true for any number of variables less than $n$ and let $f(t_1,\dots,t_n)$ be symmetric. By collecting powers of $t_n$, we can write
 \[f(t_1,\dots,t_n)=a_0+a_1t_n+\cdots+a_dt_n^d.\]
 where each $a_i$ is a polynomial in $t_1,\dots,t_{n-1}$. Since $f$ is symmetric in $t_1,\dots,t_{n-1}$ and $t_1,\dots,t_{n}$ are independent, each of the coefficients $a_i$ is symmetric in $t_1,\dots,t_{n-1}$. By the inductive hypothesis, we may express each $a_i$ as a polynomial in the elementary symmetric polynomials on $t_1,\dots,t_{n-1}$. If these elementary symmetric polynomials are denoted by $u_1,\dots,u_{n-1}$, then
@@ -2093,7 +2093,7 @@ has degree (in $X$) at most $n-1$ but has $n$ distinct roots $t_1,\dots,t_n$, wh
 \begin{example}
 Let $g(X)=X^n-s_1X^{n-1}+\cdots+(-1)^ns_n$ be the general polynomial with algebraically independent roots $r_1,\dots,r_n$. Let
 \[p_i(r_1,\dots,r_n)=r_1^i+\cdots+r_n^i\]
-Since the $p_i$'s are symmetric polynomials in the roots of $g(X)$, Theorem~\ref{Newton's Theorem} implies that they can be expressed as symmetric polynomials in the elementary symmetric polynomials $s_1,\dots,s_n$. Newton's identities are
+Since the $p_i$'s are symmetric polynomials in the roots of $g(X)$, \cref{Newton's Theorem} implies that they can be expressed as symmetric polynomials in the elementary symmetric polynomials $s_1,\dots,s_n$. Newton's identities are
 \begin{align}\label{Newton's identities}
 p_ks_0-p_{k-1}s_1+p_{k-2}s_2+\cdots+(-1)^{k-1}p_1s_{k-1}+(-1)^kks_k=0
 \end{align}
@@ -2140,7 +2140,7 @@ Since $[K(\Delta):K]=2$ and $K(\Delta)\sub E^{G\cap\mathfrak{A}_n}$, we get
 \[K(\Delta)=E^{G\cap\mathfrak{A}_n}.\]
 Thus, $K(\Delta)$ is the fixed field of the subgroup of even permutations in $\Gal_K(f(X))$.
 \end{proof}
-The usefulness of Proposition~\ref{Galois group discriminant criterion} comes from the fact that $D$ can actually be computed without knowing the roots of $f(X)$ explicitly. This follows from the fact that $\Delta$ is the Vandermonde determinant
+The usefulness of \cref{Galois group discriminant criterion} comes from the fact that $D$ can actually be computed without knowing the roots of $f(X)$ explicitly. This follows from the fact that $\Delta$ is the Vandermonde determinant
 \[\Delta=\left|\begin{array}{cccc}
 1&1&1&1\\
 r_1&r_2&\cdots&r_n\\
@@ -2252,7 +2252,7 @@ Let $f$ be reducible:
 If $\char(K)\neq 2$, then $G=\{1\}$ if and only if $g(X):=X^2+pX+q$ is reducible, and $G=\mathfrak{S}_2$ if and only if $g(X)$ is irreducible. Since
 \[D_f=(r-t)^2(r-s)^2(t-s)^2=(r^2-(t+s)r+ts)^2(t-s)^2=(r^2-(t+s)r+ts)^2D_g,\]
 we see $\sqrt{D}_f\in K$ if and only if $\sqrt{D}_g\in K$, Hence the claim of $(1)$ and $(2)$ follows.\par
-Now assume that $f$ is irreducible, so that no roots of $f(X)$ lies in $K$. Then since any root of $f(X)$ has degree $3$ over $K$, we conclude that $[E:K]=|G|\geq 3$. By Proposition~\ref{Galois group discriminant criterion} $\sqrt{D}\in K$ if and only if $G\sub\mathfrak{A}_3\cong\Z/3\Z$, which then implies $G=\mathfrak{A}_3$. Therefore $(3)$ holds. The other case is $\sqrt{D}\notin K$, which implies $G=\mathfrak{S}_3$ by order consideration. This completes the proof.
+Now assume that $f$ is irreducible, so that no roots of $f(X)$ lies in $K$. Then since any root of $f(X)$ has degree $3$ over $K$, we conclude that $[E:K]=|G|\geq 3$. By \cref{Galois group discriminant criterion} $\sqrt{D}\in K$ if and only if $G\sub\mathfrak{A}_3\cong\Z/3\Z$, which then implies $G=\mathfrak{A}_3$. Therefore $(3)$ holds. The other case is $\sqrt{D}\notin K$, which implies $G=\mathfrak{S}_3$ by order consideration. This completes the proof.
 \end{proof}
 We know that $D\in K$. For $K=\Q$, we can learn more about the roots of a cubic by looking at the sign of $D$. A cubic $f(X)$ over $\Q$ has either one real root $r$ and two nonreal roots $\{a+bi,a-bi\}$ or three real roots $r,s$ and $t$. In the former case,
 \[\Delta=(r-a-bi)(r-a+bi)2bi=|(r-a)+bi|^22bi\]
@@ -2351,20 +2351,20 @@ If $A=(r,0)$ is constructible, so is $B=(-r, 0)$; $C$ is the midpoint of the seg
 Let $\gamma\in\mathscr{C}_{\C}$ be a constructible number. Then $[\Q(\gamma):\Q]$ is a power of $2$.
 \end{corollary}
 \begin{proof}
-By Lemma~\ref{field constructible number} and Theorem~\ref{constructible number criterion}, there exist $\delta_1,\dots,\delta_k\in\R$ such that
+By \cref{field constructible number} and \cref{constructible number criterion}, there exist $\delta_1,\dots,\delta_k\in\R$ such that
 \[\gamma\in\Q(\delta_1,\dots,\delta_k,i)\]
-and each $\delta_j$ has degree $\leq 2$ over $\Q(\delta_1,\dots,\delta_{j-1})$. Repeated application of Proposition~\ref{field ext degree multiplicative} shows that
+and each $\delta_j$ has degree $\leq 2$ over $\Q(\delta_1,\dots,\delta_{j-1})$. Repeated application of \cref{field ext degree multiplicative} shows that
 \[[\Q(\delta_1,\dots,\delta_k,i):\Q]\]
 is a power of $2$, and since
 \[\Q\sub\Q(\gamma)\sub\Q(\delta_1,\dots,\delta_k,i)\]
-the claim follows from Corollary~\ref{field ext intermediate field degree divide}.
+the claim follows from \cref{field ext intermediate field degree divide}.
 \end{proof}
 As an example, constructing a regular $7$-gon would amount to constructing a $7$-th (complex) root of $1,\zeta$. By definition, $\zeta$ satisfies
 \[t^7-1=(t-1)(t^6+t^5+\cdots+t+1)\]
-as $\zeta\neq 1$, $\zeta$ must satisfy the cyclotomic polynomial $t^6+\cdots+1$. This is irreducible, hence again we find that $\zeta$ has degree $6$ over $\Q$, and Corollary~\ref{constructible number then degree power of 2} implies that the regular $7$-gon cannot be constructed with straightedge and compass.\par
+as $\zeta\neq 1$, $\zeta$ must satisfy the cyclotomic polynomial $t^6+\cdots+1$. This is irreducible, hence again we find that $\zeta$ has degree $6$ over $\Q$, and \cref{constructible number then degree power of 2} implies that the regular $7$-gon cannot be constructed with straightedge and compass.\par
 Of course $7$ is not too special: if $p$ is a positive prime integer, the \textbf{cyclotomic polynomial} of degree $p-1$ is irreducible; hence
 \[[\Q(\zeta_p):\Q]=p-1\]
-where $\zeta_p$ is the complex $p$-th root of $1$ with argument $2\pi/p$. Therefore, Corollary~\ref{constructible number then degree power of 2} reveals that if $p$ is prime, then the regular $p$-gon can be constructed only if $p-1$ is a power of $2$. This is even more restrictive than it looks at first, due to the following simple lemma.
+where $\zeta_p$ is the complex $p$-th root of $1$ with argument $2\pi/p$. Therefore, \cref{constructible number then degree power of 2} reveals that if $p$ is prime, then the regular $p$-gon can be constructed only if $p-1$ is a power of $2$. This is even more restrictive than it looks at first, due to the following simple lemma.
 \begin{lemma}
 If $2^k+1$ is prime, then $K$ is a power of $2$.
 \end{lemma}
@@ -2387,7 +2387,7 @@ As the Galois correspondence is bijective for Galois extensions, this statement 
 The regular $n$-gon is constructible by straightedge and compass if and only if $\phi(n)$ is a power of $2$, if and only if $n=2^mp_1\cdots p_r$, where $m\geq 0$ and the factors $p_i$ are distinct Fermat primes.
 \end{theorem}
 \begin{proof}
-We first prove the first equivalence. One direction is proved in Proposition~\ref{constructible number criterion}. For the converse, assume $\phi(n)=2^r$ for some $r$. The extension $\Q\sub\Q(\zeta_n)$ is Galois (it is the splitting field of $\Phi_n(X)$), of order $[\Q(\zeta_n):\Q]=\phi(n)=2^r$. Proposition~\ref{prime power constr} shows that the condition given in Theorem~\ref{constructible number criterion} is satisfied and therefore that $\zeta_n$ is constructible, as needed.\par
+We first prove the first equivalence. One direction is proved in \cref{constructible number criterion}. For the converse, assume $\phi(n)=2^r$ for some $r$. The extension $\Q\sub\Q(\zeta_n)$ is Galois (it is the splitting field of $\Phi_n(X)$), of order $[\Q(\zeta_n):\Q]=\phi(n)=2^r$. \cref{prime power constr} shows that the condition given in \cref{constructible number criterion} is satisfied and therefore that $\zeta_n$ is constructible, as needed.\par
 Now let $\phi(n)$ be a power of $2$. From the equation
 \[\phi(n)=p_1^{k_1-1}(p_1-1)p_2^{k_2-1}(p_2-1)\cdots p_i^{k_i-1}(p_i-1)\]
 we see that if $k_i-1>0$, then $p_i=2$. If $k_i-1=0$, then $p_i=2^m+1$ should be a prime, so $p_i$ is a Fermat prime. Hence $n=2^mp_1\cdots p_r$. The converse can also be deduced from the equality above.
@@ -2426,7 +2426,7 @@ Let $q=p^n$ be a power of a prime integer $p$.
 In particular, for every prime power $q$ there exists one and only one finite field of order $q$, up to isomorphism.
 \end{theorem}
 \begin{proof}
-Let $F$ be the splitting field of $X^q-X$ over $\F_p$. Let $E$ be the set of roots of $f(X)=X^q-X$ in $F$. Since $f'(X)=qX^{q-1}-1=-1$ (as $q=0$ in characteristic $p$), we have $(f(X),f'(X))=1$; hence by Proposition~\ref{poloynomial separable iff f'} $f(X)$ is separable, and $E$ consists of precisely $q$ elements. We claim that $E$ is a field, and it follows that $E=F$.\par
+Let $F$ be the splitting field of $X^q-X$ over $\F_p$. Let $E$ be the set of roots of $f(X)=X^q-X$ in $F$. Since $f'(X)=qX^{q-1}-1=-1$ (as $q=0$ in characteristic $p$), we have $(f(X),f'(X))=1$; hence by \cref{poloynomial separable iff f'} $f(X)$ is separable, and $E$ consists of precisely $q$ elements. We claim that $E$ is a field, and it follows that $E=F$.\par
 To see that $E$ is a field, let $a,b\in E$. Then $a^q=a$ and $b^q=b$; it follows that
 \[(a-b)^q=a^p+(-1)^qb^q=a^q-b^q=a-b.\]
 (note that $(-1)^q=-1$ if $p$ is odd and $(-1)^q=+1=-1$ if $p=2$). If $b\neq0$,
@@ -2473,9 +2473,9 @@ In fact, write $n=kd+r$ with $0\leq r<d$, then
 \[X^{n}-1=X^{kd+r}-X^r+X^r-1=X^r(X^{kd}-1)+X^r-1.\]
 Since $X^d-1\mid X^{kd}-1$, this implies
 \[X^n-1\equiv X^r-1\quad \text{mod $X^d-1$}\]
-which proves (\ref{finite field subfield iff order divide-1}) immediately. Now apply these results with Proposition~\ref{finite field p^n order extension char}, we obtain that
+which proves (\ref{finite field subfield iff order divide-1}) immediately. Now apply these results with \cref{finite field p^n order extension char}, we obtain that
 \[d\mid n\Leftrightarrow p^d-1\mid p^n-1\Leftrightarrow X^{p^d-1}-1\mid X^{p^n-1}-1\Leftrightarrow f_{p^d}(X)\mid f_{p^n}(X).\]
-which says (\rmnum{1}) and (\rmnum{2}) are equivalent. Moreover, by Proposition~\ref{finite field p^n order extension char},
+which says (\rmnum{1}) and (\rmnum{2}) are equivalent. Moreover, by \cref{finite field p^n order extension char},
 \[\F_{p^d}\sub\F_{p^n}\Leftrightarrow\text{Root}(f_{p^d}(X))\sub\text{Root}(f_{p^n}(X))\Leftrightarrow f_{p^d}(X)\mid f_{p^n}(X).\]
 so (\rmnum{2}) and (\rmnum{3}) are also equivalent. Moreover, if $\F_{p^n}$ has two distinct subfields of size $p^d$, then the polynomial $f_{p^d}(X)$ would have more than $p^d$ roots in $\F_{p^n}$, which is impossible.\par
 For the last statement, recall that the multiplicative group of nonzero elements of a finite field is cyclic. If $\alpha\in\F_{p^n}$ is a generator of this gorup, then $\alpha$ will generate $\F_{p^n}$ over any subfield. If $d\mid n$, then $\F_{p^n}=\F_{p^d}(\alpha)$, so this extension is simple.
@@ -2485,17 +2485,17 @@ These results can be translated into rather precise information on the structure
 Let $F$ be a finite field. Then for all integers $n\geq1$ there exist irreducible polynomials of degree $n$ in $F[X]$.
 \end{corollary}
 \begin{proof}
-We know $F=\F_{q}$ for some prime power $q$. By Corollary~\ref{finite field subfield iff order divide} there is an extension $\F_{q}\sub\F_{q^{n}}$, generated by an element $\alpha$. Then $[F_{q^{n}}:\F_{q}]=n$, and it follows that the minimal polynomial of $\alpha$ over $F=\F_{q}$ is an irreducible polynomial of degree $n$ in $F[X]$.
+We know $F=\F_{q}$ for some prime power $q$. By \cref{finite field subfield iff order divide} there is an extension $\F_{q}\sub\F_{q^{n}}$, generated by an element $\alpha$. Then $[F_{q^{n}}:\F_{q}]=n$, and it follows that the minimal polynomial of $\alpha$ over $F=\F_{q}$ is an irreducible polynomial of degree $n$ in $F[X]$.
 \end{proof}
 In fact, our analysis of extensions of finite fields tells us about explicit factorizations, leading to an inductive algorithm for the computation of irreducible polynomials in $\F_q[X]$:
 \begin{corollary}
 Let $F=\F_q$ be a finite field, and let $n$ be a positive integer. Then the factorization of $X^{q^n}-X$ in $F[X]$ consists of all irreducible monic polynomials of degree $d$, as $d$ ranges over the positive divisors of $n$. In particular, all these polynomials factor completely in $\F_{q^n}$, and each irreducible polynomial appears only once in the factorization.
 \end{corollary}
 \begin{proof}
-By Theorem~\ref{finite field p^n order extension char}, $\F_{q^n}$ is the splitting field of $X^{q^n}-X$ over $\F_p$, and hence over $\F_q=F$.\par
-If $f(X)$ is a monic irreducible polynomial of degree $d$, then $F[X]/(f(X))=F(\alpha)$ is an extension of degree $d$ of $F$, that is, an isomorphic copy of $\F_{q^d}$. By Corollary~\ref{finite field subfield iff order divide}, if $d\mid n$, then there is an embedding of $\F_{q^d}$ in $\F_{q^n}$. But then $\alpha$ must be a root of $X^{q^n}-X$, and hence $X^{q^n}-X$ is a multiple of $f(X)$, as this is the minimal polynomial of $\alpha$. This proves that every irreducible polynomial of degree $d\mid n$ is a factor of $X^{q^n}-X$.\par
-Conversely, if $f(X)$ is an irreducible factor of $X^{q^n}-X$, then $\F_{q^n}$ contains a root $\alpha$ of $f(X)$; we have the extensions $F=\F_q\sub\F_q(\alpha)\sub\F_{q^n}$, and $\F_q(\alpha)\cong\F_{q^d}$ for $d=\deg\alpha$. It follows that $d\mid n$, again by Corollary~\ref{finite field subfield iff order divide}.\par
-For the last statement, note that $(X^{p^n}-X)'=p^nX^{p^n-1}-1=-1$, so $X^{p^n}-X$ is separable by Proposition~\ref{poloynomial separable iff f'}. This implies each irreducible polynomial appears only once in $X^{p^n}-X$.
+By \cref{finite field p^n order extension char}, $\F_{q^n}$ is the splitting field of $X^{q^n}-X$ over $\F_p$, and hence over $\F_q=F$.\par
+If $f(X)$ is a monic irreducible polynomial of degree $d$, then $F[X]/(f(X))=F(\alpha)$ is an extension of degree $d$ of $F$, that is, an isomorphic copy of $\F_{q^d}$. By \cref{finite field subfield iff order divide}, if $d\mid n$, then there is an embedding of $\F_{q^d}$ in $\F_{q^n}$. But then $\alpha$ must be a root of $X^{q^n}-X$, and hence $X^{q^n}-X$ is a multiple of $f(X)$, as this is the minimal polynomial of $\alpha$. This proves that every irreducible polynomial of degree $d\mid n$ is a factor of $X^{q^n}-X$.\par
+Conversely, if $f(X)$ is an irreducible factor of $X^{q^n}-X$, then $\F_{q^n}$ contains a root $\alpha$ of $f(X)$; we have the extensions $F=\F_q\sub\F_q(\alpha)\sub\F_{q^n}$, and $\F_q(\alpha)\cong\F_{q^d}$ for $d=\deg\alpha$. It follows that $d\mid n$, again by \cref{finite field subfield iff order divide}.\par
+For the last statement, note that $(X^{p^n}-X)'=p^nX^{p^n-1}-1=-1$, so $X^{p^n}-X$ is separable by \cref{poloynomial separable iff f'}. This implies each irreducible polynomial appears only once in $X^{p^n}-X$.
 \end{proof}
 The picture we are trying to convey is the following: the $q^n$ roots of $X^{q^n}-X$ clump into disjoint subsets, with each subset collecting the roots of each and every irreducible polynomial of degree $d\mid n$ in $F[X]$.
 \begin{example}
@@ -2511,7 +2511,7 @@ It also follows that $\F_8$ may be realized in two ways as a quotient of $\F_2[X
 \[\dfrac{\F_2[X]}{(X^3+X^2+1)}\cong\dfrac{\F_2[X]}{(X^3+X+1)}\]
 \end{itemize}
 \end{example}
-Since extensions of finite fields are simple extensions, our previous work allows us to be much more precise. Restricting our attention to the extensions $\F_p\sub\F_{p^n}$, for a prime $p$, we know these can be realized as simple extensions by an element with minimal polynomial of degree $n$. This polynomial is necessarily separable ($\F_p$ is perfect), so Corollary~\ref{field simple ext order of Aut} immediately gives us the size of the automorphism group: $|\Gal(\F_{p^n}/\F_p)|=n$.
+Since extensions of finite fields are simple extensions, our previous work allows us to be much more precise. Restricting our attention to the extensions $\F_p\sub\F_{p^n}$, for a prime $p$, we know these can be realized as simple extensions by an element with minimal polynomial of degree $n$. This polynomial is necessarily separable ($\F_p$ is perfect), so \cref{field simple ext order of Aut} immediately gives us the size of the automorphism group: $|\Gal(\F_{p^n}/\F_p)|=n$.
 \begin{proposition}\label{finite field Galois generated by Frobenius}
 The Galois group $G$ of $\F_{p^n}$ over $\F_p$ is cyclic of order $n$, generated by the Frobenius automorphism.
 \end{proposition}
@@ -2524,7 +2524,7 @@ are distinct elements of $G$, for if $\sigma^k=1$ then $\alpha^{p^k}=\alpha$ for
 Let $d\mid n$ be positive integers, then the Galois group $G$ of $\F_{p^n}$ over $\F_{p^d}$ is cyclic of order $n/d$, generated by the automorphism $\sigma^d:\alpha\mapsto\alpha^{p^d}$.
 \end{corollary}
 \begin{proof}
-Let $\sigma^d$ be the automorphism prescribed above. Then $\sigma^d$ fixes $\F_{p^d}$.and hence is in $G$, and it has order $d/n$. By Theorem~\ref{Galois fundamental theorem-3} we have
+Let $\sigma^d$ be the automorphism prescribed above. Then $\sigma^d$ fixes $\F_{p^d}$.and hence is in $G$, and it has order $d/n$. By \cref{Galois fundamental theorem-3} we have
 \[\Gal(\F_{p^d}/\F_p)\cong\frac{\Gal(\F_{p^n}/\F_p)}{\Gal(\F_{p^n}/\F_{p^d})},\]
 and in particular $|\Gal(\F_{p^n}/\F_{p^d})|=n/d$. Since $\sigma^{d}$ also has order $n/d$, the claim follows.
 \end{proof}
@@ -2532,9 +2532,9 @@ and in particular $|\Gal(\F_{p^n}/\F_{p^d})|=n/d$. Since $\sigma^{d}$ also has o
 The absolute Galois group $\Gal(\widebar{\F}_p/\F_p)$ is isomomorphic to $\widehat{\Z}=\llim\Z/n\Z$.
 \end{corollary}
 \begin{proof}
-Let $F=\F_q$ be a finite field. We show that the absolute Galois group is isomomorphic to $\widehat{\Z}$. For this, let $\mathcal{N}$ be the category associated to the poset $\N$ of division partial order, and we still denote by $n$ the objects of $\mathcal{N}$. By Proposition~\ref{finite field subfield iff order divide} we have an inverse system of groups
+Let $F=\F_q$ be a finite field. We show that the absolute Galois group is isomomorphic to $\widehat{\Z}$. For this, let $\mathcal{N}$ be the category associated to the poset $\N$ of division partial order, and we still denote by $n$ the objects of $\mathcal{N}$. By \cref{finite field subfield iff order divide} we have an inverse system of groups
 \[\big(\Gal(\F_{q^n}/\F_q)\big)_{n\in\mathcal{N}}\]
-where for $m\mid n$ the map $\Gal(\F_{q^n}/\F_q)\to\Gal(\F_{q^m}/\F_q)$ is the restriction map; that is, the image of an automorphism $\sigma\in\Gal(\F_{q^n}/\F_q)$ in $\Gal(\F_{q^m}/\F_q)$ is obtained by simply restricting the domain of $\sigma$ from $\F_{q^n}$ to $\F_{q^m}$. Since $\F_{q^m}$ are all the finite subextensions of $\widebar{\F}_q$, by Corollary~\ref{Galois group identified as inverse limit}, we see the inverse limit of this inverse system is exactly $\Gal(\widebar{F}_q/\F_q)$. But Corollary~\ref{finite field F_pn over F_pd char} suggests that $\Gal(\F_{q^n}/\F_q)\cong\Z/n\Z$ and the restriction map corresponds to the quotient map $\Z/n\Z\to Z/m\Z$. Thus the inverse system $\big(\Gal(\F_{q^n}/\F_q)\big)_{n\in\mathcal{N}}$ is isomorphic to $(\Z/n\Z)_{n\in\mathcal{N}}$ and the claim follows from this.
+where for $m\mid n$ the map $\Gal(\F_{q^n}/\F_q)\to\Gal(\F_{q^m}/\F_q)$ is the restriction map; that is, the image of an automorphism $\sigma\in\Gal(\F_{q^n}/\F_q)$ in $\Gal(\F_{q^m}/\F_q)$ is obtained by simply restricting the domain of $\sigma$ from $\F_{q^n}$ to $\F_{q^m}$. Since $\F_{q^m}$ are all the finite subextensions of $\widebar{\F}_q$, by \cref{Galois group identified as inverse limit}, we see the inverse limit of this inverse system is exactly $\Gal(\widebar{F}_q/\F_q)$. But \cref{finite field F_pn over F_pd char} suggests that $\Gal(\F_{q^n}/\F_q)\cong\Z/n\Z$ and the restriction map corresponds to the quotient map $\Z/n\Z\to Z/m\Z$. Thus the inverse system $\big(\Gal(\F_{q^n}/\F_q)\big)_{n\in\mathcal{N}}$ is isomorphic to $(\Z/n\Z)_{n\in\mathcal{N}}$ and the claim follows from this.
 \end{proof}
 \subsubsection{The algebraic closure of a finite field}
 To conclude, we determine the algebraic closure of a finite field $\F_{p}$. Since $\F_{p}\sub\F_{p^n}$ is algebraic for all positive integers $n$, an algebraic closure of $\F_p$ must contain all of the fields $\F_{p^n}$. Since $n!\mid(n+1)!$, it follows that $\F_{p^{n!}}\sub\F_{p^{(n+1)!}}$ and so the union
@@ -2583,14 +2583,14 @@ Thus the set of $n$-th roots of $1$ equals the union of the sets of primitive $d
 \[X^n-1=\prod_{\zeta\in \mu_n}(X-\zeta)=\prod_{\substack{1\leq d\leq n\\d\mid n}}\Bigg(\prod_{\zeta\text{ primitive $d$-th root of }1}(X-\zeta)\Bigg)=\prod_{\substack{1\leq d\leq n\\d\mid n}}\Phi_d(X)\]
 as claimed.
 \end{proof}
-Lemma~\ref{cyclotomic polynomial lemma} yields an inductive computation of cyclotomic polynomials; the fact that $\Phi_n(X)\in\Z[X]$ follows from this fact. Explicitly,
+\cref{cyclotomic polynomial lemma} yields an inductive computation of cyclotomic polynomials; the fact that $\Phi_n(X)\in\Z[X]$ follows from this fact. Explicitly,
 \begin{corollary}
 The cyclotomic polynomials $\Phi_n(X)$ have integer coefficients.
 \end{corollary}
 \begin{proof}
 Use induction on $n$. Note that $\Phi_1(X)=x-1$, and assume we have shown that all $\Phi_m(X)$ have integer coefficients for $m<n$. In particular, $f(X):=\prod_{1\leq d\mid n,d<n}\Phi_d(X)$ is a monic polynomial with integer coefficients. Since $f(X)$ is monic, we can divide it into $X^n-1$ with remainder, within $\Z[X]$: there exist $q(X),r(X)\in\Z[X]$ such that
 \[X^n-1=q(X)f(X)+r(X)\]
-with $r(X)=0$ or $\deg r(X)<\deg f(X)$. On the other hand, by Lemma~\ref{cyclotomic polynomial lemma},
+with $r(X)=0$ or $\deg r(X)<\deg f(X)$. On the other hand, by \cref{cyclotomic polynomial lemma},
 \[X^n-1=f(X)\Phi_n(X)\]
 in $\C[X]$. Therefore
 \[f(X)(\Phi_n(X)-q(X))=r(X)\]
@@ -2611,7 +2611,7 @@ with $h(X)\in\Z[X]$. Reading the last equation modulo $p$, we get (again using $
 In particular, $\widebar{f}(X)$ and $\widebar{g}(X)$ must have a nontrivial common factor $\widebar{\ell}(X)$ in $\F_p[X]$. But then
 \[\ell^2(X)\mid\widebar{f}(X)\widebar{g}(X)\]
 the reduction of $\Phi_n(X)$ modulo $p$ must have a multiple factor.\par
-This implies that $X^n-1\in\F_p[X]$ has a multiple factor; that is, it is inseparable. However, its derivative $nX^{n-1}\in\F_p[X]$ is nonzero (because $p$ does not divide $n$ by assumption), and Proposition~\ref{poloynomial separable iff f'} implies that $X^n-1$ is separable in $\F_p[X]$.\par
+This implies that $X^n-1\in\F_p[X]$ has a multiple factor; that is, it is inseparable. However, its derivative $nX^{n-1}\in\F_p[X]$ is nonzero (because $p$ does not divide $n$ by assumption), and \cref{poloynomial separable iff f'} implies that $X^n-1$ is separable in $\F_p[X]$.\par
 This contradiction shows that our assumption that $\Phi_n(X)$ is reducible must be nonsense, proving the statement.
 \end{proof}
 \begin{definition}
@@ -2621,7 +2621,7 @@ The splitting field $\Q(\zeta_n)$ for the polynomial $X^n-1$ over $\Q$ is the $n
 The Galois group $\Gal(\Q(\zeta_n)/\Q)$ is isomorphic to $(\Z/n\Z)^\times$.
 \end{proposition}
 \begin{proof}
-We know that $\Gal(\Q(\zeta_n)/\Q)$ has cardinality $\phi(n)$ (Corollary~\ref{field simple ext order of Aut}; the roots
+We know that $\Gal(\Q(\zeta_n)/\Q)$ has cardinality $\phi(n)$ (\cref{field simple ext order of Aut}; the roots
 are distinct since $\Phi_n(X)$ is separable), so the homomorphism $\Gal(\Q(\zeta_n)/\Q)\to(\Z/n\Z)^\times$ is an isomorphism.
 \end{proof}
 \begin{corollary}
@@ -2631,10 +2631,10 @@ If $n,m$ are relative prime integers, then
 \begin{proof}
 We note that $\zeta_n$ and $\zeta_m$ are both contained in $\Q(\zeta_{mn})$ since $\zeta_{mn}^n$ is a primitive $m$-th root of unity. Furthermore, $\zeta_{m}\zeta_n$ is a primitive $mn$-th root of unity. Hence
 \[\Q(\zeta_m)\Q(\zeta_n)=\Q(\zeta_{mn})\]
-Our assertion then follows from the multiplicativity $\phi(mn)=\phi(m)\phi(n)$ and Proposition~\ref{Galois group of lifting}.
+Our assertion then follows from the multiplicativity $\phi(mn)=\phi(m)\phi(n)$ and \cref{Galois group of lifting}.
 \end{proof}
 \begin{example}
-The reader should consider Examples~\ref{split field of x^8-1} again: by what we have just proved, the automorphism group of the splitting field of $X^8-1$ is isomorphic to the group of units in $\Z/8\Z$; this group is immediately seen to be isomorphic to $(\Z/2\Z)\times(\Z/2\Z)$, confirming the claim made in Example~\ref{split field of x^8-1}.
+The reader should consider \cref{split field of x^8-1} again: by what we have just proved, the automorphism group of the splitting field of $X^8-1$ is isomorphic to the group of units in $\Z/8\Z$; this group is immediately seen to be isomorphic to $(\Z/2\Z)\times(\Z/2\Z)$, confirming the claim made in \cref{split field of x^8-1}.
 \end{example}
 \subsection{Cyclic extensions}
 \subsubsection{Hilbert's theorem 90}
@@ -2689,13 +2689,13 @@ Let $\ell\in L^G$, and let $n\in N$ map to $\ell$. For all $\sigma\in G$, $\sigm
 \begin{example}
 Let $\pi:\widetilde{X}\to X$ be the universal covering space of a topological space $X$, and let $\Gamma$ be the group of covering transformations. Under some fairly general hypotheses, a $\Gamma$-module $M$ will define a sheaf $\mathcal{M}$ on $X$, and $H^1(X,\mathcal{M})\cong H^1(\Gamma,M)$. For example, when $M=\Z$ with the trivial action of $\Gamma$, this becomes the isomorphism $H^1(X,\Z)\cong H^1(\Gamma,\Z)=\Hom(\Gamma,\Z)$.
 \end{example}
-\begin{theorem}\label{field ext H^1(G,E^*) H^1(G,E) is trivial}
+\begin{theorem}\label{field ext H^1 is trivial}
 Let $E$ be a finite Galois extension of $K$ with group $G$; then $H^1(G,E^{\times})=0$ and $H^1(G,E)=0$.
 \end{theorem}
 \begin{proof}
 Let $f$ be a crossed homomorphism $G\to E^\times$. In multiplicative notation, this means that
 \[f(\sigma\tau)=f(\sigma)\cdot (\sigma f(\tau))\]
-for $\sigma,\tau\in G$, and we have to find a $\gamma\in E^\times$ such that $f(\sigma)=\sigma(\gamma)/\gamma$ for all $\sigma\in G$. Because the $f(\tau)$ are nonzero, Corollary~\ref{field embedding independent} implies that
+for $\sigma,\tau\in G$, and we have to find a $\gamma\in E^\times$ such that $f(\sigma)=\sigma(\gamma)/\gamma$ for all $\sigma\in G$. Because the $f(\tau)$ are nonzero, \cref{field embedding independent} implies that
 \[\sum_{\tau\in G}f(\tau)\tau:E\to E\]
 is not the zero map, i.e., there exists an $\alpha\in E$ such that
 \[\beta:=\sum_{\tau\in G}f(\tau)\tau(\alpha)\neq 0.\]
@@ -2720,13 +2720,13 @@ Since $\tr(\gamma)\neq 0$, we obtain $f(\sigma)=\beta/\tr(\gamma)-\sigma(\beta/\
 Let $E$ be a finite cyclic extension of $K$ and let $\sigma$ generate $\Gal(E/K)$. Let $\alpha\in E$, if $N(\alpha)=1$, then $\alpha=\beta/\sigma(\beta)$ for some $\beta\in E$.
 \end{corollary}
 \begin{proof}
-Let $n=[E:K]$. The condition on $\alpha$ is that $\alpha\sigma(\alpha)\cdots\sigma^{n-1}(\alpha)=1$, and so by $(\ref{cross homomorphism cyclic})$ there is a crossed homomorphism $f:G\to E^{\times}$ with $f(\sigma)=\alpha$. Theorem~\ref{field ext H^1(G,E^*) H^1(G,E) is trivial} now shows that $f$ is principal, which means that there is a $\beta\in E$ such that $\alpha=\beta/\sigma(\beta)$.
+Let $n=[E:K]$. The condition on $\alpha$ is that $\alpha\sigma(\alpha)\cdots\sigma^{n-1}(\alpha)=1$, and so by $(\ref{cross homomorphism cyclic})$ there is a crossed homomorphism $f:G\to E^{\times}$ with $f(\sigma)=\alpha$. \cref{field ext H^1 is trivial} now shows that $f$ is principal, which means that there is a $\beta\in E$ such that $\alpha=\beta/\sigma(\beta)$.
 \end{proof}
 \begin{corollary}[\textbf{Hilbert's theorem 90, additive version}]
 Let $E$ be a finite cyclic extension of $K$ and let $\sigma$ generate $\Gal(E/K)$. Let $\alpha\in E$, if $\tr(\alpha)=0$, then $\alpha=\beta-\sigma(\beta)$ for some $\beta\in E$.
 \end{corollary}
 \begin{proof}
-Let $n=[E:K]$. The condition on $\alpha$ is that $\alpha+\sigma(\alpha)+\cdots+\sigma^{n-1}(\alpha)=1$, and so by $(\ref{cross homomorphism cyclic})$ there is a crossed homomorphism $f:G\to E$ with $f(\sigma)=\alpha$. Theorem~\ref{field ext H^1(G,E^*) H^1(G,E) is trivial} now shows that $f$ is principal, which means that there is a $\beta\in E$ such that $\alpha=\beta/\sigma(\beta)$.
+Let $n=[E:K]$. The condition on $\alpha$ is that $\alpha+\sigma(\alpha)+\cdots+\sigma^{n-1}(\alpha)=1$, and so by $(\ref{cross homomorphism cyclic})$ there is a crossed homomorphism $f:G\to E$ with $f(\sigma)=\alpha$. \cref{field ext H^1 is trivial} now shows that $f$ is principal, which means that there is a $\beta\in E$ such that $\alpha=\beta/\sigma(\beta)$.
 \end{proof}
 \subsubsection{Abelian and Cyclic Extensions}
 Extensions are often named after their Galois groups. Here is a very important example.
@@ -2743,8 +2743,8 @@ The basic properties of abelian and cyclic extensions are given in the next prop
 \end{itemize}
 \end{proposition}
 \begin{proof}
-Let $K\sub E_i$ be abelian extensions, then since $E_i/K$ are Galois, the extension $K\sub\bigvee E_i$ is also Galois. Moreover, by Proposition~\ref{Galois group of a composite}, the Galois group $\Gal(\bigvee E_i/K)$ is a subgroup of $\prod\Gal(E_i/K)$, which is abelian, and hence is also abelian.\par
-Now consider a lifting of abelian (cyclic) extension. By Proposition~\ref{Galois group of lifting} the extension $F\sub EF$ is Galois, and $\Gal(EF/F)\cong\Gal(E/E\cap F)$. Note that $\Gal(E/E\cap F)$ is a subgroup of $\Gal(E/K)$, and hence is abelian (cyclic) if $\Gal(E/K)$ is abelian (cyclic).\par
+Let $K\sub E_i$ be abelian extensions, then since $E_i/K$ are Galois, the extension $K\sub\bigvee E_i$ is also Galois. Moreover, by \cref{Galois group of a composite}, the Galois group $\Gal(\bigvee E_i/K)$ is a subgroup of $\prod\Gal(E_i/K)$, which is abelian, and hence is also abelian.\par
+Now consider a lifting of abelian (cyclic) extension. By \cref{Galois group of lifting} the extension $F\sub EF$ is Galois, and $\Gal(EF/F)\cong\Gal(E/E\cap F)$. Note that $\Gal(E/E\cap F)$ is a subgroup of $\Gal(E/K)$, and hence is abelian (cyclic) if $\Gal(E/K)$ is abelian (cyclic).\par
 Finally, consider a tower $K\sub E\sub F$, where $F/K$ is abelian (cyclic). Since all subgroups of $\Gal(F/K)$ is then normal, we see $E/K$ and $F/E$ are both Galois extensions, and $\Gal(E/K)$, $\Gal(F/E)$ are isomorphic to subgroups of $\Gal(F/K)$, which are abelian (cyclic).
 \end{proof}
 Abelian and cyclic extensions fail to be distinguished because, and only because if the steps in a tower are abelian (cyclic), this does not imply that the full extension is abelian (cyclic). What does it imply?\par
@@ -2752,7 +2752,7 @@ Suppose that
 \[K=K_0\sub K_1\sub K_2\sub\cdots\sub K_{n}=E\]
 is a tower in which each step $K_{i+1}/K_i$ is abelian (cyclic). Taking Galois groups gives the series
 \[\{1\}=\Gal(E/E)\sub\Gal(E/K_{n-1})\sub\cdots\sub\Gal(E/K_1)\sub \Gal(E/K_0)=\Gal(E/K).\]
-Consider the subtower $K_i\sub K_{i+1}\sub E$. Since the lower step is normal, it follows from Theorem~\ref{Galois fundamental theorem-3}$(a)$ that $\Gal(E/K_{i+1})$ is a normal subgroup of its parent $\Gal(E/K_i)$ and that
+Consider the subtower $K_i\sub K_{i+1}\sub E$. Since the lower step is normal, it follows from \cref{Galois fundamental theorem-3}$(a)$ that $\Gal(E/K_{i+1})$ is a normal subgroup of its parent $\Gal(E/K_i)$ and that
 \[\frac{\Gal(E/K_i)}{\Gal(E/K_{i+1})}\hookrightarrow\Gal(K_{i+1}/K_{i}).\]
 Since the latter is abelian (cyclic), so is the former. Thus,
 \[\{1\}=\Gal(E/E)\lhd\Gal(E/K_{n-1})\lhd\cdots\lhd\Gal(E/K_1)\lhd\Gal(E/K).\]
@@ -2795,7 +2795,7 @@ Conversely, let $a\in K$. If $\alpha$ is a root of $f(X)=X^p-X-a$, then
 \[f(\alpha+1)=(\alpha+1)^p-\alpha-1-a=\alpha^p-\alpha-a=0\]
 so $\alpha+1$ is also a root. Therefore the roots of $f(X)$ are 
 \[\alpha_1:=\alpha,\quad\alpha_2:=\alpha+1,\quad\cdots,\quad\alpha_p:=\alpha+p-1\]
-If $\alpha\in K$, then all $\alpha_i$ is in $K$. If $\alpha\notin K$, then all $\alpha_i$ is not in $K$. In this case, any sum $\sum_I$ with $I\neq\{1,\dots,p\}$ and $I\neq\emp$ is not an element of $K$. Therefore $f(X)$ is irreducible by Exercise~\ref{irr exercise}. Since all roots of $f(X)$ is in $K(\alpha)$, it follows that $K(\alpha)$ is normal over $K$. Since $f(X)$ has no multiple roots, it follows that $K(\alpha)$ is Galois over $K$. Since $\alpha+1$ is a root of $f(X)$, there exists an automorphism $\sigma$ of $K(\alpha)$ over $K$ such that $\sigma(\alpha)=\alpha+1$. Then the powers $\sigma^i$ give $\sigma^i(\alpha)=\alpha+i$ for $i=1,\dots,p$ and are distinct. Since $[K(\alpha):K]=p$, it follows that $\Gal(K(\alpha)/K)=\langle\sigma\rangle$ and is cyclic of order $p$, there by proving the theorem.
+If $\alpha\in K$, then all $\alpha_i$ is in $K$. If $\alpha\notin K$, then all $\alpha_i$ is not in $K$. In this case, any sum $\sum_I$ with $I\neq\{1,\dots,p\}$ and $I\neq\emp$ is not an element of $K$. Therefore $f(X)$ is irreducible by \cref{irr exercise}. Since all roots of $f(X)$ is in $K(\alpha)$, it follows that $K(\alpha)$ is normal over $K$. Since $f(X)$ has no multiple roots, it follows that $K(\alpha)$ is Galois over $K$. Since $\alpha+1$ is a root of $f(X)$, there exists an automorphism $\sigma$ of $K(\alpha)$ over $K$ such that $\sigma(\alpha)=\alpha+1$. Then the powers $\sigma^i$ give $\sigma^i(\alpha)=\alpha+i$ for $i=1,\dots,p$ and are distinct. Since $[K(\alpha):K]=p$, it follows that $\Gal(K(\alpha)/K)=\langle\sigma\rangle$ and is cyclic of order $p$, there by proving the theorem.
 \end{proof}
 \subsection{Solvable and radical extensions}
 \subsubsection{Solvable extensions}
@@ -2804,7 +2804,7 @@ A finite separable extension $E/K$ is said to be \textbf{solvable} if the Galois
 Solvable extensions form a distinguished class of extensions.
 \end{proposition}
 \begin{proof}
-We first deal with liftings. Let $E/K$ be solvable and $F$ be a field containing $K$ and assume $E,F$ are subfields of some algebraically closed field. Let $L$ be Galois solvable over $K$ and $E\sub L$. Then $LF$ is Galois over $F$ and $\Gal(LF/F)$ is a subgroup of $\Gal(L/K)$ by Proposition~\ref{Galois group of lifting}. Hence $LF/F$ is solvable, and it follows that $EF/F$ is slovable.\par
+We first deal with liftings. Let $E/K$ be solvable and $F$ be a field containing $K$ and assume $E,F$ are subfields of some algebraically closed field. Let $L$ be Galois solvable over $K$ and $E\sub L$. Then $LF$ is Galois over $F$ and $\Gal(LF/F)$ is a subgroup of $\Gal(L/K)$ by \cref{Galois group of lifting}. Hence $LF/F$ is solvable, and it follows that $EF/F$ is slovable.\par
 Now let $K\sub E\sub F$ be a tower of extensions. If $F/K$ is slovable, then there exists a field $L$ containing $F$ such that $L/K$ is Galois and solvable. The by definition $E/K$ is solvable. For $F/E$, it is clear that $L/E$ is Galois, and since $\Gal(L/E)$ is a subgroup of $\Gal(L/K)$, it is also solvable. It follows that $F/E$ is solvable.\par
 \vspace{-3pt}
 \begin{figure}[htbp]
@@ -2820,9 +2820,9 @@ K\ar[u,no head]
 \caption{A tower of solvable extensions is solvable.}
 \end{figure}
 \vspace{-3pt}
-For the converse, assume that $F/E$ and $E/K$ are solvable. Let $L$ be a finite solvable Galois extension of $K$ containing $E$. Then as a lifting, we see $FL/L$ is solvable. Let $M$ be a finite solvable Galois extension of $K$ containing $FL$. If $\sigma$ is any embedding of $M$ over $K$ in a given algebraic closure, then since $L/K$ is Galois, we have $\sigma(L)=L$ and hence $\sigma(M)$ is also solvable extension of $L$. We let $N$ be the compositum of all extensions $\sigma(M)$ for all embeddings $\sigma$ of $M$ over $K$. Then $N$ is Galois over $K$ and is therefore Galois over $L$. The Galois group $\Gal(N/L)$ is a subgroup of the product $\prod\Gal(\sigma(M)/L)$ by Proposition~\ref{Galois group of a composite}, hence is solvable. Since $L$ is Galois over $K$, we have a isomorphism
+For the converse, assume that $F/E$ and $E/K$ are solvable. Let $L$ be a finite solvable Galois extension of $K$ containing $E$. Then as a lifting, we see $FL/L$ is solvable. Let $M$ be a finite solvable Galois extension of $K$ containing $FL$. If $\sigma$ is any embedding of $M$ over $K$ in a given algebraic closure, then since $L/K$ is Galois, we have $\sigma(L)=L$ and hence $\sigma(M)$ is also solvable extension of $L$. We let $N$ be the compositum of all extensions $\sigma(M)$ for all embeddings $\sigma$ of $M$ over $K$. Then $N$ is Galois over $K$ and is therefore Galois over $L$. The Galois group $\Gal(N/L)$ is a subgroup of the product $\prod\Gal(\sigma(M)/L)$ by \cref{Galois group of a composite}, hence is solvable. Since $L$ is Galois over $K$, we have a isomorphism
 \[\Gal(L/K)\cong\frac{\Gal(N/K)}{\Gal(N/L)}\]
-by Theorem~\ref{Galois fundamental theorem-3}, which shows $\Gal(N/K)$ is slovable. Since $F\sub N$, this proves $N$ is solvable, which completes the proof.
+by \cref{Galois fundamental theorem-3}, which shows $\Gal(N/K)$ is slovable. Since $F\sub N$, this proves $N$ is solvable, which completes the proof.
 \end{proof}
 \subsubsection{Radical extensions}
 Loosely speaking, when $\char(K)\neq 0$, an extension $K\sub E$ is solvable by radicals if it is possible to reach $E$ from $K$ by adjoining a finite sequence of $n$-th roots of existing elements. More specifically, we have the following definitions, which also deal with the case $\char(K)\neq 0$.\par
@@ -2876,7 +2876,7 @@ where $K\sub\langle R/K\rangle$ is a normal radical extension.
 \end{itemize}
 \end{proposition}
 \begin{proof}
-Let $K\sub E\sub F$ be a tower. If $K\sub F$ is solvable by radicals then there is a field $R$ containing $F$ such that $R/K$ is a  radical extension. It follows that $E/K$ solvable by radicals. For the upper step, $R/K$ radical implies $R/E$ is radical by Proposition~\ref{field ext radical prop} and so $F/E$ is solvable by radicals. Now suppose the steps in the tower are radical. Then we have the following extensions:
+Let $K\sub E\sub F$ be a tower. If $K\sub F$ is solvable by radicals then there is a field $R$ containing $F$ such that $R/K$ is a  radical extension. It follows that $E/K$ solvable by radicals. For the upper step, $R/K$ radical implies $R/E$ is radical by \cref{field ext radical prop} and so $F/E$ is solvable by radicals. Now suppose the steps in the tower are radical. Then we have the following extensions:
 \[\begin{tikzcd}[column sep=small,row sep=small]
 &R_{E/K}R_{F/E}\\
 R_{F/E}\ar[ru,no head]&\\
@@ -2892,14 +2892,14 @@ As to lifting, if $K\sub E\sub R$ with $R/K$ radical, the lifting by $K\sub F$ g
 and since $F\sub RF$ is radical, $EF/F$ is solvable by radicals.\par
 The second part of the theorem follows from the fact that if $K\sub E\sub R$ with $R/K$ is radical, then
 \[K\sub\langle E/K\rangle\sub\langle R/K\rangle\]
-with $K\sub\langle R/K\rangle$ radical by Proposition~\ref{field ext radical prop}.
+with $K\sub\langle R/K\rangle$ radical by \cref{field ext radical prop}.
 \end{proof}
 Now we come to the key result that links the concepts of solvable extension and solvability by radicals.
 \begin{theorem}\label{field ext solvable iff solvable by radical}
 Let $E$ be a finite separable extension of $K$. Then $E$ is solvable by radicals if and only if $E/K$ is solvable.
 \end{theorem}
 \begin{proof}
-Assume that $E/K$ is solvable, and let $F$ be a finite solvable Galois extension of $K$ containing $E$. Let $m$ be the product of all prime divisors the degree $[F:K]$ that are unequal to the characteristic, and let $L=K(\zeta)$ where $\zeta$ is a primitive $m$-th root of unity. Then $L/K$ is abelian. We lift $F$ over $L$, so that $FL$ is solvable over $L$. Since every solvable group admits a cyclic composition series whose factor groups are of prime order, we can use the Galois correspondence to find a tower of subfields between $L$ and $FL$ such that each step is cyclic of prime order. By Theorem~\ref{field ext cyclic nonchar case} and \ref{field ext cyclic char p case}, we conclude that $FL$ is solvable by radicals over $L$, and hence is solvable by radicals over $K$. This proves that $E/L$ is solvable by radicals.
+Assume that $E/K$ is solvable, and let $F$ be a finite solvable Galois extension of $K$ containing $E$. Let $m$ be the product of all prime divisors the degree $[F:K]$ that are unequal to the characteristic, and let $L=K(\zeta)$ where $\zeta$ is a primitive $m$-th root of unity. Then $L/K$ is abelian. We lift $F$ over $L$, so that $FL$ is solvable over $L$. Since every solvable group admits a cyclic composition series whose factor groups are of prime order, we can use the Galois correspondence to find a tower of subfields between $L$ and $FL$ such that each step is cyclic of prime order. By \cref{field ext cyclic nonchar case} and \ref{field ext cyclic char p case}, we conclude that $FL$ is solvable by radicals over $L$, and hence is solvable by radicals over $K$. This proves that $E/L$ is solvable by radicals.
 \[\begin{tikzcd}[column sep=small,row sep=small]
 &FL\\
 F\ar[ru,no head]&\\
@@ -2907,7 +2907,7 @@ E\ar[u,no head]&L\ar[uu,no head]\\
 K\ar[u,no head]\ar[ru,no head]&
 \end{tikzcd}\]
 
-Conversely, assume that $E/K$ is solvable by radicals. For any embedding $\sigma$ of $E$ in $\widebar{E}$ over $K$, the extension $\sigma(E)/K$ is also solvable by radicals. Hence the normal closure $F$ of $E/K$ is solvable by radicals. Let $m$ be the product of all prime divisors the degree $[F:K]$ that are unequal to the characteristic and again let $L=K(\zeta)$ where $\zeta$ is a primitive $m$-th root of unity. It will suffice to prove that $FL$ is solvable over $L$, because it follows then that $FL$ is solvable over $K$ and hence $F/K$ is slovable by Proposition~\ref{field ext solvable distinguished}. But $FL/L$ can be decomposed into a tower of extensions, such that each step is prime degree and of the type described in Theorem~\ref{field ext cyclic nonchar case} or Theorem~\ref{field ext cyclic char p case}, and the corresponding root of unity is in the field $L$. Hence $FL/L$ is solvable, and our theorem is proved.
+Conversely, assume that $E/K$ is solvable by radicals. For any embedding $\sigma$ of $E$ in $\widebar{E}$ over $K$, the extension $\sigma(E)/K$ is also solvable by radicals. Hence the normal closure $F$ of $E/K$ is solvable by radicals. Let $m$ be the product of all prime divisors the degree $[F:K]$ that are unequal to the characteristic and again let $L=K(\zeta)$ where $\zeta$ is a primitive $m$-th root of unity. It will suffice to prove that $FL$ is solvable over $L$, because it follows then that $FL$ is solvable over $K$ and hence $F/K$ is slovable by \cref{field ext solvable distinguished}. But $FL/L$ can be decomposed into a tower of extensions, such that each step is prime degree and of the type described in \cref{field ext cyclic nonchar case} or \cref{field ext cyclic char p case}, and the corresponding root of unity is in the field $L$. Hence $FL/L$ is solvable, and our theorem is proved.
 \end{proof}
 \subsection{Solvability of polynomial equations by radicals}
 We begin this part with a brief history of the study of roots of polynomials. Mathematicians of the Middle Ages, and probably those in Babylonia, knew the \textbf{quadratic formula} giving the roots of a quadratic polynomial $f(X)=X^2+bX+c$. Setting $X=x-b/2$ transforms $f(X)$ into a polynomial $g(X)$ with no $x$ term:
@@ -2960,12 +2960,12 @@ in terms of the coefficients ai and basic operations such as taking roots. This 
 The general polynomial equation of degree $5$ or higher admits no solution by radicals.
 \end{theorem}
 \begin{proof}
-Recall that the extension $K(s_1,\dots,s_n)\sub K(t_1,\dots,t_n)$ has Galois group $\mathfrak{S}_n$, which is not solvable for $n\geq 5$. Therefore by Theorem~\ref{field ext solvable iff solvable by radical} this extension is not solvable by radicals. This means there is no formula for the solution of the general polynomial $g(X)$. 
+Recall that the extension $K(s_1,\dots,s_n)\sub K(t_1,\dots,t_n)$ has Galois group $\mathfrak{S}_n$, which is not solvable for $n\geq 5$. Therefore by \cref{field ext solvable iff solvable by radical} this extension is not solvable by radicals. This means there is no formula for the solution of the general polynomial $g(X)$. 
 \end{proof}
 \begin{corollary}\label{polynomial solvable by radical iff Galois solvable}
 Let $K$ be a field of characteristic $0$, and let $f(X)\in K[X]$ be an irreducible polynomial. Then $f(X)$ is solvable by radicals if and only if its Galois group is solvable.
 \end{corollary}
-Corollary~\ref{polynomial solvable by radical iff Galois solvable} is called \textbf{Galois' criterion}. Ruffini (1799) and Abel (1824) had previously established that general formulas in radicals for the solutions of equations of degree $\geq 5$ do not exist (that is, Theorem~\ref{no solution formula for n geq 5}); but it was Galois who identified the precise condition given in Corollary~\ref{polynomial solvable by radical iff Galois solvable}.\par
+\cref{polynomial solvable by radical iff Galois solvable} is called \textbf{Galois' criterion}. Ruffini (1799) and Abel (1824) had previously established that general formulas in radicals for the solutions of equations of degree $\geq 5$ do not exist (that is, \cref{no solution formula for n geq 5}); but it was Galois who identified the precise condition given in \cref{polynomial solvable by radical iff Galois solvable}.\par
 In fact, we could now do more: we know that $\mathfrak{S}_3$ and $\mathfrak{S}_4$ are solvable; from a composition series with cyclic quotients we could in principle decompose explicitly the splitting field of general polynomials of degree $3$ and $4$ as radical extensions and as a consequence recover the Tartaglia/Cardano/Ferrari formulas for their solutions.
 \subsection{Exercise}
 \begin{exercise}
@@ -3007,7 +3007,7 @@ The splitting field of $X^4-2$ is $\Q(i,\sqrt[2]{2})$. So it Galois group $G$ ha
 Prove that the polynomial $X^5-5X-1$ has exactly $3$ real roots (this is a calculus exercise) and is irreducible over $\Q$. Prove that its Galois group is $\mathfrak{S}_5$.
 \end{exercise}
 \begin{proof}
-$f(X)=X^5-5X-1$, then $f(-2)=-23,f(-1)=3,f(0)=-1,f(2)=21$. So $f(X)$ has $3$ real roots. And by Example~\ref{Galois group is S_n eg}, $f(X)$ has Galois group $\mathfrak{S}_5$.
+$f(X)=X^5-5X-1$, then $f(-2)=-23,f(-1)=3,f(0)=-1,f(2)=21$. So $f(X)$ has $3$ real roots. And by \cref{Galois group is S_n eg}, $f(X)$ has Galois group $\mathfrak{S}_5$.
 \end{proof}
 \begin{exercise}\label{Galois order p ele}
 Let $f(X)\in K[X]$ be a separable irreducible polynomial of prime degree $p$ over a field $K$, and let $\alpha_1,\dots,\alpha_p$ be the roots of $f(X)$ in its splitting field $K$. Prove that the Galois group of $f(X)$ contains an element $\sigma$ of order $p$, cycling through the roots.
@@ -3055,7 +3055,7 @@ Thus $|S|\cap|T|\neq\emp$. This immediately implies that $x$ is a sum of squres.
 Find the cyclotomic polynomials $\Phi_{2^m}(X)$ for all $m\geq 0$.
 \end{exercise}
 \begin{proof}
-We have by Lemma~\ref{cyclotomic polynomial lemma}
+We have by \cref{cyclotomic polynomial lemma}
 \[X^{2^m}-1=\prod_{i=1}^{m}\Phi_{2^i}(X)\]
 so
 \[\Phi_{2^m}(X)=\dfrac{X^{2^{m}}-1}{X^{2^{m-1}}-1}=X^{2^{m-1}}+1\]
@@ -3153,7 +3153,7 @@ since $a^d\not\equiv 1$, we get the claim.
 Let $a,p,n$ be integers, with $p,n$ positive and $p$ prime, $p\nmid n$. Assume that $p$ divides $\Phi_n(a)$. Prove that $p\equiv1$ mod $n$.
 \end{exercise}
 \begin{proof}
-From Exercise~\ref{p divides Phi_n(a)}, we know that $[a]_p$ has order $n$ in $(\Z/p\Z)^{\times}$. In particular, $n\mid p-1$.
+From \cref{p divides Phi_n(a)}, we know that $[a]_p$ has order $n$ in $(\Z/p\Z)^{\times}$. In particular, $n\mid p-1$.
 \end{proof}
 \section{Transcendental extensions}
 \subsection{Transcendental basis}
@@ -3162,14 +3162,14 @@ Let $E/K$ be a field extension. A subset $S$ of $E$ is \textbf{algebraically dep
 \end{definition}
 In fancier language, consider the map defined by
 \[K[S]\to K,\quad f(X_1,\dots,X_n)\mapsto f(s_1,\dots,s_n).\]
-Then $S$ is algebraically independent if and only if this map is injective. Since algebraically dependent subsets are necessarily nonempty, it follows that the empty subset $\emp$ is algebraically independent. A singleton $\{\alpha\}\sub E$ is algebraically dependent if $\alpha$ is algebraic over $K$. If $\{\alpha\}$ is algebraically independent, then $\alpha$ is transcendental over $K$, in which case $K(\alpha)\cong K(X)$. The following lemma extends the second case in Proposition~\ref{field simple ext char}.
+Then $S$ is algebraically independent if and only if this map is injective. Since algebraically dependent subsets are necessarily nonempty, it follows that the empty subset $\emp$ is algebraically independent. A singleton $\{\alpha\}\sub E$ is algebraically dependent if $\alpha$ is algebraic over $K$. If $\{\alpha\}$ is algebraically independent, then $\alpha$ is transcendental over $K$, in which case $K(\alpha)\cong K(X)$. The following lemma extends the second case in \cref{field simple ext char}.
 \begin{lemma}\label{field ext purely transcendental finite case}
 Let $E/K$ be a purely transcendental extension with $S=\{s_1,\dots,s_n\}$ is a finite algebraically independent subset. If $K(X_1,\dots,X_n)$ is the function field with indeterminates $X_1,\dots,X_n$, then there is an isomorphism $K(X_1,\dots,X_n)\cong E$ with $X_i\mapsto s_i$ for all $i$.
 \end{lemma}
 \begin{proof}
 The bijection $X=\{X_1,\dots,X_n\}\to S$ given by $X_i\mapsto s_i$ extends to an isomorphism $K[X_1,\dots,X_n]\cong K[s_1,\dots,s_n]$, which in turn extends to an isomorphism of fraction fields.
 \end{proof}
-We can now improve Lemma~\ref{field ext purely transcendental finite case} by removing the finiteness hypothesis.
+We can now improve \cref{field ext purely transcendental finite case} by removing the finiteness hypothesis.
 \begin{theorem}\label{field ext purely transcendental iso to function field}
 Let $E/K$ be a purely transcendental extension; that is, $E=K(S)$, where $S$ is an algebraically independent subset. Then $E\cong K(X)$, the function field with indeterminates $X$, where $|X|=|S|$, via an isomorphism $\varphi:K(X)\to E$ with $\varphi(X)\in S$ for all $x\in X$.
 \end{theorem}
@@ -3177,7 +3177,7 @@ Let $E/K$ be a purely transcendental extension; that is, $E=K(S)$, where $S$ is 
 By the well ordering principle, we may assume that $S$ is well-ordered. Now let $X$ be a set equipped with a bijection $h:X\to S$; we may assume that $X$ is well-ordered by defining $x\leq y$ to mean $h(x)\leq h(y)$. If $y\in X$, define
 \[X_y=\{x\in X:x\leq y\}\quad S_y=\{h(x)\in S:x\leq y\}.\]
 We prove by transfinite induction that there are isomorphisms $\varphi_y:K(X_y)\to K(S_y)$ with $\varphi_y(x)=h(x)$ for all $x\leq y$ and with $\varphi_{y_2}$ extending $\varphi_{y_1}$ whenever $y_1\leq y_2$. This will suffice, for $K(X)=\bigcup_{y\in X}K(X_y)$ and $E=K(S)=\bigcup_{y\in X}K(S_y)$.\par
-The base step was proved in Lemma~\ref{field ext purely transcendental finite case} with $E=K(S_y)=K(y)$, where $y$ is the smallest element in $S$. The inductive step wants an isomorphism $\varphi_z:K(X_z)\to K(S_z)$ with $y\mapsto h(y)$ for all $y\leq z$. If $z$ is a successor, say $z$ is the next index after $y$, then $K(X_y)(z)=K(X_z)$, and Lemma~\ref{field ext purely transcendental finite case} gives an isomorphism $K(X_y)(z)\to K(S_y)(h(z))$. If $z$ is a limit, observe that the family of subfields $K(X_y)$ for all $y<z$ is an increasing chain, and so $K_*=\bigcup_{y<z}K(X_y)$ is a field; similarly, $E_*=\bigcup_{y< z}K(S_y)$ is a field. If $y_1\leq y_2<z$, then the isomorphism $\varphi_{y_2}$ extends $\varphi_{y_1}$, so that $\bigcup_{y<z}\varphi_y$ is a (well-defined) isomorphism from $K_*$ to $E_*$. As the isomorphisms $\varphi_y$ agree whenever possible, they can be assembled to an isomorphism $\varphi_z:K(X_z)\to K(S_z)$. This finishes the induction process and hence the proof.
+The base step was proved in \cref{field ext purely transcendental finite case} with $E=K(S_y)=K(y)$, where $y$ is the smallest element in $S$. The inductive step wants an isomorphism $\varphi_z:K(X_z)\to K(S_z)$ with $y\mapsto h(y)$ for all $y\leq z$. If $z$ is a successor, say $z$ is the next index after $y$, then $K(X_y)(z)=K(X_z)$, and \cref{field ext purely transcendental finite case} gives an isomorphism $K(X_y)(z)\to K(S_y)(h(z))$. If $z$ is a limit, observe that the family of subfields $K(X_y)$ for all $y<z$ is an increasing chain, and so $K_*=\bigcup_{y<z}K(X_y)$ is a field; similarly, $E_*=\bigcup_{y< z}K(S_y)$ is a field. If $y_1\leq y_2<z$, then the isomorphism $\varphi_{y_2}$ extends $\varphi_{y_1}$, so that $\bigcup_{y<z}\varphi_y$ is a (well-defined) isomorphism from $K_*$ to $E_*$. As the isomorphisms $\varphi_y$ agree whenever possible, they can be assembled to an isomorphism $\varphi_z:K(X_z)\to K(S_z)$. This finishes the induction process and hence the proof.
 \end{proof}
 Recall that if $V$ is a vector space and $S=\{v_1,\dots,v_n\}$ is a subset in $V$, then $S$ is linearly dependent if and only if some $v_i$ is in the subspace spanned by the others. Here is an analog of this for algebraic dependence.
 \begin{proposition}\label{field ext algebraically dependent iff algebraic on other}
@@ -3209,10 +3209,10 @@ Let $E/K$ be an extension field, let $\alpha\in E$, and let $S\sub E$.
 \end{itemize}
 \end{proposition}
 \begin{proof}
-It is easy to check (\rmnum{1}) and (\rmnum{2}). We now verify (\rmnum{3}). If $\alpha\preceq S$, then $\alpha$ is algebraic over $K(S)$. Suppose there is some $T\sub E$ with $s\preceq T$ for every $s\in S$; then it follows from Theorem~\ref{field ext by algebraic elements is algebraic} that $K(T)\sub K(S)(T)$ is an algebraic extension. Since $\alpha$ is algebraic over $K(S)$ and hence $K(S)(T)$, it is then algebraic over $K(T)$. That is, $\alpha$ is dependent on $T$.\par
-Let us verify (\rmnum{4}). The exchange property assumes that $\alpha\preceq S\cup\{\beta\}$ (that is, $\alpha$ is algebraic over $K(S\cup\{\beta\})$) and $\alpha$ is transcendental over $K(S\setminus)$. We first note that $\beta\not\preceq S$: otherwise $\beta$ is algebraic over $K(S)$, and hence $K(S)\sub K(S\cup\{\beta\})$ is algebraic. But this implies $\alpha$ is algebraic over $K(S)$, which contradicts the hypothesis. Now since $K(S\cup\{\beta\})=K(S)(\beta)$, we conclude from Proposition~\ref{field ext algebraically dependent iff algebraic on other} that $\{\alpha,\beta\}$ is algebraic dependent over $K(S)$. Thus there is a nonzero polynomial $f(X,Y)\in K(S)[X,Y]$ with $f(\alpha,\beta)=0$. In more detail, $f(X,Y)=g_0(X)+g_1(X)Y+\cdots+g_n(X)Y^n$, where $g_i(X)\in K(S)[X]$. Define $h(Y)=f(\alpha,Y)=\sum_ig^i(\alpha)Y^i\in K(S,\alpha)[Y]$. Since $\alpha$ is not dependent on $S$, $h(Y)$ is not the zero polynomial. But $h(\beta)=f(\alpha,\beta)=0$, so $\beta$ is dependent on $S\cup\{\alpha\}$.
+It is easy to check (\rmnum{1}) and (\rmnum{2}). We now verify (\rmnum{3}). If $\alpha\preceq S$, then $\alpha$ is algebraic over $K(S)$. Suppose there is some $T\sub E$ with $s\preceq T$ for every $s\in S$; then it follows from \cref{field ext by algebraic elements is algebraic} that $K(T)\sub K(S)(T)$ is an algebraic extension. Since $\alpha$ is algebraic over $K(S)$ and hence $K(S)(T)$, it is then algebraic over $K(T)$. That is, $\alpha$ is dependent on $T$.\par
+Let us verify (\rmnum{4}). The exchange property assumes that $\alpha\preceq S\cup\{\beta\}$ (that is, $\alpha$ is algebraic over $K(S\cup\{\beta\})$) and $\alpha$ is transcendental over $K(S\setminus)$. We first note that $\beta\not\preceq S$: otherwise $\beta$ is algebraic over $K(S)$, and hence $K(S)\sub K(S\cup\{\beta\})$ is algebraic. But this implies $\alpha$ is algebraic over $K(S)$, which contradicts the hypothesis. Now since $K(S\cup\{\beta\})=K(S)(\beta)$, we conclude from \cref{field ext algebraically dependent iff algebraic on other} that $\{\alpha,\beta\}$ is algebraic dependent over $K(S)$. Thus there is a nonzero polynomial $f(X,Y)\in K(S)[X,Y]$ with $f(\alpha,\beta)=0$. In more detail, $f(X,Y)=g_0(X)+g_1(X)Y+\cdots+g_n(X)Y^n$, where $g_i(X)\in K(S)[X]$. Define $h(Y)=f(\alpha,Y)=\sum_ig^i(\alpha)Y^i\in K(S,\alpha)[Y]$. Since $\alpha$ is not dependent on $S$, $h(Y)$ is not the zero polynomial. But $h(\beta)=f(\alpha,\beta)=0$, so $\beta$ is dependent on $S\cup\{\alpha\}$.
 \end{proof}
-Returning to extension fields $E/K$, by Proposition~\ref{field ext algebraically dependent iff algebraic on other} a nonempty subset $S\sub E$ is algebraically independent if and only if $s\not\preceq S\setminus\{s\}$ for all $s\in S$. It follows that every subset of an algebraically independent set is itself algebraically independent.
+Returning to extension fields $E/K$, by \cref{field ext algebraically dependent iff algebraic on other} a nonempty subset $S\sub E$ is algebraically independent if and only if $s\not\preceq S\setminus\{s\}$ for all $s\in S$. It follows that every subset of an algebraically independent set is itself algebraically independent.
 \begin{definition}
 If $E/K$ is an extension field, then a subset $S\sub E$ \textbf{generates} $E$ if $x\preceq S$ for all $x\in E$. Or equivalently, if $E$ is algebraic over $K(S)$. A \textbf{transcendental basis} is a maximal algebraically independent subset of $E$ over $K$.
 \end{definition}
@@ -3220,16 +3220,16 @@ If $E/K$ is an extension field, then a subset $S\sub E$ \textbf{generates} $E$ i
 Let $E/K$ be an extension field. If $S\sub E$ is algebraically independent over $K$ and $\alpha\in E$ is transcendental over $K(S)$, then $S\cup\{\alpha\}$ is algebraically independent.
 \end{lemma}
 \begin{proof}
-Since $\alpha\not\preceq S$, Theorem~\ref{field algebraic dependence prop}(\rmnum{1}) gives $\alpha\notin S$, and so $S\subsetneq S\cup\{\alpha\}$. If $S\cup\{\alpha\}$ is algebraically dependent, then there exists $s\in S\cup\{\alpha\}$ with $s\preceq(S\cup\{\alpha\})\setminus\{s\}$. If $s=\alpha$, then $(S\cup\{\alpha\})\setminus\{s\}=S$, contradicting $\alpha\not\preceq S$. Therefore, $s\in S$. Since $S$ is algebraically independent, $s\not\preceq S\setminus\{s\}$. Combining with the observation $(S\cup\{\alpha\})\setminus\{s\}=(S\setminus\{s\})\cup\{\alpha\}$, we obtain
+Since $\alpha\not\preceq S$, \cref{field algebraic dependence prop}(\rmnum{1}) gives $\alpha\notin S$, and so $S\subsetneq S\cup\{\alpha\}$. If $S\cup\{\alpha\}$ is algebraically dependent, then there exists $s\in S\cup\{\alpha\}$ with $s\preceq(S\cup\{\alpha\})\setminus\{s\}$. If $s=\alpha$, then $(S\cup\{\alpha\})\setminus\{s\}=S$, contradicting $\alpha\not\preceq S$. Therefore, $s\in S$. Since $S$ is algebraically independent, $s\not\preceq S\setminus\{s\}$. Combining with the observation $(S\cup\{\alpha\})\setminus\{s\}=(S\setminus\{s\})\cup\{\alpha\}$, we obtain
 \[s\preceq(S\setminus\{s\})\cup\{\alpha\},\quad s\not\preceq S\setminus\{s\}.\]
 Therefore it follows from the exchange property that $\alpha\preceq(S\setminus\{s\})\cup\{s\}=S$, contradicting the hypothesis. Therefore $S\cup\{\alpha\}$ is algebraically independent.
 \end{proof}
-Note that Lemma~\ref{field adding algebraic independent element} implies that a if $S$ is a transcendental basis of $E$, then $S$ automatically generates $E$: there is no element in $E$ that is transcendental over $K(S)$. We now prove that every algebraically independent set in $E$ can be extended to a maximal algebraically independent set, and hence a transcendantal basis for $E$.
+Note that \cref{field adding algebraic independent element} implies that a if $S$ is a transcendental basis of $E$, then $S$ automatically generates $E$: there is no element in $E$ that is transcendental over $K(S)$. We now prove that every algebraically independent set in $E$ can be extended to a maximal algebraically independent set, and hence a transcendantal basis for $E$.
 \begin{theorem}\label{field transcendental basis exist} 
 If $E/K$ is an extension field, then $E$ has a transcendental basis. In fact, every algebraically independent subset is part of a transcendental basis.
 \end{theorem}
 \begin{proof}
-Let $S$ be an algebraically independent subset of $E$. We use Zorn's Lemma to prove the existence of maximal algebraically independent subsets of $E$ containing $S$. Let $\mathcal{X}$ be the family of all algebraically independent subsets of $E$ containing $S$, partially ordered by inclusion. Note that $X$ is nonempty, for $S\in\mathcal{X}$. Suppose that $\mathcal{S}=(S_\alpha)_{\alpha\in A}$ is a chain in $\mathcal{X}$. It is clear that $S^*=\bigcup_{\alpha\in A}S_\alpha$ is an upper bound of $\mathcal{S}$ if it lies in $\mathcal{X}$, that is, if $S^*$ is algebraically independent. If, on the contrary, $S^*$ is algebraically dependent, then there is $s\in S^*$ with $s\preceq S^*\setminus\{s\}$. By the compactness property, there is a finite subset $\{s_1,\dots,s_n\}\sub S^*\setminus\{s\}$ with $s\preceq\{s_1,\dots,s_n\}$. Now there is $S_0\in\mathcal{S}$ with $s\in S_0$, and, for each $i$ with $1\leq i\leq n$, there is $S_{\alpha_i}$ with $s_i\in S_{\alpha_i}$. Since $\mathcal{S}$ is a chain, one of these, call it $S'$, contains all the others, and the algebraically dependent set $\{s,s_1,\dots,s_n\}$ is contained in $S'$. But since $S'$ is algebraically independent, so are its subsets, and this is a contradiction. Zorn's Lemma now provides a maximal element $M$ of $\mathcal{X}$; that is, $M$ is a maximal algebraically independent subset of $E$ containing $S$. If $M$ is not a basis, then there exists $\alpha\in E$ with $\alpha\not\preceq M$. By Lemma~\ref{field adding algebraic independent element}, $M\cup\{\alpha\}$ is an algebraically independent set strictly larger than $M$, contradicting the maximality of $M$.
+Let $S$ be an algebraically independent subset of $E$. We use Zorn's Lemma to prove the existence of maximal algebraically independent subsets of $E$ containing $S$. Let $\mathcal{X}$ be the family of all algebraically independent subsets of $E$ containing $S$, partially ordered by inclusion. Note that $X$ is nonempty, for $S\in\mathcal{X}$. Suppose that $\mathcal{S}=(S_\alpha)_{\alpha\in A}$ is a chain in $\mathcal{X}$. It is clear that $S^*=\bigcup_{\alpha\in A}S_\alpha$ is an upper bound of $\mathcal{S}$ if it lies in $\mathcal{X}$, that is, if $S^*$ is algebraically independent. If, on the contrary, $S^*$ is algebraically dependent, then there is $s\in S^*$ with $s\preceq S^*\setminus\{s\}$. By the compactness property, there is a finite subset $\{s_1,\dots,s_n\}\sub S^*\setminus\{s\}$ with $s\preceq\{s_1,\dots,s_n\}$. Now there is $S_0\in\mathcal{S}$ with $s\in S_0$, and, for each $i$ with $1\leq i\leq n$, there is $S_{\alpha_i}$ with $s_i\in S_{\alpha_i}$. Since $\mathcal{S}$ is a chain, one of these, call it $S'$, contains all the others, and the algebraically dependent set $\{s,s_1,\dots,s_n\}$ is contained in $S'$. But since $S'$ is algebraically independent, so are its subsets, and this is a contradiction. Zorn's Lemma now provides a maximal element $M$ of $\mathcal{X}$; that is, $M$ is a maximal algebraically independent subset of $E$ containing $S$. If $M$ is not a basis, then there exists $\alpha\in E$ with $\alpha\not\preceq M$. By \cref{field adding algebraic independent element}, $M\cup\{\alpha\}$ is an algebraically independent set strictly larger than $M$, contradicting the maximality of $M$.
 \end{proof}
 \begin{theorem}\label{field ext transcendental basis iff}
 If $E/K$ be a field extension. Then a subset $S\sub E$ is a transcendental basis for $E/K$ if and only if $S$ is algebraically independent and $E/K(S)$ is algebraic.
@@ -3243,8 +3243,8 @@ Let $E/K$ be a field extension. Then any transcendental basis of $E$ over $K$ ha
 \end{theorem}
 \begin{proof}
 Let $S$ and $T$ be two transcendantal basis for $E$ over $K$. If $S=\emp$, we claim that $T=\emp$. Otherwise, there exists $t\in T$. We have $t\preceq S$ since $S$ generates $E$ and $\emp\sub T\setminus\{t\}$, so that transitivity gives $t\preceq T\setminus\{t\}$, a contradiction since $T$ is algebraically independent. Therefore, we may assume that both $S$ and $T$ are nonempty.\par
-Now assume that $S$ is finite; say, $S=\{s_1,\dots,s_n\}$. We claim that some $t_1\in T$ is transcendental over $K(s_2,\dots,s_n)$. Assume the contrary, then every element in $T$ is algebraic over $K(s_2,\dots,s_n)$, whence $K(s_2,\dots,s_n)(T)$ is algebraic over $K(s_2,\dots,s_n)$ by Theorem~\ref{field ext by algebraic elements is algebraic}. Since $E$ is algebraic over $K(T)$, it is necessarily algebraic over $K(T)(s_2,\dots,s_n)=K(s_2,\dots,s_n)(T)$. Therefore $E$ is algebraic over $K(s_2,\dots,s_n)$ by Corollary~\ref{field ext intermediate algebraic iff}. In partial, $s_1$ is algebraic over $K(s_2,\dots,s_n)$. But $S$ is algebraically independent over $K$, this is a contradiction. Thus some $t_1\in T$ must be transcendental over $K(s_2,\dots,s_n)$, and consequently $\{t_1,s_2,\dots,s_n\}$ is algebraic independent by Lemma~\ref{field adding algebraic independent element}.\par
-Now if $s_1$ were transcendental over $K(t_1,s_2,\dots,s_n)$, then $\{t_1,s_1,s_2,\dots,s_n\}$ is algebraic independent over $K$, which is impossible since $S$ is a maximal algebraically independent set. consequently, $K(S)(t_1)=K(t_1,s_2,\dots,s_n)(s_1)$ is algebraic over $K(t_1,s_2,\dots,s_n)$, whence $E$ is algebraic over $K(t_1,s_2,\dots,s_n)$ (Proposition~\ref{field ext transcendental basis iff}). Therefore $\{t_1,s_2,\dots,s_n\}$ is a transcendental basis for $E$ by Proposition~\ref{field ext transcendental basis iff}.\par
+Now assume that $S$ is finite; say, $S=\{s_1,\dots,s_n\}$. We claim that some $t_1\in T$ is transcendental over $K(s_2,\dots,s_n)$. Assume the contrary, then every element in $T$ is algebraic over $K(s_2,\dots,s_n)$, whence $K(s_2,\dots,s_n)(T)$ is algebraic over $K(s_2,\dots,s_n)$ by \cref{field ext by algebraic elements is algebraic}. Since $E$ is algebraic over $K(T)$, it is necessarily algebraic over $K(T)(s_2,\dots,s_n)=K(s_2,\dots,s_n)(T)$. Therefore $E$ is algebraic over $K(s_2,\dots,s_n)$ by \cref{field ext intermediate algebraic iff}. In partial, $s_1$ is algebraic over $K(s_2,\dots,s_n)$. But $S$ is algebraically independent over $K$, this is a contradiction. Thus some $t_1\in T$ must be transcendental over $K(s_2,\dots,s_n)$, and consequently $\{t_1,s_2,\dots,s_n\}$ is algebraic independent by \cref{field adding algebraic independent element}.\par
+Now if $s_1$ were transcendental over $K(t_1,s_2,\dots,s_n)$, then $\{t_1,s_1,s_2,\dots,s_n\}$ is algebraic independent over $K$, which is impossible since $S$ is a maximal algebraically independent set. consequently, $K(S)(t_1)=K(t_1,s_2,\dots,s_n)(s_1)$ is algebraic over $K(t_1,s_2,\dots,s_n)$, whence $E$ is algebraic over $K(t_1,s_2,\dots,s_n)$ (\cref{field ext transcendental basis iff}). Therefore $\{t_1,s_2,\dots,s_n\}$ is a transcendental basis for $E$ by \cref{field ext transcendental basis iff}.\par
 A similar argument shows that some $t_2\in T$ is transcendental over $K(t_1,s_3,\dots,s_n)$, and hence $\{t_1,t_2,s_3,\dots,s_n\}$ is a transcendental basis for $E$. Repeating this process we eventually obtain $t_1,\dots,t_n\in T$ such that $\{t_1,\dots,t_n\}$ is a transcendantal basis for $E$ over $K$. This implies $T=\{t_1,\dots,t_n\}$ and therefore $|T|=|S|$.\par
 Finally, we assume that $S$ is infinite. Then by the argument above, $T$ must also be infinite. If $s\in S$, then $s$ is algebraic over $K(T)$. The coefficients of the minimal polynomial $f$ of $s$ over $K(T)$ all lie in $K(T_s)$ for some finite subset $T_s\sub T$. Consequently, $f\in K(T_s)[X]$ and $s$ is algebraic over $K(T_s)$. Choose such a finite set $T_s$ for each $s$. We claim that $T=\bigcup_{s\in S}T_s$. In fact, if $t\in T\setminus\{T_s\}$, then for any $s\in S$ we have $T_s\sub T\setminus\{t\}$ and thus
 \[s\preceq T_s\preceq T\setminus\{t\}.\]
@@ -3263,21 +3263,21 @@ Let $K\sub E\sub F$ be field extensions. Then
 \end{proposition}
 \begin{proof}
 Let $S$ be a transcendental besis of $E$ over $K$, and $T$ be that of $F$ over $E$. Since $S\sub E$, $S\cap T=\emp$. It suffices if we show $S\cup T$ is a transcendental basis of $F$ over $K$.\par
-First of all, $E$ is algebraic over $K(S)$ by Theorem~\ref{field ext transcendental basis iff}, and hence over $K(S\cup T)$. Thus $K(S\cup T)(E)$ is algebraic over $K(S\cup T)$ by Proposition~\ref{field ext by algebraic elements is algebraic}. Since
+First of all, $E$ is algebraic over $K(S)$ by \cref{field ext transcendental basis iff}, and hence over $K(S\cup T)$. Thus $K(S\cup T)(E)$ is algebraic over $K(S\cup T)$ by \cref{field ext by algebraic elements is algebraic}. Since
 \[K(S\cup T)=K(S)(T)\sub E(T)\sub K(S\cup T)(E),\]
-it follows from Corollary~\ref{field ext intermediate algebraic iff}that $E(T)$ is algebraic over $K(S\cup T)$. Since $F$ is algebraic over $E(T)$ by Theorem~\ref{field ext transcendental basis iff}, we conclude that $F$ is algebraic over $K(S\cup T)$. Now we only need to prove $S\cup T$ is algebraically independent.\par
+it follows from \cref{field ext intermediate algebraic iff}that $E(T)$ is algebraic over $K(S\cup T)$. Since $F$ is algebraic over $E(T)$ by \cref{field ext transcendental basis iff}, we conclude that $F$ is algebraic over $K(S\cup T)$. Now we only need to prove $S\cup T$ is algebraically independent.\par
 Suppose there is a polynomial $f(X_1,\dots,X_n,Y_1,\dots,Y_m)$ such that
 \[f(s_1,\dots,s_n,t_1,\dots,t_m)=0\]
 for some $s_1,\dots,s_n\in S$, $t_1,\dots,t_m\in T$. Since $S$ and $T$ are both algebraically independent, the coefficients of $s_i$, $t_j$ are not trivial. Then we can write
 \[h(Y_1,\dots,Y_m):=f(s_1,\dots,s_n,Y_1,\dots,Y_m)\in K(S)[Y_1,\dots,Y_m]\]
 satisfies $h(t_1,\dots,t_m)=0$. Since $s_1,\dots,s_n\in E$, this means $T$ is not algebraically independent over $E$, which is an contradiction.
 \end{proof}
-Now we use Proposition~\ref{field transcendental degree additive} to prove the following useful result.
+Now we use \cref{field transcendental degree additive} to prove the following useful result.
 \begin{proposition}\label{field transcendence remained under algebraic extension}
 Let $K\sub E\sub L$ be field extensions and suppose that $E/K$ is algebraic. If $S\sub L$ is algebraically independent over $K$, then $S$ is also algebraically independent over $E$. In other words, $L$ remains algebraically independent over any algebraic extension of the base field.
 \end{proposition}
 \begin{proof}
-Since $K\sub E$ is algebraic, so is the extension $K(S)\sub E(S)$. Now, by Proposition~\ref{field transcendental degree additive},
+Since $K\sub E$ is algebraic, so is the extension $K(S)\sub E(S)$. Now, by \cref{field transcendental degree additive},
 \[\tr.\deg(E(S)/E)+\tr.\deg(E/K)=\tr.\deg(E(S)/K)=\tr.\deg(E(S)/K(S))+\tr.\deg(K(S)/K)\]
 and so
 \[\tr.\deg(E(S)/E)=\tr.\deg(K(S)/K)=|S|\]
@@ -3346,7 +3346,7 @@ then $\Aut_K(K(X))\cong\PGL(2,K)$.
 \begin{corollary}
 If $K(X)$ is the field of rational functions over a field $K$, then $\Aut_K(K(X))=\PGL(2,K)$.
 \end{corollary}
-We now prove L\"uroth's Theorem which classifies all the intermediate fields $K\subsetneq E\sub K(X)$, where $X$ is transcendental over $K$; the proof is essentially a converse of that of Proposition~\ref{field simple transcendental ext minimal poly of elements}.
+We now prove L\"uroth's Theorem which classifies all the intermediate fields $K\subsetneq E\sub K(X)$, where $X$ is transcendental over $K$; the proof is essentially a converse of that of \cref{field simple transcendental ext minimal poly of elements}.
 \begin{lemma}\label{Luroth's Theorem lemma}
 Let $K$ be a field, and let
 \[I(X,Y)=Y^n+\frac{g_{n-1}(X)}{h_{n-1}(X)}Y^{n-1}+\cdots+\frac{g_0(X)}{h_0(X)}\in K(X)[Y]\]
@@ -3365,7 +3365,7 @@ Now $h_i\mid c$ for all $i$, so that $\deg(h_i)\leq\deg(c)$. Also, $\deg(g_i)\le
 If $K(X)$ is a simple transcendental extension, then every intermediate field $E$ with $E\neq K$ is also a simple transcendental extension of $K$: there is $\varphi\in K$ with $E=K(\varphi)$.
 \end{theorem}
 \begin{proof}
-If $\beta\in E$ is not constant, then Proposition~\ref{field simple transcendental ext minimal poly of elements} says that $\beta$ is transcendental over $K$, the extension $K(X)/K(\beta)$ is algebraic, and $[K(X):K(\beta)]$ is finite. As $K(\beta)\sub E\sub K(X)$, we have
+If $\beta\in E$ is not constant, then \cref{field simple transcendental ext minimal poly of elements} says that $\beta$ is transcendental over $K$, the extension $K(X)/K(\beta)$ is algebraic, and $[K(X):K(\beta)]$ is finite. As $K(\beta)\sub E\sub K(X)$, we have
 \[[K(X):K(\beta)]=[K(X):E][E:K(\beta)],\]
 so that $K(X)/E$ is a finite extension field. Let $I(X,Y)\in E[Y]$ be the minimal polynomial of $X$ over $E$:
 \[I(X,Y)=Y^n+b_{n-1}Y^{n-1}+\cdots+b_0\in K[Y]\]
@@ -3391,7 +3391,7 @@ Taking associated primitive polynomials and using $(\ref{Luroth's Theorem-3})$, 
 \end{align*}
 and therefore
 \[\deg_X(\theta^*)=\deg_X(q^*)+\deg_X(I^*).\]
-By Lemma~\ref{Luroth's Theorem lemma}, we have $\deg_X(I^*)\geq\deg(\varphi)=\deg_X(\theta^*)$, so that $\deg_X(q^*)=0$; that is, $q^*$ is a function of $Y$ alone. The anti-symmetry of $\theta^*$ says that $\theta^*$ is primitive as a polynomial in $X$. But $\theta^*=q^*I^*$, so we must have $\deg_Y(q^*)=0$; that is, $q^*$ is a constant. Now take $y$-degree we get
+By \cref{Luroth's Theorem lemma}, we have $\deg_X(I^*)\geq\deg(\varphi)=\deg_X(\theta^*)$, so that $\deg_X(q^*)=0$; that is, $q^*$ is a function of $Y$ alone. The anti-symmetry of $\theta^*$ says that $\theta^*$ is primitive as a polynomial in $X$. But $\theta^*=q^*I^*$, so we must have $\deg_Y(q^*)=0$; that is, $q^*$ is a constant. Now take $y$-degree we get
 \[\deg_Y(\theta)=\deg_Y(\theta^*)=\deg_Y(I^*)=\deg_Y(I).\]
 This then conclude that $[K(X):K(\varphi)]=[K(X):E]$, so the claim follows.
 \end{proof}

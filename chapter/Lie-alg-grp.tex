@@ -1,8 +1,8 @@
 \chapter{Lie algebras}
 \section{Definition of Lie algebras}
-In this part, $\K$ will denote a commutative ring with unit not reduced to zero.
+In this section, $\K$ will denote a commutative ring with unit not reduced to zero.
 \subsection{Algebras and Lie algebras}
-Let $A$ be a $\K$-module with a bilinear mapping $(x,y)\mapsto xy$ of $A\times A$ into $A$. All the axioms for algebras are satisfied except associativity of multiplication. By an abuse of language, $A$ is called a (not necessarily associative) \textbf{algebra} over $\K$, or sometimes, when no confusion can arise, an algebra over $\K$. In this part we shall use the latter notation. If the $\K$-module $A$ is given the multiplication $(x,y)\mapsto yx$, an algebra is obtained called the \textbf{opposite} of the above algebra.\par
+Let $A$ be a $\K$-module with a bilinear mapping $(x,y)\mapsto xy$ of $A\times A$ into $A$. All the axioms for algebras are satisfied except associativity of multiplication. By an abuse of language, $A$ is called a (not necessarily associative) \textbf{algebra} over $\K$, or sometimes, when no confusion can arise, an algebra over $\K$. In this paragraph we shall use the latter notation. If the $\K$-module $A$ is given the multiplication $(x,y)\mapsto yx$, an algebra is obtained called the \textbf{opposite} of the above algebra.\par
 A sub-$\K$-module $I$ of $A$ which is stable under multiplication is given the structure of an algebra over $\K$ in an obvious way. Then $I$ is called a subalgebra of $A$. Also, $I$ is called a left (resp. right) \textbf{ideal} of $A$ if the conditions $x\in I$, $y\in A$ imply $yx\in A$ (resp. $xy\in I$). If $I$ is both a left ideal and a right ideal of $A$, $I$ is called a two-sided ideal of $A$. In this case the multiplication on $A$ enables us to define, on passing to the quotient, a bilinear multiplication on the quotient space $A/I$ such that $A/I$ has an algebra structure. The algebra $A/I$ is called the quotient algebra of $A$ by $I$.\par
 Let $A_1$ and $A_2$ be two algebras over $\K$ and $\phi$ a mapping of $A_1$ into $A_2$. Then $\phi$ is called a homomorphism if $\phi$ is $\K$-linear and $\phi(xy)=\phi(x)\phi(y)$ for $x,y\in A_1$. The kernel $I$ of $\phi$ is a two-sided ideal of $A_1$ and the image of $\phi$ is a subalgebra of $A_2$. On passing to the quotient, $\phi$ defines an isomorphism of the algebra $A_1/I$ onto the algebra $\phi(A_1)$.\par
 Let $A$ be an algebra over $\K$. A mapping $D$ of $A$ into $A$ is called a \textbf{derivation} of $A$ if it is $\K$-linear and $D(xy)=(Dx)y+x(Dy)$ for all $x,y\in A$. The kernel of a derivation of $A$ is a subalgebra of $A$. If $D_1$ and $D_2$ are derivations of $A$, then $D_1D_2-D_2D_1$ is a derivation of $A$.\par
@@ -347,7 +347,7 @@ This means that $\theta_V(V_\alpha(D))=V_{\widebar{\lambda\alpha}}(D)$. In parti
 This example is minimal because each complex Lie algebra of dimension $2$ has a real form.
 \end{example}
 \section{Enveloping algebra of a Lie algebra}
-\subsection{Definition of the enveloping algebra}
+\subsection{The enveloping algebra}
 Let $\g$ be a Lie algebra over $\K$. For any associative algebra with unit element $A$ over $\K$, a homomorphism of $\g$ into $A$ is a $\K$-linear mapping $\sigma$ of $\g$ into $A$ such that
 \[\sigma([x,y])=[\sigma(x),\sigma(y)].\]
 (in other words a homomorphism of $\g$ into the Lie algebra associated with $A$). If $B$ is another associative algebra with unit element over $\K$ and $\tau$ a homomorphism of $A$ into $B$, then $\tau\circ\sigma$ is an a-mapping of $\g$ into $B$. We shall look for an associative algebra with unit element and a homomorphism of $\g$ into this algebra which are universal.
@@ -1086,7 +1086,7 @@ with $x_i\in\a\cup\b$. If at least $n$ of the $x_i$ are contained in $\a$, then 
 Let $\g$ be a finite-dimensional Lie algebra, then by Proposition~\ref{Lie algebra nilpotent ideal operation is nilpotent} there is a largest nilpotent ideal. The maximal nilpotent ideal is called the \textbf{nilradical of $\g$}, and is denoted by $\nil(\g)$.
 \end{definition}
 \subsection{The largest nilpotency ideal of a representation}
-In Corollary~\ref{Lie algebra nilpotent iff ad nilpotent} we have seen that nilpotency of a Lie algebra is intensively connected with the nilpotency of the endomorphisms it induces (via the adjoint representation). In this part we generalize this concept and consider a Lie algebra $\g$ with an arbitrary representation $M$ of $\g$. We will see the subset $\a$ of $\g$ with act nilpotently on $M$ is a nilpotent ideal, which will be called the largest nilpotency ideal associated with $M$.
+In Corollary~\ref{Lie algebra nilpotent iff ad nilpotent} we have seen that nilpotency of a Lie algebra is intensively connected with the nilpotency of the endomorphisms it induces (via the adjoint representation). In this paragraph we generalize this concept and consider a Lie algebra $\g$ with an arbitrary representation $M$ of $\g$. We will see the subset $\a$ of $\g$ with act nilpotently on $M$ is a nilpotent ideal, which will be called the largest nilpotency ideal associated with $M$.
 \begin{lemma}\label{Lie algebra rep nilpotent on simple module zero}
 Let $\g$ be a Lie algebra, $\a$ an ideal of $\g$ and $M$ a simple $\g$ -module. If, for all $x\in\a$, $x_M$ is nilpotent, then $x_M=0$ for all $x\in\a$.
 \end{lemma}
@@ -1147,9 +1147,9 @@ Let $A$ be the associative $\K$-algebra generated by $1$ and the $x_M$ ($x\in\g$
 \end{proof}
 In particular, if $\K'$ is separable over $\K$, the nilradical of $\sigma_*(\g)$ is derived from that of $\g$ by extending the base field from $\K$ to $\K'$.
 \section{Solvable Lie algebras}
-In this part, we turn to the class of solvable Lie algebras. They are defined in a similar fashion as nilpotent ones, and indeed every nilpotent Lie algebra is solvable. The central results on solvable Lie algebras are Lie's Theorem on representations of solvable Lie algebras and Cartan's Solvability Criterion in terms of vanishing of $\tr(\ad[x,y]\ad z)$ for $x,y,z\in\g$. As we shall see later on, similar techniques apply to semi-simple Lie algebras.\par
-In this part $\K$ henceforth denotes a field of characteristic $0$ and all Lie algebras are assumed to be finite-dimensional over $\K$.
-\subsection{Definition of solvable Lie algebras}
+In this section, we turn to the class of solvable Lie algebras. They are defined in a similar fashion as nilpotent ones, and indeed every nilpotent Lie algebra is solvable. The central results on solvable Lie algebras are Lie's Theorem on representations of solvable Lie algebras and Cartan's Solvability Criterion in terms of vanishing of $\tr(\ad[x,y]\ad z)$ for $x,y,z\in\g$. As we shall see later on, similar techniques apply to semi-simple Lie algebras.\par
+In this section $\K$ henceforth denotes a field of characteristic $0$ and all Lie algebras are assumed to be finite-dimensional over $\K$.
+\subsection{Solvable Lie algebras}
 The derived series of $\g$ is the decreasing sequence of characteristic ideals of $\g$ defined inductively as follows
 \[D^0(\g)=\g,\quad D^{p+1}(\g)=[D^p(\g),D^p(\g)].\]
 A Lie algebra $\g$ is called \textbf{solvable} if its $p$-th derived algebra $D^p(\g)$ is zero for sufficiently large $p$. Clearly a nilpotent Lie algebra is solvable.
@@ -1308,7 +1308,7 @@ Suppose that $[\g,\g]$ is orthogonal to $\g$ with respect to $\beta$. We prove t
 \[\tr(t[x,y])=\beta(t,[x,y])=0\]
 whence by linearity $\tr(tu)=0$ for all $u\in[\g,\g]$. Also, clearly $[\g,\g]\sub\t$. Hence (Lemma~\ref{Lie subalgebra normalizer of gl product trace zero then nilpotent}) every element of $[\g,\g]$ is nilpotent. It follows that $[\g,\g]$ is nilpotent and hence that $\g$ is solvable.
 \end{proof}
-\subsection{Further properties of the radical}
+\subsection{Properties of the radical ideal}
 \begin{proposition}\label{Lie algebra radical and [g,g] prop}
 Let $\g$ be a Lie algebra and $\r$ its radical.
 \begin{itemize}
@@ -1360,9 +1360,9 @@ The inclusion $\r\supset\g^\bot$ follows from Proposition~\ref{Lie algebra radic
 \end{remark}
 Let $\g$ be a Lie $\K$-algebra and $\sigma:\K\to \K'$ an extension of fields. Clearly $\sigma_*(\g)$ is solvable if and only if $\g$ is solvable, since $D^p(\sigma_*(\g))=\sigma_*(D^p(\g))$. Let $\r$ be the radical of $\g$. Then $\sigma_*(\r)$ is the radical of $\sigma_*(\g)$. For let $\beta$ be the Killing form of $\g$. As $\r$ is the orthogonal of $[\g,\g]$ with respect to $\beta$, $\sigma_*(\g)$ is the orthogonal of $[\sigma_*(\g),\sigma_*(\g)]$ with respect to the form derived from $\beta$ by extension from $\K$ to $\K'$, that is, the Killing form of $\sigma_*(\g)$. Our assertion then follows from a further application of Proposition~\ref{Lie algebra radical and [g,g] prop}.
 \section{Semi-simple Lie algebras}
-In this part, we encounter a third class of Lie algebras. Semisimple Lie algebras are a counterpart to the solvable and nilpotent Lie algebras because their ideal structure is quite simple. They can be decomposed as a product of simple ideals. On the other hand, they have a rich geometric structure which even makes a complete classification of finite-dimensional semi-simple Lie algebras possible. One can even show that every finite-dimensional Lie algebra is a semidirect product of its radical and a semi-simple subalgebra.\par
+In this section, we encounter a third class of Lie algebras. Semisimple Lie algebras are a counterpart to the solvable and nilpotent Lie algebras because their ideal structure is quite simple. They can be decomposed as a product of simple ideals. On the other hand, they have a rich geometric structure which even makes a complete classification of finite-dimensional semi-simple Lie algebras possible. One can even show that every finite-dimensional Lie algebra is a semidirect product of its radical and a semi-simple subalgebra.\par
 Recall that $\K$ denotes a field of characteristic $0$ and that all Lie algebras are assumed to be finite-dimensional over $\K$.
-\subsection{Definition of semi-simple Lie algebras}
+\subsection{Semi-simple Lie algebras}
 \begin{definition}
 A Lie algebra $\g$ is called \textbf{semi-simple} if the only abelian ideal of $\g$ is $\{0\}$. The Lie algebra $\g$ is called \textbf{simple} if it is not abelian and it contains no ideals other than $\g$ and $\{0\}$.
 \end{definition}
@@ -1632,7 +1632,7 @@ Let $\g$ be a Lie algebra, $\h$ a subalgebra reductive in $\g$ and $\k$ a subalg
 \begin{proof}
 The representation $x\mapsto\ad_\g(x)$ of $\h$ on $\g$ is semi-simple and hence its restriction to $\k$ is semi-simple by Corollary~\ref{Lie reductive algebra semi-simple rep restriction}.
 \end{proof}
-To conclude this part, we now present a technique for recognizing certain Lie algebras of matrices as semi-simple. It begins with the following proposition.
+To conclude this paragraph, we now present a technique for recognizing certain Lie algebras of matrices as semi-simple. It begins with the following proposition.
 \begin{proposition}\label{Lie algebra so and sp semi-simple}
 Let $V$ be a finite-dimensional vector space over $\K$ and $\beta$ a nondegenerate symmetric (resp. alternating) bilinear form on $V$. Let $\g$ be the Lie algebra consisting of the $x\in\gl(V)$ such that
 \[\beta(xv,w)=-\beta(v,xw)\]
@@ -1742,7 +1742,7 @@ In particular, $\s$ is a Levi-subalgebra of $[\g,\g]$.
 Since $\s$ is semi-simple, we have $[\s,\s]=\s$, which implies $\s\sub[\g,\g]$. Therefore Corollary~\ref{Lie algebra Levi decomposition of ideal} shows $[\g,\g]=([\g,\g]\cap\r)+\s$. But we know that $[\g,\g]\cap\r=[\g,\r]$, so the claim follows.
 \end{proof}
 \subsection{The invariant theorem}
-Let $\g$ be a Lie algebra and $\rho$ a representation of $\g$ on a vector space $M$. For every class $\delta$ of simple representations of $\g$ let $M_\delta$ be the isotypical component of $M$ of species $\delta$. The subspace $M_0$ of invariant elements of $M$ is just $M_{\delta_0}$, where $\delta_0$ denotes the class of the zero representation of $\g$ on a space of dimension $1$. In this part, we deduce some of the properties about this subspace.
+Let $\g$ be a Lie algebra and $\rho$ a representation of $\g$ on a vector space $M$. For every class $\delta$ of simple representations of $\g$ let $M_\delta$ be the isotypical component of $M$ of species $\delta$. The subspace $M_0$ of invariant elements of $M$ is just $M_{\delta_0}$, where $\delta_0$ denotes the class of the zero representation of $\g$ on a space of dimension $1$. In this paragraph, we deduce some of the properties about this subspace.
 \begin{lemma}\label{Lie algebra invariant subspace under bilinear form}
 Let $(M,\rho)$, $(N,\sigma)$, and $(P,\tau)$ be representations of $\g$. Suppose that we are given a $\K$-bilinear mapping $(\cdot\,\cdot)$ of $M\times N$ into $P$ such that
 \[(\rho(x)m,n)+(m,\sigma(x)n)=\tau(x)(m,n)\]
@@ -1824,7 +1824,7 @@ Let $\g=\a+\h$ be a Lie algebra which is the direct sum of an ideal $\a$ and a s
 \end{itemize}
 \end{theorem}
 \begin{proof}
-Let $U(\a)$ be the enveloping algebra of $\a$. Suppose that $U(\a)$ and $U(\a)^*$ have the $\g$-module structures defined at the beginning of this part. Let $I\sub U(\a)$ be the kernel of $\tau$ (identified with a representation of $U(\a)$). It is a two-sided ideal of $U(\a)$ of finite codimension. By definition the subspace $C(\tau)$ of $U(\a)^*$ is orthogonal from $I$. Let $T$ be the sub-$\g$-module of $U(\a)^*$ generated by $C(\tau)$.\par
+Let $U(\a)$ be the enveloping algebra of $\a$. Suppose that $U(\a)$ and $U(\a)^*$ have the $\g$-module structures defined at the beginning of this paragraph. Let $I\sub U(\a)$ be the kernel of $\tau$ (identified with a representation of $U(\a)$). It is a two-sided ideal of $U(\a)$ of finite codimension. By definition the subspace $C(\tau)$ of $U(\a)^*$ is orthogonal from $I$. Let $T$ be the sub-$\g$-module of $U(\a)^*$ generated by $C(\tau)$.\par
 We now show that $T$ is finite-dimensional over $\K$. Let $W$ be the space on which $\tau$ operates and $W=W_0\supset W_1\supset\cdots\supset W_r=\{0\}$ a Jordan-H\"older series of the $\a$-module $W$. Let $\tau_i$ be the representation of $\a$ on $W_i/W_{i+1}$ derived from $\tau$. Let $J\sub U(\a)$ be the intersection of the kernels of the $\tau_i$ (identified with representations of $U(\a)$). Then
 \[J^r\sub I\sub J\]
 and $J\cap\a$ is the largest nilpotency ideal of $\tau$. By Corollary~\ref{Lie algebra finite codim ideals in enveloping algebra}, $J^r$ is of finite codimension in $U(\a)$. If $x\in\h$, the derivation $u\mapsto xu-ux$ of $U(\a)$ maps $\a$ into $[\h,\a]\sub J$, hence $U(\a)$ into $J$ and hence $J^r$ into $J^r$. On the other hand, clearly $J^r$ is a sub-$\a$-module of $U(\a)$. Hence $J^r$ is a sub-$\g$-module of $U(\a)$. The orthogonal of $J^r$ in $U(\a)^*$ is then a finite-dimensional sub-$\g$-module which contains $C(\tau)$ and therefore $T$. This shows that $T$ is finite-dimensional over $\K$.\par
@@ -1854,7 +1854,7 @@ It is easily deduced that the centre $\z$ of $\g$, which is a product of $1$-dim
 \chapter{Free Lie algebras}
 In this section, the letter $\K$ denotes a non-zero commutative ring. The unit element of $\K$ is denoted by $1$. Unless otherwise mentioned, all cogebras, algebras and bigebras, all modules and all tensors products are over $\K$. However, when necessary, $\K$ will be assumed to be a field of characteristic $0$.
 \section{Enveloping bigebra of a Lie algebra}
-Throughout this part, $\g$ will denote a Lie algebra over $\K$, $U(\g)$ or simply $U$ its enveloping algebra, $\iota$ the canonical map of $\g$ into $U(\g)$ and $(U_n)$ the canonical filtration of $U$.
+Throughout this section, $\g$ will denote a Lie algebra over $\K$, $U(\g)$ or simply $U$ its enveloping algebra, $\iota$ the canonical map of $\g$ into $U(\g)$ and $(U_n)$ the canonical filtration of $U$.
 \subsection{Primitive elements}
 We consider a cogebra $E$ with coproduct $c:E\to E\otimes E$ and counit $\eps$. Recall that $\eps$ is a linear form on the $\K$-module $E$ such that (with the canonical identification of $E\otimes\K$ and $\K\otimes E$ with $E$):
 \[1_E=(\eps\otimes 1_E)\circ c=(1_E\otimes\eps)\circ c.\]
@@ -2461,7 +2461,7 @@ Conversely, let $u\in P_{p+1}$. We distinguish two cases:
 \end{itemize}
 Then there exist an integer $i\geq 0$ and an element $w$ of $M(X)$ such that $u=w_p^iw$, and either $w\in X$ or $w\notin X$ and $\alpha(w)\neq w_p$. If $i=0$, we have case ($\alpha$) above, whence $w\in P_p$ and $w\neq w_p$. If $i>0$, the proof of ($\beta$) above establishes, by induction on $i$, the relations $w\in P_{p+1}$ and $w\neq w_p$. Suppose $w\notin X$; from $w\in P_{p+1}$ it follows that $\alpha(w)\leq w_p$ and as $\alpha(w)\neq w_p$, we conclude that $w\in P_p$. This completes the proof of (d).
 \end{proof}
-We now arrive the most important theorem in this part, which shows that any Hall set $H$ relative to $X$ gives arise to a basis for the free Lie algebra $L(X)$. More precisely, we have the following result:
+We now arrive the most important theorem in this paragraph, which shows that any Hall set $H$ relative to $X$ gives arise to a basis for the free Lie algebra $L(X)$. More precisely, we have the following result:
 \begin{theorem}\label{Lie algebra free module basis by Hall set}
 Let $H$ be a Hall set relative to $X$ and $\eps$ the canonical mapping of $M(X)$ into the free Lie algebra $L(X)$. Then the image of $H$ is a basis of the module $L(X)$.
 \end{theorem}
@@ -2495,7 +2495,7 @@ Let $\varphi$ denote an automorphism of the free module $\K X=\K Y$ sending $X$ 
 \[(\tilde{\varphi}\circ\tilde{\psi})|_{\K X}=\tilde{\varphi}|_{\K X}\circ\tilde{\psi}|_{\K X}=\varphi|_{\K X}\circ\psi|_{\K Y}=(\varphi\circ\psi)|_{\K X}=1_{\K X}.\]
 Simiarly, $(\tilde{\psi}\circ\tilde{\varphi})|_{\K X}$. Since $\K X$ generates $L(X)$, it follows that $\tilde{\varphi}$ is an isomorphism with inverse $\tilde{\psi}$ transforming $X$ to $Y$. Since $X$ is a free generating set, the same is true for $Y$.
 \end{proof}
-In this part we are going to prove a proposition which will give the freeness of some special subalgebras of free Lie algebras. This will enable us to prove the main theorem concerning the freeness of homogeneous subalgebras in the case where the base ring satisfies some rather mild restrictions (all projective modules over this ring must be free). Then, as corollaries, we will derive well-known theorems of Shirshov and Witt in which the base ring is respectively a field or the ring of integers.\par
+In this paragraph we are going to prove a proposition which will give the freeness of some special subalgebras of free Lie algebras. This will enable us to prove the main theorem concerning the freeness of homogeneous subalgebras in the case where the base ring satisfies some rather mild restrictions (all projective modules over this ring must be free). Then, as corollaries, we will derive well-known theorems of Shirshov and Witt in which the base ring is respectively a field or the ring of integers.\par
 We will require some more notation. Let $X$ be a nonempty set and $M(X)$ the free magma over $X$. A subset $S$ is called a \textbf{left ideal} of $M(X)$ if for all $u\in M(X)$, $v\in S$, we have $uv\in S$. Suppose that $H$ is a Hall family in $M(X)$ satisfying the following condition: for any $u\in H\setminus S$, $v\in H\cap S$, we have $u\leq v$. An element $w\in S$ is called \textbf{$\bm{S}$-reducible} if it can be represented in the form $w=uv$, where $u,v\in S$; all the other elements $w\in S$ are called \textbf{$\bm{S}$-irreducible}.
 \begin{proposition}\label{Lie algebra free irreducible element generate free subalgebra}
 Let $S$ be a left ideal in $M(X)$, $Y$ the set of $S$-irreducible elements in $H\cap S$ ($H$ as above). Then the $\K$-submodule $M$ of the free Lie algebra $L(X)$ generated over $\K$ by $H\cap S$ is a free Lie algebra with $Y$ as a free generating set.
@@ -2544,7 +2544,7 @@ Let $L(X)$ be a free Lie ring and $\g$ a homogeneous subring. If the abelian gro
 We apply natural grading of $L(X)$. By our hypotheses, $\g$ is the direct summand of the abelian group $L(X)$. Each projective module over $\Z$ being free follows using the theorem about subgroups of abelian groups. Thus Theorem~\ref{Lie algebra free subalgebra free if direct summand} applies.
 \end{proof}
 \section{Enveloping algebra of the free Lie algebra}
-In this part, $A(X)=A_{\K}(X)$ denote the \textit{free associative algebra} of the set $X$ over the ring $\K$. The set $X$ is identified with its canonical image in $A(X)$; recall that the $\K$-module $A(X)$ admits as basis the free monoid $\Delta(X)$ derived from $X$; $A^+(X)$ denotes the submodule of $A(X)$ generated by the non-empty words.
+In this section, $A(X)=A_{\K}(X)$ denote the \textit{free associative algebra} of the set $X$ over the ring $\K$. The set $X$ is identified with its canonical image in $A(X)$; recall that the $\K$-module $A(X)$ admits as basis the free monoid $\Delta(X)$ derived from $X$; $A^+(X)$ denotes the submodule of $A(X)$ generated by the non-empty words.
 \subsection{The enveloping algebra of \texorpdfstring{$L(X)$}{LX}}
 \begin{theorem}\label{Lie algebra free enveloping algebra char}
 Let $\alpha:L(X)\to A(X)$ be the unique Lie algebra homomorphism extending the canonical injection of $X$ into $A(X)$. Let $\iota:L(X)\to U(L(X))$ be the canonical map of $L(X)$ into its enveloping algebra and $\tilde{\alpha}:U(L(X))\to A(X)$ the unique unital algebra homomorphism such that $\tilde{\alpha}\circ\iota=\alpha$. Then
@@ -2897,7 +2897,7 @@ Thus the claim follows.
 The above proof shows that the lower central series of the Lie algebra $\gr(G)$ is given by
 \[C^n(\gr(G))=\sum_{m\geq n}\gr_m(G).\]
 \subsection{Magnus algebras}
-In this part and the following, $X$ denotes a set, $F(X)$ the free group constructed on $X$ and $A(X)$ the free associative algebra constructed on $X$ with its total graduation $(A_n(X))_{n\geq 0}$. The set $X$ is identified with its images in $F(X)$ and $A(X)$.\par
+In this section and the following, $X$ denotes a set, $F(X)$ the free group constructed on $X$ and $A(X)$ the free associative algebra constructed on $X$ with its total graduation $(A_n(X))_{n\geq 0}$. The set $X$ is identified with its images in $F(X)$ and $A(X)$.\par
 Let $\widehat{A}(X)$ be the product module $\prod_{n\geq 0}A^n(X)$. We define on $\widehat{A}(X)$ a multiplication by the rule
 \[(a\cdot b)_n=\sum_{i=0}^{n}a_i\cdot b_{n-i}\]
 where $a=(a_n)$ and $b=(b_n)$ are in $\widehat{A}(X)$. We know that $\widehat{A}(X)$ is an associated algebra and that $A(X)$ is identified with the subalgebra of $\widehat{A}(X)$ consisting of the sequence all of whose terms are zero except for a finite number.\par
@@ -2923,7 +2923,7 @@ For an element $a$ of $\widehat{A}(X)$ to be invertible, it is necessary and suf
 \begin{proof}
 If $a$ is invertible in $\widehat{A}(X)$, $\eps(a)$ is invertible in $\K$. Conversely, if $\eps(a)$ is invertible in $\K$, there exists $u\in\widehat{A}_1(X)$ such that $a=\eps(a)(1-u)$; we write $b=\eps(a)^{-1}\sum_{n\geq 0}u^n$. Then $ab=ba=1$ and $a$ is invertible. 
 \end{proof}
-The set of elements of $\widehat{A}(X)$ of constant term $1$ is therefore a subgroup of the multiplicative monoid $\widehat{A}(X)$, called the \textbf{Magnus group} constructed on $X$ (relative to $\K$). In this part it will be denoted by $\Gamma(X)$ or simply $\Gamma$. For every integer $n\geq 1$, we denote by $\Gamma_n$ the set of $a\in\Gamma$ such that $\omega(a-1)\geq n$. By Proposition~\ref{central filtration Gamma}, the sequence $(\Gamma_n)_{n\geq 0}$ is an integral central filtration on $\Gamma$.\par
+The set of elements of $\widehat{A}(X)$ of constant term $1$ is therefore a subgroup of the multiplicative monoid $\widehat{A}(X)$, called the \textbf{Magnus group} constructed on $X$ (relative to $\K$). In this paragraph it will be denoted by $\Gamma(X)$ or simply $\Gamma$. For every integer $n\geq 1$, we denote by $\Gamma_n$ the set of $a\in\Gamma$ such that $\omega(a-1)\geq n$. By Proposition~\ref{central filtration Gamma}, the sequence $(\Gamma_n)_{n\geq 0}$ is an integral central filtration on $\Gamma$.\par
 We now explore the relation between the Magnus group $\Gamma(X)$ and the free group $F(X)$. For this we first prove some lemmas.
 \begin{lemma}\label{Magnus group (1+t)^n expansion prop}
 Let $n$ be an nonzero rational integer. In the ring $\K\llbracket t\rrbracket$ of formal power series we write $(1+t)^n=\sum_{j\geq 0}c_{j,n}t^j$. Then there exists an integer $j\geq 1$ such that $c_{j,n}\neq 0$.
@@ -2995,7 +2995,7 @@ Suppose that $X$ is a set with two elements $x,y$ and let $H_1=\{x,y\}$, $H_2=\{
 \[w=x^ay^b[x,y]^c\mod C^3.\]
 \end{example}
 \section{The Hausdorff series}
-In this part we assume that $\K$ is a field of characteristic $0$. We shall consider the exponential and logarithm maps on Lie algebras and derive the famous Hausdorff formula for Lie algebras.
+In this section we assume that $\K$ is a field of characteristic $0$. We shall consider the exponential and logarithm maps on Lie algebras and derive the famous Hausdorff formula for Lie algebras.
 \subsection{Exponential and logarithm in filtered algebras}
 Let $A$ be a unital associative algebra which is Hausdorff and complete under a real filtration $(A_\alpha)$. We write $\m=A_0^+=\bigcup_{\alpha>0}A_\alpha$. For $x\in\m$, the family $(x^n/n!)_{n\in\N}$ is then summable. We write
 \[e^x=\exp(x)=\sum_{n=0}^{\infty}\frac{x^n}{n!}.\]
@@ -3506,7 +3506,7 @@ Again, we have $\exp_A(x)\exp_A(y)=\exp_A(h(x,y))$ for $x,y$ in $G$ as in Exampl
 \end{example}
 \chapter{Coxeter systems and tits systems}
 \section{Coxeter systems}\label{Coxeter system subsection}
-In this part, $W$ denotes a group written multiplicatively, with identity element $1$, and $S$ denotes a set of generators of $W$ such that $S=S^{-1}$ and $1\notin S$. Every element of $W$ is the product of a finite sequence of elements of $S$.
+In this section, $W$ denotes a group written multiplicatively, with identity element $1$, and $S$ denotes a set of generators of $W$ such that $S=S^{-1}$ and $1\notin S$. Every element of $W$ is the product of a finite sequence of elements of $S$.
 \subsection{Length and reduced decompositions}
 Let $w\in W$. The \textbf{length} of $w$ (with respect to $S$), denoted by $\ell_S(w)$ or simply by $\ell(w)$, is the smallest positive integer $p$ such that $w$ is the product of a sequence of $p$ elements of $S$. A reduced decomposition of $w$ (with respect to $S$) is any sequence $\bm{s}=(s_1,\dots,s_p)$ of elements of $S$ such that $w=s_1\cdots s_p$ and $p=\ell(w)$. In particular, we see $1$ is the unique element of length $0$ and $S$ consists of the elements of length $1$.
 \begin{proposition}\label{Coxeter system length prop}
@@ -3824,7 +3824,7 @@ For a fixed $s$ in $S$, let $C_s$ be the set of $\tilde{s}\in S$ satisfying the 
 \end{proof}
 \subsection{Characterization of Coxeter systems}
 The statement that the Exchange Property is fundamental in the combinatorial theory of Coxeter groups can be made very precise: It characterizes such groups! This is often a convenient way to prove that a given group is a Coxeter group.\par
-Throughout this part we assume that $W$ is an arbitrary group and that $S\sub W$ is a generating subset such that $s^2=1$ for all $s\in S$. For such a pair, we define the "Exchange Property" and "Deletion Property" as follows.
+Throughout this paragraph we assume that $W$ is an arbitrary group and that $S\sub W$ is a generating subset such that $s^2=1$ for all $s\in S$. For such a pair, we define the "Exchange Property" and "Deletion Property" as follows.
 \begin{enumerate}[leftmargin=20pt]
 \item[(E)] Let $w\in W$ and $s\in S$ be such that $\ell(sw)\leq\ell(w)$. Then for any reduced decomposition $(s_1,\dots,s_p)$ of $w$, there exists an integer $j$ such that $s=s_1\cdots s_{j-1}s_j(s_1\cdots s_{j-1})^{-1}$.
 \item[(D)] Let $w\in W$ and $s\in S$. If $(s_1,\dots,s_p)$ is not a reduced decomposition of $w$, then there exists integers $i<j$ such that $w=s_1\cdots\hat{s}_i\cdots\hat{s}_j\cdots s_p$.
@@ -3986,7 +3986,7 @@ A \textbf{Tits system} is a quadruple $(G,B,N,S)$, where $G$ is a group, $B$ and
 \begin{remark}
 Let $(G,B,N,S)$ be a Tits system, and let $Z$ be a normal subgroup of $G$ contained in $B$. Let $\tilde{G}=G/Z$, $\tilde{B}=B/Z$, $\tilde{N}=N/(Z\cap N)$, and let $\tilde{S}$ be the image of $S$ in $\tilde{N}/(\tilde{B}\cap\tilde{N})$. Then one sees immediately that $(\tilde{G},\tilde{B},\tilde{N},\tilde{S})$ is a Tits system.
 \end{remark}
-Throughout this part, let $(G,B,N,S)$ be a Tits system. We set $T=B\cap N$ and $W=N/T$. A double coset means a double coset of $G$ with respect to $B$. For any $w\in W$, we set $C(w)=BwB$; this is a double coset.\par
+Throughout this paragraph, let $(G,B,N,S)$ be a Tits system. We set $T=B\cap N$ and $W=N/T$. A double coset means a double coset of $G$ with respect to $B$. For any $w\in W$, we set $C(w)=BwB$; this is a double coset.\par
 We first deduce several elementary consequences of the axioms (T1) to (T4). We denote by $w,\tilde{w},\dots$ elements of $W$ and by $s,\tilde{s},\dots$ elements of $S$. The following relations are clear:
 \begin{align}\label{Tits system prop-1}
 C(1)=B,\quad C(w\tilde{w})\sub C(w)C(\tilde{w}),\quad C(w^{-1})=C(w)^{-1}
@@ -4203,7 +4203,7 @@ which proves the proposition.
 \end{proof}
 \chapter{Groups generated by reflections}
 \section{Hyperplanes, chambers and facets}
-In this part, $E$ denotes a real affine space of finite dimension $d$ and $T$ the space of translations of $E$. If $x$ and $y$ are two points of $E$, $[x,y]$ (resp. $(x,y)$, resp. $(x,y]$) will denote the closed segment (resp. open segment, resp. segment open at $x$ and closed at $y$) with extremities $x,y$. The space $T$ is provided with its unique separated topological vector space topology; it is isomorphic to $\R^d$. The space $E$ is provided with the unique topology such that, for all $e\in E$, the map $t\mapsto t+e$ from $T$ to $E$ is a homeomorphism.\par
+In this section, $E$ denotes a real affine space of finite dimension $d$ and $T$ the space of translations of $E$. If $x$ and $y$ are two points of $E$, $[x,y]$ (resp. $(x,y)$, resp. $(x,y]$) will denote the closed segment (resp. open segment, resp. segment open at $x$ and closed at $y$) with extremities $x,y$. The space $T$ is provided with its unique separated topological vector space topology; it is isomorphic to $\R^d$. The space $E$ is provided with the unique topology such that, for all $e\in E$, the map $t\mapsto t+e$ from $T$ to $E$ is a homeomorphism.\par
 Let $H$ be a hyperplane of $E$. Recall that $E\setminus H$ has two connected components, called the \textbf{open half-spaces} bounded by $H$. Their closures are called the \textbf{closed half-spaces} bounded by $H$. Let $x,y\in E$. Then $x$ and $y$ are said to be \textbf{strictly on the same side} of $H$ if they are contained in the same open half-space bounded by $H$, or equivalently, if the closed segment with extremities $x$ and $y$ does not meet $H$; $x$ and $y$ are said to be \textbf{on opposite sides} of $H$ if $x$ belongs to one of the open half-spaces bounded by $H$ and $y$ to the other. If $x\in E$ and $t\in T$, then $x$ and $t$ are said to be \textbf{strictly on the same side} of $H$ if this is so for $x$ and $h+t$ for all $h\in H$.\par
 Let $A$ be a non-empty connected subset of $E$. For any hyperplane $H$ of $E$ that does not meet $A$, $D_H(A)$ denotes the unique open half-space bounded by $H$ that contains $A$. If $\mathcal{H}$ is a set of hyperplanes of $E$, none of which meet $A$, put
 \[D_{\mathcal{H}}(A)=\bigcap_{H\in\mathcal{H}}D_H(A).\]
@@ -4372,7 +4372,7 @@ Then $L$ meets $C$.
 Let $b_1$ (resp. $b_2$) be a point of the face of $C$ with support $H_1$ (resp. $H_2$); it is immediate that every point of the segment $(b_1,b_2)$ belongs to $C$. Introduce an affine function $f_1$ that vanishes at every point of $H_1$ and is such that $f_1(x)>0$ for $x$ in $D_{H_1}(C)$; similarly, introduce an affine function $f_2$ having an analogous property with respect to $H_2$. By applying Proposition~\ref{reflection group parallel and functional}, we can find numbers $\lambda_1$ and $\lambda_2$ and an affine function $g$ having the properties stated in the proposition. We have $(\lambda_1,\lambda_2)\neq(0,0)$, and for every point $x$ of $L\cap D_{H_1}(C)\cap D_{H_2}(C)$, we have $f_1(x)>0$, $f_2(x)>0$ and $\lambda_1f_1(x)+\lambda_2f_2(x)=0$, so $\lambda_1\lambda_2<0$. On the other hand, we have $g(b_1)=\lambda_2f_2(b_1)$ and $g(b_2)=\lambda_1f_1(b_2)$, and since $f_1(b_2)>0$, $f_2(b_1)>0$, we have $g(b_1)g(b_2)<0$. The points $b_1$ and $b_2$ are thus strictly on opposite sides of the hyperplane $L$, hence there exists a point $c$ of $L$ which belongs to $(b_1,b_2)$, hence that belongs to $C$.
 \end{proof}
 \section{Reflections over a vector space}
-In this part, $\K$ will denote a field with characteristic not equal to $2$. We denote by $V$ a vector space over $\K$.
+In this section, $\K$ will denote a field with characteristic not equal to $2$. We denote by $V$ a vector space over $\K$.
 \subsection{Pseudo-reflections and reflections}
 \begin{definition}
 An endomorphism $s$ of the vector space $V$ is said to be a \textbf{pseudo-reflection} if $1-s$ is of rank $1$.
@@ -4496,7 +4496,7 @@ so $\ell(w)=2k+1$ and $\ell(sw)=2k$.
 \end{itemize}
 \end{example}
 \subsection{Complements on plane rotations}
-In this part $V$ denotes a real vector space of dimension $2$, provided with a scalar product (that is, a non-degenerate, positive, symmetric bilinear form) and an orientation. The measures of angles will be taken with respect to the base $2\pi$. The principal measure of an angle between half-lines (resp. lines) is thus a real number $\theta$ such that $0\leq\theta <2\pi$ (resp. $0\leq\theta<\pi$). By abuse of language, for any real number $\theta$, we shall use $\theta$ to denote an angle whose measure is $\theta$ and denote by $\rho_\theta$ the rotation with angle $\theta$.
+In this paragraph $V$ denotes a real vector space of dimension $2$, provided with a scalar product (that is, a non-degenerate, positive, symmetric bilinear form) and an orientation. The measures of angles will be taken with respect to the base $2\pi$. The principal measure of an angle between half-lines (resp. lines) is thus a real number $\theta$ such that $0\leq\theta <2\pi$ (resp. $0\leq\theta<\pi$). By abuse of language, for any real number $\theta$, we shall use $\theta$ to denote an angle whose measure is $\theta$ and denote by $\rho_\theta$ the rotation with angle $\theta$.
 \begin{proposition}\label{reflection on plane angle of two line}
 Let $s$ be the orthogonal reflection with respect to a line $D$ of $V$. If $\Delta_1$ and $\Delta_2$ are two half-lines starting at the origin (resp. two lines passing through the origin) of $V$, we have
 \[\widehat{(s(\Delta_1),s(\Delta_2))}\equiv -\widehat{(\Delta_1,\Delta_2)}\mod 2\pi\quad\text{(resp. $\mathrm{mod}$ $\pi$)}.\]
@@ -4598,7 +4598,7 @@ Finally, let $H$ be a hyperplane such that $s_H\in W$. If $H$ did not belong to 
 Let $\Sigma$ be a set of reflections generating $W$. Then every reflection belonging to $W$ is conjugate to an element of $\Sigma$.
 \end{corollary}
 \begin{proof}
-Let $\tilde{\mathcal{H}}$ be the set of hyperplanes of the form $w(H)$ with $w\in W$ and $H\in\mathcal{H}$ such that $s_H\in\Sigma$. Since $W$ is generated by the family $(s_H)_{H\in\tilde{\mathcal{H}}}$ and since $\tilde{\mathcal{H}}$ is stable under $W$, we can apply all the results of this part to $\tilde{\mathcal{H}}$ instead of $\mathcal{H}$. But Theorem~\ref{reflection group is Coxeter system}(d) shows that every reflection $s_H$ in $W$ is of the form $s_{\tilde{H}}=ws_Hw^{-1}$ with $\tilde{H}=w(H)\in\tilde{\mathcal{H}}$, hence the corollary.
+Let $\tilde{\mathcal{H}}$ be the set of hyperplanes of the form $w(H)$ with $w\in W$ and $H\in\mathcal{H}$ such that $s_H\in\Sigma$. Since $W$ is generated by the family $(s_H)_{H\in\tilde{\mathcal{H}}}$ and since $\tilde{\mathcal{H}}$ is stable under $W$, we can apply all the results of this paragraph to $\tilde{\mathcal{H}}$ instead of $\mathcal{H}$. But Theorem~\ref{reflection group is Coxeter system}(d) shows that every reflection $s_H$ in $W$ is of the form $s_{\tilde{H}}=ws_Hw^{-1}$ with $\tilde{H}=w(H)\in\tilde{\mathcal{H}}$, hence the corollary.
 \end{proof}
 \subsection{Fundamental domain and stabilisers}
 Recall that a subset $D$ of $E$ is called a fundamental domain for the group $W$ if every orbit of $W$ in $E$ meets $D$ in exactly one point. This is equivalent to the following conditions:
@@ -4816,7 +4816,7 @@ Suppose finally that the family $(e_H)_{H\in\mathcal{R}}$ is free. Let $a$ be a 
 Since $W$ is generated by reflections with respect to the walls of the chamber $C$, the preceding proposition gives a criterion for $W$ to be finite. We shall return to this question later.
 \end{remark}
 \begin{example}
-Let $F$ be a finite-dimensional real affine space and $G$ a group of automorphisms of $F$. For all $g\in G$, denote by $U(g)$ the automorphism of the space of translations $V$ of $F$ associated to $g$. Assume that the image $U(G)$ is a finite subgroup of $\GL(V)$; then $V$ has a scalar product invariant under $U(G)$. If, in addition, $G$ acts properly on $F$ when it is provided with the discrete topology, and if it is generated by reflections, we can apply to $G$ the results of this part.
+Let $F$ be a finite-dimensional real affine space and $G$ a group of automorphisms of $F$. For all $g\in G$, denote by $U(g)$ the automorphism of the space of translations $V$ of $F$ associated to $g$. Assume that the image $U(G)$ is a finite subgroup of $\GL(V)$; then $V$ has a scalar product invariant under $U(G)$. If, in addition, $G$ acts properly on $F$ when it is provided with the discrete topology, and if it is generated by reflections, we can apply to $G$ the results of this paragraph.
 \end{example}
 \subsection{Representation of the Weyl group on the underlying space}
 Let $I$ be the set of vertices of the Coxeter graph of $W$ and let $J$ be a subset of $I$ such that no vertex in $J$ is linked to any vertex in $I\setminus J$. Ley $C$ be a chamber, $s$ the canonical bijection from $I$ to the set of reflections with respect to the walls of $C$, and let $W_{J,C}$ be the subgroup generated by the image $s(J)$. It follows from Proposition~\ref{Coxeter system restricted product if} that $W$ is the direct product of the two subgroups $W_{J,C}$ and $W_{I\setminus J,C}$. Let $\tilde{C}$ be another chamber and $\tilde{s}$ the corresponding injection of $I$ into $W$. We have seen that if $w\in W$ transforms $C$ into $\tilde{C}$, then $\tilde{s}(i)=ws(i)w^{-1}$ for $i\in I$. Since $W_{J,C}$ is normal in $W$, it follows that $\tilde{s}(i)\in W_{J,C}$ for all $i\in J$. We deduce that the subgroup $W_{J,C}$ does not depend on $C$. We denote it simply by $W_J$ from now on.
@@ -4974,7 +4974,7 @@ There exists a chamber $C_0$ such that $x$ is an extremal point of $C_0$ (Coroll
 The set $\Omega_x$ is contained in the set of special points, but in general is distinct from it.
 \end{remark}
 \section{Geometric representation of a Coxeter matrix}
-In this part, all vector spaces will be assumed to be real.
+In this section, all vector spaces will be assumed to be real.
 \subsection{Associated form and reflections of a Coxeter matrix}
 Let $S$ be a set and let $M=(m(s,\tilde{s}))$ be a Coxeter matrix of type $S$. Let $E$ be the real vector space spanned by $S$, $(e_s)_{s\in S}$ be the canonical basis of $E$, and let $\beta_M$ be the bilinear form on $E$ such that
 \[\beta_M(e_s,e_{\tilde{s}})=-\cos\frac{\pi}{m(s,\tilde{s})}.\]
@@ -5190,7 +5190,7 @@ We can apply to $W$ and $C$ all the properties proved for reflection groups. In 
 \[(e_s,e_{\tilde{s}})=-\cos(\pi/m(s,\tilde{s}))\]
 and that the $e_s$ form a basis of $E$. The natural representation of $W$ on $E$ can thus be identified with the representation $\sigma$.
 \subsection{Coxeter matrices with positive degenerate bilinear form}
-To conclude this part, we consider the case where the bilinear form $\beta_M$ is positive and degenerate. Still, we assume that $S$ is finite.
+To conclude this section, we consider the case where the bilinear form $\beta_M$ is positive and degenerate. Still, we assume that $S$ is finite.
 \begin{lemma}\label{Coxeter matrix positive dege form E^bot char}
 The orthogonal complement $E^\bot$ of $E$ for $\beta_M$ is of dimension $1$. It is generated by an element $e=\sum_{s\in S}\lambda_se_s$ with $\lambda_s>0$ for all $s$.
 \end{lemma}
@@ -5288,7 +5288,7 @@ Assume that $G$ is finite and $V$ has finite dimension. Then $S$ is an $R$-modul
 \begin{align}\label{graded algebra action rank is card of group}
 \rank_R(S)=[L:K]=|G|.
 \end{align}
-In this part, we consider the case where $G$ is generated by pseudo-reflections. In particular, this is true for finite Coxeter groups. We shall see that in this case the algebra $R$ has a bunch of good properties.
+In this paragraph, we consider the case where $G$ is generated by pseudo-reflections. In particular, this is true for finite Coxeter groups. We shall see that in this case the algebra $R$ has a bunch of good properties.
 \begin{theorem}\label{reflection group inv of Sym basis}
 Let $\mathbbb{k}$ be a field, $V$ a finite dimensional vector space over $\mathbbb{k}$, $S=\mathcal{S}(V)$ the symmetric algebra of $V$, $G$ a finite group of automorphisms of $V$, and $R$ the graded subalgebra of $S$ consisting of the elements invariant under $G$. Assume that $G$ is generated by pseudo-reflections and that $q=|G|$ is coprime to the characteristic of $\mathbbb{k}$. Then the $R$-module $S$ has a basis consisting of $q$ homogeneous elements.
 \end{theorem}
@@ -5510,7 +5510,7 @@ The fact that $\div(D_{R'/R})$ is zero shows that $\div(d)=0$, which means that 
 Retain the assumptions and notation of Theorem~\ref{reflection group iff invariant subalgebra polynomial}. Let $H$ be the set of pseudo-reflections belonging to $G$. Assume that $H$ generates $G$. For all $g\in G$, put $g(x)=x+f_g(x)e_g$ with $e_g\in V$, $f_g\in V^*$. Put $e=\prod_{g\in H}e_g\in S$. The the difierent of $S$ over $R$ is the principal ideal $Se$.
 \end{remark}
 \section{Coxeter transformations for reflection groups}
-In this part, let $V$ be a real vector space of finite dimension $l$ and $W$ a finite subgroup of $\GL(V)$ generated by reflections and essential. Provide $V$ with a scalar product $(x,y)$ invariant under $W$. Denote by $\mathcal{H}$ the set of hyperplanes $H$ of $V$ such that the corresponding orthogonal reflection $s_H$ belongs to $W$. Then we can apply the results in Section~\ref{reflection group section}. For example, the group $W$ acts transitively on the set of chambers determined by $\mathcal{H}$, and the number of walls of a chamber $C$ is also $d$ (Proposition~\ref{reflection group essential finite chamber prop}.)
+In this section, let $V$ be a real vector space of finite dimension $l$ and $W$ a finite subgroup of $\GL(V)$ generated by reflections and essential. Provide $V$ with a scalar product $(x,y)$ invariant under $W$. Denote by $\mathcal{H}$ the set of hyperplanes $H$ of $V$ such that the corresponding orthogonal reflection $s_H$ belongs to $W$. Then we can apply the results in Section~\ref{reflection group section}. For example, the group $W$ acts transitively on the set of chambers determined by $\mathcal{H}$, and the number of walls of a chamber $C$ is also $d$ (Proposition~\ref{reflection group essential finite chamber prop}.)
 \subsection{Ordered chamber and Coxeter transformations}
 An \textbf{ordered chamber} relative to $W$ is a pair consisting of a chamber $C$ determined by $\mathcal{H}$ and a bijection $i\mapsto H_i$ from $\{1,2,\dots,l\}$ onto the set of walls of $C$. The \textbf{Coxeter transformation} determined by an ordered chamber $(C,(H_i)_{1\leq i\leq l})$ is the element $w_C=s_{H_1}s_{H_2}\dots s_{H_l}$ of $W$. This definition of $w_C$ clearly depends on the chamber $C$ and the ordering $(H_i)$. However, as we will see, the conjugate class of $w_C$ are all equal, for any ordered chamber $(C,(H_i)_{1\leq i\leq l})$. For this, we need the following lemmas.
 \begin{lemma}\label{graph forest terminal point prop}
@@ -5669,7 +5669,7 @@ thus $w_C^{h/2}=-1$ since $w_C$ is a semi-simple automorphism of $V$.
 \end{proof}
 \chapter{Root systems and Weyl groups}
 \section{Abstract root systems}
-In this part, $\K$ denotes a field of characteristic zero and $V$ denotes a vector space over $\K$ of finite dimension.
+In this section, $\K$ denotes a field of characteristic zero and $V$ denotes a vector space over $\K$ of finite dimension.
 \subsection{Root systems in a vector space}
 \begin{lemma}\label{root system reflection unique lemma}
 Let $V$ be a vector space over $\K$, $\Phi$ a finite subset of $V$ generating $V$. For any $\alpha\in\Phi$ such that $\alpha\neq 0$, there exists at most one reflection $s$ of $V$ such that $s(\alpha)=-\alpha$ and $s(\Phi)=\Phi$.
@@ -6404,7 +6404,7 @@ Let $F\in\mathcal{F}$. It is clear that $\mathscr{P}(F)\in\mathcal{P}$. On the o
 where $T$ is a subset of $\Phi$ which we can clearly take to be $\mathscr{P}(F)$. Thus, $\widebar{F}=\mathscr{F}(\mathscr{P}(F))$.
 \end{proof}
 If $P\in\mathcal{P}$, the facet $F$ such that $P=\mathscr{P}(F)$ is said to be associated to $P$; we denote it by $F_P$. By Proposition~\ref{root system parabolic subset and facet connection}, we see $F\mapsto\mathscr{P}(F)$ is a bijection from $\mathcal{F}$ to $\mathcal{P}$.\par
-As an application of the results in this part, we show the existence of a maximal root in an irreducible root system. More precisely, we have the following proposition.
+As an application of the results in this paragraph, we show the existence of a maximal root in an irreducible root system. More precisely, we have the following proposition.
 \begin{proposition}\label{root system highest root}
 Assume that $\Phi$ is irreducible. Let $C$ be a chamber of $\Phi$, and let $\Delta(C)=\{\alpha_1,\dots,\alpha_l\}$ be the corresponding basis. There exists a root $\tilde{\alpha}=\sum_{i=1}^{l}n_i\alpha_i$ such that
 \begin{itemize}
@@ -7411,7 +7411,7 @@ Finally, we show that (\rmnum{1})$\Rightarrow$(\rmnum{4}). Assume that $G$ leave
 Let $G$ be a finite group generated by reflections and essential. We will see that $G$ is crystallographic if and only if every element of its Coxeter matrix is one of the integers $1,2,3,4,6$.
 \end{remark}
 \section{Classification of root systems}
-In this part, we are going to determine, up to isomorphism, all root systems, and consequently all crystallographic groups. More generally, we shall start by determining all finite groups generated by reflections in a finite-dimensional real vector space: this is equivalent to determining all finite Coxeter groups, or to determining all Coxeter matrices of finite order such that the associated bilinear form is positive and nondegenerate.
+In this section, we are going to determine, up to isomorphism, all root systems, and consequently all crystallographic groups. More generally, we shall start by determining all finite groups generated by reflections in a finite-dimensional real vector space: this is equivalent to determining all finite Coxeter groups, or to determining all Coxeter matrices of finite order such that the associated bilinear form is positive and nondegenerate.
 \subsection{Finite Coxeter groups}
 Let $M=(m_{ij})_{i,j\in I}$ be a Coxeter matrix of finite order $l$ and put
 \[q_{ij}=-\cos(\pi/m_{ij}).\]
@@ -8645,7 +8645,7 @@ Let $V$ be a finite-dimensional representation of $\sl(2,\K)$. If $\alpha,\alpha
 \begin{proof}
 We may assume that $\beta:=\alpha+2k$ satisfies $|\beta|\geq|\alpha|$. Then we pick some simple submodule $V_i\cong V^{(\lambda_i)}$ of $V$ such that $\beta$ is an eigenvalue of $\rho(h)|_{V_i}$. Then $\lambda_i-\beta\in 2\N$ and all integers in $[-|\beta|,|\beta|]\cap(\beta+2\Z)$ are eigenvalues of $\rho(h)|_{V_i}$. This contains in particular the set of all integers of the form $\alpha+2j$, $j=0,1,\dots,k$, between $\alpha$ and $\beta$.
 \end{proof}
-To conclude this part, we prove an important property for $\sl(2,\K)$-modules. We first consider the element $\theta\in\Aut(\sl(2,\K))$ defined by
+To conclude this paragraph, we prove an important property for $\sl(2,\K)$-modules. We first consider the element $\theta\in\Aut(\sl(2,\K))$ defined by
 \begin{align*}
 \theta=\exp(\ad(e))\exp(-\ad(f))\exp(\ad(e))=\Ad(\vartheta)=\Inn(\theta)
 \end{align*}
@@ -8895,7 +8895,7 @@ If $\alpha,\beta\in\Phi$ are such that $\alpha+\beta\in\Phi$, then $N_{\alpha,\b
 \end{proof}
 The existence of Chevalley systems for $(\g,\h)$ is not easy to prove. We will return to this topic after we introduce the generating relation of a split semi-simple Lie algebra.
 \subsection{Subalgebras invariant under a Cartan subalgebra}
-In this part, we consider cartain subalgebras of a split semi-simple Lie algebra $\g$. Again, we assume that $\K$ has characteristic zero and $(\g,\h)$ is a split semi-simple Lie algebra, with root system $\Phi$.\par
+In this paragraph, we consider cartain subalgebras of a split semi-simple Lie algebra $\g$. Again, we assume that $\K$ has characteristic zero and $(\g,\h)$ is a split semi-simple Lie algebra, with root system $\Phi$.\par
 Let $V$ be a vector subspace of $\g$. Then since $\h$ acts via the adjoint representation on $\g$, it also acts on $V$. Although $V$ may not be stable under $\ad(\h)$, it contains a largest invariant subspace. Such a subspace may be characterized using the root decomposation of $\g$, which is the content of the following proposition.
 \begin{proposition}\label{Lie algebra spl-s-simp stable subspace under h}
 Let $V$ be a vector subspace of $\g$ and $\Phi(V)$ the set of $\alpha\in\Phi$ such that $\g^\alpha\sub V$. Then $(V\cap\h)+\bigoplus_{\alpha\in\Phi(V)}\g^\alpha$ is the largest vector subspace of $V$ stable under $\ad(\h)$.
@@ -9532,7 +9532,7 @@ g)\cdot\ker\eps=\Aut_e(\g)\cdot\varsigma(T_{\Lambda_r})$.
 By Corollary~\ref{Lie algebra spl-s-simp Borel subalgebra transitive}, $\Aut_0(\g)=\Aut_e(\g)\cdot\Aut_0(\g,\h)$. On the other hand, $\eps(\Aut_e(\g,\h))\sups W(\Phi)$, so $\Aut_0(\g,\h)=\Aut_e(\g,\h)\cdot\ker\eps$.
 \end{proof}
 \section{Modules over a split semi-simple Lie algebra}
-In this part, $(\g,\h)$ denotes a split semi-simple Lie algebra, $\Phi$ its root system, $W$ its Weyl group, $\Delta$ a basis of $\Phi$, $\Phi^+$ (resp. $\Phi^-$) the set of positive (resp. negative) roots relative to $\Delta$. Put
+In this section, $(\g,\h)$ denotes a split semi-simple Lie algebra, $\Phi$ its root system, $W$ its Weyl group, $\Delta$ a basis of $\Phi$, $\Phi^+$ (resp. $\Phi^-$) the set of positive (resp. negative) roots relative to $\Delta$. Put
 \[\n^+=\sum_{\alpha\in\Phi^+}\g^\alpha,\quad \n^-=\sum_{\alpha\in\Phi^-}\g^\alpha,\quad \b^+=\h+\n^+,\quad\b^-=\h+\n^-.\]
 We have $\n^+=[\b^+,\b^+]$ and $\n^-=[\b^-,\b^-]$. For all $\alpha\in\Phi$, we choose an element $x_\alpha\in\g^\alpha$ such that $[x_\alpha,x_{-\alpha}]=h_\alpha$. It turns out that none of the definitions in this part will depend on this choice.
 \subsection{Weights and primitive elements}
@@ -10358,7 +10358,7 @@ The group $\Aut_0(\g)$ is open and closed in $\Aut(\g)$ in the Zariski topology.
 Proposition~\ref{Lie algebra s-simp Aut_0 iff invariant under polynomial} shows that $\Aut_0(\g)$ is closed. Let $\widebar{\K}$ be an algebraic closure of $\K$. The group $\Aut(\g\otimes\widebar{\K})/\Aut_0(\g\otimes\widebar{\K})$ is finite (Corollary~\ref{Lie algebra spl-s-simp Aut(g) is semidirect prod of Aut_0}); a fortiori, the group $\Aut(\g)/\Aut_0(\g)$ is finite. Since the cosets of $\Aut_0(\g)$ in $\Aut(\g)$ are closed, it follows that $\Aut_0(\g)$ is open in $\Aut(\g)$.
 \end{proof}
 \subsubsection{Centre of the universal enveloping algebra}
-To conclude this part, we consider the centre $Z(\g)$ of the enveloping algebra $U(\g)$. We have seen that $Z(\g)$ and $S(\h)^W$ are both isomorphic to a polynomial algebra over $\K$ of transcendence degree $l=\rank(\g)$, so they are isomorphic. In fact, with a bit efforts, we can construct a explicit isomorphism from $Z(\g)$ to $S(\h)^W$, which is called the Harish-Chandra isomorphism. We also recall that we have a Harish-Chandra homomorphism, which is a homomorphism $\varphi$ from the commutant $U(\g)^0$ of $U(\h)$ to $U(\h)=S(\h)$.\par
+To conclude this paragraph, we consider the centre $Z(\g)$ of the enveloping algebra $U(\g)$. We have seen that $Z(\g)$ and $S(\h)^W$ are both isomorphic to a polynomial algebra over $\K$ of transcendence degree $l=\rank(\g)$, so they are isomorphic. In fact, with a bit efforts, we can construct a explicit isomorphism from $Z(\g)$ to $S(\h)^W$, which is called the Harish-Chandra isomorphism. We also recall that we have a Harish-Chandra homomorphism, which is a homomorphism $\varphi$ from the commutant $U(\g)^0$ of $U(\h)$ to $U(\h)=S(\h)$.\par
 Let $\delta=\frac{1}{2}\sum_{\alpha\in\Phi^+}\alpha$ be the Weyl vector, and $t_\delta$ the automorphism of the algebra $S(\h)$ that takes every $x\in\h$ to $x-\delta(x)$, and hence the polynomial function $f$ on $\h^*$ to the function $\lambda\mapsto f(\lambda-\delta)$.
 \begin{theorem}\label{Lie algebra spl-s-simp H-C isomorphism}
 Let $U(\g)$ be the enveloping algebra of $\g$, $Z(\g)$ its centre, $U(\h)\sub U(\g)$ the enveloping algebra of $\h$ (identified with $S(\h)$), $U(\g)^0$ the commutant of $U(\h)$ in $U(\g)$, and $\varphi$ the Harish-Chandra homomorphism from $U(\g)^0$ to $U(\h)$ relative to $\Delta$. Let $S(\h)^W$ be the set of elements of $S(\h)$ invariant under the action of $W$. Then $(t_{\delta}\circ\varphi)|_{Z(\g)}$ is an isomorphism from $Z(\g)$ to $S(\h)^W$, independent of the choice of $\Delta$.
@@ -10798,7 +10798,7 @@ Now let $G$ be a connected commutative (real) Lie group. The exponential map $\e
 \item[(\rmnum{3})] $G$ is isomorphic to $\R^n$ ($n=\dim(G)$).
 \end{itemize}
 In this case, transporting the vector space structure of $L(G)$ to $G$ by the isomorphism $\exp_G$ gives a vector space structure on $G$, which is the only one compatible with the topological group structure of $G$. Simply-connected commutative Lie groups are called \textbf{vector (Lie) groups}; unless stated otherwise, they are always given the $\R$-vector space structure defined above.\par
-Denote by $\Gamma(G)$ the kernel of $\exp_G$. By Theorem~\ref{}, the group $G$ is compact if and only if $\Gamma(G)$ is a lattice in $\mathfrak{Lie}(G)$, in other words (loc. cit.) if the rank of the free $\Z$-module $\Gamma(G)$ is equal to the dimension of $G$. Conversely, if $L$ is a finite dimensional $\R$-vector space and $\Gamma$ a lattice in $L$, the quotient topological group $L/\Gamma$ is a compact connected commutative Lie group. The compact connected commutative Lie groups are called \textbf{real tori}, or (in this part) \textbf{tori}.\par
+Denote by $\Gamma(G)$ the kernel of $\exp_G$. By Theorem~\ref{}, the group $G$ is compact if and only if $\Gamma(G)$ is a lattice in $\mathfrak{Lie}(G)$, in other words (loc. cit.) if the rank of the free $\Z$-module $\Gamma(G)$ is equal to the dimension of $G$. Conversely, if $L$ is a finite dimensional $\R$-vector space and $\Gamma$ a lattice in $L$, the quotient topological group $L/\Gamma$ is a compact connected commutative Lie group. The compact connected commutative Lie groups are called \textbf{real tori}, or \textbf{tori}.\par
 In the general case, let $E$ be the vector subspace of $\mathfrak{Lie}(G)$ generated by $\Gamma(G)$, and let $V$ be a complementary subspace. Then $G$ is the direct product of its Lie subgroups $\exp(E)$ and $\exp(V)$; the first is a torus, the second is vector. Finally, every compact subgroup of $G$ is contained in $\exp(E)$ (since its projection onto $\exp(V)$ is necessarily reduced to the identity element); thus, the subgroup $\exp(E)$ is the unique maximal compact subgroup of $G$.\par
 For example, take $G=\C^*$; identify $\mathfrak{Lie}(G)$ with $\C$ so that the exponential map of $G$ is $z\mapsto e^z$. Then $\Gamma(G)=2\pi i\Z$, $E=i\R$, and so $\exp(E)=\mathbb{U}$, the upper half plane; if we take $V=\R$, then $\exp(V)=\R^\times_+$ and we recover the isomorphism $\C^\times\cong\mathbb{U}\times\R^\times_+$. Note finally that $\exp_G:\mathfrak{Lie}(G)\to G$ is a universal covering of $G$, hence $\Gamma(G)$ can be identified naturally with the fundamental group of $G$.
 \section{Compact Lie algebras and maximal tori}
@@ -11346,7 +11346,7 @@ z&0\\
 \Ad(t)(u)=\Re(z^2)u+\Im(z^2)v,\quad \Ad(t)(v)=-\Im(z^2)u+\Re(z^2)v.
 \end{align}
 \section{Root system associated to a compact Lie group}
-In this part we shall construct a root system from a compact Lie group and consider its relation with the root system of the Lie algebra associated. Here quite a bit notations in the Lie algebra setting generalize to compact Lie groups, and analogous statements are valid. However, there are still subtle points for the transition of Lie algebras to Lie groups, as we will see in the discussion.
+In this section we shall construct a root system from a compact Lie group and consider its relation with the root system of the Lie algebra associated. Here quite a bit notations in the Lie algebra setting generalize to compact Lie groups, and analogous statements are valid. However, there are still subtle points for the transition of Lie algebras to Lie groups, as we will see in the discussion.
 \subsection{The character group and nodal group}
 Let $G$ be a compact Lie group with Lie algebra $\g$. Denote by $X(G)$ the (commutative) group of continuous homomorphisms from $G$ to the topological group $\C^\times$. By Theorem~\ref{}, the elements of $X(G)$ are morphisms of Lie groups. We identify the Lie algebra of $\C^\times$ with $\C$ in such a way that the exponential map of $\C^\times$ coincides with the map $z\mapsto e^z$ from $\C$ to $\C^\times$. Then, to any element $\chi\in X(G)$ is associated an element $\mathfrak{Lie}(\chi)\in\Hom_{\R}(\g,\C)$; we denote by $\chi_*$ the element of $\Hom_{\C}(\g_{(\C)},\C)$ that corresponds to it (that is, whose restriction to $\g\sub\g_{(\C)}$ is equal to $\mathfrak{Lie}(\chi)$). For all $x\in\g$ and all $\chi\in X(G)$, we have
 \[\chi(\exp_G(x))=e^{\chi_*(x)},\]

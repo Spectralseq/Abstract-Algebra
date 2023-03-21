@@ -152,7 +152,7 @@ For (a), assume that $\mathscr{F}$ is a sheaf, and consider the commutative diag
 \mathscr{F}(U)\ar[r]\ar[d,"\varphi_U"]&\prod_{x\in U}\mathscr{F}_x\ar[d,"\prod_{x\in U}\varphi_x"]\\
 \mathscr{G}(U)\ar[r]&\prod_{x\in U}\mathscr{G}_x
 \end{tikzcd}\]
-By Proposition~\ref{Goement construction image of sheaf char} the map $\mathscr{F}(U)\to\prod_{x\in U}\mathscr{F}_x$ is injective, thus if $\varphi_x$ are all injective, so is $\varphi_U$. Assertion (c) can also be derived from this diagram.\par
+By \cref{Goement construction image of sheaf char} the map $\mathscr{F}(U)\to\prod_{x\in U}\mathscr{F}_x$ is injective, thus if $\varphi_x$ are all injective, so is $\varphi_U$. Assertion (c) can also be derived from this diagram.\par
 Then we prove (b). Assume $\varphi_x$ are bijective, we show that $\varphi_U$ is surjective. Let $t\in\mathscr{G}(U)$. For any $x\in U$, since $\varphi_x$ is surjective, there exist $s_x\in\mathscr{F}_x$ such that $\varphi_x(s_x)=t_x$. Let $s_x$ be represented by a section $s(x)$ on a neighborhood $V_x$ of $x$. Then by $(\ref{presheaf morphism induced on stalk})$,
 \[\big(\varphi_{V_x}(s(x))\big)_x=\varphi_x(s_x)=(t|_{V_x})_x.\]
 By shrinking $V_x$ we may assume that $\varphi_{V_x}(s(x))=t|_{V_x}$.\par 
@@ -173,7 +173,7 @@ Let $\mathscr{F}$ be a sheaf of abelian groups on a topological space, $U\sub X$
 For $x\in U\setminus\supp(s)$ we have $s_x=0$, so there exists an open subset $V\sub U$ with $s|_V=0$. This implies $s_{y}=0$ for every $y\in V$ and therefore $V\sub U\setminus\supp(s)$. Hence $U\setminus\supp(s)$ is open.
 \end{proof}
 \begin{example}
-Let $X$ be a topological space. Let $C_X$ be the sheaf of continuous $\R$-valued functions on $X$. Let $U\sub X$ be open and $s\in C_X(U)$ a continuous function $U\to\R$. In the proof of Proposition~\ref{sheaf section supp is closed} we have just seen that $U\setminus\supp(s)$ is the interior of $\{x\in U:s(x)=0\}$. Therefore we have
+Let $X$ be a topological space. Let $C_X$ be the sheaf of continuous $\R$-valued functions on $X$. Let $U\sub X$ be open and $s\in C_X(U)$ a continuous function $U\to\R$. In the proof of \cref{sheaf section supp is closed} we have just seen that $U\setminus\supp(s)$ is the interior of $\{x\in U:s(x)=0\}$. Therefore we have
 \[\supp(s)=\widebar{\{x\in U:s(x)\neq 0\}}\]
 which coincides with usual definition of the support of a continuous function.
 \end{example}
@@ -190,7 +190,7 @@ As a universal construction, the sheafification functor $\mathscr{F}\to\mathscr{
 \[\Mor_{\mathbf{Shv}(X)}(\mathscr{F}^{\#},\mathscr{G})\cong\Mor_{\mathbf{Psh}(X)}(\mathscr{F},\mathscr{G})\]
 for any presheaf $\mathscr{F}$ and sheaf $\mathscr{G}$.
 \end{definition}
-In Proposition~\ref{Goement construction image of sheaf char} we see that if $\mathscr{F}$ is a sheaf, then $\mathscr{F}(U)$ can be identified as elements in $\prod_{x\in U}\mathscr{F}_x$ consists of compatible germs. This turns out to be a appropriate way to define the sheafification.
+In \cref{Goement construction image of sheaf char} we see that if $\mathscr{F}$ is a sheaf, then $\mathscr{F}(U)$ can be identified as elements in $\prod_{x\in U}\mathscr{F}_x$ consists of compatible germs. This turns out to be a appropriate way to define the sheafification.
 \begin{proposition}\label{sheaf sheafification construction}
 Let $\mathscr{F}$ be a presheaf on a topological space $X$. Then there exists a sheafification $\iota_{\mathscr{F}}:\mathscr{F}\to\mathscr{F}^{\#}$ such that the following properties hold:
 \begin{itemize}
@@ -215,8 +215,8 @@ Suppose $\mathscr{F}$ is a presheaf. Define $\mathscr{F}^{\#}$ by declearing $\m
 For $U\sub V$ the restriction map $\mathscr{F}^{\#}(V)\to\mathscr{F}^{\#}(U)$ is induced by the natural projection. With this, for any covering $U=\bigcup_iU_i$ and sections $(s_x)_{x\in U_i}$ in $\mathscr{F}^{\#}$, the condition
 \[\big((s_x)_{x\in U_i}\big)|_{U_i\cap U_j}=\big((s_x)_{x\in U_j}\big)|_{U_i\cap U_j}\]
 implies that $(s_x)_{x\in U_i}$ and $(s_x)_{x\in U_j}$ have common germs on their common domains. Thus we can construct a unique section $(s_x)_{x\in U}$ by just gathering their germs. It is clear that such a section $(s_x)_{x\in U}$ has compatible germs, hence belongs to $\mathscr{F}^{\#}$. This shows $\mathscr{F}^{\#}$ is a sheaf. For $U\sub X$ open, we define $\iota_{\mathscr{F},U}:\mathscr{F}(U)\to\mathscr{F}^{\#}(U)$ by $s\mapsto(s_x)_{x\in U}$. The definition of $\mathscr{F}^{\#}$ shows that, for $x\in X$, $\mathscr{F}^{\#}_x=\mathscr{F}_x$ and that $\iota_{\mathscr{F},x}$ is the identity.\par
-Now let $\mathscr{G}$ be a presheaf on $X$ and let $\varphi:\mathscr{F}\to\mathscr{G}$ be a morphism. Sending $(s_x)_{x\in U}$ to $\big(\varphi_x(s_x)\big)_{x\in U}$ defines a morphism $\mathscr{F}^{\#}\to\mathscr{G}^{\#}$. By Proposition~\ref{sheaf morphism prop iff stalk prop}(c) this is the unique morphism making the diagram $(\ref{sheafification-1})$ commutative.\par
-If we assume in addition that $\mathscr{G}$ is a sheaf, then the morphism of sheaves $\iota_{\mathscr{G}}$, which is bijective on stalks, is an isomorphism by Proposition~\ref{sheaf morphism prop iff stalk prop}(b). Composing the morphism $\mathscr{F}^{\#}\to\mathscr{G}^{\#}$ with $\iota_{\mathscr{G}}^{-1}$, we obtain the morphism $\tilde{\varphi}:\mathscr{F}^{\#}\to\mathscr{G}$. Finally, the uniqueness of $\iota_{\mathscr{F}}:\mathscr{F}\to\mathscr{F}^{\#}$ is a formal consequence of universal property.
+Now let $\mathscr{G}$ be a presheaf on $X$ and let $\varphi:\mathscr{F}\to\mathscr{G}$ be a morphism. Sending $(s_x)_{x\in U}$ to $\big(\varphi_x(s_x)\big)_{x\in U}$ defines a morphism $\mathscr{F}^{\#}\to\mathscr{G}^{\#}$. By \cref{sheaf morphism prop iff stalk prop}(c) this is the unique morphism making the diagram $(\ref{sheafification-1})$ commutative.\par
+If we assume in addition that $\mathscr{G}$ is a sheaf, then the morphism of sheaves $\iota_{\mathscr{G}}$, which is bijective on stalks, is an isomorphism by \cref{sheaf morphism prop iff stalk prop}(b). Composing the morphism $\mathscr{F}^{\#}\to\mathscr{G}^{\#}$ with $\iota_{\mathscr{G}}^{-1}$, we obtain the morphism $\tilde{\varphi}:\mathscr{F}^{\#}\to\mathscr{G}$. Finally, the uniqueness of $\iota_{\mathscr{F}}:\mathscr{F}\to\mathscr{F}^{\#}$ is a formal consequence of universal property.
 \end{proof}
 \begin{proposition}\label{sheaf sheafification on morphism prop}
 The sheafification of an injection (resp. surjection) of presheaves of sets is an injection (resp. surjection).
@@ -224,7 +224,7 @@ The sheafification of an injection (resp. surjection) of presheaves of sets is a
 \begin{proof}
 This follows from the fact that sheafification does not change the stalk.
 \end{proof}
-From Proposition~\ref{sheaf morphism prop iff stalk prop}, we get the following characterization of the sheafification.
+From \cref{sheaf morphism prop iff stalk prop}, we get the following characterization of the sheafification.
 \begin{proposition}\label{sheaf iso to sheafification iff stalk iso}
 Let $\mathscr{F}$ be a presheaf and $\mathscr{G}$ be a sheaf. Then $\mathscr{G}$ is isomorphic to the sheafification of $\mathscr{F}$ if and only and if there exists a morphism $\iota:\mathscr{F}\to\mathscr{G}$ such that $\iota_x$ is bijective for all $x\in X$.
 \end{proposition}
@@ -234,17 +234,17 @@ One direction is trivial, assume the converse. Then there is a $\tilde{\iota}:\m
 \mathscr{F}^{\#}\ar[r,"\tilde{\iota}"]&\mathscr{G}\\
 \mathscr{F}\ar[ru,swap,"\iota"]\ar[u]
 \end{tikzcd}\]
-By Proposition~\ref{sheaf morphism prop iff stalk prop} $\tilde{\iota}$ induced isomorphisms on stalks, hence is an isomorphism $\mathscr{F}^{\#}\cong\mathscr{G}$.
+By \cref{sheaf morphism prop iff stalk prop} $\tilde{\iota}$ induced isomorphisms on stalks, hence is an isomorphism $\mathscr{F}^{\#}\cong\mathscr{G}$.
 \end{proof}
 \begin{example}\label{sheafification presheaf of function}
 Let $E$ be a set and let $\mathscr{F}$ be a presheaf of functions with values in $E$. Then its sheafification is given by
 \[\mathscr{F}^{\#}(U)=\{f:U\to E\mid\exists\text{ open covering $(U_i)_i$ of $U$ such that $f|_{U_i}\in\mathscr{F}(U_i)$ for all $i$}\}.\]
-Indeed, this is a sheaf by Example~\ref{sheaf of E-valued function eg} and the inclusions $\mathscr{F}(U)\hookrightarrow\mathscr{F}^{\#}(U)$ for $U$ open define a morphism of presheaves $\mathscr{F}\to\mathscr{F}^{\#}$ that is bijective on stalks. Hence we can apply Proposition~\ref{sheaf iso to sheafification iff stalk iso}.
+Indeed, this is a sheaf by \cref{sheaf of E-valued function eg} and the inclusions $\mathscr{F}(U)\hookrightarrow\mathscr{F}^{\#}(U)$ for $U$ open define a morphism of presheaves $\mathscr{F}\to\mathscr{F}^{\#}$ that is bijective on stalks. Hence we can apply \cref{sheaf iso to sheafification iff stalk iso}.
 \end{example}
 \begin{example}
 From the previous example, let's consider the constant presheaves. Let $E_{X}$ be the sheaf of locally constant functions with values in $E$:
 \[E_X=\{f:U\to E\mid \forall x\in U,\exists V\ni x\text{ open s.t. $f$ is constant on $V$}\}\]
-then by Proposition~\ref{sheaf iso to sheafification iff stalk iso}, $E_X$ is the sheafification of the presheaf of constant functions with values in $E$.
+then by \cref{sheaf iso to sheafification iff stalk iso}, $E_X$ is the sheafification of the presheaf of constant functions with values in $E$.
 \end{example}
 \begin{example}[\textbf{Open subset as a sheaf}]\label{sheaf by open subset}
 Let $U\sub X$ be an open subset, then we can define a presheaf $\mathscr{U}$
@@ -329,9 +329,9 @@ we obtain
 Thus $(\psi^\flat)^\sharp=\psi$. A similar argument gives $(\varphi^\sharp)^\flat=\varphi$, hence we are done.
 \end{proof}
 \begin{remark}
-We will almost never use the concrete description of $f^{p}\mathscr{G}$ in the sequel. Very often we are given $f$, $\mathscr{F}$, and $\mathscr{G}$ as in the Proposition~\ref{presheaf inverse image exist}, and a morphism of sheaves $\varphi:\mathscr{G}\to f_*\mathscr{F}$. Then usually it will be sufficient to understand for each $x\in X$ the map
+We will almost never use the concrete description of $f^{p}\mathscr{G}$ in the sequel. Very often we are given $f$, $\mathscr{F}$, and $\mathscr{G}$ as in the \cref{presheaf inverse image exist}, and a morphism of sheaves $\varphi:\mathscr{G}\to f_*\mathscr{F}$. Then usually it will be sufficient to understand for each $x\in X$ the map
 \[\varphi^{\sharp}_x:(f^{p}\mathscr{G})_x=\mathscr{G}_{f(x)}\to\mathscr{F}_x\]
-induced by $\varphi^{\sharp}:f^{p}\mathscr{G}\to\mathscr{F}$ on stalks. The proof of Proposition~\ref{presheaf inverse image exist} shows that we can describe this map in terms of as follows. For every open neighborhood $V\sub Y$ of $f(x)$, we have maps
+induced by $\varphi^{\sharp}:f^{p}\mathscr{G}\to\mathscr{F}$ on stalks. The proof of \cref{presheaf inverse image exist} shows that we can describe this map in terms of as follows. For every open neighborhood $V\sub Y$ of $f(x)$, we have maps
 \[\begin{tikzcd}
 \mathscr{G}(V)\ar[r,"\varphi_V"]&\mathscr{F}(f^{-1}(V))\ar[r]&\mathscr{F}_x
 \end{tikzcd}\]
@@ -345,7 +345,7 @@ This is obtained as follows
 \begin{align*}
 (f^{p}\mathscr{G})_x&=\rlim_{U\ni x}f^{p}\mathscr{G}(U)=\rlim_{U\ni x}\rlim_{V\sups f(U)}\mathscr{G}(V)=\rlim_{V\ni f(x)}\mathscr{G}(V)=\mathscr{G}_{f(x)}.
 \end{align*}
-Here we have used the fact that any $V$ open in $Y$ containing $f(x)$ occurs in the description above. The case for sheaves is obtained from Proposition~\ref{sheaf sheafification construction}.
+Here we have used the fact that any $V$ open in $Y$ containing $f(x)$ occurs in the description above. The case for sheaves is obtained from \cref{sheaf sheafification construction}.
 \end{proof}
 Let $\mathscr{G}$ be a sheaf of sets on $Y$. The \textbf{pullback sheaf} $f^{-1}\mathscr{G}$ is defined by the formula
 \[f^{-1}\mathscr{G}=(f^{p}\mathscr{G})^{\#}.\]
@@ -515,9 +515,9 @@ For a closed immersion $i:Z\hookrightarrow X$, the functor $i^!$ is right adjoin
 \[\Mor_{\mathbf{Shv}(X)}(i_*\mathscr{G},\mathscr{F})=\Mor_{\mathbf{Shv}(Z)}(\mathscr{G},i^!\mathscr{F})\]
 \end{proposition}
 \begin{proof}
-Note that $i_*i^!\mathscr{F}=\mathscr{H}_Z(\mathscr{F})$ by Theorem~\ref{sheaf closed extension functor prop}. Since $i_*$ is fully faithful we are reduced to showing that
+Note that $i_*i^!\mathscr{F}=\mathscr{H}_Z(\mathscr{F})$ by \cref{sheaf closed extension functor prop}. Since $i_*$ is fully faithful we are reduced to showing that
 \[\Mor_{\mathbf{Shv}(X)}(i_*\mathscr{G},\mathscr{F})=\Mor_{\mathbf{Shv}(Z)}(i_*\mathscr{G},\mathscr{H}_Z(\mathscr{F})).\]
-This follows since the support of the image via any homomorphism of a section of $i_*\mathscr{G}$ is contained in $Z$, by Theorem~\ref{sheaf closed extension functor prop}.
+This follows since the support of the image via any homomorphism of a section of $i_*\mathscr{G}$ is contained in $Z$, by \cref{sheaf closed extension functor prop}.
 \end{proof}
 \begin{proposition}
 Let $i:Z\hookrightarrow X$ be a closed embedding, set $U=Z^c$ and let $j:U\hookrightarrow X$ be the corresponding open embedding. Then for any sheaf $\mathscr{F}$ on $X$, the sequence
@@ -625,7 +625,7 @@ so condition (\rmnum{3}) shows that the canonical morphism $\mathscr{F}_{\mathca
 for $W\in\mathcal{B}$, $W\sub U$ satisfy the conditions characterizing the inverse limit of the $\mathscr{F}(W)$'s, so our claim follows from the uniqueness of the inverse limit.\par
 Now let $U$ be any open set of $X$, $(U_\alpha)$ a covering of $U$ by open sets contained in $U$, and let $\mathcal{B}'$ be the subfamily of $\mathcal{B}$ consisting of the sets of $\mathcal{B}$ contained in at least one $U_\alpha$. It is clear that $\mathcal{B}'$ is still a basis of the topology of $X$, so $\mathscr{F}_{\mathcal{B}}(U)$ (resp. $\mathscr{F}_{\mathcal{B}}(U_\alpha)$) is the inverse limit of the $\mathscr{F}(V)$ for $V\in\mathcal{B}'$ and $V\sub U$ (resp. $V\sub U_\alpha$); the sheaf axiom is then verified immediately by virtue of the definition of the inverse limit.
 \end{proof}
-We say $\mathscr{F}$ is a \textbf{sheaf on $\mathcal{B}$} if it satisfies the equivalent conditions in Proposition~\ref{sheaf on basis sheaf condition}.
+We say $\mathscr{F}$ is a \textbf{sheaf on $\mathcal{B}$} if it satisfies the equivalent conditions in \cref{sheaf on basis sheaf condition}.
 \begin{corollary}\label{sheaf basis cofinal coro}
 Let $X$ be a topological space. Let $\mathcal{B}$ be a basis for the topology on $X$. Assume that for every pair $U,U'\in\mathcal{B}$ we have $U\cap U'\in\mathcal{B}$. Let $\mathscr{F}$ be a presheaf of sets on $\mathcal{B}$. The following are equivalent:
 \begin{itemize}
@@ -634,7 +634,7 @@ Let $X$ be a topological space. Let $\mathcal{B}$ be a basis for the topology on
 \end{itemize}
 \end{corollary}
 \begin{proof}
-This is a reformulation of Proposition~\ref{sheaf on basis sheaf condition}, as we can take $V$ to be $U_\alpha\cap U_\beta$.
+This is a reformulation of \cref{sheaf on basis sheaf condition}, as we can take $V$ to be $U_\alpha\cap U_\beta$.
 \end{proof}
 Note that for any $x\in X$ we have $\mathscr{F}_x=(\mathscr{F}_{\mathcal{B}})_x$ in the situation of the proposition. This is so because the collection of elements of $\mathcal{B}$ containing $x$ forms a fundamental system of open neighbourhoods of $x$.\par
 Let $\mathscr{F}$, $\mathscr{G}$ be two presheaves over $\mathcal{B}$. A morphism $\varphi:\mathscr{F}\to\mathscr{G}$ is defined to be a family $(\varphi_V)_{V\in\mathcal{B}}$ of morphisms $\varphi_V:\mathscr{F}(V)\to\mathscr{F}(V)$ satisfying the compatible conditions with restriction maps. By passing to inverse limits, we get a morphism $\varphi_{\mathcal{B}}:\mathscr{F}_{\mathcal{B}}\to\mathscr{G}_{\mathcal{B}}$ of presheaves (it is easy to verify the compatible conditions with restriction maps).
@@ -740,8 +740,8 @@ Suppose $\varphi:\mathscr{F}\to\mathscr{G}$ is a morphism of sheaves of sets on 
 If these conditions hold, we say that $\mathscr{F}$ is a \textbf{subsheaf} of $\mathscr{G}$.
 \end{proposition}
 \begin{proof}
-The last two statements are equivalent by Proposition~\ref{sheaf morphism prop iff stalk prop}, and the implication (c)$\Rightarrow$(a) is immediate, since a monomorphism in $\mathbf{Psh}(X)$ is clearly monic in $\mathbf{Shv}(X)$.\par 
-Now assume that $\varphi$ is a monomorphism, and let $s,t\in\mathscr{F}(U)$ be such that $\varphi_U(s)=\varphi_U(t)$. Then by Example~\ref{sheaf by open subset} there are morphisms $\psi_s,\psi_t:\mathscr{U}^{\#}\to\mathscr{F}$. From $\varphi_U(s)=\varphi_U(t)$ we see $\varphi\circ\psi_s=\varphi\circ\psi_t$, which implies $\psi_s=\psi_t$. By the isomorphism in Example~\ref{sheaf by open subset}, we conclude $s=t$, so $\varphi_U$ is injective.
+The last two statements are equivalent by \cref{sheaf morphism prop iff stalk prop}, and the implication (c)$\Rightarrow$(a) is immediate, since a monomorphism in $\mathbf{Psh}(X)$ is clearly monic in $\mathbf{Shv}(X)$.\par 
+Now assume that $\varphi$ is a monomorphism, and let $s,t\in\mathscr{F}(U)$ be such that $\varphi_U(s)=\varphi_U(t)$. Then by \cref{sheaf by open subset} there are morphisms $\psi_s,\psi_t:\mathscr{U}^{\#}\to\mathscr{F}$. From $\varphi_U(s)=\varphi_U(t)$ we see $\varphi\circ\psi_s=\varphi\circ\psi_t$, which implies $\psi_s=\psi_t$. By the isomorphism in \cref{sheaf by open subset}, we conclude $s=t$, so $\varphi_U$ is injective.
 \end{proof}
 \begin{proposition}\label{sheaf cat epimorphism iff}
 Suppose $\varphi:\mathscr{F}\to\mathscr{G}$ is a morphism of sheaves of sets on a topological space $X$. Then the following are equivalent.
@@ -753,17 +753,17 @@ Suppose $\varphi:\mathscr{F}\to\mathscr{G}$ is a morphism of sheaves of sets on 
 If these conditions hold, we say that $\mathscr{G}$ is a \textbf{quotient sheaf} of $\mathscr{F}$.
 \end{proposition}
 \begin{proof}
-If $\varphi_x:\mathscr{F}_x\to\mathscr{G}_x$ is surjective for all $x\in X$, then by Proposition~\ref{sheaf morphism prop iff stalk prop} and the diagram
+If $\varphi_x:\mathscr{F}_x\to\mathscr{G}_x$ is surjective for all $x\in X$, then by \cref{sheaf morphism prop iff stalk prop} and the diagram
 \[\begin{tikzcd}
 \mathscr{F}(U)\ar[r,"\varphi_U"]\ar[d,hook]&\mathscr{G}\ar[r,"\psi_U"]\ar[d,hook]&\mathscr{H}(U)\ar[d,hook]\\
 \prod_{x\in U}\mathscr{F}_x\ar[r,"\varphi_x"]&\prod_{x\in U}\mathscr{G}_x\ar[r,"\psi_x"]&\prod_{x\in U}\mathscr{H}_x
 \end{tikzcd}\]
 we see $\varphi$ is an epimorphism.\par
-Now assume that $\varphi$ is an epimorphism, and let $f,g:\mathscr{G}_x\to B$ be two maps such that $f\circ\varphi_x=g\circ\varphi_x$. Then by Proposition~\ref{stalk adj skyscraper} we have induced morphism of sheaves $\psi_f,\psi_g:\mathscr{G}\to i_{x,*}(B)$ such that $\psi_f\circ\varphi=\psi_g\circ\varphi$. Since $\varphi$ is an epic, this implies $f=g$, which means $\varphi_x$ is surjective.\par
+Now assume that $\varphi$ is an epimorphism, and let $f,g:\mathscr{G}_x\to B$ be two maps such that $f\circ\varphi_x=g\circ\varphi_x$. Then by \cref{stalk adj skyscraper} we have induced morphism of sheaves $\psi_f,\psi_g:\mathscr{G}\to i_{x,*}(B)$ such that $\psi_f\circ\varphi=\psi_g\circ\varphi$. Since $\varphi$ is an epic, this implies $f=g$, which means $\varphi_x$ is surjective.\par
 Finally, the condition (b) clearly implies (c), and if (c) holds, let $t_x\in\mathscr{G}_x$ with $t_x=(t,V)$ for some $V\sub X$ open and $t\in\mathscr{G}_x$. Then there is a covering $V=\bigcup_iV_i$ and $s_i\in\mathscr{F}(U_i)$ such that $\varphi_{V_i}(s_i)=t|_{V_i}$. Choose a $x\in V_i$, then $\varphi_x\big((s_i)_x\big)=t_x$. Thus $\varphi_x$ is surjective.
 \end{proof}
 \begin{remark}
-The condition for $\varphi$ in Proposition~\ref{sheaf cat epimorphism iff} does not imply that $\varphi_U$ is surjective for all open sets $U$ of $X$ as Example~\ref{sheaf cat epi not surjective on object} shows. In other words, being epic in the category of sheaves is a weaker that begin surjective on objects.
+The condition for $\varphi$ in \cref{sheaf cat epimorphism iff} does not imply that $\varphi_U$ is surjective for all open sets $U$ of $X$ as \cref{sheaf cat epi not surjective on object} shows. In other words, being epic in the category of sheaves is a weaker that begin surjective on objects.
 \end{remark}
 \begin{example}\label{sheaf cat epi not surjective on object}
 Let $\mathcal{O}_X$ be the sheaf of holomorphic functions on an open subset $X$ of $\C$. For every open subspace $U\sub X$ and $f\in\mathcal{O}_X(U)$ we let $D_U(f)=f'$ be the derivative. We obtain a morphism $D:\mathcal{O}_X\to\mathcal{O}_X$ of sheaves of $\C$-vector spaces. Then $D$ is an epimorphism, because locally every holomorphic function has a primitive. But there exist open subsets $U$ of $X$ and functions $f$ on $U$ that have no primitive., for instance $U=\B(z_0)\setminus\{z_0\}\sub\C$ contained in $X$ and $f=1/(z-z_0)$. More precisely, by complex analysis we know that $D_U$ is surjective if and only if every connected component of $U$ is simply connected. Thus $D$ is not surjective.
@@ -856,7 +856,7 @@ With $X$, $\mathscr{O}_1,\mathscr{O}_2$, $\mathscr{F}$ and $\mathscr{G}$ as abov
 In other words, the restriction and change of rings functors are adjoint to each other.
 \end{proposition}
 \begin{proof}
-This follows from Proposition~\ref{presheaf module restriction} and the fact that \[\Hom_{\mathscr{O}_2}(\mathscr{O}_2\otimes_{\mathscr{O}_1}\mathscr{G},\mathscr{F})=\Hom_{\mathscr{O}_2}(\mathscr{O}_2\otimes_{p,\mathscr{O}_1}\mathscr{G},\mathscr{F},\mathscr{F})\]
+This follows from \cref{presheaf module restriction} and the fact that \[\Hom_{\mathscr{O}_2}(\mathscr{O}_2\otimes_{\mathscr{O}_1}\mathscr{G},\mathscr{F})=\Hom_{\mathscr{O}_2}(\mathscr{O}_2\otimes_{p,\mathscr{O}_1}\mathscr{G},\mathscr{F},\mathscr{F})\]
 by the property of sheafification.
 \end{proof}
 \begin{proposition}\label{ext module stalk}
@@ -918,7 +918,7 @@ This follows from the equalities
 &=\Hom_{\mathbf{PMod}(f_*\mathscr{O})}\big(\mathscr{G},f_*(\mathscr{F}_{f^pf_*\mathscr{O}})\big)\\
 &=\Hom_{\mathbf{PMod}(f_*\mathscr{O})}\big(\mathscr{G},f_*\mathscr{F}).
 \end{align*}
-For the third equality, note that $\mathbf{1}_{f_*\mathscr{O}}$ corresponds to $\sigma_{\mathscr{O}}$ under the adjunction described in the proof of Proposition~\ref{pull back presheaf module adj} and thus we have the equality $\mathbf{1}_{f_*\mathscr{O}}=f_*\sigma_{\mathscr{O}}\circ\rho_{f_*\mathscr{O}}$. Now consider the module structures:
+For the third equality, note that $\mathbf{1}_{f_*\mathscr{O}}$ corresponds to $\sigma_{\mathscr{O}}$ under the adjunction described in the proof of \cref{pull back presheaf module adj} and thus we have the equality $\mathbf{1}_{f_*\mathscr{O}}=f_*\sigma_{\mathscr{O}}\circ\rho_{f_*\mathscr{O}}$. Now consider the module structures:
 \[\begin{tikzcd}[row sep=small]
 \mathscr{F}_{f^pf_*\mathscr{O}}:&f^pf_*\mathscr{O}\times\mathscr{F}\ar[r,"\sigma_{\mathscr{O}}\times\mathbf{1}"]&\mathscr{O}\times\mathscr{F}\ar[r]&\mathscr{F}\\
 f_*(\mathscr{F}_{f^pf_*\mathscr{O}}):&f_*\mathscr{O}\times f_*\mathscr{F}\ar[r,"\rho_{f_*\mathscr{O}}\times\mathbf{1}"]&f_*f^pf_*\mathscr{O}\times f_*\mathscr{F}\ar[r,"f_*\sigma_{\mathscr{O}}\times\mathbf{1}"]&f_*\mathscr{O}\times f_*\mathscr{F}\ar[r]&f_*\mathscr{F}
@@ -935,7 +935,7 @@ Let $f:X\to Y$ be a continuous map of topological spaces. Let $\mathscr{O}$ be a
 which turns $f^{-1}\mathscr{G}$ into a sheaf of $f^{-1}\mathscr{O}$-modules.
 \end{lemma}
 \begin{proof}
-Recall that $f^{-1}$ is defined as the composition of the functor $f^p$ and sheafification. Thus the lemma is a combination of Lemma~\ref{pull back presheaf module def} and Proposition~\ref{sheafification module}.
+Recall that $f^{-1}$ is defined as the composition of the functor $f^p$ and sheafification. Thus the lemma is a combination of \cref{pull back presheaf module def} and \cref{sheafification module}.
 \end{proof}
 Let $f:X\to Y$ be a continuous map. Let $\mathscr{O}_X$ be a sheaf of rings on $X$ and let $\mathscr{O}_Y$ be a sheaf of rings on $Y$. So now we have defined functors
 \[f_*:\mathbf{Mod}(\mathscr{O}_X)\to\mathbf{Mod}(f_*\mathscr{O}_X),\quad f^{-1}:\mathbf{Mod}(\mathscr{O}_Y)\to\mathbf{Mod}(f^{-1}\mathscr{O}_Y).\]
@@ -962,7 +962,7 @@ This follows from the equalities
 &=\Hom_{\mathbf{Mod}(f_*\mathscr{O})}\big(\mathscr{G},f_*(\mathscr{F}_{f^{-1}f_*\mathscr{O}})\big)\\
 &=\Hom_{\mathbf{Mod}(f_*\mathscr{O})}(\mathscr{G},f_*\mathscr{F}).
 \end{align*}
-where the last equality is obtained in Proposition~\ref{pushforward presheaf module adj}.
+where the last equality is obtained in \cref{pushforward presheaf module adj}.
 \end{proof}
 \subsection{Supports of modules and sections}
 \begin{definition}
@@ -985,7 +985,7 @@ Let $(X,\mathscr{O}_X)$ be a ringed space. Let $\mathscr{F}$ be a sheaf of $\mat
 \end{lemma}
 In general the support of a sheaf of modules is not closed. Namely, the sheaf could be an abelian sheaf on $\R$ (with the usual archimedean topology) which is the direct sum of infinitely many nonzero skyscraper sheaves each supported at a single point $p_i$ of $\R$. Then the support would be the set of points pi which may not be closed.\par
 Another example is to consider the open immersion $j:U=(0,\infty)\to\R=X$,
-and the abelian sheaf $j_!\Z_U$. By Proposition~\ref{sheaf open extension functor prop} the support of this sheaf is exactly $U$.
+and the abelian sheaf $j_!\Z_U$. By \cref{sheaf open extension functor prop} the support of this sheaf is exactly $U$.
 \begin{lemma}\label{sheaf ring supp closed}
 Let $X$ be a topological space. The support of a sheaf of rings is closed.
 \end{lemma}
@@ -1008,16 +1008,16 @@ Let $(X,\mathscr{O}_X)$ be a ringed space and $\mathscr{F}$ be a sheaf of $\math
 \begin{proof}
 Consider the subpresheaf of $\mathscr{F}$ defined by the rule
 \[U\mapsto\{\sum_{i\in J}f_i(s_i|_U):\text{$J\sub I$ is finite, $U\sub U_i$ for every $i\in J$ and $f_i\in\Gamma(U,\mathscr{O}_X)$}\}.\]
-Let $\mathscr{G}$ be the sheafification of this subpresheaf. This is a subsheaf of $\mathscr{F}$ by Proposition~\ref{sheaf sheafification on morphism prop}. Since all the finite sums clearly have to be in $\mathscr{F}$ this is the smallest subsheaf as desired.
+Let $\mathscr{G}$ be the sheafification of this subpresheaf. This is a subsheaf of $\mathscr{F}$ by \cref{sheaf sheafification on morphism prop}. Since all the finite sums clearly have to be in $\mathscr{F}$ this is the smallest subsheaf as desired.
 \end{proof}
 \begin{proposition}
 Let $(X,\mathscr{O}_X)$ be a ringed space and $\mathscr{F}$ be a sheaf of $\mathscr{O}_X$-modules. Let $(s_i)_{i\in I}$ be a family of local sections of $\mathscr{F}$ and $\mathscr{G}$ be the subsheaf generated by the $s_i$ and let $x\in X$. Then $\mathscr{G}_x$ is the $\mathscr{O}_{X,x}$-submodule of $\mathscr{F}_x$ generated by the elements $s_{i,x}$ for those $i$ such that $s_i$ is defined at $x$.
 \end{proposition}
 \begin{proof}
-This is clear from the construction of $\mathscr{G}$ in the proof of Proposition~\ref{sheaf of module local section generate subsheaf}.
+This is clear from the construction of $\mathscr{G}$ in the proof of \cref{sheaf of module local section generate subsheaf}.
 \end{proof}
 \begin{example}\label{sheaf of module not generated by global section eg}
-Consider the open immersion $j:U=(0,\infty)\to\R=X$, and the abelian sheaf $j_!(\Z_U)$. By Proposition~\ref{sheaf open extension functor prop} the stalk of $j_!(\Z_U)$ at $x=0$ is $0$. In fact the sections of this sheaf over any open interval containing $0$ are $0$. Thus there is no open neighbourhood of the point $0$ over which the sheaf can be generated by global sections.
+Consider the open immersion $j:U=(0,\infty)\to\R=X$, and the abelian sheaf $j_!(\Z_U)$. By \cref{sheaf open extension functor prop} the stalk of $j_!(\Z_U)$ at $x=0$ is $0$. In fact the sections of this sheaf over any open interval containing $0$ are $0$. Thus there is no open neighbourhood of the point $0$ over which the sheaf can be generated by global sections.
 \end{example}
 Let $(X,\mathscr{O}_X)$ be a ringed space. Let $\mathscr{F}$ be a sheaf of $\mathscr{O}_X$-modules. We say that $\mathscr{F}$ is \textbf{locally generated by sections} if for every $x\in X$ there exists an open neighbourhood $U$ such that $\mathscr{F}|_U$ is globally generated as a sheaf of $\mathscr{O}_U$-modules. In other words there exists a set $I$ and for each $i$ a section $s_i\in\mathscr{F}(U)$ such that the associated map
 \[\bigoplus_{i\in I}\mathscr{O}_U\to\mathscr{F}|_U\]
@@ -1032,14 +1032,14 @@ of ringed spaces
 (f^{-1}(V),\mathscr{O}_{f^{-1}(V)})\ar[r,"i"]\ar[d,"\tilde{f}"]&(X,\mathscr{O}_X)\ar[d,"f"]\\
 (V,\mathscr{O}_V)\ar[r,"j"]&(Y,\mathscr{O}_Y)
 \end{tikzcd}\]
-We know that $(f^*\mathscr{G})|_{f^{-1}(V)}\cong(\tilde{f})^*(\mathscr{G}|_V)$ by Proposition~\ref{pull push composition}. Thus we may assume that $\mathscr{G}$ is globally generated. We have seen that $f^*$ commutes with all colimits, and is right exact. Thus if we have a surjection $\mathscr{O}_Y^{\oplus I}\to\mathscr{G}\to 0$, then upon applying $f^*$ we obtain the surjection $\mathscr{O}_X^{\oplus I}\to f^*\mathscr{G}\to 0$, where we use the observation that
+We know that $(f^*\mathscr{G})|_{f^{-1}(V)}\cong(\tilde{f})^*(\mathscr{G}|_V)$, so we may assume that $\mathscr{G}$ is globally generated. We have seen that $f^*$ commutes with all colimits, and is right exact. Thus if we have a surjection $\mathscr{O}_Y^{\oplus I}\to\mathscr{G}\to 0$, then upon applying $f^*$ we obtain the surjection $\mathscr{O}_X^{\oplus I}\to f^*\mathscr{G}\to 0$, where we use the observation that
 \[f^*\mathscr{O}_Y=\mathscr{O}_X\otimes_{f^{-1}\mathscr{O}_Y}f^{-1}\mathscr{O}_Y=\mathscr{O}_X.\]
 This implies the assertion.
 \end{proof}
 \subsection{Tensor product}
 Let $(X,\mathscr{O}_X)$ be a ringed space. Let $\mathscr{F},\mathscr{G}$ be $\mathscr{O}_X$-modules. We define first the tensor product presheaf
 \[\mathscr{F}\otimes_{p,\mathscr{O}_X}\mathscr{G}\]
-as the rule which assigns to $U\sub X$ open the $\mathscr{O}_X(U)$-module $\mathscr{F}(U)_{\mathscr{O}_X(U)}\mathscr{G}(U)$. Having defined this we dene the tensor product sheaf as the sheafification of the above:
+as the rule which assigns to $U\sub X$ open the $\mathscr{O}_X(U)$-module $\mathscr{F}(U)_{\mathscr{O}_X(U)}\mathscr{G}(U)$. Having defined this we define the tensor product sheaf as the sheafification of the above:
 \[\mathscr{F}\otimes_{\mathscr{O}_X}\mathscr{G}=(\mathscr{F}\otimes_{p,\mathscr{O}_X}\mathscr{G})^{\#}\]
 This can be characterized as the sheaf of $\mathscr{O}_X$-modules such that for any third sheaf of $\mathscr{O}_X$-modules $\mathscr{H}$ we have
 \[\Hom_{\mathscr{O}_X}(\mathscr{F}\otimes_{\mathscr{O}_X}\mathscr{G},\mathscr{H})=\mathrm{Bilin}_{\mathscr{O}_X}(\mathscr{F}\times\mathscr{G},\mathscr{H}).\]
@@ -1060,9 +1060,9 @@ Let $(X,\mathscr{O}_X)$ be a ringed space. Let $\mathscr{F}',\mathscr{G}'$ be pr
 \begin{proof}
 On stalks we have 
 \[(\mathscr{F}\otimes_{\mathscr{O}_X}\mathscr{G})_x=\mathscr{F}_x\otimes_{\mathscr{O}_{X,x}}\mathscr{G}_x=\mathscr{F}'_x\otimes_{\mathscr{O}_{X,x}}\mathscr{G}'_x=\mathscr{F}'_x\otimes_{p,\mathscr{O}_{X,x}}\mathscr{G}'_x\]
-Thus by Proposition~\ref{sheaf iso to sheafification iff stalk iso} we conclude the result.
+Thus by \cref{sheaf iso to sheafification iff stalk iso} we conclude the result.
 \end{proof}
-\begin{proposition}~\label{sheaf module tensor exact}
+\begin{proposition}\label{sheaf module tensor exact}
 Let $(X,\mathscr{O}_X)$ be a ringed space. Let $\mathscr{G}$ be an $\mathscr{O}_X$-module. If $\mathscr{F}_1\to\mathscr{F}_2\to\mathscr{F}_3\to 0$ is an exact sequence of $\mathscr{O}_X$-modules then the induced sequence
 \[\mathscr{F}_1\otimes_{\mathscr{O}_X}\mathscr{G}\to\mathscr{F}_2\otimes_{\mathscr{O}_X}\mathscr{G}\to\mathscr{F}_3\to 0\]
 is exact.
@@ -1100,7 +1100,7 @@ We first prove that the tensor product of locally free $\mathscr{O}_X$-modules i
 The sheaf $\bigoplus_{i\in I}\mathscr{O}_X$ is the sheaf associated to the presheaf $U\mapsto\bigoplus_{i\in I}\mathscr{O}_X(U)$. Hence the tensor product is the sheaf associated to the presheaf
 \[U\mapsto\Big(\bigoplus_{i\in I}\mathscr{O}_X(U)\Big)\otimes_{\mathscr{O}_X(U)}\Big(\bigoplus_{j\in J}\mathscr{O}_X(U)\Big).\]
 We deduce what we want since for any ring $R$ we have $(\bigoplus_{i\in I}R)\otimes_{R}(\bigoplus_{j\in J}R)\cong\bigoplus_{(i,j)\in I\times J}R$.\par
-If $\mathscr{F}_2\to\mathscr{F}_1\to\mathscr{F}\to0$ is exact, then by Proposition~\ref{sheaf module tensor exact} the complex $\mathscr{F}_2\otimes\mathscr{G}\to\mathscr{F}_1\otimes\mathscr{G}\to\mathscr{F}\otimes\mathscr{G}\to 0$ is exact. Using this we can prove (\rmnum{5}). Namely, in this case there exists locally such an exact sequence with $\mathscr{F}_i,i=1,2$ finite free. Hence the two terms $\mathscr{F}_i\otimes\mathscr{G}$ are isomorphic to finite direct sums of $\mathscr{G}$. Since finite direct sums are coherent sheaves, these are coherent and so is the cokernel of the map.\par
+If $\mathscr{F}_2\to\mathscr{F}_1\to\mathscr{F}\to0$ is exact, then by \cref{sheaf module tensor exact} the complex $\mathscr{F}_2\otimes\mathscr{G}\to\mathscr{F}_1\otimes\mathscr{G}\to\mathscr{F}\otimes\mathscr{G}\to 0$ is exact. Using this we can prove (\rmnum{5}). Namely, in this case there exists locally such an exact sequence with $\mathscr{F}_i,i=1,2$ finite free. Hence the two terms $\mathscr{F}_i\otimes\mathscr{G}$ are isomorphic to finite direct sums of $\mathscr{G}$. Since finite direct sums are coherent sheaves, these are coherent and so is the cokernel of the map.\par
 If we also have another exact sequence $\mathscr{G}_2\to\mathscr{G}_1\to\mathscr{G}\to0$, then tensoring together we get an exact sequence
 \[\begin{tikzcd}
 (\mathscr{F}_2\otimes\mathscr{G}_1)\oplus(\mathscr{F}_1\otimes\mathscr{G}_2)\ar[r]&\mathscr{F}_1\otimes\mathscr{G}_1\ar[r]&\mathscr{F}\otimes\mathscr{G}\ar[r]&0
@@ -1118,7 +1118,7 @@ where the equality sign follows from the property of tensor product of modules. 
 \subsection{Internal Hom}
 Let $(X,\mathscr{O}_X)$ be a ringed space. Let $\mathscr{F},\mathscr{G}$ be $\mathscr{O}_X$-modules. Consider the rule
 \[U\mapsto\Hom_{\mathscr{O}_X|_U}(\mathscr{F}|_U,\mathscr{G}|_U)\]
-It follows from Proposition~\ref{sheaf glue morphism of sheaf} that this is a sheaf of abelian groups. In addition, given an element $\varphi\in\Hom_{\mathscr{O}_X|_U}(\mathscr{F}|_U,\mathscr{G}|_U)$ and a section $f\in\mathscr{O}_X(U)$ then we can define $f\varphi\in\Hom_{\mathscr{O}_X|_U}(\mathscr{F}|_U,\mathscr{G}|_U)$ by either precomposing with multiplication by $f$ on $\mathscr{F}|_U$ or postcomposing with multiplication by $f$ on $\mathscr{G}|_U$ (it gives the same result). Hence we in fact get a sheaf of $\mathscr{O}_X$-modules. We will denote this sheaf $\mathcal{H}om_{\mathscr{O}_X}(\mathscr{F},\mathscr{G})$. For every $x\in X$ there is also a canonical morphism
+It follows from \cref{sheaf glue morphism of sheaf} that this is a sheaf of abelian groups. In addition, given an element $\varphi\in\Hom_{\mathscr{O}_X|_U}(\mathscr{F}|_U,\mathscr{G}|_U)$ and a section $f\in\mathscr{O}_X(U)$ then we can define $f\varphi\in\Hom_{\mathscr{O}_X|_U}(\mathscr{F}|_U,\mathscr{G}|_U)$ by either precomposing with multiplication by $f$ on $\mathscr{F}|_U$ or postcomposing with multiplication by $f$ on $\mathscr{G}|_U$ (it gives the same result). Hence we in fact get a sheaf of $\mathscr{O}_X$-modules. We will denote this sheaf $\mathcal{H}om_{\mathscr{O}_X}(\mathscr{F},\mathscr{G})$. For every $x\in X$ there is also a canonical morphism
 \[\mathcal{H}\!om_{\mathscr{O}_X}(\mathscr{F},\mathscr{G})_x\to \Hom_{\mathscr{O}_{X,x}}(\mathscr{F}_x,\mathscr{G}_x)\]
 which is rarely an isomorphism.
 \begin{proposition}
@@ -1181,13 +1181,13 @@ is an isomorphism.
 \end{proposition}
 \begin{proof}
 Note that $f^*\mathscr{F}$ is also finitely presented. Let $x\in X$ map
-to $y\in Y$. Looking at the stalks at $x$ we get an isomorphism by Proposition~\ref{stalk hom f.pre} and that in this case $\Hom$ commutes with base change by $\mathscr{O}_{Y,y}\to\mathscr{O}_{X,x}$.
+to $y\in Y$. Looking at the stalks at $x$ we get an isomorphism by \cref{stalk hom f.pre} and that in this case $\Hom$ commutes with base change by $\mathscr{O}_{Y,y}\to\mathscr{O}_{X,x}$.
 \end{proof}
 \begin{proposition}
 Let $(X,\mathscr{O}_X)$ be a ringed space. Let $\mathscr{F},\mathscr{G}$ be $\mathscr{O}_{X}$-modules. If $\mathscr{F}$ is finitely presented then the sheaf $\mathcal{H}om_{\mathscr{O}_X}(\mathscr{F},\mathscr{G})$ is locally a kernel of a map between finite direct sums of copies of $\mathscr{G}$. In particular, if $\mathscr{G}$ is coherent then $\mathcal{H}om_{\mathscr{O}_X}(\mathscr{F},\mathscr{G})$ is coherent too.
 \end{proposition}
 \begin{proof}
-The first assertion we saw in the proof of Proposition~\ref{stalk hom f.pre}. And the result for coherent sheaves then follows from Proposition~\ref{sheaf of module coh prop}.
+The first assertion we saw in the proof of \cref{stalk hom f.pre}. And the result for coherent sheaves then follows from \cref{sheaf of module coh prop}.
 \end{proof}
 \begin{proposition}
 Let $X$ be a topological space. Let $\mathscr{O}_1\to\mathscr{O}_2$ be a homomorphism of sheaves of rings. Then we have
@@ -1242,7 +1242,7 @@ For the cokernel, given any sheaf $\mathscr{E}$ and a diagram
 \end{tikzcd}\]
 we construct the map $\tilde{\psi}$ by using the universal property of $\mathrm{coker}_p\varphi$ and that of sheafification.
 \end{proof}
-In view of Proposition~\ref{presheaf ker and coker universal property}, for a morphism $\varphi:\mathscr{F}\to\mathscr{G}$, we define the kernel and cokernel of $\varphi$ by
+In view of \cref{presheaf ker and coker universal property}, for a morphism $\varphi:\mathscr{F}\to\mathscr{G}$, we define the kernel and cokernel of $\varphi$ by
 \[\ker\varphi=\mathrm{ker}_p\varphi,\quad \coker\varphi=(\mathrm{coker}_p\varphi)^{\#}.\]
 Since taking stalks commutes with taking sheafification, the following result is immediate.
 \begin{proposition}\label{sheaf ker coker and stalk prop}
@@ -1267,7 +1267,7 @@ Now that we kernel and cokernels, we can prove that $\mathbf{Mod}(\mathscr{O}_X)
 Let $(X,\mathscr{O}_X)$ be a ringed space. The category $\mathbf{Mod}(\mathscr{O}_X)$ is an abelian category. Moreover, a complex $\mathscr{F}\to\mathscr{G}\to\mathscr{H}$ is exact at $\mathscr{G}$ if and only if for all $x\in X$ the complex $\mathscr{F}_x\to\mathscr{G}_x\to\mathscr{H}_x$ is exact at $\mathscr{G}_x$.
 \end{theorem}
 \begin{proof}
-We have to show that image and coimage agree. By Proposition~\ref{sheaf morphism prop iff stalk prop} it is enough to show that image and coimage have the same stalk at every $x\in X$. By the constructions of kernels and cokernels above these stalks are the coimage and image in the categories of $\mathscr{O}_{X,x}$-modules. Thus we get the result from the fact that the category of modules over a ring is abelian.
+We have to show that image and coimage agree. By \cref{sheaf morphism prop iff stalk prop} it is enough to show that image and coimage have the same stalk at every $x\in X$. By the constructions of kernels and cokernels above these stalks are the coimage and image in the categories of $\mathscr{O}_{X,x}$-modules. Thus we get the result from the fact that the category of modules over a ring is abelian.
 \end{proof}
 Actually the category $\mathbf{Mod}(\mathscr{O}_X)$ has many more properties. Here are two constructions we can do.
 \begin{itemize}
@@ -1310,7 +1310,7 @@ Recall that $(f^*,f_*)$ is an adjoint pair of functors. The last part holds beca
 Let $j:U\to X$ be an open immersion of topological spaces. The functor $j_!:\mathbf{Ab}(U)\to\mathbf{Ab}(X)$ is exact.
 \end{proposition}
 \begin{proof}
-This follows from the description of stalks given in Proposition~\ref{sheaf open extension functor prop}.
+This follows from the description of stalks given in \cref{sheaf open extension functor prop}.
 \end{proof}
 \begin{proposition}\label{sheaf module quasi-compact sum}
 Let $(X,\mathscr{O}_X)$ be a ringed space. Let $I$ be a set. For $i\in I$, let $\mathscr{F}_i$ be a sheaf of $\mathscr{O}_X$-modules. For $U\sub X$ quasi-compact open the map 
@@ -1563,7 +1563,7 @@ The isomorphism between $\mathscr{F}_1$ and $\mathscr{F}_3$ comes from the fact 
 is exact, that $\pi^*$ commutes with arbitrary direct sums, and the fact that $\pi^*(A)=\mathscr{O}_X$.\par
 Now assertion (a) is clear from construction (\rmnum{2}), so is (b) since $\pi^*$ has these properties. Assertion (c) follows from the description of stalks of pullback sheaves, and (d) follows from adjointness of $\pi^*$ and $\pi_*$.
 \end{proof}
-In the situation of Proposition~\ref{qcoh module associated with a module} we say $\mathscr{F}_M$ is the \textbf{sheaf associated to the module $\bm{M}$ and the ring map $\bm{\rho}$}. If $A=\Gamma(X,\mathscr{O}_X)$ and $\rho=1_A$, we simply say that $\mathscr{F}_M$ is the sheaf associated to the $A$-module $M$.
+In the situation of \cref{qcoh module associated with a module} we say $\mathscr{F}_M$ is the \textbf{sheaf associated to the module $\bm{M}$ and the ring map $\bm{\rho}$}. If $A=\Gamma(X,\mathscr{O}_X)$ and $\rho=1_A$, we simply say that $\mathscr{F}_M$ is the sheaf associated to the $A$-module $M$.
 \begin{proposition}\label{qcoh module associated with a module and pull back}
 Let $(X,\mathscr{O}_X)$ be a ringed space and $A=\Gamma(X,\mathscr{O}_X)$. Let $M$ be an $A$-module and $\mathscr{F}_M$ be the quasi-coherent sheaf of $\mathscr{O}_X$-modules associated to $M$. If $(f,f^{\#}):(Y,\mathscr{O}_Y)\to(X,\mathscr{O}_X)$ is a morphism of ringed spaces, then $f^*(\mathscr{F}_M)$ is the sheaf associated to the $\Gamma(Y,\mathscr{O}_Y)$-module $\Gamma(Y,\mathscr{O}_Y)\otimes_AM$.
 \end{proposition}
@@ -1575,7 +1575,7 @@ In view of the following diagram of ringed spaces
 (X,\mathscr{O}_X)\ar[r,"\pi"]&(\{\ast\},\Gamma(X,\mathscr{O}_X))
 \end{tikzcd}
 \end{equation*}
-the assertion follows from the first description of $\mathscr{F}_M$ in Proposition~\ref{qcoh module associated with a module} as $\pi^*(M)$.
+the assertion follows from the first description of $\mathscr{F}_M$ in \cref{qcoh module associated with a module} as $\pi^*(M)$.
 \end{proof}
 To conclude this part, we prove an important result which will be used when we consider quasi-coherent sheaf on affine schemes. We state it in a general manner.
 \begin{proposition}\label{quasi-coherent sheaf locally module on qc nbhd}
@@ -1583,9 +1583,9 @@ Let $(X,\mathscr{O}_X)$ be a ringed space and $x$ be a point of $X$. suppose tha
 \end{proposition}
 \begin{proof}
 Since $\mathscr{F}$ is quasi-coherent, we may replace $X$ by an open neighbourhood of $x$ and assume that $\mathscr{F}$ is isomorphic to the cokernel of a map $\mathscr{O}_X^{\oplus J}\to\mathscr{O}_X^{\oplus I}$. The problem is that this map may not be given by a matrix, because the global sections of a direct sum is in general different from the direct sum of the global sections.\par
-Let $U$ be a quasi-compact neighbourhood of $x$. We proceed as in the proof of Proposition~\ref{sheaf module quasi-compact sum}. For each $j\in J$ denote $s_j\in\Gamma(X,\bigoplus_{i\in I}\mathscr{O}_X)$ the image of the section $1$ in the summand $\mathscr{O}_X$ corresponding to $j$. There exists a finite collection of opens $U_{jk},k\in K_j$ such that $U=\bigcup_{k\in K_j}U_{jk}$ and such that each restriction $s_j|_{U_{jk}}$ is a finite sum $\sum_{i\in I_{jk}}f_{jki}$ with $I_{jk}\sub I$. Let $I_j=\bigcup_{k\in K_j}I_{jk}$. This is a finite set since there are finitely many $U_{jk}$ and each $I_{jk}$ is finite. Since $U=\bigcup_{k\in K_j}U_{jk}$ the section $s_j|_U$ is a section of the finite direct sum $\bigoplus_{i\in I_j}\mathscr{O}_X$. Then by Proposition~\ref{sheaf module limit} we see that actually $s_j|_U$ is a sum $\sum_{i\in I_j}f_{ij}$ with $f_{ij}\in\mathscr{O}_X(U)=\Gamma(U,\mathscr{O}_U)$. At this point we can define a module $M$ as the cokernel of the map
+Let $U$ be a quasi-compact neighbourhood of $x$. We proceed as in the proof of \cref{sheaf module quasi-compact sum}. For each $j\in J$ denote $s_j\in\Gamma(X,\bigoplus_{i\in I}\mathscr{O}_X)$ the image of the section $1$ in the summand $\mathscr{O}_X$ corresponding to $j$. There exists a finite collection of opens $U_{jk},k\in K_j$ such that $U=\bigcup_{k\in K_j}U_{jk}$ and such that each restriction $s_j|_{U_{jk}}$ is a finite sum $\sum_{i\in I_{jk}}f_{jki}$ with $I_{jk}\sub I$. Let $I_j=\bigcup_{k\in K_j}I_{jk}$. This is a finite set since there are finitely many $U_{jk}$ and each $I_{jk}$ is finite. Since $U=\bigcup_{k\in K_j}U_{jk}$ the section $s_j|_U$ is a section of the finite direct sum $\bigoplus_{i\in I_j}\mathscr{O}_X$. Then by \cref{sheaf module limit} we see that actually $s_j|_U$ is a sum $\sum_{i\in I_j}f_{ij}$ with $f_{ij}\in\mathscr{O}_X(U)=\Gamma(U,\mathscr{O}_U)$. At this point we can define a module $M$ as the cokernel of the map
 \[\bigoplus_{j\in J}\Gamma(U,\mathscr{O}_U)\to\bigoplus_{i\in I}\Gamma(U,\mathscr{O}_U).\]
-with matrix given by the $(f_{ij})$. By construction (\rmnum{2}) of Proposition~\ref{qcoh module associated with a module} we see that $\mathscr{F}_M$ has the same presentation as $\mathscr{F}|_U$ and therefore $\mathscr{F}_M\cong\mathscr{F}|_U$.
+with matrix given by the $(f_{ij})$. By construction (\rmnum{2}) of \cref{qcoh module associated with a module} we see that $\mathscr{F}_M$ has the same presentation as $\mathscr{F}|_U$ and therefore $\mathscr{F}_M\cong\mathscr{F}|_U$.
 \end{proof}
 \subsection{Sheaves of finite type}
 Let $(X,\mathscr{O}_X)$ be a ringed space and $\mathscr{F}$ be an $\mathscr{O}_X$-modules. We say that $\mathscr{F}$ is \textbf{of finite type} if for every point $x\in X$ there exists an open neighbourhood $U$ of $x$ such that $\mathscr{F}|_U$ is generated by a finite family of sections over $U$, whence isomorphic to a quotient sheaf of a sheaf of the form $\mathscr{O}_X^n|_U$. It is clear that any quotient of a sheaf of finite type is of finite type, and a finite direct sum of sheaves of finite type is of finite type. 
@@ -1619,14 +1619,14 @@ Let $(X,\mathscr{O}_X)$ be a locally ringed space and $\mathscr{F}$, $\mathscr{G
 \[\supp(\mathscr{F}\otimes_{\mathscr{O}_X}\mathscr{G})=\supp(\mathscr{F})\cap\supp(\mathscr{G}).\]
 \end{corollary}
 \begin{proof}
-As the tensor product of two $\kappa(x)$-vector spaces is nonzero if both of them are nonzero, this follows from Corollary~\ref{sheaf of module ft over lrs supp char by maximal ideal}.
+As the tensor product of two $\kappa(x)$-vector spaces is nonzero if both of them are nonzero, this follows from \cref{sheaf of module ft over lrs supp char by maximal ideal}.
 \end{proof}
 \begin{corollary}
 Let $f:X\to Y$ be a morphism of locally ringed spaces. For any $\mathscr{O}_Y$-module $\mathscr{G}$ of finite type, we have
 \[\supp(f^*(\mathscr{G}))=f^{-1}(\supp(\mathscr{G})).\]
 \end{corollary}
 \begin{proof}
-This follows from Corollary~\ref{sheaf of module ft over lrs supp char by maximal ideal} and Proposition~\ref{}.
+This follows from \cref{sheaf of module ft over lrs supp char by maximal ideal} and \cref{*}.
 \end{proof}
 \begin{proposition}\label{sheaf of module ft over qc surjective homomorphism prop}
 Suppose that $X$ is quasi-compact and let $\mathscr{F},\mathscr{G}$ be two $\mathscr{O}_X$-modules such that $\mathscr{G}$ is of finite type and $\mathscr{F}$ is the filtered limit $(\mathscr{F}_\lambda)$ of $\mathscr{O}_X$-modules. Let $\varphi:\mathscr{F}\to\mathscr{G}$ be a surjective homomorphism, then there exists an index $\lambda$ such that the homomorphism $\mathscr{F}_\lambda\to\mathscr{G}$ is surjective.
@@ -1677,7 +1677,7 @@ is bijective.
 Let $(X,\mathscr{O}_X)$ be a ringed space and $\mathscr{F},\mathscr{G}$ be finitely presented $\mathscr{O}_X$-module. If for a point $x\in X$, $\mathscr{F}_x$ and $\mathscr{G}_x$ are isomorphic $\mathscr{O}_{X,x}$-modules, then there exists an open neighbourhood $U$ of $x$ such that $\mathscr{F}|_U\cong\mathscr{G}|_U$.
 \end{proposition}
 \begin{proof}
-If $\varphi:\mathscr{F}_x\to\mathscr{G}_x$ and $\psi:\mathscr{G}_x\to\mathscr{F}_x$ are the isomorphisms, there exists, by Proposition~\ref{sheaf of module fp sheaf Hom bijective on stalk}, an open neighborhood $V$ of $x$ and a section $u$ (resp. $v$) of $\sHom_{\mathscr{O}_X}(\mathscr{F},\mathscr{G})$ (resp. $\sHom_{\mathscr{O}_X}(\mathscr{G}\circ\mathscr{F})$) over $V$ such that $u_x=\varphi$ (resp. $v_x=\psi$). As $(u\circ v)_x$ and $(v\circ u)_x$ are the identities, by Proposition~\ref{sheaf of module fp sheaf Hom bijective on stalk} again there exists an open neighborhood $U\sub V$ of $x$ such that $(u\circ v)|_U$ and $(v\circ u)|_U$ are idnetities, whence the proposition.
+If $\varphi:\mathscr{F}_x\to\mathscr{G}_x$ and $\psi:\mathscr{G}_x\to\mathscr{F}_x$ are the isomorphisms, there exists, by \cref{sheaf of module fp sheaf Hom bijective on stalk}, an open neighborhood $V$ of $x$ and a section $u$ (resp. $v$) of $\sHom_{\mathscr{O}_X}(\mathscr{F},\mathscr{G})$ (resp. $\sHom_{\mathscr{O}_X}(\mathscr{G}\circ\mathscr{F})$) over $V$ such that $u_x=\varphi$ (resp. $v_x=\psi$). As $(u\circ v)_x$ and $(v\circ u)_x$ are the identities, by \cref{sheaf of module fp sheaf Hom bijective on stalk} again there exists an open neighborhood $U\sub V$ of $x$ such that $(u\circ v)|_U$ and $(v\circ u)|_U$ are idnetities, whence the proposition.
 \end{proof}
 \subsection{Coherent sheaves}
 Let $(X,\mathscr{O}_X)$ be a ringed space. Let $\mathscr{F}$ be a sheaf of $\mathscr{O}_X$-modules. We say that $\mathscr{F}$ is a \textbf{coherent} $\mathscr{O}_X$-module if $\mathscr{F}$ is of finite type and for every open $U\sub X$ and every finite collection $s_1,\dots,s_n$ of sections of $\mathscr{F}$ over $U$, the kernel of the associated map $\bigoplus_{i=1}^{n}\mathscr{O}_U\to\mathscr{F}|_U$ is of finite type. The category of coherent $\mathscr{O}_X$-modules is denoted $\mathbf{Coh}(\mathscr{O}_X)$. This is a more reasonable object than the category of quasi-coherent sheaves, in the sense that it is at least an abelian subcategory of $\mathbf{Mod}(\mathscr{O}_X)$ no matter what $X$ is. However, the pullback of a coherent module is almost never coherent in the general setting of ringed spaces.
@@ -1711,8 +1711,8 @@ diagram
 0\ar[r]&\ker\psi\ar[r]\ar[d]&\bigoplus_{i=1}^{n}\mathscr{O}_U\ar[d,equal]\ar[r]&\mathscr{G}\ar[r]\ar[d]&0\\
 0\ar[r]&\ker\widebar{\psi}\ar[r]&\bigoplus_{i=1}^{n}\mathscr{O}_U\ar[r]&\coker\psi\ar[r]&0
 \end{tikzcd}\]
-By the snake lemma we have $\im\varphi\cong\coker(\ker\psi\to\ker\widebar{\psi})$, thus there is a short exact sequence $0\to\ker\psi\to\ker\widebar{\psi}\to\im\varphi\to 0$. Hence by Proposition~\ref{sheaf of module ft exact sequence} we see that $\ker\widebar{\psi}$ is of finite type.\par
-Let $0 \to\mathscr{F}_1\to\mathscr{F}_2 \to\mathscr{F}_3\to 0$ be a short exact sequence of $\mathscr{O}_X$-modules. By part (b) it suffices to prove that if $\mathscr{F}_1$ and $\mathscr{F}_3$ are coherent so is $\mathscr{F}_2$. By Proposition~\ref{sheaf of module ft exact sequence} we see that $\mathscr{F}_2$ has finite type. Let $s_1,\dots,s_n$ be finitely many local sections of $\mathscr{F}_2$ defined over a common open $U$ of $X$. We have to show that the module of relations $\mathscr{K}$ between them is of finite type. Consider the following commutative diagram
+By the snake lemma we have $\im\varphi\cong\coker(\ker\psi\to\ker\widebar{\psi})$, thus there is a short exact sequence $0\to\ker\psi\to\ker\widebar{\psi}\to\im\varphi\to 0$. Hence by \cref{sheaf of module ft exact sequence} we see that $\ker\widebar{\psi}$ is of finite type.\par
+Let $0 \to\mathscr{F}_1\to\mathscr{F}_2 \to\mathscr{F}_3\to 0$ be a short exact sequence of $\mathscr{O}_X$-modules. By part (b) it suffices to prove that if $\mathscr{F}_1$ and $\mathscr{F}_3$ are coherent so is $\mathscr{F}_2$. By \cref{sheaf of module ft exact sequence} we see that $\mathscr{F}_2$ has finite type. Let $s_1,\dots,s_n$ be finitely many local sections of $\mathscr{F}_2$ defined over a common open $U$ of $X$. We have to show that the module of relations $\mathscr{K}$ between them is of finite type. Consider the following commutative diagram
 \[\begin{tikzcd}
 0\ar[r]&0\ar[r]\ar[d]&\bigoplus_{i=1}^{n}\mathscr{O}_U\ar[d]\ar[r]&\bigoplus_{i=1}^{n}\mathscr{O}_U\ar[r]\ar[d]&0\\
 0\ar[r]&\mathscr{F}_1\ar[r]&\mathscr{F}_2\ar[r]&\mathscr{F}_3\ar[r]&0
@@ -1727,7 +1727,7 @@ In fact, $\coker u=\mathscr{F}_2/\ker v$ and $\im w=\ker t$ are coherent, and it
 \[\begin{tikzcd}
 0\ar[r]&\coker u\ar[r]&\mathscr{F}_3\ar[r]&\im w\ar[r]&0
 \end{tikzcd}\]
-and apply Proposition~\ref{sheaf of module coh prop}.
+and apply \cref{sheaf of module coh prop}.
 \end{proof}
 \begin{corollary}\label{sheaf of module coh sum and quotient}
 Let $\mathscr{F}$ and $\mathscr{G}$ be two coherent subsheaves of a coherent sheaf $\mathscr{K}$. The sheaves $\mathscr{F}+\mathscr{G}$ and $\mathscr{F}/\mathscr{G}$ are coherent.
@@ -1740,23 +1740,23 @@ If $\mathscr{F}$ and $\mathscr{G}$ are coherent $\mathscr{O}_X$-modules, so are 
 \end{corollary}
 \begin{proof}
 Since the question is local, we can assume that $\mathscr{F}$ is the cokernel of a homomorphism $\mathscr{O}_X^n\to\mathscr{O}_X^m$. Then $\mathscr{F}\otimes_{\mathscr{O}_X}\mathscr{G}$ is isomorphic to the cokernel of the homomorphism $\mathscr{O}_X^n\otimes_{\mathscr{O}_X}\mathscr{G}\to\mathscr{O}_X^m\otimes_{\mathscr{O}_X}\mathscr{G}$, which is identified with the cokernel of $\mathscr{G}^n\to\mathscr{G}^m$. Since $\mathscr{G}$ is coherent, we then see $\mathscr{F}\otimes_{\mathscr{O}_X}\mathscr{G}$ is also coherent.\par
-Similarly, in view of Proposition~\ref{sheaf of module fp sheaf Hom bijective on stalk}, we have an exact sequence 
+Similarly, in view of \cref{sheaf of module fp sheaf Hom bijective on stalk}, we have an exact sequence 
 \end{proof}
 \begin{corollary}
 Let $\mathscr{F}$ be a coherent $\mathscr{O}_X$-module and $\mathscr{I}$ be an coherent ideal of $\mathscr{O}_X$. Then the $\mathscr{O}_X$-module $\mathscr{I}\mathscr{F}$ is coherent.
 \end{corollary}
 \begin{proof}
-The image of the canonical homomorphism $\mathscr{I}\otimes_{\mathscr{O}_X}\mathscr{F}\to\mathscr{F}$ is $\mathscr{I}\mathscr{F}$, so this follows from Corollary~\ref{sheaf of module coh tensor and Hom}. 
+The image of the canonical homomorphism $\mathscr{I}\otimes_{\mathscr{O}_X}\mathscr{F}\to\mathscr{F}$ is $\mathscr{I}\mathscr{F}$, so this follows from \cref{sheaf of module coh tensor and Hom}. 
 \end{proof}
 \begin{corollary}\label{sheaf of module coh injective on stalk prop}
 Let $X$ be a ringed space and $\varphi:\mathscr{F}\to\mathscr{G}$ be a homomorphism of $\mathscr{O}_X$-modules. Assume $\mathscr{F}$ of finite type, $\mathscr{G}$ is coherent and the homomorphism $\varphi:\mathscr{F}_x\to\mathscr{G}_x$ is injective for a point $x\in X$. Then there exists an open neighbourhood $x\in U\sub X$ such that $\varphi|_U$ is injective.
 \end{corollary}
 \begin{proof}
-Denote by $\mathscr{K}\sub\mathscr{F}$ the kernel of $\varphi$. By Proposition~\ref{sheaf of module coh prop} we see that $\mathscr{K}$ is a finite type $\mathscr{O}_X$-module. Our assumption is that $\mathscr{K}_x=0$, so by Proposition~\ref{sheaf of module ft local prop}(\rmnum{4}) there exists an open neighbourhood $U$ of $x$ such that $\mathscr{K}|_U=0$.
+Denote by $\mathscr{K}\sub\mathscr{F}$ the kernel of $\varphi$. By \cref{sheaf of module coh prop} we see that $\mathscr{K}$ is a finite type $\mathscr{O}_X$-module. Our assumption is that $\mathscr{K}_x=0$, so by \cref{sheaf of module ft local prop}(\rmnum{4}) there exists an open neighbourhood $U$ of $x$ such that $\mathscr{K}|_U=0$.
 \end{proof}
-We say an $\mathscr{O}_X$-algebra $\mathscr{A}$ is \textbf{coherent} if $\mathscr{A}$ is a coherent $\mathscr{O}_X$-module. In particular, $\mathscr{O}_X$ is a coherent $\mathscr{O}_X$-algebra if, for any open subset $U\sub X$ and any homomorphism $\mathscr{O}_X^n|_U\to\mathscr{O}_X|U$ of $\mathscr{O}_U$-modules, the kernel of this homomorphism is of finite type. We then say that $\mathscr{O}_X$ is a coherent sheaf of rings. If $\mathscr{O}_X$ is a coherent sheaf of rings, any $\mathscr{O}_X$-module of finite presentation is coherent in view of Proposition~\ref{sheaf of module coh prop}.
+We say an $\mathscr{O}_X$-algebra $\mathscr{A}$ is \textbf{coherent} if $\mathscr{A}$ is a coherent $\mathscr{O}_X$-module. In particular, $\mathscr{O}_X$ is a coherent $\mathscr{O}_X$-algebra if, for any open subset $U\sub X$ and any homomorphism $\mathscr{O}_X^n|_U\to\mathscr{O}_X|U$ of $\mathscr{O}_U$-modules, the kernel of this homomorphism is of finite type. We then say that $\mathscr{O}_X$ is a coherent sheaf of rings. If $\mathscr{O}_X$ is a coherent sheaf of rings, any $\mathscr{O}_X$-module of finite presentation is coherent in view of \cref{sheaf of module coh prop}.
 \begin{example}
-The annihilator of a $\mathscr{O}_X$-module $\mathscr{F}$ is the kernel $\mathscr{I}$ of the homomorphism $\mathscr{O}_X\to\sHom_{\mathscr{O}_X}(\mathscr{F},\mathscr{F})$ which sends a section $s\in\Gamma(U,\mathscr{O}_X)$ to the multiplication by $s$ in $\Hom(\mathscr{F}|_U,\mathscr{F}|_U)$. If $\mathscr{O}_X$ is a coherent sheaf of rings and if $\mathscr{F}$ is a coherent $\mathscr{O}_X$-module, $\mathscr{I}$ is coherent by Proposition~\ref{sheaf of module coh prop}, and it follows from Proposition~\ref{sheaf of module fp sheaf Hom bijective on stalk} that for each $x\in X$, $\mathscr{I}_x$ is the annihilator of the $\mathscr{O}_{X,x}$-module $\mathscr{F}_x$.
+The annihilator of a $\mathscr{O}_X$-module $\mathscr{F}$ is the kernel $\mathscr{I}$ of the homomorphism $\mathscr{O}_X\to\sHom_{\mathscr{O}_X}(\mathscr{F},\mathscr{F})$ which sends a section $s\in\Gamma(U,\mathscr{O}_X)$ to the multiplication by $s$ in $\Hom(\mathscr{F}|_U,\mathscr{F}|_U)$. If $\mathscr{O}_X$ is a coherent sheaf of rings and if $\mathscr{F}$ is a coherent $\mathscr{O}_X$-module, $\mathscr{I}$ is coherent by \cref{sheaf of module coh prop}, and it follows from \cref{sheaf of module fp sheaf Hom bijective on stalk} that for each $x\in X$, $\mathscr{I}_x$ is the annihilator of the $\mathscr{O}_{X,x}$-module $\mathscr{F}_x$.
 \end{example}
 \begin{proposition}\label{sheaf of module O/I coh iff}
 Suppose that $\mathscr{O}_X$ is a coherent sheaf of rings and let $\mathscr{I}$ be a coherent ideal of $\mathscr{I}$. For an $(\mathscr{O}_X/\mathscr{I})$-module $\mathscr{F}$ to be coherent, it is necessary and sufficient that as an $\mathscr{O}_X$-module, $\mathscr{F}$ is coherent. In particular, $\mathscr{O}_X/\mathscr{I}$ is a coherent sheaf of rings.
@@ -1769,14 +1769,14 @@ Conversely, suppose that $\mathscr{F}$, as an $\mathscr{O}_X$-module, is coheren
 Let $f:X\to Y$ be a morphism of ringed spaces and suppose that $\mathscr{O}_X$ is a coherent rings. Then for any coherent $\mathscr{O}_Y$-module $\mathscr{G}$, $f^*(\mathscr{G})$ is a coherent $\mathscr{O}_X$-module.
 \end{proposition}
 \begin{proof}
-Let $V$ be an open subset of $Y$ such that $\mathscr{G}|_V$ is the cokernel of a homomorphism $v:\mathscr{O}_Y^n|_V\to\mathscr{O}_Y^n|_V$. As $f_U^*$ is right exact, we have $f^*(\mathscr{G})|_U=f_U^*(\mathscr{G}|_V)$ (where $U=f^{-1}(V)$) and the cokernel of the homomorphism $f_U^*(v):\mathscr{O}_X^m|_U\to\mathscr{O}_X^n|_U$ is coherent by Proposition~\ref{sheaf of module coh prop}. 
+Let $V$ be an open subset of $Y$ such that $\mathscr{G}|_V$ is the cokernel of a homomorphism $v:\mathscr{O}_Y^n|_V\to\mathscr{O}_Y^n|_V$. As $f_U^*$ is right exact, we have $f^*(\mathscr{G})|_U=f_U^*(\mathscr{G}|_V)$ (where $U=f^{-1}(V)$) and the cokernel of the homomorphism $f_U^*(v):\mathscr{O}_X^m|_U\to\mathscr{O}_X^n|_U$ is coherent by \cref{sheaf of module coh prop}. 
 \end{proof}
 \subsection{Locally free sheaves}
 Let $(X,\mathscr{O}_X)$ be a ringed space. We say an $\mathscr{O}_X$-module $\mathscr{F}$ is \textbf{locally free} if, for any $x\in X$, there exists an open neighborhood $U$ of $x$ such that $\mathscr{F}|_U$ is isomorphic to an $(\mathscr{O}_X|_U)$-module of the form $\mathscr{O}_X^{\oplus I}|_U$. If for any open subset $U$ the set $I$ is finite, we say that $\mathscr{F}$ is \textbf{of finite rank}. If for any open subset $U$, the set $I$ has $n$ elements, we say that $\mathscr{F}$ is \textbf{of rank $\bm{n}$}. If $\mathscr{F}$ is a locally free $\mathscr{O}_X$-module of finite rank, for any point $x\in X$, $\mathscr{F}_x$ is a free $\mathscr{O}_X$-module of finite rank $n(x)$, and there exists an open neighborhood $U$ of $x$ such that $\mathscr{F}|_U$ is of rank $n(x)$. If $X$ is connected, we then see $n(x)$ is constant.\par
 It is clear that any locally finite sheaf is quasi-coherent, and if $\mathscr{O}_X$ is a coherent sheaf of rings, any locally free $\mathscr{O}_X$-module of finite rank is coherent. If $\mathscr{E}$ is locally free, $\mathscr{E}\otimes_{\mathscr{O}_X}\mathscr{F}$ is an exact functor on the category of $\mathscr{O}_X$-modules.\par
 We will mostly consider locally free $\mathscr{O}_X$-modules of finite rank, so when we mention the notation of a locally free $\mathscr{O}_X$-modules, it should be understood that we mean locally free $\mathscr{O}_X$-modules of finite rank.\par
 \begin{example}
-Let $\mathscr{F}$ be an $\mathscr{O}_X$-module of finite presentation. Then if for a point $x\in X$, $\mathscr{F}_x$ is a free module of rank $n$, there exists an open neighborhood $U$ of $x$ such that $\mathscr{F}|_U$ is locally free of rank $n$ (Proposition~\ref{sheaf of module fp isomorphic on stalk}).
+Let $\mathscr{F}$ be an $\mathscr{O}_X$-module of finite presentation. Then if for a point $x\in X$, $\mathscr{F}_x$ is a free module of rank $n$, there exists an open neighborhood $U$ of $x$ such that $\mathscr{F}|_U$ is locally free of rank $n$ (\cref{sheaf of module fp isomorphic on stalk}).
 \end{example}
 \begin{proposition}\label{sheaf of module local free tensor with dual iso}
 Let $\mathscr{E}$, $\mathscr{F}$ be $\mathscr{O}_X$-modules and consider the canonical functorial homomorphism
@@ -1856,7 +1856,7 @@ Since the question is local, we can assume that $\mathscr{E}=\mathscr{O}_X^n$. I
 Let $X$ be a locally ringed space and $\mathscr{E}$ be a locally free $\mathscr{O}_X$-module of finite rank. Let $s_1,\dots,s_p$ be sections of $\mathscr{E}$ over $X$. Then the set of $x\in X$ such that $s_1(x),\dots,s_p(x)$ are lineraly independent over $\mathscr{E}_x/\m_x\mathscr{E}_x$ is open in $X$.
 \end{corollary}
 \begin{proof}
-We know that $\bigw^p\mathscr{E}$ is a locally free $\mathscr{O}_X$-module of rank $\binom{n}{p}$. Moreover, for any $x\in X$, the stalk $(\bigw^p\mathscr{E})_x/\m_x(\bigw^p\mathscr{E})_x$ is identified with $\bigw^p(\mathscr{E}_x/\m_x\mathscr{E}_x)$. If $s=s_1\wedge\cdots\wedge s_p$, then $s(x)$ is identified with $s_1(x)\wedge\cdots\wedge s_p(x)$, and $s(x)\neq 0$ if and only if $s_1(x),\dots,s_p(x)$ are linearly independent, whence the assertion by Proposition~\ref{sheaf of module local free section principal open}. 
+We know that $\bigw^p\mathscr{E}$ is a locally free $\mathscr{O}_X$-module of rank $\binom{n}{p}$. Moreover, for any $x\in X$, the stalk $(\bigw^p\mathscr{E})_x/\m_x(\bigw^p\mathscr{E})_x$ is identified with $\bigw^p(\mathscr{E}_x/\m_x\mathscr{E}_x)$. If $s=s_1\wedge\cdots\wedge s_p$, then $s(x)$ is identified with $s_1(x)\wedge\cdots\wedge s_p(x)$, and $s(x)\neq 0$ if and only if $s_1(x),\dots,s_p(x)$ are linearly independent, whence the assertion by \cref{sheaf of module local free section principal open}. 
 \end{proof}
 \begin{corollary}\label{sheaf of module local free section define iso if li}
 Let $X$ be a locally ringed space, $\mathscr{E}$ be a locally free $\mathscr{O}_X$-module of rank $n$, and $s_1,\dots,s_n$ be sections of $\mathscr{E}$ over $X$ such that, for any $x\in X$, $s_1(x),\dots,s_n(x)$ are lineraly independent. Then the homomorphism $u:\mathscr{O}_X^n\to\mathscr{E}$ defined by the sections $s_i$ is bijective.
@@ -1874,10 +1874,10 @@ Let $X$ be a locally ringed space, $\mathscr{F}$ be an $\mathscr{O}_X$-module of
 Moreover, the set of $x\in X$ satisfying these equivalent conditions are open.
 \end{proposition}
 \begin{proof}
-The equivalence of (\rmnum{1}) and (\rmnum{2}) is a general result in algebras, and it is clear that (\rmnum{3}) implies (\rmnum{1}). We now prove that (\rmnum{1}) implies (\rmnum{3}); there exists by hypothesis a homomorphism $w:\mathscr{E}_x\to\mathscr{F}_x$ such that $w\circ u_x$ is the identify automorphism on $\mathscr{F}_x$. As $\mathscr{E}$ is locally free of finite rank, hence of finite presentation, it follows from Proposition~\ref{sheaf of module fp sheaf Hom bijective on stalk} that there exists an open neigbourhood $U$ of $x$ and a homomorphism $v:\mathscr{E}|_U\to\mathscr{F}|_U$ such that $w=v_x$, hence $(v\circ(u|_U))_x=v_x\circ u_x$ is the identity automorphism. We then conclude that, by restricting $U$, we can suppose that $v\circ(u|_U)$ is the identity on $\mathscr{F}|_U$, which means $u|_U$ is left invertible. We then know that $p=(u|_U)\circ v$ is a projection from $\mathscr{E}|_U$ to $u(\mathscr{F})|_U$, and that $u|_U$ is an isomorphism from $\mathscr{F}|_U$ to $u(\mathscr{F})|_U$. We claim that (aftering shrinking $U$ if necessary), $u(\mathscr{E})_U$ and $\ker p$ are locally free $\mathscr{O}_U$-modules (supplementary in $\mathscr{F}|_U$). In fact, $p_x:\mathscr{F}_x\to(u(\mathscr{F}))_x$ is a projection, hence so is $p_x\otimes 1:\mathscr{E}_x/\m_x\mathscr{E}_x\to(u(\mathscr{F}))_x/\m_x(u(\mathscr{F}))_x$. There exists sections $s_j$ ($1\leq j\leq n$) of $\mathscr{F}$ over $U$ such that the first $m$ sections $s_j$ ($1\leq j\leq m$) are sections of $u(\mathscr{F})$, and the later $n-m$ are sections of $\ker p$, and that the $s_j(x)$ ($1\leq j\leq n$) form a base for $\mathscr{F}_x/\m_x\mathscr{F}_x$. In view of Corollary~\ref{sheaf of module local free section define iso if li}, by shrinking $U$, we can suppose that the $\mathscr{O}_X$-module $\mathscr{M}$ generated by $s_j$ for $1\leq j\leq n$ and the $\mathscr{O}_X$-module $\mathscr{N}$ generated by the $s_j$ for $m+1\leq j\leq n$ are free and supplementary in $\mathscr{E}|_U$. We have evidently $\mathscr{M}\sub u(\mathscr{F})|_U$ and $\mathscr{N}\sub\ker p$; on the other hand, if $i:\mathscr{M}\to u(\mathscr{F})|_U$ and $j:\mathscr{N}\to\ker p$ are the canonical injections, then the choice of $s_j$ implies that $i_x$ and $j_x$ are bijections. As $u(\mathscr{F})|_U$ and $\ker p$ are $\mathscr{O}_U$-modules of finite type (the second being the image of $\mathscr{E}|_U$ under $1-p$), we conclude from Proposition~\ref{sheaf of module ft local prop} (by shrinking $U$ if necessary) that $\mathscr{M}=u(\mathscr{E})|_U$ and $\mathscr{N}=\ker p$.
+The equivalence of (\rmnum{1}) and (\rmnum{2}) is a general result in algebras, and it is clear that (\rmnum{3}) implies (\rmnum{1}). We now prove that (\rmnum{1}) implies (\rmnum{3}); there exists by hypothesis a homomorphism $w:\mathscr{E}_x\to\mathscr{F}_x$ such that $w\circ u_x$ is the identify automorphism on $\mathscr{F}_x$. As $\mathscr{E}$ is locally free of finite rank, hence of finite presentation, it follows from \cref{sheaf of module fp sheaf Hom bijective on stalk} that there exists an open neigbourhood $U$ of $x$ and a homomorphism $v:\mathscr{E}|_U\to\mathscr{F}|_U$ such that $w=v_x$, hence $(v\circ(u|_U))_x=v_x\circ u_x$ is the identity automorphism. We then conclude that, by restricting $U$, we can suppose that $v\circ(u|_U)$ is the identity on $\mathscr{F}|_U$, which means $u|_U$ is left invertible. We then know that $p=(u|_U)\circ v$ is a projection from $\mathscr{E}|_U$ to $u(\mathscr{F})|_U$, and that $u|_U$ is an isomorphism from $\mathscr{F}|_U$ to $u(\mathscr{F})|_U$. We claim that (aftering shrinking $U$ if necessary), $u(\mathscr{E})_U$ and $\ker p$ are locally free $\mathscr{O}_U$-modules (supplementary in $\mathscr{F}|_U$). In fact, $p_x:\mathscr{F}_x\to(u(\mathscr{F}))_x$ is a projection, hence so is $p_x\otimes 1:\mathscr{E}_x/\m_x\mathscr{E}_x\to(u(\mathscr{F}))_x/\m_x(u(\mathscr{F}))_x$. There exists sections $s_j$ ($1\leq j\leq n$) of $\mathscr{F}$ over $U$ such that the first $m$ sections $s_j$ ($1\leq j\leq m$) are sections of $u(\mathscr{F})$, and the later $n-m$ are sections of $\ker p$, and that the $s_j(x)$ ($1\leq j\leq n$) form a base for $\mathscr{F}_x/\m_x\mathscr{F}_x$. In view of \cref{sheaf of module local free section define iso if li}, by shrinking $U$, we can suppose that the $\mathscr{O}_X$-module $\mathscr{M}$ generated by $s_j$ for $1\leq j\leq n$ and the $\mathscr{O}_X$-module $\mathscr{N}$ generated by the $s_j$ for $m+1\leq j\leq n$ are free and supplementary in $\mathscr{E}|_U$. We have evidently $\mathscr{M}\sub u(\mathscr{F})|_U$ and $\mathscr{N}\sub\ker p$; on the other hand, if $i:\mathscr{M}\to u(\mathscr{F})|_U$ and $j:\mathscr{N}\to\ker p$ are the canonical injections, then the choice of $s_j$ implies that $i_x$ and $j_x$ are bijections. As $u(\mathscr{F})|_U$ and $\ker p$ are $\mathscr{O}_U$-modules of finite type (the second being the image of $\mathscr{E}|_U$ under $1-p$), we conclude from \cref{sheaf of module ft local prop} (by shrinking $U$ if necessary) that $\mathscr{M}=u(\mathscr{E})|_U$ and $\mathscr{N}=\ker p$.
 \end{proof}
 \begin{corollary}\label{sheaf of module local free inverse image injective iff}
-With the hypotheses in Proposition~\ref{sheaf of module homomorphism ft to local free prop}, the following conditions are equivalent:
+With the hypotheses in \cref{sheaf of module homomorphism ft to local free prop}, the following conditions are equivalent:
 \begin{itemize}
 \item[(\rmnum{1})] For any morphism $g:X'\to X$ of locally ringed spaces, the homomorphism $g^*(u):g^*(\mathscr{F})\to g^*(\mathscr{E})$ is injective.
 \item[(\rmnum{2})] For any $x\in X$, the homomorphism $u_x\otimes 1:\mathscr{F}_x/\m_x\mathscr{F}_x\to\mathscr{E}_x/\m_x\mathscr{E}_x$ is injective.
@@ -1886,10 +1886,10 @@ With the hypotheses in Proposition~\ref{sheaf of module homomorphism ft to local
 Moreover, if the conditions are satisfied, $\mathscr{F}$ is a locally free $\mathscr{O}_X$-module of finite rank.
 \end{corollary}
 \begin{proof}
-The equivalence of (\rmnum{2}) and (\rmnum{3}) follows from Proposition~\ref{sheaf of module homomorphism ft to local free prop}, so does the last one. The fact that (\rmnum{3}) implies (\rmnum{1}) follows from follows from the fact that we can reduce ourselves to the case where $\mathscr{E}=\mathscr{O}_X^n$ and $\mathscr{F}=\mathscr{O}_X^m$ and that $g^*$ is left exact, since the question is local on $X$. Finally, we show that (\rmnum{2}) is a particular case of (\rmnum{1}): it suffices to consider the locally ringed space $X'$ reduced to a point $x$, with sheaf of rings $\kappa(x)$ (that is, $\Spec(\kappa(x))$). We let $g:X'\to X$ be the canonical morphism which maps $x$ to $x$ and $g^{\#}:\mathscr{O}_X\to\kappa(x)$ is the cannical homomorphism $\Gamma(U,\mathscr{O}_X)\to\mathscr{O}_{X,x}\to\kappa(x)$ for any open neigbourhood $U$ of $x$. It is then easily verified that $g^*(u)$ is the homomorphism $u_x\otimes 1$. 
+The equivalence of (\rmnum{2}) and (\rmnum{3}) follows from \cref{sheaf of module homomorphism ft to local free prop}, so does the last one. The fact that (\rmnum{3}) implies (\rmnum{1}) follows from follows from the fact that we can reduce ourselves to the case where $\mathscr{E}=\mathscr{O}_X^n$ and $\mathscr{F}=\mathscr{O}_X^m$ and that $g^*$ is left exact, since the question is local on $X$. Finally, we show that (\rmnum{2}) is a particular case of (\rmnum{1}): it suffices to consider the locally ringed space $X'$ reduced to a point $x$, with sheaf of rings $\kappa(x)$ (that is, $\Spec(\kappa(x))$). We let $g:X'\to X$ be the canonical morphism which maps $x$ to $x$ and $g^{\#}:\mathscr{O}_X\to\kappa(x)$ is the cannical homomorphism $\Gamma(U,\mathscr{O}_X)\to\mathscr{O}_{X,x}\to\kappa(x)$ for any open neigbourhood $U$ of $x$. It is then easily verified that $g^*(u)$ is the homomorphism $u_x\otimes 1$. 
 \end{proof}
 \begin{remark}
-If $u$ satisfies the conditions of Corollary~\ref{sheaf of module local free inverse image injective iff}, then we say that it is \textbf{universally injective}.
+If $u$ satisfies the conditions of \cref{sheaf of module local free inverse image injective iff}, then we say that it is \textbf{universally injective}.
 \end{remark}
 \begin{corollary}\label{sheaf of module local free surjective iff}
 Let $X$ be a locally ringed space, $\mathscr{F}$, $\mathscr{E}$ be two locally free $\mathscr{O}_X$-modules of finite rank, $u:\mathscr{F}\to\mathscr{E}$ be a homomorphism, and $x$ be a point of $X$. The following conditions are equivalent:
@@ -1906,10 +1906,10 @@ The equivalence of (\rmnum{1}) and (\rmnum{2}) follows from Nakayama's Lemma. Si
 \[(\bigw^mu_x)\otimes 1:(\bigw^m\mathscr{F}_x)/\m_x(\bigw^m\mathscr{F}_x)\to(\bigw^m\mathscr{E}_x)/\m_x(\bigw^m\mathscr{E}_x)\]
 is surjective; but $(\bigw^mu_x)\otimes 1$ is identified with
 \[\bigw^m(u_x\otimes 1):\bigw^m(\mathscr{F}_x/\m_x\mathscr{F}_x)\to\bigw^m(\mathscr{E}_x/\m_x\mathscr{E}_x),\]
-and as $\mathscr{E}_x/\m_x\mathscr{E}_x$ is a vector space of dimension $m$ over $\kappa(x)$, $\bigw^m(u_x\otimes 1)$ is surjective if $u_x\otimes 1$ is surjective, and is zero in the contrary case, whence the equivalence of (\rmnum{1}) and (\rmnum{3}). On the other hand, as $(\mathscr{F}^*)^*=\mathscr{F}$, $(\mathscr{E}^*)^*=\mathscr{E}$ and $(u^{t})^{t}=u$, it is the same to say that $u_x\otimes 1$ is surjective and that $(u_x\otimes 1)^t=(u_x)^t\otimes 1:\mathscr{E}_x^*/\m_x\mathscr{E}_x^*\to\mathscr{F}_x^*/\m_x\mathscr{F}_x^*$ is injective, whence the equivalence of (\rmnum{1}) and (\rmnum{4}) in view of Proposition~\ref{sheaf of module homomorphism ft to local free prop}. The fact that $S$ is open follows from Proposition~\ref{sheaf of module homomorphism ft to local free prop}. We can then reduce to the case where $S=X$, and the other assertions of the statement are deduced by transposing the conclusions of Proposition~\ref{sheaf of module homomorphism ft to local free prop} applied to $u^t$.
+and as $\mathscr{E}_x/\m_x\mathscr{E}_x$ is a vector space of dimension $m$ over $\kappa(x)$, $\bigw^m(u_x\otimes 1)$ is surjective if $u_x\otimes 1$ is surjective, and is zero in the contrary case, whence the equivalence of (\rmnum{1}) and (\rmnum{3}). On the other hand, as $(\mathscr{F}^*)^*=\mathscr{F}$, $(\mathscr{E}^*)^*=\mathscr{E}$ and $(u^{t})^{t}=u$, it is the same to say that $u_x\otimes 1$ is surjective and that $(u_x\otimes 1)^t=(u_x)^t\otimes 1:\mathscr{E}_x^*/\m_x\mathscr{E}_x^*\to\mathscr{F}_x^*/\m_x\mathscr{F}_x^*$ is injective, whence the equivalence of (\rmnum{1}) and (\rmnum{4}) in view of \cref{sheaf of module homomorphism ft to local free prop}. The fact that $S$ is open follows from \cref{sheaf of module homomorphism ft to local free prop}. We can then reduce to the case where $S=X$, and the other assertions of the statement are deduced by transposing the conclusions of \cref{sheaf of module homomorphism ft to local free prop} applied to $u^t$.
 \end{proof}
 \begin{corollary}\label{sheaf of module local free same rank inj iff bij}
-With the notations of Corollary~\ref{sheaf of module local free surjective iff}, suppose moreover that $\mathscr{F}$ and $\mathscr{E}$ have the same rank at each point. Then, for any $x\in X$, the following conditions are equivalent:
+With the notations of \cref{sheaf of module local free surjective iff}, suppose moreover that $\mathscr{F}$ and $\mathscr{E}$ have the same rank at each point. Then, for any $x\in X$, the following conditions are equivalent:
 \begin{itemize}
 \item[(\rmnum{1})] $u_x$ is left invertible;
 \item[(\rmnum{2})] $u_x$ is surjective;
@@ -1918,16 +1918,16 @@ With the notations of Corollary~\ref{sheaf of module local free surjective iff},
 Moreover, the set of $x\in x$ satisfying these conditions is open in $X$.
 \end{corollary}
 \begin{corollary}\label{sheaf of module local free same rank sur of inverse image}
-With the notations of Corollary~\ref{sheaf of module local free surjective iff}, let $f:X'\to X$ be a morphism of locally ringed spaces and put $\mathscr{F}'=f^*(\mathscr{F})$, $\mathscr{E}'=f^*(\mathscr{E})$, which are locally free $\mathscr{O}_{X'}$-modules of finite rank. Let $u'=f^*(u):\mathscr{F}'\to\mathscr{E}'$. Then for a point $x'\in X'$, $u'_{x'}$ is surjective (resp. left invertible) if and only if at the point $x=f(x')$, $u_x$ is surjective (resp. left invertible).
+With the notations of \cref{sheaf of module local free surjective iff}, let $f:X'\to X$ be a morphism of locally ringed spaces and put $\mathscr{F}'=f^*(\mathscr{F})$, $\mathscr{E}'=f^*(\mathscr{E})$, which are locally free $\mathscr{O}_{X'}$-modules of finite rank. Let $u'=f^*(u):\mathscr{F}'\to\mathscr{E}'$. Then for a point $x'\in X'$, $u'_{x'}$ is surjective (resp. left invertible) if and only if at the point $x=f(x')$, $u_x$ is surjective (resp. left invertible).
 \end{corollary}
 \begin{proof}
-In fact, we have $\mathscr{F}'_{x'}=\mathscr{F}_x\otimes_{\mathscr{O}_{X,x}}\mathscr{O}_{X',x'}$, $\mathscr{E}'_{x'}=\mathscr{F}_x\otimes_{\mathscr{O}_{X,x}}\mathscr{O}_{X',x'}$, and $u'_{x'}$ is deduced from $u_x$ be base changing $\mathscr{O}_{X,x}$ to $\mathscr{O}_{X',x'}$. If $k$ and $k'$ are the residue fields of $x$ and $x'$, we then have $\mathscr{F}'_{x'}\otimes k'=(\mathscr{F}_x\otimes k)\otimes_kk'$, $\mathscr{F}'_{x'}\otimes k'=(\mathscr{F}_x\otimes k)\otimes_kk'$, and the homomorphism $u'_{x'}\otimes 1:\mathscr{F}'_{x'}\otimes k'\to\mathscr{E}'_{x'}\otimes k'$ is then deduced from $u_x\otimes 1_k:\mathscr{F}_x\otimes k\to\mathscr{E}_x\otimes k$ by base changing from $k$ to $k'$. The conclusion then follows from the fact that this base change is faithfully flat, the Nakayama lemma, and Proposition~\ref{sheaf of module homomorphism ft to local free prop}. 
+In fact, we have $\mathscr{F}'_{x'}=\mathscr{F}_x\otimes_{\mathscr{O}_{X,x}}\mathscr{O}_{X',x'}$, $\mathscr{E}'_{x'}=\mathscr{F}_x\otimes_{\mathscr{O}_{X,x}}\mathscr{O}_{X',x'}$, and $u'_{x'}$ is deduced from $u_x$ be base changing $\mathscr{O}_{X,x}$ to $\mathscr{O}_{X',x'}$. If $k$ and $k'$ are the residue fields of $x$ and $x'$, we then have $\mathscr{F}'_{x'}\otimes k'=(\mathscr{F}_x\otimes k)\otimes_kk'$, $\mathscr{F}'_{x'}\otimes k'=(\mathscr{F}_x\otimes k)\otimes_kk'$, and the homomorphism $u'_{x'}\otimes 1:\mathscr{F}'_{x'}\otimes k'\to\mathscr{E}'_{x'}\otimes k'$ is then deduced from $u_x\otimes 1_k:\mathscr{F}_x\otimes k\to\mathscr{E}_x\otimes k$ by base changing from $k$ to $k'$. The conclusion then follows from the fact that this base change is faithfully flat, the Nakayama lemma, and \cref{sheaf of module homomorphism ft to local free prop}. 
 \end{proof}
 \begin{proposition}\label{sheaf of module local rank 1 iff invertible}
 Let $X$ be a locally ringed space, $\mathscr{L}$ be an $\mathscr{O}_X$-module of finite type. For that $\mathscr{L}$ to be locally free of rank $1$, it is necessary and sufficient that there exists an $\mathscr{O}_X$-module $\mathscr{F}$ such that $\mathscr{L}\otimes_{\mathscr{O}_X}\mathscr{F}$ is isomorphic to $\mathscr{O}_X$. Moreover, any $\mathscr{O}_X$-module with this property is isomorphic to $\mathscr{L}^{-1}$.
 \end{proposition}
 \begin{proof}
-We have seen that if $\mathscr{L}$ is locally of rank $1$ then $\mathscr{L}^{-1}\otimes_{\mathscr{O}_X}\mathscr{L}\cong\mathscr{O}_X$. Moreover, in this case $\mathscr{L}^{-1}$ is isomorphic to $\mathscr{L}^{-1}\otimes_{\mathscr{O}X}\mathscr{O}_X$, hence to $\mathscr{L}^{-1}\otimes_{\mathscr{O}_X}(\mathscr{L}\otimes_{\mathscr{O}_X}\mathscr{F})$ and therefore to $\mathscr{F}$. It then remains to prove that if $\mathscr{L}\otimes_{\mathscr{O}_X}\mathscr{F}$ is isomorphic to $\mathscr{O}_X$ then $\mathscr{L}$ is locally free of rank $1$. Let $x\in X$ and put $A=\mathscr{O}_{X,x}$ (which is a local ring with maximal ideal $\m$), $M=\mathscr{L}_x$, $N=\mathscr{F}_x$. The hypothesis implies that $M\otimes_AN$ is isomorphic to $A$, and as $(A/\m)\otimes_A(M\otimes_AN)$ is identified with $(M/\m M)\otimes_{A/\m}(N/\m N)$, this tensor product is isomorphic to $A/\m$ over the field $A/\m$, which shows that $M/\m M$ and $N/\m N$ are of dimension $1$ over $A/\m$. For any element $z\in M$ not belonging to $\m M$, we then have $M=Az+\m M$, which implies $M=Az$ by Nakayama's Lemma. Also, the annihilator of $z$ also annihilates $M\otimes_AN$, which is isomorphic to $A$, so this annihilator is zero and $M$ is isomorphic to $A$. There is then a section $s$ of $\mathscr{L}$ over an open neigbourhood $U$ of $x$ such that $t_x\mapsto t_xs_x$ is an isomorphism from $\mathscr{O}_{X,x}$ to $\mathscr{L}_x$. Since $\mathscr{L}$ is of finite type, we can, by shrinking $U$, suppose that $s$ generates $\mathscr{L}|_U$ (Proposition~\ref{sheaf of module ft local prop}), which means we have a surjective homomorphism $u:\mathscr{O}_U\to\mathscr{L}|_U$. Moreover, for any $y\in U$, the homomorphism $\mathscr{O}_{X,y}/\m_y\to\mathscr{L}_y/\m_y\mathscr{L}_y$ deduced from $u$ is bijective, hence so is $u$ (Proposition~\ref{localization map injective iff}).
+We have seen that if $\mathscr{L}$ is locally of rank $1$ then $\mathscr{L}^{-1}\otimes_{\mathscr{O}_X}\mathscr{L}\cong\mathscr{O}_X$. Moreover, in this case $\mathscr{L}^{-1}$ is isomorphic to $\mathscr{L}^{-1}\otimes_{\mathscr{O}X}\mathscr{O}_X$, hence to $\mathscr{L}^{-1}\otimes_{\mathscr{O}_X}(\mathscr{L}\otimes_{\mathscr{O}_X}\mathscr{F})$ and therefore to $\mathscr{F}$. It then remains to prove that if $\mathscr{L}\otimes_{\mathscr{O}_X}\mathscr{F}$ is isomorphic to $\mathscr{O}_X$ then $\mathscr{L}$ is locally free of rank $1$. Let $x\in X$ and put $A=\mathscr{O}_{X,x}$ (which is a local ring with maximal ideal $\m$), $M=\mathscr{L}_x$, $N=\mathscr{F}_x$. The hypothesis implies that $M\otimes_AN$ is isomorphic to $A$, and as $(A/\m)\otimes_A(M\otimes_AN)$ is identified with $(M/\m M)\otimes_{A/\m}(N/\m N)$, this tensor product is isomorphic to $A/\m$ over the field $A/\m$, which shows that $M/\m M$ and $N/\m N$ are of dimension $1$ over $A/\m$. For any element $z\in M$ not belonging to $\m M$, we then have $M=Az+\m M$, which implies $M=Az$ by Nakayama's Lemma. Also, the annihilator of $z$ also annihilates $M\otimes_AN$, which is isomorphic to $A$, so this annihilator is zero and $M$ is isomorphic to $A$. There is then a section $s$ of $\mathscr{L}$ over an open neigbourhood $U$ of $x$ such that $t_x\mapsto t_xs_x$ is an isomorphism from $\mathscr{O}_{X,x}$ to $\mathscr{L}_x$. Since $\mathscr{L}$ is of finite type, we can, by shrinking $U$, suppose that $s$ generates $\mathscr{L}|_U$ (\cref{sheaf of module ft local prop}), which means we have a surjective homomorphism $u:\mathscr{O}_U\to\mathscr{L}|_U$. Moreover, for any $y\in U$, the homomorphism $\mathscr{O}_{X,y}/\m_y\to\mathscr{L}_y/\m_y\mathscr{L}_y$ deduced from $u$ is bijective, hence so is $u$ (\cref{localization map injective iff}).
 \end{proof}
 The $\mathscr{O}_X$-modules locally free of rank $1$ over a locally ringed space $X$ are then called the \textbf{invertible} $\mathscr{O}_X$-modules.
 \begin{proposition}\label{sheaf of module invertible section zero iff}
@@ -1970,7 +1970,7 @@ Let $(X,\mathscr{O}_X)$ be a ringed space. Then the category $\mathbf{Mod}(\math
 Let $\mathscr{F}$ be a sheaf of $\mathscr{O}_X$-modules. For each point $x\in X$, the stalk $\mathscr{F}_x$ is an $\mathscr{O}_{X,x}$-module. Therefore there is an injection $\mathscr{F}_x\to I_x$, where $\mathscr{I}_x$ is an injective $\mathscr{O}_{X,x}$-module. For each point $x$, let $i_x$ denote the inclusion of the one-point space $\{x\}$ into $X$, and consider the sheaf $\mathscr{I}=\prod_{X\in X}i_{x,*}(I_x)$. Here we consider $I_x$ as a sheaf on the one-point space $\{x\}$.\par
 Now for any sheaf $\mathscr{G}$ of $\mathscr{O}_X$-modules, we have
 \[\Hom_{\mathscr{O}_{X}}(\mathscr{G},\mathscr{I})=\prod_{x\in X}\Hom_{\mathscr{O}_{X}}(\mathscr{G},i_{x,*}(I_x))\] 
-by definition of the direct product. On the other hand, for each point $x\in X$, by Proposition~\ref{sheaf module stalk adj} we have
+by definition of the direct product. On the other hand, for each point $x\in X$, since $i_{x,*}$ is the adjoint of taking stalk, we have
 \[\Hom_{\mathscr{O}_{X}}(\mathscr{G},i_{x,*}(I_x))=\Hom_{\mathscr{O}_{X,x}}(\mathscr{G}_x,I_x)\]
 Thus we conclude first that there is a natural morphism of sheaves of $\mathscr{O}_X$-modules $\mathscr{F}\to\mathscr{I}$ obtained from the local maps $\mathscr{F}_x\to\mathscr{I}_x$. It is clearly injective. Second, the functor $\Hom_{\mathscr{O}_{X}}(-,\mathscr{I})$ is the direct product over all $x\in X$ of the stalk functor $\mathscr{G}\to\mathscr{G}$ which is exact, followed by $\Hom_{\mathscr{O}_{X,x}}(-,I_x)$, which is exact, since $I_x$ is a injective. Hence $\Hom(-,\mathscr{I})$ is an exact functor, and therefore $\mathscr{I}$ is an injective $\mathscr{O}_X$-module.
 \end{proof}
@@ -1998,7 +1998,7 @@ Every $\mathscr{O}_X$-module may be embedded in a canonical functorial way into 
 \begin{proof}
 Let $\mathscr{F}$ be an $\mathscr{O}_X$-module, and consider the Godement construction
 \[U\mapsto\prod_{x\in U}\mathscr{F}_x\]
-which we denote by $C^0(X,\mathscr{F})$. It is immediate that we have an injection of $\mathscr{O}_X$-modules $\mathscr{F}\to C^0(X,\mathscr{F})$ by Proposition~\ref{Goement construction image of sheaf char}. An element of $C^0(X,\mathscr{F})$ over any open set $U$ is a collection $(s_x)$ of elements indexed by $U$, each $s_x$ lying over the $\mathscr{O}_{X,x}$-module $\mathscr{F}_x$. Such a sheaf is flasque because every $U$-indexed sequence $s_x$ can be extended to an $X$-indexed sequence by assigning any arbitrary element of $\mathscr{F}_x$ to any $x\in X-U$. Hence $\mathbf{Mod}(\mathscr{O}_X)$ possesses enough flasque sheaves.\par
+which we denote by $C^0(X,\mathscr{F})$. It is immediate that we have an injection of $\mathscr{O}_X$-modules $\mathscr{F}\to C^0(X,\mathscr{F})$ by \cref{Goement construction image of sheaf char}. An element of $C^0(X,\mathscr{F})$ over any open set $U$ is a collection $(s_x)$ of elements indexed by $U$, each $s_x$ lying over the $\mathscr{O}_{X,x}$-module $\mathscr{F}_x$. Such a sheaf is flasque because every $U$-indexed sequence $s_x$ can be extended to an $X$-indexed sequence by assigning any arbitrary element of $\mathscr{F}_x$ to any $x\in X-U$. Hence $\mathbf{Mod}(\mathscr{O}_X)$ possesses enough flasque sheaves.\par
 If $\mathscr{Z}_1$ is the cokernel of the canonical injection $\mathscr{F}\to C^0(X,\mathscr{F})$, we define $C^1(X,\mathscr{F})$ to be the flasque sheaf $C^0(X,\mathscr{Z}_1)$. In general, 
 \[\mathscr{Z}_n=\coker\Big(\mathscr{Z}_{n-1}\hookrightarrow C^0(X,\mathscr{Z}_{n-1})\Big)\And C^n(X,\mathscr{F})=C^0(X,\mathscr{Z}_n).\] Putting all this information together, we obtain the desired flasque resolution of $\mathscr{F}$
 \[\begin{tikzcd}
@@ -2018,7 +2018,7 @@ Given any open set $U$, we must prove that
 \[\begin{tikzcd}
 0\ar[r]&\mathscr{F}_1(U)\ar[r,"\varphi"]&\mathscr{F}_2(U)\ar[r,"\psi"]&\mathscr{F}_3(U)\ar[r]&0
 \end{tikzcd}\]
-is exact. By Proposition~\ref{sheaf cat monomorphism iff} and~\ref{sheaf cat epimorphism iff}, the sole problem is to prove that $\mathscr{F}_2(U)\to\mathscr{F}_3(U)$ is surjective. By restricting we only need to prove the case for $X$. Let $t$ be a global section of $\mathscr{F}_3$, then by Proposition~\ref{sheaf cat epimorphism iff}, locally $t$ may be lifted to sections of $\mathscr{F}$. Let $T$ be the family of all pairs $(U,\sigma)$ where $U$ is an open in $X$, and $\sigma$ is a section of $\mathscr{F}$ over $U$ whose image in $\mathscr{F}_3(U)$ equal $t|_{U}$. Partially order $T$ as in the proof of Proposition~\ref{flasque is local} and observe that $T$ is inductive. Zorn's lemma provides us with a maximal lifting of $t$ to a section $\sigma\in\mathscr{F}(U_0)$.\par
+is exact. By \cref{sheaf cat monomorphism iff} and \cref{sheaf cat epimorphism iff}, the sole problem is to prove that $\mathscr{F}_2(U)\to\mathscr{F}_3(U)$ is surjective. By restricting we only need to prove the case for $X$. Let $t$ be a global section of $\mathscr{F}_3$, then by \cref{sheaf cat epimorphism iff}, locally $t$ may be lifted to sections of $\mathscr{F}$. Let $T$ be the family of all pairs $(U,\sigma)$ where $U$ is an open in $X$, and $\sigma$ is a section of $\mathscr{F}$ over $U$ whose image in $\mathscr{F}_3(U)$ equal $t|_{U}$. Partially order $T$ as in the proof of \cref{flasque is local} and observe that $T$ is inductive. Zorn's lemma provides us with a maximal lifting of $t$ to a section $\sigma\in\mathscr{F}(U_0)$.\par
 Were $U_0$ not $X$, there would exist $x\in X-U_0$, a neighborhood $V$ of $x$, and a section $\tau$ of $\mathscr{F}$ over $V$ which is a local lifting of $t|_V$. The sections $\sigma|_{V\cap U_0}$ and $\tau|_{V\cap U_0}$ have the same image in $\mathscr{F}_3(U_0\cap V)$ under the map $\psi$, so their difference maps to $0$. Since $\im\varphi=\ker\psi$, there is a section $s$ of $\mathscr{F}_1(U_0\cap V)$ such that
 \[\sigma|_{U_0\cap V}=\tau|_{V\cap U_0}+\varphi(s).\]
 Since $\mathscr{F}_1$ is flasque, the section $s$ is the restriction of a section $s_0\in\mathscr{F}_1(V)$. Upon replacing $\tau$ by $\tau+\varphi(t_0)$ (which does not affect the image in $\mathscr{F}_3(V)$), we may assume that $\sigma|_{V\cap U_0}=\tau|_{V\cap U_0}$; that is, $\tau$ and $\sigma$ agree on the overlap. Then we may extend $\sigma$ to $U_0\cup V$, contradicting the maximality of $(U_0,\sigma)$; hence, $U_0=X$.\par
@@ -2058,14 +2058,14 @@ Flasque sheaves are acyclic, that is $H^i(X,\mathscr{F})=0$ for every flasque
 sheaf $\mathscr{F}$ and all $i\geq1$, and the cohomology groups $H^i(X,\mathscr{F})$ of any arbitrary sheaf $\mathscr{F}$ can be computed using flasque resolutions.
 \end{proposition}
 \begin{proof}
-Apply Theorem~\ref{acyclic thm} on the functor $\Gamma(X,-):\mathbf{Ab}(X)\to\mathbf{Ab}(X)$.
+Apply \cref{acyclic thm} on the functor $\Gamma(X,-):\mathbf{Ab}(X)\to\mathbf{Ab}(X)$.
 \end{proof}
 In view of the proposition above, we also have the following result.
 \begin{proposition}
 Let $(X,\mathscr{O}_X)$ be a ringed space. Then the derived functors of the functor $\Gamma(X,-)$ from $\mathbf{Mod}(\mathscr{O}_X)$ to $\mathbf{Ab}(X)$ coincide with the cohomology functors $H^i(X,-)$.
 \end{proposition}
 \begin{proof}
-Let $I$ be an injective $\mathscr{O}_X$-module, then $\mathscr{I}$ is a flasque $\mathscr{O}_X$-module by Theorem~\ref{acyclic thm}. Therefore an injective resolution in $\mathbf{Mod}(\mathscr{O}_X)$ is a flasque resolution in $\mathbf{Ab}(X)$, hence computes the sheaf cohomology.
+Let $I$ be an injective $\mathscr{O}_X$-module, then $\mathscr{I}$ is a flasque $\mathscr{O}_X$-module by \cref{acyclic thm}. Therefore an injective resolution in $\mathbf{Mod}(\mathscr{O}_X)$ is a flasque resolution in $\mathbf{Ab}(X)$, hence computes the sheaf cohomology.
 \end{proof}
 \section{Locality of cohomology}
 we first sate a useful result in abelian categories.
@@ -2091,7 +2091,7 @@ where $FG(I)\to I$ is the unit map of the adjunction $(F,G)$. Since $I$ is injec
 Let $f:X\to Y$ be a morphism of ringed spaces. Assume $f$ is flat. Then $f_*\mathscr{I}$ is an injective $\mathscr{O}_Y$-module for any injective $\mathscr{O}_X$-module $\mathscr{I}$. In particular, the pushforward $f_*:\mathbf{Ab}(X)\to\mathbf{Ab}(Y)$ transforms injective abelian sheaves into injective abelian sheaves.
 \end{proposition}
 \begin{proof}
-In this case $f^*$ is exact, and we have an adjoint pair $(f^*,f_*)$. Now apply Theorem~\ref{abelian cat adjoint exactness of one prop} we get the claim.
+In this case $f^*$ is exact, and we have an adjoint pair $(f^*,f_*)$. Now apply \cref{abelian cat adjoint exactness of one prop} we get the claim.
 \end{proof}
 The following lemma says there is no ambiguity in defining the cohomology of a sheaf $\mathscr{F}$ over an open.
 \begin{lemma}
@@ -2102,7 +2102,7 @@ Let $X$ be a ringed space. Let $U\sub X$ be an open subspace.
 \end{itemize}
 \end{lemma}
 \begin{proof}
-Denote $j:U\to X$ the open immersion. Then $(j_!,j^{-1})$ satisfies the condition of Theorem~\ref{abelian cat adjoint exactness of one prop}. By definition $H^p(U,\mathscr{F})=H^p(\Gamma(U,\mathscr{I}^\bullet))$ where $\mathscr{F}\to\mathscr{I}^\bullet$ is an injective resolution in $\mathbf{Mod}(\mathcal{O}_X)$. By the above we see that $\mathscr{F}|_U\to\mathscr{I}|_U$ is an injective resolution in $\mathbf{Mod}(\mathcal{O}_U)$. Hence $H^p(U,\mathscr{F}|_U)$ is equal to $H^p(\Gamma(U,\mathscr{I}^\bullet|_U))$. Of course $\Gamma(U,\mathscr{F})=\Gamma(U,\mathscr{F}|_U)$ for any sheaf $\mathscr{F}$ on $X$. Hence the equality in (b).
+Denote $j:U\to X$ the open immersion. Then $(j_!,j^{-1})$ satisfies the condition of \cref{abelian cat adjoint exactness of one prop}. By definition $H^p(U,\mathscr{F})=H^p(\Gamma(U,\mathscr{I}^\bullet))$ where $\mathscr{F}\to\mathscr{I}^\bullet$ is an injective resolution in $\mathbf{Mod}(\mathcal{O}_X)$. By the above we see that $\mathscr{F}|_U\to\mathscr{I}|_U$ is an injective resolution in $\mathbf{Mod}(\mathcal{O}_U)$. Hence $H^p(U,\mathscr{F}|_U)$ is equal to $H^p(\Gamma(U,\mathscr{I}^\bullet|_U))$. Of course $\Gamma(U,\mathscr{F})=\Gamma(U,\mathscr{F}|_U)$ for any sheaf $\mathscr{F}$ on $X$. Hence the equality in (b).
 \end{proof}
 Let $f:X\to Y$ be a continuous. Since the functor $f_*$ is left-exact, for an injective resolution $0\to\mathscr{F}\to\mathscr{I}^\bullet$ we define 
 \[\mathcal{R}^if_*\mathscr{F}=H^i(f_*\mathscr{I}^\bullet)\]
@@ -2126,7 +2126,7 @@ which is equal to $H^i(f^{-1}(V),\mathscr{F})$ and we win.
 Let $f:X\to Y$ be a morphism of ringed spaces. Let $\mathscr{F}$ be a sheaf of $\mathscr{O}_X$-modules. If $\mathscr{F}$ is flasque, then $\mathcal{R}^pf_*\mathscr{F}=0$ for $p>0$.
 \end{corollary}
 \begin{proof}
-This follows from Proposition~\ref{flasque is acyclic} and Proposition~\ref{push derive char}.
+This follows from \cref{flasque is acyclic} and \cref{push derive char}.
 \end{proof}
 \begin{proposition}
 Let $f:X\to Y$ be a morphism of ringed spaces. Let $\mathscr{F}$ be an $\mathcal{O}_X$-module. Let $V\sub Y$ be an open subspace. Denote $g:f^{-1}(V)\to V$ the restriction of $f$. Then we have
@@ -2267,7 +2267,7 @@ For any open $U\sub X$ the functor $\mathscr{F}\to\mathscr{F}(U)$ is an additive
 Let $X$ be a ringed space. Let $\mathcal{U}=(U_i)_{i\in I}$ be an open covering. The functors $\check{H}^p(\mathcal{U},-)$ form a $\delta$-functor from the abelian category of presheaves of $\mathscr{O}_X$-modules to the category of $\mathscr{O}_X(X)$-modules
 \end{theorem}
 \begin{proof}
-By Proposition~\ref{Cech complex exact presheaf} a short exact sequence of presheaves of $\mathscr{O}_X$-modules is turned into a short exact sequence of complexes of $\mathscr{O}_X(X)$-modules. Hence we can get a long exact sequence.
+By \cref{Cech complex exact presheaf} a short exact sequence of presheaves of $\mathscr{O}_X$-modules is turned into a short exact sequence of complexes of $\mathscr{O}_X(X)$-modules. Hence we can get a long exact sequence.
 \end{proof}
 \begin{proposition}
 Let $X$ be a ringed space. Let $\mathcal{U}$ be an open covering of $X$. The \v{C}ech cohomology functors $\check{H}^p(\mathcal{U},-)$ are canonically isomorphic as a $\delta$-functor to the right derived functors of the functor 
@@ -2336,7 +2336,7 @@ Now let $\mathcal{U}=(U_i)_{i\in I}$ and $\mathcal{V}=(V_j)_{j\in J}$ be two cov
 \end{tikzcd}\]
 shows that $\tau$ maps $C_0^\bullet(\mathcal{U},\mathscr{C})$ into $C_0^\bullet(\mathcal{V},\mathscr{C})$, thus defining the homomorphisms
 \[\tau^*:\check{H}^p_0(\mathcal{U},\mathscr{C})\to\check{H}^p_0(\mathcal{V},\mathscr{C}).\]
-Moreover, the homomorphisms $\tau$ are independent of the choice of the mapping $\tau$: this follows from the fact that, if $f\in C^p_0(\mathcal{U},\mathscr{C})$, we have $\kappa f\in C^{p-1}_0(\mathcal{V},\mathscr{C})$, with the notations of Proposition~\ref{Cech refinement map}. We have thus obtained canonical homomorphisms $H^p_0(\mathcal{U},\mathscr{C})\to\check{H}^p_0(\mathcal{V},\mathscr{C})$; we might then define $\check{H}^p_0(X,\mathscr{C})$ as the inductive limit of the groups $\check{H}^p(X,\mathscr{C})$.\par
+Moreover, the homomorphisms $\tau$ are independent of the choice of the mapping $\tau$: this follows from the fact that, if $f\in C^p_0(\mathcal{U},\mathscr{C})$, we have $\kappa f\in C^{p-1}_0(\mathcal{V},\mathscr{C})$, with the notations of \cref{Cech refinement map}. We have thus obtained canonical homomorphisms $H^p_0(\mathcal{U},\mathscr{C})\to\check{H}^p_0(\mathcal{V},\mathscr{C})$; we might then define $\check{H}^p_0(X,\mathscr{C})$ as the inductive limit of the groups $\check{H}^p(X,\mathscr{C})$.\par
 Because an inductive limit of exact sequences is an exact sequence, we obtain:
 \begin{proposition}
 The sequence
@@ -2358,13 +2358,13 @@ Let $\mathcal{U}=(U_i)_{i\in I}$ be a covering and let $f=(f_j)$ be an element o
 For any $x\in X$, take a $\tau(x)\in I$ such that $x\in U_{\tau(x)}$. Since $f_{\tau(x)}$ is a section of $\mathscr{C}$ over $U_{\tau(x)}$, by the surjectivity of $\beta$ there exists an open neighborhood $V_x$ of $x$, contained in $U_{\tau(x)}$ and a section $b_x$ of $\mathscr{B}$ over $V_x$ such that $\beta(b_x)=f_{\tau(x)}|_{V_x}$ on $V_x$. The $(V_x)_{x\in X}$ form a covering $\mathcal{V}$ of $X$, and the $b_x$ form a $0$-chain $b$ of $\mathcal{V}$ with values in $\mathcal{U}$. From the construction we have $\tau(f)=\beta(b)$, so that $\tau(f)\in C^0_0(\mathcal{V},\mathscr{C})$.
 \end{proof}
 Now we can prove the following result.
-\begin{theorem}\label{Cech map p=0,1}
+\begin{theorem}\label{Cech cohomology equal to cohomology at 0 1} 
 The canonical homomorphism $\check{H}^p_0(X,\mathscr{C})\to\check{H}^p(X,\mathscr{C})$ is bijective for $p=0$ and injective for $p=1$.
 \end{theorem}
 \begin{proof}
-By Lemma~\ref{Cech C^0_0 lem} the bijectivity for $p=0$ is immediate. We now show that
+By \cref{Cech C^0_0 lem} the bijectivity for $p=0$ is immediate. We now show that
 \[\check{H}^1_0(X,\mathscr{C})\to\check{H}^1(X,\mathscr{C})\]
-is injective. Let $[z]$ be in the kernel of this map, which is represented by a $1$-cocycle $z=(z_{i_0i_1})\in C^1_0(\mathcal{U},\mathscr{C})$. Then since $[z]=0$ in $\check{H}^1(X,\mathscr{C})$, there exists an $f=(f_i)\in C^0(\mathcal{U},\mathscr{C})$ with $df=z$; applying Lemma~\ref{Cech C^0_0 lem} (and its notations) to $f$ yields a covering $\mathcal{V}$ such that $\tau(f)\in C^0_0(\mathcal{V},\mathscr{C})$, which shows that $\tau(z)$ is cohomologous to $0$ in $C^1_0(\mathcal{V},\mathscr{C})$, thus its image $[z]$ in $\check{H}^1_0(X,\mathscr{C})$ is $0$. This shows the claim.
+is injective. Let $[z]$ be in the kernel of this map, which is represented by a $1$-cocycle $z=(z_{i_0i_1})\in C^1_0(\mathcal{U},\mathscr{C})$. Then since $[z]=0$ in $\check{H}^1(X,\mathscr{C})$, there exists an $f=(f_i)\in C^0(\mathcal{U},\mathscr{C})$ with $df=z$; applying \cref{Cech C^0_0 lem} (and its notations) to $f$ yields a covering $\mathcal{V}$ such that $\tau(f)\in C^0_0(\mathcal{V},\mathscr{C})$, which shows that $\tau(z)$ is cohomologous to $0$ in $C^1_0(\mathcal{V},\mathscr{C})$, thus its image $[z]$ in $\check{H}^1_0(X,\mathscr{C})$ is $0$. This shows the claim.
 \end{proof}
 \begin{corollary}\label{Cech long exact seq general}
 With notations above, we have an exact sequence:
@@ -2376,13 +2376,13 @@ With notations above, we have an exact sequence:
 If $\check{H}^1(X,\mathscr{A})=0$, then $\Gamma(X,\mathscr{B})\to\Gamma(X,\mathscr{C})$ is surjective.
 \end{corollary}
 \subsection{Paracompact space}
-Recall that a space $X$ is said to be paracompact if any covering of $X$ admits a locally finite refinement. On paracompact spaces, we can extend Proposition~\ref{Cech map p=0,1} for all values of $p$:
+Recall that a space $X$ is said to be paracompact if any covering of $X$ admits a locally finite refinement. On paracompact spaces, we can extend \cref{Cech cohomology equal to cohomology at 0 1}  for all values of $p$:
 \begin{theorem}\label{Cech paracompact thm}
 If $X$ is paracompact, the canonical homomorphism
 \[\check{H}^p_0(X,\mathscr{C})\to\check{H}^p(X,\mathscr{C})\]
 is bijective for all $p\geq0$.
 \end{theorem}
-This Proposition is an immediate consequence of the following lemma, analogous to Lemma~\ref{Cech C^0_0 lem}:
+This Proposition is an immediate consequence of the following lemma, analogous to \cref{Cech C^0_0 lem}:
 \begin{lemma}
 Let $X$ be a paracompact space. Let $\mathcal{U}=(U_i)_{i\in I}$ be a covering, and let $f=(f_{i_0\dots i_p})$ be an element of $C^p(\mathcal{U},\mathscr{C})$. Then there exists a covering $\mathcal{V}=(V_j)_{j\in J}$ and a mapping $\tau:J\to I$ such that $V_j\sub U_{\tau(j)}$ and $\tau(f)\in C_0^p(\mathcal{V},\mathscr{C})$.
 \end{lemma}
@@ -2472,7 +2472,7 @@ If $\mathscr{F}$ is a flasque sheaf on $X$, then $\check{H}^p(\mathcal{U},\maths
 \begin{proof}
 Let $\mathscr{C}^\bullet(\mathcal{U},\mathscr{F})$ be the \v{C}ech resolution of $\mathscr{F}$ with respect to $\mathcal{U}$. Recall that $\mathscr{C}^p(\mathcal{U},\mathscr{F})$ is defined for any open $V\sub X$ by
 \[\Gamma(V,\mathscr{C}^p(\mathcal{U},\mathscr{F}))=\prod\mathscr{F}(V\cap U_{i_0\dots i_p}).\]
-For each of these $U_{i_0\dots i_p}$, the sheaf $V\mapsto\mathscr{F}(V\cap U_{i_0\dots i_p})$ is flasque and since products of flasque sheaves are flasque, the entire sheaf $\mathscr{C}^p(\mathcal{U},\mathscr{F})$ is flasque. Therefore $\mathscr{C}^p(\mathcal{U},\mathscr{F})$ is acyclic by Proposition~\ref{flasque is acyclic}, so the \v{C}ech resolution can used to compute sheaf cohomology:
+For each of these $U_{i_0\dots i_p}$, the sheaf $V\mapsto\mathscr{F}(V\cap U_{i_0\dots i_p})$ is flasque and since products of flasque sheaves are flasque, the entire sheaf $\mathscr{C}^p(\mathcal{U},\mathscr{F})$ is flasque. Therefore $\mathscr{C}^p(\mathcal{U},\mathscr{F})$ is acyclic by \cref{flasque is acyclic}, so the \v{C}ech resolution can used to compute sheaf cohomology:
 \[\check{H}^p(\mathcal{U},\mathscr{F})=H^p(X,\mathscr{F})=0\]
 as desired.
 \end{proof}
@@ -2480,7 +2480,7 @@ as desired.
 For any sheaf $\mathscr{F}$ on $X$, the map $\check{H}^1(X,\mathscr{F})\to H^1(X,\mathscr{F})$ is an isomorphism.
 \end{corollary}
 \begin{proof}
-Let $\mathscr{G}$ be a flasque sheaf and $0\to\mathscr{F}\to\mathscr{G}\to\mathscr{Q}\to 0$ be a short exact sequence of sheaves on $X$. Then $\check{H}^1(X,\mathscr{G})=0$, and by Corollary~\ref{Cech long exact seq general} there is an exact sequence
+Let $\mathscr{G}$ be a flasque sheaf and $0\to\mathscr{F}\to\mathscr{G}\to\mathscr{Q}\to 0$ be a short exact sequence of sheaves on $X$. Then $\check{H}^1(X,\mathscr{G})=0$, and by \cref{Cech long exact seq general} there is an exact sequence
 \[\begin{tikzcd}
 0\ar[r]&\Gamma(X,\mathscr{F})\ar[r]\ar[d,"\mathbf{1}"]&\Gamma(X,\mathscr{G})\ar[r]\ar[d,"\mathbf{1}"]&\Gamma(X,\mathscr{Q})\ar[r]\ar[d,"\mathbf{1}"]&\check{H}^1(X,\mathscr{F})\ar[r]\ar[d]&0\\
 0\ar[r]&\Gamma(X,\mathscr{F})\ar[r]&\Gamma(X,\mathscr{G})\ar[r]&\Gamma(X,\mathscr{Q})\ar[r]&H^1(X,\mathscr{F})\ar[r]&0
@@ -2493,7 +2493,7 @@ Let $X$ be a paracompact space, and $\mathscr{F}$ be a sheaf on $X$. Then the ca
 are isomorphisms for $p\geq 0$.
 \end{proposition}
 \begin{proof}
-This follows from Corollary~\ref{Cech long exact seq paracompact} and an induction.
+This follows from \cref{Cech long exact seq paracompact} and an induction.
 \end{proof}
 \begin{definition}
 A sheaf $\mathscr{F}$ on $X$ is \textbf{acyclic for an open cover} $\mathcal{U}=(U_i)_{i\in I}$ if for all $p>0$ we have
@@ -2505,7 +2505,7 @@ If $\mathscr{F}$ is a sheaf on $X$ which is acyclic for an open cover $\mathcal{
 are isomorphisms for all $p\geq 0$.
 \end{theorem}
 \begin{proof}
-We proceed by induction on the degree $p$. For $p=0$ we already know that the result is true thanks to Proposition~\ref{Cech H^0}.\par
+We proceed by induction on the degree $p$. For $p=0$ we already know that the result is true thanks to \cref{Cech H^0}.\par
 Now, assume $\check{H}^j(U,\mathscr{G})\to H^j(X,\mathscr{G})$ is an isomorphism for all $j\leq p$ and all sheaves $\mathscr{G}$ acyclic for $\mathcal{U}$. Embed $\mathscr{F}$ in a flasque sheaf $\mathscr{G}$ and let $\mathscr{H}$ be the quotient, so that we have an exact sequence
 \[\begin{tikzcd}
 0\ar[r]&\mathscr{F}\ar[r]&\mathscr{G}\ar[r]&\mathscr{H}\ar[r]&0
@@ -2523,7 +2523,7 @@ is exact, so that we get a long exact sequence in \v{C}ech cohomology
 \[\begin{tikzcd}
 \cdots\ar[r]&\check{H}^{p}(\mathcal{U},\mathscr{F})\ar[r]&\check{H}^{p}(\mathcal{U},\mathscr{G})\ar[r]&\check{H}^{p}(\mathcal{U},\mathscr{H})\ar[r]&\check{H}^{p+1}(\mathcal{U},\mathscr{F})\ar[r]&\cdots
 \end{tikzcd}\]
-Now since $\mathscr{G}$ is flasque, Proposition~\ref{Cech flasque} shows that $\check{H}^p(\mathcal{U},\mathscr{G})=0$. Therefore we have a diagram with exact rows
+Now since $\mathscr{G}$ is flasque, \cref{Cech flasque} shows that $\check{H}^p(\mathcal{U},\mathscr{G})=0$. Therefore we have a diagram with exact rows
 \[\begin{tikzcd}
 0\ar[r]&\check{H}^{p}(\mathcal{U},\mathscr{H})\ar[r]\ar[d]&\check{H}^{p+1}(\mathcal{U},\mathscr{F})\ar[r]\ar[d]&0\\
 0\ar[r]&H^{p}(\mathcal{U},\mathscr{H})\ar[r]&H^{p+1}(\mathcal{U},\mathscr{F})\ar[r]&0
@@ -2557,11 +2557,11 @@ Let $X$ be a ringed space. Let $\mathscr{F}$ be an $\mathcal{O}_X$-module such t
 for all $p>0$ and any open covering $\mathcal{U}:U=\bigcup_{i\in I}U_i$ of an open subset $U$ of $X$. Then $H^p(U,\mathscr{F})=0$ for all $p>0$ and any open $U\sub X$.
 \end{proposition}
 \begin{proof}
-Choose an embedding $\mathscr{F}\to\mathscr{I}$ into an injective $\mathscr{O}_X$-module. By Proposition~\ref{Cech flasque} $\mathscr{I}$ has vanishing higher \v{C}ech cohomology for any open covering. Let $\mathscr{Q}=\mathscr{I}/\mathscr{F}$ so that we have a short exact sequence
+Choose an embedding $\mathscr{F}\to\mathscr{I}$ into an injective $\mathscr{O}_X$-module. By \cref{Cech flasque} $\mathscr{I}$ has vanishing higher \v{C}ech cohomology for any open covering. Let $\mathscr{Q}=\mathscr{I}/\mathscr{F}$ so that we have a short exact sequence
 \[\begin{tikzcd}
 0\ar[r]&\mathscr{F}\ar[r]&\mathscr{I}\ar[r]&\mathscr{Q}\ar[r]&0
 \end{tikzcd}\]
-By Proposition\ref{Cech exact section} and our assumptions this sequence is actually exact as a sequence of presheaves! In particular we have a long exact sequence of \v{C}ech cohomology groups for any open covering $\mathcal{U}$, see Proposition~\ref{Cech presheaf delta functor} for example. This implies that $\mathscr{Q}$ is also an $\mathscr{O}_X$-module with vanishing higher \v{C}ech cohomology for all open coverings.\par
+By Proposition\ref{Cech exact section} and our assumptions this sequence is actually exact as a sequence of presheaves! In particular we have a long exact sequence of \v{C}ech cohomology groups for any open covering $\mathcal{U}$, see \cref{Cech presheaf delta functor} for example. This implies that $\mathscr{Q}$ is also an $\mathscr{O}_X$-module with vanishing higher \v{C}ech cohomology for all open coverings.\par
 Next, we look at the long exact cohomology sequence
 \[\begin{tikzcd}
 \cdots\ar[r]&H^p(U,\mathscr{F})\ar[r]&H^p(U,\mathscr{I})\ar[r]&H^p(U,\mathscr{Q})\ar[r]&H^{p+1}(U,\mathscr{F})\ar[r]&\cdots
@@ -2578,11 +2578,11 @@ Let $X$ be a ringed space. Let $\mathcal{B}$ be a basis for the topology on $X$.
 Then $H^p(U,\mathscr{F})=0$ for all $p>0$ and any $U\in\mathcal{B}$.
 \end{proposition}
 \begin{proof}
-Let $\mathscr{F}$ and $\mathrm{Cov}$ be as in the lemma. We will indicate this by saying $\mathscr{F}$ has vanishing higher \v{C}ech cohomology for any $\mathcal{U}\in\mathrm{Cov}$. Choose an embedding $\mathscr{F}\hookrightarrow\mathscr{I}$ into an injective $\mathscr{O}_X$-module. By Proposition~\ref{Cech flasque} has vanishing higher \v{C}ech cohomology for any $\mathcal{U}\in\mathrm{Cov}$. Let $\mathscr{Q}=\mathscr{I}/\mathscr{F}$ so that we have a short exact sequence
+Let $\mathscr{F}$ and $\mathrm{Cov}$ be as in the lemma. We will indicate this by saying $\mathscr{F}$ has vanishing higher \v{C}ech cohomology for any $\mathcal{U}\in\mathrm{Cov}$. Choose an embedding $\mathscr{F}\hookrightarrow\mathscr{I}$ into an injective $\mathscr{O}_X$-module. By \cref{Cech flasque} has vanishing higher \v{C}ech cohomology for any $\mathcal{U}\in\mathrm{Cov}$. Let $\mathscr{Q}=\mathscr{I}/\mathscr{F}$ so that we have a short exact sequence
 \[\begin{tikzcd}
 0\ar[r]&\mathscr{F}\ar[r]&\mathscr{I}\ar[r]&\mathscr{Q}\ar[r]&0
 \end{tikzcd}\]
-By Proposition~\ref{Cech exact section} and our assumption (\rmnum{2}) this sequence gives rise to an exact sequence
+By \cref{Cech exact section} and our assumption (\rmnum{2}) this sequence gives rise to an exact sequence
 \[\begin{tikzcd}
 0\ar[r]&\mathscr{F}(U)\ar[r]&\mathscr{I}(U)\ar[r]&\mathscr{Q}(U)\ar[r]&0
 \end{tikzcd}\]
@@ -2610,5 +2610,5 @@ Set $\mathcal{U}=f^{-1}(\mathcal{V})$. It is an open covering of $X$ and
 \[C^\bullet(\mathcal{V},f_*\mathscr{I})=C^\bullet(\mathcal{U},\mathscr{I}).\]
 This is true because
 \[f_*\mathscr{I}(V_{j_0\dots j_p})=\mathscr{I}(f^{-1}(V_{j_0\dots j_p}))=\mathscr{I}\big(f^{-1}(V_{j_0})\cap\cdots\cap f^{-1}(V_{j_p})\big)=\mathscr{I}(U_{j_0\dots j_p}).\]
-Thus the first statement of the lemma follows from Proposition~\ref{Cech flasque}. The second statement follows from the first and Proposition~\ref{Cech vanish H^p vanish}.
+Thus the first statement of the lemma follows from \cref{Cech flasque}. The second statement follows from the first and \cref{Cech vanish H^p vanish}.
 \end{proof}

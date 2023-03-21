@@ -1,7 +1,569 @@
 \babel@toc {english}{}
-\contentsline {chapter}{\numberline {1}The language of \boldmath $\infty $-category}{3}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Simplicial sets}{3}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Simplicial and cosimplicial objects}{5}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}The skeletal filtration}{9}{subsection.1.1.2}%
-\contentsline {subsection}{\numberline {1.1.3}Discrete simplicial sets}{12}{subsection.1.1.3}%
+\contentsline {chapter}{\numberline {1}General topology}{15}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Topological structures}{15}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Topological spaces}{15}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Base of topologies}{16}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Neighborhoods}{19}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.4}Closure, interior and boundary}{20}{subsection.1.1.4}%
+\contentsline {section}{\numberline {1.2}Continuous functions}{22}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Semicontinuity}{22}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Continuous functions}{24}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Initial topologies}{27}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Final topologies}{28}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.5}Subspaces of a topological space}{30}{subsection.1.2.5}%
+\contentsline {section}{\numberline {1.3}Quotient spaces and quotient maps}{32}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Quotient spaces and maps}{32}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Quotient of a subspace}{36}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Hausdorff condition of quotient spaces}{37}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}Direct limit of topological spaces}{38}{subsection.1.3.4}%
+\contentsline {section}{\numberline {1.4}Product of topological spaces}{39}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Product spaces}{39}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Sections and projections}{41}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}Inverse limit of topological spaces}{43}{subsection.1.4.3}%
+\contentsline {section}{\numberline {1.5}Connectedness}{44}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Connected spaces}{44}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Path connectedness}{48}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.5.3}Components and locally connectedness}{51}{subsection.1.5.3}%
+\contentsline {subsection}{\numberline {1.5.4}Path components}{53}{subsection.1.5.4}%
+\contentsline {section}{\numberline {1.6}Countablity and separation axoims}{54}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Nets and filters}{55}{section.1.7}%
+\contentsline {subsection}{\numberline {1.7.1}Nets}{55}{subsection.1.7.1}%
+\contentsline {subsection}{\numberline {1.7.2}Filters}{57}{subsection.1.7.2}%
+\contentsline {subsection}{\numberline {1.7.3}Construction of filters}{60}{subsection.1.7.3}%
+\contentsline {subsection}{\numberline {1.7.4}Limit of filters}{62}{subsection.1.7.4}%
+\contentsline {section}{\numberline {1.8}Compactness}{64}{section.1.8}%
+\contentsline {subsection}{\numberline {1.8.1}Limit point compactness and sequencially compactness}{66}{subsection.1.8.1}%
+\contentsline {subsection}{\numberline {1.8.2}General characterization of compactness}{69}{subsection.1.8.2}%
+\contentsline {subsection}{\numberline {1.8.3}Inverse limit of compact spaces}{70}{subsection.1.8.3}%
+\contentsline {subsection}{\numberline {1.8.4}Aezel\'a-Ascoli theorem}{71}{subsection.1.8.4}%
+\contentsline {subsection}{\numberline {1.8.5}Compactification}{74}{subsection.1.8.5}%
+\contentsline {section}{\numberline {1.9}Local compactness}{77}{section.1.9}%
+\contentsline {subsection}{\numberline {1.9.1}Continuous functions}{79}{subsection.1.9.1}%
+\contentsline {subsection}{\numberline {1.9.2}One-point compactification}{81}{subsection.1.9.2}%
+\contentsline {subsection}{\numberline {1.9.3}Stone-Weierstrass theorem}{83}{subsection.1.9.3}%
+\contentsline {subsection}{\numberline {1.9.4}Metrizability}{86}{subsection.1.9.4}%
+\contentsline {section}{\numberline {1.10}Proper maps}{87}{section.1.10}%
+\contentsline {subsection}{\numberline {1.10.1}Proper maps}{87}{subsection.1.10.1}%
+\contentsline {subsection}{\numberline {1.10.2}Proper maps}{88}{subsection.1.10.2}%
+\contentsline {section}{\numberline {1.11}Baire Spaces}{91}{section.1.11}%
+\contentsline {subsection}{\numberline {1.11.1}Nowhere dense sets and meager sets}{91}{subsection.1.11.1}%
+\contentsline {subsection}{\numberline {1.11.2}Baire category theorem}{95}{subsection.1.11.2}%
+\contentsline {section}{\numberline {1.12}Topological manifolds}{96}{section.1.12}%
+\contentsline {subsection}{\numberline {1.12.1}Definition of manifolds}{96}{subsection.1.12.1}%
+\contentsline {subsection}{\numberline {1.12.2}Manifolds with boundary}{98}{subsection.1.12.2}%
+\contentsline {subsection}{\numberline {1.12.3}Adjunction spaces}{100}{subsection.1.12.3}%
+\contentsline {section}{\numberline {1.13}Paracompactness}{103}{section.1.13}%
+\contentsline {subsection}{\numberline {1.13.1}Paracompact spaces}{103}{subsection.1.13.1}%
+\contentsline {subsection}{\numberline {1.13.2}Partitions of unity}{109}{subsection.1.13.2}%
+\contentsline {chapter}{\numberline {2}Uniform structures}{113}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Uniform spaces}{113}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Uniformly continuous functions}{117}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Construction of uniform structures}{118}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Complete spaces}{121}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Cauchy filters}{121}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Complete spaces}{124}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Product and inverse limit of complete spaces}{125}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Extension of uniformly continuous functions}{128}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Completion of uniform spaces}{129}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.6}The Hausdorff space associated with a uniform space}{131}{subsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.2.7}Completion of subspaces and product spaces}{132}{subsection.2.2.7}%
+\contentsline {section}{\numberline {2.3}Compact space and uniform spaces}{133}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Uniformity for compact Hausdorff spaces}{133}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Compactness of uniform spaces}{135}{subsection.2.3.2}%
+\contentsline {chapter}{\numberline {3}Topological groups and rings}{137}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Topological groups}{137}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Topologies on groups}{137}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Topological subgroups}{141}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Group actions}{143}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Product and quotient of topological groups}{147}{subsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.1.5}$\mathcal {S}$-topologies}{152}{subsection.3.1.5}%
+\contentsline {subsection}{\numberline {3.1.6}Metrizability}{154}{subsection.3.1.6}%
+\contentsline {section}{\numberline {3.2}Complete topological groups}{156}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Uniformity on topological groups}{157}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Complete groups}{158}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Completion of Hausdorff groups}{160}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Completeness of commutative topological groups}{162}{subsection.3.2.4}%
+\contentsline {section}{\numberline {3.3}Topological group with operators, topological rings, modules and fields}{163}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Topological group with operators}{163}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Topological direct sum of stable subgroups}{164}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Topological rings and modules}{165}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Topological division ring and fields}{170}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}Inverse limits of topological groups and rings}{171}{subsection.3.3.5}%
+\contentsline {chapter}{\numberline {4}Topologies encountered in algebraic geometry}{179}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Irreducibility}{179}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Irredicible topological spaces}{179}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Noetherian topological spaces}{181}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Generic points}{183}{subsection.4.1.3}%
+\contentsline {section}{\numberline {4.2}Krull dimension}{183}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Krull dimension of a topological space}{183}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Codimension of a closed subset}{185}{subsection.4.2.2}%
+\contentsline {chapter}{\numberline {5}Integral domains}{189}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Prime and irreducible elements}{189}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Domains with factorizations}{190}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Greatest common divisors and B\'ezout domains}{191}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Unique factorization in polynomial rings}{194}{section.5.4}%
+\contentsline {section}{\numberline {5.5}A prime ideal principle}{199}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Some results on UFDs and PIDs}{201}{section.5.6}%
+\contentsline {paragraph}{\numberline {5.6.0.0.1}On UFDs}{201}{paragraph.5.6.0.0.1}%
+\contentsline {paragraph}{\numberline {5.6.0.0.2}On PIDs}{202}{paragraph.5.6.0.0.2}%
+\contentsline {paragraph}{\numberline {5.6.0.0.3}On UFD into PID}{203}{paragraph.5.6.0.0.3}%
+\contentsline {paragraph}{\numberline {5.6.0.0.4}Fermat's Last Theorem for Polynomials}{203}{paragraph.5.6.0.0.4}%
+\contentsline {section}{\numberline {5.7}Exercise}{204}{section.5.7}%
+\contentsline {chapter}{\numberline {6}Chain conditions}{207}{chapter.6}%
+\contentsline {section}{\numberline {6.1}General properties}{207}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Noetherian rings}{211}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Artin rings}{212}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Exercise}{215}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Linear algebras}{219}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Modules and diagrams}{219}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Finitely generated modules}{219}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Exact sequence and the snake lemma}{221}{subsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.1.3}Exercise}{225}{subsection.7.1.3}%
+\contentsline {section}{\numberline {7.2}Flat modules}{228}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}$M$-flat modules}{228}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Flat modules}{230}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Intersection properties}{234}{subsection.7.2.3}%
+\contentsline {subsection}{\numberline {7.2.4}Extension of scalars and flatness}{235}{subsection.7.2.4}%
+\contentsline {subsection}{\numberline {7.2.5}Finitely presented modules}{236}{subsection.7.2.5}%
+\contentsline {subsection}{\numberline {7.2.6}Structure of flat modules}{244}{subsection.7.2.6}%
+\contentsline {section}{\numberline {7.3}Faithfully flat modules}{245}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Extension of scalars and faithfully flatness}{247}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Faithfully flat rings}{249}{subsection.7.3.2}%
+\contentsline {section}{\numberline {7.4}Injective modules}{252}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Injective modules}{252}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Injective modules and cogenerators}{254}{subsection.7.4.2}%
+\contentsline {subsection}{\numberline {7.4.3}Injective hull of modules}{256}{subsection.7.4.3}%
+\contentsline {chapter}{\numberline {8}Homological algebras for modules}{261}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Complexes of modules}{261}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Complexes of $A$-modules}{261}{subsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.1.2}Long exact homological sequence}{264}{subsection.8.1.2}%
+\contentsline {subsection}{\numberline {8.1.3}Homotopies}{266}{subsection.8.1.3}%
+\contentsline {subsection}{\numberline {8.1.4}Splitting complexes}{267}{subsection.8.1.4}%
+\contentsline {subsection}{\numberline {8.1.5}Cone and cylinder of a morphism of complexes}{269}{subsection.8.1.5}%
+\contentsline {subsection}{\numberline {8.1.6}Euler-Poincar\'e characteristic}{272}{subsection.8.1.6}%
+\contentsline {subsection}{\numberline {8.1.7}The de Rham complex}{274}{subsection.8.1.7}%
+\contentsline {section}{\numberline {8.2}Resolutions}{277}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}Resolutions of modules}{277}{subsection.8.2.1}%
+\contentsline {subsection}{\numberline {8.2.2}The canonical free resolution}{278}{subsection.8.2.2}%
+\contentsline {subsection}{\numberline {8.2.3}The canonical injective resolution}{279}{subsection.8.2.3}%
+\contentsline {subsection}{\numberline {8.2.4}Finitely generated resolutions}{280}{subsection.8.2.4}%
+\contentsline {subsection}{\numberline {8.2.5}Minimal projective resolutions}{281}{subsection.8.2.5}%
+\contentsline {subsection}{\numberline {8.2.6}Graded resolutions}{282}{subsection.8.2.6}%
+\contentsline {subsection}{\numberline {8.2.7}The standard resolution}{282}{subsection.8.2.7}%
+\contentsline {subsection}{\numberline {8.2.8}Resolutions and Grothendieck groups}{284}{subsection.8.2.8}%
+\contentsline {section}{\numberline {8.3}Tensor product}{284}{section.8.3}%
+\contentsline {subsection}{\numberline {8.3.1}Tensot product of complexes}{284}{subsection.8.3.1}%
+\contentsline {subsection}{\numberline {8.3.2}Tensor products and homotopies}{287}{subsection.8.3.2}%
+\contentsline {subsection}{\numberline {8.3.3}The twisted product and its properties}{289}{subsection.8.3.3}%
+\contentsline {subsection}{\numberline {8.3.4}The long exact sequence of twisted products}{292}{subsection.8.3.4}%
+\contentsline {subsection}{\numberline {8.3.5}K\"unneth formula}{294}{subsection.8.3.5}%
+\contentsline {section}{\numberline {8.4}Modules of extensions}{296}{section.8.4}%
+\contentsline {subsection}{\numberline {8.4.1}The Hom complex of complexes}{296}{subsection.8.4.1}%
+\contentsline {subsection}{\numberline {8.4.2}Hom complex and homotopies}{298}{subsection.8.4.2}%
+\contentsline {section}{\numberline {8.5}Koszul complex}{299}{section.8.5}%
+\contentsline {subsection}{\numberline {8.5.1}The Koszul complex associated with a linear form}{299}{subsection.8.5.1}%
+\contentsline {subsection}{\numberline {8.5.2}The canonical Koszul complex of $S(E)$}{303}{subsection.8.5.2}%
+\contentsline {subsection}{\numberline {8.5.3}Koszul complexes and alternating maps}{304}{subsection.8.5.3}%
+\contentsline {subsection}{\numberline {8.5.4}Koszul complexes and completely secant sequences}{306}{subsection.8.5.4}%
+\contentsline {subsection}{\numberline {8.5.5}Extension class associated with a regular sequence}{313}{subsection.8.5.5}%
+\contentsline {chapter}{\numberline {9}Field Theories}{317}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Field extensions}{317}{section.9.1}%
+\contentsline {subsection}{\numberline {9.1.1}Basic definitions of field extensions}{317}{subsection.9.1.1}%
+\contentsline {subsubsection}{\numberline {9.1.1.1}Distinguished extensions}{318}{subsubsection.9.1.1.1}%
+\contentsline {subsection}{\numberline {9.1.2}Simple, finite, and algebraic extensions}{319}{subsection.9.1.2}%
+\contentsline {subsubsection}{\numberline {9.1.2.1}Simple extensions}{319}{subsubsection.9.1.2.1}%
+\contentsline {subsubsection}{\numberline {9.1.2.2}Finite and algebraic extensions}{322}{subsubsection.9.1.2.2}%
+\contentsline {subsection}{\numberline {9.1.3}Algebraic closure}{327}{subsection.9.1.3}%
+\contentsline {subsection}{\numberline {9.1.4}Embeddings and their extensions}{329}{subsection.9.1.4}%
+\contentsline {subsection}{\numberline {9.1.5}Splitting fields and normal extensions}{332}{subsection.9.1.5}%
+\contentsline {subsubsection}{\numberline {9.1.5.1}Normal extensions are not distinguished}{335}{subsubsection.9.1.5.1}%
+\contentsline {subsubsection}{\numberline {9.1.5.2}Normal closures}{336}{subsubsection.9.1.5.2}%
+\contentsline {subsection}{\numberline {9.1.6}Separable extensions and linearly disjointness}{336}{subsection.9.1.6}%
+\contentsline {subsubsection}{\numberline {9.1.6.1}Separable polynomials}{337}{subsubsection.9.1.6.1}%
+\contentsline {subsubsection}{\numberline {9.1.6.2}Separable extensions}{339}{subsubsection.9.1.6.2}%
+\contentsline {subsubsection}{\numberline {9.1.6.3}Perfect fields}{343}{subsubsection.9.1.6.3}%
+\contentsline {subsubsection}{\numberline {9.1.6.4}Purely inseparability}{345}{subsubsection.9.1.6.4}%
+\contentsline {subsubsection}{\numberline {9.1.6.5}Separable and purely inseparable closures}{348}{subsubsection.9.1.6.5}%
+\contentsline {subsubsection}{\numberline {9.1.6.6}Existence of primitive elements}{350}{subsubsection.9.1.6.6}%
+\contentsline {subsubsection}{\numberline {9.1.6.7}Linearly disjointness}{352}{subsubsection.9.1.6.7}%
+\contentsline {subsection}{\numberline {9.1.7}Exercise}{354}{subsection.9.1.7}%
+\contentsline {section}{\numberline {9.2}Galois theory}{358}{section.9.2}%
+\contentsline {subsection}{\numberline {9.2.1}Galois connections}{358}{subsection.9.2.1}%
+\contentsline {subsubsection}{\numberline {9.2.1.1}Definition of Galois connection}{358}{subsubsection.9.2.1.1}%
+\contentsline {subsubsection}{\numberline {9.2.1.2}Indexed Galois connections}{361}{subsubsection.9.2.1.2}%
+\contentsline {subsection}{\numberline {9.2.2}The Galois correspondence}{363}{subsection.9.2.2}%
+\contentsline {subsection}{\numberline {9.2.3}Closed elements in the Galois correspondence}{366}{subsection.9.2.3}%
+\contentsline {subsection}{\numberline {9.2.4}The Krull topology on Galois group}{369}{subsection.9.2.4}%
+\contentsline {subsection}{\numberline {9.2.5}Normal subgroups and normal extensions}{372}{subsection.9.2.5}%
+\contentsline {subsection}{\numberline {9.2.6}Galois groups of lifting and composites}{376}{subsection.9.2.6}%
+\contentsline {subsection}{\numberline {9.2.7}Exercise}{380}{subsection.9.2.7}%
+\contentsline {section}{\numberline {9.3}Applications of Galois theory}{381}{section.9.3}%
+\contentsline {subsection}{\numberline {9.3.1}The Galois group of a polynomial}{382}{subsection.9.3.1}%
+\contentsline {subsubsection}{\numberline {9.3.1.1}Symmetric polynomials}{382}{subsubsection.9.3.1.1}%
+\contentsline {subsubsection}{\numberline {9.3.1.2}The discriminant of a polynomial}{387}{subsubsection.9.3.1.2}%
+\contentsline {subsection}{\numberline {9.3.2}The Galois groups of some polynomials}{388}{subsection.9.3.2}%
+\contentsline {subsubsection}{\numberline {9.3.2.1}The quadratic}{388}{subsubsection.9.3.2.1}%
+\contentsline {subsubsection}{\numberline {9.3.2.2}The cubic}{389}{subsubsection.9.3.2.2}%
+\contentsline {subsection}{\numberline {9.3.3}Geometric impossibilities}{391}{subsection.9.3.3}%
+\contentsline {subsubsection}{\numberline {9.3.3.1}Constructions by straightedge and compass}{391}{subsubsection.9.3.3.1}%
+\contentsline {subsubsection}{\numberline {9.3.3.2}Constructible numbers and quadratic extensions}{392}{subsubsection.9.3.3.2}%
+\contentsline {subsection}{\numberline {9.3.4}The fundamental theorem of algebra}{396}{subsection.9.3.4}%
+\contentsline {subsection}{\numberline {9.3.5}Finite fields}{396}{subsection.9.3.5}%
+\contentsline {subsubsection}{\numberline {9.3.5.1}Finite fields as splitting fields}{396}{subsubsection.9.3.5.1}%
+\contentsline {subsubsection}{\numberline {9.3.5.2}The algebraic closure of a finite field}{401}{subsubsection.9.3.5.2}%
+\contentsline {subsection}{\numberline {9.3.6}Cyclotomic polynomials and fields}{401}{subsection.9.3.6}%
+\contentsline {subsection}{\numberline {9.3.7}Cyclic extensions}{404}{subsection.9.3.7}%
+\contentsline {subsubsection}{\numberline {9.3.7.1}Hilbert's theorem 90}{404}{subsubsection.9.3.7.1}%
+\contentsline {subsubsection}{\numberline {9.3.7.2}Abelian and Cyclic Extensions}{407}{subsubsection.9.3.7.2}%
+\contentsline {subsection}{\numberline {9.3.8}Solvable and radical extensions}{410}{subsection.9.3.8}%
+\contentsline {subsubsection}{\numberline {9.3.8.1}Solvable extensions}{410}{subsubsection.9.3.8.1}%
+\contentsline {subsubsection}{\numberline {9.3.8.2}Radical extensions}{410}{subsubsection.9.3.8.2}%
+\contentsline {subsubsection}{\numberline {9.3.8.3}Solvability by radicals}{412}{subsubsection.9.3.8.3}%
+\contentsline {subsection}{\numberline {9.3.9}Solvability of polynomial equations by radicals}{413}{subsection.9.3.9}%
+\contentsline {subsection}{\numberline {9.3.10}Exercise}{416}{subsection.9.3.10}%
+\contentsline {section}{\numberline {9.4}Transcendental extensions}{421}{section.9.4}%
+\contentsline {subsection}{\numberline {9.4.1}Transcendental basis}{421}{subsection.9.4.1}%
+\contentsline {subsection}{\numberline {9.4.2}Simple transcendantal extension and L\"uroth's theorem}{426}{subsection.9.4.2}%
+\contentsline {chapter}{\numberline {10}Localizations}{431}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Prime ideals and maximal ideals}{431}{section.10.1}%
+\contentsline {subsection}{\numberline {10.1.1}Prime ideals}{431}{subsection.10.1.1}%
+\contentsline {subsection}{\numberline {10.1.2}Nilradical and Jacobson radical}{432}{subsection.10.1.2}%
+\contentsline {subsection}{\numberline {10.1.3}Coprime ideals}{433}{subsection.10.1.3}%
+\contentsline {subsection}{\numberline {10.1.4}Local rings and semilocal rings}{434}{subsection.10.1.4}%
+\contentsline {subsection}{\numberline {10.1.5}Operations on ideals}{436}{subsection.10.1.5}%
+\contentsline {subsection}{\numberline {10.1.6}Exercise}{439}{subsection.10.1.6}%
+\contentsline {section}{\numberline {10.2}Rings and modules of fractions}{442}{section.10.2}%
+\contentsline {subsection}{\numberline {10.2.1}Definition of rings of fractions}{442}{subsection.10.2.1}%
+\contentsline {subsection}{\numberline {10.2.2}Modules of fractions}{445}{subsection.10.2.2}%
+\contentsline {subsection}{\numberline {10.2.3}Change of multiplicative subset}{448}{subsection.10.2.3}%
+\contentsline {subsection}{\numberline {10.2.4}Properties of the localization operation}{452}{subsection.10.2.4}%
+\contentsline {subsection}{\numberline {10.2.5}Ideals under localization}{453}{subsection.10.2.5}%
+\contentsline {subsection}{\numberline {10.2.6}Modules of fractions of tensor products and Hom sets}{456}{subsection.10.2.6}%
+\contentsline {section}{\numberline {10.3}Local rings and passing from local to global}{457}{section.10.3}%
+\contentsline {subsection}{\numberline {10.3.1}Local rings}{457}{subsection.10.3.1}%
+\contentsline {subsection}{\numberline {10.3.2}Modules over a local ring}{459}{subsection.10.3.2}%
+\contentsline {subsection}{\numberline {10.3.3}Passing from local to global}{462}{subsection.10.3.3}%
+\contentsline {section}{\numberline {10.4}The spectrum of a ring}{465}{section.10.4}%
+\contentsline {subsection}{\numberline {10.4.1}The space $\mathrm {Spec}(A)$}{465}{subsection.10.4.1}%
+\contentsline {subsection}{\numberline {10.4.2}Functoriality of the spactrum}{470}{subsection.10.4.2}%
+\contentsline {subsection}{\numberline {10.4.3}The support of a module}{473}{subsection.10.4.3}%
+\contentsline {subsection}{\numberline {10.4.4}Clopen subsets of the spectrum}{476}{subsection.10.4.4}%
+\contentsline {subsection}{\numberline {10.4.5}Glueing properties of localization}{478}{subsection.10.4.5}%
+\contentsline {section}{\numberline {10.5}Finitely generated projective modules}{482}{section.10.5}%
+\contentsline {subsection}{\numberline {10.5.1}Local characterization}{482}{subsection.10.5.1}%
+\contentsline {subsection}{\numberline {10.5.2}Rank of finitely generated projective modules}{484}{subsection.10.5.2}%
+\contentsline {subsection}{\numberline {10.5.3}Projective modules of rank \boldmath $1$}{486}{subsection.10.5.3}%
+\contentsline {subsection}{\numberline {10.5.4}Non-degenerate submodules and invertible submodules}{487}{subsection.10.5.4}%
+\contentsline {subsection}{\numberline {10.5.5}The class group of invertible submodules}{490}{subsection.10.5.5}%
+\contentsline {subsection}{\numberline {10.5.6}Exercise}{491}{subsection.10.5.6}%
+\contentsline {chapter}{\numberline {11}Graded rings and filtrations}{495}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Graduation on rings and modules}{495}{section.11.1}%
+\contentsline {subsection}{\numberline {11.1.1}Graded ring and graded module}{495}{subsection.11.1.1}%
+\contentsline {subsection}{\numberline {11.1.2}Graduation on tensor products and Hom sets}{503}{subsection.11.1.2}%
+\contentsline {subsection}{\numberline {11.1.3}Graduation by an ordered group}{505}{subsection.11.1.3}%
+\contentsline {subsection}{\numberline {11.1.4}Graded rings of type \boldmath $\mathbb {Z}$}{507}{subsection.11.1.4}%
+\contentsline {section}{\numberline {11.2}Filtration and topologies}{512}{section.11.2}%
+\contentsline {subsection}{\numberline {11.2.1}Filtrated rings and modules}{512}{subsection.11.2.1}%
+\contentsline {subsection}{\numberline {11.2.2}The associated graded module}{514}{subsection.11.2.2}%
+\contentsline {subsection}{\numberline {11.2.3}Homomorphism compatible with filtrations}{516}{subsection.11.2.3}%
+\contentsline {section}{\numberline {11.3}Filtrations and completions}{517}{section.11.3}%
+\contentsline {subsection}{\numberline {11.3.1}Complete filtered groups}{518}{subsection.11.3.1}%
+\contentsline {subsection}{\numberline {11.3.2}Completion of filtered rings and modules}{521}{subsection.11.3.2}%
+\contentsline {subsection}{\numberline {11.3.3}Lifting properties of the associated graduation}{527}{subsection.11.3.3}%
+\contentsline {section}{\numberline {11.4}The adic topology on Noetherian rings}{533}{section.11.4}%
+\contentsline {subsection}{\numberline {11.4.1}Good filtrations}{533}{subsection.11.4.1}%
+\contentsline {subsection}{\numberline {11.4.2}The adic topology on Noetherian rings}{536}{subsection.11.4.2}%
+\contentsline {subsection}{\numberline {11.4.3}The adic completion of a Noetherian ring}{537}{subsection.11.4.3}%
+\contentsline {subsection}{\numberline {11.4.4}Zariski rings}{540}{subsection.11.4.4}%
+\contentsline {section}{\numberline {11.5}Lifting in complete rings}{544}{section.11.5}%
+\contentsline {subsection}{\numberline {11.5.1}Strongly relatively prime polynomials}{544}{subsection.11.5.1}%
+\contentsline {subsection}{\numberline {11.5.2}Restricted power series and Hensel's lemma}{546}{subsection.11.5.2}%
+\contentsline {subsection}{\numberline {11.5.3}System of equations in complete rings}{550}{subsection.11.5.3}%
+\contentsline {section}{\numberline {11.6}Flatness of graded modules}{555}{section.11.6}%
+\contentsline {section}{\numberline {11.7}Exercise}{559}{section.11.7}%
+\contentsline {chapter}{\numberline {12}Associated prime ideals and primary decomposition}{563}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Associated prime ideals of a module}{563}{section.12.1}%
+\contentsline {subsection}{\numberline {12.1.1}Definition of associated prime ideals}{563}{subsection.12.1.1}%
+\contentsline {subsection}{\numberline {12.1.2}Associated prime ideal of localizations}{565}{subsection.12.1.2}%
+\contentsline {subsection}{\numberline {12.1.3}Associated prime ideals and supports}{565}{subsection.12.1.3}%
+\contentsline {subsection}{\numberline {12.1.4}Associated prime ideals of modules over Noetherian rings}{566}{subsection.12.1.4}%
+\contentsline {section}{\numberline {12.2}Primary decomposition}{568}{section.12.2}%
+\contentsline {subsection}{\numberline {12.2.1}Primary submodules}{568}{subsection.12.2.1}%
+\contentsline {subsection}{\numberline {12.2.2}Primary decompositions}{569}{subsection.12.2.2}%
+\contentsline {subsection}{\numberline {12.2.3}The localization of a primary decomposition}{572}{subsection.12.2.3}%
+\contentsline {subsection}{\numberline {12.2.4}Module of finite length}{573}{subsection.12.2.4}%
+\contentsline {subsection}{\numberline {12.2.5}Extension of scalars}{576}{subsection.12.2.5}%
+\contentsline {subsection}{\numberline {12.2.6}Primary decomposition of graded modules}{579}{subsection.12.2.6}%
+\contentsline {chapter}{\numberline {13}Integral dependence}{583}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Integral elements}{583}{section.13.1}%
+\contentsline {subsection}{\numberline {13.1.1}The integral closure of a ring}{586}{subsection.13.1.1}%
+\contentsline {subsection}{\numberline {13.1.2}Examples of integrally closed domains}{587}{subsection.13.1.2}%
+\contentsline {subsection}{\numberline {13.1.3}Completely integrally closed domains}{589}{subsection.13.1.3}%
+\contentsline {subsection}{\numberline {13.1.4}The integral closure of a ring of fractions}{590}{subsection.13.1.4}%
+\contentsline {subsection}{\numberline {13.1.5}Norms and traces of integral elements}{592}{subsection.13.1.5}%
+\contentsline {subsection}{\numberline {13.1.6}Integers over a graded ring}{596}{subsection.13.1.6}%
+\contentsline {subsection}{\numberline {13.1.7}The lift of prime ideals}{598}{subsection.13.1.7}%
+\contentsline {section}{\numberline {13.2}Group action on algebras}{604}{section.13.2}%
+\contentsline {subsection}{\numberline {13.2.1}Group acting on an algebra}{604}{subsection.13.2.1}%
+\contentsline {subsection}{\numberline {13.2.2}Decomposition group and inertial group}{605}{subsection.13.2.2}%
+\contentsline {subsection}{\numberline {13.2.3}Applications for integrally closed domains}{610}{subsection.13.2.3}%
+\contentsline {section}{\numberline {13.3}Finite generated algebras over a field}{613}{section.13.3}%
+\contentsline {subsection}{\numberline {13.3.1}The Nullstellensatz}{617}{subsection.13.3.1}%
+\contentsline {subsection}{\numberline {13.3.2}Jacobson rings}{618}{subsection.13.3.2}%
+\contentsline {section}{\numberline {13.4}Exercise}{621}{section.13.4}%
+\contentsline {chapter}{\numberline {14}Valuation rings}{623}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Valuation rings of fields}{623}{section.14.1}%
+\contentsline {section}{\numberline {14.2}Ordered groups and valuations}{626}{section.14.2}%
+\contentsline {subsection}{\numberline {14.2.1}Valuations of rank one}{629}{subsection.14.2.1}%
+\contentsline {subsection}{\numberline {14.2.2}Discrete valuation rings}{631}{subsection.14.2.2}%
+\contentsline {section}{\numberline {14.3}Compare valuation rings of a field}{633}{section.14.3}%
+\contentsline {section}{\numberline {14.4}Dependent valuations and induced topology}{636}{section.14.4}%
+\contentsline {section}{\numberline {14.5}Completion of valued fields}{643}{section.14.5}%
+\contentsline {subsection}{\numberline {14.5.1}Archimedean complete fields}{644}{subsection.14.5.1}%
+\contentsline {subsection}{\numberline {14.5.2}Non-archimedean complete fields}{648}{subsection.14.5.2}%
+\contentsline {section}{\numberline {14.6}Extensions of valuation rings}{652}{section.14.6}%
+\contentsline {subsection}{\numberline {14.6.1}Ramification index and inertial degree}{652}{subsection.14.6.1}%
+\contentsline {subsection}{\numberline {14.6.2}Prolongations of a valuation}{654}{subsection.14.6.2}%
+\contentsline {subsection}{\numberline {14.6.3}Henselian fields}{657}{subsection.14.6.3}%
+\contentsline {subsection}{\numberline {14.6.4}The fundamental inequality}{661}{subsection.14.6.4}%
+\contentsline {section}{\numberline {14.7}Exercise}{667}{section.14.7}%
+\contentsline {chapter}{\numberline {15}Krull domains and divisors}{671}{chapter.15}%
+\contentsline {section}{\numberline {15.1}Krull domains}{671}{section.15.1}%
+\contentsline {subsection}{\numberline {15.1.1}Fractional ideals}{671}{subsection.15.1.1}%
+\contentsline {subsection}{\numberline {15.1.2}The monoid structure on $\mathfrak {D}(A)$}{673}{subsection.15.1.2}%
+\contentsline {subsection}{\numberline {15.1.3}Krull domains}{675}{subsection.15.1.3}%
+\contentsline {subsection}{\numberline {15.1.4}Essential valuations for a Krull domain}{676}{subsection.15.1.4}%
+\contentsline {subsection}{\numberline {15.1.5}Approximation theorem for essential valuations}{678}{subsection.15.1.5}%
+\contentsline {subsection}{\numberline {15.1.6}Prime ideals of height \boldmath $1$ in a Krull domain}{679}{subsection.15.1.6}%
+\contentsline {subsection}{\numberline {15.1.7}Permanence properties of Krull domains}{680}{subsection.15.1.7}%
+\contentsline {subsection}{\numberline {15.1.8}Divisor classes in a Krull domain}{682}{subsection.15.1.8}%
+\contentsline {subsection}{\numberline {15.1.9}Dedekind domains}{685}{subsection.15.1.9}%
+\contentsline {subsection}{\numberline {15.1.10}The Krull-Akizuki theorem}{688}{subsection.15.1.10}%
+\contentsline {subsection}{\numberline {15.1.11}Unique factorization domains}{690}{subsection.15.1.11}%
+\contentsline {section}{\numberline {15.2}Modules over integrally closed Noetherian domains}{694}{section.15.2}%
+\contentsline {subsection}{\numberline {15.2.1}Lattices}{695}{subsection.15.2.1}%
+\contentsline {subsection}{\numberline {15.2.2}Duality and reflexive modules}{698}{subsection.15.2.2}%
+\contentsline {subsection}{\numberline {15.2.3}Local construction of reflexive modules}{701}{subsection.15.2.3}%
+\contentsline {subsection}{\numberline {15.2.4}Divisors attached to finite generated torsion modules}{705}{subsection.15.2.4}%
+\contentsline {subsection}{\numberline {15.2.5}Divisor classes attached to a finite generated module}{708}{subsection.15.2.5}%
+\contentsline {subsection}{\numberline {15.2.6}Properties relative to finite field extensions}{711}{subsection.15.2.6}%
+\contentsline {subsection}{\numberline {15.2.7}Modules over Dedekind domains}{715}{subsection.15.2.7}%
+\contentsline {chapter}{\numberline {16}Dimension}{717}{chapter.16}%
+\contentsline {section}{\numberline {16.1}Dimension of rings and modules}{717}{section.16.1}%
+\contentsline {subsection}{\numberline {16.1.1}Dimension of a ring}{717}{subsection.16.1.1}%
+\contentsline {subsection}{\numberline {16.1.2}Dimension of a finitely generated module}{720}{subsection.16.1.2}%
+\contentsline {subsection}{\numberline {16.1.3}Cycle associated with a module}{720}{subsection.16.1.3}%
+\contentsline {subsection}{\numberline {16.1.4}Exercise}{722}{subsection.16.1.4}%
+\contentsline {section}{\numberline {16.2}Dimension of algebras}{728}{section.16.2}%
+\contentsline {subsection}{\numberline {16.2.1}Dimension and the going-down property}{728}{subsection.16.2.1}%
+\contentsline {subsection}{\numberline {16.2.2}Dimension of a finitely generated algebra}{729}{subsection.16.2.2}%
+\contentsline {subsection}{\numberline {16.2.3}Dimension of finitely generated algebras over fields}{731}{subsection.16.2.3}%
+\contentsline {subsection}{\numberline {16.2.4}Exercise}{736}{subsection.16.2.4}%
+\contentsline {section}{\numberline {16.3}Dimension of Noetherian rings}{740}{section.16.3}%
+\contentsline {subsection}{\numberline {16.3.1}Dimension of a quotient ring}{740}{subsection.16.3.1}%
+\contentsline {subsection}{\numberline {16.3.2}Dimension and secant sequences}{742}{subsection.16.3.2}%
+\contentsline {subsection}{\numberline {16.3.3}Extension of scalars}{747}{subsection.16.3.3}%
+\contentsline {subsection}{\numberline {16.3.4}Exersise}{751}{subsection.16.3.4}%
+\contentsline {section}{\numberline {16.4}Hilbert-Samuel series}{752}{section.16.4}%
+\contentsline {subsection}{\numberline {16.4.1}Poincar\'e series of a graded module on a polynomial ring}{754}{subsection.16.4.1}%
+\contentsline {subsection}{\numberline {16.4.2}Hilbert-Samuel series of a good-filtered module}{757}{subsection.16.4.2}%
+\contentsline {section}{\numberline {16.5}Regular local rings}{765}{section.16.5}%
+\contentsline {subsection}{\numberline {16.5.1}Regularity of a local ring}{765}{subsection.16.5.1}%
+\contentsline {subsection}{\numberline {16.5.2}Quotients of regular local rings}{768}{subsection.16.5.2}%
+\contentsline {subsection}{\numberline {16.5.3}Eisenstein polynomials}{769}{subsection.16.5.3}%
+\contentsline {section}{\numberline {16.6}Dimension and graded rings}{772}{section.16.6}%
+\contentsline {subsection}{\numberline {16.6.1}Dimension and chains of homogeneous ideals}{773}{subsection.16.6.1}%
+\contentsline {subsection}{\numberline {16.6.2}Dimension of graded modules}{776}{subsection.16.6.2}%
+\contentsline {subsection}{\numberline {16.6.3}Dimension and graded algebras}{779}{subsection.16.6.3}%
+\contentsline {section}{\numberline {16.7}Multiplicity}{781}{section.16.7}%
+\contentsline {subsection}{\numberline {16.7.1}Multiplicity of a module relative to an ideal}{781}{subsection.16.7.1}%
+\contentsline {subsection}{\numberline {16.7.2}Multiplicity and base change}{783}{subsection.16.7.2}%
+\contentsline {subsection}{\numberline {16.7.3}Multiplicity and secant sequences}{785}{subsection.16.7.3}%
+\contentsline {subsection}{\numberline {16.7.4}Exercise}{789}{subsection.16.7.4}%
+\contentsline {chapter}{\numberline {17}Complete Noetherian local rings}{791}{chapter.17}%
+\contentsline {section}{\numberline {17.1}Witt vectors and Witt rings}{791}{section.17.1}%
+\contentsline {subsection}{\numberline {17.1.1}Witt polynomials}{791}{subsection.17.1.1}%
+\contentsline {subsection}{\numberline {17.1.2}The ring of Witt vectors}{795}{subsection.17.1.2}%
+\contentsline {subsection}{\numberline {17.1.3}Filtration and topology of the Witt ring}{798}{subsection.17.1.3}%
+\contentsline {subsection}{\numberline {17.1.4}The Witt ring with characteristic $p$}{802}{subsection.17.1.4}%
+\contentsline {section}{\numberline {17.2}Cohen rings}{804}{section.17.2}%
+\contentsline {subsection}{\numberline {17.2.1}$p$-rings}{804}{subsection.17.2.1}%
+\contentsline {subsection}{\numberline {17.2.2}Existence and uniqueness of $p$-rings}{808}{subsection.17.2.2}%
+\contentsline {subsection}{\numberline {17.2.3}Multiplicative representatives}{809}{subsection.17.2.3}%
+\contentsline {subsection}{\numberline {17.2.4}Structure of Noetherian complete local rings}{811}{subsection.17.2.4}%
+\contentsline {subsection}{\numberline {17.2.5}Coefficient fields}{812}{subsection.17.2.5}%
+\contentsline {section}{\numberline {17.3}Integral closure of complete local rings}{814}{section.17.3}%
+\contentsline {subsection}{\numberline {17.3.1}Japanese rings}{814}{subsection.17.3.1}%
+\contentsline {subsection}{\numberline {17.3.2}Nagata rings}{818}{subsection.17.3.2}%
+\contentsline {chapter}{\numberline {18}Depth}{823}{chapter.18}%
+\contentsline {section}{\numberline {18.1}Homological definition of depth}{823}{section.18.1}%
+\contentsline {chapter}{\numberline {19}Sheaves and cohomology of sheaves}{825}{chapter.19}%
+\contentsline {section}{\numberline {19.1}Sheaves of sets}{825}{section.19.1}%
+\contentsline {subsection}{\numberline {19.1.1}Presheaves and sheaves}{825}{subsection.19.1.1}%
+\contentsline {subsection}{\numberline {19.1.2}Stalks of presheaves and sheaves}{827}{subsection.19.1.2}%
+\contentsline {subsection}{\numberline {19.1.3}Sheafification}{831}{subsection.19.1.3}%
+\contentsline {subsection}{\numberline {19.1.4}Direct and inverse images of sheaves}{833}{subsection.19.1.4}%
+\contentsline {subsection}{\numberline {19.1.5}Open immersions and closed immersions}{837}{subsection.19.1.5}%
+\contentsline {paragraph}{\numberline {19.1.5.0.1}Open immersions and sheaves}{837}{paragraph.19.1.5.0.1}%
+\contentsline {paragraph}{\numberline {19.1.5.0.2}Closed immersions and sheaves}{839}{paragraph.19.1.5.0.2}%
+\contentsline {subsection}{\numberline {19.1.6}Glueing sheaves}{840}{subsection.19.1.6}%
+\contentsline {subsection}{\numberline {19.1.7}Preheaves and sheaves over a basis}{842}{subsection.19.1.7}%
+\contentsline {subsection}{\numberline {19.1.8}The category of presheaves and sheaves}{844}{subsection.19.1.8}%
+\contentsline {paragraph}{\numberline {19.1.8.0.1}The category of presheaves}{845}{paragraph.19.1.8.0.1}%
+\contentsline {paragraph}{\numberline {19.1.8.0.2}The category of sheaves}{846}{paragraph.19.1.8.0.2}%
+\contentsline {section}{\numberline {19.2}Sheaf of modules}{849}{section.19.2}%
+\contentsline {subsection}{\numberline {19.2.1}Presheaf of moudles}{849}{subsection.19.2.1}%
+\contentsline {subsection}{\numberline {19.2.2}Sheaf of moudles}{850}{subsection.19.2.2}%
+\contentsline {subsection}{\numberline {19.2.3}Sheafification of presheaves of modules}{850}{subsection.19.2.3}%
+\contentsline {subsection}{\numberline {19.2.4}Continuous maps}{851}{subsection.19.2.4}%
+\contentsline {subsection}{\numberline {19.2.5}Supports of modules and sections}{854}{subsection.19.2.5}%
+\contentsline {subsection}{\numberline {19.2.6}Modules generated by sections}{855}{subsection.19.2.6}%
+\contentsline {subsection}{\numberline {19.2.7}Tensor product}{856}{subsection.19.2.7}%
+\contentsline {subsection}{\numberline {19.2.8}Internal Hom}{859}{subsection.19.2.8}%
+\contentsline {subsection}{\numberline {19.2.9}The abelian category of sheaves of modules}{860}{subsection.19.2.9}%
+\contentsline {section}{\numberline {19.3}Ringed spaces}{864}{section.19.3}%
+\contentsline {subsection}{\numberline {19.3.1}Ringed spaces, $\mathscr {A}$-modules, and $\mathscr {A}$-algebras}{864}{subsection.19.3.1}%
+\contentsline {subsection}{\numberline {19.3.2}Direct image of $\mathscr {A}$-modules}{868}{subsection.19.3.2}%
+\contentsline {subsection}{\numberline {19.3.3}Inverse image of a $\mathscr {B}$-module}{870}{subsection.19.3.3}%
+\contentsline {subsection}{\numberline {19.3.4}Relations of direct images and inverse images}{872}{subsection.19.3.4}%
+\contentsline {subsection}{\numberline {19.3.5}Open immersions and representable natrual transformations}{875}{subsection.19.3.5}%
+\contentsline {section}{\numberline {19.4}Quasi-coherent sheaves and coherent sheaves}{876}{section.19.4}%
+\contentsline {subsection}{\numberline {19.4.1}Quasi-coherent sheaves}{876}{subsection.19.4.1}%
+\contentsline {subsection}{\numberline {19.4.2}Sheaves of finite type}{878}{subsection.19.4.2}%
+\contentsline {subsection}{\numberline {19.4.3}Coherent sheaves}{881}{subsection.19.4.3}%
+\contentsline {subsection}{\numberline {19.4.4}Locally free sheaves}{884}{subsection.19.4.4}%
+\contentsline {chapter}{\numberline {20}Cohomology group of sheaves}{893}{chapter.20}%
+\contentsline {section}{\numberline {20.1}Definition of sheaf cohomology}{893}{section.20.1}%
+\contentsline {section}{\numberline {20.2}Flasque sheaves}{894}{section.20.2}%
+\contentsline {section}{\numberline {20.3}Locality of cohomology}{897}{section.20.3}%
+\contentsline {chapter}{\numberline {21}\v {C}ech cohomology}{901}{chapter.21}%
+\contentsline {section}{\numberline {21.1}The \v {C}ech cohomology group with respect to a covering}{901}{section.21.1}%
+\contentsline {section}{\numberline {21.2}\v {C}ech cohomology as a functor on presheaves}{904}{section.21.2}%
+\contentsline {section}{\numberline {21.3}The \v {C}ech cohomology groups}{905}{section.21.3}%
+\contentsline {section}{\numberline {21.4}Long exact sequence of \v {C}ech-cohomology}{906}{section.21.4}%
+\contentsline {subsection}{\numberline {21.4.1}General case}{906}{subsection.21.4.1}%
+\contentsline {subsection}{\numberline {21.4.2}Paracompact space}{908}{subsection.21.4.2}%
+\contentsline {section}{\numberline {21.5}\v {C}ech resolution and Leray Acyclic Theorem}{909}{section.21.5}%
+\contentsline {section}{\numberline {21.6}\v {C}ech vs. Sheaf cohomology}{913}{section.21.6}%
+\contentsline {chapter}{\numberline {22}The language of schemes}{917}{chapter.22}%
+\contentsline {section}{\numberline {22.1}Affine schemes}{917}{section.22.1}%
+\contentsline {subsection}{\numberline {22.1.1}Sheaves associated with a module}{917}{subsection.22.1.1}%
+\contentsline {subsection}{\numberline {22.1.2}Functorial properties of the associated sheaf}{922}{subsection.22.1.2}%
+\contentsline {subsection}{\numberline {22.1.3}Quasi-coherent sheaves over affine schemes}{925}{subsection.22.1.3}%
+\contentsline {section}{\numberline {22.2}General schemes}{930}{section.22.2}%
+\contentsline {subsection}{\numberline {22.2.1}Schemes and morphisms of schemes}{930}{subsection.22.2.1}%
+\contentsline {subsection}{\numberline {22.2.2}Local schemes}{933}{subsection.22.2.2}%
+\contentsline {subsection}{\numberline {22.2.3}Shemes over a scheme}{935}{subsection.22.2.3}%
+\contentsline {subsection}{\numberline {22.2.4}Quasi-coherent sheaves on schemes}{936}{subsection.22.2.4}%
+\contentsline {subsection}{\numberline {22.2.5}Noetherian schemes and locally Noetherian schemes}{938}{subsection.22.2.5}%
+\contentsline {section}{\numberline {22.3}Product of schemes}{940}{section.22.3}%
+\contentsline {subsection}{\numberline {22.3.1}Product of schemes}{941}{subsection.22.3.1}%
+\contentsline {subsection}{\numberline {22.3.2}Base change of schemes}{943}{subsection.22.3.2}%
+\contentsline {subsection}{\numberline {22.3.3}Tensor product of quasi-coherent sheaves}{946}{subsection.22.3.3}%
+\contentsline {subsection}{\numberline {22.3.4}Scheme valued points}{948}{subsection.22.3.4}%
+\contentsline {subsection}{\numberline {22.3.5}Surjective morphisms}{952}{subsection.22.3.5}%
+\contentsline {subsection}{\numberline {22.3.6}Radical morphisms}{953}{subsection.22.3.6}%
+\contentsline {subsection}{\numberline {22.3.7}Fibers of morphisms}{955}{subsection.22.3.7}%
+\contentsline {subsection}{\numberline {22.3.8}Universally open and universally closed morphisms}{956}{subsection.22.3.8}%
+\contentsline {section}{\numberline {22.4}Subschemes and immersions}{960}{section.22.4}%
+\contentsline {subsection}{\numberline {22.4.1}Subschemes}{960}{subsection.22.4.1}%
+\contentsline {subsection}{\numberline {22.4.2}Immersions of schemes}{962}{subsection.22.4.2}%
+\contentsline {subsection}{\numberline {22.4.3}Inverse image of subschemes}{964}{subsection.22.4.3}%
+\contentsline {subsection}{\numberline {22.4.4}Local immersions and local isomorphisms}{967}{subsection.22.4.4}%
+\contentsline {subsection}{\numberline {22.4.5}Nilradical and associated reduced scheme}{968}{subsection.22.4.5}%
+\contentsline {subsection}{\numberline {22.4.6}Reduced scheme structure on closed subsets}{973}{subsection.22.4.6}%
+\contentsline {section}{\numberline {22.5}Separated schemes and morphisms}{975}{section.22.5}%
+\contentsline {subsection}{\numberline {22.5.1}Diagonal and graph of a morphism}{975}{subsection.22.5.1}%
+\contentsline {subsection}{\numberline {22.5.2}Separated morphisms and schemes}{979}{subsection.22.5.2}%
+\contentsline {subsection}{\numberline {22.5.3}Criterion of separated morphisms}{981}{subsection.22.5.3}%
+\contentsline {section}{\numberline {22.6}Finiteness conditions for morphisms}{984}{section.22.6}%
+\contentsline {subsection}{\numberline {22.6.1}Quasi-compact and quasi-separated morphisms}{985}{subsection.22.6.1}%
+\contentsline {subsection}{\numberline {22.6.2}Morphisms of finite type and of finite presentation}{991}{subsection.22.6.2}%
+\contentsline {subsection}{\numberline {22.6.3}Algebraic schemes}{998}{subsection.22.6.3}%
+\contentsline {subsection}{\numberline {22.6.4}Local determination of morphisms}{1001}{subsection.22.6.4}%
+\contentsline {subsection}{\numberline {22.6.5}Direct image of quasi-coherent sheaves}{1003}{subsection.22.6.5}%
+\contentsline {subsection}{\numberline {22.6.6}Extension of quasi-coherent sheaves}{1004}{subsection.22.6.6}%
+\contentsline {subsection}{\numberline {22.6.7}Scheme-theoretic image}{1006}{subsection.22.6.7}%
+\contentsline {section}{\numberline {22.7}Rational maps over schemes}{1008}{section.22.7}%
+\contentsline {subsection}{\numberline {22.7.1}Rational maps and rational functions}{1008}{subsection.22.7.1}%
+\contentsline {subsection}{\numberline {22.7.2}Defining domain of a rational map}{1011}{subsection.22.7.2}%
+\contentsline {subsection}{\numberline {22.7.3}Sheaf of rational functions}{1013}{subsection.22.7.3}%
+\contentsline {subsection}{\numberline {22.7.4}Torsion sheaves and torsion-free sheaves}{1014}{subsection.22.7.4}%
+\contentsline {subsection}{\numberline {22.7.5}Separation criterion for integral schemes}{1016}{subsection.22.7.5}%
+\contentsline {section}{\numberline {22.8}Formal schemes}{1019}{section.22.8}%
+\contentsline {subsection}{\numberline {22.8.1}Formal affine schemes and morphisms}{1019}{subsection.22.8.1}%
+\contentsline {subsection}{\numberline {22.8.2}Morphisms of formal schemes}{1022}{subsection.22.8.2}%
+\contentsline {subsection}{\numberline {22.8.3}Inductive limits of schemes}{1026}{subsection.22.8.3}%
+\contentsline {subsection}{\numberline {22.8.4}Formal completion of schemes}{1030}{subsection.22.8.4}%
+\contentsline {chapter}{\numberline {23}Global properties of morphisms of schemes}{1035}{chapter.23}%
+\contentsline {section}{\numberline {23.1}Affine morphisms}{1035}{section.23.1}%
+\contentsline {subsection}{\numberline {23.1.1}Schemes affine over a scheme}{1035}{subsection.23.1.1}%
+\contentsline {subsection}{\numberline {23.1.2}Affine $S$-scheme associated with an $\mathscr {O}_S$-algebra}{1037}{subsection.23.1.2}%
+\contentsline {subsection}{\numberline {23.1.3}Quasi-coherent sheaves over affine $S$-schemes}{1039}{subsection.23.1.3}%
+\contentsline {subsection}{\numberline {23.1.4}Base change of affine $S$-schemes}{1042}{subsection.23.1.4}%
+\contentsline {subsection}{\numberline {23.1.5}Vector bundles}{1044}{subsection.23.1.5}%
+\contentsline {section}{\numberline {23.2}Homogeneous specturm of graded algebras}{1048}{section.23.2}%
+\contentsline {subsection}{\numberline {23.2.1}Localization of graded rings}{1048}{subsection.23.2.1}%
+\contentsline {subsection}{\numberline {23.2.2}The homogeneous specturm of a graded ring}{1050}{subsection.23.2.2}%
+\contentsline {subsection}{\numberline {23.2.3}Sheaf associated with a graded module}{1055}{subsection.23.2.3}%
+\contentsline {subsection}{\numberline {23.2.4}Graded $S$-module associated with a sheaf}{1059}{subsection.23.2.4}%
+\contentsline {subsection}{\numberline {23.2.5}Functorial properties of $\mathrm {Proj}(S)$}{1064}{subsection.23.2.5}%
+\contentsline {subsection}{\numberline {23.2.6}Closed subschemes of $\mathrm {Proj}(S)$}{1068}{subsection.23.2.6}%
+\contentsline {section}{\numberline {23.3}Homogeneous spectrum of sheaves of graded algebras}{1070}{section.23.3}%
+\contentsline {subsection}{\numberline {23.3.1}Homogeneous spectrum of a graded $\mathscr {O}_Y$-algebra}{1070}{subsection.23.3.1}%
+\contentsline {subsection}{\numberline {23.3.2}Sheaves associated with a graded $\mathscr {S}$-module}{1074}{subsection.23.3.2}%
+\contentsline {subsection}{\numberline {23.3.3}Graded $\mathscr {S}$-module assocaited with a sheaf}{1076}{subsection.23.3.3}%
+\contentsline {subsection}{\numberline {23.3.4}Functorial properties of $\mathrm {Proj}(\mathscr {S})$}{1080}{subsection.23.3.4}%
+\contentsline {subsection}{\numberline {23.3.5}Closed subschemes of $\mathrm {Proj}(\mathscr {S})$}{1083}{subsection.23.3.5}%
+\contentsline {subsection}{\numberline {23.3.6}Morphisms into $\mathrm {Proj}(\mathscr {S})$}{1084}{subsection.23.3.6}%
+\contentsline {section}{\numberline {23.4}Projective bundles and ample sheaves}{1090}{section.23.4}%
+\contentsline {subsection}{\numberline {23.4.1}Projective bundles}{1090}{subsection.23.4.1}%
+\contentsline {subsection}{\numberline {23.4.2}Morphisms into $\mathbb {P}(\mathscr {E})$}{1092}{subsection.23.4.2}%
+\contentsline {subsection}{\numberline {23.4.3}The Segre morphism}{1095}{subsection.23.4.3}%
+\contentsline {subsection}{\numberline {23.4.4}Very ample sheaves}{1097}{subsection.23.4.4}%
+\contentsline {subsection}{\numberline {23.4.5}Ample sheaves}{1102}{subsection.23.4.5}%
+\contentsline {subsection}{\numberline {23.4.6}Relatively ample sheaves}{1107}{subsection.23.4.6}%
+\contentsline {section}{\numberline {23.5}Quasi-affine, proper, and projective morphisms}{1110}{section.23.5}%
+\contentsline {subsection}{\numberline {23.5.1}Quasi-affine morphisms}{1110}{subsection.23.5.1}%
+\contentsline {subsection}{\numberline {23.5.2}Serre's criterion on affineness}{1113}{subsection.23.5.2}%
+\contentsline {subsection}{\numberline {23.5.3}Quasi-projective morphisms}{1116}{subsection.23.5.3}%
+\contentsline {subsection}{\numberline {23.5.4}Universally closed and proper morphisms}{1117}{subsection.23.5.4}%
+\contentsline {subsection}{\numberline {23.5.5}Projective morphisms}{1120}{subsection.23.5.5}%
+\contentsline {subsection}{\numberline {23.5.6}Chow's lemma}{1122}{subsection.23.5.6}%
+\contentsline {section}{\numberline {23.6}Integral morphisms and finite morphisms}{1126}{section.23.6}%
+\contentsline {subsection}{\numberline {23.6.1}Integral and finite morphisms}{1126}{subsection.23.6.1}%
+\contentsline {subsection}{\numberline {23.6.2}Quasi-finite morphisms}{1129}{subsection.23.6.2}%
+\contentsline {subsection}{\numberline {23.6.3}Integral closure of a scheme}{1131}{subsection.23.6.3}%
+\contentsline {subsection}{\numberline {23.6.4}Determinant of an endomorphism of $\mathscr {O}_X$-modules}{1134}{subsection.23.6.4}%
+\contentsline {subsection}{\numberline {23.6.5}Norm of an invertible sheaf}{1138}{subsection.23.6.5}%
+\contentsline {subsection}{\numberline {23.6.6}Application: a criterion of amplitude}{1142}{subsection.23.6.6}%
+\contentsline {subsection}{\numberline {23.6.7}Chevally's theorem}{1144}{subsection.23.6.7}%
+\contentsline {section}{\numberline {23.7}Valuative criterion}{1146}{section.23.7}%
+\contentsline {subsection}{\numberline {23.7.1}Remainders for valuation rings}{1146}{subsection.23.7.1}%
+\contentsline {subsection}{\numberline {23.7.2}Valuative criterion of separation}{1148}{subsection.23.7.2}%
+\contentsline {subsection}{\numberline {23.7.3}Valuative criterion of properness}{1149}{subsection.23.7.3}%
+\contentsline {subsection}{\numberline {23.7.4}Algebraic curves}{1153}{subsection.23.7.4}%
+\contentsline {section}{\numberline {23.8}Blow up of schemes, projective cones and closures}{1158}{section.23.8}%
+\contentsline {subsection}{\numberline {23.8.1}Blow up of schemes}{1158}{subsection.23.8.1}%
+\contentsline {subsection}{\numberline {23.8.2}Homogenization of graded rings}{1163}{subsection.23.8.2}%
+\contentsline {subsection}{\numberline {23.8.3}Projective cones}{1168}{subsection.23.8.3}%
+\contentsline {subsection}{\numberline {23.8.4}Functorial properties}{1173}{subsection.23.8.4}%
+\contentsline {subsection}{\numberline {23.8.5}Blunt cones over a homogeneous specturm}{1175}{subsection.23.8.5}%
+\contentsline {subsection}{\numberline {23.8.6}Blow up of projective cones}{1178}{subsection.23.8.6}%
+\contentsline {subsection}{\numberline {23.8.7}Ample sheaves and contractions}{1181}{subsection.23.8.7}%
+\contentsline {subsection}{\numberline {23.8.8}Quasi-coherent sheaves over the projective cone}{1182}{subsection.23.8.8}%
+\contentsline {chapter}{\numberline {24}Cohomology of coherent sheaves over schemes}{1187}{chapter.24}%
+\contentsline {section}{\numberline {24.1}Cohomology of affine schemes}{1187}{section.24.1}%
+\contentsline {subsection}{\numberline {24.1.1}\v {C}ech cohomology and Koszul complex}{1187}{subsection.24.1.1}%
+\contentsline {subsection}{\numberline {24.1.2}Cohomology of affine schemes}{1189}{subsection.24.1.2}%
+\contentsline {subsection}{\numberline {24.1.3}Application to cohomology of schemes}{1190}{subsection.24.1.3}%
+\contentsline {section}{\numberline {24.2}Coholomogical study of projective morphisms}{1194}{section.24.2}%
+\contentsline {subsection}{\numberline {24.2.1}Cohomology associated with an invertible sheaf}{1194}{subsection.24.2.1}%
+\contentsline {subsection}{\numberline {24.2.2}The coherence theorem for projective morphisms}{1197}{subsection.24.2.2}%
+\contentsline {subsection}{\numberline {24.2.3}Applications to associated sheaves of graded modules}{1199}{subsection.24.2.3}%
+\contentsline {subsection}{\numberline {24.2.4}Euler characteristic and Hilbert polynomial}{1202}{subsection.24.2.4}%
+\contentsline {subsection}{\numberline {24.2.5}Cohomological criterion for ampleness}{1203}{subsection.24.2.5}%
+\contentsline {section}{\numberline {24.3}The finiteness theorem for proper morphisms}{1203}{section.24.3}%
+\contentsline {subsection}{\numberline {24.3.1}The d\'evissage lemma}{1203}{subsection.24.3.1}%
+\contentsline {subsection}{\numberline {24.3.2}The finiteness theorem for proper morphisms}{1204}{subsection.24.3.2}%
 \contentsfinish 
