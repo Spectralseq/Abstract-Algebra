@@ -558,15 +558,15 @@ The first, somewhat surprising, observation about separability is that we can in
 we denote by $f'(X)$ the derivative
 \[f'(X)=a_1+2a_2X+\cdots+na_nX^{n-1}.\]
 Of course this is a purely formal operation; no limiting process is at work over arbitrary fields. Still, all expected properties of derivatives hold, as the reader should check: for example, $(fg)'=f'g+fg'$ as usual.
-\begin{proposition}\label{poloynomial separable iff f'}
+\begin{proposition}\label{poloynomial separable iff f' coprime to f}
 Let $K$ be a field, and let $f(X)\in K[X]$. Then $f(X)$ is separable if and only if $f(X)$ and $f'(X)$ are relatively prime.
 \end{proposition}
-By definition, $f(X)$ and $f'(X)$ are relatively prime precisely when the greatest common divisor of $f(X)$ and $f'(X)$ is $1$. Note that if $E/K$, the gcd of $f(X)$ and $f'(X)$ is the same whether it is considered in $K[X]$ or in $E[X]$: for example because it can be computed by applying the Euclidean algorithm, and this proceeds in exactly the same way whether it is performed in $K[X]$ or in $E[X]$.
 \begin{proof}
 Over a splitting field $E$ for $f(X)$, we have
 \[f(X)=(X-\alpha_1)^{e_1}(X-\alpha_2)^{e_2}\cdots(X-\alpha_n)^{e_n}\]
 where the $\alpha_i$'s are distinct. It is easy to see that $f(X)$ and $f'(X)$ have no nontrivial common factors over $E$ if and only if $e_i=1$ for all $i$.
 \end{proof}
+By definition, $f(X)$ and $f'(X)$ are relatively prime precisely when the greatest common divisor of $f(X)$ and $f'(X)$ is $1$. Note that if $E/K$, the gcd of $f(X)$ and $f'(X)$ is the same whether it is considered in $K[X]$ or in $E[X]$: for example because it can be computed by applying the Euclidean algorithm, and this proceeds in exactly the same way whether it is performed in $K[X]$ or in $E[X]$.\par
 For example, the polynomial $X^p-t$ may be seen to be inseparable without invoking splitting fields: the derivative of $X^p-t$ equals $pX^{p-1}=0$ in characteristic $p$, and $\gcd(X^p-t,0)=X^p-t\neq 1$. This example captures one of the key features of inseparability:
 \begin{corollary}\label{insepara zero}
 Let $K$ be a field, and let $f(X)\in K[X]$ be an irreducible polynomial. Then $f(X)$ is separable if and only if $f'(X)\neq 0$.
@@ -2426,7 +2426,7 @@ Let $q=p^n$ be a power of a prime integer $p$.
 In particular, for every prime power $q$ there exists one and only one finite field of order $q$, up to isomorphism.
 \end{theorem}
 \begin{proof}
-Let $F$ be the splitting field of $X^q-X$ over $\F_p$. Let $E$ be the set of roots of $f(X)=X^q-X$ in $F$. Since $f'(X)=qX^{q-1}-1=-1$ (as $q=0$ in characteristic $p$), we have $(f(X),f'(X))=1$; hence by \cref{poloynomial separable iff f'} $f(X)$ is separable, and $E$ consists of precisely $q$ elements. We claim that $E$ is a field, and it follows that $E=F$.\par
+Let $F$ be the splitting field of $X^q-X$ over $\F_p$. Let $E$ be the set of roots of $f(X)=X^q-X$ in $F$. Since $f'(X)=qX^{q-1}-1=-1$ (as $q=0$ in characteristic $p$), we have $(f(X),f'(X))=1$; hence by \cref{poloynomial separable iff f' coprime to f} $f(X)$ is separable, and $E$ consists of precisely $q$ elements. We claim that $E$ is a field, and it follows that $E=F$.\par
 To see that $E$ is a field, let $a,b\in E$. Then $a^q=a$ and $b^q=b$; it follows that
 \[(a-b)^q=a^p+(-1)^qb^q=a^q-b^q=a-b.\]
 (note that $(-1)^q=-1$ if $p$ is odd and $(-1)^q=+1=-1$ if $p=2$). If $b\neq0$,
@@ -2495,7 +2495,7 @@ Let $F=\F_q$ be a finite field, and let $n$ be a positive integer. Then the fact
 By \cref{finite field p^n order extension char}, $\F_{q^n}$ is the splitting field of $X^{q^n}-X$ over $\F_p$, and hence over $\F_q=F$.\par
 If $f(X)$ is a monic irreducible polynomial of degree $d$, then $F[X]/(f(X))=F(\alpha)$ is an extension of degree $d$ of $F$, that is, an isomorphic copy of $\F_{q^d}$. By \cref{finite field subfield iff order divide}, if $d\mid n$, then there is an embedding of $\F_{q^d}$ in $\F_{q^n}$. But then $\alpha$ must be a root of $X^{q^n}-X$, and hence $X^{q^n}-X$ is a multiple of $f(X)$, as this is the minimal polynomial of $\alpha$. This proves that every irreducible polynomial of degree $d\mid n$ is a factor of $X^{q^n}-X$.\par
 Conversely, if $f(X)$ is an irreducible factor of $X^{q^n}-X$, then $\F_{q^n}$ contains a root $\alpha$ of $f(X)$; we have the extensions $F=\F_q\sub\F_q(\alpha)\sub\F_{q^n}$, and $\F_q(\alpha)\cong\F_{q^d}$ for $d=\deg\alpha$. It follows that $d\mid n$, again by \cref{finite field subfield iff order divide}.\par
-For the last statement, note that $(X^{p^n}-X)'=p^nX^{p^n-1}-1=-1$, so $X^{p^n}-X$ is separable by \cref{poloynomial separable iff f'}. This implies each irreducible polynomial appears only once in $X^{p^n}-X$.
+For the last statement, note that $(X^{p^n}-X)'=p^nX^{p^n-1}-1=-1$, so $X^{p^n}-X$ is separable by \cref{poloynomial separable iff f' coprime to f}. This implies each irreducible polynomial appears only once in $X^{p^n}-X$.
 \end{proof}
 The picture we are trying to convey is the following: the $q^n$ roots of $X^{q^n}-X$ clump into disjoint subsets, with each subset collecting the roots of each and every irreducible polynomial of degree $d\mid n$ in $F[X]$.
 \begin{example}
@@ -2611,7 +2611,7 @@ with $h(X)\in\Z[X]$. Reading the last equation modulo $p$, we get (again using $
 In particular, $\widebar{f}(X)$ and $\widebar{g}(X)$ must have a nontrivial common factor $\widebar{\ell}(X)$ in $\F_p[X]$. But then
 \[\ell^2(X)\mid\widebar{f}(X)\widebar{g}(X)\]
 the reduction of $\Phi_n(X)$ modulo $p$ must have a multiple factor.\par
-This implies that $X^n-1\in\F_p[X]$ has a multiple factor; that is, it is inseparable. However, its derivative $nX^{n-1}\in\F_p[X]$ is nonzero (because $p$ does not divide $n$ by assumption), and \cref{poloynomial separable iff f'} implies that $X^n-1$ is separable in $\F_p[X]$.\par
+This implies that $X^n-1\in\F_p[X]$ has a multiple factor; that is, it is inseparable. However, its derivative $nX^{n-1}\in\F_p[X]$ is nonzero (because $p$ does not divide $n$ by assumption), and \cref{poloynomial separable iff f' coprime to f} implies that $X^n-1$ is separable in $\F_p[X]$.\par
 This contradiction shows that our assumption that $\Phi_n(X)$ is reducible must be nonsense, proving the statement.
 \end{proof}
 \begin{definition}

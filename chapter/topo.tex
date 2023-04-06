@@ -4604,7 +4604,9 @@ If $Y$ is a closed subset of an irreducible finite-dimensional topological space
 Let $X$ be a topological space. For an irreducible closed subset $Z$ of $X$, the \textbf{codimension} of $Z$ in $X$ is defined to be the supremum of the lengths of the chains of closed irreducible subsets of $X$ containing $Z$. If $Y$ is a closed subset of $X$, the \textbf{codimension} of $Y$ in $X$ is defined to be the infimum of the codimensions in $X$ of the irreducible of components $Y$.\par
 The codimension of a closed subset $Y$ of $X$ is therefore the infimum of the codimensions of the irreducible closed subsets of $Y$. We have $\codim(\emp,X)=+\infty$ and, if $X$ is not empty, $\codim(X,X)=0$. Since any nonempty closed subset of $X$ contains an irreducible closed subset (for example the closure of a singleton), the codimension in $X$ of a closed subset $Y$ is always a positive integer or $+\infty$. It is zero if and only if $Y$ contains an irreducible component of $X$. Note that by definition $\codim(Y,X)\leq\dim(X)$, and $\dim(X)=\sup_Y\codim(Y,X)$ where $Y$ runs through all irreducible closed subsets of $X$. Also, if $Y'\sub Y$ are closed subsets of $X$, we have $\codim(Y,X)\leq\codim(Y,X)$.\par
 Let $Y$ be a closed subset of $X$ and $(X_\alpha)_{\alpha\in A}$ (resp. $(Y_\beta)_{\beta\in B}$) be the family of irreducible components of $X$ (resp. of $Y$). For each $\beta\in B$, let $A_\beta$ be the subset $\alpha\in A$ such that $Y_\beta\sub X_\alpha$. Then since each irreducible closed subset of $X$ is contained in one of $X_\alpha$, it follows from definition that
-\[\codim(Y,X)=\inf_{\beta\in B}\sup_{\alpha\in A_\beta}\codim(Y_\beta,X_\alpha).\]
+\begin{align}\label{topo space codim is inf of component}
+\codim(Y,X)=\inf_{\beta\in B}\sup_{\alpha\in A_\beta}\codim(Y_\beta,X_\alpha).
+\end{align}
 In particular, if $(Y_i)_{i\in I}$ is a finite family of closed subsets of $X$ and $Y=\bigcup_iY_i$, then
 \[\codim(Y,X)=\inf_{i\in I}\codim(Y_i,X)\]
 since by \cref{topo space irreducible contained in finite union} any irreducible component of $Y$ is contained in one of the $Y_i$.

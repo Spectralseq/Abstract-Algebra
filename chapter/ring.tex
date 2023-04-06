@@ -2090,7 +2090,7 @@ An important application of \cref{module res faithfully flat prop} is when $B$ i
 Let $\rho:A\to B$ be a ring homomorphism. The following properties are equivalent:
 \begin{itemize}
 \item[(\rmnum{1})] The $A$-module $B$ is faithfully flat.
-\item[(\rmnum{2})] The homomorphism $\rho$ is injectioe and the $A$-module $B/\rho(A)$ is flat.
+\item[(\rmnum{2})] The homomorphism $\rho$ is injective and the $A$-module $B/\rho(A)$ is flat.
 \item[(\rmnum{3})] The $A$-module $B$ is flat and, for every $A$-module $F$, the canonical homomorphism $F\to B\otimes_AF$ is injective.
 \item[(\rmnum{4})] The $A$-module $B$ is flat and, for every ideal $\a$ of $A$, $\a^{ec}=\a$.
 \item[(\rmnum{5})] The $A$-module $B$ is flat and, for every maximal ideal $\m$ if $A$, there exists a maximal ideal $\mathfrak{M}$ of $B$ such that $\mathfrak{M}^c=\m$.
@@ -2377,10 +2377,10 @@ resp.
 \end{tikzcd}\]
 such that $d_n\circ d_{n+1}=0$ (resp. $d^n\circ d^{n-1}=0$) for each $n\in\Z$. By abuse of language, we will also call complex the data of such a sequence of $A$-modules and homomorphisms.\par
 Any graded $A$-module will be tacitly considered as a complex in providing zero differential; the complexes thus obtained will be called complexes with zero differential. In particular, any $A$-module $M$ will be equipped with the unique structure of $A$-complex such that $M_0=M^0=M$. The complex $(M,d)$ is said to be zero if $M$ is reduced to $0$. In the following, we denote by $0$ a zero complex.\par
-Adjointing the ordered set $\Z$ with elements $-\infty$ and $+\infty$, we denote by $\widebar{\Z}$ the obtained set, and extend the order relation on $\Z$ to $\widebar{\Z}$ by defining $-\infty<n<+\infty$ for any $n\in\Z$. The set $\widebar{\Z}$ then has maximal and minimal elements. If $M$ is a complex, we define the left and right bounds of $M$ to be the elements $b_l(M)$ and $b_r(M)$ of $\widebar{Z}$ by
+Adjointing the ordered set $\Z$ with elements $-\infty$ and $+\infty$, we denote by $\widebar{\Z}$ the obtained set, and extend the order relation on $\Z$ to $\widebar{\Z}$ by defining $-\infty<n<+\infty$ for any $n\in\Z$. The set $\widebar{\Z}$ then has maximal and minimal elements. If $M$ is a complex, we define the left and right bounds of $M$ to be the elements $b_l(M)$ and $b_r(M)$ of $\widebar{\Z}$ by
 \[b_l(M)=\sup\{n\in\Z:M_n\neq 0\},\quad b_r(M)=\inf\{n\in\Z:M_n\neq 0\}.\]
-We say $M$ is \textbf{positive} if $b_r(M)\geq 0$, and \textbf{left bounded} if $b_l(M)\neq+\infty$. Similarly, $M$ is \textbf{negative} if $b_l(M)\leq 0$, and \textbf{right bounded} if $b_r(M)\neq-\infty$. Finally, we say $M$ is \textbf{bounded} if it is left bounded and right bounded. The length of $M$, denote by $l(M)$, is the element $\widebar{\Z}$ defined by the following: if $M$ is zero then $l(M)=-\infty$; if $M$ is bounded and nonzero, $l(M)=b_r(M)-b_l(M)$; if $M$ is not bounded, $l(M)=+\infty$.\par
-We say the complex $(M,d)$ is free, projective, flat, injective, if each of its component $M_n$ is. We note that the complex $(M,d)$ is projective or flat if and only if the module $M$ is (\cref{module flat and direct sum}), but $M$ can be free without the complex $(M,d)$ being free (since a direct factor of a module free is not always free), just as $(M,d)$ can be injective without $M$ being injective.\par
+The complex $M$ is said to be \textbf{positive} if $b_r(M)\geq 0$, and \textbf{left bounded} if $b_l(M)\neq+\infty$. Similarly, $M$ is \textbf{negative} if $b_l(M)\leq 0$, and \textbf{right bounded} if $b_r(M)\neq-\infty$. Finally, we say $M$ is \textbf{bounded} if it is left bounded and right bounded. The length of $M$, denote by $l(M)$, is the element $\widebar{\Z}$ defined by the following: if $M$ is zero then $l(M)=-\infty$; if $M$ is bounded and nonzero, $l(M)=b_r(M)-b_l(M)$; if $M$ is not bounded, $l(M)=+\infty$.\par
+We say that the complex $(M,d)$ is free, projective, flat, injective, if each of its component $M_n$ is. We note that the complex $(M,d)$ is projective or flat if and only if the module $M$ is (\cref{module flat and direct sum}), but $M$ can be free without the complex $(M,d)$ being free (since a direct factor of a module free is not always free), just as $(M,d)$ can be injective without $M$ being injective.\par
 Let $(M,d)$ be a complex. We set $Z(M,d)=\ker d$ and $B(M,d)=\im d$. These are graded submodules of $M$, which are called \textbf{cycles} and \textbf{boundaries} of $(M,d)$. The homogeneous components of $Z(M,d)$ and $B(M,d)$ are denoted by $Z_n(M,d)=Z^{-n}(M,d)$ and $B_n(M,d)=B^{-n}(M,d)$. We have
 \[Z_n(M,d)=\ker d_n,\quad B_n(M,d)=\im d_{n+1},\quad Z^n(M,d)=\ker d^n,\quad B^n(M,d)=\im d^{n-1}.\]
 Since $d\circ d=0$, we have $B(M,d)\sub Z(M,d)$; two cycles are then said to be \textbf{homologous} if their difference is a boundary. The quotient graded module $H(M,d)=Z(M,d)/B(M,d)$ and called the \textbf{homology module} of $(M,d)$. Its elements are called the homology classes, and the homogeneous components of $H(M,d)$ are denoted by $H_n(M,d)=H^{-n}(M,d)$.
@@ -3620,7 +3620,7 @@ We have the following exact sequences:
 \begin{equation}
 \begin{aligned}
 \begin{tikzcd}
-0\ar[r]&H&0(N)\ar[r,"i"]&N^0\ar[r]&N^1
+0\ar[r]&H^0(N)\ar[r,"i"]&N^0\ar[r]&N^1
 \end{tikzcd}\\
 \begin{tikzcd}
 M_1\ar[r,"d_1"]&M_0\ar[r,"\pi"]&H_0(M)\ar[r]&0
@@ -3751,10 +3751,7 @@ For any $\lambda\in\a$, the homothety $\lambda_{K(\alpha)}$ is homotopic to zero
 \end{proof}
 Suppose that $E$ is projective (resp. $K(\alpha)$ is acyclic at positive degrees). Then the complex $\bigw(E)$ is projective (resp. is a resolution of $A/\a$). By \cref{*} (resp. \cref{*}), we then have, for any $A$-module $M$, the homomorphisms
 \begin{alignat*}{3}
-&H_\bullet^A(\alpha,M)\to \Tor_\bullet^A(A/\a,M)&\quad\quad&&&\Ext_A^\bullet(A/\a,M)\to H_A^\bullet(\alpha,M),
-\end{alignat*}
-resp.
-\begin{alignat*}{3}
+&H_\bullet^A(\alpha,M)\to \Tor_\bullet^A(A/\a,M)&\quad\quad&&&\Ext_A^\bullet(A/\a,M)\to H_A^\bullet(\alpha,M),\\
 &\Tor_\bullet^A(A/\a,M)\to H_\bullet^A(\alpha,M)&\quad\quad&&&H_A^\bullet(\alpha,M)\to\Ext_A^\bullet(A/\a,M).
 \end{alignat*}
 If $E$ is projective and $K(\alpha)$ is acyclic at positive degrees, the homomorphisms above are bijective and inverses of each other (\cref{*}).
@@ -3813,28 +3810,25 @@ H^A_\bullet(\alpha,M)\to H_A^{n-\bullet}(\alpha,M\otimes_A\bigw^n(E)).
 \end{align}
 Since $E$ is free of rank $n$, we know the module $\bigw^n(E)$ is isomorphic to $A$, so in particular, we have an isomorphism $H_\bullet^A(\alpha,M)\to H_A^{n-\bullet}(\alpha,M)$. Note however that this isomorphism is not canonical.
 \begin{proposition}\label{Koszul complex long exact sequence}
-Consider an exact sequence of complexes:
-\[\begin{tikzcd}
-0\ar[r]&L\ar[r]&M\ar[r]&N\ar[r]&0
-\end{tikzcd}\]
+Consider an exact sequence of complexes $0\to L\to M\to N\to 0$.
 \begin{itemize}
 \item[(a)] If $E$ is flat then there is a long exact sequence of $H_\bullet^A(\alpha,-)$:
-\[\begin{tikzcd}
+\[\begin{tikzcd}[column sep=6mm]
 \cdots\ar[r]&H_n^A(\alpha,L)\ar[r]&H_n^A(\alpha,M)\ar[r]&H_n^A(\alpha,N)\ar[r]&H_{n-1}^A(\alpha,L)\ar[r]&\cdots
 \end{tikzcd}\] 
 \item[(b)] If $E$ is projective then there is also a long exact sequence of $H^\bullet_A(\alpha,-)$:
-\[\begin{tikzcd}
+\[\begin{tikzcd}[column sep=6mm]
 \cdots\ar[r]&H^n_A(\alpha,L)\ar[r]&H^n_A(\alpha,M)\ar[r]&H^n_A(\alpha,N)\ar[r]&H^{n+1}_A(\alpha,L)\ar[r]&\cdots
 \end{tikzcd}\] 
 \end{itemize}
 \end{proposition}
 \begin{proof}
 If $E$ is flat (resp. projective) then $\bigw(E)$ is flat (resp. projective), so the sequence
-\[\begin{tikzcd}
+\[\begin{tikzcd}[column sep=6mm]
 0\ar[r]&K_\bullet^A(\alpha,L)\ar[r]&K_\bullet^A(\alpha,M)\ar[r]&K_\bullet^A(\alpha,N)\ar[r]&0
 \end{tikzcd}\]
 resp. the sequence
-\[\begin{tikzcd}
+\[\begin{tikzcd}[column sep=6mm]
 0\ar[r]&K^\bullet_A(\alpha,L)\ar[r]&K^\bullet_A(\alpha,M)\ar[r]&K^\bullet_A(\alpha,N)\ar[r]&0
 \end{tikzcd}\]
 The rest then follows from the long exact sequence theorem for homology modules.
@@ -3955,7 +3949,7 @@ We then have isomorphisms
 Let $K$ be an $A$-complex such that $K_i=0$ for $i\neq 0,1$, and $M$ an $A$-complex.
 \begin{itemize}
 \item[(a)] If $K$ is flat, for any integer $p\in\N$ we have an exact sequence
-\[\begin{tikzcd}
+\[\begin{tikzcd}[column sep=6mm]
 0\ar[r]&H_0(K\otimes_AH_p(M))\ar[r]&H_p(K\otimes_AM)\ar[r]&H_1(K\otimes_AH_{p-1}(M))\ar[r]&0
 \end{tikzcd}\] 
 \item[(b)] If $K$ is projective, for any integer $p\in\N$ we have an exact sequence
@@ -4005,7 +3999,7 @@ By the exact sequence in \cref{Koszul complex iterated homology prop}, for $H_p(
 \end{proof}
 \begin{corollary}\label{Koszul complex sequence delete exact seq}
 Let $\bm{x}=(x_1,\dots,x_n)$ be a sequence of elements of $A$, $M$ an $A$-module, and $\tilde{\bm{x}}=(x_1,\dots,x_{n-1})$. Then we have an exact sequence
-\[\begin{tikzcd}
+\[\begin{tikzcd}[column sep=6mm]
 0\ar[r]&A/x_nA\otimes_AH_p(\tilde{\bm{x}},M)\ar[r]&H_p(\bm{x},M)\ar[r]&\Hom_A(A/x_n,H_{p-1}(\tilde{\bm{x}},M))\ar[r]&0
 \end{tikzcd}\]
 \end{corollary}
@@ -4059,9 +4053,9 @@ for each $i$. Similar to \cref{Koszul complex regular is completely secant}, we 
 Take for example $A=k[D_1,\dots,D_n]$, where $k$ is a $\Q$-algebra, and $M=k[T_1,\dots,T_n]$, where $D_i$ acts on $M$ by $D_iP=\partial P/\partial T_i$. We then verify that the sequence $(D_1,\dots,D_n)$ is $M$-coregular. Combine this with \cref{Koszul complex and de Rham complex for polynomial ring}, we deduce that the de Rham complex of $k[T_1,\dots,T_n]$ over $k$ is acyclic at positive degrees.
 \end{example}
 Let $A$ be a ring, $M$ an $A$-module, $\x$ an ideal of $A$. We recall that the $\x$-adic topology on $M$ is the topology compatible with the module structure on $M$ and such that $\x^rM$ form a fundamental neighborhood of $0$ in $M$. Suppose now $\x$ is generated by a sequence $\bm{x}=(x_1,\dots,x_n)$ of elements of $A$. Consider the graded $A$-module $\bigoplus_r\x^rM$ and the graded $A$-homomorphism of degree $0$:
-\[a_M^\x:A[X_1,\dots,X_n]\otimes_AM\to\bigoplus_r\x^rM\] 
+\[a_M^\x:A[X_1,\dots,X_n]\otimes_AM\to\bigoplus_{r\geq 0}\x^rM\] 
 such that $a_M^\x(P\otimes m)=P(x_1,\dots,x_n)m$ if $P$ is a homogeneous polynomial and $m\in M$. Let $\d$ be the ideal of $A[X_1,\dots,x_n]$ generated by the elements $(x_iX_j-x_jX_i)$ for $1\leq i<j\leq n$. Then $P(x_1,\dots,x_n)=0$ if $P\in\d$, so $a_M^\x$ factors into a graded $A$-homomorphism of degree $0$:
-\[\alpha_M^\x:(A[X_1,\dots,X_n]/\d)\otimes_AM\to\bigoplus_r\x^rM.\]
+\[\alpha_M^\x:(A[X_1,\dots,X_n]/\d)\otimes_AM\to\bigoplus_{r\geq 0}\x^rM.\]
 By tensoring with $A/\x$, we deduce from $\alpha_M^\x$ another graded $A$-homomorphism of degree $0$:
 \[\beta_M^\x:(A/\x)[X_1,\dots,X_n]\otimes_AM\to\gr_\x(M).\]
 For each $i$, let $M_i$ be the quotient $A$-module $M/(x_1M+\cdots+x_{i-1}M)$.
@@ -4072,13 +4066,13 @@ Let $A_0$ be the ring $\Z[T_1,\dots,T_n]$ and let $\rho:A_0[X_1,\dots,X_n]\to A_
 \begin{proof}
 
 \end{proof}
-\begin{theorem}\label{Koszul complex completely secant crit}
+\begin{theorem}\label{Koszul complex completely secant annd regular relation}
 Consider the following conditions:
 \begin{itemize}
 \item[(\rmnum{1})] The sequence $\bm{x}$ is $M$-regular.
 \item[(\rmnum{2})] The sequence $\bm{x}$ is completely secant for $M$.
 \item[(\rmnum{3})] $H_1(\bm{x},M)=0$.
-\item[(\rmnum{4})] The homomorphism $\alpha_M^\x:(A[X_1,\dots,X_n]/\d)\otimes_AM\to\bigoplus_r\x^rM$ is bijective.
+\item[(\rmnum{4})] The homomorphism $\alpha_M^\x:(A[X_1,\dots,X_n]/\d)\otimes_AM\to\bigoplus_{r\geq 0}\x^rM$ is bijective.
 \item[(\rmnum{5})] The homomorphism $\beta_M^\x:(A/\x)[X_1,\dots,X_n]\otimes_AM\to\gr_\x(M)$ is bijective.
 \end{itemize}
 We have (\rmnum{1})$\Rightarrow$(\rmnum{2})$\Rightarrow$(\rmnum{3})$\Leftrightarrow$(\rmnum{4})$\Rightarrow$(\rmnum{5}). If for each $i$ the $A$-module $M_i$ is separated for the $\x$-adic topology, the above conditions are equivalent. 
@@ -4088,13 +4082,13 @@ The implication (\rmnum{1})$\Rightarrow$(\rmnum{2}) is already proved, and (\rmn
 To prove (\rmnum{4})$\Rightarrow$(\rmnum{3}), consider the homomorphism $(\alpha_M^\x)_1$ induced on the component of degree $1$ by $\alpha_M^\x$. Let $E$ be the graded $A$-module $A[X_1,\dots,X_n]$; the $A$-module $E_1$ is free with basis $X_1,\dots,X_n$, and $\d_1$ is the sub-$A$-module of $E_1$ generated by the elements $x_iX_j-x_jX_i$ for $1\leq i<j\leq n$. Therefore $((E/\d)\otimes_AM)_1$ is identified with $K_1(\bm{x},M)/B_1(K_\bullet(\bm{x},M))$, and the homomorphism $(\alpha_M^\x)_1$ is identified with the map from $K_1(\bm{x},M)/B_1(K_\bullet(\bm{x},M))$ to $B_0(K_\bullet(\bm{x},M))$ induced by $d_1$. Thus the condition that $H_1(\bm{x},M)=0$ is equivalent to the injectivity of $(\alpha_M^\x)_1$, which proves the implication (\rmnum{4})$\Rightarrow$(\rmnum{3}).\par
 To prove that (\rmnum{3}) implies (\rmnum{4}), we consider the ring $A_0=\Z[T_1,\dots,T_n]$ and let $\t$ be the ideal of $A_0$ generated by $T_1,\dots,T_n$. Endow $M$ the $A_0$-module structure such that $T_im=x_im$ for $m\in M$. Then the homology group $H_i(\bm{x},M)$ is identified with $H_i(\bm{T},M)$, where $\bm{T}=(T_1,\dots,T_n)$. Since $\bm{T}$ is regular for $A_0$, it follows from the implication (\rmnum{1})$\Rightarrow$(\rmnum{2}) that the complex $K_\bullet(\bm{T},A_0)$ is a free resolution for the $A_0$-module $A_0/\t$, which is identified with $\Z$ with the $A_0$-structure defined by $T_i\Z=0$ for each $i$. Therefore, the condition (\rmnum{3}) is equivalent to $\Tor_1^{A_0}(M,\Z)=0$.\par
 We first show that (\rmnum{3}) implies $\Tor_1^{A_0}(M,A_0/\t^r)=0$ for $r\geq 1$. This is true for $r=1$ as we have seen. In the general case, consider the exact sequence
-\begin{equation}\label{Koszul complex completely secant crit-1}
+\begin{equation}\label{Koszul complex completely secant annd regular relation-1}
 \begin{tikzcd}
 0\ar[r]&\t^r/\t^{r+1}\ar[r,"\iota_r"]&A_0/\t^{r+1}\ar[r,"\pi_r"]&A_0/\t^r\ar[r]&0
 \end{tikzcd}
 \end{equation}
-The $A_0$-module $\t^r/\t^{r+1}$ is isomorphic to a finite product of modules isomomorphic to $\Z$, so $\Tor_1^{A_0}(M,\t^r/\t^{r+1})=0$. We then deduce, by induction on $r$, that $\Tor_1^{A_0}(M,A_0/\t^r)=0$ for each $r\geq 1$. The sequence (\ref{Koszul complex completely secant crit-1}) then provides, by tensoring with $M$, an exact sequence
-\begin{equation}\label{Koszul complex completely secant crit-2}
+The $A_0$-module $\t^r/\t^{r+1}$ is isomorphic to a finite product of modules isomomorphic to $\Z$, so $\Tor_1^{A_0}(M,\t^r/\t^{r+1})=0$. We then deduce, by induction on $r$, that $\Tor_1^{A_0}(M,A_0/\t^r)=0$ for each $r\geq 1$. The sequence (\ref{Koszul complex completely secant annd regular relation-1}) then provides, by tensoring with $M$, an exact sequence
+\begin{equation}\label{Koszul complex completely secant annd regular relation-2}
 \begin{tikzcd}
 0\ar[r]&(\t^r/\t^{r+1})\otimes_{A_0}M\ar[r]&M/\t^{r+1}M\ar[r]&M/\t^rM\ar[r]&0
 \end{tikzcd}
@@ -4111,14 +4105,14 @@ and induction on $r$, we then conclude that the map $m_r:\t^r\otimes_{A_0}M\to\x
 where $\eta$ is the canonical isomorphism of extension of scalars:
 \[(A_0[X_1,\dots,X_n]/\d_0)\otimes_{A_0}M\cong (A_0[X_1,\dots,X_n]/\d_0)\otimes_{A_0}A\otimes_AM\cong(A[X_1,\dots,X_n]/\d)\otimes_AM.\]
 By \cref{polynomial ring iterated multiplication map kernel char}, we then see condition (\rmnum{4}) follows.\par
-Finally, consider the follwoing exact sequence induced from (\ref{Koszul complex completely secant crit-1}):
-\begin{equation}\label{Koszul complex completely secant crit-3}
+Finally, consider the follwoing exact sequence induced from (\ref{Koszul complex completely secant annd regular relation-1}):
+\begin{equation}\label{Koszul complex completely secant annd regular relation-3}
 \begin{tikzcd}[column sep=12mm]
 \Tor_1^{A_0}(A_0/\t^{r+1},M)\ar[r,"{\Tor(\iota_r,1_M)}"]&\Tor_1^{A_0}(A_0/\t^r,M)\ar[r,"{\Tor(\pi_r,1_M)}"]&(\t^r/\t^{r+1})\otimes_{A_0}M\ar[out=0, in=180, looseness=2, overlay,"\iota_r\otimes 1_M"description]{dl}\\
 &(A_0/\t^{r})\otimes_{A_0}M\ar[r,"\pi_r\otimes 1_M"]&(A_0/\t^{r+1})\otimes_{A_0}M\ar[r]&0
 \end{tikzcd}
 \end{equation}
-The kernel of $\pi_r\otimes 1_M$ is identified with $\x^rM/\x^{r+1}M$ and the $A_0$-module $\t^r/\t^{r+1}$ is identified with the homogeneous component of degree $r$ of $A_0$. Therefore, the homomorphism $(\t^r/\t^{r+1})\otimes_{A_0}M\to\x^rM/\x^{r+1}M$ induced by $\iota_r\otimes 1_M$ is identified with the homogeneous component of degree $r$ of $\beta_M^{\x}$ and we get the following exact sequence from (\ref{Koszul complex completely secant crit-3}):
+The kernel of $\pi_r\otimes 1_M$ is identified with $\x^rM/\x^{r+1}M$ and the $A_0$-module $\t^r/\t^{r+1}$ is identified with the homogeneous component of degree $r$ of $A_0$. Therefore, the homomorphism $(\t^r/\t^{r+1})\otimes_{A_0}M\to\x^rM/\x^{r+1}M$ induced by $\iota_r\otimes 1_M$ is identified with the homogeneous component of degree $r$ of $\beta_M^{\x}$ and we get the following exact sequence from (\ref{Koszul complex completely secant annd regular relation-3}):
 \[\begin{tikzcd}[column sep=12mm]
 \Tor_1^{A_0}(A_0/\t^{r+1},M)\ar[r,"{\Tor_1^{A_0}(\iota_r,1_M)}"]&\Tor_1^{A_0}(A_0/\t^r,M)\ar[r,"{\Tor_1^{A_0}(\pi_r,1_M)}"]&(\t^r/\t^{r+1})\otimes_{A_0}M\ar[r,"(\beta_M^{\x})_r"]&\x^rM/\x^{r+1}M
 \end{tikzcd}\]
@@ -4151,7 +4145,7 @@ This being so, suppose the condition (\rmnum{5}') holds for $M$. Let $r\geq 1$ b
 0\ar[r]&A_0/\t^r\ar[r,"T_1"]&A_0/\t^{r+1}\ar[r]&\widebar{A}_0/\bar{\t}^{r+1}\ar[r]&0
 \end{tikzcd}\]
 which induces the following commutative diagram
-\begin{equation}\label{Koszul complex completely secant crit-4}
+\begin{equation}\label{Koszul complex completely secant annd regular relation-4}
 \begin{tikzcd}
 \Tor_1^{A_0}(A_0/\t^{r+1},M)\ar[r]\ar[d,"{\Tor_1(\pi_r,1)}"]&\Tor_1^{A_0}(\widebar{A}_0/\bar{\t}^{r+1},M)\ar[r]\ar[d,"{\Tor_1(\bar{\pi}_r,1)}"]&M/\x^rM\ar[r,"x_1"]\ar[d]&M/\x^{r+1}M\ar[d]\\
 \Tor_1^{A_0}(A_0/\t^{r},M)\ar[r]&\Tor_1^{A_0}(\widebar{A}_0/\bar{\t}^{r},M)\ar[r]&M/\x^{r-1}M\ar[r,"x_1"]&M/\x^{r}M
@@ -4161,18 +4155,18 @@ with exact rows. Now the multiplication by $x_1$ defines an injection from $M/\x
 \[\begin{tikzcd}
 0\ar[r]&\x^{r-1}M/\x^rM\ar[r]&M/\x^rM\ar[r]&M/\x^{r-1}M\ar[r]&0
 \end{tikzcd}\]
-and the injectivity of the homothety with ratio $x_1$ on $\gr_{\x}(M)$. Therefore, the first horizontal maps in both rows of (\ref{Koszul complex completely secant crit-4}) are surjective, and condition (\rmnum{5}') then implies that the homomorphism $\Tor_1^{\widebar{A}_0}(\bar{\pi}_r,1_M)$ is surjective for $r\geq 1$. By composing with the isomorphisms $(\varphi_{\widebar{A}_0/\bar{\t}^{r+1}})^{-1}$ and $\varphi_{\widebar{A}_0/\bar{\t}^r}$, we then deduce that the homomorphism
+and the injectivity of the homothety with ratio $x_1$ on $\gr_{\x}(M)$. Therefore, the first horizontal maps in both rows of (\ref{Koszul complex completely secant annd regular relation-4}) are surjective, and condition (\rmnum{5}') then implies that the homomorphism $\Tor_1^{\widebar{A}_0}(\bar{\pi}_r,1_M)$ is surjective for $r\geq 1$. By composing with the isomorphisms $(\varphi_{\widebar{A}_0/\bar{\t}^{r+1}})^{-1}$ and $\varphi_{\widebar{A}_0/\bar{\t}^r}$, we then deduce that the homomorphism
 \[\Tor_1^{\widebar{A}_0}(\bar{\pi}_r,1_M):\Tor_1^{\widebar{A}_0}(\widebar{A}_0/\bar{\t}^{r+1},M)\to\Tor_1^{\widebar{A}_0}(\widebar{A}_0/\bar{\t}^{r},M)\]
 is surjective for $r\geq 1$, whence the condition (\rmnum{5}') for $\widebar{M}$. This completes the proof. 
 \end{proof}
 \begin{corollary}\label{Koszul sequence Zariski ring complete secant is regular}
-If $A$ is a Zariski ring and $\x$ is a defining ideal of $A$. Then for any finitely generated $A$-module $M$, the conditions in \cref{Koszul complex completely secant crit} are equivalent.
+If $A$ is a Zariski ring and $\x$ is a defining ideal of $A$. Then for any finitely generated $A$-module $M$, the conditions in \cref{Koszul complex completely secant annd regular relation} are equivalent.
 \end{corollary}
 \begin{proof}
 By \cref{Zariski ring def} the modules $M_i$ are separated for the $\x$-adic topology.
 \end{proof}
 \begin{corollary}\label{Koszul sequence graded ring complete secant is regular}
-Suppose that $A$ is a graded ring of positive degrees, $M$ a graded $A$-module bounded below, and the $x_i$ are homogeneous elements of positive degrees. Then the conditions in \cref{Koszul complex completely secant crit} are equivalent.
+Suppose that $A$ is a graded ring of positive degrees, $M$ a graded $A$-module bounded below, and the $x_i$ are homogeneous elements of positive degrees. Then the conditions in \cref{Koszul complex completely secant annd regular relation} are equivalent.
 \end{corollary}
 \begin{proof}
 The $\x$-adic topology is in fact separated for any graded $A$-module $N$ bounded below, since if $N_n=0$ for $n<n_0$ we have $\x^\nu N\sub\sum_{i\geq n_0+\nu}N_i$ for any $\nu\geq 0$.
@@ -4181,7 +4175,7 @@ The $\x$-adic topology is in fact separated for any graded $A$-module $N$ bounde
 Suppose that the modules $M_i$ are separated for the $\x$-adic topology; let $1\leq p\leq n$ be an integer. For the sequence $\bm{x}$ to be completely secant for $M$, it is necessary and sufficient that the sequence $(x_1,\dots,x_p)$ is completely secant for $M$ and the sequence $(x_{p+1},\dots,x_n)$ is completely secant for $M/(x_1M+\cdots+x_pM)$.
 \end{corollary}
 \begin{remark}
-Let $\bm{x}=(x_1,\dots,x_n)$ be a sequence of elements of $A$ such that $H_1(\bm{x},A)=0$. Then from the construction of $K_\bullet(\alpha)$, the kernel of the surjective homomorphism $\alpha:A^n\to\x$ such that $\alpha(\sum_ia_ie_i)=\sum_ia_ix_i$ is the image of $\bigw^2(A^n)$ under $d_\alpha$, which by (\ref{Koszul complex differential def}) is generated by the elements $x_je_i-x_ie_j$. Therefore, the $A$-algebra $A[X_1,\dots,X_n]/\d$ is isomorphic to the symmetric algebra $S_A(\x)$ (\cref{*}). It then follows from \cref{Koszul complex completely secant crit} that the algebra homomorphism $S_A(\x)\to\bigoplus_n\x^n$ induced from the canonical injection of $\x$ to $\bigoplus_n\x^n$ is an isomorphism. The same holds for the homomorphism $S_A(\x/\x^2)\to\gr_\x(A)$. 
+Let $\bm{x}=(x_1,\dots,x_n)$ be a sequence of elements of $A$ such that $H_1(\bm{x},A)=0$. Then from the construction of $K_\bullet(\alpha)$, the kernel of the surjective homomorphism $\alpha:A^n\to\x$ such that $\alpha(\sum_ia_ie_i)=\sum_ia_ix_i$ is the image of $\bigw^2(A^n)$ under $d_\alpha$, which by (\ref{Koszul complex differential def}) is generated by the elements $x_je_i-x_ie_j$. Therefore, the $A$-algebra $A[X_1,\dots,X_n]/\d$ is isomorphic to the symmetric algebra $S_A(\x)$ (\cref{*}). It then follows from \cref{Koszul complex completely secant annd regular relation} that the algebra homomorphism $S_A(\x)\to\bigoplus_n\x^n$ induced from the canonical injection of $\x$ to $\bigoplus_n\x^n$ is an isomorphism. The same holds for the homomorphism $S_A(\x/\x^2)\to\gr_\x(A)$. 
 \end{remark}
 \subsection{Extension class associated with a regular sequence}
 Let $A$ be a ring, $M$ an $A$-module and $\bm{x}=(x_1,\dots,x_n)$ a sequence of elements of $A$. Let $M_i=M/(x_1M+\cdots+x_{i-1}M)$ for each $i=0,1,\dots,n+1$ (we set $M_0=M$), and let
@@ -4194,18 +4188,17 @@ be the $A$-homomorphism composing the homothety with ratio $x_i$ on $M_{i-1}$ wi
 \end{equation} 
 is exact. The element $\theta_{\bm{x}}\in\Ext_A^n(M/x M,M)$ associated with this sequence is then called the \textbf{extension class associated with the $\bm{M}$-regular sequence $\bm{x}$}.\par
 For each integer $1\leq i\leq n$, the sequence (\ref{Koszul complex regular sequence long exact seq}) can be decomposed into the following two exact sequences:
-\begin{equation}\label{Koszul complex regular sequence long exact seq decompose-1}
+\begin{equation*}
+\begin{gathered}
 \begin{tikzcd}
 0\ar[r]&M\ar[r,"\bar{x}_1"]&M_1\ar[r,"\bar{x}_2"]&\cdots\ar[r,"\bar{x}_i"]&M_i\ar[r]&M_{i+1}\ar[r]&0
-\end{tikzcd}
-\end{equation}
-\begin{equation}\label{Koszul complex regular sequence long exact seq decompose-2}
+\end{tikzcd}\\
 \begin{tikzcd}
 0\ar[r]&M_{i+1}\ar[r,"\bar{x}_{i+1}"]&M_{i+1}\ar[r,"\bar{x}_{i+2}"]&\cdots\ar[r,"\bar{x}_n"]&M_n\ar[r,"\pi"]&M/\x M\ar[r]&0
 \end{tikzcd}
-\end{equation}
-which are none other than the exact sequences associated with the sequence $(x_1,\dots,x_i)$ which is regular for $M$ and that with $(x_{i+1},\dots,x_n)$ which is regular for $M_{i+1}$.\par
-Note that the the extension classes associated with (\ref{Koszul complex regular sequence long exact seq decompose-1}) and (\ref{Koszul complex regular sequence long exact seq decompose-2}) are
+\end{gathered}
+\end{equation*}
+which are none other than the exact sequences associated with the sequence $(x_1,\dots,x_i)$ which is regular for $M$ and that with $(x_{i+1},\dots,x_n)$ which is regular for $M_{i+1}$. Note that the the extension classes associated with these sequences are
 \[\theta_{(x_1,\dots,x_i)}\in\Ext_A^i(M_{i+1},M),\quad \theta_{(x_{i+1},\dots,x_n)}\in\Ext_A^{n-i}(M/\x M,M_{i+1})\]
 and we have by \cref{*} that
 \[\theta_{(x_1,\dots,x_n)}=\theta_{(x_1,\dots,x_i)}\circ\theta_{(x_{i+1},\dots,x_n)}.\]
@@ -4234,10 +4227,10 @@ suppose further that the modules $M_i$ are separated for the $\x$-adic topology,
 and $\bm{y}=(y_1,\dots,y_n)$. Then the sequence $\bm{y}$ is regular for $M$ and we have $\theta_{\bm{y}}=\det(a_{ij})^{-1}\theta_{\bm{x}}$.
 \end{corollary}
 \begin{proof}
-In fact, the sequence $\bm{y}$ is regular for $M$ by \cref{Koszul complex completely secant prop} and \cref{Koszul complex completely secant crit}; the second assertion then follows from \cref{Koszul complex regular sequence extension class relation} and \cref{*}.
+In fact, the sequence $\bm{y}$ is regular for $M$ by \cref{Koszul complex completely secant prop} and \cref{Koszul complex completely secant annd regular relation}; the second assertion then follows from \cref{Koszul complex regular sequence extension class relation} and \cref{*}.
 \end{proof}
 \begin{proposition}\label{Koszul complex regular sequence extension class and Hom prop}
-Let $\bm{x}$ be a regular sequence for $M$ and $N$ is an $A$-module annihilated by $\bm{x}$. Then $\Ext_A^i(N,M)=0$ for $i<n$ and the map $\alpha\mapsto\theta_{\bm{x}}\circ\alpha$ from $\Hom_A(N,M/\x M)$ to $\Ext_A^n(N,M)$ is bijective.
+Let $\bm{x}=(x_1,\dots,x_n)$ be a regular sequence for $M$ and $N$ is an $A$-module annihilated by $\x$. Then $\Ext_A^i(N,M)=0$ for $i<n$ and the map $\alpha\mapsto\theta_{\bm{x}}\circ\alpha$ from $\Hom_A(N,M/\x M)$ to $\Ext_A^n(N,M)$ is bijective.
 \end{proposition}
 \begin{proof}
 We prove by induction that the homomorphism

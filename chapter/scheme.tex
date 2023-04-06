@@ -243,7 +243,7 @@ If $\varphi:B\to A$ is surjective, then the corresponding morphism $\Phi$ is a m
 The map $^{a}\!\varphi$ is injective by \cref{Spec of ring and quotient map}, and since $\varphi$ is surjective, for any $x\in x$ the map $\varphi^{\#}_x:B_{{^{a}\!\varphi}(x)}\to A_x$, obtained by passing to localization, is surjective; these prove the assertion.
 \end{proof}
 \subsection{Quasi-coherent sheaves over affine schemes}
-Recall that we have defined the abstract notion of a quasi-coherent sheaf. In this part we show that any quasi-coherent sheaf on an affine scheme $\Spec(A)$ corresponds to the sheaf $\widetilde{M}$ associated with an $A$-module $M$.
+Recall that we have defined the abstract notion of a quasi-coherent sheaf. In this paragraph we show that any quasi-coherent sheaf on an affine scheme $\Spec(A)$ corresponds to the sheaf $\widetilde{M}$ associated with an $A$-module $M$.
 \begin{lemma}\label{scheme sheaf principal open condition lemma}
 Let $X=\Spec(A)$ and $V=\bigcup_{i=1}^{n}D(g_i)$ be a union of finitely may standard opens. Let $\mathscr{F}$ be an $\mathscr{O}_X$-module satisfying the conditions:
 \begin{itemize}
@@ -839,7 +839,7 @@ The first isomorphism is $(p_1,p_2)_S\times_Sp_3$, where $p_1,p_2,p_3$ are the p
 If $X$ is an $S$-scheme, any $\mathscr{O}_X$-module $\mathscr{F}$ is the inverse image of $\mathscr{F}\otimes_S\mathscr{O}_S$ under the canonical isomorphism from $X$ to $X\times_SS$.
 \end{corollary}
 Let $X$ be an $S$-scheme, $\mathscr{F}$ be an $\mathscr{O}_X$-module, and $\varphi:S'\to S$ be an morphism. We denote by $\mathscr{F}_{(\varphi)}$ or $\mathscr{F}_{(S')}$ the sheaf $\mathscr{F}\otimes_S\mathscr{O}_{S'}$ over $X\times_SS'=X_{(\varphi)}=X_{(S')}$, so $\mathscr{F}_{(S')}=p^*(\mathscr{F})$, where $p$ is the projection $X_{(S')}\to X$.
-\begin{proposition}\label{scheme sheaf base change associativity}
+\begin{proposition}\label{scheme sheaf base change transitivity}
 Let $\varphi':S''\to S'$ be a morphism. For any $\mathscr{O}_X$-module $\mathscr{F}$ over the $S$-scheme $X$, $(\mathscr{F}_{(\varphi)})_{(\varphi')}$ is the inverse image of $\mathscr{F}_{(\varphi\circ\varphi)}$ under the canonical isomorphism $(X_{(\varphi)})_{(\varphi')}\to X_{(\varphi\circ\varphi')}$.
 \end{proposition}
 \begin{proof}
@@ -1248,7 +1248,7 @@ where two terms are quasi-coherent $\mathscr{O}_X$-modules; we then deduce that 
 where the first arrow is the canonical homomorphism and $\theta$ is an isomorphism. If $\mathscr{O}_Z=(\mathscr{O}_X/\mathscr{I})|_Z$, $(Z,\mathscr{O}_Z)$ is then a closed subscheme of $(X,\mathscr{O}_X)$ and $f$ factors through the canonical injection $j_Z:Z\to X$. Since the corresponding morphism $Y\to Z$ is just $(f_0,\theta_0)$, where $f_0$ is the map $f$ considered as a homeomorphism from $Y$ to $Z$ and $\theta_0$ is the restriction of $\theta$ to $\mathscr{O}_Z$, it is clear that $f$ is a closed immersion, which completes the proof.
 \end{proof}
 \begin{remark}
-It may happen that $f:Y\to X$ is a closed immersion and for all $y\in Y$, $f^{\#}_y:\mathscr{O}_{X,f(y)}\to\mathscr{O}_{Y,y}$ is bijective, without $f$ being an open immersion (that is, $f(Y)$ is not necessarily opened in $X$). For example, let $X=\Spec(A)$ be an affine scheme and $x\in X$ be a closed point of $X$ that is not isolated. Then if $Y=\Spec(A/\m_x)$, the canonical morphism $Y\to X$ is a closed immersion satisfying the desired property, since the subspace $\{x\}$ is not open in $X$.
+It may happen that $f:Y\to X$ is a closed immersion and for all $y\in Y$, $f^{\#}_y:\mathscr{O}_{X,f(y)}\to\mathscr{O}_{Y,y}$ is bijective, without $f$ being an open immersion (that is, $f(Y)$ is not necessarily open in $X$). For example, let $X=\Spec(A)$ be an affine scheme and $x\in X$ be a closed point of $X$ that is not isolated. Then if $Y=\Spec(A/\m_x)$, the canonical morphism $Y\to X$ is a closed immersion satisfying the desired property, since the subspace $\{x\}$ is not open in $X$.
 \end{remark}
 \begin{corollary}\label{scheme immersion local on target}
 Let $f:Y\to X$ be a morphism of schemes.
@@ -1261,7 +1261,7 @@ Let $f:Y\to X$ be a morphism of schemes.
 In the case (a), $f^{\#}_y$ is surjective (resp. bijective) for every point $y\in Y$, and in case (b) it is surjective for every point $y\in Y$; it then suffices to verify that in case (a) $f$ is a homeomorphism of $Y$ onto a locally closed (resp. open) subset of $X$ and in case (b), a homeomorphism onto a closed subset of $X$. Now, the hypothesis imply that $f$ is clearly injective and maps each neighborhood of $y\in Y$ to a neighborhood of $f(y)$ in $f(Y)$. In case (a), $f(Y)\cap V_\lambda$ is locally closed (resp. open) in the union of the $V_\lambda$, and a fortiori in $X$; in case (b), $f(Y)\cap U_\lambda$ is closed in $U_\lambda$, hence closed in $X$ since $X=\bigcup_\lambda U_\lambda$.
 \end{proof}
 \begin{remark}
-We can generalize the notions of this part to any ringed spaces. We define a \textbf{ringed subspace} of a ringed space $(X,\mathscr{O}_X)$ to be a ringed space of the form $(Y,(\mathscr{O}_U/\mathscr{I})|_Y)$, where $U$ is an open of $X$, $\mathscr{I}$ an ideal of $\mathscr{O}_U$ and $Y$ the support of the sheaf of rings $\mathscr{O}_U/\mathscr{I}$ (support which is no longer necessarily closed in $U$). We can define the canonical injection $Y\to X$, and the definitions and results of \cref{scheme morphism factor through subscheme iff} are valid without modification. We then define the notion of immersion (resp. of closed immersion) in the same manner. The characterizations of open (resp. closed) immersions given in \cref{scheme morphism immersion iff stalk}  still hold (observing that if $f(Y)$ is closed in $X$, $f_*(\mathscr{O}_Y)$ has support $f(Y)$). The result of \cref{scheme morphism immersion iff stalk}  can therefore be stated by saying that if a scheme $Y$ is a ringed subspace of a scheme $X$, then $Y$ is a subscheme of $X$.
+We can generalize the notions of immersions to any ringed spaces. We define a \textbf{ringed subspace} of a ringed space $(X,\mathscr{O}_X)$ to be a ringed space of the form $(Y,(\mathscr{O}_U/\mathscr{I})|_Y)$, where $U$ is an open of $X$, $\mathscr{I}$ an ideal of $\mathscr{O}_U$ and $Y$ the support of the sheaf of rings $\mathscr{O}_U/\mathscr{I}$ (support which is no longer necessarily closed in $U$). We can define the canonical injection $Y\to X$, and the definitions and results of \cref{scheme morphism factor through subscheme iff} are valid without modification. We then define the notion of immersion (resp. of closed immersion) in the same manner. The characterizations of open (resp. closed) immersions given in \cref{scheme morphism immersion iff stalk}  still hold (observing that if $f(Y)$ is closed in $X$, $f_*(\mathscr{O}_Y)$ has support $f(Y)$). The result of \cref{scheme morphism immersion iff stalk}  can therefore be stated by saying that if a scheme $Y$ is a ringed subspace of a scheme $X$, then $Y$ is a subscheme of $X$.
 \end{remark}
 \subsection{Inverse image of subschemes}
 \begin{proposition}\label{scheme immersion stable under product}
@@ -2310,7 +2310,7 @@ In this case, we say $X$ is \textbf{of finite presentation over $\bm{Y}$}, or is
 \end{itemize}
 \end{proposition}
 \begin{proof}
-This follows immediately from \cref{scheme morphism qc permanence prop}, \cref{scheme morphism qs permanence prop}, and \cref{scheme morphism local fp permanence prop}.
+This follows from \cref{scheme morphism qc permanence prop}, \cref{scheme morphism qs permanence prop}, and \cref{scheme morphism local fp permanence prop}.
 \end{proof}
 It follows from \cref{scheme morphism fp permanence prop}(\rmnum{3}) that if $f$ is a morphism of finite presentation and $U$ is an open subset of $Y$, the restriction $f^{-1}(U)\to U$ of $f$ is also of finite presentation. conversely, let $(U_\alpha)$ be a covering of $Y$ by affine opens and suppose that the restriction $f^{-1}(U_\alpha)\to U_\alpha$ of $f$ is a morphism of finite presentation. Then it follows that $f$ is of finite presentation, since $f$ is clearly of finite presentation and quasi-compact and it is quasi-separated by \cref{scheme qs local on target}.\par
 If $X$ is a quasi-separated scheme, any morphism $f:X\to Y$ is quasi-separated by \cref{scheme morphism from into qs prop}. Therefore, if $f$ is quasi-compact and locally of finite presentation, it is of finite presentation.
@@ -2376,7 +2376,7 @@ Let $X$ be a finite scheme over a field $K$. For any extension $K'$ of $K$, $X\o
 \begin{proof}
 In fact, if $X=\Spec(A)$, we have $[A\otimes_KK':K']=[A:K]$, whence the claim.
 \end{proof}
-\begin{corollary}\label{scheme finite over field count point in sc extension}
+\begin{corollary}\label{scheme finite over field count point in a.c. extension}
 Let $X$ be a finite scheme over a field $K$. We put
 \[n=\sum_{x\in X}[\kappa(x):K]_s\]
 Then, for any algebraically closed extension $\Omega$ of $K$, the underlying space of $X\otimes_K\Omega$ has exactly $n$ points, which are identified with the $\Omega$-valued points of $X$.
@@ -2384,13 +2384,13 @@ Then, for any algebraically closed extension $\Omega$ of $K$, the underlying spa
 \begin{proof}
 By \cref{scheme artinian iff}, we can assume that $A=\Gamma(X,\mathscr{O}_X)$ is local; let $\m$ be the maximal ideal of $A$, $L=A/\m$ the residue field, which is a finite algebraic extension of $K$ by \cref{scheme algebraic Artinian iff}. The $\Omega$-points of $X$ correspond bijectively to $\Omega$-sections of $X\otimes_K\Omega$, and to the closed points of $X\otimes_K\Omega$ by \cref{scheme algebraic over ac field closed point iff rational}, and finally to the points of this Artinian scheme (\cref{scheme artinian iff}). They also correspond to $K$-homomorphisms of $L$ into $\Omega$, and the assertion then follows from the definition of separable degree.
 \end{proof}
-The number $n$ defined in \cref{scheme finite over field count point in sc extension} is called the \textbf{separable rank} of $A$ (or $X$) over $K$, or the \textbf{geometric number of points} of $X$. This is also the number of elements in $X(\Omega)_K$. It follows from this definition that for any extension $K'$ of $K$, $X\otimes_KK'$ has the same geometric number of points as $X$. If we denote this number by $n(X)$, it is clear that, if $X$ and $Y$ are two finite schemes over $K$, we have
+The number $n$ defined in \cref{scheme finite over field count point in a.c. extension} is called the \textbf{separable rank} of $A$ (or $X$) over $K$, or the \textbf{geometric number of points} of $X$. This is also the number of elements in $X(\Omega)_K$. It follows from this definition that for any extension $K'$ of $K$, $X\otimes_KK'$ has the same geometric number of points as $X$. If we denote this number by $n(X)$, it is clear that, if $X$ and $Y$ are two finite schemes over $K$, we have
 \[n(X\amalg Y)=n(X)+n(Y),\quad n(X\times_KY)=n(X)n(Y).\]
 \begin{proposition}\label{scheme morphism ft fiber algebraic}
 Let $f:X\to Y$ be a morphism locally of finite type (resp. of finite type). Then, for any $y\in Y$, the fiber $X_y=f^{-1}(y)$ is a locally algebraic (resp. algebraic) scheme over $\kappa(y)$, and for each $x\in X_y$, $\kappa(x)$ is a extension of $\kappa(y)$ of finite type.
 \end{proposition}
 \begin{proof}
-As $X_y=X\otimes_Y\kappa(y)$, this is a concequence of \cref{scheme morphism local ft permanence prop}(\rmnum{3}) and \cref{scheme morphism ft permanence prop}(\rmnum{3}).
+As $X_y=X\otimes_Y\kappa(y)$, this follows from \cref{scheme morphism local ft permanence prop}(\rmnum{3}) and \cref{scheme morphism ft permanence prop}(\rmnum{3}).
 \end{proof}
 \begin{proposition}\label{scheme base change fiber finite scheme prop}
 Let $f:X\to Y$, $g:Y'\to Y$ be two morphisms, and put $X'=X\times_YY'$, $f'=f_{(Y')}:X'\to Y'$. Let $y'\in Y'$ and $y=g(y')$. If the fiber $X_y=f^{-1}(y)$ is a finite scheme over $\kappa(y)$, then the fiber $X'_{y'}=f'^{-1}(y')$ is a finite scheme over $\kappa(y')$, and we have
@@ -3143,10 +3143,10 @@ Let $X$ be a (usual) scheme, $Z$ be a subscheme of $X$, $U$ be an open subset of
 This definition is justified by the fact that it obviously does not depend on the choice open subset $U$, because at every point $x$ of $U-Z$, there is a neighborhood of $x$ in which $\mathscr{O}_U/\mathscr{I}_U^n$ is zero for any integer $n$. We can therefore limit ourselves to the case where $Z$ is a closed subscheme of $X$, and we will always assume this henceforth. Also, it is clear that for any open subset $U\sub X$, we have $(\mathscr{F}|_U)_{/(U\cap Z)}=(\mathscr{F}_{/Z})|_{U\cap Z}$.\par
 By passing to projective limits, it is clear that $(\mathscr{O}_X)_{/Z}$ is a sheaf of rings, and that $\mathscr{F}_{/Z}$ can be considered as an $(\mathscr{O}_{/Z})$-module. Furthermore, as there existss a basis for $Z$ formed by quasi-compact opens, we can consider $(\mathscr{O}_X)_{/Z}$ (resp. $\mathscr{F}_{/Z}$) as a sheaf of topological rings (resp. topological groups) which is the projective limit of the sheaf of discrete rings (resp. groups) $\mathscr{O}_X/\mathscr{I}^n$ (resp. $\mathscr{F}\otimes_{\mathscr{O}_X}(\mathscr{O}_X/\mathscr{I}^n)=\mathscr{F}/\mathscr{I}^n\mathscr{F}$), and by passing to projective limits, $\mathscr{F}_{/Z}$ is a topological $(\mathscr{O}_X)_{/Z}$-module. Note that for any quasi-compact open subset $U$ of $X$, $\Gamma(U\cap Z,(\mathscr{O}_X)_{/Z})$ (resp. $\Gamma(U\cap Z,\mathscr{F}_{/Z})$) is then the projective limit of the discrete rings (resp. groups) $\Gamma(U,\mathscr{O}_X/\mathscr{I})$ (resp. $\Gamma(U,\mathscr{F}/\mathscr{I}\mathscr{F})$).\par
 Now let $u:\mathscr{F}\to\mathscr{G}$ be a homomorphism of $\mathscr{O}_X$-modules, we then deduce a canonical homomorphism
-\[\mathscr{u}_{\mathscr{I}^n}:\mathscr{F}\otimes_{\mathscr{O}_X}(\mathscr{O}_X/\mathscr{I}^n)\to\mathscr{G}\otimes_{\mathscr{O}_X}(\mathscr{O}_X/\mathscr{I}^n)\]
-for any $n\geq 1$, and these homomorphisms form a projective system. By passing to projective limits and restricting to $Z$, we obtain a continuous $(\mathscr{O}_X)_{/Z}$-homomorphism $\mathscr{F}_{/Z}\to\mathscr{G}_{/Z}$, denoted by $u_{/Z}$ of $\hat{u}$, and is called the completion of $u$ along $Z$. It is clear that if $v:\mathscr{G}\to\mathscr{H}$ is a second homomorphism of $\mathscr{O}_X$-modules, then $(v\circ u)_{/Z}=(v_{/Z})\circ(u_{/Z})$, so $\mathscr{F}_{/Z}$ is a covariant additive functor on $\mathscr{F}$ from the category of quasi-coherent $\mathscr{O}_X$-modules, with values in the category of $(\mathscr{O}_X)_{/Z}$-modules.
+\[u_{\mathscr{I}^n}:\mathscr{F}\otimes_{\mathscr{O}_X}(\mathscr{O}_X/\mathscr{I}^n)\to\mathscr{G}\otimes_{\mathscr{O}_X}(\mathscr{O}_X/\mathscr{I}^n)\]
+for any $n\geq 1$, and these homomorphisms form a projective system. By passing to projective limits and restricting to $Z$, we obtain a continuous $(\mathscr{O}_X)_{/Z}$-homomorphism $\mathscr{F}_{/Z}\to\mathscr{G}_{/Z}$, denoted by $u_{/Z}$ or $\hat{u}$, and is called the \textbf{completion of $\bm{u}$ along $\bm{Z}$}. It is clear that if $v:\mathscr{G}\to\mathscr{H}$ is a second homomorphism of $\mathscr{O}_X$-modules, then $(v\circ u)_{/Z}=(v_{/Z})\circ(u_{/Z})$, so $\mathscr{F}_{/Z}$ is a covariant additive functor on $\mathscr{F}$ from the category of quasi-coherent $\mathscr{O}_X$-modules, with values in the category of $(\mathscr{O}_X)_{/Z}$-modules.
 \begin{proposition}\label{scheme closed subscheme completion prop}
-Let $Z$ be a closed subscheme of $X$ defined by a quasi-coherent ideal $\mathscr{I}$ of finite type. Then the support of $(\mathscr{O}_X)_{/Z}$ is $Z$, the topologically ringed space $(Z,(\mathscr{O}_{X})_{/Z})$ is an adic formal scheme, and $\mathscr{I}_{/Z}$ is a defining ideal of this formal scheme. If $X=\Spec(A)$ is an affine scheme, $\mathscr{I}=\widetilde{\mathfrak{I}}$ where $\mathfrak{I}$ is an ideal of $A$, and $Z=V(\mathfrak{I})$, then $(Z,(\mathscr{O}_X)_{/Z})$ is canonically identified with $\Spf(\widehat{A})$ where $\widehat{A}$ is the Hausdorff completion of $A$ for the $\mathfrak{I}$-adic topology.
+Let $Z$ be a closed subscheme of $X$ defined by a quasi-coherent ideal $\mathscr{I}$ of finite type. Then the support of $(\mathscr{O}_X)_{/Z}$ is $Z$, the topologically ringed space $(Z,(\mathscr{O}_{X})_{/Z})$ is an adic formal scheme, and $\mathscr{I}_{/Z}$ is a defining ideal of this formal scheme. If $X=\Spec(A)$ is an affine scheme, $\mathscr{I}=\widetilde{\mathfrak{I}}$ where $\mathfrak{I}$ is an ideal of $A$, and $Z=V(\mathfrak{I})$, then $(Z,(\mathscr{O}_X)_{/Z})$ is canonically identified with $\Spf(\widehat{A})$, where $\widehat{A}$ is the Hausdorff completion of $A$ for the $\mathfrak{I}$-adic topology.
 \end{proposition}
 \begin{proof}
 We can evidently assume that $X=\Spec(A)$ is affine. By \cref{*} the the Hausdorff completion $\widehat{\mathfrak{I}}$ of $\mathfrak{I}$ for the $\mathfrak{I}$-adic topology is identified with the ideal $\mathfrak{I}\widehat{A}$ of $\widehat{A}$, and that $\widehat{A}$ is a $\widehat{A}$-adic ring such that $\widehat{A}/\widehat{\mathfrak{I}}
@@ -3154,14 +3154,14 @@ We can evidently assume that $X=\Spec(A)$ is affine. By \cref{*} the the Hausdor
 \end{proof}
 The formal scheme therefore defined is called the \textbf{completion} of $X$ along $Z$ and is denoted by $X_{/Z}$ of $\widehat{X}$. If $Z=X$, we can put $\mathscr{I}=0$, and we then have $X_{/Z}=X$. It is clear that if $U$ is an open subscheme of $X$, then $U_{/(U\cap Z)}$ is canonically identified with the formal subscheme of $X_{/Z}$ induced over the open subset $U\cap Z$ of $Z$.
 \begin{corollary}\label{scheme formal completion reduced prop}
-Under the hypothesis of \cref{scheme closed subscheme completion prop}, assume that $X$ is locally Noetherian; then the (usual) scheme $\widehat{X}_{\red}$ is the unique reduced subscheme of $X$ with underlying space $Z$ (\cref{scheme closed subset reduced subscheme}). For $\widehat{X}$ to be Noetherian, it is necessary and sufficient that $\widehat{X}_{\red}$ is Noetherian, and it is sufficient that $X$ is. 
+Under the hypothesis of \cref{scheme closed subscheme completion prop}, assume that $X$ is locally Noetherian; then the (usual) scheme $\widehat{X}_{\red}$ is the unique reduced subscheme of $X$ with underlying space $Z$ (\cref{scheme closed subset reduced subscheme}). For $\widehat{X}$ to be Noetherian, it is necessary and sufficient that $\widehat{X}_{\red}$ is Noetherian, and it is sufficient that $X$ is Noetherian. 
 \end{corollary}
 \begin{proof}
 The determination of $\widehat{X}_{\red}$ is local (\cref{scheme formal local Noe X_red}), so we can assume that $X$ is affine; with the notations of \cref{scheme closed subscheme completion prop}, the ideal $\mathfrak{T}$ of topological nilpotent elements of $\widehat{A}$ is the inverse image of the nilradical of $A/\mathfrak{T}$ under the canonical map $\widehat{A}\to\widehat{A}/\widehat{\mathfrak{I}}=A/\mathfrak{I}$, so $\widehat{A}/\mathfrak{T}$ is isomorphic to $(A/\mathfrak{I})_{\red}$. The first assertion then follows from \cref{scheme formal local Noe X_red} and \cref{scheme closed subset reduced subscheme}. If $\widehat{X}_{\red}$ is Noetherian, its underlying space $Z$ is also Noetherian, so the $Z_n=\Spec(\mathscr{O}_X/\mathscr{I}^n)$ are Noetherian and so is $\widehat{X}$ (\cref{scheme projetive system limit adic if}); the converse of this is immeidate. 
 \end{proof}
 The canonical homomorphisms $\mathscr{O}_X\to\mathscr{O}_X/\mathscr{I}^n$ form a projective system and therefore gives, by passing to limit, a homomorphism of sheaves of rings $\theta:\mathscr{O}_X\to i_*((\mathscr{O}_X)_{/Z})=\llim(\mathscr{O}_X/\mathscr{I}^n)$, where we denote by $i:Z\to X$ the canonical injection. We therefore obtain a morphism
 \[(i,\theta):X_{/Z}\to X\]
-of ringed spaces, called the canonical morphism. By tensoring, for any coherent $\mathscr{O}_X$-module $\mathscr{F}$, the canonical homomorphisms $\mathscr{O}_X\to\mathscr{O}_X/\mathscr{I}^n$ give the homomorphisms $\mathscr{F}\to\mathscr{F}\otimes_{\mathscr{O}_X}(\mathscr{O}_X/\mathscr{I}^n)$ of $\mathscr{O}_X$-modules which form a projective system, so define a canonical functorial homomorphism $\gamma:\mathscr{F}\to i_*(\mathscr{F}_{/Z})$ of $\mathscr{O}_X$-modules.
+of ringed spaces, called the \textbf{canonical morphism}. By tensoring, for any coherent $\mathscr{O}_X$-module $\mathscr{F}$, the canonical homomorphisms $\mathscr{O}_X\to\mathscr{O}_X/\mathscr{I}^n$ give the homomorphisms $\mathscr{F}\to\mathscr{F}\otimes_{\mathscr{O}_X}(\mathscr{O}_X/\mathscr{I}^n)$ of $\mathscr{O}_X$-modules which form a projective system, so define a canonical functorial homomorphism $\gamma:\mathscr{F}\to i_*(\mathscr{F}_{/Z})$ of $\mathscr{O}_X$-modules.
 \begin{example}
 Let $Z,Z'$ be closed subschemes of $X$, defined by quasi-coherent ideals $\mathscr{I}$, $\mathscr{I}'$ of $\mathscr{O}_X$. Suppose that for any affine open $U$ of $X$, the ideals $\mathscr{I}|_U$, $\mathscr{I}'|_U$ of $\mathscr{O}_U$ are such that there exists an integer $m>0$ such that $(\mathscr{I}|_U)^,\sub\mathscr{I}'|_U$ and $(\mathscr{I}'|_U)^m\sub\mathscr{I}|_U$. It is clear that under this condition, for any quasi-coherent $\mathscr{O}_X$-module $\mathscr{F}$, the sheaf of abelian groups $\llim(\mathscr{F}\otimes_{\mathscr{O}_X}(\mathscr{O}_X/\mathscr{I}^n))$ and $\llim(\mathscr{F}\otimes_{\mathscr{O}_X}(\mathscr{O}_X/\mathscr{I}'^n))$ are canonically isomorphic, which means $\mathscr{F}_{/Z}=\mathscr{F}_{/Z'}$. Note that this condition on $Z$ and $Z'$ implies that these two closed subschemes have the same underlying space, but is not in general equivalent to the latter property.\par
 However, if the quasi-coherent ideals $\mathscr{I}$ and $\mathscr{I}'$ are of finite type, then it follows from \cref{scheme qc qcoh ft ideal power annihilated if supp} that if the subschemes $Z$ and $Z'$ have the same underlying space, the above condition is satisfied. In particular, if $X$ is locally Noetherian, so that any quasi-coherent ideal of $\mathscr{O}_X$ is of finite type, then for any closed subset (or locally closed) $Z$ of $X$, we can define $\mathscr{F}_{/Z}$ to be equal to $\mathscr{F}_{/Y}$ for any subscheme $Y$ of $X$ with underlying space $Z$.
@@ -3523,7 +3523,7 @@ In view of \cref{scheme morphism cancelled by separated if}, it suffices to prov
 If $X$ is an affine scheme and $Y$ is a separated scheme, any morphism $f:X\to Y$ is affine.
 \end{corollary}
 \begin{proof}
-This is a direct concequence of \cref{scheme affine morphism permanence prop}(\rmnum{5}).
+This is a direct concequence of \cref{scheme affine morphism permanence prop}(\rmnum{5}), since the canonical morphism $X\to\Spec(\Z)$ is affine.
 \end{proof}
 \begin{proposition}\label{scheme morphism to local Noe affine iff f_red}
 Let $Y$ be a locally Noetherian scheme and $f:X\to Y$ be a morphism of finite type. Then for $f$ to be affine, it is necessary and sufficient that $f_{\red}$ is affine.
@@ -3936,7 +3936,7 @@ Let $d>0$ be an integer and $U=\bigcup_{f\in S_d}D_+(f)$. Then the restriction t
 In view of \cref{scheme Proj twisted qcoh prop}, we can assume that $d=1$, and the conclusion then follows the proof of \cref{scheme Proj qcoh S(nd) local is O_X}.
 \end{proof}
 \subsection{Graded \texorpdfstring{$S$}{S}-module associated with a sheaf}
-In this part, for simplicity, we always assume that the ideal $S_+$ is generated by $S_1$, which also means that $S=S_0[S_1]$ by \cref{graded ring generating set iff}. The $\mathscr{O}_X$-module $\mathscr{O}_X(1)$ is then inveritble by \cref{scheme Proj qcoh S(n) invertible if}; we then put, for any $\mathscr{O}_X$-module $\mathscr{F}$, that
+In this paragraph, for simplicity, we always assume that the ideal $S_+$ is generated by $S_1$, which also means that $S=S_0[S_1]$ by \cref{graded ring generating set iff}. The $\mathscr{O}_X$-module $\mathscr{O}_X(1)$ is then inveritble by \cref{scheme Proj qcoh S(n) invertible if}; we then put, for any $\mathscr{O}_X$-module $\mathscr{F}$, that
 \[\Gamma_*(\mathscr{F})=\Gamma_*(\mathscr{O}_X(1),\mathscr{F})=\bigoplus_{n\in\Z}\Gamma(X,\mathscr{F}(n))\]
 Recall that $\Gamma_*(\mathscr{O}_X)$ is endowed with a graded ring structure and $\Gamma_*(\mathscr{F})$ is a graded module over $\Gamma_*(\mathscr{O}_X)$. Since $\mathscr{O}_X(n)$ is locally free, $\Gamma_*(\mathscr{F})$ is a covariant left-exact functor on $\mathscr{F}$; in particular, if $\mathscr{I}$ is a sheaf of ideals of $\mathscr{O}_X$, $\Gamma_*(\mathscr{F})$ is canonically a graded ideal of $\Gamma_*(\mathscr{O}_X)$.\par
 Suppose that $M$ is a graded $S$-module. For any $f\in S_d$ with $d>0$, $x\mapsto x/1$ is a homomorphism of abelian groups $M_0\mapsto M_{(f)}$, and as $M_{(f)}$ is canonically identified with $\Gamma(D_+(f),\widetilde{M})$, we obtain a homomorphism $\alpha_0^f:M_0\to\Gamma(D_+(f),\widetilde{M})$ of abelian groups. It is clear that, for any $g\in S_e$ with $e>0$, the diagram
@@ -4417,7 +4417,7 @@ For any section $f\in\Gamma(Y,\mathscr{S}_d)$ with $d>0$, $X_f$ is identified wi
 \begin{proof}
 The element $\alpha_d(f)$ is a section of $p_*(\mathscr{O}_X(d))$ over $Y$, and by definition is then a section of $\mathscr{O}_X(d)$ over $X$. The definition of $X_f$ (\cref{scheme Proj of qcoh graded algebra X_f def}) proves our claim in the affine case, in view of \cref{scheme Proj D_+(f) nonzero lucus char}.
 \end{proof}
-We shall henceforth suppose, in addition to the hypothesis at the beginning of this part, that for every quasi-coherent $\mathscr{O}_X$-module $\mathscr{F}$, $p_*(\mathscr{F}(n))$ is quasi-coherent over $Y$, and therefore $\Gamma_*(\mathscr{F})=\bigoplus_{n\in\Z}p_*(\mathscr{F}(n))$ is also a quasi-coherent $\mathscr{O}_Y$-module; this circumstance will always occur if $X$ is of finite type on $Y$ (\cref{scheme morphism qcqs qcoh direct image}). We then conclude that $\widetilde{\Gamma_*(\mathscr{F})}$ is defined and is a quasi-coherent $\mathscr{O}_X$-module. For any affine open subset $U$ of $Y$, we have (\cref{scheme affine associated sheaf ker and coker}, \cref{scheme Proj of qcoh alg associated functor exact}, and note that $U$ is quasi-compact)
+We shall henceforth suppose, in addition to the hypothesis at the beginning of this paragraph, that for every quasi-coherent $\mathscr{O}_X$-module $\mathscr{F}$, $p_*(\mathscr{F}(n))$ is quasi-coherent over $Y$, and therefore $\Gamma_*(\mathscr{F})=\bigoplus_{n\in\Z}p_*(\mathscr{F}(n))$ is also a quasi-coherent $\mathscr{O}_Y$-module; this circumstance will always occur if $X$ is of finite type on $Y$ (\cref{scheme morphism qcqs qcoh direct image}). We then conclude that $\widetilde{\Gamma_*(\mathscr{F})}$ is defined and is a quasi-coherent $\mathscr{O}_X$-module. For any affine open subset $U$ of $Y$, we have (\cref{scheme affine associated sheaf ker and coker}, \cref{scheme Proj of qcoh alg associated functor exact}, and note that $U$ is quasi-compact)
 \begin{align*}
 \big(\Gamma(U,\bigoplus_{n\in\Z}p_*(\mathscr{F}(n)))\big)\widetilde{\hspace{3mm}}&=\bigoplus_{n\in\Z}\big(\Gamma(U,p_*(\mathscr{F}(n)))\big)\widetilde{\hspace{3mm}}=\bigoplus_{n\in\Z}\big(\Gamma(p^{-1}(U),\mathscr{F}(n))\big)\widetilde{\hspace{3mm}}\\
 &=\Big(\bigoplus_{n\in\Z}\Gamma(p^{-1}(U),\mathscr{F}(n))\Big)\widetilde{\hspace{3mm}}=(\Gamma_*(\mathscr{F}|_{p^{-1}(U)}))\widetilde{\hspace{3mm}}
@@ -4475,7 +4475,7 @@ Suppose the hypotheses of \cref{scheme Proj of qcoh alg qc beta isomorphism} and
 \begin{proof}
 For any $y\in Y$, let $U$ be an affine open neighborhood of $y$ in $Y$. There then exists an inter $n_0(U)$ such that, for $n\geq n_0(U)$, $\mathscr{F}(n)|_{p^{-1}(U)}$ is generated by finitely many sections over $p^{-1}(U)$ (\cref{scheme Proj qcoh iso to quotient of O_X^r}); but these are canonical images of sections of $p^*(p_*(\mathscr{F}(n)))$ over $p^{-1}(U)$, so $\mathscr{F}(n)|_{p^{-1}(U)}$ is equal to the canonical image of $p^*(p_*(\mathscr{F}(n)))|_{p^{-1}(U)}$. Finally, as $Y$ is quasi-compact, there is a finite affine open cover $(U_i)$ of $Y$, and we can choose $n_0$ to be the largest of the $n_0(U_i)$. 
 \end{proof}
-\begin{remark}\label{scheme qcoh global generation and surjective sigma}
+\begin{remark}\label{scheme qcoh sigma surjective iff global generation}
 If $p:X\to Y$ is a morphism of ringed spaces and $\mathscr{F}$ is an $\mathscr{O}_X$-module, the fact that the canonical homomorphism $\sigma:p^*(p_*(\mathscr{F}))\to\mathscr{F}$ is surjective is explained as follows: for any $x\in X$ and any sections of $\mathscr{F}$ over an open neighborhood $V$ of $x$, there exists an open neighborhood $U$ of $p(x)$ in $Y$, finitely many sections $(t_i)_{1\leq i\leq m}$ of $\mathscr{F}$ over $p^{-1}(U)$, a neighborhood $W\sub V\cap p^{-1}(U)$ of $x$ and sections $(a_i)_{1\leq i\leq m}$ of $\mathscr{O}_X$ over $W$ such that
 \[s|_W=\sum_ia_i\cdot(t_i|_W).\]
 
@@ -4924,7 +4924,7 @@ If $\mathscr{F}=\mathscr{S}_1$, the canonical homomorphism $\bm{S}(\mathscr{F})\
 Let $q:X\to Y$ be a quasi-compact morphism and $\mathscr{L}$ be an invertible $\mathscr{O}_X$-module. Then $\mathscr{L}$ is very ample relative to $q$ if and only if $q_*(\mathscr{L})$ is quasi-coherent, the cannical homomorphism $\sigma:q^*(q_*(\mathscr{L}))\to\mathscr{L}$ is surjective, and the morphism $r_{\mathscr{L},\sigma}:X\to\P(q_*(\mathscr{L}))$ is an immersion.
 \end{proposition}
 \begin{proof}
-As $q$ is quasi-compact, $q_*(\mathscr{L})$ is quasi-coherent if $q$ is separated (\cref{scheme morphism qcqs qcoh direct image}). By \cref{scheme qcoh global generation and surjective sigma}, the existence of a surjective homomorphism $\varphi:q^*(\mathscr{E})\to\mathscr{L}$ ($\mathscr{E}$ being a quasi-coherent $\mathscr{O}_Y$-module) implies that $\sigma$ is surjective. Moreover, the factorization $\varphi:q^*(\mathscr{E})\to q^*(q_*(\mathscr{L}))\stackrel{\sigma}{\to}\mathscr{L}$ of (\ref{ringed space u^sharp factorization by sigma}) corresponds to a canonical factorization (recall that $q^*$ commutes with $\bm{S}$)
+As $q$ is quasi-compact, $q_*(\mathscr{L})$ is quasi-coherent if $q$ is separated (\cref{scheme morphism qcqs qcoh direct image}). By \cref{scheme qcoh sigma surjective iff global generation}, the existence of a surjective homomorphism $\varphi:q^*(\mathscr{E})\to\mathscr{L}$ ($\mathscr{E}$ being a quasi-coherent $\mathscr{O}_Y$-module) implies that $\sigma$ is surjective. Moreover, the factorization $\varphi:q^*(\mathscr{E})\to q^*(q_*(\mathscr{L}))\stackrel{\sigma}{\to}\mathscr{L}$ of (\ref{ringed space u^sharp factorization by sigma}) corresponds to a canonical factorization (recall that $q^*$ commutes with $\bm{S}$)
 \[\begin{tikzcd}
 q^*(\bm{S}(\mathscr{E}))\ar[r]&q^*(\bm{S}(q_*(\mathscr{L})))\ar[r]&\bm{S}(\mathscr{L})
 \end{tikzcd}\]
@@ -5100,7 +5100,7 @@ Let $q:X\to Y$ be a quasi-compact and quasi-separated morphism where $Y$ is affi
 The first assertion follows from the definition of very ample: if $A$ is the ring of $Y$, there exists an $A$-module $E$ and a surjective homomorphism
 \[\psi:q^*(\widetilde{\bm{S}(E)})\to\bm{S}(\mathscr{L})\]
 such that $i=r_{\mathscr{L},\psi}$ is an immersion from $X$ to $P=\P(\widetilde{E})$ such that $\mathscr{L}\cong i^*(\mathscr{O}_P(1))$. As the $D_+(f)$ for $f\in\bm{S}(E)_+$ homogeneous form a basis for $P$ and $i^{-1}(D_+(f))=X_{\psi^\flat(f)}$, we see that condition (\rmnum{1}) of \cref{scheme ample sheaf iff} holds, so $\mathscr{L}$ is ample.\par
-Now assume that $q$ is of finite type and $\mathscr{L}$ is ample. It follows from \cref{scheme ample sheaf iff}(\rmnum{2}) and \cref{scheme morphism into P(E) ft reduction}(a) that there exists an integer $k_0>0$ such that $\mathscr{L}^{\otimes k_0}$ is very ample relative to $q$. On the other hand, in view of \cref{scheme ample sheaf iff global generation}, there exists an integer $m_0$ such that, for $m\geq m_0$, $\mathscr{L}^{\otimes m}$ is generated by global sections. Put $n_0=k_0+m_0$; if $n\geq n_0$, we can write $n=k_0+m$ where $m\geq m_0$, whence $\mathscr{L}^{\otimes n}=\mathscr{L}^{\otimes k_0}\otimes\mathscr{L}^{\otimes m}$. As $\mathscr{L}^{\otimes m}$ is generated by global sections, it follow from \cref{scheme very ample tensor with free} and \cref{scheme qcoh global generation and surjective sigma} that $\mathscr{L}^{\otimes n}$ is very ample relative to $q$. Finally, it is clear that (\rmnum{5}) implies (\rmnum{5}'), and (\rmnum{5}') implies that $\mathscr{L}$ is ample in view of (a) and \cref{scheme ample sheaf iff power ample}. 
+Now assume that $q$ is of finite type and $\mathscr{L}$ is ample. It follows from \cref{scheme ample sheaf iff}(\rmnum{2}) and \cref{scheme morphism into P(E) ft reduction}(a) that there exists an integer $k_0>0$ such that $\mathscr{L}^{\otimes k_0}$ is very ample relative to $q$. On the other hand, in view of \cref{scheme ample sheaf iff global generation}, there exists an integer $m_0$ such that, for $m\geq m_0$, $\mathscr{L}^{\otimes m}$ is generated by global sections. Put $n_0=k_0+m_0$; if $n\geq n_0$, we can write $n=k_0+m$ where $m\geq m_0$, whence $\mathscr{L}^{\otimes n}=\mathscr{L}^{\otimes k_0}\otimes\mathscr{L}^{\otimes m}$. As $\mathscr{L}^{\otimes m}$ is generated by global sections, it follow from \cref{scheme very ample tensor with free} and \cref{scheme qcoh sigma surjective iff global generation} that $\mathscr{L}^{\otimes n}$ is very ample relative to $q$. Finally, it is clear that (\rmnum{5}) implies (\rmnum{5}'), and (\rmnum{5}') implies that $\mathscr{L}$ is ample in view of (a) and \cref{scheme ample sheaf iff power ample}. 
 \end{proof}
 \begin{corollary}\label{scheme ample tensor with power is very ample}
 Let $q:X\to Y$ be a quasi-compact and quasi-separated morphism of finite type where $Y$ is affine, $\mathscr{L}$ be an ample $\mathscr{O}_X$-module, and $\mathscr{L}'$ be an invertible $\mathscr{O}_X$-module. Then there exists an integer $n_0>0$ such that for $n\geq n_0$, $\mathscr{L}^{\otimes n}\otimes\mathscr{L}'$ is very ample relative to $q$.
@@ -5809,10 +5809,10 @@ Let $f:X\to Y$ be a morphism locally of finite type, $x$ be a point of $X$ and $
 \end{itemize}
 \end{proposition}
 \begin{proof}
-The question is local over $X$ and $Y$, so we can suppose that $X=\Spec(B)$ and $Y=\Spec(A)$ are affine, where $B$ is finite $A$-algebra. Moreover, we can replace $X$ by $X\times_Y\Spec(\mathscr{O}_{Y,y})$ without changing the fiber $X_y$ and the local ring $\mathscr{O}_{X,x}$ (\cref{scheme morphism base change by local scheme prop}). We can then suppose that $A$ is a local ring with maximal ideal $\m$ (which equals to the local ring $\mathscr{O}_{Y,y}$). The fiber $X_y$ is then the affine sheme of the ring $B/\m B$, of finite type over $\kappa(y)=A/\m$ (\cref{scheme morphism ft fiber algebraic}). Let $\mathfrak{P}$ be the prime ideal of $B$ corresponding to $x$.\par
-We note that the fiber $X_y=X\times_Y\Spec(\kappa(y))=\Spec(B\otimes_A\kappa(y))$ is Jacobson. If (\rmnum{2}) is satisfied, then $\{x\}$ is an open subset of $X_y$, hence contains a closed point (by the Jacobson property) which must be $x$, and $x$ is therefore closed in $X_y$. Also, since $\{x\}$ is open in $X_y$, it is clear that there is no further generalization $x'$ of $x$ (which means $x\in\widebar{\{x'\}}$) in $X_y$; this proves (\rmnum{2}).\par
-We now consider the condition in (\rmnum{2}). Consider the ring $\widebar{B}=B\otimes_A\kappa(y)=B/\m B$ and let $\widebar{\mathfrak{P}}$ be the prime ideal corresponding to $\mathfrak{P}$. If $x$ is closed in $X_y$, we see that $\widebar{\mathfrak{P}}$ is maximal in $\widebar{B}$ and by condition (\rmnum{2}) there is no prime ideal of $\widebar{B}$ contained in $\widebar{\mathfrak{P}}$. This shows that $\widebar{B}_{\widebar{\mathfrak{P}}}$ is Artinian, so we conclude that the ring homomorphism $A\to B$ is quasi-finite at $\mathfrak{P}$; that is, the $\mathscr{O}_{Y,y}$-module $\mathscr{O}_{X,x}$ is quasi-finite. Conversely, if $\widebar{B}_{\widebar{\mathfrak{P}}}$ is Artinian, then $\widebar{\mathfrak{P}}$ is maximal and there is no prime ideal of $\widebar{B}$ contained in $\widebar{\mathfrak{P}}$; we then conclude that $x$ is closed in $X_y$ and there is no generalization of $x$ in $X_y$. This shows that (\rmnum{2})$\Leftrightarrow$(\rmnum{3}).\par
-We finally prove that (\rmnum{2}) implies (\rmnum{1}). If (\rmnum{2}) is satisfied, then the prime ideal $\mathfrak{P}$ is maximal and minimal in $B$ since $\widebar{B}_{\widebar{\mathfrak{P}}}$ is Artinian. Let $\widebar{\mathfrak{P}}_1=\widebar{\mathfrak{P}},\widebar{\mathfrak{P}}_2,\dots,\widebar{\mathfrak{P}}_r$ be the minimal prime ideals of $\widebar{B}$. Then the intersection $\bigcap_{i=1}^{r}\widebar{\mathfrak{P}}_i$ is equal to the nilradical of $\widebar{B}$, and $\bigcap_{i=2}^{r}\widebar{\mathfrak{P}}_i$ is contained in this intersection in view of \cref{prime ideal contain intersection}, so there exists an element $\bar{b}\in\bigcap_{i=2}^{r}\widebar{\mathfrak{P}}_i$ that is not nilpotent. The open subset $D_{\widebar{B}}(\bar{b})$ of $X_y=\Spec(\widebar{B})$ then reduces to $\{x\}$, which shows that $x$ is isolated.
+The question is local over $X$ and $Y$, so we can suppose that $X=\Spec(B)$ and $Y=\Spec(A)$ are affine, where $B$ is finite $A$-algebra. Moreover, replacing $X$ by $X\times_Y\Spec(\mathscr{O}_{Y,y})$ does not change the fiber $X_y$ and the local ring $\mathscr{O}_{X,x}$ (\cref{scheme morphism base change by local scheme prop}), so we can suppose that $A$ is a local ring with maximal ideal $\m$ (which equals to the local ring $\mathscr{O}_{Y,y}$). The fiber $X_y$ is then the affine sheme of the ring $B/\m B$, of finite type over $\kappa(y)=A/\m$ (\cref{scheme morphism ft fiber algebraic}). Let $\mathfrak{P}$ be the prime ideal of $B$ corresponding to $x$.\par
+We note that the fiber $X_y=X\times_Y\Spec(\kappa(y))=\Spec(B\otimes_A\kappa(y))$ is Jacobson. If (\rmnum{1}) is satisfied, then $\{x\}$ is an open subset of $X_y$, hence contains a closed point (by the Jacobson property) which must be $x$, and $x$ is therefore closed in $X_y$. Also, since $\{x\}$ is open in $X_y$, it is clear that there is no further generalization $x'$ of $x$ (which means $x\in\widebar{\{x'\}}$) in $X_y$; this proves (\rmnum{1})$\Rightarrow$(\rmnum{2}).\par
+We now consider the conditions in (\rmnum{2}) and (\rmnum{3}). Consider the ring $\widebar{B}=B\otimes_A\kappa(y)=B/\m B$ and let $\widebar{\mathfrak{P}}$ be the prime ideal corresponding to $\mathfrak{P}$. If $x$ is closed in $X_y$, we see that $\widebar{\mathfrak{P}}$ is maximal in $\widebar{B}$ and by condition (\rmnum{2}) there is no prime ideal of $\widebar{B}$ contained in $\widebar{\mathfrak{P}}$. This shows that $\widebar{B}_{\widebar{\mathfrak{P}}}$ is Artinian, so we conclude that the ring homomorphism $A\to B$ is quasi-finite at $\mathfrak{P}$; that is, the $\mathscr{O}_{Y,y}$-module $\mathscr{O}_{X,x}$ is quasi-finite. Conversely, if $\widebar{B}_{\widebar{\mathfrak{P}}}$ is Artinian, then $\widebar{\mathfrak{P}}$ is maximal and there is no prime ideal of $\widebar{B}$ contained in $\widebar{\mathfrak{P}}$; we then conclude that $x$ is closed in $X_y$ and there is no generalization of $x$ in $X_y$. This shows that (\rmnum{2})$\Leftrightarrow$(\rmnum{3}).\par
+We finally prove that (\rmnum{2}) implies (\rmnum{1}). If (\rmnum{2}) is satisfied, then the prime ideal $\mathfrak{P}$ is both maximal and minimal in $B$ since $\widebar{B}_{\widebar{\mathfrak{P}}}$ is Artinian. Let $\widebar{\mathfrak{P}}_1=\widebar{\mathfrak{P}},\widebar{\mathfrak{P}}_2,\dots,\widebar{\mathfrak{P}}_r$ be the minimal prime ideals of $\widebar{B}$. Then the intersection $\bigcap_{i=1}^{r}\widebar{\mathfrak{P}}_i$ is equal to the nilradical of $\widebar{B}$, and $\bigcap_{i=2}^{r}\widebar{\mathfrak{P}}_i$ is contained in this intersection in view of \cref{prime ideal contain intersection}, so there exists an element $\bar{b}\in\bigcap_{i=2}^{r}\widebar{\mathfrak{P}}_i$ that is not nilpotent. The open subset $D_{\widebar{B}}(\bar{b})$ of $X_y=\Spec(\widebar{B})$ then reduces to $\{x\}$, which shows that $x$ is isolated.
 \end{proof}
 \begin{corollary}\label{scheme morphism ft quasi-finite iff fiber discrete}
 Let $f:X\to Y$ be a morphism of finite type. Then the following conditions are equivalent:
@@ -5825,7 +5825,7 @@ Let $f:X\to Y$ be a morphism of finite type. Then the following conditions are e
 \begin{proof}
 The equivalence of (\rmnum{1}) and (\rmnum{3}) follows from \cref{scheme morphism local ft isolated in fiber iff}. On the other hand, as $X_{f(x)}$ is an algebraic $\kappa(f(x))$-scheme, the equivalence of (\rmnum{1}) and (\rmnum{2}) follows from \cref{scheme algebraic Artinian iff}.
 \end{proof}
-We say a morphism $f:X\to Y$ of finite type is \textbf{quasi-finite}, or $X$ is quasi-finite over $Y$, if it satisfies the equivalent conditions of \cref{scheme morphism ft quasi-finite iff fiber discrete}.  From \cref{scheme morphism integral fiber finite discrete}, it is clear that any finite morphism is quasi-finite.
+We say a morphism $f:X\to Y$ of finite type is \textbf{quasi-finite}, or $X$ is \textbf{quasi-finite} over $Y$, if it satisfies the equivalent conditions of \cref{scheme morphism ft quasi-finite iff fiber discrete}.  From \cref{scheme morphism integral fiber finite discrete}, it is clear that any finite morphism is quasi-finite.
 \begin{proposition}[\textbf{Properties of Quasi-finite Morphisms}]\label{scheme morphism quasi-finite permanence prop}
 \mbox{}
 \begin{itemize}
@@ -5833,7 +5833,7 @@ We say a morphism $f:X\to Y$ of finite type is \textbf{quasi-finite}, or $X$ is 
 \item[(\rmnum{2})] If $f:X\to Y$ and $g:Y\to Z$ are quasi-finite morphisms, $g\circ f$ is quasi-finite.
 \item[(\rmnum{3})] If $f:X\to Y$ is a quasi-finite $S$-morphism, $f_{(S')}:X_{(S')}\to Y_{(S')}$ is quasi-finite for any base change $S'\to S$.
 \item[(\rmnum{4})] If $f:X\to Y$ and $g:X'\to Y'$ are quasi-finite $S$-morphisms, $f\times_Sg$ is quasi-finite.
-\item[(\rmnum{5})] Let $f:X\to Y$ and $g:Y\to Z$ be two morphisms such that $g\circ f$ is quasi-finite; then, if $g$ is separated, or $X$ is Noetherian, or $X\times_ZY$ is locally Noetherian, then $f$ is quasi-finite.
+\item[(\rmnum{5})] Let $f:X\to Y$ and $g:Y\to Z$ be two morphisms such that $g\circ f$ is quasi-finite; if $g$ is separated, or $X$ is Noetherian, or $X\times_ZY$ is locally Noetherian, then $f$ is quasi-finite.
 \item[(\rmnum{6})] If $f$ is quasi-finite, so is $f_{\red}$.
 \end{itemize}
 \end{proposition}
@@ -5979,7 +5979,7 @@ f^*(\mathscr{F})\otimes_{\mathscr{O}_X}\mathscr{K}_X\ar[r,"f^*(v)\otimes 1"]&f^*
 \end{tikzcd}\]
 We then conclude that $\det(f^*(v))$ is the canonical image of the section $\det(v)$ of $\mathscr{K}_Y$ under the canonical homomorphism $f^*(\mathscr{K}_Y)\to\mathscr{K}_X$. In fact, it is immediate that we are reduced to the case where $X=\Spec(B)$ and $Y=\Spec(A)$ are affine, $A$, $B$ being integral domains with fraction fields $K$, $L$ respectively, the hommorphism $A\to B$ being injective and extends to a monomorphism $K\to L$. If $\mathscr{F}=\widetilde{M}$ where $M$ is a finitely generated $A$-module, the dimension of $M\otimes_AK$ is equal to that of $(M\otimes_AB)\otimes_BL$ over $L$, and $\det((u\otimes 1)\otimes 1)$ is the image of $\det(u\otimes 1)$ in $L$ for any endomorphism $u$ of $M$, whence our conclusion.\par
 Finally, suppose that $X$ is a reduced locally Noetherian scheme, whose sheaf of rational functions $\mathscr{K}_X$ is quasi-coherent by \cref{scheme local finite K(X) qcoh and injection}. Let $\mathscr{E}$ be a coherent $\mathscr{O}_X$-module such that $\mathscr{E}'=\mathscr{E}\otimes_{\mathscr{O}_X}\mathscr{K}_X$ is locally free of rank $n$. We can then define for each endomorphism $u$ of $\mathscr{E}$ the elementary symmetric functions $\sigma_j(u)$, which are sections of $\mathscr{K}_X$ over $X$.
-\subsection{Norm of an invertible sheaf}
+\subsection{Norm of invertible sheafs}
 Let $(X,\mathscr{A})$ be a ringed space and $\mathscr{B}$ be an $\mathscr{A}$-algebra. The $\mathscr{A}$-module $\mathscr{B}$ is canonically identified with a sub-$\mathscr{A}$-module of $\sHom_{\mathscr{A}}(\mathscr{B},\mathscr{B})$, where a section $f$ of $\mathscr{B}$ over an open subset $U$ of $X$ is identified with the multiplication by this section. Assume that $(X,\mathscr{A})$ and $\mathscr{B}$ satisfies the conditions given in the previous subsection, so that we can define $\det(f)$ (resp. $\sigma_j(f)$) to be a section of $\mathscr{K}_X$ over $U$, which is called the \textbf{norm} of $f$ (resp. the elementary symmetric functions) of $f$ and denoted by $N_{\mathscr{B}/\mathscr{A}}(f)$. We suppose that one of the following conditions is satisfied:
 \begin{itemize}
 \item[($\alpha$)] $\mathscr{B}$ is a locally free $\mathscr{A}$-module of finite rank $n$.
@@ -6070,7 +6070,7 @@ Assume the hypotheses of \cref{scheme morphism finite N(u') isomorphism iff}. Th
 \begin{proof}
 Note that we have $\psi^*(\varphi_*(\mathscr{L}'))=\varphi'_*(\psi'^*(\mathscr{L}'))$ in view of \cref{scheme S-affine algebra under base change prop}, and in particular $\varphi'_*(\mathscr{O}_{Y'})=\psi^*(\varphi_*(\mathscr{O}_{X'}))$; if $\varphi_*(\mathscr{O}_{X'})$ is locally free, so is $\varphi'_*(\mathscr{O}_{Y'})$. The conclusion then follows from the definition of $N_{X'/X}$, $N_{Y'/Y}$, and (\ref{ringed space norm of invertible sheaf and inverse image commute}).
 \end{proof}
-\subsection{Application: a criterion of amplitude}
+\subsection{A criterion for ample sheaves}
 \begin{proposition}\label{scheme morphism finite surjective norm of ample}
 Let $f:X\to Y$ be a quasi-compact morphism, $g:X'\to X$ be a finite and surjective morphism such that $(X,\mathscr{O}_X)$ and $g_*(\mathscr{O}_{X'})$ satisfy condition ($\beta$). Then, for an ample invertible $\mathscr{O}_{X'}$-module $\mathscr{L}'$ relative to $f\circ g$, $N_{X'/X}(\mathscr{L}')=\mathscr{L}$ is ample relative to $f$.
 \end{proposition}
@@ -6262,15 +6262,15 @@ Let $A$ be a valuation ring with fraction field $K$, $Y=\Spec(A)$, $b$ be the ge
 \begin{proof}
 Let $x$ be a rational point of $f^{-1}(b)$ over $K$. As $f$ is separated, so is the morphism $f^{-1}(b)\to\Spec(K)$ corresponding to $f$ (\cref{scheme morphism separated permanence prop}(\rmnum{4})), since and any section of $f^{-1}(b)$ a closed immersion by \cref{scheme morphism to separated graph is closed}, $\{x\}$ is closed in $f^{-1}(b)$. Consider the reduced closed subscheme $X'$ of $X$ with underlying space $\widebar{\{x\}}$ of $\{x\}$ in $X$. It is clear that the restriction of $f$ to $X'$ satisfies the conditions of \cref{scheme morphism from valuation specturm iso if} (note that since $x$ is rational over $K$, we have $\kappa(x)=K$), hence an isomorphism from $X'$ to $Y$, whose inverse isomorphism is the $Y$-section of $X$ we want.
 \end{proof}
-Recall that if $F$ is a subset of the scheme $Y$, the codimension of $F$ in $Y$ equal to the infimum of $\dim(\mathscr{O}_{Y,z})$ where $z\in F$ (this can be easily verified after reducing to affine case), and we denote this number by $\codim_Y(F)$.
+Recall that if $F$ is a subset of the scheme $Y$, the codimension of $F$ in $Y$ is equal to the infimum of $\dim(\mathscr{O}_{Y,z})$ where $z\in F$ (this can be easily verified after reducing to affine case), and we denote this number by $\codim_Y(F)$.
 \begin{corollary}\label{scheme local Noe section not defined codim prop}
-Let $Y$ be a reduced locally Noetherian scheme such that the subset $N$ of $y\in Y$ where $Y$ is not regular has codimension $\codim_Y(N)\geq 2$. Let $f:X\to Y$ be a separted and closed morphism of finite type and $g$ be a rational $Y$-section of $X$. If $Y'$ is the set of points of $Y$ where $g$ is not defined, then $\codim_Y(Y')\geq 2$.
+Let $Y$ be a reduced locally Noetherian scheme such that the subset $N$ of $y\in Y$ where $Y$ is not regular has codimension $\geq 2$. Let $f:X\to Y$ be a separted and closed morphism of finite type and $g$ be a rational $Y$-section of $X$. If $Y'$ is the set of points of $Y$ where $g$ is not defined, then $\codim_Y(Y')\geq 2$.
 \end{corollary}
 \begin{proof}
 It suffices to prove that $g$ is defined at any point $y\in Y$ such that $\dim(\mathscr{O}_{Y,y})\leq 1$. If $\dim(\mathscr{O}_{Y,y})=0$, then $y$ is the generic point of an irreducible component of $Y$. For any open dense subset $V$ of $Y$, by restricting to an affine neighborhood of $y$ and apply \cref{topo space open dense intersect irre component}, we conclude that $V$ contains $y$. In particular, $y$ belongs to the defining domain of $g$. Suppose now that $\dim(\mathscr{O}_{Y,y})=1$; then $\mathscr{O}_{Y,y}$ is a regular local ring, hence a discrete valuation ring. Let $Z=\Spec(\mathscr{O}_{Y,y})$; as $U=Y-Y'$ is open and dense, by \cref{scheme local scheme correspond generalization} and our preceding arguments, $U\cap Z$ is nonempty (contains the generic of an irreducible component of $Y$ containing $y$), so we can consider the rational map $g':Z\dashrightarrow X$ induced by $g$. It then suffices to prove that $g'$ is a morphism (\cref{scheme reduced to separated rational map define iff on local}). Now, $g'$ can be considered as a rational $Z$-section of the $Z$-scheme $f^{-1}(Z)=X\times_YZ$; it is clear that the morphism $f^{-1}(Z)\to Z$ corresponding to $f$ is closed, and is separted by \cref{scheme morphism separated permanence prop}(\rmnum{1}). We then conclude from \cref{scheme section over valaution bijective if} that $g'$ is everywhere defined, and as $Z$ is reduced and $X$ is separated over $Y$, $g'$ is a morphism (\cref{scheme reduced to separated rational extend to domain}).
 \end{proof}
 \begin{corollary}\label{scheme local Noe rational map not defined codim prop}
-Let $S$ be a locally Noetherian scheme, $X,Y$ be $S$-scheme, and assume that $X$ is proper over $X$. Suppose that $Y$ is reduced and the subset $N$ of $y\in Y$ where $Y$ is not regular has codimension $\codim_Y(N)\geq 2$. Let $f:Y\dashrightarrow X$ be a rational map and $Y'$ be the set of points where $f$ is not defined, then $\codim_Y(Y')\geq 2$.
+Let $S$ be a locally Noetherian scheme, $X,Y$ be $S$-scheme, and assume that $X$ is proper over $X$. Suppose that $Y$ is reduced and the subset $N$ of $y\in Y$ where $Y$ is not regular has codimension $\geq 2$. Let $f:Y\dashrightarrow X$ be a rational map and $Y'$ be the set of points where $f$ is not defined, then $\codim_Y(Y')\geq 2$.
 \end{corollary}
 \begin{proof}
 The rational $S$-maps $Y\dashrightarrow X$ correspond to rational $Y$-sections of $X\times_SY$; as the structural morphism $X\times_SY\to Y$ is closed by \cref{scheme morphism proper permanence prop}, we can apply \cref{scheme local Noe section not defined codim prop}, whence the corollary.
@@ -7237,19 +7237,17 @@ By definition $R^pf_*(\mathscr{F})$ is defined to be the sheaf associated with t
 Let $f:X\to Y$ be an affine morphism. Then for any quasi-coherent $\mathscr{O}_X$-module $\mathscr{F}$, the canonical homomorphism $H^p(Y,f_*(\mathscr{F}))\to H^p(X,\mathscr{F})$ is bijective for any $p$.
 \end{corollary}
 \begin{proof}
-It suffices to prove that the edge-homomorphisms
-\[E_2^{p,0}=H^p(Y,f_*(\mathscr{F}))\to H^p(X,\mathscr{F})\]
-of the Leray spectral sequence is bijective. But the $E_2$ page of this sequence is given by
+Consider the Leray spectral sequence
 \[E_2^{p,q}=(R^p\Gamma\circ R^qf_*)(\mathscr{F})=H^p(Y,R^qf_*(\mathscr{F})),\]
-so it follows from \cref{scheme morphism affine higher direct image vanish} that $E_2^{p,q}=0$ for $q>0$, and this sequence collapses at $E_2$ page, whence our assertion.
+it follows from \cref{scheme morphism affine higher direct image vanish} that $E_2^{p,q}=0$ for $q>0$, so this sequence collapses at $E_2$ page, whence our assertion.
 \end{proof}
-\begin{corollary}\label{scheme morphism affine higher direct image of composition}
-Let $f:X\to Y$ be an affine morphism, $g:Y\to Z$ be a morphism. Then for any quasi-coherent $\mathscr{O}_X$-module $\mathscr{F}$, the canonical homomorphism $R^pg_*(f_*(\mathscr{F}))\to F^p(g\circ f)_*(\mathscr{F})$ is bijective for any $p$.
+\begin{corollary}\label{scheme morphism affine R^pg_*(f_*) isomorphic to composition}
+Let $f:X\to Y$ be an affine morphism and $g:Y\to Z$ be a morphism. Then for any quasi-coherent $\mathscr{O}_X$-module $\mathscr{F}$, the canonical homomorphism $R^pg_*(f_*(\mathscr{F}))\to R^p(g\circ f)_*(\mathscr{F})$ is bijective for any $p$.
 \end{corollary}
 \begin{proof}
 It suffices to remark that, by \cref{scheme morphism affine cohomology of direct image}, for any affine open $W$ of $Z$, the canonical homomorphism $H^p(g^{-1}(W),f_*(\mathscr{F}))\to H^p(f^{-1}(g^{-1}(W)),\mathscr{F})$ is bijective; this homomorphism of presheaves then defines a canonical homomorphism $R^pg_*(f_*(\mathscr{F}))\to R^p(g\circ f)_*(\mathscr{F})$ which is bijective.
 \end{proof}
-\subsection{Application to cohomology of schemes}
+\subsection{Applications to cohomology of schemes}
 \begin{proposition}\label{scheme separated cohomology compute by finite affine cover}
 Let $X$ be a separated scheme, $\mathfrak{U}=(U_\alpha)$ be a covering of $X$ by affine opens. For any quasi-coherent $\mathscr{O}_X$-module $\mathscr{F}$, the cohomology module $H^\bullet(X,\mathscr{F})$ and $H^\bullet(\mathfrak{U},\mathscr{F})$ (over $\Gamma(X,\mathscr{O}_X)$) are canonically isomorphic.
 \end{proposition}
@@ -7325,56 +7323,65 @@ Since taking restriction commutes with higher direct images, we may assume that 
 \end{tikzcd}\]
 It then follows from our assumption and \cref{scheme affine associated sheaf ker and coker} that $R^p(f_{U\cup V})_*(\mathscr{F})$ is quasi-coherent for $p\geq 0$, so the assertion follows by applying \cref{scheme qcqs induction principle}.
 \end{proof}
-\begin{proposition}\label{scheme qcsp morphism higher direct image on affine char}
-Let $f:X\to Y$ be a quasi-compact and separated morphism. Then for any quasi-coherent $\mathscr{O}_X$-module $\mathscr{F}$ and any affine open $V\sub Y$, the canonical homomorphism $H^p(f^{-1}(V),\mathscr{F})\to\Gamma(V,R^pf_*(\mathscr{F}))$ is an isomorphism for $p\geq 0$.
-\end{proposition}
-\begin{corollary}\label{scheme qcsp over affine higher direct image vanish for p>n}
-Under the hypothesis of \cref{scheme qcqs morphism qcoh higher direct image}, suppose that $Y$ is quasi-compact. Then there exists an integer $n>0$ such that for any quasi-coherent $\mathscr{O}_X$-module, we have $R^pf_*(\mathscr{F})=0$ for $p>n$. If $Y$ is affine, then we can choose $n$ so that there exists a covering of $X$ by $n$ affine opens.
+\begin{corollary}\label{scheme qcqs morphism direct image over affine char}
+Let $f:X\to Y$ be a quasi-compact and quasi-separated morphism. Then for any quasi-coherent $\mathscr{O}_X$-module $\mathscr{F}$ and any affine open $V\sub Y$, the canonical homomorphism
+\[H^p(f^{-1}(V),\mathscr{F})\to H^0(V,R^pf_*(\mathscr{F}))\]
+is an isomorphism for $p\geq 0$.
 \end{corollary}
 \begin{proof}
-Since $Y$ is a union of affine opens, it suffices to prove the second assertion, in view of \cref{scheme qcsp morphism higher direct image on affine char}. Now if $\mathfrak{U}$ is a covering of $X$ by $n$ affine opens, then $H^p(\mathfrak{U},\mathscr{F})=0$ for $p>n$, since the cochains can be taken to be alternating. The conclusion then follows from \cref{scheme separated cohomology compute by finite affine cover}.
+Since this question is local, we may assume that $Y$ is affine. Consider the Leray spectral sequence
+\[E_2^{p,q}=H^p(Y,R^qf_*(\mathscr{F}))\Rightarrow H^{p+q}(X,\mathscr{F}).\]
+By \cref{scheme qcqs morphism qcoh higher direct image} we see that the $R^qf_*(\mathscr{F})$ are quasi-coherent $\mathscr{O}_Y$-module, so $H^p(Y,R^qf_*(\mathscr{F}))=0$ for $p>0$ (\cref{Serre's criterion for affineness}). The spectral sequence therefore collapses at $E_2$ and we obtain an isomorphism $H^q(X,\mathscr{F})\cong H^0(Y,R^qf_*(\mathscr{F}))$.
 \end{proof}
-\begin{corollary}\label{scheme qcsp over affine section of higher direct image on Y_f char}
+\begin{corollary}\label{scheme qcsp over qc qcoh R^pf_* vanish for p>r}
+Let $f:X\to Y$ be a quasi-compact and separated morphism, and suppose that $Y$ is quasi-compact. Then there exists an integer $r>0$ such that for any quasi-coherent $\mathscr{O}_X$-module, we have $R^pf_*(\mathscr{F})=0$ for $p>r$. If $Y$ is affine, then we can choose $r$ so that there exists a covering of $X$ by $r$ affine opens.
+\end{corollary}
+\begin{proof}
+Since $Y$ is a union of affine opens, it suffices to prove the second assertion, in view of \cref{scheme qcqs morphism direct image over affine char}. Now if $\mathfrak{U}$ is a covering of $X$ by $r$ affine opens, then $H^p(\mathfrak{U},\mathscr{F})=0$ for $p>r$, since the cochains can be taken to be alternating. The conclusion then follows from \cref{scheme separated cohomology compute by finite affine cover}.
+\end{proof}
+\begin{corollary}\label{scheme qcsp over affine R^pf_* section on Y_f char}
 Under the hypothesis of \cref{scheme qcqs morphism qcoh higher direct image}, suppose that $Y=\Spec(A)$ is affine. Then for any quasi-coherent $\mathscr{O}_X$-module $\mathscr{F}$ and any $f\in A$, we have
 \[\Gamma(Y_f,R^pf_*(\mathscr{F}))=(\Gamma(Y,R^pf_*(\mathscr{F})))_f\]
 \end{corollary}
 \begin{proof}
 This follows from \cref{scheme qcqs morphism qcoh higher direct image} and \cref{scheme qcqs section of qcoh over X_s char}.
 \end{proof}
-\begin{proposition}\label{scheme qcsp morphism higher direct image composition}
-Let $f:X\to Y$ be a quasi-compact and separated morphism, $g:Y\to Z$ be an affine morphism. For any quasi-coherent $\mathscr{O}_X$-module $\mathscr{F}$, the canonical homomorphism $R^p(g\circ f)_*(\mathscr{F})\to g_*(R^pf_*(\mathscr{F}))$ is bijective for $p\geq 0$.
+\begin{proposition}\label{scheme qcqs morphism g_*(R^pf_*) isomorphic to composition}
+Let $f:X\to Y$ be a quasi-compact and quasi-separated morphism, $g:Y\to Z$ be an affine morphism. For any quasi-coherent $\mathscr{O}_X$-module $\mathscr{F}$, the canonical homomorphism $R^p(g\circ f)_*(\mathscr{F})\to g_*(R^pf_*(\mathscr{F}))$ is bijective for $p\geq 0$.
 \end{proposition}
 \begin{proof}
-For any affine open $W\sub Z$, $g^{-1}(W)$ is an affine open of $Y$, so the conclusion follows from \cref{scheme qcsp morphism higher direct image on affine char}.
+Consider the Grothendieck spectral sequence
+\[E_2^{p,q}=R^pg_*(R^qf_*(\mathscr{F}))\Rightarrow R^{p+q}(g\circ f)_*(\mathscr{F}).\]
+Since each $R_qf_*(\mathscr{F})$ is coherent by \cref{scheme qcqs morphism qcoh higher direct image}, it then suffices to prove that $R^pg_*(\mathscr{G})=0$ for any coherent $\mathscr{O}_Y$-module $\mathscr{G}$ and $p\geq 0$. Since this question is local, we may assume that $Z$ is affine; but then $Y$ is also affine so the assertion follows from \cref{scheme qcsp over affine R^pf_* section on Y_f char}.
 \end{proof}
-\begin{proposition}\label{scheme sp ft morphism higher direct image extension}
+\begin{proposition}\label{scheme morphism proper ftsp flat base change R^pf_*}
 Let $f:X\to Y$ be a separated morphism of finite type and $g:Y'\to Y$ be a flat morphism. Let $f'=f_{(Y')}:X'=X_{(Y')}\to Y'$, and consider the commutative diagram
 \[\begin{tikzcd}
-X'\ar[r,"g'"]\ar[d,swap,"f'"]&X\ar[d,"f"]\\
-Y'\ar[r,"g"]&Y
+X'\ar[r,"f'"]\ar[d,swap,"g'"]&Y'\ar[d,"g"]\\
+X\ar[r,"f"]&Y
 \end{tikzcd}\]
-Then for any quasi-coherent $\mathscr{O}_X$-module $\mathscr{F}$, $R^pf'_*(\mathscr{F}')$ is canonically isomorphic to $R^pf_*(\mathscr{F})\otimes_{\mathscr{O}_Y}\mathscr{O}_{Y'}=g^*(R^pf_*(\mathscr{F}))$ for $p\geq 0$ (where $\mathscr{F}'=g'^*(\mathscr{F})=\mathscr{F}\otimes_{\mathscr{O}_Y}\mathscr{O}_{Y'}$).
+Let $\mathscr{F}$ be a quasi-coherent $\mathscr{O}_X$-module and set $\mathscr{F}'=g'^*(\mathscr{F})$. Then $R^pf'_*(\mathscr{F}')$ is canonically isomorphic to $g^*(R^pf_*(\mathscr{F}))$ for $p\geq 0$.
 \end{proposition}
 \begin{proof}
 The canonical homomorphism $\rho:\mathscr{F}\to g'_*(g'^*(\mathscr{F}))$ defines a homomorphism
-\begin{align}\label{scheme sp ft morphism higher direct image extension-1}
+\begin{align}\label{scheme morphism proper ftsp flat base change R^pf_*-1}
 R^pf_*(\mathscr{F})\to R^pf_*(g'_*(g'^*(\mathscr{F}))).
 \end{align}
 On the other hand, we also have the canonical homomorphisms
-\begin{align}\label{scheme sp ft morphism higher direct image extension-2}
+\begin{align}\label{scheme morphism proper ftsp flat base change R^pf_*-2}
 R^pf_*(g'_*(\mathscr{F}'))\to R^ph_*(\mathscr{F}')\to g_*(R^pf'_*(\mathscr{F}')),
 \end{align}
-where $h=f\circ g'=g\circ f'$. Composing (\ref{scheme sp ft morphism higher direct image extension-1}) with (\ref{scheme sp ft morphism higher direct image extension-2}), we get a homomorphism
+where $h=f\circ g'=g\circ f'$. Composing (\ref{scheme morphism proper ftsp flat base change R^pf_*-1}) with (\ref{scheme morphism proper ftsp flat base change R^pf_*-2}), we get a homomorphism
 \[\psi:R^pf_*(\mathscr{F})\to g_*(R^pf'_*(\mathscr{F}))\]
 and finaly a induced canonical homomorphism (without using the hypothesis on $g$)
-\begin{align}\label{scheme sp ft morphism higher direct image extension-3}
+\begin{align}\label{scheme morphism proper ftsp flat base change R^pf_*-3}
 \psi^{\sharp}:g^*(R^pf_*(\mathscr{F}))\to R^pf'_*(\mathscr{F}').
 \end{align}
-We need to prove that $\psi^{\sharp}$ is an isomorphism if $g$ is flat. It is clear that the question is local over $Y$ and $Y'$, so we may assume that $Y=\Spec(A)$, $Y'=\Spec(B)$, and $g$ corresponds to a ring homomorphism $\varphi:A\to B$. Then it follows from \cref{scheme qcsp morphism higher direct image on affine char} and the definition of the homomorphism (\ref{scheme sp ft morphism higher direct image extension-2}) that $\psi$ corresponds to the composition homomorphism
+We need to prove that $\psi^{\sharp}$ is an isomorphism if $g$ is flat. It is clear that the question is local over $Y$ and $Y'$, so we may assume that $Y=\Spec(A)$, $Y'=\Spec(B)$, and $g$ corresponds to a ring homomorphism $\varphi:A\to B$. Then it follows from \cref{scheme qcqs morphism direct image over affine char} and the definition of the homomorphism (\ref{scheme morphism proper ftsp flat base change R^pf_*-2}) that $\psi$ corresponds to the composition homomorphism
 \[\begin{tikzcd}
-H^p(X,\mathscr{F})\ar[r,"\rho_p"]&H^p(X,g'_*(g'^*(\mathscr{F})))\ar[r,"\theta_p"]&H^p(X',g'_*(g'^*(g'^*(\mathscr{F}))))\ar[r,"\sigma_p"]&H^p(X',g'^*(\mathscr{F}))
+H^p(X,\mathscr{F})\ar[r,"\rho_p"]&H^p(X,g'_*(g'^*(\mathscr{F})))\ar[r,"\theta_p"]&H^p(X',g'^*(g'_*(g'^*(\mathscr{F}))))\ar[r,"\sigma_p"]&H^p(X',g'^*(\mathscr{F}))
 \end{tikzcd}\]
-where $\rho_p$ and $\sigma_p$ correspond to the canonical homomorphism $\rho$ and $\sigma$, and $\theta_p$ is the $\varphi$-morphism of (\cref{*}) relative to the $\mathscr{O}_X$-module $g'_*(g'^*(\mathscr{F}))$. By the functoriality of $\theta_p$, we have a commutative diagram
+where $\rho_p$ and $\sigma_p$ correspond to the canonical homomorphism $\rho_{\mathscr{F}}$ and $\sigma_{g'^*(\mathscr{F})}$, and $\theta_p$ is the $\varphi$-morphism of (\cref{*}) relative to the $\mathscr{O}_X$-module $g'_*(g'^*(\mathscr{F}))$. By the functoriality of $\theta_p$, we have a commutative diagram
 \[\begin{tikzcd}
 H^p(X,\mathscr{F})\ar[r,"\rho_p"]\ar[d]&H^p(X,g'_*(g'^*(\mathscr{F})))\ar[d]\\
 H^p(X',v'^*(\mathscr{F}))\ar[r,"g'^*(\rho_p)"]&H^p(X',g'_*(g'^*(g'^*(\mathscr{F}))))
@@ -7388,7 +7395,7 @@ is commutative, and the the columns are isomorphisms since $X$ and $X'$ are sepa
 \[H^p(\mathfrak{U},\mathscr{F})\otimes_AB\to H^p(\mathfrak{U}',\mathscr{F}')\]
 is an isomorphism. Now in view of \cref{scheme affine associated sheaf inverse image char}, we see the canonical map $C^p(\mathfrak{U},\mathscr{F})\otimes_AB\to C^p(\mathfrak{U}',\mathscr{F}')$ is bijective. As $B$ is a flat $A$-module, it follows that the canonical map $H^p(\mathfrak{U},\mathscr{F})\otimes_AB\to H^p(\mathfrak{U}',\mathscr{F}')$ is an isomorphism.
 \end{proof}
-\begin{corollary}\label{scheme ft over ring affine iff faithfully flat extension}
+\begin{corollary}\label{scheme ft affine iff faithfully flat base change}
 Let $A$ be a ring, $X$ be an $A$-scheme of finite type, and $B$ be a faithfully flat $A$-algebra. Then for $X$ to be affine, it is necesary and sufficient that $X\otimes_AB$ is affine.
 \end{corollary}
 \begin{proof}
@@ -7401,10 +7408,10 @@ for $i\geq 0$ and any quasi-coherent $\mathscr{O}_X$-module $\mathscr{F}$. As $X
 Let $X$ be a scheme, $\mathscr{L}$ be an invertible $\mathscr{O}_X$-module, and consider the graded ring
 \[S=\Gamma_*(X,\mathscr{L})=\bigoplus_{n\in\Z}\Gamma(X,\mathscr{L}^{\otimes n}).\]
 Let $\bm{f}=(f_i)_{1\leq i\leq r}$ be a family of homogeneous elements of $S$, where $f_i\in S_{d_i}$. Put $U_i=X_{f_i}$, $U=\bigcup_iU_i$, and let $\mathfrak{U}=(U_i)$ be the covering of $U$. For any quasi-coherent $\mathscr{O}_X$-module $\mathscr{F}$ of $X$, we set
-\begin{align}\label{scheme invertible qcoh graded cohomology}
+\begin{align}\label{scheme qcoh graded cohomology-1}
 H^\bullet(\mathfrak{U},\mathscr{F}(\ast)):=\bigoplus_{n\in\Z}H^\bullet(\mathfrak{U},\mathscr{F}\otimes\mathscr{L}^{\otimes n}),\quad H^\bullet(U,\mathscr{F}(\ast)):=\bigoplus_{n\in\Z}H^\bullet(U,\mathscr{F}\otimes\mathscr{L}^{\otimes n}).
 \end{align}
-We note that the abelian groups in (\ref{scheme invertible qcoh graded cohomology}) are bigraded: for $m,n\in\Z$ we set
+We note that the abelian groups in (\ref{scheme qcoh graded cohomology-1}) are bigraded: for $m,n\in\Z$ we set
 \[(H^\bullet(\mathfrak{U},\mathscr{F}(\ast)))_{mn}=H^m(\mathfrak{U},\mathscr{F}\otimes\mathscr{L}^n),\quad (H^\bullet(U,\mathscr{F}(\ast)))_{mn}=H^m(U,\mathscr{F}\otimes\mathscr{L}^n).\]
 For any fixed $m\in\Z$, it is clear that $H^m(\mathfrak{U},\mathscr{F}(\ast))$ and $H^m(U,\mathscr{F}(\ast))$ are graded $S$-modules. We now consider the graded $S$-module
 \[M=\Gamma_*(\mathscr{L},\mathscr{F})=H^0(X,\mathscr{F}(\ast))=\bigoplus_{n\in\Z}\Gamma(X,\mathscr{F}\otimes\mathscr{L}^{\otimes n}).\]
@@ -7415,20 +7422,20 @@ Recall that $M_{f_{i_0}\cdots f_{i_p}}$ is idnetified with $\rlim_nM^n_{i_0\dots
 is then an isomorphism of graded $S$-modules. By \cref{scheme qcqs Cech cohomology is limit of Koszul}, we have isomorphism of graded $S$-modules
 \[C^p(\mathfrak{U},\mathscr{F}(\ast))=C^{p+1}(\f,M)=\rlim_nK^{p+1}(\bm{f}^n,M)\]
 where the degree of an element in $\rlim K^{p+1}(\bm{f}^n,M)$ is defined similarly. It is easy to see that the isomorphisms above are compatible with differential maps, so from \cref{scheme qcqs Cech cohomology is limit of Koszul} we conclude the following:
-\begin{proposition}\label{scheme qcqs invertible qcoh Cech is limit of Koszul}
+\begin{proposition}\label{scheme qcqs graded cohomology Cech is limit of Koszul}
 Let $X$ be a quasi-compact and quasi-separated scheme. Then there exists a canonical isomorphism of graded $S$-modules
-\begin{align}\label{scheme qcqs invertible qcoh Cech is limit of Koszul-1}
+\begin{align}\label{scheme qcqs graded cohomology Cech is limit of Koszul-1}
 H^p(\mathfrak{U},\mathscr{F}(\ast))\stackrel{\sim}{\to}H^{p+1}(\f,M)\for p\geq 1,
 \end{align}
 where $\f$ is the ideal generated by $\bm{f}$. Moreover, we have a functorial exact sequence
-\begin{equation}\label{scheme qcqs invertible qcoh Cech is limit of Koszul-2}
+\begin{equation}\label{scheme qcqs graded cohomology Cech is limit of Koszul-2}
 \begin{tikzcd}
 0\ar[r]&H^0(\f,M)\ar[r]&M\ar[r]&H^0(\mathfrak{U},\mathscr{F}(\ast))\ar[r]&H^1(\f,M)\ar[r]&0
 \end{tikzcd}
 \end{equation}
 of homomorphisms of degree $0$.
 \end{proposition}
-\begin{corollary}\label{scheme qcsp invertible qcoh cohomology is limit of Koszul}
+\begin{corollary}\label{scheme qcsp graded cohomology is limit of Koszul}
 If $X$ is quasi-compact and separated and $U_i=X_{f_i}$ are affine, then there exists a canonical isomorphism of degree $0$:
 \[H^p(U,\mathscr{F}(\ast))\stackrel{\sim}{\to}H^{p+1}(\f,M)\for p>0.\]
 and we have a functorial exact sequence
@@ -7449,7 +7456,7 @@ and we have a functorial exact sequence
 of homomorphisms of degree $0$.
 \end{corollary}
 \begin{proof}
-In fact, we have $\Gamma(U_{i_0\dots i_p},\widetilde{M(n)})=(M_{f_{i_0}\cdots f_{i_p}})_n$, so $\Gamma(U_{i_0\dots i_p},\widetilde{M}(\ast))=M_{f_{i_0}\cdots f_{i_p}}$. The conclusion then follows from \cref{scheme qcsp invertible qcoh cohomology is limit of Koszul} since $X$ is quasi-compact and separated.
+In fact, we have $\Gamma(U_{i_0\dots i_p},\widetilde{M(n)})=(M_{f_{i_0}\cdots f_{i_p}})_n$, so $\Gamma(U_{i_0\dots i_p},\widetilde{M}(\ast))=M_{f_{i_0}\cdots f_{i_p}}$. The conclusion then follows from \cref{scheme qcsp graded cohomology is limit of Koszul} since $X$ is quasi-compact and separated.
 \end{proof}
 \begin{remark}
 \cref{scheme Proj cohomology is limit of Koszul} is intersting if $S$ is an $A$-algebra generated by $S_1$ where $A$ is Noetherian. In fact, in this case any quasi-coherent $\mathscr{O}_X$-module $\mathscr{F}$ is of the form $\widetilde{M}$ by \cref{scheme Proj qc beta isomorphism}.
@@ -7491,7 +7498,7 @@ Let $A$ be a ring, $r>0$ be an integer, and $X=\P_A^r$.
 \end{itemize}
 \end{proposition}
 \begin{proof}
-By \cref{scheme Proj cohomology limit of polynomial} we have $H^i(\m,S)=0$ for $i\neq r+1$, so the assertion in (a) follows from (\ref{scheme qcqs invertible qcoh Cech is limit of Koszul-1}). From the exact sequence (\ref{scheme qcqs invertible qcoh Cech is limit of Koszul-2}), it is easy to see that $S\cong H^0(X,\mathscr{O}_X(\ast))$, and the isomorphism is given by the canonical homomorphism $\alpha$. The last assertion also follows from (\ref{scheme qcqs invertible qcoh Cech is limit of Koszul-1}) and \cref{scheme Proj cohomology limit of polynomial}.
+By \cref{scheme Proj cohomology limit of polynomial} we have $H^i(\m,S)=0$ for $i\neq r+1$, so the assertion in (a) follows from (\ref{scheme qcqs graded cohomology Cech is limit of Koszul-1}). From the exact sequence (\ref{scheme qcqs graded cohomology Cech is limit of Koszul-2}), it is easy to see that $S\cong H^0(X,\mathscr{O}_X(\ast))$, and the isomorphism is given by the canonical homomorphism $\alpha$. The last assertion also follows from (\ref{scheme qcqs graded cohomology Cech is limit of Koszul-1}) and \cref{scheme Proj cohomology limit of polynomial}.
 \end{proof}
 \begin{corollary}\label{scheme Proj cohomology of O_X(n) nonzero value}
 The values $(i,n)$ such that $H^i(X,\mathscr{O}_X(n))\neq 0$ are the following: $i=0$ and $n\geq 0$, or $i=r$ and $n\leq-(r+1)$.
@@ -7508,7 +7515,7 @@ Let $Y$ be a scheme, $\mathscr{E}$ be a locally free $\mathscr{O}_Y$-module of r
 is an isomorphism.
 \end{proposition}
 \begin{proof}
-This question is local over $Y$, so we can assume that $Y=\Spec(A)$ is affine and $\mathscr{E}=\widetilde{E}$, where $E=A^{r+1}$. We can then apply \cref{scheme Proj cohomology of O_X(n)}, in view of \cref{scheme qcsp morphism higher direct image on affine char}.
+This question is local over $Y$, so we can assume that $Y=\Spec(A)$ is affine and $\mathscr{E}=\widetilde{E}$, where $E=A^{r+1}$. We can then apply \cref{scheme Proj cohomology of O_X(n)}, in view of \cref{scheme qcqs morphism direct image over affine char}.
 \end{proof}
 \subsection{The coherence theorem for projective morphisms}
 \begin{proposition}\label{scheme Proj over Noe ring cohomology of coh prop}
@@ -7521,14 +7528,14 @@ Let $A$ be a Noetherian ring and $S$ be a graded $A$-algebra with positive degre
 \end{itemize}
 \end{proposition}
 \begin{proof}
-Note that $X$ can be identified with a closed subscheme of $P=\P_A^r$ (\cref{scheme Proj closed immersion char}). Moreover, if $j:X\to P$ is the canonical injection, $j_*(\mathscr{F})$ is a coherent $\mathscr{O}_P$-module and we have $j_*(\mathscr{F}(n))=(j_*(\mathscr{F}))(n)$ (\cref{scheme Proj of qcoh alg qc qcoh iso to assocaited ft} and \cref{scheme Proj of qcoh alg inverse and direct char}). In view of \cref{*}, we only need to consider the case where $X=\P^r_A$ and $S=A[T_0,\dots,T_r]$. Now $X$ can be covered by $r+1$ affine opens $D_+(T_i)$, so (b) follows from \cref{scheme qcsp morphism higher direct image on affine char} and \cref{scheme qcsp over affine higher direct image vanish for p>n}. We also note that (d) is proved in \cref{scheme Proj of qcoh alg twisted sigma surjective}.\par
+Note that $X$ can be identified with a closed subscheme of $P=\P_A^r$ (\cref{scheme Proj closed immersion char}). Moreover, if $j:X\to P$ is the canonical injection, $j_*(\mathscr{F})$ is a coherent $\mathscr{O}_P$-module and we have $j_*(\mathscr{F}(n))=(j_*(\mathscr{F}))(n)$ (\cref{scheme Proj of qcoh alg qc qcoh iso to assocaited ft} and \cref{scheme Proj of qcoh alg inverse and direct char}). In view of \cref{*}, we only need to consider the case where $X=\P^r_A$ and $S=A[T_0,\dots,T_r]$. Now $X$ can be covered by $r+1$ affine opens $D_+(T_i)$, so (b) follows from \cref{scheme qcqs morphism direct image over affine char} and \cref{scheme qcsp over qc qcoh R^pf_* vanish for p>r}. We also note that (d) is proved in \cref{scheme Proj of qcoh alg twisted sigma surjective}.\par
 We now prove (a) and (c). By \cref{scheme Proj cohomology of O_X(n)}, these assertions hold for $\mathscr{F}=\mathscr{O}_X(m)$, hence for direct sums of finitely many $\mathscr{O}_X$-module of the form $\mathscr{O}_X(m_j)$. On the other hand, (a) and (c) are trivial for $p>r$ in view of (b). We now proceed by descendent induction on $p$. Since $\mathscr{F}$ is coherent, it is a quotient of direct sume of finitely many sheaves $\mathscr{O}_X(m_j)$ (\cref{scheme Proj qcoh iso to quotient of O_X(-n)^r}). That is, we have an exact sequence $0\to\mathscr{R}\to\mathscr{E}\to\mathscr{F}\to 0$ where $\mathscr{R}$ is coherent and $\mathscr{E}$ satisfies (a) and (c). Since tensoring with $\mathscr{O}_X(n)$ is exact, we obtain an exact sequence
 \[\begin{tikzcd}
 H^{p-1}(X,\mathscr{E}(n))\ar[r]&H^{p-1}(X,\mathscr{F}(n))\ar[r]&H^p(X,\mathscr{R}(n)).
 \end{tikzcd}\]
 As $\mathscr{E}(n)$ is a direct sum of $\mathscr{O}_X(m_j+n)$, we see $H^{p-1}(X,\mathscr{E}(n))$ is finitely generated by \cref{scheme Proj cohomology of O_X(n) free ft}, and so is $H^p(X,\mathscr{R}(n))$ by induction hypothesis. As $A$ is Noetherian, we then conclude that $H^{p-1}(X,\mathscr{F}(n))$ is finitely generated for any $n\in\Z$, and in particular for $n=0$. On the other hand, by induction hypothesis there exists an integer $n_0$ such that for $n\geq n_0$ we have $H^p(X,\mathscr{R}(n))=0$, and we can choose $n_0$ such that $H^{p-1}(X,\mathscr{E}(n))=0$ for $n\geq n_0$, since $\mathscr{E}$ satisfies (c). Therefore we see that $H^{p-1}(X,\mathscr{F}(n))=0$ for $n\geq n_0$, which completes the proof. 
 \end{proof}
-\begin{theorem}[\textbf{Serre}]\label{scheme morphism projective coherence theorem}
+\begin{theorem}[\textbf{Serre}]\label{scheme morphism projective cohomology of coh prop}
 Let $Y$ be a Noetherian scheme, $f:X\to Y$ be a projective morphism, and $\mathscr{L}$ be an invertible $\mathscr{O}_X$-module that is ample for $f$. For any coherent $\mathscr{O}_X$-module $\mathscr{F}$, set $\mathscr{F}(n)=\mathscr{F}\otimes_{\mathscr{O}_X}\mathscr{L}^{\otimes n}$.
 \begin{itemize}
 \item[(a)] The $\mathscr{O}_Y$-module $R^pf_*(\mathscr{F})$ is coherent for $p\geq 0$.
@@ -7539,17 +7546,17 @@ Let $Y$ be a Noetherian scheme, $f:X\to Y$ be a projective morphism, and $\maths
 \begin{proof}
 We note that the theorem is unchanged if we replace $\mathscr{L}$ by $\mathscr{L}^{\otimes d}$ for $d>0$. In fact, we then have $\mathscr{F}(n)=(\mathscr{F}\otimes\mathscr{L}^{\otimes r})\otimes\mathscr{L}^{\otimes kd}$ for $k>0$ and $0\leq r<d$, and by hypothesis for any $r$ there is an integer $n_r$ such that for $k\geq n_r$, the properties (b) and (c) holds for $\mathscr{F}\otimes\mathscr{L}^{\otimes r}$. Let $n_0$ be the supremum of $dn_r$, then assertion (b) and (c) hold for $n\geq n_0$. In view of \cref{scheme qc relative ample iff power very ample}, we may assume that $\mathscr{L}$ is very ample relative to $f$, so there exists a dominant open immersion $i:X\to P$, where $P=\Proj(\mathscr{S})$ for a quasi-coherent graded $\mathscr{O}_Y$-algebra $\mathscr{S}$ with positive degrees that is finitely generated by $\mathscr{S}_1$; moreover, $\mathscr{L}\cong i^*(\mathscr{O}_P(1))$. Since $f$ is proper, the morphism $i$ is also proper by \cref{scheme morphism proper cancelled prop}, so it is an isomorphism $X\cong P$. We can therefore assme that $X=\Proj(\mathscr{S})$ and $\mathscr{L}=\mathscr{O}_X(1)$, and the theorem then follows from \cref{scheme Proj over Noe ring cohomology of coh prop}.
 \end{proof}
-\begin{corollary}\label{scheme morphism proper coherence direct image exact}
-Under the hypothesis of \cref{scheme morphism projective coherence theorem}, let $0\to\mathscr{F}\to\mathscr{G}\to\mathscr{H}\to 0$ be an exact sequence of coherent $\mathscr{O}_X$-modules. Then there exists an integer $n_0$ such that for $n\geq n_0$, the sequence
+\begin{corollary}\label{scheme morphism projective f_*(F(n)) exact}
+Under the hypothesis of \cref{scheme morphism projective cohomology of coh prop}, let $0\to\mathscr{F}\to\mathscr{G}\to\mathscr{H}\to 0$ be an exact sequence of coherent $\mathscr{O}_X$-modules. Then there exists an integer $n_0$ such that for $n\geq n_0$, the sequence
 \[\begin{tikzcd}
 0\ar[r]&f_*(\mathscr{F}(n))\ar[r]&f_*(\mathscr{G}(n))\ar[r]&f_*(\mathscr{H}(n))
 \end{tikzcd}\]
 is exact.
 \end{corollary}
 \begin{proof}
-This follows from the long exact sequence of $f_*$ and property (b) of \cref{scheme morphism projective coherence theorem}.
+This follows from the long exact sequence of $f_*$ and property (b) of \cref{scheme morphism projective cohomology of coh prop}.
 \end{proof}
-\begin{corollary}\label{scheme morphism ft coherence direct image exact if supp proper}
+\begin{corollary}\label{scheme morphism ft f_*(F(n)) exact if supp proper}
 Let $Y$ be a Noetherian scheme, $f:X\to Y$ be a morphism of finite type, and $\mathscr{L}$ be an invertible $\mathscr{O}_X$-module that is ample for $f$. Let $0\to\mathscr{F}\to\mathscr{G}\to\mathscr{H}\to 0$ be an exact sequence of coherent $\mathscr{O}_X$-modules such that the supports of $\mathscr{F}$ and $\mathscr{H}$ are proper over $Y$. Then there exists an integer $n_0$ such that for $n\geq n_0$, the sequence
 \[\begin{tikzcd}
 0\ar[r]&f_*(\mathscr{F}(n))\ar[r]&f_*(\mathscr{G}(n))\ar[r]&f_*(\mathscr{H}(n))
@@ -7557,15 +7564,15 @@ Let $Y$ be a Noetherian scheme, $f:X\to Y$ be a morphism of finite type, and $\m
 is exact.
 \end{corollary}
 \begin{proof}
-The same reasoning of \cref{scheme morphism projective coherence theorem} show that we can assume that $\mathscr{L}$ is very ample relative to $f$, so we can identify $X$ as an open subscheme of $Z=\Proj(\mathscr{S})$, where $\mathscr{S}$ is a quasi-coherent graded $\mathscr{O}_Y$-algebra with positive degrees, such that $\mathscr{S}$ is finitely generated by $\mathscr{S}_1$, and $\mathscr{L}=i^*(\mathscr{O}_Z(1))$, where $i:X\to P$ is the caonical immersion. Now as $\supp(\mathscr{G})$ is closed in $X$ and contained in $\supp(\mathscr{F})\cap\supp(\mathscr{H})$, it is proper over $Y$; the supports of $\mathscr{F},\mathscr{G},\mathscr{H}$ are then closed in $Z$. The sheaves $\mathscr{F}'=i_*(\mathscr{F})$, $\mathscr{G}'=i_*(\mathscr{G})$, and $\mathscr{H}'=i_*(\mathscr{H})$ are then coherent $\mathscr{O}_Z$-modules, and the sequence $0\to\mathscr{F}'\to\mathscr{G}'\to\mathscr{H}'\to 0$ is exact. Moreover, if $g:Z\to Y$ is the structral morphism, then $f=g\circ i$, and it is clear that $\mathscr{F}'(n)=i_*(\mathscr{F}(n))$ and similarly for $\mathscr{G}'$, $\mathscr{H}'$. The conclusion then follows from \cref{scheme morphism proper coherence direct image exact}.
+The same reasoning of \cref{scheme morphism projective cohomology of coh prop} show that we can assume that $\mathscr{L}$ is very ample relative to $f$, so we can identify $X$ as an open subscheme of $Z=\Proj(\mathscr{S})$, where $\mathscr{S}$ is a quasi-coherent graded $\mathscr{O}_Y$-algebra with positive degrees, such that $\mathscr{S}$ is finitely generated by $\mathscr{S}_1$, and $\mathscr{L}=i^*(\mathscr{O}_Z(1))$, where $i:X\to P$ is the caonical immersion. Now as $\supp(\mathscr{G})$ is closed in $X$ and contained in $\supp(\mathscr{F})\cap\supp(\mathscr{H})$, it is proper over $Y$; the supports of $\mathscr{F},\mathscr{G},\mathscr{H}$ are then closed in $Z$. The sheaves $\mathscr{F}'=i_*(\mathscr{F})$, $\mathscr{G}'=i_*(\mathscr{G})$, and $\mathscr{H}'=i_*(\mathscr{H})$ are then coherent $\mathscr{O}_Z$-modules, and the sequence $0\to\mathscr{F}'\to\mathscr{G}'\to\mathscr{H}'\to 0$ is exact. Moreover, if $g:Z\to Y$ is the structral morphism, then $f=g\circ i$, and it is clear that $\mathscr{F}'(n)=i_*(\mathscr{F}(n))$ and similarly for $\mathscr{G}'$, $\mathscr{H}'$. The conclusion then follows from \cref{scheme morphism projective f_*(F(n)) exact}.
 \end{proof}
 \begin{remark}
-The assertion (a) of \cref{scheme morphism projective coherence theorem} is still valid if we only assume that $Y$ is locally Noetherian. In fact, this property is local over $Y$, and the hypotheses in\cref{scheme morphism projective coherence theorem} imply that for any affine open $U\sub Y$, the restriction $f$ to $f^{-1}(U)$ is projective and $\mathscr{L}|_{f^{-1}(U)}$ is ample for this restriction.
+The assertion (a) of \cref{scheme morphism projective cohomology of coh prop} is still valid if we only assume that $Y$ is locally Noetherian. In fact, this property is local over $Y$, and the hypotheses in\cref{scheme morphism projective cohomology of coh prop} imply that for any affine open $U\sub Y$, the restriction $f$ to $f^{-1}(U)$ is projective and $\mathscr{L}|_{f^{-1}(U)}$ is ample for this restriction.
 \end{remark}
 \begin{remark}
-The assertion (a) of \cref{scheme morphism projective coherence theorem} is still valid, as we have seen, when we only assumes that $X$ is a quasi-compact and quasi-separated scheme and $f:X\to Y$ is a quasi-compact and quasi-separated morphism (\cref{scheme qcqs relative ample iff sigma surjective}). However, note that assertion (b) is not true if we suppose that $Y$ is the spectrum of a field $k$ and that $f$ is quasi-projective. For example, let $X'=\Spec(k[T_0,\dots,T_r])$ and $X$ be the union of the affine opens $D(T_i)$ (so that $X$ can be considered as the space $\A_k^r$ with the origin removed). As the immersion $X\to X'$ is quasi-compact, the structural morphism $f:X\to Y$ is quasi-affine, so $\mathscr{O}_X$ is very ample relative to $f$ (\cref{scheme qc quasi-affine iff}). But the ring $\Gamma(X,\mathscr{O}_X)$ is identified with the intersection of $K[T_0,\dots,T_r]_{T_i}$ for $0\leq i\leq r$ (\cref{scheme integral section is intersection of stalk}), which is $K[T_0,\dots,T_r]$, so it follows from (\ref{scheme qcsp affine open covering Cech and Koszul isomorphic-1}) that we have $H^r(X,\mathscr{O}_X^{\otimes n})=H^r(X,\mathscr{O}_X)=A\neq 0$ for any $n\in\Z$. 
+The assertion (a) of \cref{scheme morphism projective cohomology of coh prop} is still valid, as we have seen, when we only assumes that $X$ is a quasi-compact and quasi-separated scheme and $f:X\to Y$ is a quasi-compact and quasi-separated morphism (\cref{scheme qcqs relative ample iff sigma surjective}). However, note that assertion (b) is not true if we suppose that $Y$ is the spectrum of a field $k$ and that $f$ is quasi-projective. For example, let $X'=\Spec(k[T_0,\dots,T_r])$ and $X$ be the union of the affine opens $D(T_i)$ (so that $X$ can be considered as the space $\A_k^r$ with the origin removed). As the immersion $X\to X'$ is quasi-compact, the structural morphism $f:X\to Y$ is quasi-affine, so $\mathscr{O}_X$ is very ample relative to $f$ (\cref{scheme qc quasi-affine iff}). But the ring $\Gamma(X,\mathscr{O}_X)$ is identified with the intersection of $K[T_0,\dots,T_r]_{T_i}$ for $0\leq i\leq r$ (\cref{scheme integral section is intersection of stalk}), which is $K[T_0,\dots,T_r]$, so it follows from (\ref{scheme qcsp affine open covering Cech and Koszul isomorphic-1}) that we have $H^r(X,\mathscr{O}_X^{\otimes n})=H^r(X,\mathscr{O}_X)=A\neq 0$ for any $n\in\Z$. 
 \end{remark}
-\begin{theorem}\label{scheme morphism projective}
+\begin{theorem}\label{scheme morphism projective over Noe coherence of qcoh graded}
 Let $Y$ be a Noetherian scheme and $\mathscr{S}$ be a quasi-coherent $\mathscr{O}_Y$-algebra of finite type. Let $f:X\to Y$ be a projective morphism, $\mathscr{S}'=f^*(\mathscr{S})$, $\mathscr{M}$ be a quasi-coherent $\mathscr{S}'$-module of finite type.
 \begin{itemize}
 \item[(a)] For any $p\geq 0$, $R^pf_*(\mathscr{M})$ is an $\mathscr{S}$-module of finite type.
@@ -7604,14 +7611,14 @@ Let $Y$ be a Noetherian scheme.
 \item[(b)] Conversely, let $q:X\to Y$ be a projective morphism, and $\mathscr{S}'$ be a graded $\mathscr{O}_X$-algebra whose homogeneous components $\mathscr{S}'_n$ are coherent $\mathscr{O}_X$-modules, and that admits a period $d>0$ such that $\mathscr{S}'_d$ is an invertible $\mathscr{O}_X$-module that is $Y$-ample. Then $\mathscr{S}=\bigoplus_{n\geq 0}q_*(\mathscr{S}'_n)$ is a quasi-coherent graded $\mathscr{O}_Y$-algebra of finite type with positive degrees, and there exists a $Y$-isomorphism $i:X\cong\Proj(\mathscr{S})$ such that $i^*(\sProj(\mathscr{S}))$ is isomorphic to $\mathscr{S}'$.
 \end{itemize}
 \end{proposition}
-\begin{proposition}\label{scheme morphism projective over Noe very ample inverse of S_X}
+\begin{proposition}\label{scheme morphism projective over Noe isomorphic to Proj of S_X}
 Let $Y$ be a Noetherian scheme, $q:X\to Y$ be a projective morphism, and $\mathscr{L}$ be an invertible $\mathscr{O}_X$-module that is very ample for $q$. Then $\mathscr{S}=\bigoplus_{n\geq 0}q_*(\mathscr{L}^{\otimes n})$ is a quasi-coherent $\mathscr{O}_Y$-algebra of finite type such that $\mathscr{S}_n=\mathscr{S}_1^n$ for $n\gg 0$, and there exists an $Y$-isomorphism $r:X\cong P=\Proj(\mathscr{S})$ such that $\mathscr{S}\cong r^*(\mathscr{O}_P(1))$.
 \end{proposition}
 \begin{proposition}\label{scheme morphism projective birational is blow up}
 Let $Y$ be a Noetherian integral scheme, $X$ be an integral scheme, and $f:X\to Y$ be a projective birational morphism. Then there exists a coherent fractional ideal $\mathscr{I}\sub\mathscr{K}_Y$ such that $X$ is $Y$-isomorphic to blow up $Y$-scheme relative to $\mathscr{I}$. Moreover, there exists an open subset $U\sub Y$ such that the restriction $f:f^{-1}(U)\to U$ is an isomorphic, and $\mathscr{I}|_U$ is invertible.
 \end{proposition}
 \begin{proof}
-By \cref{scheme quasi-projective over qcqs iff P(E)}, there exists an invertible $\mathscr{O}_X$-module $\mathscr{L}$ that is very ample for $f$, so we can apply \cref{scheme morphism projective over Noe very ample inverse of S_X}, hence identify $X$ with $\Proj(\mathscr{S})$, where $\mathscr{S}=\bigoplus_{n\geq 0}f_*(\mathscr{L}^{\otimes n})$. We also see that each $f_*(\mathscr{L}^{\otimes n})$ is a torsion-free $\mathscr{O}_Y$-module (\cref{scheme integral torsion-free sheaf push forward by dominant}), so $\mathscr{S}$ is canonically identified with a sub-$\mathscr{O}_Y$-module of $\mathscr{S}\otimes_{\mathscr{O}_Y}\mathscr{K}_Y$. By \cref{scheme irreducible qcoh K(X) module simple} this sheaf is simple, so is completely determined when we know its restriction to any non-empty open set, for example to a open nonempty $U'\sub U$ (here $U\sub Y$ is an open subset such that $f$ is an isomorphic on $f^{-1}(U)$) such that $\mathscr{L}|_{f^{-1}(U')}$ is isomorphic to $\mathscr{O}_X|_{f^{-1}(U')}$. As by hypotheses $f_*(\mathscr{L}^{\otimes n})|_{U'}$ is then isomorphic to $\mathscr{O}_Y|_{U'}$, we conclude that $\mathscr{S}\otimes\mathscr{K}_Y$ is an $\mathscr{K}_Y$-module isomorphic to $\mathscr{K}_Y[T]$, where $T$ is an indeterminate, and $\mathscr{S}$ is eventually isomorphic to the sub-$\mathscr{O}_Y$-module generated by the canonical image of $f_*(\mathscr{L})$ in $\mathscr{S}\otimes_{\mathscr{O}_Y}\mathscr{K}_Y$ (\cref{scheme morphism projective over Noe very ample inverse of S_X}). But if we identify $\mathscr{S}\otimes_{\mathscr{O}_Y}\mathscr{K}_Y$ with $\mathscr{K}_Y[T]$, then the image of $f_*(\mathscr{L})$ is identified with $\mathscr{I}\cdot T$, where $\mathscr{I}$ is a coherent sub-$\mathscr{O}_Y$-module of $\mathscr{K}_Y$ (\cref{scheme morphism projective coherence theorem}), and its restriction to $U'$ is isomorphic to $\mathscr{O}_Y|_{U'}$. We therefore conclude that $\mathscr{I}|_U$ is invertible and $\mathscr{S}$ is eventually isomorphic to $\bigoplus_{n\geq 0}\mathscr{I}^n$, whence our assertion.
+By \cref{scheme quasi-projective over qcqs iff P(E)}, there exists an invertible $\mathscr{O}_X$-module $\mathscr{L}$ that is very ample for $f$, so we can apply \cref{scheme morphism projective over Noe isomorphic to Proj of S_X}, hence identify $X$ with $\Proj(\mathscr{S})$, where $\mathscr{S}=\bigoplus_{n\geq 0}f_*(\mathscr{L}^{\otimes n})$. We also see that each $f_*(\mathscr{L}^{\otimes n})$ is a torsion-free $\mathscr{O}_Y$-module (\cref{scheme integral torsion-free sheaf push forward by dominant}), so $\mathscr{S}$ is canonically identified with a sub-$\mathscr{O}_Y$-module of $\mathscr{S}\otimes_{\mathscr{O}_Y}\mathscr{K}_Y$. By \cref{scheme irreducible qcoh K(X) module simple} this sheaf is simple, so is completely determined when we know its restriction to any non-empty open set, for example to a open nonempty $U'\sub U$ (here $U\sub Y$ is an open subset such that $f$ is an isomorphic on $f^{-1}(U)$) such that $\mathscr{L}|_{f^{-1}(U')}$ is isomorphic to $\mathscr{O}_X|_{f^{-1}(U')}$. As by hypotheses $f_*(\mathscr{L}^{\otimes n})|_{U'}$ is then isomorphic to $\mathscr{O}_Y|_{U'}$, we conclude that $\mathscr{S}\otimes\mathscr{K}_Y$ is an $\mathscr{K}_Y$-module isomorphic to $\mathscr{K}_Y[T]$, where $T$ is an indeterminate, and $\mathscr{S}$ is eventually isomorphic to the sub-$\mathscr{O}_Y$-module generated by the canonical image of $f_*(\mathscr{L})$ in $\mathscr{S}\otimes_{\mathscr{O}_Y}\mathscr{K}_Y$ (\cref{scheme morphism projective over Noe isomorphic to Proj of S_X}). But if we identify $\mathscr{S}\otimes_{\mathscr{O}_Y}\mathscr{K}_Y$ with $\mathscr{K}_Y[T]$, then the image of $f_*(\mathscr{L})$ is identified with $\mathscr{I}\cdot T$, where $\mathscr{I}$ is a coherent sub-$\mathscr{O}_Y$-module of $\mathscr{K}_Y$ (\cref{scheme morphism projective cohomology of coh prop}), and its restriction to $U'$ is isomorphic to $\mathscr{O}_Y|_{U'}$. We therefore conclude that $\mathscr{I}|_U$ is invertible and $\mathscr{S}$ is eventually isomorphic to $\bigoplus_{n\geq 0}\mathscr{I}^n$, whence our assertion.
 \end{proof}
 \begin{corollary}\label{scheme morphism projective birational is blow up of ideal}
 Under the hypothesis of \cref{scheme morphism projective birational is blow up}, suppose that for any nontrivial coherent sub-$\mathscr{O}_Y$-module $\mathscr{I}$ of $\mathscr{K}_Y$, there exists an invertible $\mathscr{O}_Y$-module $\mathscr{L}$ such that
@@ -7630,7 +7637,7 @@ Let $X$ and $Y$ be integral schemes that are projective over a field $k$, and le
 In fact, $f$ is projective by \cref{scheme morphism projective permanence prop}, and as $Y$ is projective over $k$, the condition of \cref{scheme morphism projective birational is blow up of ideal} is satisfied. It then suffices to consider the closed subscheme of $Y$ defined by the coherent ideal $\mathscr{I}$.
 \end{proof}
 \subsection{Euler characteristic and Hilbert polynomial}
-Let $A$ be an Artinian ring, $X$ be a projective scheme over $Y=\Spec(A)$. For any coherent $\mathscr{O}_X$-module $\mathscr{F}$, the cohomology module $H^i(X,\mathscr{F})$ is finitely generated (\cref{scheme morphism projective coherence theorem}), hence is of finite length. We also see that $H^i(X,\mathscr{F})=0$ for $i\gg 0$, so the integer
+Let $A$ be an Artinian ring, $X$ be a projective scheme over $Y=\Spec(A)$. For any coherent $\mathscr{O}_X$-module $\mathscr{F}$, the cohomology module $H^i(X,\mathscr{F})$ is finitely generated (\cref{scheme morphism projective cohomology of coh prop}), hence is of finite length. We also see that $H^i(X,\mathscr{F})=0$ for $i\gg 0$, so the integer
 \[\chi_A(\mathscr{F})=\sum_{i=0}^{\infty}(-1)^i\ell_A(H^i(X,\mathscr{F}))\]
 is defined for any coherent $\mathscr{O}_X$-module. If $A$ is local Artinian, then we say that $\chi_A(\mathscr{F})$ is the Euler characteristic of $\mathscr{F}$ (over the ring $A$). For $\mathscr{F}=\mathscr{O}_X$, the integer $\chi_A(\mathscr{O}_X)$ is called the \textbf{arithmetic genus} of $X$ (over $A$).\par
 It is clear that the map $\chi_A$ is additive on the category of coherent $\mathscr{O}_X$-modules. That is, for an exact sequence $0\to\mathscr{F}'\to\mathscr{F}\to\mathscr{F}''\to 0$, we have
@@ -7658,7 +7665,7 @@ Let $A$ be a local Artinian ring, $S$ be a graded $A$-algebra of finite type gen
 This follows from \cref{scheme Proj of qcoh alg associated sheaf alpha TN isomorphism}, since $H^i(X,\widetilde{M}(n))=0$ for $i>0$ if $n\gg 0$.
 \end{proof}
 \subsection{Cohomological criterion for ampleness}
-\begin{proposition}\label{scheme relative ample to proper over Noe iff}
+\begin{proposition}\label{scheme morphism proper over Noe relative ample iff}
 Let $Y$ be a Noetherian scheme, $f:X\to Y$ be a proper morphism, and $\mathscr{L}$ be an invertible $\mathscr{O}_X$-module. For any coherent $\mathscr{O}_X$-module $\mathscr{F}$, we set $\mathscr{F}(n)=\mathscr{F}\otimes\mathscr{L}^{\otimes n}$ for $n\in\Z$.
 \begin{itemize}
 \item[(\rmnum{1})] $\mathscr{L}$ is ample for $f$.
@@ -7698,14 +7705,358 @@ Suppose that the exact subset $\mathfrak{E}$ satisfies the additional property t
 In fact, in this case the proof of \cref{scheme Noe devissage lemma} when $Y$ is irreducible can be modified as follows: $\mathscr{G}_y$ is a $\kappa(y)$-vector space of dimension $q>0$, and we then have an isomorphism $(\mathscr{G}_y)^m\cong(\mathscr{F}_y)^q$. By the same reasoning, we obtain that $\mathscr{F}^q\in\mathfrak{E}$, so $\mathscr{F}\in\mathfrak{E}$ by our additional assumption on $\mathfrak{E}$.
 \end{proof}
 \subsection{The finiteness theorem for proper morphisms}
-\begin{theorem}\label{scheme morphism proper over local Noe coherence theorem}
-Let $Y$ be a locally Noetherian scheme and $f:X\to Y$ be a proper morphism. Then for any coherent $\mathscr{O}_X$-module $\mathscr{F}$, the $\mathscr{O}_Y$-module $R^pf_*(\mathscr{F})$ is coherent for $p>0$.
+\begin{theorem}\label{scheme morphism proper over Noe R^pf_* coherence}
+Let $Y$ be a locally Noetherian scheme and $f:X\to Y$ be a proper morphism. Then for any coherent $\mathscr{O}_X$-module $\mathscr{F}$, the $\mathscr{O}_Y$-modules $R^pf_*(\mathscr{F})$ are coherent for $p\geq 0$.
 \end{theorem}
 \begin{proof}
-Since this question is local over $Y$, we can suppose that $Y$ is Noetherian, and hence $X$ is Noetherian (\cref{scheme local Noe local ft iff fp}). The coherent $\mathscr{O}_X$-module $\mathscr{F}$ satisfying the conclusion of \cref{scheme morphism proper over local Noe coherence theorem} is easily seen to form an exact subset $\mathfrak{E}$ of the category $\mathcal{A}$ of coherent $\mathscr{O}_X$-modules. In fact, let $0\to\mathscr{F}'\to\mathscr{F}\to\mathscr{F}''\to 0$ be an exact sequence of coherect $\mathscr{O}_X$-modules, and suppose for example that $\mathscr{F}'$, $\mathscr{F}$ belong to $\mathfrak{E}$. Then we have an exact sequence
+Since this question is local over $Y$, we can suppose that $Y$ is Noetherian, and hence $X$ is Noetherian (\cref{scheme local Noe local ft iff fp}). The coherent $\mathscr{O}_X$-module $\mathscr{F}$ satisfying the conclusion of \cref{scheme morphism proper over Noe R^pf_* coherence} is easily seen to form an exact subset $\mathfrak{E}$ of the category $\mathcal{A}$ of coherent $\mathscr{O}_X$-modules. In fact, let $0\to\mathscr{F}'\to\mathscr{F}\to\mathscr{F}''\to 0$ be an exact sequence of coherect $\mathscr{O}_X$-modules, and suppose for example that $\mathscr{F}'$, $\mathscr{F}$ belong to $\mathfrak{E}$. Then we have an exact sequence
 \[\begin{tikzcd}
 R^{p-1}f_*(\mathscr{F}'')\ar[r,"\partial"]&R^pf_*(\mathscr{F})\ar[r]&R^pf_*(\mathscr{F})\ar[r]&R^pf_*(\mathscr{F}'')\ar[r,"\partial"]&R^{p+1}f_*(\mathscr{F}')
 \end{tikzcd}\]
-in which the four outer terms are conherent. It then follows from \cref{sheaf of module coh 5 of 4} that $R^pf_*(\mathscr{F})$ is coherent. We also note that any direct factor $\mathscr{F}'\in\mathcal{A}$ of a coherent $\mathscr{O}_X$-module $\mathscr{F}\in\mathfrak{E}$ belongs to $\mathfrak{E}$: in fact, $R^pf_*(\mathscr{F}')$ is then a direct factor of $R^pf_*(\mathscr{F})$ (\cref{*}), so is of finite type, and since it is quasi-coherent (\cref{scheme qcqs morphism qcoh higher direct image}), it is coherent (note that $Y$ is Noetherian). In view of \cref{scheme Noe direct factor stable devissage lemma}, we only need to prove that if $X$ is irreducible with generic point $x$, then there exists a coherent $\mathscr{O}_X$-module $\mathscr{F}\in\mathfrak{E}$ such that $\mathscr{F}_x\neq 0$. In fact, for any irreducible closed subscheme $Y$ of $X$ with canonical injection $j:Y\to X$, the composition $f\circ j$ is proper (\cref{scheme morphism proper permanence prop}), and if $\mathscr{G}$ is a coherent $\mathscr{O}_Y$-module supported in $Y$, then $j_*(\mathscr{G})$ is a coherent $\mathscr{O}_X$-module such that $R^p(f\circ j)_*(\mathscr{G})=R^pf_*(j_*(\mathscr{G}))$ (\cref{*}), so we can apply our result on $Y$.\par
-By Chow's lemma (\cref{scheme morphism ft over Now Chow lemma}), there exists an irreducible scheme $X'$ and a surjective projective morphism $g:X'\to X$ such that $f\circ g:X'\to Y$ is projective.
+in which the four outer terms are conherent. It then follows from \cref{sheaf of module coh 5 of 4} that $R^pf_*(\mathscr{F})$ is coherent. We also note that any direct factor $\mathscr{F}'\in\mathcal{A}$ of a coherent $\mathscr{O}_X$-module $\mathscr{F}\in\mathfrak{E}$ belongs to $\mathfrak{E}$: in fact, $R^pf_*(\mathscr{F}')$ is then a direct factor of $R^pf_*(\mathscr{F})$ (\cref{*} G, \Rmnum{2} 4.4.4), so is of finite type, and since it is quasi-coherent (\cref{scheme qcqs morphism qcoh higher direct image}), it is coherent (note that $Y$ is Noetherian). In view of \cref{scheme Noe direct factor stable devissage lemma}, we only need to prove that if $X$ is irreducible with generic point $x$, then there exists a coherent $\mathscr{O}_X$-module $\mathscr{F}\in\mathfrak{E}$ such that $\mathscr{F}_x\neq 0$. In fact, for any irreducible closed subscheme $Y$ of $X$ with canonical injection $j:Y\to X$, the composition $f\circ j$ is proper (\cref{scheme morphism proper permanence prop}), and if $\mathscr{G}$ is a coherent $\mathscr{O}_Y$-module supported in $Y$, then $j_*(\mathscr{G})$ is a coherent $\mathscr{O}_X$-module such that $R^p(f\circ j)_*(\mathscr{G})=R^pf_*(j_*(\mathscr{G}))$ (\cref{*} G, \Rmnum{2}, 4.9.1), so we can apply our result on $Y$.\par
+By Chow's lemma (\cref{scheme morphism ft over Now Chow lemma}), there exists an irreducible scheme $X'$ and a surjective projective morphism $g:X'\to X$ such that $f\circ g:X'\to Y$ is projective. By \cref{scheme quasi-projective over qcqs iff P(E)}, there exists a $g$-ample $\mathscr{O}_{X'}$-module $\mathscr{L}$, so by \cref{scheme morphism projective cohomology of coh prop} we see that there exists an integer $n_0$ such that $\mathscr{F}=g_*(\mathscr{O}_{X'}(n))$ is a coherent $\mathscr{O}_X$-module and $R^pg_*(\mathscr{O}_{X'}(n))=0$ for $p>0$ and $n\geq n_0$. Moreover, if $x$ (resp. $x'$) is the generic point of $X$ (resp. $X')$, there exists an open subset $U$ of $x$ such that $g$ is an isomorphism from $g^{-1}(U)$ onto $U$, so $\mathscr{F}_x\cong(\mathscr{O}_{X'}(n))_{x'}\neq 0$. On the other hand, since $f\circ g$ is projective and $Y$ is Noetherian, the $R^p(f\circ g)(\mathscr{O}_{X'}(n))$ are coherent by \cref{scheme morphism projective cohomology of coh prop}. Consider the Grothendieck's spectral sequence:
+\[E_2^{p,q}=R^pf_*(R^qg_*(\mathscr{O}_{X'}(n)))\Rightarrow R^*(f\circ g)_*(\mathscr{O}_{X'}(n)).\]
+We have already remarked that for $n\gg 0$ we have $R^qg_*(\mathscr{O}_{X'}(n))=0$ for $q>0$, so this sequence collapse at $E_2$ and we obtain an isomorphism $E_2^{p,0}=R^pf_*(\mathscr{F})\cong R^p(f\circ g)_*(\mathscr{O}_{X'}(n))$, which implies $\mathscr{F}\in\mathfrak{E}$ and completes the proof.
+\end{proof}
+\begin{corollary}\label{scheme proper over Noe ring coherence of cohomology}
+Let $A$ be a Noetherian ring, $X$ be a proper scheme over $A$. For any coherent $\mathscr{O}_X$-module $\mathscr{F}$, the $H^p(X,\mathscr{F})$ are finitely generated $A$-modules, and there exists an integer $r$ such that $H^p(X,\mathscr{F})=0$ for any coherent $\mathscr{O}_X$-module $\mathscr{F}$ and $p>r$.
+\end{corollary}
+\begin{proof}
+The second assertion is proved in \cref{scheme Proj over Noe ring cohomology of coh prop}, and the first one follows from \cref{scheme morphism proper over Noe R^pf_* coherence}, in view of \cref{scheme qcqs morphism direct image over affine char}.
+\end{proof}
+\begin{corollary}\label{scheme morphism ft R^pf_* coherence if supp proper}
+Let $Y$ be a locally Noetherian scheme, $f:X\to Y$ be a morphism of finite type. For any coherent $\mathscr{O}_X$-module with support proper over $Y$, the $\mathscr{O}_Y$-modules $R^pf_*(\mathscr{F})$ are coherent for $p\geq 0$.
+\end{corollary}
+\begin{proof}
+Since this question is local over $Y$, we may assume that $Y$ is Noetherian, and then so is $X$. By hypothesis, any closed subscheme $Z$ of $X$ with underlying space $\supp(\mathscr{F})$ is proper over $Y$, so if $j:Y\to X$ is the canonical injection, $f\circ j$ is proper. Now we may choose $Z$ such that $\mathscr{F}=j_*(\mathscr{G})$, where $\mathscr{G}=j^*(\mathscr{F})$ is a coherent $\mathscr{O}_Z$-module (\cref{scheme qc qcoh ft direct image of inverse prop}). Since we have $R^pf_*(\mathscr{F})=R^p(f\circ j)_*(\mathscr{G})$ by \cref{scheme morphism affine R^pg_*(f_*) isomorphic to composition}, the conclusion follows from \cref{scheme morphism proper over Noe R^pf_* coherence}.
+\end{proof}
+\begin{proposition}\label{scheme morphism proper over Noe coherence of qcoh graded}
+Let $Y$ be a Noetherian scheme, $\mathscr{S}$ be a quasi-coherent graded $\mathscr{O}_Y$-algebra of finite type with positive degrees, $Y'=\Proj(\mathscr{S})$, and $g:Y'\to Y$ be the structural morphism. Let $f:X\to Y$ be a proper morphism, $\mathscr{S}'=f^*(\mathscr{S})$, and $\mathscr{M}$ be a quasi-coherent graded $\mathscr{S}'$-module of finite type. Then the $R^pf_*(\mathscr{M})$ are graded $\mathscr{S}$-modules of finite type for $p\geq 0$. Suppose moreover that $\mathscr{S}$ is generated by $\mathscr{S}_1$, then for any $p\in\N$, there exists an integer $k_p$ such that for $k\geq k_p$ and $r\geq 0$, we have
+\begin{align}\label{scheme morphism proper over Noe coherence of qcoh graded-1}
+R^pf_*(\mathscr{M}_{k+r})=\mathscr{S}_rR^pf_*(\mathscr{M}_k).
+\end{align} 
+\end{proposition}
+\begin{proof}
+The first assertion follows from \cref{scheme morphism projective over Noe coherence of qcoh graded} since in its proof the condition on $f$ is only used to derive the coherence of the $\mathscr{O}_{Y'}$-modules $R^pf'_*(\bigtilde{\mathscr{M}})$. With the hypotheses of \cref{scheme morphism proper over Noe coherence of qcoh graded}, $f'$ is proper (\cref{scheme morphism proper permanence prop}(\rmnum{3})), so we can now utilize \cref{scheme morphism proper over Noe R^pf_* coherence} to complete the proof.
+\end{proof}
+\begin{corollary}\label{scheme proper over Noe coh power by ideal cohomology}
+Let $A$ be a Noetherian ring, $\mathfrak{I}$ be an ideal of $A$, $X$ be a proper $A$-scheme, and $\mathscr{F}$ be a coherent $\mathscr{O}_X$-module. Then for any $p\geq 0$, the direct sum $\bigoplus_{k\geq 0}H^p(X,\mathfrak{I}^k\mathscr{F})$ is a finitely generated module over $S=\bigoplus_{k\geq 0}\mathfrak{I}^k$. In particular, there exists an integer $k_p\geq 0$ such that for $k\geq k_p$, $r\geq 0$, we have
+\begin{align}\label{scheme proper over Noe coh power by ideal cohomology-1}
+H^p(X,\mathfrak{I}^{k+r}\mathscr{F})=\mathfrak{I}^rH^p(X,\mathfrak{I}^k\mathscr{F}).
+\end{align}
+\end{corollary}
+\begin{proof}
+It suffices to apply \ref{scheme morphism proper over Noe coherence of qcoh graded} to $Y=\Spec(A)$, $\mathscr{S}=\widetilde{S}$, and $\mathscr{M}_k=\mathfrak{I}^k\mathscr{F}$.
+\end{proof}
+\subsection{Generalization to formal schemes}
+\section{Zariski's main theorem and applications}
+\subsection{Grothendieck's comparison theorem}
+Let $X,Y$ be Noetherian schemes, $f:X\to Y$ be a proper morohism, $Y'$ be a closed subset of $Y$, and $X'$ be the inverse image $f^{-1}(Y')$. We denote by $\widehat{X}$ and $\widehat{Y}$ the formal completion $X_{/X'}$ and $Y_{/Y'}$ of $X$ and $Y$ along $X'$ and $Y'$, respectively, and let $\hat{f}:\widehat{X}\to\widehat{Y}$ be the extension of $f$ to completions. For any coherent $\mathscr{O}_X$-module $\mathscr{F}$, let $\widehat{\mathscr{F}}$ be the completion $\mathscr{F}_{/X'}$ of $\mathscr{F}$ along $X'$, which is coherent by \cref{scheme local Noe formal completion exact}.\par
+Let $\mathscr{I}$ be a coherent ideal of $\mathscr{O}_Y$ defining $Y'$, then by \cref{scheme inverse image of subscheme}(b) the coherent ideal $\mathscr{K}=f^*(\mathscr{I})\mathscr{O}_X$ defines the closed subscheme $X'$ of $X$. For each $k\geq 0$, we consider the coherent $\mathscr{O}_X$-module
+\[\mathscr{F}_k=\mathscr{F}\otimes_{\mathscr{O}_Y}(\mathscr{O}_Y/\mathscr{I}^{k+1})=\mathscr{F}/\mathscr{K}^{k+1}\mathscr{F}.\]
+The $\mathscr{O}_Y$-modules $R^pf_*(\mathscr{F})$ and $R^pf_*(\mathscr{F}_k)$ are coherent for $p\geq 0$ (\cref{scheme morphism proper over Noe R^pf_* coherence}). For any $k\geq 0$ and $p\geq 0$, the canonical homomorphism $\mathscr{F}\to\mathscr{F}_k$ defines by functoriality a homomorphism
+\begin{align}\label{scheme morphism proper completion and direct image-1}
+R^pf_*(\mathscr{F})\to R^pf_*(\mathscr{F}_k)
+\end{align}
+Moreover, as $\mathscr{F}_k$ is an $\mathscr{O}_X/\mathscr{K}^{k+1}$-module, $R^pf_*(\mathscr{F}_k)$ is an $\mathscr{O}_Y/\mathscr{I}^{k+1}$-module (\cref{*}) and we then deduce from (\ref{scheme morphism proper completion and direct image-1}) a homomorphism
+\begin{align}\label{scheme morphism proper completion and direct image-2}
+R^pf_*(\mathscr{F})\otimes_{\mathscr{O}_Y}(\mathscr{O}_Y/\mathscr{I}^{k+1})\to R^pf_*(\mathscr{F}_k).
+\end{align}
+The two sides of (\ref{scheme morphism proper completion and direct image-2}) form two projective systems, and the projective limit of the left side is just the completion $(R^pf_*(\mathscr{F}))_{/Y'}$, which we also denote by $\widehat{R^pf_*(\mathscr{F})}$. Moreover, it is immediate that the homomorphism (\ref{scheme morphism proper completion and direct image-2}) form a projective system, so by passing to limit we obtain a canonocal homomorphism
+\begin{align}\label{scheme morphism proper completion and direct image-3}
+\varphi_p:\widehat{R^pf_*(\mathscr{F})}\to\llim_kR^pf_*(\mathscr{F}_k).
+\end{align}
+Since (\ref{scheme morphism proper completion and direct image-2}) is a homomorphism of $(\mathscr{O}_Y/\mathscr{I}^{k+1})$-modules, and can be considered as a continuous homomorphism of $\mathscr{O}_{\widehat{Y}}$-modules of discrete topological modules (\cref{scheme closed subscheme completion prop}), we see the homomorphism $\varphi_p$ is a continuous homomorphism of topological $\mathscr{O}_Y$-modules.\par
+On the other hand, let $i:\widehat{X}\to X$ be the canonical morphism of ringed spaces, which fits into the commutative diagram
+\begin{equation}\label{scheme morphism proper completion and cohomology-1}
+\begin{tikzcd}
+X_k\ar[rd,swap,"i_k"]\ar[r,"h_k"]&\widehat{X}\ar[d,"i"]\\
+&X
+\end{tikzcd}
+\end{equation}
+where $X_k$ is the closed subscheme of $X$ defined by the ideal $\mathscr{K}^{k+1}$, $i_k:X_k\to X$ is the canonical injection, and $h_k$ is the morphism of ringed spaces given by the canonical homomorphism $\mathscr{O}_{\widehat{X}}\to\mathscr{O}_X/\mathscr{K}^{k+1}$; by \cref{scheme local Noe formal completion exact} we have $\widehat{\mathscr{F}}=i^*(\mathscr{F})$ up to a canonical isomorphism. Since $\mathscr{F}_k=(i_k)_*(i_{k}^*(\mathscr{F}_k))$ (\cref{*} G, \Rmnum{2}, 4.9.1), we see that
+\begin{align}\label{scheme morphism proper completion and cohomology-2}
+H^p(X_k,i_k^*(\mathscr{F}_k))=H^p(X,\mathscr{F}_k).
+\end{align}
+The canonical hommorphism $H^p(\widehat{X},\widehat{\mathscr{F}})\to H^p(X_k,h_k^*(\widehat{\mathscr{F}}))$ can then by written as
+\begin{align}\label{scheme morphism proper completion and cohomology-3}
+H^p(\widehat{X},\widehat{\mathscr{F}})\to H^p(X,\mathscr{F}_k).
+\end{align}
+These homomorphisms evidently form a projective system as $k$ varies, so by passing to limit we obtain a canonical homomorphism
+\[
+\psi_{p,X}:H^p(\widehat{X},\widehat{\mathscr{F}})\to\llim_kH^p(X,\mathscr{F}_k).
+\]
+Now in view of \cref{scheme qcqs morphism direct image over affine char}, by replacing $X$ with open subsets of the form $f^{-1}(V)$, where $V$ is an affine open of $Y$, we also obtain homomorphisms
+\[\psi_{p,V}:H^p(\widehat{X}\cap f^{-1}(V),\widehat{\mathscr{F}})\to\llim_k\Gamma(V,R^pf_*(\mathscr{F}_k));\]
+and by passing to limit with respect to affine opens $V$, these define a canonical homomorphism of sheaves
+\begin{align}\label{scheme morphism proper completion and cohomology-4}
+\psi_p:R^p\hat{f}_*(\widehat{\mathscr{F}})\to\llim_kR^pf_*(\mathscr{F}_k).
+\end{align}
+
+Finally, let $j:\widehat{Y}\to Y$ be the canonical morphism of ringed spaces; as $R^pf_*(\mathscr{F})$ is a coherent $\mathscr{O}_Y$-module by \cref{scheme morphism proper over Noe R^pf_* coherence}, we have $j^*(R^pf_*(\mathscr{F}))=\widehat{R^pf_*(\mathscr{F})}$, and therefore a canonical homomorphism (\cref{scheme local Noe formal completion exact})
+\begin{align}
+\rho_p:\widehat{R^pf_*(\mathscr{F})}=j^*(R^pf_*(\mathscr{F}))\to R^p\hat{f}_*(i^*(\mathscr{F}))=R^p\hat{f}_*(\widehat{\mathscr{F}})
+\end{align}
+which is defined in the same way as the canonical homomorphism (\ref{scheme morphism proper ftsp flat base change R^pf_*-3}). From the commutativity of (\ref{scheme morphism proper completion and cohomology-1}) and the relations between the cohomology groups, we obtain a commutative diagram
+\begin{equation}\label{scheme morphism proper comparision diagram}
+\begin{tikzcd}
+\widehat{R^pf_*(\mathscr{F})}\ar[rd,swap,"\varphi_p"]\ar[rr,"\rho_p"]&&R^p\hat{f}_*(\widehat{\mathscr{F}})\ar[ld,"\psi_p"]\\
+&\llim_kR^pf_*(\mathscr{F}_k)
+\end{tikzcd}
+\end{equation}
+\begin{theorem}[\textbf{Grothendieck's Comparison Theorem}]\label{scheme morphism proper comparison theorem}
+Let $f:X\to Y$ be a proper morphism between Noetherian schemes, $Y'$ be a closed subset of $Y$, and $X'=f^{-1}(Y')$. Then for any coherent $\mathscr{O}_X$-module $\mathscr{F}$, $R^p\hat{f}_*(\widehat{\mathscr{F}})$ is a coherent $\mathscr{O}_{\widehat{X}}$-module and the homomorphisms in (\ref{scheme morphism proper comparision diagram}) are homeomorphisms for $p\geq 0$.
+\end{theorem}
+In order to prove \cref{scheme morphism proper comparison theorem}, we begin by establishing the following affine case:
+\begin{corollary}\label{scheme morphism proper comparison theorem affine case}
+Under the hypotheses of \cref{scheme morphism proper comparison theorem}, assume further that $Y=\Spec(A)$, where $A$ is Noetherian, and $\mathscr{I}=\widetilde{\mathfrak{I}}$ is an ideal of $A$, so that $\mathscr{F}_k=\mathscr{F}/\mathfrak{I}^{k+1}\mathscr{F}$. Then for each $p\geq 0$, the projective system $(H^p(X,\mathscr{F}_k))_{k\geq 0}$ satisfies the Mittag-Leffler condition, and the canonical homomorphism
+\begin{align}\label{scheme morphism proper comparison theorem affine case-1}
+\psi_p:H^p(\widehat{X},\widehat{\mathscr{F}})\to\llim_kH^p(X,\mathscr{F}_k)
+\end{align}
+is an isomorphism.
+Moreover, the filtration on $H^p(X,\mathscr{F})$ defined by the kernel of the canonical homomorphisms $H^p(X,\mathscr{F})\to H^p(X,\mathscr{F}_k)$ is $\mathfrak{I}$-good and the canonical homomorphisms
+\begin{align}\label{scheme morphism proper comparison theorem affine case-2}
+\varphi_p:\widehat{H^p(X,\mathscr{F})}\to\llim_kH^p(X,\mathscr{F}_k)
+\end{align}
+is a homeomorphism (where the left side is the $\mathfrak{I}$-adic completion of $H^p(X,\mathscr{F})$).  
+\end{corollary}
+\begin{proof}
+Fix an integer $p\geq 0$, and we simplfy the notation by setting
+\[H=H^p(X,\mathscr{F}),\quad H_k=H^p(X,\mathscr{F}_k),\quad R_k=\ker(H\to H_k)\sub H.\]
+The exact sequence on cohomology
+\[\begin{tikzcd}
+H^p(X,\mathfrak{I}^{k+1}\mathscr{F})\ar[r]&H^p(X,\mathscr{F})\ar[r]&H^p(X,\mathscr{F}_k)\ar[r,"\partial"]&H^{p+1}(X,\mathfrak{I}^{k+1}\mathscr{F})\ar[r]&H^{+1}(X,\mathscr{F})
+\end{tikzcd}\]
+shows that $R_k$ is also the image of the homomorphism $H^p(X,\mathfrak{I}^{k+1}\mathscr{F})\to H^p(X,\mathscr{F})$; we set
+\begin{align}\label{scheme morphism proper comparison theorem affine case-3}
+Q_k=\ker(H^{p+1}(X,\mathfrak{I}^{k+1}\mathscr{F})\to H^{p+1}(X,\mathscr{F}))=\im(H^p(X,\mathscr{F}_k)\to H^{p+1}(X,\mathfrak{I}^{k+1}\mathscr{F}))
+\end{align}
+so that there is an exact sequence
+\[\begin{tikzcd}
+0\ar[r]&R_k\ar[r]&H\ar[r]&H_k\ar[r]&Q_k\ar[r]&0
+\end{tikzcd}\]
+Let $x$ be an element of $\mathfrak{I}^m$ for $m\geq 0$; the multiplication by $x$ on $\mathfrak{I}^k\mathscr{F}$ is a homomorphism $\mathfrak{I}^k\mathscr{F}\to\mathfrak{I}^{k+m}\mathscr{F}$, and therefore gives a homomorphism
+\begin{align*}
+\mu_{x,m}:H^p(X,\mathfrak{I}^k\mathscr{F})\to H^p(X,\mathfrak{I}^{k+m}\mathscr{F}).
+\end{align*}
+If we denote by $S$ the graded $A$-algebra $\bigoplus_{k\geq 0}\mathfrak{I}^k$, then the multiplications $\mu_{x,m}$ define over $E=\bigoplus_{k\geq 0}H^p(X,\mathfrak{I}^k\mathscr{F})$ a finitely generated graded $S$-module structure (\cref{scheme proper over Noe coh power by ideal cohomology}), which is Noetherian since $S$ is Noetherian (\cref{graded ring finitely generated criterion}).\par
+We begin by showing that the submodules $(R_k)$ define a $\mathfrak{I}$-good filtration on $H$. First, for any $x\in\mathfrak{I}^m$, the diagram
+\[\begin{tikzcd}
+\mathfrak{I}^{k+1}\mathscr{F}\ar[d]\ar[r,"x"]&\mathfrak{I}^{k+m+1}\mathscr{F}\ar[d]\\
+\mathscr{F}\ar[r,"x"]&\mathscr{F}
+\end{tikzcd}\]
+is commutative, so the correponding diagram
+\begin{equation}\label{scheme morphism proper comparison theorem affine case-4}
+\begin{tikzcd}
+H^p(X,\mathfrak{I}^{k+1}\mathscr{F})\ar[r,"\mu_{x,m}"]\ar[d]&H^p(X,\mathfrak{I}^{k+m+1}\mathscr{F})\ar[d]\\
+H^p(X,\mathscr{F})\ar[r,"\mu_{x,0}"]&H^p(X,\mathscr{F})
+\end{tikzcd}
+\end{equation}
+is commutative, which proves, in view of the interpretation of $R_k$ as the image of $H^{p}(X,\mathfrak{I}^{k+1}\mathscr{F})\to H^p(X,\mathfrak{F})$, that $\mathfrak{I}^mR_k\sub R_{k+m}$ and that the graded $S$-module $R=\bigoplus_{k\geq 0}R_k$ is a quotient of the sub-$S$-module $M=\bigoplus_{k\geq 0}H^p(X,\mathfrak{I}^{k+1}\mathscr{F})$ of $E$. Since $M$ is also a finitely generated $S$-module by \cref{scheme proper over Noe coh power by ideal cohomology}, the $S$-module $R$ is then finitely generated, which is equivalent to the condition that $(R_k)$ is $\mathfrak{I}$-good (\cref{filtration I-good iff Res(M) is finite}).\par
+Consider now the graded $S$-module $N=\bigoplus_{k\geq 0}H^{p+1}(X,\mathfrak{I}^{k+1}\mathscr{F})$, which is a finitely generated $S$-module in view of \cref{scheme proper over Noe coh power by ideal cohomology}. For each $k\geq 0$, by (\ref{scheme morphism proper comparison theorem affine case-3}) we have $Q_k\sub N_k$, and by replacing $p$ by $p+1$ in the diagram (\ref{scheme morphism proper comparison theorem affine case-4}) we see that $S_mQ_k=\mathfrak{I}^{m}Q_k\sub Q_{k+m}$. In other words, $Q=\bigoplus_{k\geq 0}Q_k$ is a graded sub-$S$-module of $N$, and is therefore finitely generated. We denote by $\alpha_m:\mathfrak{I}^m\to A$ the canonical injection, which can also be written as $S_m\to S_0$. Since $\mathfrak{I}^{k+1}\mathscr{F}_k=0$, the $A$-module $H^p(X,\mathscr{F}_k)$ is annihilated by $\mathfrak{I}^{k+1}$, so $Q_k$, as the image of the $A$-homomorphism $H^p(X,\mathscr{F}_k)\to H^{p+1}(X,\mathfrak{I}^{k+1}\mathscr{F})$, is also annihilated by $\mathfrak{I}^{k+1}$. This signifies that, in the $S$-module $Q$, we have
+\begin{align}\label{scheme morphism proper comparison theorem affine case-5}
+\alpha_{k+1}(S_{k+1})Q_k=0.
+\end{align}
+As $Q$ is a finitely generated $S$-module, there exists an integers $k_0$ and $d$ such that $Q_{k+d}=S_dQ_k$ for $k\geq k_0$ (\cref{graded ring finite module M_n+d=A_dM_n}); we then deduce from this relation and (\ref{scheme morphism proper comparison theorem affine case-5}) that there exists an integer $r>0$ such that
+\begin{align}\label{scheme morphism proper comparison theorem affine case-6}
+\alpha_r(S_r)Q=0.
+\end{align}
+
+Now note that the the canonical injection $\mathfrak{I}^{k+m}\mathscr{F}\to\mathfrak{I}^k\mathscr{F}$ gives by passing to cohomology an $A$-homomorphism 
+\begin{align*}
+\nu_m:H^{p+1}(X,\mathfrak{I}^{k+m}\mathscr{F})\to H^{p+1}(X,\mathfrak{I}^k\mathscr{F})
+\end{align*}
+and, for any $x\in\mathfrak{I}^m$, we have evidently a factorization
+\begin{align*}
+\mu_{x,0}:H^{p+1}(X,\mathfrak{I}^k\mathscr{F})\stackrel{\mu_{x,m}}{\to}H^{p+1}(X,\mathfrak{I}^{k+m}\mathscr{F})\stackrel{\nu_m}{\to}H^{p+1}(X,\mathfrak{I}^k\mathscr{F})
+\end{align*}
+from which we conclude that, for any sub-$A$-module $P$ of $H^{p+1}(X,\mathfrak{I}^k\mathscr{F})$, we have, in the $S$-module $N$,
+\begin{align}\label{scheme morphism proper comparison theorem affine case-7}
+\nu_m(S_mP)=\alpha_m(S_m)P.
+\end{align}
+If we choose $m\geq r$ to be a multiple of $d$, then as $Q_{k+m}=S_mQ_k$ for $k\geq k_0$ (by our choice of $d$), we derive from (\ref{scheme morphism proper comparison theorem affine case-7}) and (\ref{scheme morphism proper comparison theorem affine case-6}) that $\nu_m(Q_{k+m})=\alpha_m(S_m)Q_k\sub\alpha_r(S_r)Q_k=0$ for $k\geq k_0$.\par
+Consider now the commutative diagram
+\[\begin{tikzcd}
+H^p(X,\mathscr{F})\ar[r]\ar[d,equal]&H^p(X,\mathscr{F}_{k+m})\ar[r,"\partial"]\ar[d]&H^{p+1}(X,\mathfrak{I}^{k+1}\mathscr{F})\ar[r]\ar[d]&H^{p+1}(X,\mathscr{F})\ar[d]\\
+H^p(X,\mathscr{F})\ar[r]&H^p(X,\mathscr{F}_k)\ar[r,"\partial"]&H^{p+1}(X,\mathfrak{I}^{k+1}\mathscr{F})\ar[r]&H^{p+1}(X,\mathscr{F})
+\end{tikzcd}\]
+induced from the homomorphisms $\mathfrak{I}^{k+m+1}\mathscr{F}\to\mathfrak{I}^k\mathscr{F}$ and $\mathscr{F}_{k+m}\to\mathscr{F}_k$. From this, we conclude the following commutative diagram
+\[\begin{tikzcd}
+0\ar[r]&R_{k+m}\ar[r]\ar[d]&H\ar[r]\ar[d,equal]&H_{k+m}\ar[r]\ar[d]&Q_{k+m}\ar[r]\ar[d,"\nu_m"]&0\\
+0\ar[r]&R_{k}\ar[r]&H\ar[r]&H_{k}\ar[r]&Q_{k}\ar[r]&0
+\end{tikzcd}\]
+whose rows are exact. As the last vertical arrow is zero for $k\geq k_0$, the image of $H_{k+m}$ in $H_k$ is contained in $\ker(H_k\to Q_k)=\im(H\to H_k)$, whence equals to $\im(H\to H_k)$ by the commutativity of the diagram. This image then equals to the image of $H_{k'}$ in $H_k$ for $k'\geq k+m$, so the projective system $(H_k)_{k\geq 0}$ satisfies the Mittag-Leffler condition. Moreover, for any affine open $U$ of $X$, we have $H^i(U,\mathscr{F}_k)=0$ for $i>0$, and the map $H^0(U,\mathscr{F}_{k+m})\to H^0(U,\mathscr{F}_k)$ is surjective for $m\geq 0$ (\cref{scheme affine associated sheaf exact}). We can then apply \cref{*} to conclude that the canonical homomorphism $H^p(\widehat{X},\widehat{\mathscr{F}})\to\llim_kH^p(X,\mathscr{F}_k)$ is bijective for each $p\geq 0$.\par
+Now since the projective system $(H/R_k)$ also satisfies the Mittag-Leffler condition, taking projective limit preserves the exactness of the sequence
+\[\begin{tikzcd}
+0\ar[r]&H/R_k\ar[r]&H_k\ar[r]&Q_k\ar[r]&0
+\end{tikzcd}\]
+As $\nu_m(Q_{k+m})=0$, we have $\llim_kQ_k=0$, so we obtain an isomorphism $\llim_k(H/R_k)\cong\llim_kH_k$. But the filtration $(R_k)$ of $H$ is $\mathfrak{I}$-good, so it defines the $\mathfrak{I}$-adic topology on $H$, and $\llim_k(H/R_k)$ is therefore the $\mathfrak{I}$-adic completion of $H$.
+\end{proof}
+\begin{proof}[\textbf{Proof of \cref{scheme morphism proper comparison theorem}}]
+We now return to the proof of \cref{scheme morphism proper comparison theorem}. For any affine open $V$ of $Y$, since $R^pf_*(\mathscr{F})$ is coherent, we see that $\Gamma(V,\widehat{R^pf_*(\mathscr{F})})$ is equal to the $\mathfrak{I}$-adic completion of $\Gamma(V,R^pf_*(\mathscr{F}))$, and $\Gamma(V,\llim_kR^pf_*(\mathscr{F}_k))$ is equal to $\llim_k\Gamma(V,R^pf_*(\mathscr{F}_k))$ (\cref{*}). The fact that $\varphi_p$ is a homeomorphism then follows from \cref{scheme morphism proper comparison theorem affine case} and \cref{scheme qcqs morphism direct image over affine char}. Similarly, we see that each $\psi_{p,V}$ is an isomorphism, so $\psi_p$ is an isomorphism by the definition of $R^p\hat{f}_*(\widehat{\mathscr{F}})$, and hence a homeomorphism by \cref{*}.
+\end{proof}
+\begin{corollary}\label{scheme morphism proper R^pf_* of completion char}
+Under the hypotheses of \cref{scheme morphism proper comparison theorem}, for any affine open $V$ of $Y$, the canonical homomorphism
+\[H^p(\widehat{X}\cap f^{-1}(V),\widehat{\mathscr{F}})\to\Gamma(\widehat{Y}\cap V,R^p\hat{f}_*(\widehat{\mathscr{F}}))\]
+is bijective.
+\end{corollary}
+\begin{proof}
+This follows from the isomorphism $\psi_p$ in \cref{scheme morphism proper comparison theorem} and \cref{scheme qcqs morphism direct image over affine char}.
+\end{proof}
+\begin{remark}
+Let $f:X\to Y$ be a morphism of finite type between Noetherian schemes, and $\mathscr{F}$ be a coherent $\mathscr{O}_Y$-module with support proper over $Y$. Then we see from \cref{*} that $R^pf_*(\mathscr{F})$ is coherent for $p\geq 0$. Moreover, we can also suppose that $\mathscr{F}=u_*(\mathscr{G})$, where $\mathscr{G}=u^*(\mathscr{F})$ is a coherent $\mathscr{O}_Z$-module, $Z$ being a closed subscheme of $X$ with underlying space $\supp(\mathscr{F})$, and $u:Z\to X$ is the canonical injection (\cref{scheme qc qcoh ft direct image of inverse prop}). If we set $\mathscr{G}_k=\mathscr{G}\otimes_{\mathscr{O}_Y}(\mathscr{O}_Y/\mathscr{I}^{k+1})$, then
+\[\mathscr{G}_k=j^*(\mathscr{F}_k),\quad R^pf_*(\mathscr{F}_k)=R^p(f\circ j)_*(\mathscr{G}_k),\quad R^pf_*(\mathscr{F})=R^p(f\circ j)_*(\mathscr{G})\]
+by \cref{scheme morphism affine R^pg_*(f_*) isomorphic to composition}. On the other hand, in view of \cref{*}, we also have
+\[R^p\hat{f}(\widehat{\mathscr{F}})=R^p\widehat{(f\circ j)}_*(\mathscr{G}).\]
+We can then apply \cref{scheme morphism proper comparison theorem} to conclude that the result of \cref{scheme morphism proper comparison theorem} is also valid for $\mathscr{F}$ and $f$.
+\end{remark}
+\begin{proposition}[\textbf{Formal Function Theorem}]\label{scheme morphism proper formal function theorem}
+Let $Y$ be a locally Noetherian scheme, $f:X\to Y$ be a proper morphism, and $\mathscr{F}$ be a coherent $\mathscr{O}_X$-module. Then for any $y\in Y$ and $p\geq 0$, the $\mathscr{O}_{Y,y}$-module $(R^pf_*(\mathscr{F}))_y$ is finitely generated, separated for the $\m_y$-adic topology, and we have a homeomorphism
+\[\widehat{(R^pf_*(\mathscr{F}))_y}\stackrel{\sim}{\to}\llim_kH^p(f^{-1}(y),\mathscr{F}\otimes_{\mathscr{O}_{Y}}(\mathscr{O}_{Y,y}/\m_y^k))\]
+where the left side is the $\m_y$-adic completion of $(R^pf_*(\mathscr{F}))_y$ and $f^{-1}(y)$ is considered as the underlying space of $X\times_Y\Spec(\mathscr{O}_{Y,y}/\m_y^k)$ (\cref{scheme inverse image of subscheme}).
+\end{proposition}
+\begin{proof}
+As $\mathscr{O}_{Y,y}$ is a Noetherian local ring and $(R^pf_*(\mathscr{F}))_y$ is finitely generated by \cref{scheme morphism proper over Noe R^pf_* coherence}. The assertions therefore results from \cref{scheme morphism proper comparison theorem affine case} if $Y$ is Noetherian and the poinr $y$ is closed, since we can replace $Y$ be an affine neighborhood of $y$ and put $Y'=\{y\}$, in view of (\cref{*} C, \Rmnum{2}, 4.9.1). In the general case, put
+\[Y_1=\Spec(\mathscr{O}_{Y,y}),\quad X_1=X\times_YY_1,\quad \mathscr{F}_1=\mathscr{F}\otimes_{\mathscr{O}_Y}\mathscr{O}_{Y_1},\quad f_1=f\times 1_{Y_1}:X_1\to Y_1.\]
+Then $Y_1$ is Noetherian, $f_1$ is proper, and $\mathscr{F}_1$ is coherent. Let $y_1$ be the unique closed point in $Y_1$; the proposition is then valid for $f_1$, $\mathscr{F}_1$ and $y_1$. We have $\mathscr{O}_{Y_1,y_1}=\mathscr{O}_{Y,y}$, $f_1^{-1}(y_1)=f^{-1}(y)$ (\cref{scheme morphism base change by local scheme prop}), and the schemes $X\times_Y\Spec(\mathscr{O}_{Y,y}/\m_y^k)$ and $X_1\times_{Y_1}\Spec(\mathscr{O}_{Y_1,y_1}/\m_{y_1}^k)$ are canonically idnetified (\cref{scheme base change transitive}). Moreover, $\mathscr{F}_1\otimes_{\mathscr{O}_{Y_1}}(\mathscr{O}_{Y_1,y_1}/\m_{y_1}^k)$ is identified with $\mathscr{F}\otimes_{\mathscr{O}_Y}(\mathscr{O}_{Y,y}/\m_y^k)$ (\cref{scheme sheaf base change transitivity}). It then remains to see that $R^p(f_1)_*(\mathscr{F}_1)$ is canonically isomorphic to $R^pf_*(\mathscr{F})\otimes_{\mathscr{O}_Y}\mathscr{O}_{Y_1}$, which follows from \cref{scheme morphism proper ftsp flat base change R^pf_*}, since the local morphism $\Spec(\mathscr{O}_{Y,y})\to Y$ is flat.
+\end{proof}
+\begin{corollary}\label{scheme morphism proper R^pf_* vanish at point if p>r}
+Let $Y$ be a locally Noetherian scheme. $f:X\to Y$ be a proper morphism, $y$ be a point of $Y$, and $r$ be the dimension of $f^{-1}(y)$. Then for any coherent $\mathscr{O}_X$-module $\mathscr{F}$, the sheaf $R^pf_*(\mathscr{F})$ vanishes in a neighborhood of $y$ for $p>r$. 
+\end{corollary}
+\begin{proof}
+In fact, if $p>r$, we then have $H^p(f^{-1}(y),\mathscr{F}\otimes(\mathscr{O}_{Y,y}/\m_y^k))=0$ (by Leray's vanishing theorem) for any $k$, so the $\m_y$-adic completion of $(R^pf_*(\mathscr{F}))_y$ is zero. As this topology is separated by \cref{scheme morphism proper formal function theorem}, we then have $(R^pf_*(\mathscr{F}))_y=0$, so the conclusion follows from \cref{sheaf of module ft local prop}. 
+\end{proof}
+\begin{corollary}
+Under the hypothesis of \cref{scheme morphism proper formal function theorem}, we have a canonical homeomorphism
+\[\widehat{(f_*(\mathscr{F}))_y}\stackrel{\sim}{\to}\llim_k\Gamma(f^{-1}(y),\mathscr{F}_y/\m_y^k\mathscr{F}_y).\]
+\end{corollary}
+\begin{remark}
+Many applications of \cref{scheme morphism proper formal function theorem} use only the case $p=0$, in which case the right-hand side is equal to $\Gamma(\widehat{X},\widehat{\mathscr{F}})$, where $\widehat{X}$ is the formal completion of $X$ along $X_y$, and $\widehat{\mathscr{F}}=\mathscr{F}\otimes_{\mathscr{O}_X}\mathscr{O}_{\widehat{X}}$. In particular, if $\mathscr{F}=\mathscr{O}_X$, we have $\Gamma(\widehat{X},\mathscr{O}_{\widehat{X}})$, which is the ring of formal-regular functions (also called holomorphic functions) on $X$ along $X_y$. Hence the name of the theorem.
+\end{remark}
+\subsection{Zariski's connectedness theorem}
+\begin{theorem}[\textbf{Zariski's Connectednes Theorem}]\label{scheme morphism proper Zariski connected}
+Let $Y$ be a locally Noetherian scheme and $f:X\to Y$ be a proper morphism. Let 
+\[\begin{tikzcd}
+X\ar[r,"f'"]&Y'\ar[r,"g"]&Y
+\end{tikzcd}\]
+be the Stein factorization of $f$. Then $g$ is finite, $f'$ is proper, $f'_*(\mathscr{O}_X)$ is isomorphic to $\mathscr{O}_{Y'}$, and the fibers $f'^{-1}(y')$ are nonempty and connected for any $y'\in Y'$.
+\end{theorem}
+\begin{proof}
+Let $\theta:\mathscr{O}_{Y'}\to f'_*(\mathscr{O}_X)$ be the morphism induced by $f'$. Then since $g_*(\mathscr{O}_{Y'})=\mathscr{A}(Y')$ and $f_*(\mathscr{O}_X)=\mathscr{A}(X)$, the homomorphism $g_*(\theta):g_*(\mathscr{O}_{Y'})\to g_*(f'_*(\mathscr{O}_X))=f_*(\mathscr{O}_X)$ is an isomorphism, so $\theta$ is an isomorphism by \cref{scheme S-affine isomorphism iff algebra iso}. Since $\mathscr{A}(X)$ is coherent by \cref{scheme morphism proper over Noe R^pf_* coherence}, we see $f'$ is finite, and it is proper by \cref{scheme morphism proper permanence prop}. It then remains to prove the following assertion: if $f:X\to Y$ is a proper morphism with $f_*(\mathscr{O}_X)\cong\mathscr{O}_Y$ and $Y$ being locally Noetherian, then the fibers $f^{-1}(y)$ are nonempty and connected for any $y\in Y$. To this end, we note that the hypothesis $f_*(\mathscr{O}_X)\cong\mathscr{O}_Y$ implies $(f_*(\mathscr{O}_X))_y\cong\mathscr{O}_{Y,y}\neq 0$ for any $y\in Y$, so $f$ is dominant and hence is surjective since $f$ is closed. We may then, as in \ref{scheme morphism proper formal function theorem}, reduce to the case where $y$ is closed in $Y$. Then $f^{-1}(y)$ is a Noetherian space with finitely many connected components, and is equal to the underlying space of the completion $\widehat{X}$ of $X$ along $f^{-1}(y)$. If $(Z_i)_{1\leq i\leq n}$ is its connected components, it is clear that $\Gamma(\widehat{X},\mathscr{O}_{\widehat{X}})$ is the direct product of the rings $\Gamma(Z_i,\mathscr{O}_{\widehat{X}})$, and each of them is nonzero since the unit section is nozero at any point of $\widehat{X}$. Now if we apply \cref{scheme morphism proper comparison theorem} to $\mathscr{F}=\mathscr{O}_X$, whose completion along $f^{-1}(y)$ is $\mathscr{O}_{\widehat{X}}$, then we see that $\Gamma(\widehat{X},\mathscr{O}_{\widehat{X}})$ is isomorphic to the $\m_y$-adic completion $\widehat{\mathscr{O}_{Y,y}}$ of the local ring $\mathscr{O}_{\widehat{X}}$; this is a local ring which can not be a direct product of nonzero proper rings, since otherwise there are elements $e_1,e_1$ such that $e_1+e_1=1$ and $e_1e_2=0$. But then $e_1,e_2$ are nonunits so are contained in the maximal ideal, and their sum cannot be $1$. We therefore have $n=1$, which proves our assertion.
+\end{proof}
+\begin{corollary}\label{scheme morphism proper f_*O_X=O_Y fiber connected}
+Under the hypothesis of \cref{scheme morphism proper Zariski connected}, if $f_*(\mathscr{O}_X)\cong\mathscr{O}_Y$, then the fibers $f^{-1}(y)$ are connected and nonempty for any $y\in Y$.
+\end{corollary}
+\begin{corollary}\label{scheme morphism proper fiber correspond to maximal ideal}
+Under the hypothesis of \cref{scheme morphism proper Zariski connected}, for any $y\in Y$, the set of connected components of the fiber $f^{-1}(y)$ is in one-to-one correspondence to the fiber $g^{-1}(y)$ (in other words, the set of maximal ideals of $(f_*(\mathscr{O}_X))_y$).
+\end{corollary}
+\begin{proof}
+Since $Y'$ is finite over $Y$, it has finite fiber at $y$ (\cref{scheme morphism integral fiber finite discrete}). As $f^{-1}(y)=f'^{-1}(g^{-1}(y))$, the corollary then follows from \cref{scheme morphism proper Zariski connected}.
+\end{proof}
+\begin{remark}\label{scheme morphism proper fiber geometrically connected}
+Let $k$ be an extension field of $\kappa(y)$; if the scheme $f^{-1}(y)\otimes_{\kappa(y)}k=X\times_Y\Spec(k)$ is connected, so is $f^{-1}(y)$, since it is the image under a projection. For a morphism $f:X\to Y$ of scheme and a point $y\in Y$, we say that the fiber $f^{-1}(y)$ is \textbf{geometrically connected} if for any field extension $k$ of $\kappa(y)$, the scheme $f^{-1}(y)\otimes_{\kappa(y)}k=X\times_Y\Spec(k)$ is connected. Under the hypothesis of \cref{scheme morphism proper f_*O_X=O_Y fiber connected}, we can then conclude that the fibers $f^{-1}(y)$ are in fact geometrically connected. To see this, observe that for any extension $k$ of $\kappa(y)$, there exists a Noetherian local ring $A$ and a local hommorphism $\varphi:\mathscr{O}_{Y,y}\to A$ which is flat and such that the residue field of $A$ is $\kappa(y)$-isomorphic to $k$ (\cref{*}). Then let $Y_1=\Spec(A)$ and $h:Y_1\to Y$ be the local morphism corresponding to $\varphi$, sending the unique closed point $y_1$ of $Y_1$ to $y$; put $X_1=X\times_YY_1$ and $f_1=f\times 1_{Y_1}$. Then $f_1$ is proper and $f_1^{-1}(y_1)$ is $\kappa(y_1)$-isomorphic to $X\times_Y\Spec(k)$. It then remains to show that $(f_1)_*(\mathscr{O}_{X_1})=\mathscr{O}_{Y_1}$; now since $g$ is flat, we have $(f_1)_*(\mathscr{O}_{X_1})=h^*(f_*(\mathscr{O}_X))=h^*(\mathscr{O}_Y)=\mathscr{O}_Y$, in view of \cref{scheme morphism proper ftsp flat base change R^pf_*} applied to $p=0$.\par
+In the general case of \cref{scheme morphism proper Zariski connected}, the same reasoning shows that we have $(f_1)_*(\mathscr{O}_{X_1})=h^*(g_*(\mathscr{O}_{Y'}))$ (\cref{scheme S-affine algebra under base change prop}), and the Stein factorization $f_1=g_1\circ f'_1$ of $f_1$ is such that we have the Cartesian square
+\[\begin{tikzcd}
+X_1\ar[r,"f_1'"]\ar[d]&Y'_1\ar[r,"g_1"]\ar[d]&Y_1\ar[d,"h"]\\
+X\ar[r,"f'"]&Y'\ar[r,"g"]&Y
+\end{tikzcd}\]
+By the transitivity of fibers, we then see that the number of connected components of $f_1^{-1}(y_1)$ is, in view of \cref{scheme morphism proper fiber correspond to maximal ideal}, equal to the number of elements of $g_1^{-1}(y_1)=g^{-1}(y)\otimes_{\kappa(y)}k$. If we choose $k$ to be an algebraic closure of $\kappa(y)$, this is also the number of geometric points of $g^{-1}(y)$, or the sum of the separable degrees $[\kappa(y'_i):\kappa(y)]_s$, where $y'_i$ runs through the finite set $g^{-1}(y)$ (\cref{scheme finite over field count point in a.c. extension}). Note that the $\kappa(y'_i)$ are none other than the residual fields of the semi-local ring $(f_*(\mathscr{O}_X))_y$.
+\end{remark}
+\begin{proposition}\label{scheme integral morphism proper fiber component and maximal ideal of closure}
+Let $X$ and $Y$ be two locally Noetherian integral schemes and $f:X\to Y$ be a proper and dominante morphism. For any $y\in Y$, the number of connected components of $f^{-1}(y)$ is also equal to the number of maximal ideals of the integral closure $\mathscr{O}_{Y,y}'$ of $\mathscr{O}_{Y,y}$ in the rational function field $K(X)$.
+\end{proposition}
+\begin{proof}
+Recall that for any open subset $U$ of $Y$, $\Gamma(U,f_*(\mathscr{O}_X))=\Gamma(f^{-1}(U),\mathscr{O}_X)$ is the intersection of the local rings $\mathscr{O}_{X,x}$ for $x\in f^{-1}(U)$ (formula (\ref{scheme integral section is intersection of stalk})). We then conclude that the fiber $(f_*(\mathscr{O}_X))_y$ is a subring of $K(X)$ containing $\mathscr{O}_{Y,y}$. Moreover, as $f_*(\mathscr{O}_X)$ is a coherent $\mathscr{O}_X$-module, $(f_*(\mathscr{O}_X))_y$ is a finitely generated $\mathscr{O}_{Y,y}$-module, hence contained in $\mathscr{O}_{Y,y}'$. By \cref{integral ring extension going up prop}, any maximal ideal of the ring $A$ is the intersection of $A$ of a maximal ideal of $\mathscr{O}_{Y,y}'$, whence the proposition.
+\end{proof}
+We say a local ring $A$ is \textbf{unibranch} if $A_{\red}$ is an integral ring and the integral closure of $A_{\red}$ is a local ring. We say a point $y$ of an integral scheme $Y$ is unibrach if the local ring $\mathscr{O}_{Y,y}$ is \textbf{unibranch} (this is the case if $Y$ is normal at $y$). Let $A$ be an integral local ring, and $K$ be its fractional field. For $A$ to be unibranch, it is then necessary and sufficient that any subring $R$ of $K$, containing $A$ and is a finite $A$-algebra, is a local ring. In fact, if $A'$ is the integral closure $A$, then any such ring is contaiend in $A'$ and any maximal ideal of $R$ is trace of a maximal ideal of $A'$ along $R$, so if $A'$ is local, so is $R$. Conversely, $A'$ is the inductive limit of the filtered family of such finite $A$-algebras $A_\alpha$ of $A'$, and if each $A_\alpha$ is a local ring, then for $A_\alpha\sub A_\beta$, the maximal ideal of $A_\alpha$ is the trace over $A_\alpha$ of the maximal ideal of $A_\beta$, so $A'$ is a local ring.\par
+We also note that if the completion of a Noetherian local ring $A$ is integral (in this case $A$ is called \textbf{analytically integral}), then $A$ is unibranch. In fact, let $\m$ be the maximal ideal of $A$, $K$ be its fraction field, and $L$ be that of $\widehat{A}$; we then have $L=K\otimes_A\widehat{A}$. Let $B$ be a finite sub-$A$-algebra of $K$, then the subring $R$ of $L$ generated by $\widehat{A}$ and $B$ is isomorphic to $B\otimes_A\widehat{A}$; this is a finitely generated $\widehat{A}$-module, and is the $\m$-adic completion of $B$. As $B$ is a semi-local ring (\cref{Noe semilocal ring finite extension is Noe semilocal}) and this completion is integral, we conclude from \ref{Noe semilocal ring completion is Noe semilocal} that $B$ has a unique maximal ideal, whence our assertion.
+\begin{corollary}\label{scheme integral morphism proper fiber and separable degree}
+Under the hypotheses of \ref{scheme integral morphism proper fiber component and maximal ideal of closure}, suppose that $[K(Y):K(X)]_s=n$ and that $y\in Y$ is unibranch. Then the fiber $f^{-1}(y)$ has at most $n$ connected components. In particular, if $K(X)$ is purely inseparable over $K(X)$, then $f^{-1}(y)$ is connected.
+\end{corollary}
+\begin{proof}
+Let $\mathscr{O}_{Y,y}'$ be the integral closure of $\mathscr{O}_{Y,y}$, then the integral closure $R$ of $\mathscr{O}_{Y,y}$ in $K(X)$ is also that of $\mathscr{O}_{Y,y}'$. If $\mathscr{O}_{Y,y}'$ is a local ring, then $R$ is a semi-local ring with at most $n$ maximal ideals (\cref{integrally closed finite algebra extension finite lying over}).  
+\end{proof}
+\begin{remark}\label{scheme integral morphism proper fiber geometrically connected at normal point}
+\cref{scheme integral morphism proper fiber and separable degree} is essentially the "connectedness theorem" proved by Zariski for algebraic schemes. Note that in \cref{scheme integral morphism proper fiber and separable degree} if we suppose that $Y$ is normal at $y$, then the fiber $f^{-1}(y)$ is geometrically connected, since (with the notation of \cref{scheme morphism proper fiber geometrically connected}) $g^{-1}(y)$ then reduces to a point $y'$ and $\kappa(y')$ is purely inseparable over $\kappa(y)$.
+\end{remark}
+\begin{corollary}\label{scheme integral morphism proper f_*O_X=O_Y at normal point}
+Under the hypothesis of \cref{scheme integral morphism proper fiber component and maximal ideal of closure}, suppose moreover that $K(Y)$ is algebraically closed in $K(X)$, and let $y$ be a normal point of $Y$. Then $f^{-1}(y)$ is geometrically connected, and there exists an open neighborhood $U$ of $y$ such that $f_*(\mathscr{O}_X|_{f^{-1}(U)})$ is isomorphic to $\mathscr{O}_Y|_U$. In particular, if we suppose that $Y$ is normal (and $K(Y)$ is algebraically closed in $K(X)$), then $f_*(\mathscr{O}_X)$ is isomorphic to $\mathscr{O}_Y$.
+\end{corollary}
+\begin{proof}
+The first assertion concerning $f^{-1}(y)$ is a particular case of \cref{scheme integral morphism proper fiber geometrically connected at normal point}. If $f:X\stackrel{f'}{\to}Y'\stackrel{g}{\to}Y$ is the Stein factorization, then $g^{-1}(y)$ is reduced to a single point $y'$. Moreover, we have $\mathscr{O}_{Y,y}\sub\mathscr{O}_{Y',y'}=(f_*(\mathscr{O}_X))_y\sub K(X)$, and as $\mathscr{O}_{Y',y'}$ is finite over $\mathscr{O}_{Y,y}$ (and a fortiori over $K(Y)$), it is contained in $K(Y)$ by our hypothesis; as $y$ is normal, we necessarily have $\mathscr{O}_{Y',y'}=\mathscr{O}_{Y,y}$. We then conclude that $g$ is a local isomorphism at the point $y'$ (\cref{scheme morphism local ft fp local immersion iso iff}), which completes the proof of the first part of the corollary. There seconds one follows from the first, because the additional assumption entails that $g$ is an isomorphism in the neighborhood of any point of $Y'$, whence an isomorphism.
+\end{proof}
+\begin{proposition}\label{scheme Proj of associated graded ring connected}
+Let $A$ be a unibranch Noethreian local ring, $\a$ be a defining ideal of $A$, $A_0=A/\a$, and $S=\gr_{\a}(A)$. Then $\Proj(S)$ is a connected $A_0$-scheme.
+\end{proposition}
+\begin{proof}
+Let $\m$ be the maximal ideal of $A$; $Y=\Spec(A)$ is an integral scheme with unique closed point $y$. By hypothesis, we have $\m^k\sub\a\sub\m$ for an integer $k$, so $V(\a)=\{\m\}$. Let $S'=\bigoplus_{n\geq 0}\a^n$, and $X=\Proj(S')$, which is the blow up $Y$-scheme relative to $\a$. Then $X$ is integral and the structural morphism $f:X\to Y$ is birational and projective (\cref{scheme integral blow up scheme prop}). \cref{scheme integral morphism proper fiber and separable degree} is then applicable and shows that $f^{-1}(y)$ is connected. But $f^{-1}(y)$ is the underlying space of $\Proj(S'\otimes_AA_0)$ (\cref{scheme Proj base ring change prop} and \cref{scheme morphism base change by local scheme prop}), and as $S'\otimes_AA_0=S$ by definition, the proposition follows.
+\end{proof}
+\subsection{Zariski's "Main Theorem"}
+\begin{proposition}\label{scheme proper over local Noe isolated in fiber open prop}
+Let $Y$ be a locally Noetherian scheme and $f:X\to Y$ be a proper morphism. Let $X'$ be the set of points $x\in X$ which is isolated in the fiber $f^{-1}(f(x))$. Then $X'$ is open in $X$, and if $f=g\circ f'$ is the Satein factorization of $f$, the restriction of $f'$ to $X'$ is an isomorphism from $X'$ onto an open subscheme of $Y'$, and we have $X'=f'^{-1}(U)$. 
+\end{proposition}
+\begin{proof}
+As $g^{-1}(f(x))$ is finite and discrete (\cref{scheme morphism integral fiber finite discrete}), for $x$ to be isolated in $f^{-1}(f(x))$, it is necessary and sufficient that it is isolated in $f'^{-1}(f'(x))$. We may then assume that $f'=f$, so $f_*(\mathscr{O}_X)=\mathscr{O}_Y$. Then, if $x\in X'$, the fiber $f^{-1}(f(x))$ is connected by \cref{scheme morphism proper f_*O_X=O_Y fiber connected}, and is necessarily reduced to the point $x$. As $f$ is closed, for any open neighborhood $V$ of $x$, $f(X-V)$ is closed in $Y$ and does not contain $y=f(x)$, since $f^{-1}(y)=\{x\}$; if $U$ is the complement of $f(X-V)$ in $Y$, then we have $f^{-1}(U)\sub V$, so we conclude that the inverse images under $f$ of a fundamental system of open neighborhoods of $y$ form a fundamental system of open neighborhoods of $x$. The hypothesis $f_*(\mathscr{O}_X)=\mathscr{O}_Y$ then implies that the homomorphism $f^{\#}_y:\mathscr{O}_{Y,y}\to\mathscr{O}_{X,x}$ is an isomorphism, so by \cref{scheme morphism local ft fp local immersion iso iff} there exists an open neighborhood $V$ of $x$ and an open neighborhood $U$ of $y$ such that $f^{-1}(U)\sub V$ and the restriction $f|_V:V\to U$ is an isomorphism. Moreover, by the remarks above, we may also assume that $V=f^{-1}(U)$, so that $V\sub X'$, which completes the proof. 
+\end{proof}
+\begin{proposition}\label{scheme morphism over local Noe finite iff affine proper}
+Let $Y$ be a locally Noetherian scheme, $f:X\to Y$ be a morphism. Then the following conditions are equivalent:
+\begin{itemize}
+\item[(\rmnum{1})] $f$ is finite.
+\item[(\rmnum{2})] $f$ is affine and proper.
+\item[(\rmnum{3})] $f$ is proper, and for any $y\in Y$, the fiber $f^{-1}(y)$ is a finite set.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+We see that (\rmnum{1})$\Rightarrow$(\rmnum{2}) by \cref{scheme morphism finite is projective}. If $f$ is proper and affine, then so is the induced morphism $f^{-1}(y)\to\Spec(\kappa(y))$ (\cref{scheme morphism proper permanence prop} and \cref{scheme affine morphism permanence prop}), and the finiteness theorem \cref{scheme morphism proper over Noe R^pf_* coherence}, applied to the structural sheaf of $f^{-1}(y)$, shows that $f^{-1}(y)=\Spec(A)$, where $A$ is a finite dimensional $\kappa(y)$-algebra. Then $f^{-1}(y)$ is a finite $\kappa(y)$-scheme, so is a finite set (\cref{scheme algebraic Artinian iff}), and we see that (\rmnum{2})$\Rightarrow$(\rmnum{3}). Finally, as $f^{-1}(y)$ is an algebraic scheme, the hypothesis that $f^{-1}(y)$ is a finite set implies that it is discrete (\cref{scheme algebraic Artinian iff}). With the notations of \cref{scheme proper over local Noe isolated in fiber open prop}, we then have $X'=X$, and $f':X'\to Y'$ is an isomorphism; as $g$ is a finite morphism, we then conclude that (\rmnum{3})$\Rightarrow$(\rmnum{1}).
+\end{proof}
+\begin{theorem}[\textbf{Zariski's "Main Theorem"}]\label{scheme quasi-projective over Noe ZMT}
+Let $Y$ be a Noetherian scheme, $f:X\to Y$ be a quasi-projective morphism, and $X'$ be the set of points $x\in X$ that is isolated in the fiber $f^{-1}(f(x))$. Then $X'$ is an open subset of $X$, and the open subscheme $X'$ of $X$ is isomorphic via $f$ to an open subscheme $Y'$ of $Y$ that is finite over $Y$.
+\end{theorem}
+\begin{proof}
+The hypotheses implies that there exists a projective $Y$-scheme $P$ such that $X$ is $Y$-isomorphic to an open subscheme of $P$. We then reduce to prove the theorem if $f$ is a projective morphism, hence proper (\cref{scheme projective and quasi-projective}), and this follows from \cref{scheme proper over local Noe isolated in fiber open prop}.
+\end{proof}
+\begin{remark}\label{scheme quasi-projective over Noe ZMT reduced irreducible condition}
+If $X$ is reduced (resp. irreducible and $X'$ is nonempty), we can suppose, in the situation of \cref{scheme quasi-projective over Noe ZMT}, that $Y'$ is reduced (resp. irreducible). In fact, we can replace $Y'$ by the scheme-theoretic closure $\widebar{X'}$ of $X'$ in $Y'$, and it is reduced if $X'$ is (\cref{scheme theoretic image exist if}). If $X'$ is nonempty, then it is irreducible if $X$ is, and then $\widebar{X'}$ is also irreducible.
+\end{remark}
+\begin{corollary}\label{scheme morphism ft isolated point nbhd finite}
+Let $Y$ be a locally Noetherian and separated scheme, $f:X\to Y$ be morphism of finite type, and $x\in X$ be a point that is isolated in $f^{-1}(f(x))$. then there exists an open neighborhood $U$ of $x$ that is isomorphic to an open subscheme of $Y$ that is finite over $Y$.
+\end{corollary}
+\begin{proof}
+Let $y=f(x)$, $U$ be an affine open neighborhood of $Y$, $V$ an affine open neighborhood of $x$ contained in $f^{-1}(U)$. As $Y$ is separated, the injection $U\to Y$ is affine (\cref{scheme morphism affine to sp is affine}), and as $V$ is affine over $U$ (again by \cref{scheme morphism affine to sp is affine}), the restriction of $f$ to $V$ is an affine morphism $V\to Y$ (\cref{scheme affine morphism permanence prop}(\rmnum{2})); a fortiori, this restriction is quasi-projective since it is of finite type (\cref{scheme morphism ft permanence prop}(\rmnum{1}) and \cref{scheme morphism quasi-projective permanence prop}). It then suffices to apply \cref{scheme quasi-projective over Noe ZMT}.
+\end{proof}
+\begin{corollary}\label{scheme affine ZMT}
+Let $A$ be a Noetherian ring, $B$ be an $A$-algebra of finite type, $\mathfrak{P}$ be a prime ideal of $B$, $\p$ be its contraction in $A$. Suppose that $\mathfrak{P}$ is both maximal and minimal among prime ideals of $B$ with contraction $\p$, then there exists $g\in B-\mathfrak{P}$, a finite $A$-algebra $A'$ and an element $f'\in A'$ such that the $A$-algebra $B_g$ and $A'_{f'}$ are isomorphic.
+\end{corollary}
+\begin{proof}
+It suffices to apply \cref{scheme morphism ft isolated point nbhd finite} to $Y=\Spec(A)$ and $X=\Spec(B)$, since the hypothesis on $\mathfrak{P}$ signified that it is isolated in the fiber.
+\end{proof}
+\begin{corollary}\label{scheme affine local ZMT}
+Let $A$ be a Noetherian local ring, $B$ be an $A$-algebra of finite type, $\mathfrak{M}$ be a maximal ideal of $B$ whose contraction in $A$ is the maximal ideal $\m$ of $A$. Suppose that $\mathfrak{M}$ and minimal among prime ideals of $B$ with contraction $\m$. Then there exists a finite $A$-algebra $A'$ and a maximal ideal $\m'$ of $A'$ (whose contraction is $\m$) such that $B_{\mathfrak{M}}$ is isomorphic to the $A$-algebra $A'_{\m'}$.
+\end{corollary}
+\begin{proof}
+This follows from \cref{scheme affine ZMT} by taking stalks at $\m$ and $\mathfrak{M}$.
+\end{proof}
+\begin{corollary}\label{scheme affine local integrally closed ZMT}
+Under the hypothesis of \cref{scheme affine local ZMT}, suppose that $A$ and $B$ are integral with the same fraction field $K$. Then, if $A$ is integrally closed, we have $B=A$.
+\end{corollary}
+\begin{proof}
+By \cref{scheme quasi-projective over Noe ZMT reduced irreducible condition} we can suppose that $A'$ is integral with fraction field $K$. The hypothesis over $A$ implies that $A'=A$, so $B_{\mathfrak{M}}=A$. As $A\sub B\sub B_{\mathfrak{M}}$, we conclude that $A=B$.
+\end{proof}
+\begin{corollary}\label{scheme morphism spft birational finite fiber open immersion}
+Let $Y$ be a locally Noetherian integral scheme, $f:X\to Y$ be a separated morphism that is of finite type and birational. Suppose that $Y$ is normal and the fibers $f^{-1}(y)$ are finite for $y\in Y$. Then $f$ is an open immersion; if moreover $f$ is closed, then it is an isomorphic.
+\end{corollary}
+\begin{proof}
+Let $x\in X$ and put $y=f(x)$. As $f^{-1}(y)$ is an algebraic scheme over $\kappa(y)$, the hypothesis that it is finite implies that it is discrete (\cref{scheme algebraic Artinian iff}); moreover $\mathscr{O}_{Y,y}$ is integrally closed and $\mathscr{O}_{X,x}$ and $\mathscr{O}_{Y,y}$ have the same fraction field. We can then apply \cref{scheme affine local integrally closed ZMT}, and the homomorphism $f^{\sharp}_y:\mathscr{O}_{Y,y}\to\mathscr{O}_{X,x}$ is bijective. We then conclude that $f$ is a local isomorphism.
+\end{proof}
+\begin{proposition}\label{scheme morphism local ft isolated in fiber open}
+Let $Y$ be a locally Noetherian scheme and $f:X\to Y$ be a morphism locally of finite type. Then the set $X'$ of $x\in X$ isolated in the fiber $f^{-1}(f(x))$ is open in $X$.
+\end{proposition}
+\begin{proof}
+This question is local over $X$ and $Y$, so we can assume that $X$ and $Y$ are affine Noetherian; $f$ is then affine and of finite type, hence quasi-projective (\cref{scheme morphism quasi-projective permanence prop}(\rmnum{1})), and it suffices to apply \cref{scheme quasi-projective over Noe ZMT}.
+\end{proof}
+\begin{corollary}\label{scheme morphism proper fiber isolated restriction finite}
+Let $Y$ be a locally Noetherian scheme, $f:X\to Y$ be a proper morphism. Then the set $U$ of points $y\in Y$ such that $f^{-1}(y)$ is discrete is open in $Y$, and the restriction morphism $f|_{f^{-1}(U)}:f^{-1}(U)\to U$ is finite. In particular, a proper and quasi-finite morphism is finite.
+\end{corollary}
+\begin{proof}
+In fact, the complement of $U$ in $Y$ is the image of $X-X'$ under $f$, which is closed in $X$ by \cref{scheme morphism local ft isolated in fiber open}. As $f$ is a closed map, $U$ is then open in $Y$. Moreover, it follows from \cref{scheme algebraic Artinian iff} that $f^{-1}(y)$ is finite for any $y\in U$; as the restriction morphism $f|_{f^{-1}(U)}:f^{-1}(U)\to U$ is proper (\cref{scheme morphism proper permanence prop}), it is finite in view of \cref{scheme morphism over local Noe finite iff affine proper}.
 \end{proof}

@@ -62,7 +62,7 @@ root-radius=.06cm]{dynkin-diagrams}
 \usetikzlibrary{bending}
 
 %设置页面样式
-%\geometry{left=3.5cm,right=3.5cm,top=3cm,bottom=3cm}
+%\geometry{top=3.5cm,bottom=3.5cm}
 \geometry{hcentering}
 \pagestyle{fancy}
 \setlength{\headheight}{15.0pt}
@@ -102,14 +102,17 @@ root-radius=.06cm]{dynkin-diagrams}
 \tikzset{
   commutative diagrams/.cd,
   arrow style=tikz,
-  diagrams={>={Computer Modern Rightarrow[length=4pt,width=3pt]}},
-  diagrams={nodes={inner sep=3pt}},
+  diagrams={>={Computer Modern Rightarrow[length=4pt,width=2pt]}},
+  diagrams={nodes={inner sep=1pt}},
   symbol/.style={
     draw=none,
     every to/.append style={
       edge node={node [sloped, allow upside down, auto=false]{$#1$}}}
-  }
+  },
+  row sep/normal=10mm,
+  column sep/normal=10mm
 }
+
 %------------------------------------------------
 
 %改变下标基线--------------------------------------
@@ -165,6 +168,7 @@ root-radius=.06cm]{dynkin-diagrams}
 \def\t{\mathfrak{t}}
 \def\f{\mathfrak{f}}
 \def\x{\mathfrak{x}}
+\def\y{\mathfrak{y}}
 \def\k{\mathfrak{k}}
 \def\st{\mathfrak{st}}
 \def\aff{\mathfrak{aff}}
@@ -215,7 +219,6 @@ root-radius=.06cm]{dynkin-diagrams}
 \def\Tor{\mathrm{Tor}}
 \def\Ext{\mathrm{Ext}}
 \def\tr{\mathrm{tr}}
-\def\pd{\mathrm{pd}}
 \def\gr{\mathrm{gr}}
 \def\lcm{\mathrm{lcm}}
 \def\codim{\mathrm{codim}}
@@ -264,6 +267,11 @@ root-radius=.06cm]{dynkin-diagrams}
 \def\sk{\mathrm{sk}}
 \def\ev{\mathrm{ev}}
 \def\Ob{\mathrm{Ob}}
+\def\Alg{\mathrm{Alg}}
+\def\rev{\mathrm{rev}}
+\def\gldim{\mathrm{gl.dim}}
+\def\projdim{\mathrm{proj.dim}}
+\def\injdim{\mathrm{inj.dim}}
 %-----------------------------
 
 
@@ -309,14 +317,14 @@ root-radius=.06cm]{dynkin-diagrams}
 
 
 %调整图片和方程编号方式----------------------
-\makeatletter
-\@addtoreset{figure}{subsection}
-\makeatother
-\renewcommand{\thefigure}{\arabic{section}.\arabic{subsection}.\arabic{figure}}
-\counterwithin*{figure}{subsection}
+%\makeatletter
+%\@addtoreset{figure}{subsection}
+%\makeatother
+%\renewcommand{\thefigure}{\arabic{section}.\arabic{subsection}.\arabic{figure}}
+\counterwithin*{figure}{section}
 
-\renewcommand{\theequation}{\arabic{section}.\arabic{subsection}.\arabic{equation}}
-\counterwithin*{equation}{subsection}
+%\renewcommand{\theequation}{\arabic{section}.\arabic{subsection}.\arabic{equation}}
+\numberwithin{equation}{section}
 %-------------------------------------------
 
 
