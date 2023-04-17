@@ -766,7 +766,7 @@ Finally, the condition (b) clearly implies (c), and if (c) holds, let $t_x\in\ma
 The condition for $\varphi$ in \cref{sheaf cat epimorphism iff} does not imply that $\varphi_U$ is surjective for all open sets $U$ of $X$ as \cref{sheaf cat epi not surjective on object} shows. In other words, being epic in the category of sheaves is a weaker that begin surjective on objects.
 \end{remark}
 \begin{example}\label{sheaf cat epi not surjective on object}
-Let $\mathcal{O}_X$ be the sheaf of holomorphic functions on an open subset $X$ of $\C$. For every open subspace $U\sub X$ and $f\in\mathcal{O}_X(U)$ we let $D_U(f)=f'$ be the derivative. We obtain a morphism $D:\mathcal{O}_X\to\mathcal{O}_X$ of sheaves of $\C$-vector spaces. Then $D$ is an epimorphism, because locally every holomorphic function has a primitive. But there exist open subsets $U$ of $X$ and functions $f$ on $U$ that have no primitive., for instance $U=\B(z_0)\setminus\{z_0\}\sub\C$ contained in $X$ and $f=1/(z-z_0)$. More precisely, by complex analysis we know that $D_U$ is surjective if and only if every connected component of $U$ is simply connected. Thus $D$ is not surjective.
+Let $\mathscr{O}_X$ be the sheaf of holomorphic functions on an open subset $X$ of $\C$. For every open subspace $U\sub X$ and $f\in\mathscr{O}_X(U)$ we let $D_U(f)=f'$ be the derivative. We obtain a morphism $D:\mathscr{O}_X\to\mathscr{O}_X$ of sheaves of $\C$-vector spaces. Then $D$ is an epimorphism, because locally every holomorphic function has a primitive. But there exist open subsets $U$ of $X$ and functions $f$ on $U$ that have no primitive., for instance $U=\B(z_0)\setminus\{z_0\}\sub\C$ contained in $X$ and $f=1/(z-z_0)$. More precisely, by complex analysis we know that $D_U$ is surjective if and only if every connected component of $U$ is simply connected. Thus $D$ is not surjective.
 \end{example}
 \section{Sheaf of modules}
 \subsection{Presheaf of moudles}
@@ -1501,7 +1501,7 @@ f_*(\mathscr{F}\otimes_{\mathscr{A}}\mathscr{F})\ar[r]&f_*(\mathscr{F})
 Similarly, if $v:f^*(\mathscr{G})\to\mathscr{F}$ is a homormorphism of $\mathscr{A}$-algebras, then $v^\flat:\mathscr{G}\to f_*(\mathscr{F})$ is a homomorphisms of $\mathscr{B}$-algebras. We then get an isomorphism of bifunctors
 \[\Hom_{\mathscr{A}-\mathbf{alg}}(f^*(\mathscr{G}),\mathscr{F})\stackrel{\sim}{\to}\Hom_{\mathscr{B}-\mathbf{alg}}(\mathscr{G},f_*(\mathscr{F})).\]
 We can then say that $f^*$ is the left adjoint of the functor $f^*$ from the category of $\mathscr{A}$-algebras to that of $\mathscr{B}$-algebras.
-\subsection{Open immersions and representable natrual transformations}
+\subsection{Open immersions and representability}
 The set of open immersions in the category $\mathbf{Rsp}$ is closed under composition and fiber product, so we can speak of natrual transformations $F\to G$ (where $F$ and $G$ are contravariant functors from $\mathbf{Rsp}$ to $\mathbf{Set}$) which are \textbf{representable by open immersions}. The same is true when if we consider the category $\mathbf{Rsp}_{/S}$, where $S$ is a base ringed space.
 \begin{proposition}\label{ringed space representable functor via subfunctor}
 Let $S$ be a ringed space, $F:(\mathbf{Rsp}_{/S})^{\circ}\to\mathbf{Set}$ a contravariant functor, and $(F_i)_{i\in I}$ be a family of subfunctors of $F$. Suppose that the following conditions are satisfied:
@@ -1788,7 +1788,7 @@ The homomorphism is defined by the following: for any open subset $U$ and a coup
 \end{proof}
 If $\mathscr{L}$ is locally free of rank $1$, so is its dual $\mathscr{L}^*=\sHom_{\mathscr{O}_X}(\mathscr{L},\mathscr{O}_X)$, because this is ture for $\mathscr{L}=\mathscr{O}_X$ and the question is local. Moreover, we have a canonical isomorphism
 \[\sHom_{\mathscr{O}_X}(\mathscr{L},\mathscr{O}_X)\otimes_{\mathscr{O}_X}\mathscr{L}\cong\mathscr{O}_{X}.\]
-In fact, it suffices to prove that the canonical homomorphism $\mathscr{O}_X\to\sHom_{\mathscr{O}_X}(\mathscr{L},\mathscr{L})$ is bijective, and for this we may assume that $\mathscr{L}=\mathscr{O}_X$, and then the claim is immediate. Due to this, we put $\mathscr{L}^{-1}=\sHom_{\mathscr{O}_X}(\mathscr{L},\mathscr{O}_X)$, and $\mathscr{L}^{-1}$ is called the inverse of $\mathscr{L}$.\par
+In fact, it suffices to prove that the canonical homomorphism $\mathscr{O}_X\to\sHom_{\mathscr{O}_X}(\mathscr{L},\mathscr{L})$ is bijective, and for this we may assume that $\mathscr{L}=\mathscr{O}_X$, and then the claim is immediate. Due to this, we put $\mathscr{L}^{-1}=\sHom_{\mathscr{O}_X}(\mathscr{L},\mathscr{O}_X)$, and $\mathscr{L}^{-1}$ is called the \textbf{inverse} of $\mathscr{L}$.\par
 If $\mathscr{L}$ and $\mathscr{L}'$ are two $\mathscr{O}_X$-modules locally free of rank $1$, so is their tensor product $\mathscr{L}\otimes_{\mathscr{O}_X}\mathscr{L}'$, since locally we have $\mathscr{O}_X\otimes_{\mathscr{O}_X}\mathscr{O}_X\cong\mathscr{O}_X$. For any integer $n\geq 1$, we denote by $\mathscr{L}^{\otimes n}$ the $n$-fold tensor product $\mathscr{L}$, which is also a locally free $\mathscr{O}_X$-module of rank $1$; by convention, we set $\mathscr{L}^{\otimes 0}=\mathscr{O}_X$ and $\mathscr{L}^{\otimes(-n)}=(\mathscr{L}^{-1})^{\otimes n}$. Then there exists a canonical isomorphism
 \[\mathscr{L}^{\otimes m}\otimes_{\mathscr{O}_X}\mathscr{L}^{\otimes n}\cong\mathscr{L}^{\otimes(n+m)}\]
 \begin{proposition}\label{sheaf of module local free inverse image}
@@ -1799,11 +1799,11 @@ The first assertion from the fact that $f^*$ commutes with direct sums and $f^*(
 \end{proof}
 Let $\mathscr{L}$ be a locally free $\mathscr{O}_X$-module of rank $1$. We denote by $\Gamma_*(X,\mathscr{L})$ or simple $\Gamma_*(\mathscr{L})$ the abelian group of the direct sum $\bigoplus_{n\in\Z}\Gamma(X,\mathscr{L}^{\otimes n})$. We endow it a graded ring structure by defining the product of a couple $(s_n,s_m)$, where $s_n\in\Gamma(X,\mathscr{L}^{\otimes n})$ and $s_m\in\Gamma(X,\mathscr{L}^{\otimes m})$, the section of $\mathscr{L}^{\otimes(n+m)}$ over $X$ corresponding to the section $s_n\otimes s_m$ of $\mathscr{L}^{\otimes n}\otimes_{\mathscr{O}_X}\mathscr{L}^{\otimes m}$. The associative of this multiplication is immediately verified, and it is clear that $\Gamma_*(X,\mathscr{L})$ is a covariant functor on $\mathscr{L}$ with values in the category of graded rings of type $\Z$.\par
 If now $\mathscr{F}$ is an $\mathscr{O}_X$-module, we set
-\[\Gamma_*(\mathscr{L},\mathscr{F})=\bigoplus_{n\in\Z}\Gamma(X,\mathscr{F}\otimes_{\mathscr{O}_X}\mathscr{L}^{\otimes n}).\]
-We endow this abelian group a graded $\Gamma_*(\mathscr{L})$-module structure by the following: for any couple $(s_n,u_m)$, where $s_n\in\Gamma(X,\mathscr{L}^{\otimes n})$ and $u_m\in\Gamma(X,\mathscr{F}\otimes\mathscr{L}^{\otimes n})$, we associate the section of $\mathscr{F}\otimes\mathscr{L}^{\otimes(n+m)}$ that corresponds to $s_n\otimes u_m$; the verification that this defines a module structure is immediate. For fixed $X$ and $\mathscr{L}$, we see $\Gamma_*(\mathscr{L},\mathscr{F})$ is a covariant functor on $\mathscr{F}$ with values in the category of graded $\Gamma_*(\mathscr{L})$-modules. For $X$ and $\mathscr{F}$ fixed, this is a covariant functor on $\mathscr{L}$ iwth values in the category of abelian groups.\par
+\[\Gamma_*(\mathscr{F};\mathscr{L})=\bigoplus_{n\in\Z}\Gamma(X,\mathscr{F}\otimes_{\mathscr{O}_X}\mathscr{L}^{\otimes n}).\]
+We endow this abelian group a graded $\Gamma_*(\mathscr{L})$-module structure by the following: for any couple $(s_n,u_m)$, where $s_n\in\Gamma(X,\mathscr{L}^{\otimes n})$ and $u_m\in\Gamma(X,\mathscr{F}\otimes\mathscr{L}^{\otimes n})$, we associate the section of $\mathscr{F}\otimes\mathscr{L}^{\otimes(n+m)}$ that corresponds to $s_n\otimes u_m$; the verification that this defines a module structure is immediate. For fixed $X$ and $\mathscr{L}$, we see $\Gamma_*(\mathscr{F};\mathscr{L})$ is a covariant functor on $\mathscr{F}$ with values in the category of graded $\Gamma_*(\mathscr{L})$-modules. For $X$ and $\mathscr{F}$ fixed, this is a covariant functor on $\mathscr{L}$ iwth values in the category of abelian groups.\par
 Let $f:Y\to X$ be a morphism of ringed spaces. The canonical homomorphism $\rho:\mathscr{L}^{\otimes n}\to f_*(f^*(\mathscr{L}^{\otimes n}))$ defines a homomorphism $\Gamma(X,\mathscr{L}^{\otimes n})\to\Gamma(Y,f^*(\mathscr{L}^{\otimes n}))$ of abelian groups, and as $f^*(\mathscr{L}^{\otimes n})=(f^*(\mathscr{L}))^{\otimes n}$, it gives a homomorphism $\Gamma_*(\mathscr{L})\to\Gamma_*(f^*(\mathscr{L}))$ of graded rings. Similarly, the canonical homomorphism $\mathscr{F}\otimes\mathscr{L}^{\otimes n}\to f_*(f^*(\mathscr{F}\otimes\mathscr{L}^{\otimes n}))$ defines a homomorphism $\Gamma(X,\mathscr{F}\otimes\mathscr{L}^{\otimes n})\to\Gamma(Y,f^*(\mathscr{F}\otimes\mathscr{L}^{\otimes n}))$ and as
 \[f^*(\mathscr{F}\times\mathscr{L}^{\otimes n})=f^*(\mathscr{F})\otimes(f^*(\mathscr{L}))^{\otimes n}\]
-these homomorphisms give rise to a bi-homomorphism $\Gamma_*(\mathscr{L},\mathscr{F})\to\Gamma_*(f^*(\mathscr{L}),f^*(\mathscr{F}))$ of graded modules.
+these homomorphisms give rise to a bi-homomorphism $\Gamma_*(\mathscr{F};\mathscr{L})\to\Gamma_*(f^*(\mathscr{L}),f^*(\mathscr{F}))$ of graded modules.
 \begin{proposition}\label{sheaf of module local free projection formula}
 Let $f:X\to Y$ be a morphism of ringed spaces, $\mathscr{F}$ be an $\mathscr{O}_X$-module, and $\mathscr{E}$ be a locally free $\mathscr{O}_Y$-module of finite rank. Then there exists a canonical isomorphism
 \[f_*(\mathscr{F})\otimes_{\mathscr{O}_Y}\mathscr{E}\cong f_*(\mathscr{F}\otimes_{\mathscr{O}_X}f^*(\mathscr{E})).\]
@@ -1980,7 +1980,7 @@ If $X$ is any topological space, then the category $\mathbf{Ab}(X)$ of sheaves o
 \begin{definition}
 Let $X$ be a topological space, and let $\Gamma(X,-):\mathbf{Ab}(X)\to\mathbf{Ab}(X)$ be the global section functor. The cohomology groups of the sheaf $\mathscr{F}$ or the cohomology groups of $X$ with values in $\mathscr{F}$, denoted by $H^i(X,\mathscr{F})$, are the groups $\mathcal{R}^i\Gamma(X,-)(\mathscr{F})$ induced by the right derived functor $\mathcal{R}^i\Gamma(X,-)$.
 \end{definition}
-Similarly, we can define cohomology groups of a $\mathscr{O}_X$-module to be the right-derived functor $\mathcal{R}^i\Gamma(X,-)$, where $\Gamma(X,-)$ is viewed as a functor from $\mathbf{Mod}(\mathcal{O}_X)$ to $\mathbf{Ab}(X)$. However, it turns out that this definition is unnecessary: the dericed functor of $\Gamma(X,-)$ in $\mathbf{Ab}(X)$ and $\mathbf{Mod}(\mathscr{O}_X)$ coincide.
+Similarly, we can define cohomology groups of a $\mathscr{O}_X$-module to be the right-derived functor $\mathcal{R}^i\Gamma(X,-)$, where $\Gamma(X,-)$ is viewed as a functor from $\mathbf{Mod}(\mathscr{O}_X)$ to $\mathbf{Ab}(X)$. However, it turns out that this definition is unnecessary: the dericed functor of $\Gamma(X,-)$ in $\mathbf{Ab}(X)$ and $\mathbf{Mod}(\mathscr{O}_X)$ coincide.
 \section{Flasque sheaves}
 \begin{definition}
 A sheaf $\mathscr{F}$ on a topological space $X$ is \textbf{flasque} if for every open subset $U$ of $X$ the restriction map $\mathscr{F}(X)\to\mathscr{F}(U)$ is surjective.
@@ -2097,12 +2097,12 @@ The following lemma says there is no ambiguity in defining the cohomology of a s
 \begin{lemma}
 Let $X$ be a ringed space. Let $U\sub X$ be an open subspace.
 \begin{itemize}
-\item[(a)] If $\mathscr{I}$ is an injective $\mathcal{O}_X$-module then $\mathscr{I}|_U$ is an injective $\mathcal{U}$-module.
-\item[(b)] For any sheaf of $\mathcal{O}_X$-modules $\mathscr{F}$ we have $H^p(U,\mathscr{F})=H^p(U,\mathscr{F}|_U)$.
+\item[(a)] If $\mathscr{I}$ is an injective $\mathscr{O}_X$-module then $\mathscr{I}|_U$ is an injective $\mathcal{U}$-module.
+\item[(b)] For any sheaf of $\mathscr{O}_X$-modules $\mathscr{F}$ we have $H^p(U,\mathscr{F})=H^p(U,\mathscr{F}|_U)$.
 \end{itemize}
 \end{lemma}
 \begin{proof}
-Denote $j:U\to X$ the open immersion. Then $(j_!,j^{-1})$ satisfies the condition of \cref{abelian cat adjoint exactness of one prop}. By definition $H^p(U,\mathscr{F})=H^p(\Gamma(U,\mathscr{I}^\bullet))$ where $\mathscr{F}\to\mathscr{I}^\bullet$ is an injective resolution in $\mathbf{Mod}(\mathcal{O}_X)$. By the above we see that $\mathscr{F}|_U\to\mathscr{I}|_U$ is an injective resolution in $\mathbf{Mod}(\mathcal{O}_U)$. Hence $H^p(U,\mathscr{F}|_U)$ is equal to $H^p(\Gamma(U,\mathscr{I}^\bullet|_U))$. Of course $\Gamma(U,\mathscr{F})=\Gamma(U,\mathscr{F}|_U)$ for any sheaf $\mathscr{F}$ on $X$. Hence the equality in (b).
+Denote $j:U\to X$ the open immersion. Then $(j_!,j^{-1})$ satisfies the condition of \cref{abelian cat adjoint exactness of one prop}. By definition $H^p(U,\mathscr{F})=H^p(\Gamma(U,\mathscr{I}^\bullet))$ where $\mathscr{F}\to\mathscr{I}^\bullet$ is an injective resolution in $\mathbf{Mod}(\mathscr{O}_X)$. By the above we see that $\mathscr{F}|_U\to\mathscr{I}|_U$ is an injective resolution in $\mathbf{Mod}(\mathscr{O}_U)$. Hence $H^p(U,\mathscr{F}|_U)$ is equal to $H^p(\Gamma(U,\mathscr{I}^\bullet|_U))$. Of course $\Gamma(U,\mathscr{F})=\Gamma(U,\mathscr{F}|_U)$ for any sheaf $\mathscr{F}$ on $X$. Hence the equality in (b).
 \end{proof}
 Let $f:X\to Y$ be a continuous. Since the functor $f_*$ is left-exact, for an injective resolution $0\to\mathscr{F}\to\mathscr{I}^\bullet$ we define 
 \[\mathcal{R}^if_*\mathscr{F}=H^i(f_*\mathscr{I}^\bullet)\]
@@ -2129,10 +2129,10 @@ Let $f:X\to Y$ be a morphism of ringed spaces. Let $\mathscr{F}$ be a sheaf of $
 This follows from \cref{flasque is acyclic} and \cref{push derive char}.
 \end{proof}
 \begin{proposition}
-Let $f:X\to Y$ be a morphism of ringed spaces. Let $\mathscr{F}$ be an $\mathcal{O}_X$-module. Let $V\sub Y$ be an open subspace. Denote $g:f^{-1}(V)\to V$ the restriction of $f$. Then we have
+Let $f:X\to Y$ be a morphism of ringed spaces. Let $\mathscr{F}$ be an $\mathscr{O}_X$-module. Let $V\sub Y$ be an open subspace. Denote $g:f^{-1}(V)\to V$ the restriction of $f$. Then we have
 \[\mathcal{R}^ig_*(\mathscr{F}|_{f^{-1}(V)})=(\mathcal{R}^if_*\mathscr{F})|_V.\]
 There is a similar statement for the derived image $\mathcal{R}^if_*\mathscr{F}$ where $\mathscr{F}^\bullet$ is a bounded
-below complex of $\mathcal{O}_X$-modules.
+below complex of $\mathscr{O}_X$-modules.
 \end{proposition}
 \begin{proof}
 Choose an injective resolution $0\to\mathscr{F}\to\mathscr{I}^\bullet$ and use that $\mathscr{F}|_{f^{-1}(V)}\to\mathscr{I}|_{f^{-1}(V)}$ is an injective resolution also.
@@ -2253,7 +2253,7 @@ Indeed, if $p\geq n$, there does not exist any strictly increasing $(p+1)$-uple 
 \end{proof}
 \section{\v{C}ech cohomology as a functor on presheaves}
 Warning: In this subsection we work almost exclusively with presheaves and categories of presheaves and the results are completely wrong in the setting of sheaves and categories of sheaves!\par
-Let $X$ be a ringed space. Let $\mathcal{U}=(U_i)_{i\in I}$ be an open covering. Let $\mathscr{F}$ be a presheaf of $\mathcal{O}_X$-modules. We have the \v{C}ech complex $C^\bullet(\mathcal{U},\mathscr{F})$ of $\mathscr{F}$ just by thinking of $\mathscr{F}$ as a presheaf of abelian groups. However, each term $C^p(\mathcal{U},\mathscr{F})$ has a natural structure of a $\mathcal{O}_X(X)$-module and the differential is given by $\mathcal{O}_X(X)$-module maps. Moreover, it is clear that the construction
+Let $X$ be a ringed space. Let $\mathcal{U}=(U_i)_{i\in I}$ be an open covering. Let $\mathscr{F}$ be a presheaf of $\mathscr{O}_X$-modules. We have the \v{C}ech complex $C^\bullet(\mathcal{U},\mathscr{F})$ of $\mathscr{F}$ just by thinking of $\mathscr{F}$ as a presheaf of abelian groups. However, each term $C^p(\mathcal{U},\mathscr{F})$ has a natural structure of a $\mathscr{O}_X(X)$-module and the differential is given by $\mathscr{O}_X(X)$-module maps. Moreover, it is clear that the construction
 \[\mathscr{F}\to C^\bullet(\mathcal{U},\mathscr{F})\]
 is functorial in $\mathscr{F}$. In fact, it is a functor
 \[C^\bullet(\mathcal{U},-):\mathbf{PMod}(\mathscr{O}_X)\to\mathcal{C}^+(\mathbf{Mod}_{\mathscr{O}_X(X)})\]
@@ -2261,7 +2261,7 @@ is functorial in $\mathscr{F}$. In fact, it is a functor
 The functor $C^\bullet(\mathcal{U},-)$ is an exact functor.
 \end{proposition}
 \begin{proof}
-For any open $U\sub X$ the functor $\mathscr{F}\to\mathscr{F}(U)$ is an additive exact functor from $\mathbf{PMod}(\mathcal{O}_X)$ to $\mathbf{Mod}_{\mathscr{O}_X(X)}$. The terms $C^p(\mathcal{U},\mathscr{F})$ of the complex are products of these exact functors and hence exact. Moreover a sequence of complexes is exact if and only if the sequence of terms in a given degree is exact. Hence the lemma follows.
+For any open $U\sub X$ the functor $\mathscr{F}\to\mathscr{F}(U)$ is an additive exact functor from $\mathbf{PMod}(\mathscr{O}_X)$ to $\mathbf{Mod}_{\mathscr{O}_X(X)}$. The terms $C^p(\mathcal{U},\mathscr{F})$ of the complex are products of these exact functors and hence exact. Moreover a sequence of complexes is exact if and only if the sequence of terms in a given degree is exact. Hence the lemma follows.
 \end{proof}
 \begin{theorem}\label{Cech presheaf delta functor}
 Let $X$ be a ringed space. Let $\mathcal{U}=(U_i)_{i\in I}$ be an open covering. The functors $\check{H}^p(\mathcal{U},-)$ form a $\delta$-functor from the abelian category of presheaves of $\mathscr{O}_X$-modules to the category of $\mathscr{O}_X(X)$-modules
@@ -2552,7 +2552,7 @@ Since $s_i$ lifts $s$ we see that $s_{i_0i_1}\in\mathscr{F}(U_{i_0i_1})$. By the
 Then clearly the sections $s_i-t_i$ satisfy the sheaf condition and glue to a section of $\mathscr{G}$ over $U$ which maps to $s$. Hence we win.
 \end{proof}
 \begin{proposition}\label{Cech vanish H^p vanish}
-Let $X$ be a ringed space. Let $\mathscr{F}$ be an $\mathcal{O}_X$-module such that
+Let $X$ be a ringed space. Let $\mathscr{F}$ be an $\mathscr{O}_X$-module such that
 \[\check{H}^p(\mathcal{U},\mathscr{F})=0\]
 for all $p>0$ and any open covering $\mathcal{U}:U=\bigcup_{i\in I}U_i$ of an open subset $U$ of $X$. Then $H^p(U,\mathscr{F})=0$ for all $p>0$ and any open $U\sub X$.
 \end{proposition}

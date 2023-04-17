@@ -39,14 +39,19 @@
 \usepackage{booktabs}
 \usepackage{easybmat}%定义大型分块矩阵
 \usepackage{dsfont}%定义bold 1
+\usepackage{calligra}
 \usepackage[
 ordering=Kac,
 edge-length=1cm,
 root-radius=.06cm]{dynkin-diagrams}
-\usepackage{bbold}
 \usepackage[T1]{fontenc}
+\PassOptionsToPackage{no-math}{fontspec}
+\usepackage[noBBpl]{mathpazo}
+\usepackage{bbold}
 \usepackage{palatino}
-\usepackage{newpxmath}
+%\usepackage{newpxmath}
+%\usepackage{txfonts}
+%\usepackage{pxfonts}
 \usepackage{l3draw,xparse}
 \usepackage{accents}%创建新的widetilde
 \usepackage{scalerel} %放大数学字体
@@ -55,12 +60,20 @@ root-radius=.06cm]{dynkin-diagrams}
 \usepackage{calc}%定义箭头不同样式symbol
 \usepackage{ulem}%定义合适的下划线
 
-
-\linespread{1.15}
-\SetSymbolFont{stmry}{bold}{U}{stmry}{m}{n}
-\usetikzlibrary{arrows.meta}
-\usetikzlibrary{bending}
-
+%-----------------------------------------------------
+\DeclareMathAlphabet{\mathbbb}{U}{bbold}{m}{n}
+\DeclareMathAlphabet{\mathbb}{U}{msb}{m}{n}
+%-----------------------------------------------------
+\DeclareFontFamily{U}{BOONDOX-cal}{\skewchar\font=45}
+\DeclareFontShape{U}{BOONDOX-cal}{m}{n}{
+  <-> s*[1] BOONDOX-r-cal}{}
+\DeclareMathAlphabet{\mathscr}{U}{BOONDOX-cal}{m}{n}
+%-----------------------------------------------------
+\DeclareFontFamily{U}{BOONDOX-frak}{\skewchar\font=45}
+\DeclareFontShape{U}{BOONDOX-frak}{m}{n}{
+  <-> s*[1]  BOONDOX-r-frak}{}
+%\DeclareMathAlphabet{\mathfrak}{U}{BOONDOX-frak}{m}{n}
+%-----------------------------------------------------
 %设置页面样式
 %\geometry{top=3.5cm,bottom=3.5cm}
 \geometry{hcentering}
@@ -84,9 +97,6 @@ root-radius=.06cm]{dynkin-diagrams}
 \newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
 \makeatother
 
-\DeclareMathAlphabet{\mathbbb}{U}{bbold}{m}{n}
-\DeclareMathAlphabet{\mathbb}{U}{msb}{m}{n}
-
 \chapterfont{\centering}%chapter居中
 \sectionfont{\centering}%section居中
 
@@ -98,12 +108,12 @@ root-radius=.06cm]{dynkin-diagrams}
 %  {\hfill\contentspage}% <filler-page-format>
 
 %调整tikz箭头格式---------------------------------
-\usetikzlibrary{arrows.meta} % not arrows, but arrows.meta
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{bending}
 \tikzset{
   commutative diagrams/.cd,
   arrow style=tikz,
-  diagrams={>={Computer Modern Rightarrow[length=4pt,width=2pt]}},
-  diagrams={nodes={inner sep=1pt}},
+  diagrams={>={Computer Modern Rightarrow[length=4pt,width=3pt]}},
   symbol/.style={
     draw=none,
     every to/.append style={
@@ -304,15 +314,14 @@ root-radius=.06cm]{dynkin-diagrams}
 %------------------------------
 
 %------------------------------花写Hom,Ext,End,Proj
-\DeclareMathOperator{\sHom}{\mathscr{H}\hspace*{-4.25pt}\mathscr{o\!m}}
-\DeclareMathOperator{\sExt}{\mathscr{E}\hspace*{-2.6pt}\mathscr{x}\hspace*{-1pt}\mathscr{t}}
-\DeclareMathOperator{\sEnd}{\mathscr{E}\hspace*{-2pt}\mathscr{n}\hspace*{-2.4pt}\mathscr{d}}
+\DeclareMathOperator{\sHom}{\mathscr{H}\hspace*{-2pt}\text{\kern -3pt {\calligra\large om}}\,}
+\DeclareMathOperator{\sExt}{\mathscr{E}\hspace*{-0.4pt}\text{\kern -3pt {\calligra\large xt}}\,}
+\DeclareMathOperator{\sEnd}{\mathscr{E}\hspace*{-0.6pt}\text{\kern -3pt {\calligra\large nd}}\,}
 \DeclareMathOperator{\sProj}{\mathscr{P}\hspace*{-0.5pt}\textit{roj}}
 %------------------------------
 
 
 \newcommand{\intprod}{\mathbin{\raisebox{\depth}{\scalebox{1}[-1]{$\lnot$}}}}%defining interior product
-
 \newcommand{\bigw}{\scalebox{.95}[1]{\boldmath{$\bigwedge$}\hspace{-1pt}}}%define a nice wedge product
 
 

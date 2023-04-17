@@ -2454,7 +2454,7 @@ commutes. Here $\alpha$ denotes the associativity constraint on the monoidal cat
 &\sHom_{\mathcal{C}}(X,Y)
 \end{tikzcd}\\
 \begin{tikzcd}[row sep=6mm,column sep=6mm]
-\sHom_{\mathcal{C}}(X,Y)\otimes\bm{1}\ar[rd,"\rho"]\ar[rr,"\id\otimes e_X"]&&\sHom_{\mathcal{C}}(X,Y)\otimes\sHom_{\mathcal{C}}(X,X)\ar[ld,"c_{Y,X,X}"]\\
+\sHom_{\mathcal{C}}(X,Y)\otimes\bm{1}\ar[rd,swap,"\rho"]\ar[rr,"\id\otimes e_X"]&&\sHom_{\mathcal{C}}(X,Y)\otimes\sHom_{\mathcal{C}}(X,X)\ar[ld,"c_{Y,X,X}"]\\
 &\sHom_{\mathcal{C}}(X,Y)
 \end{tikzcd}
 \end{aligned}
@@ -2576,6 +2576,123 @@ are both equal to the identity.
 commutes (in the ordinary category $\mathbf{Cat}$).
 \end{itemize}
 The reader might at this point object that the definition of strict $2$-category violates a fundamental principle of category theory: the axioms of strict $2$-categories require that certain functors are equal. In practice, one often encounters mathematical structures $\mathcal{C}$ which do not quite fit in this framework, because the associative law for composition of $1$-morphisms in $\mathcal{C}$ holds only up to isomorphism. To address this point, B\'enabou introduced a more general type of structure which he called a bicategory, which we will refer to here as a $2$-category.\par
-Our goal in this section is then to give a brief introduction to the theory of $2$-categories. We begin by reviewing the definition of a $2$-category and establishing some notational and terminological conventions. Every strict $2$-category can be regarded as a $2$-category, but many of the $2$-categories which arise "in nature" fail to be strict. To articulate the relationship between $2$-categories and strict$ 2$-categories more precisely, it is convenient to view each as the objects of a suitable (ordinary) category: we do this by introducing the notion of a functor between $2$-categories. Roughly speaking, a functor $F:\mathcal{C}\to\mathcal{D}$ is an operation which carries objects, $1$-morphisms, and $2$-morphisms of $\mathcal{C}$ to objects, $1$-morphisms, and $2$-morphisms of $\mathcal{D}$, which is compatible with the composition laws on $\mathcal{C}$ and $\mathcal{D}$. Here again there are several possible definitions, depending on whether one demands that the compatibility holds strictly (in which case we say that $F$ is a strict functor), up to isomorphism (in which case we say that $F$ is a functor), or up to possible non-invertible $2$-morphism (in which case we say that $F$ is a lax functor). We use this notion to introduce an (ordinary) category $2\mathbf{Cat}$, whose objects are $2$-categories and whose morphisms are functors between $2$-categories (and consider several other variations on this theme).
+Our goal in this section is then to give a brief introduction to the theory of $2$-categories. We begin by reviewing the definition of a $2$-category and establishing some notational and terminological conventions. Every strict $2$-category can be regarded as a $2$-category, but many of the $2$-categories which arise "in nature" fail to be strict. To articulate the relationship between $2$-categories and strict $2$-categories more precisely, it is convenient to view each as the objects of a suitable (ordinary) category: we do this by introducing the notion of a functor between $2$-categories. Roughly speaking, a functor $F:\mathcal{C}\to\mathcal{D}$ is an operation which carries objects, $1$-morphisms, and $2$-morphisms of $\mathcal{C}$ to objects, $1$-morphisms, and $2$-morphisms of $\mathcal{D}$, which is compatible with the composition laws on $\mathcal{C}$ and $\mathcal{D}$. Here again there are several possible definitions, depending on whether one demands that the compatibility holds strictly (in which case we say that $F$ is a strict functor), up to isomorphism (in which case we say that $F$ is a functor), or up to possible non-invertible $2$-morphism (in which case we say that $F$ is a lax functor). We use this notion to introduce an (ordinary) category $2\mathbf{Cat}$, whose objects are $2$-categories and whose morphisms are functors between $2$-categories (and consider several other variations on this theme).
 \subsection{\texorpdfstring{$2$}{2}-categories}
-Let $\mathcal{C}$ be a strict $2$-category
+Let $\mathcal{C}$ be a strict $2$-category. Then the composition of $1$-morphisms in $\mathcal{C}$ is strictly associative: that is, given a triple of composable $1$-morphisms
+\[f:W\to X,\quad g:X\to Y,\quad h:Y\to Z\]
+of C, we have an equality $h\circ(g\circ f)=(h\circ g)\circ f$. Our goal in this paragraph is to introduce the more general notion of (non-strict) $2$-category, where we weaken the associativity requirement: rather than demand that the $1$-morphisms $h\circ(g\circ f)$ and $(h\circ g)\circ f$ are identical, we instead ask for a specified isomorphism $\alpha_{h,g,f}:h\circ(g\circ f)\Rightarrow(h\circ g)\circ f$ in the category $\sHom_{\mathcal{C}}(W,Z)$. In order to obtain a sensible theory, we must require that these isomorphisms satisfy an analogue of the pentagon identity: We define a $2$-category $\mathcal{C}$ to be a collection consisting of the following data:
+\begin{itemize}
+\item A collection $\Obj(\mathcal{C})$, whose elements we refer to as objects of $\mathcal{C}$. We will often abuse notation by writing $X\in\mathcal{C}$ to indicate that $X$ is an element of $\Obj(\mathcal{C})$.
+\item For every pair of objects $X,Y\in\Obj(\mathcal{C})$, a category $\sHom_{\mathcal{C}}(X,Y)$. We refer to objects $f$ of the category $\sHom_{\mathcal{C}}(X,Y)$ as $1$-morphisms from $X$ to $Y$ and write $f:X\to Y$ to indicate that $f$ is a $1$-morphism from $X$ to $Y$. Given a pair of $1$-morphisms $f,g\in\sHom_{\mathcal{C}}(X,Y)$, we refer to morphisms from $f$ to $g$ in the category $\sHom_{\mathcal{C}}(X,Y)$ as $2$-morphisms from $f$ to $g$. We will sometimes write $\gamma:f\Rightarrow g$ to indicate that is $\gamma$ a $2$-morphism from $f$ to $g$.
+\item For every triple of objects $X,Y,Z\in\Obj(\mathcal{C})$, a composition functor
+\[\circ:\sHom_{\mathcal{C}}(Y,Z)\times\sHom_{\mathcal{C}}(X,Y)\to\sHom_{\mathcal{C}}(X,Z).\]
+\item For every object $X\in\Obj(\mathcal{C})$, a $1$-morphism $\id_X\in\sHom_{\mathcal{C}}(X,X)$, which we call the identity $1$-morphism from $X$ to itself.
+\item For every object $X\in\Obj(\mathcal{C})$, an isomorphism $\upsilon:\id_X\circ\id_X\Rightarrow\id_X$ in the category $\sHom_{\mathcal{C}}(X,X)$. We refer to the $2$-morphisms $\{\upsilon_X\}_{X\in\Obj(\mathcal{C})}$ as the \textbf{unit constraints} of $\mathcal{C}$.
+\item For every quadruple of objects $W,X,Y,Z\in\mathcal{C}$, a natural isomorphism $\alpha$ from the functor
+\[\sHom_{\mathcal{C}}(Y,Z)\times\sHom_{\mathcal{C}}(X,Y)\times\sHom_{\mathcal{C}}(W,X)\to\sHom_{\mathcal{C}}(W,Z),\quad (h,g,f)\mapsto h\circ(g\circ f)\]
+to the functor
+\[\sHom_{\mathcal{C}}(Y,Z)\times\sHom_{\mathcal{C}}(X,Y)\times\sHom_{\mathcal{C}}(W,X)\to\sHom_{\mathcal{C}}(W,Z),\quad (h,g,f)\mapsto (h\circ g)\circ f.\]
+We denote the value of $\alpha$ on a triple $(h,g,f)$ by $\alpha_{h,g,f}:h\circ(g\circ f)\Rightarrow(h\circ g)\circ f$, and these isomorphisms are called the \textbf{associativity constraints} of $\mathcal{C}$.\par
+\end{itemize}
+These data are required to satisfy the following conditions:
+\begin{itemize}
+\item[(C)] For every pair of objects $X,Y\in\Obj(\mathcal{C})$, the functors
+\begin{gather*}
+\sHom_{\mathcal{C}}(X,Y)\to\sHom_{\mathcal{C}}(X,Y),\quad f\mapsto f\circ\id_X\\
+\sHom_{\mathcal{C}}(X,Y)\to\sHom_{\mathcal{C}}(X,Y),\quad f\mapsto\id_Y\circ f
+\end{gather*}
+are fully faithful.
+\item[(P)] For every quadruple of composable $1$-morphisms
+\[\begin{tikzcd}
+V\ar[r,"e"]&W\ar[r,"f"]&X\ar[r,"g"]&Y\ar[r,"h"]&Z
+\end{tikzcd}\]
+in $\mathcal{C}$, the diagram of isomorphisms
+\[\begin{tikzcd}[row sep=4mm, column sep=1pt]
+&h\circ((g\circ f)\circ e)\ar[rr,Rightarrow,"\alpha_{h,g\circ f,e}"]&&(h\circ(g\circ f))\circ e\ar[rd,Rightarrow,"\alpha_{h,g,f\circ\id_e}"]&\\
+h\circ(g\circ(f\circ e))\ar[ru,Rightarrow,"\id_h\circ\alpha_{g,f,e}"]\ar[rrd,Rightarrow,"\alpha_{h,g,f\circ e}"]&&&&((h\circ g)\circ f)\circ e\\
+&&(h\circ g)\circ(f\circ g)\ar[rru,Rightarrow,"\alpha_{h\circ g,f,e}"]&&
+\end{tikzcd}\]
+commutes in the category $\sHom_{\mathcal{C}}(V,Z)$.
+\end{itemize}
+\begin{example}[\textbf{Ordinary Categories}]\label{2-cat ordinary cat example}
+Every ordinary category can be regarded as a strict $2$-category. More precisely, to each category $\mathcal{C}$ we can associate a strict $2$-category $\mathcal{C}'$ as follows:
+\begin{itemize}
+\item The objects of $\mathcal{C}'$ are objects of $\mathcal{C}$.
+\item For every pair of objects $X,Y\in\mathcal{C}$, objects of the category $\sHom_{\mathcal{C}'}(X,Y)$ are elements of the set $\Hom_{\mathcal{C}}(X,Y)$, and every morphism in $\sHom_{\mathcal{C}}(X,Y)$ is an identity morphism.
+\item For every triple of objects $X,Y,Z\in\mathcal{C}$, the composition functor
+\[\circ:\sHom_{\mathcal{C}'}(Y,Z)\times\sHom_{\mathcal{C}'}(X,Y)\to\sHom_{\mathcal{C}'}(X,Z)\]
+is given on objects by the composition map of $\mathcal{C}$.
+\item For every object $X\in\mathcal{C}$, the identity object $\id_X\in\sHom_{\mathcal{C}'}(X,X)$ coincides with the identity morphism $\id_X\in\Hom_{\mathcal{C}}(X,X)$.
+\end{itemize}
+In this situation, we will generally abuse terminology by identifying the strict $2$-category $\mathcal{C}'$ with the ordinary category $\mathcal{C}$.
+\end{example}
+\begin{example}[\textbf{Strict \bm{$2$}-Categories}]\label{2-cat strict as general 2-cat}
+Let $\mathcal{C}$ be any strict $2$-category. Then $\mathcal{C}$ can be viewed as a $2$-category by taking the unit and associativity constraints $\upsilon_X$ and $\alpha_{h,g,f}$ to be identity $2$-morphisms in $\mathcal{C}$.
+\end{example}
+\begin{remark}\label{2-cat underlying cat if strict}
+Let $\mathcal{C}$ be a $2$-category. If $\mathcal{C}$ is strict, then we can extract from $\mathcal{C}$ an underlying ordinary category having the same objects and $1$-morphisms. However, this operation has no counterpart for a general $2$-category $\mathcal{C}$: in general, composition of $1$-morphisms in $\mathcal{C}$ is associative only up to isomorphism.
+\end{remark}
+\begin{remark}
+Let $\mathcal{C}$ be a $2$-category. Then $\mathcal{C}$ can be obtained from an ordinary category if and only if every $2$-morphism in $\mathcal{C}$ is an identity $2$-morphism (note that a $2$-category with this property is automatically strict, by virtue of \cref{2-cat strict as general 2-cat}).
+\end{remark}
+\begin{remark}[\textbf{Endomorphism Categories}]\label{2-cat endomorphism cat monoidal}
+Let $\mathcal{C}$ be a $2$-category and let $X$ be an object of $\mathcal{C}$. We will write $\sEnd_{\mathcal{C}}(X)$ for the category $\sHom_{\mathcal{C}}(X,X)$. Then the composition law
+\[\circ:\sHom_{\mathcal{C}}(X,X)\times\sHom_{\mathcal{C}}(X,X)\to\sHom_{\mathcal{C}}(X,X)\]
+determines a monoidal structure on the category $\sEnd_{\mathcal{C}}(X)$. Note that, if $\mathcal{C}$ is an ordinary category (regarded as a strict $2$-category by \cref{2-cat ordinary cat example}), then the endomorphism category $\sEnd_{\mathcal{C}}(X)$ can be identified with the endomorphism monoid $\End_{\mathcal{C}}(X)$, regarded as a (strict) monoidal category.
+\end{remark}
+\begin{example}[\textbf{Delooping}]\label{2-cat delooping of monoidal cat}
+Let $\mathcal{M}$ be a category equipped with a (strict) monoidal structure $\otimes:\mathcal{M}\times\mathcal{M}\to\mathcal{M}$. We define a strict $2$-category $B\mathcal{M}$ as follows:
+\begin{itemize}
+\item The set of objects $\Obj(B\mathcal{M})$ is the singleton set $\{X\}$.
+\item The category $\sHom_{B\mathcal{M}}(X,X)$ is equal to $\mathcal{M}$.
+\item The composition functor $\circ:\sHom_{B\mathcal{M}}(X,X)\times\sHom_{B\mathcal{M}}(X,X)\to\sHom_{B\mathcal{M}}(X,X)$ is equal to the tensor product $\otimes:\mathcal{M}\times\mathcal{M}\to\mathcal{M}$.
+\item The identity morphism $\id_X$ is the (strict) unit object of $\mathcal{M}$.
+\end{itemize}
+The $2$-category $B\mathcal{M}$ is called the \textbf{delooping} of $\mathcal{M}$. Note that the constructions
+\[\mathcal{M}\mapsto B\mathcal{M},\quad \mathcal{C}\mapsto\sEnd_{\mathcal{C}}(X)\]
+induce mutually inverse bijections from (strict) monoidal categories to (strict) $2$-categories with a single object.
+\end{example}
+Let $\mathcal{C}$ be a $2$-category. Then there are two different notions of composition for the $2$-morphisms of $\mathcal{C}$:
+\begin{itemize}
+\item[(V)] Let $X$ and $Y$ be objects of $\mathcal{C}$. Suppose we are given $1$-morphisms $f,g,h:X\to Y$ and a pair of $2$-morphisms
+\[\gamma:f\Rightarrow g,\quad \delta:g\Rightarrow h.\]
+We can then apply the composition law in the ordinary category $\sHom_{\mathcal{C}}(X,Y)$ to obtain a $2$-morphism $f\Rightarrow h$, which is called the \textbf{vertical composition} of $\gamma$ and $\delta$.
+\item[(H)] Let $X,Y,Z$ be objects of $\mathcal{C}$. Suppose we are given 2-morphisms $\gamma:f\Rightarrow g$ in the category $\sHom_{\mathcal{C}}(X,Y)$ and $\gamma':f'\Rightarrow g'$ in the category HomC(Y,Z). Then the image of $(\gamma',\gamma)$ under the composition law
+\[\circ:\sHom_{\mathcal{C}}(Y,Z)\times\sHom_{\mathcal{C}}(X,Y)\to\sHom_{\mathcal{C}}(X,Z)\]
+is a $2$-morphism from $f'\circ f$ to $g'\circ g$, which is called the \textbf{horizontal composition} of $\gamma$ and $\gamma'$.
+\end{itemize}
+The terminology is motivated by the following graphical representations of the data described in (V) and (H):
+\[\begin{tikzcd}
+X\ar[r,bend left=60pt,"f",""{name=U, below}]\ar[r,"g"description,""{name=V1,above},""{name=V2,below}]\ar[r,bend right=60pt,swap,"h",""{name=W,above}]&Y\arrow[Rightarrow,from=U, to=V1,"\gamma"]\arrow[Rightarrow,from=V2, to=W,"\delta"]
+\end{tikzcd}\quad\quad\quad\begin{tikzcd}
+X\ar[r]&Y\ar[r]&Z
+\end{tikzcd}\]
+To avoid confusion, we will generally denote the vertical composition of $2$-morphisms $\gamma$ and $\delta$ by $\delta\gamma$ and the horizontal composition of $2$-morphisms $\gamma$ and $\gamma'$ by $\gamma'\circ\gamma$.
+\begin{remark}
+Let $\mathcal{C}$ be a $2$-category. For each object $X\in\Obj(\mathcal{C})$, the identity $1$-morphism $\id_X$ and the unit constraint $\upsilon_X$ are determined (up to unique isomorphism) by the composition law and associativity constraints. More precisely, given any other choice of identity morphism $\id_X'$ and unit constraint $\upsilon'_X:\id_X'\circ\id_X'\Rightarrow\id_X'$, there exists a unique invertible $2$-morphism $\gamma:\id_X\Rightarrow\id_X'$ for which the diagram
+\[\begin{tikzcd}
+\id_X\circ\id_X\ar[r,Rightarrow,"\upsilon_X"]\ar[d,swap,Rightarrow,"\gamma\circ\gamma"]&\id_X\ar[d,Rightarrow,"\gamma"]\\
+\id'_X\circ\id'_X\ar[r,Rightarrow,"\upsilon_X'"]&\id_X'
+\end{tikzcd}\]
+commutes. This follows from \cref{monoidal cat uniqueness of unit} applied to the monoidal category $\sEnd_{\mathcal{C}}(X)$ of \cref{2-cat endomorphism cat monoidal}.
+\end{remark}
+Let $\mathcal{C}$ be a $2$-category. For every $1$-morphism $f:X\to Y$ in $\mathcal{C}$, we have canonical isomorphisms
+\[\begin{tikzcd}
+\id_Y\circ(\id_Y\circ f)\ar[r,Rightarrow,"\alpha_{\id_Y,\id_Y,f}"]&(\id_Y\circ\id_Y)\circ f\ar[r,Rightarrow,"\upsilon_Y\circ\id_f"]&\id_Y\circ f
+\end{tikzcd}\]
+Since composition on the left with $\id_Y$ is fully faithful, it follows that there is a unique isomorphism $\lambda_f:\id_Y\circ f\Rightarrow f$ for which the diagram
+\[\begin{tikzcd}
+\id_Y\circ(\id_Y\circ f)\ar[rd,Rightarrow,"\id_{\id_Y}\circ\lambda_f"]\ar[rr,Rightarrow,"\alpha_{\id_Y,\id_Y,f}"]&&(\id_Y\circ\id_Y)\circ f\ar[ld,"\upsilon_Y\circ\id_f"]\\
+&\id_Y\circ f
+\end{tikzcd}\]
+commutes. The isomorphism $\lambda_f$ is called the left unit constraint. Similarly, there is a unique isomorphism $\rho_f:f\circ\id_X\Rightarrow f$ for which the diagram
+\[\begin{tikzcd}
+f\circ(\id_X\circ\id_X)\ar[rd,Rightarrow,"\id_{f}\circ\upsilon_X"]\ar[rr,Rightarrow,"\alpha_{f,\id_X,\id_X}"]&&(f\circ\id_X)\circ\id_X\ar[ld,"\rho_f\circ\id_{\id_X}"]\\
+&f\circ\id_X
+\end{tikzcd}\]
+commutes; The isomorphism $\rho_f$ is called the \textbf{right unit constraint}.
+\begin{remark}
+Let $\mathcal{C}$ be a $2$-category and let $X$ be an object of $\mathcal{C}$. For every $1$-morphism $f:X\to X$ in $\mathcal{C}$, the left and right unit constraints
+\[\lambda_f:\id_X\circ f\Rightarrow f,\quad \rho_f:f\circ\id_X\Rightarrow f\]
+coincide with the left and right unit constraints of the monoidal category $\sEnd_{\mathcal{C}}(X)$.
+\end{remark}
