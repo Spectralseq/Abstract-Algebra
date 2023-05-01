@@ -8778,3 +8778,131 @@ By \cref{scheme S-affine finite group quotient char}, if $X$ is defined by the q
 \end{proof}
 \subsection{Galois categories}
 
+\end{proof}
+\begin{example}\label{fibre cat cloven fiven by functor to Cat}
+Let $F:\mathcal{E}^{\op}\to\mathbf{Cat}$ be a functor. Then $F$ can be considered as a pseudo-functor by setting
+\[\mathcal{F}_S=F(S),\quad f^*=F(f),\quad c_{f,g}=\id_{(fg)^*},\]
+so we can construct the fibre category $\mathcal{F}$ associated with $F$. For a cloven fibre category $\mathcal{F}$ over $\mathcal{E}$ to be isomorphic to that defined by a functor $F:\mathcal{E}^{\op}\to\mathbf{Cat}$, it is necessary and sufficient that the following condition is satisfied for any morphisms $f,g$ of $\mathcal{E}$:
+\[(fg)^*=g^*f^*,\quad c_{f,g}=\id_{(fg)^*}.\]
+In terms of the set $K$ of transport morhisms, this signifies that $K$ is stable under composition. A cleavage of a category $\mathcal{F}$ over $\mathcal{E}$ satisfying this condition is said to be \textbf{splitting}, and a category $\mathcal{F}$ over $\mathcal{E}$ endowed with a splitting cleavage is called a \textbf{split fiber category over $\mathcal{E}$}. It is immediate that the category of split fiber categories over $\mathcal{E}$ is equivalent to $\sHom(\mathcal{E}^{\op},\mathbf{Cat})$.\par
+If $\mathcal{F}$ is a fibre category over $\mathcal{E}$, there does not exists (in general) a split over $\mathcal{F}$. Suppose for example that $\Obj(\mathcal{E})$ and $\Obj(\mathcal{F})$ are both reduced to a singleton, and that the endomorphism sets are groups $F$ and $E$, respectively. The functor $p$ then corresponds to a group homomorphism $\phi:E\to F$, and is surjective if $p$ is fibrant. We see that the cleavages of $\mathcal{F}$ over $\mathcal{E}$ corresponds to maps $s:E\to F$ such that $ps=\id_E$, and a cleavage over $\mathcal{F}$ is splitting if and only if $s$ is a group homomorphism. Therefore, the fibre category $\mathcal{F}$ is split if and only if the extension $F$ of the group $E$ by $G=\ker\phi$ is trivial.\par
+Suppose that $\mathcal{F}$ is a fibre category over $\mathcal{E}$ such that $\mathcal{F}_S$ are \textbf{rigid categories}, i.e. the automorphism groups of any object of $\mathcal{F}_S$ is trivial (in this case, $\mathcal{F}_S$ is also called a \textbf{setoid}). Then it is easy to see that there exists a splitting of $\mathcal{F}$ over $\mathcal{E}$. In fact, we first note that the question of the existence of a splitting is unchanged if we replaces $\mathcal{F}$ by an equivalent $\mathcal{E}$-category, which brings us to the case where $\mathcal{F}_S$ are \textit{sets}. In this case, the pullback of an object $\xi\in\Obj(\mathcal{F}_S)$ under a morphism $f:T\to S$ in $\mathcal{E}$ is necessarily unique (if exists), so we conclude that there eixsts a unique cleavage of $\mathcal{F}$ over $\mathcal{E}$, which is necessarily splitting. In particular, we obtain an equivalence from the category of fibre categories in setoids over $\mathcal{E}$ to the category of functors $\mathcal{E}^{\op}\to\mathbf{Set}$.
+\end{example}
+Before we proceed further to give examples of fibre categories, we shall introduce here the notion of \textit{cofibre} categories and bifibre categories. This is defined to be a category over $\mathcal{E}$ that has both pullbacks and pushouts. More precisely, consider a category $\mathscr{F}$ over $\mathcal{E}$, with structural functor $p:\mathcal{F}\to\mathcal{E}$. Then we also have a functor
+\[p^{\op}:\mathcal{F}^{\op}\to\mathcal{E}^{\op}\]
+on opposite categories. A morphism $\alpha:\eta\to\xi$ lying over $f:T\to S$ in $\mathcal{F}$ is said to be co-Cartesian if it is a Cartesian morphism in $\mathcal{F}^{\op}$ over $\mathcal{E}^{\op}$. Explicitly, this means for any object $\xi'$ in $\mathcal{F}_S$, the map
+\[\Hom_S(\xi,\xi')\to\Hom_f(\eta,\xi')\]
+is bijective. In this case, we also say that $(\xi,\alpha)$ is a direct image of $\eta$ under $f$, in the category $\mathcal{F}$. If such an image exists for any $\eta$ in $\mathcal{F}_T$, we then obtain a direct image functor, denoted by $f_*:\mathcal{F}_T\to\mathcal{F}_S$ (as always, this depends on the choice of diect images); it is therefore defined by the isomorphism of bifunctors over $\mathcal{F}_T^{\op}\times\mathcal{F}_S$:
+\[\Hom_S(f_*(\eta),\xi)\stackrel{\sim}{\to}\Hom_f(\eta,\xi).\]
+If $f_*$ exists, then for the inverse image functor $f^*$ to exist, it is necessary and sufficient that $f_*$ admits an adjoint functor, i.e. a functor $f^*:\mathcal{F}_S\to\mathcal{F}_T$ such that there is an isomorphism of bifunctors
+\[\Hom_S(f_*(\eta),\xi)\stackrel{\sim}{\to}\Hom_T(\eta,f^*(\xi)).\]
+Let $g:U\to T$ be another morphism in $\mathcal{E}$, and suppose that the inverse images and direct images exists for $f,g$ and $fg$. Consider the functorial homomorphisms
+\[c^{f,g}:(fg)_*\to f_*g_*,\quad c_{f,g}:g^*f^*\to (fg)^*.\]
+We note that if we consider $f_*g_*$ and $g^*f^*$ as an adjoint pair, as well as $(fg)_*$ and $(fg)^*$, then the preceding homomorphisms are corresponded under adjunction. Therefore, one of them is an isomorphism if and only if the other is. In particular, we obtain the following result:
+\begin{proposition}\label{fibre cat bi-prefibre is fibre iff bifire}
+Suppose that the category $\mathcal{F}$ over $\mathcal{E}$ is prefibre and coprefibre. Then for it to be fibre (resp. cofibre), it is necessary and sufficient that it is cofibre.
+\end{proposition}
+Of course, we say that $\mathcal{F}$ is coprefire (resp. cofibre) over $\mathcal{E}$ if $\mathcal{F}^{\op}$ is prefibre (resp. fibre) over $\mathcal{E}^{\op}$, and $\mathcal{F}$ is said to be \textbf{bifibre} if it is both fibre and cofibre over $\mathcal{E}$.
+\begin{example}[\textbf{Arrow category over $\mathcal{E}$}]
+Let $\mathcal{E}$ be a category. We define the \textbf{arrow category} over $\mathcal{E}$ as follows:
+\begin{itemize}
+\item Objects of $\mathbf{Arr}(\mathcal{E})$ are morphisms (arrows) in $\mathcal{E}$.
+\item If $f:T\to S$ and $g:Y\to X$ are objects of $\mathbf{Arr}(\mathcal{E})$, a morphism from $f$ to $g$ is defined to be a pair $(u,v)$ of morphisms $u:Y\to T$, $v:X\to S$ such that the following diagram is commutative:
+\[\begin{tikzcd}
+Y\ar[d,swap,"u"]\ar[r,"g"]&X\ar[d,"v"]\\
+T\ar[r,"f"]&S
+\end{tikzcd}\]
+\end{itemize}
+The functor which sends a morphism in $\mathcal{E}$ to its target then defines a canonical functor
+\[p:\mathbf{Arr}(\mathcal{E})\to\mathcal{E}.\]
+For any object $S$ of $\mathcal{E}$, the categorical fiber $\mathbf{Arr}(\mathcal{E})_S$ is canonically isomorphic to the category $\mathcal{E}_{/S}$ of objects lying over $S$.\par
+Consider a morphism $f:T\to S$ in $\mathcal{E}$, which then correponds to a canonical functor
+\[f_*:\mathcal{E}_{/T}=\mathbf{Arr}(\mathcal{E})_T\to\mathcal{E}_{/S}=\mathbf{Arr}(\mathcal{E})_S\]
+and a functorial isomorphism
+\[\Hom_S(f_*(\eta),\xi)\stackrel{\sim}{\to}\Hom_f(\eta,\xi)\]
+which makes $f_*$ a functor (called the \textbf{direct image functor} of $f$ in $\mathbf{Arr}(\mathcal{E})$). Moreover, we have 
+\[(\id_S)_*=\id_{\mathbf{Arr}(\mathcal{E})_S},\quad (fg)^*=f_*g_*,\quad c^{f,g}=\id_{fg},\]
+so $\mathbf{Arr}(\mathcal{E})$ is endowed with a co-splitting over $\mathcal{E}$, and a fortiori is co-fibre over $\mathcal{E}$. We also note that by definition, a morphism
+\[\begin{tikzcd}
+Y\ar[d,swap,"u"]\ar[r,"g"]&X\ar[d,"v"]\\
+T\ar[r,"f"]&S
+\end{tikzcd}\]
+in $\mathbf{Arr}(\mathcal{E})$ is Cartesian if and only if this square is Cartesian in $\mathcal{E}$, i.e. $Y$ is a fiber product of $X$ and $T$ over $S$. Therefore, the inverse image functor $f^*$ exists if and only if fiber products exists in $\mathcal{E}$. It follows from \cref{fibre cat bi-prefibre is fibre iff bifire} that if fiber products in $\mathcal{E}$, i.e. if $\mathcal{F}$ is prefibre over $\mathcal{E}$, then it is fibre over $\mathcal{E}$.
+\end{example}
+\begin{example}[\textbf{Category of presheaves over $\mathbf{Top}$}]
+Let $\mathcal{E}=\mathbf{Top}$ be the category of topological spaces. If $T$ is a topological space, we denote by $\mathcal{U}(T)$ the category of open subsets of $T$, where the morphisms are induced by inclusions. If $\mathcal{C}$ is a category, a functor $F:\mathcal{U}(T)^{\op}\to\mathcal{C}$ is called a presheaf over $T$ with values in $\mathcal{E}$, and a sheaf if it satisfies some additional exactness conditions. The category $\mathbf{Psh}(T)$ of presheaves over $T$ with values in $\mathcal{C}$, is by definition the category $\sHom(\mathcal{U}(T)^{\op},\mathcal{C})$, and the category $\mathbf{Sh}(T)$ of sheaves over $T$ with values in $\mathcal{T}$ is a full subcategory of $\mathbf{Psh}(T)$. If $f:T\to S$ is a morphism in $\mathcal{E}$, i.e. a continuous map of topological spaces, then it corresponds to a functor
+\[\mathcal{U}(S)\to\mathcal{U}(T),\quad U\mapsto f^{-1}(U),\]
+whence a functor
+\[f_*:\mathbf{Psh}(T)\to\mathbf{Psh}(S)\]
+called the direct image functor of presheaves under $f$. We also see that the direct image of a sheaf is a sheaf, so $f_*$ induces a functor $f_*:\mathbf{Sh}(T)\to\mathbf{Sh}(S)$. Moreoever, by the associativity of the composition of the functors, we have, for a second map $g:U\to T$, the identity
+\[(gf)_*=g_*f_*,\quad (\id_S)_*=\id_{\mathbf{Psh}(S)}.\]
+Therefore we obtain a functor $S\mapsto\mathbf{Psh}(S)$ (resp. $S\mapsto\mathbf{Sh}(S)$) from the category $\mathcal{E}$ to $\mathbf{Cat}$. The corresponding functor $S\mapsto\mathbf{Psh}(S)^{\op}$ (resp. $S\mapsto\mathbf{Sh}(S)^{\op}$) then defines a cofibre (and cosplitting) category over $\mathbf{Top}$, called the \textbf{cofibre category of presheaves} (resp. \textbf{sheaves}) \textbf{with values in $\mathcal{C}$}, and denoted by $\mathbf{Psh}$ (resp. $\mathbf{Sh}$). By the construction before \cref{fibre cat cloven given by pseudo-functor to Cat}, we see that a morphism of a presheaf $G$ over $T$ to a presheaf $F$ over $S$ is defined to be a couple $(\phi,f)$, where $f:T\to S$ is a continuous map and $\phi:F\to f_*(G)$ is a morphism in $\mathbf{Psh}(S)$. This description also applies to the morphisms of sheaves, since $\mathbf{Sh}$ is a full subcategory of $\mathbf{Psh}$.\par
+In most important cases, the categories $\mathbf{Psh}$ and $\mathbf{Sh}$ over $\mathcal{E}$ are also fibre categories, i.e., for any continuous map $f:T\to S$, the direct image functors $f_*:\mathbf{Psh}(T)\to\mathbf{Psh}(S)$ and $f_*:\mathbf{Sh}(T)\to\mathbf{Sh}(S)$ admit adjoints, which is then denoted by $f^*$ and called the \textbf{inverse image functor} of presheaves (resp. sheaves) by the continuous $f$. The functor $f^*:\mathbf{Psh}(T)\to\mathbf{Psh}(S)$ exists as long as the category $\mathcal{C}$ admits inductive limits, so the problem is that for $\mathbf{Sh}$. For example, if $\mathcal{C}=\mathbf{Set}$, then the inverse limit of a sheaf (considered as a presheaf) is in general not a sheaf, so we can not just hope that the inverse image functor of $\mathbf{Psh}$ restricts to $\mathbf{Sh}$ (despite their common notation $f^*$). Therefore, we see that $\mathbf{Sh}$ is a cofibre subcategory of $\mathbf{Psh}$, but not a \textit{fibre subcategory}, i.e. the inclusion functor $\mathbf{Sh}\to\mathbf{Psh}$ is not fibrant.\par
+The cofibre category $\mathbf{PSh}$ can be deduced from a more general cofibre category. For this, we note that the association $\mathcal{U}\mapsto\sHom(\mathcal{U},\mathcal{C})$ is naturally a contravariant functor on $\mathcal{U}$, from the category $\mathbf{Cat}$ to $\mathbf{Cat}$, so it defines a split fibre category over $\mathcal{E}=\mathbf{Cat}$, which we denote by $\mathbf{Cat}_{(-,\mathcal{C})}$. The objects of this category are the couples $(\mathcal{U},p)$ of a category $\mathcal{U}$ and a functor $p:\mathcal{U}\to\mathcal{C}$, and a morphism of $(\mathcal{U},p)$ to $(\mathcal{V},q)$ is essentially a couple $(f,u)$, where $f:\mathcal{U}\to\mathcal{V}$ is a functor and $u:p\to qf$ is a homomorphism of functors:
+\[\begin{tikzcd}[column sep=5mm,row sep=10mm]
+\mathcal{U}\ar[rd,swap,"p",""{name=U, below}]\ar[rr,"f"]&&\mathcal{V}\ar[ld,"q"]\\
+&\mathcal{C}&
+\arrow[Rightarrow,from=U,to=1-3,"u",shorten <=2mm,shorten >=2mm]
+\end{tikzcd}\]
+The composition of two morphisms $(f,u):(\mathcal{U},p)\to(\mathcal{V},q)$ and $(g,v):(\mathcal{V},q)\to(\mathcal{W},r)$ is given by the couple $(fg,w)$, where $w:p\to rgf$ is given by the composition $w=(v\circ f)\cdot u$:
+\[\begin{tikzcd}[column sep=5mm,row sep=10mm]
+&\mathcal{V}\ar[rr,"g"]\ar[rd,"q"description,""{name=V}]&&\mathcal{W}\ar[ld,"r"]\\
+\mathcal{U}\ar[ru,"f"]\ar[rr,swap,"p",""{name=U,above}]&&\mathcal{C}
+\arrow[Rightarrow,from=U,to=1-2,"u",shorten <=1mm,shorten >=2mm,pos=0.4]
+\arrow[Rightarrow,from=V,to=1-4,"v",
+start anchor={[xshift=-1pt,yshift=-3pt]},
+shorten <=1mm,shorten >=2mm]
+\end{tikzcd}\]
+The projection functor $\mathscr{F}=\mathbf{Cat}_{(-,\mathcal{C})}\to\mathcal{E}$ is then defined to associate a couple $(\mathcal{U},p)$ with the object $\mathcal{U}$, and the categorical fiber $\mathcal{F}_\mathcal{U}$ over $\mathcal{U}$ is the category $\sHom(\mathcal{U},\mathcal{C})$. If $\mathcal{C}$ admits inductive limits, then the fibre category $\mathbf{Cat}_{(-,\mathcal{C})}$ over $\mathbf{Cat}$ is equally cofibre over $\mathbf{Cat}$, i.e. we can define the direct image of a functor $p:\mathcal{U}\to\mathcal{C}$ by a functor $f:\mathcal{U}\to\mathcal{V}$. The category $\mathbf{Psh}$ of presheaves is induced from $\mathcal{F}$ by the base change defined by the functor
+\[\mathbf{Top}^{\op}\to\mathbf{Cat},\quad S\mapsto\mathcal{U}(S)\]
+which gives a fibre category on $\mathbf{Top}^{\op}$, and by passing to the opposite category, we obtain the cofibre category $\mathbf{Psh}$ of the presheaves over $\mathbf{Top}$. Note that under this identification, the inverse image (resp. direct image) of a functor corresponds to the direct image (resp. inverse image) of a presheaf.
+\end{example}
+\begin{example}
+Let $\mathcal{F}$ be a category over $\mathcal{E}$ and $S$ be an object of $\mathcal{E}$ acted by a group $G$. This object then corresponds to a functor $\lambda:\mathcal{E}'\to\mathcal{E}$ from category $\mathcal{E}'$ defined by $G$ (with a single object and the endomorphism being $G$) to $\mathcal{E}$. By base change, we then obtain a category $\mathscr{F}'$ over $\mathcal{E}'$, which is fibre (resp. cofibre) if and only if $\mathcal{F}$ is fibre (resp. cofibre) over $\mathcal{E}$ (\cref{fibre cat morphism Cartesian iff base change}). A section of $\mathcal{E}'$ over $\mathcal{F}'$ (necessarily Cartesian, because $\mathcal{E}'$ is a gropoid and any isomorphism in $\mathcal{F}'$ is Cartesian) can also be interpreted as an $\mathcal{E}$-functor $\mathcal{E}'\to\mathcal{F}$ lying over $\lambda$, or also as an object $\xi$ in $\mathcal{F}$ acted by $G$ which is "lying over" the object $S$.
+\end{example}
+\begin{example}\label{fibre cat given by quasi-inverse of cat}
+If the base category $\mathcal{E}$ is reduced to two objects $a,b$ and the only nontrivial morphisms are $f:a\to b$ and $g:b\to a$, which are inverses of each other, a normalized cloven category $\mathcal{F}$ over $\mathcal{E}$ is essentially the a system formed by two categories $\mathcal{F}_a$, $\mathcal{F}_b$ and an adjoint pair $G\dashv F:\mathcal{F}_a\to\mathcal{F}_b$ of functors, which are equivalences of categories. In fact, we can choose $\mathcal{F}_a$ and $\mathcal{F}_b$ to be the fibers of $\mathcal{F}$, the $F$, $G$ are the functors $f^*$ and $g^*$, and the two isomorphisms
+\[u:FG\stackrel{\sim}{\to}\id_{\mathcal{F}_a},\quad GF\stackrel{\sim}{\to}\id_{\mathcal{F}_b}\]
+are $c_{g,f}$ and $c_{f,g}$. The usual compatibility conditions followws from (\ref{fibre cat cloven composition isomorphism with identity formula-4}) for the composition $fgf$ and $gfg$.\par
+An interesting case is the following: assume that we have
+\[\mathcal{F}_b=\mathcal{F}_a^{\op},\quad G=F^{\op},\quad v=u^{\op}.\]
+In general, a functor $D:\mathcal{C}\to\mathcal{C}^{\op}$ and an isomorphism $u:DD^\op\stackrel{\sim}{\to}\id_\mathcal{C}$ such that the isomorphism $u^{\op}:D^\circ D\stackrel{\sim}{\to}\id_{\mathcal{C}^{\op}}$ makes $(D,D^\circ)$ an adjoint pair is called an \textbf{autoduality} on $\mathcal{C}$.
+\end{example}
+\begin{example}\label{fibre cat over set}
+Let $\mathcal{E}$ be a discrete category, so that it is defined by a set $I=\Obj(\mathcal{E})$. Then a category $\mathcal{F}$ over $\mathcal{E}$ is given a family of categories $\mathcal{F}_i$ ($i\in I$), the categorical fibers, any category $\mathcal{F}$ over $\mathcal{E}$ is fibre, any $\mathcal{E}$-functor $\mathcal{F}\to\mathcal{G}$ is Cartesian, and we have a canonical isomorphism
+\[\sHom_{/\mathcal{E}}(\mathscr{F},\mathcal{G})\stackrel{\sim}{\to}\prod_i\sHom(\mathscr{F}_i,\mathcal{G}_i).\]
+In particular, the category $\mathbf{\Gamma}(\mathcal{F}/\mathcal{E})=\mathbf{\Gamma}_{\Cart}(\mathcal{F}/\mathcal{E})$ is isomorphic to $\prod_i\mathcal{F}_i$.
+\end{example}
+\begin{example}\label{fibre cat given by a Hom functor}
+Suppose that $\mathcal{E}$ has exactly two objects $S$ and $T$, and a unique nontrivial morphism $f:T\to S$. Then a category $\mathcal{F}$ over $\mathcal{E}$ is defined by two categories $\mathcal{F}_S$, $\mathcal{F}_T$ and a bifunctor $H(-,-)$ over $\mathcal{F}_T^\op\times\mathcal{F}_S$ with values in $\mathbf{Set}$. In fact, this bifunctor is given by $H(\eta,\xi)=\Hom_f(\eta,\xi)$, where $\eta\in\Obj(\mathcal{F}_T)$ and $\xi\in\Obj(\mathcal{F}_S)$. For the considered category to be fibre (or prefibre, which is the same), it is necessary and it is sufficient that the functor $H(\eta,-)$ be representable for any $\eta\in\Obj(\mathcal{F}_T)$, and for it to be cofibre, it is necessary and sufficient that the functor $H(-,\xi)$ be representable for any $\xi\in\Obj(\mathcal{F}_S)$.
+\end{example}
+\subsection{Functors of fibre categories}
+Let $\mathcal{F}$ be a normalized cloven category over $\mathcal{E}$. For any object $S$ of $\mathcal{E}$, we denote by $i_S:\mathcal{F}_S\to\mathcal{F}$ the inclusion functor. We then have a functorial homomorphism, for any morphism $f:T\to S$ in $\mathcal{E}$:
+\[\alpha_f:i_Tf^*\to i_S,\]
+where $f^*$ is the inverse image functor $\mathcal{F}_S\to\mathcal{F}_T$ for $f$ defined by the cleavage. Now let $F:\mathcal{F}\to\mathcal{C}$ be a functor from $\mathcal{F}$ into a category $\mathcal{C}$. For $S\in\Obj(\mathcal{E})$, we set
+\[F_S:F\circ i_S:\mathcal{F}_S\to\mathcal{C}\]
+and for any morphism $f:T\to S$ in $\mathcal{E}$, we define
+\[\varphi_f:F\circ\alpha_f:F_Tf^*\to F_S.\]
+We therefore obtain a family $(F_S)$ of functors $\mathcal{F}_S\to\mathcal{C}$, and a family $(\varphi_f)$ of homomorphisms of functors $F_Tf^*\to F_S$. This family satisfies the following conditions:
+\begin{itemize}
+\item[(a)] $\varphi_{\id_S}=\id_{F_S}$.
+\item[(b)] For two morphisms $f:T\to S$ and $g:U\to T$ in $\mathcal{E}$, we have a commutative diagram
+\[\begin{tikzcd}
+F_Ug^*f^*\ar[r,"F_U\circ c_{f,g}"]\ar[d,"\varphi_g\circ f^*"]&F_U(fg)^*\ar[d,"\varphi_{fg}"]\\
+F_Tf^*\ar[r,"\varphi_f"]&F_S
+\end{tikzcd}\]
+\end{itemize}
+In fact, the fitst relation is trivial, and the second one is obtained by applying $F$ to the commutative diagram
+\[\begin{tikzcd}
+g^*f^*(\xi)\ar[r,"c_{f,g}(\xi)"]\ar[d,"\alpha_g(f^*(\xi))"]&(fg)^*(\xi)\ar[d,"\alpha_{fg}(\xi)"]\\
+f^*(\xi)\ar[r,"\varphi_f"]&\xi
+\end{tikzcd}\]
+for any object $\xi$ in $\mathcal{F}_S$.\par
+If 
+\section{Faithfully flat descent}
+The notion "descent" provides a general framework for "glueing" process of objects, and hence the "glueing" of categories. The most classical case of glueing is giving a topological space $X$ and an open covering $(X_i)$ of $X$; if for each $i$ we are given a fiber space (say) $E_i$ over $X_i$, and for each pair $(i,j)$ an isomorphism $f_{ji}$ from $E_i|_{X_ij}$ to $E_j|_{X_ij}$ (where $X_{ij}=X_i\cap X_j$), satisfying a transitive condition (that is, $f_{kj}f_{ji}=f_{ki}$), then we know that there exists a unique (up to isomorphism) space $E$ over $X$, defined by the condition that we have isomorphisms $f_i:E|_{X_i}\to E_i$, satisfying the relations $f_{ji}=f_jf_i^{-1}$. Let $X'$ be the sum of $X_i$, which is a fiber space over $X$ (endowed with the continous map $X'\to X$). The data of the spaces $E_i$ then can be interpreted as a fiber space $E'$ over $X'$, and the isomorphisms $f_{ji}$ give an isomorphism of the inverse images $E_1''$ and $E_2''$ of $E'$ (under the canonical projection) over $X''=X\times_XX'$. The gluing condition can then be written as an identity between isomorphisms of the fiber spaces $E_1'''$ and $E_3'''$ over the triple fiber product $X'''=X'\times_XX'\times_XX'$ (where $E_i'''$ is the inverse image of $E'$ over $X'''$ under the canonical projection of index $i$). The construction of $E$ from $E_i$ and $f$ is a typical case of a "descent" process.
+\subsection{Descent of quasi-coherent modules}
+Let $\mathbf{Sch}$ be the category of schemes. We consider the category $\mathcal{F}$ of couples $(X,\mathscr{F})$, where $X$ is a scheme and $\mathscr{F}$ is an $\mathscr{O}_X$-module over $X$. A morphism from $(X,\mathscr{F})$ to $(Y,\mathscr{G})$ is defined to be a couple $(f,\varphi)$, where $f:X\to Y$ is a morphism of schemes and $\varphi:\mathscr{G}\to f_*(\mathscr{F})$ is a homomorphism. This category can be considered as a fibre category over $\mathbf{Sch}$, where the inverse image functor of a morphism $f:X\to Y$ in $\mathbf{Sch}$ is given by the usual pullback functor of modules defined by $f$. As the inverse image of a quasi-coherent module is quasi-coherent, we see that the full subcategory formed by couples $(X,\mathscr{F})$, wherer $\mathscr{F}$ is a quasi-coherent $\mathscr{O}_X$-module, is a fibre subcategory. This category is called the \textbf{fibre category of quasi-coherent modules over schemes}, and denoted by $\mathbf{Qcoh}$. By definition, the structural functor $p:\mathbf{Qcoh}\to\mathbf{Sch}$ sends a couplt $(X,\mathscr{F})$ to its base scheme $X$, and the categorical fiber of $\mathbf{Qcoh}$ at an object $X$ in $\mathbf{Sch}$ is the \textit{opposite} category $\mathbf{Qcoh}(X)^{\op}$.\par
+Recall that a morphism $f:X\to Y$ of ringed spaces is called \textbf{faithfully flat} if it is flat and surjective, and \textbf{quasi-compact} if the inverse image of any quasi-compact open is quasi-compact. By 
+\begin{theorem}
+Let $\mathbf{Qcoh}$ be the fibre category of quasi-coherent modules over schemes. Let $g:S'\to S$ be a faithfully flat and quasi-compact morphism of schemes. Then $g$ is a morphism of effective 
