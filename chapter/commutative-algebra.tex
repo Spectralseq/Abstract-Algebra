@@ -932,7 +932,7 @@ Let $A$ be a local ring and $\m$ its maximal ideal. For a family $(y_i)$ of elem
 \begin{proof}
 If this condition holds, it can be assumed that $(x_i)$ is a subfamily of a family $(x_i)$ of elements of $M$ such that $(1\otimes x_i)$ is a basis of $M/\m M$ and \cref{local ring module M/mM is free then M free} then proves that $(x_i)$ is a basis of $M$.
 \end{proof}
-\begin{corollary}\label{local ring free iff projective for finite presented module}
+\begin{corollary}\label{local ring fp module free iff flat iff projective}
 Let $A$ be a local ring, $\m$ its maximal ideal and $M$ an $A$-module. Suppose that one of the following conditions holds:
 \begin{itemize}
 \item[(a)] $M$ is finitely presented;
@@ -960,7 +960,7 @@ Let $A$ be a local ring and $\m$ its maximal radical. Let $M$ and $N$ be two fin
 \end{itemize}
 \end{proposition}
 \begin{proof}
-We know that, if $N/\phi(M)$ is free, then $\phi(M)$ is a direct factor of $N$, hence (\rmnum{3}) implies (\rmnum{1}). Conversely, (\rmnum{1}) implies that $\coker\phi$, isomorphic to a complement of $\phi(M)$ in $N$, is a finitely generated projective $A$-module and a fortiori finitely presented, hence this module is free by \cref{local ring free iff projective for finite presented module} and thus (\rmnum{1}) implies (\rmnum{3}).\par
+We know that, if $N/\phi(M)$ is free, then $\phi(M)$ is a direct factor of $N$, hence (\rmnum{3}) implies (\rmnum{1}). Conversely, (\rmnum{1}) implies that $\coker\phi$, isomorphic to a complement of $\phi(M)$ in $N$, is a finitely generated projective $A$-module and a fortiori finitely presented, hence this module is free by \cref{local ring fp module free iff flat iff projective} and thus (\rmnum{1}) implies (\rmnum{3}).\par
 On the other hand, (\rmnum{1}) obviously implies (\rmnum{2}). For simplicity we write $\widetilde{M}=(A/\m)\otimes_AM$ and $\widetilde{N}=(A/\m)\otimes_AN$. As $M$ and $N$ are finitely generated, the duals $\widetilde{M}^*$ and $\widetilde{N}^*$ of the $(A/\m)$-modules $\widetilde{M}$ and $\widetilde{N}$ are canonically identified with $M^*\otimes_A(A/\m)$ and $N^*\otimes_A(A/\m)$ and $(1\otimes\phi)^t$ with $1\otimes\phi^t$. As $\widetilde{M}$ and $\widetilde{N}$ are vector spaces over the field $A/\m$, the hypothesis that $1\otimes\phi$ is injective implies that $(1\otimes\phi)^t$ is surjective. \cref{local ring module surjective iff tensor with (A/m)} then shows that $\phi^t$ is surjective and we have thus proved that (\rmnum{2}) implies (\rmnum{4}).\par
 Finally we show that (\rmnum{4}) implies (\rmnum{1}). Suppose that $\phi^t$ is surjective. As $M^*$ is free, there exists a homomorphism $\psi^t:M^*\to N^*$ such that $\phi^t\circ\phi^t=\id$. As $M$ and $N$ are free and finitely generated, there exists a homomorphism $\psi:N\to M$  such that the dual of $\psi$ is $\psi^t$, whence 
 \[\id_M^t=\id_{M^*}=\phi^t\circ\psi^t=(\psi\circ\phi)^t\]
@@ -1077,7 +1077,7 @@ Let $A$ be a ring, $B$ an $A$-algebra and $T$ a multiplicative subset of $B$. If
 \begin{proof}
 We have $T^{-1}N=T^{-1}B\otimes_BN$, so the proposition follows from \cref{module flat tensor product is flat}.
 \end{proof}
-\begin{proposition}
+\begin{proposition}\label{module flat over base change iff}
 Let $\rho:A\to B$ be a homomorphism and $N$ be a $B$-module. The following properties are equivalent:
 \begin{itemize}
 \item[(a)] $N$ is a flat $A$-module;
@@ -1699,7 +1699,7 @@ Let $A$ be a ring and $P$ an $A$-module. Then the following properties are equiv
 \end{itemize}
 \end{theorem}
 \begin{proof}
-By \cref{module fp prop}, we know that a finitely generated projective module is finitely presented. If $P$ is a projective $A$-module, $P_\m=P\otimes_AA_\m$ is a projective $A_\m$-module. Finally, as $A_\m$ is a local ring, every finitely presented projective $A_\m$-module is free (\cref{local ring free iff projective for finite presented module}). This shows (\rmnum{1}) implies (\rmnum{2}). Also, (\rmnum{2}) implies (\rmnum{5}) by \cref{localization module free at p then free at f}.\par
+By \cref{module fp prop}, we know that a finitely generated projective module is finitely presented. If $P$ is a projective $A$-module, $P_\m=P\otimes_AA_\m$ is a projective $A_\m$-module. Finally, as $A_\m$ is a local ring, every finitely presented projective $A_\m$-module is free (\cref{local ring fp module free iff flat iff projective}). This shows (\rmnum{1}) implies (\rmnum{2}). Also, (\rmnum{2}) implies (\rmnum{5}) by \cref{localization module free at p then free at f}.\par
 Now assume (\rmnum{5}), and let $E$ be the set of $f\in A$ such that $P_f$ is a finitely generated free $A_f$-module. The hypothesis implies that $E$ is contained in no maximal ideal of $A$, hence $E$ generates the ideal $A$ and there therefore exist a finite family $(f_i)_{i\in I}$ of elements of $E$ that generates $A$, whence (\rmnum{4}).\par
 Assume (\rmnum{4}) and consider the ring $B=\prod_{i\in I}A_{f_i}$ and the $B$-module $M=\bigoplus_{i\in I}P_{f_i}=P\otimes_AB$. For every index $i$, there exists a free $A_{f_i}$-module $L_i$ such that $P_i$ is a direct factor of $L_i$ and it may be assumed that all the $L_i$ have the same rank; then $L=\bigoplus_{i\in I}L_i$ is a free $B$-module of which $M$ is a direct factor, in other words $M$ is a finitely generated projective $B$-module. As $B$ is a faithfully flat $A$-module, we conclude that $P$ is a finitely generated projective $A$-module by \cref{module extension to faithfully flat ring finiteness iff}.\par
 Finally, we show that (\rmnum{4}) implies (\rmnum{3}) and (\rmnum{3}) implies (\rmnum{5}). If (\rmnum{4}) holds, then it follows from \cref{Spec finite standard open cov glue property} that $P$ is finitely generated. On the other hand, for every prime ideal $\p$ of $A$, there exists an index $i$ such that $f_i\notin\p$; then $P_{\p}=(P_{f_i})_{\p_{f_i}}$ and hence by hypothesis $P_\p$ is free and of the same rank as $P_{f_i}$, which proves (\rmnum{3}).\par
@@ -1715,7 +1715,7 @@ Let $\p$ be a prime ideal of $A$, set $\rank_\p=r$ and let $(y_1,\dots,y_r)$ be 
 Every finitely presented flat module is projective.
 \end{corollary}
 \begin{proof}
-If $P$ is a finitely presented flat $A$-module and $\m$ a maximal ideal of $A$, the $A_\m$-module $P_\m$ is flat and finitely presented and hence free (\cref{local ring free iff projective for finite presented module}). Condition (\rmnum{2}) of \cref{module finite projective iff} therefore holds.
+If $P$ is a finitely presented flat $A$-module and $\m$ a maximal ideal of $A$, the $A_\m$-module $P_\m$ is flat and finitely presented and hence free (\cref{local ring fp module free iff flat iff projective}). Condition (\rmnum{2}) of \cref{module finite projective iff} therefore holds.
 \end{proof}
 \subsection{The rank function}
 \begin{definition}
@@ -1747,7 +1747,8 @@ It is sufficient to apply \cref{projective module rank n iff}(\rmnum{3}) with $\
 Let $E$ and $F$ be two finitely generated projective $A$-modules. We know that $E\oplus F$, $E\otimes_AF$, $\Hom_A(E,F)$ and the dual $E^*$ of $E$ are projective and finitely generated, so is the exterior power $\bigwedge^pE$ for every integer $p>0$. Also, it follows immediately from definition and the exactness of localization that, for every prime ideal $\p$ of $A$,
 \begin{gather*}
 \rank_\p(E\oplus F)=\rank_\p(E)+\rank_\p(F),\quad\rank_\p(E\times F)=\rank_\p(E)\rank_\p(F),\\
-\rank_\p(\Hom_A(E,F))=\rank_\p(E)\rank_\p(F),\quad\rank_\p(E^*)=\rank_\p(E),\quad \rank_\p(\bigwedge\nolimits^pE)=\binom{\rank_\p(E)}{p}.
+\rank_\p(\Hom_A(E,F))=\rank_\p(E)\rank_\p(F),\quad\rank_\p(E^*)=\rank_\p(E),\\
+\rank_\p(\bigwedge\nolimits^pE)=\binom{\rank_\p(E)}{p}.
 \end{gather*}
 If the ranks of $E$ and $F$ are defined, so are those of $E\oplus F$, $E\otimes_AF$, $\Hom_A(E,F)$, $E^*$ and $\bigwedge^pE$ and the above equations also hold with the index $\p$ omittcd. Moreover:
 \begin{corollary}
@@ -2858,7 +2859,7 @@ If $\gr(M)$ is finitely generated, there is a finite system of homogeneous gener
 Let $A$ be a complete Hausdorff filtered ring whose filtration is exhaustive. If $\gr(A)$ is Noetherian, so is $A$.
 \end{corollary}
 \begin{corollary}\label{filtration complete ring M=M_1+N then M=N}
-Let $A$ be a complete filtered ring, $(A_n)$ its filtration, $M$ a Hausdorff filtered $A$-module, $(E_n)$ its filtration and $N$ a finitely generated submodule of $M$; suppose that $A_0=A$ and $M_0=M$.
+Let $A$ be a complete filtered ring, $(A_n)$ its filtration, $M$ a Hausdorff filtered $A$-module, $(M_n)$ its filtration and $N$ a finitely generated submodule of $M$; suppose that $A_0=A$ and $M_0=M$.
 \begin{itemize}
 \item[(a)] If for all $n\in\Z$ we have $M_n=M_{n+1}+A_nN$, then $M=N$.
 \item[(b)] If the filtration on $M$ is derived from that on $A$, the relation $M=M_1+N$ implies $M=N$.
@@ -2937,11 +2938,11 @@ Suppose conversely that the conditions of the statement hold and let $(x_\lambda
 \gr(L)\ar[r,"\cong"]&\gr(A)\otimes_{A/\m}(L/\m L)\ar[r,"\eta"]&\gr(A)\otimes_{A/\m}(M/\m M)\ar[r,"\gamma_M"]&\gr(M)
 \end{tikzcd}
 \]
-where $\eta$ is the bijection map the class $1\otimes\bar{e}_\lambda$ onto $1\otimes\bar{x}_\lambda$. The hypothesis then implies that $\gr(\phi)$ is bijective and the conclusion follows with the aid of \cref{filtration gr(phi) injective imply phi injective if}, \cref{module generating set in M/mM} and \cref{filtration gr(phi) surjective imply phi surjective if}.
+where $\eta$ is the bijection map the class $1\otimes\bar{e}_\lambda$ onto $1\otimes\bar{x}_\lambda$. The hypothesis then implies that $\gr(\phi)$ is bijective and the conclusion follows from \cref{filtration gr(phi) injective imply phi injective if}, \cref{module generating set in M/mM} and \cref{filtration gr(phi) surjective imply phi surjective if}.
 \end{proof}
-Recall that we have already seen that if $A$ is a ring and $\a$ is an ideal of $A$ such that $A$ is Hausdorff and complete with the $\a$-adic topology, then the topological ring $A$ is cannically identified with the inverse limit of the discrete rings $A_i=A/\a^{i+1}$ ($i\in\N$) with respect to the canonical homomorphisms 
+We have already seen that if $A$ is a ring and $\a$ is an ideal of $A$ such that $A$ is Hausdorff and complete with the $\a$-adic topology, then the topological ring $A$ is cannically identified with the inverse limit of the discrete rings $A_i=A/\a^{i+1}$ ($i\in\N$) with respect to the canonical homomorphisms 
 \[\pi_{ij}:A/\a^{j+1}\to A/\a^{i+1}\]
-for $i\leq j$; note that $\pi_{ij}$ is surjective and if $\n_{ij}$ is its kernel, then
+for $i\leq j$. Note that $\pi_{ij}$ is surjective and if $\n_{ij}$ is its kernel, then
 \[\n_{ij}=\a^{i+1}/\a^{j+1}=(\a/\a^{j+1})^{i+1}=(\n_{0,j})^{i+1};\]
 in particular $(\n_{0,j})^{j+1}=0$. Conversely, we have the following result:
 \begin{proposition}\label{ring inverse limit complete and finiteness prop}
@@ -2957,25 +2958,49 @@ Then the following assertions hold:
 \end{itemize}
 \end{proposition}
 \begin{proof}
-The first assertion (\rmnum{1}) follows from \cref{uniform space inverse limit of complete is complete} and \cref{set inverse limit countable cofinal surjective}. For each $i\in\N$, let $\m_{i+1}=\ker\pi_i$, $N_{i+1}=\ker u_i$; then by hypothesis (b),
-\[\m_{i+1}=\llim_k\pi_{i,i+k}^{-1}(0)=\llim_k\n_{i+1}^{i+k},\quad N_{i+1}=\llim_ku_{i,i+k}^{-1}(0)=\llim_k\n_{i+k}^{i+1}M_{i+k};\]
+The first assertion follows from \cref{uniform space inverse limit of complete is complete} and \cref{set inverse limit countable cofinal surjective}. For each $i$, let $\m_{i+1}=\ker\pi_i$ and $N_{i+1}=\ker u_i$; then by hypothesis (b),
+\[\m_{i+1}=\llim_k(\ker\pi_{i,i+k})=\llim_k\n_{i+1}^{i+k},\quad N_{i+1}=\llim_k(\ker u_{i,i+k})=\llim_k\n_{i+k}^{i+1}M_{i+k},\]
 and as $\pi_{i+k}$ and $u_{i+k}$ are surjective, we also have
 \begin{align}\label{ring inverse limit complete and ft prop-1}
 \pi_{i+k}(\m_{i+1})=\n_{i+k}^{i+1},\quad u_{i+k}(N_{i+1})=\n_{i+k}^{i+1}M_{i+k}.
 \end{align}
-We prove that $\m_iN_j\sub N_{i+j}$ for $i,j\geq 1$, which amounts to showing that $u_{i+j-1}(\m_iN_j)=0$. For this, note that $\n_k^{k+1}=0$ for $k\geq 0$ as it is the kernel of $\pi_{kk}=\id$, so
-\[u_{i+j-1}(\m_iN_j)=\pi_{i+j-1}(\m_i)u_{i+j-1}(N_j)=\n_{i+j-1}^i(\n_{i+j-1}^jM_{i+j-1})=0;\]
-we see similarly that $\m_i\m_j\sub\m_{i+j}$. If for $i\leq 0$ we set $\m_i=A$ and $N_i=M$, then $(\m_i)_{i\in\Z}$ is a filtration of $A$ and $(N_i)_{i\in\Z}$ is a filtration of $M$ compatible with that of $A$. The topology on $A$ and $M$ are obviously those defined by these filtrations. Now let $\a$ be an ideal of $A$ such that $\pi_1(\a)=\n_1$ and $M'$ be the submodule of $M$ generated by a subset $E$ of $M$ such that $u_0(E)$ generates $M_0$; we are going to show that
+We first prove that $\m_iN_j\sub N_{i+j}$, which amounts to saying that $u_{i+j-1}(\m_iN_j)=0$. For this, note that $\n_k^{k+1}=0$ as it is the kernel of $\pi_{kk}=\id$, so
+\[u_{i+j-1}(\m_iN_j)=\pi_{i+j-1}(\m_i)u_{i+j-1}(N_j)=\n_{i+j-1}^i(\n_{i+j-1}^jM_{i+j-1})=0.\]
+Similarly, we see that $\m_i\m_j\sub\m_{i+j}$. If we set $\m_i=A$ and $N_i=M$ for $i\leq 0$, then $(\m_i)_{i\in\Z}$ is a filtration of $A$ and $(N_i)_{i\in\Z}$ is a filtration of $M$ compatible with that of $A$, and the topology on $A$ and $M$ are obviously those defined by these filtrations. Now let $\a$ be an ideal of $A$ such that $\pi_1(\a)=\n_1$ and $M'$ be the submodule of $M$ generated by a subset $E$ of $M$ such that $u_0(E)$ generates $M_0$. We are going to prove that for each $i\geq 0$,
 \begin{align}\label{ring inverse limit complete and ft prop-2}
-N_i=\a^iM'+N_{i+1}\for i\geq 0.
+N_i=\a^iM'+N_{i+1}.
 \end{align}
-Let us write $\a_i=\pi_i(\a)$ and $M'_i=u_i(M')$; from the definition of $N_{i+1}$, it then suffices to show that
+Let us write $\a_i=\pi_i(\a)$ and $M'_i=u_i(M')$. From the definition of $N_{i+1}$, it then suffices to show that
 \[u_i(N_i)=\a_i^iM'_i.\]
-This is true if $i=0$, since $N_0=M$ and $M'_0=M_0$ by hypothesis. If $i\geq 1$, then $u_i(N_i)=\n_i^iM_i$ by (\ref{ring inverse limit complete and ft prop-1}). As $\pi_{1,i}$ is surjective and $\pi_{0,i}=\pi_{0,1}\circ\pi_{1,i}$, $\pi_{1,i}$ maps the kernel $\n_i$ of $h_{0,i}$ onto the kernel of $h_{0,1}$ and $\n_i=\pi_{1,i}^{-1}(\n_1)$, so
-\[\pi_{1,i}(\a_i)=\pi_1(\a)=\n_1=\pi_{1,i}(\n_i);\]
-as the kernel of $\pi_{1,i}$ is $\n_i^2$, we conclude that $\a_i\sub\n_i\sub\a_i+\n_i^2$, whence $\n_i=\a_i+\n_i^2$. Moreover $u_{0,i}(M'_i)=u_0(M')=M_0=u_{0,i}(M_i)$ and as $\ker u_{0,i}=\n_iM_i$, $M_i=M'_i+\n_iM_i$, so
-\[\n_iM_i=(\a_i+\n_i^2)^i(M'_i+\n_iM_i).\]
-Now $\a_i^k\n_i^{i+1-k}\sub\n_i^{i+1}=0$ for $0\leq k\leq i$, so it follows that $u_i(N_i)=\n_iM_i=\a_i^iM'_i$, which proves (\ref{ring inverse limit complete and ft prop-2}). Moreover, $\m_1=\pi_1^{-1}(\n_1)$, so $\a\sub\m_1$ and therefore $\a^i\sub\m_1^i\sub\m_i$, whence $N_i\sub\m_iM'+N_{i+1}$. On the other hand, obviously $\m_iM\sub N_i$ and so $N_i=\m_iM'+N_{i+1}$ for $i\geq 0$; it then follows from \cref{filtration complete ring M=M_1+N then M=N} that $M'=M$, which completes the proof.
+This is true if $i=0$, since $N_0=M$ and $M'_0=M_0$ by hypothesis. If $i\geq 1$, then $u_i(N_i)=\n_i^iM_i$ by (\ref{ring inverse limit complete and ft prop-1}). As $\pi_{1,i}$ is surjective and $\pi_{0,i}=\pi_{0,1}\circ\pi_{1,i}$, the transition homomorphism $\pi_{1,i}$ maps the kernel $\n_i$ of $\pi_{0,i}$ onto the kernel $\n_1$ of $\pi_{0,1}$ and $\n_i=\pi_{1,i}^{-1}(\n_1)$, so
+\[\pi_{1,i}(\a_i)=\pi_1(\a)=\n_1=\pi_{1,i}(\n_i).\]
+As the kernel of $\pi_{1,i}$ is $\n_i^2$, we then conclude that $\a_i\sub\n_i\sub\a_i+\n_i^2$, whence $\n_i=\a_i+\n_i^2$. On the other hand, we have $u_{0,i}(M'_i)=u_0(M')=M_0=u_{0,i}(M_i)$, and as $\ker u_{0,i}=\n_iM_i$ by hypothesis, this implies $M_i=M'_i+\n_iM_i$, so
+\begin{align}\label{ring inverse limit complete and ft prop-3}
+\n_i^iM_i=(\a_i+\n_i^2)^i(M'_i+\n_iM_i).
+\end{align}
+We note that $\a_i^k\n_i^{i+1-k}\sub\n_i^{i+1}=0$ for $0\leq k\leq i$, so it follows from (\ref{ring inverse limit complete and ft prop-1}) and (\ref{ring inverse limit complete and ft prop-3}) that
+\[u_i(N_i)=\n_i^iM_i=\a_i^iM'_i,\]
+which proves (\ref{ring inverse limit complete and ft prop-2}). Now since $\m_1=\pi_1^{-1}(\n_1)$, we have $\a\sub\m_1$ and then $\a^i\sub\m_1^i\sub\m_i$, whence $N_i\sub\m_iM'+N_{i+1}$ in view of (\ref{ring inverse limit complete and ft prop-2}). On the other hand, it is clear that $\m_iM\sub N_i$, so $N_i=\m_iM'+N_{i+1}$ for $i\geq 0$. It then follows from \cref{filtration complete ring M=M_1+N then M=N} that $M'=M$, which completes the proof.
+\end{proof}
+\begin{corollary}\label{ring inverse limit topology is adic if finite ideal}
+Under the hypotheses of \cref{ring inverse limit complete and finiteness prop}, suppose that $M_0$ is a finitely generated $A_0$-module and that the ideal $\n_1$ of $A_1$ is finitely generated. Let $\m_{i+1}$ (resp. $N_i$) be the kernel of the canonical homomorphism $\pi_i:A\to A_i$ (resp. $u_i:M\to M_i$), and set $\m=\m_1$. Then
+\begin{itemize}
+\item[(a)] For each $i>0$, we have $\m_i=\m^i$ and $N_i=\m^iM$. In other words, the topology of $A$ and $M$ are the $\m$-adic topology.
+\item[(b)] $\m/\m^2$ is a finitely generated $A$-module.
+\end{itemize}
+\end{corollary}
+\begin{proof}
+We preserve the notation of the proof of \cref{ring inverse limit complete and finiteness prop}. The hypotheses here allow us to assume that the ideal $\a$ is \textit{finitely generated}. Let $i,j$ be positive integers, then by (\ref{ring inverse limit complete and ft prop-2}) we have
+\[N_{i+j}=\a^j(\a^iM)+N_{i+j+1}\sub\m_j(\a^iM)+N_{i+j+1}.\]
+Conversely, $\m_j(\a^iM)\sub\m_j\m_iM\sub\m_{i+j}N\sub N_{i+j}$, so
+\[N_{i+j}=\m_i(\a^iM)+N_{i+j+1}.\]
+As $\a$ and $M$ are finitely generated $A$-modules, so is $\a^iM$. Applying \cref{filtration complete ring M=M_1+N then M=N} to the module $N_i$ with the filtration $(N_{ij})_{j\in\Z}$ defined by $N_{ij}=N_i$ if $j<0$ and $N_{ij}=N_{i+j}$ if $j\geq 0$, we then obtain $N_i=\a^iM$, whence $N_i\sub\m^iM$. But we also have $\m^iM\sub\m_iM\sub N_i$, so $N_i=\m^iM$. In particular, applying this to the case where $M_i=A_i$ and $u_{ij}=\pi_{ij}$, we obtain that $\m_i=\m^i$. Moreover, $\m=\a+\m^2$ by (\ref{ring inverse limit complete and ft prop-2}), which proves the last assertion of the corollary.
+\end{proof}
+\begin{corollary}\label{ring inverse limit Noe iff A_0 Noe}
+Under the hypotheses of \cref{ring inverse limit topology is adic if finite ideal}, for $A$ to be Noetherian, it is necessary and sufficient that $A_0$ is Noetherian.
+\end{corollary}
+\begin{proof}
+This condition is necessary since $A_0$ is isomorphic to a quotient of $A$, and is sufficient in view of \cref{filtration complete ring gr(A) Noe imply A Noe}.
 \end{proof}
 \section{The adic topology on Noetherian rings}
 Let $A$ be a filtered ring, $M$ a filtered $A$-module and $(A_n)$ and $(M_n)$ be the corresponding filtrations. Since we only consider the $\a$-adic filtration, we may assume that all filtrations are exhaustive and consist of submodules. The \textbf{Rees ring} of $A$ is then defined by
@@ -3573,7 +3598,7 @@ Substituting $a_j$ for $X_j$ for $1\leq j\leq r$ in the $f_i$, we see immediatel
 \end{proof}
 \section{Complements on complete rings}
 \subsection{Admissible rings}
-Let $A$ be a linearly topologized ring and $\mathfrak{I}$ be an open ideal of $A$. We say that $\mathfrak{I}$ is a nilideal if for any open neighborhood $V$ of $0$ in $A$, there exists an integer $n>0$ such that $\mathfrak{I}^n\sub V$ (which means, by abusing language, that $(\mathfrak{I}^n)$ tends to $0$). The linearly topologized $A$ is called \textbf{preadmissible} if there exists a nilideal of $A$, and $A$ is \textbf{admissible} if it is preadmissible and is complete and separated.\par
+Let $A$ be a linearly topologized ring and $\mathfrak{I}$ be an open ideal of $A$. We say that $\mathfrak{I}$ is a \textbf{nilideal} if for any open neighborhood $V$ of $0$ in $A$, there exists an integer $n>0$ such that $\mathfrak{I}^n\sub V$ (which means, by abusing language, that $(\mathfrak{I}^n)$ tends to $0$). The linearly topologized $A$ is called \textbf{preadmissible} if there exists a nilideal of $A$, and $A$ is \textbf{admissible} if it is preadmissible and is complete and separated.\par
 It is clear that if $\mathfrak{I}$ is a nilideal and $\mathfrak{K}$ is an open ideal of $A$, then $\mathfrak{I}\cap\mathfrak{K}$ is also a nilideal. The nilideals of a preadmissible ring $A$ then form a fundamental system of open ideals (but note that the power $\mathfrak{I}^n$ of a nilideal if not necessarily open).
 \begin{lemma}\label{topo ring nilpotent element iff}
 Let $A$ be a linearly topologized ring.
@@ -3636,7 +3661,7 @@ For a linearly topologized ring be to admissible, it is necessary and sufficient
 If these are satisfied, the kernel $\mathfrak{I}$ of $u_0:A\to A_0$ is equal to $\llim\mathfrak{I}_\lambda$.
 \end{proposition}
 \begin{proof}
-This condition is necessary in view of the above remarks, since we can choose a fundamental system $(\mathfrak{I}_\lambda)$ of neighbrohoods of $0$ formed by nilideals contained in a fixed nilideal $\mathfrak{I}_0$, and note that $\mathfrak{I}_0^n\sub\mathfrak{I}_\lambda$ for sufficiently large $n$. The converse of this follows from the definition of projective limits, and the last assertion is immediate.
+This condition is necessary in view of the above remarks, since we can choose a fundamental system $(\mathfrak{I}_\lambda)$ of neighbrohoods of $0$ formed by nilideals contained in a fixed nilideal $\mathfrak{I}_0$, and note that $\mathfrak{I}_0^n\sub\mathfrak{I}_\lambda$ for sufficiently large $n$. The converse of this follows from the definition of projective limits, since $\mathfrak{I}$ is then a nilideal of $A$, and the last assertion is immediate.
 \end{proof}
 Let $A$ be an admissible ring and $\mathfrak{I}$ be an ideal of $A$ contained in a nilideal (which means $(\mathfrak{I}^n)$ tends to $0$). We can then consider the $\mathfrak{I}$-adic topology on $A$, and the hypothesis on $A$ implies that $\bigcap_n\mathfrak{I}^n=0$, so the $\mathfrak{I}$-adic topology on $A$ is separated.
 \begin{proposition}\label{admissible ring I-adic complete separated if I^n nilpotent closed}
@@ -3652,15 +3677,16 @@ Let $A$ be an admissible ring, $\mathfrak{I}$ be a nilideal of $A$ such that the
 These conditions are clearly necessary. Conversely, if they are satisfied, then since $\gr(A)$ is generated by $\gr_1(A)=\mathfrak{I}/\mathfrak{I}^2$ over $\gr_0(A)=A/\mathfrak{I}$, it is Noetherian by Hilbert basis theorem, and the conclusion follows from \cref{filtration complete ring gr(A) Noe imply A Noe}.
 \end{proof}
 If $A$ is an adic ring and $\mathfrak{I}$ is a defining ideal of $A$, then $A$ is the projective limit of the discrete rings $A_i=A/\mathfrak{I}^{i+1}$, which is identified with the $\mathfrak{I}$-adic completion of $A$. Conversely, we can in fact use this to characterize adic rings such that there exists a defining ideal $\mathfrak{I}$ such that $\mathfrak{I}/\mathfrak{I}^2$ is finitely generated, as the following proposition shows:
-\begin{proposition}\label{adic ring given by projective limit}
+\begin{proposition}\label{adic ring given by I-adic completion}
 Let $A$ be a ring, $\mathfrak{I}$ be an ideal of $A$ such that $\mathfrak{I}/\mathfrak{I}^2$ is a finitely generated $A/\mathfrak{I}$-module.
 \begin{itemize}
 \item[(a)] The ring $\widehat{A}=\llim(A/\mathfrak{I}^{n+1})$ is an adic ring. If $\widehat{\mathfrak{I}}$ is the closure of the canonical image of $\mathfrak{I}$ in $A$, then $\widehat{\mathfrak{I}}$ is a finitely generated nilideal of $A$, and $\widehat{\mathfrak{I}}^n$ is the closure of the canonical image of $\mathfrak{I}^n$ in $A$. Moreover, $\widehat{A}/\widehat{\mathfrak{I}}^n$ is isomorphic to $A/\mathfrak{I}^n$ and $\widehat{\mathfrak{I}}/\widehat{\mathfrak{I}}^2$ to $\mathfrak{I}/\mathfrak{I}^2$, and $\widehat{\mathfrak{I}}$ is isomorphic to $\llim(\mathfrak{I}/\mathfrak{I}^{n+1})$.
 \item[(b)] Let $M$ be an $A$-module such that $M/\mathfrak{I}M$ is a finitely generated $A/\mathfrak{I}$-module. Then $\widehat{M}=\llim(M/\mathfrak{I}^{n+1}M)$ is a finitely generated $A$-module, $\widehat{\mathfrak{I}}^n\widehat{M}$ is the closure of the canonical image of $\mathfrak{I}^nM$, and $\widehat{M}/\widehat{\mathfrak{I}}^n\widehat{M}$ is isomorphic to $M/\mathfrak{I}^nM$.
 \end{itemize}
+Moreover, for $A$ to be Noetherian, it is necessary and sufficient that $A_0$ is Noetherian.
 \end{proposition}
 \begin{proof}
-It is clear that the conditions of \cref{ring inverse limit complete and finiteness prop} are satisfied.
+It is clear that the conditions of \cref{ring inverse limit complete and finiteness prop} and \cref{ring inverse limit topology is adic if finite ideal} are satisfied, and the last assertion follows from \cref{ring inverse limit Noe iff A_0 Noe}.
 \end{proof}
 \subsection{Complete localizations}
 Let $A$ be a linearly topologized ring, $(\mathfrak{I}_\lambda)$ be a fundamental system of neighborhoods of $0$ formed by ideals of $A$, and $S$ be a multiplicative subset of $A$. Let $u_\lambda:A\to A_\lambda=A/\mathfrak{I}_\lambda$ be the canonical homomorphism, and for $\mathfrak{I}_\mu\sub\mathfrak{I}_\lambda$, let $u_{\lambda\mu}:A_\mu\to A_\lambda$ be the canonical homomorphism. Put $S_\lambda=u_\lambda(S)$, so that $u_{\lambda\mu}(S_\mu)=S_\lambda$. The homomorphisms $u_{\lambda\mu}$ then induce canonical surjections $S_\mu^{-1}A_\mu\to S_\lambda^{-1}A_\lambda$, which form a projective system and we denote by $A\{S^{-1}\}$ its projective limit. It is clear that this does not depend on the choice of the system $(\mathfrak{I}_\lambda)$.
@@ -3737,7 +3763,7 @@ For (b), put $A_i=A/\mathfrak{I}^{i+1}$, and let $u_{ij}:A_j\to A_i$ be the cano
 Under the hypothesis of \cref{topo ring complete localization admissible adic prop}(b), we have $(\mathfrak{I}\{S^{-1}\})^n=\mathfrak{I}^n\{S^{-1}\}$.
 \end{corollary}
 \begin{proof}
-This is already proved in the proof of \cref{topo ring complete localization admissible adic prop}, in view of \cref{ring inverse limit complete and finiteness prop}.
+This follows from \cref{ring inverse limit complete and finiteness prop}, in view of the proof of \cref{topo ring complete localization admissible adic prop}.
 \end{proof}
 \begin{proposition}\label{Noe adic ring complete localization flat}
 Let $A$ be an adic Noetherian ring and $S$ be a multiplicative subset of $A$. Then $A\{S^{-1}\}$ is a flat $A$-module.
@@ -3771,7 +3797,7 @@ Under the hypotheses of \cref{admissible ring complete localization at prime res
 By \cref{topo ring complete localization admissible adic prop}(b) and \cref{Noe adic ring complete successive localization flat}, the ring $A\{S^{-1}\}$ is Noetherian and flat over $A_{\{S\}}$. As the homomorphism $A_{\{S\}}\to A\{S^{-1}\}$ is local, we then conclude that $A\{S^{-1}\}$ is faithfully flat over $A_{\{S\}}$, and hence Noetherian (\cref{ring faithfully flat Noe Artin descent}).
 \end{proof}
 \subsection{Complete tensor products}
-Let $A$ be a linearly topologized ring and $M,N$ be two linearly topologized $A$-modules. Let $\mathfrak{I}$, $V$, $W$ be neighborhoods of $0$ in $A$, $M$, $N$, respectively, which are $A$-modules and such that $\mathfrak{I}\cdot M\sub V$, $\mathfrak{I}\cdot N\sub W$. Then the quotient modules $M/V$ and $N/W$ can be considered as $(A/\mathfrak{I})$-modules. If $\mathfrak{I}$, $V$, $W$ runs through the systems of open neighborhoods satisfying the preceding conditions, it is immediate that the modules $(M/V)\otimes_{A/\mathfrak{I}}(N/W)$ form a projective system of modules over the projective system $A/\mathfrak{I}$, so by passing to limit we obtain a module over the completion $\widehat{A}$ of $A$, which is called the complete tensor product of $M$ and $N$, and denoted by $M\hat{\otimes}_AN$. Note that since $M/V$ is canonically identified with $\widehat{M}/\widehat{V}$, where $\widehat{V}$ is the closure of $V$ in $\widehat{M}$, the complete tensor product is canonically identified with $\widehat{M}\hat{\otimes}_{\widehat{A}}\widehat{N}$.\par
+Let $A$ be a linearly topologized ring and $M,N$ be two linearly topologized $A$-modules. Let $\mathfrak{I}$, $V$, $W$ be neighborhoods of $0$ in $A$, $M$, $N$, respectively, which are $A$-modules and such that $\mathfrak{I}\cdot M\sub V$, $\mathfrak{I}\cdot N\sub W$. Then the quotient modules $M/V$ and $N/W$ can be considered as $(A/\mathfrak{I})$-modules. If $\mathfrak{I}$, $V$, $W$ runs through the systems of open neighborhoods satisfying the preceding conditions, it is immediate that the modules $(M/V)\otimes_{A/\mathfrak{I}}(N/W)$ form a projective system of modules over the projective system $A/\mathfrak{I}$, so by passing to limit we obtain a module over the completion $\widehat{A}$ of $A$, which is called the complete tensor product of $M$ and $N$, and denoted by $M\hat{\otimes}_AN$. Note that since $M/V$ is canonically identified with $\widehat{M}/\widehat{V}$, where $\widehat{V}$ is the closure of $V$ in $\widehat{M}$, the complete tensor product is canonically identified with the completion of $\widehat{M}\otimes_{\widehat{A}}\widehat{N}$, hence with $\widehat{M}\hat{\otimes}_{\widehat{A}}\widehat{N}$.\par
 We also note that the tensor products $(M/V)\otimes_A(N/W)$ and $(M/V)\otimes_{A/\mathfrak{I}}(N/W)$ are both canonically idnetified with the quotient $(M\otimes_AN)/(\im(V\otimes_AN)+\im(M\otimes_AW))$, so the complete tensor product $M\hat{\otimes}_AN$ is the completion of the $A$-module $M\otimes_AN$ endowed with the topology induced by the submodules $\im(V\otimes_AN)+\im(M\otimes_AW)$. For simplicity, we say that this topology is the \textbf{tensor product} of the given topologies on $M$ and $N$.\par
 Let $u:M\to M'$ and $v:N\to N'$ be continuous homomorphisms of linearly topologized $A$-modules. It is immediate that $u\otimes v$ is continuous for the tensor product topologies on $M\otimes_AN$ and $M'\otimes_AN'$, respectively, so by passing to completion, we deduce a continuous homomorphism $M'\hat{\otimes}_AN'\to M\hat{\otimes}_AN$, which we denote by $u\hat{\otimes}v$. In this way, the construction $(M,N)\mapsto M\hat{\otimes}_AN$ is then a bifunctor on the category of linearly topologized $A$-modules. Moreover, in the same way we can define the complete tensor product for finitely many linearly topologized $A$-modules, and it is clear that this construction satisfies the commutativity and associativity.\par
 Let $B$ and $C$ be linearly topologized $A$-algebras. Then the tensor product of the topologies on $B$ and $C$ is a linear topology on $B\otimes_AC$, so $B\hat{\otimes}_AC$ is endowed with a topological $\widehat{A}$-algebra structure. This algebra is called the complete tensor product of the algebras $B$ and $C$.\par
@@ -12622,7 +12648,7 @@ It is clear that (\rmnum{1})$\Rightarrow$(\rmnum{2}) and (\rmnum{3})$\Rightarrow
 Finally, suppose that condition (\rmnum{4}) is satisfied, and let $\p$ be a prime ideal of $A$ containing $\mathfrak{I}$. Then the $A_\p/\mathfrak{I}_\p$-module $\mathfrak{I}_\p/\mathfrak{I}_\p^2$ is free. Let $\bm{x}=(x_1,\dots,x_r)$ be a sequence of elements of $\mathfrak{I}_\p$ whose image forms a basis for $\mathfrak{I}_\p/\mathfrak{I}_\p^2$. The sequence $\bm{x}$ generates $\mathfrak{I}_\p$ by Nakayama's lemma, and satisfies condition (\rmnum{4}) of \cref{completely secant ideal generated by sequence iff}. Therefore the ideal $\mathfrak{I}_\p$ of $A_\p$ is completely secant, and $\mathfrak{I}$ is then completely secant at $\p$.
 \end{proof}
 \begin{remark}
-Suppose that the ideal $\mathfrak{I}$ is completely secant and let $\bm{x}=(x_1,\dots,x_r)$ be a sequence of elements of $\mathfrak{I}$ such that for any maximal ideal $\m\in V(\mathfrak{I})$, the image of $\bm{x}$ in $\mathfrak{I}/\m\mathfrak{I}$ forms a basis for the $A/\m$-vector space $\mathfrak{I}/\m\mathfrak{I}$. Then the $A/\mathfrak{I}$-module $\mathfrak{I}/\mathfrak{I}^2$ is free and the canonical image of $\bm{x}$ in $\mathfrak{I}/\mathfrak{I}^2$ forms a basis: in fact, it suffices to verify that for each $\m\in V(\mathfrak{I})$, the image of $\bm{x}$ forms a basis for the $A_\m/\mathfrak{I}_\m$-module $\mathfrak{I}_\m/\mathfrak{I}^2_\m$, and this follows from \cref{local ring module M/mM is free then M free} and \cref{local ring free iff projective for finite presented module} since the $A_\m/\mathfrak{I}_\m$-module $\mathfrak{I}_\m/\mathfrak{I}^2_\m$ is projective by \cref{Noe ring completely secant ideal iff alpha and beta isomorphism}.
+Suppose that the ideal $\mathfrak{I}$ is completely secant and let $\bm{x}=(x_1,\dots,x_r)$ be a sequence of elements of $\mathfrak{I}$ such that for any maximal ideal $\m\in V(\mathfrak{I})$, the image of $\bm{x}$ in $\mathfrak{I}/\m\mathfrak{I}$ forms a basis for the $A/\m$-vector space $\mathfrak{I}/\m\mathfrak{I}$. Then the $A/\mathfrak{I}$-module $\mathfrak{I}/\mathfrak{I}^2$ is free and the canonical image of $\bm{x}$ in $\mathfrak{I}/\mathfrak{I}^2$ forms a basis: in fact, it suffices to verify that for each $\m\in V(\mathfrak{I})$, the image of $\bm{x}$ forms a basis for the $A_\m/\mathfrak{I}_\m$-module $\mathfrak{I}_\m/\mathfrak{I}^2_\m$, and this follows from \cref{local ring module M/mM is free then M free} and \cref{local ring fp module free iff flat iff projective} since the $A_\m/\mathfrak{I}_\m$-module $\mathfrak{I}_\m/\mathfrak{I}^2_\m$ is projective by \cref{Noe ring completely secant ideal iff alpha and beta isomorphism}.
 \end{remark}
 \begin{corollary}\label{Noe ring flat extension completely secant iff}
 Let $\rho:A\to B$ be a flat homomorphism of Noetherian rings, and $\mathfrak{I}$ be an ideal of $A$. 

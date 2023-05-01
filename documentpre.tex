@@ -76,6 +76,7 @@ root-radius=.06cm]{dynkin-diagrams}
 %-----------------------------------------------------
 %设置页面样式
 %\geometry{top=3.5cm,bottom=3.5cm}
+%\linespread{1.15}
 \geometry{hcentering}
 \pagestyle{fancy}
 \setlength{\headheight}{15.0pt}
@@ -85,12 +86,19 @@ root-radius=.06cm]{dynkin-diagrams}
 \fancyhead[LO]{\bf\nouppercase{\leftmark}}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
+ 
+%-------------------------------------------------------
+%定义能编号的paragraph
+\usepackage{chngcntr}
+\counterwithout{paragraph}{subsubsection}
+\renewcommand{\theparagraph}{\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{paragraph}}
+\setcounter{secnumdepth}{4}
 
-%--------------------------------
-%修改section的自动引用名
-\renewcommand{\sectionautorefname}{\S}
-\renewcommand{\chapterautorefname}{Chapter}
-%--------------------------------
+%---------------------------------------------------------
+%---控制enumerate编号正体
+\usepackage{enumitem}
+\setlist[enumerate,1]{font=\upshape}
+
 
 \makeatletter%define roman numbers
 \newcommand{\rmnum}[1]{\romannumeral #1}
@@ -113,17 +121,24 @@ root-radius=.06cm]{dynkin-diagrams}
 \tikzset{
   commutative diagrams/.cd,
   arrow style=tikz,
-  diagrams={>={Computer Modern Rightarrow[length=4pt,width=3pt]}},
+  diagrams={>={Computer Modern Rightarrow[length=5pt,width=4pt]}},
   symbol/.style={
     draw=none,
     every to/.append style={
       edge node={node [sloped, allow upside down, auto=false]{$#1$}}}
   },
-  row sep/normal=10mm,
-  column sep/normal=10mm
+  row sep/normal=8mm,
+  column sep/normal=8mm
 }
 
 %------------------------------------------------
+%引入mathabx包的widecheck
+\DeclareFontFamily{U}{mathx}{}
+\DeclareFontShape{U}{mathx}{m}{n}{ <-> mathx10 }{}
+\DeclareSymbolFont{mathx}{U}{mathx}{m}{n}
+\DeclareFontSubstitution{U}{mathx}{m}{n}
+\DeclareMathAccent{\widecheck}{0}{mathx}{"71}
+\DeclareMathAccent{\widebar}{0}{mathx}{"73}
 
 %改变下标基线--------------------------------------
 %\usepackage{subdepth}
@@ -282,6 +297,15 @@ root-radius=.06cm]{dynkin-diagrams}
 \def\gldim{\mathrm{gl.dim}}
 \def\projdim{\mathrm{proj.dim}}
 \def\injdim{\mathrm{inj.dim}}
+\def\pr{\mathrm{pr}}
+\def\Arr{\mathrm{Arr}}
+\def\Cart{\mathrm{Cart}}
+\def\Cov{\mathrm{Cov}}
+\def\PSh{\mathrm{PSh}}
+\def\Sh{\mathrm{Sh}}
+\def\Ouv{\mathrm{Ouv}}
+\def\Esp{\mathrm{Esp}}
+\def\Topos{\mathrm{Topos}}
 %-----------------------------
 
 
@@ -294,6 +318,9 @@ root-radius=.06cm]{dynkin-diagrams}
 \def\Int{\operatorname{Int}}
 %-----------------------------
 
+%--------------------text定义
+\def\et{\textup{\'et}}
+\def\Zar{\textup{Zar}}
 %--------------------其他定义
 \def\sub{\subseteq}
 \def\sups{\supseteq}
@@ -307,16 +334,15 @@ root-radius=.06cm]{dynkin-diagrams}
 %------------------------------
 
 %------------------------------
-\newcommand{\hash}{\raisebox{\depth}{\#}}
 \renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
 \renewcommand{\i}{\mathrm{i}}
 %------------------------------
 
 %------------------------------花写Hom,Ext,End,Proj
-\DeclareMathOperator{\sHom}{\mathscr{H}\hspace*{-2pt}\text{\kern -3pt {\calligra\large om}}\,}
-\DeclareMathOperator{\sExt}{\mathscr{E}\hspace*{-0.4pt}\text{\kern -3pt {\calligra\large xt}}\,}
-\DeclareMathOperator{\sEnd}{\mathscr{E}\hspace*{-0.6pt}\text{\kern -3pt {\calligra\large nd}}\,}
+\DeclareMathOperator{\sHom}{\mathcal{H}\hspace*{-0.4pt}\textit{om}\hspace{0.5pt}}
+\DeclareMathOperator{\sExt}{\mathcal{E}\hspace*{-1.3pt}\textit{xt}\hspace{0.5pt}}
+\DeclareMathOperator{\sEnd}{\mathcal{E}\hspace*{-1pt}\textit{nd}\hspace{0.5pt}}
 \DeclareMathOperator{\sProj}{\mathscr{P}\hspace*{-0.5pt}\textit{roj}}
 %------------------------------
 
@@ -337,77 +363,10 @@ root-radius=.06cm]{dynkin-diagrams}
 %-------------------------------------------
 
 
-%---------------------------------------------------------
-\makeatletter
-\let\save@mathaccent\mathaccent
-\newcommand*\if@single[3]{%
-  \setbox0\hbox{${\mathaccent"0362{#1}}^H$}%
-  \setbox2\hbox{${\mathaccent"0362{\kern0pt#1}}^H$}%
-  \ifdim\ht0=\ht2 #3\else #2\fi
-  }
-%The bar will be moved to the right by a half of \macc@kerna, which is computed by amsmath:
-\newcommand*\rel@kern[1]{\kern#1\dimexpr\macc@kerna}
-%If there's a superscript following the bar, then no negative kern may follow the bar;
-%an additional {} makes sure that the superscript is high enough in this case:
-\newcommand*\widebar[1]{\@ifnextchar^{{\wide@bar{#1}{0}}}{\wide@bar{#1}{1}}}
-%Use a separate algorithm for single symbols:
-\newcommand*\wide@bar[2]{\if@single{#1}{\wide@bar@{#1}{#2}{1}}{\wide@bar@{#1}{#2}{2}}}
-\newcommand*\wide@bar@[3]{%
-  \begingroup
-  \def\mathaccent##1##2{%
-%Enable nesting of accents:
-    \let\mathaccent\save@mathaccent
-%If there's more than a single symbol, use the first character instead (see below):
-    \if#32 \let\macc@nucleus\first@char \fi
-%Determine the italic correction:
-    \setbox\z@\hbox{$\macc@style{\macc@nucleus}_{}$}%
-    \setbox\tw@\hbox{$\macc@style{\macc@nucleus}{}_{}$}%
-    \dimen@\wd\tw@
-    \advance\dimen@-\wd\z@
-%Now \dimen@ is the italic correction of the symbol.
-    \divide\dimen@ 3
-    \@tempdima\wd\tw@
-    \advance\@tempdima-\scriptspace
-%Now \@tempdima is the width of the symbol.
-    \divide\@tempdima 10
-    \advance\dimen@-\@tempdima
-%Now \dimen@ = (italic correction / 3) - (Breite / 10)
-    \ifdim\dimen@>\z@ \dimen@0pt\fi
-%The bar will be shortened in the case \dimen@<0 !
-    \rel@kern{0.6}\kern-\dimen@
-    \if#31
-      \overline{\rel@kern{-0.6}\kern\dimen@\macc@nucleus\rel@kern{0.4}\kern\dimen@}%
-      \advance\dimen@0.4\dimexpr\macc@kerna
-%Place the combined final kern (-\dimen@) if it is >0 or if a superscript follows:
-      \let\final@kern#2%
-      \ifdim\dimen@<\z@ \let\final@kern1\fi
-      \if\final@kern1 \kern-\dimen@\fi
-    \else
-      \overline{\rel@kern{-0.6}\kern\dimen@#1}%
-    \fi
-  }%
-  \macc@depth\@ne
-  \let\math@bgroup\@empty \let\math@egroup\macc@set@skewchar
-  \mathsurround\z@ \frozen@everymath{\mathgroup\macc@group\relax}%
-  \macc@set@skewchar\relax
-  \let\mathaccentV\macc@nested@a
-%The following initialises \macc@kerna and calls \mathaccent:
-  \if#31
-    \macc@nested@a\relax111{#1}%
-  \else
-%If the argument consists of more than one symbol, and if the first token is
-%a letter, use that letter for the computations:
-    \def\gobble@till@marker##1\endmarker{}%
-    \futurelet\first@char\gobble@till@marker#1\endmarker
-    \ifcat\noexpand\first@char A\else
-      \def\first@char{}%
-    \fi
-    \macc@nested@a\relax111{\first@char}%
-  \fi
-  \endgroup
-}
-\makeatother
-%---------------------------------------------------------
+
+
+%--------------------------------------------------------
+%定义widecheck
 
 
 %---------------------------------------------------------

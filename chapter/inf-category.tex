@@ -39,7 +39,7 @@ These constructions determine adjoint functors
 \end{tikzcd}\]
 relating the category $\mathbf{Set}_\Delta$ of simplicial sets to the category $\mathbf{Top}$ of topological spaces. For any (pointed) topological space $X$, \cref{simplicial set singular homology from Sing} and \cref{simplicial set pi_1 from Sing} the singular homology and fundamental group of $X$ can be recovered from the simplicial set $\Sing_\bullet(X)$. In fact, one can say more: under mild assumptions, the entire homotopy type of $X$ can be recovered from $\Sing_\bullet(X)$. More precisely, there is always a canonical map $|\Sing_\bullet(X)|\to X$ (given by the counit of the adjunction described above), and Giever proved that it is always a weak homotopy equivalence (hence a homotopy equivalence when $X$ has the homotopy type of a CW complex). Consequently, for the purpose of studying homotopy theory, nothing is lost by replacing $X$ by $\Sing_\bullet(X)$ and working in the setting of simplicial sets, rather than topological spaces. In fact, it is possible to develop the theory of algebraic topology in entirely combinatorial terms, using simplicial sets as surrogates for topological spaces. However, not every simplicial set $S_\bullet$ behaves like the singular complex of a space, and it is therefore necessary to single out a class of "good" simplicial sets to work with. Later we will introduce a special class of simplicial sets, called \textit{Kan complexes}. By a theorem of Milnor, the homotopy theory of Kan complexes is equivalent to the classical homotopy theory of CW complexes.
 \subsection{Simplicial and cosimplicial objects}
-For every nonnegative integer $n$, we let $[n]$ denote the linearly ordered $\{0,1,\dots,n\}$. We define a category $\Delta$ (called the \textbf{simplex category}) over the ordered sets $[n]$ for $n\geq 0$: a morphism from $[m]$ to $[n]$ in the category $\Delta$ is a \textit{nondecreasing} function $\alpha:[m]\to[n]$. We note that the category $\Delta$ is equivalent to the category of all nonempty finite linearly ordered sets, with morphisms given by nondecreasing maps. In fact, we can say something even better: for every nonempty finite linearly ordered set $I$, there is a unique order-preserving bijection $I\cong[n]$, for some $n\geq 0$.\par
+For every nonnegative integer $n$, we let $[n]$ denote the linearly ordered $\{0,1,\dots,n\}$. We define a category $\Delta$ (called the \textbf{simplex category}) over the ordered sets $[n]$ for $n\geq 0$ as follows: a morphism from $[m]$ to $[n]$ in the category $\Delta$ is a \textit{nondecreasing} function $\alpha:[m]\to[n]$. We note that the category $\Delta$ is equivalent to the category of all nonempty finite linearly ordered sets, with morphisms given by nondecreasing maps. In fact, we can say something even better: for every nonempty finite linearly ordered set $I$, there is a unique order-preserving bijection $I\cong[n]$, for some $n\geq 0$.\par
 Now let $\mathcal{C}$ be an arbitray category. A \textbf{simplicial object} (resp. \textbf{cosimplicial object}) of $\mathcal{C}$ is defined to be a contravariant functor $\Delta^{\op}\to\mathcal{C}$ (resp. convariant functor $\Delta\to\mathcal{C}$). We often use the notation $C_\bullet$ to denote a simplicial object of $\mathcal{C}$. In this case, we use $C_n$ (resp. $C^n$) to denote the value of $C_\bullet$ (resp. $C^\bullet$) on $[n]\in\Delta^{\op}$.\par
 As a variant of the category $\Delta$, we define $\Delta_{\inj}$ to be the category whose objects are sets of the form $[n]$ (where $n$ is a nonnegative integer) and whose morphisms are strictly increasing functions $\alpha:[m]\to[n]$. If $\mathcal{C}$ is a category, a contravariant functor $\Delta_{\inj}^{\op}\to\mathcal{C}$ (resp. covariant functor) as a \textbf{semi-simplicial object} (\textbf{semi-cosimplicial object}) of $\mathcal{C}$. We use the notation $C_\bullet$ to indicate a semi-simplicial object of $\mathcal{C}$, whose value on an object $[n]\in\Delta^{\op}_{\inj}$ we denote by $C_n$.
 \begin{remark}
@@ -614,7 +614,7 @@ We now sketch another proof of \cref{simplicial set subcategory small colimits a
 \item The objects of $\Delta_S$ are pairs $([n],\sigma)$, where $[n]$ is an object of $\Delta$ and $\sigma$ is an $n$-simplex.
 \item A morphism from $([n],\sigma)$ to $([m],\tau)$ in the category $\Delta_S$ is a nondecreasing function $f:[n]\to[m]$ with the property that the induced map $S_m\to S_n$ sends $\tau$ to $\sigma$.
 \end{itemize}
-The category $\Delta_S$ is called the \textbf{category of simplicies of $\bm{S_\bullet}$}. Via the Yoneda embedding $\Delta\hookrightarrow\mathbf{Set}_\Delta$, we can identify $\Delta_S$ with the category whose objects are simplicial sets of the form $\Delta^n$ (for some $n\neq 0$), which are equipped with a map of simplicial sets $\Delta^n\to S_\bullet$. In particular, we have a canonical map of simplicial sets $\varinjlim_{([n],\sigma)}\Delta^n\to S_\bullet$. To prove \cref{simplicial set subcategory small colimits and Delta^n nonproper}, it suffices to observe that this map is an isomorphism.\par
+The category $\Delta_S$ is called the \textbf{category of simplicies of \boldmath$S_\bullet$}. Via the Yoneda embedding $\Delta\hookrightarrow\mathbf{Set}_\Delta$, we can identify $\Delta_S$ with the category whose objects are simplicial sets of the form $\Delta^n$ (for some $n\neq 0$), which are equipped with a map of simplicial sets $\Delta^n\to S_\bullet$. In particular, we have a canonical map of simplicial sets $\rlim_{([n],\sigma)}\Delta^n\to S_\bullet$. To prove \cref{simplicial set subcategory small colimits and Delta^n nonproper}, it suffices to observe that this map is an isomorphism.\par
 Now as a generalization of \cref{simplicial set geometric realization exist}, we prove the following theorem about the adjointness of $\Sing_\bullet$ functors.
 \begin{proposition}\label{simplicial set Sing^Q functor adjoint}
 Let $\mathcal{C}$ be a category, let $Q^\bullet$ be a cosimplicial object of $\mathcal{C}$, and let $\Sing_\bullet^Q:\mathcal{C}\to\mathbf{Set}_\Delta$ be the corresponding functor. If the category $\mathcal{C}$ admits small colimits, then the functor $\Sing_\bullet^Q$ admits a left adjoint $\mathbf{Set}_\Delta\to\mathcal{C}$, which is denoted by $S_\bullet\to|S_\bullet|^Q$.
@@ -913,18 +913,21 @@ G&\text{if $\ast=1$},\\
 \[\{\text{continuous maps $f:X\to|B_\bullet G|$}\}/\text{homotopy}\stackrel{\sim}{\to}\{\text{$G$-torsors $P\to X$}\}/\text{isomorphism}.\]
 \end{itemize}
 \end{example}
+\begin{example}
+Let $\mathcal{C}$ be a category and $N_\bullet(\mathcal{C})$ be the nerve of $\mathcal{C}$. The category $\mathcal{C}$ is called a \textbf{setoid} if it is equivalence to a set. It is not hard to see that this is true if and only if the canonical functor $\mathcal{C}\to\pi_0(N_\bullet(\mathcal{C}))$ (where $\pi_0(N_\bullet(\mathcal{C}))$ is considered as a category) is an equivalence of categories.
+\end{example}
 \subsection{Homotopy category of a simplicial set}
 Recall that the functor $N_\bullet$ can be identified with $\Sing_\bullet^Q$, where $Q:\Delta\to\mathbf{Cat}$ is the functor sending $[n]\in\Delta$ to itself, considered as a category. By \cref{simplicial set Sing^Q functor adjoint}, $N_\bullet$ then admits a left adjoint, which is the functor that sends a simplicial set to its homotopy category as we shall now define.\par
-Let $\mathcal{C}$ be a category. We will say that a map of simplicial sets $u:S_\bullet\to N_\bullet(\mathcal{C})$ exhibits $\mathcal{C}$ as the homotopy category of $S_\bullet$ if, for every category $\mathcal{D}$, the composite map
+Let $\mathcal{C}$ be a category. We will say that a map of simplicial sets $u:S_\bullet\to N_\bullet(\mathcal{C})$ exhibits $\mathcal{C}$ as the \textbf{homotopy category} of $S_\bullet$ if, for every category $\mathcal{D}$, the composite map
 \[\Hom_{\mathbf{Cat}}(\mathcal{C},\mathcal{D})\to\Hom_{\mathbf{Set}_\Delta}(N_\bullet(\mathcal{C}),N_\bullet(\mathcal{D}))\stackrel{\circ u}{\to}\Hom_{\mathbf{Set}_\Delta}(S_\bullet,N_\bullet(\mathcal{D}))\]
 is bijective (note that since $N_\bullet$ is fully faithful, the first map is always bijective).
-\begin{example}
+\begin{example}\label{simplicial set Sing(X) homotopy cat is Pi(X)}
 Let $X$ be a category and $\Sing_\bullet(X)$ be the singular simplicial set of $X$. We consider the fundamental groupoid $\Pi(X)$ of $X$, which is defined in the begining of this chapter. Then there exists a unique map of simplicial sets $u:\Sing_\bullet(X)\to N_\bullet(\Pi(X))$ with teh following properties:
 \begin{itemize}
 \item On $0$-simplicies, $u$ sends each point $x\in X$ to itself, considered as an object of $\Pi(X)$.
 \item On $1$-simplicies, $u$ sends a path $p:[0,1]\to X$ (considered as an edge of $\Sing_\bullet(X)$) to its homotopy class $[p]$ (as a morphism of $\Pi(X)$).
 \item On $n$-simplicies, $u$ sends a continuous map $|\Delta^n|\to X$ to the functor that associates each element $i\in[n]$ with $\sigma(i)$, and each morphism $(i\leq j)$ with the homotopy class of the path $\sigma_{ij}$ defined by the restriction of $\sigma$ on the edge from $i$ to $j$ in $|\Delta^n|$.
-\end{itemize}\label{simplicial set Sing(X) homotopy cat is Pi(X)}
+\end{itemize}
 Moreover, for any category $\mathcal{C}$, the map
 \[\Hom_{\mathbf{Set}_\Delta}(N_\bullet(\Pi(X)),N_\bullet(\mathcal{C}))\to\Hom_{\mathbf{Set}_\Delta}(\Sing_\bullet(X),N_\bullet(\mathcal{C}))\]
 is bijective. In fact, any homotopy of paths $\sigma,\sigma'$ in $X$ can be written as a continuous map $\tau\in\Sing_2(X)$ such that $d_0(\tau)=s_0(x)$, $d_1(\tau)=\sigma$ and $d_2(\tau)=\sigma'$. If $f:\Sing_\bullet(X)\to N_\bullet(\mathcal{C})$ is a map of simplicial sets, then $f$ sends $\tau$ to a $2$-simplex in $N_\bullet(\mathcal{C})$, which means
@@ -1569,7 +1572,7 @@ where $\rho_{T_\bullet}$ is the isomorphism appearing in the statement of \cref{
 \end{proof}
 We will be primarily interested in the special case where the target simplicial set $T_\bullet$ is an $\infty$-category. In this case, we have the following result:
 \begin{theorem}\label{simplicial set Fun of inf-cat is inf-cat}
-Let $S_\bullet$ be a simplicial set and let $\mathcal{D}$ be an $\infty$-category. Then the simplicial set $\Fun(S_\bullet,\mathcal{D})$ is an $\infty$-category.
+Let $S_\bullet$ be a simplicial set and $\mathcal{D}$ be an $\infty$-category. Then the simplicial set $\Fun(S_\bullet,\mathcal{D})$ is an $\infty$-category.
 \end{theorem}
 If $\mathcal{C}$ and $\mathcal{D}$ are $\infty$-categories, by \cref{simplicial set Fun of inf-cat is inf-cat} simplicial set $\Fun(\mathcal{C},\mathcal{D})$ is an $\infty$-category, which is called the $\infty$-category of functors from $\mathcal{C}$ to $\mathcal{D}$. By definition, the objects of the $\infty$-category $\Fun(\mathcal{C},\mathcal{D})$ can be identified with functors from $\mathcal{C}$ to $\mathcal{D}$ (that is, with maps of simplicial sets from $\mathcal{C}$ to $\mathcal{D}$). We say the morphisms of $\Fun(\mathcal{C},\mathcal{D})$ are natural tranformations. That is, if $F,G:\mathcal{C}\to\mathcal{D}$ are objects of $\Fun(\mathcal{C},\mathcal{D})$, we define a natural transformation from $F$ to $G$ to be a map of simplicial sets $u:\Delta^1\times\mathcal{C}\to\mathcal{D}$ satisfying $u|_{\{0\}\times\mathcal{C}}=F$ and $u|_{\{1\}\times\mathcal{C}}=G$.\par
 Let us abuse notation by identifying each ordinary category $\mathcal{E}$ with the $\infty$-category $N_\bullet(\mathcal{E})$. In this case, \cref{simplicial set Fun to nerve isomorphism} implies that when $\mathcal{C}$ is an $\infty$-category and $\mathcal{D}$ is an ordinary category, then we have a canonical isomorphism $\Fun(C,D)\cong\Fun(h(\mathcal{C}),\mathcal{D})$. In particular, the functor $\infty$-category $\Fun(\mathcal{C},\mathcal{D})$ is an ordinary category.
@@ -2004,7 +2007,7 @@ which is called the \textbf{tensor product functor}. It is associative in the fo
 \end{example}
 
 Our goal in this section is to review the theory of monoidal categories, which axiomatizes the essential features of Example~\ref{monoidal cat Vect_k eg}. To simplify the discussion, we begin by developing the nonunital version of this theory; that is, nonunital monoidal categories. After this, we define the concept of units in a nonunital monoidal category, and show that units are unique up to isomorphisms. We then define a monoidal category to be a nonunital monoidal category $\mathcal{C}$ together with a choice of unit. A basic prototype is the category $\mathbf{Vect}_k$ of vector spaces over a field $k$ (equipped with the tensor product and associativity constraints given in Example~\ref{monoidal cat Vect_k eg}, and the unit given by the object $k\in\mathbf{Vect}_k$).\par
-We conclude this section with a brief review of enriched category theory. If $\mathcal{A}$ is a monoidal category, then an $\mathcal{A}$-enriched category $\mathcal{C}$ consists of a collection $\Obj(\mathcal{C})$ of objects of $\mathcal{C}$, a collection of mapping objects $\sHom_{\mathcal{C}}(X,Y)\in\mathcal{A}$ for each pair of objects $X,Y\in\Obj(\mathcal{C})$, and a composition law
+We conclude this section with a brief review of enriched category theory. If $\mathcal{A}$ is a monoidal category, then an $\mathcal{A}$-enriched category $\mathcal{C}$ consists of a collection $\Ob(\mathcal{C})$ of objects of $\mathcal{C}$, a collection of mapping objects $\sHom_{\mathcal{C}}(X,Y)\in\mathcal{A}$ for each pair of objects $X,Y\in\Ob(\mathcal{C})$, and a composition law
 \[\sHom_{\mathcal{C}}(Y,Z)\otimes\sHom_{\mathcal{C}}(X,Y)\to\sHom_{\mathcal{C}}(X,Z)\]
 which is required to be unital and associative. Enriched category theory will play an important role throughout this chapter: we will be particularly interested in the special case where $\mathcal{A}=\mathbf{Cat}$ is the category of small categories (in which case we recover the notion of strict $2$-category), where $\mathcal{A}=\mathbf{Set}_\Delta$ is the category of simplicial sets (in which case we recover the notion of simplicial category), and where $\mathcal{A}=\mathrm{Ch}(\mathbf{Ab})$ is the category of chain complexes of abelian groups (in which case we recover the notion of differential graded category).
 \subsection{Monoidal categories}
@@ -2311,10 +2314,10 @@ Let $\mathcal{C}$ and $\mathcal{D}$ be nonunital monoidal categories. A nonunita
 \end{remark}
 Let $\mathcal{D}$ and $\mathcal{D}$ be nonunital monoidal categories. Let $F,F':\mathcal{C}\to\mathcal{D}$ be functors equipped with nonunital lax monoidal structures $\mu$ and $\mu'$, respectively. We say that a natural transformation of functors $\gamma:F\to F'$ is \textbf{nonunital monoidal} if, for every pair of objects $X,Y\in\mathcal{C}$, the diagram
 \[\begin{tikzcd}
-F(X)\otimes F(Y)\ar[d,"\gamma(X)\otimes\gamma(Y)"]\ar[r,"\mu_{X,Y}"]&F(X\otimes Y)\ar[d,"\gamma(X\otimes Y)"]\\
+F(X)\otimes F(Y)\ar[d,swap,"\gamma(X)\otimes\gamma(Y)"]\ar[r,"\mu_{X,Y}"]&F(X\otimes Y)\ar[d,"\gamma(X\otimes Y)"]\\
 F'(X)\otimes F'(Y)\ar[r,"\mu'_{X,Y}"]&F'(X\otimes Y)
 \end{tikzcd}\]
-is commutative. We denote by $\Fun^{\mathrm{lax}}_{\mathrm{nu}}(\mathcal{C},\mathcal{C})$ the category whose objects are nonunital lax monoidal functors $(F,\mu)$ from $\mathcal{C}$ to $\mathcal{D}$, and whose morphisms are nonunital monoidal natural transformations. We denote by $\Fun_{\mathrm{nu}}^{\otimes}(\mathcal{C},\mathcal{D})$ denote the full subcategory of $\Fun^{\mathrm{lax}}_{\mathrm{nu}}(\mathcal{C},\mathcal{C})$ spanned by the nonunital monoidal functors $(F,\mu)$ from $\mathcal{C}$ to $\mathcal{D}$.
+is commutative. We denote by $\Fun^{\mathrm{lax}}_{\mathrm{nu}}(\mathcal{C},\mathcal{C})$ the category of nonunital lax monoidal functors $(F,\mu):\mathcal{C}\to\mathcal{D}$, whose morphisms are nonunital monoidal natural transformations. We denote by $\Fun_{\mathrm{nu}}^{\otimes}(\mathcal{C},\mathcal{D})$ denote the full subcategory of $\Fun^{\mathrm{lax}}_{\mathrm{nu}}(\mathcal{C},\mathcal{C})$ spanned by the nonunital monoidal functors $(F,\mu)$ from $\mathcal{C}$ to $\mathcal{D}$.
 \begin{example}[\textbf{Nonunital Algebras}]\label{monoidal cat nununital algebra structure}
 Let $\mathcal{C}$ be a nonunital monoidal category and let $A$ be an object of $\mathcal{C}$. A \textbf{nonunital algebra structure} on $A$ is a map $m:A\otimes A\to A$ for which the diagram
 \[\begin{tikzcd}[row sep=6mm,column sep=4mm]
@@ -2428,16 +2431,16 @@ We now show that if a nonunital lax monoidal functor $F$ admits a unit $\eps$, t
 Let $\mathcal{C}$ be a category. For every pair of objects $X,Y\in\mathcal{C}$, we let $\Hom_{\mathcal{C}}(X,Y)$ denote the set of morphisms from $X$ to $Y$ in $\mathcal{C}$. In many cases of interest, the sets $\Hom_{\mathcal{C}}(X,Y)$ can be endowed with additional structure, which are respected by the composition law on $\mathcal{C}$. To give a systematic discussion of this phenomenon, it is convenient to use the formalism of \textit{enriched category theory}.\par
 Let $\mathcal{A}$ be a monoidal category with unit object $\bm{1}$. An \textbf{$\mathcal{A}$-enriched category $\mathcal{C}$}, or \textbf{a category enriched over $\mathcal{A}$}, is a class consists of the following datum:
 \begin{itemize}
-\item A collection $\Obj(\mathcal{C})$, whose elements are called the objects of $\mathcal{C}$. We will often abuse notation by writing $X\in\mathcal{C}$ to indicate that $X$ is an element of $\Obj(\mathcal{C})$.
-\item For every pair of objects $X,Y\in\Obj(\mathcal{C})$, an object $\sHom_{\mathcal{C}}(X,Y)$ of the monoidal category $\mathcal{A}$.
-\item For every triple of objects $X,Y,Z\in\Obj(\mathcal{C})$, a morphism
+\item A collection $\Ob(\mathcal{C})$, whose elements are called the objects of $\mathcal{C}$. We will often abuse notation by writing $X\in\mathcal{C}$ to indicate that $X$ is an element of $\Ob(\mathcal{C})$.
+\item For every pair of objects $X,Y\in\Ob(\mathcal{C})$, an object $\sHom_{\mathcal{C}}(X,Y)$ of the monoidal category $\mathcal{A}$.
+\item For every triple of objects $X,Y,Z\in\Ob(\mathcal{C})$, a morphism
 \[c_{Z,Y,X}:\sHom_{\mathcal{C}}(Y,Z)\otimes\sHom_{\mathcal{C}}(X,Y)\to\sHom_{\mathcal{C}}(X,Z)\]
 in the category $\mathcal{A}$, which is called the \textbf{composition law}.
-\item For every object $X\in\Obj(\mathcal{C})$, a morphism $e_X:\bm{1}\to\sHom_{\mathcal{C}}(X,X)$ in the category $\mathcal{A}$, which is called the \textbf{identity} of $X$.
+\item For every object $X\in\Ob(\mathcal{C})$, a morphism $e_X:\bm{1}\to\sHom_{\mathcal{C}}(X,X)$ in the category $\mathcal{A}$, which is called the \textbf{identity} of $X$.
 \end{itemize}
 These data are required to satisfy the following conditions:
 \begin{itemize}
-\item[(A)] For every quadruple of objects $W,X,Y,Z\in\Obj(\mathcal{C})$, the diagram
+\item[(A)] For every quadruple of objects $W,X,Y,Z\in\Ob(\mathcal{C})$, the diagram
 \[\begin{tikzcd}[row sep=6mm,column sep=6mm]
 &\sHom_{\mathcal{C}}(Y,Z)\otimes\sHom_{\mathcal{C}}(W,Y)\ar[dd,"c_{Z,Y,W}"]\\
 \sHom_{\mathcal{C}}(Y,Z)\otimes(\sHom_\mathcal{C}(X,Y)\otimes\sHom_{\mathcal{C}}(W,X))\ar[ru,"\id\otimes c_{Y,X,W}"]\ar[dd,"\alpha"]&\\
@@ -2446,7 +2449,7 @@ These data are required to satisfy the following conditions:
 &\sHom_{\mathcal{C}}(X,Z)\otimes\sHom_{\mathcal{C}}(W,X)\ar[uu,swap,"c_{Z,X,W}"]
 \end{tikzcd}\]
 commutes. Here $\alpha$ denotes the associativity constraint on the monoidal category $\mathcal{A}$.
-\item[(U)] For every pair of objects $X,Y\in\Obj(\mathcal{C})$, the diagrams
+\item[(U)] For every pair of objects $X,Y\in\Ob(\mathcal{C})$, the diagrams
 \begin{equation*}
 \begin{aligned}
 \begin{tikzcd}[row sep=6mm,column sep=6mm]
@@ -2468,17 +2471,17 @@ Let $\mathcal{A}=\mathbf{Set}$ be the category of sets, endowed with the monoida
 Let $\mathcal{A}$ be a monoidal category. If $\mathcal{C}$ is a category enriched over $\mathcal{A}$ and $X$ is an object of $\mathcal{C}$, then the composition law
 \[c_{X,X,X}:\sHom_{\mathcal{C}}(X,X)\otimes \sHom_{\mathcal{C}}(X,X)\to \sHom_{\mathcal{C}}(X,X)\]
 exhibits $\sHom_{\mathcal{C}}(X,X)$ as an algebra object of $\mathcal{A}$, in the sense of \cref{*}. Moreover, this construction induces a bijection
-\[\{\text{$\mathcal{A}$-enriched categories $\mathcal{C}$ with $\Obj(\mathcal{C})=\{X\}$}\}\stackrel{\sim}{\to}\{\text{algebra objects of $\mathcal{A}$}\}.\]
+\[\{\text{$\mathcal{A}$-enriched categories $\mathcal{C}$ with $\Ob(\mathcal{C})=\{X\}$}\}\stackrel{\sim}{\to}\{\text{algebra objects of $\mathcal{A}$}\}.\]
 Consequently, the theory of enriched categories can be regarded as a generalization of the theory of associative algebras.
 \end{example}
 \begin{remark}[\textbf{Functoriality}]\label{monoidal cat enrichment functoriality}
 Let $\mathcal{A}$ and $\mathcal{A}'$ be monoidal categories, and let $F:\mathcal{A}\to\mathcal{A}'$ be a lax monoidal functor (with tensor constraints $\mu_{A,B}:F(A)\otimes F(B)\to F(A\otimes B)$ and unit $\eps:\bm{1}_{\mathcal{A}'}\to F(\bm{1}_{\mathcal{A}}))$. Then every $\mathcal{A}$-enriched category $\mathcal{C}$ determines an $\mathcal{A}'$-enriched category $\mathcal{C}'$, which can be described concretely as follows:
 \begin{itemize}
 \item The objects of $\mathcal{C}'$ are objects of $\mathcal{C}$.
-\item For every pair of objects $X,Y\in\Obj(\mathcal{C}')$, we set $\sHom_{\mathcal{C}'}(X,Y)=F(\sHom_{\mathcal{C}}(X,Y))$.
-\item For every triple of objects $X,Y,Z\in\Obj(\mathcal{C}')$, the composition law $c'_{Z,Y,X}$ for $\mathcal{C}'$ is given by the composition
+\item For every pair of objects $X,Y\in\Ob(\mathcal{C}')$, we set $\sHom_{\mathcal{C}'}(X,Y)=F(\sHom_{\mathcal{C}}(X,Y))$.
+\item For every triple of objects $X,Y,Z\in\Ob(\mathcal{C}')$, the composition law $c'_{Z,Y,X}$ for $\mathcal{C}'$ is given by the composition
 \[F(c_{Z,Y,X})\circ\mu:F(\sHom_{\mathcal{C}}(Y,Z))\otimes F(\sHom_{\mathcal{C}'}(X,Y))\to F(\sHom_{\mathcal{C}}(X,Z)).\]
-\item For every object $X\in\Obj(\mathcal{C}')$, the identity morphism $e_X'$ for $X$ in $\mathcal{C}$ is given by the composition
+\item For every object $X\in\Ob(\mathcal{C}')$, the identity morphism $e_X'$ for $X$ in $\mathcal{C}$ is given by the composition
 \[\begin{tikzcd}
 \bm{1}_{\mathcal{A}'}\ar[r,"\eps"]&F(\bm{1}_{\mathcal{A}})\ar[r,"F(e_X)"]&F(\sHom_{\mathcal{C}}(X,X))=\sHom_{\mathcal{C}'}(X,X)
 \end{tikzcd}\]
@@ -2507,18 +2510,18 @@ It follows that, for any ordinary category $\mathcal{C}_0$, promoting $\mathcal{
 \end{example}
 Let $\mathcal{A}$ be a monoidal category, and let $\mathcal{C}$ and $\mathcal{D}$ be $\mathcal{A}$-enriched categories. An \textbf{$\mathcal{A}$-enriched functor} $F:\mathcal{C}\to\mathcal{D}$ consists of the following data:
 \begin{itemize}
-\item For every object $X\in\Obj(\mathcal{C})$, and object $F(X)\in\Obj(\mathcal{D})$.
-\item For every pair of objects $X,Y\in\Obj(\mathcal{C})$, a morphism
+\item For every object $X\in\Ob(\mathcal{C})$, and object $F(X)\in\Ob(\mathcal{D})$.
+\item For every pair of objects $X,Y\in\Ob(\mathcal{C})$, a morphism
 \[F_{X,Y}:\sHom_{\mathcal{C}}(X,Y)\to\sHom_{\mathcal{D}}(F(X),F(Y))\]
 in the category $\mathcal{A}$.
 \end{itemize}
 These data are required to satisfy the following conditions:
 \begin{itemize}
-\item For every object $X\in\Obj(\mathcal{C})$, the morphism $e_{F(X)}:\mathbf{1}\to\sHom_{\mathcal{D}}(F(X),F(X))$ factors as a composition
+\item For every object $X\in\Ob(\mathcal{C})$, the morphism $e_{F(X)}:\mathbf{1}\to\sHom_{\mathcal{D}}(F(X),F(X))$ factors as a composition
 \[\begin{tikzcd}
 \mathbf{1}\ar[r,"e_X"]&\sHom_{\mathcal{C}}(X,X)\ar[r,"F_{X,X}"]&\sHom_{\mathcal{D}}(F(X),F(X))
 \end{tikzcd}\]
-\item For every triple of objects $X,Y,Z\in\Obj(\mathcal{C})$, the diagram
+\item For every triple of objects $X,Y,Z\in\Ob(\mathcal{C})$, the diagram
 \[\begin{tikzcd}
 \sHom_{\mathcal{C}}(Y,Z)\otimes\sHom_{\mathcal{C}}(X,Y)\ar[d,swap,"F_{Y,Z}\otimes F_{X,Y}"]&\sHom_{\mathcal{C}}(X,Z)\ar[d,"F_{X,Z}"]&\\
 \sHom_{\mathcal{D}}(F(Y),F(Z))\otimes\sHom_{\mathcal{D}}(F(X),F(Y))\ar[r]&\sHom_{\mathcal{D}}(F(X),F(Z))
@@ -2526,7 +2529,7 @@ These data are required to satisfy the following conditions:
 commutes (in the category $\mathcal{A}$); here the horizontal maps are given by the composition laws on $\mathcal{C}$ and $\mathcal{D}$.
 \end{itemize}
 \begin{remark}[\textbf{The Category of Enriched Categories}]
-Let $\mathcal{A}$ be a monoidal category. We say that an $\mathcal{A}$-enriched category $\mathcal{C}$ is small if the collection of objects $\Obj(\mathcal{C})$ is small. The collection of small $\mathcal{A}$-enriched categories can itself be organized into a category $\mathbf{Cat}(\mathcal{A})$, whose morphisms are given by $\mathcal{A}$-enriched functors.
+Let $\mathcal{A}$ be a monoidal category. We say that an $\mathcal{A}$-enriched category $\mathcal{C}$ is small if the collection of objects $\Ob(\mathcal{C})$ is small. The collection of small $\mathcal{A}$-enriched categories can itself be organized into a category $\mathbf{Cat}(\mathcal{A})$, whose morphisms are given by $\mathcal{A}$-enriched functors.
 \end{remark}
 \begin{example}
 Let $\mathcal{C}$ and $\mathcal{D}$ be small categories, which we regard as $\mathbf{Set}$-enriched categories by means of \cref{monoidal cat enriched over Set}. Then $\mathbf{Set}$-enriched functors from $\mathcal{C}$ to $\mathcal{D}$ can be identified with functors from $\mathcal{C}$ to $\mathcal{D}$ in the usual sense. This identification determines an isomorphism of categories $\mathbf{Cat}(\mathbf{Set})\cong\mathbf{Cat}$.
@@ -2554,7 +2557,7 @@ The collection of (small) categories can itself be organized into a (large) cate
 \end{itemize}
 To remedy the situation, it is useful to contemplate a more elaborate mathematical structure. A \textbf{strict $2$-category} $\mathcal{C}$ consists of the following data:
 \begin{itemize}
-\item A collection $\Obj(\mathcal{C})$, whose elements we refer to as objects of $\mathcal{C}$. We will often abuse notation by writing $X\in\mathcal{C}$ to indicate that $X$ is an element of $\Obj(\mathcal{C})$.
+\item A collection $\Ob(\mathcal{C})$, whose elements we refer to as objects of $\mathcal{C}$. We will often abuse notation by writing $X\in\mathcal{C}$ to indicate that $X$ is an element of $\Ob(\mathcal{C})$.
 \item For every pair of objects $X,Y\in\mathcal{C}$, a category $\sHom_{\mathcal{C}}(X,Y)$. We refer to objects $f$ of the category $\sHom_{\mathcal{C}}(X,Y)$ as $1$-morphisms from $X$ to $Y$ and write $f:X\to Y$ to indicate that $f$ is a $1$-morphism from $X$ to $Y$. Given a pair of $1$-morphisms $f,g\in\sHom_{\mathcal{C}}(X,Y)$, we refer to morphisms from $f$ to $g$ in the category $\Hom_{\mathcal{C}}(X,Y)$ as $2$-morphisms from $f$ to $g$.
 \item For every triple of objects $X,Y,Z\in\mathcal{C}$, a \textbf{composition functor}
 \[\circ:\sHom_{\mathcal{C}}(Y,Z)\times\sHom_{\mathcal{C}}(X,Y)\to\sHom_{\mathcal{C}}(X,Z).\]
@@ -2582,12 +2585,12 @@ Let $\mathcal{C}$ be a strict $2$-category. Then the composition of $1$-morphism
 \[f:W\to X,\quad g:X\to Y,\quad h:Y\to Z\]
 of C, we have an equality $h\circ(g\circ f)=(h\circ g)\circ f$. Our goal in this paragraph is to introduce the more general notion of (non-strict) $2$-category, where we weaken the associativity requirement: rather than demand that the $1$-morphisms $h\circ(g\circ f)$ and $(h\circ g)\circ f$ are identical, we instead ask for a specified isomorphism $\alpha_{h,g,f}:h\circ(g\circ f)\Rightarrow(h\circ g)\circ f$ in the category $\sHom_{\mathcal{C}}(W,Z)$. In order to obtain a sensible theory, we must require that these isomorphisms satisfy an analogue of the pentagon identity: We define a $2$-category $\mathcal{C}$ to be a collection consisting of the following data:
 \begin{itemize}
-\item A collection $\Obj(\mathcal{C})$, whose elements we refer to as objects of $\mathcal{C}$. We will often abuse notation by writing $X\in\mathcal{C}$ to indicate that $X$ is an element of $\Obj(\mathcal{C})$.
-\item For every pair of objects $X,Y\in\Obj(\mathcal{C})$, a category $\sHom_{\mathcal{C}}(X,Y)$. We refer to objects $f$ of the category $\sHom_{\mathcal{C}}(X,Y)$ as $1$-morphisms from $X$ to $Y$ and write $f:X\to Y$ to indicate that $f$ is a $1$-morphism from $X$ to $Y$. Given a pair of $1$-morphisms $f,g\in\sHom_{\mathcal{C}}(X,Y)$, we refer to morphisms from $f$ to $g$ in the category $\sHom_{\mathcal{C}}(X,Y)$ as $2$-morphisms from $f$ to $g$. We will sometimes write $\gamma:f\Rightarrow g$ to indicate that is $\gamma$ a $2$-morphism from $f$ to $g$.
-\item For every triple of objects $X,Y,Z\in\Obj(\mathcal{C})$, a composition functor
+\item A collection $\Ob(\mathcal{C})$, whose elements we refer to as objects of $\mathcal{C}$. We will often abuse notation by writing $X\in\mathcal{C}$ to indicate that $X$ is an element of $\Ob(\mathcal{C})$.
+\item For every pair of objects $X,Y\in\Ob(\mathcal{C})$, a category $\sHom_{\mathcal{C}}(X,Y)$. We refer to objects $f$ of the category $\sHom_{\mathcal{C}}(X,Y)$ as $1$-morphisms from $X$ to $Y$ and write $f:X\to Y$ to indicate that $f$ is a $1$-morphism from $X$ to $Y$. Given a pair of $1$-morphisms $f,g\in\sHom_{\mathcal{C}}(X,Y)$, we refer to morphisms from $f$ to $g$ in the category $\sHom_{\mathcal{C}}(X,Y)$ as $2$-morphisms from $f$ to $g$. We will sometimes write $\gamma:f\Rightarrow g$ to indicate that is $\gamma$ a $2$-morphism from $f$ to $g$.
+\item For every triple of objects $X,Y,Z\in\Ob(\mathcal{C})$, a composition functor
 \[\circ:\sHom_{\mathcal{C}}(Y,Z)\times\sHom_{\mathcal{C}}(X,Y)\to\sHom_{\mathcal{C}}(X,Z).\]
-\item For every object $X\in\Obj(\mathcal{C})$, a $1$-morphism $\id_X\in\sHom_{\mathcal{C}}(X,X)$, which we call the identity $1$-morphism from $X$ to itself.
-\item For every object $X\in\Obj(\mathcal{C})$, an isomorphism $\upsilon:\id_X\circ\id_X\Rightarrow\id_X$ in the category $\sHom_{\mathcal{C}}(X,X)$. We refer to the $2$-morphisms $\{\upsilon_X\}_{X\in\Obj(\mathcal{C})}$ as the \textbf{unit constraints} of $\mathcal{C}$.
+\item For every object $X\in\Ob(\mathcal{C})$, a $1$-morphism $\id_X\in\sHom_{\mathcal{C}}(X,X)$, which we call the identity $1$-morphism from $X$ to itself.
+\item For every object $X\in\Ob(\mathcal{C})$, an isomorphism $\upsilon:\id_X\circ\id_X\Rightarrow\id_X$ in the category $\sHom_{\mathcal{C}}(X,X)$. We refer to the $2$-morphisms $\{\upsilon_X\}_{X\in\Ob(\mathcal{C})}$ as the \textbf{unit constraints} of $\mathcal{C}$.
 \item For every quadruple of objects $W,X,Y,Z\in\mathcal{C}$, a natural isomorphism $\alpha$ from the functor
 \[\sHom_{\mathcal{C}}(Y,Z)\times\sHom_{\mathcal{C}}(X,Y)\times\sHom_{\mathcal{C}}(W,X)\to\sHom_{\mathcal{C}}(W,Z),\quad (h,g,f)\mapsto h\circ(g\circ f)\]
 to the functor
@@ -2596,7 +2599,7 @@ We denote the value of $\alpha$ on a triple $(h,g,f)$ by $\alpha_{h,g,f}:h\circ(
 \end{itemize}
 These data are required to satisfy the following conditions:
 \begin{itemize}
-\item[(C)] For every pair of objects $X,Y\in\Obj(\mathcal{C})$, the functors
+\item[(C)] For every pair of objects $X,Y\in\Ob(\mathcal{C})$, the functors
 \begin{gather*}
 \sHom_{\mathcal{C}}(X,Y)\to\sHom_{\mathcal{C}}(X,Y),\quad f\mapsto f\circ\id_X\\
 \sHom_{\mathcal{C}}(X,Y)\to\sHom_{\mathcal{C}}(X,Y),\quad f\mapsto\id_Y\circ f
@@ -2643,7 +2646,7 @@ determines a monoidal structure on the category $\sEnd_{\mathcal{C}}(X)$. Note t
 \begin{example}[\textbf{Delooping}]\label{2-cat delooping of monoidal cat}
 Let $\mathcal{M}$ be a category equipped with a (strict) monoidal structure $\otimes:\mathcal{M}\times\mathcal{M}\to\mathcal{M}$. We define a strict $2$-category $B\mathcal{M}$ as follows:
 \begin{itemize}
-\item The set of objects $\Obj(B\mathcal{M})$ is the singleton set $\{X\}$.
+\item The set of objects $\Ob(B\mathcal{M})$ is the singleton set $\{X\}$.
 \item The category $\sHom_{B\mathcal{M}}(X,X)$ is equal to $\mathcal{M}$.
 \item The composition functor $\circ:\sHom_{B\mathcal{M}}(X,X)\times\sHom_{B\mathcal{M}}(X,X)\to\sHom_{B\mathcal{M}}(X,X)$ is equal to the tensor product $\otimes:\mathcal{M}\times\mathcal{M}\to\mathcal{M}$.
 \item The identity morphism $\id_X$ is the (strict) unit object of $\mathcal{M}$.
@@ -2662,14 +2665,19 @@ We can then apply the composition law in the ordinary category $\sHom_{\mathcal{
 is a $2$-morphism from $f'\circ f$ to $g'\circ g$, which is called the \textbf{horizontal composition} of $\gamma$ and $\gamma'$.
 \end{itemize}
 The terminology is motivated by the following graphical representations of the data described in (V) and (H):
-\[\begin{tikzcd}
-X\ar[r,bend left=60pt,"f",""{name=U, below}]\ar[r,"g"description,""{name=V1,above},""{name=V2,below}]\ar[r,bend right=60pt,swap,"h",""{name=W,above}]&Y\arrow[Rightarrow,from=U, to=V1,"\gamma"]\arrow[Rightarrow,from=V2, to=W,"\delta"]
-\end{tikzcd}\quad\quad\quad\begin{tikzcd}
-X\ar[r]&Y\ar[r]&Z
+\[\begin{tikzcd}[row sep=15mm,column sep=15mm]
+X\ar[r,bend left=60pt,"f",""{name=U, below}]\ar[r,"g"description,""{name=V1,above},""{name=V2,below}]\ar[r,bend right=60pt,swap,"h",""{name=W,above}]&Y
+\arrow[Rightarrow,from=U, to=V1,"\gamma"]
+\arrow[Rightarrow,from=V2, to=W,"\delta"{anchor=west}]
+\end{tikzcd}\quad\quad\quad
+\begin{tikzcd}[row sep=15mm,column sep=15mm]
+X\ar[r,bend left=30pt,"f",""{name=U1, below}]\ar[r,bend right=30pt,swap,"f'",""{name=U2, above}]&Y\ar[r,bend left=30pt,"g",""{name=V1, below}]\ar[r,bend right=30pt,swap,"g'",""{name=V2, above}]&Z
+\arrow[Rightarrow,from=U1, to=U2,"\gamma"]
+\arrow[Rightarrow,from=V1, to=V2,"\delta"]
 \end{tikzcd}\]
 To avoid confusion, we will generally denote the vertical composition of $2$-morphisms $\gamma$ and $\delta$ by $\delta\gamma$ and the horizontal composition of $2$-morphisms $\gamma$ and $\gamma'$ by $\gamma'\circ\gamma$.
 \begin{remark}
-Let $\mathcal{C}$ be a $2$-category. For each object $X\in\Obj(\mathcal{C})$, the identity $1$-morphism $\id_X$ and the unit constraint $\upsilon_X$ are determined (up to unique isomorphism) by the composition law and associativity constraints. More precisely, given any other choice of identity morphism $\id_X'$ and unit constraint $\upsilon'_X:\id_X'\circ\id_X'\Rightarrow\id_X'$, there exists a unique invertible $2$-morphism $\gamma:\id_X\Rightarrow\id_X'$ for which the diagram
+Let $\mathcal{C}$ be a $2$-category. For each object $X\in\Ob(\mathcal{C})$, the identity $1$-morphism $\id_X$ and the unit constraint $\upsilon_X$ are determined (up to unique isomorphism) by the composition law and associativity constraints. More precisely, given any other choice of identity morphism $\id_X'$ and unit constraint $\upsilon'_X:\id_X'\circ\id_X'\Rightarrow\id_X'$, there exists a unique invertible $2$-morphism $\gamma:\id_X\Rightarrow\id_X'$ for which the diagram
 \[\begin{tikzcd}
 \id_X\circ\id_X\ar[r,Rightarrow,"\upsilon_X"]\ar[d,swap,Rightarrow,"\gamma\circ\gamma"]&\id_X\ar[d,Rightarrow,"\gamma"]\\
 \id'_X\circ\id'_X\ar[r,Rightarrow,"\upsilon_X'"]&\id_X'
