@@ -934,42 +934,42 @@ is bijective. In fact, any homotopy of paths $\sigma,\sigma'$ in $X$ can be writ
 \[f(\sigma)=\id_{f(x)}\circ f(\sigma'),\]
 so $f$ is constant on homotopy classes. This indicates that $f$ descents to a uniquely determined map $N_\bullet(\Pi(X))\to N_\bullet(\mathcal{C})$ of simplicial sets, so we therefore conclude that $u$ exhibits the fundamental groupoid $\Pi(X)$ as a homotopy category of the singular simplicial set $\Sing_\bullet(X)$.
 \end{example}
-Let $S_\bullet$ be a simplicial set. It follows immediately from the definition that if there exists a category $\mathcal{C}$ and a map $u:S_\bullet\to N_\bullet(\mathcal{C})$ which exhibits $\mathcal{C}$ as a homotopy category of $S_\bullet$, then the category $\mathcal{C}$ is unique up to isomorphism and depends functorially on $S_\bullet$. To emphasize this dependence, we will refer to $\mathcal{C}$ as the homotopy category of $S_\bullet$ and denote it by $h(S_\bullet)$.
+Let $S_\bullet$ be a simplicial set. It follows immediately from the definition that if there exists a category $\mathcal{C}$ and a map $u:S_\bullet\to N_\bullet(\mathcal{C})$ which exhibits $\mathcal{C}$ as a homotopy category of $S_\bullet$, then the category $\mathcal{C}$ is unique up to isomorphism and depends functorially on $S_\bullet$. To emphasize this dependence, we will refer to $\mathcal{C}$ as the homotopy category of $S_\bullet$ and denote it by $\ho S_\bullet$.
 \begin{proposition}\label{simplicial set homotopy cat exist}
 Let $S_\bullet$ be a simplicial set. Then there exists a category $\mathcal{C}$ and a map of simplicial sets $u:S_\bullet\to N_\bullet(\mathcal{C})$ which exhibits $\mathcal{C}$ as a homotopy category of $S_\bullet$.
 \end{proposition}
 \begin{proof}
-Let $Q^\bullet$ denote the cosimplicial object of $\mathbf{Cat}$ given by the inclusion $\Delta\hookrightarrow\mathbf{Cat}$. Unwinding the definitions, we see that a homotopy category of $S_\bullet$ can be identified with a realization $|S_\bullet|^Q$, whose existence is a special case of \cref{simplicial set Sing^Q functor adjoint}. Alternatively, we can give a direct construction of the homotopy category $h(S_\bullet)$:
+Let $Q^\bullet$ denote the cosimplicial object of $\mathbf{Cat}$ given by the inclusion $\Delta\hookrightarrow\mathbf{Cat}$. Unwinding the definitions, we see that a homotopy category of $S_\bullet$ can be identified with a realization $|S_\bullet|^Q$, whose existence is a special case of \cref{simplicial set Sing^Q functor adjoint}. Alternatively, we can give a direct construction of the homotopy category $\ho S_\bullet$:
 \begin{itemize}
-\item The objects of $h(S_\bullet)$ are the vertices of $S_\bullet$.
-\item Every edge $e$ of $S_\bullet$ determines a morphism $[e]$ in $h(S_\bullet)$, whose source is the vertex $d_1(e)$ and whose target is the vertex $d_0(e)$.
-\item The collection of morphisms in $h(S_\bullet)$ is generated under composition by morphisms of the form $[e]$, subject only to the relations
+\item The objects of $\ho S_\bullet$ are the vertices of $S_\bullet$.
+\item Every edge $e$ of $S_\bullet$ determines a morphism $[e]$ in $\ho S_\bullet$, whose source is the vertex $d_1(e)$ and whose target is the vertex $d_0(e)$.
+\item The collection of morphisms in $\ho S_\bullet$ is generated under composition by morphisms of the form $[e]$, subject only to the relations
 \begin{gather*}
 [s_0(x)]=\id_x\for x\in S_0,\\
 [d_1(\sigma)]=[d_0(\sigma)]\circ[d_2(\sigma)]\for \sigma\in S_2.
 \end{gather*}
 \end{itemize}
-As in \cref{simplicial set Sing(X) homotopy cat is Pi(X)}, it is easy to verify that the defined class $h(S_\bullet)$ is indeed a category and the canonical map $u:S_\bullet\to N_\bullet(h(S_\bullet))$ exhibits $h(S_\bullet)$ as a homotopy category of $S_\bullet$. 
+As in \cref{simplicial set Sing(X) homotopy cat is Pi(X)}, it is easy to verify that the defined class $\ho S_\bullet$ is indeed a category and the canonical map $u:S_\bullet\to N_\bullet(\ho S_\bullet)$ exhibits $\ho S_\bullet$ as a homotopy category of $S_\bullet$. 
 \end{proof}
 \begin{corollary}\label{simplicial set nerve and homotopy cat adjoint}
-The nerve functor $N_\bullet:\mathbf{Cat}\to\mathbf{Set}_\Delta$ admits a left adjoint, given on $S_\bullet\to h(S_\bullet)$.
+The nerve functor $N_\bullet:\mathbf{Cat}\to\mathbf{Set}_\Delta$ admits a left adjoint, given on $S_\bullet\to \ho S_\bullet$.
 \end{corollary}
 \begin{remark}
-Let $\mathcal{C}$ be a category. Then the counit of the adjunction in \cref{simplicial set nerve and homotopy cat adjoint} induces an isomorphism of categories $h(N_\bullet(\mathcal{C}))\cong\mathcal{C}$ (this is a restatement of \cref{simplicial set nerve of cat fully faithful}). In other words, every category $\mathcal{C}$ can be recovered as the homotopy category of its nerve $N_\bullet(\mathcal{C})$.
+Let $\mathcal{C}$ be a category. Then the counit of the adjunction in \cref{simplicial set nerve and homotopy cat adjoint} induces an isomorphism of categories $\ho N_\bullet(\mathcal{C})\cong\mathcal{C}$ (this is a restatement of \cref{simplicial set nerve of cat fully faithful}). In other words, every category $\mathcal{C}$ can be recovered as the homotopy category of its nerve $N_\bullet(\mathcal{C})$.
 \end{remark}
 \begin{remark}
-Let $S_\bullet$ be a simplicial set. Our proof of \cref{simplicial set homotopy cat exist} gives a construction of the homotopy category $h(S_\bullet)$ by generators and relations. The result of this construction is not easy to describe. If $x$ and $y$ are vertices of $S_\bullet$, then every morphism from $x$ to $y$ in $h(S_\bullet)$ can be represented by a composition
+Let $S_\bullet$ be a simplicial set. Our proof of \cref{simplicial set homotopy cat exist} gives a construction of the homotopy category $\ho S_\bullet$ by generators and relations. The result of this construction is not easy to describe. If $x$ and $y$ are vertices of $S_\bullet$, then every morphism from $x$ to $y$ in $\ho S_\bullet$ can be represented by a composition
 \[[e_n]\circ[e_{n-1}]\circ\cdots\circ[e_1]\]
 where $\{e_i\}_{0\leq i\leq n}$ is a sequence of edges satisfying
 \[d_1(e_1)=x,\quad d_0(e_i)=d_1(e_{i+1}),\quad d_0(e_n)=y.\]
-In general, it can be difficult to determine whether or not two such compositions represent the same morphism of $h(S_\bullet)$ (even for finite simplicial sets, this question is algorithmically undecidable). However, there are two situations in which the homotopy category $h(S_\bullet)$ admits a simpler description:
+In general, it can be difficult to determine whether or not two such compositions represent the same morphism of $\ho S_\bullet$ (even for finite simplicial sets, this question is algorithmically undecidable). However, there are two situations in which the homotopy category $\ho S_\bullet$ admits a simpler description:
 \begin{itemize}
-\item Let $S_\bullet$ be a simplicial set of dimension $\leq 1$, which we can identify with a directed graph $G$ (\cref{simplicial set graph functor on dim 1 faithful}). In this case, the homotopy category $h(S_\bullet)$ is generated freely by the vertices and edges of the graph $G$: that is, it can be identified with the \textit{path category} of $G$.
-\item Let $S_\bullet$ be an $\infty$-category (we will define this later). In this case, every morphism in the homotopy category $C=h(S_\bullet)$ can be represented by a single edge of $S_\bullet$, rather than a composition of edges (in other words, the canonical map $u:S_\bullet\to N_\bullet(\mathcal{C})$ is surjective on edges), and two edges of $S_\bullet$ represent the same morphism in $h(S_\bullet)$ if and only if they are homotopic. This leads to a more explicit description of the homotopy category $\mathcal{C}$ which generalize \cref{simplicial set Sing(X) homotopy cat is Pi(X)}.
+\item Let $S_\bullet$ be a simplicial set of dimension $\leq 1$, which we can identify with a directed graph $G$ (\cref{simplicial set graph functor on dim 1 faithful}). In this case, the homotopy category $\ho S_\bullet$ is generated freely by the vertices and edges of the graph $G$: that is, it can be identified with the \textit{path category} of $G$.
+\item Let $S_\bullet$ be an $\infty$-category (we will define this later). In this case, every morphism in the homotopy category $C=\ho S_\bullet$ can be represented by a single edge of $S_\bullet$, rather than a composition of edges (in other words, the canonical map $u:S_\bullet\to N_\bullet(\mathcal{C})$ is surjective on edges), and two edges of $S_\bullet$ represent the same morphism in $\ho S_\bullet$ if and only if they are homotopic. This leads to a more explicit description of the homotopy category $\mathcal{C}$ which generalize \cref{simplicial set Sing(X) homotopy cat is Pi(X)}.
 \end{itemize}
 \end{remark}
 \subsection{Path category of a directed graph}
-Let $S_\bullet$ be a simplicial set of dimension $\leq 1$. In this paragraph, we will show that the homotopy category $h(S_\bullet)$ admits a concrete description, which can be conveniently described using the language of directed graphs.\par
+Let $S_\bullet$ be a simplicial set of dimension $\leq 1$. In this paragraph, we will show that the homotopy category $\ho S_\bullet$ admits a concrete description, which can be conveniently described using the language of directed graphs.\par
 Let $G$ be a directed graph. For each edge $e\in E(G)$, we let $s(e),t(e)\in V(G)$ denote the source and target of $e$, respectively. If $x$ and $y$ are vertices of $V(G)$, then a path from $x$ to $y$ is a sequence of edges $(e_n,e_{n-1},\dots,e_1)$ satisfying
 \[s(e_1)=x,\quad t(e_i)=s(e_{i+1}),\quad t(e_n)=y.\]
  By convention, we regard the empty sequence of edges as a path from each vertex $x\in V(G)$. to itself. We define a category $P[G]$ as follows:
@@ -1068,7 +1068,7 @@ We will generally use calligraphic letters (like $\mathcal{C}$, $\mathcal{D}$, a
 &Y\ar[rd,"g"]&\\
 X\ar[ru,"f"]\ar[rr,dashed,"h"]&&Z
 \end{tikzcd}\]
-In this case, the morphism $h=d_1(\sigma)$ is called a composition of $f$ and $g$. However, this comes with a caveat: the extension $\sigma$ is usually not unique (rather than the case in categories, where we have condition (Ner)), so the morphism $h$ is not completely determined by $f$ and $g$. However, we will show that it is unique up to a certain notion of homotopy, and we will apply this observation to give a concrete description of the homotopy category $h(\mathcal{C})$ when $\mathcal{C}$ is an $\infty$-category.
+In this case, the morphism $h=d_1(\sigma)$ is called a composition of $f$ and $g$. However, this comes with a caveat: the extension $\sigma$ is usually not unique (rather than the case in categories, where we have condition (Ner)), so the morphism $h$ is not completely determined by $f$ and $g$. However, we will show that it is unique up to a certain notion of homotopy, and we will apply this observation to give a concrete description of the homotopy category $\ho\mathcal{C}$ when $\mathcal{C}$ is an $\infty$-category.
 \subsection{Objects and morphisms}
 Let $\mathcal{C}=S_\bullet$ be an $\infty$-category. An \textbf{object} of $\mathcal{C}$ is a vertex of the simplicial set $S_\bullet$ (that is, an element of the set $S_0$). A morphism of $\mathcal{C}$ is an edge of the simplicial set $S_\bullet$ (that is, an element of $S_1$). If $f\in S_1$ is a morphism of $\mathcal{C}$, the objects $X=d_1(f)$ and $Y=d_0(f)$ are called the \textbf{source} and \textbf{target} of $f$, respectively. In this case, we say that $f$ is a morphism from $X$ to $Y$. For any object $X$ of $\mathcal{C}$, we can regard the degenerate edge $s_0(X)$ as a morphism from $X$ to itself; this is denoted by $\id_X$ and called the \textbf{identity morphism} of $X$. We often write $X\in\mathcal{C}$ to indicate that $X$ is an object of $\mathcal{C}$, and we use the phrase "$f:X\to Y$ is a morphism of $\mathcal{C}$" to indicate that $f$ is a morphism of $\mathcal{C}$ having source $X$ and target $Y$.
 \begin{example}
@@ -1269,19 +1269,19 @@ X\ar[ru,"f"]\ar[rru,dashed,"h"{anchor=south}]\ar[rrr,dashed,"h''"]&&&Z\ar[llu,cr
 Using our assumption that $\mathcal{C}$ is an $\infty$-category, we can extend $\tau_0$ to a $3$-simplex $\tau$ of $\mathcal{C}$. Then the face $d_1(\tau)$ is a homotopy from $h$ to $h''$.
 \end{proof}
 \subsection{Homotopy category of an \texorpdfstring{$\infty$}{inf}-category}
-To any topological space $X$, recall that one can associate a category $\Pi(X)$, called the fundamental groupoid of $X$. This category can be described informally as follows: the objects of $\Pi(X)$ are points of $X$, and given a pair of points $x,y\in X$, $\Hom_{\Pi(X)}(x,y)$ is the set of homotopy classes of continuous paths $p:[0,1]\to X$ satisfying $p(0)=x$ and $p(1)=y$, with composition given by concatenation of paths. All of the concepts needed to define the fundamental groupoid $\Pi(X)$ (such as points, paths, homotopies, and concatenation) can be formulated in terms of singular $n$-simplices of $X$ (for $n\geq 2$). Consequently, one can view the fundamental groupoid $\Pi(X)$ as an invariant of the simplicial set $\Sing_\bullet(X)$, rather than the topological space $X$. In this paragraph, we describe an extension of this invariant, where the simplicial set $\Sing_\bullet(X)$ is replaced by an arbitrary $\infty$-category $\mathcal{C}$. In this case, the fundamental groupoid $\Pi(X)$ is replaced by a category $h(\mathcal{C})$ which we call the \textbf{homotopy category} of $\mathcal{C}$ (beware that the homotopy category $h\mathcal{C}$ is generally not a groupoid: in fact, we will later see that it is a groupoid if and only if $\mathcal{C}$ is a Kan complex).\par
-Let $\mathcal{C}$ be an $\infty$-category. For every pair of objects $X,Y\in\mathcal{C}$, we let $\Hom_{h(\mathcal{C})}(X,Y)$ denote the set of homotopy classes of morphisms from $X$ to $Y$ in $\mathcal{C}$. For every morphism $f:X\to Y$, we let $[f]$ denote its equivalence class in $\Hom_{h(\mathcal{C})}(X,Y)$. It follows from Propositions~\ref{simplicial set inf-cat composition unique up to homotopy} and \ref{simplicial set inf-cat composotion respect homotopy} that, for every triple of objects $X,Y,Z\in\mathcal{C}$, there is a unique composition law
+To any topological space $X$, recall that one can associate a category $\Pi(X)$, called the fundamental groupoid of $X$. This category can be described informally as follows: the objects of $\Pi(X)$ are points of $X$, and given a pair of points $x,y\in X$, $\Hom_{\Pi(X)}(x,y)$ is the set of homotopy classes of continuous paths $p:[0,1]\to X$ satisfying $p(0)=x$ and $p(1)=y$, with composition given by concatenation of paths. All of the concepts needed to define the fundamental groupoid $\Pi(X)$ (such as points, paths, homotopies, and concatenation) can be formulated in terms of singular $n$-simplices of $X$ (for $n\geq 2$). Consequently, one can view the fundamental groupoid $\Pi(X)$ as an invariant of the simplicial set $\Sing_\bullet(X)$, rather than the topological space $X$. In this paragraph, we describe an extension of this invariant, where the simplicial set $\Sing_\bullet(X)$ is replaced by an arbitrary $\infty$-category $\mathcal{C}$. In this case, the fundamental groupoid $\Pi(X)$ is replaced by a category $\ho\mathcal{C}$ which we call the \textbf{homotopy category} of $\mathcal{C}$ (beware that the homotopy category $h\mathcal{C}$ is generally not a groupoid: in fact, we will later see that it is a groupoid if and only if $\mathcal{C}$ is a Kan complex).\par
+Let $\mathcal{C}$ be an $\infty$-category. For every pair of objects $X,Y\in\mathcal{C}$, we let $\Hom_{\ho\mathcal{C}}(X,Y)$ denote the set of homotopy classes of morphisms from $X$ to $Y$ in $\mathcal{C}$. For every morphism $f:X\to Y$, we let $[f]$ denote its equivalence class in $\Hom_{\ho\mathcal{C}}(X,Y)$. It follows from Propositions~\ref{simplicial set inf-cat composition unique up to homotopy} and \ref{simplicial set inf-cat composotion respect homotopy} that, for every triple of objects $X,Y,Z\in\mathcal{C}$, there is a unique composition law
 \begin{align}\label{simplicial set inf-cat composition in homotopy cat}
-\circ:\Hom_{h(\mathcal{C})}(Y,Z)\times\Hom_{h(\mathcal{C})}(X,Y)\to\Hom_{h(\mathcal{C})}(X,Z)
+\circ:\Hom_{\ho\mathcal{C}}(Y,Z)\times\Hom_{\ho\mathcal{C}}(X,Y)\to\Hom_{\ho\mathcal{C}}(X,Z)
 \end{align}
 satisfying the identity $[g]\circ[f]=[h]$ whenever $h:X\to Z$ is a composition of $f$ and $g$ in the $\infty$-category $\mathcal{C}$.
 \begin{proposition}\label{simplicial set inf-cat homotopy cat def}
 Let $\mathcal{C}$ be an $\infty$-category.
 \begin{itemize}
-\item[(a)] The composition law (\ref{simplicial set inf-cat composition in homotopy cat}) is associative. That is, for every triple of composable morphisms $f:W\to X$, $g:X\to Y$, and $h:Y\to Z$ in $\mathcal{C}$, we have an equality $([h]\circ[g])\circ[f]=[h]\circ([g]\circ[f])$ in $\Hom_{h(\mathcal{C})}(W,Z)$.
-\item[(b)] For every object $X\in\mathcal{C}$, the homotopy class $[\id_X]\in Hom_{h(\mathcal{C})}(X,X)$ is a two-sided identity with respect to the composition law (\ref{simplicial set inf-cat composition in homotopy cat}). That is, for every morphism $f:W\to X$ in $\mathcal{C}$ and every morphism $g:X\to Y$ in $\mathcal{C}$, we have $[\id_X]\circ[f]=[f]$ and $[g]\circ[\id_X]=[g]$.
+\item[(a)] The composition law (\ref{simplicial set inf-cat composition in homotopy cat}) is associative. That is, for every triple of composable morphisms $f:W\to X$, $g:X\to Y$, and $h:Y\to Z$ in $\mathcal{C}$, we have an equality $([h]\circ[g])\circ[f]=[h]\circ([g]\circ[f])$ in $\Hom_{\ho\mathcal{C}}(W,Z)$.
+\item[(b)] For every object $X\in\mathcal{C}$, the homotopy class $[\id_X]\in Hom_{\ho\mathcal{C}}(X,X)$ is a two-sided identity with respect to the composition law (\ref{simplicial set inf-cat composition in homotopy cat}). That is, for every morphism $f:W\to X$ in $\mathcal{C}$ and every morphism $g:X\to Y$ in $\mathcal{C}$, we have $[\id_X]\circ[f]=[f]$ and $[g]\circ[\id_X]=[g]$.
 \end{itemize}
-In other word, the composition law (\ref{simplicial set inf-cat composition in homotopy cat}) makes $h(\mathcal{C})$ a category, called the \textbf{homotopy category} of $\mathcal{C}$.
+In other word, the composition law (\ref{simplicial set inf-cat composition in homotopy cat}) makes $\ho\mathcal{C}$ a category, called the \textbf{homotopy category} of $\mathcal{C}$.
 \end{proposition}
 \begin{proof}
 We first prove (a). Let $u:W\to Y$ be a composition of $f$ and $g$, let $v:X\to Z$ be a composition of $g$ and $h$, and let $w:W\to Z$ be a composition of $f$ and $v$. Then $([h]\circ[g])\circ[f]=[w]$ and $[h]\circ([g]\circ[f])=[h]\circ[u]$. It therefore suffices to show that $w$ is a composition of $u$ and $h$. Choose a $2$-simplex $\sigma_0$ of $\mathcal{C}$ which witnesses $v$ as a composition of $g$ and $h$, a $2$-simplex $\sigma_0$ of $\mathcal{C}$ which witnesses $w$ as a composition of $f$ and $v$, and a $2$-simplex $\sigma_3$ of $\mathcal{C}$ which witnesses $u$ as a composition of $f$ and $g$. Then the sequence $(\sigma_0,\ast,\sigma_2,\sigma_3)$ determines a map of simplicial sets $\tau_0:\Lambda_1^3\to\mathcal{C}$, which we depict informally as a diagram
@@ -1292,28 +1292,28 @@ W\ar[ru,"f"]\ar[rru,dashed,"u"{anchor=south}]\ar[rrr,dashed,"w"]&&&Z\ar[llu,cros
 Using our assumption that $\mathcal{C}$ is an $\infty$-category, we can extend $\tau_0$ to a $3$-simplex $\tau$ of $\mathcal{C}$. Then the $2$-simplex $d_1(\tau)$ witnesses $w$ as a composition of $u$ and $h$.
 \end{proof}
 \begin{example}
-Let $\mathcal{C}$ be an ordinary category. Then the homotopy category of the $\infty$-category $N_\bullet(\mathcal{C})$ can be identified with $\mathcal{C}$. In particular, for each $n\geq 0$, the homotopy category $h(\Delta^n)$ can be identified with $[n]$.
+Let $\mathcal{C}$ be an ordinary category. Then the homotopy category of the $\infty$-category $N_\bullet(\mathcal{C})$ can be identified with $\mathcal{C}$. In particular, for each $n\geq 0$, the homotopy category $\ho\Delta^n$ can be identified with $[n]$.
 \end{example}
 \begin{example}
-Let $X$ be a topological space, and regard the singular simplicial set $\Sing_\bullet(X)$ as an $\infty$-category. Then the homotopy category $h(\Sing_\bullet(X))$ can be identified with the fundamental groupoid $\Pi(X)$.
+Let $X$ be a topological space, and regard the singular simplicial set $\Sing_\bullet(X)$ as an $\infty$-category. Then the homotopy category $\ho\Sing_\bullet(X)$ can be identified with the fundamental groupoid $\Pi(X)$.
 \end{example}
-Let $\mathcal{C}$ be an $\infty$-category and let $\sigma:\Delta^n\to\mathcal{C}$ be an $n$-simplex of $\mathcal{C}$. For $0\leq i\leq n$, let $C_i$ denote the object of $\mathcal{C}$ given by the image of the $i$-th vertex of $\Delta^n$. For $0\leq i\leq j\leq n$, let $f_{ij}:C_i\to C_j$ denote the image under $\sigma$ of the edge of $\Delta^n$ joining the $i$-th vertex to the $j$-th vertex, and let $[f_{ij}]\in\Hom_{h(\mathcal{C})}(C_i,C_j)$ denote the homotopy class of $f_{ij}$. Then we can regard $(\{C_i\},\{[f_{ij}]\})$ as a functor from the linearly ordered set $[n]$ to the homotopy category $h(\mathcal{C})$. Let $u(\sigma)$ denote the corresponding $n$-simplex of $N_\bullet(h(\mathcal{C}))$. Then the map $\sigma\mapsto u(\sigma)$ determines a map of simplicial sets
-\[u:\mathcal{C}\to N_\bullet(h(\mathcal{C})).\]
+Let $\mathcal{C}$ be an $\infty$-category and let $\sigma:\Delta^n\to\mathcal{C}$ be an $n$-simplex of $\mathcal{C}$. For $0\leq i\leq n$, let $C_i$ denote the object of $\mathcal{C}$ given by the image of the $i$-th vertex of $\Delta^n$. For $0\leq i\leq j\leq n$, let $f_{ij}:C_i\to C_j$ denote the image under $\sigma$ of the edge of $\Delta^n$ joining the $i$-th vertex to the $j$-th vertex, and let $[f_{ij}]\in\Hom_{\ho\mathcal{C}}(C_i,C_j)$ denote the homotopy class of $f_{ij}$. Then we can regard $(\{C_i\},\{[f_{ij}]\})$ as a functor from the linearly ordered set $[n]$ to the homotopy category $\ho\mathcal{C}$. Let $u(\sigma)$ denote the corresponding $n$-simplex of $N_\bullet(\ho\mathcal{C})$. Then the map $\sigma\mapsto u(\sigma)$ determines a map of simplicial sets
+\[u:\mathcal{C}\to N_\bullet(\ho\mathcal{C}).\]
 \begin{proposition}\label{simplicial set inf-cat homotopy cat is adjoint}
-Let $\mathcal{C}$ be an $\infty$-category and let $u:\mathcal{C}\to N_\bullet(h(\mathcal{C}))$ be the map described above. Then $u$ exhibits $h(\mathcal{C})$ as a homotopy category of the simplicial set $\mathcal{C}$. In other words, for every category $\mathcal{D}$, the composite map
-\[\Hom_{\mathbf{Cat}}(h(\mathcal{C}),\mathcal{D})\to\Hom_{\mathbf{Set}_\Delta}(N_\bullet(h(\mathcal{C})),N_\bullet(\mathcal{D}))\stackrel{\circ u}{\to}\Hom_{\mathbf{Set}_\Delta}(\mathcal{C},N_\bullet(\mathcal{D}))\]
+Let $\mathcal{C}$ be an $\infty$-category and let $u:\mathcal{C}\to N_\bullet(\ho\mathcal{C})$ be the map described above. Then $u$ exhibits $\ho\mathcal{C}$ as a homotopy category of the simplicial set $\mathcal{C}$. In other words, for every category $\mathcal{D}$, the composite map
+\[\Hom_{\mathbf{Cat}}(\ho\mathcal{C},\mathcal{D})\to\Hom_{\mathbf{Set}_\Delta}(N_\bullet(\ho\mathcal{C}),N_\bullet(\mathcal{D}))\stackrel{\circ u}{\to}\Hom_{\mathbf{Set}_\Delta}(\mathcal{C},N_\bullet(\mathcal{D}))\]
 is bijective.
 \end{proposition}
 \begin{proof}
-Let $F:\mathcal{C}\to N_\bullet(\mathcal{D})$ be a map of simplicial sets. Then $F$ induces a functor of homotopy categories $G:h(\mathcal{C})\to h(N_\bullet(D))\cong\mathcal{D}$. By construction, the map of simplicial sets
+Let $F:\mathcal{C}\to N_\bullet(\mathcal{D})$ be a map of simplicial sets. Then $F$ induces a functor of homotopy categories $G:\ho\mathcal{C}\to \ho N_\bullet(D)\cong\mathcal{D}$. By construction, the map of simplicial sets
 \[\begin{tikzcd}
-\mathcal{C}\ar[r,"u"]&N_\bullet(h(\mathcal{C}))\ar[r,"N_\bullet(G)"]&N_\bullet(\mathcal{D})
+\mathcal{C}\ar[r,"u"]&N_\bullet(\ho\mathcal{C})\ar[r,"N_\bullet(G)"]&N_\bullet(\mathcal{D})
 \end{tikzcd}\]
-agrees with $F$ on the vertices and edges of $\mathcal{C}$, and therefore coincides with $F$ (since a simplex of $N_\bullet(\mathcal{D})$ is determined by its $1$-dimensional facets). On the other hand, since any functor from $h(\mathcal{C})$ to $\mathcal{D}$ is comcpletely determined by its action on vertices and facets, we see $G$ is the unique functor satisfying this property. 
+agrees with $F$ on the vertices and edges of $\mathcal{C}$, and therefore coincides with $F$ (since a simplex of $N_\bullet(\mathcal{D})$ is determined by its $1$-dimensional facets). On the other hand, since any functor from $\ho\mathcal{C}$ to $\mathcal{D}$ is comcpletely determined by its action on vertices and facets, we see $G$ is the unique functor satisfying this property. 
 \end{proof}
 \subsection{Isomorphisms in \texorpdfstring{$\infty$}{inf}-categories}
-Let $\mathcal{C}$ be an $\infty$-category and let $f:X\to Y$ be a morphism of $\mathcal{C}$. We say that $f$ is an \textbf{isomorphism} if the homotopy class $[f]$ is an isomorphism in the homotopy category $h(\mathcal{C})$. We say that two objects $X,Y\in\mathcal{C}$ are isomorphic if there exists an isomorphism from $X$ to $Y$ (that is, if $X$ and $Y$ are isomorphic as objects of the homotopy category $h(\mathcal{C})$). It is clear that if $\mathcal{C}$ be an ordinary category, then a morphism $f:X\to Y$ of $\mathcal{C}$ is an isomorphism if and only if it is an isomorphism when regarded as a morphism of the $\infty$-category $N_\bullet(\mathcal{C})$, so this notion generalize the usual isomorphisms in categories.\par
-Now suppose that we are given a pair of morphisms $f:X\to Y$ and $g:Y\to X$ in an $\infty$-category $\mathcal{C}$. We say that $g$ is a \textbf{left homotopy inverse} of $f$ if the identity morphism $\id_X$ is a composition of $f$ and $g$: that is, if we have an equality $[\id_X]=[g]\circ[f]$ in the homotopy category $h(\mathcal{C})$. Similarly, $g$ is a \textbf{right homotopy inverse} of $f$ if the identity morphism $\id_Y$ is a composition of $g$ and $f$: that is, if we have an equality $[\id_Y]=[f]\circ[g]$ in the homotopy category $h(\mathcal{C})$. We say that $g$ is a \textbf{homotopy inverse} of $f$ if it is both a left and a right homotopy inverse of $f$. We note that the condition that $g$ is left homotopy inverse to $f$ is equivalent to that $f$ is right homotopy inverse to $g$, since both of these conditions are equivalent to the existence of a $2$-simplex $\sigma$ of $\mathcal{C}$ satisfying $d_0(\sigma)=g$, $d_1(\sigma)=\id_X$, and $d_2(\sigma)=f$, as depicted in the diagram
+Let $\mathcal{C}$ be an $\infty$-category and let $f:X\to Y$ be a morphism of $\mathcal{C}$. We say that $f$ is an \textbf{isomorphism} if the homotopy class $[f]$ is an isomorphism in the homotopy category $\ho\mathcal{C}$. We say that two objects $X,Y\in\mathcal{C}$ are isomorphic if there exists an isomorphism from $X$ to $Y$ (that is, if $X$ and $Y$ are isomorphic as objects of the homotopy category $\ho\mathcal{C}$). It is clear that if $\mathcal{C}$ be an ordinary category, then a morphism $f:X\to Y$ of $\mathcal{C}$ is an isomorphism if and only if it is an isomorphism when regarded as a morphism of the $\infty$-category $N_\bullet(\mathcal{C})$, so this notion generalize the usual isomorphisms in categories.\par
+Now suppose that we are given a pair of morphisms $f:X\to Y$ and $g:Y\to X$ in an $\infty$-category $\mathcal{C}$. We say that $g$ is a \textbf{left homotopy inverse} of $f$ if the identity morphism $\id_X$ is a composition of $f$ and $g$: that is, if we have an equality $[\id_X]=[g]\circ[f]$ in the homotopy category $\ho\mathcal{C}$. Similarly, $g$ is a \textbf{right homotopy inverse} of $f$ if the identity morphism $\id_Y$ is a composition of $g$ and $f$: that is, if we have an equality $[\id_Y]=[f]\circ[g]$ in the homotopy category $\ho\mathcal{C}$. We say that $g$ is a \textbf{homotopy inverse} of $f$ if it is both a left and a right homotopy inverse of $f$. We note that the condition that $g$ is left homotopy inverse to $f$ is equivalent to that $f$ is right homotopy inverse to $g$, since both of these conditions are equivalent to the existence of a $2$-simplex $\sigma$ of $\mathcal{C}$ satisfying $d_0(\sigma)=g$, $d_1(\sigma)=\id_X$, and $d_2(\sigma)=f$, as depicted in the diagram
 \[\begin{tikzcd}
 &Y\ar[rd,"g"]&\\
 X\ar[ru,"f"]\ar[rr,"\id_X"]&&X
@@ -1332,7 +1332,7 @@ In this case, the morphism $g$ is uniquely determined up to homotopy; moreover, 
 Let $f:X\to Y$ be a morphism in an $\infty$-category $\mathcal{C}$, and suppose that $g,h:Y\to X$ are left homotopy inverses to $f$. If $f$ does not admit a right homotopy inverse, then $g$ and $h$ need not be homotopic. This follows from the fact that a left-invertible morphism is not necessarily invertible.
 \end{remark}
 \begin{proposition}\label{simplicial set Kan morphism is isomorphism}
-Let $\mathcal{C}$ be a Kan complex. Then every morphisms of $\mathcal{C}$ is an isomorphism. In other words, its homotopy category $h(\mathcal{C})$ is a groupoid.
+Let $\mathcal{C}$ be a Kan complex. Then every morphisms of $\mathcal{C}$ is an isomorphism. In other words, its homotopy category $\ho\mathcal{C}$ is a groupoid.
 \end{proposition}
 \begin{proof}
 Let $f:X\to Y$ be a morphism in $\mathcal{C}$. Then the tuple $(\ast,\id_X,f)$ determines a map of simplicial sets $\sigma_0:\Lambda^2_0\to\mathcal{C}$, which we depict as
@@ -1342,7 +1342,7 @@ X\ar[ru,"f"]\ar[rr,"\id_X"]&&X
 \end{tikzcd}\]
 If $\mathcal{C}$ is a Kan complex, then we can extend $\sigma_0$ to a $2$-simplex $\sigma$ of $\mathcal{C}$. Then $\sigma$ exhibits the morphism $g=d_0(\sigma)$ as a left homotopy inverse to $f$. A similar argument shows that $f$ admits a right homotopy inverse, so that $f$ is an isomorphism.
 \end{proof}
-Let $S_\bullet$ be a Kan complex, then it follows from \cref{simplicial set Kan morphism is isomorphism} that the homotopy category $h(S_\bullet)$ is a groupoid. We denote this groupoid by $\Pi(S_\bullet)$ and call it as the \textbf{fundamental groupoid} of $S_\bullet$.
+Let $S_\bullet$ be a Kan complex, then it follows from \cref{simplicial set Kan morphism is isomorphism} that the homotopy category $\ho S_\bullet$ is a groupoid. We denote this groupoid by $\Pi(S_\bullet)$ and call it as the \textbf{fundamental groupoid} of $S_\bullet$.
 \begin{remark}
 Let $S_\bullet$ be a Kan complex. By definition, the objects of the fundamental groupoid $\Pi(S_\bullet)$ are the vertices of $S_\bullet$, and a pair of vertices $x,y\in S_0$ are isomorphic in $\Pi(S_\bullet)$ if and only if there exists an edge $e:x\to y$ in $S_\bullet$. Applying \cref{simplicial set Kan same component iff connected by edge}, we deduce that $x,y\in S_0$ are isomorphic if and only if they belong to the same connected component of $S_\bullet$. In other words, we have a canonical bijection
 \[\pi_0(S_\bullet)\cong\Ob(\Pi(S_\bullet))/\text{isomorphism}.\]
@@ -1357,7 +1357,7 @@ Consequently, the notion of functor admits an obvious generalization to the sett
 \subsection{Example of functors}
 Let $F:\mathcal{C}\to\mathcal{D}$ be a functor of $\infty$-categories. Then $F$ carries objects of $\mathcal{D}$ to that of $\mathcal{D}$, and edges of $\mathcal{C}$ to that of $\mathcal{D}$. Also, $F$ is compatible with composition "up to coherent homotopy." For example, suppose that we are given objects $X,Y,Z\in\mathcal{C}$ and morphisms $f:X\to Y$, $g:Y\to Z$, and $h:X\to Z$. If $h$ is a composition of $f$ and $g$, then $F(h)$ is a composition of $F(f)$ and $F(g)$. Moreover, we can say more: if $\sigma$ is a $2$-simplex of $\mathcal{C}$ which witnesses $h$ as a composition of $f$ and $g$, then $F(\sigma)$ is a $2$-simplex of $\mathcal{D}$ which witnesses $F(h)$ as a composition of $F(f)$ and $F(g)$. In particular, we see that $f,g:X\to Y$ are homotopic morphisms of $\mathcal{C}$, then $F(f),F(g):F(X)\to F(Y)$ are homotopic morphisms of $\mathcal{D}$. More precisely, the functor $F$ carries homotopies from $f$ to $g$ (viewed as $2$-simplices of $\mathcal{C}$) to homotopies from $F(f)$ to $F(g)$ (viewed as $2$-simplices of $\mathcal{D}$).
 \begin{example}
-Let $\mathcal{C}$ be an $\infty$-category and let $\mathcal{D}$ be an ordinary category. Using \cref{simplicial set inf-cat homotopy cat is adjoint}, we obtain a bijection from functors of $\infty$-categories from $\mathcal{C}$ to $N_\bullet(\mathcal{D})$ to that of ordinary categories from $h(\mathcal{C})$ to $\mathcal{D}$
+Let $\mathcal{C}$ be an $\infty$-category and let $\mathcal{D}$ be an ordinary category. Using \cref{simplicial set inf-cat homotopy cat is adjoint}, we obtain a bijection from functors of $\infty$-categories from $\mathcal{C}$ to $N_\bullet(\mathcal{D})$ to that of ordinary categories from $\ho\mathcal{C}$ to $\mathcal{D}$
 \end{example}
 \begin{example}
 Let $X$ be a topological space and let $\mathcal{C}$ be an ordinary category. To specify a functor of $\infty$-categories $F:\Sing_\bullet(X)\to N_\bullet(\mathcal{C})$, one must give a rule which assigns to each continuous map $\sigma:|\Delta^n|\to X$ (viewed as an $n$-simplex of $\Sing_\bullet(X)$) a diagram $F(\sigma)$ of morphisms in $\mathcal{D}$. In particular:
@@ -1450,7 +1450,7 @@ Let $\mathcal{C}$ be an $\infty$-category and $K_\bullet\sub\Delta^1\times\Delta
 C_{00}\ar[r,"f"]\ar[d,swap,"g"]&C_{01}\ar[d,"g'"]\\
 C_{10}\ar[r,"f'"]&C_{11}
 \end{tikzcd}\]
-Composing with the unit map $\mathcal{C}\to N_\bullet(h(\mathcal{C}))$, we obtain a diagram $\sigma'$ in the homotopy category $h(\mathcal{C})$, which we can depict as
+Composing with the unit map $\mathcal{C}\to N_\bullet(\ho\mathcal{C})$, we obtain a diagram $\sigma'$ in the homotopy category $\ho\mathcal{C}$, which we can depict as
 \[\begin{tikzcd}
 C_{00}\ar[r,"{[f]}"]\ar[d,swap,"{[g]}"]&C_{01}\ar[d,"{[g']}"]\\
 C_{10}\ar[r,"{[f']}"]&C_{11}
@@ -1544,9 +1544,9 @@ Let $\mathcal{C}$ and $\mathcal{D}$ be categories. Then there is a canonical iso
 \[\Fun(\mathcal{C},\mathcal{D})\cong h\big(\Fun(N_\bullet(\mathcal{C}),N_\bullet(\mathcal{D}))\big).\]
 \end{corollary}
 \begin{corollary}\label{simplicial set Fun to nerve isomorphism}
-Let $S_\bullet$ be a simplicial set having homotopy category $h(S_\bullet)$. Then, for any category $\mathcal{D}$, the composite map
-\[N_\bullet(\Fun(h(S_\bullet),\mathcal{D}))\times S_\bullet\cong N_\bullet(\Fun(h(S_\bullet),\mathcal{D})\times h(S_\bullet))\to N_\bullet(\mathcal{D})\]
-induces an isomorphism of simplicial sets $\rho_{S_\bullet}:N_\bullet(\Fun(h(S_\bullet),\mathcal{D}))\cong\Fun(S_\bullet,N_\bullet(\mathcal{D}))$.
+Let $S_\bullet$ be a simplicial set having homotopy category $\ho S_\bullet$. Then, for any category $\mathcal{D}$, the composite map
+\[N_\bullet(\Fun(\ho S_\bullet,\mathcal{D}))\times S_\bullet\cong N_\bullet(\Fun(\ho S_\bullet,\mathcal{D})\times \ho S_\bullet)\to N_\bullet(\mathcal{D})\]
+induces an isomorphism of simplicial sets $\rho_{S_\bullet}:N_\bullet(\Fun(\ho S_\bullet,\mathcal{D}))\cong\Fun(S_\bullet,N_\bullet(\mathcal{D}))$.
 \end{corollary}
 \begin{proof}
 The construction $S_\bullet\mapsto\rho_{S_\bullet}$ carries colimits (in the category $\mathbf{Set}_\Delta$ of simplicial sets) to limits (in the category $\Fun([1],\mathbf{Set}_\Delta$) of morphisms between simplicial sets). Since the category $\mathbf{Set}_\Delta$ is generated under colimits by objects of the form $\Delta^n$, it suffices to prove \cref{simplicial set Fun to nerve isomorphism} in the special case where $S_\bullet=\Delta^n$. In this case, the desired result follows from \cref{simplicial set functor of nerve cat isomorphism}, since $S_\bullet$ is isomorphic to the nerve of the category $\mathcal{C}=[n]$.
@@ -1555,18 +1555,18 @@ The construction $S_\bullet\mapsto\rho_{S_\bullet}$ carries colimits (in the cat
 The formation of homotopy categories determines a functor $\mathbf{Set}_\Delta\to\mathbf{Cat}$ which commutes with finite products.
 \end{corollary}
 \begin{proof}
-Since the construction $S_\bullet\to h(S_\bullet)$ preserves final objects, it suffices to show that for any pair of simplicial sets $S_\bullet$ and $T_\bullet$, the canonical map
-\[u:h(S_\bullet\times T_\bullet)\to h(S_\bullet)\times h(T_\bullet)\]
+Since the construction $S_\bullet\to \ho S_\bullet$ preserves final objects, it suffices to show that for any pair of simplicial sets $S_\bullet$ and $T_\bullet$, the canonical map
+\[u:\ho S_\bullet\times T_\bullet\to \ho S_\bullet\times \ho T_\bullet\]
 is an isomorphism of categories. In other words, we want to show that for any category $\mathcal{C}$, composition with $u$ induces a bijection
-\[\Hom_{\mathbf{Cat}}(h(S_\bullet)\times h(T_\bullet),\mathcal{C})\to\Hom_{\mathbf{Cat}}(h(S_\bullet\times T_\bullet),\mathcal{C}).\]
+\[\Hom_{\mathbf{Cat}}(\ho S_\bullet\times \ho T_\bullet,\mathcal{C})\to\Hom_{\mathbf{Cat}}(\ho S_\bullet\times T_\bullet,\mathcal{C}).\]
 Unwinding the definitions and using the adjunction of $h$ and $N_\bullet$:
 \begin{gather*}
-\Hom_{\mathbf{Cat}}(h(S_\bullet)\times h(T_\bullet),\mathcal{C})\cong\Hom_{\mathbf{Cat}}(h(S_\bullet),\Fun(h(T_\bullet),\mathcal{C}))\cong \Hom_{\mathbf{Set}_\Delta}(S_\bullet,N_\bullet(\Fun(h(T_\bullet),\mathcal{C}))),\\
-\Hom_{\mathbf{Cat}}(h(S_\bullet\times T_\bullet),\mathcal{C})\cong\Hom_{\mathbf{Set}_\Delta}(S_\bullet\times T_\bullet,N_\bullet(\mathcal{C}))\cong\Hom_{\mathbf{Set}_\Delta}(S_\bullet,\Fun(T_\bullet,N_\bullet(\mathcal{C})))
+\Hom_{\mathbf{Cat}}(\ho S_\bullet\times \ho T_\bullet,\mathcal{C})\cong\Hom_{\mathbf{Cat}}(\ho S_\bullet,\Fun(\ho T_\bullet,\mathcal{C}))\cong \Hom_{\mathbf{Set}_\Delta}(S_\bullet,N_\bullet(\Fun(\ho T_\bullet,\mathcal{C}))),\\
+\Hom_{\mathbf{Cat}}(\ho S_\bullet\times T_\bullet,\mathcal{C})\cong\Hom_{\mathbf{Set}_\Delta}(S_\bullet\times T_\bullet,N_\bullet(\mathcal{C}))\cong\Hom_{\mathbf{Set}_\Delta}(S_\bullet,\Fun(T_\bullet,N_\bullet(\mathcal{C})))
 \end{gather*}
 we see that this map is in fact given by
 \begin{align*}
-\Hom_{\mathbf{Set}_\Delta}(S_\bullet,N_\bullet(\Fun(h(T_\bullet),\mathcal{C})))\stackrel{\rho_{T_\bullet}\circ}{\to}\Hom_{\mathbf{Set}_\Delta}(S_\bullet,\Fun(T_\bullet,N_\bullet(\mathcal{C}))),
+\Hom_{\mathbf{Set}_\Delta}(S_\bullet,N_\bullet(\Fun(\ho T_\bullet,\mathcal{C})))\stackrel{\rho_{T_\bullet}\circ}{\to}\Hom_{\mathbf{Set}_\Delta}(S_\bullet,\Fun(T_\bullet,N_\bullet(\mathcal{C}))),
 \end{align*}
 where $\rho_{T_\bullet}$ is the isomorphism appearing in the statement of \cref{simplicial set Fun to nerve isomorphism}.
 \end{proof}
@@ -1575,7 +1575,7 @@ We will be primarily interested in the special case where the target simplicial 
 Let $S_\bullet$ be a simplicial set and $\mathcal{D}$ be an $\infty$-category. Then the simplicial set $\Fun(S_\bullet,\mathcal{D})$ is an $\infty$-category.
 \end{theorem}
 If $\mathcal{C}$ and $\mathcal{D}$ are $\infty$-categories, by \cref{simplicial set Fun of inf-cat is inf-cat} simplicial set $\Fun(\mathcal{C},\mathcal{D})$ is an $\infty$-category, which is called the $\infty$-category of functors from $\mathcal{C}$ to $\mathcal{D}$. By definition, the objects of the $\infty$-category $\Fun(\mathcal{C},\mathcal{D})$ can be identified with functors from $\mathcal{C}$ to $\mathcal{D}$ (that is, with maps of simplicial sets from $\mathcal{C}$ to $\mathcal{D}$). We say the morphisms of $\Fun(\mathcal{C},\mathcal{D})$ are natural tranformations. That is, if $F,G:\mathcal{C}\to\mathcal{D}$ are objects of $\Fun(\mathcal{C},\mathcal{D})$, we define a natural transformation from $F$ to $G$ to be a map of simplicial sets $u:\Delta^1\times\mathcal{C}\to\mathcal{D}$ satisfying $u|_{\{0\}\times\mathcal{C}}=F$ and $u|_{\{1\}\times\mathcal{C}}=G$.\par
-Let us abuse notation by identifying each ordinary category $\mathcal{E}$ with the $\infty$-category $N_\bullet(\mathcal{E})$. In this case, \cref{simplicial set Fun to nerve isomorphism} implies that when $\mathcal{C}$ is an $\infty$-category and $\mathcal{D}$ is an ordinary category, then we have a canonical isomorphism $\Fun(C,D)\cong\Fun(h(\mathcal{C}),\mathcal{D})$. In particular, the functor $\infty$-category $\Fun(\mathcal{C},\mathcal{D})$ is an ordinary category.
+Let us abuse notation by identifying each ordinary category $\mathcal{E}$ with the $\infty$-category $N_\bullet(\mathcal{E})$. In this case, \cref{simplicial set Fun to nerve isomorphism} implies that when $\mathcal{C}$ is an $\infty$-category and $\mathcal{D}$ is an ordinary category, then we have a canonical isomorphism $\Fun(C,D)\cong\Fun(\ho\mathcal{C},\mathcal{D})$. In particular, the functor $\infty$-category $\Fun(\mathcal{C},\mathcal{D})$ is an ordinary category.
 \subsection{Digression: lifting properties}
 We now review some categorical terminology which will be useful in the proof of \cref{simplicial set Fun of inf-cat is inf-cat}. Let $\mathcal{C}$ be a category. A \textbf{lifting problem} in $\mathcal{C}$ is a commutative diagram
 \[\begin{tikzcd}

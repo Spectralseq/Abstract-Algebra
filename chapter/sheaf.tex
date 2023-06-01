@@ -58,7 +58,7 @@ A presheaf is a \textbf{sheaf} if it satisfies two more axioms.
 \[s_i|_{U_i\cap U_j}=s_j|_{U_i\cap U_j}\]
 for all $i$ and $j$, then there is some $s\in\mathscr{F}(U)$ such that $s|_{U_i}=s_i$ for all $i$.
 \end{itemize}
-A \textbf{morphism of sheaves} is a morphism of presheaves, and we obtain the category of sheaves on the topological space $X$, which we denote by $\mathbf{Shv}(X)$.
+A \textbf{morphism of sheaves} is a morphism of presheaves, and we obtain the category of sheaves on the topological space $X$, which we denote by $\Sh(X)$.
 \end{definition}
 \begin{remark}
 If $\mathscr{F}$ is a sheaf on $X$, then by using the covering of the empty set $U=\emp$ with empty index set $I=\emp$, we see $\mathscr{F}(\emp)$ is a set consisting of one element. In general, if $U,V\sub X$ are disjoint open subsets, then
@@ -109,7 +109,7 @@ which sends the equivalence class of $(U,f)$ in $\mathscr{F}_x$ to the class of 
 \end{tikzcd}
 \end{equation}
 Now we introduct a construction frequently apprears in the theory of sheaves. The \textbf{Godement construction} 
-\[\mathrm{God}:\mathbf{Psh}(X)\to\mathbf{Shv}(X)\]
+\[\mathrm{God}:\mathbf{Psh}(X)\to\Sh(X)\]
 is the functor given by sending a presheaf $\mathscr{F}\in\mathbf{PSh}(X)$ to the sheaf $\mathrm{God}(\mathscr{F})$ defined by sending an open set $U$ to
 \[\mathrm{God}(\mathscr{F})(U):=\prod_{x\in U}\mathscr{F}_x,\]
 with the restriction morphisms given by product projections (it is easy to see this defines a sheaf on $X$). The assignment of $\mathrm{God}$ on morphisms is given by sending a morphism of presheaves $\phi:\mathscr{F}\to\mathscr{G}$ to the morphism
@@ -178,7 +178,7 @@ Let $X$ be a topological space. Let $C_X$ be the sheaf of continuous $\R$-valued
 which coincides with usual definition of the support of a continuous function.
 \end{example}
 \subsection{Sheafification}
-In this part, we give a functorial way to attach to a presheaf a sheaf. This can be seen as the left adjoint of the forgetful functor from $\mathbf{Shv}(X)$ to $\mathbf{Psh}(X)$.
+In this part, we give a functorial way to attach to a presheaf a sheaf. This can be seen as the left adjoint of the forgetful functor from $\Sh(X)$ to $\mathbf{Psh}(X)$.
 \begin{definition}[\textbf{Universal property of sheafification}]
 If $\mathscr{F}$ is a presheaf on $X$, then a morphism of presheaves $\iota_{\mathscr{F}}:\mathscr{F}\to\mathscr{F}^{\#}$ on $X$ is called a \textbf{sheafification} of $\mathscr{F}$ if $\mathscr{F}^{\#}$ is a sheaf, and for any sheaf $\mathscr{G}$, and any presheaf morphism $\varphi:\mathscr{F}\to\mathscr{G}$, there exists a unique morphism of sheaves $\tilde{\varphi}:\mathscr{F}^{\#}\to\mathscr{G}$ making the diagram
 \[\begin{tikzcd}
@@ -187,7 +187,7 @@ If $\mathscr{F}$ is a presheaf on $X$, then a morphism of presheaves $\iota_{\ma
 \end{tikzcd}\]
 commute.\par
 As a universal construction, the sheafification functor $\mathscr{F}\to\mathscr{F}^{\#}$ is left-adjoint to the forgetful functor from sheaves on $X$ to presheaves on $X$: there is a canonical isomorphism
-\[\Mor_{\mathbf{Shv}(X)}(\mathscr{F}^{\#},\mathscr{G})\cong\Mor_{\mathbf{Psh}(X)}(\mathscr{F},\mathscr{G})\]
+\[\Mor_{\Sh(X)}(\mathscr{F}^{\#},\mathscr{G})\cong\Mor_{\mathbf{Psh}(X)}(\mathscr{F},\mathscr{G})\]
 for any presheaf $\mathscr{F}$ and sheaf $\mathscr{G}$.
 \end{definition}
 In \cref{Goement construction image of sheaf char} we see that if $\mathscr{F}$ is a sheaf, then $\mathscr{F}(U)$ can be identified as elements in $\prod_{x\in U}\mathscr{F}_x$ consists of compatible germs. This turns out to be a appropriate way to define the sheafification.
@@ -256,7 +256,7 @@ where $i_V:V\hookrightarrow U$ is the inclusion map. Let $\mathscr{U}^{\#}$ be i
 Let $\mathscr{F}$ be a sheaf and $s\in\mathscr{F}(U)$, then we can define a morphism $\varphi_s$ by setting $\varphi_{s,U}(\mathbf{1}_U)=s$ and others by restriction. Then we get a map
 \[\mathscr{F}(U)\to\Mor_{\mathbf{Psh}(X)}(\mathscr{U},\mathscr{F})\]
 which can be shown is an isomorphism. Together with the adjointness of sheafification, we get isomorphisms
-\[\mathscr{F}(U)\cong\Mor_{\mathbf{Psh}(X)}(\mathscr{U},\mathscr{F})\cong\Mor_{\mathbf{Shv}(X)}(\mathscr{U}^{\#},\mathscr{F}).\]
+\[\mathscr{F}(U)\cong\Mor_{\mathbf{Psh}(X)}(\mathscr{U},\mathscr{F})\cong\Mor_{\Sh(X)}(\mathscr{U}^{\#},\mathscr{F}).\]
 \end{example}
 \subsection{Direct and inverse images of sheaves}
 In this part $f:X\to Y$ denotes a continuous map of topological spaces. We will now see how to use $f$ in order to attach to a sheaf on $X$ a sheaf on $Y$ (direct image) and to a sheaf on $Y$ a sheaf an $X$ (inverse image).
@@ -268,7 +268,7 @@ the restriction maps given by the restriction maps for $\mathscr{F}$. Then $f_*\
 \begin{proposition}\label{sheaf direct image prop}
 Let $f:X\to Y$ be a continuous map
 \begin{itemize}
-\item[(a)] If $\mathscr{F}$ is a sheaf on $X$, then $f_*\mathscr{F}$ is a sheaf on $Y$. Therefore $f_*$ also defines a functor $f_*:\mathbf{Shv}(Y)\to\mathbf{Shv}(X)$.
+\item[(a)] If $\mathscr{F}$ is a sheaf on $X$, then $f_*\mathscr{F}$ is a sheaf on $Y$. Therefore $f_*$ also defines a functor $f_*:\Sh(Y)\to\Sh(X)$.
 \item[(b)] If $g:Y\to Z$ is a second continuous map, then $(g\circ f)_*=g_*\circ f_*$.
 \end{itemize}
 \end{proposition}
@@ -351,8 +351,8 @@ Let $\mathscr{G}$ be a sheaf of sets on $Y$. The \textbf{pullback sheaf} $f^{-1}
 \[f^{-1}\mathscr{G}=(f^{p}\mathscr{G})^{\#}.\]
 Sheafification is a left adjoint to the inclusion of sheaves in presheaves, and $f^{p}$ is a left adjoint to $f_*$ on presheaves. As a formal consequence we obtain that $f^{-1}$ is a left adjoint of pushforward on sheaves: for sheaves $\mathscr{F}$ and $\mathscr{G}$, we have
 \begin{align*}
-\Mor_{\mathbf{Shv}(X)}(f^{-1}\mathscr{G},\mathscr{F})&=\Mor_{\mathbf{Shv}(X)}\big((f^{p}\mathscr{G})^{\#},\mathscr{F}\big)\cong\Mor_{\mathbf{Psh}(X)}\big(f^{p}\mathscr{G},\mathscr{F}\big)\\
-&\cong\Mor_{\mathbf{Psh}(X)}(\mathscr{G},f_*\mathscr{F})=\Mor_{\mathbf{Shv}(X)}(\mathscr{G},f_*\mathscr{F})
+\Mor_{\Sh(X)}(f^{-1}\mathscr{G},\mathscr{F})&=\Mor_{\Sh(X)}\big((f^{p}\mathscr{G})^{\#},\mathscr{F}\big)\cong\Mor_{\mathbf{Psh}(X)}\big(f^{p}\mathscr{G},\mathscr{F}\big)\\
+&\cong\Mor_{\mathbf{Psh}(X)}(\mathscr{G},f_*\mathscr{F})=\Mor_{\Sh(X)}(\mathscr{G},f_*\mathscr{F})
 \end{align*}
 \begin{proposition}
 There are canonical maps 
@@ -405,139 +405,108 @@ If $x\notin\widebar{\{x\}}$, then there exist arbitrarily small open neighbourho
 \end{proof}
 \begin{proposition}\label{stalk adj skyscraper}
 Let $X$ be a topological space, and let $x\in X$ be a point. The functors $\mathscr{F}\mapsto\mathscr{F}_x$ and $A\mapsto i_{x,*}A$ are adjoint. In a formula,
-\[\Mor_{\mathbf{Set}}(\mathscr{F}_x,A)\cong\Mor_{\mathbf{Shv}(X)}(\mathscr{F},i_{x,*}A)\]
+\[\Mor_{\mathbf{Set}}(\mathscr{F}_x,A)\cong\Mor_{\Sh(X)}(\mathscr{F},i_{x,*}A)\]
 \end{proposition}
 \begin{proof}
 Consider the pull back functor of the map $i_x:\{x\}\to X$: for a sheaf $\mathscr{F}$ on $X$,
 \[i_x^{-1}\mathscr{F}(\{x\})=\rlim_{U\ni x}\mathscr{F}(U),\]
 which is exactly the stalk of $\mathscr{F}$ at $x$. Thus the adjointness comes from that of $i_x^{-1}$ and $i_{x,*}$.
 \end{proof}
-\subsection{Open immersions and closed immersions}
-\paragraph{Open immersions and sheaves}
-Let $j:U\hookrightarrow X$ be an open immersion (that is, an embedded of $U$ into an open subset of $X$). It turns out that there is a functor $j_!$ which is left adjoint to $j^{-1}$, so that we get a triple $(j_!,j^{-1},j_*)$ in which each consecutive pair is an adjunction and $j^{-1}$ is exact. But first let us point out that $j^{-1}$ has a particularly simple description in the case of an open immersion.
-\begin{proposition}\label{sheaf inverse image of open immersion}
-Let $X$ be a topological space. Let $j:U\to X$ be the inclusion of an open subset $U$ into $X$.
-\begin{itemize}
-\item[(a)] Let $\mathscr{G}$ be a presheaf of sets on $X$. The presheaf $j^p\mathscr{G}$ is given by the rule $V\mapsto\mathscr{G}(V)$ for $V\sub U$ open.
-\item[(b)] Let $\mathscr{G}$ be a sheaf of sets on $X$. The sheaf $j^{-1}\mathscr{G}$ is given by the rule $V\mapsto\mathscr{G}(V)$ for $V\sub U$ open.
-\item[(c)] On the category of presheaves of $U$ we have $j^pj_*=\mathbf{1}$, and on the category of sheaves of $U$ we have $j^{-1}j_*=\mathbf{1}$.
-\end{itemize}
-\end{proposition}
-\begin{proof}
-Note that $j^{-1}j_*\mathscr{F}(V)=j^{p}j_*\mathscr{F}(V)=\mathscr{F}(V)$ for open subsets $V\sub U$, so the claims follow immediately.
-\end{proof}
-\begin{definition}
-Let $X$ be a topological space. Let $j:U\to X$ be the inclusion of an open subset.
-\begin{itemize}
-\item Let $\mathscr{G}$ be a presheaf of sets on $X$. The presheaf $j^p\mathscr{G}$ is called the \textbf{restriction} of $\mathscr{G}$ to $U$ and denoted $\mathscr{G}|_U$.
-\item Let $\mathscr{G}$ be a sheaf of sets on $X$. The presheaf $j^{-1}\mathscr{G}$ is called the \textbf{restriction} of $\mathscr{G}$ to $U$ and denoted $\mathscr{G}|_U$.
-\end{itemize}
-\end{definition}
-\begin{definition}
-Let $X$ be a topological space. Let $j:U\hookrightarrow X$ be the inclusion
-of an open subset.
-\begin{itemize}
-\item[(a)] Let $\mathscr{F}$ be a presheaf of sets on $U$. We define the \textbf{extension of $\mathscr{F}$ by the empty set} $j_{p!}\mathscr{F}$ to be the presheaf of sets on $X$ defined by the rule
-\[j_{p!}=\begin{cases}
-\mathscr{F}(V)&\text{if }V\sub U,\\
-\emp&\text{otherwise}.
-\end{cases}\]
-with obvious restriction mappings.
-\item[(b)] Let $\mathscr{F}$ be a sheaf of sets on $U$. We define the \textbf{extension of $\mathscr{F}$} by the empty set $j_!\mathscr{F}$ to be the sheafification of the presheaf $j_{p!}\mathscr{F}$.
-\end{itemize}
-\end{definition}
-\begin{proposition}\label{sheaf open extension functor prop}
-Let $X$ be a topological space. Let $j:U\to X$ be the inclusion of an open subset. 
-\begin{itemize}
-\item[(a)] The functor $j_{p!}$ is a left adjoint to the restriction functor $j^p$:
-\[\Mor_{\mathbf{Psh}(X)}(j_{p!}\mathscr{F},\mathscr{G})\cong\Mor_{\mathbf{Psh}(U)}(\mathscr{F},j^p\mathscr{G})=\Mor_{\mathbf{Psh}(X)}(\mathscr{F},\mathscr{G}|_U).\]
-\item[(b)] The functor $j_!$ is a left adjoint to restriction,
-\[\Mor_{\mathbf{Shv}(X)}(j_{!}\mathscr{F},\mathscr{G})\cong\Mor_{\mathbf{Shv}(U)}(\mathscr{F},j^{-1}\mathscr{G})=\Mor_{\mathbf{Shv}(U)}(\mathscr{F},\mathscr{G}|_U).\]
-\item[(c)] Let $\mathscr{F}$ be a sheaf of sets on $U$. The stalks of the sheaf $j_!\mathscr{F}$ are described as follows
-\[(j_!\mathscr{F})_x=\begin{cases}
-\mathscr{F}_x&\text{if }x\in U,\\
-\emp&\text{otherwise}.
-\end{cases}\]
-Therefore the functor $j_!$ is exact.
-\item[(e)] On the category of presheaves of $U$ we have $j^pj_{p!}=\mathbf{1}$, and on the category of sheaves of $U$ we have $j^{-1}j_!=\mathbf{1}$.
-\end{itemize}
-\end{proposition}
-\begin{proof}
-To map $j_{p!}\mathscr{F}$ into $\mathscr{G}$ it is enough to map $\mathscr{F}(V)\to\mathscr{G}(V)$ whenever $V\sub U$ compatibly with restriction mappings. And the same description holds for maps $\mathscr{F}\mapsto\mathscr{G}|_U$. The adjointness of $j_!$ and restriction follows from this and the properties of sheafification. The identification of stalks is obvious from the definition of the extension by the empty set and the definition of a stalk.\par
-Finally, if $\mathscr{F}$ is a sheaf on $U$, consider the canonical maps
-\[\mathscr{F}\mapsto j^pj_{p!}\mathscr{F},\quad\mathscr{F}\mapsto j^{-1}j_{!}\mathscr{F}.\]
-Since the induced maps on stalks are isomorphisms, the claim follows.
-\end{proof}
-\begin{theorem}\label{sheaf open extension fully faithful essential image char}
-Let $X$ be a topological space. Let $j:U\to X$ be the inclusion of an open subset. The functor
-\[j_!:\mathbf{Shv}(U)\to\mathbf{Shv}(X)\]
-is fully faithful. Its essential image consists exactly of those sheaves $\mathscr{G}$ whose support is contained in $U$.
-\end{theorem}
-\begin{proof}
-Fully faithfulness follows formally from $j^{-1}j_!=\mathbf{1}$. We have seen that any sheaf in the image of the functor has the property on the stalks mentioned in the lemma. Conversely, suppose that $\mathscr{G}$ has the indicated property, then the canonical map
-\[j_!j^{-1}\mathscr{G}\to\mathscr{G}\]
-is an isomorphism on all stalks and hence an isomorphism.
-\end{proof}
-\paragraph{Closed immersions and sheaves}
-Let $X$ be a topological space. Let $i:Z\to X$ be the inclusion of a closed subset $Z$ into $X$. In a similar fashion, we can extend the adjunction $(i^{-1},i_*)$. First we state an important result for the direct image $i_*$.
-\begin{lemma}\label{sheaf closed pushforward stalk char}
-Let $X$ be a topological space. Let $i:Z\hookrightarrow X$ be the inclusion of a closed subset $Z$ into $X$. Let $\mathscr{F}$ be a sheaf of sets on $Z$. The stalks of $i_*\mathscr{F}$ are described By
-\[(i_*\mathscr{F})_x=\begin{cases}
-\mathscr{F}_x&x\in Z,\\
-\{\ast\}&\text{otherwise}.
-\end{cases}\]
-\end{lemma}
-\begin{proof}
-This follows from the definition of $i_*\mathscr{F}$, and the fact that $Z$ is closed.
-\end{proof}
-\begin{theorem}\label{sheaf closed extension functor prop}
-Let $X$ be a topological space. Let $i:Z\to X$ be the inclusion of a closed subset. The functor
-\[i_*:\mathbf{Shv}(Z)\to\mathbf{Shv}(X)\]
-is fully faithful. Its essential image consists exactly of those sheaves $\mathscr{G}$ whose support is contained in $Z$. The functor $i^{-1}$ is a left inverse to $i_*$.
-\end{theorem}
-\begin{proof}
-Fully faithfulness follows formally from $i^{-1}i_*=\mathbf{1}$. We have seen that any sheaf in the image of the functor has the property on the stalks mentioned in the lemma. Conversely, suppose that $\mathscr{G}$ has the indicated property. Then the map $\mathscr{G}\to i_*i^{-1}\mathscr{G}$ is an isomorphism on stalks, and hence an isomrophism.
-\end{proof}
-Now we define the functor $i^!$ for a closed immersion.
-\begin{proposition}
-Let $X$ be a topological space. Let $Z\sub X$ be a closed subset. Let $\mathscr{F}$ be a sheaf on $X$. Define a sheaf $\mathscr{H}_Z(\mathscr{F})$ by
-\[\Gamma(U,\mathscr{H}_Z(\mathscr{F}))=\{s\in\mathscr{F}(U):\supp(s)\sub Z\cap U\}.\]
-Then $\mathscr{H}_Z(\mathscr{F})$ is a subsheaf of $\mathscr{F}$. It is the largest subsheaf of $\mathscr{F}$ whose support is contained in $Z$. The construction $\mathscr{F}\mapsto\mathscr{H}_Z(\mathscr{F})$ is functorial in the sheaf $\mathscr{F}$.
-\end{proposition}
-\begin{proof}
 
-\end{proof}
+\subsection{Locally closed subspaces}
+In this paragraph, we shall be concerned with a locally closed subspace $W$ of $X$. This means that any point $x\in W$ has an open neighbourhood $V$ in $X$ such that $W\cap V$ is closed relative to $V$. The inclusion of $W$ in $X$ will be denoted $f:W\to X$.
 \begin{definition}
-Let $i:Z\to X$ be the inclusion of a closed subset. For a sheaf $\mathscr{F}$ on $X$, define the \textbf{inverse image of $\mathscr{F}$ supported on $\bm{Z}$} to be the sheaf $i^!\mathscr{F}=i^{-1}\mathscr{H}_Z(\mathscr{F})$.
+For a sheaf $\mathscr{E}$ over $W$ we define $f_!(\mathscr{E})$ to be the sheaf on $X$ whose section over an open subset $U$ of $X$ is given by
+\[\Gamma(U,f_!(\mathscr{E}))=\{s\in\Gamma(W\cap U,\mathscr{E}):\text{$\supp(s)$ is closed relative to $U$}\}.\]
+The restriction maps of $f_!(\mathscr{E})$ are induced from $f_!(\mathscr{E})$, of which it is a subsheaf. We therefore obtain a canonical monomorphism $f_!(\mathscr{E})\to f_*(\mathscr{E})$.
 \end{definition}
-\begin{proposition}
-For a closed immersion $i:Z\hookrightarrow X$, the functor $i^!$ is right adjoint to $i_*$. In a formula
-\[\Mor_{\mathbf{Shv}(X)}(i_*\mathscr{G},\mathscr{F})=\Mor_{\mathbf{Shv}(Z)}(\mathscr{G},i^!\mathscr{F})\]
-\end{proposition}
-\begin{proof}
-Note that $i_*i^!\mathscr{F}=\mathscr{H}_Z(\mathscr{F})$ by \cref{sheaf closed extension functor prop}. Since $i_*$ is fully faithful we are reduced to showing that
-\[\Mor_{\mathbf{Shv}(X)}(i_*\mathscr{G},\mathscr{F})=\Mor_{\mathbf{Shv}(Z)}(i_*\mathscr{G},\mathscr{H}_Z(\mathscr{F})).\]
-This follows since the support of the image via any homomorphism of a section of $i_*\mathscr{G}$ is contained in $Z$, by \cref{sheaf closed extension functor prop}.
-\end{proof}
-\begin{proposition}
-Let $i:Z\hookrightarrow X$ be a closed embedding, set $U=Z^c$ and let $j:U\hookrightarrow X$ be the corresponding open embedding. Then for any sheaf $\mathscr{F}$ on $X$, the sequence
-\[\begin{tikzcd}
-0\ar[r]&j_!j^{-1}\mathscr{F}\ar[r]&\mathscr{F}\ar[r]&j_*j^{-1}\mathscr{F}\ar[r]&0
-\end{tikzcd}\]
-is exact. Moreover, for any morphism $\varphi:\mathscr{F}\to\mathscr{G}$ of sheaves on $X$ we obtain a morphism of short exact sequences
-\[\begin{tikzcd}
-0\ar[r]&j_!j^{-1}\mathscr{F}\ar[r]\ar[d]&\mathscr{F}\ar[r]\ar[d]&j_*j^{-1}\mathscr{F}\ar[r]\ar[d]&0\\
-0\ar[r]&j_!j^{-1}\mathscr{G}\ar[r]&\mathscr{G}\ar[r]&j_*j^{-1}\mathscr{G}\ar[r]&0
-\end{tikzcd}\]
-\end{proposition}
-\begin{proof}
-The functoriality of the short exact sequence is immediate from the naturality of the adjunction mappings. We may check exactness on stalks: for $x\in X$, the sequence is
-\[\begin{cases}
-0\to\mathscr{F}_x\to\mathscr{F}_x\to 0\to 0&x\in U,\\
-0\to0\to\mathscr{F}_x\to \mathscr{F}_x\to 0&x\in Z.
+On the other hand, from the description of the sections of $f_!(\mathscr{E})$, it is not hard to see, in view of the fact that $W$ is locally closed, that we have
+\[(f_!(\mathscr{E}))_x=\begin{cases}
+\mathscr{E}_x&\text{if $x\in W$},\\
+0&\text{if $x\notin W$}.
 \end{cases}\]
-so the claim follows.
+which in particular shows that $f_!$ is exact.
+
+\begin{proposition}\label{sheaf locally closed extension image char}
+The functor $f_!:\Sh(W)\to\Sh(X)$ is an equivalence between the category of sheaves on $W$ and the full subcategory of $\Sh(X)$ made up of the sheaves for which $\mathscr{F}_x=0$ for $x\in X-W$. The inverse functor is given by $f^*$.
+\end{proposition}
+\begin{proof}
+For a sheaf $\mathscr{E}$ on $W$, we note the following simple identity among sheaves on $W$:
+\[f^*(f_!(\mathscr{E}))=\mathscr{E}.\]
+Next, consider a sheaf $\mathscr{F}$ on $X$ whose stalks vanish outside $W$. A close examination reveals that the adjunction morphism $\mathscr{F}\to f_*(f^*(\mathscr{F}))$ may be factored through $f_!(f^*\mathscr{F})$, so that we obtain an isomorphism $\mathscr{F}\cong f_!(f^*(\mathscr{F}))$.
 \end{proof}
+
+\begin{proposition}\label{sheaf locally closed extension right adjoint}
+The functor $f_!:\Sh(W)\to\Sh(X)$ admits a right adjoint $f^!:\Sh(X)\to\Sh(W)$. 
+\end{proposition}
+\begin{proof}
+For a sheaf $\mathscr{F}$ over $X$, we let $\mathscr{F}^W$ denote the sheaf on $X$ whose section over an open subset $U$ is given by
+\[\Gamma(U,\mathscr{F}^W)=\{s\in\Gamma(U,\mathscr{F}):\supp(s)\sub W\}.\]
+The stalks of $\mathscr{F}^W$ are then zero at any poitns outside $W$, so if we put $f^!(\mathscr{F})=f^*(\mathscr{F}^W)$, then by the last assertion of \cref{sheaf locally closed extension image char} applied to $\mathscr{F}^W$,
+\begin{equation}\label{sheaf locally closed extension right adjoint-1}
+\Gamma(U,f_!(f^!(\mathscr{F})))=\Gamma(U,\mathscr{F}^W)=\{s\in\Gamma(U,\mathscr{F}):\supp(s)\sub W\}.
+\end{equation}
+This formula provides a monomorphism $f_!(f^!(\mathscr{F}))\to\mathscr{F}$, and it follows from (\ref{sheaf locally closed extension right adjoint-1}) that any morphism $\mathscr{G}\to\mathscr{F}$, where $\mathscr{G}$ is a sheaf on $X$ whose stalks are zero outside $W$, may by factored through the monomorphism $f_!(f^!(\mathscr{F}))\to\mathscr{F}$. In particular, for a sheaf $\mathscr{E}$ on $W$, we get accordingly
+\[\Hom(f_!(\mathscr{E}),\mathscr{F})=\Hom(f_!(\mathscr{E}),f_!(f^!(\mathscr{F}))).\]
+On the other hand, the first assertion of \cref{sheaf locally closed extension image char} implies that we have an isomorphism
+\[f_!:\Hom(\mathscr{E},f^!(\mathscr{F}))\cong \Hom(f_!(\mathscr{E}),f_!(f^!(\mathscr{F}))),\]
+whence the claim.
+\end{proof}
+
+\begin{proposition}\label{sheaf locally closed f^! sends injective to injective}
+The functor $f^!:\Sh(X)\to\Sh(W)$ is left exact and transforms injective sheaves into injective sheaves.
+\end{proposition}
+\begin{proof}
+The left exactness is a formal consequence of the adjunction. The second statement is a formal consequence of the exactness of $f_!$.
+\end{proof}
+
+\paragraph{Open and closed subspaces}
+We shall now make a close investigation of the special case of open and closed subsets.
+
+\begin{proposition}\label{sheaf open and closed shrink functor char}
+Let $X$ be a topological space.
+\begin{enumerate}
+    \item[(a)] For the inclusion $i:Z\to X$ of a closed subspace, we have $i_!=i_*$.
+    \item[(b)] For the inclusion $j:U\to X$ of an open subspace, we have $j^*=j^!$. 
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+For a sheaf $\mathscr{E}$ on $Z$, we have a natural map $i_!(\mathscr{E})\to i_*(\mathscr{E})$ which is an isomorphism as one checks by localization, since $Z$ is closed in $X$. On the other hand, for a sheaf $\mathscr{F}$ on $X$, we have according to the proof of \cref{sheaf locally closed extension right adjoint} that $j^!(\mathscr{F})=j^*(\mathscr{F}^U)$. Combined with the inclusion $\mathscr{F}^U\to\mathscr{F}$, this yields a monomorphism $j^!(\mathscr{F})\to j^*(\mathscr{F})$, which is an isomorphism because for any open subset $V$ of $U$, we have
+\begin{equation*}
+\Gamma(V,j^!(\mathscr{F}))=\Gamma(V,\mathscr{F}^U)=\Gamma(V,\mathscr{F}).\qedhere
+\end{equation*}
+\end{proof}
+
+\begin{corollary}
+The functor $i_*:\Sh(Z)\to\Sh(X)$ is exact, and $j^*:\Sh(X)\to\Sh(U)$ transforms an injective sheaf $\mathscr{I}$ on $X$ into an injective sheaf $j^*(\mathscr{I})$ on $U$.
+\end{corollary}
+\begin{proof}
+This follows from \cref{sheaf open and closed shrink functor char} and \cref{sheaf locally closed f^! sends injective to injective}.
+\end{proof}
+
+\begin{proposition}\label{sheaf open and closed complement exact sequence on shrink}
+In the case where $U$ and $Z$ are complementary subspaces of $X$, a sheaf $\mathscr{F}$ on $X$ give rise to an exact sequence
+\begin{equation}
+\begin{tikzcd}
+0\ar[r]&j_!(j^*(\mathscr{F}))\ar[r]&\mathscr{F}\ar[r]&i_*(i^*(\mathscr{F}))\ar[r]&0
+\end{tikzcd}
+\end{equation}
+of sheaves on $X$, where the two morphism are adjunction morphisms.
+\end{proposition}
+\begin{proof}
+The exactness is seen by taking stalks. In fact, if $x\in U$, then we have $j_!(j^*(\mathscr{F}))_x=(j^*(\mathscr{F}))_x=\mathscr{F}_x$ and $i_*(i^*(\mathscr{F}))=0$, and a similar result holds for $x\in Z$.
+\end{proof}
+
+In the situation of \cref{sheaf open and closed complement exact sequence on shrink}, we have adjoint pairs $(j_!,j^!=j^*,j_*)$ and $(i^*,i_*=i_!,i^!)$, which are presented in the following diagram
+\[\begin{tikzcd}[column sep=12mm]
+\Sh(U)\ar[r,bend left=40pt,"j_!"]\ar[r,bend right=40pt,"j_*"]&\Sh(X)\ar[l,swap,"j^*=j^!"]\ar[r,bend left=40pt,"i^*"]\ar[r,bend right=40pt,"i^!"]&\Sh(Z)\ar[l,swap,"i_*=i_!"]
+\end{tikzcd}\]
+The functors in the lower row are left exact and preserves injectives, that in the middle row are exact and preserves injectives, and that in the upper row are exact. Moreover, the adjoint relationship between the various functions can be read off from this diagram, and we have identities
+\begin{gather*}
+j^*j_*=1,\quad j^*j_!=1,\quad i^!i_*=1,\quad i^*i_*=1,\\
+j^*i_*=0,\quad i^*j_!=0,\quad i^!j_*=0.
+\end{gather*}
+
 \subsection{Glueing sheaves}
 It is quite often that we want to glue a bunch of objects defined on the members of a covering of $X$ to create a new one. In this paragraph we will see how to do this for morphisms and sheaves.
 \begin{proposition}\label{sheaf glue morphism of sheaf}
@@ -555,7 +524,7 @@ For $V\sub X$ open, we have $V=\bigcup_i(V\cap U_i)$, so for $s\in\mathscr{F}(V)
 By the condition of sheaf, this is well-defined, and indeed defines a morphism of sheaves. It is clear that $\varphi$ restrict to $\varphi_i$ on each $U_i$. To see the uniqueness, if $\psi:\mathscr{F}\to\mathscr{G}$ is another morphism restricting to $\varphi_i$ on each $i$, then for each $s\in\mathscr{F}(U)$, $\psi(s)$ also satisfies (\ref{sheaf glue morphism of sheaf-1}), so it must coincides with $\varphi(s)$ by the condition of sheaf. This shows $\varphi=\psi$, as desired.
 \end{proof}
 The previous proposition implies that given two sheaves $\mathscr{F},\mathscr{G}$ on the topological space $X$ the rule
-\[U\mapsto\Mor_{\mathbf{Shv}(X)}(\mathscr{F}|_U,\mathscr{G}|_U)\]
+\[U\mapsto\Mor_{\Sh(X)}(\mathscr{F}|_U,\mathscr{G}|_U)\]
 defines a sheaf. This is a kind of \textbf{internal hom sheaf}. It is seldom used in the setting of sheaves of sets, and more usually in the setting of sheaves of modules.\par
 Let $X$ be a topological space. Let $X=\bigcup_iU_i$ be an open covering. For each $i\in I$ let $\mathscr{F}_i$ be a sheaf of sets on $U_i$. For each pair $i,j\in I$, let 
 \[\varphi_{ij}:\mathscr{F}_i|_{U_i\cap U_j}\to\mathscr{F}_j|_{U_i\cap U_j}\]
@@ -584,7 +553,7 @@ We still have to prove that $\mathscr{F}|_{U_i}$ maps isomorphically to $\mathsc
 \begin{corollary}\label{sheaf cat equivalent to glueing data}
 Let $X$ be a topological space. Let $X=\bigcup_iU_i$ be an open covering. The functor which associates to a sheaf of sets $\mathscr{F}$ the following collection of glueing data
 \[\big(\mathscr{F}|_{U_i},(\mathscr{F}_i)|_{U_i\cap U_j}\to(\mathscr{F}_j)|_{U_i\cap U_j}\big)\]
-with respect to the covering $X=\bigcup_iU_i$ defines an equivalence of categories between $\mathbf{Shv}(X)$ and the category of glueing data.
+with respect to the covering $X=\bigcup_iU_i$ defines an equivalence of categories between $\Sh(X)$ and the category of glueing data.
 \end{corollary}
 This result means that if the sheaf $\mathscr{F}$ was constructed from the glueing data $(\mathscr{F})_i,\varphi_{ij})$ and if $\mathscr{G}$ is a sheaf on $X$, then a morphism $f:\mathscr{F}\to\mathscr{G}$ is given by a collection of morphisms of sheaves
 \[f_i:\mathscr{F}_i\to\mathscr{G}\]
@@ -639,15 +608,15 @@ This is a reformulation of \cref{sheaf on basis sheaf condition}, as we can take
 Note that for any $x\in X$ we have $\mathscr{F}_x=(\mathscr{F}_{\mathcal{B}})_x$ in the situation of the proposition. This is so because the collection of elements of $\mathcal{B}$ containing $x$ forms a fundamental system of open neighbourhoods of $x$.\par
 Let $\mathscr{F}$, $\mathscr{G}$ be two presheaves over $\mathcal{B}$. A morphism $\varphi:\mathscr{F}\to\mathscr{G}$ is defined to be a family $(\varphi_V)_{V\in\mathcal{B}}$ of morphisms $\varphi_V:\mathscr{F}(V)\to\mathscr{F}(V)$ satisfying the compatible conditions with restriction maps. By passing to inverse limits, we get a morphism $\varphi_{\mathcal{B}}:\mathscr{F}_{\mathcal{B}}\to\mathscr{G}_{\mathcal{B}}$ of presheaves (it is easy to verify the compatible conditions with restriction maps).
 \begin{theorem}
-Let $X$ be a topological space. Let $\mathcal{B}$ be a basis for the topology on $X$. Denote $\mathbf{Shv}(\mathcal{B})$ the category of sheaves on $\mathcal{B}$. There is an equivalence of categories
-\[\mathbf{Shv}(X)\to\mathbf{Shv}(\mathcal{B})\]
+Let $X$ be a topological space. Let $\mathcal{B}$ be a basis for the topology on $X$. Denote $\Sh(\mathcal{B})$ the category of sheaves on $\mathcal{B}$. There is an equivalence of categories
+\[\Sh(X)\to\Sh(\mathcal{B})\]
 which assigns to a sheaf on $X$ its restriction to the members of $\mathcal{B}$.
 \end{theorem}
 \begin{proof}
 If $\mathscr{F}$ is a sheaf on $\mathcal{B}$, then the sheaf $\mathscr{F}_{\mathcal{B}}$ satisfies $\mathscr{F}(U)=\mathscr{F}_{\mathcal{B}}(U)$ for $U\in\mathcal{B}$, thus the restriction of $\mathscr{F}_{\mathcal{B}}$ equals $\mathscr{F}$. Conversely, if $\mathscr{F}$ is a sheaf on $X$, then the restriction $\mathscr{F}|_{\mathcal{B}}$ induces a sheaf $\mathscr{F}':=(\mathscr{F}|_{\mathcal{B}})_{\mathcal{B}}$ on $X$. Then $\mathscr{F}$ and $\mathscr{F}'$ has the same stalk, so we conclude $\mathscr{F}\cong\mathscr{F}'$. Moreover, by looking at stalks, we see the Hom sets are canonically identified, whence the claim.
 \end{proof}
 \subsection{The category of presheaves and sheaves}
-In this subsection, we derive some result for the categories $\mathbf{Psh}(X)$ and $\mathbf{Shv}(X)$.
+In this subsection, we derive some result for the categories $\mathbf{Psh}(X)$ and $\Sh(X)$.
 \paragraph{The category of presheaves} We first consider the category of presheaves, with morphisms are defined to be morphisms of presheaves. As we will see, this category behaves much like the base category $\mathbf{Set}$.
 \begin{example}[\textbf{Final object of presheaves}]
 Let $X$ be a topological space. Consider a rule $\mathscr{F}$ that associates to every open subset a singleton set. Since every set has a unique map into a
@@ -705,17 +674,17 @@ and we have $\psi_f\circ\varphi_U=\psi_g\circ\varphi_U$, which implies $f=g$, so
 We have already seen that limits and colimits exist in the category of presheaves. Now we consider them in the category of sheaves.
 \begin{proposition}
 Let $\mathcal{I}$ be a small category and let $\mathscr{F}:\mathcal{I}\to\mathbf{Psh}(X)$ be an $\mathcal{I}$-diagram of sheaves on $X$. Then the limit and colimit of $\mathscr{F}$ both exist, whichi are given by
-\[\llim_{i,\mathbf{Shv}(X)}\mathscr{F}_i=\llim_{i,\mathbf{Psh}(X)}\mathscr{F}_i,\quad \rlim_{i,\mathbf{Shv}(X)}\mathscr{F}_i:=(\rlim_{i,\mathbf{Psh}(X)}\mathscr{F}_i)^{\#}.\]
+\[\llim_{i,\Sh(X)}\mathscr{F}_i=\llim_{i,\mathbf{Psh}(X)}\mathscr{F}_i,\quad \rlim_{i,\Sh(X)}\mathscr{F}_i:=(\rlim_{i,\mathbf{Psh}(X)}\mathscr{F}_i)^{\#}.\]
 \end{proposition}
 \begin{proof}
 Since the limit and colimit exist in $\mathbf{Psh}(X)$, we can define
-\[\llim_{i,\mathbf{Shv}(X)}\mathscr{F}_i:=(\llim_{i,\mathbf{Psh}(X)}\mathscr{F}_i)^{\#},\quad \rlim_{i,\mathbf{Shv}(X)}\mathscr{F}_i:=(\rlim_{i,\mathbf{Psh}(X)}\mathscr{F}_i)^{\#}.\]
-Using the universal property of sheafification, we can show that the construction above indeed gives the colimits in the category of sheaves. Now we note that, since the forgetful functor $\iota:\mathbf{Shv}(X)\to\mathbf{Psh}(X)$ has a left adjoint given by the sheafification, it commutes with limits. In other words, if $\mathcal{I}$ is a small category and $\mathscr{F}:\mathcal{I}\to\mathbf{Psh}(X)$ be an $\mathcal{I}$-diagram of sheaves on $X$. Then the limit $\llim_i\mathscr{F}_i$ satisfies
-\[\iota(\llim_{i,\mathbf{Shv}(X)}\mathscr{F}_i)=\llim_{i,\mathbf{Psh}(X)}\iota(\mathscr{F}_i).\]
+\[\llim_{i,\Sh(X)}\mathscr{F}_i:=(\llim_{i,\mathbf{Psh}(X)}\mathscr{F}_i)^{\#},\quad \rlim_{i,\Sh(X)}\mathscr{F}_i:=(\rlim_{i,\mathbf{Psh}(X)}\mathscr{F}_i)^{\#}.\]
+Using the universal property of sheafification, we can show that the construction above indeed gives the colimits in the category of sheaves. Now we note that, since the forgetful functor $\iota:\Sh(X)\to\mathbf{Psh}(X)$ has a left adjoint given by the sheafification, it commutes with limits. In other words, if $\mathcal{I}$ is a small category and $\mathscr{F}:\mathcal{I}\to\mathbf{Psh}(X)$ be an $\mathcal{I}$-diagram of sheaves on $X$. Then the limit $\llim_i\mathscr{F}_i$ satisfies
+\[\iota(\llim_{i,\Sh(X)}\mathscr{F}_i)=\llim_{i,\mathbf{Psh}(X)}\iota(\mathscr{F}_i).\]
 But the forgetful functor does nothing actually, so the limit $\llim_i\mathscr{F}_i$ is in fact given by the limit in $\mathbf{Psh}(X)$, i.e.,
-\[\llim_{i,\mathbf{Shv}(X)}\mathscr{F}_i=\llim_{i,\mathbf{Psh}(X)}\mathscr{F}_i.\]
+\[\llim_{i,\Sh(X)}\mathscr{F}_i=\llim_{i,\mathbf{Psh}(X)}\mathscr{F}_i.\]
 However, since $\iota$ may not commutes with colimits, the colimit of $\mathscr{F}$ should be defined as the sheafification of that in $\mathbf{Psh}(X)$:
-\[\rlim_{i,\mathbf{Shv}(X)}\mathscr{F}_i:=(\rlim_{i,\mathbf{Psh}(X)}\mathscr{F}_i)^{\#}.\]
+\[\rlim_{i,\Sh(X)}\mathscr{F}_i:=(\rlim_{i,\mathbf{Psh}(X)}\mathscr{F}_i)^{\#}.\]
 This completes the proof.
 \end{proof}
 \begin{proposition}
@@ -740,7 +709,7 @@ Suppose $\varphi:\mathscr{F}\to\mathscr{G}$ is a morphism of sheaves of sets on 
 If these conditions hold, we say that $\mathscr{F}$ is a \textbf{subsheaf} of $\mathscr{G}$.
 \end{proposition}
 \begin{proof}
-The last two statements are equivalent by \cref{sheaf morphism prop iff stalk prop}, and the implication (c)$\Rightarrow$(a) is immediate, since a monomorphism in $\mathbf{Psh}(X)$ is clearly monic in $\mathbf{Shv}(X)$.\par 
+The last two statements are equivalent by \cref{sheaf morphism prop iff stalk prop}, and the implication (c)$\Rightarrow$(a) is immediate, since a monomorphism in $\mathbf{Psh}(X)$ is clearly monic in $\Sh(X)$.\par 
 Now assume that $\varphi$ is a monomorphism, and let $s,t\in\mathscr{F}(U)$ be such that $\varphi_U(s)=\varphi_U(t)$. Then by \cref{sheaf by open subset} there are morphisms $\psi_s,\psi_t:\mathscr{U}^{\#}\to\mathscr{F}$. From $\varphi_U(s)=\varphi_U(t)$ we see $\varphi\circ\psi_s=\varphi\circ\psi_t$, which implies $\psi_s=\psi_t$. By the isomorphism in \cref{sheaf by open subset}, we conclude $s=t$, so $\varphi_U$ is injective.
 \end{proof}
 \begin{proposition}\label{sheaf cat epimorphism iff}
@@ -2256,12 +2225,12 @@ Warning: In this subsection we work almost exclusively with presheaves and categ
 Let $X$ be a ringed space. Let $\mathcal{U}=(U_i)_{i\in I}$ be an open covering. Let $\mathscr{F}$ be a presheaf of $\mathscr{O}_X$-modules. We have the \v{C}ech complex $C^\bullet(\mathcal{U},\mathscr{F})$ of $\mathscr{F}$ just by thinking of $\mathscr{F}$ as a presheaf of abelian groups. However, each term $C^p(\mathcal{U},\mathscr{F})$ has a natural structure of a $\mathscr{O}_X(X)$-module and the differential is given by $\mathscr{O}_X(X)$-module maps. Moreover, it is clear that the construction
 \[\mathscr{F}\to C^\bullet(\mathcal{U},\mathscr{F})\]
 is functorial in $\mathscr{F}$. In fact, it is a functor
-\[C^\bullet(\mathcal{U},-):\mathbf{PMod}(\mathscr{O}_X)\to\mathcal{C}^+(\mathbf{Mod}_{\mathscr{O}_X(X)})\]
+\[C^\bullet(\mathcal{U},-):\mathbf{PMod}(\mathscr{O}_X)\to\mathcal{C}^+(\mathbf{Mod}(\mathscr{O}_X(X)))\]
 \begin{proposition}\label{Cech complex exact presheaf}
 The functor $C^\bullet(\mathcal{U},-)$ is an exact functor.
 \end{proposition}
 \begin{proof}
-For any open $U\sub X$ the functor $\mathscr{F}\to\mathscr{F}(U)$ is an additive exact functor from $\mathbf{PMod}(\mathscr{O}_X)$ to $\mathbf{Mod}_{\mathscr{O}_X(X)}$. The terms $C^p(\mathcal{U},\mathscr{F})$ of the complex are products of these exact functors and hence exact. Moreover a sequence of complexes is exact if and only if the sequence of terms in a given degree is exact. Hence the lemma follows.
+For any open $U\sub X$ the functor $\mathscr{F}\to\mathscr{F}(U)$ is an additive exact functor from $\mathbf{PMod}(\mathscr{O}_X)$ to $\mathbf{Mod}(\mathscr{O}_X(X))$. The terms $C^p(\mathcal{U},\mathscr{F})$ of the complex are products of these exact functors and hence exact. Moreover a sequence of complexes is exact if and only if the sequence of terms in a given degree is exact. Hence the lemma follows.
 \end{proof}
 \begin{theorem}\label{Cech presheaf delta functor}
 Let $X$ be a ringed space. Let $\mathcal{U}=(U_i)_{i\in I}$ be an open covering. The functors $\check{H}^p(\mathcal{U},-)$ form a $\delta$-functor from the abelian category of presheaves of $\mathscr{O}_X$-modules to the category of $\mathscr{O}_X(X)$-modules
@@ -2271,7 +2240,7 @@ By \cref{Cech complex exact presheaf} a short exact sequence of presheaves of $\
 \end{proof}
 \begin{proposition}
 Let $X$ be a ringed space. Let $\mathcal{U}$ be an open covering of $X$. The \v{C}ech cohomology functors $\check{H}^p(\mathcal{U},-)$ are canonically isomorphic as a $\delta$-functor to the right derived functors of the functor 
-\[\check{H}^0(\mathcal{U},-):\mathbf{PMod}(\mathscr{O}_X)\to\mathbf{Mod}_{\mathscr{O}_X(X)}.\]
+\[\check{H}^0(\mathcal{U},-):\mathbf{PMod}(\mathscr{O}_X)\to\mathbf{Mod}(\mathscr{O}_X(X)).\]
 Moreover, there is a functorial quasi-isomorphism
 \[C^\bullet(\mathcal{U},\mathscr{F})\to\mathcal{R}\check{H}^0(\mathcal{U},\mathscr{F}).\]
 \end{proposition}

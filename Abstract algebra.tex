@@ -2,7 +2,7 @@
 \include{documentpre}
 %\usepackage{showkeys}
 \usepackage{adjustbox}
-\usepackage{indentfirst}
+\usepackage{indentfirst} 
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
@@ -46,7 +46,6 @@ Algebra\\}
 
 %\include{chapter/alg-structure}
 %\include{chapter/linear-algebra-2}
-%\include{chapter/category}
 %\include{chapter/homological-algebra}
 %\include{chapter/dim-theory}
 
@@ -58,10 +57,49 @@ Algebra\\}
 %\include{chapter/Lie-alg-grp}
 %\include{chapter/sheaf}
 %\include{chapter/scheme}
-\include{chapter/etale-cohomology}
+%\include{chapter/topos-etale-cohomology}
 %\include{chapter/inf-category}
+%\include{chapter/category}
+%\include{chapter/group-scheme}
+\include{chapter/D-module}
 
+%\bibliographystyle{plain}
+%\bibliography{Bibtex}
 \end{document}
+
+
+\section{Constructible sets}
+In this section, we introduce constructible sets which are a class of subsets of a topological space that have a relatively "simple" structure. This notation is used particularly in algebraic geometry and related fields: for example, a key result known as Chevalley's theorem in algebraic geometry shows that the image of a constructible set is constructible for an important class of mappings (more specifically morphisms) of algebraic varieties (or more generally schemes). In addition, a large number of "local" geometric properties of schemes, morphisms and sheaves are (locally) constructible. Constructible sets also feature in the definition of various types of constructible sheaves in algebraic geometry and intersection cohomology, for example the notion of constructible sheaves in \'etale cohomology.
+\subsection{Constructible sets in topological spaces}
+A subset $Z$ of a topological space $X$ is called \textbf{retrocompact} in $X$ if for any quasi-compact open subset $U$ of $X$, the intersection $Z\cap U$ is quasi-compact. A closed subset of $X$ is clearly retrocompact in $X$, but a non-closed quasi-compact subset of $X$ is not necessarilly retrocompact. If $X$ is quasi-compact, then any retrocompact open subset of $X$ is quasi-compact, since we can take $U=X$ in the above definition. It is clear that any finite union of retrocompact subsets in $X$ is retrocompact in $X$, since any finite union of quasi-compact subsets is quasi-compact. Also, a finite intersection of open retrocompact open subsets in $X$ is a retrocompact open subset in $X$. It is also important to note that, in a locally Noetherian space $X$, any quasi-compact subset is a Noetherian space, so any subset of $X$ is retrocompact in $X$.
+
+\begin{definition}
+Let $X$ be a topological space. A subset of $X$ is called \textbf{quasi-constructible} (resp. \textbf{constructible}) if it belongs to the smallest collection $\mathfrak{F}$ of subsets of $X$ which contains the open subsets (resp. retrocompact open subsets) of $X$ and is stable under finite intersection and taking complements (and hence under finite union).
+\end{definition}
+It is clear that any constructible subset of $X$ is quasi-constructible, and the converse is ture if $X$ is locally Noetherian.
+
+\begin{proposition}\label{topo space constructible iff finite union}
+For a subset of $X$ to be quasi-constructible (resp. constructible), it is necessary and sufficient that it is a finite union of subsets of the form $U\cap V^c$, where $U$ and $V$ are open (resp. retrocompact open) subsets of $X$.
+\end{proposition}
+\begin{proof}
+It is clear that this condition is sufficient. For the converse, consider the set $\mathfrak{S}$ of finite union of subsets of the form $U\cap V^c$, where $U$ and $V$ are open (resp. retrocompact open) subsets of $X$. Since $\mathfrak{S}\sub\mathfrak{F}$, it suffices to prove that $\mathfrak{S}$ is closed under complements, whence $\mathfrak{S}=\mathfrak{F}$. Let $Z=\bigcup_{i\in I}(U_i\cap V_i^c)$, where $I$ is finite and $U_i,V_i$ are open (resp. retrocompact open) subsets of $X$. We then have $Z^c=\bigcap_{i\in I}(V_i\cup U_i^c)$, so $Z^c$ is a finite union of subsets which are intersectios of certain number of $V_i$ and $U_i^c$, hence of the form $V\cap U^c$, where $U$ is a union of some $U_i$ and $V$ is a intersection of some $V_i$. The conclusion then follows from the fact that open (resp. retrocompact open) subsets of $X$ are closed under finite unions and finite intersections.
+\end{proof}
+
+We can also say that the quasi-constructible subsets of $X$ are the finite unions of \textit{locally closed subsets} of $X$.
+
+\begin{corollary}\label{topo space constructible is retrocompact}
+Any constructible subset of $X$ is retrocompact in $X$.
+\end{corollary}
+\begin{proof}
+It suffices to show that if $U$ and $V$ are retrocompact open subsets of $X$, then $U\cap V^c$ is retrocompact in $X$. In fact, if $W$ is quasi-compact in $X$, then $W\cap U\cap V^c$ is closed in the quasi-compact space $W\cap U$, whence quasi-compact. 
+\end{proof}
+
+\begin{corollary}\label{topo space open constructible iff retrocompact}
+For an open subset $U$ of $X$ to be constructible, it is necessary and sufficient that it is retrocompact in $X$. For a closed subset $F$ of $X$ to be constructible, it is necessary and sufficient that $F^c$ is retrocompact.
+\end{corollary}
+
+
+
 \subsection{Jacobson schemes}
 A scheme $X$ is called \textbf{Jacobson} if its underlying space $X$ is Jacobson, in other words, the set $X_0$ of its closed points is dense in $X$. We say a ring $A$ is Jacobson if the scheme $\Spec(A)$ is Jacobson. Since any closed subset of $X=\Spec(A)$ is of the form $Z=V(\a)$, where $\a$ is a radical ideal of $A$, and the set $X_0$ of closed points of $X$ is the set of maximal ideals of $A$, we see $Z\cap X_0$ is dense in $Z$ if and only if $\a$ is the intersection of maximal ideals containing it. As $\a$ is already the intersection of prime ideals containing it, we see $A$ is a Jacobson ring if and only if each prime ideal of $A$ is the intersection of maximal ideals, which means $A$ is Jacobson in the usual sense.
 \begin{proposition}\label{scheme Jacobson iff affine open}
@@ -130,153 +168,4 @@ where the colimit is taken over all open subgroups $U$ of $G$, ordered by inclus
 \[(x,U)\cdot g=(y,g^{-1}Ug),\]
 where $y$ is the image of $x$ under the canonical morphism $F(G/g^{-1}Ug\stackrel{g}{\to}G/U)$. This action is continuous since $G_x\sups U$, and is well-defined on equivalent classes.
 \end{proof}
-\iffalse
-\bibliographystyle{plain}
-\bibliography{Bibtex}
-\fi
 
-
-
-
-
-
-\iffalse
-\section{\'Etale site and topos of schemes}
-In this section, we develop the we develop the elementary properties of \'etale topology and cohomology for schemes. Certain properties in this section is essentially valid for many other different topologies, such as the "fppf topology". However, there are also distinguished properties for the \'etale topology, due to the very particular nature of \'etale morphisms.
-\subsection{The \'etale topology}
-We denote by $\mathbf{Sch}$ the category of schemes (in a fixed universe $\mathscr{U}$). Recall that a morphism $f:X\to Y$ is \'etale if it is locally of finite presentation, formally smooth and formally unramified. Equivalently, this means $f$ is locally of finite presentation and for any affine scheme $Y'$ over $Y$ and any subscheme $Y'_0$ defined by a nilpotent ideal, the map
-\[\Hom(Y,X)\to\Hom_Y(Y'_0,X)\]
-is bijective. We define the \textbf{\'etale topology} on $\mathbf{Sch}$ to be the topology generated by the basis given by $X\mapsto\Cov(X)$, where $\Cov(X)$ is formed by families of jointly surjective morphisms $\{u_i:X_i\to X\}$ such that each $u_i$ is \'etale. For each object $X$ of $\mathbf{Sch}$, we consider the subcategory $\mathbf{Et}_{/X}$ of $\mathbf{Sch}_{/X}$ formed by \'etale schemes over $X$, and endow it with the induced \'etale topology of that on $\mathbf{Sch}$ (called the \textbf{\'etale topology}). The resulting site is denoted by $X_{\et}$, and called the \textbf{\'etale site} of $X$. We note that any morphism in $\mathbf{Et}_{/X}$ is \'etale (\cref{scheme unramified smooth permanence prop}), so a family $\{U_i\to U\}$ of morphisms in $X_\et$ is covering if and only if it is jointly surjective. The topos $\Sh(X_{\et})$ of sheaves over $X_\et$ is called the \textbf{\'etale topos} of $X$.
-\begin{proposition}\label{scheme etale site small generator exist}
-Let $X$ be a scheme, $\mathcal{C}$ be a full subcategory of $X_\et$ such that for any \'etale scheme $Y$ over $X$ which is affine, $\mathcal{C}$ contains an object which is isomorphic to $Y$. Then $\mathcal{C}$ is a topological generating family of the site $X_\et$, hence a set of  generators for the topos $\Sh(X_\et)$, and the restriction functor $\Sh(X_\et)\to\Sh(\mathcal{C})$ is an equivalence of categories (where $\mathcal{C}$ is endowed with the induced topology).
-\end{proposition}
-\begin{proof}
-This is trivial in view of the comparision lemma (SGA4 \Rmnum{3}).
-\end{proof}
-\begin{corollary}\label{scheme qs etale site of fp scheme prop}
-suppose that $X$ is quasi-separated. Let $\mathcal{C}$ be the full subcategory of $X_\et$ formed by \'etale schemes over $X$ that are of finite presentation, endowed with the induced topology of $X_\et$. Then
-\begin{enumerate}
-\item[(a)] $\mathcal{C}$ is stable under fiber products and is a site of finite type if $X$ is quasi-compact.
-\item[(b)] The restriction functor $\Sh(X_\et)\to\Sh(\mathcal{C})$ is an equivalence of categories.
-\end{enumerate}
-In particular, if $X$ is quasi-compact and quasi-separated, the functors $H^p(X_\et,F)$ over abelian sheaves of $X_\et$ commute with inductive limits.
-\end{corollary}
-\begin{proof}
-The first assertion is trivial in view of \cref{scheme morphism fp permanence prop}, and the second one follows from \cref{scheme etale site small generator exist} because $\mathcal{C}$ satisfies the condition of \cref{scheme etale site small generator exist}. In fact, since $X$ is quasi-separated, if $Y$ is quasi-compact, then it is quasi-compact over $X$, hence of finite presentation over $X$ if $Y$ is \'etale over $X$. Finally, if $X$ is quasi-compact, then by replacing $X_\et$ with $\mathcal{C}$, the last assertion follows from (a) and (SGA4 \Rmnum{6} 6.1.2(3)).
-\end{proof}
-As $X_\et$ is then a $\mathscr{U}$-site and $\Sh(X_\et)$ is a $\mathscr{U}$-topos, the general constructions and results can be applied to them. In the sequel, unless specified, the topologies on $\mathbf{Et}_{/X}$ or $\mathbf{Sch}$ are understood to be the \'etale topologies, and we often write $X$ instead of $X_\et$ or $\mathbf{Et}_{/X}$. For example, by sheaves of $X$, we mean sheaves for the étale topology on the site $X_{\et}$. We will denote by ̃$\Sh(X_\et)$ the category of these sheaves, which is a $\mathscr{U}$-topos. If $F$ is an abelian sheaf on $X$, we will denote its cohomology group by $H^p(X,F)$, which should be understood to be given by $H^p(X_\et,F)$.\par
-Let $f:X\to Y$ be a morphism of schemes. Then the inverse image functor $Y'\mapsto Y'\times_YX$ induces a functor
-\begin{align}\label{scheme etale site inverse image functor}
-\tilde{f}:Y_\et\to X_\et
-\end{align}
-which commutes with finite projective limits and sends covering families to covering families, hence is continuous. We then obtain an induced functor
-\[f_*^\et:\Sh(X_\et)\to\Sh(Y_\et)\]
-on the category of sheaves, given by the formula $F\mapsto F\circ \tilde{f}$. Moreover, in view of \cref{site small continuous functor iff}, the functor $f_*^\et$ admits a left adjoint
-\[f^*_\et:\Sh(Y_\et)\to\Sh(X_\et)\]
-which extends the functor (\ref{scheme etale site inverse image functor}) and commutes with inductive limits and finite projective limits. In other words, $f$ defines a morphism of topos
-\[f_\et:\Sh(X_\et)\to\Sh(Y_\et).\]
-Evidently, if $g:Y\to Z$ is another morphism of schemes, we have canonical isomorphisms
-\begin{align}\label{scheme etale site inverse direct image functor transitive-1}
-(gf)_*^\et\cong g_*^\et f_*^\et,\quad (gf)^*_\et\cong f_\et^*g^*_\et
-\end{align}
-whence an isomorphism
-\begin{align}\label{scheme etale site inverse direct image functor transitive-2}
-(gf)_\et\cong g_\et f_\et.
-\end{align}
-
-In this section, since we only consider the \'etale topology, we just write $f^*$ and $f_*$ instead of $f^*_\et$ and $f_*^\et$. If $f:X\to Y$ is a morphism of schemes, the functors $R^pf_*^\et$ are then simply denoted by $R^pf_*$. Recall that for a sheaf $F$ over $X$, we have the following Leray spectral sequence:
-\[E_2^{p,q}=H^p(Y,R^qf_*(F))\Rightarrow H^{p+q}(X,F).\]
-Similarly, if $f:X\to Y$ and $g:Y\to Z$ are morphisms, we have a Grothendieck spectral sequence
-\[E_2^{p,q}=R^pg_*(R^qf_*(F))\Rightarrow R^{p+q}(fg)_*(F).\]
-
-If $f:X\to Y$ is an \'etale morphism, we can consider $X$ as an object of $Y_\et$, and there is then a canonical isomorphism of sites
-\[X_\et\stackrel{\sim}{\to}(Y_\et)_{/X}.\]
-With this isomorphism, the inverse image functor $Y'\mapsto Y'\times_YX$ is identified with the base change functor of $\mathbf{Et}_{/Y}$. It follows then that the functor
-\[f^*:\Sh(Y_\et)\to\Sh(X_\et)\]
-is isomorphic to the restriction functor to $Y$:
-\[f^*(F)=F\circ i_{X/Y}\]
-where $F$ is a sheaf over $Y_\et$ and $i_{X/Y}:X_\et\to Y_\et$ is the inclusion.
-\begin{remark}
-Note that if $X$ is nonempt, then $X_\et$ is not an element of the chosen universe $\mathscr{U}$. However, as we pointed out, it can be proved that we can find a full subcategory $\mathcal{C}$ of $X_\et$ satisfying the conditions of the "comparison lemma" (SGA4 \Rmnum{3}), so that the restriction functor induces an equivalence $\Sh(X_\et)\stackrel{\sim}{\to}\Sh(\mathcal{C})$. Therefore, the \'etale topos is equivalent to a topos defined by a small site, so it is a $\mathscr{U}$-site.
-\end{remark}
-\begin{example}\label{scheme etale site subcanonical}
-Let $Y$ be a scheme over $X$. Then $Y$ defines a sheaf over $\mathbf{Sch}_{/X}$ for the \'etale topology, given by $Y(X')=\Hom_X(X',Y)$. In other words, the \'etale topology is subcanonical on $\mathbf{Sch}_{/X}$ (this fact is essentially due to the result of (SGA1 \Rmnum{8} 5.1)). A fortiori, the restriction of this sheaf on $X_\et$ is a sheaf, which is still denoted by $Y$ if there is no risk of confusion. We also note that the functor thus obtained
-\[\mathbf{Sch}_{/X}\to\Sh(X_\et)\]
-commutes with finite projective limits (this is trivial). This implies for example if $Y$ is a group (resp. abelian group, ring, etc.) scheme over $X$, then the sheaf defined by $Y$ is a sheaf of groups (resp. abelian group, ring, etc.). Note that the induced functor $X_\et\to\Sh(X_\et)$ is nothing but the canonical functor of $X_\et$, which associates an object $Y$ of $X_\et$ the functor it represents. It is therefore an isomorphism from the category $X_\et$ to a full subcategory of the \'etale topos $\Sh(X_\et)$, by which we identify usually an object $Y$ of $X_\et$ with the corresponding sheaf, which will be denoted $h_Y$ or simply $Y$. It is clear that we have $H^0(X,Y)=\Hom_X(X,Y)$, and if $F$ is a group scheme over $X$ (abelian by our definition of cohomology groups, but note that this is also true for nonabelian group schemes), then $H^1(X,F)$ is canonically isomorphic to the classes of $F$-torsors over $X_\et$.
-\end{example}
-\begin{remark}
-For \textit{any} scheme $Y$ over $X$, we denote by $\widetilde{Y}$ the associated sheaf over $X_\et$. If $f:X'\to X$ is a morphism of schemes, we have a evident homomorphism (functorial on $Z$)
-\begin{align}\label{scheme etale site associated sheaf and inverse image}
-f^*(\widetilde{Y})\to\widetilde{Y_{(X')}},
-\end{align}
-(where $Y_{(X')}=Y\times_XX'$), which is the adjoint homomorphism of the canonical homomorphism $\widetilde{Y}\to f_*(\widetilde{Y_{(X')}})$ obtained from the functorial homomorphism
-\[\Hom_X(U,Y)\to\Hom_{X'}(U_{(X')},Y_{(X')})\]
-where $U\in\Ob(X_\et)$. This homomorphism is in general not an isomorphism, i.e. the formation of associated \'etale sheaf does not commute with inverse image functors. However, if $Y$ is a \'etale scheme over $X$ (that is, $Y\in\Ob(X_\et)$), then for any sheaf $F'$ over $X'_\et$, we have
-\begin{align*}
-\Hom_{\Sh(X'_\et)}(f^*(\widetilde{Y}),F')&\cong\Hom_{\Sh(X_\et)}(\widetilde{Y},f_*(F'))\cong f_*(F')(Y)=F'(Y_{(X')})\cong\Hom_{\Sh(X'_\et)}(Y_{(X')},F')
-\end{align*}
-so (\ref{scheme etale site associated sheaf and inverse image}) is an isomorphism in this case. Similarly, the functor
-\[\varphi_X:\mathbf{Sch}_{/X}\to\Sh(X_\et)\]
-is not faithful if $X$ is nonempty, but its restriction to $X_\et$, which is the canonical functor $X_\et\to\Sh(X_\et)$, is fully faithful (since the topology on $X_\et$ is subcanonical).\par
-Note that (\ref{scheme etale site associated sheaf and inverse image}) commutes with (small) direct sums, as can be easily verified. In particular, if for any set $I$ we denote by $I_X=\coprod_{i\in I}X$ the constant $X$-scheme over $X$, then the associated sheaf is none other than the constant sheaf $I_{X_\et}$ (direct sum of $I$ copies of final sheaf over $X_\et$, which sends $Y$ to $\coprod_{i\in I}Y$). As the functor $I\mapsto I_X$ commutes with finite projective limits, it transforms (abelian) groups to (abelian) groups, etc. If $G$ is a ordinary abelian group, we write $H^p(X,G)$ for $H^p(X,G_X)$. Suppose, for example, that $G$ is a finite group; then $G_X$ is finite and hence affine over $X$, so using the remarks in \cref{scheme etale site subcanonical}, we obtain an interpretation of $H^1(X,G)$ as the classes of principal $G$-bundles over $X$ (SGA1 \Rmnum{5} 2.7). If $X$ is connected and endowed with a geometric point $\bar{x}$, then in terms of the \'etale fundamental group $\pi_1(X,\bar{x})$, we obtain an isomorphism
-\begin{align}\label{scheme etale site cohomology G coefficient is pi_1 Hom}
-H^1(X,G)\stackrel{\sim}{\to}\Hom(\pi_1(X,\bar{x}),G)
-\end{align}
-(where we may suppose that $G$ is commutative).
-\end{remark}
-\begin{example}\label{scheme etale sheaf induced by O_X module}
-Let $\mathscr{F}$ be an $\mathscr{O}_X$-module over $X$, in the sense of Zariski topology. Then we can define a presheaf over $\mathbf{Sch}_{/X}$ by the formula
-\[\Gamma_\mathscr{F}(Y)=\Gamma(Y,\mathscr{F}\otimes_{\mathscr{O}_X}\mathscr{O}_{Y}),\quad 
-\widecheck{\Gamma}_\mathscr{F}(Y)=\Hom_{\mathscr{O}_Y}(\mathscr{F}\otimes_{\mathscr{O}_X}\mathscr{O}_Y,\mathscr{O}_Y)\]
-which is in fact a sheaf for the \'etale cohomology, in view of (SGA1 \Rmnum{8} 1.6) and (SGA1 \Rmnum{4} 6.3.1). A fortiori, the restriction of $\Gamma_\mathscr{F}$ to $X_\et$ is a sheaf, which is also denoted by $\Gamma_\mathscr{F}$. By definition, we then have $H^0(X,\Gamma_\mathscr{F})=\Gamma(\mathscr{F})=H^0(X,\mathscr{F})$.
-\end{example}
-\subsection{Comparision of cohomologies}
-We note that the examples considered in the previous paragraph are in fact in a natural way restrictions of sheaves defined on $\mathbf{Sch}_{/X}$ endowed with its \'etale topology (or even fpqc topology). In general, we have an inclusion functor $X_\et\hookrightarrow\mathbf{Sch}_{/X}$ which is continuous and commutes with finite projective limits, hence defines a morphism of sites
-\[\iota:X_\et\to\mathbf{Sch}_{/X}\]
-whence a functor $\iota_*:\Sh(\mathbf{Sch}_{/X})\to\Sh(X_\et)$ over the category of sheaves, given by $F\mapsto F\circ\iota$.
-\begin{proposition}\label{scheme cohomology X_et and Sch_X comparision}
-Let $\iota^*:\Sh(X_\et)\to\Sh(\mathbf{Sch}_{/X})$ be the functor defined by
-\[\iota^*(F)(Y)=(p_Y)_\et^*(F)(Y)\]
-where $Y\in\Ob(\mathbf{Sch}_{/X})$ and $p_Y$ is the structural morphism $Y\to X$. Then
-\begin{enumerate}
-\item[(a)] The functor $i^*$ is fully faithful and a left adjiont to $\iota_*$, so for any sheaf $G$ over $X_\et$, the canonical homomorphism $G\mapsto \iota_*\iota^*(G)$ is an isomorphism.
-\item[(c)] Let $G$ (resp. $F$) be an abelian sheaf over $X_\et$ (resp. $\mathbf{Sch}_{/X}$). Then the canonical homomorphism (defined as the edge-homomorphisms of the Leray spectral sequence) are isomorphisms
-\begin{gather*}
-H^*(X_\et,\iota_*(F))\stackrel{\sim}{\to} H^*(\mathbf{Sch}_{/X},F),\quad H^*(X_\et,G)\stackrel{\sim}{\to} H^*(\mathbf{Sch}_{/X},\iota^*(G)).
-\end{gather*}
-\end{enumerate}
-\end{proposition}
-\begin{proof}
-Let $Y$ be a scheme over $X$. Then in fact, the morphism $u$ is cocontinuous, so we can apply the result of (SGA4 \Rmnum{3}, 2.2).
-\end{proof}
-On the other hand, it is necessary to introduce on $\mathbf{Sch}$ (therefore on $\mathbf{Sch}_{/X}$) various topologies other than the \'etale topology. The coarsest of these is the \textit{Zariski topology} (Zar), defined by the basis where the covering families are the surjective families of open immersions; it is less fine than the \'etale topology. The finest of these topologies is the "\textit{faithfully flat and quasi-compact}" topology, for short (fpqc), which is the coarses topologies for which the covering families in the sense of Zariski, as well as the faithfully flat quasi-compact morphisms, are covering; the fpqc topology is finer as the topology spreads out. As we have already noted, the various examples of sheaves considered on $\mathbf{Sch}_{/X}$ are in fact already sheaves for the fpqc topology.\par
-However, one should note that an abelian sheaf $F$ over $\mathbf{Sch}_{/X}$ for the fpqc topology (or the fppf topology), the cohomology group of $F$ for the fpqc topology is not always isomorphic to that for the \'etale topology (even if $X$ is the spectrum of a field $k$ and $F$ is represented by an algebraic group over $k$). In general, we can show that the \'etale cohomology gives the "good" cohomological groups when the coefficient is taken in any \'etale group scheme (or more generally smooth scheme) over $X$, but this is no longer true for group schemes such as the radical group over $X$, in which case we need to replace the \'etale cohomology with the fpqc or fppf topology.\par
-As an example of the relations between cohomologies relative to different topologies, we consider here the Zariski topologies and the \'etale topology. We denote by $X_{\Zar}$ the site of Zariski open sets of $X$, so that we have a canonical inclusion functor $i:X_\Zar\to X_\et$, which defines an induced functor
-\[f_*:\Sh(X_\et)\to\Sh(X_\Zar)\]
-given by the formula $F\mapsto F\circ f$, and the corresponding inverse image functor
-\[f^*:\Sh(X_\Zar)\to\Sh(X_\et)\]
-which is the left adjoint of $f_*$. Geometrically, the couple $(f^*,f_*)$ can be considered as a morphism of topos
-\[f:\Sh(X_\et)\to\Sh(X_\Zar).\]
-We therefore deduce a homomorphism of cohomology functors
-\[H^*(X_\Zar,f_*(F))\to H^*(X_\et,F)\]
-and a Leray spectral sequence
-\[H^p(X_\Zar,R^qf_*(F))\Rightarrow H^{p+q}(X_\et,F),\]
-where $F$ is an abelian sheaf over $X_\et$. This spectral sequence summarizes the general relations between \'etale cohomology and Zariski topology. Of course, for the constant coefficient sheafs $F$, this spectral sequence is in general far from being trivial, i.e. in general we have $R^qf_*(F)\neq 0$. However, the following result is true:
-\begin{proposition}\label{scheme cohomology X_et and X_Zar qcoh isomorphism}
-Let $\mathscr{F}$ be an $\mathscr{O}_X$-module on $X$ (in the sense of Zariski topology) and $\mathscr{F}_\et$ be the associated sheaf over $X_\et$ (cf. \cref{scheme etale sheaf induced by O_X module}). Then we have a canonical homomorphism of cohomological functors
-\begin{align}\label{scheme cohomology X_et and X_Zar qcoh isomorphism-1}
-H^*(X,\mathscr{F})\to H^*(X_\et,\mathscr{F}_\et).
-\end{align}
-If $\mathscr{F}$ is quasi-coherent, then the preceding homomorphism is an isomorphism.
-\end{proposition}
-\begin{proof}
-In fact, the cohomology group $H^*(X,\mathscr{F})$ is equal to $H^*(X_\Zar,f_*(\mathscr{F}_\et))$, and with the preceding notations, it suffices to prove that
-\[R^qf_*(\mathscr{F})=0\for q>0.\]
-Since affine opens form a basis for the topology of $X$, it suffices to assume that $X$ is affine and prove that
-\[H^q(X_\et,\mathscr{F}_\et)=0\for q>0.\]
-To this end, let $\mathcal{C}$ be the full subcategory of $X_\et$ formed by \'etale affine schemes over $X$. In view of \cref{scheme etale site small generator exist}, we have
-\[H^q(X_\et,\mathscr{F}_\et)\cong H^q(\mathcal{C},\mathscr{F}|_\mathcal{C}).\]
-It then suffices to prove that $\mathscr{F}|_\mathcal{C}$ is $\mathcal{C}$ acyclic (SGA4 \Rmnum{5}, 4.1), or that it satisfies the condition of (SGA4 \Rmnum{5}, 4.3), i.e. that for all $U\in\Ob(\mathcal{C})$ and all covering family $\mathfrak{U}=\{U_i\to U\}$ we have $H^q(\mathfrak{U},\mathscr{F})=0$ for $q>0$. Now we can assume that $\mathfrak{U}$ is finite, so by replacing the $U_i$ with their sum, that the covering family consists of a single morphism which is covering, i.e. (\'etale and) surjective. We are therefore reduced to proving that if $f:X\to Y$ is a surjective \'etale morphism of affine scheme and $\mathscr{F}$ a quasi-coherent module on $X$, then $H^q(X/Y,\mathscr{F})=0$ for $q>0$, which follows from TDTE \Rmnum{1}, B, 1.1.
-\end{proof}
-\subsection{Cohomology of a projective limit of schemes}
-\fi

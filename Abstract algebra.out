@@ -1,22 +1,12 @@
-\BOOKMARK [0][-]{chapter.1}{The theory of topos and étale cohomology of schemes}{}% 1
-\BOOKMARK [1][-]{section.1.1}{Presheaves\040of\040sets}{chapter.1}% 2
-\BOOKMARK [2][-]{subsection.1.1.1}{The\040category\040of\040presheaves\040of\040sets}{section.1.1}% 3
-\BOOKMARK [2][-]{subsection.1.1.2}{Projective\040limits\040and\040inductive\040limits}{section.1.1}% 4
-\BOOKMARK [2][-]{subsection.1.1.3}{Exactness\040properties\040of\040the\040category\040of\040presheaves}{section.1.1}% 5
-\BOOKMARK [1][-]{section.1.2}{Grothendieck\040topologies\040and\040sheaves}{chapter.1}% 6
-\BOOKMARK [2][-]{subsection.1.2.1}{Topologies\040and\040basis}{section.1.2}% 7
-\BOOKMARK [2][-]{subsection.1.2.2}{Sheaves\040over\040a\040site}{section.1.2}% 8
-\BOOKMARK [2][-]{subsection.1.2.3}{Sheafifications\040of\040presheaves}{section.1.2}% 9
-\BOOKMARK [2][-]{subsection.1.2.4}{Exactness\040properties\040of\040the\040category\040of\040sheaves}{section.1.2}% 10
-\BOOKMARK [2][-]{subsection.1.2.5}{The\040induced\040topology\040on\040Sh}{section.1.2}% 11
-\BOOKMARK [1][-]{section.1.3}{Functoriality\040of\040categories\040of\040sheaves}{chapter.1}% 12
-\BOOKMARK [2][-]{subsection.1.3.1}{Continuous\040functors}{section.1.3}% 13
-\BOOKMARK [1][-]{section.1.4}{Grothendieck\040Topoi}{chapter.1}% 14
-\BOOKMARK [2][-]{subsection.1.4.1}{Definition\040and\040characterization\040of\040topos}{section.1.4}% 15
-\BOOKMARK [1][-]{section.1.5}{Cohomology\040of\040topoi}{chapter.1}% 16
-\BOOKMARK [2][-]{subsection.1.5.1}{Complements\040on\040abelian\040categories}{section.1.5}% 17
-\BOOKMARK [2][-]{subsection.1.5.2}{Flat\040modules\040on\040ringed\040topoi}{section.1.5}% 18
-\BOOKMARK [2][-]{subsection.1.5.3}{Čech cohomology}{section.1.5}% 19
-\BOOKMARK [2][-]{subsection.1.5.4}{The\040Cartan-Laray\040spectral\040sequence}{section.1.5}% 20
-\BOOKMARK [2][-]{subsection.1.5.5}{Acyclic\040sheaves}{section.1.5}% 21
-\BOOKMARK [2][-]{subsection.1.5.6}{Local\040Ext\040and\040cohomology\040with\040closed\040support}{section.1.5}% 22
+\BOOKMARK [0][]{chapter.1}{D-modules\040and\040perverse\040sheaves}{}% 1
+\BOOKMARK [1][]{section.1.1}{Elementary\040properties\040of\040D-modules}{chapter.1}% 2
+\BOOKMARK [2][]{subsection.1.1.1}{Differential\040operators}{section.1.1}% 3
+\BOOKMARK [2][]{subsection.1.1.2}{D-modules}{section.1.1}% 4
+\BOOKMARK [2][]{subsection.1.1.3}{Characteristic\040varieties}{section.1.1}% 5
+\BOOKMARK [2][]{subsection.1.1.4}{Codimension\040filtration}{section.1.1}% 6
+\BOOKMARK [2][]{subsection.1.1.5}{Global\040dimension\040of\040D}{section.1.1}% 7
+\BOOKMARK [2][]{subsection.1.1.6}{Duality\040functor}{section.1.1}% 8
+\BOOKMARK [1][]{section.1.2}{Functorial\040properties\040of\040D-modules}{chapter.1}% 9
+\BOOKMARK [2][]{subsection.1.2.1}{Inverse\040images\040of\040D-modules}{section.1.2}% 10
+\BOOKMARK [2][]{subsection.1.2.2}{External\040tensor\040product}{section.1.2}% 11
+\BOOKMARK [2][]{subsection.1.2.3}{Direct\040image\040of\040D-modules}{section.1.2}% 12

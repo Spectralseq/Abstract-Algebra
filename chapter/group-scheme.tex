@@ -1,0 +1,857 @@
+\chapter{Group schemes}
+\section{Algebraic structures}
+\subsection{Algebraic structures on the category of presheaves}
+Given a kind of algebraic structure in the category of sets, we propose to extend it to the category $\mathcal{C}$. Let us first consider an example: the case of groups.
+\paragraph{Group objects in \texorpdfstring{$\widehat{\mathcal{C}}$}{C}}
+Let $G\in\widehat{\mathcal{C}}$, a \textbf{group structure on $\bm{G}$} is defined to be the assignment of a group structure on the set $G(S)$ for any $S\in\Ob(\mathcal{C})$, so that for any morphism $f:S'\to S$ in $\mathcal{C}$, the map $G(f):G(S)\to G(S')$ is a homomorphism of groups. If $G$ and $H$ are groups in $\widehat{\mathcal{C}}$, a \textbf{group homomorphism} from $G$ to $H$ is defined to be a morphism $\theta\in\Hom(G,H)$ such that for any object $S\in\Ob(\mathcal{C})$, the map $\theta(S):G(S)\to H(S)$ is a homomorphism of groups. We denote by $\Hom_{\Grp}(G,H)$ the set of group homomorphisms from $G$ to $H$, and by $\Grp_{\widehat{\mathcal{C}}}$ the category of groups in $\widehat{\mathcal{C}}$.
+
+\begin{example}
+Let $E\in\widehat{\mathcal{C}}$, then the object $\sAut(E)$ is endowed with a group structure. The final object $e$ also possesses a unique group structure and is a final object in $\Grp_{\widehat{\mathcal{C}}}$.
+\end{example}
+
+Let $G$ be a group in $\widehat{\mathcal{C}}$. For any $S\in\Ob(\mathcal{C})$, let $e_G(S)$ be the unit element in $G(S)$. The family $e_G(S)$ then defines an element $e_G\in\Gamma(G)=\Hom(e,G)$, which is a morphism of groups $e\to G$ and called the \textbf{unit section} of $G$. We also note that giving a group structure over $G$ amounts to given a composition law over $G$, which is a morphism
+\[\pi_G:G\times G\to G\]
+such that for any $S\in\Ob(\mathcal{C})$, $\pi_G(S)$ is a group structure on $G(S)$. With the same manner, $f:G\to H$ is a group homomorphism is and only if the following diagram is commutative:
+\[\begin{tikzcd}
+G\times G\ar[r,"\pi_G"]\ar[d,swap,"{(f,f)}"]&G\ar[d,"f"]\\
+H\times H\ar[r,"\pi_H"]&H
+\end{tikzcd}\]
+
+A sub-object $H$ of $G$ such that for any $S\in\Ob(\mathcal{C})$, $H(S)$ is a subgroup of $G(S)$ possessing evidently a group structure induced by that of $G$: that is, such that the monomorphism $H\to G$ is a morphism of groups. The group $H$ endowed with this structure is called a \textbf{subgroup} of $G$.\par
+If $G$ and $H$ are two groups in $\widehat{\mathcal{C}}$, the product $G\times H$ is endowed with a group structure such that for any $S\in\Ob(\mathcal{C})$, $G(S)\times H(S)$ is endowed with the product group structure. The group $G\times H$ endowed with this structure is called the product group of $G$ and $H$ (and this is also the product in the category $\Grp_{\widehat{\mathcal{C}}}$).\par
+If $G$ is a group in $\widehat{\mathcal{C}}$ then for any $S\in\Ob(\mathcal{C})$, $G_S$ is also a group in $\widehat{\mathcal{C}_{/S}}$. If $G$ and $H$ are groups in $\widehat{\mathcal{C}}$, then we can define an object $\sHom_{\Grp}(G,H)$ of $\widehat{\mathcal{C}}$ by
+\[\sHom_{\Grp}(G,H)(S)=\Hom_{\Grp}(G_S,H_S).\]
+One should note that $\sHom_{\Grp}(G,H)$ is in general not a group, nor a fortiori the object $\sHom$ in the category $\Grp_{\widehat{\mathcal{C}}}$. We define similarly objects $\sIso_{\Grp}(G,H)$, $\sEnd_{\Grp}(G)$ and $\sAut_{\Grp}(G)$.
+
+\begin{definition}
+Let $G\in\Ob(\mathcal{C})$. A \textbf{group structure over $\bm{G}$} is defined to be a group structure over $h_G\in\widehat{\mathcal{C}}$. If $G$ and $H$ are groups in $\mathcal{C}$, a group homomorphism from $G$ to $H$ is defined to be an element $f\in\Hom(G,H)\cong\Hom(h_G,h_H)$ which is a group homomorphism from $h_G$ to $h_H$. We denote by $\Grp_{\mathcal{C}}$ the category of groups in $\mathcal{C}$. Note that there is a Cartesian square in $\Cat$:
+\[\begin{tikzcd}
+\Grp_{\mathcal{C}}\ar[r]\ar[d]&\Grp_{\widehat{\mathcal{C}}}\ar[d]\\
+\mathcal{C}\ar[r,"h"]&\widehat{\mathcal{C}}
+\end{tikzcd}\]
+\end{definition}
+
+The preceding definitions and constructions carries over to groups in $\mathcal{C}$, provided that the corresponding functors (products, $\sHom$ objects, etc.) are representable in $\mathcal{C}$. They also applies to categories of the form $\mathcal{C}_{/S}$, and in this case, we denote by $\sHom_{S\dash\Grp}$ for $\sHom_{\Grp}$, etc.\par
+More generally, if $\mathcal{T}$ is a kind of structure over $n$ base sets defined by finite projective limits (for example, by the commutativity of some diagrams constructed from Cartesian products: monoid, group, action by group, module over a ring, Lie algebra over a ring, etc.), we can define the notion of $\mathcal{T}$ structure over $n$ objects $F_1,\dots,F_n$ over $\widehat{\mathcal{C}}$: such a structure is the assignment of a $\mathcal{T}$ structure over the sets $F_1(S),\dots,F_n(S)$ for each $S\in\Ob(\mathcal{C})$, so that for any morphism $S'\to S$ in $\mathcal{C}$, the family of maps $(F_i(S)\to F_i(S'))$ is a poly-homomorphism for the $\mathcal{T}$ structure. We define in a similar way the morphisms of the $\mathcal{T}$ structure, whence a category of $\mathcal{T}$ objects in $\widehat{\mathcal{C}}$. The fully faithful functor $h$ permits us to define the category of $\mathcal{T}$ objects in $\mathcal{C}$ as a fiber product in $\Cat$.\par
+Suppose now that in $\mathcal{C}$ the pullbacks exist, and let $\mathcal{T}$ be an algebraic structure defined by the data of certain morphisms between Cartesian products satisfying some axioms consisting of the commutativity of certain diagrams constructed by the previous arrows. A $\mathcal{T}$ structure on a family of objects of $\mathcal{C}$ will therefore be defined by certain morphisms between Cartesian products satisfying certain commutation conditions. It follows that if $\mathcal{C}$ and $\mathcal{C}'$ are two categories with products and $\lambda:\mathcal{C}\to\mathcal{C}'$ is a functor commuting with products, then for any family of objects $(F_i)$ of $\mathcal{C}$ equipped with a $\mathcal{T}$ structure, the family $(f(F_i))$ of objects of $\mathcal{C}'$ will thereby be endowed with a $\mathcal{T}$ structure. For example, any group in $\mathcal{C}$ will be transformed into a group in $\mathcal{C}'$, any pair of a ring in $\mathcal{C}$ and a module over this ring will be transformed into an analogous pair in $\mathcal{C}'$, etc.\par
+In particular, let $\mathcal{C}$ be a category, then the constant functor $E\mapsto E_S$ commutes with finite projective limits, and hence transforms groups into $S$-groups (i.e. groups in $\mathcal{C}_{/S}$), rings to $S$-rings, etc.
+
+\begin{remark}
+It is worth noting that the previous construction, applied to the category $\widehat{\mathcal{C}}$, restores the notions that have already been defined there. In others words, it amounts to the same thing to give oneself a $\mathcal{T}$ structure over an object of $\widehat{\mathcal{C}}$ when we consider this object as a functor on $\mathcal{C}$, or to give ourselves a $\mathcal{T}$ structure on the representable functor over $\mathcal{C}$ defined by this object. For example, let $G\in\widehat{\mathcal{C}}$; if the functor $F\mapsto\Hom_{\widehat{\mathcal{C}}}(F,G)$ is endowed with a group structure, then so is its restriction to $\mathcal{C}$. Conversely, if $G$ is a group in $\widehat{\mathcal{C}}$, then the multiplication morphism $\pi_G:G\times G\to G$ induces for each $F\in\widehat{\mathcal{C}}$ a group structure over $\Hom_{\widehat{\mathcal{C}}}(F,G)$, which is functorial on $F$.
+\end{remark}
+
+\paragraph{Group action in \texorpdfstring{$\widehat{\mathcal{C}}$}{PSh}}
+Let $E\in\widehat{\mathcal{C}}$ and $G\in\Grp_{\widehat{\mathcal{C}}}$. A \textbf{$\bm{G}$-object structure} over $E$ is defined to be an assignment over $E(S)$, for each $S\in\Ob(\mathcal{C})$, a $G(S)$-set structure on $G(S)$, so that for any morphism $S'\to S$ in $\mathcal{C}$, the map $E(S)\to E(S')$ is compatible with the group homomorphism $G(S)\to G(S')$. As usual, this is equivalent to giving a morphism
+\[\mu:G\times E\to E\]
+which for each $S$ endows $E(S)$ with a $G(S)$-set structure. On the other hand, since $\Hom(G\times E,E)\cong\Hom(G,\sEnd(E))$, the morphism $\mu$ defines also a morphism $G\to\sEnd(E)$ and it is immediate to see that this is a group homomorphism which sends $G$ into $\sAut(E)$. Therefore, giving a $G$-object structure over $E$ is equivalent to giving a group homomorphism
+\[\rho:G\to\sAut(E).\]
+In particular, any element $g\in G(S)$ defines an automorphism $\rho(g)$ of the functor $E_S$, that is, an automorphism of $E\times h_S$ which commutes with the projection $E\times h_S\to h_S$, and in particular an automorphism of $E(S')$ for any morphism $S'\to S$.
+
+\begin{definition}
+Let $G$ be a group in $\widehat{\mathcal{C}}$ and $E$ be a $G$-object. We denote by $E^G$ the sub-object of $E$ defined by
+\[E^G(S)=\{x\in E(S):\text{$x_{S'}$ is invariant under $G(S')$ for any morphism $S'\to S$}\}.\]
+Here $x_{S'}$ is the image of $x$ under $E(S)\to E(S')$. It is clear that $E^G$ (called the \textbf{invariant sub-object} of $E$) is the largest sub-object of $E$ on which $G$ acts trivially. If $F$ is a sub-object of $E$, we denote by $N_G(F)$ and $Z_G(F)$ the subgroups of $G$ defined by
+\begin{align*}
+N_G(F)(S)&=\{g\in G(S):\rho(g)F_S=F_S\}\\
+&=\{g\in G(S):\text{$\rho(S)F(S')=F(S')$ for any morphism $S'\to S$}\},\\
+Z_G(F)(S)&=\{g\in G(S):\rho(g)|_{F_S}=\id\}\\
+&=\{g\in G(S):\text{$\rho(g)|_{F(S')}=\id$ for any morphism $S'\to S$}\}.
+\end{align*}
+\end{definition}
+
+In particular, let $x\in\Gamma(E)$, i.e. a collection of elements $x_S\in E(S)$, $S\in\Ob(\mathcal{C})$, such that for any morphism $f:S'\to S$, we have $E(f)(x_s)=x_{S'}$ (if $\mathcal{C}$ admits a final object $S_0$, then we have $\Gamma(E)=E(S_0)$). Then $x$ can be considered as a sub-functor of $E$, also denoted by $x$, and we have $N_G(x)=Z_G(x)$. This common functor is also denoted by $\Stab_G(x)$ and called the \textbf{stablizer} of $x$. For any $S\in\Ob(\mathcal{C})$, we then have
+\[\Stab_G(x)(S)=\{g\in G(S):\rho(g)x_S=x_S\}.\]
+Suppose that fiber products exist in $\mathcal{C}$. If $G=h_G$ (resp. $E=h_E$), where $G$ is a group in $\mathcal{C}$ (resp. $E\in\Ob(\mathcal{C})$), and if $\mathcal{C}$ possesses a final object $S_0$, so that $x$ is a morphism $S_0\to E$, then the stablizer $\Stab_G(x)$ is represented by the fiber product $G\times_ES_0$, where $G\to E$ is the composition of $\id_G\times x:G=G\times S_0\to G\times E$ and $\mu:G\times E\to E$.
+
+\begin{remark}
+The formation of $E^G$, $N_G(F)$ and $Z_G(F)$ commute with base changes, so for any $S\in\Ob(\mathcal{C})$, weh ave
+\[(E^G)_S=(E_S)^{G_S},\quad N_G(F)_S\cong N_{G_S}(F_S),\quad Z_G(F)_S\cong Z_{G_S}(F_S).\]
+\end{remark}
+
+If $G$ is a group in $\mathcal{C}$ and $E$ is an object of $\widehat{\mathcal{C}}$ (resp. an object of $\mathcal{C}$), a $G$-object structure over $E$ is defined to be an $h_G$-object structure over $E$ (resp. $h_E$). With this definition, the above notations carries to $\mathcal{C}$, if the corresponding functors are representable. For example, if $N_{h_G}(h_F)$ is representable, then it is represented by a unique sub-object of $G$, which is then a subgroup of $G$ and denoted by $N_G(F)$.\par
+We say that the group $G$ in $\widehat{\mathcal{C}}$ acts on a group $H$ in $\widehat{\mathcal{C}}$ if $H$ is endowed with a $G$-object structure such that, for any $g\in G(S)$, the automorphism of $H(S)$ defined by $g$ is a group automorphism. This is the same to say that for any $g\in G(S)$, the automorphism $\rho(g)$ of $H_S$ is an automorphism of groups in $\widehat{\mathcal{C}_{/S}}$, or that the morphism $G\to\sAut(H)$ sends $G$ into $\sAut_{\Grp}(H)$.\par
+In the above situation, there exists over $H\times G$ a unique group structure such that, for any $S\in\Ob(\mathcal{C})$, $(H\times G)(S)$ is the semi-direct product of the groups $H(S)$ and $G(S)$ relative to the given action of $G(S)$ on $H(S)$. This group is denoted by $H\rtimes G$ and called the semi-direct product of $H$ by $G$. By definition, we then have
+\[(H\rtimes G)(S)=H(S)\rtimes G(S).\]
+Let $G$ be a group in $\widehat{\mathcal{C}}$. For any morphism $S'\to S$ of $\mathcal{C}$ and any $g\in G(S)$, let $\Inn(g)$ be the automorphism of $G(S')$ defined by $\Inn(g)h=ghg^{-1}$. This definition extends to a morphism of groups in $\widehat{\mathcal{C}}$:
+\[\Inn:G\to\sAut_{\Grp}(G)\sub\sAut(G).\]
+The above definitions then apply to $H$ and we have subgroups $N_G(E)$ and $Z_G(E)$ for any sub-object $E$ of $G$.
+
+\begin{definition}
+We define the \textbf{center} of $G$ and denote by $Z(G)$ the subgroup $Z_G(G)$ of $G$. We say that $G$ is \textbf{abelian} if $Z_G(G)=G$ or, equivalently, if $G(S)$ is abelian for any $S\in\Ob(\mathcal{C})$. A subgroup $H$ of $G$ is called \textbf{invariant} in $G$ if $N_G(H)=G$, or equivalently, if $H(S)$ is invariant in $G(S)$ for any $S$. Moreover, we say that $H$ is \textbf{cental} in $G$ if $Z_G(H)=G$, or equivalently, if $H(S)$ is cental in $G(S)$ for any $S$.
+\end{definition}
+
+\begin{definition}
+Let $f:G\to G'$ be a group homomorphism. The kernel of $f$ is the subgroup of $G$ defined by
+\[(\ker f)(S)=\{x\in G(S):f(S)x=1\}=\ker f(S)\]
+for any $S\in\Ob(\mathcal{C})$. This is an invariant subgroup of $G$. Note that if $G$ and $G'$ belongs to $\mathcal{C}$, $\mathcal{C}$ possesses a final object $S_0$ and fiber products exist in $\mathcal{C}$, then $\ker(f)$ is represented by $S_0\times_{G'}G$.
+\end{definition}
+
+\begin{definition}
+Let $E\in\widehat{\mathcal{C}}$ and $G$ be a group acting on $E$. We say that the action of $G$ on $E$ is faithful if the kernel of the morphism $G\to\sAut(E)$ is trivial, that is, if for any $S\in\Ob(\mathcal{C})$ and $g\in G(S)$, the condition $g_{S'}\cdot x=x$ for any morphism $S'\to S$ and $x\in E(S')$ implies $g=1$.
+\end{definition}
+
+Many definitions and propositions of elementary group theory are easily transported to the setting of groups in $\widehat{\mathcal{C}}$. Let us simply point out the following which will be useful to us:
+\begin{proposition}\label{category presheaf group homomorphism section iff semi-direct}
+Let $f:W\to G$ be a group homomorphism and put $H(S)=\ker f(S)$ for $S\in\Ob(\mathcal{C})$. Let $u:G\to W$ be a group homomorphism which is a section of $f$. Then $W$ is identified with a semi-direct product of $H$ by $G$ for the action of $G$ over $H$ defined by $(g,h)\mapsto\Inn(u(g))h$ for $g\in G(S)$, $h\in H(S)$ and $S\in\Ob(\mathcal{C})$.
+\end{proposition}
+
+All the definitions and propositions are transported as usual to $\mathcal{C}$. We define in particular the semi-product of two groups $H$ and $G$ in $\mathcal{C}$, with $G$ acting on $H$, when the Cartesian product $H\times G$ exists in $\mathcal{C}$. We have the following analogue of \cref{category presheaf group homomorphism section iff semi-direct}:
+\begin{proposition}\label{category group homomorphism section iff semi-direct}
+Let $f:W\to G$ and $i:H\to W$ be group homomorphisms in $\mathcal{C}$ such that for any $S\in\Ob(\mathcal{C})$, $(H(S),i(S))$ is a kernel of $f(S):W(S)\to G(S)$. Let $u:G\to W$ be a homomorphism of groups in $\mathcal{C}$ which is a section of $f$. Then $W$ is identified with the semi-direct product of $H$ by $G$ for the action of $G$ over $H$ such that if $S\in\Ob(\mathcal{C})$, $g\in G(S)$ and $h\in H(S)$, we have $\Inn(u(g))i(h)=i(ghg^{-1})$.
+\end{proposition}
+
+To end this paragraph, we breifly introduce the concept of modules over a ring in $\widehat{\mathcal{C}}$. So let $A$ and $M$ be objects of $\widehat{\mathcal{C}}$, we say that $F$ is a \textbf{module over the ring $\bm{A}$}, of simply an $A$-module, if for each $S\in\Ob(\mathcal{C})$ the et $A(S)$ is endowed with a ring structure and $M(S)$ with a module structure over this ring, so that for any morphism $S'\to S$, the map $A(S)\to A(S')$ is a ring homomorphism and $M(S)\to M(S')$ is a bi-homomorphism. If the ring $A$ is fixed, we define as usual morphisms of $A$-modules $M$, $M'$, whence the abelian group $\Hom_A(M,M')$, and the category of $A$-modules, which we denote by $\Mod(A)$.
+
+\begin{proposition}\label{category presheaf Mod(A) is AB5 category}
+The category $\Mod(A)$ is endowed with an abelian category structure defined "argument by argument". Moreover, $\Mod(A)$ is an (AB5) category, that is, arbitrary direct sums exist in $\Mod(A)$ and if $M$ is an $A$-module, $N$ is a submodule, and $(M_i)_{i\in I}$ is a filtrant family of increasing submodules of $M$, then
+\[\bigcup_{i\in I}(M_i\cap N)=\Big(\bigcup_{i\in I}M_i\Big)\cap N.\]
+\end{proposition}
+\begin{proof}
+In fact, let $f:M\to M'$ be a morphism of $A$-modules. We define the $A$-modules $\ker f$ (resp. $\im f$ and $\coker f$) so that for any $S\in\Ob(\mathcal{C})$, $(\ker f)(S)=\ker f(S)$ (resp. $\cdots$). Then $\ker f$ (resp. $\coker f$) is a kernel (resp. cokernel) of $f$, and we have an isomorphism of $A$-modules $M/\ker f\cong\im f$. This proves that $\Mod(A)$ is an abelian category.\par
+Arbitrary direct sums exist in $\Mod(A)$ and are defined "argument by argument". Finally, if $M$ is an $A$-module, $N$ is a submodule, and $(M_i)_{i\in I}$ is a filtrant family of increasing submodules of $M$, then the inclusion
+\[\bigcup_{i\in I}(M_i\cap N)\sub \Big(\bigcup_{i\in I}M_i\Big)\cap N\]
+is an equality: in fact, if $S\in\Ob(\mathcal{C})$ and $x\in N(S)\cap\bigcup_iM_i(S)$, then there exists $i\in I$ such that $x\in N(S)\cap M_i(S)$.
+\end{proof}
+
+\begin{proposition}\label{category presheaf Mod(A) generator if small}
+If the category $\mathcal{C}$ is $\mathscr{U}$-small, then $A$ is a generator for the category $\Mod(A)$. Concequently, $\Mod(A)$ is a Grothendieck category, hence possesses enough injectives.
+\end{proposition}
+\begin{proof}
+Let $M$ be an $A$-module. For any $S\in\Ob(\mathcal{C})$, let $M_0(S)$ be a system of generators of the $A(S)$-module $M(S)$. Since, by hypothesis, $\mathcal{C}$ is small, we can consider the set $I=\coprod_{S\in\Ob(\mathcal{C})}M_0(S)$. We then have an epimorphism $A^{\oplus I}\to M$. This proves that $A$ is a generator for $\Mod(A)$ (cf. \cite{tohoku} 1.9.1). As $\Mod(A)$ satisfies (AB5), it then follows from (cf. \cite{tohoku} 1.10.2) that $\Mod(A)$ has enough injectives.
+\end{proof}
+
+\begin{remark}
+If we consider $\Z$ as a constant functor on $\mathcal{C}$, then the category of $\Z$-modules is isomorphic to the category of abelian groups.
+\end{remark}
+
+\begin{definition}
+If $M$ is an $A$-module, then for any $S\in\Ob(\mathcal{C})$, $M_S$ is an $A_S$-module, so we can define an abelian group $\sHom_A(M,N)$ by
+\[\sHom_A(M,N)(S)=\Hom_{A_S}(M_S,N_S).\]
+We define similarly objects $\sIso_A(M,N)$, $\sEnd_A(M)$ and $\sAut_A(M)$, which are groups in $\widehat{\mathcal{C}}$ endowed with the structure of composition.
+\end{definition}
+
+\begin{definition}
+Let $A$ be a ring in $\widehat{\mathcal{C}}$, $M$ be an $A$-module and $G$ be a group in $\widehat{\mathcal{C}}$. We denote by $A[G]$ the group algebra in $\widehat{\mathcal{C}}$ of $G$ over $A$, so that for any $S\in\Ob(\mathcal{C})$, we have 
+\[(A[G])(S)=A(S)[G(S)].\]
+An \textbf{$\bm{A[G]}$-module structure} on $M$ is defined to be a $G$-object structure such that for any $S\in\Ob(\mathcal{C})$ and $g\in G(S)$, the automorphim of $F(S)$ defined by $g$ is an automorphism of $A(S)$-module. Equivalently, this means the group homomorphism
+\[\rho:G\to\sAut(M)\]
+sends $G$ to the subgroup $\sAut_A(M)$ of $\sAut(M)$. Therefore, given an $A[G]$-module structure on $M$, we have a group homomorphism
+\[\rho:G\to\sAut_A(M).\]
+We define similarly the abelian group $\Hom_{A[G]}(M,N)$ for $A[G]$-modules $M,N$, whence an additive category $\Mod(A[G])$.
+\end{definition}
+The constructions above are immediately specialized in the case where $G$ (or $A$, or both) are representable by objects of $\mathcal{C}$ which are thereby endowed with corresponding algebraic structures.
+
+\subsection{Algebraic structures on the category of schemes}
+We now apply the constructions of the previous paragraph to the category of schemes $\Sch$, and more generally to categories $\Sch_{/S}$. We will simplify the notations in the following way: a group in $\Sch$ will also be called a \textbf{group scheme}, and a group scheme in $\Sch_{/S}$ will be called a \textbf{group scheme over $\bm{S}$}, or an \textbf{$\bm{S}$-group}, or $A$-group when $S$ is the spectrum of a ring $A$.
+\paragraph{Constant schemes}
+The category of schemes admits direct sums and fiber products, while direct sums commute with base changes. We can then define the constant objects: for any set $E$, we have a scheme $E_\Z$ and for any scheme $S$, an $S$-scheme $E_S=(E_\Z)_S$. Recall that for any $S$-scheme $T$, $\Hom_S(T,E_S)$ is the set of locally constant maps from the space $T$ to $E$.\par
+The functor $E\mapsto E_S$ commutes with finite projective limits. In particular, if $G$ is a group, then $G_S$ is a group scheme over $S$; if $A$ is a ring, then $A_S$ is a ring scheme over $S$, etc.
+\paragraph{Affine \texorpdfstring{$S$}{S}-groups}
+Let $T$ be an affine $S$-scheme, or an $S$-scheme that is affine over $S$. Then the $\mathscr{O}_S$-algebra $f_*(\mathscr{O}_T)$ (also denoted by $\mathscr{A}(T)$), where $f:T\to S$ is the structural morphism, is then quasi-coherent. Conversely, any quasi-coherent $\mathscr{O}_S$-algebra $\mathscr{A}$ corresponds to an affine $S$-scheme $\Spec(\mathscr{A})$, and the constructions $T\mapsto\mathscr{A}(T)$, $\mathscr{A}\mapsto\Spec(\mathscr{A})$ are quasi-inverses of each other. It follows that giving an algebraic structure on an affine $S$-scheme $T$ is equivalent to giving the corresponding structure on $\mathscr{A}(T)$ in the opposite category to that of quasi-coherent $\mathscr{O}_S$-algebras. In particular, if $G$ is an affine $S$-group over $S$, $\mathscr{A}(G)$ is endowed with an augmented $\mathscr{O}_S$-bialgebra structure, that is, we have the following homomorphisms of $\mathscr{O}_S$-algebras
+\[\Delta:\mathscr{A}(G)\to\mathscr{A}(G)\otimes_{\mathscr{O}_S}\mathscr{A}(G),\quad \eps:\mathscr{A}(G)\to\mathscr{O}_S,\quad \tau:\mathscr{A}(G)\to\mathscr{A}(G)\]
+corresponding to the morphisms of $S$-schemes 
+\[\pi:G\times G\to G,\quad e_G:S\to G,\quad i:G\to G.\]
+The maps $\Delta$, $\eps$ and $\tau$ satisfy the following conditions (which express that $G$ is an $S$-monoid):
+\begin{enumerate}[leftmargin=40pt]
+    \item[(HA1)] $\Delta$ is coassociative: the following diagram is commutative
+    \[\begin{tikzcd}
+    \mathscr{A}(G)\ar[r,"\Delta"]\ar[d,swap,"\Delta"]&\mathscr{A}(G)\otimes_{\mathscr{O}_S}\mathscr{A}(G)\ar[d,"\id\otimes\Delta"]\\
+    \mathscr{A}(G)\otimes_{\mathscr{O}_S}\mathscr{A}(G)\ar[r,"\Delta\otimes\id"]&\mathscr{A}(G)\otimes_{\mathscr{O}_S}\mathscr{A}(G)\otimes_{\mathscr{O}_S}\mathscr{A}(G)
+    \end{tikzcd}\]
+    \item[(HA2)] $\Delta$ is compatible with $\eps$: the following compositions are identities:
+    \[\begin{tikzcd}
+    \mathscr{A}(G)\ar[r,"\Delta"]&\mathscr{A}(G)\otimes_{\mathscr{O}_S}\mathscr{A}(G)\ar[r,"\id\otimes\eps"]&\mathscr{A}(G)\otimes_{\mathscr{O}_S}\mathscr{O}_S\ar[r,"\sim"]&\mathscr{A}(G)
+    \end{tikzcd}\]
+    \vspace*{-4mm}
+    \[\begin{tikzcd}
+    \mathscr{A}(G)\ar[r,"\Delta"]&\mathscr{A}(G)\otimes_{\mathscr{O}_S}\mathscr{A}(G)\ar[r,"\eps\otimes\id"]&\mathscr{O}_S\otimes_{\mathscr{O}_S}\mathscr{A}(G)\ar[r,"\sim"]&\mathscr{A}(G)
+    \end{tikzcd}\]
+\end{enumerate}
+Also, in this case $(\mathscr{A}(G),\Delta,\eps,\tau)$ is a Hopf algebra. Let us take advantage of the circumstance to notice once again that it follows from the definition of an $S$-group structure that in order to give such a structure on a $S$-scheme $G$ affine over $S$, it is not necessary to verify anything on $\mathscr{A}(G)$, but simply endow each $G(S')$ for $S'$ above $S$ with a group structure functorial in $S'$. This remark applies mutatis mutandis to morphisms.
+\paragraph{The groups \texorpdfstring{$\G_a$}{G} and \texorpdfstring{$\G_m$}{G}}\label{scheme group G_a and G_m paragraph}
+We consider the \textbf{additive group functor} $\G_a:\Sch^{\op}\to\Set$ defined by the formula
+\[\G_a(S)=\Gamma(S,\mathscr{O}_S),\]
+endowed with the group structure defined by the additive group structure of the ring $\Gamma(S,\mathscr{O}_S)$. This is represented by the affine scheme, which we denote also by $\G_a$, and which is then a group scheme
+\[\G_a=\Spec(\Z[T]).\]
+In fact, we have bijections
+\[\Hom(S,\G_a)=\Hom_{\Alg}(\Z[T],\Gamma(S,\mathscr{O}_S))\cong\Gamma(S,\mathscr{O}_S).\]
+For any scheme $S$, we then have an affine $S$-group over $S$, which we denote by $\G_{a,S}$, and it corresponds to the $\mathscr{O}_S$-bigebra $\mathscr{O}_S[T]$ with the comultiplication and counit given by
+\[\Delta(T)=T\otimes 1+1\otimes T,\quad \eps(T)=0.\]
+
+Let $\G_m:\Sch^{\op}\to\Set$ be the \textbf{multiplication group functor} defined by
+\[\G_m(S)=\Gamma(S,\mathscr{O}_S)^{\times},\]
+where $\Gamma(S,\mathscr{O}_S)^{\times}$ denotes the multiplication group of invertible elements in the ring $\Gamma(S,\mathscr{O}_S)$, endowed with the canonical group structure. This is represented by an affine group, which is still denoted by $\G_m$:
+\[\G_m=\Spec(\Z[T,T^{-1}])=\Spec(\Z[\Z])\]
+where $\Z[\Z]$ is the group algebra of the additive group $\Z$ over the ring $\Z$. In fact,
+\[\Hom(S,\Spec(\Z[T,T^{-1}]))=\Hom_{\Alg}(\Z[T,T^{-1}],\Gamma(S,\mathscr{O}_S))\cong\Gamma(S,\mathscr{O}_S)^\times.\]
+For any scheme $S$, we then have an affine $S$-group $\G_{m,S}$ over $S$, which corresponds to the $\mathscr{O}_S$-bigebra $\mathscr{O}_S[\Z]$, with the comultiplication and counit given by
+\[\Delta(x)=x\otimes x,\quad \eps(x)=1\for x\in\Z.\]
+
+We also note that the set $\Gamma(S,\mathscr{O}_S)$ is a ring for each scheme $S$, so we can endow the functor $\G_a$ with a natural ring structure, which we denote by $\mathbb{O}$. The ring $\mathbb{O}$ is represented by the scheme $\Spec(\Z[T])$, which is also denoted by $\mathbb{O}$, which is then a ring scheme in $\widehat{\Sch}$. For any scheme $S$, $\mathbb{O}_S=S\times_{\Spec(\Z)}\Spec(\Z[T])=\Spec(\mathscr{O}_S[T])$ is then an affine ring scheme over $S$. Note that this ring is also denoted by $S[T]$.\par
+For any object $F$ in $\widehat{\Sch}$, the set $\mathbb{O}(F)=\Hom(F,\mathbb{O})$ is then endowed with a ring structure and is functorial on $F$. In particular, if $X$ is a scheme and we are given morphisms $x:X\to F$ and $f:F\to\mathbb{O}$ (that is, $x\in F(X)$ and $f\in\mathbb{O}(F)$), then $f(x):=f\circ x$ is an element in $\mathbb{O}(X)=\Gamma(X,\mathscr{O}_X)$.
+
+\begin{definition}
+Let $\pi:M\to X$ be a morphism in $\widehat{\Sch}$, and $\mathbb{O}_X=\mathbb{O}\times X$. We say that $M$ is an \textbf{$\mathbb{O}_X$-module} if for each $X$-scheme $X'$, we are given an $\mathbb{O}(X')$-module structure on $\Hom_X(X',M)$, which is functorial on $X'$. Equivalently, this amounts to giving oneself an $X$-abelian group structure $\mu:M\times_XM\to M$ on $M$ and an "external law"
+\[\mathbb{O}\times M=\mathbb{O}_X\times_XM\to M,\quad (f,m)\mapsto f\cdot m\]
+which is an $X$-morphism and for any $x\in X(S)$, endows $M(x)=\{m\in M(S):\pi(m)=x\}$ an $\mathbb{O}(S)$-module structure. In this case, for any $Y\in\widehat{\Sch}_{/X}$ (not necessarily representable), the set $\Hom_X(Y,M)=\Gamma(M_Y/Y)$ is an $\mathbb{O}(Y)$-module, which is functorial on $Y$.
+\end{definition}
+
+\paragraph{Diagonalizable groups}
+The construction of $\G_m$ can be generalized in the following manner. Let $M$ be an abelian group and $M_\Z$ be the constant group scheme associated with $M$. We then consider the functor $D(M):\Sch^{\op}\to\Set$ defined by
+\[D(M)(S)=\Hom_{\Grp}(M_\Z(S),\G_m(S))\cong \Hom_{S\dash\Grp}(M_S,\G_{m,S})\cong \sHom_{\Grp}(M_\Z,\G_m)(S).\]
+This is an abelian group in $\widehat{\Sch}$ and is represented by the group scheme $\Spec(\Z[M])$, which is still denoted by $D(M)$. In fact, for any scheme $S$, we have
+\[\Hom(S,\Spec(\Z[M]))=\Hom_{\Alg}(\Z[M],\Gamma(S,\mathscr{O}_S))\cong\Hom_{\Grp}(M,\Gamma(S,\mathscr{O}_S)^{\times}).\]
+
+For any scheme $S$, we then obtain an affine group scheme over $S$:
+\[D_S(M)=D(M)_S=\sHom_{\Grp}(M_\Z,\G_m)_S=\sHom_{\Grp}(M_S,\G_{m,S}).\]
+This is associated with the $\mathscr{O}_S$-bigebra $\mathscr{O}_S[M]$, whose comultiplication and counit are defined by
+\[\Delta(x)=x\otimes x,\quad \eps(x)=1\for x\in M.\]
+
+If $f:M\to N$ is a homomorphism of abelian groups, we then have obtain a morphism of $S$-groups
+\[D_S(f):D_S(N)\to D_S(M),\]
+whence a functor $D_S:M\mapsto D_S(M)$ from the category of abelian groups to the category of affine groups over $S$, which can also be described as the composition of the functor $M\mapsto M_S$ with the functor $M_S\mapsto\sHom_{\Grp}(M_S,\G_{m,S})$. This functor clearlt commutes with base changes. An $S$-group isomorphic to a group of them form $D_S(M)$ is called \textbf{diagonalizable}. We note that the elements of $M$ can be interpreted as some characters of $D_S(M)$, that is, certain elements of $\Hom_{\Grp}(D_S(M),\G_{m,S})$.
+\begin{example}
+It is clear that we have $D(\Z)=\G_m$ and $D(\Z^n)=(\G_m)^n$. We now consider the group scheme
+\[\bm{\mu}_n=D(\Z/n\Z)\]
+which is called the \textbf{group of $\bm{n}$-th roots of unity}. In fact, we have
+\[\bm{\mu}_n(S)=\Hom_{\Grp}(\Z/n\Z,\Gamma(S,\mathscr{O}_S)^\times)=\{f\in\Gamma(S,\mathscr{O}_S):f^n=1\}.\]
+The $S$-group $\bm{\mu}_{n,S}$ corresponds to the $\mathscr{O}_S$-algebra $\mathscr{O}_S[T]/(T^n-1)$. Suppose in particular that $S$ is the spectrum of a field $k$ of characteristic $p$. Then by putting $T-1=s$, we have
+\[k[T]/(T^p-1)=k[s]/(s^p),\]
+which shows that the underlying space of $\bm{\mu}_{p,S}$ is reduced to a single point, and the local ring of this point is the Artinian $k$-algebra $k[s]/(s^p)$. By the same ideas, we see that the $S$-schemes $\G_{a,S}$, $\G_{m,S}$, $\mathbb{O}_S$ are smooth on $S$, that $D_S(M)$ is flat on $S$ and that it is formally smooth (resp. smooth) on $S$ if and only if the residual characteristic of $S$ does not divide the torsion of $M$ (resp. and if moreover $M$ is finite type).
+\end{example}
+\begin{example}
+The above procedure applies to "classical groups" (linear groups $\GL_n$, symplectic groups $\Sp_n$, orthogonal groups $\O_n$, etc.). We define for example $\GL_n$ as representing the functor such that
+\[\GL_n(S)=\GL(n,\Gamma(S,\mathscr{O}_S))=\Aut_{\mathscr{O}_S}(\mathscr{O}_S^n).\]
+We can construct it for example as the open set of $\Spec(\Z[T_{ij}])$ ($1\leq i,j\leq n$) defined by the function $f=\det(T_{ij})$, which is $\Spec(\Z[T_{ij},f^{-1}])$.
+\end{example}
+
+\paragraph{Module functors in the category of schemes}
+We now associate with any $\mathscr{O}_S$-module over the schema $S$, an $\mathbb{O}_S$-module (where $\mathbb{O}_S$ denotes the ring functor introduced in \ref{scheme group G_a and G_m paragraph}). This can be done in two different ways, as we shall now define.
+\begin{definition}
+Let $S$ be a scheme. For any $\mathscr{O}_S$-module $\mathscr{F}$, we denote by $\Gamma_\mathscr{F}$ and $\check{\Gamma}_\mathscr{F}$ the contravariant functors over $\Sch_{/S}$ defined by
+\[\Gamma_\mathscr{F}(S')=\Gamma(\mathscr{F}\otimes_{\mathscr{O}_{S}}\mathscr{O}_{S'}),\quad \check{\Gamma}_\mathscr{F}(S')=\Hom_{\mathscr{O}_{S'}}(\mathscr{F}\otimes_{\mathscr{O}_{S}}\mathscr{O}_{S'},\mathscr{O}_{S'}).\]
+Then $\Gamma_\mathscr{F}$ and $\check{\Gamma}_\mathscr{F}$ are endowed with natural structures of $\mathbb{O}_S$-modules (we note that $\mathbb{O}_S(S')=\Gamma(S',\mathscr{O}_{S'})=\Gamma_{\mathscr{O}_S}(S')$), so that we obtain functors $\Gamma$ and $\check{\Gamma}$ from the category of $\mathscr{O}_S$-modules to that of $\mathbb{O}_S$-modules, $\Gamma$ being convariant and $\check{\Gamma}$ being contracovariant.
+\end{definition}
+
+We often restrict ourselves to the category of quasi-coherent $\mathscr{O}_S$-modules, so that $\Gamma$ and $\check{\Gamma}$ are considered as functors from $\Qcoh(\mathscr{O}_S)$ to the category of $\mathbb{O}_S$-modules:
+\[\Gamma:\Qcoh(\mathscr{O}_S)\to\Mod(\mathbb{O}_S),\quad \check{\Gamma}:\Qcoh(\mathscr{O}_S)^{\op}\to\Mod(\mathbb{O}_S).\]
+The reader should however note that most of the propositions in this paragraph do not rely on the quasi-coherence hypothesis.
+\begin{proposition}\label{scheme Gamma module functor prop}
+Let $S$ be a scheme.
+\begin{enumerate}
+    \item[(a)] The functors $\Gamma$ and $\check{\Gamma}$ commute with base changes: if $S'\to S$ is a morphism and $\mathscr{F}$ is a quasi-coherent $\mathscr{O}_S$-module, then $\Gamma_{\mathscr{F}\otimes\mathscr{O}_{S'}}\cong (\Gamma_{\mathscr{F}})_{S'}$ and $\check{\Gamma}_{\mathscr{F}\otimes\mathscr{O}_{S'}}\cong (\check{\Gamma}_{\mathscr{F}})_{S'}$.
+    \item[(b)] The functors $\Gamma$ and $\check{\Gamma}$ are fully faithful: the canonical maps
+    \begin{gather*}
+    \Hom_{\mathscr{O}_S}(\mathscr{F},\mathscr{F}')\to\Hom_{\mathbb{O}_S}(\Gamma_\mathscr{F},\Gamma_{\mathscr{F}'}),\\
+    \Hom_{\mathscr{O}_S}(\mathscr{F},\mathscr{F}')\to\Hom_{\mathbb{O}_S}(\check{\Gamma}_{\mathscr{F}'},\check{\Gamma}_{\mathscr{F}})
+    \end{gather*}
+    are bijective.
+    \item[(c)] The functors $\Gamma$ and $\check{\Gamma}$ are additive: we have $\Gamma_{\mathscr{F}\oplus\mathscr{F}'}\cong \Gamma_\mathscr{F}\times_S\Gamma_{\mathscr{F}'}$ and $\check{\Gamma}_{\mathscr{F}\oplus\mathscr{F}'}\cong \check{\Gamma}_\mathscr{F}\times_S\check{\Gamma}_{\mathscr{F}'}$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+Assertions (a) and (c) are clear from the definitions. As for (b), we note that by taking $S'$ to be the open subsets of $S$, we can construct a homomorphism $u:\mathscr{F}\to\mathscr{F}'$ from an $\mathbb{O}_S$-homomorphism $f:\Gamma_\mathscr{F}\to\Gamma_{\mathscr{F}'}$, and it is immediate to verify that this gives an inverse of the canonical map $\Hom_{\mathscr{O}_S}(\mathscr{F},\mathscr{F}')\to\Hom_{\mathbb{O}_S}(\Gamma_\mathscr{F},\Gamma_{\mathscr{F}'})$. A similar argument shows that the canonical map $\Hom_{\mathscr{O}_S}(\mathscr{F},\mathscr{F}')\to\Hom_{\mathbb{O}_S}(\check{\Gamma}_{\mathscr{F}'},\check{\Gamma}_{\mathscr{F}})$ is also bijective.
+\end{proof}
+
+We recall that if $F,F'$ are $\mathbb{O}_S$-modules, then $\sHom_{\mathbb{O}_S}(F,F')$ denote that $S$-functor which associates any morphism $S'\to S$ with $\Hom_{\mathbb{O}_{S'}}(F_{S'},F'_{S'})$.
+
+\begin{proposition}\label{scheme Gamma module functor of sHom morphism}
+We have the following canonical morphisms in $\Mod(\mathbb{O}_S)$:
+\[\begin{tikzcd}[column sep=3mm]
+\sHom_{\mathbb{O}_S}(\Gamma_\mathscr{F},\Gamma_{\mathscr{F}'})\ar[rr,"\sim"]&&\sHom_{\mathbb{O}_S}(\check{\Gamma}_{\mathscr{F}'},\check{\Gamma}_{\mathscr{F}})\\
+&\Gamma_{\sHom_{\mathscr{O}_S}(\mathscr{F},\mathscr{F}')}\ar[ru]\ar[lu]&
+\end{tikzcd}\]
+\end{proposition}
+\begin{proof}
+For each $S$-scheme $S'$, we have a canonical homomorphism
+\begin{gather*}
+\Gamma_{\sHom_{\mathscr{O}_S}(\mathscr{F},\mathscr{F}')}(S')=\Gamma(\sHom_{\mathscr{O}_S}(\mathscr{F},\mathscr{F}')\otimes\mathscr{O}_{S'})\to \Hom_{\mathscr{O}_{S'}}(\mathscr{F}\otimes\mathscr{O}_{S'},\mathscr{F}'\otimes\mathscr{O}_{S'}).
+\end{gather*}
+The proposition then follows from \cref{scheme Gamma module functor prop}~(a) and (b).
+\end{proof}
+
+\begin{remark}
+Let $\mathscr{F}$ be a quasi-coherent $\mathscr{O}_S$-module. Recall that the $S$-functor $\check{\Gamma}_\mathscr{F}$ is represented by an affine $S$-scheme which is denoted by $\V(\mathscr{F})$ and called the vector bundle defined by $\mathscr{F}$:
+\[\V(\mathscr{F})=\Spec(\bm{S}(\mathscr{F})),\]
+where $\bm{S}(\mathscr{F})$ denotes the symmetric algebra over $\mathscr{F}$. On the other hand, the article (\cite{*}) shows that if $S$ is Noetherian and $\mathscr{F}$ is a coherent $\mathscr{O}_S$-module, then $\Gamma_\mathscr{F}$ is representable if and only if $\mathscr{F}$ is locally free, and in this case we have an isomorphism $\Gamma_\mathscr{F}\cong\check{\Gamma}_\mathscr{F}$.
+\end{remark}
+
+\begin{proposition}\label{scheme Gamma module functor Hom with Spec prop}
+Let $\mathscr{F}$ and $\mathscr{F}'$ be quasi-coherent $\mathscr{O}_S$-modules and $\mathscr{A}$ be a quasi-coherent $\mathscr{O}_S$-algebra. Then we have a functorial isomorphism
+\[\Hom_S(\Spec(\mathscr{A}),\sHom_{\mathbb{O}_S}(\Gamma_{\mathscr{F}'},\Gamma_{\mathscr{F}}))\stackrel{\sim}{\to} \Hom_{\mathscr{O}_S}(\mathscr{F}',\mathscr{F}\otimes_{\mathscr{O}_S}\mathscr{A}).\]
+\end{proposition}
+\begin{proof}
+If we put $X=\Spec(\mathscr{A})$, then the LHS is canonically isomorphic to $\sHom_{\mathbb{O}_S}(\Gamma_{\mathscr{F}'},\Gamma_{\mathscr{F}})(X)$, which by \cref{scheme Gamma module functor prop} is given by
+\begin{align*}
+\sHom_{\mathbb{O}_S}(\Gamma_{\mathscr{F}'},\Gamma_{\mathscr{F}})(X)&\cong\Hom_{\mathbb{O}_X}(\Gamma_{\mathscr{F}'\otimes\mathscr{O}_X},\Gamma_{\mathscr{F}\mathscr{O}_X})\cong\Hom_{\mathscr{O}_X}(\mathscr{F}'\otimes\mathscr{O}_X,\mathscr{F}\otimes\mathscr{O}_X)\\
+&\cong \Hom_{\mathscr{O}_S}(\mathscr{F}',\varphi_*(\varphi^*(\mathscr{F})))
+\end{align*}
+where $\varphi:X\to S$ is the structural morphism. On the other hand, by \cref{scheme S-affine qcoh general product char} we have $\varphi_*(\varphi^*(\mathscr{F}))\cong\mathscr{F}\otimes\mathscr{A}$, so the assertion follows.
+\end{proof}
+
+\begin{corollary}\label{scheme Gamma module functor of tensor with algbera char}
+We have a canonical isomorphism $\Gamma_{\mathscr{F}\otimes\mathscr{A}}\cong\sHom_S(\Spec(\mathscr{A}),\Gamma_\mathscr{F})$.
+\end{corollary}
+\begin{proof}
+Let $f:S'\to S$ be an $S$-scheme and $X'=X\times_SS'$, we then have a Cartesian diagram
+\[\begin{tikzcd}
+X'\ar[r,"\varphi'"]\ar[d,swap,"f'"]&S'\ar[d,"f"]\\
+X\ar[r,"\varphi"]&S
+\end{tikzcd}\]
+By \cref{scheme S-affine stable under base change} and \cref{scheme S-affine algebra under base change prop}, $X'$ is affine over $S'$ and $\varphi'_*(\mathscr{O}_{X'})=f^*(\mathscr{A})$, so
+\[\sHom_S(\Spec(\mathscr{A}),\Gamma_\mathscr{F})(S')=\Hom_{S'}(\Spec(f^*(\mathscr{A})),\Gamma_{f^*(\mathscr{F})})\]
+and by \cref{scheme Gamma module functor Hom with Spec prop} applied to $f^*(\mathscr{F})$, $\mathscr{F}'=\mathscr{O}_{S'}$ and $f^*(\mathscr{A})$, this is equal to
+\begin{equation*}
+\Gamma(S',f^*(\mathscr{F})\otimes f^*(\mathscr{A}))=\Gamma(S',f^*(\mathscr{F}\otimes\mathscr{A}))=\Gamma_{\mathscr{F}\otimes\mathscr{A}}(S').\qedhere
+\end{equation*}
+\end{proof}
+
+\begin{proposition}\label{scheme Gamma module functor of sHom locally free prop}
+If $\mathscr{F}$ and $\mathscr{F}'$ are locally free of finite type, then the morphisms in \cref{scheme Gamma module functor of sHom morphism} are isomorphisms.
+\end{proposition}
+\begin{proof}
+In fact, for any morphism $S'\to S$, we then have
+\[\Gamma_{\sHom_{\mathscr{O}_S}(\mathscr{F},\mathscr{F}')}(S')=\Gamma(S',\sHom_{\mathscr{O}_S}(\mathscr{F},\mathscr{F}')\otimes\mathscr{O}_{S'})=\Hom_{\mathscr{O}_S}(\mathscr{F},\mathscr{F}').\]
+But this is also isomorphic to $\sHom_{\mathbb{O}_S}(\Gamma_\mathscr{F},\Gamma_{\mathscr{F}'})(S')$ and to $\sHom_{\mathbb{O}_S}(\Gamma_\mathscr{F},\Gamma_{\mathscr{F}'})(S')$, in view of \cref{scheme Gamma module functor prop}~(b).
+\end{proof}
+
+\begin{corollary}\label{scheme Gamma module functor isomorphic if locally free}
+Let $\mathscr{F}$ be a locally free $\mathscr{O}_S$-module of finite type and put $\check{\mathscr{F}}=\sHom_{\mathscr{O}_S}(\mathscr{F},\mathscr{O}_S)$. Then we have canonical isomorphisms
+\begin{align*}
+\Gamma_{\check{\mathscr{F}}}&\cong\sHom_{\mathbb{O}_S}(\Gamma_\mathscr{F},\mathbb{O}_S)\cong\check{\Gamma}_\mathscr{F},\\
+\check{\Gamma}_{\check{\mathscr{F}}}&\cong\sHom_{\mathbb{O}_S}(\check{\Gamma}_\mathscr{F},\mathbb{O}_S)\cong\Gamma_\mathscr{F},
+\end{align*}
+\end{corollary}
+
+\begin{proposition}\label{scheme Gamma module functor monomorphism iff split}
+If $u:\mathscr{F}\to\mathscr{F}'$ is a morphism of locally free $\mathscr{O}_S$-modules of finite rank, then for $\Gamma_u:\Gamma_\mathscr{F}\to\Gamma_{\mathscr{F}'}$ to be a monomorphism, it is necessary and sufficient that $f$ identifies $\mathscr{F}$ locally as a direct factor of $\mathscr{F}'$.
+\end{proposition}
+\begin{proof}
+One direction follows essentially from \cref{sheaf of module homomorphism ft to local free prop}. Conversely, if $\mathscr{F}$ is a direct factor of $\mathscr{F}'$, then for any $f:S'\to S$, $f^*(\mathscr{F})$ is a submodule of $f^*(\mathscr{F}')$, so $\Gamma_\mathscr{F}(S')=\Gamma(S',f^*(\mathscr{F}))$ is a submodule of $\Gamma_{\mathscr{F}'}(S')=\Gamma(S',f^*(\mathscr{F}'))$.
+\end{proof}
+
+\paragraph{The category of \texorpdfstring{$\mathscr{O}_S[G]$}{O}-modules}
+Let $G$ be an $S$-group and $\mathscr{F}$ be an $\mathscr{O}_S$-module. Then an \textbf{$\mathscr{O}_S[G]$-module structure} on $\mathscr{F}$ is defined to be an $\mathbb{O}_S[h_G]$-module structure on $\Gamma_\mathscr{F}$. A morphism of $\mathscr{O}_S[G]$-modules is by definition a morphism of the associated $\mathbb{O}_S[h_G]$-modules. We thus obtain a category $\Mod(\mathscr{O}_S[G])$ of $\mathscr{O}_S[G]$-modules and the full subcategory $\Qcoh(\mathscr{O}_S[G])$ formed by quasi-coherent $\mathscr{O}_S$-modules. By definition, giving an $\mathscr{O}_S[G]$-module structure on $\mathscr{F}$ is equivalent to giving a morphism of groups
+\[\rho:h_G\to\sAut_{\mathbb{O}_S}(\Gamma_\mathscr{F}).\]
+
+\begin{remark}
+Since by \cref{scheme Gamma module functor prop} we have an anti-isomorphism
+\[\sAut_{\mathbb{O}_S}(\Gamma_\mathscr{F})\cong\sAut_{\mathbb{O}_S}(\check{\Gamma}_\mathscr{F}),\]
+we see that an $\mathbb{O}_S[h_G]$-module structure on $\Gamma_\mathscr{F}$ is equivalent to an $\mathbb{O}_S[h_G]$-module structure on $\check{\Gamma}_\mathscr{F}$, and these two structures are connected by the operation $\rho(g)\mapsto \rho^*(g^{-1})$, where $\rho^*$ denotes the image of $\rho:h_G\to\sAut_{\mathbb{O}_S}(\Gamma_\mathscr{F})$ under the above isomorphism.
+\end{remark}
+
+\begin{remark}
+The categories we have just constructed can also be defined by the following Cartesian squares:
+\[\begin{tikzcd}
+\Qcoh(\mathscr{O}_S[G])\ar[r,hook]\ar[d]&\Mod(\mathscr{O}_S[G])\ar[r]\ar[d]&\Mod(\mathbb{O}_S[h_G])\ar[d,"\text{forget}"]\\
+\Qcoh(\mathscr{O}_S)\ar[r,hook]&\Mod(\mathscr{O}_S)\ar[r,"\Gamma"]&\Mod(\mathbb{O}_S)
+\end{tikzcd}\]
+The categories $\Mod(\mathscr{O}_S)$ and $\Mod(\mathbb{O}_S)$ are abelian, but one should be careful that in general the functor $\Gamma$ is not exact, neither left nor right.
+\end{remark}
+
+\begin{remark}\label{scheme module over group invariant subshaef def}
+Let $\mathscr{F}$ be an $\mathscr{O}_S[G]$-module. The \textbf{subsheaf of invariants} $\mathscr{F}^G$ is defined as follows: for any open subset $U$ of $S$,
+\[\mathscr{F}^G(U)=\Gamma_\mathscr{F}^G(U)=\{x\in\mathscr{F}(U):\text{$g\cdot x_{S'}=x_{S'}$ for any morphism $f:S'\to U$ and $g\in G(S')$}\}\]
+where $x_{S'}$ denotes the image of $x$ in $\Gamma(S',f^*(\mathscr{F}))=\Gamma(U,f_*(f^*(\mathscr{F})))$.\par
+Be careful that the natural morphism $\Gamma_{\mathscr{F}^G}\to\Gamma_\mathscr{F}^G$ is not an isomorphism in general. For example, if $S=\Spec(\Z)$ and $G$ is the constant group $\Z/2\Z=\{1,\tau\}$ acting on $\mathscr{F}=\mathscr{O}_S$ via $\tau\cdot 1=-1$, then we have $\mathscr{F}^G=0$ since the ring $\Gamma(U,\mathscr{F})$ has characteristic zero for any standard open $U$ of $S$. However, it is clear that $\Gamma_\mathscr{F}^G(\Spec(R))=R$ for any $\F_2$-algebra $R$.
+\end{remark}
+
+From now on, we restrict ourselves to the case where the group scheme $G$ is affine over $S$. Then, in view of \cref{scheme Gamma module functor Hom with Spec prop}, giving a morphism of $S$-functors
+\[\rho:h_G\to\sAut_{\mathbb{O}_S}(\Gamma_\mathscr{F})\]
+is equivalent to giving a morphism of $\mathscr{O}_S$-modules
+\[\mu:\mathscr{F}\to\mathscr{F}\otimes_{\mathscr{O}_S}\mathscr{A}(G).\]
+The condition that $\rho$ is a group homomorphism is then translated into the folllowing conditions on $\mu$:
+\begin{enumerate}[leftmargin=40pt]
+    \item[(CM1)] the following diagram is commutative:
+    \[\begin{tikzcd}
+    \mathscr{F}\ar[r,"\mu"]\ar[d,swap,"\mu"]&\mathscr{F}\otimes_{\mathscr{O}_S}\mathscr{A}(G)\ar[d,"\id\otimes\Delta"]\\
+    \mathscr{F}\otimes_{\mathscr{O}_S}\mathscr{A}(G)\ar[r,"\mu\otimes\id"]&\mathscr{F}\otimes_{\mathscr{O}_S}\mathscr{A}(G)\otimes_{\mathscr{O}_S}\mathscr{A}(G)
+    \end{tikzcd}\]
+    \item[(CM2)] the following composition is the identity:
+    \[\begin{tikzcd}
+    \mathscr{F}\ar[r,"\mu"]&\mathscr{F}\otimes_{\mathscr{O}_S}\mathscr{A}(G)\ar[r,"\id\otimes\eps"]&\mathscr{F}\otimes\mathscr{O}_S\ar[r,"\sim"]&\mathscr{F}
+    \end{tikzcd}\]
+\end{enumerate}
+These two axioms then endow a \textit{comodule structure} on $\mathscr{F}$ over the bigebra $\mathscr{A}(G)$.\par
+Put $\mathscr{A}=\mathscr{A}(G)$. If $\mathscr{F}$ and $\mathscr{F}'$ are $\mathscr{A}$-comodules, a morphism $f:\mathscr{F}\to\mathscr{F}'$ of comodules is then defined to be a morphism of $\mathscr{O}_S$-modules such that the following diagram is commutative:
+\[\begin{tikzcd}
+\mathscr{F}\ar[r,"f"]\ar[d,swap,"\mu_{\mathscr{F}}"]&\mathscr{F}'\ar[d,"\mu_{\mathscr{F}'}"]\\
+\mathscr{F}\otimes\mathscr{A}\ar[r,"f\otimes\id"]&\mathscr{F}'\otimes\mathscr{A}
+\end{tikzcd}\]
+We thus obtain a category $\CoMod(\mathscr{A})$ of comodules over $\mathscr{A}$, and we denote by $\CoQcoh(\mathscr{A})$ the full subcategory formed by quasi-coherent $\mathscr{O}_S$-modules. From the above remarks, it is also clear that we have the following:
+\begin{proposition}\label{scheme module over affine group cat equivalence}
+Let $G$ be an affine $S$-group. Then we have equivalences of categories:
+\[\Mod(\mathscr{O}_S[G])\cong\CoMod(\mathscr{A}(G)),\quad \Qcoh(\mathscr{O}_S[G])\cong\CoQcoh(\mathscr{A}(G)).\]
+If moreover $S=\Spec(A)$ is affine and we put $A[G]=\Gamma(S,\mathscr{A}(G))$, then we have an equivalence of categories
+\[\CoQcoh(\mathscr{A}(G))\cong\CoMod(A[G]).\]
+\end{proposition}
+
+\begin{proposition}\label{scheme module over flat affine group cat is abelian}
+Suppose that $G$ is affine and flat over $S$. Then the category $\Mod(\mathscr{O}_S[G])$ (resp. $\Qcoh(\mathscr{O}_S[G])$), being equivalent to the category of $\mathscr{A}(G)$-comodules (resp. quasi-coherent over $\mathscr{O}_S$), is abelian.
+\end{proposition}
+\begin{proof}
+Suppose that $\mathscr{A}=\mathscr{A}(G)$ is a flat $\mathscr{O}_S$-module. Let $\mathscr{E}$ be an $\mathscr{A}$-comodule and $\mathscr{F}$ be a sub-$\mathscr{O}_S$-module of $\mathscr{E}$. As $\mathscr{A}$ is flat over $\mathscr{O}_S$, we can identify $\mathscr{F}\otimes\mathscr{A}$ (resp. $\mathscr{F}\otimes\mathscr{A}\otimes\mathscr{A}$) as a sub-$\mathscr{O}_S$-module of $\mathscr{E}$ (resp. $\mathscr{E}\otimes\mathscr{A}\otimes\mathscr{A}$). Assume that $\mu_{\mathscr{E}}$ sends $\mathscr{F}$ into $\mathscr{F}\otimes\mathscr{A}$, then the restriction $\mu_\mathscr{F}:\mathscr{F}\to\mathscr{F}\otimes\mathscr{A}$ induces a comodule structure on $\mathscr{F}$, and we say that $\mathscr{F}$ is a sub-comodule of $\mathscr{E}$. By passing to quotient, $\mu_\mathscr{E}$ then defies a morphism of $\mathscr{O}_S$-modules $\mathscr{E}/\mathscr{F}\to\mathscr{E}/\mathscr{F}\otimes\mathscr{A}$, which endows $\mathscr{E}/\mathscr{F}$ with an $\mathscr{A}$-comodule structure.\par
+Now if $f:\mathscr{E}\to\mathscr{E}'$ is a morphism of $\mathscr{A}$-comodules, then $\ker f$ (resp. $\im f$) is a sub-$\mathscr{A}$-comodule of $\mathscr{E}$ (resp. $\mathscr{E}'$), and $f$ induces an isomorphism $\mathscr{E}/\ker f\stackrel{\sim}{\to} \im f$ of $\mathscr{A}$-comodules. Moreover, if $\mathscr{E}$ and $\mathscr{E}'$ are quasi-coherent $\mathscr{O}_S$-modules, then so are $\ker f$ and $\im f$. Therefore, we conclude that $\CoMod(\mathscr{A})$ and $\CoQcoh(\mathscr{A})$ are abelian categories.
+\end{proof}
+
+We now suppose further that $G$ is a diagonalizable group, which means $\mathscr{A}(G)$ is the algebra of an abelian group $M$ over the ring $\mathscr{O}_S$. If $\mathscr{F}$ is an $\mathscr{O}_S$-module, we then have
+\[\mathscr{F}\otimes\mathscr{A}(G)=\coprod_{m\in M}\mathscr{F}\otimes m\mathscr{O}_S,\]
+so giving a morphism $\mu:\mathscr{F}\to\mathscr{F}\otimes\mathscr{A}(G)$ is equivalent to giving a family of endomorphisms $(\mu_m)_{m\in M}$ of $\mathscr{F}$ such that for any section $x$ of $\mathscr{F}$ over an open subset $S$, $(\mu_m(x))$ is a section of the direct sum $\coprod_{m\in M}\mathscr{F}$ (this means that over any sufficiently small open subset, there are only a finite number of restrictions of the $\mu_m(x)$ which are non-zero). For a morphism $\mu$ defined by
+\[\mu(x)=\sum_{m\in M}\mu_m(x)\otimes m\]
+to satisfy (CM1) and (CM2), it is necessary and sufficient that we have 
+\[\mu_m\circ\mu_n=\delta_{mn}\mu_m,\quad \sum_{m\in M}\mu_m=\id_\mathscr{F}\]
+which signify that the $\mu_m$ are orthogonal projections adding up to the identity. We have therefore proved the following result:
+\begin{proposition}\label{scheme module over diagonalizable group cat equivalent to graded module}
+If $G=D_S(M)$ is a diagonalizable group over $S$, then the category of $\mathscr{O}_S[G]$-modules (resp. quasi-coherent $\mathscr{O}_S[G]$-modules) is equivalent to the category of graded $\mathscr{O}_S$-modules (resp. quasi-coherent $\mathscr{O}_S[G]$-modules) of type $M$.
+\end{proposition}
+
+\begin{corollary}\label{scheme affine acted by diagonalizable group equivalent to graded alg}
+The functor $\mathscr{A}\mapsto\Spec(\mathscr{A})$ induces an equivalence from the category of graded quasi-coherent $\mathscr{O}_S$-algebras of type $M$ to the opposite category of that of affine $S$-schemes acted by the group $G=D_S(M)$.
+\end{corollary}
+\begin{proof}
+If $X$ is an affine scheme over $S$ acted by the affine $S$-group $D_S(M)$, then $\mathscr{A}(S)$ is a quasi-coherent $\mathscr{O}_S$-algebra which is acted by $G$, whence a graded $\mathscr{O}_S$-algebra of type $M$. The converse of this is immediate.
+\end{proof}
+
+\begin{proposition}\label{scheme module over diagonalizable group sequence split iff}
+Let $G$ be a diagonalizable group over $S$. If
+\[\begin{tikzcd}
+0\ar[r]&\mathscr{F}_1\ar[r]&\mathscr{F}_2\ar[r]&\mathscr{F}_3\ar[r]&0
+\end{tikzcd}\]
+is an exact sequence of quasi-coherent $\mathscr{O}_S[G]$-modules which split as a sequence of $\mathscr{O}_S$-modules, then it splits as a sequence of $\mathscr{O}_S[G]$-modules..
+\end{proposition}
+\begin{proof}
+If $G=D_S(M)$, then each $\mathscr{F}_i$ is graded by the $(\mathscr{F}_i)_m$ and for each $m\in M$ the sequence
+\[\begin{tikzcd}
+0\ar[r]&(\mathscr{F}_1)_m\ar[r]&(\mathscr{F}_2)_m\ar[r]&(\mathscr{F}_3)_m\ar[r]&0
+\end{tikzcd}\]
+of $\mathscr{O}_S$-modules is splitting. The proposition then follows from \cref{scheme module over diagonalizable group cat equivalent to graded module}, since the corresponding result for graded modules is true.
+\end{proof}
+
+\subsection{Cohomology of groups}
+\paragraph{The standard complex}
+Let $\mathcal{C}$ be a category, $G$ be a group in $\widehat{\mathcal{C}}$, $A$ be a ring and $M$ be a $A[G]$-module. For $n\geq 0$, we put
+\[C^n(G,M)=\Hom(G^n,M),\quad \mathcal{C}^n(G,M)=\sHom(G^n,M),\]
+where $G^0$ is the final object $e$ of $\widehat{\mathcal{C}}$. Then $\mathcal{C}^n(G,M)$ (resp. $C^n(G,M)$) is endowed evidently with a structure of $\mathbb{O}$-module (resp. $\Gamma(\mathbb{O})$-module), and we have
+\[C^n(G,M)\cong\Gamma(\mathcal{C}^n(G,M)),\quad \mathcal{C}^n(G,M)(S)=C^n(G_S,M_S).\]
+Giving an element of $C^n(G,M)$ is then equivalent to giving for each $S\in\Ob(\mathcal{C})$ an $n$-cochain of $G(S)$ in $M(S)$, which is functorial on $S$. The boundary operator
+\[d:C^n(G(S),M(S))\to C^{n+1}(G(S),M(S)),\]
+which is defined by the formula
+\begin{align*}
+(df)(g_1,\dots,g_{n+1})&=g_1\cdot f(g_2,\dots,g_{n+1})+\sum_{i=1}^{n}(-1)^if(g_1,\dots,g_ig_{i+1},\dots,g_{n+1})\\
+&+(-1)^{n+1}f(g_1,\dots,g_n)
+\end{align*}
+is then functorial on $S$ and hence defines a homomorphism
+\[d:C^n(G,M)\to C^{n+1}(G,M)\]
+such that $d\circ d=0$. We then obtain a complex of abelian groups, which we denote by $C^\bullet(G,M)$. We define similarly a complex of $A$-modules $\mathcal{C}^n(G,M)$, and we have
+\[C^\bullet(G,M)=\Gamma(\mathcal{C}^n(G,M)).\]
+We denote by $H^n(G,M)$ (resp. $\mathcal{H}^n(G,M)$) the cohomology group of the complex $C^\bullet(G,M)$ (resp. $\mathcal{C}^\bullet(G,M)$). In particular, we have
+\[\mathcal{H}^0(G,M)=M^G,\quad H^0(G,M)=\Gamma(M^G).\]
+
+\begin{remark}
+The set-theoretic definition of $d$ is given to verify that $d\circ d=0$. We can also define $d$ in terms of the multiplication $m:G\times G\to G$ and the action $\mu:G\times M\to M$ as follows: for any $f\in C^n(G,M)$,
+\[df=\mu\circ(\id_G\times f)+\sum_{i=1}^{n}(-1)^if\circ(\id_{G^{i-1}}\times m\times\id_{G^{n-i}})+(-1)^{n+1}f\circ\pr_{[1,n]},\]
+where $\pr_{[1,n]}$ is the projection of $G^{n+1}=G^{n}\times G$ to $G^n$. Similarly, for any $S\in\Ob(\mathcal{C})$ and $f\in\Ob(\mathcal{C})^n(G,M)(S)=C^n(G_S,M_S)$, we have
+\[df=\mu_S\circ(\id_G\times f)+\sum_{i=1}^{n}(-1)^if\circ(\id_{G_S^{i-1}}\times m_S\times\id_{G_S^{n-i}})+(-1)^{n+1}f\circ\pr_{[1,n]},\]
+where $m_S$ and $\mu_S$ are defined by base change.
+\end{remark}
+
+We recall that $\Mod(A[G])$ is endowed with an abelian category structure, defined "argument by argument" (\cref{category presheaf Mod(A) is AB5 category}); therefore a sequence of $A[G]$-modules
+\[\begin{tikzcd}
+0\ar[r]&M'\ar[r]&M\ar[r]&M''\ar[r]&0
+\end{tikzcd}\]
+is exact if and only the sequence of abelian groups
+\[\begin{tikzcd}
+0\ar[r]&M'(S)\ar[r]&M(S)\ar[r]&M''(S)\ar[r]&0
+\end{tikzcd}\]
+is exact for any $S\in\Ob(\mathcal{C})$. If $\mathcal{C}$ is $\mathscr{U}$-small, then by \cref{category presheaf Mod(A) generator if small}, $\Mod(A[G])$ possesses enough injectives, so that the derived functors of the left exact functors $\mathcal{H}^0$ and $H^0$ can be defined. We now show that the functors $\mathcal{H}^n$ and $H^n$ are isomorphic to the derived functors of $\mathcal{H}^0$ and $H^0$, respectively.
+
+\begin{definition}
+For any $A$-module $P$, we denote by $\CoInd(P)$ the object $\sHom(G,P)$ of $\widehat{\mathcal{C}}$ endowed with the structure of an $A[G]$-module defined as follows: for any $S\in\Ob(\mathcal{C})$, we have $\sHom(G,P)(S)=\Hom_S(G_S,P_S)$, and we act $g\in G(S)$ and $a\in A[S]$ on $\phi\in\Hom_S(G_S,P_S)$ by the formule
+\[(g\cdot\phi)(h)=\phi(hg),\quad (a\cdot\phi)(h)=a\phi(h),\]
+for any $h\in G(S')$ and $S'\to S$. Moreover, for any $\phi\in\Hom_S(G_S,P_S)$, we set
+\[\eps(\phi)=\phi(1)\in P(S)\]
+where $1$ denotes the unit element of $G(S)$. Then it is clear that the construction of $\CoInd(P)$ is functorial on $P$, and we have thus defined a functor $\CoInd:\Mod(A)\to\Mod(A[G])$ and a natural transform $\iota\circ\CoInd\to \id$, where $\iota$ denotes the forgetful functor.
+\end{definition}
+
+\begin{remark}
+Let $G_1$ and $G_2$ be two copies of $G$. Then the morphism
+\[G_1\times \CoInd(P)\to \CoInd(P),\quad (g_1,\phi)\mapsto(g_2\mapsto\phi(g_2g_1))\]
+corresponds via the isomorphisms
+\begin{align*}
+\Hom(G_1\times \CoInd(P),\CoInd(P))&\cong\Hom(\CoInd(P),\sHom(G_1,\sHom(G_2,P)))\\
+&\cong\Hom(\CoInd(P),\sHom(G_2\times G_1,P))
+\end{align*}
+to the morphism $\phi\mapsto((g_2,g_1)\mapsto\phi(g_2g_1))$, i.e. to the morphism
+\[\sHom(G,P)\to\sHom(G_2\times G_1,P)\]
+induced by the multiplication $\mu_G:G\times G\to G,(g_2,g_1)\mapsto g_2g_1$.
+\end{remark}
+
+\begin{lemma}\label{category presheaf group module forgetful CoInd adjoint}
+The functor $\CoInd$ is right adjoint to the forgetful functor $\iota:\Mod(A[G])\to\Mod(A)$. More precisely, $\eps:\iota\circ\CoInd\to\id$ induces for any $M\in\Mod(A[G])$ and $P\in\Mod(A)$ a bijection
+\[\Hom_{A[G]}(M,\CoInd(P))\stackrel{\sim}{\to} \Hom_A(M,P).\]
+Therefore, if $I$ is an injective object of $\Mod(A)$, then $\CoInd(I)$ is an injective object of $\Mod(A[G])$.
+\end{lemma}
+\begin{proof}
+To any $A$-morphism $f:M\to P$, we associate an element $\phi_f\in\Hom_A(M,\CoInd(P))$ defined as follows: for $S\in\Ob(\mathcal{C})$ and $m\in M(S)$, $\phi_f(m)$ is the element of $\Hom_S(G_S,P_S)$ such that for any $g\in G(S')$, $S'\to S$,
+\[\phi_f(m)(g)=f(gm)\in P(S').\]
+Then for any $h\in G(S)$, we have $\phi_f(hm)=h\cdot f(m)$, i.e. $\phi_f\in\Hom_{A[G]}(M,\CoInd(P))$. Now if $\phi\in\Hom_{A[G]}(M,\CoInd(P))$ and we denote, for $m\in M(S)$, $f(m)=\phi(m)(1)$, then
+\[\phi_f(m)(g)=f(gm)=\phi(gm)(1)=(g\cdot\phi(m))=\phi(m)(g),\]
+so $\phi_f=\phi$. Conversely, it is clear that $\phi_f(m)(1)=f(m)$, whence the first claim. The second claim then follows since the forgetful functor $\iota$ is exact.
+\end{proof}
+
+\begin{definition}\label{category presheaf group module forgetful CoInd unit def}
+Let $M$ be an $A[G]$-module; the identity map on $M$ (considered as an $A$-module) corresponds by adjunction to a morphism of $A[G]$-modules
+\[\eta_M:M\to \CoInd(M)\]
+such that for $S\in\Ob(\mathcal{C})$ and $m\in M(S)$, $\eta_M(m)$ is the morpism $G_S\to M_S$ such that for any $S'\to S$ and $g\in G(S')$, $\eta_M(m)(g)=g\cdot m_{S'}\in M(S')$. Note that $\eta_M$ is a monomorphism: in fact, $\eps_M:\CoInd(M)\to M$ is a morphism of $A$-modules such that $\eps_M\circ\eta_M=\id_M$. Therefore, $M$ is a direct factor of the $A$-module $\CoInd(M)$.
+\end{definition}
+
+\begin{lemma}\label{category presheaf group module cohomology of coinduction zero}
+For any $P\in\Mod(A)$, we have
+\[H^n(G,\sHom(G,P))=0,\quad \mathcal{H}^n(G,\sHom(G,P))=0\for n>0.\]
+Therefore, the functors $H^n(G,-)$ and $\mathcal{H}^n(G,-)$ are effacable for $n>0$.
+\end{lemma}
+\begin{proof}
+It suffices to prove that $\mathcal{C}^\bullet(G,\sHom(G,P))$ and $C^\bullet(G,\sHom(G,P))$ are null-homotopic at positive degrees. To this end, we only need to consider the second one, since the corresponding result can be derived via base changes. Now, we define for $n\geq 0$ a morphism
+\[\sigma:C^{n+1}(G,\sHom(G,P))\to C^n(G,\sHom(G,P)).\]
+Let $f\in C^{n+1}(G,\sHom(G,P))$; for any $S\in\Ob(\mathcal{C})$ and $g_1,\dots,g_n\in G(S)$, $\sigma(f)(g_1,\dots,g_n)$ is the element of $\Hom_S(G_S,P_S)$ such that for any $S'\to S$ and $x\in G(S')$, 
+\[\sigma(f)(g_1,\dots,g_n)(x)=f(x,g_1,\dots,g_n)(1)\in P(S'),\]
+where $1$ denotes the unit element of $G(S')$. Then $\sigma$ is a null homotopy at positive degrees. In fact, for any $g_1,\dots,g_{n+1}\in G(S)$ and $x\in G(S')$, we have, on the one hand,
+\begin{align*}
+d\sigma(f)(g_1,\dots,g_{n+1})(x)&=f(xg_1,g_2,\dots,g_{n+1})(1)+\sum_{i=1}^{n}(-1)^if(x,g_1,\dots,g_ig_{i+1},\dots,g_{n+1})(1)\\
+&+(-1)^{n+1}f(x,g_1,\dots,g_n)(1),
+\end{align*}
+and on the other hand,
+\begin{align*}
+\sigma(df)(g_1,\dots,g_{n+1})(x)&=(xf(g_1,\dots,g_{n+1}))(1)-f(xg_1,g_2,\dots,g_{n+1})(1)\\
+&+\sum_{i=1}^{n}(-1)^{i+1}f(x,g_1,\dots,g_ig_{i+1},g_{n+1})+(-1)^{n+2}f(x,g_1,\dots,g_n)(1),
+\end{align*}
+whence
+\[(d\sigma(f)+\sigma(df))(g_1,\dots,g_{n+1})(x)=(xf(g_1,\dots,g_{n+1}))(1)=f(g_1,\dots,g_{n+1})(x),\]
+i.e. $d\sigma+\sigma d$ is the identity map on $C^{n+1}(G,\sHom(G,P))$, for any $n\geq 0$.
+\end{proof}
+
+\begin{proposition}\label{category presheaf group module cohomology is derived}
+Suppose that $\mathcal{C}$ is $\mathscr{U}$-small, finite products exist in $\mathcal{C}$, and that $G$ is representable. Then the functors $H^n(G,-)$ (resp. $\mathcal{H}^n(G,-)$) are the derived functors of $H^0(G,-)$ (resp. $\mathcal{H}^n(G,-)$) over the category of $A[G]$-modules.
+\end{proposition}
+\begin{proof}
+In view of (\cite{tohoku} 2.2.1 and 2.3), it suffices to show that the $H^n(G)$ (resp. $\mathcal{H}^n(G,-)$) form a cohomological functors, since they are effacable for $n>0$ in view of \cref{category presheaf group module cohomology of coinduction zero}. Let 
+\[\begin{tikzcd}
+0\ar[r]&M'\ar[r]&M\ar[r]&M''\ar[r]&0
+\end{tikzcd}\]
+be an exact sequence of $A[G]$-modules, and let $S\in\Ob(\mathcal{C})$. By hypothesis, $G$ is represented by an object $G\in\Ob(\mathcal{C})$, and finite products exist in $\mathcal{C}$. In particular, $\mathcal{C}$ possesses a final object $e$. For each $n\geq 0$, the product $G^n\times h_S$ is then represented by $G^n\times S$ (where $G^0=e$), and the sequence
+\[\begin{tikzcd}
+0\ar[r]&M'(G^n\times S)\ar[r]&M(G^n\times S)\ar[r]&M''(G^n\times S)\ar[r]&0
+\end{tikzcd}\]
+is exact. Therefore, the sequence of $A$-modules
+\[\begin{tikzcd}
+0\ar[r]&\mathcal{C}^n(h_G,M')\ar[r]&\mathcal{C}^n(h_G,M)\ar[r]&\mathcal{C}^n(h_G,M'')\ar[r]&0
+\end{tikzcd}\]
+is exact, which means $\mathcal{C}^\bullet(G,-)$, considered as a functor from $\Mod(A[G])$ to the category of complexes of $\Mod(A)$, is exact. It then follows from the induced long exact sequence that $\mathcal{H}^n(G,-)$ form a cohomological functor. As the functor $\Gamma$ is exact, the same holds for the functors $H^n(G,-)$.
+\end{proof}
+
+\paragraph{Cohomology of \texorpdfstring{$\mathscr{O}_S[G]$}{O}-modules}
+Let $S$ be a scheme, $G$ be an $S$-group and $\mathscr{F}$ be a quasi-coherent $\mathscr{O}_S[G]$-module. We define the cohomology groups of $G$ with values in $\mathscr{F}$ by
+\[H^n(G,\mathscr{F})=H^n(h_G,\Gamma_\mathscr{F}).\]
+Suppose that $G$ is affine over $S$, then by \cref{scheme Gamma module functor of tensor with algbera char}, this cohomology can be calculated in the following way: $H^n(G,\mathscr{F})$ is the $n$-th cohomology group of the complex $C^\bullet(G,\mathscr{F})$ whose $n$-th term is 
+\[C^n(G,\mathscr{F})=\Gamma(S,\mathscr{F}\otimes\underbrace{\mathscr{A}(G)\otimes\cdots\otimes\mathscr{A}(G)}_{\text{$n$-fold}}).\]
+If $f$ (resp. $a_i$) is a section of $\mathscr{F}$ (resp. $\mathscr{A}(G)$) over an open subset of $S$, we then have
+\begin{align*}
+d(f\otimes a_1\otimes\cdots\otimes a_n)&=\mu_\mathscr{F}(f)\otimes a_1\otimes\cdots\otimes a_n+\sum_{i=1}^{n}(-1)^if\otimes a_1\cdots\otimes \Delta a_i\otimes\cdots\otimes a_n\\
+&+(-1)^{n+1}f\otimes a_1\otimes\cdots\otimes a_n\otimes 1
+\end{align*}
+where $\Delta:\mathscr{A}(G)\to\mathscr{A}(G)\otimes\mathscr{A}(G)$ and $\mu_\mathscr{F}:\mathscr{F}\to\mathscr{F}\otimes\mathscr{A}(G)$ are induced from the cogebrea structure of $\mathscr{A}(G)$ and the comodule structure on $\mathscr{F}$. Note in passing that the cohomology of $G$ with values in $\mathscr{F}$ therefore depends only on the comodule structure of $\mathscr{F}$ and the monoid structure of $G$. In particular, we obtain a functor
+\[H^0(G,\mathscr{F})=\Gamma(S,\mathscr{F}^G)\]
+where $\mathscr{F}^G$ is the invariant sheaf of $\mathscr{F}$ defined in \cref{scheme module over group invariant subshaef def}.
+
+\begin{theorem}\label{scheme group module over affine flat cohomology is derived}
+Let $S$ be an affine scheme and $G$ be an affine and flat group over $S$. Then the functors $H^n(G,-)$ are the derived functors of $H^0(G,-)$ over the category of quasi-coherent $\mathscr{O}_S[G]$-modules. 
+\end{theorem}
+
+If $G$ is affine and flat over $S$, then by \cref{scheme module over flat affine group cat is abelian}, the category $\Qcoh(\mathscr{O}_S[G])$ is equivalent to the category $\CoQcoh(\mathscr{A}(G))$ of quasi-coherent $\mathscr{A}(G)$-comodules over $\mathscr{O}_S$ and is abelian. On the other hand, $\mathscr{A}(G)$ being a flat $\mathscr{O}_S$-module, the functor $\mathscr{F}\mapsto\mathscr{F}\otimes_{\mathscr{O}_S}\mathscr{A}(G)^{\otimes n}$ is exact; as $S$ is also affine, we conclude that $C^\bullet(G,-)$ is an exact functor over $\Qcoh(\mathscr{O}_S[G])$.\par
+We denote by $\Delta$ (resp. $\eta$) the coultiplication (resp. counit) of $\mathscr{A}(G)$. For any quasi-coherent $\mathscr{O}_S$-module $\mathscr{P}$, we denote by $\Ind(\mathscr{P})=\mathscr{P}\otimes_{\mathscr{O}_S}\mathscr{A}(G)$ endowed with the $\mathscr{A}(G)$-comodule structure defined by
+\[\id_\mathscr{P}\otimes\Delta:\mathscr{P}\otimes_{\mathscr{O}_S}\mathscr{A}(G)\to\mathscr{P}\otimes_{\mathscr{O}_S}\mathscr{A}(G)\otimes_{\mathscr{O}_S}\mathscr{A}(G);\]
+this defines a functor $\Ind:\Qcoh(\mathscr{O}_S)\to\Qcoh(\mathscr{O}_S[G])$. It follows from \cref{scheme Gamma module functor of tensor with algbera char} that we have an isomorphism of $\mathbb{O}_S[G]$-modules
+\begin{equation}\label{scheme module over group Ind and CoInd relation}
+\Gamma_{\Ind(\mathscr{P})}\cong \CoInd(\Gamma_\mathscr{P})=\sHom(G,\Gamma_\mathscr{P}).
+\end{equation}
+Via this identification, the morphism $\eps:\CoInd(\Gamma_\mathscr{P})\to\Gamma_\mathscr{P}$ then corresponds to the morphism $\id_\mathscr{P}\otimes \eta:\Ind(\mathscr{P})\to\mathscr{P}$ of $\mathscr{O}_S$-modules, where we use \cref{scheme Gamma module functor prop}. From \cref{category presheaf group module forgetful CoInd adjoint}, we then conclude the following corolalry:
+\begin{corollary}\label{scheme module over group forgetful Ind adjoint}
+Let $S$ be a scheme and $G$ be an affine group over $S$. Then the functor $\Ind$ is right adjoint to the forgetful functor $\iota:\Qcoh(\mathscr{O}_S[G])\to\Qcoh(\mathscr{O}_S)$. More precisely, the map $\id_\mathscr{P}\otimes\eta:\Ind(\mathscr{P})\to\mathscr{P}$ induces for any object $\mathscr{M}$ of $\Qcoh(\mathscr{O}_S[G])$ a bijection
+\[\Hom_{\mathscr{O}_S[G]}(\mathscr{M},\Ind(\mathscr{P}))\stackrel{\sim}{\to}\Hom_{\mathscr{O}_S}(\mathscr{M},\mathscr{P}).\]
+Therefore, if $\mathscr{I}$ is an injective object in $\Qcoh(\mathscr{O}_S)$, then $\Ind(\mathscr{I})$ is an injective object in $\Qcoh(\mathscr{O}_S)$.
+\end{corollary}
+
+Let $\mathscr{F}$ be an $\mathscr{O}_S[G]$-module and $\mu_\mathscr{F}:\mathscr{F}\to\Ind(\mathscr{F})$ be the map defining the $\mathscr{A}(G)$-comodule structure. It follows from the axioms (CM1) and (CM2) that $\mu_\mathscr{F}$ is a morphism of $\mathscr{O}_S[G]$-modules, and that $(\id_\mathscr{F}\otimes\eta)\circ\mu_\mathscr{F}=\id_\mathscr{F}$, so that $\mathscr{F}$ is a direct factor of $\Ind(\mathscr{F})$ considered as $\mathscr{O}_S$-modules. In particular, $\mu_\mathscr{F}$ is a monomorphism. As we have, by (\ref{scheme module over group Ind and CoInd relation}) and \cref{category presheaf group module cohomology of coinduction zero},
+\[H^n(G,\Gamma_{\Ind(\mathscr{F})})\cong H^n(G,\sHom_S(G,\Gamma_\mathscr{F}))=0\for n>0\]
+we conclude that $H^n(G,-)$ is effacable for $n>0$.\par
+Finally, as $S$ is affine, $\Qcoh(\mathscr{O}_S)$ possesses enough injectives. Let $\mathscr{F}\rightarrowtail\mathscr{I}$ be a monomorphism of $\mathscr{O}_S$-modules where $\mathscr{I}$ is injective object of $\Qcoh(\mathscr{O}_S)$; then, $\mathscr{A}(G)$ being flat over $\mathscr{O}_S$, $\Ind(\mathscr{F})$ is a sub-$\mathscr{O}_S[G]$-module of $\Ind(\mathscr{I})$, so we conclude that
+\begin{corollary}\label{scheme group module over affine Qcoh enough injective}
+Under the hypothesis of \cref{scheme group module over affine flat cohomology is derived}, the abelian category $\Qcoh(\mathscr{O}_S[G])$ possesses enough injectives.
+\end{corollary}
+
+In view of (\cite{tohoku} 2.2.1 and 2.3), we then conclude that proof of \cref{scheme group module over affine flat cohomology is derived}.
+
+\begin{remark}
+We can also prove \cref{scheme module over group forgetful Ind adjoint}by the following calculation. To any morphism of $\mathscr{O}_S[G]$-modules $\phi:\mathscr{M}\to\mathscr{P}\otimes_{\mathscr{O}_S}\mathscr{A}(G)$, we associate the $\mathscr{O}_S$-morphism $(\id_\mathscr{P}\otimes\eta)\circ\phi:\mathscr{M}\to\mathscr{P}$. Conversely, to any $\mathscr{O}_S$-morphism $f:\mathscr{M}\to\mathscr{P}$ we associate the $\mathscr{O}_S[G]$-morphism $(f\otimes\id_{\mathscr{A}(G)})\circ\mu_\mathscr{M}:\mathscr{M}\to\Ind(\mathscr{P})$. On the one hand, from axiom (CM2) we see that
+\[(\id_\mathscr{P}\otimes\eta)\circ(f\circ\id_{\mathscr{A}(G)})\circ\mu_\mathscr{M}=(f\circ\id_{\mathscr{O}_S})\circ(\id_\mathscr{P}\otimes\eta)\circ\mu_\mathscr{M}=f.\]
+On the other hand, for any $\phi$ the following diagram is commutative:
+\[\begin{tikzcd}
+\mathscr{M}\ar[r,"\phi"]\ar[d,swap,"\mu_\mathscr{M}"]&\mathscr{P}\otimes_{\mathscr{O}_S}\mathscr{A}(G)\ar[d,"\id_\mathscr{P}\otimes\Delta"]\\
+\mathscr{M}\otimes_{\mathscr{O}_S}\mathscr{A}(G)\ar[r,"\phi\otimes\id_{\mathscr{A}(G)}"]&\mathscr{P}\otimes_{\mathscr{O}_S}\mathscr{A}(G)\otimes_{\mathscr{O}_S}\mathscr{A}(G)
+\end{tikzcd}\]
+so it follows that
+\begin{align*}
+\big(((\id_\mathscr{P}\otimes\eta)\circ\phi)\otimes\id_{\mathscr{A}(G)}\big)\circ\mu_\mathscr{M}&=(\id_\mathscr{P}\otimes\eta\otimes\id_{\mathscr{A}(G)})\circ(\phi\otimes\id_{\mathscr{A}(G)})\circ\mu_\mathscr{M}\\
+&=(\id_\mathscr{P}\otimes\eta\otimes\id_{\mathscr{A}(G)})\circ(\id_\mathscr{P}\otimes\Delta)\circ\phi=\phi.
+\end{align*}
+This proves the first claim of \cref{scheme module over group forgetful Ind adjoint}, and the second one then follows.
+\end{remark}
+
+Let $\mathscr{F}$ be an $\mathscr{O}_S[G]$-module. We have seen that the axiom (CM2) shows that considered as $\mathscr{O}_S$-modules, $\mathscr{F}$ is a direct factor of $\CoInd(\mathscr{F})$. This implies the following proposition:
+
+\begin{proposition}\label{scheme module over flat group cohomology zero if}
+Let $S$ be an affine scheme and $G$ be an affine and flat group scheme over $S$. Suppose that for any exact sequence
+\[\begin{tikzcd}
+0\ar[r]&\mathscr{F}_1\ar[r]&\mathscr{F}_2\ar[r]&\mathscr{F}_3\ar[r]&0
+\end{tikzcd}\]
+of quasi-coherent $\mathscr{O}_S[G]$-modules, which splits as a sequence of $\mathscr{O}_S$-modules, also split as $\mathscr{O}_S[G]$-modules. Then the functors $H^n(G,-)$ are zero for $n>0$.
+\end{proposition}
+\begin{proof}
+In fact, by the hypothesis, the sequence of $\mathscr{O}_S[G]$-modules
+\[\begin{tikzcd}
+0\ar[r]&\mathscr{F}\ar[r]&\CoInd(\mathscr{F})\ar[r]&\CoInd(\mathscr{F})/\mathscr{F}\ar[r]&0
+\end{tikzcd}\]
+is splitting, so $\mathscr{F}$ is a direct factor of $\CoInd(\mathscr{F})$ as an $\mathscr{O}_S[G]$-module. Since $\CoInd(\mathscr{F})$ has trivial higher cohomology, so does $\mathscr{F}$.
+\end{proof}
+
+\begin{theorem}\label{scheme module over diagonalizable group cohomology zero}
+Let $S$ be an affine scheme and $G$ be a diagonalizable $S$-group. Then for any quasi-coherent $\mathscr{O}_S[G]$-module $\mathscr{F}$, we have $H^n(G,\mathscr{F})=0$ for $n>0$.
+\end{theorem}
+\begin{proof}
+This follows from \cref{scheme module over flat group cohomology zero if} and \cref{scheme module over diagonalizable group sequence split iff}.
+\end{proof}
+
+\subsection{\texorpdfstring{$G$}{G}-equivariant objects and modules}
+Let $\mathcal{C}$ be a category with a final object $e$ and such that fiber products exist in $\mathcal{C}$. Let $G$ be a group in $\widehat{\mathcal{C}}$, $\pi:M\to X$ be a morphism in $\widehat{\mathcal{C}}$, and $\lambda=\lambda_X:G\times X\to X$ be an action of $G$ on $X$. In this paragraph, we denote by $Y\times_fM$ the fiber product of $\pi:M\to X$ and an $X$-functor $f:Y\to X$.\par
+For any $U\in\Ob(\mathcal{C})$ and $x\in X(U)$, the \textbf{fiber} of $M$ at $x$ is defined by $M_x=U\times_xM$, i.e. for any $\phi:U'\to U$, we have
+\[M_x(U')=\{m\in M(U'):\pi(m)=x_{U'}=\phi^*(x)\}.\]
+Finally, if $g\in G(U)$, we denote by $g(x)$ the element $\lambda(g,x)$ in $X(U)$.
+
+\begin{definition}
+We say that $M$ is a \textbf{$\bm{G}$-equivariant object over $\bm{X}$}, or a \textbf{$\bm{G}$-equivariant $\bm{X}$-object}, if we are given an action $\Lambda:G\times M\to M$ of $G$ on $M$ compatible with $\lambda$, i.e. such that the following diagram is commutative:
+\[\begin{tikzcd}
+G\times M\ar[r,"\Lambda"]\ar[d,"\id_G\times\pi"]&M\ar[d,"\pi"]\\
+G\times X\ar[r,"\lambda"]&X
+\end{tikzcd}\]
+This is equivalent to saying that we are given, for any morphism $(g,x):U\to G\times X$, morphisms
+\[\Lambda_x^U(g):M_x(U)\to M_{g(x)}(U),\quad m\mapsto g\cdot m\]
+satisfying $1\cdot m=m$ and $g\cdot(h\cdot m)=(gh)\cdot m$ and functorial on the $(G\times X)$-object $U$. Alternatively, this means we are given morphisms of $U$-objects
+\[\Lambda_x(g):M_x\to M_{g(x)}\]
+such that $\Lambda_x(1)=\id$ and $\Lambda_{h(x)}(g)\circ\Lambda_x(h)=\Lambda_x(gh)$.\par
+Now let $A$ be a ring in $\widehat{\mathcal{C}}$ and $A_X=A\times X$. Under the condition described above, we say that $M$ is a \textbf{$\bm{G}$-equivariant $\bm{A_X}$-module} if it is an $A_X$-module and the action $\Lambda$ is compatible with the $A_X$-module structure on $M$, that is, if for any morphism $(g,x):U\to G\times X$, the map $\Lambda_x(g):M_x\to M_{g(x)}$ is a morphism of $A_U$-modules.
+\end{definition}
+
+\begin{remark}
+In the above definition for $G$-equivariant objects, the conditions $\Lambda_x(1)=\id$ and $\Lambda_{h(x)}(g)\circ\Lambda_x(h)=\Lambda_x(gh)$ implies that $\Lambda_x(g)$ is an isomorphism, with inverse $\Lambda_{g(x)}(g^{-1})$. Conversely, if we suppose that each $\Lambda_x(g)$ is an isomorphism, the condition $\Lambda_{h(x)}(g)\circ\Lambda_x(h)=\Lambda_{x}(gh)$, applied to $h=1$, then implies that $\Lambda_x(1)=\id$.
+\end{remark}
+
+\begin{remark}\label{category of presheaf G-equivariant object iff isomorphism on product}
+If $M$ is an $A_X$-module, then in view of the universal property of fiber products, giving a morphism $\Lambda:G\times M\to M$ which is compatible with $\lambda$ is equivalent to giving a homomorphism of $A_{G\times X}$-modules
+\[\theta:G\times M=(G\times X)\times_{\pr_X}M \to (G\times X)\times_\lambda M,\quad (g,x,m)\mapsto(g,g(x),g\cdot m),\]
+and the morphisms $\Lambda_x(g):M_x\to M_{g(x)},m\mapsto g\cdot m$ are isomorphisms of $A_U$-modules if and only if $\theta$ is an isomorphism. As we have supposed that each $\Lambda_x(h)$ is an isomorphism, the equality $\Lambda_x(1)=\id$ follows from the equality $\Lambda_{h(x)}(g)\circ\Lambda_x(h)=\Lambda_{x}(gh)$. Therefore, $\Lambda$ is an action of $G$ over $M$ if and only the following diagram of $(G\times G\times X)$-isomorphisms is commutative (where we denote by $m$ the multiplication of $G$ and $f^*(\theta)$ is the isomorphism induced from $\theta$ under a base change $f:G\times G\times X\to G\times X$)
+\[\begin{tikzcd}
+(G\times G\times X)\times_{\pr_X\circ\pr_{23}}M\ar[r,"\pr^*_{23}(\theta)","\sim"']\ar[d,equal]&(G\times G\times X)\times_{\lambda\circ\pr_{23}}M\ar[d,equal]\\
+(G\times G\times X)\times_{\pr_X\circ(m\times\id_X)}M\ar[d,swap,"(m\times\id_X)^*(\theta)","\sim"']&(G\times G\times X)\times_{\pr_X\circ(\id_G\times\lambda)}M\ar[d,"(\id_G\times\lambda)^*(\theta)","\sim"']\\
+(G\times G\times X)\times_{\lambda\times(m\times\id_X)}M\ar[r,equal]&(G\times G\times X)\times_{\lambda\circ(\id_G\times\lambda)}M
+\end{tikzcd}\]
+\end{remark}
+
+\begin{remark}
+The above definitions extend to the case where $G$ is only a monoid. In this case, giving an action $\Lambda:G\times M\to M$ that is compatible with $\lambda$ and such that each $\Lambda_x(g):M_x\to M_{g(x)}$ is a morphism of $A_U$-modules is equivalent to giving a morphism 
+\[\theta:G\times M=(G\times X)\times_{\pr_X}M \to (G\times X)\times_\lambda M,\quad (g,x,m)\mapsto(g,g(x),g\cdot m),\]
+such as the diagram in \cref{category of presheaf G-equivariant object iff isomorphism on product} (without the signs $\sim$ under the arrows) is commutative, and such that $\pr_M\circ\theta\circ(\eps_G\times\id_M)=\id_M$, where $\eps_G$ denotes the unit section of $G$ and $\pr_M$ the projection on $M$ (this is added since in this case the equality $\Lambda_x(1)=\id$ can not be derived).
+\end{remark}
+
+Let $Y$ be another object of $\widehat{\mathcal{C}}$ which is endowed with an action $\lambda_Y:G\times Y\to Y$ by $G$ and $N$ be a $G$-equivariant $A_X$-module. A morphism $f:Y\to X$ in $\widehat{\mathcal{C}}$ (resp. a homomorphism of $A_X$-modules $\phi:M\to X$) is called $G$-equivariant if it commutes with the action of $G$, i.e. if we have $f(g\cdot y)=g\cdot f(y)$ (resp. $\phi(g\cdot m)=g\cdot\phi(m)$), which is equivalent to $f\circ\lambda_Y=\lambda_X\circ\id_G\times f$ (resp. $\phi\circ\Lambda_M=\Lambda_N\circ(\id_G\times\phi)$). We then obtain the following lemma:
+
+\begin{lemma}\label{category of presheaf G-equivariant pullback}
+Let $f:Y\to X$ be a $G$-equivariant morphism and $M$ be a $G$-equivariant $A$-module. Then the inverse image $f^*(M)=Y\times_fM$ is a $G$-equivariant $A_Y$-module.
+\end{lemma}
+\begin{proof}
+
+\end{proof}
+
+\section{Tangent spaces and Lie algebras}
+In this section, we construct the tangent spaces and Lie algebras in scheme theory. It will be useful not to restrict oneself to the diagrams themselves, but to also be intersted to certain functors on the category of schemes which are not necessarily representable. The exposition we give here easily generalize beyond the theory of schemes. For example, it is valid for the theory of complex analytic spaces, with suitable modifications.
+\subsection{The tangent space of a scheme}
+
+\paragraph{The functor \texorpdfstring{$\sHom_{Z/S}(X,Y)$}{Hom}}
+Let $\mathcal{C}$ be a category and $S$ be an object of $\mathcal{C}$. We consider objects $X,Y,Z$ in $\widehat{\mathcal{C}}$ with $X,Y$ lying over $Z$ and $Z$ lying over $S$:
+\[\begin{tikzcd}[row sep=4mm, column sep=4mm]
+X\ar[rd,swap,"p_X"]&&Y\ar[ld,"p_Y"]\\
+&Z\ar[d]&\\
+&S
+\end{tikzcd}\]
+
+\begin{definition}
+We define an object $\sHom_{Z/S}(X,Y)$ in $\widehat{\mathcal{C}_{/S}}$ by the formula
+\[\sHom_{Z/S}(X,Y)(S')=\Hom_{Z_{S'}}(X_{S'},Y_{S'})=\Hom_Z(X\times_SS',Y),\]
+where $S'$ is an object of $\mathcal{C}_{/S}$. We see that $\sHom_{Z/S}(X,Y)$ is none other than the sub-object of $\sHom_S(X,Y)$ formed by morphisms compatible with $p_X$ and $p_Y$, that is, it is the kernel of the morphisms
+\[\begin{tikzcd}
+\sHom_S(X,Y)\ar[r,shift left=2pt]\ar[r,shift right=2pt]&\sHom_S(X,Z)
+\end{tikzcd}\]
+where the first map is defined by composing with $p_Y$ and the seond one is the constant map of $\p_X$.
+\end{definition}
+
+On the other hand, we see as in (\ref{category presheaf Hom functor adjoint prop-1}) that, for any object $T$ of $\widehat{\mathcal{C}}$ over $S$, we have a natural bijection
+\[\Hom_S(T,\sHom_{Z/S}(X,Y))\cong \Hom_Z(X\times_ST,Y).\]
+Moreover, by (\ref{category presheaf Hom functor adjoint prop-1}), if $E,F$ are objects of $\widehat{\mathcal{C}}$ lying over $Z$, then
+\[\Hom_Z(E,\sHom_Z(F,Y))\cong\Hom_Z(E\times_ZF,Y)\cong\Hom_Z(F,\sHom_Z(E,Y)).\]
+Apply this to $E=X$ and $F=Z\times_ST$, we then obtain the following bijections for any object $T$ of $\widehat{\mathcal{C}_{/S}}$:
+\begin{equation}\label{category of presheaf functor Hom_Z/S(X,Y) isomorphism-1}
+\Hom_S(T,\sHom_{Z/S}(X,Y))\cong\Hom_Z(X\times_ST,Y)\cong\begin{cases}
+\Hom_Z(Z\times_ST,\sHom_Z(X,Y)),\\
+\Hom_Z(X,\sHom_Z(Z\times_ST,Y)).
+\end{cases}
+\end{equation}
+Since these bijections are functorial over $T$, we then obtain isomorphisms of $S$-functors
+\begin{equation}\label{category of presheaf functor Hom_Z/S(X,Y) isomorphism-2}
+\begin{tikzcd}[row sep=5mm, column sep=2mm]
+\sHom_S(T,\sHom_{Z/S}(X,Y))\ar[rd,"\sim"]\ar[rr,"\sim"]&&\sHom_{Z/S}(X,\sHom_Z(Z\times_ST,Y))\\
+&\sHom_{Z/S}(X\times_ST,Y)\ar[ru,"\sim"]&
+\end{tikzcd}
+\end{equation}
+
+We also note that, by definition, for $Z=S$ we have $\sHom_{S/S}(X,Y)=\sHom_S(X,Y)$. On the other hand, if $X=Z$, we put
+\[\Res_{Z/S}Y=\sHom_{Z/S}(Z,Y),\]
+by definition, we then have
+\[\Res_{Z/S}(Y)(S')=\Hom_Z(Z\times_SS',Y)=\Gamma(Y_{S'}/Z_{S'}).\]
+The functor $\Res_{Z/S}:\widehat{\mathcal{C}_{/Z}}\to\widehat{\mathcal{C}_{/S}}$ is a right adjoint of the base change functor from $S$ to $Z$. In fact, for any $S$-functor $U$, by (\ref{category of presheaf functor Hom_Z/S(X,Y) isomorphism-1}) we have
+\[\Hom_S(U,\Res_{Z/S}Y)=\Hom_S(U,\sHom_{Z/S}(Z,Y))\cong\Hom_Z(U\times_SZ,Y).\]
+(If $\mathcal{C}=\Sch$ and $Z$ is an $S$-scheme, the functor $\Res_{Z/S}$ is called the Weil restriction.) We also ntoe that since for any $S'\in\Ob(\mathcal{C}_{/S})$ we have 
+\begin{align*}
+\sHom_{Z/S}(X,Y)(S')&=\Hom_{Z}(X_{S'},Y)\cong\Hom_X(X_{S'},Y\times_ZX)=\sHom_{X/S}(X,Y\times_ZX),
+\end{align*}
+so we obtain an isomorphism
+\[\sHom_{Z/S}(X,Y)\cong\sHom_{X/S}(X,Y\times_ZX)=\Res_{X/S}(Y\times_ZX),\]
+which for $Z=S$ gives an isomorphism 
+\[\sHom_S(X,Y)\cong \Res_{X/S}Y_X.\]
+
+\paragraph{The scheme \texorpdfstring{$I_S(\mathscr{M})$}{I}}
+\begin{definition}
+Let $S$ be a scheme and $\mathscr{M}$ be a quasi-coherent $\mathscr{O}_S$-module. We denote by $\mathscr{D}_S(\mathscr{M})$ the quasi-coherent algebra $\mathscr{O}_S\oplus\mathscr{M}$ (where $\mathscr{M}$ is considered as a square zero ideal). We denote by $I_S(\mathscr{M})$ the $S$-scheme $\Spec(\mathscr{D}_S(\mathscr{M}))$. In particular, we have $\mathscr{D}_S=\mathscr{D}_S(\mathscr{O}_S)$, $I_S=I_S(\mathscr{O}_S)$, which are called the \textbf{algebra of dual numbers over $\bm{S}$} and the \textbf{dual number scheme over $\bm{S}$}.
+\end{definition}
+
+We then obtain a contravariant functor $\mathscr{M}\mapsto I_S(\mathscr{M})$ from the category of quasi-coherent $\mathscr{O}_S$-modules to the category of $S$-schemes. In particular, the morphisms $0\to\mathscr{M}$ and $\mathscr{M}\to 0$ define respectively the structural morphism $\rho:I_S(\mathscr{M})\to I_S(0)=S$ and a section $\eps_\mathscr{M}:S\to I_S(\mathscr{M})$, which is called the \textbf{zero section} of $I_S(\mathscr{M})$.\par
+
+As $\mathscr{M}\mapsto I_S(\mathscr{M})$ is a contravariant functor, for any endomorphism $a\in\End_{\mathscr{O}_S}(\mathscr{M})$, we have an $S$-endomorphism $a^*$ of $I_S(\mathscr{M})$, and
+\[1^*=\id,\quad (ab)^*=b^*\circ a^*,\quad 0^*=\eps_\mathscr{M}\circ\rho,\quad a^*\circ\eps_\mathscr{M}=\eps_\mathscr{M}.\]
+Therefore, the $S$-scheme $I_S(\mathscr{M})$ is endowed with a right action of the multiplicative monoid $\End_{\mathscr{O}_S}(\mathscr{M})$, which commutes with $S$-morphisms $I_S(\mathscr{M})\to I_S(\mathscr{M}')$ induced by morphisms $\mathscr{M}\to\mathscr{M}'$. In particular, the operations $a^*$ preserves the zero section of $I_S(\mathscr{M})$.\par
+For any endomorphism $a\in\End_{\mathscr{O}_S}(\mathscr{M})$, $f:S'\to S$ and $m\in I_S(\mathscr{M})(S')$, we write $m\cdot a=a^*(m)$. Then we have
+\[m\cdot 1=m,\quad (m\cdot a)\cdot b=m\cdot(ab),\quad m\cdot 0=\eps_\mathscr{M}(\rho(m))\]
+and, if $m=\eps_\mathscr{M}(f)$, then $m\cdot a=m$.
+
+\begin{remark}
+The formation of $I_S(\mathscr{M})$ commutes with base changes: we have a canonical isomorphism
+\[I_S(\mathscr{M})_{S'}\cong I_{S'}(\mathscr{M}\otimes_{\mathscr{O}_S}\mathscr{O}_{S'}).\]
+For simplicity, we shall write $I_{S'}(\mathscr{M})$ for $I_S(\mathscr{M})_{S'}$. More generally, if $X$ is an $S$-functor (not necessarily representable), then we define $I_X(\mathscr{M}):=I_S(\mathscr{M})\times_SX$.
+\end{remark}
+
+\begin{remark}
+By consider the homotheties on $\mathscr{M}$, we see that the multiplicative monoid $\mathbb{O}(S')$ acts on the $S'$-scheme $I_{S'}(\mathscr{M})$, which is functorial on $\mathscr{M}$, i.e. the $S$-scheme $I_S(\mathscr{M})$ is endowed with a structure of an $\mathbb{O}_S$-object, which is functorial on $\mathscr{M}$. We then have a morphism of $S$-schemes
+\[\lambda:I_S(\mathscr{M})\times_S\mathbb{O}_S\to I_S(\mathscr{M}),\]
+which satisfies the evident conditions. For any $S$-functor $X$, we then obtain by base change a morphism of $X$-functors
+\[\lambda_X:I_X(\mathscr{M})\times_S\mathbb{O}_S\to I_X(\mathscr{M})\]
+which makes the $S$-functor $I_X(\mathscr{M})$ an object acted by the monoid $\mathbb{O}(X)$: any element $a$ of $\mathbb{O}_X=\Hom_S(X,\mathbb{O}_S)$ defines an $X$-endomorphism $a^*$ of $I_X(\mathscr{M})$. More precisely, if $x\in X(S')$ and $m\in I_S(\mathscr{M})(S')=I_{S'}(\mathscr{M})(S')$, then $a(x)=a\circ x$ belongs to $\mathbb{O}(S')$ and we have
+\[(m,x)\cdot a=(m\cdot a(x),x).\]
+This operation is functorial on $\mathscr{M}$ and preserves the zero section $\eps_\mathscr{M}:X\to I_X(\mathscr{M})$, i.e. $a^*\circ\eps_\mathscr{M}=\eps_\mathscr{M}$ for any $a\in\mathbb{O}(X)$.\par
+Even further, this operation is functorial on $X$ in the following sense: if $\pi:Y\to X$ is a morphism of $S$-functors and $u:\mathbb{O}(X)\to\mathbb{O}(Y)$ is the corresponding ring homomorphism (i.e. $u(a)=a\circ\pi$ for $a\in\mathbb{O}(X)$), then the following diagram is commutative
+\[\begin{tikzcd}
+I_Y(\mathscr{M})\ar[r,"u(a)^*"]\ar[d,swap,"\pi"]&I_Y(\mathscr{M})\ar[d,"\pi"]\\
+I_X(\mathscr{M})\ar[r,"a^*"]&I_X(\mathscr{M})
+\end{tikzcd}\]
+\end{remark}
+
+Let $\mathscr{M}$ and $\mathscr{N}$ be quasi-coherent $\mathscr{O}_S$-modules. The commutative diagram
+\[\begin{tikzcd}[row sep=4mm,column sep=4mm]
+&\mathscr{M}\oplus\mathscr{N}\ar[ld]\ar[rd]&\\
+\mathscr{M}\ar[rd]&&\mathscr{N}\ar[ld]\\
+&0&
+\end{tikzcd}\]
+then defines a commutative diagram of $S$-schemes
+\begin{equation}\label{scheme dual number of direct sum Cartesian diagram-1}
+\begin{tikzcd}[row sep=4mm,column sep=4mm]
+&I_S(\mathscr{M}\oplus\mathscr{N})&\\
+I_S(\mathscr{M})\ar[ru]&&I_S(\mathscr{N})\ar[lu]\\
+&S\ar[ru,swap,"\eps_\mathscr{N}"]\ar[lu,"\eps_\mathscr{M}"]\ar[uu,swap,"\eps_{\mathscr{M}\oplus\mathscr{N}}"]&
+\end{tikzcd}
+\end{equation}
+
+\begin{proposition}\label{scheme dual number of direct sum Cartesian diagram}
+For any $S$-scheme $X$, the diagram of functors over $S$ obtained by applying the functor $\sHom_S(-,X)$ to (\ref{scheme dual number of direct sum Cartesian diagram-1}) is Cartesian:
+\[\begin{tikzcd}
+\sHom_S(I_S(\mathscr{M}\oplus\mathscr{N}),X)\ar[r]\ar[d]&\sHom_S(I_S(\mathscr{N}),X)\ar[d]\\
+\sHom_S(I_S(\mathscr{M}),X)\ar[r]&\sHom_S(S,X)=X
+\end{tikzcd}\]
+\end{proposition}
+\begin{proof}
+It suffices to verify that for any $S'\to S$, the diagram obtained by applying the functors on $S'$ is Cartesian. As the formation of $I_S(\mathscr{P})$ commutes with base change, it then suffices to prove this for $S'=S$, hence to verify that the following diagram is Cartesian:
+\[\begin{tikzcd}[row sep=12mm,column sep=8mm]
+X(I_S(\mathscr{M}\oplus\mathscr{N}))\ar[r]\ar[d]\ar[rd,"X(\eps_{\mathscr{M}\oplus\mathscr{N}})",pos=0.4]&X(I_S(\mathscr{N}))\ar[d,"X(\eps_\mathscr{N})"]\\
+X(I_S(\mathscr{M}))\ar[r,"X(\eps_\mathscr{M})"]&X(S)
+\end{tikzcd}\]
+Now if $x\in X(S)$, it follows from (\cite{SGA1} \Rmnum{3}, 5.1) that the fiber $X(\eps_\mathscr{M})^{-1}(x)$ is isomorphic to $\Hom_{\mathscr{O}_S}(x^*(\Omega_{X/S}^1),\mathscr{M})$. Since this latter functor clearly commutes with finite direct sums of $\mathscr{O}_S$-modules, our assertion follows.
+\end{proof}
+
+\begin{corollary}\label{scheme dual number isomorphic to product}
+Let $X$ be an $S$-scheme and $\mathscr{M}$ be a free $\mathscr{O}_X$-module of finite type. Then the $S$-functor $\sHom_S(I_S(\mathscr{M}),X)$ is isomorphic to a finite product of copies of $\sHom_S(I_S,X)$.
+\end{corollary}
+
+\begin{remark}\label{scheme dual number Hom represented by vector bundle of Omega}
+It follows from the proof of \cref{scheme dual number of direct sum Cartesian diagram} that $\sHom_S(I_S,X)$ is isomorphic to the $X$-functor $\check{\Gamma}_{\Omega^1_{X/S}}$, and hence represented by the vector bundle $\V(\Omega_{X/S}^1)$. 
+\end{remark}
+
+\paragraph{The tangent bundle}
+\begin{definition}
+Let $S$ be a scheme and $\mathscr{M}$ be a free $\mathscr{O}_S$-module of finite type. Let $X$ be a functor over $S$. The \textbf{tangent bundle of $\bm{X}$ over $\bm{S}$ relative to the $\mathscr{O}_S$-module $\mathscr{M}$} is defined to be the $S$-functor
+\[T_{X/S}(\mathscr{M})=\sHom_S(I_S(\mathscr{M}),X).\]
+In particular, the \textbf{tangent bundle of $\bm{X}$ over $\bm{S}$} is the functor
+\[T_{X/S}=T_{X/S}(\mathscr{O}_S)=\sHom_S(I_S,X).\]
+\end{definition}
+
+The construction $\mathscr{M}\mapsto T_{X/S}(\mathscr{M})$ is then a covariant functor from the category of free $\mathscr{O}_S$-modules of finite type to the category of $X$-functors. In particular, the morphisms $\mathscr{M}\to 0$ and $0\to\mathscr{M}$ define respectively an $S$-morphism $\pi_\mathscr{M}:T_{X/S}(\mathscr{M})\to T_{X/S}(0)\cong X$ and a section $\tau:X\to T_{X/S}(\mathscr{M})$, called the \textbf{zero section}. Moreover, it follows from the preceding remarks that $\mathbb{O}(S)$ is a monoid acting on the $X$-functor $T_{X/S}(\mathscr{M})$, which is functorial on $\mathscr{M}$.
+
+\begin{remark}\label{scheme tangent bundle projection zero section char}
+We note that the projection $\pi_\mathscr{M}:T_{X/S}(\mathscr{M})\to X$ is induced by the zero section $\eps_\mathscr{M}:S\to I_S(\mathscr{M})$, while the zero section $\tau:X\to T_{X/S}(\mathscr{M})$ is induced by the structural morphism $\rho:I_S(\mathscr{M})\to S$. For any point $t\in T_{X/S}(\mathscr{M})(S')$ (resp. $x\in X(S')$), which corresponds to an $S$-morphism $f:I_{S'}(\mathscr{M})\to X$ (resp. $g:S'\to X$), we have 
+\[\pi(t)=f\circ(\id_{S'}\times\eps_\mathscr{M}),\quad  \text{(resp. $\tau(x)=g\circ(\id_{S'}\times\rho)$)}.\]
+\end{remark}
+
+\begin{remark}
+For any $S$-morphism $X'\to X$, we put
+\[\Sigma(X',\mathscr{M})=\Hom_X(X',T_{X/S}(\mathscr{M})).\]
+\end{remark}
+
+\begin{definition}
+Let $x\in X(S)=\Hom_S(S,X)=\Gamma(X/S)$. We then define the tangent space of $X$ over $S$ at the point $x$ relative to $\mathscr{M}$ to be the $S$-functor obtained from $T_{X/S}(\mathscr{M})$ by base change via the morphism $x:S\to X$:
+\[\begin{tikzcd}
+T_{X/S,x}(\mathscr{M})\ar[r]\ar[d]&T_{X/S}(\mathscr{M})\ar[d,"\pi"]\\
+S\ar[r,"x"]&X
+\end{tikzcd}\]
+In particular, $T_{X/S,x}(\mathscr{O}_X)$ is denoted by $T_{X/S,x}$, which is called the \textbf{tangent space of $\bm{X}$ over $\bm{S}$ at the point $\bm{x}$}.
+\end{definition}
+
+\begin{remark}
+It follows from \cref{scheme tangent bundle projection zero section char} that, for any $g:S'\to S$, $T_{X/S,x}(\mathscr{M})$ is the set of $S$-morphisms $f:I_{S'}(\mathscr{M})\to X$ such that $f\circ(\id_{S'}\times\eps_\mathscr{M})=x\circ g$, where $\eps_\mathscr{M}:S\to I_{S}(\mathscr{M})$ is the zero section.
+\end{remark}
+
+\begin{proposition}\label{scheme tangent bundle representable if}
+If $X$ is representable, then $T_{X/S}(\mathscr{M})$ and $T_{X/S,x}(\mathscr{M})$ are representable. In particular, $T_{X/S}$ and $T_{X/S,x}$ are represented by the vector bundles $\V(\Omega_{X/S}^1)$ and $\V(x^*(\Omega_{X/S}^1))$.
+\end{proposition}
+\begin{proof}
+It suffices to prove the proposition for $T_{X/S}(\mathscr{M})$, since the analogous result follows from base change. By \cref{scheme dual number isomorphic to product}, it suffices to consider $T_{X/S}$, which follows from \cref{scheme dual number Hom represented by vector bundle of Omega}.
+\end{proof}
+
+\begin{remark}
+By \cref{scheme tangent bundle representable if}, we can give a simple description of the vector bundle representing $T_{X/S,x}$: if $x:S\to X$ is an $S$-morphism, then the image of $x$ is locally closed in $S$ by \cref{scheme morphism graph is immersion}, hence defined by a quasi-coherent ideal $\mathscr{I}$ of an open subscheme of $X$. The quotient $\mathscr{I}/\mathscr{I}^2$ can then be considered as a quasi-coherent module over $S$, whose vector bundle $V(\mathscr{I}/\mathscr{I}^2)$ is the desired representing scheme.\par
+For example, let $X$ be an algebraic scheme over a field $X$ and $x$ be a rational point of $X$ over $k$. Let $\m_x$ be the maximal ideal of the local ring $\mathscr{O}_{X,x}$, then we have $T_{X/k,x}=\V(\m_x/\m_x^2)$.
+\end{remark}

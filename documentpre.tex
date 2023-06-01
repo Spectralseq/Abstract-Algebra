@@ -1,5 +1,6 @@
 \usepackage[utf8]{inputenc}
-\usepackage[colorlinks,linkcolor=blue,hyperfootnotes=false]{hyperref}
+\usepackage[colorlinks,linkcolor=blue,citecolor=blue,urlcolor=blue,hyperfootnotes=true,bookmarksopen=true]{hyperref}
+\usepackage{footnotebackref}
 \usepackage{graphicx}
 \usepackage{multicol}
 \usepackage{amsmath,amssymb,amsthm,amsfonts}
@@ -48,7 +49,7 @@ root-radius=.06cm]{dynkin-diagrams}
 \PassOptionsToPackage{no-math}{fontspec}
 \usepackage[noBBpl]{mathpazo}
 \usepackage{bbold}
-\usepackage{palatino}
+%\usepackage{palatino}
 %\usepackage{newpxmath}
 %\usepackage{txfonts}
 %\usepackage{pxfonts}
@@ -58,9 +59,10 @@ root-radius=.06cm]{dynkin-diagrams}
 \usepackage{calligra,mathrsfs}%for sheaf Hom
 \usepackage{mathtools}%def new widetilde
 \usepackage{calc}%定义箭头不同样式symbol
-\usepackage{ulem}%定义合适的下划线
+\usepackage[normalem]{ulem}%定义合适的下划线
 
 %-----------------------------------------------------
+%定义BOONDOX包的字体
 \DeclareMathAlphabet{\mathbbb}{U}{bbold}{m}{n}
 \DeclareMathAlphabet{\mathbb}{U}{msb}{m}{n}
 %-----------------------------------------------------
@@ -73,6 +75,8 @@ root-radius=.06cm]{dynkin-diagrams}
 \DeclareFontShape{U}{BOONDOX-frak}{m}{n}{
   <-> s*[1]  BOONDOX-r-frak}{}
 %\DeclareMathAlphabet{\mathfrak}{U}{BOONDOX-frak}{m}{n}
+
+
 %-----------------------------------------------------
 %设置页面样式
 %\geometry{top=3.5cm,bottom=3.5cm}
@@ -86,12 +90,16 @@ root-radius=.06cm]{dynkin-diagrams}
 \fancyhead[LO]{\bf\nouppercase{\leftmark}}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
- 
+%-------------------------------------------------------
+
+%------------------------------------------------------
+%重新定义autoref的section和subsection的名字
+\renewcommand{\sectionautorefname}{\S\!}
+\renewcommand{\subsectionautorefname}{\S\S\!}
+
 %-------------------------------------------------------
 %定义能编号的paragraph
-\usepackage{chngcntr}
-\counterwithout{paragraph}{subsubsection}
-\renewcommand{\theparagraph}{\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{paragraph}}
+\renewcommand{\theparagraph}{\thesubsection.\arabic{paragraph}}% How paragraphs are numbered
 \setcounter{secnumdepth}{4}
 
 %---------------------------------------------------------
@@ -139,6 +147,8 @@ root-radius=.06cm]{dynkin-diagrams}
 \DeclareFontSubstitution{U}{mathx}{m}{n}
 \DeclareMathAccent{\widecheck}{0}{mathx}{"71}
 \DeclareMathAccent{\widebar}{0}{mathx}{"73}
+%------------------------------------------------
+
 
 %改变下标基线--------------------------------------
 %\usepackage{subdepth}
@@ -166,6 +176,7 @@ root-radius=.06cm]{dynkin-diagrams}
 \def\RP{\mathbb{RP}}
 \def\CP{\mathbb{CP}}
 \def\P{\mathbb{P}}
+\def\G{\mathbb{G}}
 %------------------------------
 
 
@@ -207,6 +218,11 @@ root-radius=.06cm]{dynkin-diagrams}
 \def\nil{\mathfrak{nil}}
 \def\rad{\mathfrak{rad}}
 \def\eff{\mathfrak{eff}}
+\def\ho{\mathrm{h}}
+\def\Ch{\mathrm{Ch}}
+\def\Lan{\mathrm{Lan}}
+\def\Ran{\mathrm{Ran}}
+\def\Qis{\mathrm{Qis}}
 %-----------------------------
 
 
@@ -303,11 +319,36 @@ root-radius=.06cm]{dynkin-diagrams}
 \def\Cov{\mathrm{Cov}}
 \def\PSh{\mathrm{PSh}}
 \def\Sh{\mathrm{Sh}}
+\def\Ab{\mathrm{Ab}}
 \def\Ouv{\mathrm{Ouv}}
 \def\Esp{\mathrm{Esp}}
 \def\Topos{\mathrm{Topos}}
+\def\Pt{\mathrm{Pt}}
+\def\Jac{\mathrm{Jac}}
+\def\Pro{\mathrm{Pro}}
+\def\pro{\mathrm{pro}}
+\def\Tot{\mathrm{Tot}}
+\def\Iso{\mathrm{Iso}}
+\def\Conn{\mathrm{Conn}}
+\def\Diff{\mathrm{Diff}}
+\def\SS{\mathrm{SS}}
+\def\Cyc{\mathrm{Cyc}}
+\def\qcoh{\!\mathrm{qcoh}}
+\def\coh{\!\mathrm{coh}}
 %-----------------------------
 
+%-----------------------------mathbf定义
+\def\Qcoh{\mathbf{Qcoh}}
+\def\Coh{\mathbf{Coh}}
+\def\Mod{\mathbf{Mod}}
+\def\CoMod{\mathbf{CoMod}}
+\def\CoQcoh{\mathbf{CoQcoh}}
+\def\Grp{\mathbf{Grp}}
+\def\Set{\mathbf{Set}}
+\def\Sch{\mathbf{Sch}}
+\def\Alg{\mathbf{Alg}}
+\def\Top{\mathbf{Top}}
+\def\Cat{\mathbf{Cat}}
 
 %------------------operatorname定义
 \def\ker{\operatorname{ker}}
@@ -321,6 +362,7 @@ root-radius=.06cm]{dynkin-diagrams}
 %--------------------text定义
 \def\et{\textup{\'et}}
 \def\Zar{\textup{Zar}}
+\def\dash{\textup{-}}
 %--------------------其他定义
 \def\sub{\subseteq}
 \def\sups{\supseteq}
@@ -339,10 +381,14 @@ root-radius=.06cm]{dynkin-diagrams}
 \renewcommand{\i}{\mathrm{i}}
 %------------------------------
 
-%------------------------------花写Hom,Ext,End,Proj
+%------------------------------花写Hom,Ext,End,Aut,Iso,Proj
 \DeclareMathOperator{\sHom}{\mathcal{H}\hspace*{-0.4pt}\textit{om}\hspace{0.5pt}}
 \DeclareMathOperator{\sExt}{\mathcal{E}\hspace*{-1.3pt}\textit{xt}\hspace{0.5pt}}
 \DeclareMathOperator{\sEnd}{\mathcal{E}\hspace*{-1pt}\textit{nd}\hspace{0.5pt}}
+\DeclareMathOperator{\sIso}{\mathcal{I}\hspace*{-0.5pt}\textit{so}\hspace{0.5pt}}
+\DeclareMathOperator{\sAut}{\mathcal{A}\hspace*{-0.2pt}\textit{ut}\hspace{0.5pt}}
+\DeclareMathOperator{\sDer}{\mathcal{D}\hspace*{-0.2pt}\textit{er}\hspace{0.5pt}}
+\DeclareMathOperator{\sDiff}{\mathcal{D}\hspace*{-0.2pt}\textit{iff}\hspace{0.5pt}}
 \DeclareMathOperator{\sProj}{\mathscr{P}\hspace*{-0.5pt}\textit{roj}}
 %------------------------------
 

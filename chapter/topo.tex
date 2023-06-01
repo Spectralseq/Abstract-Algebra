@@ -2687,6 +2687,277 @@ Then $f$ is continuous since only finite terms are nonzero in a neighborhood of 
 \[f(x)=\sum_{k=m+1}^{\infty}k\psi_k(x)>\sum_{k=m+1}^{\infty}m\psi_k(x)=m\sum_{k=m+1}^{\infty}\psi_k(x)=m\]
 The contrapositive of this last statement is that $f(x)\leq m$ implies $x\in\bigcup_{k=1}^{m}\widebar{U}_k$. Let $c\in\R$ be arbitrary, and let $m$ be any positive integer greater that $c$. It follows that $f^{-1}\big((-\infty,c]\big)$ is a closed subset of the compact set $\bigcup_{k=1}^{m}\widebar{U}_k$, and is therefore compact.
 \end{proof}
+\section{Irreducibility and Krull dimension}
+\subsection{Irredicible topological spaces}
+A topological space $X$ is called \textbf{irreducible} if every finite intersection of non-empty open sets of $X$ is non-empty. By considering the empty family of open sets of $X$ it is seen that an irreducible space is non-empty. For a topological space $X$ to be irreducible, it is necessary and sufficient that it be non-empty and that the intersection of two non-empty open sets of $X$ be always non-empty (or, what amounts to the same thing, that the union of two closed sets distinct from $X$ be always distinct from $X$).
+\begin{proposition}\label{topo space irreducible iff}
+Let $X$ be a non-empty topological space. The following assertions are
+equivalent.
+\begin{itemize}
+\item[(\rmnum{1})] $X$ is irreducible.
+\item[(\rmnum{2})] Any two non-empty open subsets of $X$ have a non-empty intersection.
+\item[(\rmnum{3})] Every non-empty open subset is dense in $X$.
+\item[(\rmnum{4})] Every non-empty open subset is connected.
+\item[(\rmnum{5})] Every non-empty open subset is irreducible.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+It is clear that (\rmnum{1}), (\rmnum{2}), and (\rmnum{3}) are equivalent. If there exist non-empty open subsets $U_1$ and $U_2$ that have an empty intersection, their union is a non-connected open subset. Conversely if $U$ is a nonempty nonconnected subset we can write $U$ as the disjoint union of two non-empty open subsets of $U$ (and hence of $X$). This shows that (\rmnum{4}) and (\rmnum{1}) are equivalent.\par
+Obviously (\rmnum{5}) implies (\rmnum{1}). Let us show that (\rmnum{3}) implies (\rmnum{5}). Let $U\sub X$ be open and non-empty, and $V$ be an open subset of $U$. Then $V$ is also open in $X$ and therefore dense in $X$ by (\rmnum{3}). But then $V$ is certainly dense in $U$, so $U$ is irreducible.
+\end{proof}
+\begin{example}
+A Hausdorff space $X$ is irreducible if and only if it consists of a single point.
+\end{example}
+A subset $E$ of a topological space $X$ is called an \textbf{irreducible} set if the subspace $E$ of $X$ is irreducible. For this to be so, it is necessary and sufficient that, for every pair of sets $U$, $V$ which are open in $X$ and meet $E$, $U\cap V$ also meet $E$, or (what amounts to the same thing) that, for every pair of sets $F$, $G$ which are closed in $X$ and satisfy $E\sub F\cup G$, $E\sub F$ or $E\sub G$. 
+\begin{proposition}\label{topo space irreducible contained in finite union}
+Let $E$ be an irreducible set of $X$. If $(F_i)_{i\in I}$ is a finite family of closed sets of $X$ such that $E\sub\bigcup_iF_i$, then there exists $i\in I$ such that $E\sub F_i$.
+\end{proposition}
+\begin{proof}
+This follows from the definition of irreducibility and induction on the cardinality of $I$.
+\end{proof}
+\begin{proposition}\label{topological subspace irreducible iff closure}
+In a topological space $X$, for a set $E$ to be irreducible, it is necessary and sufficient that its closure $\widebar{E}$ be so.
+\end{proposition}
+\begin{proof}
+For an open set of $X$ to meet $E$, it is necessary and sufficient that it meet $E$. Then the proposition follows from the above remarks.
+\end{proof}
+\begin{proposition}\label{topo space open cover of irreducible is irreducible if}
+Let $X$ be a topological space and let $(U_\alpha)_{\alpha\in A}$ be an open covering of $X$ consists of irreducible open subsets such that $U_\alpha\cap U_\beta\neq\emp$ for $\alpha\neq\beta$. Then $X$ is irreducible.
+\end{proposition}
+\begin{proof}
+Let us show that, for every non-empty open set $V$ in $X$, $V\cap U_\alpha\neq\emp$ for all $\alpha\in A$; it then follows that $V\cap U_\alpha$ is dense in $U_\alpha$ by hypothesis, hence that $V$ is dense in $X$ and this proves that $X$ is irreducible. Now there exists at least one index $\gamma$ such that $V\cap U_\gamma\neq\emp$. As $U_\alpha\cap U_\gamma\neq\emp$ for all $\alpha$ and $V\cap U_\gamma$ is dense in $U_\gamma$, we see $V\cap U_\gamma\cap U_\alpha\neq\emp$ and a fortiori $V\cap U_\alpha\neq\emp$, which completes the proof of (b).
+\end{proof}
+\begin{proposition}\label{topo space irreducible under continuous map}
+Let $X$ and $Y$ be two topological spaces and $f:X\to Y$ a continuous map. For every irreducible subset $E$ of $X$, $f(E)$ is an irreducible subset of $Y$.
+\end{proposition}
+\begin{proof}
+If $U$, $V$ are two open sets of $Y$ which meet $f(E)$, then $f^{-1}(U)$ and $f^{-1}(V)$ are open sets of $X$ which meet $E$. Consequently, $f^{-1}(U)\cap f^{-1}(V)=f^{-1}(U\cap V)$ meets $E$, which implies that $U\cap V$ meets $f(E)$ and proves the proposition.
+\end{proof}
+Now let $X$ be a topological space. Every maximal irreducible subset of a topological space $X$ is called an \textbf{irreducible component} of $X$. It follows from \cref{topological subspace irreducible iff closure} that every irreducible component of $X$ is closed in $X$.
+\begin{proposition}\label{topo space irreducible component prop}
+Let $X$ be a topological space. Every irreducible subset of $X$ is contained in an irreducible component of $X$ and $X$ is the union of its irreducible components.
+\end{proposition}
+\begin{proof}
+To prove the first assertion, it is sufficient, by virtue of Zorn's Lemma, to prove that the set $\mathcal{I}$ of irreducible subsets of $X$ is inductive. Let $\mathcal{C}$ be a chain in $\mathcal{I}$. We show that the union $E$ of the sets $F\in\mathcal{C}$ is irreducible. Let $U$, $V$ be two open sets of $X$ which meet $E$. As $\mathcal{C}$ is totally ordered, there exists a set $F\in\mathcal{I}$ meeting $U$ and $V$. As $F$ is irreducible, $U\cap V$ meets $F$ and hence also $E$, which proves that $E$ is irreducible and hence that $\mathcal{I}$ is inductive. The second assertion follows from the first, for every subset of $X$ consisting of a single point is irreducible.
+\end{proof}
+\begin{corollary}\label{topo space connected component union of irre component}
+Every connected component of a topological space $X$ is a union of irreducible components of $X$.
+\end{corollary}
+\begin{proof}
+Every irreducible subspace of $X$ is connected by \cref{topo space irreducible iff} and hence is contained in a connected component of $X$.
+\end{proof}
+\begin{proposition}\label{topo space finite closed irreducible cover}
+Let $X$ be a topological space and $(Z_i)_{1\leq i\leq n}$ a finite closed covering of $X$ consisting of irreducible sets. Then the irreducible components of $X$ are the maximal elements (with respect to inclusion) of the set of $Z_i$.
+\end{proposition}
+\begin{proof}
+We may restrict ourselves to the case where no two $Z_i$ are comparable. If $E$ is an irreducible subset of $X$, then $E\sub\bigcup_iZ_i$, and hence $E$ is contained in one of the closed sets $Z_i$ (\cref{topo space irreducible contained in finite union}). This proves that the $Z_i$ are the only maximal irreducible subsets of $X$.
+\end{proof}
+\begin{corollary}\label{topo space subspace finite irre component prop}
+Let $X$ be a topological space and $E$ a subspace with only a finite number of distinct irreducible components $Q_1,\dots,Q_n$. Then the irreducible components of the closure $E$ in $X$ are the closures $\widebar{Q}_i$ of the $Q_i$ and $\widebar{Q}_i\neq\widebar{Q}_j$ when $i\neq j$.
+\end{corollary}
+\begin{proof}
+The space $\widebar{E}$ is the union of the $\widebar{Q}_i$ which are irreducible (\cref{topological subspace irreducible iff closure}). As $Q_i$ is closed in $E$, $\widebar{Q}_i\cap E=Q_i$. As $Q_i\neq Q_j$, we see $\widebar{Q}_i\neq\widebar{Q}_j$ when $i\neq j$, whence the corollary by virtue of \cref{topo space finite closed irreducible cover}.
+\end{proof}
+\begin{example}
+Suppose that $X$ has only a finite number of distinct irreducible components $X_1,\dots,X_n$. Then $U_i=(\bigcup_{j\neq i}X_j)^c$ is open in $X$ and dense in $X_i$ (since $X_i\nsubseteq\bigcup_{j\neq i}X_j$). The $U_i$ are therefore non-empty open sets of $X$ which are irreducible by \cref{topological subspace irreducible iff closure}, pairwise disjoint and with their union dense in $X$.
+\end{example}
+\begin{proposition}\label{topo space open dense intersect irre component}
+Let $X$ be a topological space with finitely irreducible components $(X_i)_{1\leq i\leq r}$. Then any open dense subset $U$ of $X$ intersects each $X_i$.
+\end{proposition}
+\begin{proof}
+If $U\cap X_i=\emp$, then the open subset $X-\bigcup_{j\neq i}X_i$ of $X$ is disjoint from $U$, contradicting to the fact that $U$ is dense in $X$.
+\end{proof}
+\begin{proposition}\label{topo space open irre closed intersection}
+Let $U$ be an open subset of a topological space $X$. Then the map $C\mapsto\widebar{C}$ (closure in $X$) gives a bijection between the set of irreducible closed subsets of $U$ and the set of irreducible closed subsets of $X$ meeting $U$, whose inverse is given by $Z\mapsto Z\cap U$. In particular, this bijection maps the set of irreducible components of $U$ onto the set of irreducible components of $X$ which meet $U$.
+\end{proposition}
+\begin{proof}
+If $C$ is closed in $U$ and irreducible, then $\widebar{C}$ is irreducible and $C=\widebar{V}\cap U$. Conversely, if $Z$ is irreducible and closed in $X$ and meets $U$, then $Z\cap U$ is a non-empty open subset of $Z$, hence irreducible and dense in $Z$ and, as $Z$ is closed, $Z=\widebar{Z\cap U}$. This proves the proposition.
+\end{proof}
+\subsection{Noetherian topological spaces}
+\begin{definition}
+A topological space is called \textbf{Noetherian} if the descending chain condition holds for closed subsets of $X$. A topological space is called \textbf{locally Noetherian} if every point has a neighbourhood which is Noetherian.
+\end{definition}
+Clearly, $X$ is noetherian if and only if every non-empty set of closed subsets of $X$ has a minimal element, if and only if every non-empty set of open subsets of $X$ has a maximal element, or that every decreasing (resp. increasing) sequence of closed (resp. open) sets is stationary.
+\begin{proposition}\label{topo space Noe prop}
+Any subspace of a Noetherian space is Noetherian. Let $(A_i)_{i\in I}$ be a finite covering of a topological space $X$. If the subspaces $A_i$ of $X$ are Noetherian, then $X$ is Noetherian.
+\end{proposition}
+\begin{proof}
+Let $X$ be a Noetherian space, $A$ a subspace of $X$ and $(F_n)$ a decreasing sequence of subsets of $A$ which are closed in $A$. Then $F_n=\widebar{F}_n\cap A$ and the closures $\widebar{F}_n$ of the $F_n$ in $X$ form a decreasing sequence of closed subsets of $X$. As this sequence is stationary, so is the sequence $(F_n)$.\par
+For (b), let $(F_n)$ be a decreasing sequence of closed subsets of $X$. By hypothesis, each of the sequences $(E_n\cap A_i)_n$ is stationary. As $I$ is finite, there is an integer $n_0$ such that, for $n\geq n_0$, $E_n\cap A_i=E_{n_0}\cap A_i$ for all $i\in I$. But
+\[E_n=\bigcup_{i\in I}E_n\cap A_i\]
+and hence the sequence $(E_n)$ is stationary and $X$ is Noetherian.
+\end{proof}
+\begin{proposition}\label{topo space Noe iff quasi-compact}
+For a topological space $X$ to be Noetherian, it is necessary and sufficient that every open set in $X$ be quasi-compact.
+\end{proposition}
+\begin{proof}
+To show the necessarity, it is sufficient, by virtue of \cref{topo space Noe prop}, to prove that every Noetherian space $X$ is quasi-compact. Let $(U_\alpha)_{\alpha\in A}$ be an open covering of $X$. The set of finite unions of sets $U$, is non-empty and hence admits a maximal element $V=\bigcup_{i\in H}U_i$ where $H$ is a finite subset of $I$. By definition, $V\cup U_i=V$ for all $i\in I$ and hence $V=X$.\par
+Conversely, suppose that every open set of $X$ is quasi-compact and let $(U_n)$ be an increasing sequence of open subsets of $X$. The union $V$ of the $U_n$ is open and hence quasi-compact. As $(U_n)$ is an open covering of $V$, there is a finite subfamily of $(U_n)$ which is a covering of $V$ and hence $V=U_n$ for some index $n$, which proves that the sequence $(U_n)$ is stationary.
+\end{proof}
+\begin{lemma}[\textbf{Principle of Noetherian Induction}]\label{topo Noe induction principle}
+Let $E$ be an ordered set such that any nonempty subset of $E$ contains a minimal element. Let $F$ be a subset of $E$ with the following property: if $a\in E$ is such that the relation $x<a$ implies $x\in F$, then $a\in F$. Then $E=F$.
+\end{lemma}
+\begin{proof}
+Suppose $F\neq E$, then $E\setminus F$ would have a minimal element $b$. By definition, $x\in F$ for all $x<b$, which implies that $b\in F$, a contradiction.
+\end{proof}
+\begin{proposition}\label{topo space Noe finite irreducible componenet}
+If $X$ is a Noetherian space, the set of irreducible components of $X$ (and a fortiori the set of connected components of $X$) is finite.
+\end{proposition}
+\begin{proof}
+It is sufficient to prove that $X$ is a finite union of irreducible closed subsets (\cref{topo space subspace finite irre component prop}). Let us show that the principle of Noetherian induction can be applied taking $E$ to be the set of closed subsets of $X$, ordered by inclusion, and $F$ to be the set of finite unions of irreducible closed subsets. Let $Y$ be a closed subset Of $X$ such that every peroper closed subset of $Y$ belongs to $F$. If $Y$ is irreducible, then $Y\in F$ by definition. Otherwise, $Y$ is the union of two closed subsets $Y_1$, $Y_2$ which are distinct from $Y$. Then $Y_1\in F$ and $Y_2\in F$ by hypothesis, whence $Y\in F$ by definition of $F$.
+\end{proof}
+\begin{proposition}\label{topo Noe irreducible decomp}
+Suppose $X$ is a Noetherian topological space. Then every nonempty closed subset $E$ can be expressed uniquely as a finite union $E=Z_1\cup\cdots\cup Z_n$ of irreducible closed subsets, none contained in any other.
+\end{proposition}
+\begin{proof}
+Just take the irreducible component of $E$.
+\end{proof}
+\begin{proposition}\label{topo space Noe under continuous map}
+Let $f:X\to Y$ be a continuous map of topological spaces.
+\begin{itemize}
+\item[(a)] If $X$ is Noetherian, then $f(X)$ is Noetherian
+\item[(b)] If $X$ is locally Noetherian and $f$ is open, then $f(X)$ is locally Noetherian.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+For (a), suppose that $(Z_i)_i$ is a descending chain of closed subsets of $f(X)$. Then $(f^{-1}(Z_i))_i$ is a descending chain of closed subsets of $X$. Hence this chain stabilizes. Since $f(f^{-1}(Z_i))=Z_i$ we conclude that $(Z_i)_i$ also stabilizes. In case (b), let $y\in f(X)$. Choose $x\in X$ with $f(x)=y$. By assumption there exists a neighbourhood $E\sub X$ of $x$ which is Noetherian. Then $f(E)\sub f(X)$ is a neighbourhood which is Noetherian by part (a).
+\end{proof}
+\begin{proposition}\label{topo space local Noe is local connected}
+Let $X$ be a locally Noetherian topological space. Then $X$ is locally
+connected.
+\end{proposition}
+\begin{proof}
+Let $x\in X$ and $V$ be a neighbourhood of $x$. We have to find a connected neighbourhood of $x$ contained in $V$. By assumption there exists a neighbourhood $U$ of $x$ which is Noetherian. Then $U\cap V$ is Noetherian. Let $U\cap V=Z_1\cup\cdots\cup Z_n$ be the decomposition into irreducible components, then $W=\bigcup_{x\in Z_i}Z_i$ is a connected subset of $U\cap V$ containing $x$ (since each $Z_i$ is connected).
+\end{proof}
+\begin{proposition}\label{topo space locally Noe irre component open iff}
+Let $X$ be a locally Noetherian space, then the following are equivalent:
+\begin{itemize}
+\item[(\rmnum{1})] The irreducible components of $X$ are open.
+\item[(\rmnum{2})] The irreducible components coincide with the connected components.
+\item[(\rmnum{3})] The connected components of $X$ are irreducible.
+\item[(\rmnum{4})] The irreducible components of $X$ are disjoint.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+Since the irreducible components of $X$ are closed and connected, clearly (\rmnum{1}) implies (\rmnum{2}) and (\rmnum{2}) implies (\rmnum{3}). If (\rmnum{3}) holds, then the connected components are exactly the irreducible component since they are open and closed and disjoint. Thus (\rmnum{3}) implies (\rmnum{2}) and (\rmnum{4}).\par
+Finally, we prove that (\rmnum{4}) implies (\rmnum{1}). Let $Z$ be an irreducible component of $X$ and $x\in Z$ be arbitrary point. Choose a noetherian neirhborhood $U$ of $x$. It is easy to see that the irreducible components of $U$ are exactly the intersection of that of $X$ with $U$. Since $U$ is noetherian, there are finitely many such irreducible components: say $Z=Z_1,\dots,Z_n$. Then since $Z_i\cap U$ are closed and disjoint, they are also open in $U$, hence in $X$. In particular, this means $Z$ has an open neighborhood of $x$, which means it is open.
+\end{proof}
+\subsection{Generic points}
+\subsection{Krull dimension of a topological space}
+\begin{definition}
+Let $I$ be an ordered set. A non-empty and totally ordered finite subset of $I$ is called a \textbf{chain} of $I$. Let $C$ be a chain of $I$, the smallest and the most large element of $C$ are called the \textbf{ends} of $C$. The integer $|C|-1$ is called the \textbf{length} of $C$. The relation of inclusion in the set of subsets of $I$ induces a order relation in the set of chains of $I$. A chain $C$ of $I$ is said to be \textbf{saturated} if it is maximal among the chains of $I$ having the same endpoints as $C$.
+\end{definition}
+Let $X$ be a topological space. We endow the set of irreducible closed subsets of $X$ of the order relation defined by the inclusion. When we talk about a chain of closed irreducible subsets of $X$, it will always be a chain in the sense of this order relation.
+\begin{definition}
+Let $X$ be a topological space. The \textbf{dimension} or more precisely the \textbf{Krull dimension} of $X$, denoted by $\dim(X)$, is defined to be the supremum of chains of irreducible closed subsets of $X$. We set $\dim(X)=-\infty$ when $X$ is the empty space. Let $x\in X$, the \textbf{Krull dimension of $\bm{X}$ at $\bm{x}$}, denoted by $\dim_x(X)$, is defined to be the infimum of the dimensions of the open neighborhoods of $x$.
+\end{definition}
+Note that if $X$ is Hausdorff then any irreducible closed subset of $X$ reduces to a point. The definition of the Krull dimension is therefore devoid of interest for Hausdorff spaces, but it is specially adapted to the topological spaces encountered in commutative algebra. In this part, no confusion is to be feared with other notions of dimension of topological spaces, and we will simply say "dimension" for "Krul dimension."
+\begin{proposition}\label{topo space Krull dimension prop}
+Let $X$ be a topological space.
+\begin{itemize}
+\item[(a)] Let $Y$ be a subspace of $X$, then $\dim(Y)\leq\dim(X)$ and $\dim_y(Y)\leq\dim_y(X)$ for any point $y$ of $Y$.
+\item[(b)] Let $x$ be a point of $X$ and $U$ a neighborhod of $x$. Then $\dim_x(X)=\dim_x(U)$.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+Let $Y$ be a subspace of $X$. If $Z$ is an irreducible closed subset of $Y$, its closure $\widebar{Z}$ in $X$ is irreducible and $\widebar{Z}\cap Y=Z$. Thus, any chain of irreducible closed subsets of $Y$ defines, by passage to closure in $X$, a chain of irreducible closed subsets of $X$ of the same length. This implies $\dim(Y)\leq\dim(X)$. If $U$ is an open subset of $X$ containing a point $y$ of $Y$, we therefore have $\dim(U\cap Y)\leq\dim(U)$, whence $\dim_y(Y)\leq\dim_y(X)$. Now part (b) follows from (a).
+\end{proof}
+\begin{proposition}\label{topo space Krull dimension is sup of point}
+Let $X$ be a topological space. Then $\dim(X)=\sup_{x\in X}\dim_x(X)$.
+\end{proposition}
+\begin{proof}
+First we have $\dim_x(X)\leq\dim(X)$ by \cref{topo space Krull dimension prop}(a). On the other hand, if $Z_0\subset\cdots\subset Z_n$ is a chain of irreducible closed subsets and $U$ a neighborhood of $x_0$ in $X$, where $x_0\in Z_0$, then $Z_0\cap U\subset\cdots\subset Z_n\cap U$ is a chain of irreducible closed subsets of $U$ (\cref{topo space irreducible iff}). This shows $\dim_x(X)\geq n$, whence $\dim(X)\leq\sup_{x\in X}\dim_x(X)$. 
+\end{proof}
+\begin{corollary}\label{topo space Krull dimension and cover}
+Let $(X_i)_{i\in I}$ be an open cover (or a locally finite closed cover) of a topological space $X$. Then
+\[\dim(X)=\sup_{i\in I}\dim(X_i),\quad \dim_x(X)=\sup_{i\in I_x}\dim_x(X_i)\]
+where $I_x$ is the set $i\in I$ such that $x\in U_i$. 
+\end{corollary}
+\begin{proof}
+The claim is immediate when $(X_i)$ is an open cover, and we now deal with the case of a locally finite closed cover. First suppose that $I$ is finite. Let $Z_0\subset\cdots\subset Z_n$ be a chain of irreducible closed subsets of $X$. Then $Z_n=\bigcup_iZ_n\cap X_i$, and each $Z_n\cap X_i$ is closed in $Z_n$. Since $I$ is finite, we see $Z_n$ is contained in one of the $X_i$, whence $\dim(X)\leq\sup_i\dim(U_i)$, and the converse inequality follows from \cref{topo space Krull dimension prop}.\par
+Now let $x\in X$ and for each $i\in I_x$ let $U_i$ be a neighborhod of $x$ such that $\dim(U_i\cap X_i)\leq n$, where $n=\sup_{i\in I_x}\dim_x(X_i)$, and let
+\[U=\Big(\bigcap_{i\in I_x}U_i\Big)\cap\Big(\bigcap_{i\in I-I_x}X_i^c\Big).\]
+Then $U$ is open in $X$ since $I_x$ is finite, and since $(U\cap X_i)_{i\in I_x}$ is a finite closed cover of $U$, by the preceding argument we have
+\[\dim(U)=\sup_{i\in I_x}\dim(U\cap X_i)\leq\sup_{i\in I_x}\dim(U_i\cap X_i)\leq n\]
+whence $\dim_x(X)\leq n$ and the proof is finished in this case. The general case then follows from \cref{topo space Krull dimension is sup of point}.
+\end{proof}
+\begin{proposition}
+Let $\mathcal{I}$ be the set of irreducible components of $X$. Then
+\[\dim(X)=\sup_{Y\in\mathcal{I}}\dim(Y).\]
+\end{proposition}
+\begin{proof}
+It is clear that $\sup_{Y\in\mathcal{I}}\dim(Y)\leq\dim(X)$ according to \cref{topo space Krull dimension prop}. Now let $Z_0\subset\cdots\subset Z_n$ be a chain of irreducible closed subsets in $X$. Then $Z_n$ is contained in a irreducible component $Y$ of $X$, and therefore $Z_0\subset\cdots\subset Z_n$ is a chain of irreducible closed subsets in $Y$ (since $Y$ is closed), and we obtain $n\leq\sup_{Y\in\mathcal{I}}\dim(Y)$, whence the claim.
+\end{proof}
+\begin{proposition}\label{topo space irreducible proper closed dimension small}
+Let $X$ be an irreducible topological space and $Y$ a proper closed subset of $X$. Then $\dim(Y)<\dim(X)$.
+\end{proposition}
+\begin{proof}
+Since $X$ is irreducible and closed, any chain $Z_0\subset\cdots\subset Z_n$ of irreducible closed subsets of $Y$ can be extended by adding $X$ at the end, whence $\dim(Y)\leq\dim(X)+1$.
+\end{proof}
+\begin{corollary}
+If $Y$ is a closed subset of an irreducible finite-dimensional topological space $X$, and if $\dim Y=\dim X$, then $Y=X$.
+\end{corollary}
+\subsection{Codimension of a closed subset}
+Let $X$ be a topological space. For an irreducible closed subset $Z$ of $X$, the \textbf{codimension} of $Z$ in $X$ is defined to be the supremum of the lengths of the chains of closed irreducible subsets of $X$ containing $Z$. If $Y$ is a closed subset of $X$, the \textbf{codimension} of $Y$ in $X$ is defined to be the infimum of the codimensions in $X$ of the irreducible of components $Y$.\par
+The codimension of a closed subset $Y$ of $X$ is therefore the infimum of the codimensions of the irreducible closed subsets of $Y$. We have $\codim(\emp,X)=+\infty$ and, if $X$ is not empty, $\codim(X,X)=0$. Since any nonempty closed subset of $X$ contains an irreducible closed subset (for example the closure of a singleton), the codimension in $X$ of a closed subset $Y$ is always a positive integer or $+\infty$. It is zero if and only if $Y$ contains an irreducible component of $X$. Note that by definition $\codim(Y,X)\leq\dim(X)$, and $\dim(X)=\sup_Y\codim(Y,X)$ where $Y$ runs through all irreducible closed subsets of $X$. Also, if $Y'\sub Y$ are closed subsets of $X$, we have $\codim(Y,X)\leq\codim(Y,X)$.\par
+Let $Y$ be a closed subset of $X$ and $(X_\alpha)_{\alpha\in A}$ (resp. $(Y_\beta)_{\beta\in B}$) be the family of irreducible components of $X$ (resp. of $Y$). For each $\beta\in B$, let $A_\beta$ be the subset $\alpha\in A$ such that $Y_\beta\sub X_\alpha$. Then since each irreducible closed subset of $X$ is contained in one of $X_\alpha$, it follows from definition that
+\begin{align}\label{topo space codim is inf of component}
+\codim(Y,X)=\inf_{\beta\in B}\sup_{\alpha\in A_\beta}\codim(Y_\beta,X_\alpha).
+\end{align}
+In particular, if $(Y_i)_{i\in I}$ is a finite family of closed subsets of $X$ and $Y=\bigcup_iY_i$, then
+\[\codim(Y,X)=\inf_{i\in I}\codim(Y_i,X)\]
+since by \cref{topo space irreducible contained in finite union} any irreducible component of $Y$ is contained in one of the $Y_i$.
+\begin{proposition}\label{topo space codim prop}
+Let $X$ be a topological space.
+\begin{itemize}
+\item[(a)] For any closed subset $Y$ of $X$, we have
+\[\dim(Y)+\codim(Y,X)\leq\dim(X).\]  
+\item[(b)] If $Y\sub Z\sub T$ are closed subsets of $X$, then
+\[\codim(Y,Z)+\codim(Z,T)\leq\codim(Y,T).\] 
+\end{itemize}
+\end{proposition}
+\begin{proof}
+To prove (a), we may assume that $\dim(X)$ is finite, whence $\dim(Y)$ and $\codim(Y,X)$ are both finite. If $Z_0\subset\cdots\subset Z_n$ is a chain of irreducible closed subsets of $Y$ such that $n=\dim(Y)$ and $Z_n\subset\cdots\subset Z_{n+p}$ is a chain of that of $X$ such that $p\geq\codim(Y,X)$, then we get a chain $Z_0\subset\cdots\subset Z_{n+p}$ in $X$, whence $\dim(X)\geq n+p$ and part (a) follows.\par
+To prove (b), we may assume that $Y$ is irreducible. Since $\codim(Y,Z)\leq\codim(Y,T)$, the claim is true if $\codim(Y,Z)=+\infty$. Otherwise, let $Z_0$ be an irreducible component of $Z$ containing $Y$ such that $\codim(Y,Z)=\codim(Y,Z_0)$. We have $\codim(Z,T)\leq\codim(Z_0,T)$, and we see, as the proof of (a), that $\codim(Y,Z_0)+\codim(Z_0,T)\leq\codim(Y,T)$, whence (b).
+\end{proof}
+\begin{definition}
+A topological space $X$ is called \textbf{catenary} if for any pair $(Y,Z)$ of irreducible closed subsets of $X$ such that $Y\sub Z$, any saturated chain of subsets irreducible closed lines with ends $Y$ and $Z$ is of length $\codim(Y,Z)$.
+\end{definition}
+It amounts to the same thing to say that, for any pair $(Y,Z)$ of closed irreducible subsets of $X$ such that $\codim(Y,Z)$ is finite, all the saturated chains with ends $Y$ and $Z$ have the same length, and that, for any couple $(Y,Z)$ such that $\codim(Y,Z)=+\infty$, there is no saturated chain with $Y$ and $Z$ ends.\par
+Any closed subspace of a catenary space is catenary. For a space is catenary, it is necessary and sufficient that its irreducible components are catenary.
+\begin{proposition}\label{topo space catenary iff}
+Let $X$ be a topological space. For $X$ be catenary, it is necessary and sufficient that, for every triple $(Y,Z,T)$ of irreducible closed subsets of $X$ such that $Y\sub Z\sub T$, we have
+\begin{align}\label{topo space catenary iff-1}
+\codim(Y,T)=\codim(Y,Z)+\codim(Z,T).
+\end{align}
+\end{proposition}
+\begin{proof}
+Suppose $X$ is catenary. Concerning \cref{topo space codim prop}, it suffices to prove $(\ref{topo space catenary iff-1})$ when $\codim(Y,Z)$ and $\codim(Z,T)$ are finite. By putting end to end a saturated chain of irreducible closed subsets with endpoints $Y$ and $Z$ of length $\codim(Y,Z)$ and a saturated chain of irreducible closed subsets with end points $Z$ and $T$ of length $\codim(Z,T)$, we obtain a saturated chain with ends $Y$ and $T$, of length $\codim(Y,Z)+\codim(Z,T)$. As $X$ is catenary, this length is necessarily equal to $\codim(Y,T)$.\par
+Conversely, suppose that $(\ref{topo space catenary iff-1})$ holds for every triple $(Y,Z,T)$ of irreducible closed subset of $X$ such that $Y\sub Z\sub T$, and we show that $X$ is catenary. For this, we prove by induction that for every saturated chain $Z_0\subset\cdots\subset Z_n$ we have $\codim(Z_0,Z_n)=n$. For $n=0$ this is clear. Let $n>0$, and suppose the property satisfied for chains of length smaller than $n-1$. If $Z_0\subset\cdots\subset Z_n$ is a maximal of length $n$, then $Z_0\sub\cdots \sub Z_{n-1}$ is a saturated chain of length $n-1$, so $\codim(Z_0,Z_{n-1})=n-1$. Given the assumption made on $X$, we have $\codim(Z_0,Z_n)=\codim(Z_0,Z_{n-1})+\codim(Z_{n-1},Z_n)=(n-1)+1=n$.
+\end{proof}
+\begin{corollary}\label{topo space irreducible finite dim catenary iff}
+Let $X$ be an irreducible topological space of finite dimension. For $X$ to be catenary, it is necessary and sufficient that, for every pair $(Y,Z)$ of irreducible closed subsets of $X$ such that $Y\sub Z$, we have
+\[\codim(Y,Z)+\codim(Z,X)=\codim(Y,X).\]
+\end{corollary}
+\begin{proof}
+The condition is necessary by \cref{topo space catenary iff}. Conversely, suppose it is ture, and for each irreducible closed subset $Z$ of $X$ define $c(Z)=\codim(Z,X)$. Then for a triple triple $(Y,Z,T)$ of irreducible closed subsets of $X$ such that $Y\sub Z\sub T$,
+\[\codim(Y,Z)+\codim(Z,T)=c(Y)-c(Z)+c(Z)-c(T)=c(Y)-c(T)=\codim(Y,T)\]
+whence $X$ is catenary by \cref{topo space catenary iff}.
+\end{proof}
+\begin{proposition}\label{topo space maximal chain same length is catenary}
+Let $X$ be a topological space of finite dimension. Suppose that all maximal chains of closed irreducible subsets of $X$ have the same length. Then $X$ is catenary, and for any irreducible closed subset $Z$ of $X$, we have
+\[\codim(Z,X)=\dim(X)-\dim(Z).\]
+Moreover, for any pair $(Y,Z)$ of irreducible closed subsets of $X$ such that $Y\sub Z$, we have
+\[\codim(Y,Z)=\dim(Z)-\dim(Y).\]
+\end{proposition}
+\begin{proof}
+Let $Y$ and $Z$ be irreducible closed subsets of $X$ such that $Y\sub Z$. Let $Y_0\subset\cdots\subset Y_p$ be a chain such that $Y_p=Y$ and $p=\dim(Y)$, $Z_0\subset\cdots\subset Z_q$ a chain such that $Z_0=Z$ and $q=\codim(Z,X)$. Then for any saturated chain $T_0\subset\cdots\subset T_r$ with $T_0=Y$, $T_r=Z$, the chain
+\[Y_0\subset\cdots\subset Y_{p-1}\sub T_0\subset\cdots\subset T_r\sub Z_1\subset\cdots\subset Z_q\]
+is maximal with length $p+q+r$. The hypotheses on $X$ then implies $p+q+r=\dim(X)$, whence $r=\dim(X)-\dim(Y)-\codim(Z,X)$. It follows that $X$ is catenary and that, for $Y$ and $Z$ as above, we have
+\[\dim(Y)+\codim(Y,Z)=\dim(X)-\codim(Z,X).\]
+Put $Z=Y$, we see the second number is equal to $\dim(Z)$, whence the proposition.
+\end{proof}
+
 \chapter{Uniform structures}
 \section{Uniform spaces}
 \begin{definition}
@@ -4387,276 +4658,4 @@ Let $(G_\alpha,\phi_{\alpha\beta})$ be an inverse system of topological groups w
 \end{corollary}
 \begin{proof}
 Let $N_\alpha$ be the kernel of $u_\alpha$ and $H_\alpha$ the kernel of $\phi_\alpha$. Then $L_\alpha=\phi_\alpha^{-1}(N_\alpha)$ is then the kernel of the surjective strict morphism $v_\alpha=u_\alpha\circ\phi_\alpha:G\to G_\alpha'$. Since $L_\alpha/H_\alpha$ is isomorphic to $N_\alpha$, $L_\alpha$ is a compact normal subgroup of $G$. The kernel $L$ of $u$ is the intersection of the $L_\alpha$. Let $\pi$ denote the canonical mapping $G\to G/L$; then we can write $v_\alpha=w_\alpha\circ\pi$, where $w_\alpha$ is a strict morphism of $G/L$ onto $G_\alpha'$, whose kernel is $L_\alpha/L$. Since the intersection of the $L_\alpha/L$ is the identity element of $G/L$, and since the $L_\alpha/L$ form a filter base and are compact, this filter base converges to the identity element of $G/L$. \cref{topological group inverse limit of nbhd quotient and completion} then shows that $w=\llim w_\alpha$ is an isomorphism of $G/L$ onto $G'$. It follows that $w\circ\pi$ is a strict morphism of $G$ onto $G'$, with kernel $L$. But it is clear that $u=w\circ\pi$, and thus the corollary is proved.
-\end{proof}
-\chapter{Topologies encountered in algebraic geometry}
-\section{Irreducibility}
-\subsection{Irredicible topological spaces}
-A topological space $X$ is called \textbf{irreducible} if every finite intersection of non-empty open sets of $X$ is non-empty. By considering the empty family of open sets of $X$ it is seen that an irreducible space is non-empty. For a topological space $X$ to be irreducible, it is necessary and sufficient that it be non-empty and that the intersection of two non-empty open sets of $X$ be always non-empty (or, what amounts to the same thing, that the union of two closed sets distinct from $X$ be always distinct from $X$).
-\begin{proposition}\label{topo space irreducible iff}
-Let $X$ be a non-empty topological space. The following assertions are
-equivalent.
-\begin{itemize}
-\item[(\rmnum{1})] $X$ is irreducible.
-\item[(\rmnum{2})] Any two non-empty open subsets of $X$ have a non-empty intersection.
-\item[(\rmnum{3})] Every non-empty open subset is dense in $X$.
-\item[(\rmnum{4})] Every non-empty open subset is connected.
-\item[(\rmnum{5})] Every non-empty open subset is irreducible.
-\end{itemize}
-\end{proposition}
-\begin{proof}
-It is clear that (\rmnum{1}), (\rmnum{2}), and (\rmnum{3}) are equivalent. If there exist non-empty open subsets $U_1$ and $U_2$ that have an empty intersection, their union is a non-connected open subset. Conversely if $U$ is a nonempty nonconnected subset we can write $U$ as the disjoint union of two non-empty open subsets of $U$ (and hence of $X$). This shows that (\rmnum{4}) and (\rmnum{1}) are equivalent.\par
-Obviously (\rmnum{5}) implies (\rmnum{1}). Let us show that (\rmnum{3}) implies (\rmnum{5}). Let $U\sub X$ be open and non-empty, and $V$ be an open subset of $U$. Then $V$ is also open in $X$ and therefore dense in $X$ by (\rmnum{3}). But then $V$ is certainly dense in $U$, so $U$ is irreducible.
-\end{proof}
-\begin{example}
-A Hausdorff space $X$ is irreducible if and only if it consists of a single point.
-\end{example}
-A subset $E$ of a topological space $X$ is called an \textbf{irreducible} set if the subspace $E$ of $X$ is irreducible. For this to be so, it is necessary and sufficient that, for every pair of sets $U$, $V$ which are open in $X$ and meet $E$, $U\cap V$ also meet $E$, or (what amounts to the same thing) that, for every pair of sets $F$, $G$ which are closed in $X$ and satisfy $E\sub F\cup G$, $E\sub F$ or $E\sub G$. 
-\begin{proposition}\label{topo space irreducible contained in finite union}
-Let $E$ be an irreducible set of $X$. If $(F_i)_{i\in I}$ is a finite family of closed sets of $X$ such that $E\sub\bigcup_iF_i$, then there exists $i\in I$ such that $E\sub F_i$.
-\end{proposition}
-\begin{proof}
-This follows from the definition of irreducibility and induction on the cardinality of $I$.
-\end{proof}
-\begin{proposition}\label{topological subspace irreducible iff closure}
-In a topological space $X$, for a set $E$ to be irreducible, it is necessary and sufficient that its closure $\widebar{E}$ be so.
-\end{proposition}
-\begin{proof}
-For an open set of $X$ to meet $E$, it is necessary and sufficient that it meet $E$. Then the proposition follows from the above remarks.
-\end{proof}
-\begin{proposition}\label{topo space open cover of irreducible is irreducible if}
-Let $X$ be a topological space and let $(U_\alpha)_{\alpha\in A}$ be an open covering of $X$ consists of irreducible open subsets such that $U_\alpha\cap U_\beta\neq\emp$ for $\alpha\neq\beta$. Then $X$ is irreducible.
-\end{proposition}
-\begin{proof}
-Let us show that, for every non-empty open set $V$ in $X$, $V\cap U_\alpha\neq\emp$ for all $\alpha\in A$; it then follows that $V\cap U_\alpha$ is dense in $U_\alpha$ by hypothesis, hence that $V$ is dense in $X$ and this proves that $X$ is irreducible. Now there exists at least one index $\gamma$ such that $V\cap U_\gamma\neq\emp$. As $U_\alpha\cap U_\gamma\neq\emp$ for all $\alpha$ and $V\cap U_\gamma$ is dense in $U_\gamma$, we see $V\cap U_\gamma\cap U_\alpha\neq\emp$ and a fortiori $V\cap U_\alpha\neq\emp$, which completes the proof of (b).
-\end{proof}
-\begin{proposition}\label{topo space irreducible under continuous map}
-Let $X$ and $Y$ be two topological spaces and $f:X\to Y$ a continuous map. For every irreducible subset $E$ of $X$, $f(E)$ is an irreducible subset of $Y$.
-\end{proposition}
-\begin{proof}
-If $U$, $V$ are two open sets of $Y$ which meet $f(E)$, then $f^{-1}(U)$ and $f^{-1}(V)$ are open sets of $X$ which meet $E$. Consequently, $f^{-1}(U)\cap f^{-1}(V)=f^{-1}(U\cap V)$ meets $E$, which implies that $U\cap V$ meets $f(E)$ and proves the proposition.
-\end{proof}
-Now let $X$ be a topological space. Every maximal irreducible subset of a topological space $X$ is called an \textbf{irreducible component} of $X$. It follows from \cref{topological subspace irreducible iff closure} that every irreducible component of $X$ is closed in $X$.
-\begin{proposition}\label{topo space irreducible component prop}
-Let $X$ be a topological space. Every irreducible subset of $X$ is contained in an irreducible component of $X$ and $X$ is the union of its irreducible components.
-\end{proposition}
-\begin{proof}
-To prove the first assertion, it is sufficient, by virtue of Zorn's Lemma, to prove that the set $\mathcal{I}$ of irreducible subsets of $X$ is inductive. Let $\mathcal{C}$ be a chain in $\mathcal{I}$. We show that the union $E$ of the sets $F\in\mathcal{C}$ is irreducible. Let $U$, $V$ be two open sets of $X$ which meet $E$. As $\mathcal{C}$ is totally ordered, there exists a set $F\in\mathcal{I}$ meeting $U$ and $V$. As $F$ is irreducible, $U\cap V$ meets $F$ and hence also $E$, which proves that $E$ is irreducible and hence that $\mathcal{I}$ is inductive. The second assertion follows from the first, for every subset of $X$ consisting of a single point is irreducible.
-\end{proof}
-\begin{corollary}\label{topo space connected component union of irre component}
-Every connected component of a topological space $X$ is a union of irreducible components of $X$.
-\end{corollary}
-\begin{proof}
-Every irreducible subspace of $X$ is connected by \cref{topo space irreducible iff} and hence is contained in a connected component of $X$.
-\end{proof}
-\begin{proposition}\label{topo space finite closed irreducible cover}
-Let $X$ be a topological space and $(Z_i)_{1\leq i\leq n}$ a finite closed covering of $X$ consisting of irreducible sets. Then the irreducible components of $X$ are the maximal elements (with respect to inclusion) of the set of $Z_i$.
-\end{proposition}
-\begin{proof}
-We may restrict ourselves to the case where no two $Z_i$ are comparable. If $E$ is an irreducible subset of $X$, then $E\sub\bigcup_iZ_i$, and hence $E$ is contained in one of the closed sets $Z_i$ (\cref{topo space irreducible contained in finite union}). This proves that the $Z_i$ are the only maximal irreducible subsets of $X$.
-\end{proof}
-\begin{corollary}\label{topo space subspace finite irre component prop}
-Let $X$ be a topological space and $E$ a subspace with only a finite number of distinct irreducible components $Q_1,\dots,Q_n$. Then the irreducible components of the closure $E$ in $X$ are the closures $\widebar{Q}_i$ of the $Q_i$ and $\widebar{Q}_i\neq\widebar{Q}_j$ when $i\neq j$.
-\end{corollary}
-\begin{proof}
-The space $\widebar{E}$ is the union of the $\widebar{Q}_i$ which are irreducible (\cref{topological subspace irreducible iff closure}). As $Q_i$ is closed in $E$, $\widebar{Q}_i\cap E=Q_i$. As $Q_i\neq Q_j$, we see $\widebar{Q}_i\neq\widebar{Q}_j$ when $i\neq j$, whence the corollary by virtue of \cref{topo space finite closed irreducible cover}.
-\end{proof}
-\begin{example}
-Suppose that $X$ has only a finite number of distinct irreducible components $X_1,\dots,X_n$. Then $U_i=(\bigcup_{j\neq i}X_j)^c$ is open in $X$ and dense in $X_i$ (since $X_i\nsubseteq\bigcup_{j\neq i}X_j$). The $U_i$ are therefore non-empty open sets of $X$ which are irreducible by \cref{topological subspace irreducible iff closure}, pairwise disjoint and with their union dense in $X$.
-\end{example}
-\begin{proposition}\label{topo space open dense intersect irre component}
-Let $X$ be a topological space with finitely irreducible components $(X_i)_{1\leq i\leq r}$. Then any open dense subset $U$ of $X$ intersects each $X_i$.
-\end{proposition}
-\begin{proof}
-If $U\cap X_i=\emp$, then the open subset $X-\bigcup_{j\neq i}X_i$ of $X$ is disjoint from $U$, contradicting to the fact that $U$ is dense in $X$.
-\end{proof}
-\begin{proposition}\label{topo space open irre closed intersection}
-Let $U$ be an open subset of a topological space $X$. Then the map $C\mapsto\widebar{C}$ (closure in $X$) gives a bijection between the set of irreducible closed subsets of $U$ and the set of irreducible closed subsets of $X$ meeting $U$, whose inverse is given by $Z\mapsto Z\cap U$. In particular, this bijection maps the set of irreducible components of $U$ onto the set of irreducible components of $X$ which meet $U$.
-\end{proposition}
-\begin{proof}
-If $C$ is closed in $U$ and irreducible, then $\widebar{C}$ is irreducible and $C=\widebar{V}\cap U$. Conversely, if $Z$ is irreducible and closed in $X$ and meets $U$, then $Z\cap U$ is a non-empty open subset of $Z$, hence irreducible and dense in $Z$ and, as $Z$ is closed, $Z=\widebar{Z\cap U}$. This proves the proposition.
-\end{proof}
-\subsection{Noetherian topological spaces}
-\begin{definition}
-A topological space is called \textbf{Noetherian} if the descending chain condition holds for closed subsets of $X$. A topological space is called \textbf{locally Noetherian} if every point has a neighbourhood which is Noetherian.
-\end{definition}
-Clearly, $X$ is noetherian if and only if every non-empty set of closed subsets of $X$ has a minimal element, if and only if every non-empty set of open subsets of $X$ has a maximal element, or that every decreasing (resp. increasing) sequence of closed (resp. open) sets is stationary.
-\begin{proposition}\label{topo space Noe prop}
-Any subspace of a Noetherian space is Noetherian. Let $(A_i)_{i\in I}$ be a finite covering of a topological space $X$. If the subspaces $A_i$ of $X$ are Noetherian, then $X$ is Noetherian.
-\end{proposition}
-\begin{proof}
-Let $X$ be a Noetherian space, $A$ a subspace of $X$ and $(F_n)$ a decreasing sequence of subsets of $A$ which are closed in $A$. Then $F_n=\widebar{F}_n\cap A$ and the closures $\widebar{F}_n$ of the $F_n$ in $X$ form a decreasing sequence of closed subsets of $X$. As this sequence is stationary, so is the sequence $(F_n)$.\par
-For (b), let $(F_n)$ be a decreasing sequence of closed subsets of $X$. By hypothesis, each of the sequences $(E_n\cap A_i)_n$ is stationary. As $I$ is finite, there is an integer $n_0$ such that, for $n\geq n_0$, $E_n\cap A_i=E_{n_0}\cap A_i$ for all $i\in I$. But
-\[E_n=\bigcup_{i\in I}E_n\cap A_i\]
-and hence the sequence $(E_n)$ is stationary and $X$ is Noetherian.
-\end{proof}
-\begin{proposition}\label{topo space Noe iff quasi-compact}
-For a topological space $X$ to be Noetherian, it is necessary and sufficient that every open set in $X$ be quasi-compact.
-\end{proposition}
-\begin{proof}
-To show the necessarity, it is sufficient, by virtue of \cref{topo space Noe prop}, to prove that every Noetherian space $X$ is quasi-compact. Let $(U_\alpha)_{\alpha\in A}$ be an open covering of $X$. The set of finite unions of sets $U$, is non-empty and hence admits a maximal element $V=\bigcup_{i\in H}U_i$ where $H$ is a finite subset of $I$. By definition, $V\cup U_i=V$ for all $i\in I$ and hence $V=X$.\par
-Conversely, suppose that every open set of $X$ is quasi-compact and let $(U_n)$ be an increasing sequence of open subsets of $X$. The union $V$ of the $U_n$ is open and hence quasi-compact. As $(U_n)$ is an open covering of $V$, there is a finite subfamily of $(U_n)$ which is a covering of $V$ and hence $V=U_n$ for some index $n$, which proves that the sequence $(U_n)$ is stationary.
-\end{proof}
-\begin{lemma}[\textbf{Principle of Noetherian Induction}]\label{topo Noe induction principle}
-Let $E$ be an ordered set such that any nonempty subset of $E$ contains a minimal element. Let $F$ be a subset of $E$ with the following property: if $a\in E$ is such that the relation $x<a$ implies $x\in F$, then $a\in F$. Then $E=F$.
-\end{lemma}
-\begin{proof}
-Suppose $F\neq E$, then $E\setminus F$ would have a minimal element $b$. By definition, $x\in F$ for all $x<b$, which implies that $b\in F$, a contradiction.
-\end{proof}
-\begin{proposition}\label{topo space Noe finite irreducible componenet}
-If $X$ is a Noetherian space, the set of irreducible components of $X$ (and a fortiori the set of connected components of $X$) is finite.
-\end{proposition}
-\begin{proof}
-It is sufficient to prove that $X$ is a finite union of irreducible closed subsets (\cref{topo space subspace finite irre component prop}). Let us show that the principle of Noetherian induction can be applied taking $E$ to be the set of closed subsets of $X$, ordered by inclusion, and $F$ to be the set of finite unions of irreducible closed subsets. Let $Y$ be a closed subset Of $X$ such that every peroper closed subset of $Y$ belongs to $F$. If $Y$ is irreducible, then $Y\in F$ by definition. Otherwise, $Y$ is the union of two closed subsets $Y_1$, $Y_2$ which are distinct from $Y$. Then $Y_1\in F$ and $Y_2\in F$ by hypothesis, whence $Y\in F$ by definition of $F$.
-\end{proof}
-\begin{proposition}\label{topo Noe irreducible decomp}
-Suppose $X$ is a Noetherian topological space. Then every nonempty closed subset $E$ can be expressed uniquely as a finite union $E=Z_1\cup\cdots\cup Z_n$ of irreducible closed subsets, none contained in any other.
-\end{proposition}
-\begin{proof}
-Just take the irreducible component of $E$.
-\end{proof}
-\begin{proposition}\label{topo space Noe under continuous map}
-Let $f:X\to Y$ be a continuous map of topological spaces.
-\begin{itemize}
-\item[(a)] If $X$ is Noetherian, then $f(X)$ is Noetherian
-\item[(b)] If $X$ is locally Noetherian and $f$ is open, then $f(X)$ is locally Noetherian.
-\end{itemize}
-\end{proposition}
-\begin{proof}
-For (a), suppose that $(Z_i)_i$ is a descending chain of closed subsets of $f(X)$. Then $(f^{-1}(Z_i))_i$ is a descending chain of closed subsets of $X$. Hence this chain stabilizes. Since $f(f^{-1}(Z_i))=Z_i$ we conclude that $(Z_i)_i$ also stabilizes. In case (b), let $y\in f(X)$. Choose $x\in X$ with $f(x)=y$. By assumption there exists a neighbourhood $E\sub X$ of $x$ which is Noetherian. Then $f(E)\sub f(X)$ is a neighbourhood which is Noetherian by part (a).
-\end{proof}
-\begin{proposition}\label{topo space local Noe is local connected}
-Let $X$ be a locally Noetherian topological space. Then $X$ is locally
-connected.
-\end{proposition}
-\begin{proof}
-Let $x\in X$ and $V$ be a neighbourhood of $x$. We have to find a connected neighbourhood of $x$ contained in $V$. By assumption there exists a neighbourhood $U$ of $x$ which is Noetherian. Then $U\cap V$ is Noetherian. Let $U\cap V=Z_1\cup\cdots\cup Z_n$ be the decomposition into irreducible components, then $W=\bigcup_{x\in Z_i}Z_i$ is a connected subset of $U\cap V$ containing $x$ (since each $Z_i$ is connected).
-\end{proof}
-\begin{proposition}\label{topo space locally Noe irre component open iff}
-Let $X$ be a locally Noetherian space, then the following are equivalent:
-\begin{itemize}
-\item[(\rmnum{1})] The irreducible components of $X$ are open.
-\item[(\rmnum{2})] The irreducible components coincide with the connected components.
-\item[(\rmnum{3})] The connected components of $X$ are irreducible.
-\item[(\rmnum{4})] The irreducible components of $X$ are disjoint.
-\end{itemize}
-\end{proposition}
-\begin{proof}
-Since the irreducible components of $X$ are closed and connected, clearly (\rmnum{1}) implies (\rmnum{2}) and (\rmnum{2}) implies (\rmnum{3}). If (\rmnum{3}) holds, then the connected components are exactly the irreducible component since they are open and closed and disjoint. Thus (\rmnum{3}) implies (\rmnum{2}) and (\rmnum{4}).\par
-Finally, we prove that (\rmnum{4}) implies (\rmnum{1}). Let $Z$ be an irreducible component of $X$ and $x\in Z$ be arbitrary point. Choose a noetherian neirhborhood $U$ of $x$. It is easy to see that the irreducible components of $U$ are exactly the intersection of that of $X$ with $U$. Since $U$ is noetherian, there are finitely many such irreducible components: say $Z=Z_1,\dots,Z_n$. Then since $Z_i\cap U$ are closed and disjoint, they are also open in $U$, hence in $X$. In particular, this means $Z$ has an open neighborhood of $x$, which means it is open.
-\end{proof}
-\subsection{Generic points}
-\section{Krull dimension}
-\subsection{Krull dimension of a topological space}
-\begin{definition}
-Let $I$ be an ordered set. A non-empty and totally ordered finite subset of $I$ is called a \textbf{chain} of $I$. Let $C$ be a chain of $I$, the smallest and the most large element of $C$ are called the \textbf{ends} of $C$. The integer $|C|-1$ is called the \textbf{length} of $C$. The relation of inclusion in the set of subsets of $I$ induces a order relation in the set of chains of $I$. A chain $C$ of $I$ is said to be \textbf{saturated} if it is maximal among the chains of $I$ having the same endpoints as $C$.
-\end{definition}
-Let $X$ be a topological space. We endow the set of irreducible closed subsets of $X$ of the order relation defined by the inclusion. When we talk about a chain of closed irreducible subsets of $X$, it will always be a chain in the sense of this order relation.
-\begin{definition}
-Let $X$ be a topological space. The \textbf{dimension} or more precisely the \textbf{Krull dimension} of $X$, denoted by $\dim(X)$, is defined to be the supremum of chains of irreducible closed subsets of $X$. We set $\dim(X)=-\infty$ when $X$ is the empty space. Let $x\in X$, the \textbf{Krull dimension of $\bm{X}$ at $\bm{x}$}, denoted by $\dim_x(X)$, is defined to be the infimum of the dimensions of the open neighborhoods of $x$.
-\end{definition}
-Note that if $X$ is Hausdorff then any irreducible closed subset of $X$ reduces to a point. The definition of the Krull dimension is therefore devoid of interest for Hausdorff spaces, but it is specially adapted to the topological spaces encountered in commutative algebra. In this part, no confusion is to be feared with other notions of dimension of topological spaces, and we will simply say "dimension" for "Krul dimension."
-\begin{proposition}\label{topo space Krull dimension prop}
-Let $X$ be a topological space.
-\begin{itemize}
-\item[(a)] Let $Y$ be a subspace of $X$, then $\dim(Y)\leq\dim(X)$ and $\dim_y(Y)\leq\dim_y(X)$ for any point $y$ of $Y$.
-\item[(b)] Let $x$ be a point of $X$ and $U$ a neighborhod of $x$. Then $\dim_x(X)=\dim_x(U)$.
-\end{itemize}
-\end{proposition}
-\begin{proof}
-Let $Y$ be a subspace of $X$. If $Z$ is an irreducible closed subset of $Y$, its closure $\widebar{Z}$ in $X$ is irreducible and $\widebar{Z}\cap Y=Z$. Thus, any chain of irreducible closed subsets of $Y$ defines, by passage to closure in $X$, a chain of irreducible closed subsets of $X$ of the same length. This implies $\dim(Y)\leq\dim(X)$. If $U$ is an open subset of $X$ containing a point $y$ of $Y$, we therefore have $\dim(U\cap Y)\leq\dim(U)$, whence $\dim_y(Y)\leq\dim_y(X)$. Now part (b) follows from (a).
-\end{proof}
-\begin{proposition}\label{topo space Krull dimension is sup of point}
-Let $X$ be a topological space. Then $\dim(X)=\sup_{x\in X}\dim_x(X)$.
-\end{proposition}
-\begin{proof}
-First we have $\dim_x(X)\leq\dim(X)$ by \cref{topo space Krull dimension prop}(a). On the other hand, if $Z_0\subset\cdots\subset Z_n$ is a chain of irreducible closed subsets and $U$ a neighborhood of $x_0$ in $X$, where $x_0\in Z_0$, then $Z_0\cap U\subset\cdots\subset Z_n\cap U$ is a chain of irreducible closed subsets of $U$ (\cref{topo space irreducible iff}). This shows $\dim_x(X)\geq n$, whence $\dim(X)\leq\sup_{x\in X}\dim_x(X)$. 
-\end{proof}
-\begin{corollary}\label{topo space Krull dimension and cover}
-Let $(X_i)_{i\in I}$ be an open cover (or a locally finite closed cover) of a topological space $X$. Then
-\[\dim(X)=\sup_{i\in I}\dim(X_i),\quad \dim_x(X)=\sup_{i\in I_x}\dim_x(X_i)\]
-where $I_x$ is the set $i\in I$ such that $x\in U_i$. 
-\end{corollary}
-\begin{proof}
-The claim is immediate when $(X_i)$ is an open cover, and we now deal with the case of a locally finite closed cover. First suppose that $I$ is finite. Let $Z_0\subset\cdots\subset Z_n$ be a chain of irreducible closed subsets of $X$. Then $Z_n=\bigcup_iZ_n\cap X_i$, and each $Z_n\cap X_i$ is closed in $Z_n$. Since $I$ is finite, we see $Z_n$ is contained in one of the $X_i$, whence $\dim(X)\leq\sup_i\dim(U_i)$, and the converse inequality follows from \cref{topo space Krull dimension prop}.\par
-Now let $x\in X$ and for each $i\in I_x$ let $U_i$ be a neighborhod of $x$ such that $\dim(U_i\cap X_i)\leq n$, where $n=\sup_{i\in I_x}\dim_x(X_i)$, and let
-\[U=\Big(\bigcap_{i\in I_x}U_i\Big)\cap\Big(\bigcap_{i\in I-I_x}X_i^c\Big).\]
-Then $U$ is open in $X$ since $I_x$ is finite, and since $(U\cap X_i)_{i\in I_x}$ is a finite closed cover of $U$, by the preceding argument we have
-\[\dim(U)=\sup_{i\in I_x}\dim(U\cap X_i)\leq\sup_{i\in I_x}\dim(U_i\cap X_i)\leq n\]
-whence $\dim_x(X)\leq n$ and the proof is finished in this case. The general case then follows from \cref{topo space Krull dimension is sup of point}.
-\end{proof}
-\begin{proposition}
-Let $\mathcal{I}$ be the set of irreducible components of $X$. Then
-\[\dim(X)=\sup_{Y\in\mathcal{I}}\dim(Y).\]
-\end{proposition}
-\begin{proof}
-It is clear that $\sup_{Y\in\mathcal{I}}\dim(Y)\leq\dim(X)$ according to \cref{topo space Krull dimension prop}. Now let $Z_0\subset\cdots\subset Z_n$ be a chain of irreducible closed subsets in $X$. Then $Z_n$ is contained in a irreducible component $Y$ of $X$, and therefore $Z_0\subset\cdots\subset Z_n$ is a chain of irreducible closed subsets in $Y$ (since $Y$ is closed), and we obtain $n\leq\sup_{Y\in\mathcal{I}}\dim(Y)$, whence the claim.
-\end{proof}
-\begin{proposition}\label{topo space irreducible proper closed dimension small}
-Let $X$ be an irreducible topological space and $Y$ a proper closed subset of $X$. Then $\dim(Y)<\dim(X)$.
-\end{proposition}
-\begin{proof}
-Since $X$ is irreducible and closed, any chain $Z_0\subset\cdots\subset Z_n$ of irreducible closed subsets of $Y$ can be extended by adding $X$ at the end, whence $\dim(Y)\leq\dim(X)+1$.
-\end{proof}
-\begin{corollary}
-If $Y$ is a closed subset of an irreducible finite-dimensional topological space $X$, and if $\dim Y=\dim X$, then $Y=X$.
-\end{corollary}
-\subsection{Codimension of a closed subset}
-Let $X$ be a topological space. For an irreducible closed subset $Z$ of $X$, the \textbf{codimension} of $Z$ in $X$ is defined to be the supremum of the lengths of the chains of closed irreducible subsets of $X$ containing $Z$. If $Y$ is a closed subset of $X$, the \textbf{codimension} of $Y$ in $X$ is defined to be the infimum of the codimensions in $X$ of the irreducible of components $Y$.\par
-The codimension of a closed subset $Y$ of $X$ is therefore the infimum of the codimensions of the irreducible closed subsets of $Y$. We have $\codim(\emp,X)=+\infty$ and, if $X$ is not empty, $\codim(X,X)=0$. Since any nonempty closed subset of $X$ contains an irreducible closed subset (for example the closure of a singleton), the codimension in $X$ of a closed subset $Y$ is always a positive integer or $+\infty$. It is zero if and only if $Y$ contains an irreducible component of $X$. Note that by definition $\codim(Y,X)\leq\dim(X)$, and $\dim(X)=\sup_Y\codim(Y,X)$ where $Y$ runs through all irreducible closed subsets of $X$. Also, if $Y'\sub Y$ are closed subsets of $X$, we have $\codim(Y,X)\leq\codim(Y,X)$.\par
-Let $Y$ be a closed subset of $X$ and $(X_\alpha)_{\alpha\in A}$ (resp. $(Y_\beta)_{\beta\in B}$) be the family of irreducible components of $X$ (resp. of $Y$). For each $\beta\in B$, let $A_\beta$ be the subset $\alpha\in A$ such that $Y_\beta\sub X_\alpha$. Then since each irreducible closed subset of $X$ is contained in one of $X_\alpha$, it follows from definition that
-\begin{align}\label{topo space codim is inf of component}
-\codim(Y,X)=\inf_{\beta\in B}\sup_{\alpha\in A_\beta}\codim(Y_\beta,X_\alpha).
-\end{align}
-In particular, if $(Y_i)_{i\in I}$ is a finite family of closed subsets of $X$ and $Y=\bigcup_iY_i$, then
-\[\codim(Y,X)=\inf_{i\in I}\codim(Y_i,X)\]
-since by \cref{topo space irreducible contained in finite union} any irreducible component of $Y$ is contained in one of the $Y_i$.
-\begin{proposition}\label{topo space codim prop}
-Let $X$ be a topological space.
-\begin{itemize}
-\item[(a)] For any closed subset $Y$ of $X$, we have
-\[\dim(Y)+\codim(Y,X)\leq\dim(X).\]  
-\item[(b)] If $Y\sub Z\sub T$ are closed subsets of $X$, then
-\[\codim(Y,Z)+\codim(Z,T)\leq\codim(Y,T).\] 
-\end{itemize}
-\end{proposition}
-\begin{proof}
-To prove (a), we may assume that $\dim(X)$ is finite, whence $\dim(Y)$ and $\codim(Y,X)$ are both finite. If $Z_0\subset\cdots\subset Z_n$ is a chain of irreducible closed subsets of $Y$ such that $n=\dim(Y)$ and $Z_n\subset\cdots\subset Z_{n+p}$ is a chain of that of $X$ such that $p\geq\codim(Y,X)$, then we get a chain $Z_0\subset\cdots\subset Z_{n+p}$ in $X$, whence $\dim(X)\geq n+p$ and part (a) follows.\par
-To prove (b), we may assume that $Y$ is irreducible. Since $\codim(Y,Z)\leq\codim(Y,T)$, the claim is true if $\codim(Y,Z)=+\infty$. Otherwise, let $Z_0$ be an irreducible component of $Z$ containing $Y$ such that $\codim(Y,Z)=\codim(Y,Z_0)$. We have $\codim(Z,T)\leq\codim(Z_0,T)$, and we see, as the proof of (a), that $\codim(Y,Z_0)+\codim(Z_0,T)\leq\codim(Y,T)$, whence (b).
-\end{proof}
-\begin{definition}
-A topological space $X$ is called \textbf{catenary} if for any pair $(Y,Z)$ of irreducible closed subsets of $X$ such that $Y\sub Z$, any saturated chain of subsets irreducible closed lines with ends $Y$ and $Z$ is of length $\codim(Y,Z)$.
-\end{definition}
-It amounts to the same thing to say that, for any pair $(Y,Z)$ of closed irreducible subsets of $X$ such that $\codim(Y,Z)$ is finite, all the saturated chains with ends $Y$ and $Z$ have the same length, and that, for any couple $(Y,Z)$ such that $\codim(Y,Z)=+\infty$, there is no saturated chain with $Y$ and $Z$ ends.\par
-Any closed subspace of a catenary space is catenary. For a space is catenary, it is necessary and sufficient that its irreducible components are catenary.
-\begin{proposition}\label{topo space catenary iff}
-Let $X$ be a topological space. For $X$ be catenary, it is necessary and sufficient that, for every triple $(Y,Z,T)$ of irreducible closed subsets of $X$ such that $Y\sub Z\sub T$, we have
-\begin{align}\label{topo space catenary iff-1}
-\codim(Y,T)=\codim(Y,Z)+\codim(Z,T).
-\end{align}
-\end{proposition}
-\begin{proof}
-Suppose $X$ is catenary. Concerning \cref{topo space codim prop}, it suffices to prove $(\ref{topo space catenary iff-1})$ when $\codim(Y,Z)$ and $\codim(Z,T)$ are finite. By putting end to end a saturated chain of irreducible closed subsets with endpoints $Y$ and $Z$ of length $\codim(Y,Z)$ and a saturated chain of irreducible closed subsets with end points $Z$ and $T$ of length $\codim(Z,T)$, we obtain a saturated chain with ends $Y$ and $T$, of length $\codim(Y,Z)+\codim(Z,T)$. As $X$ is catenary, this length is necessarily equal to $\codim(Y,T)$.\par
-Conversely, suppose that $(\ref{topo space catenary iff-1})$ holds for every triple $(Y,Z,T)$ of irreducible closed subset of $X$ such that $Y\sub Z\sub T$, and we show that $X$ is catenary. For this, we prove by induction that for every saturated chain $Z_0\subset\cdots\subset Z_n$ we have $\codim(Z_0,Z_n)=n$. For $n=0$ this is clear. Let $n>0$, and suppose the property satisfied for chains of length smaller than $n-1$. If $Z_0\subset\cdots\subset Z_n$ is a maximal of length $n$, then $Z_0\sub\cdots \sub Z_{n-1}$ is a saturated chain of length $n-1$, so $\codim(Z_0,Z_{n-1})=n-1$. Given the assumption made on $X$, we have $\codim(Z_0,Z_n)=\codim(Z_0,Z_{n-1})+\codim(Z_{n-1},Z_n)=(n-1)+1=n$.
-\end{proof}
-\begin{corollary}\label{topo space irreducible finite dim catenary iff}
-Let $X$ be an irreducible topological space of finite dimension. For $X$ to be catenary, it is necessary and sufficient that, for every pair $(Y,Z)$ of irreducible closed subsets of $X$ such that $Y\sub Z$, we have
-\[\codim(Y,Z)+\codim(Z,X)=\codim(Y,X).\]
-\end{corollary}
-\begin{proof}
-The condition is necessary by \cref{topo space catenary iff}. Conversely, suppose it is ture, and for each irreducible closed subset $Z$ of $X$ define $c(Z)=\codim(Z,X)$. Then for a triple triple $(Y,Z,T)$ of irreducible closed subsets of $X$ such that $Y\sub Z\sub T$,
-\[\codim(Y,Z)+\codim(Z,T)=c(Y)-c(Z)+c(Z)-c(T)=c(Y)-c(T)=\codim(Y,T)\]
-whence $X$ is catenary by \cref{topo space catenary iff}.
-\end{proof}
-\begin{proposition}\label{topo space maximal chain same length is catenary}
-Let $X$ be a topological space of finite dimension. Suppose that all maximal chains of closed irreducible subsets of $X$ have the same length. Then $X$ is catenary, and for any irreducible closed subset $Z$ of $X$, we have
-\[\codim(Z,X)=\dim(X)-\dim(Z).\]
-Moreover, for any pair $(Y,Z)$ of irreducible closed subsets of $X$ such that $Y\sub Z$, we have
-\[\codim(Y,Z)=\dim(Z)-\dim(Y).\]
-\end{proposition}
-\begin{proof}
-Let $Y$ and $Z$ be irreducible closed subsets of $X$ such that $Y\sub Z$. Let $Y_0\subset\cdots\subset Y_p$ be a chain such that $Y_p=Y$ and $p=\dim(Y)$, $Z_0\subset\cdots\subset Z_q$ a chain such that $Z_0=Z$ and $q=\codim(Z,X)$. Then for any saturated chain $T_0\subset\cdots\subset T_r$ with $T_0=Y$, $T_r=Z$, the chain
-\[Y_0\subset\cdots\subset Y_{p-1}\sub T_0\subset\cdots\subset T_r\sub Z_1\subset\cdots\subset Z_q\]
-is maximal with length $p+q+r$. The hypotheses on $X$ then implies $p+q+r=\dim(X)$, whence $r=\dim(X)-\dim(Y)-\codim(Z,X)$. It follows that $X$ is catenary and that, for $Y$ and $Z$ as above, we have
-\[\dim(Y)+\codim(Y,Z)=\dim(X)-\codim(Z,X).\]
-Put $Z=Y$, we see the second number is equal to $\dim(Z)$, whence the proposition.
 \end{proof}

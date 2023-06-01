@@ -3933,7 +3933,7 @@ where an element $m\in C^p(I,M)$ corresponds to an element $\check{m}$ of $C^{n-
 \[m(\alpha_1,\dots,\alpha_p)=\check{m}(\beta_1,\dots,\beta_{n-p})\]
 if $(\alpha_1,\dots,\alpha_p,\beta_1,\dots,\beta_{n-p})$ is an even permutation of $\{1,\dots,n\}$. Also note that when $I=\{1,\dots,n\}$, we can identify $C^p(I,M)$ with the set of families $m(\alpha_1,\dots,\alpha_p)$ of elements of $M$ where $\alpha_1<\cdots<\alpha_p$.
 \begin{example}\label{Koszul complex and de Rham complex for polynomial ring}
-Let $M=k[T_1,\dots,T_n]$; the Koszul complex $K(\partial/\partial T,M)$ associated with the sequence $(\partial/\partial T_1,\dots,\partial/\partial T_n)$ is then identified with the de Rham complex of $k[X_1,\dots,X_n]$ over $k$. In fact, for an element $m\in C^p(I,M)$, where $I=\{1,\dots,n\}$, we can associate a differential form
+Let $M=k[T_1,\dots,T_n]$; the Koszul complex $K(\partial/\partial T,M)$ associated with the sequence $(\partial/\partial T_1,\dots,\partial/\partial T_n)$ is then identified with the de Rham complex of $k[X_1,\dots,X_n]$ over $k$. In fact, to an element $m\in C^p(I,M)$, where $I=\{1,\dots,n\}$, we can associate a differential form
 \[\omega(m)=\sum_{\alpha_1<\cdots<\alpha_p}m(\alpha_1,\dots,\alpha_p)dx_{\alpha_1}\wedge\cdots\wedge d_{x_{\alpha_p}}.\]
 The assertion follows from the following computation
 \begin{align*}
@@ -3941,7 +3941,7 @@ d\omega(m)&=\sum_{\alpha_1<\cdots<\alpha_p}\sum_{i=1}^{n}(\partial/\partial T_i)
 &=\sum_{\alpha_1<\cdots<\alpha_{p+1}}\sum_{i=1}^{p+1}(-1)^{i+1}(\partial/\partial T_{\alpha_i})(m(\alpha_1,\dots,\widehat{\alpha_i},\dots,\alpha_{p+1}))dx_{\alpha_1}\wedge\cdots\wedge d_{x_{\alpha_p+1}}\\
 &=\omega(\partial^pm).
 \end{align*}
-which shows $\omega$ is a complex isomorphism.
+which shows $\omega$ is an isomorphism of complexes.
 \end{example}
 \subsection{Completely secant sequences}
 We now turn to the most important case, where $E$ is just the free module $A$. Let $\alpha:A\to A$ be a linear form on $A$ and $\alpha(1)=x\in A$. The complex $K(\alpha)$ is then of length $1$ and given by
