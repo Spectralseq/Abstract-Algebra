@@ -423,19 +423,19 @@ The mapping $\phi$ of $T(\g)$ onto $\gr(U(\g))$ is an algebra homomorphism mappi
 \begin{proof}
 If $s\in T^p(\g)$ and $t\in T^q(\g)$, then $\phi(s)\phi(t)=\phi(st)$ by definition of the multiplication on $\gr(U(\g))$. Hence $\phi$ is an algebra homomorphism and clearly $\phi(1)=1$. If $x,y$ are in $\g$, then $x\otimes y-y\otimes x\in T^2(\g)$ and the canonical image of this element in $U_2(\g)$ is equal to that of $[x,y]$ and therefore belongs to $U_1(\g)$. Hence $\phi(x\otimes y-y\otimes x)=0$, which proves the proposition.
 \end{proof}
-Let $S(\g)$ be the symmetric algebra of the $\K$-module $\g$ and $\tau$ the canonical homomorphism of $T(\g)$ onto $S(\g)$. Then Proposition~\ref{Lie enveloping algebra image of tensor algebra} shows that there exists a canonical homomorphism $\varpi:S(\g)\to\gr(U(\g))$ which is surjective and such that $\phi=\varpi\circ\tau$. Then we have the following commutative diagram:
+Let $\bm{S}(\g)$ be the symmetric algebra of the $\K$-module $\g$ and $\tau$ the canonical homomorphism of $T(\g)$ onto $\bm{S}(\g)$. Then Proposition~\ref{Lie enveloping algebra image of tensor algebra} shows that there exists a canonical homomorphism $\varpi:\bm{S}(\g)\to\gr(U(\g))$ which is surjective and such that $\phi=\varpi\circ\tau$. Then we have the following commutative diagram:
 \begin{equation}\label{Lie enveloping algebra maps on algebras}
 \begin{tikzcd}[row sep=10pt, column sep=10pt]
 &U_n(\g)\ar[rd,"\pi_n"]&\\
 T^n(\g)\ar[rd,swap,"\tau_n"]\ar[ru,"\psi_n"]\ar[rr,"\phi_n"]&&\gr_n(U(\g))\\
-&S^n(\g)\ar[ru,swap,"\varpi_n"]&
+&\bm{S}^n(\g)\ar[ru,swap,"\varpi_n"]&
 \end{tikzcd}
 \end{equation}
 \begin{proposition}\label{Lie enveloping algebra algebra Noe if finite dim}
 If $\K$ is Noetherian and $\g$ is a finitely generated module, then the ring $U(\g)$ is right and left Noetherian.
 \end{proposition}
 \begin{proof}
-The algebra $S(\g)$ is a finitely generated algebra over $\K$ and hence a Noetherian ring. Hence $\gr(U(\g))$, which is isomorphic to a quotient ring of $S(\g)$, is Noetherian.  Hence $U(\g)$ is right and left Noetherian (Corollary~\ref{filtration complete ring gr(A) Noe imply A Noe}).
+The algebra $\bm{S}(\g)$ is a finitely generated algebra over $\K$ and hence a Noetherian ring. Hence $\gr(U(\g))$, which is isomorphic to a quotient ring of $\bm{S}(\g)$, is Noetherian.  Hence $U(\g)$ is right and left Noetherian (Corollary~\ref{filtration complete ring gr(A) Noe imply A Noe}).
 \end{proof}
 \begin{corollary}\label{Lie algebra finite codim ideals in enveloping algebra}
 Suppose that $\K$ is a field and that $\g$ is finite-dimensional over $\K$. Let $I_1,\dots,I_r$ be right (resp. left) ideals of finite codimension in $U(\g)$. Then the product ideal $I_1\cdots I_r$ is of finite codimension.
@@ -507,19 +507,19 @@ There exists a homomorphism $\rho:\g\to\End(P)$ such that
 By Lemma~\ref{Lie algebra representation on polynomial existence} there exists a homomorphism $\sigma$ of the $\K$-module $\g\otimes_\K P$ into $P$ satisfying, for all $n$, conditions ($A_n$), ($B_n$), ($C_n$) (where $\sigma_n$ is replaced by $\sigma$). This homomorphism defines a homomorphism $\rho$ of the $\K$-module $\g$ into the $\K$-module $\End(P)$ and $\rho$ is a homomorphism because of condition ($C_n$). Finally, $\rho$ satisfies properties (a) and (b) of the lemma because of conditions ($A_n$) and ($B_n$).
 \end{proof}
 \begin{lemma}\label{Lie enveloping algebra zero in U_n}
-Let $\tilde{s}$ be a tensor in $T_n(\g)$ that is mapped to zero in $U_n(\g)$. Then the homogeneous component $t_n$ of $\tilde{s}$ of order $n$ is in the kernel of the canonical homomorphism $T(\g)\to S(\g)$.
+Let $\tilde{s}$ be a tensor in $T_n(\g)$ that is mapped to zero in $U_n(\g)$. Then the homogeneous component $t_n$ of $\tilde{s}$ of order $n$ is in the kernel of the canonical homomorphism $T(\g)\to \bm{S}(\g)$.
 \end{lemma}
 \begin{proof}
-We write $t_n$ in the form $t_n=\sum_{i=1}^{r}x_{I_i}$, where the $I_i$ are sequences of $n$ elements of $\Lambda$. The mapping $\rho$ extends to a homomorphism of the algebra $T(\g)$ into the algebra $\End(P)$ (which we shall also denote by $\rho$). By Lemma~\ref{Lie algebra representation on polynomial prop}, $\rho(t)$ is a polynomial whose terms of highest degree are $\sum_{i=1}^{r}z_{I_i}$. Since $\tilde{s}$ is mapped to zero in $U_n(\g)$, $\rho(t)=0$ and hence $\sum_{i=1}^{r}z_{I_i}=0$ in $P$. Now $P$ is canonically identified with $S(\g)$, since $\g$ has basis $(x_\lambda)$. Hence the canonical image of $t_n$ in $S(\g)$ is zero.
+We write $t_n$ in the form $t_n=\sum_{i=1}^{r}x_{I_i}$, where the $I_i$ are sequences of $n$ elements of $\Lambda$. The mapping $\rho$ extends to a homomorphism of the algebra $T(\g)$ into the algebra $\End(P)$ (which we shall also denote by $\rho$). By Lemma~\ref{Lie algebra representation on polynomial prop}, $\rho(t)$ is a polynomial whose terms of highest degree are $\sum_{i=1}^{r}z_{I_i}$. Since $\tilde{s}$ is mapped to zero in $U_n(\g)$, $\rho(t)=0$ and hence $\sum_{i=1}^{r}z_{I_i}=0$ in $P$. Now $P$ is canonically identified with $\bm{S}(\g)$, since $\g$ has basis $(x_\lambda)$. Hence the canonical image of $t_n$ in $\bm{S}(\g)$ is zero.
 \end{proof}
 \begin{theorem}[\textbf{Poincar\'e-Birkhoff-Witt Theorem}]
-Let $\g$ be a Lie $\K$-algebra, $U(\g)$ its enveloping algebra, $\gr(U(\g))$ the graded algebra associated with the filtered algebra $U(\g)$ and $S(\g)$ the symmetric algebra of the $\K$-module $\g$. If $\g$ is a free $\K$-module, the canonical homomorphism $S(\g)\to\gr(U(\g))$ is an isomorphism.
+Let $\g$ be a Lie $\K$-algebra, $U(\g)$ its enveloping algebra, $\gr(U(\g))$ the graded algebra associated with the filtered algebra $U(\g)$ and $\bm{S}(\g)$ the symmetric algebra of the $\K$-module $\g$. If $\g$ is a free $\K$-module, the canonical homomorphism $\bm{S}(\g)\to\gr(U(\g))$ is an isomorphism.
 \end{theorem}
 \begin{proof}
-It is necessary to prove that the canonical homomorphism of $S(\g)$ onto $\gr(U(\g))$ is injective. In other words, in the notations of $(\ref{Lie enveloping algebra maps on algebras})$, it is necessary to show that the condition $\psi(t)\in U_{n-1}(\g)$ implies $\tau(t)=0$. Now $\psi(t)\in U_{n-1}(\g)$ means that there exists a tensor $s\in T_{n-1}(\g)$ such that $t-s$ is mapped to zero in $U_n(\g)$. The tensor $t-s$ admits $\tilde{s}$ as homogeneous component of order $n$ and hence $\tilde{s}$ is zero in $S(\g)$ by Lemma~\ref{Lie enveloping algebra zero in U_n}.
+It is necessary to prove that the canonical homomorphism of $\bm{S}(\g)$ onto $\gr(U(\g))$ is injective. In other words, in the notations of $(\ref{Lie enveloping algebra maps on algebras})$, it is necessary to show that the condition $\psi(t)\in U_{n-1}(\g)$ implies $\tau(t)=0$. Now $\psi(t)\in U_{n-1}(\g)$ means that there exists a tensor $s\in T_{n-1}(\g)$ such that $t-s$ is mapped to zero in $U_n(\g)$. The tensor $t-s$ admits $\tilde{s}$ as homogeneous component of order $n$ and hence $\tilde{s}$ is zero in $\bm{S}(\g)$ by Lemma~\ref{Lie enveloping algebra zero in U_n}.
 \end{proof}
 \begin{corollary}\label{Lie enveloping algebra submodule of T^n mapped to S^n prop}
-Suppose that $\g$ is a free $\K$-module. Let $W$ be a sub-$\K$-module of $T^n(\g)$. If in the notation of diagram $(\ref{Lie enveloping algebra maps on algebras})$, the restriction of $\tau_n$ to $W$ is an isomorphism of $W$ onto $S^n(\g)$, then the restriction of $\psi_n$ to $W$ is an isomorphism of $W$ onto a supplement of $U_{n-1}(\g)$ in $U_n(\g)$.
+Suppose that $\g$ is a free $\K$-module. Let $W$ be a sub-$\K$-module of $T^n(\g)$. If in the notation of diagram $(\ref{Lie enveloping algebra maps on algebras})$, the restriction of $\tau_n$ to $W$ is an isomorphism of $W$ onto $\bm{S}^n(\g)$, then the restriction of $\psi_n$ to $W$ is an isomorphism of $W$ onto a supplement of $U_{n-1}(\g)$ in $U_n(\g)$.
 \end{corollary}
 \begin{proof}
 The restriction to $W$ of $\varpi_n\circ\tau_n$ is a bijection of $W$ onto $\gr_n(U(\g))$; so is the restriction $\theta_n\circ\psi_n$ to $W$. Hence the corollary.
@@ -539,21 +539,21 @@ Let $\Lambda_n$ be the set of increasing sequences of $n$ elements of $\Lambda$.
 \end{proof}
 \begin{corollary}\label{Lie algebra image of S^n in enveloping algebra}
 Let $\tilde{S}^n(\g)\sub T^n(\g)$ be the set of homogeneous symmetric tensors of order $n$. Suppose that $\K$ is a field of characteristic $0$. Then the composite mapping of the canonical mappings
-\[S^n(\g)\to \tilde{S}^n(\g)\to U_n(\g)\]
-is an isomorphism of the vector space $S^n(\g)$ onto a supplement of $U_{n-1}(\g)$ in $U_n(\g)$.
+\[\bm{S}^n(\g)\to \tilde{S}^n(\g)\to U_n(\g)\]
+is an isomorphism of the vector space $\bm{S}^n(\g)$ onto a supplement of $U_{n-1}(\g)$ in $U_n(\g)$.
 \end{corollary}
 \begin{proof}
 This follows from Corollary~\ref{Lie enveloping algebra submodule of T^n mapped to S^n prop} by taking $W=\tilde{S}^n(\g)$. 
 \end{proof}
-Suppose henceforth that $\K$ is a field of characteristic $0$. Let $\eta_n$ be the mapping of $S^n(\g)$ into $U_n(\g)$ just defined. Let $U^n(\g)=\eta_n(S^n(\g))$. The vector space $U(\g)$ is then the direct sum of the $U^n(\g)$. The $\eta_n$ define an isomorphism $\eta$ of the vector space $S(\g)=\bigoplus_nS^n(\g)$ onto the vector space $U(\g)=\bigoplus_nU^n(\g)$, called the \textbf{canonical isomorphism} of $S(\g)$ onto $U(\g)$; this is not an algebra isomorphism. We have the commutative diagram
+Suppose henceforth that $\K$ is a field of characteristic $0$. Let $\eta_n$ be the mapping of $\bm{S}^n(\g)$ into $U_n(\g)$ just defined. Let $U^n(\g)=\eta_n(\bm{S}^n(\g))$. The vector space $U(\g)$ is then the direct sum of the $U^n(\g)$. The $\eta_n$ define an isomorphism $\eta$ of the vector space $\bm{S}(\g)=\bigoplus_n\bm{S}^n(\g)$ onto the vector space $U(\g)=\bigoplus_nU^n(\g)$, called the \textbf{canonical isomorphism} of $\bm{S}(\g)$ onto $U(\g)$; this is not an algebra isomorphism. We have the commutative diagram
 \begin{equation}\label{Lie enveloping algebra isomorphisms}
 \begin{tikzcd}[row sep=10pt, column sep=10pt]
 &U^n(\g)\ar[rd,"\pi_n"]&\\
 \tilde{S}^n(\g)\ar[rd,swap,"\tau_n"]\ar[ru,"\psi_n"]&&\gr_n(U(\g))\\
-&S^n(\g)\ar[ru,swap,"\varpi_n"]\ar[uu,"\eta_n"]&
+&\bm{S}^n(\g)\ar[ru,swap,"\varpi_n"]\ar[uu,"\eta_n"]&
 \end{tikzcd}
 \end{equation}
-where each arrow represents a vector space isomorphism. If $x_1,\dots,x_n$ are in $\g$, then $\eta_n$ maps the product $x_1x_2\cdots x_n$, calculated in $S(\g)$, to the element
+where each arrow represents a vector space isomorphism. If $x_1,\dots,x_n$ are in $\g$, then $\eta_n$ maps the product $x_1x_2\cdots x_n$, calculated in $\bm{S}(\g)$, to the element
 \[\frac{1}{n!}\sum_{\sigma\in\mathfrak{S}_n}x_{\sigma(1)}\cdots x_{\sigma(n)}\]
 calculated in $U(\g)$.
 \begin{corollary}\label{Lie enveloping algebra integral if}
@@ -635,7 +635,7 @@ Finally, let $x\in\g$. Let $\ad_U(\iota(x))$ be the inner derivation $y\mapsto\i
 whence $\ad_U(\iota(x))\circ\iota=\iota\circ\ad_\g(x)$. This completes the proof.
 \end{proof}
 Applying Proposition~\ref{Lie enveloping algebra derivation prop} to the case of an abelian Lie algebra, it is seen that every endomorphism $u$ of a $\K$-module can be extended uniquely to a derivation of the symmetric algebra of this module; this derivation is derived on passing to the quotient from the derivation of the tensor algebra which extends $u$.\par
-We again take a Lie algebra $\g$ over $\K$ and let $D$ be a derivation of $\g$. Let $D_T$, $D_S$ be the derivations of $T(\g)$, $S(\g)$ which extend $D$ and let $D_U$ be the unique derivation of $U(\g)$ such that $\iota\circ D=D_U\circ\iota$. Since $D_U$ leaves the $U_n(\g)$ stable, $D_U$ defines on taking quotients a derivation $D_G$ of $\gr(U(\g))$. Also, the commutative diagram (\ref{Lie enveloping algebra maps on algebras}) proves that $D_G$ can also be derived from $D_S$ by the homomorphism $\varpi_n$. If further $\K$ is a field of characteristic $0$, the isomorphisms of diagram (\ref{Lie enveloping algebra isomorphisms}) map one into another the restrictions of $D_T$, $D_S$, $D_U$, $D_G$ to $\tilde{S}^n(\g)$, $S^n(\g)$, $U^n(\g)$, $\gr_n(U(\g))$. Hence the canonical isomorphism of $S(\g)$ onto $U(\g)$ maps $D_S$ to $D_U$. This proves, in particular, that \textit{the canonical isomorphism $\eta:S(\g)\to U(\g)$ is in fact an isomorphism of $\g$-modules}.
+We again take a Lie algebra $\g$ over $\K$ and let $D$ be a derivation of $\g$. Let $D_T$, $D_S$ be the derivations of $T(\g)$, $\bm{S}(\g)$ which extend $D$ and let $D_U$ be the unique derivation of $U(\g)$ such that $\iota\circ D=D_U\circ\iota$. Since $D_U$ leaves the $U_n(\g)$ stable, $D_U$ defines on taking quotients a derivation $D_G$ of $\gr(U(\g))$. Also, the commutative diagram (\ref{Lie enveloping algebra maps on algebras}) proves that $D_G$ can also be derived from $D_S$ by the homomorphism $\varpi_n$. If further $\K$ is a field of characteristic $0$, the isomorphisms of diagram (\ref{Lie enveloping algebra isomorphisms}) map one into another the restrictions of $D_T$, $D_S$, $D_U$, $D_G$ to $\tilde{S}^n(\g)$, $\bm{S}^n(\g)$, $U^n(\g)$, $\gr_n(U(\g))$. Hence the canonical isomorphism of $\bm{S}(\g)$ onto $U(\g)$ maps $D_S$ to $D_U$. This proves, in particular, that \textit{the canonical isomorphism $\eta:\bm{S}(\g)\to U(\g)$ is in fact an isomorphism of $\g$-modules}.
 \section{Representations of Lie algebras}
 \subsection{Representations}
 Let $\g$ be a Lie algebra over $\K$ and $M$ a $\K$-module. A homomorphism of $\g$ into the Lie Algebra $\gl(M)$ is called a \textbf{representation} of $\g$ on the module $M$. An injective representation is called faithful. If $\K$ is a field, the dimension (finite or infinite) of $M$ over $\K$ is called the \textbf{dimension} of the representation. The representation $x\mapsto\ad(x)$ of $\g$ on the $\K$-module $\g$ is called the \textbf{adjoint representation} of $\g$. If $M$ is a $\g$-module and $x\in\g$, we denote by $x_M$ the homothety of $M$ defined by $x$.
@@ -692,8 +692,8 @@ for all $x\in\g$, $x_i\in M_i$.
 \end{proposition}
 The corresponding representation is called the tensor product of the given
 representations of $\g$ on the $M_i$. In particular, if $M$ is a $\g$-module, we have a $\g$-module structure on each $M_n=\bigotimes^nM$ and hence on the tensor algebra $T(M)$ of $M$.\par
-Note that formula $(\ref{Lie algebra tensor product of modules-1})$ shows that, for all $x\in\g$, $x_T$ is the unique derivation of the algebra $T(M)$ which extends $x_M$. We know that $x_T$ defines on passing to the quotient a derivation of the symmetric algebra $S(M)$ of $M$. Hence $S(M)$ can be considered as a quotient $\g$-module of $T(M)$ and the $x_S$ are derivations of $S(M)$.\par
-Still more particularly, consider $\g$ as a $\g$-module by means of the adjoint representation of $\g$. Let $U(\g)$ be the enveloping algebra of $\g$. By Proposition~\ref{Lie enveloping algebra derivation prop}, $x_M$ defines on passing to the quotients a derivation of $U$ which is just the inner derivation defined by $\iota(x)$ ($\iota$ denoting the canonical mapping of $\g$ into $U(\g)$). Then $U(\g)$ can be considered as a quotient $\g$-module of $T(\g)$. If $\K$ is a field of characteristic $0$, the canonical isomorphism of $S(\g)$ onto $U(\g)$ is a $\g$-module isomorphism.
+Note that formula $(\ref{Lie algebra tensor product of modules-1})$ shows that, for all $x\in\g$, $x_T$ is the unique derivation of the algebra $T(M)$ which extends $x_M$. We know that $x_T$ defines on passing to the quotient a derivation of the symmetric algebra $\bm{S}(M)$ of $M$. Hence $\bm{S}(M)$ can be considered as a quotient $\g$-module of $T(M)$ and the $x_S$ are derivations of $\bm{S}(M)$.\par
+Still more particularly, consider $\g$ as a $\g$-module by means of the adjoint representation of $\g$. Let $U(\g)$ be the enveloping algebra of $\g$. By Proposition~\ref{Lie enveloping algebra derivation prop}, $x_M$ defines on passing to the quotients a derivation of $U$ which is just the inner derivation defined by $\iota(x)$ ($\iota$ denoting the canonical mapping of $\g$ into $U(\g)$). Then $U(\g)$ can be considered as a quotient $\g$-module of $T(\g)$. If $\K$ is a field of characteristic $0$, the canonical isomorphism of $\bm{S}(\g)$ onto $U(\g)$ is a $\g$-module isomorphism.
 \subsection{Representation on homomorphism modules}
 Again let $\g_1$ and $\g_2$ be two Lie algebras over $\K$ and $M_i$ a $\g_i$-module. Let $U(\g_i)$ be the enveloping algebra of $\g_i$ and $\iota_i$ the canonical mapping of $\g_i$ into $U(\g_i)$. Then $M_i$ is a left $U(\g_i)$-module and hence $\Hom_\K(M_1,M_2)$ has a canonical left $U(\g_1)^{op}\otimes_\K U(\g_2)$-module structure. Now $U(\g_1)^{op}\otimes_\K U(\g_2)$ is the enveloping algebra of $\g_1^{op}\times \g_2$ and the mapping
 \[(x_1,x_2)\mapsto\iota_1(x_1)\otimes 1+1\otimes\iota_2(x_2)\]
@@ -1596,7 +1596,7 @@ Let $\g$ be a Lie algebra and $\rho$ and $\tau$ two finite-dimensional semi-simp
 The $\g$-module $\End_\K(M,N)$ is canonically identified with the $\g$-module $M^*\otimes_\K N$ (Proposition~\ref{Lie algebra rep tensor and endo isomorphism}), so the claim follows from Corollary~\ref{Lie algebra semi-simple rep tensor product}.
 \end{proof}
 \begin{corollary}\label{Lie algebra semi-simple rep on tensor and symmetric power}
-Let $\g$ be a Lie algebra, $\rho$ a semi-simple representation of $\g$ on a finite-dimensional vector space $V$, $T(V)$ and $S(V)$ the tensor and symmetric algebras of $V$ and $\rho_T$, $\rho_S$ the representations of $\g$ on $T(V)$ and $S(V)$ canonically derived from $\rho$. Then $\rho_T$ and $\rho_S$ are semi-simple and, more precisely, direct sums of finite-dimensional simple representations.
+Let $\g$ be a Lie algebra, $\rho$ a semi-simple representation of $\g$ on a finite-dimensional vector space $V$, $T(V)$ and $\bm{S}(V)$ the tensor and symmetric algebras of $V$ and $\rho_T$, $\rho_S$ the representations of $\g$ on $T(V)$ and $\bm{S}(V)$ canonically derived from $\rho$. Then $\rho_T$ and $\rho_S$ are semi-simple and, more precisely, direct sums of finite-dimensional simple representations.
 \end{corollary}
 \begin{proof}
 Let $T^n(V)$ be the subspace of $T$ consisting of the homogeneous tensors of order $n$. This subspace is stable under $\rho_T$ and the representation defined by $\rho_T$ on $T^n(V)$ is semi-simple by Corollary~\ref{Lie algebra semi-simple rep tensor product}. Hence the corollary for $\rho_T$ and therefore for $\rho_S$, which is a quotient representation of $\rho_T$.
@@ -1765,7 +1765,7 @@ Suppose further that $(N,\sigma)$ and $(P,\tau)$ are semi-simple. For all $n\in 
 By linearity it suffices to consider the case where $n\in N_\delta$. If $\delta\neq\delta_0$, $n^\sharp=0$ and $(m,n)\in P_\delta$ by Lemma~\ref{Lie algebra invariant subspace under bilinear form}, hence $(m,n)^\sharp)=0=(m,n^\sharp)$. If $\delta=\delta_0$, $n^\sharp=n$ and $(m,n)\in P_0$ (Lemma~\ref{Lie algebra invariant subspace under bilinear form}), hence $(m,n)^\sharp=(m,n)=(m,n^\sharp)$.
 \end{proof}
 \begin{theorem}\label{Lie algebra invariant on symmetric algebra prop}
-Let $\g$ be a Lie algebra, $V$ a semi-simple $\g$-module of finite dimension over $\K$, $S=S(V)$ the symmetric algebra of $V$ and $x_S$ the derivation of $S$ which extends $s_V$ (so that $x\mapsto x_S$ is a representation of $\g$ on $S$).
+Let $\g$ be a Lie algebra, $V$ a semi-simple $\g$-module of finite dimension over $\K$, $S=\bm{S}(V)$ the symmetric algebra of $V$ and $x_S$ the derivation of $S$ which extends $s_V$ (so that $x\mapsto x_S$ is a representation of $\g$ on $S$).
 \begin{itemize}
 \item[(a)] The algebra $S_0$ of invariants of $S$ is generated by a finite number of elements.
 \item[(b)] For every class $\delta$ of simple representations of $\g$ of finite dimension over $\K$, let $S_\delta$ be the isotypical component of $S$ of species $\delta$. Then $S_\delta$ is a finitely generated $S_0$- module.
@@ -1983,7 +1983,7 @@ The elements of $E_1^+$ are primitive.
 If $x\in E_1^+$, then $c^+(x)=0$ by (\ref{bigebra filtered filtration and c^+ map prop-1}), so $x$ is primitive.
 \end{proof}
 \begin{example}
-Let $M$ be a $\K$-module and $E=T(M)$ (resp. $S(M)$ or $\bigw(M)$) be its tensor algebra (resp. symmetric or exterior). Then the elements of degree $1$ are primitive elements of $E$, which justifies Corollary~\ref{bigebra filtered E1^+ is primitive}. The converse is also true, for example, if $\K$ is a field of characteristic zero. 
+Let $M$ be a $\K$-module and $E=T(M)$ (resp. $\bm{S}(M)$ or $\bigw(M)$) be its tensor algebra (resp. symmetric or exterior). Then the elements of degree $1$ are primitive elements of $E$, which justifies Corollary~\ref{bigebra filtered E1^+ is primitive}. The converse is also true, for example, if $\K$ is a field of characteristic zero. 
 \end{example}
 \subsection{Enveloping bigebra of a Lie algebra}
 Recall that $\g$ denotes a Lie algebra and $U$ its enveloping algebra, with its canonical filtration $(U_n)_{n\geq 0}$. We now define a coproduct $c$ on $U$ such that $U$, with the filtration $(U_n)$, becomes a filtered bigebra. The bigebra $(U,c)$ will be called the \textbf{enveloping bigebra} of $\g$.
@@ -2024,24 +2024,24 @@ It follows from Propositions~\ref{Lie algebra enveloping is universal bigebra} t
 Let $\g_i$ be a Lie algebra, $U(\g_i)$ its enveloping bigebra and $\iota_i:\g_i\to U(\g_i)$ the canonical map ($i=1,2$). For every Lie algebra homomorphism $\varphi:\g_1\to\g_2$, the unital algebra homomorphism $U(\varphi):U(\g_1)\to U(\g_2)$ such that $U(\varphi)\circ\iota_1=\iota_2\circ\varphi$ is a bigebra morphism.
 \end{corollary}
 \subsection{Structure of the cogebra \boldmath\texorpdfstring{$U(\g)$}{Ug} in characteristic \boldmath\texorpdfstring{$0$}{0}}
-We now explore the structure of the bigebra $U(\g)$, for which we will from now on assume that $\K$ is \textit{a field of characteristic $0$}. Let $S(\g)$ be the symmetric algebra of the vector space $\g$, $c_S$ its coproduct and $\eta$ the canonical isomorphism of $S(\g)$ onto the vector space $U$. Recall that if $x_1,\dots,x_n$ are in $\g$, then
+We now explore the structure of the bigebra $U(\g)$, for which we will from now on assume that $\K$ is \textit{a field of characteristic $0$}. Let $\bm{S}(\g)$ be the symmetric algebra of the vector space $\g$, $c_{\bm{S}}$ its coproduct and $\eta$ the canonical isomorphism of $\bm{S}(\g)$ onto the vector space $U$. Recall that if $x_1,\dots,x_n$ are in $\g$, then
 \begin{align}\label{Lie algebra S and U isomorphism formula}
 \eta(x_1\cdots x_n)=\frac{1}{n!}\sum_{\sigma\in\mathfrak{S}_n}\iota(x_{\sigma(1)})\cdots\iota(x_{\sigma(n)}).
 \end{align}
 In particular, for $x\in\g$ and $n\geq 0$, we have
 \[\eta(x^n)=\iota(x)^n.\]
-Note that by Remark~\ref{}, $\eta$ is the unique linear map of $S(\g)$ into $U$ satisfying condition (\ref{Lie algebra S and U isomorphism formula}).
+Note that by Remark~\ref{}, $\eta$ is the unique linear map of $\bm{S}(\g)$ into $U$ satisfying condition (\ref{Lie algebra S and U isomorphism formula}).
 \begin{proposition}\label{Lie algebra enveloping cogebra isomorphic to S}
 For every integer $n\in\N$, let $U^n$ be the vector subspace of $U$ generated by the $\iota(x)^n$ for $x\in\g$.
 \begin{itemize}
 \item[(a)] The sequence $(U^n)_{n\geq 0}$ is a graduation of the vector space $U$ compatible with its cogebra structure.
-\item[(b)] The canonical map $\eta:S(\g)\to U$ is an isomorphism of graded cogebras. 
+\item[(b)] The canonical map $\eta:\bm{S}(\g)\to U$ is an isomorphism of graded cogebras. 
 \end{itemize}
 The graduation $(U^n)_{n\geq 0}$ of $U$ is called the \textbf{canonical graduation}.
 \end{proposition}
 \begin{proof}
-Let $x\in\g$ and $n\in\N$. Then since $c_S$ is an algebra homomorphism,
-\[c_S(x^n)=c_S(x)^n=(x\otimes 1+1\otimes x)^n=\sum_{i=0}^{n}\binom{n}{i}x^i\otimes x^{n-i}.\]
+Let $x\in\g$ and $n\in\N$. Then since $c_{\bm{S}}$ is an algebra homomorphism,
+\[c_{\bm{S}}(x^n)=c_{\bm{S}}(x)^n=(x\otimes 1+1\otimes x)^n=\sum_{i=0}^{n}\binom{n}{i}x^i\otimes x^{n-i}.\]
 Similarly, by (\ref{Lie algebra S and U isomorphism formula}),
 \begin{equation}\label{Lie algebra enveloping cogebra isomorphic to S-1}
 \begin{aligned}
@@ -2050,8 +2050,8 @@ c(\eta(x^n))&=c(\iota(x)^n)=c(\iota(x))^n=(\iota(x)\otimes 1+1\otimes\iota(x))^n
 \end{aligned}
 \end{equation}
 whence
-\[(\eta\otimes\eta)(c_S(x^n))=c(\eta(x^n)).\]
-As the $x^n$, for $x\in\g$ and $n\in\N$, generate the vector space $S(\g)$, $(\eta\otimes\eta)\circ c_S=c\circ\eta$ and $\eta$ is a cogebra isomorphism. On the other hand, formula (\ref{Lie algebra S and U isomorphism formula}) shows that $\eta(S^n(\g))=U^n$, which completes the proof of (a) and (b) taking account of the fact that the graduation of $S(\g)$ is compatible with its cogebra structure.
+\[(\eta\otimes\eta)(c_{\bm{S}}(x^n))=c(\eta(x^n)).\]
+As the $x^n$, for $x\in\g$ and $n\in\N$, generate the vector space $\bm{S}(\g)$, $(\eta\otimes\eta)\circ c_{\bm{S}}=c\circ\eta$ and $\eta$ is a cogebra isomorphism. On the other hand, formula (\ref{Lie algebra S and U isomorphism formula}) shows that $\eta(\bm{S}^n(\g))=U^n$, which completes the proof of (a) and (b) taking account of the fact that the graduation of $\bm{S}(\g)$ is compatible with its cogebra structure.
 \end{proof}
 \begin{corollary}\label{Lie algebra primitive element in envoloping isomorphism}
 The canonical map $\iota$ defines an isomorphism of $\g$ onto the Lie algebra $P(U)$ of primitive elements of $U$.
@@ -2064,11 +2064,11 @@ It suffices to prove that if $n>1$ and $a\in U^n$ is primitive, then $a=0$. Now 
 which proves the claim.
 \end{proof}
 \begin{example}
-Let $V$ be a vector space. The primitive elements of the bigebra $S(V)$ are the elements of degree $1$, as we have already seen. This also follows from Corollary~\ref{Lie algebra primitive element in envoloping isomorphism} applied to the commutative Lie algebra $V$.
+Let $V$ be a vector space. The primitive elements of the bigebra $\bm{S}(V)$ are the elements of degree $1$, as we have already seen. This also follows from Corollary~\ref{Lie algebra primitive element in envoloping isomorphism} applied to the commutative Lie algebra $V$.
 \end{example}
 \begin{remark}
-The map $\eta$ is the unique morphism of graded cogebras of $S(\g)$ into $U$ such that $\eta(1)=1$ and $\eta(x)=\iota(x)$ for $x\in\g$. For if $\tilde{\eta}$ is a morphism satisfying these conditions, we can prove by induction on $n$ that $\tilde{\eta}(x^n)=\eta(x^n)$ for $x\in\g$ and $n>1$. To this end, assume the hypothesis for degree smaller than $n$; as $c_S^+(x^n)=\sum_{i=1}^{n-1}\binom{n}{i}x^i\otimes x^{n-i}$, by the induction hypothesis we have
-\[(\eta\otimes\eta)(c_S^+(x^n))=(\tilde{\eta}\otimes\tilde{\eta})(c_S^+(x^n)).\]
+The map $\eta$ is the unique morphism of graded cogebras of $\bm{S}(\g)$ into $U$ such that $\eta(1)=1$ and $\eta(x)=\iota(x)$ for $x\in\g$. For if $\tilde{\eta}$ is a morphism satisfying these conditions, we can prove by induction on $n$ that $\tilde{\eta}(x^n)=\eta(x^n)$ for $x\in\g$ and $n>1$. To this end, assume the hypothesis for degree smaller than $n$; as $c_{\bm{S}}^+(x^n)=\sum_{i=1}^{n-1}\binom{n}{i}x^i\otimes x^{n-i}$, by the induction hypothesis we have
+\[(\eta\otimes\eta)(c_{\bm{S}}^+(x^n))=(\tilde{\eta}\otimes\tilde{\eta})(c_{\bm{S}}^+(x^n)).\]
 It then follows that $c^+(\eta(x^n))=c^+(\tilde{\eta}(x^n))$, so $\eta(x^n)-\tilde{\eta}(x^n)$ is a primitive element of degree $n$ and hence is zero (Corollary to Proposition~\ref{Lie algebra primitive element in envoloping isomorphism}).
 \end{remark}
 Let $(e_i)_{i\in I}$ be a basis of the vector $\K$-space $\g$, where the indexing set $I$ is totally ordered. For all $\alpha\in\N^{\oplus I}$, we write
@@ -2117,13 +2117,13 @@ Let $c_E$ (resp. $\eps_E$) be the coproduct (resp. counit) of $E$. we write $\g=
 c_E(X_\alpha)=\sum_{\beta+\gamma=\alpha}X_\beta\otimes X_\gamma\for \alpha\in\N^{\oplus I}
 \end{align}
 
-We show that $\phi_E$ is injective. In fact, we will show that, if $\phi:S(\g)\to E$ is a cogebra morphism that is injective on $S^0(\g)+S^1(\g)$, then $\phi$ is injective. To prove this, let $n\geq 0$; we write $S_n=\sum_{i\leq n}S^i(\g)$ and $c_S$ for the coproduct of $S(\g)$ and show by induction on $n$ that $\phi|_{S_n}$ is injective. Since the assertion is trivial for $n=0$ and $n=1$, we assume that $n\geq 2$ and let $u\in S_n$ be such that $\phi(u)=0$. Then
+We show that $\phi_E$ is injective. In fact, we will show that, if $\phi:\bm{S}(\g)\to E$ is a cogebra morphism that is injective on $\bm{S}^0(\g)+\bm{S}^1(\g)$, then $\phi$ is injective. To prove this, let $n\geq 0$; we write $\bm{S}_n(\g)=\sum_{i\leq n}\bm{S}^i(\g)$ and $c_{\bm{S}}$ for the coproduct of $\bm{S}(\g)$ and show by induction on $n$ that $\phi|_{\bm{S}_n(\g)}$ is injective. Since the assertion is trivial for $n=0$ and $n=1$, we assume that $n\geq 2$ and let $u\in \bm{S}_n(\g)$ be such that $\phi(u)=0$. Then
 \begin{align*}
-0=c_E(\phi(u))&=(\phi\otimes\phi)(c_S(u))\\
-&=\phi(u)\otimes 1+1\otimes\phi(u)+(\phi\otimes\phi)(c^+_S(u))\\
-&=(\phi\otimes\phi)(c_S^+(u)).
+0=c_E(\phi(u))&=(\phi\otimes\phi)(c_{\bm{S}}(u))\\
+&=\phi(u)\otimes 1+1\otimes\phi(u)+(\phi\otimes\phi)(c^+_{\bm{S}}(u))\\
+&=(\phi\otimes\phi)(c_{\bm{S}}^+(u)).
 \end{align*}
-As $c_S^+(u)\in S_{n-1}\otimes S_{n-1}$,  the induction hypothesis shows that $u$ is a primitive element of $S(V)$, hence is of degree $1$ and hence is zero, since $\phi|_{S^1(V)}$ is injective. Now since $U(\g)$ is isomorphic to $S(\g)$ as cogebras and $\phi_E|_{S^1(\g)}$ is identified with the canonical inclusion from $P(E)$ to $E$, we see the first assertion follows. In particular, the family $(X_\alpha)$ is free.\par
+As $c_{\bm{S}}^+(u)\in \bm{S}_{n-1}(\g)\otimes \bm{S}_{n-1}(\g)$,  the induction hypothesis shows that $u$ is a primitive element of $\bm{S}(V)$, hence is of degree $1$ and hence is zero, since $\phi|_{\bm{S}^1(V)}$ is injective. Now since $U(\g)$ is isomorphic to $\bm{S}(\g)$ as cogebras and $\phi_E|_{\bm{S}^1(\g)}$ is identified with the canonical inclusion from $P(E)$ to $E$, we see the first assertion follows. In particular, the family $(X_\alpha)$ is free.\par
 We show that $\phi_E$ is surjective if $E$ has a filtration compatible with its bigebra structure. Let $(E_n)_{n\geq 0}$ be such a filtration and write $E_n^+=E_n\cap\ker(\eps_E)$. We show by induction on $n$ that $E_n^+$ is contained in the image of $\phi_E$. As $E=\K\cdot 1+\bigcup_{n\geq 0}E_n^+$, this will imply the surjectivity of $\phi_E$. The assertion is trivial for $n=0$ and follows from Corollary~\ref{bigebra filtered E1^+ is primitive} if $n=1$; suppose henceforth that $n\geq 2$ and let $x\in E_n^+$. By Proposition~\ref{bigebra filtered filtration and c^+ map prop},
 \[c_E^+(x)\in\sum_{i=1}^{n-1}E_i^+\otimes E_{n-i}^+\]
 and by the induction hypothesis there exist scalars $\lambda_{\alpha,\beta}$, where $\alpha,\beta$ are in $\N^{\oplus I}$, which are zero except for a finite number, such that
@@ -2354,7 +2354,7 @@ Let $X$ be a set and $n\geq 0$ an integer.
 \end{itemize}
 \end{proposition}
 \begin{proof}
-We apply Proposition~\ref{Lie algebra iterated bracket prop} with $\g=L(X)$ and $P=L^1(X)$. By induction on $n$, we deduce from (\ref{Lie algebra free total graduation-1}) and (\ref{Lie algebra iterated bracket prop-1}) the equality $P_n=L^n(X)$. The desired relation in (a) is equivalent to the definition $[P,P_n]=P_{n+1}$. Part (b) then follows from (a) by induction on $n$.\par
+We apply Proposition~\ref{Lie algebra iterated bracket prop} with $\g=L(X)$ and $P=L^1(X)$. By induction on $n$, we deduce from (\ref{Lie algebra free total graduation-1}) and (\ref{Lie algebra iterated bracket prop-1}) the equality $P_n=L^n(X)$. The desired relation in (a) is equivalent to the definition $[P,P_n]=P_{n+1}$. Assertion (b) then follows from (a) by induction on $n$.\par
 Let $\g=L(X)$ and $\g_n=\sum_{p\geq n}L^p(X)$. Then $\g=\g_0$ and formula (\ref{Lie algebra free total graduation-2}) implies $[\g_n,\g_m]\sub\g_{n+m}$ and in particular $[\g,\g_n]\sub\g_{n+1}$. By induction on $n$, $C^n(\g)\sub\g_n$. On the other hand, from (a) we deduce that $L^{n}(X)\sub\g_n$ by induction on $n$. As $C^n(\g)$ is an ideal of $\g$, the relation $L^p(X)\sub C^n(\g)$ implies that
 \[L^{p+1}(X)=[L^1(X),L^p(X)]\sub C^n(\g)\]
 by (a). Hence $L^p(X)\sub C^n(\g)$ for $p\geq n+1$, whence $\g_n\sub C^n(\g)$.
@@ -2571,7 +2571,7 @@ If $\K$ is a field of characteristic $0$, $L(X)$ is the Lie algebra ef primitive
 This follows from Corollary~\ref{Lie algebra A(X) is bigebra} and Corollary~\ref{Lie algebra primitive element in envoloping isomorphism}.
 \end{proof}
 \begin{remark}\label{Lie algebra free extension scalar is intersection}
-Let $\K'$ be a commutative ring containing $\K$. If $A(X)$, $L(X)$ and $L_{\K'}(X)$ are identified with subsets of $A_{\K'}(X)$, we deduce from part (a) of Theorem~\ref{Lie algebra free enveloping algebra char} the relation
+Let $\K'$ be a commutative ring containing $\K$. If $A(X)$, $L(X)$ and $L_{\K'}(X)$ are identified with subsets of $A_{\K'}(X)$, we deduce from assertion (a) of Theorem~\ref{Lie algebra free enveloping algebra char} the relation
 \begin{align}\label{Lie algebra A(X) and L(X) under base change}
 L(X)=L_{\K'}(X)\cap A(X).
 \end{align}
@@ -2613,7 +2613,7 @@ Let $a$ be in $A(X)$ and $b$ in $A^+(X)$; then
 hence $\pi_0$ is a derivation of $L(X)$. Let $\pi_1$ be the endomorphism of the module $L(X)$ which coincides on $L^n(X)$ with multiplication by the integer $n$. The formula $[L^n(X),L^m(X)]\sub L^{m+n}(X)$ shows that $\pi_1$ is a derivation. The derivation $\pi_1-\pi_0$ of $L(X)$ is zero on $X$ and, as $X$ generates $L(X)$, $\pi_0=\pi_1$, whence (b).
 \end{proof}
 \begin{remark}
-We have also a more straightforward proof for part (b) of Proposition~\ref{Lie algebra free A^+ to L projection def}, using inductions: Note that $\pi(x)=x$ for $x\in X$; moreover, if $\pi$ coincides with $\pi_0$ on $L^n(X)$, then for $u\in L^1(X)$ and $v\in L^n(X)$,
+We have also a more straightforward proof for assertion (b) of Proposition~\ref{Lie algebra free A^+ to L projection def}, using inductions: Note that $\pi(x)=x$ for $x\in X$; moreover, if $\pi$ coincides with $\pi_0$ on $L^n(X)$, then for $u\in L^1(X)$ and $v\in L^n(X)$,
 \[\pi([u,v])=[u,\pi(v)]+[\pi(u),v]=n[u,v]+[u,v]=(n+1)[u,v]\]
 which shows that $\pi=\pi_0$ on $L^{n+1}(X)$ since $L^{n+1}(X)=[L^1(X),L^n(X)]$. 
 \end{remark}
@@ -6104,7 +6104,7 @@ If $\alpha\in\Phi$ and $\tau\in\Aut(\Phi)$, then $\tau s_\alpha\tau^{-1}=s_{\tau
 Let $\Phi_1,\dots,\Phi_r$ be root systems in vector spaces $V_1,\dots,V_r$. Let $\Phi$ be the direct sum of the $\Phi_i$ in $V=\bigoplus_{i=1}^{r}V_i$, $C_i$ a chamber of $\Phi$, and $\Delta_i=\Delta(C_i)$. It is immediate that $C=\prod_iC_i$ is a chamber of $\Phi$ and that $\Delta(C)=\bigcup_i\Delta_i$. It follows from Theorem~\ref{root system chamber prop} that all the chambers and bases of $\Phi$ are obtained in this way.
 \end{example}
 \subsection{Positive roots}
-Let $C$ be a chamber of $\Phi$, and let $\Delta=\{\alpha_1,\dots,\alpha_l\}$ be the corresponding basis of $\Phi$. The \textbf{order relation on $\bm{V}$ (resp. $\bm{V^*}$) defined by $\bm{C}$} is the order relation campatible with the vector space structure of $V$ (resp. $V^*$) for which the positive elements are the linear combinations of the $\alpha_i$ (resp. the $\check{\alpha}_i$) with real positive coefficients. An element that is positive for one of these relations is said to be \textbf{positive for $\bm{C}$}, or \textbf{positive for the basis $\bm{\Delta}$}. These order relations are also defined by $\check{C}$, as one sees by identifying $V$ with $V^*$ by using a scalar product invariant under $W(\Phi)$. In view of Theorem~\ref{root system chamber prop}, an element of $V^*$ is positive if and only if it takes positive values on $C$. An element $x$ of $V$ is positive if and only if it takes positive values on $\check{C}$, or, equivalently, if $(x,y)\geq 0$ for all $y\in C$.\par
+Let $C$ be a chamber of $\Phi$, and let $\Delta=\{\alpha_1,\dots,\alpha_l\}$ be the corresponding basis of $\Phi$. The \textbf{order relation on $\bm{V}$ (resp. $\bm{V^*}$) defined by $\bm{C}$} is the order relation campatible with the vector space structure of $V$ (resp. $V^*$) for which the positive elements are the linear combinations of the $\alpha_i$ (resp. the $\check{\alpha}_i$) with real positive coefficients. An element that is positive for one of these relations is said to be \textbf{positive for $\bm{C}$}, or \textbf{positive for the basis $\bm{\Delta}$}. These order relations are also defined by $\check{C}$, as one sees by identifying $V$ with $V^*$ by using a scalar product invariant under $W(\Phi)$. In view of Theorem~\ref{root system chamber prop}, an element of $V^*$ is positive if and only if it takes positive values on $C$, and an element $x$ of $V$ is positive if and only if it takes positive values on $\check{C}$, or, equivalently, if $(x,y)\geq 0$ for all $y\in C$.\par
 The elements of $\widebar{C}$ are positive for $C$ by Lemma~\ref{reflection group obtuse basis prop} and Theorem~\ref{root system chamber prop}. But the set of positive elements for $C$ is in general distinct from $\widebar{C}$ (cf. the root systems $A_2$, $B_2$, $G_2$).
 \begin{theorem}\label{root system integer coefficients of basis}
 Every root is a linear combination with integer coefiicients of the same sign of elements of $\Delta(C)$. In particular, every root is either positive or negative for $C$.
@@ -6152,11 +6152,11 @@ If $\rho\neq\beta$, there exists an element $\gamma\in\Delta(C)$ with $\gamma\ne
 (s,-\eps)&\text{if $\rho=\beta$}.
 \end{cases}
 \end{equation}
-Comparison of (\ref{root system associated reflection char-1}) and (\ref{root system associated reflection char-2}) now shows that $\pi_s(\psi(\gamma))=\psi(s(\gamma))$ for all roots $\gamma$ and all $s\in S$. Since $S$ generates $W$, part (a) follows.\par
+Comparison of (\ref{root system associated reflection char-1}) and (\ref{root system associated reflection char-2}) now shows that $\pi_s(\psi(\gamma))=\psi(s(\gamma))$ for all roots $\gamma$ and all $s\in S$. Since $S$ generates $W$, assertion (a) follows.\par
 On the other hand, saying that $w(\alpha)$ is negative is equivalent to saying that 
 \[\psi(w(\alpha))=(ws_\alpha w^{-1},-1).\]
-or, by part (a), that $\pi_w(\psi(\alpha))=(ws_\alpha w^{-1},-1)$. If in addition $\alpha$ is positive, then $\psi(\alpha)=(s_\alpha,1)$ and $\pi_w(\psi(\alpha))=(ws_\alpha w^{-1},\eta(w^{-1},s_\alpha))$, hence (b).\par
-Finally, by part (b), $\eta(w,s_\alpha)=-1$ if and only if one of the roots $\alpha$ and $w^{-1}(\alpha)$ is positive and the other negative. This is equivalent to saying that $(\alpha,x)(w^{-1}(\alpha),x)<0$ for all $x\in C$, hence the first assertion in (c). The second assertion in (c) follows immediately.
+or, by assertion (a), that $\pi_w(\psi(\alpha))=(ws_\alpha w^{-1},-1)$. If in addition $\alpha$ is positive, then $\psi(\alpha)=(s_\alpha,1)$ and $\pi_w(\psi(\alpha))=(ws_\alpha w^{-1},\eta(w^{-1},s_\alpha))$, hence (b).\par
+Finally, by assertion (b), $\eta(w,s_\alpha)=-1$ if and only if one of the roots $\alpha$ and $w^{-1}(\alpha)$ is positive and the other negative. This is equivalent to saying that $(\alpha,x)(w^{-1}(\alpha),x)<0$ for all $x\in C$, hence the first assertion in (c). The second assertion in (c) follows immediately.
 \end{proof}
 \begin{corollary}\label{root system reflection in basis permutes positive roots}
 Let $\beta\in\Delta(C)$. Then the reflection $s_\beta$ permutes the positive roots not proportional to $\beta$.
@@ -6547,7 +6547,7 @@ Let $x\in V$. The following three properties are equivalent:
 \item[(\rmnum{2})] $\langle x,y^*\rangle\in\Z$ for all $y^*\in\check{\Delta}$;
 \item[(\rmnum{3})] the coordinates of $x$ with respect to the dual basis of $\check{\Delta}$ are in $\Z$.   
 \end{itemize}
-We deduce from this that the basis dual to $\check{\Delta}$ is a basis of $G$. On the other hand, (R3) proves that $\Phi\sub G$, so $\Lambda_r(\Phi)\sub G$.
+We then conclude that the basis dual to $\check{\Delta}$ is a basis of $G$. On the other hand, (R3) proves that $\Phi\sub G$, so $\Lambda_r(\Phi)\sub G$.
 \end{proof}
 The group $G$ of Proposition~\ref{root system integral elements is discrete group} is denoted by $\Lambda(\Phi)$, and its elements are called the \textbf{weights} of $\Phi$. We can also consider the group $\Lambda(\check{\Phi})$ of weights of $\check{\Phi}$. Since
 \[\rank(\Lambda(\Phi))=\rank(\Lambda_r(\Phi))\And\rank(\Lambda(\check{\Phi}))=\rank(\Lambda_r(\check{\Phi})),\]
@@ -6568,7 +6568,7 @@ Let $\tau\in\Aut(\Phi)$. Recall that by the remark follows Proposition~\ref{root
 \[\langle\tau(x),\check{\alpha}\rangle=n(\tau(x),\alpha)=n(x,\tau^{-1}(\alpha)).\]
 Therefore the group $\Aut(\Phi)$ leaves $\Lambda(\Phi)$ and $\Lambda_r(\Phi)$ invariant, and hence acts on the quotient group $\Lambda(\Phi)/\Lambda_r(\Phi)$. By Proposition~\ref{root system subsystem weight x-w(x) prop} (take $\tilde{\Phi}=\Phi$), the group $W(\Phi)$ acts trivially on $\Lambda(\Phi)/\Lambda_r(\Phi)$. Passing to the quotient, we see that the quotient group $\Aut(\Phi)/W(\Phi)$ (cf. Proposition~\ref{root system Aut is semidirect prod}) acts canonically on $\Lambda(\Phi)/\Lambda_r(\Phi)$.
 \end{proof}
-From now on, we assume that $\Phi$ is reduced. Let $C$ be a chamber of $\Phi$, and let $\Delta$ be the corresponding basis of $\Delta$. Since $\Phi$ is reduced, $\check{\Delta}=\{\check{\alpha}\}_{\alpha\in\Delta}$ is a basis of $\check{\Phi}$. The dual basis $(\varpi_\alpha)_{\alpha\in\Delta}$ of $\check{\Delta}$ is thus a basis of the group of weights; its elements are called the \textbf{fundamental weights} (relative to $\Delta$, or to $C$); if the elements of $\Delta$ are denoted by $(\alpha_1,\dots,\alpha_l)$, the corresponding fundamental weights are denoted by $(\varpi_1,\dots,\varpi_l)$. For any element $x\in V$, $x\in C$ if and only if $\langle x,\check{\alpha}\rangle>0$ for all $\alpha\in\Delta$. It follows that $C$ is the set of linear combinations of the $\varpi_i$, with positive coefficients.\par
+From now on, we assume that $\Phi$ is \textit{reduced}. Let $C$ be a chamber of $\Phi$, and let $\Delta$ be the corresponding basis of $\Delta$. Since $\Phi$ is reduced, $\check{\Delta}=\{\check{\alpha}\}_{\alpha\in\Delta}$ is a basis of $\check{\Phi}$. The dual basis $(\varpi_\alpha)_{\alpha\in\Delta}$ of $\check{\Delta}$ is thus a basis of the group of weights; its elements are called the \textbf{fundamental weights} (relative to $\Delta$, or to $C$); if the elements of $\Delta$ are denoted by $(\alpha_1,\dots,\alpha_l)$, the corresponding fundamental weights are denoted by $(\varpi_1,\dots,\varpi_l)$. For any element $x\in V$, $x\in C$ if and only if $\langle x,\check{\alpha}\rangle>0$ for all $\alpha\in\Delta$. It follows that $C$ is the set of linear combinations of the $\varpi_i$, with positive coefficients.\par
 The entries $n(\alpha,\beta)=\langle\alpha,\check{\beta}\rangle$ of the Cartan matrix are, for fixed $\alpha$, the coordinates of a with respect to the basis $(\varpi_\beta)_{\beta\in\Delta}$:
 \[\alpha=\sum_{\beta\in\Delta}n(\alpha,\beta)\varpi_\beta.\]
 The Cartan matrix is thus the transpose of the matrix of the canonical injection $\Lambda_r(\Phi)\to\Lambda(\Phi)$ with respect to the bases $\Delta$ and $(\varpi_\beta)_{\beta\in\Delta}$ of the $\Z$-moduhas $\Lambda_r(\Phi)$ and $\Lambda(\Phi)$. Therefore, to express the fundamental weights in means of the basis $\Delta$, one only need to invert the Cartan matrix for $\Delta$. In particular, we conclude that the connection index is just the determinant of the Cartan matrix.\par
@@ -6579,7 +6579,7 @@ for $\alpha,\beta\in\Delta$ ($\delta_{\alpha\beta}$ denoting the Kronecker symbo
 s_\beta(\varpi_\alpha)=\varpi_\alpha-\delta_{\alpha\beta}\beta\And(\varpi_\alpha,\beta)=\frac{1}{2}(\beta,\beta)\delta_{\alpha,\beta}.
 \end{align}
 In other words, $\varpi_\alpha$ is orthogongl to $\beta$ for $\beta\neq\alpha$, and its orthogonal projection onto $\R\alpha$ is $\frac{1}{2}\alpha$. Since $\varpi_\alpha\in\widebar{C}$, $(\varpi_\alpha,\varpi_\beta)\geq 0$ for $\alpha,\beta\in\Delta$, i.e., the angle $\widehat{(\varpi_\alpha,\varpi_\beta)}$ is acute or a right angle.\par
-An element $\lambda\in V$ is said to be \textbf{dominant} if it belongs to $\widebar{C}$, in other words if its coordinates with respect to $(\varpi_\beta)_{\beta\in\Delta}$ are non-negative integers, or equivalently if $2(\varpi,\alpha)/(\alpha,\alpha)$ is positive for all $\alpha\in\Delta$. It is strictly dominant if $\lambda\in C$. Since $\widebar{C}$ is a fundamental domain for $W(\Phi)$, there exists, for any element $\lambda\in V$, a unique dominant element $\tilde{\lambda}$ such that $\tilde{\lambda}$ is a transform of $\lambda$ by $W(\Phi)$. We denote by $\Lambda^+(\Phi)$ the set of weights for $\Phi$ that are positive with respect to the order on $V$ defined by $\Delta$, and $\Lambda^{++}(\Phi)$ the set of dominant weights for $\Phi$.
+An element $\lambda\in V$ is said to be \textbf{dominant} if it belongs to $\widebar{C}$, in other words if its coordinates with respect to $(\varpi_\beta)_{\beta\in\Delta}$ are non-negative integers, or equivalently if $2(\lambda,\alpha)/(\alpha,\alpha)$ is positive for all $\alpha\in\Delta$; it is \textbf{strictly dominant} if $\lambda\in C$. Since $\widebar{C}$ is a fundamental domain for $W(\Phi)$, there exists, for any element $\lambda\in V$, a unique dominant element $\tilde{\lambda}$ such that $\tilde{\lambda}$ is a transform of $\lambda$ by $W(\Phi)$. We denote by $\Lambda^+(\Phi)$ the set of weights for $\Phi$ that are positive with respect to the order on $V$ defined by $\Delta$, and $\Lambda^{++}(\Phi)$ the set of dominant weights for $\Phi$.
 \begin{proposition}\label{root system fundamental weight for subsystem}
 Let $\Delta$ be a basis of $\Phi$, $\Sigma$ a subset of $\Delta$, $V_\Sigma$ the vector subspace of $V$ generated by $\Sigma$, $\Phi_\Sigma=\Phi\cap V_\Sigma$ (which is a root system in $V_\Sigma$), and $\pi$ the orthogonal projection of $V$ onto $V_\Sigma$. Then $\Lambda_r(\Phi_\Sigma)=\Lambda_r(\Phi)\cap V_\Sigma$, $\Lambda(\Phi_\Sigma)=\Lambda(\Phi)\cap V_\Sigma$, and the set of dominant weights of $\Phi_\Sigma$ is the image under $\pi$ of the set of dominant weights of $\Phi$.
 \end{proposition}
@@ -6785,10 +6785,10 @@ Let $\lambda\in V$ be a dominant element. Then
 \end{itemize}
 \end{proposition}
 \begin{proof}
-Part (b) follows from Proposition~\ref{root system closure of chamber iff biggest in orbit}, by the definition of dominant. For any basis $\{\alpha_1,\dots,\alpha_l\}$ of $V$, we can form a dual basis $\{\alpha_1^*,\dots,\alpha_l^*\}$ of $V$ by the relation $(\alpha_i^*,\alpha_j)=\delta_{ij}$. By Proposition~\ref{reflection group obtuse basis prop}, since $\{\alpha_1,\dots,\alpha_j\}$ is an obtuse basis, we see $\{\alpha_1^*,\dots,\alpha_j^*\}$ is a acute basis for $V$, meaning that $(\alpha_i^*,\alpha_j^*)\geq 0$ for all $i,j$. If $\lambda$ is dominant, the coefficients in the expansion $\lambda=\sum_jc_j\alpha_j$ are given by
+Assertion (b) follows from Proposition~\ref{root system closure of chamber iff biggest in orbit}, by the definition of dominant. For any basis $\{\alpha_1,\dots,\alpha_l\}$ of $V$, we can form a dual basis $\{\alpha_1^*,\dots,\alpha_l^*\}$ of $V$ by the relation $(\alpha_i^*,\alpha_j)=\delta_{ij}$. By Proposition~\ref{reflection group obtuse basis prop}, since $\{\alpha_1,\dots,\alpha_j\}$ is an obtuse basis, we see $\{\alpha_1^*,\dots,\alpha_j^*\}$ is a acute basis for $V$, meaning that $(\alpha_i^*,\alpha_j^*)\geq 0$ for all $i,j$. If $\lambda$ is dominant, the coefficients in the expansion $\lambda=\sum_jc_j\alpha_j$ are given by
 \[c_j=(\alpha_j^*,\lambda)=\sum_{i=1}^{r}(\alpha_j^*,\alpha_i^*)(\alpha_i,\lambda).\]
 Since $\lambda$ is dominant, we have $(\alpha_i,\lambda)\geq 0$. Furthermore, the $\alpha_i^*$'s form an obtuse basis for $E$ and thus $(\alpha_i^*,\alpha_j^*)\geq 0$ for each $i,j$. This proves $c_j\geq 0$, hence $\lambda\succeq 0$.\par
-Suppose that $\lambda$ is a strictly dominant weight. Then $\lambda-\delta$ will still be dominant in light of Proposition~\ref{root system half sum of positive prop}(a). Thus, by part (a) we have $\lambda-\delta\succeq 0$, which is equivalent to $\lambda\succeq\delta$.
+Suppose that $\lambda$ is a strictly dominant weight. Then $\lambda-\delta$ will still be dominant in light of Proposition~\ref{root system half sum of positive prop}(a). Thus, by assertion (a) we have $\lambda-\delta\succeq 0$, which is equivalent to $\lambda\succeq\delta$.
 \end{proof}
 Recall that the \textit{convex hull} of a subset $X\sub V$ is the smallest convex subset of $E$ containing $X$. For $\lambda\in V$, we let $W\cdot\lambda$ denote the Weyl-group orbit of $\lambda\in V$ and we let $\conv(W\cdot\lambda)$ denote the convex hull of $W\cdot\lambda$.
 \begin{proposition}\label{root system conv hull of dominant char}
@@ -6883,7 +6883,7 @@ Hence:
 \[\theta_i=s_l\cdots s_{i+1}(\alpha_i)\equiv\alpha_i\hspace{6pt}\text{mod\ $Q_i$}.\]
 In other words, there exist integers $c_{ij}$ such that
 \[\theta_i=\alpha_i+\sum_{j>i}c_{ij}\alpha_j.\]
-Part (b) then follows immediately.\par
+Assertion (b) then follows immediately.\par
 Finally, let $\alpha$ be a root. The element $\sum_{k=0}^{h-1}w_C^k(\alpha)$ is invariant under $w_C$, and hence zero (recall that $1$ is not an eigenvalue of $w_C$). The $c^k(\alpha)$ cannot therefore all have the same sign, and there exists a $k$ such that $w_C^k(\alpha)>0$ and $w_C^{k+1}(\alpha)<0$. By (a), $c^k(\alpha)$ is one of the $\theta_i$. Thus every orbit of $w_C$ on $\Phi$ is one of the $\Omega_i$. Each orbit of $w_C$ in $\Phi$ has at most $h$ elements, and there are at most $l$ distinct orbits, by the above remarks. Now by Theorem~\ref{Coxeter transform irreducible exponent prop}(b), the cardinal of $\Phi$ is equal to $hl$, which immediately implies (c).
 \end{proof}
 \subsection{Exponential invariants}
@@ -7079,7 +7079,7 @@ Let $\Phi$ be a root system in $V$.
 \end{itemize}
 \end{corollary}
 \begin{proof}
-This follows from Proposition~\ref{root system special point are coweight}, in View of the Corollary~\ref{reflection group special point and vertex of chamber} and Proposition~\ref{reflection group special point under translation}.
+This is a concequence of Proposition~\ref{root system special point are coweight}, in view of Corollary~\ref{reflection group special point and vertex of chamber} and Proposition~\ref{reflection group special point under translation}.
 \end{proof}
 \begin{proposition}\label{root system cochamber unique alcove contained in}
 Let $\check{C}$ be a chamber of $\check{\Phi}$.
@@ -7743,7 +7743,7 @@ On the other hand, let $N$ be the normaliser of $W_a(\Phi)$. To any $g\in N$ cor
 \begin{theorem}
 Let $(W,S)$ be an irreducible Coxster system with $S$ finite. Then the associated quadratic form is positive and degenerate if and only if the Coxeter graph of $(W,S)$ is isomorphic to one of the following:
 {\renewcommand\arraystretch{1.5}
-\begin{longtable}[c]{m{0.5cm}m{1.12cm}m{7.25cm}}
+\begin{longtable}[c]{m{0.7cm}m{1.5cm}m{7.5cm}}
 $\widetilde{A}_1$&&\begin{dynkinDiagram}[extended,Coxeter]A{1}
 \end{dynkinDiagram}
 \\
@@ -8009,7 +8009,7 @@ Let $\h$ be a nilpotent Lie algebra and $(V,\rho)$ a finite dimensional $\h$-mod
 \end{itemize}
 \end{proposition}
 \begin{proof}
-We have remarked that if $\h$ is nilpotent, then $\rho$ is almost commutative, so part (a), (b), and (d) follows. We now prove (c). We can assume that $V=V^\lambda(\h)$. Then, for all $x\in\h$, $\lambda(x)=\dim(V)^{-1}\tr(\rho(x))$, which proves that $\lambda$ is linear and that $\lambda$ vanishes on $[\h,\h]$. Consider the map $\eta:\h\to\End(V)$ defined by
+We have remarked that if $\h$ is nilpotent, then $\rho$ is almost commutative, so assertions (a), (b), and (d) follow. We now prove (c). We can assume that $V=V^\lambda(\h)$. Then, for all $x\in\h$, $\lambda(x)=\dim(V)^{-1}\tr(\rho(x))$, which proves that $\lambda$ is linear and that $\lambda$ vanishes on $[\h,\h]$. Consider the map $\eta:\h\to\End(V)$ defined by
 \[\eta(x)=\rho(x)-\lambda(x).\]
 This is a representation of $\h$ on $V$, and by part (a) $\eta(x)$ is nilpotent for all $x\in\h$. By Engel's theorem, there exists $v\neq 0$ in $V$ such that $\eta(x)v=0$ for all $x\in\h$, so $v\in V_\lambda(\h)$.\par
 The first assertion of (e) follows from Proposition~\ref{set rep eigenspace under homomorphism}. To prove the second, we can assume that $\K$ is algebraically closed in view of Proposition~\ref{set rep eigenspace under field extension}. It then follows from the first and the fact that $V=\bigoplus_{\lambda\in\mathcal{P}}V^\lambda(\h)$ and $W=\bigoplus_{\lambda\in\mathcal{P}}W^\lambda(\h)$, so the second assertion follows.
@@ -8511,7 +8511,7 @@ and
 \end{lemma}
 \begin{proof}
 Since $\ad(h)$ is a derivation of $A$ and $[h,e]=2e$ commutes with $e$, we obtain inductively $[h,e^n]=ne^{n-1}[h,e]=2ne^n$. The second part of (a) is obtained similarly.\par
-Note that by induction we can prove that $[f,e^n]=\sum_{i=0}^{n-1}e^i[f,e]e^{n-i-1}$, and by part (a) we have
+Note that by induction we can prove that $[f,e^n]=\sum_{i=0}^{n-1}e^i[f,e]e^{n-i-1}$, and by assertion (a) we have
 \begin{align*}
 [f,e^n]&=\sum_{i=0}^{n-1}e^i(-h)e^{n-i-1}=-\sum_{i=0}^{n-1}e^i([h,e^{n-i-1}]+e^{n-i-1}h)\\
 &=-n(n-1)e^{n-1}-ne^{n-1}h.
@@ -8695,7 +8695,7 @@ Let $\alpha,\beta$ be roots of $(\g,\h)$ and let $\langle\cdot,\cdot\rangle$ be 
 \end{itemize}
 \end{proposition}
 \begin{proof}
-Part (a) is a special case of Proposition~\ref{Lie nilpotent rep eigenspace under homomorphism}. If $x\in\g^\alpha$, $y\in\g^{-\alpha}$ and $h\in\h$, we have $[x,y]\in\g^{\alpha-\alpha}=\h$, and
+Assertion (a) is a special case of Proposition~\ref{Lie nilpotent rep eigenspace under homomorphism}. If $x\in\g^\alpha$, $y\in\g^{-\alpha}$ and $h\in\h$, we have $[x,y]\in\g^{\alpha-\alpha}=\h$, and
 \[\langle h,[x,y]\rangle=\langle[h,x],y\rangle=\langle\alpha(h)x,y\rangle=\alpha(h)\langle x,y\rangle.\]
 This completes the proof.
 \end{proof}
@@ -9708,7 +9708,7 @@ Moreover, we claim that $F(\lambda)$ is the largest proper sub-$\sl(2,\K)$-modul
 On the other hand, if $\lambda$ is not a non-negative integer, then $e\cdot v_j=j(\lambda-(j-1))v_{j-1}$ is nonzero for all $j>0$, so from any linear combination $\sum_ic_iv_i$ we can get $v_0$ by repeatly applying $e$. In other words, the proper submodule $F(\lambda)$ equals to $0$, and $Z(\lambda)$ itself is the simple $\sl(2,\K)$-module with highest weight $\lambda$.
 \end{example}
 \subsection{Commutant of \texorpdfstring{$\h$}{h} in the enveloping algebra}
-Let $(\g,\h)$ be a splitting semi-simple Lie algbra. Let $U(\g)$ be the enveloping algebra of $\g$, $U(\h)\sub U(\g)$ the enveloping algebra of $\h$. Since $\h$ is abelian, the algebra $U(\h)$ can be identified with the symmetric algebra $S(\h)$ of $\h$, and also with the algebra of polynomial functions on $\h^*$. Denote by $\alpha_1,\dots,\alpha_n$ the pairwise distinct positive roots. Let $(h_1,\dots,h_l)$ be a basis of $\h$. By the Poincar\'e-Birkhoff-Witt theorem, the elements
+Let $(\g,\h)$ be a splitting semi-simple Lie algbra. Let $U(\g)$ be the enveloping algebra of $\g$, $U(\h)\sub U(\g)$ the enveloping algebra of $\h$. Since $\h$ is abelian, the algebra $U(\h)$ can be identified with the symmetric algebra $\bm{S}(\h)$ of $\h$, and also with the algebra of polynomial functions on $\h^*$. Denote by $\alpha_1,\dots,\alpha_n$ the pairwise distinct positive roots. Let $(h_1,\dots,h_l)$ be a basis of $\h$. By the Poincar\'e-Birkhoff-Witt theorem, the elements
 \begin{align}\label{Lie spl-s-simp algebra basis element of U(g) formula}
 u(\bm{q},\bm{m},\bm{p}):=x_{-\alpha_1}^{q_1}\cdots x_{-\alpha_n}^{q_n}h_1^{m_1}\cdots h_l^{m_l}x_{\alpha_1}^{p_1}\cdots x_{\alpha_n}^{p_n}
 \end{align}
@@ -10176,36 +10176,36 @@ This follows from Theorem~\ref{Lie algebra spl-s-simp representation ring isomor
 \end{proof}
 \subsection{Symmetric invariants}
 In this paragraph, we retain the notations in the previous part. We denote by $(\g,\h)$ a split semi-simple Lie algebra, by $\Phi$ its root system, by $W$ its Weyl group, and by $\Lambda$ its group of weights.\par
-Let $V$ be a finite dimensional vector space, $S(V)$ its symmetric algebra. The coalgebra structure of $S(V)$ defines on $S(V)^*$ a commutative and associative algebra structure. The vector space $S(V)^*$ can be identified canonically with $\prod_{n\geq 0}S^n(V)^*$, and $S^n(V)^*$ can be identified canonically with the space of symmetric $n$-linear forms on $V$. The canonical injection of $V^*=S^1(V)^*$ into $S(V)^*$ defines an injective homomorphism from the algebra $S(V^*)$ to the algebra $S(V)^*$, whose image is $\gr(S(V)^*)=\sum_{n\geq 0}S^n(V)^*$. We identify the algebras $S(V^*)$ and $\gr(S(V)^*)$ by means of this homomorphism; we also identify $S(V^*)$ with the algebra of polynomial functions on $V$.
+Let $V$ be a finite dimensional vector space, $\bm{S}(V)$ its symmetric algebra. The coalgebra structure of $\bm{S}(V)$ defines on $\bm{S}(V)^*$ a commutative and associative algebra structure. The vector space $\bm{S}(V)^*$ can be identified canonically with $\prod_{n\geq 0}\bm{S}^n(V)^*$, and $\bm{S}^n(V)^*$ can be identified canonically with the space of symmetric $n$-linear forms on $V$. The canonical injection of $V^*=\bm{S}^1(V)^*$ into $\bm{S}(V)^*$ defines an injective homomorphism from the algebra $\bm{S}(V^*)$ to the algebra $\bm{S}(V)^*$, whose image is $\gr(\bm{S}(V)^*)=\sum_{n\geq 0}\bm{S}^n(V)^*$. We identify the algebras $\bm{S}(V^*)$ and $\gr(\bm{S}(V)^*)$ by means of this homomorphism; we also identify $\bm{S}(V^*)$ with the algebra of polynomial functions on $V$.
 \paragraph{The exponential of a linear functional}
-The elements $(u_n)\in\prod_{n\geq 0}S^n(v)^*$ such that $u_0=0$ form an ideal $\m$ of $S(V)^*$; we give $S(V)^*$ the $\m$-adic topology, in which $S(V)^*$ is complete and $S(V^*)$ is dense in $S(V)^*$. If $(e_i^*)_{1\leq i\leq l}$ is a basis of $V^*$, and if $T_1,\dots,T_l$ are indeterminates, the homomorphism from $\K[T_1,\dots,T_l]$ to $S(V^*)$ that takes $T_i$ to $e_i^*$ is an isomorphism of algebras, and extends to a continuous isomorphism from the algebra $\K\llbracket T_1,\dots,T_l\rrbracket$ to the algebra $S(V)^*$.\par
-For all $\lambda\in V^*$, the family $\lambda^n/n!$ is summable in $S(V)^*$. Its sum is called the \textbf{exponential} of $\lambda$ and is denoted by $\exp(\lambda)$. Let $x_1,\dots,x_n\in V$; we have (formula (\ref{}))
+The elements $(u_n)\in\prod_{n\geq 0}\bm{S}^n(v)^*$ such that $u_0=0$ form an ideal $\m$ of $\bm{S}(V)^*$; we give $\bm{S}(V)^*$ the $\m$-adic topology, in which $\bm{S}(V)^*$ is complete and $\bm{S}(V^*)$ is dense in $\bm{S}(V)^*$. If $(e_i^*)_{1\leq i\leq l}$ is a basis of $V^*$, and if $T_1,\dots,T_l$ are indeterminates, the homomorphism from $\K[T_1,\dots,T_l]$ to $\bm{S}(V^*)$ that takes $T_i$ to $e_i^*$ is an isomorphism of algebras, and extends to a continuous isomorphism from the algebra $\K\llbracket T_1,\dots,T_l\rrbracket$ to the algebra $\bm{S}(V)^*$.\par
+For all $\lambda\in V^*$, the family $\lambda^n/n!$ is summable in $\bm{S}(V)^*$; its sum is called the \textbf{exponential} of $\lambda$ and is denoted by $\exp(\lambda)$. If $x_1,\dots,x_n\in V$, then we have
 \[\langle\exp(\lambda),x_1\cdots x_n\rangle=\frac{1}{n!}\langle\lambda^n,x_1\cdots x_n\rangle=\frac{1}{n!}\sum_{\sigma\in\mathfrak{S}_n}\langle\lambda,x_{\sigma(1)}\rangle\cdots\langle\lambda,x_{\sigma(n)}\rangle=\langle\lambda,x_1\rangle\cdots\langle\lambda,x_n\rangle.\]
-It follows immediately that $\exp(\lambda)$ is the unique homomorphism from the algebra $S(V)$ to $\K$ that extends $\lambda$.\par
-We have $\exp(\lambda+\mu)=\exp(\lambda)\exp(\mu)$ for all $\lambda,\mu\in V^*$. Thus, the map $\exp:V^*\to S(V)^*$ is a homomorphism from the additive group $V^*$ to the multiplicative group of invertible elements of $S(V)^*$. The family $(\exp(\lambda))_{\lambda\in V^*}$ is a free family in the vector space $S(V)^*$ (Theorem~\ref{}), and in particular the map $\psi$ is injective.
+It follows immediately that $\exp(\lambda)$ is the unique homomorphism from the algebra $\bm{S}(V)$ to $\K$ that extends $\lambda$.\par
+We have $\exp(\lambda+\mu)=\exp(\lambda)\exp(\mu)$ for all $\lambda,\mu\in V^*$. Thus, the map $\exp:V^*\to \bm{S}(V)^*$ is a homomorphism from the additive group $V^*$ to the multiplicative group of invertible elements of $\bm{S}(V)^*$. The family $(\exp(\lambda))_{\lambda\in V^*}$ is a free family in the vector space $\bm{S}(V)^*$ (Theorem~\ref{}), and in particular the map $\psi$ is injective.
 \begin{proposition}\label{Lie algebra spl-s-simp exp of linear form generate S^p}
-Let $\Pi$ be a subgroup of $V^*$ that generates the vector space $V^*$, and $n$ an non-negative integer. Then $\pi_n(\exp(\Pi))$ generates the vector space $S^n(V^*)$.
+Let $\Pi$ be a subgroup of $V^*$ that generates the vector space $V^*$, and $n$ an non-negative integer. Then $\pi_n(\exp(\Pi))$ generates the vector space $\bm{S}^n(V^*)$.
 \end{proposition}
 \begin{proof}
-By Proposition~\ref{}, any product of $p$ elements of $V^*$ is a $\K$-linear combination of elements of the form $x^p$ where $x\in\Pi$. But $x^n=n!\pi_n(\exp(x))$.
+By Proposition~\ref{}, any product of $p$ elements of $V^*$ is a $\K$-linear combination of elements of the form $x^p$ where $x\in\Pi$. But we have $x^n=n!\pi_n(\exp(x))$, whence the proposition.
 \end{proof}
-By transport of structure, every automorphism of $V$ defines automorphisms of the algebras $S(V)$ and $S(V)^*$; this gives linear representations of $\GL(V)$ on $S(V)$ and $S(V)^*$.\par
-Now consider the vector space $V=\h$. The map $\lambda\mapsto\exp(\lambda)$ from $\Lambda$ to $S(\h)^*$ is a homomorphism from the additive group $\Lambda$ to $S(\h)^*$ equipped with its multiplicative structure. Consequently, there exists a unique homomorphism $\psi$ from the algebra $\K[\Lambda]$ of the monoid $\Lambda$ to the algebra $S(\h)^*$ such that
+By transport of structure, every automorphism of $V$ defines automorphisms of the algebras $\bm{S}(V)$ and $\bm{S}(V)^*$; this gives linear representations of $\GL(V)$ on $\bm{S}(V)$ and $\bm{S}(V)^*$.\par
+Now consider the vector space $V=\h$. The map $\lambda\mapsto\exp(\lambda)$ from $\Lambda$ to $\bm{S}(\h)^*$ is a homomorphism from the additive group $\Lambda$ to $\bm{S}(\h)^*$ equipped with its multiplicative structure. Consequently, there exists a unique homomorphism $\psi$ from the algebra $\K[\Lambda]$ of the monoid $\Lambda$ to the algebra $\bm{S}(\h)^*$ such that
 \[\psi(e^\lambda)=\exp(\lambda)\for \lambda\in\Lambda.\]
-By transport of structure, $\psi(w(e^\lambda))=w(\psi(e^\lambda))$ for all $\lambda\in\Lambda$ and all $w\in W$. Hence, if $\K[\Lambda]^W$ (resp. $S(\h)^{*W}$) denotes the set of elements of $\K[\Lambda]$ (resp. $S(\h)^*$) invariant under $W$, we have $\psi(\K[\Lambda]^W)\sub S(\h)^{*W}$.
+By transport of structure, $\psi(w(e^\lambda))=w(\psi(e^\lambda))$ for all $\lambda\in\Lambda$ and all $w\in W$. Hence, if $\K[\Lambda]^W$ (resp. $\bm{S}(\h)^{*W}$) denotes the set of elements of $\K[\Lambda]$ (resp. $\bm{S}(\h)^*$) invariant under $W$, we have $\psi(\K[\Lambda]^W)\sub \bm{S}(\h)^{*W}$.
 \begin{proposition}\label{Lie algebra spl-s-simp exp of invariant weight}
-Let $S^n(\h^*)^W$ be the set of elements of $S^n(\h^*)$ invariant under $W$. Then
-\[\pi_n(\psi(\K[\Lambda]^W))=S^n(\h^*)^W.\]
+Let $\bm{S}^n(\h^*)^W$ be the set of elements of $\bm{S}^n(\h^*)$ invariant under $W$. Then
+\[\pi_n(\psi(\K[\Lambda]^W))=\bm{S}^n(\h^*)^W.\]
 \end{proposition}
 \begin{proof}
-It is clear from the preceding that $\pi_n(\psi(\K[\Lambda]^W))\sub S^n(\h^*)^W$. Every element of $S^n(\h^*)$ is a $\K$-linear combination of elements of the form
+It is clear from the preceding that $\pi_n(\psi(\K[\Lambda]^W))\sub \bm{S}^n(\h^*)^W$. Every element of $\bm{S}^n(\h^*)$ is a $\K$-linear combination of elements of the form
 \[\pi_n(\exp(\lambda))=(\pi_n\circ\psi)(e^\lambda)\]
-where $\lambda\in\Lambda$ (Proposition~\ref{Lie algebra spl-s-simp exp of linear form generate S^p}). Hence every element of $S^n(\h^*)^W$ is a linear combination of elements of the form
+where $\lambda\in\Lambda$ (Proposition~\ref{Lie algebra spl-s-simp exp of linear form generate S^p}). Hence every element of $\bm{S}^n(\h^*)^W$ is a linear combination of elements of the form
 \[\sum_{w\in W}w((\pi_n\circ\psi)(e^\lambda))=(\pi_n\circ\psi)\Big(\sum_{w\in W}w(e^\lambda)\Big)\]
 each of which belongs to $\pi_n(\psi(\K[\Lambda]^W))$.
 \end{proof}
 \begin{proposition}\label{Lie algebra spl-s-simp chi and tr relation}
-Let $E$ be a finite dimensional $\g$-module. Let $U(\h)=S(\h)$ be the enveloping algebra of $\h$. If $u\in U(\h)$, then
+Let $E$ be a finite dimensional $\g$-module. Let $U(\h)=\bm{S}(\h)$ be the enveloping algebra of $\h$. If $u\in U(\h)$, then
 \begin{align}\label{Lie algebra spl-s-simp chi and tr relation-1}
 \tr(u_E)=\langle\psi(\chi(E)),u\rangle.
 \end{align}
@@ -10218,33 +10218,33 @@ It suffices to treat the case in which $u=h_1\cdots h_n$ with $h_1,\dots,h_n\in\
 This proves the claim.
 \end{proof}
 \begin{corollary}\label{Lie algebra spl-s-simp commute diagram of tr and chi}
-Let $U(\g)$ be the enveloping algebra of $\g$. Let $\zeta:U(\g)^*\to U(\h)^*=S(\h)^*$ be the transpose of the canonical injection $U(\h)\to U(\g)$. The following diagram commutes
+Let $U(\g)$ be the enveloping algebra of $\g$. Let $\zeta:U(\g)^*\to U(\h)^*=\bm{S}(\h)^*$ be the transpose of the canonical injection $U(\h)\to U(\g)$. The following diagram commutes
 \[\begin{tikzcd}
 \mathscr{R}(\g)\ar[d,"\tr"]\ar[r,"\chi"]&\Z[\Lambda]\ar[d,"\psi"]\\
-U(\g)^*\ar[r,"\zeta"]&S(\h)^*
+U(\g)^*\ar[r,"\zeta"]&\bm{S}(\h)^*
 \end{tikzcd}\]
 \end{corollary}
 \begin{proof}
 This is just a reformulation of Proposition~\ref{Lie algebra spl-s-simp chi and tr relation}.
 \end{proof}
 \begin{corollary}\label{Lie algebra spl-s-simp invariant polynomial under W is trace}
-Let $n$ be a non-negative integer. Then every element of $S^n(\h^*)^W$ is a linear combination of polynomial functions on $\h$ of the form $x\mapsto\tr(\rho(x)^n)$, where $\rho$ is a finite dimensional linear representation of $\g$.
+Let $n$ be a non-negative integer. Then every element of $\bm{S}^n(\h^*)^W$ is a linear combination of polynomial functions on $\h$ of the form $x\mapsto\tr(\rho(x)^n)$, where $\rho$ is a finite dimensional linear representation of $\g$.
 \end{corollary}
 \begin{proof}
-By Proposition~\ref{Lie algebra spl-s-simp exp of invariant weight}, $S^n(\h^*)^W=(\pi_n\circ\psi)(\K[\Lambda]^W)$. Now $\Z[\Lambda]^W=\chi(\mathscr{R}(\g))$ (Theorem~\ref{Lie algebra spl-s-simp representation ring isomorphic to invariant}), so $\psi(\K[\Lambda]^W)$ is the $\K$-vector subspace of $S(\h)^*$ generated by $\psi(\chi(\mathscr{R}(\g)))=\zeta(\tr(\mathscr{R}(\g)))$. Consequently, $S^n(\h^*)^W$ is the vector subspace of $S^n(\h^*)$ generated by $(\pi_n\circ\zeta\circ\tr)(\mathscr{R}(\g))$. But, if $\rho$ is a finite dimensional linear representation of $\g$, for all $x\in\h$ have
+By Proposition~\ref{Lie algebra spl-s-simp exp of invariant weight}, $\bm{S}^n(\h^*)^W=(\pi_n\circ\psi)(\K[\Lambda]^W)$. Now $\Z[\Lambda]^W=\chi(\mathscr{R}(\g))$ (Theorem~\ref{Lie algebra spl-s-simp representation ring isomorphic to invariant}), so $\psi(\K[\Lambda]^W)$ is the $\K$-vector subspace of $\bm{S}(\h)^*$ generated by $\psi(\chi(\mathscr{R}(\g)))=\zeta(\tr(\mathscr{R}(\g)))$. Consequently, $\bm{S}^n(\h^*)^W$ is the vector subspace of $\bm{S}^n(\h^*)$ generated by $(\pi_n\circ\zeta\circ\tr)(\mathscr{R}(\g))$. But, if $\rho$ is a finite dimensional linear representation of $\g$, for all $x\in\h$ have
 \begin{equation*}
 (\pi_n\circ\zeta\circ\tr)(\rho)(x)=\langle(\zeta\circ\tr)(\rho),\frac{x^n}{n!}\rangle=\frac{1}{n!}\tr(\rho(x)^n).\qedhere
 \end{equation*}
 \end{proof}
 \paragraph{Invariant polynomial functions}
-We now take a further step and consider invariant polynomial functions on $\g$. Let $\g$ be a finite dimensional Lie algebra. In accordance with the conventions before, we identify the algebra $S(\g^*)$, the algebra $\gr(S(\g)^*)$, and the algebra of polynomial functions on $\g$. For all $x\in\g$, we have the adjoint representation $\ad(x)$ on $\g$, which can be extended to a derivation on $S(\g)$, still denoted by $\ad(x)$. Let $\ad^*(x)$ be the restriction of $-\ad(x)^{t}$ to $\g^*$ (the coadjoint representation), and extend it to $S(\g^*)$ to obtain a derivation on $S(\g^*)$. Then $\ad$ and $\ad^*$ are representations of $\g$. If $f\in S^n(\g^*)$, then $\ad^*(x)(f)\in S^n(\g^*)$ and, for $x_1,\dots,x_n\in\g$,
+We now take a further step and consider invariant polynomial functions on $\g$. Let $\g$ be a finite dimensional Lie algebra. In accordance with the conventions before, we identify the algebra $\bm{S}(\g^*)$, the algebra $\gr(\bm{S}(\g)^*)$, and the algebra of polynomial functions on $\g$. For all $x\in\g$, we have the adjoint representation $\ad(x)$ on $\g$, which can be extended to a derivation on $\bm{S}(\g)$, still denoted by $\ad(x)$. Let $\ad^*(x)$ be the restriction of $-\ad(x)^{t}$ to $\g^*$ (the coadjoint representation), and extend it to $\bm{S}(\g^*)$ to obtain a derivation on $\bm{S}(\g^*)$. Then $\ad$ and $\ad^*$ are representations of $\g$. If $f\in \bm{S}^n(\g^*)$, then $\ad^*(x)(f)\in \bm{S}^n(\g^*)$ and, for $x_1,\dots,x_n\in\g$,
 \begin{align}
 \ad(x)(x_1\cdots x_n)&=\sum_{i=1}^{n}x_1\cdots x_{i-1}[x,x_i]x_{i+1}\cdots x_n,\label{Lie algebra representation on S(g)}\\
 \ad^*(x)(f)(x_1,\dots,x_n)&=-\sum_{i=1}^{n}f(x_1,\dots,x_{i-1},[x,x_i],x_{i+1},\dots,x_n).\label{Lie algebra representation on S(g^*)}
 \end{align}
-We deduce easily from (\ref{Lie algebra representation on S(g)}) and (\ref{Lie algebra representation on S(g^*)}) that $\ad(x)$ and $\ad^*(x)$ are derivations of $S(\g)$, $S(\g^*)$ respectively. An element of $S(\g)$ (resp. $S(\g^*)$) that is invariant under the representation $\ad$ (resp. $\ad^*$) of $\g$ is called an \textbf{invariant element} of $S(\g)$ (resp. $S(\g^*)$).
+We deduce easily from (\ref{Lie algebra representation on S(g)}) and (\ref{Lie algebra representation on S(g^*)}) that $\ad(x)$ and $\ad^*(x)$ are derivations of $\bm{S}(\g)$, $\bm{S}(\g^*)$ respectively. An element of $\bm{S}(\g)$ (resp. $\bm{S}(\g^*)$) that is invariant under the representation $\ad$ (resp. $\ad^*$) of $\g$ is called an \textbf{invariant element} of $\bm{S}(\g)$ (resp. $\bm{S}(\g^*)$).
 \begin{remark}
-Let $U(\g)$ be the enveloping algebra of $\g$ and recall that we have a canonical isomorphism $\eta:S(\g)\to U(\g)$ as $\g$-modules (the comments after Proposition~\ref{Lie enveloping algebra derivation prop}). In particular, the invariant elements in $S(\g)$ corresponds to invariant elements of $U(\g)$ under $\g$.
+Let $U(\g)$ be the enveloping algebra of $\g$ and recall that we have a canonical isomorphism $\eta:\bm{S}(\g)\to U(\g)$ as $\g$-modules (the comments after Proposition~\ref{Lie enveloping algebra derivation prop}). In particular, the invariant elements in $\bm{S}(\g)$ corresponds to invariant elements of $U(\g)$ under $\g$.
 \end{remark}
 \begin{lemma}\label{Lie algebra spl-s-simp trace is invariant function}
 Let $\rho$ be a finite dimensional linear representation of $\g$, and $n$ a non-negative integer. Then the function $x\mapsto\tr(\rho(x)^n)$ on $\g$ is an invariant polynomial function.
@@ -10267,9 +10267,9 @@ The condition is clearly necessary. Assume now that it is satisfied. Let $e$ be 
 \[0=\exp(tx_E)e-e=\sum_{n=0}^{N-1}\frac{(tx_E)^ne}{n!}\]
 so $x\cdot e=0$. But the Lie algebra $\g$ is generated by its nilpotent elements (Proposition~\ref{Lie algebra Serre relation}). Hence $e$ is an invariant element of the $\g$-module $E$.
 \end{proof}
-For any $\xi\in\GL(\g)$, let $S(\xi)$ be the automorphism of $S(\g)$ that extends $\xi$, and $S^*(\xi)$ the restriction to $S(\g^*)$ of the contragredient automorphism of $S(\xi)$. Then $S$ and $S^*$ are representations of $\GL(\g)$. If $x$ is a nilpotent element of $\g$, $\ad(x)$ is locally nilpotent on $S(\g)$ and $S(\exp(\ad(x)))=\exp(\ad(x))$, so 
+For any $\xi\in\GL(\g)$, let $\bm{S}(\xi)$ be the automorphism of $\bm{S}(\g)$ that extends $\xi$, and $\bm{S}^*(\xi)$ the restriction to $\bm{S}(\g^*)$ of the contragredient automorphism of $\bm{S}(\xi)$. Then $S$ and $\bm{S}^*$ are representations of $\GL(\g)$. If $x$ is a nilpotent element of $\g$, $\ad(x)$ is locally nilpotent on $\bm{S}(\g)$ and $\bm{S}(\exp(\ad(x)))=\exp(\ad(x))$, so 
 \begin{align}\label{Lie algebra exp of ad extend on S(g^*) prop}
-S^*(\exp(\ad(x)))=\exp(\ad^*(x)).
+\bm{S}^*(\exp(\ad(x)))=\exp(\ad^*(x)).
 \end{align}
 \begin{proposition}\label{Lie algebra spl-s-simp polynomial function invariant iff}
 Let $f$ be a polynomial function on $\g$. Then the following conditions are equivalent:
@@ -10283,18 +10283,18 @@ Let $f$ be a polynomial function on $\g$. Then the following conditions are equi
 The equivalence of (\rmnum{1}) and (\rmnum{3}) follows from formula (\ref{Lie algebra exp of ad extend on S(g^*) prop}) and Lemma~\ref{Lie algebra spl-s-simp module invariant element iff exp of nilpotent}. It follows from this that (\rmnum{3}) implies (\rmnum{2}) by extension of the base field. The implication (\rmnum{2})$\Rightarrow$(\rmnum{1}) is clear.
 \end{proof}
 \begin{theorem}\label{Lie algebra spl-s-simp invariant polynomial under ad and W iso}
-Let $I(\g^*)$ be the algebra of invariant polynomial functions on $\g$. Let $i:S(\g^*)\to S(\h^*)$ be the restriction homomorphism.
+Let $I(\g^*)$ be the algebra of invariant polynomial functions on $\g$. Let $i:\bm{S}(\g^*)\to \bm{S}(\h^*)$ be the restriction homomorphism.
 \begin{itemize}
-\item[(a)] The map $i|_{I(\g^*)}$ is an isomorphism from the algebra $I(\g^*)$ to the algebra $S(\h^*)^W$.
+\item[(a)] The map $i|_{I(\g^*)}$ is an isomorphism from the algebra $I(\g^*)$ to the algebra $\bm{S}(\h^*)^W$.
 \item[(b)] For any non-negative integer $n$, let $I^n(\g^*)$ be the set of homogeneous elements of $I(\g^*)$ of degree $n$. Then $I^n(\g^*)$ is the set of linear combinations of functions on $\g$ of the form $x\mapsto\tr(\rho(x)^n)$, where $\rho$ is a finite dimensional linear representation of $\g$.
 \item[(c)] Let $l=\rank(\g)$. Then there exist $l$ algebraically independent homogeneous elements of $I(\g^*)$ that generate the algebra $I(\g^*)$.
 \end{itemize}
 \end{theorem}
 \begin{proof}
-Let $f\in I(\g^*)$ and $w\in W$. There exists $s\in\Aut_e(\g,\h)$ such that $s|_{\h}=w^*$. Since $f$ is invariant under $s$ (Proposition~\ref{Lie algebra spl-s-simp polynomial function invariant iff}), $i(f)$ is invariant under $w$. Hence $i(I(\g^*))\sub S(\h^*)^W$. We prove that, if $f\in I(\g^*)$ is such that $i(f)=0$, then $f=0$. Extending the base field if necessary, we can assume that $\K$ is algebraically closed. By Proposition~\ref{Lie algebra exp of ad extend on S(g^*) prop}, $f$ vanishes on $\varphi(\h)$ for all $\varphi\in\Aut_e(\g)$. Hence $f$ vanishes on every Cartan subalgebra of $\g$, and in particular on the set of regular elements of $\g$. But this set is dense in $\g$ for the Zariski topology, so our claim follows.\par
+Let $f\in I(\g^*)$ and $w\in W$. There exists $s\in\Aut_e(\g,\h)$ such that $s|_{\h}=w^*$. Since $f$ is invariant under $s$ (Proposition~\ref{Lie algebra spl-s-simp polynomial function invariant iff}), $i(f)$ is invariant under $w$. Hence $i(I(\g^*))\sub \bm{S}(\h^*)^W$. We prove that, if $f\in I(\g^*)$ is such that $i(f)=0$, then $f=0$. Extending the base field if necessary, we can assume that $\K$ is algebraically closed. By Proposition~\ref{Lie algebra exp of ad extend on S(g^*) prop}, $f$ vanishes on $\varphi(\h)$ for all $\varphi\in\Aut_e(\g)$. Hence $f$ vanishes on every Cartan subalgebra of $\g$, and in particular on the set of regular elements of $\g$. But this set is dense in $\g$ for the Zariski topology, so our claim follows.\par
 Let $n$ be a non-negative integer. Let $I^n$ be the set of linear combinations of functions of the form $x\mapsto\tr(\rho(x)^n)$ on $\g$, where $\rho$ is a finite dimensional linear representation of $\g$. By Lemma~\ref{Lie algebra spl-s-simp trace is invariant function}, $I^n\sub I^n(\g^*)$. Thus
-\[i(I^n)\sub i(I^n(\g^*))\sub S^n(\h^*)^W.\]
-By Corollary~\ref{Lie algebra spl-s-simp invariant polynomial under W is trace}, $S^n(\h^*)^W\sub i(I^n)$, hence $i(I^n(\g^*))=S^n(\h^*)^W$, which proves (a), and $i(I^n)=i(I^n(\g^*))$, which shows (b). Assertion (c) follows from (a) and Theorem~\ref{reflection group inv of Sym minimal generating prop}.
+\[i(I^n)\sub i(I^n(\g^*))\sub \bm{S}^n(\h^*)^W.\]
+By Corollary~\ref{Lie algebra spl-s-simp invariant polynomial under W is trace}, $\bm{S}^n(\h^*)^W\sub i(I^n)$, hence $i(I^n(\g^*))=\bm{S}^n(\h^*)^W$, which proves (a), and $i(I^n)=i(I^n(\g^*))$, which shows (b). Assertion (c) follows from (a) and Theorem~\ref{reflection group inv of Sym minimal generating prop}.
 \end{proof}
 \begin{corollary}\label{Lie algebra simple exponent and degree of invariant polynomial}
 Assume that $\g$ is simple. Let $m_1,\dots,m_l$ be the exponents of the Weyl group of $\g$. Then there exist elements $P_1,\dots,p_l$ of $I(\g^*)$, homogeneous of degrees $m_1+1,\dots,m_l+1$, which are algebraically independent and generate the algebra $I(\g^*)$.
@@ -10303,26 +10303,26 @@ Assume that $\g$ is simple. Let $m_1,\dots,m_l$ be the exponents of the Weyl gro
 This follows from Theorem~\ref{Lie algebra spl-s-simp invariant polynomial under ad and W iso}(a) and Proposition~\ref{Coxeter transform degree is exponent}.
 \end{proof}
 \begin{corollary}\label{Lie algebra spl-s-simp projection S(g) to S(h)}
-Let $\Delta$ be a basis of $\Phi$, $S(\h)$ the symmetric algebra of $\h$, and $J$ the ideal of $S(\g)$ generated by $\n^+\cup\n^-$.
+Let $\Delta$ be a basis of $\Phi$, $\bm{S}(\h)$ the symmetric algebra of $\h$, and $J$ the ideal of $\bm{S}(\g)$ generated by $\n^+\cup\n^-$.
 \begin{itemize}
-\item[(a)] $S(\g)=S(\h)\oplus J$.
-\item[(b)] Let $j:S(\g)\to S(\h)$ be the homomorphism defined by the preceding decomposition of $S(\g)$. Let $I(\g)$ be the set of invariant elements of $S(\g)$. Let $S(\h)^W$ be the set of elements of $S(\h)$ invariant under the operation of $W$. Then $j|_{I(\g)}$ is an isomorphism from $I(\g)$ to $S(\h)^W$.
+\item[(a)] $\bm{S}(\g)=\bm{S}(\h)\oplus J$.
+\item[(b)] Let $j:\bm{S}(\g)\to \bm{S}(\h)$ be the homomorphism defined by the preceding decomposition of $\bm{S}(\g)$. Let $I(\g)$ be the set of invariant elements of $\bm{S}(\g)$. Let $\bm{S}(\h)^W$ be the set of elements of $\bm{S}(\h)$ invariant under the operation of $W$. Then $j|_{I(\g)}$ is an isomorphism from $I(\g)$ to $\bm{S}(\h)^W$.
 \end{itemize}
 \end{corollary}
 \begin{proof}
-Assertion (a) is clear. The Killing form defines an isomorphism from the vector space $\g^*$ to the vector space $\g$, which extends to an isomorphism $\xi$ from the $\g$-module $S(\g^*)$ to the $\g$-module $S(\g)$. We have $\xi(I(\g^*))=I(\g)$. The orthogonal complement of $\h$ with respect to the Killing form is $\n^++\n^-$. If we identify $\h^*$ with the orthogonal complement of $\n^++\n^-$ in $\g^*$, then $\xi(\h^*)=\h$, so $\xi(S(\h^*)) =S(\h)$ and $\xi(S(\h^*)^W)=S(\h)^W$. Finally, $\xi^{-1}(J)$ is the set of polynomial functions on $\g$ that vanish on $\h$. This proves that $\xi$ transforms the homomorphism $i$ of Theorem~\ref{Lie algebra spl-s-simp invariant polynomial under ad and W iso} into the homomorphism $j$. Thus assertion (b) follows from Theorem~\ref{Lie algebra spl-s-simp invariant polynomial under ad and W iso}(i).
+Assertion (a) is clear. The Killing form defines an isomorphism from the vector space $\g^*$ to the vector space $\g$, which extends to an isomorphism $\xi$ from the $\g$-module $\bm{S}(\g^*)$ to the $\g$-module $\bm{S}(\g)$. We have $\xi(I(\g^*))=I(\g)$. The orthogonal complement of $\h$ with respect to the Killing form is $\n^++\n^-$. If we identify $\h^*$ with the orthogonal complement of $\n^++\n^-$ in $\g^*$, then $\xi(\h^*)=\h$, so $\xi(\bm{S}(\h^*)) =\bm{S}(\h)$ and $\xi(\bm{S}(\h^*)^W)=\bm{S}(\h)^W$. Finally, $\xi^{-1}(J)$ is the set of polynomial functions on $\g$ that vanish on $\h$. This proves that $\xi$ transforms the homomorphism $i$ of Theorem~\ref{Lie algebra spl-s-simp invariant polynomial under ad and W iso} into the homomorphism $j$. Thus assertion (b) follows from Theorem~\ref{Lie algebra spl-s-simp invariant polynomial under ad and W iso}(i).
 \end{proof}
-Recall that $W$ is a group generated by reflections, so by Theorem~\ref{reflection group inv of Sym minimal generating prop} the algebra $S(\h)^W$ (resp. $S(\h^*)^W$) is a graded polynomial $\K$-algebra of transcendence degree $l=\rank(\g)$; therefore $I(\g)$ and $I(\g^*)$ are both polynomial $\K$-algebras. On the other hand, recall that by the Poincar\'e-Birkhoff-Witt theorem, $S(\g)$ is isomorphic to the graded algebra $\gr(U(\g))$ associated with $U(\g)$, so $I(\g)$ can be identified with the graded algebra $\gr(Z(\g))$ associated with $Z(\g)$, the centre of $U(\g)$. The preceding remarks show that $\gr(Z(\g))$ is a graded polynomial algebra of degree $l$. We now show that $Z(\g)$ is a polynomial algebra and extend this to the case where $\g$ is not splitting. The following lemma is the key for our arguments.
+Recall that $W$ is a group generated by reflections, so by Theorem~\ref{reflection group inv of Sym minimal generating prop} the algebra $\bm{S}(\h)^W$ (resp. $\bm{S}(\h^*)^W$) is a graded polynomial $\K$-algebra of transcendence degree $l=\rank(\g)$; therefore $I(\g)$ and $I(\g^*)$ are both polynomial $\K$-algebras. On the other hand, recall that by the Poincar\'e-Birkhoff-Witt theorem, $\bm{S}(\g)$ is isomorphic to the graded algebra $\gr(U(\g))$ associated with $U(\g)$, so $I(\g)$ can be identified with the graded algebra $\gr(Z(\g))$ associated with $Z(\g)$, the centre of $U(\g)$. The preceding remarks show that $\gr(Z(\g))$ is a graded polynomial algebra of degree $l$. We now show that $Z(\g)$ is a polynomial algebra and extend this to the case where $\g$ is not splitting. The following lemma is the key for our arguments.
 \begin{lemma}\label{graded algebra polynomial iff extension of scalar}
 Let $\K$ be a field and $A=\bigoplus_{n\geq 0}A_n$ be a graded $\K$-algebra, $\K'$ an extension of $\K$, and $A'=A\otimes_{\K}\K'$. Assume that $A'$ is a graded polynomial algebra over $\K'$. Then $A$ is a graded polynomial algebra over $\K$.
 \end{lemma}
 \begin{proof}
-Since $A'$ is a polynomial algebra, we have $A'_0=\K'$, so $A_0=\K$. Put $A_+=\bigoplus_{n\geq 1}A_n$ and $V=A_+/A_+^2$. Then $V$ is a graded vector space and there is a graded linear map $f:V\to A_+$ of degree zero such that the composite with the canonical projection $A_+\to V$ is the identity on $M$. Give $S(V)$ the graded structure induced by that of $V$. The homomorphism of $\K$-algebras $\tilde{f}:S(V)\to A$ that extends $f$ is a graded homomorphism of degree $0$; an immediate induction on the degree shows that $\tilde{f}$ is surjective.\par
-We claim that $A$ is a graded polynomial algebra if and only if $V$ is finite dimensional and $\tilde{f}$ is bijective. In fact, if $V$ is finite dimensional, $S(V)$ is clearly a graded polynomial algebra, and so is $A$ if $\tilde{f}$ is bijective. Conversely, assume that $A$ is generated by algebraically independent homogeneous elements $x_1,\dots,x_l$ of degrees $d_1,\dots,d_l$. Let $\bar{x}_i$ be the image of $x_i$ in $V$. It is immediate that the $\bar{x}_i$ form a basis of $V$; since $\bar{x}_i$ is of degree $d_i$, it follows that $S(V)$ and $A$ are isomorphic; in particular, $\dim(S^n(V))=\dim(A_n)$ for all $n$. Since $\tilde{f}$ is surjective, it is necessarily bijective.\par
-Finally, we show that $\tilde{f}$ is bijective in our case. In fact, the preceding result, appiled to the graded $\K'$-algebra $A'$, shows that $\tilde{f}\otimes 1:S(V)\otimes\K'\to A\otimes\K'$ is bijective, and hence so is $\tilde{f}$.
+Since $A'$ is a polynomial algebra, we have $A'_0=\K'$, so $A_0=\K$. Put $A_+=\bigoplus_{n\geq 1}A_n$ and $V=A_+/A_+^2$. Then $V$ is a graded vector space and there is a graded linear map $f:V\to A_+$ of degree zero such that the composite with the canonical projection $A_+\to V$ is the identity on $M$. Give $\bm{S}(V)$ the graded structure induced by that of $V$. The homomorphism of $\K$-algebras $\tilde{f}:\bm{S}(V)\to A$ that extends $f$ is a graded homomorphism of degree $0$; an immediate induction on the degree shows that $\tilde{f}$ is surjective.\par
+We claim that $A$ is a graded polynomial algebra if and only if $V$ is finite dimensional and $\tilde{f}$ is bijective. In fact, if $V$ is finite dimensional, $\bm{S}(V)$ is clearly a graded polynomial algebra, and so is $A$ if $\tilde{f}$ is bijective. Conversely, assume that $A$ is generated by algebraically independent homogeneous elements $x_1,\dots,x_l$ of degrees $d_1,\dots,d_l$. Let $\bar{x}_i$ be the image of $x_i$ in $V$. It is immediate that the $\bar{x}_i$ form a basis of $V$; since $\bar{x}_i$ is of degree $d_i$, it follows that $\bm{S}(V)$ and $A$ are isomorphic; in particular, $\dim(\bm{S}^n(V))=\dim(A_n)$ for all $n$. Since $\tilde{f}$ is surjective, it is necessarily bijective.\par
+Finally, we show that $\tilde{f}$ is bijective in our case. In fact, the preceding result, appiled to the graded $\K'$-algebra $A'$, shows that $\tilde{f}\otimes 1:\bm{S}(V)\otimes\K'\to A\otimes\K'$ is bijective, and hence so is $\tilde{f}$.
 \end{proof}
 \begin{proposition}\label{Lie algebra spl-s-simp invariant is polynomial algebra}
-Let $\g$ be a semi-simple Lie algebra, $l$ its rank. Let $I(\g)$ (resp. $I(\g^*)$) be the set of elements of $S(\g)$ (resp. $S(\g^*)$) invariant under the representation induced by the adjoint representation of $\g$. Let $Z(\g)$ be the centre of the enveloping algebra of $\g$.
+Let $\g$ be a semi-simple Lie algebra, $l$ its rank. Let $I(\g)$ (resp. $I(\g^*)$) be the set of elements of $\bm{S}(\g)$ (resp. $\bm{S}(\g^*)$) invariant under the representation induced by the adjoint representation of $\g$. Let $Z(\g)$ be the centre of the enveloping algebra of $\g$.
 \begin{itemize}
 \item[(a)] $I(\g)$ and $I(\g^*)$ are graded polynomial algebras of transcendence degree $l$.
 \item[(b)] $Z(\g)$ is isomorphic to the algebra of polynomials in $l$ indeterminates over $\K$.
@@ -10332,7 +10332,7 @@ Let $\g$ be a semi-simple Lie algebra, $l$ its rank. Let $I(\g)$ (resp. $I(\g^*)
 The canonical filtration of the enveloping algebra of $\g$ induces a filtration of $Z(\g)$.  so $\gr(Z(\g))$ is isomorphic to $I(\g)$. In view of Proposition~\ref{filtered complete ring generator of A and gr(A)}, it follows that (\rmnum{1})$\Rightarrow$(\rmnum{2}). On the other hand, Theorem~\ref{Lie algebra spl-s-simp invariant polynomial under ad and W iso} and Corollary~\ref{Lie algebra spl-s-simp projection S(g) to S(h)} show that (a) is true whenever $\g$ is split. The general case reduces to that case in view of the previous lemma.
 \end{proof}
 \begin{proposition}\label{Lie algebra spl-s-simp nilpotent iff zero under invariant polynomial}
-We retain the notations of Proposition~\ref{Lie algebra spl-s-simp invariant is polynomial algebra}, and denote by $\p$ the ideal of $S(\g^*)$ generated by the homogeneous elements of $I$ of positive degree. Let $x\in\g$. Then $x$ is nilpotent if and only if $f(x)=0$ for all $f\in\p$.
+We retain the notations of Proposition~\ref{Lie algebra spl-s-simp invariant is polynomial algebra}, and denote by $\p$ the ideal of $\bm{S}(\g^*)$ generated by the homogeneous elements of $I$ of positive degree. Let $x\in\g$. Then $x$ is nilpotent if and only if $f(x)=0$ for all $f\in\p$.
 \end{proposition}
 \begin{proof}
 Extending the base field if necessary, we can assume that $\g$ is splittable. Assume that $x$ is nilpotent. For any finite dimensional linear representation $\rho$ of $\g$, and any positive integer $n$, we have $\tr(\rho(x)^n)=0$, so $f(x)=0$ for all homogeneous $f\in I(\g^*)$ of positive degree, and hence $f(x)=0$ for all $f\in\p$. Conversely, if $f(x)=0$ for all $f\in\p$, then $\tr(\ad(x)^n)=0$ for all $n\geq 1$, so $\ad(x)$ is nilpotent and thus $x$ is nilpotent by Theorem~\ref{Lie semi-simple algebra Jordan decomposition}.
@@ -10357,39 +10357,39 @@ The group $\Aut_0(\g)$ is open and closed in $\Aut(\g)$ in the Zariski topology.
 Proposition~\ref{Lie algebra s-simp Aut_0 iff invariant under polynomial} shows that $\Aut_0(\g)$ is closed. Let $\widebar{\K}$ be an algebraic closure of $\K$. The group $\Aut(\g\otimes\widebar{\K})/\Aut_0(\g\otimes\widebar{\K})$ is finite (Corollary~\ref{Lie algebra spl-s-simp Aut(g) is semidirect prod of Aut_0}); a fortiori, the group $\Aut(\g)/\Aut_0(\g)$ is finite. Since the cosets of $\Aut_0(\g)$ in $\Aut(\g)$ are closed, it follows that $\Aut_0(\g)$ is open in $\Aut(\g)$.
 \end{proof}
 \paragraph{Centre of the universal enveloping algebra}
-To conclude this paragraph, we consider the centre $Z(\g)$ of the enveloping algebra $U(\g)$. We have seen that $Z(\g)$ and $S(\h)^W$ are both isomorphic to a polynomial algebra over $\K$ of transcendence degree $l=\rank(\g)$, so they are isomorphic. In fact, with a bit efforts, we can construct a explicit isomorphism from $Z(\g)$ to $S(\h)^W$, which is called the Harish-Chandra isomorphism. We also recall that we have a Harish-Chandra homomorphism, which is a homomorphism $\varphi$ from the commutant $U(\g)^0$ of $U(\h)$ to $U(\h)=S(\h)$.\par
-Let $\delta=\frac{1}{2}\sum_{\alpha\in\Phi^+}\alpha$ be the Weyl vector, and $t_\delta$ the automorphism of the algebra $S(\h)$ that takes every $x\in\h$ to $x-\delta(x)$, and hence the polynomial function $f$ on $\h^*$ to the function $\lambda\mapsto f(\lambda-\delta)$.
+To conclude this paragraph, we consider the centre $Z(\g)$ of the enveloping algebra $U(\g)$. We have seen that $Z(\g)$ and $\bm{S}(\h)^W$ are both isomorphic to a polynomial algebra over $\K$ of transcendence degree $l=\rank(\g)$, so they are isomorphic. In fact, with a bit efforts, we can construct a explicit isomorphism from $Z(\g)$ to $\bm{S}(\h)^W$, which is called the Harish-Chandra isomorphism. We also recall that we have a Harish-Chandra homomorphism, which is a homomorphism $\varphi$ from the commutant $U(\g)^0$ of $U(\h)$ to $U(\h)=\bm{S}(\h)$.\par
+Let $\delta=\frac{1}{2}\sum_{\alpha\in\Phi^+}\alpha$ be the Weyl vector, and $t_\delta$ the automorphism of the algebra $\bm{S}(\h)$ that takes every $x\in\h$ to $x-\delta(x)$, and hence the polynomial function $f$ on $\h^*$ to the function $\lambda\mapsto f(\lambda-\delta)$.
 \begin{theorem}\label{Lie algebra spl-s-simp H-C isomorphism}
-Let $U(\g)$ be the enveloping algebra of $\g$, $Z(\g)$ its centre, $U(\h)\sub U(\g)$ the enveloping algebra of $\h$ (identified with $S(\h)$), $U(\g)^0$ the commutant of $U(\h)$ in $U(\g)$, and $\varphi$ the Harish-Chandra homomorphism from $U(\g)^0$ to $U(\h)$ relative to $\Delta$. Let $S(\h)^W$ be the set of elements of $S(\h)$ invariant under the action of $W$. Then $(t_{\delta}\circ\varphi)|_{Z(\g)}$ is an isomorphism from $Z(\g)$ to $S(\h)^W$, independent of the choice of $\Delta$.
+Let $U(\g)$ be the enveloping algebra of $\g$, $Z(\g)$ its centre, $U(\h)\sub U(\g)$ the enveloping algebra of $\h$ (identified with $\bm{S}(\h)$), $U(\g)^0$ the commutant of $U(\h)$ in $U(\g)$, and $\varphi$ the Harish-Chandra homomorphism from $U(\g)^0$ to $U(\h)$ relative to $\Delta$. Let $\bm{S}(\h)^W$ be the set of elements of $\bm{S}(\h)$ invariant under the action of $W$. Then $(t_{\delta}\circ\varphi)|_{Z(\g)}$ is an isomorphism from $Z(\g)$ to $\bm{S}(\h)^W$, independent of the choice of $\Delta$.
 \end{theorem}
 \begin{proof}
 Let $\Lambda^{++}$ be the set of dominant weights of $\Phi$, $w\in W$, $\lambda\in\Lambda^{++}$, $\mu=w(\lambda)$. Then $Z(\mu-\delta)$ is isomorphic to a submodule of $Z(\lambda-\delta)$ by Corollary~\ref{Lie spl-s-simp algebra Verma module Z(mu) submodule of Z(lambda) if}, and $\langle\varphi(u),\lambda-\delta\rangle=\langle\varphi(u),\mu-\delta\rangle$ for all $u\in Z(\g)$ (Proposition~\ref{Lie spl-s-simp algebra centre character and H-C homomorphism}). Thus, the polynomial functions $(t_\delta\circ\varphi)(u)$ and $(\delta\circ\varphi)(u)\circ w$ on $\h^*$ coincide on $\Lambda^{++}$. But $\Lambda^{++}$ is dense in $\h^*$ in the Zariski topology: this can be seen by identifying $\h^*$ with $\K^{\Delta}$ by means of the basis consisting of the fundamental weights $\varpi_\alpha$, and by applying Proposition~\ref{}. Hence
 \begin{align}\label{Lie algebra spl-s-simp H-C isomorphism-1}
 (t_\delta\circ\varphi)(u)=(t_\delta\circ\varphi)(u)\circ w,
 \end{align}
-which shows that $(t_\delta\circ\varphi)(Z(\g))\sub S(\h)^W$.\par
-Let $\zeta:I(\g)\to S(\h)$ be the homomorphism defined in Corollary~\ref{Lie algebra spl-s-simp projection S(g) to S(h)}, which induces an isomorphism from $I(\g)$ to $S(\h)^W$. Consider the canonical isomorphism from the $\g$-module $U(\g)$ to the $\g$-module $S(\g)$, and let $\theta$ be its restriction to $Z(\g)$. Then $\theta(Z(\g))=I(\g)$.
+which shows that $(t_\delta\circ\varphi)(Z(\g))\sub \bm{S}(\h)^W$.\par
+Let $\zeta:I(\g)\to \bm{S}(\h)$ be the homomorphism defined in Corollary~\ref{Lie algebra spl-s-simp projection S(g) to S(h)}, which induces an isomorphism from $I(\g)$ to $\bm{S}(\h)^W$. Consider the canonical isomorphism from the $\g$-module $U(\g)$ to the $\g$-module $\bm{S}(\g)$, and let $\theta$ be its restriction to $Z(\g)$. Then $\theta(Z(\g))=I(\g)$.
 \[\begin{tikzcd}
 Z(\g)\ar[r,"\theta"]\ar[d,"\varphi"]&I(\g)\ar[d,"\zeta"]\\
-S(\h)\ar[r,"t_{\delta}"]&S(\h)
+\bm{S}(\h)\ar[r,"t_{\delta}"]&\bm{S}(\h)
 \end{tikzcd}\]
 Let $z$ be an element of $Z(\g)$ with $\deg(z)\leq d$ in $U(\g)$. Introduce the notations of (\ref{Lie spl-s-simp algebra basis element of U(g) formula}), and put 
 \[z=\sum_{|\bm{q}|+|\bm{m}|+|\bm{p}|\leq d}\lambda_{\bm{q},\bm{m},\bm{p}}u(\bm{q},\bm{m},\bm{p}).\]
 Let $v(\bm{q},\bm{m},\bm{p})$ be the monomial 
 \[v(\bm{q},\bm{m},\bm{p})=x_{-\alpha_1}^{q_1}\cdots x_{-\alpha_n}^{q_n}h_1^{m_1}\cdots h_l^{m_l}x_{\alpha_1}^{m_1}\cdots x_{\alpha_n}^{p_n}\]
-calculated in $S(\g)$. Denoting by $S_n(\g)$ the sum of the homogeneous components of $S(\g)$ of degrees smaller than or equal to $n$, then by Corollary~\ref{Lie algebra image of S^n in enveloping algebra} we have
+calculated in $\bm{S}(\g)$. Denoting by $\bm{S}_n(\g)$ the sum of the homogeneous components of $\bm{S}(\g)$ of degrees smaller than or equal to $n$, then by Corollary~\ref{Lie algebra image of S^n in enveloping algebra} we have
 \begin{align*}
-\theta(z)\equiv\sum_{|\bm{q}|+|\bm{m}|+|\bm{p}|=d}\lambda_{\bm{q},\bm{m},\bm{p}}v(\bm{q},\bm{m},\bm{p})\quad\text{mod \hspace{6pt} $S_{d-1}(\g)$}
+\theta(z)\equiv\sum_{|\bm{q}|+|\bm{m}|+|\bm{p}|=d}\lambda_{\bm{q},\bm{m},\bm{p}}v(\bm{q},\bm{m},\bm{p})\quad\text{mod \hspace{6pt} $\bm{S}_{d-1}(\g)$}
 \end{align*}
 so
 \begin{align*}
-(\zeta\circ\theta)(z)\equiv\sum_{|\bm{m}|=d}\lambda_{\bm{0},\bm{m},\bm{0}}v(\bm{0},\bm{m},\bm{0})\quad\text{mod \hspace{6pt} $S_{d-1}(\h)$}
+(\zeta\circ\theta)(z)\equiv\sum_{|\bm{m}|=d}\lambda_{\bm{0},\bm{m},\bm{0}}v(\bm{0},\bm{m},\bm{0})\quad\text{mod \hspace{6pt} $\bm{S}_{d-1}(\h)$}
 \end{align*}
 and concequently
 \begin{align}\label{Lie algebra spl-s-simp H-C isomorphism-2}
-(\zeta\circ\theta)(z)\equiv\varphi(z)\quad\text{mod \hspace{6pt} $S_{d-1}(\h)$}.
+(\zeta\circ\theta)(z)\equiv\varphi(z)\quad\text{mod \hspace{6pt} $\bm{S}_{d-1}(\h)$}.
 \end{align}
-The canonical filtrations on $U(\g)$ and $S(\g)$ induce filtrations on $Z(\g)$, $I(\g)$ and $S(\h)^W$, and $\theta$, $\zeta$ are compatible with these filtrations, so that $\gr(\zeta\circ\theta)$ is an isomorphism from the vector space $\gr(Z(\g))$ to the vector space $\gr(S(\h)^W)$. By (\ref{Lie algebra spl-s-simp H-C isomorphism-2}), $\gr(\varphi)=\gr(\zeta\circ\theta)$, and it is clear that $\gr(t_{\delta})$ is an isomorphism. Hence $\gr(t_{\delta}\circ\varphi)$ is bijective, so $t_{\delta}\circ\varphi:Z(\g)\to S(\h)^W$ is bijective (since $Z(\g)$ and $S(\h)^W$ are isomorphic to their associated graded algebras).\par
+The canonical filtrations on $U(\g)$ and $\bm{S}(\g)$ induce filtrations on $Z(\g)$, $I(\g)$ and $\bm{S}(\h)^W$, and $\theta$, $\zeta$ are compatible with these filtrations, so that $\gr(\zeta\circ\theta)$ is an isomorphism from the vector space $\gr(Z(\g))$ to the vector space $\gr(\bm{S}(\h)^W)$. By (\ref{Lie algebra spl-s-simp H-C isomorphism-2}), $\gr(\varphi)=\gr(\zeta\circ\theta)$, and it is clear that $\gr(t_{\delta})$ is an isomorphism. Hence $\gr(t_{\delta}\circ\varphi)$ is bijective, so $t_{\delta}\circ\varphi:Z(\g)\to \bm{S}(\h)^W$ is bijective (since $Z(\g)$ and $\bm{S}(\h)^W$ are isomorphic to their associated graded algebras).\par
 Now let $E$ be a simple $\g$-module of highest weight $\lambda$, and $\chi$ its central character. Let $w\in W$ and let $\tilde{\varphi}$ and $t_{\tilde{\delta}}$ be the homomorphisms analogous to $\varphi$ and $\delta$ relative to the basis $w(\Delta)$. The highest weight of $E$ relative to $w(\Delta)$ is $w(\lambda)$. By Proposition~\ref{Lie spl-s-simp algebra centre character and H-C homomorphism},
 \[\langle\varphi(u),\lambda\rangle=\chi(u)=\langle\tilde{\varphi}(u),w(\lambda)\rangle\]
 for $u\in Z(\g)$, and by (\ref{Lie algebra spl-s-simp H-C isomorphism-1})
@@ -10407,12 +10407,12 @@ For all $\lambda\in\h^*$, let $\chi_\lambda$ be the homomorphism $z\mapsto\langl
 \end{itemize}
 \end{corollary}
 \begin{proof}
-If $\K$ is algebraically closed, every homomorphism from $S(\h)^W$ to $\K$ extends to a homomorphism from $S(\h)$ to $\K$ (Proposition~\ref{algebra action integral over fix point} and Corollary~\ref{integral extension homomorphism to algebraically closed}), and every homomorphism from $S(\h)$ to $\K$ is of the form $f\mapsto f(\lambda)$ for some $\lambda\in\h^*$. Hence, if $\chi$ is a homomorphism from $Z(\g)$ to $\K$, there exists a $\mu\in\h^*$ such that, for all $z\in Z(\g)$,
+If $\K$ is algebraically closed, every homomorphism from $\bm{S}(\h)^W$ to $\K$ extends to a homomorphism from $\bm{S}(\h)$ to $\K$ (Proposition~\ref{algebra action integral over fix point} and Corollary~\ref{integral extension homomorphism to algebraically closed}), and every homomorphism from $\bm{S}(\h)$ to $\K$ is of the form $f\mapsto f(\lambda)$ for some $\lambda\in\h^*$. Hence, if $\chi$ is a homomorphism from $Z(\g)$ to $\K$, there exists a $\mu\in\h^*$ such that, for all $z\in Z(\g)$,
 \[\chi(z)=\langle(t_{\delta}\circ\varphi)(z),\lambda\rangle=\langle\varphi(z),\lambda-\delta\rangle\]
 hence (a).\par
 Let $\lambda,\mu\in\h^*$ and assume that $\chi_\lambda=\chi_\mu$. Then, for all $z\in Z(\g)$,
 \[\langle(t_{\delta}\circ\varphi)(z),\lambda+\delta\rangle=\chi_\lambda(z)=\chi_\mu(z)=\langle(t_{\delta}\circ\varphi)(z),\mu+\delta\rangle\]
-in other words, the homomorphisms from $S(\h)$ to $\K$ defined by $\lambda+\delta$ and $\mu+\delta$ coincide on $S(\h)^W$; thus, assertion (b) follows from Corollary~\ref{algebra finite group action homomorphism same restriction}.
+in other words, the homomorphisms from $\bm{S}(\h)$ to $\K$ defined by $\lambda+\delta$ and $\mu+\delta$ coincide on $\bm{S}(\h)^W$; thus, assertion (b) follows from Corollary~\ref{algebra finite group action homomorphism same restriction}.
 \end{proof}
 \begin{corollary}
 Let $E,F$ be finite dimensional simple $\g$-modules, and $\chi_E,\chi_F$ their central characters. If $\chi_E=\chi_F$, then $E$ and $F$ are isomorphic.
@@ -11176,7 +11176,7 @@ Let $(x_\alpha)_{\alpha\in\Phi}$ be a Chevalley system for $(\g,\h)$.
 \end{itemize}
 \end{proposition}
 \begin{proof}
-Part (a) follows immediately from the preceding. We prove (b). Since $\sigma\circ\theta$ and $\theta\circ\sigma$ are two semi-linear maps from $\g$ to $\g$ that coincide on $\g_0$, they coincide. Now $\sigma\circ\theta$ satisfies conditions (\ref{Lie algebra real form on conjugation prop}), hence is the conjugation of a relative to the real form $\g_u$ consisting of the $x\in\g$ such that $\sigma\circ\theta(x)=x$. For all $\alpha\in\Phi$ put
+Assertion (a) follows immediately from the preceding. We prove (b). Since $\sigma\circ\theta$ and $\theta\circ\sigma$ are two semi-linear maps from $\g$ to $\g$ that coincide on $\g_0$, they coincide. Now $\sigma\circ\theta$ satisfies conditions (\ref{Lie algebra real form on conjugation prop}), hence is the conjugation of a relative to the real form $\g_u$ consisting of the $x\in\g$ such that $\sigma\circ\theta(x)=x$. For all $\alpha\in\Phi$ put
 \begin{align}\label{Lie algebra real form Chevalley system-4}
 u_\alpha=x_\alpha-x_{-\alpha},\quad v_\alpha=i(x_\alpha+x_{-\alpha})
 \end{align}
@@ -11227,7 +11227,7 @@ Let $\g$ be a complex semi-simple Lie algebra.
 \end{itemize}
 \end{theorem}
 \begin{proof}
-Let $\h$ be a Cartan subalgebra of $\g$. Then $(\g,\h)$ is split, and has a Chevalley system $(x_\alpha)$. Part (a) now follows from Proposition~\ref{Lie algebra real form associated with Chevalley system}. Let $\k$ be a compact real form of $\g$; we show that there exists $s\in\Inn(\g)$ such that $s(\g_u)=\g$. Let $\t$ be a Cartan subalgebra of $\k$; then $\t_{(\C)}$ is a Cartan subalgebra of $\g$; since $\Inn(\g)$ operates transitively on the set of Cartan subalgebras of $\g$ (Theorem~\ref{Lie Cartan subalgebras conjugacy thm}), we are reduced to the case in which $\t_{(\C)}=\h$. Since $\k$ is a compact form, the eigenvalues of the endomorphisms $\ad(h)$, for $h\in\t$, are purely imaginary (Proposition~\ref{Lie algebra real compact iff}), so the roots $\alpha\in\Phi$ map $\t$ to $i\R$; this implies that $\t=i\h_0$. Then, by Proposition~\ref{Lie algebra compact real form image of g_u}, there exists $s\in\Inn(\g)$ such that $s(\g_u)=\k$, hence (b) in the case of compact forms.\par
+Let $\h$ be a Cartan subalgebra of $\g$. Then $(\g,\h)$ is split, and has a Chevalley system $(x_\alpha)$. Assertion (a) now follows from Proposition~\ref{Lie algebra real form associated with Chevalley system}. Let $\k$ be a compact real form of $\g$; we show that there exists $s\in\Inn(\g)$ such that $s(\g_u)=\g$. Let $\t$ be a Cartan subalgebra of $\k$; then $\t_{(\C)}$ is a Cartan subalgebra of $\g$; since $\Inn(\g)$ operates transitively on the set of Cartan subalgebras of $\g$ (Theorem~\ref{Lie Cartan subalgebras conjugacy thm}), we are reduced to the case in which $\t_{(\C)}=\h$. Since $\k$ is a compact form, the eigenvalues of the endomorphisms $\ad(h)$, for $h\in\t$, are purely imaginary (Proposition~\ref{Lie algebra real compact iff}), so the roots $\alpha\in\Phi$ map $\t$ to $i\R$; this implies that $\t=i\h_0$. Then, by Proposition~\ref{Lie algebra compact real form image of g_u}, there exists $s\in\Inn(\g)$ such that $s(\g_u)=\k$, hence (b) in the case of compact forms.\par
 Finally, let $\k_1$ and $\k_2$ be two splittable real forms of $\g$. There exist framings $(\k_1,\h_1,\Delta_1,(x_\alpha^1))$ and $(\k_2,\h_2,\Delta_2,(x_\alpha^2))$. These extend in an obvious way to bases $e_1$ and $e_2$ of $\g$. An automorphism of $\g$ that maps $e_1$ to $e_2$ maps $\k_1$ to $\k_2$; thus, it suffices to apply Proposition~\ref{Lie algebra spl-s-simp Aut_0(g) simple transitive on framing} to obtain the existence of an element $u$ of $\Aut_0(\g)=\Inn(\g)$ such that $u(\k_1)=\k_2$.
 \end{proof}
 \begin{corollary}\label{Lie algebra real compact isomorphic iff complexification}

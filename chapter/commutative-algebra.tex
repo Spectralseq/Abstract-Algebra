@@ -12962,12 +12962,12 @@ Let $k$ be a ring, $C$ be a $k$-algebra and $N$ be a square zero ideal of $C$. W
 k\ar[r]\ar[d]&C\ar[d,"\pi"]\\
 A\ar[r,"\varphi",pos=.6]\ar[ru,dashed,"\tilde{\varphi}"{anchor=south}]&C/N
 \end{tikzcd}\]
-Let $\tilde{\varphi}$ be such a lefting, and $\delta:A\to N$ be a map; we denote by $\delta+\tilde{\varphi}$ the map $x\mapsto\delta(x)+\tilde{\varphi}(x)$ from $A$ into $C$.
+
 \begin{proposition}\label{algebra derivation act on lifting}
 If $\varphi$ admits a lefting, the map $(\delta,\tilde{\varphi})\mapsto\delta+\tilde{\varphi}$ defines a simply transitive action of the group $\Der_k(A,N)$ of $k$-derivations from $A$ to $N$ on the set of leftings of $\varphi$.
 \end{proposition}
 \begin{proof}
-Let $\tilde{\varphi}_0:A\to C$ be a lifting of $\varphi$. The map $\delta\mapsto\delta+\tilde{\varphi}_0$ induces a bijection from the set of maps $A\to N$ to the set of maps $\tilde{\varphi}:A\to C$ such that $\pi\circ\tilde{\varphi}=\varphi$. Fix $\delta$, and put $\tilde{\delta}=\delta+\tilde{\varphi}_0$. For $\tilde{\delta}$ to be a homomorphism of $k$-algebras, it is necessary and sufficient that $\delta$ is a $k$-derivation: in fact, for $x,y\in A$ and $\lambda\in k$, we have the relations
+Let $\tilde{\varphi}_0:A\to C$ be a lifting of $\varphi$. The map $\delta\mapsto\delta+\tilde{\varphi}_0$ induces a bijection from the set of maps $A\to N$ to the set of maps $\tilde{\varphi}:A\to C$ such that $\pi\circ\tilde{\varphi}=\varphi$. Fix $\delta$, and put $\tilde{\varphi}=\delta+\tilde{\varphi}_0$. For $\tilde{\varphi}$ to be a homomorphism of $k$-algebras, it is necessary and sufficient that $\delta$ is a $k$-derivation: in fact, for $x,y\in A$ and $\lambda\in k$, we have the relations
 \begin{align*}
 \tilde{\varphi}(x+y)-\tilde{\varphi}(x)-\tilde{\varphi}(y)&=\delta(x+y)-\delta(x)-\delta(y)\\
 \tilde{\varphi}(\lambda x)-\lambda\tilde{\varphi}(x)&=\delta(\lambda x)-\lambda\delta(x)\\
@@ -13288,7 +13288,7 @@ The results of \cref{algebra local es.ft formally smooth adic then for discrete}
 In each case, it follows from \cref{algebra local formally smooth locus open}, in view of \cref{Noe local k-algebra formally smooth iff georegular} and \cref{algebra Noe georegular normal separable and localization}, that the $k_0$-algebra $A$ is formally smooth if and only if it is gemetrically regular.
 \end{remark}
 \begin{corollary}[\textbf{Zariski's Jacobian Criterion}]\label{algebra local regular es.ft over field Jacobian criterion}
-Let $k$ be a field, $A$ be a regular local $k$-algebra, and $\mathfrak{I}$ be a proper ideal of $A$. Suppose that the $k$-algebra $A$ is essentially of finite type or complete. For the loca ring $A/\mathfrak{I}$ to be regular, it is necessary and sufficient that there exists a generating family $f_1,\dots,f_m$ of $\mathfrak{I}$ and derivations $D_1,\dots,D_m$ of $A$ such that $\det(D_j(f_i))\notin\m_A$. In this case, the elements $(f_1,\dots,f_m)$ is a subset of a system of parameters of $A$ and the ideal $\mathfrak{I}$ is prime. 
+Let $k$ be a field, $A$ be a regular local $k$-algebra, and $\mathfrak{I}$ be a proper ideal of $A$. Suppose that the $k$-algebra $A$ is essentially of finite type or complete. For the local ring $A/\mathfrak{I}$ to be regular, it is necessary and sufficient that there exists a generating family $f_1,\dots,f_m$ of $\mathfrak{I}$ and derivations $D_1,\dots,D_m$ of $A$ such that $\det(D_j(f_i))\notin\m_A$. In this case, the elements $(f_1,\dots,f_m)$ is a subset of a system of parameters of $A$ and the ideal $\mathfrak{I}$ is prime. 
 \end{corollary}
 \begin{proof}
 Let $k_0$ be the prime subfield of $k$. The $k_0$-algebra $A$ is geometrically regular by \cref{algebra local regular separable residue is georegular}, hence formally smooth (\cref{algebra local formally smooth locus open if ft over separable}). By the same reasoning, the regularity of $A/\mathfrak{I}$ is equivalent to its formally smoothness over $k_0$. The first assertion then follows from \cref{algebra A/I formally smooth Jacobian criterion}, which also implies that the sequence $(f_1,\dots,f_m)$ is completely secant for $A$ in this case. We can then apply \cref{regular local ring quotient by ideal regular iff} to conclude the second assertion (note that $A/\mathfrak{I}$ is then an integral domain).

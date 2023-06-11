@@ -428,12 +428,12 @@ On the other hand, from the description of the sections of $f_!(\mathscr{E})$, i
 which in particular shows that $f_!$ is exact.
 
 \begin{proposition}\label{sheaf locally closed extension image char}
-The functor $f_!:\Sh(W)\to\Sh(X)$ is an equivalence between the category of sheaves on $W$ and the full subcategory of $\Sh(X)$ made up of the sheaves for which $\mathscr{F}_x=0$ for $x\in X-W$. The inverse functor is given by $f^*$.
+The functor $f_!:\Sh(W)\to\Sh(X)$ is an equivalence between the category of sheaves on $W$ and the full subcategory of $\Sh(X)$ consisting of sections of $\mathscr{F}$ that are supported in $W$. The inverse functor is given by $f^{-1}$.
 \end{proposition}
 \begin{proof}
 For a sheaf $\mathscr{E}$ on $W$, we note the following simple identity among sheaves on $W$:
-\[f^*(f_!(\mathscr{E}))=\mathscr{E}.\]
-Next, consider a sheaf $\mathscr{F}$ on $X$ whose stalks vanish outside $W$. A close examination reveals that the adjunction morphism $\mathscr{F}\to f_*(f^*(\mathscr{F}))$ may be factored through $f_!(f^*\mathscr{F})$, so that we obtain an isomorphism $\mathscr{F}\cong f_!(f^*(\mathscr{F}))$.
+\[f^{-1}(f_!(\mathscr{E}))=\mathscr{E}.\]
+Next, consider a sheaf $\mathscr{F}$ on $X$ whose stalks vanish outside $W$. A close examination reveals that the adjunction morphism $\mathscr{F}\to f_*(f^{-1}(\mathscr{F}))$ may be factored through $f_!(f^{-1}\mathscr{F})$, so that we obtain an isomorphism $\mathscr{F}\cong f_!(f^{-1}(\mathscr{F}))$.
 \end{proof}
 
 \begin{proposition}\label{sheaf locally closed extension right adjoint}
@@ -442,7 +442,7 @@ The functor $f_!:\Sh(W)\to\Sh(X)$ admits a right adjoint $f^!:\Sh(X)\to\Sh(W)$.
 \begin{proof}
 For a sheaf $\mathscr{F}$ over $X$, we let $\mathscr{F}^W$ denote the sheaf on $X$ whose section over an open subset $U$ is given by
 \[\Gamma(U,\mathscr{F}^W)=\{s\in\Gamma(U,\mathscr{F}):\supp(s)\sub W\}.\]
-The stalks of $\mathscr{F}^W$ are then zero at any poitns outside $W$, so if we put $f^!(\mathscr{F})=f^*(\mathscr{F}^W)$, then by the last assertion of \cref{sheaf locally closed extension image char} applied to $\mathscr{F}^W$,
+The stalks of $\mathscr{F}^W$ are then zero at any poitns outside $W$, so if $f^!(\mathscr{F})=f^{-1}(\mathscr{F}^W)$, then by the last assertion of \cref{sheaf locally closed extension image char} applied to $\mathscr{F}^W$, we have
 \begin{equation}\label{sheaf locally closed extension right adjoint-1}
 \Gamma(U,f_!(f^!(\mathscr{F})))=\Gamma(U,\mathscr{F}^W)=\{s\in\Gamma(U,\mathscr{F}):\supp(s)\sub W\}.
 \end{equation}
@@ -467,44 +467,51 @@ We shall now make a close investigation of the special case of open and closed s
 Let $X$ be a topological space.
 \begin{enumerate}
     \item[(a)] For the inclusion $i:Z\to X$ of a closed subspace, we have $i_!=i_*$.
-    \item[(b)] For the inclusion $j:U\to X$ of an open subspace, we have $j^*=j^!$. 
+    \item[(b)] For the inclusion $j:U\to X$ of an open subspace, we have $j^{-1}=j^!$. 
 \end{enumerate}
 \end{proposition}
 \begin{proof}
-For a sheaf $\mathscr{E}$ on $Z$, we have a natural map $i_!(\mathscr{E})\to i_*(\mathscr{E})$ which is an isomorphism as one checks by localization, since $Z$ is closed in $X$. On the other hand, for a sheaf $\mathscr{F}$ on $X$, we have according to the proof of \cref{sheaf locally closed extension right adjoint} that $j^!(\mathscr{F})=j^*(\mathscr{F}^U)$. Combined with the inclusion $\mathscr{F}^U\to\mathscr{F}$, this yields a monomorphism $j^!(\mathscr{F})\to j^*(\mathscr{F})$, which is an isomorphism because for any open subset $V$ of $U$, we have
+For a sheaf $\mathscr{E}$ on $Z$, we have a natural map $i_!(\mathscr{E})\to i_*(\mathscr{E})$ which is an isomorphism as one checks by localization, since $Z$ is closed in $X$. On the other hand, for a sheaf $\mathscr{F}$ on $X$, we have according to the proof of \cref{sheaf locally closed extension right adjoint} that $j^!(\mathscr{F})=j^{-1}(\mathscr{F}^U)$. Combined with the inclusion $\mathscr{F}^U\to\mathscr{F}$, this yields a monomorphism $j^!(\mathscr{F})\to j^{-1}(\mathscr{F})$, which is an isomorphism because for any open subset $V$ of $U$, we have
 \begin{equation*}
 \Gamma(V,j^!(\mathscr{F}))=\Gamma(V,\mathscr{F}^U)=\Gamma(V,\mathscr{F}).\qedhere
 \end{equation*}
 \end{proof}
 
 \begin{corollary}
-The functor $i_*:\Sh(Z)\to\Sh(X)$ is exact, and $j^*:\Sh(X)\to\Sh(U)$ transforms an injective sheaf $\mathscr{I}$ on $X$ into an injective sheaf $j^*(\mathscr{I})$ on $U$.
+The functor $i_*:\Sh(Z)\to\Sh(X)$ is exact, and $j^{-1}:\Sh(X)\to\Sh(U)$ transforms an injective sheaf $\mathscr{I}$ on $X$ into an injective sheaf $j^{-1}(\mathscr{I})$ on $U$.
 \end{corollary}
 \begin{proof}
 This follows from \cref{sheaf open and closed shrink functor char} and \cref{sheaf locally closed f^! sends injective to injective}.
 \end{proof}
 
 \begin{proposition}\label{sheaf open and closed complement exact sequence on shrink}
-In the case where $U$ and $Z$ are complementary subspaces of $X$, a sheaf $\mathscr{F}$ on $X$ give rise to an exact sequence
-\begin{equation}
+In the case where $U$ and $Z$ are complementary subspaces of $X$, a sheaf $\mathscr{F}$ on $X$ give rise to exact sequences
+\begin{equation}\label{sheaf open and closed complement exact sequence on shrink-1}
 \begin{tikzcd}
-0\ar[r]&j_!(j^*(\mathscr{F}))\ar[r]&\mathscr{F}\ar[r]&i_*(i^*(\mathscr{F}))\ar[r]&0
+0\ar[r]&j_!j^{-1}(\mathscr{F})\ar[r]&\mathscr{F}\ar[r]&i_*i^{-1}(\mathscr{F})\ar[r]&0
 \end{tikzcd}
 \end{equation}
-of sheaves on $X$, where the two morphism are adjunction morphisms.
+\vspace*{-5mm}
+\begin{equation}\label{sheaf open and closed complement exact sequence on shrink-2}
+\begin{tikzcd}
+0\ar[r]&i_*i^!(\mathscr{F})\ar[r]&\mathscr{F}\ar[r]&j_*(j^{-1}(\mathscr{F}))
+\end{tikzcd}
+\end{equation}
+of sheaves on $X$, where the two morphism are adjunction morphisms. Moreover, the last morphism in (\ref{sheaf open and closed complement exact sequence on shrink-2}) is surjective if $\mathscr{F}$ is injective.
 \end{proposition}
 \begin{proof}
-The exactness is seen by taking stalks. In fact, if $x\in U$, then we have $j_!(j^*(\mathscr{F}))_x=(j^*(\mathscr{F}))_x=\mathscr{F}_x$ and $i_*(i^*(\mathscr{F}))=0$, and a similar result holds for $x\in Z$.
+The exactness is seen by taking stalks. For example, if $x\in U$, then we have $j_!(j^{-1}(\mathscr{F}))_x=(j^{-1}(\mathscr{F}))_x=\mathscr{F}_x$ and $i_*(i^{-1}(\mathscr{F}))=0$, and a similar result holds for $x\in Z$.
 \end{proof}
 
-In the situation of \cref{sheaf open and closed complement exact sequence on shrink}, we have adjoint pairs $(j_!,j^!=j^*,j_*)$ and $(i^*,i_*=i_!,i^!)$, which are presented in the following diagram
+
+In the situation of \cref{sheaf open and closed complement exact sequence on shrink}, we have adjoint pairs $(j_!,j^!=j^{-1},j_*)$ and $(i^{-1},i_*=i_!,i^!)$, which are presented in the following diagram
 \[\begin{tikzcd}[column sep=12mm]
-\Sh(U)\ar[r,bend left=40pt,"j_!"]\ar[r,bend right=40pt,"j_*"]&\Sh(X)\ar[l,swap,"j^*=j^!"]\ar[r,bend left=40pt,"i^*"]\ar[r,bend right=40pt,"i^!"]&\Sh(Z)\ar[l,swap,"i_*=i_!"]
+\Sh(U)\ar[r,bend left=40pt,"j_!"]\ar[r,bend right=40pt,"j_*"]&\Sh(X)\ar[l,swap,"j^{-1}=j^!"]\ar[r,bend left=40pt,"i^{-1}"]\ar[r,bend right=40pt,"i^!"]&\Sh(Z)\ar[l,swap,"i_*=i_!"]
 \end{tikzcd}\]
 The functors in the lower row are left exact and preserves injectives, that in the middle row are exact and preserves injectives, and that in the upper row are exact. Moreover, the adjoint relationship between the various functions can be read off from this diagram, and we have identities
 \begin{gather*}
-j^*j_*=1,\quad j^*j_!=1,\quad i^!i_*=1,\quad i^*i_*=1,\\
-j^*i_*=0,\quad i^*j_!=0,\quad i^!j_*=0.
+j^{-1}j_*=1,\quad j^{-1}j_!=1,\quad i^!i_*=1,\quad i^{-1}i_*=1,\\
+j^{-1}i_*=0,\quad i^{-1}j_!=0,\quad i^!j_*=0.
 \end{gather*}
 
 \subsection{Glueing sheaves}
@@ -1192,7 +1199,7 @@ The presheaf $($co$)$kernel satisfies the universal property of $($co$)$kernel i
 \begin{proof}
 Let $\psi:\mathscr{G}\to\mathscr{H}$ be another morphism of presheaves of $\mathscr{O}_X$-modules such that $(\psi\circ\varphi)_U=\psi_U\circ\varphi_U=0$ for any $U\sub X$. Then we have an induced map $\tilde{\psi}_U:\ker\varphi_U\to\mathscr{H}(U)$ for each $U$. For $U\sub V$ open in $X$, it is easy to verify that the following commutative diagram:
 \[\begin{tikzcd}
-\ker\varphi_V\ar[r,"\tilde{\psi}_V"]\ar[d,"\res^V_U"]&\mathscr{H}(V)\ar[d,"\res^V_U"]\\
+\ker\varphi_V\ar[r,"\tilde{\psi}_V"]\ar[d,swap,"\res^V_U"]&\mathscr{H}(V)\ar[d,"\res^V_U"]\\
 \ker\varphi_U\ar[r,"\tilde{\psi}_U"]&\mathscr{H}(U)
 \end{tikzcd}\]
 so $\ker\varphi$ is the kernel in the category of presheaves. A similar verification works for cokernels.
@@ -2581,3 +2588,155 @@ This is true because
 \[f_*\mathscr{I}(V_{j_0\dots j_p})=\mathscr{I}(f^{-1}(V_{j_0\dots j_p}))=\mathscr{I}\big(f^{-1}(V_{j_0})\cap\cdots\cap f^{-1}(V_{j_p})\big)=\mathscr{I}(U_{j_0\dots j_p}).\]
 Thus the first statement of the lemma follows from \cref{Cech flasque}. The second statement follows from the first and \cref{Cech vanish H^p vanish}.
 \end{proof}
+
+\section{Cohomology with compact support}
+\subsection{The sheaf of sections with compact support}
+Let $X$ be a locally compact Hausdorff space. For a sheaf $\mathscr{F}$ on $X$, we define the sections of $\mathscr{F}$ over $X$ with compact support to be
+\[\Gamma_c(X,\mathscr{F})=\{s\in\Gamma(X,\mathscr{F}):\text{$\supp(s)$}\}\]
+This define a left exact functor $\Gamma_c(X,-):\Sh(X)\to\mathbf{Ab}$, whose $i$-th derived functor is denoted by $H_c^i(X,\mathscr{F})$ and called the $i$-the cohomology group with compact support with coefficient in $\mathscr{F}$.\par
+Consider a proper map $f:X\to Y$ between locally compact Hausdorff spaces, i.e. such that the inverse image of any compact subset of $Y$ is compact in $X$. For a sheaf $\mathscr{G}$ over $X$, the adjunction map $\Gamma(Y,\mathscr{G})\to \Gamma(X,f^*(\mathscr{G}))$ will transform a section of $G$ with compact support into a section of $f^*(\mathscr{G})$ with compact support, and hence induces a natural map
+\begin{equation}\label{sheaf on LHS induction morphism on pullback}
+\Gamma_c(Y,\mathscr{G})\to\Gamma_c(X,f^*(\mathscr{G})).
+\end{equation}
+Since $f^*$ is exact, we can extend this into a morphism
+\[f^*:H_c^*(Y,\mathscr{G})\to H_c^*(X,f^*(\mathscr{G}))\]
+by choosing an injective resolution $\mathscr{G}\to\mathscr{J}^\bullet$ and an injective resolution $f^*(\mathscr{J}^\bullet)\to\mathscr{I}^\bullet$. The compostion
+\[\Gamma_c(Y,\mathscr{J}^\bullet)\to \Gamma_c(X,f^*(\mathscr{J}^\bullet))\to\Gamma_c(X,\mathscr{I}^\bullet)\]
+then represents (\ref{sheaf on LHS induction morphism on pullback}) on the chain level, noticing that $\mathscr{I}$ is an injective resolution of $f^*(\mathscr{G})$.\par
+By the functoriality, we can derive from an exact sequence of sheaves on $Y$
+\[\begin{tikzcd}
+0\ar[r]&\mathscr{E}\ar[r]&\mathscr{F}\ar[r]&\mathscr{G}\ar[r]&0
+\end{tikzcd}\]
+a commutative diagram
+\[\begin{tikzcd}[column sep=5mm]
+\cdots\ar[r]&H^p_c(Y,\mathscr{E})\ar[r]\ar[d]&H^p_c(Y,\mathscr{F})\ar[r]\ar[d]&H^p_c(Y,\mathscr{G})\ar[r]\ar[d]&H^{p+1}_c(Y,\mathscr{E})\ar[d]\ar[r]&\cdots\\
+\cdots\ar[r]&H^p_c(X,f^*(\mathscr{E}))\ar[r]&H^p_c(X,f^*(\mathscr{F}))\ar[r]&H^p_c(X,f^*(\mathscr{G}))\ar[r]&H^{p+1}_c(X,f^*(\mathscr{E}))\ar[r]&\cdots
+\end{tikzcd}\]
+
+Consider in particular the inclusion $i:Z\to X$ of a closed subspace. A sheaf $\mathscr{E}$ on $Z$ givs rise to a canonical isomorphism
+\[H^*_c(Z,\mathscr{E})=H^*_c(X,i_*(\mathscr{E})).\]
+For closed subspaces $A$ and $B$ of $X$, we also have a Mayer-Vietoris sequence
+\[\begin{tikzcd}
+\cdots\ar[r]&H^p_c(A\cup B,\mathscr{F})\ar[r]&H^p_c(A,\mathscr{F})\oplus H^p_c(\mathscr{B},\mathscr{F})\ar[r]&H^p_c(A\cap B,\mathscr{F})\ar[r]&\cdots
+\end{tikzcd}\]
+whose proof is similar to the case of usual cohomology groups.
+
+\subsection{Soft sheaves}
+Let $X$ denote a locally compact Hausdorff space. We shall introduce an important class of $\Gamma_c(X,-)$-acyclic sheaves on $X$.
+
+\begin{proposition}\label{sheaf on LHS compact subset restriction isomorphism}
+Let $i:Z\to X$ be the inclusion of a compact subset into a locally compact Hausdorff space $X$. For any sheaf $\mathscr{F}$ on $X$, there is a canonical isomorphism
+\[\rlim_{U}\Gamma(U,\mathscr{F})\stackrel{\sim}{\to} \Gamma(Z,i^{-1}(\mathscr{F})),\]
+where the limit is taken over all open subsets $U\sups Z$.
+\end{proposition}
+\begin{proof}
+We note that the canonical map $\rlim\Gamma(U,\mathscr{F})\to\Gamma(Z,i^{-1}(\mathscr{F}))$ is injective for trivial reasons. To see that it is surjective, consider a section $s\in\Gamma(Z,i^{-1}(\mathscr{F}))$. Since $Z$ is compact, there exists a finite family of open subsets $(U_i)_{i\in I}$ and sections $s_i\in\Gamma(U_i,\mathscr{F})$ such that $s|_{U_i\cap Z}=s_i|_{U_i\cap Z}$ and $Z\sub\bigcup_iU_i$. We can then find a family of open subsets $(V_i)_{i\in I}$ such that $\widebar{V}_i\sub U_i$ and $Z\sub\bigcup_iV_i$. For $x\in X$, let $I(x)=\{i\in I:x\in\widebar{V}_i\}$ and define
+\[W=\{x\in\bigcup_iV_i:\text{$(s_i)_x=(s_j)_x$ for any $i,j\in I(x)$}\}.\]
+Then $I(x)$ is finite and each $x$ has a neighborhood $W_x$ such that $I(y)\sub I(x)$ for any $y\in W_x$. We then conclude that $W$ is open and contains $Z$ by its construction. Since $s_i|_{W\cap V_i\cap V_j}=s_j|_{W\cap V_i\cap V_j}$, there exists $\tilde{s}\in\Gamma(W,\mathscr{F})$ such that $\tilde{s}|_{W\cap V_i}=s_i|_{W\cap V_i}$, which is our desired section.
+\end{proof}
+
+\begin{definition}
+A sheaf $\mathscr{F}$ on $X$ is called \textbf{soft} if for any compact subset $K$ of $X$, the restriction map $\Gamma(X,\mathscr{F})\to\Gamma(K,\mathscr{F})$ is surjective.
+\end{definition}
+In view of \cref{sheaf on LHS compact subset restriction isomorphism}, softness can also be described by the following conditions: for any compact subset $K$, any open subset $U$ of $X$ containing $K$, and any section $s$ of $\mathscr{F}$ over $U$, there exists a section $t$ of $\mathscr{F}$ over $X$ such that $s$ and $t$ have the same restriction to some open neighborhood of $K$ contained in $U$. Therefore, flasque sheaves, and in particular injective sheaves, are soft. We also note that softness can be detected by sections with compact support.
+
+\begin{proposition}\label{sheaf on LHS soft iff comact restriction surjective}
+Let $\mathscr{F}$ be a sheaf over $X$. Then $X$ is soft if and only if for any closed subset $Z$ of $X$, the restriction map $\Gamma_c(X,\mathscr{F})\to\Gamma_c(Z,\mathscr{F}|_Z)$ is surjective.
+\end{proposition}
+\begin{proof}
+If $K$ is compact, then $\Gamma(K,\mathscr{F})=\Gamma_c(K,\mathscr{F}|_K)$, so it suffices to prove the converse. Let $\mathscr{F}$ be soft and $s\in\Gamma(Z,\mathscr{F}|_Z)$ with compact support $K$. Let $U$ be a relatively compact open neighborhood of $K$ in $X$ and define a section $\tilde{s}\in\Gamma(\partial U\cup(Z\cap\widebar{U}),\mathscr{F})$ by setting $\tilde{s}|_{Z\cap\widebar{U}}=s$ and $\tilde{s}|_{\partial U}=0$.If we extend $\tilde{s}$ to a section $t\in\Gamma(X,\mathscr{F})$, then since $t=0$ on a neighborhood of $\partial U$, we may assume that $t$ is supported by $\widebar{U}$, which is compact by hypothesis.
+\end{proof}
+
+\begin{corollary}\label{sheaf on LHS soft restriction to locally closed}
+Let $W$ be a locally closed subspace of $X$ and $\mathscr{F}$ be a soft sheaf on $X$. Then $\mathscr{F}|_W$ is soft on $W$.
+\end{corollary}
+\begin{proof}
+If $W$ is open, this is clear, and the closed case follows from \cref{sheaf on LHS soft iff comact restriction surjective}.
+\end{proof}
+
+\begin{theorem}\label{sheaf on LHS soft is compact acyclic}
+A soft sheaf $\mathscr{F}$ on a locally compact Hausdorff space $X$ is $\Gamma_c(X,-)$ acyclic, i.e.
+\[H^n_c(X,\mathscr{F})=0\for n>0.\]
+\end{theorem}
+\begin{proof}
+Consider an exact sequence
+\[\begin{tikzcd}
+0\ar[r]&\mathscr{E}\ar[r,"\varphi"]&\mathscr{F}\ar[r,"\psi"]&\mathscr{G}\ar[r]&0
+\end{tikzcd}\]
+with $\mathscr{E}$ soft. We shall prove that the projection $\Gamma_c(X,\mathscr{F})\to\Gamma_c(X,\mathscr{G})$ is surjective. First assume that $X$ is compact, so let there be given a section $s\in\Gamma(X,\mathscr{G})$. For each point $x\in X$, we can choose a compact neighborhood $K_x$ of $x$ and a section $t_x\in\Gamma(K_x,\mathscr{F})$ which projects onto the restriction of $s$ to $K_x$. We may refine the covering $(\Int K_x)_{X\in X}$ to a finite covering, which leads us to the following construction: Given compact subsets $K$ and $L$ of $X$, $u\in\Gamma(K,\mathscr{F})$ and $v\in\Gamma(L,\mathscr{F})$ and $v\in\Gamma(L,\mathscr{F})$ which projects onto $s$. The section $u|_{K\cap L}-v|_{K\cap L}$ represents a section of $\mathscr{E}$ over $L\cap K$ and can as such be extended to a section $w\in\Gamma(L,\mathscr{E})$. We can now consider the sections $u\in\Gamma(K,\mathscr{F})$ and $v+\varphi(w)\in\Gamma(L,\mathscr{F})$ and glue them toghther to obtain a section of $\mathscr{F}$ over $K\cap L$ which projects onto $s$. Now apply this construction to our finite covering, we get a section of $F$ over $X$ which projects onto $s\in\Gamma(X,\mathscr{G})$.\par
+In the case where $X$ is not compact, we can choose a compact subset $K$ so that $\Int K$ contains $\supp(s)$. Choose a section $t$ of $F$ over $K$ which projects onto the restriction of $s$ to $K$. The restriction of $t$ to $\partial K$ represents a section of $E$ over $\partial K$ which we extend to a section of $\mathscr{E}$ over $K$, and subtract from $t$. Thus we may assume that the restriction of $t$ to $\partial K$ is zero, and hence extend $t$ by zero outside $K$, to obtain a global section of $F$ which projects onto $s$. We also note that these considerations proves that if we add the assumption that $\mathscr{F}$ is soft, then $G$ is soft.\par
+We now return to a general soft sheaf $\mathscr{F}$ over $X$ and choose an exact sequence
+\[\begin{tikzcd}
+0\ar[r]&\mathscr{F}\ar[r]&\mathscr{I}\ar[r]&\mathscr{T}\ar[r]&0
+\end{tikzcd}\]
+with $\mathscr{I}$ injetive. Using that $\mathscr{I}$ is flasque, we conclude first that $\mathscr{I}$ is soft and second that $\mathscr{T}$ is soft. We can now conclude from our previous arguments that $H_c^1(X,\mathscr{F})=0$, and the general case follows by an induction.
+\end{proof}
+
+\begin{corollary}\label{sheaf on LHS soft and exact sequence}
+Let $0\to\mathscr{E}\to\mathscr{F}\to\mathscr{G}\to 0$ be an exact sequence of sheaves over $X$. If $\mathscr{E}$ and $\mathscr{F}$ are soft, then $\mathscr{G}$ is soft.
+\end{corollary}
+\begin{proof}
+This is remarked in the proof of \cref{sheaf on LHS soft is compact acyclic}.
+\end{proof}
+
+\begin{proposition}\label{sheaf on LHS soft is local prop}
+Let $\mathscr{F}$ be a sheaf over a locally compact Hausdorff space $X$. If every point of $X$ has an open neighborhood $U$ such that the restriction of $\mathscr{F}$ to $U$ is a soft sheaf on $U$, then $\mathscr{F}$ is soft.
+\end{proposition}
+\begin{proof}
+We first treat the case where $X$ is compact. By assumption we can find a finite number of compact subsets $X_1,\dots,X_n$ of $X$ such that restrictions of $\mathscr{F}$ to each of these is soft. To prove that $\mathscr{F}$ is soft, consider a compact subset $K$ of $X$ and $s\in\Gamma(K,\mathscr{F})$. Put $X^i=K\cup X_1\cup\cdots\cup X_i$, where $i=1,\dots,n$. Suppose that we have already extended $s=s^0$ to a section $s^i$ of $s$ over $X^i$. By assumption we can extend the restriction of $s^i$ to $X^i\cap X_{i+1}$ into a section $\sigma^{i+1}$ of $\mathscr{F}$ over $X_{i+1}$. By glueing, we obtain a section $s^{i+1}$ of $\mathscr{F}$ over $X^{i+1}$ which extends $s^i$ and $\sigma^{i+1}$. We can now proceed by induction to obtain an extension of $s$ to $X$.\par
+We now consider the general case. We know that the restriction of $\mathscr{F}$ to any compact subset of $X$ is soft. Let us attempt to extend a section $s$ of $\mathscr{F}$ over the compact subset $K$ to a global section. Choose a compact subset $L$ of $X$ with $K\sub\Int L$. We can then extend the section over $K\cup\partial L$ which is $s$ on $K$ and zero on $\partial L$ to a section of $\mathscr{F}$ over $L$, and extend it by zero outside $L$. 
+\end{proof}
+
+\begin{proposition}\label{sheaf on LHS soft ringed module is soft}
+Let $\mathscr{A}$ be a soft sheaf of commutative rings. Then any sheaf $\mathscr{M}$ of $A$-modules is soft.
+\end{proposition}
+\begin{proof}
+Let $K$ be a compact subset of $X$ and $L$ be a compact neighborhood of $K$. Then there exists $\sigma\in\Gamma(X,\mathscr{A})$ such that $\sigma=1$ in an open neighborhood of $K$ and such that the restriction of $\sigma$ to the complement of $\Int L$ is zero. To see this, let us consider the section on $K\cup\partial L$ which is $1$ on $K$ and $0$ on $\partial L$. Extend this to a section $\tau$ of $\mathscr{A}$ over $L$ and let $\sigma$ be the extension of $\tau$ by zero outside $L$, we then get the desired section.\par
+Now let us show that $\mathscr{M}$ is soft, so let $s$ be a section of $\mathscr{F}$ over an open neighborhood $U$ of $K$. Let $L$ be a compact neighborhood of $K$ contained and $\sigma$ be a global section of $\mathscr{A}$ as above. If $\tau$ is the restriction of $\sigma$ to $L$, then the section $\tau s$ of $\mathscr{F}$ over $L$ is zero on $\partial L$, and therefore can be extended by zero to $X$.
+\end{proof}
+
+\begin{proposition}\label{sheaf on LHS soft sheaf morphism extentable}
+Let $\mathscr{F}$ and $\mathscr{G}$ be sheaves on a locally compact Hausdorff space $X$ and $f:\Gamma(X,\mathscr{F})\to \Gamma(X,\mathscr{G})$ be a linear map which satisfies the following conditions:
+\[\supp(f(s))\sub\supp(s)\for s\in\Gamma_c(X,\mathscr{F}).\]
+If $\mathscr{F}$ is soft, then there exists a unique morphism of sheaves $\varphi:\mathscr{F}\to\mathscr{G}$ which induces $f$ on the level of lobal sections.
+\end{proposition}
+\begin{proof}
+For any point $x$ of $X$ the restriction map $\Gamma_c(X,\mathscr{F})\to \mathscr{F}_x$ is surjective, so the uniqueness of $\varphi$ follows. Given an open subset $U$ of $X$ and $s\in\Gamma(U,\mathscr{F})$, we cover $U$ with open subsets $U_i$ such that there exists $s_i\in\Gamma_c(X,\mathscr{F})$ whose restriction to $U_i$ equals to that of $s$. In view of the condition on supports, we see that the sections $f(s_i)|_{U_i}$ coincide on overlappings, so we can glue them together to get a section of $\mathscr{G}$ over $U$. It is clear that this construction is compatible with restriction to smaller opens, so we obtain a morphism $\varphi:\mathscr{F}\to\mathscr{G}$. It is then easy to check that $\varphi$ induces $f$ on the level of global sections.
+\end{proof}
+
+\subsection{Soft sheaves on \texorpdfstring{$\R^n$}{R}}
+A basic sheaf on $\R^n$ is the sheaf $\mathscr{C}^\infty$ of smooth $\R$-valued functions, which we now prove that is soft.
+
+\begin{theorem}\label{sheaf of smooth function soft}
+The sheaf $\mathscr{C}^\infty$ of smooth functions on $\R^n$ is soft.
+\end{theorem}
+\begin{proof}
+Let $s$ be a section of $\mathscr{C}^\infty$ over an open neighborhood $U$ of the compact set $K$. We can choose a compact neighborhood $V$ of $K$ contained in $U$ and a smooth function on $\R^n$ which is zero outside $V$ and is $1$ in a neighborhood of $K$. The function $\varphi s$ can then be extended into a section of $\R^n$.
+\end{proof}
+
+\begin{corollary}
+The sheaf $\mathscr{C}$ of continuous real functions on $\R^n$ is soft. More generally, the sheaf $\mathscr{C}^{(p)}$ of $p$-times continuously differentiable real functions on $\R^n$ is soft.
+\end{corollary}
+\begin{proof}
+Note that $\mathscr{C}^{(p)}$ is a sheaf of module over $\mathscr{C}^\infty$, so we can apply \cref{sheaf on LHS soft ringed module is soft}.
+\end{proof}
+
+\begin{example}
+The fundamental example of a locally compact Hausdorff space is the real line $\R$. The constant sheaf $\underline{\R}$ has the "Calculus resolution" which is soft:
+\[\begin{tikzcd}
+0\ar[r]&\underline{\R}\ar[r]&\mathscr{C}^{(1)}\ar[r,"d"]&\mathscr{C}\ar[r]&0
+\end{tikzcd}\]
+where $d$ is the ordinary differentiation. To calculate the cohomology, we consider the exact sequence
+\[\begin{tikzcd}
+0\ar[r]&\Gamma_c(\R,\mathscr{C}^{(1)})\ar[r,"d"]&\Gamma_c(\R,\mathscr{C})\ar[r,"\int"]&\R\ar[r]&0
+\end{tikzcd}\]
+where $\int$ is given by the formula $\int f=\int_{\R}f(x)dx$. We therefore conclude that
+\[H_c^i(\R,\underline{\R})=\begin{cases}
+0&i\neq 1,\\
+\R&i=1.
+\end{cases}\]
+\end{example}
+
+\begin{proposition}
+
+\end{proposition}
