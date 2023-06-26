@@ -2263,7 +2263,7 @@ Let $\mathcal{T}$ be a weak Serre subcategory of $\mathcal{A}$ and $*\in\{+,b,\e
     \item[(\rmnum{3})] $*=-$ and $F,G$ are bounded above;
     \item[(\rmnum{4})] $*=\emp$ and $F,G$ are bounded.
 \end{enumerate}
-Moreover, if $\mathfrak{I}$ (resp. $\mathfrak{P}$) is a subset of $\Ob(\mathcal{T})$ such that for any $X\in\mathcal{T}$ there exists a monomorphism $X\rightarrowtail I$ with $I\in\mathfrak{I}$ (resp. an epimorphism $P\to X$ with $P\in\mathfrak{P}$), then $\eta$ is an isomorphism if $\eta(X):F(X)\to G(X)$ is an isomorphism for each $X\in\mathfrak{I}$, and one of conditions (\rmnum{1}), (\rmnum{2}) (resp. (\rmnum{1}), (\rmnum{3})) is satisfied.
+Moreover, if $\mathfrak{I}$ (resp. $\mathfrak{P}$) is a subset of $\Ob(\mathcal{T})$ such that for any $X\in\mathcal{T}$ there exists a monomorphism $X\hookrightarrow I$ with $I\in\mathfrak{I}$ (resp. an epimorphism $P\to X$ with $P\in\mathfrak{P}$), then $\eta$ is an isomorphism if $\eta(X):F(X)\to G(X)$ is an isomorphism for each $X\in\mathfrak{I}$, and one of conditions (\rmnum{1}), (\rmnum{2}) (resp. (\rmnum{1}), (\rmnum{3})) is satisfied.
 \end{proposition}
 \begin{proof}
 We first deal with the case $*=b$. Since $\eta$ is a morphism of triangulated functors, we see by induction on $|n|$ that $\eta(X[n])$ is an isomorphism for each $X\in\mathcal{T}$ and $n\in\Z$. To see that $\eta(X)$ is an isomorphism for any $X\in D_\mathcal{T}^*(\mathcal{A})$, we may replace $X$ with the isomorphic complex $\tau^{\leq n}(X)$ with some integer $n$ large enough. From (\ref{derived category dt for truncation functor-2}), we obtain a morphism of triangles, induced by $\eta$:
@@ -2358,7 +2358,7 @@ We shall now give a sufficient condition in order that $\mathcal{J}$ is $F$-inje
 Let $\mathcal{J}$ be a full additive subcategory of $\mathcal{A}$ and let $F:\mathcal{A}\to\mathcal{A}'$ be a left exact functor. Assume that
 \begin{enumerate}
     \item[(a)] $\mathcal{J}$ is cogenerating in $\mathcal{A}$;
-    \item[(b)] for any monomorphism $Y'\rightarrowtail X$ with $Y'\in\mathcal{J}$, there exists an exact sequence $0\to Y'\to Y\to Y''\to 0$ with $Y,Y''\in\mathcal{J}$ such that $Y'\to Y$ factors through $X$ and the sequence $0\to F(Y')\to F(Y)\to F(Y'')\to 0$ is exact. 
+    \item[(b)] for any monomorphism $Y'\hookrightarrow X$ with $Y'\in\mathcal{J}$, there exists an exact sequence $0\to Y'\to Y\to Y''\to 0$ with $Y,Y''\in\mathcal{J}$ such that $Y'\to Y$ factors through $X$ and the sequence $0\to F(Y')\to F(Y)\to F(Y'')\to 0$ is exact. 
 \end{enumerate}
 Then $\mathcal{J}$ is $F$-injective.
 \end{theorem}
@@ -2453,11 +2453,11 @@ and $F(Y)$ is exact by our hypothesis, whence $H^m(F(X))\cong H^{m-1}(F(M(f)))\c
 \paragraph{Derived projective limit}
 As an application of \cref{derived category F-injective subcat if factor through monomorphism} we shall discuss the existence of the derived functor of projective limits. Let $\mathcal{A}$ be an abelian $\mathscr{U}$-category. Recall that $\Pro(\mathcal{A})$ is an abelian category admitting small projective limits, and small filtrant projective limits as well as small products are exact. Assume that $\mathcal{A}$ admits small projective limits. Then the natural exact functor $\mathcal{A}\to\Pro(\mathcal{A})$ admits a right adjoint
 \[\pi_\mathcal{A}:\Pro(\mathcal{A})\to\mathcal{A}\]
-defined as follows: if $\beta:I^{\op}\to\mathcal{A}$ is a functor with $I$ small and filtrant, then $\pi_\mathcal{A}$ transforms $\llim\beta$ (as a pro-object) to the limit $\llim\beta$ in $\mathcal{A}$. The functor $\pi_\mathcal{A}$ is left exact and we shall give a condition in order that it is right derivable.\par
+defined as follows: if $\beta:I^{\op}\to\mathcal{A}$ is a functor with $I$ small and filtrant, then $\pi_\mathcal{A}$ transforms $\text{"$\llim$"}\beta$ (as a pro-object) to the limit $\llim\beta$ in $\mathcal{A}$. The functor $\pi_\mathcal{A}$ is left exact and we shall give a condition in order that it is right derivable.\par
 For a full additive subcategory $\mathcal{J}$ of $\mathcal{A}$, we define a full additive subcategory $\mathcal{J}_{\pro}$ of $\Pro(\mathcal{A})$ by
-\[\mathcal{J}_{\pro}=\{x\in\Pro(\mathcal{A}):\text{$X\cong\prod_{i\in I}X_i$ for a small set $I$ and $X_i\in\mathcal{J}$}\}.\]
-Here the product $\prod_i$ is taken in the category $\Pro(\mathcal{A})$, so for $X_i,Y\in\mathcal{A}$, we have a canonical bijection
-\[\Hom_{\Pro(\mathcal{A})}(\prod_{i\in I}X_i,Y)\stackrel{\sim}{\to} \bigoplus_{i\in I}\Hom_{\mathcal{A}}(X_i,Y).\]
+\[\mathcal{J}_{\pro}=\{X\in\Pro(\mathcal{A}):\text{$X\cong\underset{i\in I}{\text{"$\prod$"}}X_i$ for a small set $I$ and $X_i\in\mathcal{J}$}\}.\]
+Here the product "$\prod$" is taken in the category $\Pro(\mathcal{A})$, so for $X_i,Y\in\mathcal{A}$, we have a canonical bijection
+\[\Hom_{\Pro(\mathcal{A})}(\underset{i\in I}{\text{"$\prod$"}}X_i,Y)\stackrel{\sim}{\to} \bigoplus_{i\in I}\Hom_{\mathcal{A}}(X_i,Y).\]
 
 \begin{proposition}\label{derived category derived functor of proj limit}
 Let $\mathcal{A}$ be an abelian category admitting small projective limits and let $\mathcal{J}$ be a full additive subcategory of $\mathcal{A}$ satisfying:
@@ -2468,46 +2468,46 @@ Let $\mathcal{A}$ be an abelian category admitting small projective limits and l
 \end{enumerate}
 Then the category $\mathcal{J}_{\pro}$ is $\pi_\mathcal{A}$-injective and the left exact functor $\pi_\mathcal{A}$ admits a right derived functor
 \[R^+\pi_\mathcal{A}:D^+(\Pro(\mathcal{A}))\to D^+(\mathcal{A})\]
-which satisfies $R^n\pi_\mathcal{A}(\prod_iX_i)=0$ for $n>0$ and $X_i\in\mathcal{J}$. Moreover, the composition
+which satisfies $R^n\pi_\mathcal{A}(\underset{i}{\text{"$\prod$"}}X_i)=0$ for $n>0$ and $X_i\in\mathcal{J}$. Moreover, the composition
 \[\begin{tikzcd}
 D^+(\mathcal{A})\ar[r]&D^+(\Pro(\mathcal{A}))\ar[r,"R^+\pi_\mathcal{A}"]&D^+(\mathcal{A})
 \end{tikzcd}\]
 is isomorphic to the identity.
 \end{proposition}
 \begin{proof}
-We shall verify the conditions of \cref{derived category F-injective subcat if factor through monomorphism}. The category $\mathcal{J}_{\pro}$ is cogenerating in $\Pro(\mathcal{A})$ since for $A=\llim_{i\in I}\alpha(i)\in\Pro(\mathcal{A})$, we obtain a monomorphism $A\rightarrowtail\prod_iX_i$ by choosing a monomorphism $\alpha(i)\rightarrowtail X_i$ with $X_i\in\mathcal{J}$ for each $i\in I$. Now consider a monomorphism $Y\rightarrowtail A$ in $\Pro(\mathcal{A})$ with $A\in\Pro(\mathcal{A})$ and $Y=\prod_iY_i$, $Y_i\in\mathcal{J}$. Applying the dual version of (\cite{kashiwara_SAC} proposition 8.6.9), for each $i$ we can find $X_i\in\mathcal{A}$ and a commutative exact diagram
+We shall verify the conditions of \cref{derived category F-injective subcat if factor through monomorphism}. The category $\mathcal{J}_{\pro}$ is cogenerating in $\Pro(\mathcal{A})$ since for $A=\text{"$\llim$\!"}\!_{i\in I}\hspace*{1pt}\alpha(i)\in\Pro(\mathcal{A})$, we obtain a monomorphism $A\hookrightarrow\text{"$\prod$"\!}_iX_i$ by choosing a monomorphism $\alpha(i)\hookrightarrow X_i$ with $X_i\in\mathcal{J}$ for each $i\in I$. Now consider a monomorphism $Y\hookrightarrow A$ in $\Pro(\mathcal{A})$ with $A\in\Pro(\mathcal{A})$ and $Y=\text{"$\prod$"\!}_iY_i$, $Y_i\in\mathcal{J}$. Applying the dual version of (\cite{kashiwara_SAC} proposition 8.6.9), for each $i$ we can find $X_i\in\mathcal{A}$ and a commutative exact diagram
 \[\begin{tikzcd}
 0\ar[r]&Y\ar[r]\ar[d]&A\ar[d]\\
 0\ar[r]&Y_i\ar[r]&X_i
 \end{tikzcd}\]
 Since $\mathcal{J}$ is cogenerating, we may assume that $X_i\in\mathcal{J}$. Let $Z_i=\coker(Y_i\to X_i)$, which is in $\mathcal{J}$ by hypothesis. By hypothesis, functor $\prod$ is exact on $\mathcal{J}$, so we obtain a commutative diagram
 \[\begin{tikzcd}
-0\ar[r]&Y\ar[r]\ar[d,"\sim"]&A\ar[d]\\
-0\ar[r]&\prod_iY_i\ar[r]&\prod_iX_i\ar[r]&\prod_iZ_i\ar[r]&0
+0\ar[r]&Y\ar[r]\ar[d,equal]&A\ar[d]\\
+0\ar[r]&\text{"$\prod$"\!}_iY_i\ar[r]&\text{"$\prod$"\!}_iX_i\ar[r]&\text{"$\prod$"\!}_iZ_i\ar[r]&0
 \end{tikzcd}\]
-with exact rows. Applying $\pi_\mathcal{A}$ to the second row, we then obtain the sequence $0\to \prod_iY_i\to \prod_iX_i\to\prod_iZ_i\to 0$ in $\mathcal{A}$, which is exact by hypothesis (c). By \cref{derived category F-injective subcat if factor through monomorphism}, we then conclude that $\mathcal{J}_{\pro}$ is $\pi_\mathcal{A}$-injective, so $\pi_\mathcal{A}$ admits a right derived functor (\cref{triangle cat localization of functor exist if}), and we have $R^n\pi_\mathcal{A}(\prod_iX_i)=0$ for $n>0$ and $X_i\in\mathcal{J}$.\par
+with exact rows. Applying $\pi_\mathcal{A}$ to the second row, we then obtain the sequence $0\to \prod_iY_i\to \prod_iX_i\to\prod_iZ_i\to 0$ in $\mathcal{A}$, which is exact by hypothesis (c). By \cref{derived category F-injective subcat if factor through monomorphism}, we then conclude that $\mathcal{J}_{\pro}$ is $\pi_\mathcal{A}$-injective, so $\pi_\mathcal{A}$ admits a right derived functor (\cref{triangle cat localization of functor exist if}), and we have $R^n\pi_\mathcal{A}(\text{"$\prod$"\!}_iX_i)=0$ for $n>0$ and $X_i\in\mathcal{J}$.\par
 Finally, by assumption $\mathcal{J}$ is injective with respect to the exact functor $\mathcal{A}\to\Pro(\mathcal{A})$. Since the functor $\mathcal{A}\to\Pro(\mathcal{A})$ sends $\mathcal{J}$ to $\mathcal{J}_{\pro}$, the last assertion follows from \cref{derived category functor derived composition prop}.
 \end{proof}
 
 \begin{corollary}
-Let $\mathcal{J}$ be a full additive subcategory of $\mathcal{A}$ satisfying the conditions of \cref{derived category derived functor of proj limit}. If $(X_n)$ is a projective system in $\mathcal{J}$ indexed by $\N$ and $X=\llim_nX_n$, then $R^p\pi_\mathcal{A}(X)=0$ for $p>1$, and we have a canonical isomorphism
+Let $\mathcal{J}$ be a full additive subcategory of $\mathcal{A}$ satisfying the conditions of \cref{derived category derived functor of proj limit}. If $(X_n)$ is a projective system in $\mathcal{J}$ indexed by $\N$ and $X=\text{"$\llim$\!"}X_n$, then $R^p\pi_\mathcal{A}(X)=0$ for $p>1$, and we have a canonical isomorphism
 \[R^1\pi_\mathcal{A}(X)\stackrel{\sim}{\to} \coker\Big(\prod_nX_n\stackrel{\Delta_X}{\longrightarrow}\prod_nX_n\Big)\]
 where $\Delta_X:=T_X-\id:\prod_nX_n\to\prod_nX_n$.
 \end{corollary}
 \begin{proof}
 We have an exact sequence in $\Pro(\mathcal{A})$:
 \[\begin{tikzcd}
-0\ar[r]&\llim_nX_n\ar[r]&\prod_nX_n\ar[r,"\Delta_X"]&\prod_nX_n\ar[r]&0
+0\ar[r]&\text{"$\llim$\!"\!}_nX_n\ar[r]&\text{"$\prod$"\!}_nX_n\ar[r,"\Delta_X"]&\text{"$\prod$"\!}_nX_n\ar[r]&0
 \end{tikzcd}\]
 Applying the functor $R^+\pi_\mathcal{A}$, we then get a long exact sequence and the results follows since $R^p\pi_\mathcal{A}(\prod_nX_n)=0$ for $p>0$.
 \end{proof}
 
 \begin{example}
-If $A$ is a ring and $\mathcal{A}=\mathbf{Mod}(A)$, we may choose $\mathcal{J}=\mathcal{A}$ in \cref{derived category derived functor of proj limit}. In fact, for a family of objects $(X_i)_{i\in I}$ in $\mathcal{A}$, the product $\prod_iX_i$ can be considered as the limit of the functor $\alpha:I\to\mathcal{A}$ with $I$ being considered as a discrete category.
+If $A$ is a ring and $\mathcal{A}=\mathbf{Mod}(A)$, we may choose $\mathcal{J}=\mathcal{A}$ in \cref{derived category derived functor of proj limit}. In fact, for a family of objects $(X_i)_{i\in I}$ in $\mathcal{A}$, the product $\text{"$\prod$"\!}_iX_i$ can be considered as the limit of the functor $\alpha:I\to\mathcal{A}$ with $I$ being considered as a discrete category.
 \end{example}
 
 \paragraph{Derived bifunctors}
-We now apply the previous results to bifunctors between abelian categories. The most important examples in mind will be $\Hom$ and tensor functors.
+We shall now apply the previous results to bifunctors between abelian categories. The most important examples in mind will be $\Hom$ and tensor functors.
 \begin{theorem}\label{derived category R^0Hom is Hom in D(A)}
 Let $\mathcal{A}$ be an abelian category and $X,Y\in D(\mathcal{A})$. Assume that the functor
 \[\Hom_\mathcal{A}^\bullet:K(\mathcal{A})^{\op}\times K(\mathcal{A})\to K(\mathbf{Mod}(\Z)),\quad (X',Y')\mapsto \Hom_\mathcal{A}^{\bullet}(X',Y')\]
@@ -2779,3 +2779,911 @@ Let $\mathcal{I}$ be a full subcategory of a Grothendieck category $\mathcal{A}$
 \subsection{Left derived functors}
 We now give a criterion for the existence of the left derived functor $LG:D(\mathcal{A})\to D(\mathcal{A}')$ of an additive functor $G:\mathcal{A}\to\mathcal{A}'$ of abelian categories, assuming that $G$ admits a right adjoint. For this, we shall assume throughout this paragraph that $\mathcal{A}$ admits small direct sums and small direct sums are exact in $\mathcal{A}$. Hence, by \cref{abelian translation derive direct sum}, $\Ch(\mathcal{A})$, $K(\mathcal{A})$ and $D(\mathcal{A})$ admit small direct sums. Note that Grothendieck categories satisfy these conditions.
 
+\section{Truncations and recollements}
+\subsection{Abelian subcategories}
+Let $\mathcal{D}$ be a triangulated category. For $X,Y\in\mathcal{D}$ and $i\in\Z$, we denote by $\Hom^i(X,Y):=\Hom(X,Y[i])$ the morphisms from $X$ to $Y$ of \textbf{degree $\bm{i}$}.
+\begin{proposition}\label{triangle cat morphism extension to triangle iff}
+Let $(X,Y,Z)$ and $(X',Y',Z')$ be distinguished triangles, and $\beta:Y\to Y'$ be a morphism such that we have a solid commutative diagram
+\[\begin{tikzcd}[row sep=12mm,column sep=12mm]
+X\ar[r,"f"]\ar[rd,phantom,font=\small,"(A)"]\ar[d,dashed,"\alpha"]&Y\ar[r,"g"]\ar[d,"\beta"]\ar[rd,phantom,"(B)"]&Z\ar[r,"h"]\ar[d,dashed,"\gamma"]&X[1]\\
+X\ar[r,"f'"]&Y\ar[r,"g'"]&Z\ar[r,"h'"]&X'[1]
+\end{tikzcd}\]
+Then the following conditions are equivalent:
+\begin{enumerate}
+    \item[(\rmnum{1})] $g'\beta f=0$;
+    \item[(\rmnum{2})] there eixsts a morphism $\alpha:X\to X'$ rendering the commutative square (A);
+    \item[(\rmnum{3})] there eixsts a morphism $\gamma:Z\to Z'$ rendering the commutative square (B);
+    \item[(\rmnum{4})] there exists a morphism of triangles $(\alpha,\beta,\gamma)$. 
+\end{enumerate}
+If these conditions are verified and $\Hom^{-1}(X,Z')=0$, then the morphisms $\alpha$, $\beta$ are unique.
+\end{proposition}
+\begin{proof}
+The exactness of the sequence
+\[\begin{tikzcd}
+\Hom^{-1}(X,Z')\ar[r]&\Hom(X,X')\ar[r]&\Hom(X,Y')\ar[r]&\Hom(X,Z')
+\end{tikzcd}\]
+applied to $\beta f\in\Hom(X,Y')$, proves the equivalence of (\rmnum{1}) and (\rmnum{2}), with the uniqueness of $\alpha$ if $\Hom^{-1}(X,Z)=0$. The implication (\rmnum{2})$\Rightarrow$(\rmnum{4}) follows from (TR2): if $\alpha$ satisfies (\rmnum{2}), then there exists $\gamma:Z\to Z'$ such that $(\alpha,\beta,\gamma)$ is a morphism of triangles; the converse of this is trivial. Finally, a dual argument shows that (\rmnum{1})$\Leftrightarrow$(\rmnum{3}), and the uniqueness of $\gamma$ if $\Hom^{-1}(X,Z')=0$.
+\end{proof}
+
+\begin{corollary}\label{triangle cat Hom^-1 zero prop}
+Let $X\stackrel{f}{\to} Y\stackrel{g}{\to} Z\stackrel{h}{\to} X[1]$ be a distinguished triangle. If $\Hom^{-1}(X,Z)=0$, then
+\begin{enumerate}
+    \item[(a)] the cone of $f$ is unique up to unique isomorphisms;
+    \item[(b)] the morphism $h:Z\to X[1]$ is the unique morphism such that the triangle $X\stackrel{f}{\to} Y\stackrel{g}{\to} Z\to X[1]$ is distinguished. 
+\end{enumerate}
+\end{corollary}
+\begin{proof}
+If in \cref{triangle cat morphism extension to triangle iff}, we set $X=X'$, $Y=Y'$ and let $f,g$ be the identity, then $Z$ is isomorphic to $Z'$ and $\Hom^{-1}(X,Z')=0$, so (a) follows from the uniqueness of $\gamma$. For (b), we can apply {triangle cat morphism extension to triangle iff} to the diagram
+\[\begin{tikzcd}
+X\ar[r,"f"]\ar[d,equal]&Y\ar[r,"g"]\ar[d,equal]&Z\ar[r,"h"]&X[1]\\
+X\ar[r,"f"]&Y\ar[r,"g"]&Z\ar[r,"h'"]&X[1]
+\end{tikzcd}\]
+We necessarily have $\gamma=\id_Z$, whence $h=h'$.
+\end{proof}
+
+Let $\mathcal{C}$ be a (fixed) full subcategory of $\mathcal{D}$ such that $0\in\mathcal{C}$. We say that $\mathcal{C}$ is \textbf{right leaning} if $\Hom^i_{\mathcal{D}}(X,Y):=\Hom_{\mathcal{D}}(X,Y[i])$ is null for any $i<0$ and $X,Y\in\mathcal{C}$. For such a category $\mathcal{C}$, by \cref{triangle cat Hom^-1 zero prop}, we see that a morphism $(\alpha,\beta,\gamma)$ of distinguished triangles in $\mathcal{C}$ is uniquely determined by the morphism $\beta$.
+\begin{example}
+Let $\mathcal{D}$ be the derived category of an abelian category $\mathcal{A}$ and $\mathcal{C}=\mathcal{A}$, identified with a full subcategory of $\mathcal{D}$. It is clear that for $X,Y\in\mathcal{A}$ we have $\Hom(X,Y[i])=0$ unless $i=0$, so $\mathcal{A}$ is right leaning in $\mathcal{D}$.
+\end{example}
+
+\begin{proposition}\label{triangle cat abelian subcat kernel cokernel prop}
+Let $f:X\to Y$ be a morphism in $\mathcal{C}$. Complete $f$ into a distinguished triangle $X\stackrel{f}{\to}Y\to S$ and suppose that there is a distinguished triangle $N[1]\to S\to C$ with $N,C\in\mathcal{C}$, so that we have a commutative diagram
+\begin{equation}\label{triangle cat abelian subcat kernel cokernel prop-1}
+\begin{tikzcd}[row sep=6mm,column sep=6mm]
+N[1]\ar[rd]\ar[dd,swap,"\alpha"]&&C\ar[ll,swap,"+1"]\\
+&S\ar[ld,"+1"]\ar[ru]&\\
+X\ar[rr,swap,"f"]&&Y\ar[lu]\ar[uu,swap,"\beta"]
+\end{tikzcd}
+\end{equation}
+Then $\alpha[-1]:N\to X$ is a kernel of $f$ in $\mathcal{C}$ and $\beta:Y\to C$ is a cokernel of $f$ in $\mathcal{C}$.
+\end{proposition}
+\begin{proof}
+For $Z\in\mathcal{C}$, the long exact sequence of $\Hom$ gives the following exact sequences
+\[\begin{tikzcd}
+0\ar[r]&\Hom^{-1}(Z,S)\ar[r]&\Hom(Z,X)\ar[r]&\Hom(Z,Y)
+\end{tikzcd}\]
+\vspace*{-4mm}
+\[\begin{tikzcd}
+0\ar[r]&\Hom(Z,N)\ar[r]&\Hom^{-1}(Z,S)\ar[r]&\Hom^{-1}(Z,C)=0
+\end{tikzcd}\]
+which proves that $(N,\alpha[-1])$ is a kernel of $f$ (recall the hypothesis on $\mathcal{C}$). A dual argument proves that $(C,\beta)$ is a cokernel of $f$.
+\end{proof}
+
+\begin{example}\label{triangle cat abelian subcat as derived eg}
+Let $\mathcal{A}$ be an abelian category and $\mathcal{D}=D(\mathcal{A})$. Then the cone $S$ of $f:X\to Y$ is the complex $X\stackrel{f}{\to} Y$, with $X$ at degree $-1$ and $Y$ at degree $0$. It has a subcomplex $(\ker f)[1]=H^{-1}(S)[1]$ and the quotient $X/\ker f\to Y$ is quasi-isomorphic to the complex $\coker f=H^0(S)$, placed at degree $0$; we thus obtain the diagram (\ref{triangle cat abelian subcat kernel cokernel prop-1}).
+\end{example}
+
+\begin{example}\label{triangle cat abelian subcat exact sequence eg}
+In the situation of \cref{triangle cat abelian subcat kernel cokernel prop}, if $f$ is a monomorphism, then we have $N=0$, so $S\cong C$ and (\ref{triangle cat abelian subcat kernel cokernel prop-1}) is reduced to the distinguished triangle $(X,Y,C)$. On the other hand, if $f$ is an epimorphic, then $C=0$, so $N[1]\cong S$ and (\ref{triangle cat abelian subcat kernel cokernel prop-1}) is reduced to the distinguished triangle $(N,X,Y)$.
+\end{example}
+
+A morphism $f:X\to Y$ in $\mathcal{C}$ is called \textbf{$\mathcal{C}$-admissible}, or simply \textbf{admissible} (if there is no ambiguity on $\mathcal{C}$), if it is the base of a diagram (\ref{triangle cat abelian subcat kernel cokernel prop-1}). For any distinguished triangle
+\[\begin{tikzcd}
+X\ar[r,"f"]&Y\ar[r,"g"]&Z\ar[r]&X[1]
+\end{tikzcd}\]
+with $X,Y,Z$ in $\mathcal{C}$ and $f,g$ admissible, we see that $f$ is a kernel of $g$ and $g$ is a cokernel of $f$. By \cref{triangle cat Hom^-1 zero prop}, the morphism $Z\to X[1]$ is uniquely determined by $f$ and $g$.\par
+A sequence $X\to Y\to Z$ in $\mathcal{C}$ is called an \textbf{admissible short exact sequence} if it is deduced from a distinguished triangle by removing the arrow of degree $1$. In other words, $X\to Y\to Z$ is admissible if it can be extended into a distinguished triangle in $\mathcal{D}$.
+
+\begin{proposition}\label{triangle cat abelian subcat iff morphism admissible}
+Suppose that $\mathcal{C}$ is stable under finite direct sums. Then the following conditions are equivalent:
+\begin{enumerate}
+    \item[(\rmnum{1})] $\mathcal{C}$ is an abelian category and every short exact sequence is admissible.
+    \item[(\rmnum{2})] Any morphism of $\mathcal{C}$ is $\mathcal{C}$-admissible.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+We first assume that any morphism in $\mathcal{C}$ is admissible. By \cref{triangle cat abelian subcat kernel cokernel prop}, any morphism of $\mathcal{C}$ has a kernel and cokernel, so to prove that $\mathcal{C}$ is abelian, it suffices to verify that $\coim f\cong\im f$ for any morphism $f:X\to Y$ in $\mathcal{C}$. Regarding (\ref{triangle cat abelian subcat kernel cokernel prop-1}) as the cap of an octahedron and apply (TR4), we obtain an octahedron
+\[\begin{tikzcd}
+C\ar[dd,swap,"+1"]&&Y\ar[ll,swap,"\beta"]\ar[ld]\\
+&S\ar[rd,"+1"]\ar[lu]&\\
+N[1]\ar[ru]\ar[rr,swap,"{\alpha[1]}"]&&X\ar[uu,swap,"f"]
+\end{tikzcd}\quad\quad 
+\begin{tikzcd}
+C\ar[dd,swap,"+1"]\ar[rd]&&Y\ar[ll,swap,"\beta"]\\
+&I\ar[ld,"+1"]\ar[ru]&\\
+N[1]\ar[rr,swap,"{\alpha[1]}"]&&X\ar[uu,swap,"f"]\ar[lu]
+\end{tikzcd}\]
+By \cref{triangle cat abelian subcat kernel cokernel prop}, we see that $\beta$ is an (admissible) epimorphism (as the cokernel of $f$). Since the triangle $(I,Y,C)$ is distinguished, we conclude from \cref{triangle cat abelian subcat exact sequence eg} that $I\in\mathcal{C}$ and it is the the kernel of $\beta$, i.e. the image of $f$. Dually, the distinguished triangle $(N,X,I)$, obtained by rotating, shows that $I$ is the coimage of $f$. Finally, by \cref{triangle cat abelian subcat exact sequence eg}, we see that any short exact sequence is admissible.\par
+Conversely, assume the codition (\rmnum{1}). The kernel $N$, cokernel $C$ and image $I$ of $f:X\to Y$ then give short exact sequences
+\[\begin{tikzcd}
+0\ar[r]&N\ar[r]&X\ar[r]&I\ar[r]&0
+\end{tikzcd}\quad\quad \begin{tikzcd}
+0\ar[r]&I\ar[r]&Y\ar[r]&C\ar[r]&0
+\end{tikzcd}\]
+By hypothesis, these two sequences are admissible, and the two thus obtained triangles form the upper cap of an octahedron. We can then apply (TR4) to obtain an octahedron of the above form, so $f$ is admissible.
+\end{proof}
+
+A full subcategory $\mathcal{C}$ of $\mathcal{D}$ is called \textbf{admissibly abelian} if it is right leaning and satisfies the equivalent conditions of \cref{triangle cat abelian subcat iff morphism admissible}. By \cref{triangle cat abelian subcat as derived eg}, we see that if $\mathcal{D}$ is the derived category of an abelian category $\mathcal{A}$, then $\mathcal{A}$ is admissibly abelian in $\mathcal{D}$.
+
+\subsection{\texorpdfstring{$t$}{t}-structures}
+Let $\mathcal{D}$ be a triangulated category. A \textbf{$\bm{t}$-structure} on $\mathcal{D}$ is a pair of strictly full subcategories $(\mathcal{D}^{\leq 0},\mathcal{D}^{\geq 0}$) satisfying the following conditions: If we put $\mathcal{D}^{\leq n}=T^{-n}(\mathcal{D}^{\leq 0})$ and $\mathcal{D}^{\geq n}=T^{-n}(\mathcal{D}^{\geq 0})$, then
+\begin{enumerate}
+    \item[(t1)] $\mathcal{D}^{\leq 0}\sub\mathcal{D}^{\leq 1}$ and $\mathcal{D}^{\geq 0}\sups\mathcal{D}^{\geq 1}$;
+    \item[(t2)] $\Hom_{\mathcal{D}}(X,Y)=0$ for $X\in\mathcal{D}^{\leq 0}$ and $Y\in\mathcal{D}^{\geq 1}$; 
+    \item[(t3)] for any $X\in\mathcal{D}$, there exists a distinguished triangle $(A,X,B)$ with $A\in\mathcal{D}^{\leq 0}$ and $B\in\mathcal{D}^{\geq 1}$.
+\end{enumerate}
+The \textbf{core} (or \textbf{heart}) of the $t$-structure $(\mathcal{D}^{\leq 0},\mathcal{D}^{\geq 0})$ is defined to be the full subcategory $\mathcal{C}=\mathcal{D}^{\leq 0}\cap\mathcal{D}^{\geq 0}$.
+
+\begin{example}[\textbf{Examples of $t$-structures}]
+\mbox{}
+\begin{enumerate}
+    \item[(a)] Let $\mathcal{A}$ be an abelian category and $\mathcal{D}=\mathcal{D}(A)$. The natural $t$-structure on $\mathcal{D}(A)$ is then defined so that $X\in\mathcal{D}^{\leq n}$ (resp. $X\in\mathcal{D}^{\geq n}$) if and only if $H^i(X)=0$ for $i>n$ (resp. for $i<n$). To verify (t3), we note that for any complex $X$, the truncations $\tau^{\leq 0}X$ and $\tau^{\geq 1}X$ are in $\mathcal{D}^{\leq 0}$ and $\mathcal{D}^{\geq 1}$, respectively, and we have a distinguished triangle $(\tau^{\leq 0}X,X,\tau^{\geq 1}X)$. 
+    \item[(b)] If $(\mathcal{D}^{\leq 0},\mathcal{D}^{\geq 0})$ is a $t$-structure on $\mathcal{D}$, then for any integer $n$, $(\mathcal{D}^{\leq 0},\mathcal{D}^{\geq 0})$ is also a $t$-structure. We say that this $t$-structure is induced from the previous one by \textit{translation}.
+    \item[(c)] If $(\mathcal{D}^{\leq 0},\mathcal{D}^{\geq 0})$ is a $t$-structure on $\mathcal{D}$, then $((\mathcal{D}^{\leq 0})^{\op},(\mathcal{D}^{\geq 0})^{\op})$ is a $t$-structure on $\mathcal{D}^{\op}$, called the dual $t$-structure.
+\end{enumerate}
+\end{example}
+A triangulated category $\mathcal{D}$, endowed with a $t$-structure $(\mathcal{D}^{\leq 0},\mathcal{D}^{\geq 0})$, is called a \textbf{$\bm{t}$-category}.
+
+\begin{proposition}\label{triangle cat t-structure truncation Hom prop}
+Let $\mathcal{D}$ be a $t$-category. Then for integers $m<n$, we have $\Hom_{\mathcal{D}}(X,Y)=0$ if $X\in\mathcal{D}^{\leq m}$ and $Y\in\mathcal{D}^{\geq n}$.
+\end{proposition}
+\begin{proof}
+
+\end{proof}
+
+\begin{proposition}\label{triangle cat t-structure truncation functor prop}
+Let $\mathcal{D}$ be a $t$-category.
+\begin{enumerate}
+    \item[(a)] The inclusion functor $\mathcal{D}^{\leq n}\to\mathcal{D}$ admits a right adjoint $\tau^{\leq n}$, and $\mathcal{D}^{\geq n}\to\mathcal{D}$ admits a left adjoint $\tau^{\geq n}$.
+    \item[(b)] For any $X\in\mathcal{D}$, there eixsts a unique morphism in $\Hom^1(\tau^{\geq 1}X,\tau^{\leq 0}X)$ such that the triangle
+    \[\begin{tikzcd}
+    \tau^{\leq 0}X\ar[r]&X\ar[r]&\tau^{\geq 1}X\ar[r,"+1"]&{}
+    \end{tikzcd}\]
+    is distinguished. Moreover, up to isomorphisms, this is the unique distinguished $(A,X,B)$ such that $A\in\mathcal{D}^{\leq 0}$ and $B\in\mathcal{D}^{\geq 1}$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+By duality and translation, it suffices to prove (a) for $\mathcal{D}^{\leq 0}$. For each $X\in\mathcal{D}$, we need to find $A\in\mathcal{D}^{\leq 0}$ with a morphism $A\to X$ (the value of $\tau^{\leq 0}$ at $X$), such that for any $T\in\mathcal{D}^{\leq 0}$ we have an isomorphism $\Hom(T,A)\cong\Hom(T,X)$. Let $(A,X,B)$ be a triangle as in (t3). The long exact sequence of $\Hom$, together with (t1), (t2), shows that $\Hom(T,A)\cong\Hom(T,X)$, so we set $A=\tau^{\leq 0}X$. A similar argument shows that $B=\tau^{\geq 1}X$, so there is a distinguished triangle $(\tau^{\leq 0}X,X,\tau^{\geq 1}X)$ and any distinguished triangle in (t3) is isomorphic to this triangle. The uniqueness of these isomorphisms follows from (t2) and \cref{triangle cat morphism extension to triangle iff}.
+\end{proof}
+
+The distinguished triangle $(\tau^{\leq 0}X,X,\tau^{\geq 1}X)$ shows that the following conditions are equivalent:
+\begin{enumerate}
+    \item[(\rmnum{1})] $\tau^{\leq 0}X=0$;
+    \item[(\rmnum{2})] $\Hom(T,X)=0$ for $T\in\mathcal{D}^{\leq 0}$;
+    \item[(\rmnum{3})] $X\cong\tau^{\geq 1}X$.
+\end{enumerate}
+The equivalence (\rmnum{2})$\Leftrightarrow$(\rmnum{3}) means that $\mathcal{D}^{\geq 1}$ is the right orthogonal of $\mathcal{D}^{\leq 0}$, which shows that $\mathcal{D}^{\geq 1}$ is stable under exensions\footnote{We recall that an object $Y$ is called an extensin of $Z$ by $X$ if there is a distinguished triangle $(X,Y,Z)$ in $\mathcal{D}$, and a subcategory $\mathcal{D}'$ of $\mathcal{D}$ is stable under extensions if for any distinguished triangle $(X,Y,Z)$ with $X,Z\in\mathcal{D}'$, we have $Y\in\mathcal{D}'$.}. Dually, we see that $\tau^{\geq 1}X=0$ if and only if $X\in\mathcal{D}^{\leq 0}$, and $\mathcal{D}^{\leq 0}$ is the left orthogonal of $\mathcal{D}^{\geq 1}$, which is stable under extensions. In particular, $\mathcal{D}^{\leq 0}$ and $\mathcal{D}^{\geq 1}$ are stable under finite direct sums.\par
+
+For $a\leq b$, we have $\mathcal{D}^{\leq a}\sub\mathcal{D}^{\leq b}$, so there exists a unique morphism $\tau^{\leq a}X\to\tau^{\leq b}X$ so that we have a commutative diagram
+\[\begin{tikzcd}[row sep=6mm,column sep=6mm]
+\tau^{\leq a}\ar[rd]\ar[rr]&&\tau^{\leq b}X\ar[ld]\\
+&X&
+\end{tikzcd}\]
+which identifies $\tau^{\leq a}X$ with $\tau^{\leq a}\tau^{\leq b}X$. Dually, we have $\tau^{\geq a}X\to\tau^{\geq b}X$, which identifies $\tau^{\geq b}X$ with $\tau^{\geq b}\tau^{\geq a}X$.\par
+For any integer $a$, we write $\tau^{>a}$ for $\tau^{\geq a+1}$ and $\tau^{<a}$ for $\tau^{<a-1}$. We deduce by translation that $X\in\mathcal{D}^{\leq a}$ if and only if $\tau^{>a}X=0$. If $b>a$, then we have $\tau^{\geq b}X=0$ in this case, and for $b\leq a$ we have $\tau^{>a}\tau^{\geq b}X=\tau^{>a}X=0$, and hence $\tau^{\geq b}$ sends $\mathcal{D}^{\leq a}$ into itself.
+
+\begin{proposition}\label{triangle cat t-structure truncation iteration prop}
+Let $a\leq b$ be integers. For $X\in\mathcal{D}$, there exists a unique isomorphism $\tau^{\geq a}\tau^{\leq b}X\to\tau^{\leq b}\tau^{\geq a}X$ rendering the following commutative diagram
+\begin{equation}\label{triangle cat t-structure truncation iteration prop-1}
+\begin{tikzcd}
+\tau^{\leq b}X\ar[d]\ar[r]&X\ar[r]&\tau^{\geq a}X\\
+\tau^{\geq a}\tau^{\leq b}X\ar[rr]&&\tau^{\leq b}\tau^{\geq a}X\ar[u]
+\end{tikzcd}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Since $\tau^{\geq a}X\in\mathcal{D}^{\geq a}$, we see that the canonical morphism $\tau^{\leq b}X\to\tau^{\geq a}X$ is obtained by the composition $\tau^{\leq b}X\to\tau^{\geq a}\tau^{\leq b}X\to\tau^{\geq a}X$. Also, since $\tau^{\geq a}\tau^{\leq b}X\in\mathcal{D}^{\leq b}$, the morphism $\tau^{\leq b}X\to\tau^{\geq a}X$ factors through $\tau^{\leq b}\tau^{\geq a}X$, so we obtain the diagram (\ref{triangle cat t-structure truncation iteration prop-1}). Applying (TR4) to $\tau^{<a}X\to\tau^{\leq b}X\to X$, we obtain an octahedron
+\vspace*{-2mm}
+\begin{equation}\label{triangle cat t-structure truncation iteration prop-2}
+\begin{tikzcd}[row sep=2pt,column sep=4pt]
+&&&{}&\\
+&&&{}&\\
+&&Y\ar[ruu]\ar[rdd]&&\\
+&&&{}&{}\\
+&\tau^{\leq b}X\ar[rd]\ar[ruu]&&\tau^{\geq a}X\ar[ru]\ar[rddd]\\
+&&X\ar[ru]\ar[rrdd]&&\\
+&&&&\\
+\tau^{<a}X\ar[ruuu]\ar[rruu]&&&&\tau^{>b}X\ar[rdd]\ar[rrd]\\
+&&&&&&{}\\
+&&&&&{}&
+\end{tikzcd}
+\vspace*{-2mm}
+\end{equation}
+In this octahedron, $Y$ is both isomorphic to $\tau^{\geq a}\tau^{\leq b}X$ (because of the distinguished triangle $(\tau^{<a}X,\tau^{\leq b}X,Y)$, in which $\tau^{<a}X=\tau^{<a}\tau^{\leq b}X$) and to $\tau^{\geq b}\tau^{\leq a}X$ (because of the distinguished triangle $(Y,\tau^{\geq a}X,\tau^{>b}X)$).
+\end{proof}
+
+\begin{corollary}\label{triangle cat t-structure truncation orthogonal prop}
+Let $m,n\in\Z$ with $m<n$. Then we have $\tau^{\leq m}\tau^{\geq n}=\tau^{\geq n}\tau^{\leq m}=0$.
+\end{corollary}
+\begin{proof}
+This follows from \cref{triangle cat t-structure truncation Hom prop}.
+\end{proof}
+
+Because of \cref{triangle cat t-structure truncation iteration prop}, we write $\tau^{[a,b]}X:=\tau^{\geq a}\tau^{\leq b}X\cong\tau^{\leq b}\tau^{\geq a}X$. It is clear that we thus obtain a functor $\tau^{[a,b]}:\mathcal{D}\to\mathcal{D}^{[a,b]}:=\mathcal{D}^{\leq b}\cap\mathcal{D}^{\geq a}$.\par
+
+Let $\mathcal{A}$ be an abelian category and $\mathcal{D}=\mathcal{D}(A)$ be the derived category of $\mathcal{A}$. Then the natural $t$-structure $(\mathcal{D}^{\leq 0},\mathcal{D}^{\geq 0})$ has the property that $\mathcal{A}\cong\mathcal{D}^{\leq 0}\cap\mathcal{D}^{\geq 0}$. We now prove that this is true for any $t$-structure of a triangulated category $\mathcal{D}$. That is, the heart $\mathcal{C}=\mathcal{D}^{\leq 0}\cap\mathcal{D}^{\geq 0}$ is an abelian category.
+
+\begin{theorem}\label{triangle cat t-structure heart admissible abelian}
+The heart $\mathcal{C}=\mathcal{D}^{\leq 0}\cap\mathcal{D}^{\geq 0}$ of a $t$-category $\mathcal{D}$ is an admissible abelian category of $\mathcal{D}$, which is stable under extensions. Moreover, the functor $H^0:=\tau^{\geq 0}\tau^{\leq 0}:\mathcal{D}\to\mathcal{C}$ is a cohomological functor.
+\end{theorem}
+\begin{proof}
+Let $X,Y\in\mathcal{C}$ and $f:X\to Y$ be a morphism with cone $S$. The distinguished triangle $(Y,S,X[1])$ then shows that $S$ is in $\mathcal{D}^{\leq 0}\cap\mathcal{D}^{\geq -1}$. The truncations $\tau^{\geq 0}S$ and $\tau^{\leq -1}S$ are hence in $\mathcal{C}$ and $\mathcal{C}[1]$, respectively, and the distinguished triangle $(\tau^{\leq-1}S,S,\tau^{\geq 0}S)$ fits into a diagram (\ref{triangle cat abelian subcat kernel cokernel prop}). This proves that $\mathcal{C}$ is admissibly abelian, and it is stable under extensions as we have remarked.\par
+It remains to prove that for any distinguished triangle $(X,Y,Z)$, the sequence $H^0(X)\to H^0(Y)\to H^0(Z)$ is exact. To this end, we first assume that $X,Y$ and $Z$ are in $\mathcal{D}^{\leq 0}$. For $U\in\mathcal{D}^{\leq 0}$ and $V\in\mathcal{D}^{\geq 0}$, we note that $H^0(U)=\tau^{\geq 0}U$ and $H^0(V)=\tau^{\leq 0}V$, so there are isomorphisms
+\[\Hom_{\mathcal{D}}(H^0(U),H^0(V))\stackrel{\sim}{\to} \Hom_{\mathcal{D}}(U,H^0(V))\stackrel{\sim}{\to}\Hom_{\mathcal{D}}(U,V).\] 
+For $T\in\mathcal{D}^{\geq 0}$, the long exact sequence of $\Hom$ and (t2) then give an exact sequence
+\[\begin{tikzcd}
+0\ar[r]&\Hom(Z,T)\ar[r]&\Hom(Y,T)\ar[r]&\Hom(X,T)
+\end{tikzcd}\]
+so the sequence $0\to\Hom(H^0(Z),T)\to\Hom(H^0(Y),T)\to\Hom(H^0(X),T)$ is exact. Since this is true for any $T$, we conclude that $H^0(X)\to H^0(Y)\to H^0(Z)\to 0$ is exact.\par
+We now show that the above conclusion is still valid if we only assume that $X\in\mathcal{D}^{\leq 0}$. For this, we note that for $T\in\mathcal{D}^{\geq 1}$, the long exact sequence of $\Hom$ gives an isomorphism $\Hom(Z,T)\cong\Hom(Y,T)$, so we have $\tau^{\geq 1}Y\cong\tau^{\geq 1}Z$. Apply (TR4) to $Y\to Z\to\tau^{\geq 1}Z$,
+\vspace*{-3mm}
+\begin{equation*}
+\begin{tikzcd}[row sep=2pt,column sep=4pt]
+&&&{}&\\
+&&&{}&\\
+&&\tau^{\leq 0}Z\ar[ruu]\ar[rdd]&&\\
+&&&{}&{}\\
+&\tau^{\leq 0}Y\ar[rd]\ar[ruu]&&Z\ar[ru]\ar[rddd]\\
+&&Y\ar[ru]\ar[rrdd]&&\\
+&&&&\\
+X\ar[ruuu]\ar[rruu]&&&&\tau^{\geq 1}Z\ar[rdd]\ar[rrd]\\
+&&&&&&{}\\
+&&&&&{}&
+\end{tikzcd}
+\vspace*{-3mm}
+\end{equation*}
+we then obtain a distinguished triangle $(X,\tau^{\leq 0}Y,\tau^{\leq 0}Z)$, on which we can apply the preceding arguments to conclude that $H^0(X)\to H^0(\tau^{\leq 0}Y)\to H^0(\tau^{\leq 0}Z)\to 0$ is exact. This proves our claim since $H^0\tau^{\leq 0}\cong H^0$. Dually, we conclude that if $Z\in\mathcal{D}^{\leq 0}$, then the sequence $0\to H^0(X)\to H^0(Y)\to H^0(Z)$ is exact.\par
+Finally, we deal with the general case. By (TR4) we have an octahedron
+\vspace*{-3mm}
+\begin{equation*}
+\begin{tikzcd}[row sep=2pt,column sep=4pt]
+&&&{}&\\
+&&&{}&\\
+&&\tau^{\geq 1}X\ar[ruu]\ar[rdd]&&\\
+&&&{}&{}\\
+&X\ar[rd]\ar[ruu]&&U\ar[ru]\ar[rddd]\\
+&&Y\ar[ru]\ar[rrdd]&&\\
+&&&&\\
+\tau^{\leq 0}X\ar[ruuu]\ar[rruu]&&&&Z\ar[rdd]\ar[rrd]\\
+&&&&&&{}\\
+&&&&&{}&
+\end{tikzcd}
+\vspace*{-3mm}
+\end{equation*}
+From the distinguished triangle $(\tau^{\leq 0}X,Y,U)$, we see that the sequence $H^0(X)\to H^0(Y)\to H^0(U)\to 0$ is exact, and $(U,Z,\tau^{\geq 1}X[1])$ shows that $0\to H^0(U)\to H^0(Z)$ is exact. We then conclude the exactness of $H^0(X)\to H^0(Y)\to H^0(Z)$, which completes the proof.
+\end{proof}
+
+\begin{proposition}\label{triangle cat t-structure truncation and cohomology prop}
+Let $X$ be an object of $\mathcal{D}$ and $n\in\Z$.
+\begin{enumerate}
+    \item[(a)] $H^p(i):H^p(\tau^{\leq n}X)\to H^p(X)$ is an isomorphism for $p\leq n$ and $H^p(\tau^{\leq n}X)=0$ for $p>0$.
+    \item[(b)] $H^p(j):H^p(X)\to H^p(\tau^{\geq n}X)$ is an isomorphism for $p\geq n$ and $H^p(\tau^{\geq n}X)=0$ for $p<n$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+By duality, it suffices to prove (a). If $p>n$, then by \cref{triangle cat t-structure truncation orthogonal prop} we have
+\[H^p(\tau^{\leq n}X)=\tau^{\leq p}\tau^{\geq p}\tau^{\leq n}X[p]=0.\]
+On the other hand, if $p\leq n$, then $\tau^{\leq p}\tau^{\leq n}X\to\tau^{\leq p}X$ is an isomorphism, and therefore
+\[H^p(\tau^{\leq n}X)=\tau^{\geq p}\tau^{\leq p}\tau^{\leq n}X[p]\to\tau^{\geq p}\tau^{\leq p}X[p]=H^p(X)[p]\]
+is an isomorphism.
+\end{proof}
+
+\begin{corollary}\label{triangle cat t-structure cohomology of D^geq n}
+Let $n\in\Z$ and $X$ be an object in $\mathcal{D}^{\leq n}$ (resp. $\mathcal{D}^{\geq n}$). Then $H^p(X)=0$ for $p>n$ (resp. $p<n$).
+\end{corollary}
+\begin{proof}
+If $X$ is an object in $\mathcal{D}^{\leq n}$, then $\tau^{\leq n}X\to X$ is an isomorphism, so $H^p(\tau^{\leq n}X)\to H^p(X)$ is an isomorphism for all $p\in\Z$. On the other hand, by \cref{triangle cat t-structure truncation and cohomology prop}, $H^p(\tau^{\leq n}X)=0$ for $p>n$. The other part of the corollary follows by duality.
+\end{proof}
+
+We say the $t$-structure of $\mathcal{D}$ is \textbf{non-degenerate} if the intersection of the $\mathcal{D}^{\leq n}$, and that of the $\mathcal{D}^{\geq n}$, both reduce to the zero object. For each integer $i\in\Z$, we put $H^i(X):=H^0(X[i])$.
+
+\begin{proposition}\label{triangle cat t-structure non-degenerate D^leq 0 char by H^i}
+If the $t$-structure of $\mathcal{D}$ is non-degenerate, then the system of functors $H^i$ is conservative, and for an object $X\in\mathcal{D}$ to belong to $\mathcal{D}^{\leq 0}$ (resp. $\mathcal{D}^{\geq 0}$), it is necessary and sufficient that $H^i(X)=0$ for $i>0$ (resp. $i<0$).
+\end{proposition}
+\begin{proof}
+Let $X\in\mathcal{D}$. We first prove that $H^i(X)=0$ for all $i\in\Z$ if and only if $X=0$. If $X\in\mathcal{D}^{\leq 0}$, the hypothesis $H^0(X)=0$ shows that $\tau^{\geq 0}X=0$, whence $X\in\mathcal{D}^{\leq 1}$. Inductively, we conclude that $X\in\bigcap_n\mathcal{D}^{\leq n}$, whence is zero by the hypothesis. Dually, we also conclude that if $X\in\mathcal{D}^{\geq 0}$, then $X=0$ if and only if $H^i(X)=0$ for any $i\in\Z$. For the general case, the values of $\tau^{\leq 0}X$ and $\tau^{\geq 1}X$ under $H^i$ are all zero, hence they are zero. We then conclude the claim by the distinguished triangle $(\tau^{\leq 0}X,X,\tau^{\geq 1}X)$.\par
+If a morphism $f:X\to Y$, with cone $Z$, induces isomorphisms $H^i(X)\cong H^i(Y)$ for each $i$, then the long exact sequence of $H^i$ shows that $H^i(Z)=0$ for all $i$, so $Z=0$ and $f$ is an isomorphism. Finally, if $H^i(X)=0$ for $i>0$, then $H^i(\tau^{>0}X)=0$ for any $i\in\Z$, so $\tau^{>0}X=0$ and we conclude that $X\in\mathcal{D}^{\leq 0}$. The dual argument shows that $X\in\mathcal{D}^{\geq 0}$ if $H^i(X)=0$ for $i<0$.
+\end{proof}
+
+\begin{proposition}\label{triangle cat t-structure bounded iff}
+Let $\mathcal{D}$ be a $t$-category. Then the following conditins are equivalent:
+\begin{enumerate}
+    \item[(\rmnum{1})] the union of the $\mathcal{D}^{\leq n}$ and that of the $\mathcal{D}^{\geq n}$ both equal to $\mathcal{D}$;
+    \item[(\rmnum{2})] the $t$-structure is non-degenerate and for any $X\in\mathcal{D}$, $H^p(X)$ are nonzero for finitely many $p\in\Z$.
+\end{enumerate}
+The $t$-structure $\mathcal{D}$ is called \textbf{bounded} if it satisfies the above conditions.
+\end{proposition}
+\begin{proof}
+Assume the conditions of (\rmnum{1}) and let $X$ be an object of $\mathcal{D}$ such that $H^p(X)=0$ for all $p\in\Z$. By assumption, there exists $n,m\in\Z$ such that $X\in\mathcal{D}^{\leq n}\cap\mathcal{D}^{\geq m}$. By considering the distinguished triangle $(\tau^{\leq p-1}X,X,\tau^{\geq p}X)$ for any $p\in\Z$, we conclude that $X\in\mathcal{D}^{\leq n}\cap\mathcal{D}^{\geq n}$ for all $n\in\Z$. In particular, $X\in\mathcal{D}^{\leq-1}\cap\mathcal{D}^{\geq 0}$, which means $\Hom(X,X)=0$ and therefore $X=0$. This shows that the $t$-structure on $\mathcal{D}$ is non-degenerate. Let $X$ be an arbitrary object in $\mathcal{D}$. Then $X\in\mathcal{D}^{\leq n}\cap\mathcal{D}^{\geq m}$ for some $m,n\in\Z$. By \cref{triangle cat t-structure truncation and cohomology prop}, $H^p(X)=0$ for $p>n$ and $p<m$, so $H^p(X)\neq 0$ for finitely many $p\in\Z$.\par
+Conversely, let $X$ be an object in $\mathcal{D}$. Then there exists $n\in\N$ such thar $H^p(X)=0$ for $|p|>n$. By , this implies that $H^p(\tau^{\leq -n}X)=0$ and $H^p(\tau^{\geq n}X)=0$ for all $p\in\Z$. Since the $t$-structure is non-degenerate, $\tau^{\leq -n}X=\tau^{\geq n}X=0$, so $X\in\mathcal{D}^{\geq -n+1}$ and $\mathcal{D}^{\leq n-1}$.
+\end{proof}
+\begin{example}
+Let $\mathcal{A}$ be an abelian category. Then the standard $t$-structure on the bounded derived category Db(A) is bounded. The standard t-structures on $D^+(\mathcal{A})$, $D^-(\mathcal{A})$ and $D(\mathcal{A})$ are not bounded.
+\end{example}
+Let $\mathcal{D}$ be a triangulated category with a nondegenerate $t$-structure. Let Db be the full subcategory consisting of all $X$ in $\mathcal{D}$ such that $H^p(X)\neq 0$ for finitely many $p\in\Z$. Clearly, $\mathcal{D}^b$ is strictly full subcategory. Assume that $(X,Y,Z)$ is a distinguished triangle in $\mathcal{D}$ and that two of its vertices are in $\mathcal{D}^b$. Then, from the long exact sequence of cohomology we see that the third vertex is also in $\mathcal{D}^b$. Therefore, $\mathcal{D}^b$ is a triangulated subcategory. Let $X$ be an object in $\mathcal{D}^b$. Then, by \cref{triangle cat t-structure truncation and cohomology prop}, $\tau^{\leq n}X$ and $\tau^{\geq n}X$ are also in Db for all $n\in\Z$. This implies that $(\mathcal{D}^b\cap\mathcal{D}^{\leq 0},\mathcal{D}^b\cap\mathcal{D}^{\geq 0})$ is a $t$-structure on $\mathcal{D}^b$. Clearly, the truncation functors and the cohomology functor $H^0$ for this $t$-structure are the restrictions of the corresponding functors on $\mathcal{D}$. Also, from the above result we see that this $t$-structure on $\mathcal{D}^b$ is bounded. We call $\mathcal{D}^b$ the subcategory of \textbf{cohomologically bounded objects} in $\mathcal{D}$.\par
+
+Let $\mathcal{D}$ be a triangulated category and denote by $\Iso(\mathcal{D})$ the collection of sets of isomorphism classes of objects of $\mathcal{D}$ (for $X\in\mathcal{D}$, we denote by $[X]$ its isomorphism class). We define an operation $\ast$ on $\Iso(\mathcal{D})$ as follows: for $A,B\in\Iso(\mathcal{D})$, $A\ast B$ is defined to be 
+\[A\ast B=\{[X]:\text{there exists a distinguished triangle $(U,X,V)$ with $[U]\in A$ and $[V]\in B$}\}.\]
+
+\begin{lemma}\label{triangle cat extension operator associative}
+The operation $\ast$ is associative.
+\end{lemma}
+\begin{proof}
+It suffices to prove that for $X,Y,Z\in\mathcal{D}$, we have
+\[(\{[X]\}\ast\{[Y]\})\ast\{[Z]\}=\{[X]\}\ast(\{[Y]\}\ast\{[Z]\}).\]
+For that $[T]$ belongs to the left side (resp. right side), it is necessary and sufficient that $T$ fits into a diagram of the upper cap (resp. lower cap)
+\[\begin{tikzcd}
+Z\ar[rd,"+1"]\ar[dd]&&T\ar[ll]\\
+&U\ar[ld]\ar[ru]\ar[ru]&\\
+Y\ar[rr,swap,"+1"]&&X\ar[lu]\ar[uu]
+\end{tikzcd}\quad\quad\text{resp.}\quad
+\begin{tikzcd}
+Z\ar[dd,swap,"+1"]&&T\ar[ll]\ar[ld]\\
+&V\ar[rd,"+1"]\ar[lu]&\\
+Y\ar[rr]\ar[ru]&&X\ar[uu]
+\end{tikzcd}\]
+The lemma then follows from axiom (TR4) and the inverse of (TR4').
+\end{proof}
+
+\cref{triangle cat extension operator associative} permits us to define the $\ast$-product $A_1\ast\cdots\ast A_p$ for a sequence of elements in $\Iso(\mathcal{D})$, without using the parentheses. It will be convenient for us to define the $\ast$-product of the empty sequence as being $\{[0]\}$.
+
+\begin{example}\label{triangle cat extension closure of subcategory}
+Let $\mathcal{A}$ be a strictly full subcategory of $\mathcal{A}$ and $E\mathcal{A}$ be the smallest strictly full subcategory of $\mathcal{D}$ containing $\mathcal{A}$, the zero object, and is stable under extensions. We have
+\begin{equation}\label{triangle cat extension closure of subcategory-1}
+[E\mathcal{A}]=\bigcup_{n\geq 0}\underbrace{[\mathcal{A}]\ast\cdots\ast[\mathcal{A}]}_{\text{$n$-factors}}.
+\end{equation}
+We also note that the condition that any morphisms in $\mathcal{A}$ are $\mathcal{A}$-admissible can be reformulated as
+\begin{equation}\label{triangle cat extension closure of subcategory-2}
+[\mathcal{A}]\ast[\mathcal{A}[1]]\sub[\mathcal{A}[1]]\ast[\mathcal{A}].
+\end{equation}
+\end{example}
+
+We now consider an admissible abelian subcategory $\mathcal{C}$ of $\mathcal{D}$ which is stable under extensions. Let $\mathcal{D}^b$ (resp. $\mathcal{D}^{b,\leq 0}$, resp. $\mathcal{D}^{b,\geq 0}$, resp. $\mathcal{D}^{b,I}$, where $I$ is an integer of $\Z$) be the smallest strictly full subcategory of $\mathcal{D}$ containing the $\mathcal{C}[n]$ for $n\in\Z$ (resp. $-n\leq 0$, resp. $-n\geq 0$, resp. $-n\in I$) which is stable under extensions\footnote{If $I$ is the empty interval, it is more natural to define $\mathcal{D}^{b,I}$ to be the category of zero objects.}.
+
+\begin{proposition}\label{triangle cat t-structure by admissible abelian}
+The pari $(\mathcal{D}^{b,\leq 0},\mathcal{D}^{b,\geq 0}$) is a bounded $t$-structure on $\mathcal{D}^{b}$. For $m\leq n$, we have $\mathcal{D}^{b,[m,n]}=\mathcal{D}^{b,\geq m}\cap\mathcal{D}^{b,\leq n}$. In particular, $\mathcal{C}=\mathcal{D}^{b,\leq 0}\cap\mathcal{D}^{b,\geq 0}$.
+\end{proposition}
+\begin{proof}
+The axiom (t1) is trivially satisfied, and (t2) follows from the long exact sequence of $\Hom$ and $\Hom^i(X,Y)=0$ for $i<0$ and $X,Y\in\mathcal{C}$. Since $\mathcal{C}$ is stable under extension, for any interver $I=[m,n]$ of $\Z$ ($m\leq n$), we have
+\begin{equation}\label{triangle cat t-structure by admissible abelian-1}
+[\mathcal{D}^{b,I}]=[\mathcal{C}[-m]]\ast\cdots\ast[\mathcal{C}[-n]].
+\end{equation}
+In view of this, for intervals $J,K$ such that $I=J\cup K$, we then have
+\begin{equation}\label{triangle cat t-structure by admissible abelian-2}
+[\mathcal{D}^{b,I}]=[\mathcal{D}^{b,J}]\ast[\mathcal{D}^{b,K}].
+\end{equation}
+In particular, for $J=[m,0]$ and $K=[1,n]$, we then conclude that any object of $\mathcal{D}^{b,I}$ is the extension of an object of $\mathcal{D}^{b,K}\sub\mathcal{D}^{b,\geq 1}$ by an object of $\mathcal{D}^{b,J}\sub\mathcal{D}^{b,\leq 0}$. Since $\mathcal{D}^b$ is the union of $\mathcal{D}^{b,I}$, we conclude axiom (t3).\par
+By (\ref{triangle cat t-structure by admissible abelian-1}), if $X$ is in $\mathcal{D}^{b,I}$, there exists a sequence of distinguished triangles $(X_i,X_{i+1},A_{i+1})$ ($m\leq i\leq n$) with $X_m\in\mathcal{C}[-m]$, $A_i\in\mathcal{C}[-j]$, and $X_n=X$. We may also set $X_{m-1}=0$ and $A_m=X_m$ and obtain a distinguished triangle $(X_{m-1},X_m,A_m)=(0,X_m,X_m)$. Apply the long exact sequence of cohomology to these triangles, we see by recurrence over $j$ that, for any $m\leq i\leq n$, we have
+\[H^i(X_j)=\begin{cases}
+0&i\notin[m,j],\\
+A_i[i]&i\in[m,j].
+\end{cases}\]
+In particular, $[X]\in\{[H^m(X)[-m]]\}\ast\cdots\ast\{[H^n(X)[-n]]\}$; this proves the boundedness of the $t$-structure (if $H^i(X)=0$ for all $i$, then $X=0$) and the second statement of the proposition (if $X\in\mathcal{C}^{b,\geq m}\cap\mathcal{D}^{b,\leq n}$, the $H^i(X)=0$ for $i\notin[m,n]$ and therefore $X$ is in $\mathcal{D}^{b,[m,n]}$).
+\end{proof}
+
+\begin{remark}
+Let $\mathcal{D}$ be a triangulated category and $\mathcal{C}$ be a right leaning full subcategory such that any morphism in $\mathcal{C}$ is admissible. The proof of \cref{triangle cat abelian subcat iff morphism admissible} shows that any morphism of $\mathcal{C}$ has a kernel and a cokernel, that $\im f=\coim f$ and that any short exact sequence of $\mathcal{C}$ is admissible. For $\mathcal{C}$ to be abelian, it is necessary and sufficient that $\mathcal{C}$ admits finite direct sums.\par
+Let $\mathcal{C}'$ be the category $E\mathcal{C}$ of successive extensions of objects of $\mathcal{C}$. The long exact sequence of $\Hom$ shows that $\mathcal{C}'$ is right leaning. Moreover, we deduce from (\ref{triangle cat extension closure of subcategory-1}), (\ref{triangle cat extension closure of subcategory-2}) and the associativity of $\ast$ that $[\mathcal{C}']\ast[C'[1]]\sub[\mathcal{C}'[1]]\ast[\mathcal{C}']$, i.e. that every morphism of $\mathcal{C}$ is admissible. Therefore $\mathcal{C}$ is an admissible abelian subcategory of $\mathcal{D}$. Applying \cref{triangle cat t-structure by admissible abelian} to $\mathcal{C}'$, we conclude that, for $\mathcal{D}^b$, $\mathcal{D}^{b,\leq 0}$ and $\mathcal{D}^{b,\leq 0}$ defined as above, $(\mathcal{D}^{b,\leq 0},\mathcal{D}^{b,\geq 0})$ is a $t$-structure of $\mathcal{D}^b$ with heart $\mathcal{C}'$.
+\end{remark}
+
+\paragraph{\texorpdfstring{$t$}{t}-exact functors}
+\begin{proposition}\label{triangle cat t-structure truncation <0 and leq 0}
+Let $\mathcal{D}$ be a $t$-category, $K\in\mathcal{D}$, and consider an short exact sequence in $\mathcal{C}$:
+\[\begin{tikzcd}
+0\ar[r]&A\ar[r]&H^0(K)\ar[r]&B\ar[r]&0
+\end{tikzcd}\]
+\begin{enumerate}
+    \item[(a)] There exists $K'\in\mathcal{D}^{\leq 0}$, with a morphism $i:K'\to K$, such that, over $\mathcal{D}^{\leq 0}$, $K'$ represents the functor
+    \[L\mapsto\ker(\Hom(L,K)\to\Hom(H^0(L),B)).\]
+    Moreover, for a couple $(K',i)$ to represents this functor, it is necessary and sufficient that for $K'\in\mathcal{D}^{\leq 0}$, $\tau^{<0}K'\cong\tau^{<0}K$ and $H^0(K')\cong A$.
+    \item[(b)] Dually, we obtain a morphhism $j:K\to K''$ with $K''\in\mathcal{D}^{\geq 0}$ and the couple $(K'',j)$ represents the functor 
+    \[L\mapsto\coker(\Hom(L,K)\to\Hom(H^0(L),B)).\]
+    Moreover, the couple $(K'',j)$ is characterized by $K''\in\mathcal{D}^{\geq 0}$, $\tau^{>0}K\cong\tau^{>0}K''$ and $H^0(K'')=B$.
+    \item[(c)] There exists a unique morphism $d:K''\to K'$ such that the triangle $(K',K,K'')$ is distinguished.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+
+\end{proof}
+
+Let $\mathcal{D}_i$ ($i=1,2$) be $t$-categories, $\mathcal{C}_i$ be the heart of $\mathcal{D}_i$, and denote by $\eps:\mathcal{C}_i\to\mathcal{D}_i$ the inclusion functor. Let $T:\mathcal{D}_1\to\mathcal{D}_2$ be an exact functor of triangulated categories (in the usual sense for triangulated categories, that is, up to a natural equivalence it commutes with translation and preserves distinguished triangles); we say that $T$ is \textbf{right $\bm{t}$-exact} if $T(\mathcal{D}^{\leq 0})\sub D^{\leq 0}$, \textbf{left $\bm{t}$-exact} if $T(\mathcal{D}^{\geq 0})\sub D^{\geq 0}$, and $t$-exact if it is both left $t$-exact and right $t$-exact.
+
+\begin{proposition}\label{triangle cat t-exact functor prop}
+Let $T:\mathcal{D}_1\to\mathcal{D}_2$ be an exact functor.
+\begin{enumerate}
+    \item[(a)] If $T$ is left (resp. right) $t$-exact, the functor $^pT:=H^0\circ T\circ\eps:\mathcal{C}_1\to\mathcal{C}_2$ is left (resp. right) exact.
+    \item[(b)] If $T$ is left (resp. right) $t$-exact and $K\in\mathcal{D}_1^{\geq 0}$ (resp. $K\in\mathcal{D}_1^{\leq 0}$), we have $^pT(H^0(K))\cong H^0(T(K))$ (resp. $H^0(T(K))\cong {^pT}(H^0(K))$).
+    \item[(c)] Let $T^*:\mathcal{D}_2\to\mathcal{D}_1:T_*$ be a pair of adjoint functors. For $T^*$ to be right $t$-exact, it is necessary and sufficient that $T_*$ is left $t$-exact, and in this case $({^pT^*},{^pT_*})$ is an adjoint pair.
+    \item[(d)] If $T_1:\mathcal{D}_1\to\mathcal{D}_2$ and $T_2:\mathcal{D}_2\to\mathcal{D}_3$ are left (resp. right) $t$-exact functors, then $T_2\circ T_1$ is also left (resp. right) $t$-exact and ${^p(T_2\circ T_1)}={^pT_2}\circ {^pT_1}$.  
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+If $T$ is left $t$-exact, for any short exact sequence $0\to X\to Y\to Z\to 0$ in $\mathcal{C}_1$, the long exact sequence on cohomology of the distinguished triangle $(T(X),T(Y),T(Z))$ gives an exact sequence
+\[0\to H^0(T(X))\to H^0(T(Y))\to H^0(T(Z)),\]
+since $T(Z)$ is in $\mathcal{D}_2^{\geq 0}$, so ${^pT}$ is left exact.\par
+For $K\in\mathcal{D}_1^{\geq 0}$, the distinguished triangle $(H^0(K),K,\tau^{>0}K)$ gives a distinguished triangle $(T(H^0(K)),T(K),T(\tau^{>0}K))$ with $T(\tau^{>0}K)\in\mathcal{D}_2^{>0}$, so the long exact sequence on cohomology shows that $H^0(T(H^0(K)))\cong H^0(T(K))$. This (and the dual argument) proves the assertions of (a) and (b).\par
+Let $T^*:\mathcal{D}_2\to\mathcal{D}_1:T_*$ be a pair of adjoint functors. If $T_*$ is left $t$-exact, for $U\in\mathcal{D}_1^{>0}$ and $V\in\mathcal{D}_2^{\leq 0}$, we have $\Hom(T^*(V),U)=\Hom(V,T_*(U))=0$. Since this is valid for any $U$, we have $\tau^{>0}T^*(V)=0$, i.e. $T^*(V)$ is in $\mathcal{D}_1^{\leq 0}$, so $T^*$ is right $t$-exact. For $A\in\mathcal{C}_1$ and $B\in\mathcal{C}_2$, we then have $H^0(T^*(B))=\tau^{\geq 0}T^*(B)$ and $H^0(T_*(A))=\tau^{\leq 0}T_*(A)$, whence a functorial isomorphism
+\[\Hom(H^0(T^*(B)),A)\stackrel{\sim}{\to} \Hom(T^*(B),A)=\Hom(A,T_*(B))\stackrel{\sim}{\leftarrow} \Hom(A,H^0(T_*(B))).\]
+This (resp. its dual form) prove the assertions of (c).\par
+Finally, if $T_1$ and $T_2$ are left $t$-exact and that $A\in\mathcal{C}_1$, we have $T_1(A)\in\mathcal{D}_2^{\geq 0}$ and
+\[{^p(T_2\circ T_1)}(A)=H^0(T_2(T_1(A)))=H^0(T_2(H^0(T_1(A))))\]
+in view of (b). This, together with its dual form, proves (d).
+\end{proof}
+
+\begin{remark}
+Let $\mathcal{D}_1^+=\bigcup_n\mathcal{D}_1^{\geq n}$ and $\mathcal{D}_2^-=\bigcup_n\mathcal{D}_2^{\leq n}$. Then the result of \cref{triangle cat t-exact functor prop}~(c) is still valid for functors $T^*:\mathcal{D}_2^{-}\to\mathcal{D}_1$ and $T_*:\mathcal{D}_1^{+}\to\mathcal{D}_2$ which are adjoint in the sense that $\Hom(T^*(V),U)=\Hom(V,T_*(U))$ for $V\in\mathcal{D}_2^-$ and $U\in\mathcal{D}_2^+$. The proof is the same.
+\end{remark}
+
+\begin{remark}\label{triangle cat adjoint functor ^pT diagram}
+In the situation of \cref{triangle cat t-exact functor prop}~(c), for $A\in\mathcal{C}_1$ and $B\in\mathcal{C}_2$, the adjoint morphisms of $(T^*,T_*)$ and $({^pT^*},{^pT_*})$ fit into the commmutative diagram
+\[\begin{tikzcd}
+T^*{^pT_*}(A)\ar[d]\ar[r]&{^pT^*}{^pT_*}(A)\ar[d]\\
+T^*T_*(A)\ar[r]&A
+\end{tikzcd}\quad\quad
+\begin{tikzcd}
+B\ar[r]\ar[d]&T_*T^*(B)\ar[d]\\
+{^pT_*}{^pT^*}(B)\ar[r]&T_*{^pT^*}(B)
+\end{tikzcd}\]
+\end{remark}
+
+\begin{example}\label{triangle cat t-structure subcategory eg}
+Let $T:\mathcal{D}'\to\mathcal{D}$ be a fully faithful exact functor between triangulated categories. For a triangle $(X,Y,Z)$ of $\mathcal{D}'$ to be distinguished, it is necessary and sufficient that its image under $T$ is diatinguished: by (TR2) we can find a distinguished triangle $(X,Y,Z')$ of $\mathcal{D}'$, whose image under $T$ is then isomorphic to the distinguished triangle $(T(X),T(Y),T(Z))$ by \cref{triangle cat morphism dt isomorphism 2 of 3}. Since $T$ is fully faithful, this implies that $(X,Y,Z)$ is isomorphic to $(X,Y,Z')$, so it is distinguished.\par
+Suppose that $\mathcal{D}$ and $\mathcal{D}'$ are endowed with $t$-structures and that $T$ is $t$-exact. For $X\in\mathcal{D}'$ to belong to $\mathcal{D}'^{\leq 0}$ (resp. $\mathcal{D}'^{\geq 0}$), it is it is necessary and sufficient that $T(X)$ is in $\mathcal{D}^{\leq 0}$ (resp. $\mathcal{D}^{\geq 0}$). This follows from the fact that $X\in\mathcal{D}'^{\leq 0}$ if and only if $\tau^{>0}X=0$, and that $T$ commutes with $\tau^{<0}$ (resp. the dual argument).\par
+Conversely, if $\mathcal{D}'$ is a full triangulated subcategory of a triangulated category $\mathcal{D}$ and that $(\mathcal{D}^{\leq 0},\mathcal{D}^{\geq 0}$) is a $t$-structure over $\mathcal{D}$, for that $(\mathcal{D}'^{\leq 0},\mathcal{D}'^{\geq 0}):=(\mathcal{D}'\cap\mathcal{D}^{\leq 0},\mathcal{D}'\cap\mathcal{D}^{\geq 0})$ is a $t$-structure over $\mathcal{D}'$, it is necessary and sufficient that $\mathcal{D}'$ is stable under the functor $\tau^{\leq 0}$. If this conditions is satisfied, this $t$-structure over $\mathcal{D}'$ is called the \textbf{induced $t$-structure}. For $\mathcal{D}'$ endowed with the induced $t$-structure, the inclusion functor $\mathcal{D}'\to\mathcal{D}$ is then $t$-exact: we have $\mathcal{C}'=\mathcal{D}'\cap\mathcal{C}$, and the restriction of the functors $\tau^{\leq n}$, $\tau^{\geq n}$ or $H^p$ of $\mathcal{D}$ is identified with the same functors of $\mathcal{D}'$.
+\end{example}
+
+Let $(\mathcal{D}_i)_{i\in I}$ be a finite family of triangulated categories and $T:\prod_i\mathcal{D}_i\to\mathcal{D}$ be an exact multifunctor to a triangulated category $\mathcal{D}$. Suppose that the $\mathcal{D}_i$ and $\mathcal{D}$ are endowed with $t$-structures. We say that $T$ is \textbf{left $t$-exact} (resp. \textbf{right $t$-exact}) if it sends the product of the $\mathcal{D}_i^{\geq 0}$ (resp. $\mathcal{D}_i^{\leq 0}$) into $\mathcal{D}^{\geq 0}$ (resp. $\mathcal{D}^{\leq 0}$), and \textbf{$t$-exact} if it is both left $t$-exact and right $t$-exact. If $T$ is left $t$-exact (resp. right $t$-exact, resp. $t$-exact) and fix certain variables to be an object of $\mathcal{D}_i^{\geq 0}$ (resp. $\mathcal{D}_i^{\leq 0}$, resp. $\mathcal{C}_i$, the herat of $\mathcal{D}_i$), the functor obtained in the remaining variables is still left $t$-exact (resp. right $t$-exact, resp. $t$-exact). This allows us to apply some proven results for functors of one variable. For example: let $\eps_i:\mathcal{C}_i\to\mathcal{D}_i$ be the inclusion functor. Put ${^pT}=H^0\circ T\circ(\eps_i)_{i\in I}$. If $T$ is left (resp. right) $t$-exact, the additive multifunctor ${^pT}$ is then left (resp. right) exact.\par
+Suppose that $T$ is left $t$-exact. For $(K_i)\in\prod_i\mathcal{D}_i^{\geq 0}$, we conclude from \cref{triangle cat t-exact functor prop}~(b) that ${^pT}(H^0(K_i))\cong H^0(T(K_i))$. Therefore, for $(K_i)\in\prod_i\mathcal{D}_i$, the morphisms $K_i\to\tau^{\geq 0}K_i$ then give a morphism
+\begin{equation}\label{triangle cat multifunctor t-exact-1}
+H^0(T(K_i))\to H^0(T(\tau^{\geq 0}K_i))\stackrel{\sim}{\leftarrow} {^pT}(H^0(K_i))
+\end{equation}
+By translating, we then obtain, for $\sum n_i=n$, a morphism
+\begin{equation}\label{triangle cat multifunctor t-exact-2}
+H^n(T(K_i))\to {^pT}(H^{n_i}(K_i))
+\end{equation}
+There is a problem of signs here, which does not appear if we consider instead
+\begin{equation}\label{triangle cat multifunctor t-exact-3}
+H^n(T(K_i))\to H^nT((H^{n_i}(K_i)[-n_i]))
+\end{equation}
+
+For $T$ right $t$-exact, we have $H^0T(K_i)\cong {^pT}H^0(K_i)$ for $(K_i)\in\prod_i\mathcal{D}_i^{\leq 0}$, so the morphisms $\tau^{\leq 0}K_i\to K_i$ provides a morphism ${^pT}(H^0(K_i))\to H^0(T(K_i))$, and by translating, we obtain morphisms
+\begin{equation}\label{triangle cat multifunctor t-exact-4}
+H^nT((H^{n_i}(K_i)[-n_i]))\to H^nT(K_i).
+\end{equation}
+where $n=\sum_in_i$.\par
+
+If $T$ is $t$-exact, we have both (\ref{triangle cat multifunctor t-exact-3}) and (\ref{triangle cat multifunctor t-exact-4}). Applying $H^nT$ to the commutative diagram
+\[\begin{tikzcd}
+\tau^{\leq n_i}K_i\ar[d]\ar[r]&H^{n_i}K_i[-n_i]\ar[d]\\
+K_i\ar[r]&\tau^{\geq n_i}K_i
+\end{tikzcd}\]
+we conclude that the composition of (\ref{triangle cat multifunctor t-exact-3}) and (\ref{triangle cat multifunctor t-exact-4}) is the identity. Now if $\sum_in_i=\sum_im_i=n$ and that $(n_i)_{i\in I}\neq (m_i)_{i\in I}$, there exists $i\in I$ such that $n_i<m_i$. The composition $\tau^{\leq n_i}K_i\to K_i\to\tau^{\geq m_i}K_i$ is zero, and we deduce that the composition of (\ref{triangle cat multifunctor t-exact-3}) for $(m_i)$ and (\ref{triangle cat multifunctor t-exact-4}) for $n_i$ is zero.
+
+\begin{proposition}\label{triangle cat multifunctor t-exact cohomology char}
+If $T$ is $t$-exact and $(K_i)\in\prod_i\mathcal{D}_i^b$, the morphisms (\ref{triangle cat multifunctor t-exact-3}) and (\ref{triangle cat multifunctor t-exact-4}) are inverses of each other, so that we have an isomorphism
+\begin{equation}\label{triangle cat multifunctor t-exact cohomology char-1}
+H^n(T(K_i))=\bigoplus H^nT((H^{n_i}K_i)[-n_i])
+\end{equation}
+where the sum is taken over $\sum_in_i=n$.
+\end{proposition}
+\begin{proof}
+We have already seen that these morphisms make the second member a direct factor of the first. Both members of (\ref{triangle cat multifunctor t-exact cohomology char-1}) are cohomological functors in each $K_i$ (for the right-hand side, thanks to the exactness of ${^pT}$) and the morphisms (\ref{triangle cat multifunctor t-exact-3}) and (\ref{triangle cat multifunctor t-exact-4}) are morphisms of cohomoloaic functors. By d\'evissage, we are reduced to assume each $K_i\in\mathcal{C}_i$, where the assertion is trivial.
+\end{proof}
+
+\subsection{Recollement}
+\paragraph{Six functors for topological spaces}\label{triangle cat recollement topo space paragraph}
+For $X$ a topological space, endowed with a sheaf of rings $\mathscr{O}_X$, we denote by $D(X,\mathscr{O}_X)$ the derived category of the abelian category $\Mod(\mathscr{O}_X)$ of sheaf of left $\mathscr{O}_X$-modules over $X$. As usual, $D^+(X,\mathscr{O}_X)$ is the full subcategory consisting of lower bounded complexes.\par
+Let $U$ be an open subset of $X$ and $Z$ be its complement. We denote by $j:U\to X$ and $i:Z\to X$ the canonical inclusions, and by $\mathscr{O}_U$, $\mathscr{O}_Z$ the inverse image of the structural sheaf $\mathscr{O}_X$ over $U$ and $Z$, respectively. We now describe the construction of glueing a $t$-structure over $D^+(U,\mathscr{O}_U)$ and that of $D^+(Z,\mathscr{O}_Z)$.\par
+The categories $\Mod(\mathscr{O}_X)$, $\Mod(\mathscr{O}_U)$, and $\Mod(\mathscr{O}_Z)$ are related by the functors
+\[\begin{tikzcd}[column sep=12mm]
+\Mod(\mathscr{O}_U)\ar[r,bend left=40pt,"j_!"]\ar[r,bend right=40pt,"j_*"]&\Mod(\mathscr{O}_X)\ar[l,swap,"j^*=j^!"]\ar[r,bend left=40pt,"i^*"]\ar[r,bend right=40pt,"i^!"]&\Mod(\mathscr{O}_Z)\ar[l,swap,"i_*=i_!"]
+\end{tikzcd}\]
+so that we have adjoint pairs $(j_!,j^*,j_*)$ and $(i^*,i_*,i^!)$. We also have identities
+\begin{gather}
+j^*j_*=1,\quad j^*j_!=1,\quad i^!i_*=1,\quad i^*i_*=1,\label{triangle cat recollement-1}\\
+j^*i_*=0,\quad i^*j_!=0,\quad i^!j_*=0.\label{triangle cat recollement-2}
+\end{gather}
+and for a sheaf $\mathscr{F}$ over $X$, the adjoint morphisms fit into exact sequences
+\begin{equation}\label{triangle cat recollement-3}
+\begin{tikzcd}
+0\ar[r]&j_!j^*(\mathscr{F})\ar[r]&\mathscr{F}\ar[r]&i_*i^*(\mathscr{F})\ar[r]&0
+\end{tikzcd}
+\end{equation}
+\vspace*{-4mm}
+\begin{equation}\label{triangle cat recollement-4}
+\begin{tikzcd}
+0\ar[r]&i_*i^!(\mathscr{F})\ar[r]&\mathscr{F}\ar[r]&j_*j^*(\mathscr{F})
+\end{tikzcd}
+\end{equation}
+where the last arrow is surjective if $\mathscr{F}$ is injective.\par
+
+For an adjoint pair $(T^*,T_*)$, the adjunction morphism $T^*T_*\to\id$ (resp. $\id\to T_*T^*$) is an isomorphism if and onyl if $T_*$ (resp. $T^*$) is fully faithful. The assertion (\ref{triangle cat recollement-1}) is then equivalent to that $i_*$, $j_*$ and $j_!$ are fully faithful.\par
+
+For an exact functor $T$ between abelian categories, it trivially extends to the derived categories. We shall use the same symbol for this extension. This extension coincides with the left derived functor $LT$ and the right derived functor $RT$, whenever they are defined.\par
+The functors described above induce functors over $D^+(X,\mathscr{O}_X)$, $D^+(U,\mathscr{O}_U)$ and $D^+(Z,\mathscr{O}_Z)$, which form adjoint pairs $(j_!,j^*,Rj_*)$ and $(i^*,i_*,Ri^!)$. We have $j^*i_*=0$, whence by adjunction $i^*j_!=0$ and $Ri^!Rj_*=0$. For $K\in K^+(X,\mathscr{O}_X)$, the exact sequences (\ref{triangle cat recollement-3}) and (\ref{triangle cat recollement-3}) then gives distinguished triangles $(j_!j^*K,K,i_*i^*K)$ and $(i_*Ri^!K,K,Rj_*j^*K)$. Finally, for $K\in D^+(Z,\mathscr{O}_Z)$ (resp. $K\in D^+(U,\mathscr{O}_U)$), by (\ref{triangle cat recollement-1}) we have isomorphisms
+\[i_*i^*K\cong K\cong Ri^!i_*K,\quad\quad(\text{resp.}\quad j^*Rj_*K\cong K\cong j^*j_!K.)\]
+In fact, $j_*$ and $i_*$ transform injectives to injectives, so we can apply Grothendieck's spectral sequence.\par
+
+The properties listed above are all that we need to glue $t$-structures, and we meet them in various contexts: for example, for $\ell$-adic derived categories, which do not come strictly within the scope of \ref{triangle cat recollement topo space paragraph}. To cover these cases, we will place ourselves in a more general framework. In this context, the sheaf categories no longer appear (only the triangulated categories appear) and we take advantage of this to lighten the notation by simply writing $j_*$ and $i^*$ for the derived functors $Rj_*$ and $Ri^!$.
+
+\paragraph{Recollement of \texorpdfstring{$t$}{t}-structures}
+Let $\mathcal{T}$ be a triangulated category endowed with strictly full subcategories $\mathcal{U}$, $\mathcal{V}$, which are stable under translations. Suppose that for $U\in\mathcal{U}$ and $V\in\mathcal{V}$ we have $\Hom(U,V)=0$, and that any $X\in\mathcal{T}$ fits into a distinguished triangle $(U,X,V)$, with $U\in\mathcal{U}$ and $V\in\mathcal{V}$. The pair $(\mathcal{U},\mathcal{V})$ is then a $t$-structure over $\mathcal{T}$. By \cref{triangle cat t-structure truncation Hom prop}, $\mathcal{V}$ is the right orthogonal of $\mathcal{U}$ and $\mathcal{U}$ is the left orthogonal of $\mathcal{V}$. In particular, $\mathcal{U}$ and $\mathcal{V}$ are Serre subcategories of $\mathcal{T}$. The hypothesis (\rmnum{1}), (\rmnum{2}) of (\cite{tohoku} 6.4, p.25) are then satisfied and by (\cite{tohoku} 6.4, p.23-p.26), the projection $\mathcal{T}\to\mathcal{T}/\mathcal{U}$ admits a fully faithful right adjoint, with image $\mathcal{V}$, and the projection $\mathcal{T}\to\mathcal{T}/\mathcal{V}$ admits a fully faithful left adjoint, with image $\mathcal{U}$. In other words, the inclusion $u:\mathcal{U}\to\mathcal{T}$ (resp. $v:\mathcal{V}\to\mathcal{T}$) has a right adjoint $u_\bullet$ (resp. a left adjoint $v^\bullet$) and the sequences
+\[\begin{tikzcd}
+0\ar[r]&\mathcal{U}\ar[r,"u"]&\mathcal{T}\ar[r,"v^\bullet"]&\mathcal{V}\ar[r]&0
+\end{tikzcd}\]
+\vspace*{-4mm}
+\[\begin{tikzcd}
+0\ar[r]&\mathcal{V}\ar[r,"v"]&\mathcal{T}\ar[r,"u_\bullet"]&\mathcal{U}\ar[r]&0
+\end{tikzcd}\]
+are "exact" in the sense that $v^\bullet$ (resp. $u_\bullet$) identified $\mathcal{V}$ (resp. $\mathcal{U}$) with the quotient of $\mathcal{T}$ by the Serre subcategory $\mathcal{U}$ (resp. $\mathcal{V}$).\par
+
+Now consider triangulated categories $\mathcal{D}$, $\mathcal{D}_U$ and $\mathcal{D}_Z$ such that we have exact functors
+\[\begin{tikzcd}
+\mathcal{D}_Z\ar[r,"i_*"]&\mathcal{D}\ar[r,"j^*"]&\mathcal{D}_U
+\end{tikzcd}\]
+It is convenient to put $i_!:=i_*$ and $j^!=j^*$. Suppose that the following \textit{recollement conditions} are satisfied\footnote{We note that this formalism is selfdual by exchanging $j_!$ with $j_*$ and $i^*$ with $i^!$.}:
+\begin{enumerate}[leftmargin=40pt]
+    \item[(R1)] $i_*$ admits a left adjoint functor $i^*$ and an exact right adjoint functor $i^!$.
+    \item[(R2)] $j^*$ admits a right adjoint functor $j_*$ and an exact left adjoint functor $j_!$.
+    \item[(R3)] $j^*i_*=i^*j_!=i^!j_*=0$, and therefore for $A\in\mathcal{D}_Z$ and $B\in\mathcal{D}_U$,
+    \[\Hom(j_!(B),i_*(A))=\Hom(i_*(A),j_*(B))=0.\]
+    \item[(R4)] There are distinguished triangles $(j_!j^*(K),K,i_*i^*(K))$ and $(i_*i^!(K),K,j_*j^*(K))$ for $K\in\mathcal{D}$.
+    \item[(R5)] $i^*i_*\to\id\to i^!i_*$ and $j^*j_*\to\id\to j^*j_!$ are isomorphisms, or equivalently, $i_*$, $j_!$ and $j_*$ are fully faithful. 
+\end{enumerate}
+Applying the preceding arguments to $\mathcal{T}=\mathcal{D}$, and choose for $(\mathcal{U},\mathcal{V})$ the pairs of subcategories $(i_*\mathcal{D}_Z,j_*\mathcal{D}_U)$ and $(j_!\mathcal{D}_U,i_*\mathcal{D}_Z)$, we obtain the following exact sequences
+\[\begin{tikzcd}
+0&\mathcal{D}_Z\ar[l]&\mathcal{D}\ar[l,swap,"i^*"]&\mathcal{D}_U\ar[l,swap,"j_!"]&0\ar[l]
+\end{tikzcd}\]
+\vspace*{-4mm}
+\[\begin{tikzcd}
+0\ar[r]&\mathcal{D}_Z\ar[r,"i_*"]&\mathcal{D}\ar[r,"j^*"]&\mathcal{D}_U\ar[r]&0
+\end{tikzcd}\]
+\vspace*{-4mm}
+\[\begin{tikzcd}
+0&\mathcal{D}_Z\ar[l]&\mathcal{D}\ar[l,swap,"i^!"]&\mathcal{D}_U\ar[l,swap,"j_*"]&0\ar[l]
+\end{tikzcd}\]
+
+Since the functor $i_*$ is fully faithful, the composition of the adjunction morphisms $i_*i^!\to\id\to i_*i^*$ gives a unique morphism of functors
+\begin{equation}\label{triangle cat recollement i^! to i^* morphism}
+i^!\to i^*.
+\end{equation}
+If we apply this to $i_*(X)$ and identify $i^!i_*(X)$ and $i^*i_*(X)$ with $X$, we obtain the identity morphism of $X$.\par
+
+The functor $j^*$ being a quotient functor (it identifies $\mathcal{D}_U$ with the quotient category), the composition of the adjunction morphisms $j_!j^*\to\id\to j_*j^*$ defines a unique morphism of functors
+\begin{equation}\label{triangle cat recollement j_! to j_* morphism}
+j_!\to j_*.
+\end{equation}
+If we identify $j^*j_!$ and $j^*j_*$ with the identity functor, then by applying $j^*$ to (\ref{triangle cat recollement j_! to j_* morphism}), we obtain the identity morphism of the idnetity functor.\par
+
+For $X\in\mathcal{D}_U$, the cone of $j_!(X)\to j_*(X)$ is then annihilated by $j^*$, so it belongs to $i_*\mathcal{D}_F$. By condition (R3) and \cref{triangle cat morphism extension to triangle iff}, the distinguished triangle with base $j_!(X)\to j_*(X)$ is uniquely determined up to unique isomorphisms, so we obtain a functor $j_*/j_!:\mathcal{D}_U\to\mathcal{D}_F$ which fits into a functorial distinguished triangle
+\begin{equation}\label{triangle cat recollement j_*/j_! dt-1}
+(j_!,j_*,i_*(j_*/j_!)).
+\end{equation}
+The dual construction provides a functor $T:\mathcal{D}_U\to\mathcal{D}_F$, which is characterized by a distinguished triangle $(i_*T,j_!,j_*)$. A triangle of this type is deduced from (\ref{triangle cat recollement j_*/j_! dt-1}) by rotation, so we have an isomorphism $T=(j_*/j_!)[-1]$. Applying $i^*$ and $i^!$ to the triangle (\ref{triangle cat recollement j_*/j_! dt-1}) (and its rotation), and noting that $i^*j_!=i^!j_*=0$, we obtain isomorphisms
+\begin{equation}\label{triangle cat recollement j_*/j_! isomorphic}
+i^*j_*\stackrel{\sim}{\to} j_*/j_!\stackrel{\sim}{\to} i^!j_![1].
+\end{equation}
+
+Let $X\in\mathcal{D}$ and apply (TR4) to the adjuction morphims $j_!j^*(X)\to X\to j_*j^*(X)$, we obtain an octahedron
+\begin{equation*}
+\begin{tikzcd}[row sep=2pt,column sep=4pt]
+&&&{}&\\
+&&A\ar[ru]\ar[rdd]&&\\
+&&&{}&{}&{}\\
+&X\ar[rd]\ar[ruu]&&B\ar[rru]\ar[rrddd]\\
+&&j_*j^*(X)\ar[ru]\ar[rrrdd]&&\\
+&&&&\\
+j_!j^*(X)\ar[ruuu]\ar[rruu]&&&&&C\ar[rdd]\ar[rrd]\\
+&&&&&&&{}\\
+&&&&&&{}&
+\end{tikzcd}
+\vspace*{-2mm}
+\end{equation*}
+By (R3), (R4) and \cref{triangle cat morphism extension to triangle iff}, there exists a unique isomorphism $A\cong i_*i^*(X)$, which identified $X\to A$ with the adjunction morphism. It also identifies $(j_!j^*X,X,A)$ to the distinguished triangle $(j_!j^*(X),X,i_*i^*(X))$ of (R4).\par
+The same argument, applied to $j_*j^*(X)$, whose image under $j^*$ is $X$, we see that $B$ is identified with $i_*i^*j_*j^*(X)=i_*(j_*/j_!)j^*(X)$ (cf. (\ref{triangle cat recollement j_*/j_! isomorphic})) and $j_*j^*(X)\to B$ is identified with the adjunction morphism of $(i^*,i_*)$. By \cref{triangle cat morphism extension to triangle iff}, there is a unique morphism $A\to B$ rendering the upper cap of an octahedron, i.e. a morphism $i_*i^*(X)\to i_*i^*j_*j^*(X)$; this is then deduced from the morphism $X\to j_*j^*(X)$ by adjunction.\par
+Dually, there exists a unique isomorphism from $C$ to $i_*i^!(X)[1]$, which identified the morphism $j_*j^*(X)\to C$ with the $+1$ shift of the adjunction morphism $i_*i^!(X)\to X$ (the triangle $(X,j_*j^*(X),C)$ is obtained by rotating $(i_*i^!(X),X,j_*j^*(X))$). The morphism $B\to C$, which is the unique morphism rendering the commutative square $(B,C,j_!j^*(X),X)$, is then identified, via the isomorphism (\ref{triangle cat recollement j_*/j_! isomorphic}), with the morphism
+\[i_*(j_*/j_!)j^*(X)=i_*i^!j_!j^*(X)[1]\to i_*i^!(X)[1]\]
+induced from $j_!j^*(X)\to X$ by functoriality.\par
+We have thus determined all the vertices, and all the arrows of the octahedron ($C\to A$ is the composition $C\to X\to A$), and proves its functoriality. If we replace $A$, $B$, $C$ by their values, the octahedron is then written as 
+\vspace*{-3mm}
+\begin{equation}\label{triangle cat recollement octahedron}
+\begin{tikzcd}[row sep=2pt,column sep=2pt]
+&&&{}&\\
+&&i_*i^*(X)\ar[ru]\ar[rdd]&&\\
+&&&{}&{}\\
+&X\ar[rd]\ar[ruu]&&i_*(j_*/j_!)j^*(X)\ar[ru]\ar[rddd]\\
+&&j_*j^*(X)\ar[ru]\ar[rrdd]&&\\
+&&&&\\
+j_!j^*(X)\ar[ruuu]\ar[rruu]&&&&i_*i^!(X)[1]\ar[rdd]\ar[rrd]\\
+&&&&&&{}\\
+&&&&&{}&
+\end{tikzcd}
+\vspace*{-3mm}
+\end{equation}
+Since $i_*$ is fully faithful, the distinguished triangle $(i_*i^*(X),i_*(j_*/j_!)j^*(X),i_*i^!(X)[1])$ is then the image under $i_*$ of a distinguished triangle $(i^*(X),(j_*/j_!)j^*(X),i^!(X)[1])$. The image under $i_*$ of the $+1$ morphism of this triangle is the composition $i_*i^!X[1]\to X\to i_*i^*(X)$, so $d:i^!(X)[1]\to i^*(X)[1]$ is the morphism (\ref{triangle cat recollement i^! to i^* morphism}) for $X[1]$ (the translation of (\ref{triangle cat recollement i^! to i^* morphism}) for $X$). Rotating the triangle, with a sign change for the morphism of degree $+1$ and erasing $i_*$ (cf. \cref{triangle cat t-structure subcategory eg}), we obtain a functorial distinguished triangle
+\begin{equation}\label{triangle cat recollement j_*/j_! dt-2}
+(i^!,i^*,(j_*/j_!)j^*).
+\end{equation}
+
+Now let $(\mathcal{D}_U^{\leq 0},\mathcal{D}_U^{\geq 0})$ be a $t$-structure over $\mathcal{D}_U$ and $(\mathcal{D}_Z^{\leq 0},\mathcal{D}_Z^{\geq 0})$ be a $t$-structure over $\mathcal{D}_Z$. We define subcategories of $\mathcal{D}$ by
+\begin{align*}
+\mathcal{D}^{\leq 0}&:=\{K\in\mathcal{D}:\text{$j^*(K)\in\mathcal{D}_U^{\leq 0}$ and $i^*(K)\in\mathcal{D}_Z^{\leq 0}$}\},\\
+\mathcal{D}^{\geq 0}&:=\{K\in\mathcal{D}:\text{$j^*(K)\in\mathcal{D}_U^{\geq 0}$ and $i^!(K)\in\mathcal{D}_Z^{\geq 0}$}\}.
+\end{align*}
+
+\begin{theorem}\label{triangle car recollement theorem}
+With the preceding hypotheses, $(\mathcal{D}^{\leq 0},\mathcal{D}^{\geq 0})$ is a $t$-structure over $\mathcal{D}$.
+\end{theorem}
+\begin{proof}
+Let $X\in\mathcal{D}^{\leq 0}$ and $Y\in\mathcal{D}^{\geq 1}$. The triangle $(j_!j^*(X),X,i_*i^*(X))$ gives the exact sequence
+\begin{small}
+\[\Hom(i^*(X),i^!(Y))=\Hom(i_*i^*(X),Y)\to \Hom(X,Y)\to\Hom(j_!j^*(X),Y)=\Hom(j^*(X),j^*(Y)).\]
+\end{small}
+We then conclude from axiom (t2) of $\mathcal{D}_U$ and $\mathcal{D}_Z$ that $\Hom(X,Y)=0$. Also, in view of the definition above, the axiom (t1) for $\mathcal{D}$ follows from that of $\mathcal{D}_U$ and $\mathcal{D}_Z$.\par
+For $X\in\mathcal{D}$, to verify axiom (t3), we choose objects $Y$ and $A$ so that we have distinguished triangles $(Y,X,j_*\tau^{>0}j^*(X))$ and $(A,Y,i_*\tau^{>0}i^*(Y))$, and apply (TR4):
+\vspace*{-2mm}
+\begin{equation*}
+\begin{tikzcd}[row sep=2pt,column sep=4pt]
+&&&{}&\\
+&&i_*\tau^{>0}i^*(Y)\ar[ru]\ar[rdd]&&\\
+&&&{}&{}&{\hspace*{8mm}}\\
+&Y\ar[rd]\ar[ruu]&&B\ar[rru]\ar[rrddd]\\
+&&X\ar[ru]\ar[rrrdd]&&\\
+&&&&\\
+A\ar[ruuu]\ar[rruu]&&&&&j_*\tau^{>0}j^*(X)\ar[rdd]\ar[rrd]\\
+&&&&&&&{}\\
+&&&&&&{}&
+\end{tikzcd}
+\vspace*{-3mm}
+\end{equation*}
+Applying $j^*$, $i^*$, $i^!$ to the distinguished triangles in this octahedron, we conclude from (R3) and (R5) that
+\begin{alignat*}{2}
+&j^*(i_*\tau^{>0}i^*(Y),B,j_*\tau^{>0}j^*(X))=(0,j^*(B),\tau^{>0}j^*(X))&\quad\quad&\text{whence $j^*(B)\stackrel{\sim}{\to} \tau^{>0}j^*(X)$},\\
+&j^*(A,X,B)=(j^*(A),j^*(X),\tau^{>0}j^*(X))&\quad\quad&\text{whence $j^*(A)\stackrel{\sim}{\to} \tau^{\leq 0}j^*(X)$},\\
+&i^*(A,Y,i_*\tau^{>0}i^*(Y))=(i^*(A),i^*(Y),\tau^{>0}i^*(Y))&\quad\quad&\text{whence $i^*(A)\stackrel{\sim}{\to} \tau^{\leq 0}i^*(Y)$},\\
+&i^!(i_*\tau^{>0}i^*(Y),B,j_*\tau^{>0}j^*(X))=(\tau^{>0}i^*(Y),i^!(B),0)&\quad\quad&\text{whence $\tau^{>0}i^*(Y)\stackrel{\sim}{\to} i^!(B)$}.
+\end{alignat*}
+We then conclude that $A\in\mathcal{D}^{\leq 0}$ and $B\in\mathcal{D}^{\geq 1}$, and this proves axiom (t3).
+\end{proof}
+
+\begin{proposition}\label{triangle car recollement t-structure iff}
+Under the hypothesis and notations of \cref{triangle car recollement theorem}, let $(\mathcal{D}^{\leq 0},\mathcal{D}^{\geq 0})$ be a $t$-structure over $\mathcal{D}$. Then the following conditions are equivalent:
+\begin{enumerate}
+    \item[(\rmnum{1})] $j_!j^*$ is right $t$-exact;
+    \item[(\rmnum{1}')] $j_*j^*$ is left $t$-exact;
+    \item[(\rmnum{2})] the $t$-structure of $\mathcal{D}$ is obtained by glueing.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+The equivalence of (\rmnum{1}) and (\rmnum{1}') follows from \cref{triangle cat t-exact functor prop}~(c), and (\rmnum{1}), (\rmnum{1}') are equivalent to axiom (t2) for $(j^*\mathcal{D}^{\leq 0},j^*\mathcal{D}^{\geq 0})$. The distinguished triangle $(j_!j^*,\id,i_*i^*)$ and $(i_*i^!,\id,j_*j^*)$ shows respectively that (\rmnum{1}) and (\rmnum{1}') implies that $i_*i^*$ is right $t$-exact and $i_*i^!$ is left $t$-exact, which are equivalent by \cref{triangle cat t-exact functor prop}~(c), and signifies that $(i^*\mathcal{D}^{\leq 0},i^!\mathcal{D}^{\geq 0})$ verifies axiom (t2).\par
+It is clear that (\rmnum{2})$\Rightarrow$(\rmnum{1}), (\rmnum{1}'), and that the $t$-structure over $\mathcal{D}_U$ and $\mathcal{D}_Z$ are such that $\mathcal{D}$ is the glueing of $(j^*\mathcal{D}^{\leq 0},j^*\mathcal{D}^{\geq 0})$ over $\mathcal{D}_U$ and $(i^*\mathcal{D}^{\leq 0},i^!\mathcal{D}^{\geq 0})$ over $\mathcal{D}_Z$. Conversely, if (\rmnum{1}) and (\rmnum{1}') are satisfied, we verify successively that
+\begin{enumerate}
+    \item[(a)] $(j^*\mathcal{D}^{\leq 0},j^*\mathcal{D}^{\geq 0})$ is a $t$-structure over $\mathcal{D}_U$. This follows from the fact that $j^*$ is essentially surjective.
+    \item[(b)] $(i^*\mathcal{D}^{\leq 0},i^!\mathcal{D}^{\geq 0})$ is a $t$-structure over $\mathcal{D}_Z$. Only axiom (t3) is nontrivial: for $X\in\mathcal{D}_Z$, the $t$-exactness of $j^*$ shows that $j^*\tau^{\leq 0}i_*(X)=\tau^{\leq 0}j^*i_*(X)=0$, and that similarly $j^*\tau^{>0}i_*(X)=0$\footnote{The truncations functor are that for the $t$-structure $(j^*\mathcal{D}^{\leq 0},j^*\mathcal{D}^{\geq 0})$ over $\mathcal{D}_U$.}. The truncations $\tau^{\leq 0}i_*(X)$ and $\tau^{>0}i_*(X)$ are therefore in $i_*\mathcal{D}_Z$, and we obtain a distinguished triangle $(i^*\tau^{\leq 0}i_*(X),X,i^*\tau^{>0}i_*(X))$, which proves axiom (t3).
+    \item[(c)] The identity functor of $\mathcal{D}$, endowed with the $t$-structure over $\mathcal{D}$ and the $t$-structure glueing $(j^*\mathcal{D}^{\leq 0},j^*\mathcal{D}^{\geq 0})$ and $(i^*\mathcal{D}^{\leq 0},i^!\mathcal{D}^{\geq 0})$, is $t$-exact.
+\end{enumerate}
+By \cref{triangle cat t-structure subcategory eg}, the original $t$-structure of $\mathcal{D}$ is therefore obtained by glueing $(j^*\mathcal{D}^{\leq 0},j^*\mathcal{D}^{\geq 0})$ and $(i^*\mathcal{D}^{\leq 0},i^!\mathcal{D}^{\geq 0})$.
+\end{proof}
+
+Suppose that we are given a $t$-structure over $\mathcal{D}_Z$, and apply \cref{triangle car recollement theorem} to the degenerate $t$-structure $(\mathcal{D}_U,0)$ over $\mathcal{D}_U$ and the given $t$-structure over $\mathcal{D}_Z$. The functor $\tau^{\leq n}$ relative to the $t$-structure obtained over $\mathcal{D}$ is then denoted by $\tau^{\leq n}_Z$, which is right adjoint to the inclusion of the full subcategory of $\mathcal{D}$ formed by $X\in\mathcal{D}$ such that $i^*(X)\in\mathcal{D}_Z^{\leq n}$. The proof of axiom (t3) in \cref{triangle car recollement theorem} shows that we have a distinguished triangle
+\begin{equation}\label{triangle car recollement truncation tau_Z^leq dt}
+(\tau^{\leq n}_ZX,X,i_*\tau^{>n}i^*(X))
+\end{equation}
+(with the notations of \cref{triangle car recollement theorem}, we have $X=Y$ since $j_*\tau^{>0}j^*(X)=0$). The cohomology functor $H^n$ for this $t$-structure is then given by $i_*H^ni^*(X)$.\par
+Dually, we define $\tau^{\geq n}_Z$ via the degenerate $t$-structure $(0,\mathcal{D}_U)$ over $\mathcal{D}_U$, which is left adjoint to the inclusion of the full subcategory of $\mathcal{D}$ formed by $X\in\mathcal{D}$ such that $i^!(X)\in\mathcal{D}_Z^{\geq n}$. We have a distinguished triangle
+\begin{equation}\label{triangle car recollement truncation tau_Z^geq dt}
+(i_*\tau^{<n}i^!(X),X,\tau^{\geq n}_ZX),
+\end{equation}
+and the functor $H^n$ is given by $i_*H^ni^!(X)$.\par
+Similarly, if we are given a $t$-structure over $\mathcal{D}_U$, and we endow $\mathcal{D}_Z$ with the $t$-structure $(\mathcal{D}_Z,0)$ (resp. $(0,\mathcal{D}_Z)$), we can define $t$-structure over $\mathcal{D}$, and truncation functor $\tau^{\leq n}_U$ (resp. $\tau^{\geq n}_U$), which fit into distinguished triangles
+\begin{equation}\label{triangle car recollement truncation tau_U dt}
+(\tau^{\leq n}_UX,X,j_*\tau^{>n}j^*(X)),\quad\quad (\text{resp.}\quad (j_!\tau^{<n}j^*(X),X,\tau^{\geq n}_UX)).
+\end{equation}
+The cohomology functor $H^n$ is given by $j_*H^nj^*(X)$ (resp. $j_!H^nj^*(X)$).\par
+The proof of axiom (t3) in \cref{triangle car recollement theorem} shows that $\tau^{\leq 0}=\tau^{\leq 0}_Z\tau^{\leq 0}_U$. By translating and duality, we obtain
+\begin{equation}\label{triangle car recollement truncation functor decomposition}
+\tau^{\leq n}=\tau^{\leq n}_Z\tau^{\leq n}_U,\quad \tau^{\geq n}=\tau^{\geq n}_Z\tau^{\geq n}_U.
+\end{equation}
+
+\begin{example}
+In the situation of \ref{triangle cat recollement topo space paragraph} and for the natural $t$-structure of $D^+(Z,\mathscr{O}_Z)$, the functor $\tau_Z^{\leq n}$ is deduced from the functor of the category of complexes of sheaves into itself which to a complex $K$ associates the subcomplex which coincides with $K$ over $U$, and with the subcomplex $\tau^{\leq n}K$ over $Z$.
+\end{example}
+
+A \textbf{prolongation} of an object $Y$ of $\mathcal{D}_U$ is defined to be an object $X$ of $\mathcal{D}$ endowed with an isomorphism $j^*(X)\cong Y$. Such an isomorphism gives by adjunction morphisms $j_!(Y)\to X\to j_*(Y)$. If $n\in\Z$ is an integer, then from the distinguished triangle (\ref{triangle car recollement truncation tau_Z^leq dt}) (resp. (\ref{triangle car recollement truncation tau_Z^geq dt})) and (R3), (R5), we see that $\tau^{\geq n}_Zj_!(Y)$ (resp. $\tau_Z^{\leq n}j_*(Y)$) is a prolongation of $Y$. If a prolongation $X$ is isomorphic as a prolongation to $\tau^{\geq n}_Zj_!(Y)$ (resp. $\tau_Z^{\leq n}j_*(Y)$), the isomorphism $j^*(X)\cong Y$ is then uniquely determined, and we simply write $X=\tau^{\geq n}_Zj_!(Y)$ (resp. $\tau_Z^{\leq n}j_*(Y)$).
+
+\begin{proposition}\label{triangle car recollement prolongation exist}
+Let $Y\in\mathcal{D}_U$ and $n$ be an integer. There exists, up to unique isomorphisms, a unique prolongation $X$ of $Y$ such that $i^*(X)\in\mathcal{D}_Z^{\leq n-1}$ and $i^!(X)\in\mathcal{D}_Z^{\geq n+1}$. This prolongation is given by $\tau^{\leq n-1}_Zj_*(Y)$, and we have $\tau^{\leq n-1}_Zj_*(Y)=\tau^{\geq n+1}_Zj_!(Y)$.
+\end{proposition}
+\begin{proof}
+Let $X$ be a prolongation of $Y$. The distinguished triangle $(i^*(X),(j_*/j_!)(Y),i^!(X)[1])$ obtained by rotating (\ref{triangle cat recollement j_*/j_! dt-2}) shows that the following conditions are equivalent:
+\begin{enumerate}
+    \item[(\rmnum{1})] $i^*(X)\in\mathcal{D}_Z^{\leq n-1}$ and $i^!(X)\in\mathcal{D}_Z^{\geq n+1}$;
+    \item[(\rmnum{2})] $i^!(X)[1]=\tau^{\geq n}(j_*/j_!)(Y)=\tau^{\geq n}i^*j_*(Y)$;
+    \item[(\rmnum{2}')] $i^*(X)=\tau^{\leq n-1}(j_*/j_!)(Y)=\tau^{\leq n}i^!j_!(Y)[1]$. 
+\end{enumerate}
+The distinguished triangles $(X,j_*(Y),i_*i^!(X)[1])$ of (\ref{triangle cat recollement octahedron}) and $(\tau^{\leq n-1}_Z,\id,i_*\tau^{>n-1}i^*)$ imply that condition (\rmnum{2}) is equivalent to $X=\tau^{\leq n-1}_Fj_*(Y)$, and the triangles $(j_!(Y),X,i_*i^*(X))$ of (\ref{triangle cat recollement octahedron}) and $(i_*\tau^{<n+1}i^!,\id,\tau_Z^{\geq n+1})$ imply that condition (\rmnum{2}') is equivalent to $X=\tau_Z^{\geq n+1}j_!(Y)$; we therefore conclude the proposition.
+\end{proof}
+
+\begin{remark}
+Let $n$ be an integer and $\mathcal{D}_m$ be the full subcategory of $\mathcal{D}$ formed by objects $X$ such that $i^*(X)\in\mathcal{D}_Z^{\leq n-1}$ and $i^!(X)\in\mathcal{D}_Z^{\geq n+1}$. The functor $j^*$ then induces an equivalence of categories $\mathcal{D}_m\stackrel{\sim}{\to}\mathcal{D}_U$. It admits $\tau^{\leq n-1}_Zj_*$ as a quasi-inverse, which we often denote by ${^pj_{!*}}$.
+\end{remark}
+
+Let $\mathcal{C}$, $\mathcal{C}_U$ and $\mathcal{C}_Z$ be the hearts of the $t$-categories $\mathcal{D}$, $\mathcal{D}_U$ and $\mathcal{D}_Z$, respectively, where $\mathcal{D}_U$ and $\mathcal{D}_Z$ are endowed with given $t$-structures, and $\mathcal{D}$ with the glueing $t$-structure. Denote by $\eps$ the inclusions of $\mathcal{C}$, $\mathcal{C}_U$ or $\mathcal{C}_Z$ into $\mathcal{D}$, $\mathcal{D}_U$ or $\mathcal{D}_Z$, and for $T$ the functors $j_!,j^*,j_*,i^*,i_*,i^!$, we denote by $^{pT}$ the functor $H^0\circ T\circ\eps$. By the definition of the $t$-structure of $\mathcal{D}$, $j^*$ is $t$-exact, $i^*$ is right $t$-exact, and $i^!$ is left $t$-exact. Applying \cref{triangle cat t-exact functor prop}~(c) and (d), we obtain the following result:
+\begin{proposition}\label{triangle car recollement functors composition and exact sequence}
+Let $\mathcal{D}$, $\mathcal{D}_U$ and $\mathcal{D}_Z$ be triangulated categories as above.
+\begin{enumerate}
+    \item[(a)] The functors $j_!$ and $i^*$ (resp. $j_*$ and $i^!$, resp. $j^*$ and $i_*$) are right $t$-exact (resp. left $t$-exact, resp. $t$-exact), and we have adjoint triples $({^pj_!},{^pj^*},{^pj_*})$ and $({^pi^*},{^pi_*},{^pi^!})$.
+    \item[(b)] The composition ${^pj^*}\circ{^pi_*}$, ${^pi^*}\circ{^pj_!}$ and ${^pi^!}\circ{^pj_*}$ are zero. For $A\in\mathcal{C}_Z$ and $B\in\mathcal{C}_U$, we have
+\[\Hom({^pj_!}(B),{^pi_*}(A))=\Hom({^pi_*}(A),{^pj_*}(B))=0.\]
+    \item[(c)] For $A\in\mathcal{C}$, the sequences
+    \[\begin{tikzcd}
+        {^pj_!}{^pj^*}(A)\ar[r]&A\ar[r]&{^pi_*}{^pi^*}(A)\ar[r]&0
+    \end{tikzcd}\]
+    \vspace*{-4mm}
+    \[\begin{tikzcd}
+        0\ar[r]&{^pi_*}{^pi^!}(A)\ar[r]&A\ar[r]&{^pj_*}{^pj^*}(A)
+    \end{tikzcd}\]
+    are exact.
+    \item[(d)] The functors ${^pi_*}$, ${^pj_!}$ and ${^pj_*}$ are fully faithful, or equivalently, ${^pi^*}{^pi_*}\to\id\to{^pi^!}{^pi_*}$ and ${^pj^*}{^pj_*}\to\id\to{^pj^*}{^pj_!}$ are isomorphisms. 
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+Only the exact sequences in (c) are nontrivial. For this, we note that by \cref{triangle cat t-exact functor prop} we have ${^pT_2}\circ{^pT_1}=H^0(T_2\circ T_1)$, so for $A\in\mathcal{C}$ we have a long exact sequence
+\[\begin{tikzcd}
+\cdots\ar[r,"+1"]&H^0(j_!j^*(A))={^pj_!}{^pj^*}(A)\ar[r]&A\ar[r]&{^pi_*}{^pi^*}(A)=H^0(i_*i^*(A))\ar[r,"+1"]&\cdots
+\end{tikzcd}\]
+To see that the morphism $A\to H^0(i_*i^*(A))$ is surjective, we note that since $j_!$ is right $t$-exact and $j^*$ is $t$-exact, we have $j_!j^*(A)\in\mathcal{D}^{\leq 0}$, so $H^1(j_!j^*(A))=0$ and we obtain the first exact sequence in (c). The second one can be deduced similarly, using the fact that $j_*$ is left $t$-exact and $j^*$ is $t$-exact (so $j_*j^*(A)\in\mathcal{D}^{\geq 0}$).
+\end{proof}
+
+\begin{remark}\label{triangle car recollement ^pi_* adjoint char}
+By ${^pj^*}{^pi_*}=0$ and the exact sequence of (c), for $X\in\mathcal{C}$ to be in the essential image $\widebar{\mathcal{C}}_Z$ of ${^pi_*}$, it is necessary and sufficient that ${^pj^*}(X)=0$. Since the functor ${^pj^*}$ is exact, this essential image is a Serre subcategory of $\mathcal{C}$. If we identify $\mathcal{C}_Z$ with $\widebar{\mathcal{C}}_Z$ by the fully faithful functor ${^pi_*}$, the adjunctions $({^pi^*},{^pi_*})$ and $({^pi_*},{^pi_!})$ show that for $X\in\mathcal{C}$, ${^pi^*}(X)$ is the largest quotient of $X$ which is in $\mathcal{C}_Z$, and ${^pi^!}(X)$ is the largest sub-object of $X$ that is in $\mathcal{C}_Z$.
+\end{remark}
+
+\begin{proposition}\label{triangle car recollement ^pj^* is quotient}
+The functor ${^pj^*}$ identifies $\mathcal{C}_U$ with the quotient of $\mathcal{C}$ by the Serre subcategory $\mathcal{C}_Z$ (or, more precisely, its iamge $\widebar{\mathcal{C}}_Z$).
+\end{proposition}
+\begin{proof}
+Let $Q:\mathcal{C}\to\mathcal{C}/\mathcal{C}_Z$ be the quotient functor. The exact functor ${^pj^*}$ admits a factorization $T\circ Q$:
+\[\begin{tikzcd}
+\mathcal{C}\ar[rd,swap,"Q"]\ar[rr,"{^pj^*}"]&&\mathcal{C}_U\\
+&\mathcal{C}/\mathcal{C}_Z\ar[ru,swap,"T"]
+\end{tikzcd}\]
+We note that $T$ is faithful: if a morphism $f$ in $\mathcal{C}/\mathcal{C}_Z$ comes from a morphism $f_1$ of $\mathcal{C}$, and $f$ is killed by $T$, then $f_1$ is killed by ${^pj^*}$. Since ${^pj^*}$ is exact, this implies ${^pj^*}(\im(f_1))=\im({^pj^*}(f_1))=0$, so $\im(f_1)\in\widebar{\mathcal{C}}_Z$ and $f_1$ is killed by $Q$. Since $\id\stackrel{\sim}{\to}{^pj^*}{^pj_!}=T\circ Q\circ{^pj_!}$, we see that $T$ is essentially surjective, so it remains to verify that $T$ is fully faithful, whence an equivalence of categories.\par
+We note that for $A\in\mathcal{C}$ there is an exact sequence
+\[\begin{tikzcd}
+0\ar[r]&{^pi_*}H^{-1}i^*(A)\ar[r]&{^pj_!}{^pj^*}(A)\ar[r]&A\ar[r]&{^pi_*}{^pi^*}(A)\ar[r]&0
+\end{tikzcd}\]
+(Note that $i_*$ is $t$-exact and $i^*$ is right $t$-exact, so we have $H^{-1}(i_*i^*(A))={^pi_*}H^{-1}i^*(A)$ by \cref{triangle cat t-exact functor prop}~(b).) The kernel and cokernel of the morphism ${^pj_!}{^pj^*}(A)\to A$ are therefore in the image of ${^pi_*}$, and any object of $\mathcal{C}/\widebar{\mathcal{C}}_Z$ is then contained in the essential image of ${^pj_!}$. For ${^pj_!}(X)$ and ${^pj_!}(Y)$ in this image, the map
+\[T:\Hom(Q{^pj_!}(X),Q{^pj_!}(Y))\to\Hom(TQ{^pj_!}(X),TQ{^pj_!}(Y))=\Hom(X,Y)\]
+admits a section $Q{^pj_!}$, and hence is surjective. This completes the proof.
+\end{proof}
+
+\begin{remark}
+In the situation of \ref{triangle cat recollement topo space paragraph}, if we endow $D^+(U,\mathscr{O}_U)$ and $D^+(Z,\mathscr{O}_Z)$ the natural $t$-structures, then the glueing $t$-structure on $D^+(X,\mathscr{O}_X)$ is the natural $t$-structure, and the abelian categories $\mathcal{C}$, $\mathcal{C}_U$ and $\mathcal{C}_Z$ are $\Mod(\mathscr{O}_X)$, $\Mod(\mathscr{O}_U)$ and $\Mod(\mathscr{O}_Z)$. In the general case, however, the functor ${^pj_!}$ is only right exact, ${^pi_*}$ is only left exact, and the first sequence of \cref{triangle car recollement functors composition and exact sequence}~(c) is not left exact.
+\end{remark}
+
+Since the functor ${^pi_*}$ is fully faithful, the composition of the adjunction morphisms ${^pi_*}{^pi^!}\to\id\to{^pi_*}{^pi^*}$ is the image under ${^pi_*}$ of a unique morphism of functors
+\begin{equation}\label{triangle cat recollement i^! to i^* heart morphism-1}
+{^pi^!}\to{^pi^*}.
+\end{equation}
+The diagrams of \cref{triangle cat adjoint functor ^pT diagram} for $(i^*,i_*)$ and $(i_*,i^!)$, and the $t$-exactness of $i_*$, imply that for $A\in\mathcal{C}$ we have a commutative diagram
+\[\begin{tikzcd}
+{^pi_*}{^pi_!}\ar[r]\ar[d,equal]&\id\ar[dd,equal]\ar[r]&{^pi_*}{^pi^*}\ar[d,equal]\\
+i_*{^pi_!}\ar[d]&&i_*{^pi^*}\\
+i_*i^!\ar[r]&\id\ar[r]&i_*i^*\ar[u]
+\end{tikzcd}\]
+Therefore, for $A\in\mathcal{C}$, the morphism ${^pi^!}(A)\to {^pi^*}(A)$ in (\ref{triangle cat recollement i^! to i^* heart morphism-1}) is given by the composition
+\begin{equation}\label{triangle cat recollement i^! to i^* heart morphism-2}
+{^pi^!}(A)\to i^!(A)\stackrel{(\ref{triangle cat recollement i^! to i^* morphism})}{\longrightarrow} i^*(A)\to {^pi^*}(A).
+\end{equation}
+By \cref{triangle car recollement functors composition and exact sequence}(d), if we apply (\ref{triangle cat recollement i^! to i^* heart morphism-1}) to ${^pi_*}(A)$ (for $A\in\mathcal{C}_Z$), then we obtain the identity morphism of $A$.\par
+
+On the other hand, since the functor ${^pj^*}$ is identified with the quotient functor (\cref{triangle car recollement ^pj^* is quotient}), the composition of the adjunction morphisms ${^pj_!}{^pj^*}\to\id\to{^pj_*}{^pj^*}$ provides a unique morphism of functors
+\begin{equation}\label{triangle cat recollement j_! to j_* heart morphism-1}
+{^pj_!}\to{^pj_*}.
+\end{equation}
+Similarly, the diagrams of \cref{triangle cat adjoint functor ^pT diagram} for $(j^*,j_*)$ and $(j_!,j^*)$, together with the $t$-exactness of $j^*$, imply that for $A\in\mathcal{C}$ we have a commutative diagram
+\[\begin{tikzcd}
+{^pj_!}{^pj^*}\ar[r]\ar[d,equal]&\id\ar[dd,equal]\ar[r]&{^pj_*}{^pj^*}\ar[d,equal]\\
+{^pj_!}j^*&&{^pj_*}j^*\ar[d]\\
+j_!j^*\ar[r]\ar[u]&\id\ar[r]&j_*j^*
+\end{tikzcd}\]
+Therefore, for $B\in\mathcal{C}_U$, the morphism $j_!(B)\to j_*(B)$ of (\ref{triangle cat recollement j_! to j_* heart morphism-1}) is the composition
+\begin{equation}\label{triangle cat recollement j_! to j_* heart morphism-2}
+j_!(B)\to \tau^{\geq 0}j_!(B)={^pj_!}(B)\stackrel{(\ref{triangle cat recollement j_! to j_* morphism})}{\longrightarrow}{^pj_*}(B)=\tau^{\leq 0}j_*(B)\to j_*(B).
+\end{equation}
+By \cref{triangle car recollement functors composition and exact sequence}(d), if we apply ${^pj_*}$ to (\ref{triangle cat recollement j_! to j_* heart morphism-1}), then we obtain the identity morphism. In particular, for $B\in\mathcal{C}_U$, the kernel and cokernel of ${^pj_!}(B)\to {^pj_*}(B)$ are in ${^pi_*}\mathcal{C}_Z$.
+
+\begin{definition}
+The functor $j_{!*}:\mathcal{C}_U\to\mathcal{C}$ is defined to be the functor which to $B\in\mathcal{C}_U$ associates the image of ${^pj_!}(B)$ into ${^pj_*}(B)$.
+\end{definition}
+
+For $B\in\mathcal{C}_U$, (\ref{triangle cat recollement j_! to j_* heart morphism-2}) shows that we have the following factorization of the morphism $j_!(B)\to j_*(B)$ of (\ref{triangle cat recollement j_! to j_* morphism}):
+\begin{equation}\label{triangle cat recollement j_! to j_* heart morphism-3}
+j_!(B)\to {^pj_!}(B)\to j_{!*}(B)\to {^pj_*}(B)\to j_*(B)
+\end{equation}
+
+\begin{proposition}\label{triangle cat recollement ^pj_! and ^pj_* is truncation}
+For $B\in\mathcal{C}_U$, we have
+\begin{align*}
+{^pj_!}(B)&=\tau^{\geq 0}_Zj_!(B)=\tau^{\leq-2}_{Z}j_*(B),\\
+j_{!*}(B)&=\tau^{\geq 1}_Zj_!(B)=\tau^{\leq-1}_Zj_*(B),\\
+{^pj_*}(B)&=\tau^{\geq 2}_Zj_!(B)=\tau^{\leq 0}_Zj_*(B).
+\end{align*}
+More precisely, ${^pj_!}(B)$, endowed with the morphism $j_!(B)\to{^pj_!}(B)$, is isomorphic to $\tau^{\geq 0}_Zj_!(B)$, and so on.
+\end{proposition}
+\begin{proof}
+Since $j^*j_!(B)\cong B$ is in $\mathcal{C}_U$, we see that $j_!(B)$ is stable under $\tau^{\geq 0}_U$. By (\ref{triangle car recollement truncation functor decomposition}) and \cref{triangle car recollement functors composition and exact sequence}~(a), we then have ${^pj_!}(B)=\tau^{\geq 0}j_!(B)=\tau^{\geq 0}_Zj_!(B)$, and \cref{triangle car recollement prolongation exist} shows that $\tau^{\geq 0}_Zj_!(B)=\tau^{\leq -2}_Zj_*(B)$. Similarly, since $j^*j_*(B)\cong B$, we have ${^pj_*}(B)=\tau^{\leq 0}_Zj_*(B)=\tau^{\geq 2}_Zj_!(B)$.\par
+The determination $H^n=i_*H^ni^!$ for the $t$-structure defining $\tau^{\geq n}_Z$ shows that we have a distinguished triangle
+\[(i_*H^0i^!j_!(B),\tau^{\geq 0}_Zj_!(B),\tau^{\geq 1}_Zj_!(B))=(i_*H^0i_!j_!(B),{^pj_!}(B),\tau^{\geq 1}_Zj_!(B)),\]
+which implies that $\tau_Z^{\geq 1}j_!(B)\in\mathcal{D}^{[-1,0]}$. A dual argument provides a distinguished triangle
+\[(\tau^{\leq -1}_Zj_*(B),\tau^{\leq 0}_Fj_*(B),i_*H^0i^*j_*(B))=(\tau^{\leq -1}_Zj_*(B),{^pj_*}(B),i_*H^0i^*(B)),\]
+which shows that $\tau^{\leq -1}_Zj_*(B)\in\mathcal{D}^{[0,1]}$. By \cref{triangle car recollement prolongation exist}, we then conclude that $\tau^{\geq 1}_Zj_!(B)=\tau^{\leq -1}_Zj_*(B)$ belongs to $\mathcal{C}$, and the above triangles produce short exact sequences
+\[\begin{tikzcd}
+0\ar[r]&i_*H^0i^!j_!(B)\ar[r]&{^pj_!}(B)\ar[r]&\tau^{\geq 1}_Zj_!(B)\ar[r]&0
+\end{tikzcd}\]
+\vspace*{-4mm}
+\[\begin{tikzcd}
+0\ar[r]&\tau_Z^{\leq -1}j_*(B)\ar[r]&{^pj_*}(B)\ar[r]&i_*H^0i^*j_*(B)\ar[r]&0
+\end{tikzcd}\]
+These together show that $\tau^{\geq 1}_Zj_!(B)=\tau^{\leq -1}_Zj_*(B)$ is the image $j_{!*}(B)$ of ${^pj_!}(B)$ in ${^pj_*}(B)$.
+\end{proof}
+
+\begin{corollary}\label{triangle cat recollement j_!* prolongation char}
+For $B\in\mathcal{C}_U$, $j_{!*}(B)$ is the unique prolongation $X$ of $B$ in $\mathcal{D}$ such that $i^*(X)\in\mathcal{D}_Z^{\leq -1}$ and $i^!(X)\in\mathcal{D}_Z^{\geq 1}$.
+\end{corollary}
+\begin{proof}
+This follows from \cref{triangle car recollement prolongation exist}. Similarly, ${^pj_!}(B)$ (resp. ${^pj_*}(B)$) is the unique prolongation $X$ such that $i^*(X)\in\mathcal{D}_Z^{\leq -2}$ (resp. $\mathcal{D}_Z^{\leq 0}$) and $i^!(X)\in\mathcal{D}_Z^{\geq 0}$ (Resp. $\mathcal{D}_Z^{\geq 2}$).
+\end{proof}
+
+\begin{corollary}\label{triangle cat recollement j_!* char by subobject quotient}
+For $B\in\mathcal{C}_U$, $j_{!*}(B)$ is the unique prolongation $X$ of $B$ in $\mathcal{C}$ with no nontrivial sub-object or quotient in the essential image $\widebar{\mathcal{C}}_Z$ of $\mathcal{C}_Z$ under ${^pi}_*$.
+\end{corollary}
+\begin{proof}
+By definition, $j_{!*}(B)$ is in $\mathcal{C}\sub\mathcal{D}$. For any prolongation $X\in\mathcal{C}$ of $B$, we have $i^*(X)\in\mathcal{D}_Z^{\leq 0}$, and $i^*(X)\in\mathcal{D}_Z^{\leq -1}$ if and only if ${^pi^*}(X)=0$. Dually, $i^!(X)\in\mathcal{D}_Z^{\geq 0}$, and $i^!(X)\in\mathcal{D}_Z^{\geq 1}$ if and only if ${^pi^!}(X)=0$. Identify $\mathcal{C}_Z$ with $\widebar{\mathcal{C}}_Z$ via ${^pi_*}$. Since ${^pi^*}(X)$ (resp. ${^pi^!}(X)$) is the largets quotient (resp. sub-object) of $X$ which is in $\mathcal{C}_Z$ (cf. \cref{triangle car recollement ^pi_* adjoint char}), the characterization \cref{triangle cat recollement j_!* char by subobject quotient} of $j_{!*}(B)$ follows from \cref{triangle cat recollement j_!* prolongation char}.
+\end{proof}
+
+\begin{proposition}\label{triangle cat recollement simple object of heart char}
+The simple objects of $\mathcal{C}$ are the ${^pi_*}(S)$, for $S$ simple in $\mathcal{C}_Z$, and the $j_{!*}(S)$, for $S$ simple in $\mathcal{C}_U$.
+\end{proposition}
+\begin{proof}
+Since the essential image $\widebar{\mathcal{C}}_Z$ of $\mathcal{C}_Z$ under ${^pi_*}$ is a Serre subcategory of $\mathcal{C}$, for an object $X\in\mathcal{C}$ to be simple, it is necessary and sufficient that one of the following conditions is satisfied:
+\begin{enumerate}
+    \item[(a)] $X\in\widebar{\mathcal{C}}_Z$ and is simple in $\widebar{\mathcal{C}}_Z$;
+    \item[(b)] the image of $X$ in $\mathcal{C}/\widebar{\mathcal{C}}_Z$ is simple, and $X$ has no nontrial sub-object or quotient in $\widebar{\mathcal{C}}_Z$.
+\end{enumerate}
+The case (a) corresponds to $X={^pi_*}(S)$, for $S$ simple in $\mathcal{C}_Z$, and by \cref{triangle cat recollement j_!* char by subobject quotient} and \cref{triangle car recollement ^pj^* is quotient}, case (b) corresponds to $X=j_{!*}(S)$, for $S$ simple in $\mathcal{C}_U$.
+\end{proof}
+
+\section{Perverse sheaves}
+\subsection{Stratified spaces}
+Let $X$ be a topological space endowed with a structural sheaf of rings $\mathscr{O}_X$, $\mathcal{S}$ be a finite partition of $X$ by locally closed subsets (a \textit{stratification}), and $p:\mathcal{S}\to\Z$ be a function (called the \textbf{perversity}). By definition, the stratum $S$ is nonempty. We further suppose that the closure of any strarum is a union of strata.\par
+For a continuous map $f:X\to Y$, we shall simply write $f_!$, $f_*$, $f^!$, $f^*$ for the derived functors $Rf_!$, $Rf_*$, $Rf^!$, $Lf^*$. This notation is motivated by the fact that we often work with the derived categories, rather than the module categories. The corresponding functors on module categories will be denoted by ${^0f_!}$, ${^0f_*}$, ${^0f^!}$, ${^0f^*}$.
+
+\begin{definition}
+We denote by ${^pD^{\leq 0}}(X,\mathscr{O}_X)$ (resp. ${^pD^{\geq 0}}(X,\mathscr{O}_X)$) the subcategory of $D(X,\mathscr{O}_X)$ formed by complexes $K\in D(X,\mathscr{O}_X)$ (resp. $K\in D^+(X,\mathscr{O}_X)$) such that for any strata $S\in\mathcal{S}$, we have $H^n(i_S^*(K))=0$ for $n>p(S)$ (resp. $H^n(i_S^!(K))=0$ for $n<p(S)$), where $i_S:S\to X$ denote the inclusion map.
+\end{definition}
+
+The exactness of the functor ${^0i^*}$ allows us to give another definition for ${^pD^{\leq 0}(X,\mathscr{O}_X)}$: for $K$ to be in ${^pD^{\leq 0}}(X,\mathscr{O}_X)$, it is necessary and sufficient that the restriction of $H^i(K)$ to $S$ is zero for $i>p(S)$. The truncation functors $\tau^{\leq n}$ and $\tau^{\geq n}$, relative to the natrual $t$-structure of $D(X,\mathscr{O}_X)$, therefore sends ${^pD^{\leq 0}}(X,\mathscr{O}_X)$ into itself.
+
+\begin{remark}\label{triangle cat perverse condition finite cohomology dim}
+If the functors ${^0i_S^!}$ have finite cohomological dimensions, then $i_S^!:D^+(X,\mathscr{O}_X)\to D^+(S,\mathscr{O}_S)$ has a natural extension $D^+(X,\mathscr{O}_X)\to D^+(S,\mathscr{O}_S)$, still denoted by $i_S^!$. In this case, the condition "$H^n(i_S^!(K))=0$ for $n<p(S)$" makes sense for any complex $K$ in $D(X,\mathscr{O}_X)$. In fact, this condition implies that $K\in D^+(X,\mathscr{O}_X)$, or more precisely, that $K\in D^{\geq n}(X,\mathscr{O}_X)$ for $p\geq n$. To see this, we shall prove by descendent induction on the strata $\mathcal{S}$ (for the order $S_1\sub\widebar{S}_2$) that the restriction of $H^i(K)$ to $S$ is zero for $i<n$. We first note that the distinguished triangle $(\tau^{<n}K,K,\tau^{\geq n}K)$ and the left exactness of ${^0i_S^!}$ imply that $H^i(i_S^!\tau^{<n}K)\stackrel{\sim}{\to} H^i(i_S^!(K))$. The induction hypothesis shows that $H^j(\tau^{<n}K)$ is zero over the strata $T\neq S$ such that $S\sub\widebar{T}$, so $S$ admits an neighborhood in which $H^j(\tau^{<n}K)$ is supported in $S$. We then have
+\[H^i(K)|_S=H^i(i_S^*\tau^{<n}K)=H^i(i_S^!\tau^{<n}(K)),\]
+and the last member is zero by our hypothesis.\par
+Without the hypothesis on cohomological dimension, the same argument is applicable for $K\in K^+(X,\mathscr{O}_X)$, and for integers $a\leq p\leq b$, we have
+\begin{align}
+D^{\leq a}(X,\mathscr{O}_X)\sub &{^pD^{\leq 0}}(X,\mathscr{O}_X)\sub D^{\leq b}(X,\mathscr{O}_X),\label{triangle cat perverse condition inclusion-1}\\
+D^{\geq a}(X,\mathscr{O}_X)\sups &{^pD^{\geq 0}}(X,\mathscr{O}_X)\sups D^{\geq b}(X,\mathscr{O}_X).\label{triangle cat perverse condition inclusion-2}
+\end{align}
+We denote by ${^pD^{+,\leq 0}}(X,\mathscr{O}_X)$ the intersection of $D^+(X,\mathscr{O}_X)$ with ${^pD^{\leq 0}}(X,\mathscr{O}_X)$, and similarly for $+$ replaced by $-,b$ and $0$ replaced by $n\in\Z$.
+\end{remark}
+
+
+\begin{proposition}\label{triangle cat perverse t-structure}
+For any perversity $p:\mathcal{S}\to\Z$, the pair $({^pD^{+,\leq 0}}(X,\mathscr{O}_X),{^pD^{+,\geq 0}}(X,\mathscr{O}_X))$ is a $t$-structure over $D^+(X,\mathscr{O}_X)$.
+\end{proposition}
+\begin{proof}
+We preceed by induction on the number $N$ of the stratum. If $N=0$, we have $X=\emp$, and the assertion is trivial. If $N=1$, then we obtain the natrual $t$-structure on $D^+(X,\mathscr{O}_X)$, translated by $p(X)$. For $N\geq 2$, let $Z$ be a proper closed subset of $X$ which is a union of strata, and $U$ be its complement. The induction hypothesis, applied to $Z$ and $U$, endowed with the induced stratification, gives $t$-structures over $D^+(U,\mathscr{O}_U)$ and $D^+(Z,\mathscr{O}_Z)$. The $t$-structure considered over $D^+(X,\mathscr{O}_X)$ is then obtained by glueing: this is clear for ${^pD^{+,\leq 0}}(X,\mathscr{O}_X)$, since $i_S^*$ is exact. As for ${^pD^{+,\geq 0}}(X,\mathscr{O}_X)$, we note that for $K\in D^+(X,\mathscr{O}_X)$ and $S\in\mathcal{S}$, we have
+\begin{align*}
+H^n(i_{S\cap U}^!j^*(K))&=H^n(i_{S\cap U}^!j^!(K))=H^n(i_{S\cap U}^!(K)),\\
+H^n(i_{S\cap Z}^!i^!(K))&=H^n(i_{S\cap Z}^!(K)).
+\end{align*}
+On the other hand, since $Z$ is a union of strata, $S$ is either disjoint from $Z$ or contained in $Z$, so we see that $H^n(i_S^!(K))=0$ if and only if $H^n(i_{S\cap U}^!j^*(K))=H^n(i_{S\cap Z}^!i^!(K))=0$. We can then apply \cref{triangle car recollement theorem} to conclude the proposition.
+\end{proof}
+
+\begin{corollary}
+The pair $({^pD^{\leq 0}}(X,\mathscr{O}_X),{^pD^{\geq 0}}(X,\mathscr{O}_X))$ is a $t$-structure over $D(X,\mathscr{O}_X)$. It induces a $t$-structure over $D^*(X,\mathscr{O}_X)$ for $*\in\{+,-,b\}$.
+\end{corollary}
+\begin{proof}
+Let $a,b$ be integers such that $a\leq p\leq b$. For $K\in {^p\mathcal{D}^{\leq 0}}$
+\end{proof}

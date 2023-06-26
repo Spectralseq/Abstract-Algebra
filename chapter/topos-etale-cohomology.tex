@@ -156,7 +156,7 @@ This signifies that for any $\eta'\in\Ob(\mathcal{F}_T)$, the map
 \end{equation}
 is bijective. In other words, the couple $(\eta,\alpha)$ represents the functor $\eta'\mapsto\Hom_f(\eta',\xi)$ from $\mathcal{F}_T^{\op}\to \mathbf{Set}$. If for any morphism $f:T\to S$ and any object $\xi\in\Ob(\mathcal{F}_S)$, there exists a such couple $(\eta,\alpha)$, i.e. a Cartesian morphism $\alpha:\eta\to \xi$ in $\mathcal{F}$ such that $p(\alpha)=f$, then $\eta$ is uniquely determined in $\mathcal{F}_T$. In this case, we then say that the inverse image of $\xi$ under $f$ exists, and an object $\eta$ together with a Cartesian $f$-morphism $\alpha:\eta\to \xi$ is called an \textbf{inverse image of $\bm{\xi}$ by $\bm{f}$}. We often assume that such an inverse image is chosen whenever it exists ($\mathcal{F}$ being fixed), and denote it by $f^*_\mathcal{F}(\xi)$, or simply $f^*(\xi)$ or $\xi\times_ST$ if there is no risk of confusion. The canonical homomorphism $\alpha:\eta\to \xi$ is then denoted in this case by $\alpha_f(\xi)$. If for any $\xi\in\Ob(\mathcal{F}_S)$, the inverse image of $\xi$ by $f$ exists, we then say that the \textbf{inverse image functor of $f$ in $\mathcal{F}$ exists}, and $\xi\mapsto f^*(\xi)$ defines a covariant functor from $\mathcal{F}_S$ to $\mathcal{F}_T$. This functorial dependence of $f^*(\xi)$ is explained as follows: consider Cartesian $f$-morphisms
 \[\alpha:\eta\to \xi,\quad \alpha':\eta'\to \xi'\]
-and an $S$-morphism $\lambda:\xi\to \xi'$. Then there exits a unique  $T$-morphism $\mu:\eta\to \eta'$ such that the diagram
+and an $S$-morphism $\lambda:\xi\to \xi'$. Then there exits a unique  $T$-morphism $\mu:\eta\to\eta'$ such that the diagram
 \[\begin{tikzcd}
 \eta\ar[d,swap,"\mu"]\ar[r,"\alpha"]&\xi\ar[d,"\lambda"]&\\
 \eta'\ar[r,"\alpha'"]&\xi'
@@ -2378,9 +2378,7 @@ R^pf_*(F)=0\for p>0.
 We note that the first formula of \cref{scheme morphism etale finite direct image char} is in fact independent of the result of \cref{scheme qcqs etale site higher direct image fiber isomorphism} and the theorem of passing to limits (\cite{SGA4-2} \Rmnum{7} 5.7), and that it implies (thanks to \cref{scheme etale site fiber functor conservative}) that $f_*$ is an exact functor on the category of abelian sheaves, whence $R^pf_*(F)=0$ for $p>0$.
 
 \begin{corollary}\label{scheme morphism etale integral direct image vanish}
-Let $f:X\to Y$ be an integral morphism. Then for any abelian sheaf $F$ over $X$, we have
-\[R^pf_*(F)=0\for p>0.\]
-Moreover, the functor $f_*$ over the sheaf of sets commutes with base change.
+Let $f:X\to Y$ be an integral morphism. Then for any abelian sheaf $F$ over $X$, we have $R^pf_*(F)=0$ for $p>0$. Moreover, the functor $f_*$ over the sheaf of sets commutes with base change.
 \end{corollary}
 \begin{proof}
 In fact, we can reduce (thanks to \cref{scheme etale site fiber functor conservative}) to the case where $Y$ is strict local. But then $Y=\Spec(A)$, $X=\Spec(B)$, with $B$ being an integral algebra over $A$, and as $B=\rlim B_i$, where $B_i$ runs through subalgebras of finite type (hence finite over $A$) of $B$, we have $X=\llim_iX_i$, where $X_i=\Spec(B_i)$. In view of (\cite{SGA4-2} \Rmnum{7} 5.13), we can then assume that $f$ is finite, and the claim follows from \ref{scheme morphism etale finite direct image char}.
@@ -2605,7 +2603,7 @@ A sheaf $F$ over a scheme $X$ is representable if and only if the following cond
 \section{Constructible sheaves and cohomology of curves}
 Let $X$ be a topological space. A sheaf $\mathscr{F}$ over $X$ is called \textbf{locally constant} if each point of $X$ has an open neighbourhood $U$ such that the restriction of $\mathscr{F}$ to $U$ is isomorphic (in the category of sheaves on $U$) to a constant sheaf. It is a well-known fact that for a sufficiently good space, the category of locally constant sheaves of sets on $X$ is equivalent to the category of coverings of $X$. Since \'etale morphisms are regarded as covering morphisms, we are therefore interested in the description of locally constant sheaves in the \'etale topology, together with their cohomology. However, the class of locally constant sheaves is well-bahaved (for example it is not closed under direct images with respect to proper maps, even closed immersions), so it become necessary to consider the smallest useful class of sheaves containing the finite constant sheaves (since we only consider finite \'etale coverings), which turns out to be \textit{constructible sheaves}. The constructible sheaves over a scheme $X$ form an ableian category, and is Noetherian if $X$ is quasi-compact. Form another perspective, constructible sheaves are precisely those that can be represented by \'etale algebraic spaces of finite type.
 \subsection{Torsion sheaves}
-Let $\mathcal{X}$ be a topos and $F$ be an abelian sheaf over $\mathcal{X}$. We can then define the multiplication by $n$ (where $n$ is an integer) on $F$, induced by the same operation on $\mathbf{Ab}$, and we denote by $F[n]$ the kernel of this multiplication. In other words, for any object $X$ of $\mathcal{X}$, $F[n](X)$ is the $n$-torsion subgroup of $F(X)$. If $n,m$ are two integers such that $n\mid m$, then there is a natrual inclusion map
+Let $\mathcal{X}$ be a topos and $F$ be an abelian sheaf over $\mathcal{X}$. We can then define the multiplication by $n$ (where $n$ is an integer) on $F$, induced by the same operation on $\mathbf{Ab}$, and we denote by $F[n]$ the kernel of this multiplication. In other words, for any object $X$ of $\mathcal{X}$, $F[n](X)$ is the $n$-torsion subgroup of $F(X)$. If $n$ and $m$ are two integers such that $n\mid m$, then there is a natrual inclusion map
 \[F[n]\to F[m]\]
 which sends, for any object $X$ of $\mathcal{X}$, the subgroup $F[n](X)$ into $F[m](X)$.
 
@@ -2614,20 +2612,18 @@ Let $p$ be a prime number (or a set of prime numbers). A sheaf $F$ is said to be
 \begin{align}\label{topos torsion abelian sheaf def}
 \rlim_nF[n]\to F
 \end{align}
-is bijective, where $n$ runs through the set of integers such that $p\mid n$, i.e. such that every prime divisor of $n$ belongs to $p$ (if $p$ is a prime number, this means $n$ is a power of $p$). If $p$ is equal to the set of all prime numbers, then $F$ is simply called a \textbf{torsion-sheaf}.
+is bijective, where $n$ runs through the set of integers such that $p\dashv n$, i.e. such that every prime divisor of $n$ belongs to $p$ (if $p$ is a prime number, this means $n$ is a power of $p$). If $p$ is equal to the set of all prime numbers, then $F$ is simply called a \textbf{torsion-sheaf}.
 \end{definition}
 
-The most important torsion sheaves within our consideration are constant sheaves induced by finite abelian groups: in fact, if $G$ is a finite abelian group, then the constant sheaf defined by $G$ is $p$-torsion, where $p$ is the set of prime divisors of $n$. In practice, we often take $G=Z/\n Z$, where $n$ is coprime to the characterstic of the base field.
+The most important torsion sheaves within our consideration are constant sheaves induced by finite abelian groups: in fact, if $G$ is a finite abelian group, then the constant sheaf defined by $G$ is $p$-torsion, where $p$ is the set of prime divisors of $n$. In practice, we often take $G=\Z/n\Z$, where $n$ is coprime to the characterstic of the base field.
 
 \begin{proposition}\label{topos p-torsion abelian sheaf prop}
 Let $\mathcal{X}$ be a topos, $F$ be a sheaf on $\mathcal{X}$, and $p$ be a set of prime numbers.
 \begin{enumerate}
-    \item[(a)] The sheaf $F$ is $p$-torsion if and only if $F$ is the sheaf associated with a presheaf with values in $p$-torsion abelian groups\footnote{An abelian group $G$ is said to be $p$-torsion if the canonical homomorphism
-    \[\rlim_{p\mid n} G[n]\to G\]
-    is an isomorphism, where $n$ runs through the set of integers such that all prime divisors of $n$ belong to $p$.}. In this case, this presheaf is isomorphic to the inductive limit $\rlim_n F[n]$, taken in the category of presheaves.
+    \item[(a)] The sheaf $F$ is $p$-torsion if and only if $F$ is the sheaf associated with a presheaf with values in $p$-torsion abelian groups\footnote{An abelian group $G$ is said to be $p$-torsion if the canonical homomorphism $\rlim_{p\dashv n} G[n]\to G$ is an isomorphism, where $n$ runs through the set of integers such that all prime divisors of $n$ belong to $p$.}. In this case, this presheaf is isomorphic to the inductive limit $\rlim_n F[n]$, taken in the category of presheaves.
     \item[(b)] If $F$ is $p$-torsion and $X$ is a quasi-compact\footnote{An object $X$ of a topos is called \textbf{quasi-compact} if any covering family $\{X_i\to X\}$ can be dominated by a finite covering family. A morphism of topos if called quasi-compact if the inverse image of any quasi-compact object is still quasi-compact.} object of $\mathcal{X}$, then $F(X)$ is a $p$-torsion group.
-    \item[(c)] If $\mathcal{X}$ is locally of finite type (cf. \cite{SGA4-2} \rmnum{6} 1.1), then $F$ is $p$-torsion if and only if for any quasi-compact object $X$ of $\mathcal{X}$, $F(X)$ is a $p$-torsion group. In this case, for any quasi-compact object $X$ of $\mathcal{X}$ and any integer $p\geq 0$, we have
-    \[\rlim_{p\mid n} H^p(X,F[n])\stackrel{\sim}{\to} H^p(X,F).\]
+    \item[(c)] If $\mathcal{X}$ is locally of finite type (cf. \cite{SGA4-2} \Rmnum{6} 1.1), then $F$ is $p$-torsion if and only if for any quasi-compact object $X$ of $\mathcal{X}$, $F(X)$ is a $p$-torsion group. In this case, for any quasi-compact object $X$ of $\mathcal{X}$ and any integer $p\geq 0$, we have
+    \[\rlim_{p\dashv n} H^p(X,F[n])\stackrel{\sim}{\to} H^p(X,F).\]
     \item[(d)] If $u:\mathcal{X}\to\mathcal{Y}$ is a morphism of topos and $G$ is a $p$-torsion sheaf over $\mathcal{Y}$, then the inverse image $u^*(G)$ is $p$-torsion over $\mathcal{X}$.
     \item[(e)] If $u:\mathcal{X}\to\mathcal{Y}$ is a quasi-compact morphism of topos locally of finite type and $F$ is a $p$-torsion sheaf over $\mathcal{X}$, then $R^pu_*(F)$ is a $p$-torsion sheaf over $\mathcal{Y}$ for any $p\geq 0$.
 \end{enumerate}
@@ -2641,10 +2637,8 @@ we then deduce an exact sequence
 \[\begin{tikzcd}
 0\ar[r]&(P[n])^\#\ar[r]&F\ar[r,"n"]&F
 \end{tikzcd}\]
-whence $(P[n])^\#=F[n]$. As $\#$ commutes with inductive limits and we have
-\[\rlim_{p\mid n}P[n]\stackrel{\sim}{\to} P\]
-with limit taken in the category of presheaves, we then deduce that
-\[\rlim_{p\mid n}F[n]\stackrel{\sim}{\to} F\]
+whence $(P[n])^\#=F[n]$. As $\#$ commutes with inductive limits and $\rlim_{p\dashv n}P[n]\stackrel{\sim}{\to}P$, with limit taken in the category of presheaves, we then deduce that
+\[\rlim_{p\dashv n}F[n]\stackrel{\sim}{\to} F\]
 so $F$ is $p$-torsion. The last assertion of (a) also follows easily from this isomorphism.\par
 Now let $F$ be $p$-torsion and $X$ be a quasi-compact object of $\mathcal{X}$. Put $P=\rlim_nF[n]$, with limit taken in the category of presheaves. Then $P$ can be considered as a sub-presheaf of $F$, so it is a separated and we have
 \[P^\#(X)=\rlim\Big(\ker\big(\prod_iP(X_i)\rightrightarrows \prod_{i,j}P(X_i\times_XX_j)\big)\Big)\]
@@ -2655,7 +2649,7 @@ Now assume that $\mathcal{X}$ is locally of finite type. To verify that $\rlim_n
 We also need a non-abelian variant of $p$-torsion sheaves, which turns our to be techniquely subtle. We therefore restrict ourselves to \'etale topos over a scheme $X$.
 
 \begin{definition}
-Let $p$ be a prime number (or a set of prime numbers). A group $G$ is called a $p$-group if it is finite with order $n$ such that $p\mid n$, and is called a \textbf{ind-$\bm{p}$-group} if any finite subset of $G$ generates a $p$-group. Equivalently, this means that the finite sub-$p$-groups $G_\alpha$ form a filtered set and that $G=\rlim G_\alpha$. If $p$ is equal to the set of all prime numbers, then $G$ is simply called a \textbf{ind-finite group}.
+Let $p$ be a prime number (or a set of prime numbers). A group $G$ is called a \textbf{$\bm{p}$-group} if it is finite with order $n$ such that $p\dashv n$, and is called a \textbf{ind-$\bm{p}$-group} if any finite subset of $G$ generates a $p$-group. Equivalently, this means that the finite sub-$p$-groups $G_\alpha$ form a filtered set and that $G=\rlim G_\alpha$. If $p$ is equal to the set of all prime numbers, then $G$ is simply called a \textbf{ind-finite group}.
 \end{definition}
 
 \begin{proposition}\label{scheme etale topos ind p-group prop}
@@ -2716,14 +2710,14 @@ where $L=L''_\mathcal{X}\times_{M''_\mathcal{X}}F$ and $G=L''_\mathcal{X}\times_
 
 We now return to the \'etale topos of a scheme $X$. As we shall see,  locally constant sheaves over $X$ corresponds to \'etale covering spaces of $X$.
 \begin{proposition}\label{scheme etale locally constant sheaf represented by etale cover}
-Let $X$ be a scheme and $F$ be a sheaf of sets over $X$. If $F$ is locally constant, then it is represented by a \'etale scheme $Y$ over $X$. If $F$ has finite (resp. nonempty) fibers, then $Y$ is a finite (resp. surjective) \'etale covering of $X$. Conversely, if $Y$ is finite \'etale over $X$, then the sheaf represented by $Y$ is locally constant.
+Let $X$ be a scheme and $F$ be a sheaf of sets over $X$. If $F$ is locally constant, then it is represented by a \'etale scheme $U$ over $X$. If $F$ has finite (resp. nonempty) fibers, then $U$ is a finite (resp. surjective) \'etale covering of $X$. Conversely, if $U$ is finite \'etale over $X$, then the sheaf represented by $U$ is locally constant.
 \end{proposition}
 \begin{proof}
 Descent (\cite{SGA1} \Rmnum{9} 4.1 if $F$ has finite fibers, and \cite{SGA3} \Rmnum{10} 5.4 in the general case).
 \end{proof}
 
 \begin{definition}
-A sheaf of sets (resp. groups, resp. $A$-modules) is called \textbf{constructible} if for any affine open subset $U\sub X$, there exists a stratification of $U$ into finitely many locally closed constructible subschemes $U=\coprod_iU_i$ such that $F|_{U_i}$ is locally constant and finite (resp. finite, resp. finitely presentated\footnote{If $A$ is not assumed to be Noetherian, then it is preferable, for the sake of Homological Algebra, to require that the $A$-module $M$ has a resolution by free $A$-modules of finite rank.}).
+A sheaf of sets (resp. groups, resp. $A$-modules) is called \textbf{constructible} if for any affine open subset $U\sub X$, there exists a finite stratification of $U$ by locally closed constructible subschemes $U=\coprod_iU_i$ such that $F|_{U_i}$ is locally constant and finite (resp. finite, resp. finitely presentated\footnote{If $A$ is not assumed to be Noetherian, then it is preferable, for the sake of Homological Algebra, to require that the $A$-module $M$ has a resolution by free $A$-modules of finite rank.}).
 \end{definition}
 
 The finiteness hypothesis on local values amounts to saying that for each geometric point $\xi$ of $X$, the fiber $F_\xi$ is finite (resp. finite, resp. of finite presentation). It then follows from \cref{topos locally constant sheaf morphism prop}~(a) that a sheaf of groups $F$ is constructible if and only if the underlying sheaf of sets is constructible. Note that if $F$ is an abelian sheaf, then it is constructible as a sheaf of groups (or a sheaf of sets) if and only if it is constructible as a sheaf of $\Z$-modules, \textit{and its fibers are finite}. Therefore, the sheaf $\Z_X$ is constructible as a $\Z$-module, but not as a sheaf of groups.
@@ -2746,7 +2740,7 @@ Evidently, if $f:Y\to X$ is a morphism and there exists a morphism and there exi
 Let $X$ be a quasi-compact and quasi-separated scheme and $F$ be a constructible sheaf of groups (resp. $A$-modules) over $X$. Then there exists a finite filtration of $F$ whose successive quotients are of the form $i_!(G)$, where $i:U\to X$ is the inclusion of a locally closed and constructible subset and $G$ is a locally constant and constructible sheaf over $U$. If $X$ is Noetherian, we can further assume that the $U$ are irreducible.
 \end{proposition}
 \begin{proof}
-By \cref{scheme etale constructible sheaf prop}~(a), there exists a stratification of $X$ into finitely many locally closed and constructible subsets $X=\coprod_iX_i$ such that $F|_{X_i}$ is locally constant with finite (resp. finitely presented) fibers. We write $X_i=U_i\cap V_i^c$, where $U_i$ and $V_i$ are constructible open subsets, and let $N$ be the number of open subsets of $X$ in the subtopology $\mathcal{T}$ generated by $\{U_i,V_i\}$. We proceed by induction on $N$: if $W$ is a minimal nonempty element of $\mathcal{T}$, it is evident that $F|_W$ is locally constant and of finite presentation. Let $i:W\to X$ be the inclusion morphism and $Y=X-W$, we then have an exact sequence
+By \cref{scheme etale constructible sheaf prop}~(a), there exists a stratification of $X$ into finitely many locally closed and constructible subsets $X=\coprod_iX_i$ such that $F|_{X_i}$ is locally constant with finite (resp. finitely presented) fibers. We write $X_i=U_i\cap V_i^c$, where $U_i$ and $V_i$ are constructible open subsets, and let $n$ be the number of open subsets of $X$ in the subtopology $\mathcal{T}$ generated by $\{U_i,V_i\}$. We proceed by induction on $n$: if $W$ is a minimal nonempty element of $\mathcal{T}$, it is evident that $F|_W$ is locally constant and of finite presentation. Let $i:W\to X$ be the inclusion morphism and $Y=X-W$, we then have an exact sequence
 \[\begin{tikzcd}
 0\ar[r]&i_!(i^*(F))\ar[r]&F\ar[r]&F|_Y\ar[r]&0
 \end{tikzcd}\]
@@ -2834,10 +2828,10 @@ Let $X$ be a scheme.
 \end{proposition}
 
 \subsection{The theories of Kummer and Artin-Schreier}
-We denote by $\G_{m,X}$ the sheaf represented by the multiplicative group $\Spec(\mathscr{O}_X[t,t^{-1}])$ over $X$. For any \'etale morphism $U\to X$, the section of $\G_{m,X}$ over $U$ is then the invertible elements $\Gamma(U,\mathscr{O}_U^\times)$ of $\Gamma(U,\mathscr{O}_U)$. Let $n\in\N$, the kernel of the $n$-th power of $\G_{m,X}$ is called the "sheaf of $n$-th unit roots", and denoted by $\mu_{n,X}$. We then have an exact sequence
+We denote by $\G_{m,X}$ the sheaf represented by the multiplicative group $\Spec(\mathscr{O}_X[t,t^{-1}])$ over $X$. For any \'etale morphism $U\to X$, the section of $\G_{m,X}$ over $U$ is then the invertible elements $\Gamma(U,\mathscr{O}_U^\times)$ of $\Gamma(U,\mathscr{O}_U)$. Let $n\in\N$, the kernel of the $n$-th power of $\G_{m,X}$ is called the "sheaf of $n$-th unit roots", and denoted by $\bm{\mu}_{n,X}$. We then have an exact sequence
 \begin{equation}\label{scheme etale Kummer exact sequence-1}
 \begin{tikzcd}
-0\ar[r]&\mu_{n,X}\ar[r]&\G_{m,X}\ar[r,"n"]&\G_{m,X}  
+0\ar[r]&\bm{\mu}_{n,X}\ar[r]&\G_{m,X}\ar[r,"n"]&\G_{m,X}  
 \end{tikzcd}
 \end{equation}
 If $n\in\N$ is invertible over $X$ (that is, if $n$ is coprime to the characteristic of each residue field of $X$), then taking $n$-th power is a surjective morphism of sheaves:
@@ -2845,7 +2839,7 @@ If $n\in\N$ is invertible over $X$ (that is, if $n$ is coprime to the characteri
 If $n$ is invertible over $X$, then we have an exact sequence
 \begin{equation}\label{scheme etale Kummer exact sequence-2}
 \begin{tikzcd}
-0\ar[r]&\mu_{n,X}\ar[r]&\G_{m,X}\ar[r,"n"]&\G_{m,X}\ar[r]&0
+0\ar[r]&\bm{\mu}_{n,X}\ar[r]&\G_{m,X}\ar[r,"n"]&\G_{m,X}\ar[r]&0
 \end{tikzcd}
 \end{equation}
 \end{theorem}
@@ -2856,14 +2850,14 @@ is \'etale over $Y$. As $U'\to U$ is surjective, it is covering and the restrict
 \end{proof}
 
 \begin{proposition}\label{scheme etale n-th root sheaf locally constant}
-Let $X$ be a scheme and $n$ be a positive integer invertible over $X$. Then the sheaf $\mu_{n,X}$ is locally constant. If $X$ is a scheme over a strictly local ring $A$ such that $n$ is invertible in $A$, then $\mu_{n,X}$ is isomorphic to the constant sheaf $\Z/n\Z$.
+Let $X$ be a scheme and $n$ be a positive integer invertible over $X$. Then the sheaf $\bm{\mu}_{n,X}$ is locally constant. If $X$ is a scheme over a strictly local ring $A$ such that $n$ is invertible in $A$, then $\bm{\mu}_{n,X}$ is isomorphic to the constant sheaf $\Z/n\Z$.
 \end{proposition}
 \begin{proof}
 We note that for any \'etale scheme $U$ over $X$, we have a bijection
 \[\Hom_X(U,\Spec(\mathscr{O}_X[T]/(T^n-1))) \stackrel{\sim}{\to} \{s\in\Gamma(U,\mathscr{O}_U^\times):s^n=1\},\]
-so $\mu_{n,X}$ is represented by the $X$-scheme $\Spec(\mathscr{O}_X[T]/(T^n-1))$, which is finite and \'etale over $X$ since $n$ is invertible over $X$. By \cref{scheme etale locally constant sheaf represented by etale cover}, we conclude that $\mu_{n,X}$ is locally constant. If $A$ is strictly Henselian and $n$ is invertible in $A$, then $T^n-1$ splits into a product of linear polynomials in $A[T]$ by (LeiFu 2.8.3~(\rmnum{5})). For any $A$-scheme $X$, $\Spec(\mathscr{O}_X[T]/(T^n-1))$ is then a trivial \'etale covering of $X$ of degree $n$. Hence $\mu_{n,X}$ is isomorphic to the constant sheaf $\Z/n\Z$.
+so $\bm{\mu}_{n,X}$ is represented by the $X$-scheme $\Spec(\mathscr{O}_X[T]/(T^n-1))$, which is finite and \'etale over $X$ since $n$ is invertible over $X$. By \cref{scheme etale locally constant sheaf represented by etale cover}, we conclude that $\bm{\mu}_{n,X}$ is locally constant. If $A$ is strictly Henselian and $n$ is invertible in $A$, then $T^n-1$ splits into a product of linear polynomials in $A[T]$ by (LeiFu 2.8.3~(\rmnum{5})). For any $A$-scheme $X$, $\Spec(\mathscr{O}_X[T]/(T^n-1))$ is then a trivial \'etale covering of $X$ of degree $n$. Hence $\bm{\mu}_{n,X}$ is isomorphic to the constant sheaf $\Z/n\Z$.
 \end{proof}
-In view of \cref{scheme etale n-th root sheaf locally constant}, we conclude that for any geometric point $\xi$ of $X$, the fiber $(\mu_{n,X})_\xi$ is isomorphic to $\Z/n\Z$, so the sheaf $\mu_{n,X}$ is locally isomorphic to $(\Z/n\Z)_X$. Kummer's theory thus gives information about the cohomology of $X$ with values in certain constant sheaves. In fact, we have by definition
+In view of \cref{scheme etale n-th root sheaf locally constant}, we conclude that for any geometric point $\xi$ of $X$, the fiber $(\bm{\mu}_{n,X})_\xi$ is isomorphic to $\Z/n\Z$, so the sheaf $\bm{\mu}_{n,X}$ is locally isomorphic to $(\Z/n\Z)_X$. Kummer's theory thus gives information about the cohomology of $X$ with values in certain constant sheaves. In fact, we have by definition
 \[H^0(X,\G_{m,X})=\Gamma(X,\mathscr{O}_{X_\et}^\times)\]
 and for dimension $1$, we have the following:
 \begin{theorem}[\textbf{Hilbert's Theorem 90}]\label{scheme etale Hilbert theorem 90}
@@ -2962,7 +2956,7 @@ F_{\bar{x}}&y=x,\\
 for any closed point $x$ and any $y\in X$.
 \end{proof}
 
-If $X$ is a Noetherian scheme of dimension $1$, then the non-closed points of $X$ are exactly maximal points of $X$, so applying \cref{scheme Noe skyscraper sheaf char} we see that for an abelian sheaf $F$ over $\Spec(K(X))$, $R^pi_*(F)$ is a skyscraper sheaf on $X$ and we have
+If $X$ is a Noetherian scheme of dimension $1$, then the non-closed points of $X$ are exactly maximal points of $X$, so applying \cref{scheme Noe skyscraper sheaf char} we see that for an abelian sheaf $F$ over $\Spec(K(X))$, the higher direct images $R^pi_*(F)$ is a skyscraper sheaf on $X$ and we have
 \[R^pi_*(F) \stackrel{\sim}{\to} \bigoplus_{x\in X_0}(i_x)_*(i_x)^*(R^pi_*(F))\]
 On the other hand, as we have already remarked, the fiber of $R^pi_*(F)$ at a geometric point $\bar{x}$ of $X$ is 
 \[(R^pi_*(F))_{\bar{x}}\cong H^p(\Spec(\mathscr{O}_{X,\bar{x}}),\widebar{F}).\]
@@ -2982,7 +2976,7 @@ Then we have
 0&p>0.
 \end{cases}\]
 where $X_x$ is the strict localization of $X$ at $x$. Therefore, we obtain a long exact sequence
-\[\begin{tikzcd}[column sep=3mm]
+\[\begin{tikzcd}[column sep=3.6mm]
 0\ar[r]&H^1(X,i_*(F))\ar[r]&H^1(\Spec(K(X)),F)\ar[r]&\bigoplus_{x} H^q(\Spec(\mathscr{O}_{X,x}),F)\ar[r]&H^2(X,i_*(F))\ar[r]&\cdots
 \end{tikzcd}\]
 \end{corollary}
@@ -3003,13 +2997,11 @@ and an exact sequence
 \end{equation}
 
 \begin{theorem}\label{scheme Noe dim 1 etale cohomology ell-dimension 1 prop}
-Let $X$ be a Noetherian scheme of dimension $1$ and $n$ be an integer that is invertible over $X$. Suppose that $\gldim_\ell(K(X))\leq 1$ for any prime divisor $\ell$ of $n$ and that for any closed point $x$ of $X$, the residue field $\kappa(x)$ is separably closed. Then we have
-\[H^q(X,\mu_{n,X})=0\for q>2,\]
-and an exact sequence
+Let $X$ be a Noetherian scheme of dimension $1$ and $n$ be an integer that is invertible over $X$. Suppose that $\gldim_\ell(K(X))\leq 1$ for any prime divisor $\ell$ of $n$ and that for any closed point $x$ of $X$, the residue field $\kappa(x)$ is separably closed. Then we have $H^q(X,\bm{\mu}_{n,X})=0$ for $q>2$ and an exact sequence
 \begin{equation}\label{scheme Noe dim 1 etale cohomology ell-dimension 1 prop-3}
-\begin{tikzcd}[row sep=6mm, column sep=6mm]
-0\ar[r]&H^0(X,\mu_{n,X})\ar[r]&\Gamma(X,\mathscr{O}_X^\times)\ar[r,"n"]&\Gamma(X,\mathscr{O}_{X}^\times)\ar[out=-10, in=170]{dll}&\\
-&H^1(X,\mu_{n,X})\ar[r]&\Pic(X)\ar[r,"n"]&\Pic(X)\ar[r]&H^2(X,\mu_{n,X})\ar[r]&0
+\begin{tikzcd}[row sep=5mm, column sep=5mm]
+0\ar[r]&H^0(X,\bm{\mu}_{n,X})\ar[r]&\Gamma(X,\mathscr{O}_X^\times)\ar[r,"n"]&\Gamma(X,\mathscr{O}_{X}^\times)\ar[out=-10, in=170]{dll}&\\
+&H^1(X,\bm{\mu}_{n,X})\ar[r]&\Pic(X)\ar[r,"n"]&\Pic(X)\ar[r]&H^2(X,\bm{\mu}_{n,X})\ar[r]&0
 \end{tikzcd}
 \end{equation}
 \end{theorem}
@@ -3018,24 +3010,24 @@ Suppose that $\ell$ is a prime divisor of $n$, then by applying \cref{scheme eta
 \[H^i(X,P)=H^i(X,Q)=0\for i>0.\]
 This implies, in view of the long exact sequence on cohomology, that
 \[H^i(X,F)\to H^i(X,i_*(i^*(F)))\]
-is an isomorphism for $i\geq 2$, so $H^i(X,\G_m)$ has no $\ell$-torsion for $i\geq 2$. Since $H^q(X,\mu_{n,X})$ is $n$-torsion for any $q\geq 2$, we conclude the exact sequence (\ref{scheme Noe dim 1 etale cohomology ell-dimension 1 prop-3}), and $H^q(X,\mu_{n,X})=0$ for $q\geq 3$\footnote{For this, one can consider the snake diagram induced by multiplication by $n$, and use skane lemma.}.
+is an isomorphism for $i\geq 2$, so $H^i(X,\G_m)$ has no $\ell$-torsion for $i\geq 2$. Since $H^q(X,\bm{\mu}_{n,X})$ is $n$-torsion for any $q\geq 2$, we conclude the exact sequence (\ref{scheme Noe dim 1 etale cohomology ell-dimension 1 prop-3}), and $H^q(X,\bm{\mu}_{n,X})=0$ for $q\geq 3$\footnote{For this, one can consider the snake diagram induced by multiplication by $n$, and use skane lemma.}.
 \end{proof}
 
 \begin{corollary}\label{scheme complete algebraic cureve cohomology of mu_n}
 Let $X$ be a complete and irreducible algebraic curve over a separably closed field $k$, with characteristic $p>0$. If $n$ is coprime to $p$, then we have
 \begin{align*}
-H^0(X,\mu_{n,X})&\cong\mu_n(k),\\
-H^1(X,\mu_{n,X})&\cong \Pic(X)_n=\{\mathscr{L}\in\Pic(X):\mathscr{L}^{\otimes n}\cong\mathscr{O}_X\},\\
-H^2(X,\mu_{n,X})&\cong \Pic(X)/n\Pic(X)\cong\Z/n\Z
+H^0(X,\bm{\mu}_{n,X})&\cong\bm{\mu}_n(k),\\
+H^1(X,\bm{\mu}_{n,X})&\cong \Pic(X)_n=\{\mathscr{L}\in\Pic(X):\mathscr{L}^{\otimes n}\cong\mathscr{O}_X\},\\
+H^2(X,\bm{\mu}_{n,X})&\cong \Pic(X)/n\Pic(X)\cong\Z/n\Z,
 \end{align*}
-and $H^q(X,\mu_{n,X})=0$ for $q\geq 3$.
+and $H^q(X,\bm{\mu}_{n,X})=0$ for $q\geq 3$.
 \end{corollary}
 \begin{proof}
 We have $\Gamma(X,\mathscr{O}_X^\times)=k^\times$, and the homomorphism $x\mapsto x^n$ is surjective, so it follows from the exact sequence (\ref{scheme Noe dim 1 etale cohomology ell-dimension 1 prop-3}) that
 \begin{align*}
-H^0(X,\mu_{n,X})&\cong\mu_n(k),\\
-H^1(X,\mu_{n,X})&\cong \Pic(X)_n=\{\mathscr{L}\in\Pic(X):\mathscr{L}^{\otimes n}\cong\mathscr{O}_X\},\\
-H^2(X,\mu_{n,X})&\cong \Pic(X)/n\Pic(X).
+H^0(X,\bm{\mu}_{n,X})&\cong\bm{\mu}_n(k),\\
+H^1(X,\bm{\mu}_{n,X})&\cong \Pic(X)_n=\{\mathscr{L}\in\Pic(X):\mathscr{L}^{\otimes n}\cong\mathscr{O}_X\},\\
+H^2(X,\bm{\mu}_{n,X})&\cong \Pic(X)/n\Pic(X).
 \end{align*}
 To see that $\Pic(X)/n\Pic(X)\cong\Z/n\Z$, let $\deg:\Pic(X)\to\Z$ be the degree homomorphism. Then the map $\deg$ is surjective, so let $\Pic^0(X)$ be its kernel. We have a commutative diagram of short exact sequences
 \[\begin{tikzcd}
@@ -3049,10 +3041,117 @@ By the snake lemma, we obtain an exact sequence
 \end{tikzcd}\]
 Now $\Pic^0(X)$ is isomorphic to the group of $k$-points $\Jac_X(k)$ of the Jacobian $\Jac_X$ of $X$, and the homomorphism $n:\Jac_X(k)\to\Jac_X(k)$ is surjective with kernel isomorphic to $(\Z/n\Z)^{2g}$, where $g$ is the genus of $X$, so we have
 \begin{gather*}
-H^1(X,\mu_{n,X})\cong\Pic(X)_n\cong\Pic^0(X)_n\cong\Jac_X(k)_n\cong(\Z/n\Z)^{2g},\\
-H^2(X,\mu_{n,X})\cong\Pic(X)/n\Pic(X)\cong\Z/n\Z.
+H^1(X,\bm{\mu}_{n,X})\cong\Pic(X)_n\cong\Pic^0(X)_n\cong\Jac_X(k)_n\cong(\Z/n\Z)^{2g},\\
+H^2(X,\bm{\mu}_{n,X})\cong\Pic(X)/n\Pic(X)\cong\Z/n\Z.
 \end{gather*}
-By \cref{scheme Noe dim 1 etale cohomology ell-dimension 1 prop}, we have $H^q(X,\mu_{n,X})=0$ for $q\geq 3$, so the claim follows.
+By \cref{scheme Noe dim 1 etale cohomology ell-dimension 1 prop}, we have $H^q(X,\bm{\mu}_{n,X})=0$ for $q\geq 3$, so the claim follows.
 \end{proof}
 
-\subsection{The trace method}
+\subsection{M\'ethode de la trace}
+Let $X$ be a scheme and $f:X'\to X$ be a \'etale morphism. Then we have an adjoint triple $(f_!,f^*,f_*)$ (the functor $f_!$ will be defined later). The adjunction map $\id\to f_*f^*$ is called the \textbf{restriction map}, and the adjunction map $f_!f^*\to\id$ is called the \textbf{trace map}. If $f$ is finite, then the functor $f_!$ coincides with $f_*$, and in this case the trace morphism $f_*f^*\to\id$ can be characterized by the following properties:
+\begin{enumerate}
+    \item[(\rmnum{1})] It commutes with \'etale localization on $X$.
+    \item[(\rmnum{2})] If $X'$ is the direct sum of $d$ copies of $X$, so that $f_*f^*(F)\cong F^{\oplus d}$, then $\tr$ is the sum morphism $F^{\oplus d}\to F$.
+\end{enumerate}
+Since any \'etale covering is locally given by a direct sum of $X$ (\cref{scheme etale locally constant sheaf represented by etale cover}), the uniquenss of such morphism is clear. The existence is ensured by the usual argument of descent.\par
+From condition (\rmnum{2}), we see that for any sheaf $F$ over $X$, the composition
+\[\begin{tikzcd}
+F\ar[r,"\res"]&f_*f^*(F)\ar[r,"\tr"]&F
+\end{tikzcd}\]
+is the multiplication by the local degree of $f$. If this degree is a constant $d$, then this is given by the multiplication by $d$. The "m\'ethode de la trace" is the following observation: if $F$ is an abelian sheaf on $X$ such that multiplication by $d$ is an isomorphism on $F$, then the map
+\[\res:H^q(X,F)\to H^q(X,f_*f^*(F))=H^q(X',f^*(F))\]
+is injective. In fact, we have $H^q(X,f_*f^*(F))=H^q(X',f^*(F))$ by the vanishing of the higher direct images (\cref{scheme morphism etale finite direct image char}) and the Leray spectral sequence (\cref{ringed topos Leray spectral sequence for morphism}). In particular, if $H^q(Y,f^*(F))=0$, then $H^q(X,F)=0$ as well.\par
+As an example of this observation, we have the following corollary.
+\begin{corollary}\label{scheme p-torsion etale sheaf trace method}
+Let $f:X'\to X$ be an \'etale covering of constant degree $d$. If $F$ is a $p$-torsion sheaf over $X$ with $\gcd(p,d)=1$, then $H^q(X',f^*(F))=0$ implies $H^q(X,F)=0$.
+\end{corollary}
+\begin{proof}
+In fact, in this case multiplication by $d$ is an isomorphism on $F$.
+\end{proof}
+
+Now let $i:U\to X$ be an immersion and $f:U'\to U$ be a finite \'etale morphism of degree $d$, which is assumed to be induced from a finite morphism $g:X'\to X$ by base change, i.e. we have a Cartesian diagram
+\begin{equation}\label{scheme qcqs semi-exact functor on etale zero iff-1}
+\begin{tikzcd}
+U'\ar[d,swap,"f"]\ar[r,"i'"]&X'\ar[d,"g"]\\
+U\ar[r,"i"]&X
+\end{tikzcd}
+\end{equation}
+For an abelian sheaf $F$ over $U$, we have
+\[\begin{tikzcd}
+F\ar[rr,bend right=20pt,swap,"\cdot d"]\ar[r,"\res"]&f_*f^*(F)\ar[r,"\tr"]&F
+\end{tikzcd}\]
+Since $i_*f_*=g_*i'_*$ and $i_!f_*\cong g_*i'_!$, we have
+\begin{equation}\label{scheme Cartesian diagram trace morphism diagram-1}
+\begin{tikzcd}
+i_*(F)\ar[rr,bend right=20pt,swap,"\cdot d"]\ar[r,"\res"]&g_*i'_*f^*(F)\ar[r,"\tr"]&i_*(F)
+\end{tikzcd}\quad\quad \begin{tikzcd}
+i_!(F)\ar[rr,bend right=20pt,swap,"\cdot d"]\ar[r,"\res"]&g_*i'_!f^*(F)\ar[r,"\tr"]&i_!(F)
+\end{tikzcd}
+\end{equation}
+Applying this to the cohomology group, we then obtain
+\begin{equation}\label{scheme Cartesian diagram trace morphism diagram-2}
+\begin{tikzcd}
+H^q(X,i_*(F))\ar[rr,bend right=10pt,swap,"\cdot d"]\ar[r,"\res"]&H^q(X',i'_*f^*(F))\ar[r,"\tr"]&H^q(X,i_*(F))
+\end{tikzcd}
+\end{equation}
+\vspace*{-2mm}
+\begin{equation}\label{scheme Cartesian diagram trace morphism diagram-3}
+\begin{tikzcd}
+H^q(X,i_!(F))\ar[rr,bend right=10pt,swap,"\cdot d"]\ar[r,"\res"]&H^q(X',i'_!f^*(F))\ar[r,"\tr"]&H^q(X,i_!(F))
+\end{tikzcd}
+\end{equation}
+
+\begin{proposition}\label{scheme qcqs semi-exact functor on etale zero iff}
+Let $X$ be a quasi-compact and quasi-separated scheme, $\ell$ be a prime number, and $H$ be a semi-exact functor on the category of $\ell$-torsion sheaves over $X$ with values in $\mathbf{Ab}$, which is compatible with filtrant inductive limits. Then the following conditions are equivalent:
+\begin{enumerate} 
+    \item[(\rmnum{1})] $H=0$.
+    \item[(\rmnum{2})] $H(f_*i_!(\Z/\ell\Z))=0$ for any finite morphism $f:Y\to X$ and any immersion $i:U\to Y$ such that $U$ is of finite presentation over $X$. If $X$ is Noetherian, we can restrict to the case where $Y$ is integral.
+\end{enumerate}
+ 
+\end{proposition}
+\begin{proof}
+By \cref{scheme qcqs etale sheaf limit of constructible} and \cref{scheme qcqs etale constructible sheaf filtration}, it suffices to verify that $H(F)=0$ for $F=i_!(G)$, where $i:U\to X$ is the inclusion of a finitely presented subscheme of $X$ and $G$ is a locally constant $\ell$-torsion sheaf over $U$. Let $U''\to U$ be a principal \'etale covering with group $g$ such that $G$ is constant over $U''$, and let $A$ be the $\ell$-group such that $G|_{U''}\cong A_{U''}$. Note that the group $g$ acts on $A$, and this action determines the structure of $G$. Let $h$ be a Sylow $\ell$-subgroup of $g$, and $U'=U''/h$ be the principal covering corresponding to $h$, so that the degree $d$ of $U'$ over $U$ is coprime to $\ell$. By Zariski's Main Theorem (\cite{EGA4}, 8.12.6), we may choose a diagram
+\[\begin{tikzcd}
+U'\ar[d,swap,"f"]\ar[r,"i'"]&X'\ar[d,"g"]\\
+U\ar[r,"i"]&X
+\end{tikzcd}\]
+where $g:X'\to X$ be a finite morphism and $i':U'\to X'$ is an open immersion. Moreover, since the composition $U'\to X$ is finitely presented, we can take the scheme-theoretic closure of $i'$ in $X'$, and thus assume that $i'$ has dense image. Since $f$ is finite and $U'$ is dense in $X'$, we conclude that the induced morphism $U'\to U\times_XX'$ is a finite open immersion with dense image, so it is an isomorphism and the above diagram is Cartesian. From the diagram (\ref{scheme Cartesian diagram trace morphism diagram-1}) and the fact that $\gcd(d,\ell)=1$, we are reduced to showing that $H(g_*i'_!f^*(G))=0$.\par
+Now it is well known that the only abelian group of $\ell$-torsion which is simple under an operation of an $\ell$-group $h$ is $\Z/\ell\Z$ with the trivial operation, so it follows that there is a filtration of $A$ as an $h$-module, whose successive quotients are isomorphic to $\Z/\ell\Z$ with trivial operation. This filtration gives a corresponding filtration of $f^*(G)$ by descent, and it is therefore sufficient to prove that $H(g_*i'_!(\Z/\ell\Z))=0$; this proves the claim.
+\end{proof}
+
+\begin{proposition}\label{scheme Noe etale sheaf higher cohomology vanish by increasing function iff}
+Let $X$ be a Noetherian scheme, $\ell$ be a prime number, and $\varphi$ be a function defined on the set of finite integral schemes over $X$ with values in $\N$. Suppose that $\varphi(Y)\leq\varphi(Y')$ if there exists an $X$-morphism $Y\to Y'$, and the inequality is strict if $Y$ is a closed proper subscheme of $Y'$. For any $X$-scheme $Y$ finite over $X$, we define $\varphi(Y)=\sup_i\varphi(Y_i)$, where $Y_i$ are the irreducible components of $Y$, endowed with the reduced scheme structure. Then the following assertions are equivalent:
+\begin{enumerate}
+    \item[(\rmnum{1})] For any scheme $Y$ finite over $X$ and any $\ell$-torsion sheaf $F$ over $Y$, we have $H^q(Y,F)=0$ for $q>\varphi(Y)$.
+    \item[(\rmnum{2})] For any scheme $Y$ which is finite and integral over $X$, we have $H^q(Y,\Z/\ell\Z)=0$ for $q>\varphi(Y)$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+It suffices to prove that (\rmnum{2})$\Rightarrow$(\rmnum{1}). If (\rmnum{2}) is satisfied, we can apply \cref{scheme qcqs semi-exact functor on etale zero iff} to the functor $H^q$, since it commutes with inductive limits and direct images under finite morphisms. We then reduce the verification of (\rmnum{1}) to the case where $Y$ is finite and integral over $X$ and $F=i_!((\Z/\ell\Z)_U)$, where $i:U\to Y$ is an immersion. Now we have an exact sequence
+\[\begin{tikzcd}
+0\ar[r]&i_!((\Z/\ell\Z)_U)\ar[r]&(\Z/\ell\Z)_Y\ar[r]&(\Z/\ell\Z)_Z\ar[r]&0
+\end{tikzcd}\]
+where $Z=Y\setminus U$. By induction on $\varphi(Y)$ and the assumption on the function $\varphi$, we may suppose that $H^q(Z,\Z/\ell\Z)=0$ for $q>\varphi(Y)-1$, whence $H^q(i_!(\Z/\ell\Z))=0$ for $q>\varphi(Y)$ in view of the long exact sequence on cohomology.
+\end{proof}
+
+\begin{corollary}\label{scheme curve over separably closed field cohomology of ell-sheaf vanish >2}
+Let $X$ be an algebraic curve over a separably closed field $k$ with characteristic $p>0$ and $\ell$ be a prime number which is coprime to $p$. Then for any $\ell$-torsion sheaf $F$ over $X$, we have $H^q(X,F)=0$ for $p>2$. If $X$ is affine, then $H^q(X,F)=0$ for $q>1$.
+\end{corollary}
+\begin{proof}
+For $Y$ finite and integral over $X$, we define $\varphi(Y)=2\dim(Y)$ (resp. $\varphi(Y)=\dim(Y)$ if $X$, and hence $Y$, is affine). By \cref{scheme Noe etale sheaf higher cohomology vanish by increasing function iff}, it suffices to show that $H^q(Y,\Z/\ell\Z)=0$ for $q>\varphi(Y)$. This is trivial for $\dim(Y)=0$, so it suffices to show that $H^q(Y,\Z/\ell\Z)=0$ if $q>2$ for an integral curve $Y$. This follows from \cref{scheme Noe dim 1 etale cohomology ell-dimension 1 prop}, since $\bm{\mu}_{\ell,Y}\cong(\Z/\ell\Z)_Y$.\par
+Suppose that $X$ is affine. Since purely inseparable extensions do not affect the cohomology (\cref{scheme etale integral surj radical eg}~(b)), we may assume that $k$ is algebraically closed. Let $f:X'\to X$ be the normalization of $X$, which is a finite morphism and an isomorphism except for a set of finitely many points of $X$, denoted by $S$. We have an exact sequence of sheaves over $X$:
+\[\begin{tikzcd}
+0\ar[r]&(\Z/\ell\Z)_X\ar[r]&f_*((\Z/\ell\Z)_{X'})\ar[r]&E\ar[r]&0
+\end{tikzcd}\]
+where $E$ is concentrated over $S$, whence $H^q(X,E)=0$ for $q>0$. By \cref{scheme morphism etale finite direct image char}, we are reduced to prove that
+\[H^q(X,f_*((\Z/\ell\Z)_{X'}))\cong H^q(X',\Z/\ell\Z)=0\for q>1\]
+which means we can assume that $X$ is normal from the begining. We may also suppose that $X$ is connected. Now by \cref{scheme Noe dim 1 etale cohomology ell-dimension 1 prop}, we have an exact sequence
+\[\begin{tikzcd}[column sep=5mm]
+\Gamma(X,\mathscr{O}_X^\times)\ar[r,"\ell"]&\Gamma(X,\mathscr{O}_X^\times)\ar[r]&H^1(X,\bm{\mu}_\ell)\ar[r]&\Pic(X)\ar[r,"\ell"]&\Pic(X)\ar[r]&H^2(X,\bm{\mu}_\ell)\ar[r]&0
+\end{tikzcd}\]
+We now embed $X$ into a complete smooth connected curve $\widebar{X}$, so that can identify the elements of $\Gamma(X,\mathscr{O}_X^\times)$ with the rational functions on $\widebar{X}$ whose divisors are contained in the finite set $\widebar{X}-X$. Now we observe that the map $\ell:\Pic(X)\to\Pic(X)$ in the affine case is surjective, since every divisor on $X$ can be extended to a divisor of degree $0$ on $\widebar{X}$ (as $\widebar{X}-X\neq\emp$) and we have seen in the proof of \cref{scheme complete algebraic cureve cohomology of mu_n} that the map $\ell:\Pic^0(\widebar{X})\to\Pic^0(\widebar{X})$ is surjective. We therefore conclude that $H^2(X,\bm{\mu}_{\ell,X})=0$, whence the corollary.
+\end{proof}
+
+\begin{remark}
+The reasoning of \cref{scheme qcqs semi-exact functor on etale zero iff} in fact establishes the following result: Let $X$ be a quasi-compact and quasi-separate scheme, $\ell$ a prime number, $\mathcal{C}$ a strictly full subcategory of the category of constructible $\ell$-torsion abelian sheaves which is stable under direct factor and extensions. Suppose that for any finite morphism $f:Y\to X$ and any open immersion $i:U\to Y$ of $Y$ that is finite presented over $X$, we have $f_*(i_!((\Z/\ell\Z)_U))\in\mathcal{C}$, then $\mathcal{C}$ contains any constructible $\ell$-torsion sheaves.
+\end{remark}
