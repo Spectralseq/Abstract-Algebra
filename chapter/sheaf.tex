@@ -418,9 +418,9 @@ In this paragraph, we shall be concerned with a locally closed subspace $W$ of $
 \begin{definition}
 For a sheaf $\mathscr{E}$ over $W$ we define $f_!(\mathscr{E})$ to be the sheaf on $X$ whose section over an open subset $U$ of $X$ is given by
 \[\Gamma(U,f_!(\mathscr{E}))=\{s\in\Gamma(W\cap U,\mathscr{E}):\text{$\supp(s)$ is closed relative to $U$}\}.\]
-The restriction maps of $f_!(\mathscr{E})$ are induced from $f_!(\mathscr{E})$, of which it is a subsheaf. We therefore obtain a canonical monomorphism $f_!(\mathscr{E})\to f_*(\mathscr{E})$.
+The restriction maps of $f_!(\mathscr{E})$ are induced from $f_*(\mathscr{E})$, of which it is a subsheaf. We therefore obtain a canonical monomorphism $f_!(\mathscr{E})\to f_*(\mathscr{E})$.
 \end{definition}
-On the other hand, from the description of the sections of $f_!(\mathscr{E})$, it is not hard to see, in view of the fact that $W$ is locally closed, that we have
+From the description of the sections of $f_!(\mathscr{E})$, it is not hard to see, in view of the fact that $W$ is locally closed, that we have
 \[(f_!(\mathscr{E}))_x=\begin{cases}
 \mathscr{E}_x&\text{if $x\in W$},\\
 0&\text{if $x\notin W$}.
@@ -440,11 +440,11 @@ Next, consider a sheaf $\mathscr{F}$ on $X$ whose stalks vanish outside $W$. A c
 The functor $f_!:\Sh(W)\to\Sh(X)$ admits a right adjoint $f^!:\Sh(X)\to\Sh(W)$. 
 \end{proposition}
 \begin{proof}
-For a sheaf $\mathscr{F}$ over $X$, we let $\mathscr{F}^W$ denote the sheaf on $X$ whose section over an open subset $U$ is given by
-\[\Gamma(U,\mathscr{F}^W)=\{s\in\Gamma(U,\mathscr{F}):\supp(s)\sub W\}.\]
-The stalks of $\mathscr{F}^W$ are then zero at any poitns outside $W$, so if $f^!(\mathscr{F})=f^{-1}(\mathscr{F}^W)$, then by the last assertion of \cref{sheaf locally closed extension image char} applied to $\mathscr{F}^W$, we have
+For a sheaf $\mathscr{F}$ over $X$, we let $\Gamma_W(\mathscr{F})$ denote the sheaf on $X$ whose section over an open subset $U$ is given by
+\[\Gamma(U,\Gamma_W(\mathscr{F}))=\{s\in\Gamma(U,\mathscr{F}):\supp(s)\sub W\}.\]
+The stalks of $\Gamma_W(\mathscr{F})$ are then zero at any poitns outside $W$, so if $f^!(\mathscr{F})=f^{-1}(\Gamma_W(\mathscr{F}))$, then by the last assertion of \cref{sheaf locally closed extension image char} applied to $\Gamma_W(\mathscr{F})$, we have
 \begin{equation}\label{sheaf locally closed extension right adjoint-1}
-\Gamma(U,f_!(f^!(\mathscr{F})))=\Gamma(U,\mathscr{F}^W)=\{s\in\Gamma(U,\mathscr{F}):\supp(s)\sub W\}.
+\Gamma(U,f_!(f^!(\mathscr{F})))=\Gamma(U,\Gamma_W(\mathscr{F}))=\{s\in\Gamma(U,\mathscr{F}):\supp(s)\sub W\}.
 \end{equation}
 This formula provides a monomorphism $f_!(f^!(\mathscr{F}))\to\mathscr{F}$, and it follows from (\ref{sheaf locally closed extension right adjoint-1}) that any morphism $\mathscr{G}\to\mathscr{F}$, where $\mathscr{G}$ is a sheaf on $X$ whose stalks are zero outside $W$, may by factored through the monomorphism $f_!(f^!(\mathscr{F}))\to\mathscr{F}$. In particular, for a sheaf $\mathscr{E}$ on $W$, we get accordingly
 \[\Hom(f_!(\mathscr{E}),\mathscr{F})=\Hom(f_!(\mathscr{E}),f_!(f^!(\mathscr{F}))).\]
@@ -471,9 +471,9 @@ Let $X$ be a topological space.
 \end{enumerate}
 \end{proposition}
 \begin{proof}
-For a sheaf $\mathscr{E}$ on $Z$, we have a natural map $i_!(\mathscr{E})\to i_*(\mathscr{E})$ which is an isomorphism as one checks by localization, since $Z$ is closed in $X$. On the other hand, for a sheaf $\mathscr{F}$ on $X$, we have according to the proof of \cref{sheaf locally closed extension right adjoint} that $j^!(\mathscr{F})=j^{-1}(\mathscr{F}^U)$. Combined with the inclusion $\mathscr{F}^U\to\mathscr{F}$, this yields a monomorphism $j^!(\mathscr{F})\to j^{-1}(\mathscr{F})$, which is an isomorphism because for any open subset $V$ of $U$, we have
+For a sheaf $\mathscr{E}$ on $Z$, we have a natural map $i_!(\mathscr{E})\to i_*(\mathscr{E})$ which is an isomorphism as one checks by localization, since $Z$ is closed in $X$. On the other hand, for a sheaf $\mathscr{F}$ on $X$, we have according to the proof of \cref{sheaf locally closed extension right adjoint} that $j^!(\mathscr{F})=j^{-1}(\Gamma_U(\mathscr{F}))$. Combined with the inclusion $\Gamma_U(\mathscr{F})\to\mathscr{F}$, this yields a monomorphism $j^!(\mathscr{F})\to j^{-1}(\mathscr{F})$, which is an isomorphism because for any open subset $V$ of $U$, we have
 \begin{equation*}
-\Gamma(V,j^!(\mathscr{F}))=\Gamma(V,\mathscr{F}^U)=\Gamma(V,\mathscr{F}).\qedhere
+\Gamma(V,j^!(\mathscr{F}))=\Gamma(V,\Gamma_U(\mathscr{F}))=\Gamma(V,\mathscr{F}).\qedhere
 \end{equation*}
 \end{proof}
 

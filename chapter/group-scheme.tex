@@ -58,7 +58,6 @@ Z_G(F)(S)&=\{g\in G(S):\rho(g)|_{F_S}=\id\}\\
 &=\{g\in G(S):\text{$\rho(g)|_{F(S')}=\id$ for any morphism $S'\to S$}\}.
 \end{align*}
 \end{definition}
-
 In particular, let $x\in\Gamma(E)$, i.e. a collection of elements $x_S\in E(S)$, $S\in\Ob(\mathcal{C})$, such that for any morphism $f:S'\to S$, we have $E(f)(x_s)=x_{S'}$ (if $\mathcal{C}$ admits a final object $S_0$, then we have $\Gamma(E)=E(S_0)$). Then $x$ can be considered as a sub-functor of $E$, also denoted by $x$, and we have $N_G(x)=Z_G(x)$. This common functor is also denoted by $\Stab_G(x)$ and called the \textbf{stablizer} of $x$. For any $S\in\Ob(\mathcal{C})$, we then have
 \[\Stab_G(x)(S)=\{g\in G(S):\rho(g)x_S=x_S\}.\]
 Suppose that fiber products exist in $\mathcal{C}$. If $G=h_G$ (resp. $E=h_E$), where $G$ is a group in $\mathcal{C}$ (resp. $E\in\Ob(\mathcal{C})$), and if $\mathcal{C}$ possesses a final object $S_0$, so that $x$ is a morphism $S_0\to E$, then the stablizer $\Stab_G(x)$ is represented by the fiber product $G\times_ES_0$, where $G\to E$ is the composition of $\id_G\times x:G=G\times S_0\to G\times E$ and $\mu:G\times E\to E$.
@@ -188,7 +187,7 @@ For any scheme $S$, we then have an affine $S$-group $\G_{m,S}$ over $S$, which 
 \[\Delta(x)=x\otimes x,\quad \eps(x)=1\for x\in\Z.\]
 
 We also note that the set $\Gamma(S,\mathscr{O}_S)$ is a ring for each scheme $S$, so we can endow the functor $\G_a$ with a natural ring structure, which we denote by $\mathbb{O}$. The ring $\mathbb{O}$ is represented by the scheme $\Spec(\Z[T])$, which is also denoted by $\mathbb{O}$, which is then a ring scheme in $\widehat{\Sch}$. For any scheme $S$, $\mathbb{O}_S=S\times_{\Spec(\Z)}\Spec(\Z[T])=\Spec(\mathscr{O}_S[T])$ is then an affine ring scheme over $S$. Note that this ring is also denoted by $S[T]$.\par
-For any object $F$ in $\widehat{\Sch}$, the set $\mathbb{O}(F)=\Hom(F,\mathbb{O})$ is then endowed with a ring structure and is functorial on $F$. In particular, if $X$ is a scheme and we are given morphisms $x:X\to F$ and $f:F\to\mathbb{O}$ (that is, $x\in F(X)$ and $f\in\mathbb{O}(F)$), then $f(x):=f\circ x$ is an element in $\mathbb{O}(X)=\Gamma(X,\mathscr{O}_X)$.
+For any object $F$ in $\widehat{\Sch}$, the set $\mathbb{O}(F):=\Hom(F,\mathbb{O})$ is then endowed with a ring structure and is functorial on $F$. In particular, if $X$ is a scheme and we are given morphisms $x:X\to F$ and $f:F\to\mathbb{O}$ (that is, $x\in F(X)$ and $f\in\mathbb{O}(F)$), then $f(x):=f\circ x$ is an element in $\mathbb{O}(X)=\Gamma(X,\mathscr{O}_X)$.
 
 \begin{definition}
 Let $\pi:M\to X$ be a morphism in $\widehat{\Sch}$, and $\mathbb{O}_X=\mathbb{O}\times X$. We say that $M$ is an \textbf{$\mathbb{O}_X$-module} if for each $X$-scheme $X'$, we are given an $\mathbb{O}(X')$-module structure on $\Hom_X(X',M)$, which is functorial on $X'$. Equivalently, this amounts to giving oneself an $X$-abelian group structure $\mu:M\times_XM\to M$ on $M$ and an "external law"
@@ -196,7 +195,7 @@ Let $\pi:M\to X$ be a morphism in $\widehat{\Sch}$, and $\mathbb{O}_X=\mathbb{O}
 which is an $X$-morphism and for any $x\in X(S)$, endows $M(x)=\{m\in M(S):\pi(m)=x\}$ an $\mathbb{O}(S)$-module structure. In this case, for any $Y\in\widehat{\Sch}_{/X}$ (not necessarily representable), the set $\Hom_X(Y,M)=\Gamma(M_Y/Y)$ is an $\mathbb{O}(Y)$-module, which is functorial on $Y$.
 \end{definition}
 
-\paragraph{Diagonalizable groups}
+\paragraph{Diagonalizable groups}\label{scheme diagonalizable group paragraph}
 The construction of $\G_m$ can be generalized in the following manner. Let $M$ be an abelian group and $M_\Z$ be the constant group scheme associated with $M$. We then consider the functor $D(M):\Sch^{\op}\to\Set$ defined by
 \[D(M)(S)=\Hom_{\Grp}(M_\Z(S),\G_m(S))\cong \Hom_{S\dash\Grp}(M_S,\G_{m,S})\cong \sHom_{\Grp}(M_\Z,\G_m)(S).\]
 This is an abelian group in $\widehat{\Sch}$ and is represented by the group scheme $\Spec(\Z[M])$, which is still denoted by $D(M)$. In fact, for any scheme $S$, we have
@@ -229,7 +228,7 @@ We can construct it for example as the open set of $\Spec(\Z[T_{ij}])$ ($1\leq i
 We now associate with any $\mathscr{O}_S$-module over the schema $S$, an $\mathbb{O}_S$-module (where $\mathbb{O}_S$ denotes the ring functor introduced in \ref{scheme group G_a and G_m paragraph}). This can be done in two different ways, as we shall now define.
 \begin{definition}
 Let $S$ be a scheme. For any $\mathscr{O}_S$-module $\mathscr{F}$, we denote by $\Gamma_\mathscr{F}$ and $\check{\Gamma}_\mathscr{F}$ the contravariant functors over $\Sch_{/S}$ defined by
-\[\Gamma_\mathscr{F}(S')=\Gamma(\mathscr{F}\otimes_{\mathscr{O}_{S}}\mathscr{O}_{S'}),\quad \check{\Gamma}_\mathscr{F}(S')=\Hom_{\mathscr{O}_{S'}}(\mathscr{F}\otimes_{\mathscr{O}_{S}}\mathscr{O}_{S'},\mathscr{O}_{S'}).\]
+\[\Gamma_\mathscr{F}(S')=\Gamma(S',\mathscr{F}\otimes_{\mathscr{O}_{S}}\mathscr{O}_{S'}),\quad \check{\Gamma}_\mathscr{F}(S')=\Hom_{\mathscr{O}_{S'}}(\mathscr{F}\otimes_{\mathscr{O}_{S}}\mathscr{O}_{S'},\mathscr{O}_{S'}).\]
 Then $\Gamma_\mathscr{F}$ and $\check{\Gamma}_\mathscr{F}$ are endowed with natural structures of $\mathbb{O}_S$-modules (we note that $\mathbb{O}_S(S')=\Gamma(S',\mathscr{O}_{S'})=\Gamma_{\mathscr{O}_S}(S')$), so that we obtain functors $\Gamma$ and $\check{\Gamma}$ from the category of $\mathscr{O}_S$-modules to that of $\mathbb{O}_S$-modules, $\Gamma$ being convariant and $\check{\Gamma}$ being contracovariant.
 \end{definition}
 
@@ -318,10 +317,12 @@ But this is also isomorphic to $\sHom_{\mathbb{O}_S}(\Gamma_\mathscr{F},\Gamma_{
 \begin{corollary}\label{scheme Gamma module functor isomorphic if locally free}
 Let $\mathscr{F}$ be a locally free $\mathscr{O}_S$-module of finite type and put $\check{\mathscr{F}}=\sHom_{\mathscr{O}_S}(\mathscr{F},\mathscr{O}_S)$. Then we have canonical isomorphisms
 \begin{align*}
-\Gamma_{\check{\mathscr{F}}}&\cong\sHom_{\mathbb{O}_S}(\Gamma_\mathscr{F},\mathbb{O}_S)\cong\check{\Gamma}_\mathscr{F},\\
-\check{\Gamma}_{\check{\mathscr{F}}}&\cong\sHom_{\mathbb{O}_S}(\check{\Gamma}_\mathscr{F},\mathbb{O}_S)\cong\Gamma_\mathscr{F},
+\Gamma_{\check{\mathscr{F}}}\cong\sHom_{\mathbb{O}_S}(\Gamma_\mathscr{F},\mathbb{O}_S)\cong\check{\Gamma}_\mathscr{F},\quad \check{\Gamma}_{\check{\mathscr{F}}}\cong\sHom_{\mathbb{O}_S}(\check{\Gamma}_\mathscr{F},\mathbb{O}_S)\cong\Gamma_\mathscr{F},
 \end{align*}
 \end{corollary}
+\begin{proof}
+This follows from \cref{scheme Gamma module functor of sHom locally free prop} by taking $\mathscr{F}'=\mathscr{O}_S$ and note that $\Gamma_{\mathscr{O}_S}=\mathbb{O}_S$.
+\end{proof}
 
 \begin{proposition}\label{scheme Gamma module functor monomorphism iff split}
 If $u:\mathscr{F}\to\mathscr{F}'$ is a morphism of locally free $\mathscr{O}_S$-modules of finite rank, then for $\Gamma_u:\Gamma_\mathscr{F}\to\Gamma_{\mathscr{F}'}$ to be a monomorphism, it is necessary and sufficient that $f$ identifies $\mathscr{F}$ locally as a direct factor of $\mathscr{F}'$.
@@ -428,7 +429,7 @@ of $\mathscr{O}_S$-modules is splitting. The proposition then follows from \cref
 \end{proof}
 
 \subsection{Cohomology of groups}
-\paragraph{The standard complex}
+\paragraph{The standard complex}\label{category cohomology of group standard complex paragraph}
 Let $\mathcal{C}$ be a category, $G$ be a group in $\widehat{\mathcal{C}}$, $A$ be a ring and $M$ be a $A[G]$-module. For $n\geq 0$, we put
 \[C^n(G,M)=\Hom(G^n,M),\quad \mathcal{C}^n(G,M)=\sHom(G^n,M),\]
 where $G^0$ is the final object $e$ of $\widehat{\mathcal{C}}$. Then $\mathcal{C}^n(G,M)$ (resp. $C^n(G,M)$) is endowed evidently with a structure of $\mathbb{O}$-module (resp. $\Gamma(\mathbb{O})$-module), and we have
@@ -683,9 +684,8 @@ Let $f:Y\to X$ be a $G$-equivariant morphism and $M$ be a $G$-equivariant $A$-mo
 
 \section{Tangent spaces and Lie algebras}
 In this section, we construct the tangent spaces and Lie algebras in scheme theory. It will be useful not to restrict oneself to the diagrams themselves, but to also be intersted to certain functors on the category of schemes which are not necessarily representable. The exposition we give here easily generalize beyond the theory of schemes. For example, it is valid for the theory of complex analytic spaces, with suitable modifications.
-\subsection{The tangent space of a scheme}
-
-\paragraph{The functor \texorpdfstring{$\sHom_{Z/S}(X,Y)$}{Hom}}
+\subsection{The tangent bundle and tangent space}
+\paragraph{The functor \texorpdfstring{$\sHom_{Z/S}(X,Y)$}{Hom}}\label{scheme tangent bundle functor sHom_Z/S(X,Y) paragraph}
 Let $\mathcal{C}$ be a category and $S$ be an object of $\mathcal{C}$. We consider objects $X,Y,Z$ in $\widehat{\mathcal{C}}$ with $X,Y$ lying over $Z$ and $Z$ lying over $S$:
 \[\begin{tikzcd}[row sep=4mm, column sep=4mm]
 X\ar[rd,swap,"p_X"]&&Y\ar[ld,"p_Y"]\\
@@ -700,7 +700,7 @@ where $S'$ is an object of $\mathcal{C}_{/S}$. We see that $\sHom_{Z/S}(X,Y)$ is
 \[\begin{tikzcd}
 \sHom_S(X,Y)\ar[r,shift left=2pt]\ar[r,shift right=2pt]&\sHom_S(X,Z)
 \end{tikzcd}\]
-where the first map is defined by composing with $p_Y$ and the seond one is the constant map of $\p_X$.
+where the first map is defined by composing with $p_Y$ and the seond one is the constant map of $p_X$.
 \end{definition}
 
 On the other hand, we see as in (\ref{category presheaf Hom functor adjoint prop-1}) that, for any object $T$ of $\widehat{\mathcal{C}}$ over $S$, we have a natural bijection
@@ -728,7 +728,7 @@ by definition, we then have
 \[\Res_{Z/S}(Y)(S')=\Hom_Z(Z\times_SS',Y)=\Gamma(Y_{S'}/Z_{S'}).\]
 The functor $\Res_{Z/S}:\widehat{\mathcal{C}_{/Z}}\to\widehat{\mathcal{C}_{/S}}$ is a right adjoint of the base change functor from $S$ to $Z$. In fact, for any $S$-functor $U$, by (\ref{category of presheaf functor Hom_Z/S(X,Y) isomorphism-1}) we have
 \[\Hom_S(U,\Res_{Z/S}Y)=\Hom_S(U,\sHom_{Z/S}(Z,Y))\cong\Hom_Z(U\times_SZ,Y).\]
-(If $\mathcal{C}=\Sch$ and $Z$ is an $S$-scheme, the functor $\Res_{Z/S}$ is called the Weil restriction.) We also ntoe that since for any $S'\in\Ob(\mathcal{C}_{/S})$ we have 
+(If $\mathcal{C}=\Sch$ and $Z$ is an $S$-scheme, the functor $\Res_{Z/S}$ is called the \textbf{Weil restriction}.) We also ntoe that since for any $S'\in\Ob(\mathcal{C}_{/S})$ we have 
 \begin{align*}
 \sHom_{Z/S}(X,Y)(S')&=\Hom_{Z}(X_{S'},Y)\cong\Hom_X(X_{S'},Y\times_ZX)=\sHom_{X/S}(X,Y\times_ZX),
 \end{align*}
@@ -737,9 +737,29 @@ so we obtain an isomorphism
 which for $Z=S$ gives an isomorphism 
 \[\sHom_S(X,Y)\cong \Res_{X/S}Y_X.\]
 
-\paragraph{The scheme \texorpdfstring{$I_S(\mathscr{M})$}{I}}
+\begin{remark}\label{category of presheaf functor Hom product commutes}
+The functore $Y\mapsto\sHom_{Z/S}(X,Y)$ commutes with products in the sense that we have a functorial isomorphism
+\begin{equation}\label{category of presheaf functor Hom product commutes-1}
+\sHom_{Z/S}(X,Y\times_ZY')\cong\sHom_{Z/S}(X,Y)\times_S\sHom_{Z/S}(X,Y')
+\end{equation}
+It follows that if $Y$ is a $Z$-group (resp. $Z$-ring, etc.), then $\sHom_{Z/S}(X,Y)$ is an $S$-group (resp. $S$-ring, etc.).\par
+Moreover, let $\pi:M\to Y$ be an $Y$-functor in $\mathbb{O}_Y$-modules. Put $H=\sHom_{Z/S}(X,Y)$, then $\sHom_{Z/S}(X,M)$ is endowed with a natrual structure of $\mathbb{O}_H$-module. More precisely, for any $H'\to H$, $\Hom_H(H',\sHom_{Z/S}(X,M))$ is endowed with a natural structure of $\mathbb{O}(H'\times_SX)$-module.
+\end{remark}
+
+\begin{remark}\label{category of presheaf functor Hom module structure}
+Moreover, let $\pi:M\to Y$ be a $Y$-functor in $\mathbb{O}_Y$-modules. Put $H=\sHom_{Z/S}(X,Y)$, then $\sHom_{Z/S}(X,M)$ is endowed with a natural $\mathbb{O}_H$-module structure; more precisely, for any $H'\to H$, $\Hom_H(H',\sHom_{Z/S}(X,M))$ is endowed with a natural $\mathbb{O}(H'\times_SX)$-structure.\par
+In fact, denote by $m:M\times_YM\to M$ and $\lambda:\mathbb{O}_Y\times_YM\to M$ the defining morphisms of abelian group structure and module structure of $M$. Let $H'$ be an $S$-scheme over $H$, that is, we are given a $Z$-morphism $f:X\times_SH'\to Y$, which makes $X\times_SH'$ a $Y$-object. Then $\Hom_H(H',\sHom_{Z/S}(X,M))$ is the set of $Z$-morphisms $\phi:X\times_SH'\to M$ such that $\pi\circ\phi=f$, that is, the $Y$-morphisms $X\times_SH'\to M$.\par
+Let $\phi,\psi$ be two such morphisms, we define $\phi+\psi$ as the composition of $Y$-morphisms
+\[\begin{tikzcd}
+X\times_SH'\ar[r,"\phi\times\psi"]&M\times_YM\ar[r,"m"]&M
+\end{tikzcd}\]
+and we verify that this endows $\sHom_{Z/S}(X,M)$ an abelian group structure over $H=\sHom_{Z/S}(X,Y)$.\par
+Similarly, if $a$ is an element of $\mathbb{O}(X\times_SH')$, i.e. an $S$-morphism $a:X\times_SH'\to\mathbb{O}_S$, we define $a\phi$ as the composition $\lambda\circ(a\times\phi)$, where $a\times\phi$ denotes the $Y$-morphism from $X\times_SH$ to $\mathbb{O}_Y\times_YM\cong\mathbb{O}_S\times_SM$ with components $a$ and $\phi$. We verify that this endows $\Hom_H(H',\sHom_{Z/S}(X,M))$ with an $\mathbb{O}(X\times_SH')$-module structure, which is functorial on $H'$.
+\end{remark}
+
+\paragraph{The scheme \texorpdfstring{$I_S(\mathscr{M})$}{I}}\label{scheme tangent bundle I_S paragraph}
 \begin{definition}
-Let $S$ be a scheme and $\mathscr{M}$ be a quasi-coherent $\mathscr{O}_S$-module. We denote by $\mathscr{D}_S(\mathscr{M})$ the quasi-coherent algebra $\mathscr{O}_S\oplus\mathscr{M}$ (where $\mathscr{M}$ is considered as a square zero ideal). We denote by $I_S(\mathscr{M})$ the $S$-scheme $\Spec(\mathscr{D}_S(\mathscr{M}))$. In particular, we have $\mathscr{D}_S=\mathscr{D}_S(\mathscr{O}_S)$, $I_S=I_S(\mathscr{O}_S)$, which are called the \textbf{algebra of dual numbers over $\bm{S}$} and the \textbf{dual number scheme over $\bm{S}$}.
+Let $S$ be a scheme and $\mathscr{M}$ be a quasi-coherent $\mathscr{O}_S$-module. We denote by $\mathscr{D}_{\mathscr{O}_S}(\mathscr{M})$ the quasi-coherent algebra $\mathscr{O}_S\oplus\mathscr{M}$ (where $\mathscr{M}$ is considered as a square zero ideal). We denote by $I_S(\mathscr{M})$ the $S$-scheme $\Spec(\mathscr{D}_{\mathscr{O}_S}(\mathscr{M}))$. In particular, we have $\mathscr{D}_{\mathscr{O}_S}=\mathscr{D}_{\mathscr{O}_S}(\mathscr{O}_S)$, $I_S=I_S(\mathscr{O}_S)$, which are called the \textbf{algebra of dual numbers over $\bm{S}$} and the \textbf{dual number scheme over $\bm{S}$}.
 \end{definition}
 
 We then obtain a contravariant functor $\mathscr{M}\mapsto I_S(\mathscr{M})$ from the category of quasi-coherent $\mathscr{O}_S$-modules to the category of $S$-schemes. In particular, the morphisms $0\to\mathscr{M}$ and $\mathscr{M}\to 0$ define respectively the structural morphism $\rho:I_S(\mathscr{M})\to I_S(0)=S$ and a section $\eps_\mathscr{M}:S\to I_S(\mathscr{M})$, which is called the \textbf{zero section} of $I_S(\mathscr{M})$.\par
@@ -757,7 +777,7 @@ The formation of $I_S(\mathscr{M})$ commutes with base changes: we have a canoni
 For simplicity, we shall write $I_{S'}(\mathscr{M})$ for $I_S(\mathscr{M})_{S'}$. More generally, if $X$ is an $S$-functor (not necessarily representable), then we define $I_X(\mathscr{M}):=I_S(\mathscr{M})\times_SX$.
 \end{remark}
 
-\begin{remark}
+\begin{remark}\label{scheme tangent bundle I_S action of O(S)}
 By consider the homotheties on $\mathscr{M}$, we see that the multiplicative monoid $\mathbb{O}(S')$ acts on the $S'$-scheme $I_{S'}(\mathscr{M})$, which is functorial on $\mathscr{M}$, i.e. the $S$-scheme $I_S(\mathscr{M})$ is endowed with a structure of an $\mathbb{O}_S$-object, which is functorial on $\mathscr{M}$. We then have a morphism of $S$-schemes
 \[\lambda:I_S(\mathscr{M})\times_S\mathbb{O}_S\to I_S(\mathscr{M}),\]
 which satisfies the evident conditions. For any $S$-functor $X$, we then obtain by base change a morphism of $X$-functors
@@ -811,24 +831,34 @@ Let $X$ be an $S$-scheme and $\mathscr{M}$ be a free $\mathscr{O}_X$-module of f
 It follows from the proof of \cref{scheme dual number of direct sum Cartesian diagram} that $\sHom_S(I_S,X)$ is isomorphic to the $X$-functor $\check{\Gamma}_{\Omega^1_{X/S}}$, and hence represented by the vector bundle $\V(\Omega_{X/S}^1)$. 
 \end{remark}
 
-\paragraph{The tangent bundle}
+\paragraph{The tangent bundle and condition (E)}
 \begin{definition}
-Let $S$ be a scheme and $\mathscr{M}$ be a free $\mathscr{O}_S$-module of finite type. Let $X$ be a functor over $S$. The \textbf{tangent bundle of $\bm{X}$ over $\bm{S}$ relative to the $\mathscr{O}_S$-module $\mathscr{M}$} is defined to be the $S$-functor
+Let $S$ be a scheme and $\mathscr{M}$ be a free $\mathscr{O}_S$-module of finite rank. Let $X$ be a functor over $S$. The \textbf{tangent bundle of $\bm{X}$ over $\bm{S}$ relative to the $\mathscr{O}_S$-module $\mathscr{M}$} is defined to be the $S$-functor
 \[T_{X/S}(\mathscr{M})=\sHom_S(I_S(\mathscr{M}),X).\]
 In particular, the \textbf{tangent bundle of $\bm{X}$ over $\bm{S}$} is the functor
 \[T_{X/S}=T_{X/S}(\mathscr{O}_S)=\sHom_S(I_S,X).\]
 \end{definition}
 
-The construction $\mathscr{M}\mapsto T_{X/S}(\mathscr{M})$ is then a covariant functor from the category of free $\mathscr{O}_S$-modules of finite type to the category of $X$-functors. In particular, the morphisms $\mathscr{M}\to 0$ and $0\to\mathscr{M}$ define respectively an $S$-morphism $\pi_\mathscr{M}:T_{X/S}(\mathscr{M})\to T_{X/S}(0)\cong X$ and a section $\tau:X\to T_{X/S}(\mathscr{M})$, called the \textbf{zero section}. Moreover, it follows from the preceding remarks that $\mathbb{O}(S)$ is a monoid acting on the $X$-functor $T_{X/S}(\mathscr{M})$, which is functorial on $\mathscr{M}$.
+The construction $\mathscr{M}\mapsto T_{X/S}(\mathscr{M})$ is then a covariant functor from the category of free $\mathscr{O}_S$-modules of finite type to the category of $S$-functors. In particular, the morphisms $\mathscr{M}\to 0$ and $0\to\mathscr{M}$ define respectively an $S$-morphism $\pi_\mathscr{M}:T_{X/S}(\mathscr{M})\to T_{X/S}(0)\cong X$ and a section $\tau:X\to T_{X/S}(\mathscr{M})$, called the \textbf{zero section}. Moreover, it follows from the preceding remarks that $\mathbb{O}(S)$ is a monoid acting on the $X$-functor $T_{X/S}(\mathscr{M})$, which is functorial on $\mathscr{M}$.
 
 \begin{remark}\label{scheme tangent bundle projection zero section char}
 We note that the projection $\pi_\mathscr{M}:T_{X/S}(\mathscr{M})\to X$ is induced by the zero section $\eps_\mathscr{M}:S\to I_S(\mathscr{M})$, while the zero section $\tau:X\to T_{X/S}(\mathscr{M})$ is induced by the structural morphism $\rho:I_S(\mathscr{M})\to S$. For any point $t\in T_{X/S}(\mathscr{M})(S')$ (resp. $x\in X(S')$), which corresponds to an $S$-morphism $f:I_{S'}(\mathscr{M})\to X$ (resp. $g:S'\to X$), we have 
 \[\pi(t)=f\circ(\id_{S'}\times\eps_\mathscr{M}),\quad  \text{(resp. $\tau(x)=g\circ(\id_{S'}\times\rho)$)}.\]
+It follows from the above definition that $\mathscr{M}\mapsto T_{X/S}(\mathscr{M})$ is a covariant functor from the category of free $\mathscr{O}_X$-modules of finite rank to that of functors over $X$. In particular, $\mathbb{O}(S)$ is a monoid operating on the $X$-functor $T_{X/S}(\mathscr{M})$, which \textit{respects the functoriality of $\mathscr{M}$}.
 \end{remark}
 
-\begin{remark}
-For any $S$-morphism $X'\to X$, we put
+\begin{remark}\label{scheme tangent bundle Sigma action construction}
+In particular, the above arguments motivates the following construction. For any $S$-morphism $X'\to X$, we put
 \[\Sigma(X',\mathscr{M})=\Hom_X(X',T_{X/S}(\mathscr{M})).\]
+We have an action of the multiplicative monoid $\End_{\mathscr{O}_S}(\mathscr{M})$ over $\Sigma(X',\mathscr{M})$, denoted by $(\lambda,x)\mapsto\lambda\ast x$, such that
+\begin{equation}\label{scheme tangent bundle Sigma action construction-1}
+\lambda\ast(\mu\ast x)=(\lambda\mu)\ast x,\quad 1\ast x=x,\quad 0\ast x=\tau_0\ast\phi
+\end{equation}
+where $\tau_0$ is the zero section $X\to T_{X/S}(\mathscr{M})$. We have similarly an action of $\End_{\mathscr{O}_S}(\mathscr{M}\oplus\mathscr{M})$ over $\Sigma(X',\mathscr{M}\oplus\mathscr{M})$.\par
+Moreover, let $m:\mathscr{M}\oplus\mathscr{M}\to\mathscr{M}$ (resp. $\delta:\mathscr{M}\to\mathscr{M}\oplus\mathscr{M}$) the addition (resp. diagonal map) of $\mathscr{M}$, and put $m_{X'}:\Sigma(X',\mathscr{M}\oplus\mathscr{M})\to\Sigma(X',\mathscr{M})$ and $\delta_{X'}:\Sigma(X',\mathscr{M})\to\Sigma(X',\mathscr{M}\oplus\mathscr{M})$ be the induced morphisms. For $\lambda,\mu\in\mathbb{O}(S)$, let $h_\lambda$ (resp. $h_{\lambda,\mu}$) be the multiplication by $\lambda$ on $\mathscr{M}$ (resp. by $(\lambda,\mu)$ on $\mathscr{M}\oplus\mathscr{M}$). Since $m\circ h_{\lambda,\lambda}=h_\lambda\circ m$ and $m\circ h_{\lambda,\mu}=h_{\lambda+\mu}$, we have, for $z\in\Sigma(X',\mathscr{M}\oplus\mathscr{M})$ and $x\in\Sigma(X',\mathscr{M})$:
+\begin{equation}\label{scheme tangent bundle Sigma action construction-2}
+\lambda\ast m(z)=m((\lambda,\lambda)\ast z),\quad m((\lambda,\mu)\ast\delta(x))=(\lambda+\mu)\ast x.
+\end{equation}
 \end{remark}
 
 \begin{definition}
@@ -840,18 +870,1064 @@ S\ar[r,"x"]&X
 In particular, $T_{X/S,x}(\mathscr{O}_X)$ is denoted by $T_{X/S,x}$, which is called the \textbf{tangent space of $\bm{X}$ over $\bm{S}$ at the point $\bm{x}$}.
 \end{definition}
 
-\begin{remark}
-It follows from \cref{scheme tangent bundle projection zero section char} that, for any $g:S'\to S$, $T_{X/S,x}(\mathscr{M})$ is the set of $S$-morphisms $f:I_{S'}(\mathscr{M})\to X$ such that $f\circ(\id_{S'}\times\eps_\mathscr{M})=x\circ g$, where $\eps_\mathscr{M}:S\to I_{S}(\mathscr{M})$ is the zero section.
+\begin{remark}\label{scheme tangent bundle fiber char by morphism}
+It follows from \cref{scheme tangent bundle projection zero section char} that, for any $t:S'\to S$, $T_{X/S,x}(\mathscr{M})(S')$ is the set of $S$-morphisms $f:I_{S'}(\mathscr{M})\to X$ such that $f\circ(\id_{S'}\times\eps_\mathscr{M})=x\circ t$, where $\eps_\mathscr{M}:S\to I_{S}(\mathscr{M})$ is the zero section.
 \end{remark}
 
 \begin{proposition}\label{scheme tangent bundle representable if}
 If $X$ is representable, then $T_{X/S}(\mathscr{M})$ and $T_{X/S,x}(\mathscr{M})$ are representable. In particular, $T_{X/S}$ and $T_{X/S,x}$ are represented by the vector bundles $\V(\Omega_{X/S}^1)$ and $\V(x^*(\Omega_{X/S}^1))$.
 \end{proposition}
 \begin{proof}
-It suffices to prove the proposition for $T_{X/S}(\mathscr{M})$, since the analogous result follows from base change. By \cref{scheme dual number isomorphic to product}, it suffices to consider $T_{X/S}$, which follows from \cref{scheme dual number Hom represented by vector bundle of Omega}.
+It suffices to prove for $T_{X/S}(\mathscr{M})$, since the analogous result follows from base change. By \cref{scheme dual number isomorphic to product}, it suffices to consider $T_{X/S}$, which follows from \cref{scheme dual number Hom represented by vector bundle of Omega}.
 \end{proof}
 
 \begin{remark}
-By \cref{scheme tangent bundle representable if}, we can give a simple description of the vector bundle representing $T_{X/S,x}$: if $x:S\to X$ is an $S$-morphism, then the image of $x$ is locally closed in $S$ by \cref{scheme morphism graph is immersion}, hence defined by a quasi-coherent ideal $\mathscr{I}$ of an open subscheme of $X$. The quotient $\mathscr{I}/\mathscr{I}^2$ can then be considered as a quasi-coherent module over $S$, whose vector bundle $V(\mathscr{I}/\mathscr{I}^2)$ is the desired representing scheme.\par
+By \cref{scheme tangent bundle representable if}, we can give a simple description of the vector bundle representing $T_{X/S,x}$: if $x:S\to X$ is an $S$-morphism, then the image of $x$ is locally closed in $S$ by \cref{scheme morphism graph is immersion}, hence defined by a quasi-coherent ideal $\mathscr{I}$ of an open subscheme of $X$. The quotient $\mathscr{I}/\mathscr{I}^2$ can then be considered as a quasi-coherent module over $S$, whose vector bundle $\V(\mathscr{I}/\mathscr{I}^2)$ is the desired representing scheme.\par
 For example, let $X$ be an algebraic scheme over a field $X$ and $x$ be a rational point of $X$ over $k$. Let $\m_x$ be the maximal ideal of the local ring $\mathscr{O}_{X,x}$, then we have $T_{X/k,x}=\V(\m_x/\m_x^2)$.
 \end{remark}
+
+We now retun to the general situation. We first note that $T_{X/S,x}$ is a covariant functor from the category of free $\mathscr{O}_S$-modules of finite rank to that of functors over $S$. In particular, $\mathbb{O}_S$ is a set of perators of the functor $T_{X/S,x}(\mathscr{M})$, which respects the functoriality on $\mathscr{M}$.
+
+\begin{proposition}\label{scheme tangent bundle commutes with base change}
+The formulation of $T_{X/S}(\mathscr{M})$ and $T_{X/S,x}(\mathscr{M})$ commutes with base changes: for any $S$-scheme $S'$, we have functorial isomorphisms
+\begin{align*}
+T_{X_{S'}/S'}(\mathscr{M}\otimes\mathscr{O}_S)\stackrel{\sim}{\to} T_{X/S}(\mathscr{M})_{S'},\\
+T_{X_{S'}/S',x'}(\mathscr{M}\otimes\mathscr{O}_S)\stackrel{\sim}{\to} T_{X/S,x}(\mathscr{M})_{S'}
+\end{align*}
+where $x'=x_{S'}$.
+\end{proposition}
+\begin{proof}
+This follows from the fact that $\sHom$ commutes with base changes.
+\end{proof}
+
+\begin{corollary}\label{scheme tangent bundle commutes with base change module isomorphism}
+The $X$-functor $T_{X/S}(\mathscr{M})$ (resp. the $S$-functor $T_{X/S,x}(\mathscr{M})$) is naturally endowed with an $\mathbb{O}_X$-object (resp. $\mathbb{O}_S$-object) structure, which is functorial on $\mathscr{M}$, and the isomorphism of \cref{scheme tangent bundle commutes with base change} are isomorphism of $\mathbb{O}_{X_{S'}}$-objects (resp. $\mathbb{O}_{S'}$-objects).
+\end{corollary}
+\begin{proof}
+We first prove the case for $T_{X/S,x}(\mathscr{M})$. For any $S'$ over $S$, $\mathbb{O}(S')$ acts on $\mathscr{M}\otimes\mathscr{O}_{S'}$, and hence on $T_{X_{S'}/S',x'}(\mathscr{M}\otimes\mathscr{O}_{S'})=T_{X/S,x}(\mathscr{M})_{S'}$. It is easy to verify that this operation is functorail on $S'$, so $T_{X/S,x}(\mathscr{M})$ is endowed with an $\mathbb{O}_S$-object structure.\par
+For $T_{X/S}(\mathscr{M})$ this is more complicated. For each $X'$ over $X$, put $T_{X/S}(\mathscr{M})_{X'}=T_{X/S}(\mathscr{M})\times_XX'$; we need to endow $T_{X/S}(\mathscr{M})_{X'}(X')=\Hom_X(X',T_{X/S}(\mathscr{M}))$ with a structure of $\mathbb{O}(X')$-set which is functorial in $X'$. For this we construct the following diagram, where $X_{X'}=X\times_SX'$ and $f'$ is the section of $X_{X'}$ over $X'$ defined by $f:X'\to X$:
+\[\begin{tikzcd}[row sep=4mm,column sep=2mm]
+&T_{X_{X'}/X'}(\mathscr{M})\ar[ld]\ar[dd]&\\
+T_{X/S}(\mathscr{M})\ar[dd]&&T_{X/S}(\mathscr{M})_{X'}\ar[lu]\ar[dd]\ar[ll,crossing over]\\
+&X_{X'}\ar[ld]\ar[ld]&\\
+X\ar[rd]&&X'\ar[ll,swap,"f"]\ar[ld]\ar[lu,swap,"f'"]\\
+&S&
+\end{tikzcd}\]
+This diagram, together with \cref{scheme tangent bundle fiber char by morphism}, shows that $T_{X/S}(\mathscr{M})_{X'}(X')$ is identified with
+\begin{equation}\label{scheme tangent bundle commutes with base change module isomorphism-1}
+T_{X_{X'}/X',f'}(\mathscr{M})(X')=\{\text{$X'$-morphisms $\psi:I_{X'}(\mathscr{M})\to X_{X'}$ such that $\psi\circ\eps_{\mathscr{M}}=f'$}\},
+\end{equation}
+over which any $a\in\mathbb{O}(X')$ operates via the action over $I_{X'}(\mathscr{M})$, i.e. with the notations of \ref{scheme tangent bundle I_S paragraph}, we have $a\psi=\psi\circ a^*$, so for any $X''\to X'$ and $x\in I_{X'}(\mathscr{M})(X'')$, $(a\psi)(x)=\psi(x\cdot a)$. We then verify that this construction is functorial on $X'$.
+\end{proof}
+
+\begin{remark}\label{scheme trangent bundle operation of O_X define as morphism}
+The operation of $\mathbb{O}_X$ over $T_{X/S}(\mathscr{M})$ can be simply defined as follows. For any $f:X'\to X$, by (\ref{scheme tangent bundle commutes with base change module isomorphism-1}) we have\footnote{If $X'$ is representable, this equality can also be deduced from \cref{scheme tangent bundle projection zero section char} and the equivalence $\widehat{\mathbf{Sch}}_{/X}\stackrel{\sim}{\to}\widehat{\mathbf{Sch}_{/X}}$. In fact, the equivalence $\alpha:\widehat{\mathbf{Sch}}_{/X}\to\widehat{\mathbf{Sch}_{/X}}$ commutes with Yoneda embedding, so we have
+\[\Hom_X(X',T_{X/S}(\mathscr{M}))\cong\Hom_{X}(X',\alpha(T_{X/S}(\mathscr{M})))=\alpha(T_{X/S}(\mathscr{M}))(X')=\{\phi\in\Hom_S(I_{X'}(\mathscr{M}),X):\pi_{\mathscr{M}}(\phi)=f\}.\]
+and \cref{scheme tangent bundle projection zero section char} shows that $\pi_\mathscr{M}(\phi)=\phi\circ\eps_\mathscr{M}$.}
+\begin{align*}
+\Hom_X(X',T_{X/S}(\mathscr{M}))=T_{X/S}(\mathscr{M})_{X'}(X')=\{\phi\in\Hom_S(I_{X'}(\mathscr{M}),X)\mid\phi\circ\eps_\mathscr{M}=f\},
+\end{align*}
+and we have seen in \cref{scheme tangent bundle I_S action of O(S)} that $I_{X'}(\mathscr{M})$, considered as an $S$-functor, is endowed with an operation by the monoid $\mathbb{O}(X')$ which conserve the zero section $\eps_\mathscr{M}:X'\to I_{X'}(\mathscr{M})$. Therefore, if we denote by $a^*$ the endomorphism of $I_{X'}(\mathscr{M})$ defined by $a\in\mathbb{O}(X')$, then we have $a^*\phi=\phi\circ a$, which means for any $S'\to S$ and $(m,x')\in\Hom_S(S',I_S(\mathscr{M})\times_SX')$,
+\[(a\phi)(m,x')=\phi(m\cdot a(x'),x')\]
+(note that $a^*\circ\eps_\mathscr{M}=\eps_\mathscr{M}$, whence $(a\phi)\circ\eps_\mathscr{M}=f$). Similarly, the operation of $\mathbb{O}_S$ over $T_{X/S,x}(\mathscr{M})$ can be described as follows. For any $t:S'\to S$, $T_{X/S,x}(\mathscr{M})(S')$ is the set of $S$-morphisms $\phi:I_{S'}(\mathscr{M})\to X$ such that $\phi\circ\eps_\mathscr{M}=u\circ t$; for such a $\phi$ and $a\in\mathbb{O}(S')$, we have $a\phi=\phi\circ a^*$.
+\end{remark}
+
+Let $S$ be a scheme and $X$ be an $S$-functor. We say that \textbf{$\bm{X}$ satisfies conditon (E) relative to $\bm{S}$} if, for any $S'\to S$ and any free $\mathscr{O}_{S'}$-module $\mathscr{M}$ and $\mathscr{N}$ of finite rank, the diagram of sets
+\[\begin{tikzcd}[row sep=4mm,column sep=4mm]
+&X(I_{S'}(\mathscr{M}\oplus\mathscr{N}))\ar[rd]\ar[ld]&\\
+X(I_{S'}(\mathscr{M}))\ar[rd]&&X(I_{S'}(\mathscr{N}))\ar[ld]\\
+&X(S')
+\end{tikzcd}\]
+obtained by applying $X$ to the diagram (\ref{scheme dual number of direct sum Cartesian diagram-1}), is Cartesian. Equivalently, this means the functor $\mathscr{M}\mapsto T_{X/S}(\mathscr{M})$ transforms direct sums of free $\mathscr{O}_S$-modules of finite rank to products of $X$-functors. If this is the case, the same holds for the functor $\mathscr{M}\mapsto T_{X/S,x}(\mathscr{M})=S\times_XT_{X/S}(\mathscr{M})$, for any $x\in\Gamma(X/S)$. By \cref{scheme dual number of direct sum Cartesian diagram}, we see that any representable functor satisfies condition (E).\par
+We often say that "$X/S$ satisfies condition (E)" to abbreviate that $X$ satisfies condition (E) relative to $S$. In this case, the functor $\mathscr{M}\mapsto T_{X/S}(\mathscr{M})$ commutes with products, hence transforms groups to groups. In particular, $T_{X/S}(\mathscr{M})$ is an abelian $X$-group, and for the same reason $T_{X/S,x}(\mathscr{M})$ is an abelian $S$-group.
+
+\begin{proposition}\label{scheme tangent bundle condition (E) module structure}
+If $X/S$ satisfies condition (E), the abelian group structure over $T_{X/S}(\mathscr{M})$ (resp. $T_{X/S,x}(\mathscr{M})$) and the operation of $\mathbb{O}_X$ (resp. $\mathbb{O}_S$) endow $T_{X/S}(\mathscr{M})$ (resp. $T_{X/S,x}(\mathscr{M})$) with the structure of an $\mathbb{O}_X$-module (resp. $\mathbb{O}_S$-module).
+\end{proposition}
+\begin{proof}
+The operation of $\mathbb{O}_X$ (resp. $\mathbb{O}_S$) is functorial on $\mathscr{M}$, so it respects the abelian group structure induced by the functoriality of $\mathscr{M}$. In fact, retain the notations of \cref{scheme tangent bundle Sigma action construction}. The structure of (abelian) $X$-group of $T_{X/S}(\mathscr{M})$ is deduced by the composition
+\[T_{X/S}(\mathscr{M})\times_X T_{X/S}(\mathscr{M})\cong T_{X/S}(\mathscr{M}\oplus\mathscr{M})\stackrel{m}{\to} T_{X/S}(\mathscr{M}),\]
+and on the other hand the morphism
+\[T_{X/S}(\mathscr{M})\stackrel{\delta}{\to} T_{X/S}(\mathscr{M}\oplus\mathscr{M})\cong T_{X/S}(\mathscr{M})\times_XT_{X/S}(\mathscr{M})\]
+is the diagonal morphism. We then deduce from the equality (\ref{scheme tangent bundle Sigma action construction-2}) and \cref{scheme tangent bundle Sigma action construction} that
+\[\lambda(x+y)=\lambda x+\lambda y,\quad (\lambda+\mu)x=\lambda x+\mu x,\]
+for any $f:X'\to X$, $x,y\in\Hom_X(X',T_{X/S}(\mathscr{M}))$ and $\lambda,\mu\in\mathbb{O}(X')$.
+\end{proof}
+
+\begin{remark}
+If $X$ is representable, then it satisfies (E) and $T_{X/S}$ and $T_{X/S,x}$ are represented by vector bundles. The previous laws are the same as those which are deduced from the vector bundle structures.
+\end{remark}
+
+\begin{proposition}\label{scheme tangent bundle condition (E) base change}
+If $X/S$ satisfies condition (E), then $X_{S'}/S'$ satisfies condition (E) and the isomorphisms of \cref{scheme tangent bundle condition (E) module structure} respects the $\mathbb{O}_{X_{S'}}$-module (resp. $\mathbb{O}_{S'}$-module) structure.
+\end{proposition}
+\begin{proof}
+The formulation of $I_S(\mathscr{M})$ commutes with base change, so the first assertion is immediate. The second one follows from the proof of \cref{scheme tangent bundle condition (E) module structure}.
+\end{proof}
+
+\begin{proposition}\label{scheme tangent bundle functorial on X}
+The functors $T_{X/S}(\mathscr{M})$ and $T_{X/S,x}(\mathscr{M})$ are functorial on $X$, which means if $f:X\to X'$ is an $S$-morphism, we have commutative diagrams
+\[\begin{tikzcd}
+T_{X/S}(\mathscr{M})\ar[r,"T(f)"]\ar[d]&T_{X'/S}(\mathscr{M})\ar[d]\\
+X\ar[r]&X'
+\end{tikzcd}\quad\quad
+\begin{tikzcd}
+T_{X/S,x}(\mathscr{M})\ar[rd]\ar[rr,"T_x(f)"]&&T_{X'/S,f\circ x}(\mathscr{M})\ar[ld]\\
+&S&
+\end{tikzcd}\]
+Moreover, if $f$ is a monomorphism, so are $T(f)$ and $T_x(f)$.
+\end{proposition}
+\begin{proof}
+The existence of $T(f)$ and $T_x(f)$, as well as the last assertion, follow immediately from definition. The commutativity of the diagrams then follows from the functoriality of these morphisms with respect to $\mathscr{M}$ and of the fact that $X=T_{X/S}(0)$.
+\end{proof}
+
+\begin{remark}\label{scheme tangent space of representable isomorphism if etale}
+In the situation of \cref{scheme tangent bundle functorial on X}, suppose that $X$ and $X'$ are representable and $r$ is the rank of the free $\mathscr{O}_S$-module $\mathscr{M}$. Then by \cref{scheme dual number isomorphic to product}, $T_{X/S}(\mathscr{M})$ is isomorphic to the product over $X$ of $r$ copies of $\V(\Omega_{X/S}^1)$, and similarly for $T_{X'/S}(\mathscr{M})$. Therefore, the square in \cref{scheme tangent bundle functorial on X} are Cartesian if $f$ is an open immersion, of more generally if $f^*(\Omega_{X'/S}^1)=\Omega_{X/S}^1$ (for example if $f$ is \'etale). In this case, we have an isomorphism of $S$-functors 
+\[T_{X/S,x}(\mathscr{M})\stackrel{\sim}{\to} T_{X'/S,f\circ x}(\mathscr{M}).\]
+More generally, the Cartesian square of \cref{scheme tangent bundle functorial on X} defines a morphism of $X$-functors
+\[\begin{tikzcd}
+T_{X/S}(\mathscr{M})\ar[rr]\ar[rd]&&T_{X'/S}(\mathscr{M})\times_{X'}X\ar[ld]\\
+&X&
+\end{tikzcd}\]
+\end{remark}
+
+\begin{proposition}\label{scheme tangent bundle condition (E) functorial on X}
+Let $f:X\to X'$ be an $S$-morphism. If $X$ and $X'$ satisfy condition (E) relative to $S$, then
+\[T_{X/S}(\mathscr{M})\stackrel{T(f)}{\to} T_{X'/S}(\mathscr{M})_X\quad\quad (\text{resp.}\quad T_{X/S,x}(\mathscr{M})\stackrel{T_x(f)}{\to} T_{X'/S,f\circ x}(\mathscr{M}))\]
+is a morphism of $\mathbb{O}_X$-modules (resp. $\mathbb{O}_S$-modules).
+\end{proposition}
+\begin{proof}
+This follows from \cref{scheme tangent bundle functorial on X} by the functoriality on $\mathscr{M}$.
+\end{proof}
+
+\begin{proposition}\label{scheme tangent bundle fiber product commutes}
+Let $X$ and $Y$ be functors over $S$. We have isomorphisms functorial on $\mathscr{M}$:
+\begin{align}
+T_{X/S}(\mathscr{M})\times_ST_{Y/S}(\mathscr{M})&\stackrel{\sim}{\to} T_{(X\times_SY)/S}(\mathscr{M}),\label{scheme tangent bundle fiber product commutes-1}\\
+T_{X/S,x}(\mathscr{M})\times_ST_{Y/S,y}(\mathscr{M})&\stackrel{\sim}{\to} T_{(X\times_SY)/S,(x,y)}(\mathscr{M}),\label{scheme tangent bundle fiber product commutes-2}
+\end{align}
+\end{proposition}
+\begin{proof}
+The first isomorphism follows from (\ref{category of presheaf functor Hom product commutes-1}), and the second one is deduced by base change via $(x,y):S\to X\times_SY$.
+\end{proof}
+
+\begin{corollary}\label{scheme tangent bundle induce algebraic structure}
+If $X/S$ is endowed with an algebraic structure defined by finite Cartesian products, then $T_{X/S}(\mathscr{M})$ is endowed with the same structure and the projection $T_{X/S}(\mathscr{M})\to X$ is a morphism of that structure.
+\end{corollary}
+
+\begin{proposition}\label{scheme tangent bundle condition (E) fiber product commutes}
+If $X/S$ and $Y/S$ satisfy condition (E), then $(X\times_SY)/S$ satisfies condition (E) and (\ref{scheme tangent bundle fiber product commutes-1}) (resp. (\ref{scheme tangent bundle fiber product commutes-2})) is an isomorphism of $\mathbb{O}_{X\times_SY}$-modules (resp. $\mathbb{O}_S$-modules).
+\end{proposition}
+\begin{proof}
+Suppose that $X/S$ and $Y/S$ satisfy condition (E). Then by (\ref{scheme tangent bundle fiber product commutes-1}), so does $(X\times_SY)/S$. Let $(x,y):Z\to X\times_SY$ be an $S$-morphism. To see that (\ref{scheme tangent bundle fiber product commutes-1}) is a morphism of $\mathbb{O}_{X\times_SY}$-modules, in view of \cref{scheme trangent bundle operation of O_X define as morphism}, it suffices to show that the map
+\begin{align*}
+\{\phi\in\Hom_S(I_Z(\mathscr{M}),X):\phi\circ\eps_\mathscr{M}=x\}&\times\{\psi\in\Hom_S(I_Z(\mathscr{M}),Y):\psi\circ\eps_\mathscr{M}=y\}\\
+&\to\{\theta\in\Hom_S(I_Z(\mathscr{M}),X\times_SY):\theta\circ\eps_\mathscr{M}=(X,y)\}
+\end{align*}
+which to $(\phi,\psi)$ associated $\phi\times\psi$, is a morphism of $\mathbb{O}(Z)$-modules. But this is immediate, since for $a\in\mathbb{O}(Z)$ we have $a\cdot(\phi,\psi)=(\phi\circ a^*,\psi\circ a^*)$, and 
+\[(\phi\circ a^*)\times(\psi\circ a^*)=(\phi\times\psi)\circ a^*=a\cdot(\phi\times\psi).\]
+Similarly, by using \cref{scheme tangent bundle fiber char by morphism}, we can show that (\ref{scheme tangent bundle fiber product commutes-2}) is a morphism of $\O_{S}$-modules.
+\end{proof}
+
+If $X$ is an $S$-group and $e:S\to X$ is the unit section, we define
+\[\mathfrak{Lie}(X/S,\mathscr{M})=T_{X/S,e}(\mathscr{M}),\]
+that is, $\mathfrak{Lie}(X/S,\mathscr{M})$ is defined by the Cartesian square
+\[\begin{tikzcd}
+\mathfrak{Lie}(X/S,\mathscr{M})\ar[d]\ar[r,"i"]&T_{X/S}(\mathscr{M})\ar[d,"\pi"]\\
+S\ar[r,"e"]&X
+\end{tikzcd}\]
+By \cref{scheme tangent bundle induce algebraic structure}, the projection $\pi:T_{X/S}(\mathscr{M})\to X$ is a morphism of $S$-groups, and it then follows that $\mathfrak{Lie}(X/S,\mathscr{M})$ is endowed with an $S$-group structure, and is isomorphic via $i$ to the kernel of $\pi$.\par
+If, moreover, $X/S$ satisfies condition (E), we shall see in \cref{scheme H-object condition (E) Lie structure induced coincide} that the $S$-group structure of $\mathfrak{Lie}(X/S,\mathscr{M})$, induced by that of $X$, coincides with the abelian group structure induced by functoriality of $\mathscr{M}$. To this end we introduce the following terminology: an \textbf{H-set} is a set $X$ endowed with a composition law with a two-sided unit, denoted by $e_X$ or simply $e$. If $f:X\to Y$ is a morphism of H-sets, its kernel $\ker f$ is defined to be $f^{-1}(e_Y)$, which is a sub-H-set of $X$.\par
+An H-object in a category $\mathcal{C}$ is defined by the usual manner: this is an object $X$ of $\mathcal{C}$, endowed with a morphism $X\times X\to X$ such that there exists a section of $X$ (over the final object) possessing the property of being a two-sided unit. Any $\mathcal{C}$-monoid, and in particular any $\mathcal{C}$-group is therefore an H-object. In particular, an H-object of the category of functors over a scheme $S$ is called an \textbf{$\bm{S}$-H-functor}. If $X$ is an $S$-H-functor (for example, an $S$-group), and $e:S\to X$ is the unit section of $X$, we define
+\[\mathfrak{Lie}(X/S,\mathscr{M})=T_{X/S,e}(\mathscr{M}),\quad \mathfrak{Lie}(X/S)=\mathfrak{Lie}(X/S,\mathscr{O}_S).\]
+By \cref{scheme tangent bundle induce algebraic structure}, we see that $T_{X/S}(\mathscr{M})$ and $\mathfrak{Lie}(X/S,\mathscr{M})$ are also $S$-H-functors, and we have morphisms of $S$-H-functors
+\begin{equation}\label{scheme H-object Lie exact sequence}
+\begin{tikzcd}
+\mathfrak{Lie}(X/S,\mathscr{M})\ar[r,"i"]&T_{X/S}(\mathscr{M})\ar[r,shift left=2pt,"\pi"]&X\ar[l,shift left=2pt,"\tau"]
+\end{tikzcd}
+\end{equation}
+where $i$ is an isomorphism from $\mathfrak{Lie}(X/S,\mathscr{M})$ to $\ker\pi$ and $\tau$ is a section of $\pi$.
+
+\begin{proposition}\label{scheme H-object condition (E) Lie structure induced coincide}
+Let $X$ be an $S$-H-object satisfying condition (E) relative to $S$. Then the $S$-H-object structure of $\mathfrak{Lie}(X/S,\mathscr{M})$ induced by that of $X$ coincides with the $S$-group structure induced by functoriality on $\mathscr{M}$.
+\end{proposition}
+
+Since $X$ satisfies condition (E), we see that $\mathfrak{Lie}(X/S,\mathscr{M})$ is an H-object in the category of $\mathbb{O}_S$-modules. The proposition then follows from the following lemma:
+
+\begin{lemma}\label{category H-object of H-object is commutative}
+Let $\mathcal{C}$ be a category. Let $G$ be an H-object in the category of $\mathcal{C}$-H-objects (i.e. $G$ is a $\mathcal{C}$-H-object endowed with a morphism of $\mathcal{C}$-H-objects $h:G\times G\to G$). Then $h$ coincides with the composition law of $G$ and is commutative.
+\end{lemma}
+\begin{proof}
+By taking the values of the functors on a variable argument, we are reduced to the case where $\mathcal{C}$ is the category of sets. We then have a set $G$ and two maps $f,h:G\times G\to G$ such that
+\begin{equation}\label{category H-object of H-object is commutative-1}
+h(f(x,y),f(z,t))=f(h(x,z),h(y,t)),
+\end{equation}
+and we have two elements $e,u$ of $G$ such that $f(e,x)=f(X,e)=x$ and $h(u,x)=h(x,u)=x$. This is the famous Eckmann-Hilton argument\footnote{This argument is used to prove, for example, that higher homotopy groups are abelian.}, which we now provide a proof. We first note that by (\ref{category H-object of H-object is commutative-1}),
+\begin{equation}\label{category H-object of H-object is commutative-2}
+h(f(u,y),f(x,u))=f(x,y)=h(f(x,u),f(u,y)).
+\end{equation}
+In particular, for $y=e$ (resp. $x=e$), we obtain, respectively,
+\begin{align*}
+x=f(x,e)=h(f(u,e),f(x,u))=h(u,f(x,u))=f(x,u),\\
+y=f(e,y)=h(f(e,u),f(u,y))=h(u,f(u,y))=f(u,y),
+\end{align*}
+whence the equality $h(y,x)=f(x,y)=h(x,y)$ in view of (\ref{category H-object of H-object is commutative-2}). This proves the lemma, whence \cref{scheme H-object condition (E) Lie structure induced coincide}.
+\end{proof}
+
+\begin{remark}\label{scheme S-H-functor condition (E) morphism i prop}
+The assertion of \cref{scheme H-object condition (E) Lie structure induced coincide} can also be interpreted as follows: if we endow $\mathfrak{Lie}(X/S,\mathscr{M})$ with the abelian group structure induced by functoriality on $\mathscr{M}$, then the morphism $i:\mathfrak{Lie}(X/S,\mathscr{M})\to T_{X/S}(\mathscr{M})$ is a morphism of $S$-H-objects.
+\end{remark}
+
+\begin{corollary}\label{scheme S-H-functor condition (E) invertible if project to unit}
+If $X$ is an $S$-H-functor satisfying condition (E) relative to $S$, any element of $X(I_S(\mathscr{M}))$, which projects to the unit element of $X(S)$, is invertible.
+\end{corollary}
+\begin{proof}
+This follows from the sequence (\ref{scheme H-object Lie exact sequence}) and \cref{scheme H-object condition (E) Lie structure induced coincide}, since $\mathfrak{Lie}(X/S,\mathscr{M})$ is a group hence any element has an inverse.
+\end{proof}
+
+\begin{corollary}\label{scheme S-monoid condition (E) invertible iff image in X(S)}
+If $X$ is an $S$-monoid satisfying condition (E) relative to $S$, an element of $X(I_S(\mathscr{M}))$ is invertible if and only if its image in $X(S)$ is invertible.
+\end{corollary}
+\begin{proof}
+One direction is immediate, so assume that $x\in X(I_S(\mathscr{M}))$ is an element whose projection $s$ to $X(S)$ is invertible in $X(S)$. Let $s^{-1}$ be the inverse of $s$ in $X(S)$, then $y=x\tau(s^{-1})=x\tau(s)^{-1}$ is projective to the unit element of $X(S)$, and hence is invertible in $X(I_S(\mathscr{M}))$. If $y^{-1}$ is this inverse, we then have
+\begin{align*}
+x\cdot\tau(s)^{-1}y^{-1}=(x\tau(s)^{-1})\cdot(x\tau(s)^{-1})^{-1}=e,
+\end{align*}
+so $x$ is right invertible. Similarly, by considering $y'=\tau(s^{-1})x=\tau(s)^{-1}x$, we see that $x$ is also left invertible, so it is invertible in $X(I_S(\mathscr{M}))$.
+\end{proof}
+
+\begin{corollary}
+If $X$ is an $S$-group satisfying condition (E) relative to $S$, the two $S$-group laws on $\mathfrak{Lie}(X/S,\mathscr{M})$ coincide.
+\end{corollary}
+
+\begin{corollary}\label{scheme S-group condition (E) power by n}
+Let $G$ be an $S$-group satisfying condition (E) relative to $S$. For $n\in\Z$, let $n_G:G\to G$ be the morphism of $S$-functors defined by $g\mapsto g^n$. Then the induced morphism $\mathfrak{Lie}(n_G):\mathfrak{Lie}(G/S)\to\mathfrak{Lie}(G/S)$ is the multiplication by $n$, i.e. the map which to any $x\in\mathfrak{Lie}(G/S)(S')$ associates $nx$.
+\end{corollary}
+\begin{proof}
+We first note that $n_G$ is in general not a morphism of groups, but it perverses the unit section $e:S\to G$, hence the induced morphism $\mathfrak{Lie}(n_G)=T_e(n_G)$ sends $\mathfrak{Lie}(G/S)$ into itself. If we denote by $i:\mathfrak{Lie}(G/S)\to T_{G/S}$ the inclusion, then $\mathfrak{Lie}(n_G)$ is defined by the equality $i(\mathfrak{Lie}(n_G)(x))=i(x)^n$, for any $S'\to S$ and $x\in\mathfrak{Lie}(G/S)(S')$. Now by \cref{scheme S-H-functor condition (E) morphism i prop} we have $i(x)^n=i(nx)$, whence $\mathfrak{Lie}(n_G)(x)=nx$.
+\end{proof}
+
+Before deducing other consequences from \cref{scheme H-object condition (E) Lie structure induced coincide}, let us prove another result of functoriality:
+
+\begin{proposition}\label{scheme tangent bundle functor and sHom commutes}
+In the situation of \ref{scheme tangent bundle functor sHom_Z/S(X,Y) paragraph}, we have a functorial isomorphism on $\mathscr{M}$:
+\[T_{\sHom_{Z/S}(X,Y)/S}(\mathscr{M})\stackrel{\sim}{\to} \sHom_{Z/S}(X,T_{Y/Z}(\mathscr{M})).\]
+\end{proposition}
+\begin{proof}
+In fact, by definition we have
+\[T_{\sHom_{Z/S}(X,Y)/S}(\mathscr{M})=\sHom_S(I_S(\mathscr{M}),\sHom_{Z/S}(X,Y))\cong\sHom_{Z/S}(X,\sHom_Z(Z\times_SI_S(\mathscr{M}),Y)),\]
+where we have used the isomorphism (\ref{category of presheaf functor Hom_Z/S(X,Y) isomorphism-1}) with $T=I_S(\mathscr{M})$. In view of the isomorphism $Z\times_SI_S(\mathscr{M})\cong I_Z(\mathscr{M})$, we then obtain
+\begin{equation*}
+T_{\sHom_{Z/S}(X,Y)/S}(\mathscr{M})\cong\sHom_{Z/S}(X,\sHom_Z(I_Z(\mathscr{M}),Y))=\sHom_{Z/S}(X,T_{Y/Z}(\mathscr{M})).\qedhere
+\end{equation*}
+\end{proof}
+
+\begin{corollary}\label{scheme tangent bundle functor and sHom module structure}
+If $Y/Z$ satisfies condition (E), then $\sHom_{Z/S}(X,Y)/S$ satisfies condition (E) and the isomorphism of \cref{scheme tangent bundle functor and sHom commutes} respects the $\mathbb{O}$-module structure over $\sHom_{Z/S}(X,Y)$.
+\end{corollary}
+\begin{proof}
+Let $\mathscr{M}$, $\mathscr{N}$ be two free $\mathscr{O}_S$-modules of finite rank. If $Y/Z$ satisfies condition (E), then
+\[T_{Y/Z}(\mathscr{M}\oplus\mathscr{N})\cong T_{Y/Z}(\mathscr{M})\times_Y T_{Y/Z}(\mathscr{N}).\]
+The right side is a sub-functor of $T_{Y/Z}(\mathscr{M})\times_ST_{Y/Z}(\mathscr{N})$ and via the isomorphism (\ref{category of presheaf functor Hom product commutes-1}), we obtain an isomorphism
+\begin{align*}
+\sHom_{Z/S}(X,T_{Y/Z}(\mathscr{M}\oplus\mathscr{N}))\cong\sHom_{Z/S}(X,T_{Y/Z}(\mathscr{M}))\times_{\sHom_{Z/S}(X,Y)}\sHom_{Z/S}(X,T_{Y/Z}(\mathscr{N})).
+\end{align*}
+Combined with \cref{scheme tangent bundle functor and sHom commutes}, this implies
+\[T_{\sHom_{Z/S}(X,Y)/S}(\mathscr{M}\oplus\mathscr{N})\cong T_{\sHom_{Z/S}(X,Y)/S}(\mathscr{M})\times_{\sHom_{Z/S}(X,Y)}T_{\sHom_{Z/S}(X,Y)/S}(\mathscr{N}),\]
+so $\sHom_{Z/S}(X,Y)$ satisfies condition (E).\par
+For the second assertion, let $H=\sHom_{Z/S}(X,Y)$ and consider an $S$-morphism $\Delta:H'\to\sHom_{Z/S}(X,Y)$, that is, an $Z$-morphism $\delta:H'\times_SX\to Y$, which makes $H'\times_SX$ a $Y$-object. We then have a commutative diagram
+\[\begin{tikzcd}
+\Hom_H(H',\sHom_{Z/S}(X,T_{Y/Z}(\mathscr{M})))\ar[r,hook]\ar[d,equal]&\Hom_S(H',\sHom_{Z/S}(X,T_{Y/Z}(\mathscr{M})))\ar[d,equal]\\
+\Hom_Y(H'\times_SX,T_{Y/Z}(\mathscr{M}))\ar[r,hook]\ar[d,equal]&\Hom_Z(H'\times_SX,T_{Y/Z}(\mathscr{M}))\ar[d,equal]\\
+\{\psi\in\Hom_Z(I_{H'\times_SX}(\mathscr{M}),Y):\psi\circ\eps_\mathscr{M}=\delta\}\ar[r,hook]&\Hom_Z(I_{H'\times_SX}(\mathscr{M}),Y).
+\end{tikzcd}\]
+By \cref{category of presheaf functor Hom module structure}, the action of $\alpha\in\mathbb{O}(H'\times_SX)$ over $\Psi\in\Hom_Y(H'\times_SX,T_{Y/Z}(\mathscr{M}))$ is given as follows: for any $U\to S$ and $(h,x)\in\Hom_S(U,H'\times_SX)$ ($U$ is then an $Y$-object via $\delta\circ(h,x)$), we have
+\[(\alpha\Psi)(h,x)=\alpha(h,x)\Psi(h,x),\]
+where $\alpha(h,x)\in\mathbb{O}(U)$ acts on $\Psi(h,x)\in T_{Y/Z}(\mathscr{M})(U)$ via the $\mathbb{O}_Y$-module structure of $T_{Y/Z}(\mathscr{M})$. By \cref{scheme trangent bundle operation of O_X define as morphism}, the latter is given, via the identification
+\[\Hom_Y(H'\times_SX,T_{Y/Z}(\mathscr{M}))=\{\psi\in\Hom_Z(I_{H'\times_SX}(\mathscr{M}),Y):\psi\circ\eps_\mathscr{M}=\delta\},\]
+by the following: for any $(m,h,x)\in\Hom_S(U,I_S(\mathscr{M})\times_SH'\times_SX)$,
+\begin{equation}\label{scheme tangent bundle functor and sHom module structure-1}
+(\alpha\psi)(m,h,x)=\psi(m\cdot\alpha(h,x),h,x).
+\end{equation}
+On the other hand, consider the tangent space $T_{H/S}(\mathscr{M})=\sHom_S(I_S(\mathscr{M}),H)$; we have a commutative diagram
+\[\begin{tikzcd}
+\Hom_H(H',T_{H/S}(\mathscr{M}))\ar[r,hook]\ar[d,equal]&\Hom_S(H',T_{H/S}(\mathscr{M}))\ar[d,equal]\\
+\{\Phi\in\Hom_S(I_{H'}(\mathscr{M}),H):\Phi\circ\eps_\mathscr{M}=\Delta\}\ar[r,hook]\ar[d,equal,"(*)"]&\Hom_S(I_{H'}(\mathscr{M}),H)\ar[d,equal]\\
+\{\phi\in\Hom_Z(I_{H'\times_SX}(\mathscr{M}),Y):\phi\circ\eps_\mathscr{M}=\delta\}\ar[r,hook]&\Hom_Z(I_{H'\times_SX}(\mathscr{M}),Y)
+\end{tikzcd}\]
+where the bijection $(*)$ is given as follows: for any $U\to S$ and $(m,h,x)\in\Hom(U,I_S(\mathscr{M})\times_SH'\times_SX)$ (so that $U$ is over $Z$ via $U\stackrel{x}{\to}X\to Z$), we have $\Phi(m,h)\in\Hom_Z(X\times_SU,Y)$ and
+\begin{equation}\label{scheme tangent bundle functor and sHom module structure-2}
+\phi(m,h,x)=\Phi(m,h)\circ(x\times\id_U)\in\Hom_Z(U,Y).
+\end{equation}
+By \cref{scheme trangent bundle operation of O_X define as morphism} (where we replace $X$ by $\sHom_{Z/S}(X,Y)$ and $X'$ by $H'$), the action of $a\in\mathbb{O}(H')$ over $\Phi\in\Hom_S(I_{H'}(\mathscr{M}),H)$ is given by
+\[(a\Phi)(m,h)=\Phi(m\cdot a(h),h)\]
+where $U\to S$ and $(m,h)\in\Hom_S(U,I_S(\mathscr{M})\times_SH')$. Therefore, if $\phi$ (resp. $a\phi$) is the element of $\Hom_Z(I_{H'\times_SX}(\mathscr{M}),Y)$ associated with $\Phi$ (resp $a\Phi$), we have, by (\ref{scheme tangent bundle functor and sHom module structure-2}),
+\begin{equation}
+(a\Phi)(m,h,x)=\Phi(m\cdot a(h),h)\circ(x\times\id_U)=\phi(m\cdot a(h),h,x).
+\end{equation}
+Together with (\ref{scheme tangent bundle functor and sHom module structure-1}), this shows that the isomorphism $T_{H/S}(\mathscr{M})\stackrel{\sim}{\to} \sHom_{Z/S}(X,T_{Y/Z}(\mathscr{M}))$ of \cref{scheme tangent bundle functor and sHom commutes} is an isomorphism of $\mathbb{O}(H)$-modules. Moreover, for any $H'\to H$, the $\mathbb{O}(H')$-module structure of $\Hom_H(H',T_{H/S}(\mathscr{M}))$ extends, in a functorial way on $H'$, to an $\mathbb{O}(H'\times_SX)$-module structure.
+\end{proof}
+
+In particular, for $Z=S$, we obtain the following corollary:
+\begin{corollary}\label{scheme tangent bundle functor and sHom global commute}
+We have a functorial isomorphism on $\mathscr{M}$:
+\[T_{\sHom_S(X,Y)/S}(\mathscr{M})\stackrel{\sim}{\to} \sHom_S(X,T_{Y/S}(\mathscr{M})).\]
+Moreover, if $Y/S$ satisfies condition (E), then $\sHom_S(X,Y)/S$ satisfies condition (E) and the preceding isomorphism respects the $\mathbb{O}$-module structure over $\sHom_S(X,Y)$.
+\end{corollary}
+
+Let $u:X\to Y$ be an $S$-morphism, which can be identified with a constant morphism $\bm{u}:S\to\sHom_S(X,Y)$ such that $\bm{u}(f)=u_{S'}$ for any $f:S'\to S$. The fiber product of $\bm{u}$ and $\sHom_S(X,T_{Y/S}(\mathscr{M}))\to\sHom_S(X,Y)$ is then identified with $\sHom_{Y/S}(X,T_{Y/S}(\mathscr{M}))$, where $X$ is over $Y$ via $u$. Therefore, we deduce from the definition of $T_{\sHom_S(X,Y)/S,\bm{u}}(\mathscr{M})$ and \cref{scheme tangent bundle functor and sHom global commute} the following:
+
+\begin{corollary}\label{scheme tangent bundle fiber and sHom commute}
+Let $u:X\to Y$ be an $S$-morphism. We have a functorial isomorphism on $\mathscr{M}$ (where $X$ is over $Y$ via $u$):
+\[T_{\sHom_S(X,Y)/S,\bm{u}}(\mathscr{M})\stackrel{\sim}{\to} \sHom_{Y/S}(X,T_{Y/S}(\mathscr{M})).\]
+This is an isomorphism of $\mathbb{O}_S$-modules if $Y/S$ satisfies condition (E).
+\end{corollary}
+
+In particular, for $Y=X$, $\sEnd_S(X)$ is an $S$-functor in monoids, hence a fortiori an $S$-H-functor. Since $\mathfrak{Lie}(\sEnd_S(X)/S,\mathscr{M})$ is by definition $T_{\sEnd_S(X)/S,e}(\mathscr{M})$, where $e$ is the unit section, we obtain (recall that $\sHom_{X/S}(X,T_{X/S}(\mathscr{M}))\cong\Res_{X/S}T_{X/S}(\mathscr{M})$):
+
+\begin{corollary}\label{scheme tangent bundle Lie and Weil restriction isomorphism}
+We have a functorial isomorphism on $\mathscr{M}$:
+\[\mathfrak{Lie}(\sEnd_S(X)/S,\mathscr{M})\stackrel{\sim}{\to}\Res_{X/S}T_{X/S}(\mathscr{M}).\]
+This is an isomorphism of $\mathbb{O}_S$-modules if $X/S$ satisfies condition (E).
+\end{corollary}
+
+\begin{remark}\label{scheme tangent bundle Weil restriction module structure}
+Suppose that $X/S$ satisfies condition (E). Then the functor $\Res_{X/S}T_{X/S}(\mathscr{M})=\sHom_{X/S}(X,T_{X/S}(\mathscr{M}))$ is endowed with a $\Res_{X/S}\mathbb{O}_X$-module structure, i.e. for any $S'\to S$,
+\[\sHom_{X/S}(X,T_{X/S}(\mathscr{M}))(S')=\{\psi\in\Hom_X(I_{S'}(\mathscr{M})\times_SX,X):\psi\circ(\eps_\mathscr{M}\times\id_X)=\pr_X\}\]
+is endowed with a $\mathbb{O}(X\times_SS')$-module structure, which is functorial on $S'$. This follows either from \cref{scheme tangent bundle condition (E) module structure} and the properties of the functor $\Res_{X/S}$, or from the proof of \cref{scheme tangent bundle functor and sHom module structure}.
+\end{remark}
+
+We now give a geometric interpretation of the tangent bundle. Let $U$ be an $S$-functor; by (\ref{category presheaf Hom functor adjoint prop-3}), we have isomorphism functorial on $\mathscr{M}$:
+\begin{align*}
+T_{X/S}(\mathscr{M})(U)&=\Hom_S(U,\sHom_S(I_S(\mathscr{M}),X))\cong\Hom_S(I_S(\mathscr{M}),\sHom_S(U,X))\\
+&=\Hom_{I_S(\mathscr{M})}(U_{I_S(\mathscr{M})},X_{I_S(\mathscr{M})}).
+\end{align*}
+In particular, the morphism $\mathscr{M}\to 0$ induces a commutative diagram
+\[\begin{tikzcd}
+\Hom_S(U,T_{X/S}(\mathscr{M}))\ar[r,"\sim"]\ar[d,"\circ\pi_\mathscr{M}"]&\Hom_{I_S(\mathscr{M})}(U_{I_S(\mathscr{M})},X_{I_S(\mathscr{M})})\ar[d]\\
+\Hom_S(U,X)\ar[r,equal]&\Hom_S(U,X)
+\end{tikzcd}\]
+where the second vertical arrow is given by base change $\eps_\mathscr{M}:S\to I_S(\mathscr{M})$. We therefore obtain the following proposition:
+
+\begin{proposition}\label{scheme tangent bundle Hom to char}
+Let $h_0:U\to X$ be an $S$-morphism. Then $\Hom_X(U,T_{X/S}(\mathscr{M}))$ is identified with the set of $I_S(\mathscr{M})$-morphisms $h:U_{I_S(\mathscr{M})}\to X_{I_S(\mathscr{M})}$ that extend $h_0$ (we view $U$ (resp. $X$) as a sub-object of $U\times_SI_S(\mathscr{M})$ (resp. $X\times_SI_S(\mathscr{M})$) via $\id_U\times_S\eps_\mathscr{M}$ (resp. $\id_X\times_S\eps_\mathscr{M}$)).
+\end{proposition}
+
+In particular, for $U=X$ and $h_0=\id_X$, we obtain:
+
+\begin{corollary}\label{scheme tangent bundle section over X char}
+The set $\Gamma(T_{X/S}(\mathscr{M})/X)$ is identified with the set of $I_S(\mathscr{M})$-endomorphisms $\phi$ of $X_{I_S(\mathscr{M})}$ which induce identity on $X$, i.e. such that the following diagram is commutative:
+\[\begin{tikzcd}
+I_X(\mathscr{M})\ar[rr,"\phi"]&&I_X(\mathscr{M})\\
+&X\ar[lu,"\eps_\mathscr{M}"]\ar[ru,swap,"\eps_\mathscr{M}"]&
+\end{tikzcd}\]
+\end{corollary}
+
+On the other hand, by \cref{scheme tangent bundle fiber and sHom commute}, $\Gamma(T_{X/S}(\mathscr{M})/X)\cong\mathfrak{Lie}(\sEnd_S(X)/S,\mathscr{M})(S)$. If $X/S$ satisfies condition (E), then $\sEnd_S(X)/S$ satisfies condition (E) and $\mathfrak{Lie}(\sEnd_S(X)/S,\mathscr{M})$ is then an $\mathbb{O}_S$-module (and in fact a $\Res_{X/S}\mathbb{O}_X$-module). Applying \cref{scheme H-object condition (E) Lie structure induced coincide}, we then deduce that
+
+\begin{proposition}\label{scheme tangent bundle condition (E) section over X abelian group char}
+If $X/S$ satisfies condition (E), the abelian group $\Gamma(T_{X/S}(\mathscr{M})/X)$ is identified with the set of $I_S(\mathscr{M})$-endomorphisms of $X_{I_S}(\mathscr{M})$ which induce identity on $X$. In particular, any $I_S(\mathscr{M})$-endomorphism of $X_{I_S}(\mathscr{M})$ which induces the identity on $X$ is an automorphism.
+\end{proposition}
+
+\begin{corollary}\label{scheme tangent bundle condition (E) morphism extension is iso}
+Let $u:X\to Y$ be an $S$-isomorphism with $Y/S$ satisfying condition (E). Any $I_S(\mathscr{M})$-morphism of $X_{I_S(\mathscr{M})}$ to $Y_{I_S(\mathscr{M})}$ which extends $u$ is an isomorphism.
+\end{corollary}
+\begin{proof}
+By \cref{scheme tangent bundle Hom to char} the considered set is identified with $\Hom_Y(X,T_{Y/S}(\mathscr{M}))$, which is isomorphic to $\Gamma(T_{Y/S}(\mathscr{M})/Y)$ by our hypothesis.
+\end{proof}
+
+\begin{corollary}\label{scheme tangent bundle condition (E) fiber of Iso to Hom}
+If $Y/S$ satisfies condition (E), the monomorphism $\sIso_S(X,Y)\to\sHom_S(X,Y)$ induces, for any $u\in\Iso_S(X,Y)$, an isomorphism
+\[T_{\sIso_S(X,Y)/S,u}(\mathscr{M})\stackrel{\sim}{\to} T_{\sHom_S(X,Y)/S,u}(\mathscr{M}).\]
+\end{corollary}
+\begin{proof}
+It suffices to see that $T_{\sIso_S(X,Y)/S,u}(\mathscr{M})\stackrel{\sim}{\to} T_{\sHom_S(X,Y)/S,u}(\mathscr{M})$ is a bijection, for any $S'\to S$. By base change (cf. \cref{scheme tangent bundle fiber product commutes}), it suffices to consider $S'=S$. In this case, we note that $T_{\sHom_S(X,Y)/S,u}(\mathscr{M})(S)$ (resp. $T_{\sIso_S(X,Y)/S,u}(\mathscr{M})(S)$) is the set of $I_S(\mathscr{M})$-morphisms (resp. automorphims) $X_{I_S(\mathscr{M})}\to Y_{I_S(\mathscr{M})}$ which extends $u$, and we can apply \cref{scheme tangent bundle condition (E) morphism extension is iso}.
+\end{proof}
+
+\begin{corollary}\label{scheme tangent bundle condition (E) fiber of Aut to End}
+If $X/S$ satisfies (E), the monomorphism $\sAut_S(X)\to\sEnd_S(X)$ induces, for any $u\in\sAut_S(X)$, an isomorphism $T_{\sAut_S(X)/S,u}(\mathscr{M})\stackrel{\sim}{\to} T_{\sEnd_S(X)/S,u}(\mathscr{M})$. In particular, we have
+\[\mathfrak{Lie}(\sAut_S(X)/S,\mathscr{M})\stackrel{\sim}{\to} \mathfrak{Lie}(\sEnd_S(X)/S,\mathscr{M})\stackrel{\sim}{\to}\Res_{X/S}T_{X/S}(\mathscr{M})\]
+so that $\mathfrak{Lie}(\sAut_S(X)/S,\mathscr{M})$ is endowed with a $\Res_{X/S}\mathbb{O}_X$-module structure.
+\end{corollary}
+
+\begin{example}\label{scheme functor condition (E) non-example}
+There exist functors possessing infinitesimal endomorphisms which are not automorphisms, and hence a fortiori do not satisfy condition (E). For any pointed set $(E,x_0)$, let $M(E)$ be the free commutative monoid generated by $E$ and $M_P(E,x_0)$ be the commutative monoid obtained by quotient $M(E)$ by the equivalence relation generated by $m\sim x_0+m$. Then $(E,x_0)\to M_P(E,x_0)$ is the left adjoint of the forgetful functor from the category of commutative monoid to that of pointed sets. We say that $M_P(E,x_0)$ is the \textbf{free commutative monoid over the pointed set $(E,x_0)$}.\par
+Let $X$ be the functor which associates any scheme $S$ to the free commutative monoid over the set $\mathbb{O}(S)$, pointed by the zero element. A morphism $f:S\to I_{\Z}=\Spec(\Z[t])$ corresponds to a square zero element $u_f$ of $\mathbb{O}(S)$, hence defines an endomorphism of $X(S)$ by $x\mapsto x+u_f$ (taken in $M_P(\mathbb{O}(S),0)$). We thus obtain an endomorphism $\phi$ of $X_{I_{\Z}}=X\times_{\Z}I_{\Z}$, defined as follows. For any $f\in I_{\Z}(S)$ and $x\in X(S)$,
+\[\phi(x,f)=(x+u_f,f).\]
+If $f_0:S\to I_{\Z}$ is the composition of the structural morphism $S\to\Spec(\Z)$ and the zero section of $I_\Z$, the corresponding element $u_{f_0}=0$, and hence $\phi(x,f_0)=(x,f_0)$ (since $x+0=x$ in $M_P(\mathbb{O}(S),0)$). Since the map $X(S)\to X_{I_{\Z}}(S)$ is given by $x\mapsto (x,f_0)$, this shows that $\phi$ induces the identity on $X$, hence is an infinitesimal endomorphism of $X$ which is evidently not an automorphism.
+\end{example}
+
+Suppose that $X$ is representable. In this case, we have seen in \cref{scheme tangent bundle representable if} that the $X$-functor $T_{X/S}$ is represented by $\V(\Omega_{X/S}^1)$, whence the bijections
+\begin{equation}\label{scheme group representable tangent bundle section and derivation}
+\Gamma(T_{X/S}/X)\cong\Hom_X(\Omega_{X/S}^1,\mathscr{O}_S)\cong\Der_{\mathscr{O}_S}(\mathscr{O}_X).
+\end{equation}
+This can also be deduced as follows. According to \cref{scheme tangent bundle condition (E) section over X abelian group char}, $\Gamma(T_{X/S}/X)$ is identified with the set of \textbf{infinitesimal endomorphisms} of $X$ (i.e. $I_S$-endomorphisms of $X_{I_S}$ inducing the identity on $X$). Now $X$ and $X_{I_S}$ have the same underlying topological space, with structural sheaves being $\mathscr{O}_X$ and $\mathscr{D}_{\mathscr{O}_X}=\mathscr{O}_X\oplus\mathscr{M}$, where $\mathscr{M}=\mathscr{O}_X$ is considered as a square zero ideal. Let $\pi:\mathscr{D}_{\mathscr{O}_X}\to\mathscr{O}_X$ be the morphism of $\mathscr{O}_X$-algebras which is zero on $\mathscr{M}$, we then deduce that giving an infinitesimal endomorphism of $X$ is equivalent to giving a morphism of $\mathscr{O}_S$-algebras $\phi:\mathscr{O}_X\to\mathscr{D}_{\mathscr{O}_X}$ such that $\pi\circ\phi=\id_{\mathscr{O}_X}$, which then amouts to giving an $\mathscr{O}_S$-derivation of the sheaf of rings $\mathscr{O}_X$.\par
+Moreover, we see that if $D,D'\in\Der_{\mathscr{O}_S}(\mathscr{O}_X)$ and if we denote by $\phi_D$ the infinitesimal endomorphism correponding to $D$, then
+\[\phi_{D+D'}=\phi_{D}\circ\phi_{D'}.\]
+This shows that the identification
+\[\{\text{infinitesimal endomorphisms of $X$}\}\cong\Der_{\mathscr{O}_S}(\mathscr{O}_X)\]
+is an isomorphism of abelian groups. In view of \cref{scheme tangent bundle condition (E) section over X abelian group char} (and \cref{scheme tangent bundle Weil restriction module structure}), we have then isomorphism of abelian groups (as well as $\mathbb{O}(X)$-modules)
+\[\Gamma(T_{X/S}/X)\stackrel{\sim}{\to} \Der_{\mathscr{O}_S}(\mathscr{O}_X)\]
+which ressume the classical interpretation of tangent vectors in view of derivations of the structural sheaf. Recall also that $\Gamma(T_{X/S}/X)$ is equal to $H^0(X,\g_{X/S})$, where $\g_{X/S}$ is the dual of $\Omega_{X/S}^1$.
+
+\subsection{Tangent space of a group}
+Let $G$ be a functor in groups over $S$. By \cref{scheme tangent bundle induce algebraic structure}, $T_{G/S}(\mathscr{M})$ and $\mathfrak{Lie}(G/S,\mathscr{M})$ are endowed with group structures over $S$ and we have group morphisms
+\begin{equation}\label{scheme group tangent space and Lie split exact sequence}
+\begin{tikzcd}
+\mathfrak{Lie}(G/S,\mathscr{M})\ar[r,"i"]&T_{G/S}(\mathscr{M})\ar[r,shift left=2pt,"\pi"]&G\ar[l,shift left=2pt,"\tau"]
+\end{tikzcd}
+\end{equation}
+By definition $i$ is an isomorphism from $\mathfrak{Lie}(G/S)(\mathscr{M})$ onto the kernel of $\pi$, and $\tau$ is a section of $\pi$. It then follows from \cref{category group homomorphism section iff semi-direct} that we can identify $T_{G/S}(\mathscr{M})$ with a semi-direct product of $G$ by $\mathfrak{Lie}(G/S,\mathscr{M})$.
+
+\begin{definition}
+The corresponding operation of $G$ on $\mathfrak{Lie}(G/S,\mathscr{M})$ is denoted by
+\[\Ad:G\to\sAut_{\Grp}(\mathfrak{Lie}(G/S,\mathscr{M}))\]
+and called the adjoint representation (relative to $\mathscr{M}$) of $G$. For any $S'\to S$, we then have by definition, for $x\in G(S')$ and $X\in\mathfrak{Lie}(G/S,\mathscr{M})(S')$, that
+\[\Ad(x)X=i^{-1}(\tau(x)i(x)\tau(x)^{-1}).\]
+\end{definition}
+\begin{definition}
+If $G$ and $H$ are two functors in groups over $S$ and if $f:G\to H$ is a group morphism, then we have an induced morphism of exact sequences which is compatible with sections:
+\[\begin{tikzcd}
+1\ar[r]&\mathfrak{Lie}(G/S,\mathscr{M})\ar[r]\ar[d,"\mathfrak{Lie}(f)"]&T_{G/S}(\mathscr{M})\ar[r]\ar[d,"T(f)"]&G\ar[r]\ar[d,"f"]&1\\
+1\ar[r]&\mathfrak{Lie}(H/S,\mathscr{M})\ar[r]&T_{H/S}(\mathscr{M})\ar[r]&H\ar[r]&1
+\end{tikzcd}\]
+The morphism $\mathfrak{Lie}(f)=T_e(f)$ is the derived morphism of $f$. If $G/S$ and $H/S$ satisfy condition (E), then $\mathfrak{Lie}(f)$ respects the $\mathbb{O}_S$-module structure induced by functoriality on $\mathscr{M}$ (cf. \cref{scheme tangent bundle condition (E) functorial on X}).
+\end{definition}
+
+\begin{proposition}\label{scheme group Lie Ad is derived of Inn}
+Let $g\in G(S)$, then $\Ad(g):\mathfrak{Lie}(G/S,\mathscr{M})\to\mathfrak{Lie}(G/S,\mathscr{M})$ is the derived morphism of $\Inn(g):G\to G$.
+\end{proposition}
+\begin{proof}
+In fact, $\Ad(g)X=i^{-1}(\Inn(g)i(X))$, which is none other than $T(\Inn(g))X$ by the definition of the derived morphism.
+\end{proof}
+
+Suppose that $G/S$ satisfies condition (E). Then, by \cref{scheme H-object condition (E) Lie structure induced coincide}, the group structure of $\mathfrak{Lie}(G/S,\mathscr{M})$ defined from $G$ coincides with that induced by the $\mathbb{O}_S$-module structure of $\mathscr{M}$. We then deduce from the preceding proposition and the functoriality of the operation of $\mathbb{O}_S$ (\cref{scheme tangent bundle condition (E) functorial on X}) that:
+
+\begin{corollary}\label{scheme group condition (E) Ad is linear representation}
+Suppose that $G/S$ satisfies condition (E). Then $\Ad$ sends $G$ into the subgroup $\sAut_{\mathbb{O}_S}(\mathfrak{Lie}(G/S,\mathscr{M}))$ of $\sAut_{\Grp}(\mathfrak{Lie}(G/S),\mathscr{M})$, that is, for any $g\in G(S')$, $\Ad(g)$ respects the $\mathbb{O}(S')$-module structure of $\mathfrak{Lie}(G_{S'}/S',\mathscr{M})$. In other words, $\Ad$ is a linear representation of $G$ on the $\mathbb{O}_S$-module $\mathfrak{Lie}(G/S,\mathscr{M})$.
+\end{corollary}
+
+\begin{remark}
+Suppose that $G/S$ satisfies condition (E). Then the derived morphism of the group law $m:G\times_SG\to G$ is none other than the addition law of $\mathfrak{Lie}(G/S,\mathscr{M})$ ($m$ is not a morphism of groups, but $m(e,e)=e$, so the derived morphism $\mathfrak{Lie}(m)$ sends $T_{(G\times_SG)/S,(e,e)}(\mathscr{M})=\mathfrak{Lie}(G/S,\mathscr{M})\times_S\mathfrak{Lie}(G/S,\mathscr{M})$ into $\mathfrak{Lie}(G/S,\mathscr{M})$). For any $n\in\Z$, we show similarly that if $n_G:G\to G$ is the morphism of $S$-functors defined by $g\mapsto g^n$, then the derived morphism $\mathfrak{Lie}(n_G)$ is the multiplication by $n$ on $\mathfrak{Lie}(G/S)$, cf. \cref{scheme S-group condition (E) power by n}.
+\end{remark}
+
+Now consider the $S$-functor $\sHom_{G/S}(G,T_{G/S}(\mathscr{M}))$; for any $S'\to S$, we have $T_{G/S}(\mathscr{M})_{S'}\cong T_{G_{S'}/S'}(\mathscr{M})$ and hence
+\[\sHom_{G/S}(G,T_{G/S}(\mathscr{M}))(S')\cong\Hom_{G_{S'}}(G_{S'},T_{G_{S'}/S'}(\mathscr{M}))=\Gamma(T_{G_{S'}/S'}(\mathscr{M})/G_{S'}).\]
+Note that we have an isomorphism, functorial on $S'$,
+\begin{equation}\label{scheme group tangent bundle Hom of Lie and section isomorphism}
+\Hom_{S'}(G_{S'},\mathfrak{Lie}(G_{S'}/S',\mathscr{M}))\stackrel{\sim}{\to}\Gamma(T_{G_{S'}/S'}(\mathscr{M})/G_{S'})
+\end{equation}
+which to any $f:G_{S'}\to\mathfrak{Lie}(G_{S'}/S',\mathscr{M})$ associates the section $s_f:G_{S'}\to T_{G_{S'}/S'}(\mathscr{M})$ such that, for any $S''\to S'$ and $g\in G(S'')$,
+\[s_f(g)=i(f(g))\tau(g).\]
+Let $h$ be an automorphism of the functor $G_{S'}$ over $S'$ (not necessarily respects the group structure). To any section $s$ of $T_{G_{S'}/S'}(\mathscr{M})$, we can associate $h(s)$ defined by transport the structure: this for example the only section of $T_{G_{S'}/S'}(\mathscr{M})$ fitting into the commutative diagram
+\[\begin{tikzcd}
+G_{S'}\ar[r,"s"]\ar[d,swap,"h"]&T_{G_{S'}/S'}(\mathscr{M})\ar[d,"T(h)"]\\
+G_{S'}\ar[r,"h(s)"]&T_{G_{S'}/S'}(\mathscr{M})
+\end{tikzcd}\]
+In particular, we can take $h$ to be the right translation $t_x$ by an element $x$ of $G(S')$, that is, $h(g)=t_x(g)=g\cdot x$, for any $g\in G(S'')$, $S''\to S'$. We have immediately
+\[t_x(s_f)=s_{t_x(f)},\]
+where $t_x(f):G_{S'}\to\mathfrak{Lie}(G_{S'}/S',\mathscr{M})$ is defined by
+\[t_x(f)(g)=f(g\cdot x^{-1})\]
+for any $g\in G(S'')$, $S''\to S'$. It follows that if we operate $G$ on  $\sHom_{G/S}(G,T_{G/S}(\mathscr{M}))$ and $\sHom_S(G,\mathfrak{Lie}(G/S,\mathscr{M}))$ by right translation in the following way: for any $S'\to S$, $x\in G(S')$, $\sigma\in\Gamma(T_{G_{S'}/S'}(\mathscr{M}/G_{S'}))$ and $f\in\Hom_{S'}(G_{S'},\mathfrak{Lie}(G_{S'}/S',\mathscr{M}))$,
+\[(\sigma\cdot x)(g)=\sigma(g\cdot x^{-1})\cdot \tau(x),\quad (f\cdot x)(g)=f(g\cdot x^{-1}),\]
+for any $g\in G(S'')$, $S''\to S'$, then the isomorphism (\ref{scheme group tangent bundle Hom of Lie and section isomorphism}) respects the action of $G$.\par
+In particular, by this isomorphism, the elements of $\sHom_{G/S}(G,T_{G/S}(\mathscr{M}))^G(S')$ (called \textbf{right invariant sections} of $T_{G_{S'}/S'}(\mathscr{M})$) corresponds to constant morphisms of $G_{S'}$ into $\mathfrak{Lie}(G_{S'}/S',\mathscr{M})$ (i.e. which factors through the projection $G_{S'}\to S'$), or to elements of $\mathfrak{Lie}(G_{S'}/S',\mathscr{M})(S')=\mathfrak{Lie}(G/S,\mathscr{M})(S')$. We then have the following proposition:
+
+\begin{proposition}\label{scheme group Lie and right invariant section}
+The map $\mathfrak{Lie}(G/S,\mathscr{M})(S)\to\Gamma(T_{G/S}(\mathscr{M})/G)$ which associates an element $X\in\mathfrak{Lie}(G/S,\mathscr{M})(S)$ the section $x\mapsto X(\pi(x))$ is a bijection from $\mathfrak{Lie}(G/S,\mathscr{M})(S)$ onto the set of right invariant sections of $\Gamma(T_{G/S}(\mathscr{M})/G)$.
+\end{proposition}
+
+Similarly, we can act $G$ on $\sEnd_{I_S(\mathscr{M})/S}(G_{I_S(\mathscr{M})})$ as follows: for any $S'\to S$, $x\in G(S')$ and $u\in\sEnd_{I_S(\mathscr{M})/S}(G_{I_S(\mathscr{M})})(S')=\End_{I_{S'}}(G_{I_{S'}(\mathscr{M})})$,
+\[(u\cdot x)(g)=u(g\cdot x^{-1})\cdot x,\]
+for any $g\in G(S'')$, $S''\to I_{S'}(\mathscr{M})$. Then the morphism of \cref{scheme tangent bundle section over X char}
+\[\sHom_{G/S}(G,T_{G/S}(\mathscr{M}))\to\sEnd_{I_S(\mathscr{M})/S}(G_{I_S(\mathscr{M})})\]
+respects the operation of $G$ and induces for any $S'\to S$ a bijection from $\Gamma(T_{G_{S'}/S'}(\mathscr{M})/G_{S'})$ and the set of $I_{S'}(\mathscr{M})$-endomorphisms $u$ of $G_{I_{S'}(\mathscr{M})}$ inducing the identity on $G$ and are invariant under right translations, i.e. satisfies $u_{S''}\cdot x=u_{S''}$ for any $S''\to S'$ and $x\in G(S'')$. By \cref{scheme tangent bundle condition (E) section over X abelian group char}, we then conclude the following theorem:
+
+\begin{proposition}\label{scheme group Lie and right invariant I_S-endomorphism}
+There exists a bijection (functorail on $G$) from the set $\mathfrak{Lie}(G/S,\mathscr{M})(S)$ to the set of $I_S(\mathscr{M})$-endomorphisms of $G_{I_S(\mathscr{M})}$ inducing the identity on $G$ and commutes with right translations of $G$, and this is a group isomorphism if $G/S$ satisfies condition (E).
+\end{proposition}
+
+By considering the case $\mathscr{M}=\mathscr{O}_S$, we thus obtain the classical definitions of the Lie algebra of a group.\par
+
+Before going further, let us establish some new corollaries of \cref{scheme tangent bundle functor and sHom commutes}. Let $X,Y$ be over $Z$ and $Z$ be over $S$, as in \ref{scheme tangent bundle functor sHom_Z/S(X,Y) paragraph}. As we have seen in \cref{scheme tangent bundle functor and sHom commutes}, the isomorphisms (\ref{category of presheaf functor Hom_Z/S(X,Y) isomorphism-2}):
+\begin{equation}\label{scheme group tangent bundle of sHom isomorphism-1}
+\begin{tikzcd}[column sep=4mm]
+\sHom_S(I_S(\mathscr{M}),\sHom_{Z/S}(X,Y))\ar[rd,"\cong"]\ar[rr,"\cong"]&&\sHom_{Z/S}(X,\sHom_Z(I_Z(\mathscr{M}),Y))\\
+&\sHom_{Z/S}(X\times_SI_S(\mathscr{M}),Y)\ar[ru,"\cong"]
+\end{tikzcd}
+\end{equation}
+induces the isomorphism $\theta$ below
+\begin{equation}\label{scheme group tangent bundle of sHom isomorphism-2}
+\begin{tikzcd}
+T_{\sHom_{Z/S}(X,Y)}(\mathscr{M})\ar[rd,"\cong"]\ar[rr,"\cong","\theta"']&&\sHom_{Z/S}(X,T_{Y/Z}(\mathscr{M}))\\
+&\sHom_{Z/S}(X\times_SI_S(\mathscr{M}),Y)\ar[ru,"\cong"]
+\end{tikzcd}
+\end{equation}
+By \cref{category of presheaf functor Hom product commutes}, if $Y$ is a $Z$-group, so is $\sHom_Z(V,Y)$ for any $V\to Z$ (in particular for $V=I_Z(\mathscr{M})$); explicitly, if $Z''\to Z'\to Z$ and $\phi,\psi\in\Hom_Z(V_{Z'},Y)$, then $\phi\cdot\psi$ is defined by
+\[(\phi\cdot\psi)(v)=\phi(v)\psi(v)\]
+for any $v\in V_{Z'}(Z'')$.
+
+\begin{definition}
+Suppose that $X$ and $Y$ are $Z$-groups. Let $\sHom_{(Z/S)\dash\Grp}(X,Y)$ be the sub-functor of $\sHom_{Z/S}(X,Y)$ defined as follows: for any $S'\to S$,
+\begin{equation}\label{scheme group tangent bundle of sHom isomorphism-3}
+\sHom_{(Z/S)\dash\Grp}(X,Y)(S')=\Hom_{Z_{S'}\dash\Grp}(X_{S'},Y_{S'}).
+\end{equation}
+This definition applies equally if we replace $Y$ by the $Z$-group $T_{Y/Z}(\mathscr{M})$.
+\end{definition}
+
+We then easily see that $T_{\sHom_{(Z/S)\dash\Grp}(X,Y)/S}(\mathscr{M})(S')$ corresponds, under the isomorphisms of (\ref{scheme group tangent bundle of sHom isomorphism-2}), to $Z_{S'}$-morphisms $\phi:X_{S'}\times_{S'}I_{S'}(\mathscr{M})\to Y_{S'}$ which is multiplicative on $X$, that is, which satisfies $\phi(x_1x_2,m)=\phi(x_1,m)\phi(x_2,m)$, and these correspond to $Z_{S'}$-group morphisms $X_{S'}\to T_{Y/Z}(\mathscr{M})_{S'}$. We then obtain the following:
+
+\begin{proposition}\label{scheme group tangent bundle of sHom_Z/S isomorphism}
+Let $X,Y$ be $Z$-groups and $Z$ be over $S$. We have an isomorphism of $S$-functors, functorial on $\mathscr{M}$:
+\[T_{\sHom_{(Z/S)\dash\Grp}(X,Y)}(\mathscr{M})\stackrel{\sim}{\to}\sHom_{(Z/S)\dash\Grp}(X,T_{Y/Z}(\mathscr{M})).\]
+\end{proposition}
+
+In particular, for $Z=S$, we obtain the following corollary. Before stating it, we note that if $Y$ is an abelian $S$-group, then so is $T_{Y/S}(\mathscr{M})$, and hence $H=\Hom_{S\dash\Grp}(X,Y)$ and $\Hom_{S\dash\Grp}(X,T_{Y/S}(M))$, and finally is $T_{H/S}(\mathscr{M})$.
+
+\begin{corollary}\label{scheme group tangent bundle of sHom isomorphism}
+Let $X,Y$ be $S$-groups. We have an isomorphism of $S$-functors, functorial on $\mathscr{M}$:
+\[T_{\sHom_{S\dash\Grp}(X,Y)/S}(\mathscr{M})\stackrel{\sim}{\to} \sHom_{S\dash\Grp}(X,T_{Y/S}(\mathscr{M})).\]
+If $Y$ is commutative, then this is an isomorphism of abelian $S$-groups.
+\end{corollary}
+
+If $Y$ is an $\mathbb{O}_S$-module, the functor $T_{Y/S}(\mathscr{M})$ (resp. $\mathfrak{Lie}(Y/S,\mathscr{M})$) is endowed with an $\mathbb{O}_S$-module structure deduced by that of $Y$, which we denote by $T_{Y/S}'(\mathscr{M})$ (resp. $\mathfrak{Lie}'(Y/S,\mathscr{M})$). Therefore, if $X,Y$ are $\mathbb{O}_S$-modules, then $T_{Y/S}'(\mathscr{M})=\sHom_S(I_S(\mathscr{M}),Y)$ and $H=\sHom_{\mathbb{O}_S}(X,Y)$, and hence $\sHom_{\mathbb{O}_S}(X,T'_{Y/S}(\mathscr{M}))$ and $T'_{H/S}(\mathscr{M})$, are endowed with $\mathbb{O}_S$-module structures, and we have:
+
+\begin{corollary}\label{scheme group tangent bundle of sHom O_S-module isomorphism}
+If $X,Y$ are $\mathbb{O}_S$-modules, we have an isomorphism of $\mathbb{O}_S$-modules, functorial on $\mathscr{M}$:
+\[T'_{\sHom_{\mathbb{O}_S}(X,Y)/S}(\mathscr{M})\stackrel{\sim}{\to} \sHom_{\mathbb{O}_S}(X,T_{Y/S}(\mathscr{M})).\]
+\end{corollary}
+
+\begin{definition}
+Let $X,L$ be $S$-groups and $X$ acts on $L$ by groups automorphisms. We define the sub-functor $\mathcal{Z}_S^1(X,L)$ of $\sHom_S(X,L)$ as follows: for any $S'\to S$, $\mathcal{Z}_S^1(X,L)(S')$ is defined to be the set
+\[\{\phi\in\Hom_{S'}(X_{S'},L_{S'}):\text{$\phi(x_1x_2)=\phi(x_1)(x_1\cdot\phi(x_2))$ for any $x_1,x_2\in X(S'')$, $S''\to S'$}\}.\]
+The functor $\mathcal{Z}_S^1(X,L)$ is called the \textbf{functor of cross homomorphisms} from $X$ to $L$.
+\end{definition}
+
+If $L$ is an $\mathbb{O}_S[X]$-module, then $\mathcal{Z}_S^1(X,L)$ coincides with the kernel of the differential
+\[d:\sHom_S(X,L)\to\sHom_S(X^2,L)\]
+defined in \ref{category cohomology of group standard complex paragraph}. In particular, $\mathcal{Z}_S^1(X,L)$ is an $\mathbb{O}_S$-module in this case.\par
+
+Let $u:X\to Y$ be a morphism of $S$-groups. We have seen in \cref{scheme tangent bundle fiber and sHom commute} that we have an isomorphism of $S$-functors, functorial on $\mathscr{M}$:
+\begin{equation}\label{scheme group tangent space of morphism isomorphism-1}
+T_{\sHom_{S}(X,Y)/S,u}(\mathscr{M})\stackrel{\sim}{\to} \sHom_{Y/S}(X,T_{Y/S}(\mathscr{M})).
+\end{equation}
+On the other hand, as $Y$ is an $S$-group, we have $T_{Y/S}(\mathscr{M})=\mathfrak{Lie}(Y/S,\mathscr{M})\rtimes Y$, whence an isomorphism
+\begin{equation}\label{scheme group tangent space of morphism isomorphism-2}
+\begin{aligned}
+\sHom_{Y/S}(X,T_{Y/S}(\mathscr{M}))&\stackrel{\sim}{\to}\sHom_{Y/S}(X,\mathfrak{Lie}(Y/S,\mathscr{M})\rtimes Y)\\
+&\stackrel{\sim}{\to}\sHom_{Y/S}(X,\mathfrak{Lie}(Y,S,\mathscr{M})_Y)\\
+&\stackrel{\sim}{\to}\sHom_S(X,\mathfrak{Lie}(Y,S,\mathscr{M})).
+\end{aligned}
+\end{equation}
+
+For any $S'\to S$, denote by $u':X'\to Y'$ the morphism induced by $u$ from base change. Consider the $S$-functor defined as follows:
+\begin{align*}
+\sHom_{(Y/S)\dash\Grp}(X,\mathfrak{Lie}(Y/S,\mathscr{M})\rtimes Y)(S')&=\Hom_{Y'\dash\Grp}(X',(\mathfrak{Lie}(Y/S,\mathscr{M})\rtimes Y)_{S'})\\
+&=\Hom_{Y'\dash\Grp}(X',\mathfrak{Lie}(Y'/S',\mathscr{M})\rtimes Y').
+\end{align*}
+The isomorphism (\ref{scheme group tangent space of morphism isomorphism-1}) then induces an isomorphism
+\begin{equation}\label{scheme group tangent space of morphism isomorphism-3}
+T_{\sHom_{S\dash\Grp}(X,Y)/S,u}(\mathscr{M})\stackrel{\sim}{\to} \sHom_{(Y/S)\dash\Grp}(X,\mathfrak{Lie}(Y/S,\mathscr{M})\rtimes Y).
+\end{equation}
+
+The isomorphism (\ref{scheme group tangent space of morphism isomorphism-2}) can be made explicit as follows. If $\Phi\in\sHom_{Y/S}(X,\mathfrak{Lie}(Y/S,\mathscr{M})\rtimes Y)$, then for any $S''\to S'\to S$ and $x\in X(S'')$, we can write
+\[\Phi(S')(x)=\phi(S')(x)\cdot u'(x)\quad\text{where}\quad \phi(S')(x)\in\mathfrak{Lie}(Y'/S',\mathscr{M})(S''),\]
+which determines an element $\phi$ of $\sHom_S(X,\mathfrak{Lie}(Y/S,\mathscr{M}))$. On the other hand, the composition of the morphisms
+\[\begin{tikzcd}
+X\ar[r,"u"]&Y\ar[r,"\Ad"]&\Aut_{S\dash\Grp}(\mathfrak{Lie}(Y/S,\mathscr{M}))
+\end{tikzcd}\]
+defines an operation of $X$ on $L=\mathfrak{Lie}(Y/S,\mathscr{M})$ by group automorphisms, and we note that $\Phi(S')$ is a group morphism if and only if for any $x_1,x_2\in X(S'')$, we have
+\begin{align*}
+\phi(S')(x_1x_2)=\phi(S')(x_1)(u(x_1)\phi(S')(x_2)u(x_1)^{-1})=\phi(S')(x_1)(x_1\cdot\phi(S')(x_2)),
+\end{align*}
+that is, if and only if $\phi\in\mathcal{Z}_S^1(X,\mathfrak{Lie}(Y/S,\mathscr{M}))$. We therefore obtain the following result:
+
+\begin{proposition}\label{scheme group tangent space of morphism isomorphism}
+Let $u:X\to Y$ be a morphism of $S$-groups. We have an isomorphism of $S$-functors, functorial on $\mathscr{M}$:
+\[T_{\sHom_{S\dash\Grp}(X,Y)/S,u}(\mathscr{M})\stackrel{\sim}{\to}\mathcal{Z}_S^1(X,\mathfrak{Lie}(Y/S,\mathscr{M})).\]
+\end{proposition}
+
+Suppose moreover that $Y/S$ satisfies condition (E). Then it folows from \cref{scheme group tangent bundle of sHom isomorphism}, by the same proof of \cref{scheme tangent bundle functor and sHom module structure}, that $\sHom_{S\dash\Grp}(X,Y)/S$ satisfies condition (E). We then have (this also follows from \cref{scheme group tangent space of morphism isomorphism})
+\[T_{\sHom_{S\dash\Grp}(X,Y)/S,u}(\mathscr{M}\oplus\mathscr{N})\cong T_{\sHom_{S\dash\Grp}(X,Y)/S,u}(\mathscr{M})\times_ST_{\sHom_{S\dash\Grp}(X,Y)/S,u}(\mathscr{N}).\]
+Therefore, $T_{\sHom_{S\dash\Grp}(X,Y)/S,u}(\mathscr{M})$ is endowed, as $\mathcal{Z}_S^1(X,\mathfrak{Lie}(Y/S,\mathscr{M}))$, with an $\mathbb{O}_S$-module structure, induced by functoriality on $\mathscr{M}$. We then deduce that the isomorphism \cref{scheme group tangent space of morphism isomorphism} is an isomorphism of $\mathbb{O}_S$-modules in this case:
+
+\begin{proposition}\label{scheme group condition (E) tangent space of morphism module isomorphism}
+Let $u:X\to Y$ be a morphism of $S$-groups and suppose that $Y/S$ satisfies condition (E). We have an isomorphism of $\mathbb{O}_S$-modules, functorial on $\mathscr{M}$:
+\[T_{\sHom_{S\dash\Grp}(X,Y)/S,u}(\mathscr{M})\stackrel{\sim}{\to}\mathcal{Z}_S^1(X,\mathfrak{Lie}(Y/S,\mathscr{M})).\]
+\end{proposition}
+
+Moreover, if $Y/S$ satisfies condition (E), we deduce from \cref{scheme tangent bundle condition (E) morphism extension is iso}, as the proof of \cref{scheme tangent bundle condition (E) fiber of Iso to Hom}, that for any $u\in\Iso_{S\dash\Grp}(X,Y)$ we have an isomorphism functorial on $\mathscr{M}$
+\[T_{\sIso_{S\dash\Grp}(X,Y)/S,u}(\mathscr{M})\stackrel{\sim}{\to } T_{\sHom_{S\dash\Grp}(X,Y)/S,u}(\mathscr{M}).\]
+We then deduce the following corollaries:
+
+\begin{corollary}\label{scheme group condition (E) tangent space of sIso isomorphism}
+Let $u:X\to Y$ be a morphism of $S$-groups. If $Y/S$ satisfies condition (E), we have an isomorphism of $\mathbb{O}_S$-modules, functorial on $\mathscr{M}$:
+\[T_{\sIso_{S\dash\Grp}(X,Y)/S,u}(\mathscr{M})\stackrel{\sim}{\to}\mathcal{Z}_S^1(X,\mathfrak{Lie}(Y/S,\mathscr{M})).\]
+\end{corollary}
+\begin{corollary}\label{scheme group condition (E) tangent space of sAut isomorphism}
+Let $X$ be an $S$-group. If $X/S$ satisfies condition (E), we have an isomorphism of $\mathbb{O}_S$-modules, functorial on $\mathscr{M}$:
+\[\mathfrak{Lie}(\sAut_{S\dash\Grp}(X)/S,\mathscr{M})\stackrel{\sim}{\to} \mathcal{Z}_S^1(X,\mathfrak{Lie}(X/S,\mathscr{M})).\]
+\end{corollary}
+
+If $Y$ is abelian, then the adjoint representation of $Y$ on $L=\mathfrak{Lie}(Y/S,\mathscr{M})$ is trivial, so we have $\mathcal{Z}_S^1(X,L)=\sHom_{S\dash\Grp}(X,L)$. We thus have:
+\begin{corollary}\label{scheme group abelian tangent space of sHom isomorphism}
+Let $Y$ be an abelian $S$-group. We have an isomorphism of $S$-functors, functorial on $\mathscr{M}$:
+\[T_{\sHom_{S\dash\Grp}(X,Y)/S,u}(\mathscr{M})\stackrel{\sim}{\to}\sHom_{S\dash\Grp}(X,\mathfrak{Lie}(Y/S,\mathscr{M})).\]
+If $Y/S$ satisfies condition (E), this is an isomorphism of $\mathbb{O}_S$-modules.
+\end{corollary}
+
+Consider now the case where $X,Y$ are $\mathbb{O}_S$-modules. Recall that we denote by $T_{Y/S}'(\mathscr{M})$ (resp. $\mathfrak{Lie}'(Y/S,\mathscr{M})$) the functor $T_{Y/S}(\mathscr{M})$ (resp. $\mathfrak{Lie}(Y/S,\mathscr{M})$) endowed with the $\mathbb{O}_S$-module structure induced by that of $Y$. If $Y/S$ satisfies condition (E), we always endow $\mathfrak{Lie}(Y/S,\mathscr{M})$ the $\mathbb{O}_S$-module structure defined by functoriality on $\mathscr{M}$. In this case, the abelian group structures of $\mathfrak{Lie}(Y/S,\mathscr{M})$ and $\mathfrak{Lie}'(Y/S,\mathscr{M})$ coincide (cf. \cref{scheme H-object condition (E) Lie structure induced coincide}), but this is in general not true for the module structures. For any $S'\to S$ and $a\in\mathbb{O}(S')$, we denote by $a\cdot'm$ (resp. $a\cdot m$) the action of $a$ on $m\in\mathfrak{Lie}'(Y/S,\mathscr{M})(S')$ (resp. $m\in\mathfrak{Lie}(Y/S,\mathscr{M})(S')$), and similarly for the actions of $a$ on $T'_{Y/S}(\mathscr{M})$ and $T_{Y/S}(\mathscr{M})$.\par
+We have $T'_{Y/S}(\mathscr{M})\cong\mathfrak{Lie}'(Y/S,\mathscr{M})\oplus Y$ as $\mathbb{O}_S$-modules; therefore, we obtain, as in \cref{scheme group abelian tangent space of sHom isomorphism}, that:
+
+\begin{proposition}\label{scheme O_S-module tangent space of sHom isomorphism}
+Let $u:X\to Y$ be a morphism of $\mathbb{O}_S$-modules. We have an isomorphism of $S$-functors, functorial on $\mathscr{M}$:
+\begin{equation}\label{scheme O_S-module tangent space of sHom isomorphism-1}
+T_{\sHom_{\mathbb{O}_S}(X,Y)/S,u}(\mathscr{M})\stackrel{\sim}{\to} \sHom_{\mathbb{O}_S}(X,\mathfrak{Lie}'(Y/S,\mathscr{M})).
+\end{equation}
+If $Y/S$ satisfies condition (E), then $\sHom_{\mathbb{O}_S}(X,Y)/S$ satisfies condition (E) and (\ref{scheme O_S-module tangent space of sHom isomorphism-1}) is an isomorphism of $\mathbb{O}_S$-modules if we endow both sides the $\mathbb{O}_S$-module structure induced by functoriality on $\mathscr{M}$.
+\end{proposition}
+
+\begin{remark}\label{scheme O_S-module tangent bundle of sIso and sHom isomorphism}
+Let $u:X\to Y$ be a morphism of $\mathbb{O}_S$-modules. Denote by $\tau_u$ the map which to any morphism $\phi:X\to\mathfrak{Lie}'(Y/S,\mathscr{M})$ of $\mathbb{O}_S$-modules associates the morphism
+\[\phi\oplus u:X\to T'_{Y/S}(\mathscr{M})=\mathfrak{Lie}'(Y/S,\mathscr{M})\oplus Y.\]
+Then the isomorphism of \cref{scheme O_S-module tangent space of sHom isomorphism} fits into the following diagram, functorial on $\mathscr{M}$:
+\[\begin{tikzcd}
+T_{\sHom_{\mathbb{O}_S}(X,Y)/S,u}\ar[r,"\cong"]\ar[d,hook]&\sHom_{\mathbb{O}_S}(X,\mathfrak{Lie}'(Y/S,\mathscr{M}))\ar[d,hook,"\tau_u"]\\
+T_{\sHom_{\mathbb{O}_S}(X,Y)/S}(\mathscr{M})\ar[r,"\cong"]&\sHom_{\mathbb{O}_S}(X,T'_{Y/S}(\mathscr{M}))
+\end{tikzcd}\]
+Moreover, if $Y/S$ satisfies condition (E), we deduce from \cref{scheme tangent bundle condition (E) morphism extension is iso}, as the proof of \cref{scheme tangent bundle condition (E) fiber of Iso to Hom}, that for any $u\in\Iso_{\mathbb{O}_S}(X,Y)$, we have
+\begin{equation}\label{scheme O_S-module tangent bundle of sIso and sHom isomorphism-1}
+T_{\sIso_{\mathbb{O}_S}(X,Y)/S}(\mathscr{M})\cong T_{\sHom_{\mathbb{O}_S}(X,Y)/S}(\mathscr{M}).
+\end{equation}
+\end{remark}
+
+\begin{corollary}\label{scheme O_S-module condition (E) Lie of sAut isomorphism}
+Let $X$ be an $\mathbb{O}_S$-module satisfying condition (E) relative to $S$. We have an isomorphism, functorial on $\mathscr{M}$:
+\[\mathfrak{Lie}(\sAut_{\mathbb{O}_S}(X)/S,\mathscr{M})\stackrel{\sim}{\to} \sHom_{\mathbb{O_S}}(X,\mathfrak{Lie}'(X/S,\mathscr{M}))\]
+which respects the $\mathbb{O}_S$-module structure induced by functoriality on $\mathscr{M}$. In particular, $\sAut_{\mathbb{O}_S}(X)/S$ satisfies condition (E).
+\end{corollary}
+\begin{proof}
+The first assertion follows from (\ref{scheme O_S-module tangent space of sHom isomorphism-1}) and (\ref{scheme O_S-module tangent bundle of sIso and sHom isomorphism-1}). For the second one, as $X/S$ satisfies condition (E), we have an isomorphism of $\mathbb{O}_S$-modules $\mathfrak{Lie}'(X/S,\mathscr{M}\oplus\mathscr{N})\cong \mathfrak{Lie}'(X/S,\mathscr{M})\times_S\mathfrak{Lie}'(X/S,\mathscr{N})$, and hence
+\[\mathfrak{Lie}(\sAut_{\mathbb{O}_S}(X)/S,\mathscr{M}\oplus\mathscr{N})\cong\mathfrak{Lie}(\sAut_{\mathbb{O}_S}(X)/S,\mathscr{M})\times_S\mathfrak{Lie}(\sAut_{\mathbb{O}_S}(X)/S,\mathscr{N}).\]
+In view of the sequence (\ref{scheme group tangent space and Lie split exact sequence}), this proves that $\sAut_{\mathbb{O}_S}(X)/S$ satisfies condition (E).
+\end{proof}
+
+Before going further towards this direction, let us take a closer look at the relations between $Y$, $\mathfrak{Lie}(Y/S)$ and $\mathfrak{Lie}'(Y/S)$. We first notice that (cf. \cref{scheme tangent bundle fiber char by morphism})
+\begin{equation}\label{scheme Lie and Lie' of O_S isomorphism to Gamma-1}
+\mathfrak{Lie}(\mathbb{O}_S/S,\mathscr{M})=\mathfrak{Lie}'(\mathbb{O}_S/S,\mathscr{M})=\Gamma_\mathscr{M}
+\end{equation}
+and that we have a canonical isomorphism
+\begin{equation}\label{scheme Lie and Lie' of O_S isomorphism to Gamma-2}
+d:\mathbb{O}_S\stackrel{\sim}{\to} \mathfrak{Lie}(\mathbb{O}_S/S).
+\end{equation}
+
+Now let $F$ be an $\mathbb{O}_S$-module. For any $S_2\to S_1\to S$, we have a bihomomorphism
+\begin{equation}\label{scheme Lie and Lie' relation morphism-1}
+F(S_1)\to F(S_2),\quad \mathbb{O}(S_1)\to\mathbb{O}(S_2),
+\end{equation}
+whence a morphism of $\mathbb{O}(S_2)$-modules
+\[F(S_1)\otimes_{\mathbb{O}(S_1)}\mathbb{O}(S_2)\to F(S_2).\]
+In particular, for $S_1=S'$ and $S_2=I_{S'}(\mathscr{M})$, we deduce a morphism of $\mathbb{O}(S')$-modules, functorial on $\mathscr{M}$
+\[F(S')\otimes_{\mathbb{O}(S')}T_{\mathbb{O}_S/S}(\mathscr{M})(S')\to T'_{F/S}(\mathscr{M})(S').\]
+With $S'$ varies, we obtain morphisms of $\mathbb{O}_S$-modules, functorial on $\mathscr{M}$:
+\begin{equation}\label{scheme Lie and Lie' relation morphism-2}
+F\otimes_{\mathbb{O}_S}T_{\mathbb{O}_S/S}(\mathscr{M})\to T'_{F/S}(\mathscr{M}).
+\end{equation}
+These morphisms are functorial on $\mathscr{M}$, hence compatible with the projections of tangent bundles onto their bases; they then define morphisms of $\mathbb{O}_S$-modules
+\begin{equation}\label{scheme Lie and Lie' relation morphism-3}
+F\otimes_{\mathbb{O}_S}\mathfrak{Lie}(\mathbb{O}_S/S,\mathscr{M})\to\mathfrak{Lie}'(F/S,\mathscr{M})
+\end{equation}
+such that the following diagram is commutative:
+\[\begin{tikzcd}
+0\ar[r]&F\otimes_{\mathbb{O}_S}\mathfrak{Lie}(\mathbb{O}_S/S,\mathscr{M})\ar[d]\ar[r]&F\otimes_{\mathbb{O}_S}T_{\mathbb{O}_S/S}(\mathscr{M})\ar[d]\ar[r]&F\ar[r]\ar[d,equal]&0\\
+0\ar[r]&\mathfrak{Lie}'(F/S,\mathscr{M})\ar[r]&T'_{F/S}(\mathscr{M})\ar[r]&F\ar[r]&0
+\end{tikzcd}\]
+We can consider the morphisms (\ref{scheme Lie and Lie' relation morphism-3}) as morphisms of abelian $S$-groups:
+\begin{equation}\label{scheme Lie and Lie' relation morphism-4}
+F\otimes_{\mathbb{O}_S}\mathfrak{Lie}(\mathbb{O}_S/S,\mathscr{M})\to\mathfrak{Lie}(F/S,\mathscr{M}).
+\end{equation}
+By tensoring $F$ with the isomorphism $d:\mathbb{O}_S\stackrel{\sim}{\to}\mathfrak{Lie}(\mathbb{O}_S/S)$, we then deduce (for $\mathscr{M}=\mathscr{O}_S$) a morphism of abelian $S$-groups
+\begin{equation}\label{scheme Lie and Lie' relation morphism-5}
+d:F\stackrel{\sim}{\to} F\otimes_{\mathbb{O}_S}\mathfrak{Lie}(\mathbb{O}_S/S)\to\mathfrak{Lie}(F/S).
+\end{equation}
+
+\begin{remark}\label{scheme O_S-module morphism F to Lie not module}
+If $F/S$ satisfies condition (E), the morphisms (\ref{scheme Lie and Lie' relation morphism-4}) and (\ref{scheme Lie and Lie' relation morphism-5}) are not necessarily morphisms of $\mathbb{O}_S$-modules, if we endow both sides the module structure induced by functoriality on $\mathscr{M}$. For example, let $k$ be a field with characteristic $p>0$, $S=\Spec(k)$, and $F$ be the $\mathbb{O}_S$-module which to any $S$-scheme $T$ associates $F(T)=\Gamma(T,\mathscr{O}_T)$, endowed with the $\mathbb{O}(T)$-module structure obtained by acting a scalar via its $p$-th power, that is, $r\cdot f=r^pf$ for $r\in\mathbb{O}(T)$ and $f\in F(T)$. As an $S$-group, $F$ is isomorphic to $\G_{a,S}$, so $F$ satisfies condition (E) and $\mathfrak{Lie}(F/S)$ is identified with $\mathfrak{Lie}(\G_{a,S}/S)\cong\mathbb{O}_S$. Then, the morphism $d:F\to\mathfrak{Lie}(F/S)$ is, for any $T\to S$, the identity map $F(T)\to\mathbb{O}(T)$; it respects the abelian group structure, but not the $\mathbb{O}_S$-module structure.
+\end{remark}
+
+\begin{remark}
+We can explicit the morphisms (\ref{scheme Lie and Lie' relation morphism-2}) and (\ref{scheme Lie and Lie' relation morphism-3}) as follows. The morphism $\Theta:F\otimes_{\mathbb{O}_S}T_{\mathbb{O}_S/S}(\mathscr{M})\to T'_{F/S}(\mathscr{M})=\sHom_S(I_S(\mathscr{M}),F)$ is defined so that for any $S'\to S$, $\alpha\in\mathbb{O}(I_{S'}(\mathscr{M}))$, and $f:S'\to F$,
+\[\Theta(f\otimes\alpha)=\alpha(\tau_0\circ f)=\alpha\cdot(f\circ\rho)\]
+where $\tau_0:F\to T'_{F/S}(\mathscr{M})$ is the zero section and $\rho:I_{S'}(\mathscr{M})\to S'$ is the structural morphism.
+\end{remark}
+
+\begin{definition}
+We say that $F$ is a \textbf{good $\mathbb{O}_S$-module} if the morphisms $F\otimes_{\mathbb{O}_S}T_{\mathbb{O}_S/S}(\mathscr{M})\to T_{F/S}(\mathscr{M})$ (or equivalently, the morphisms $F\otimes_{\mathbb{O}_S}\mathfrak{Lie}(\mathbb{O}_S/S,\mathscr{M})\to \mathfrak{Lie}(F/S,\mathscr{M})$) are isomorphisms of abelian $S$-groups (so that $F/S$ satisfies condition (E)) and if moreover they respect the $\mathbb{O}_S$-module structures induced by functoriality on $\mathscr{M}$.
+\end{definition}
+
+\begin{proposition}\label{scheme O_S-module good Lie and Lie' coincide}
+Let $F$ be an $\mathbb{O}_S$-module. Consider the following conditions:
+\begin{enumerate}
+    \item[(\rmnum{1})] $F$ is a good $\mathbb{O}_S$-module.
+    \item[(\rmnum{2})] $F/S$ satisfies condition (E) and $d:F\to\mathfrak{Lie}(F/S)$ is an isomorphism of $\mathbb{O}_S$-modules.
+    \item[(\rmnum{3})] $\mathfrak{Lie}(F/S,\mathscr{M})=\mathfrak{Lie}'(F/S,\mathscr{M})$.
+\end{enumerate}
+Then we have (\rmnum{1})$\Leftrightarrow$(\rmnum{2})$\Rightarrow$(\rmnum{3}).
+\end{proposition}
+\begin{proof}
+The implication (\rmnum{1})$\Rightarrow$(\rmnum{2}) follows from definition. To see that (\rmnum{2})$\Rightarrow$(\rmnum{2}), it suffices to show that the morphisms of abelian $S$-groups
+\[F\otimes_{\mathbb{O}_S}\mathfrak{Lie}(\mathbb{O}_S/S,\mathscr{M})\stackrel{\sim}{\to} \mathfrak{Lie}(F/S,\mathscr{M})\]
+are isomorphisms of $\mathbb{O}_S$-modules. As $F/S$ satisfies condition (E), the two members transform finite direct sums of copies of $\mathscr{O}_S$ into finite products of abelian $S$-groups. We are then reduced to the case where $\mathscr{M}=\mathscr{O}_S$, which follows by the hypothesis.\par
+Finally, (\rmnum{1})$\Rightarrow$(\rmnum{3}) follows from the definition and the fact that the isomorphisms
+\[F\otimes_{\mathbb{O}_S}\mathfrak{Lie}(\mathbb{O}_S/S,\mathscr{M})\stackrel{\sim}{\to}\mathfrak{Lie}'(F/S,\mathscr{M})\]
+of (\ref{scheme Lie and Lie' relation morphism-3}) is an isomorphism of $\mathbb{O}_S$-modules.
+\end{proof}
+
+\begin{example}\label{scheme O_S-module Gamma is good}
+For any quasi-coherent $\mathscr{O}_S$-module $\mathscr{E}$, the $\mathbb{O}_S$-module $\Gamma_{\mathscr{E}}$ and $\check{\Gamma}_{\mathscr{E}}$ are good. In fact, for any $f:S'\to S$, the morphisms
+\begin{align*}
+\Gamma_\mathscr{E}(S')\otimes_{\mathbb{O}(S')}\mathbb{O}(I_{S'}(\mathscr{M}))&\to T_{\Gamma_\mathscr{E}/S}(\mathscr{M})(S')\\
+\check{\Gamma}_\mathscr{E}(S')\otimes_{\mathbb{O}(S')}\mathbb{O}(I_{S'}(\mathscr{M}))&\to T_{\check{\Gamma}_\mathscr{E}/S}(\mathscr{M})(S')
+\end{align*}
+correspond, respectively, to morphisms
+\begin{align*}
+\Gamma(S',f^*(\mathscr{E}))\otimes_{\mathbb{O}(S')}\Gamma(S',\mathscr{D}_{\mathscr{O}_{S'}}(\mathscr{M}))&\to\Gamma(S',f^*(\mathscr{E})\otimes_{\mathscr{O}_{S'}}\mathscr{D}_{\mathscr{O}_{S'}}(\mathscr{M})),\\
+\Hom_{\mathscr{O}_{S'}}(f^*(\mathscr{E}),\mathscr{O}_{S'})\otimes_{\mathbb{O}(S')}\Gamma(S',\mathscr{D}_{\mathscr{O}_{S'}}(\mathscr{M}))&\to \Hom_{\mathscr{O}_{S'}}(f^*(\mathscr{E}),\mathscr{D}_{\mathscr{O}_{S'}}(\mathscr{M}));
+\end{align*}
+which are both isomorphisms since $\mathscr{D}_{\mathscr{O}_{S'}}(\mathscr{M})$ is isomorphic, as $\mathscr{O}_{S'}$-module, to a finite direct sum of copies of $\mathscr{O}_{S'}$ (recall that $\mathscr{M}$ is assumed to be free). 
+\end{example}
+
+\begin{proposition}\label{scheme O_S-module good Lie of sAut isomorphism}
+Let $F$ be a good $\mathbb{O}_S$-module. Then $\sAut_{\mathbb{O}_S}(F)/S$ satisfies condition (E) and we have a isomorphism (functorial on $\mathscr{M}$)
+\[\mathfrak{Lie}(\sAut_{\mathbb{O}_S}(F)/S,\mathscr{M})\stackrel{\sim}{\to} \sHom_{\mathbb{O}_S}(F,\mathfrak{Lie}(F/S,\mathscr{M}))\]
+which respects the $\mathbb{O}_S$ induced by the functoriality on $\mathscr{M}$. In particular, we have an isomorphism of $\mathbb{O}_S$-modules
+\[\mathfrak{Lie}(\sAut_{\mathbb{O}_S}(F)/S)\stackrel{\sim}{\to} \sEnd_{\mathbb{O}_S}(F).\]
+Morover, $\sEnd_{\mathbb{O}_S}(F)$ is a good $\mathbb{O}_S$-module.
+\end{proposition}
+\begin{proof}
+In fact, by \cref{scheme O_S-module good Lie and Lie' coincide}, $F/S$ satisfies condition (E) and
+\begin{equation}\label{scheme O_S-module good Lie of sAut isomorphism-1}
+\mathfrak{Lie}(F/S,\mathscr{M})=\mathfrak{Lie}'(F/S,\mathscr{M})\cong F\otimes_{\mathbb{O}_S}\mathfrak{Lie}(\mathbb{O}_S/S,\mathscr{M}).
+\end{equation}
+The first assertion then follows from \cref{scheme O_S-module condition (E) Lie of sAut isomorphism}. Put $E=\sEnd_{\mathbb{O}_S}(F)$; by (\ref{scheme O_S-module good Lie of sAut isomorphism-1}) and (\cite{SGA3} remarque 4.3.5), we have the following commutative diagram of abelian groups
+\[\begin{tikzcd}
+\sEnd_{\mathbb{O}_S}(F)\otimes_{\mathbb{O}_S}\mathfrak{Lie}(\mathbb{O}_S/S,\mathscr{M})\ar[d,equal]\ar[r,"d_E"]&\mathfrak{Lie}(\sEnd_{\mathbb{O}_S}(F)/S,\mathscr{M})\\
+\sHom_{\mathbb{O}_S}(F,F\otimes_{\mathbb{O}_S}\mathfrak{Lie}(\mathbb{O}_S/S,\mathscr{M}))\ar[r,"d_F"]&\sHom_{\mathbb{O}_S}(F,\mathfrak{Lie}(\sEnd_{\mathbb{O}_S}(F)/S,\mathscr{M}))\ar[u,"\cong","(*)"']
+\end{tikzcd}\]
+where $d_F$ and ($*$) are isomorphisms of $\mathbb{O}_S$-modules; therefore, so is $d_E$, and this proves the proposition.
+\end{proof}
+
+\begin{remark}\label{scheme tangent space of Aut and infinitesimal endomorphism}
+Put $\mathscr{O}_{I_S}=\mathscr{O}_S\oplus t\mathscr{O}_S$ (with $t^2=0$) and let $F$ be a good $\mathbb{O}_S$-module. Then, for any $S'\to S$, the morphism
+\[F(S')\oplus tF(S')=F(S')\otimes_{\mathbb{O}(S')}\mathbb{O}(I_{S'})\to F(I_{S'})=F(S')\oplus\mathfrak{Lie}(F/S)(S')\]
+(which is the identity on $F(S')$) induces an isomorphism of $\mathbb{O}(S')$-modules $tF(S')\cong\mathfrak{Lie}(F/S)(S')$. By varying $S'$, we then obtain an isomorphism $\mathfrak{Lie}(F/S)\cong tF$. For any $S'\to S$, we have, by \cref{scheme O_S-module good Lie of sAut isomorphism}, a commutative diagram
+\[\begin{tikzcd}
+\End_{\mathbb{O}_{S'}}(F_{S'})\ar[r,"\cong"]&\Hom_{\mathbb{O}_{S'}}(F_{S'},tF_{S'})\ar[r,"\cong"]\ar[d,hook]&\mathfrak{Lie}(\sAut_{\mathbb{O}_S}(F)/S)(S')\ar[d,hook]\\
+&\Aut_{\mathbb{O}(I_{S'})}(F_{I_{S'}})\ar[r,equal]&T_{\sAut_{\mathbb{O}_S}(F)/S}(S')
+\end{tikzcd}\]
+and we deduce from \cref{scheme O_S-module tangent bundle of sIso and sHom isomorphism} that any $X\in\End_{\mathbb{O}_{S'}}(F_{S'})$ corresponds to the element $\id+tX$ of $\Aut_{\mathbb{O}_{I_{S'}}}(F_{I_{S'}})$.
+\end{remark}
+
+We say that the $S$-group $G$ is \textbf{good} if $G/S$ satisfies condition (E) and $\mathfrak{Lie}(G/S)$ is a good $\mathbb{O}_S$-module. Note that if $F$ is a good $\mathbb{O}_S$-module, it is also a good $S$-groups: in fact, $F/S$ satisfies condition (E) and $\mathfrak{Lie}(F/S)\cong F$ (cf. \cref{scheme O_S-module good Lie and Lie' coincide}~(\rmnum{2})) is a good $\mathbb{O}_S$-module.
+
+\begin{example}\label{scheme group representable is good}
+If $G$ is representable, then it is good. In fact, $G/S$ satisfies condition (E) and $\mathfrak{Lie}(G/S)$ is of the form $\V(\mathscr{E})$ by \cref{scheme tangent bundle representable if}, hence good by \cref{scheme O_S-module Gamma is good}.
+\end{example}
+
+\begin{lemma}\label{scheme group condition (E) Lie of Lie module morphism}
+Let $G$ be an $S$-group such that $G/S$ satisfies condition (E), and $F=\mathfrak{Lie}(G/S)$. Then $F/S$ satisfies condition (E) and the abelian group morphism $d:F\to\mathfrak{Lie}(F/S)$ respects the $\mathbb{O}_S$-module structure. Therefore, $G$ is good if and only $d:F\to\mathfrak{Lie}(F/S)$ is bijective.
+\end{lemma}
+\begin{proof}
+
+\end{proof}
+
+\begin{theorem}\label{scheme O_S-module good Aut is good}
+If $F$ is a good $\mathbb{O}_S$-module, the $S$-group $\sAut_{\mathbb{O}_S}(F)$ is good.
+\end{theorem}
+\begin{proof}
+In fact, by \cref{scheme O_S-module good Lie of sAut isomorphism}, $\sAut_{\mathbb{O}_S}(F)/S$ satisfies condition (E) and $\mathfrak{Lie}(\sAut_{\mathbb{O}_S}(F)/S)\cong\sEnd_{\mathbb{O}_S}(F)$ is a good $\mathbb{O}_S$-module.
+\end{proof}
+
+\begin{example}\label{scheme O_S-module p-twisted G_m not good}
+Let $F$ be the $\mathbb{O}_S$-module defined in \cref{scheme O_S-module morphism F to Lie not module}. Then, the canonical morphism $d:F\to\mathfrak{Lie}(F/S)$ is, for any $T\to S$, the identity morphism $F(T)\to\mathbb{O}(T)$. It respects the abelian group structure, but not the module structure, so $F$ is not good.
+\end{example}
+
+Let $G$ be an $S$-group and $F$ be a good $\mathbb{O}_S$-module. Suppose that we are given a linear representation of $G$ on $F$, that is, an $S$-group morphism
+\[\rho:G\to\sAut_{\mathbb{O}_S}(F).\]
+If $G/S$ satisfies condition (E), we deduce from \cref{scheme O_S-module good Lie of sAut isomorphism} and \cref{scheme tangent bundle condition (E) functorial on X} a morphism of $\mathbb{O}_S$-modules
+\[d\rho:\mathfrak{Lie}(G/S)\to\mathfrak{Lie}(\sAut_{\mathbb{O}_S}(F)/S)\cong\sEnd_{\mathbb{O}_S}(F).\]
+Moreover, put $\mathscr{O}_{I_S}=\mathscr{O}_S\oplus t\mathscr{O}_S$ (with $t^2=0$), we deduce from \cref{scheme tangent space of Aut and infinitesimal endomorphism} that, if $S'\to S$ and $X\in\mathfrak{Lie}(G/S)(S')\sub G(I_{S'})$, then we have the following equality in $\Aut_{\mathbb{O}_{I_{S'}}}(F_{I_{S'}})$:
+\begin{equation}\label{scheme group derived morphism of linear representation equality}
+\rho(X)=\id+t d\rho(X),
+\end{equation}
+i.e. for any $S''\to I_{S'}$ and $f\in F(S')$, we have $\rho(X)(f)=f+td\rho(X)(f)$ in $F(S'')$.\par
+Let $G$ be a good $S$-group. Then $\mathfrak{Lie}(G/S)$ is a good $\mathbb{O}_S$-module, and we have a morphism of $S$-groups
+\[\Ad:G\to\sAut_{\mathbb{O}_S}(\mathfrak{Lie}(G/S)).\]
+We then deduce a morphism of $\mathbb{O}_S$-modules
+\[\ad:\mathfrak{Lie}(G/S)\to\sEnd_{\mathbb{O}_S}(\mathfrak{Lie}(G/S)),\]
+or equivalently, an $\mathbb{O}_S$-bilinear morphism
+\[\mathfrak{Lie}(G/S)\times_S\mathfrak{Lie}(G/S)\to\mathfrak{Lie}(G/S),\quad (x,y)\mapsto [x,y]:=\ad(x)\cdot y\]
+where $x,y$ denote elements of $\mathfrak{Lie}(G/S)(S')=\mathfrak{Lie}(G_{S'}/S')(S')$. If $G$ is commutative, then the action $\Ad$ is trivial, and we have $[x,y]=0$.
+
+\begin{remark}\label{scheme group Lie bracket definition by diagram}
+We can give an equivalent definition of the bracket: note first that it suffices to do this for $x,y\in\mathfrak{Lie}(G/S)(S)$. We then note that there is a canonical isomorphism $I_S\times_SI_S\cong I_{I_S}$; to avoid confusions, we denote by $I$ and $I'$ the two copies of $I_S$ and put $\mathscr{O}_I=\mathscr{O}_S[t]$, $\mathscr{O}_{I'}=\mathscr{O}_S[t']$, where $t^2=t'^2=0$. We then have a commutative diagram
+\[\begin{tikzcd}
+I\times I'\ar[d]\ar[r]&I'\ar[d]\\
+I\ar[r]&S
+\end{tikzcd}\]
+(the two arrows from $I\times I'$ identifying it as the dual number scheme over $I$ or over $I'$), which gives a commutative diagram of abelian groups (where $L=\mathfrak{Lie}(G/S)$) by (\ref{scheme group tangent space and Lie split exact sequence}):
+\begin{equation}
+\begin{tikzcd}
+&&1\ar[d]&1\ar[d]&\\
+&&L(I)\ar[d]\ar[r]&L(S)\ar[d]\ar[r]&1\\
+1\ar[r]&L(I')\ar[r]\ar[d]&G(I\times I')\ar[r]\ar[d]&G(I')\ar[r]\ar[d]&1\\
+1\ar[r]&L(S)\ar[r]\ar[d]&G(I)\ar[r]\ar[d]&G(S)\ar[r]\ar[d]&1\\
+&1&1&1
+\end{tikzcd}
+\end{equation}
+The ninith vertex of this diagram is none other than $\mathfrak{Lie}(L/S)(S)$. If $G$ is good, this is isomorphic to $L(S)$ and we then have the following diagram, where the rows and columns are exact sequences of groups and in view of the identification $L(I)=L(S)\oplus tL(S)$ (resp. $L(I')=L(S)\oplus t'L(S)$), the injection $L(S)\hookrightarrow L(I)$ (resp. $L(S)\hookrightarrow L(I')$) is given by $u\mapsto tu$ (resp. $u\mapsto t'u$):
+\begin{equation}
+\begin{tikzcd}
+L(S)\ar[r,"t"]\ar[d,"t'"]&L(I)\ar[r]\ar[d]&L(S)\ar[d]\\
+L(I')\ar[r]\ar[d]&G(I\times I')\ar[r]\ar[d]&G(I')\ar[d]\\
+L(S)\ar[r]&G(I)\ar[r]&G(S)
+\end{tikzcd}
+\end{equation}
+
+Now in this diagram, if we take two elements $x$ and $y$ in $L(S)$ and choose arbitrarily element $\tilde{x}\in L(I)$ (resp. $\tilde{y}\in L(I')$) which maps to $x$ (resp. to $y$), then the commutator $\tilde{x}\tilde{y}\tilde{x}^{-1}\tilde{y}^{-1}$ in $G(I\times I')$ does not depend on the choice of $\tilde{x}$ and $\tilde{y}$, and it is the image of an element $z\in L(S)$. In fact, if we identify $x$ with its image under the canonical section $L(S)\to L(I)$ (and similarly for $y$), then $\tilde{x}=xu$ and $\tilde{y}=yv$, with $u,v\in L(S)=L(I)\cap L(I')$, and since $L(I)$, $L(I')$ are abelian, we have
+\[\tilde{x}\tilde{y}\tilde{x}^{-1}\tilde{y}^{-1}=xuyvu^{-1}x^{-1}v^{-1}y^{-1}=xuyu^{-1}vx^{-1}v^{-1}y^{-1}=xyx^{-1}y^{-1}.\]
+Moreover, this element is send to the unit element of $G(I)$ and of $G(I')$, hence comes from an element $z\in L(S)$. Finally, consider $y$ (resp. $x$) as element of $L(I')$ (resp. $L(S)\sub G(I')$), by (\ref{scheme group derived morphism of linear representation equality}) we have
+\[xyx^{-1}=\Ad(x)(y)=(\id+t'\ad(x))(y)=y+t'[x,y],\]
+so the element $xyx^{-1}y^{-1}$ of $L(I')$ is the iamge of $z=[x,y]\in L(S)$.\par
+From the above construction, we see that the bracket has the following properties:
+\begin{enumerate}
+    \item[(\rmnum{1})] The bracket is functorial on $G$: more precisely, $G\mapsto\mathfrak{Lie}(G/S)$ is a functor from the category of good $S$-groups to the category of good $\mathbb{O}_S$-modules endowed with an $\mathbb{O}_S$-bilinear composition law.
+    \item[(\rmnum{2})] We have $[x,y]+[y,x]=0$. In fact, the diagram is symmetric, and by exchanging $x$ and $y$ we are considering the element $\tilde{y}\tilde{x}\tilde{y}^{-1}\tilde{x}^{-1}$, which is the inverse of $\tilde{x}\tilde{y}\tilde{x}^{-1}\tilde{y}^{-1}$.
+\end{enumerate}
+\end{remark}
+
+\begin{proposition}\label{scheme O_S-module good Lie bracket expression}
+Let $F$ be a good $\mathbb{O}_S$-module. Via the identification $\mathfrak{Lie}(\sAut_{\mathbb{O}_S}(F)/S)=\sEnd_{\mathbb{O}_S}(F)$, we have
+\[\Ad(g)\cdot Y=g\circ Y\circ g^{-1},\quad [X,Y]=X\circ Y-Y\circ X,\]
+for any $S'\to S$, $g\in\Aut_{\mathbb{O}_S}(F_{S'})$ and $X,Y\in\mathfrak{Lie}(\sAut_{\mathbb{O}_S}(F)/S)(S')=\End_{\mathbb{O}_S}(F_{S'})$.
+\end{proposition}
+\begin{proof}
+By base change, we can assume that $S'=S$, which makes it possible to simplify the notations. Put $I=I_S$ and $\mathscr{O}_I=\mathscr{O}_S[t]$ (with $t^2=0$). Recall that the inclusion $i:\End_{\mathbb{O}_S}(F)\hookrightarrow\sAut_{\mathbb{O}_I}(F_I)$ sends $Y$ to $\id+tY$, so by the definition of $\Ad(g)$, we have
+\[\id+t\Ad(g)(Y)=g\circ(\id+tY)\circ g^{-1}=\id+t(g\circ Y\circ g^{-1}),\]
+whence $\Ad(g)(Y)=g\circ Y\circ g^{-1}$.\par
+Let $I'$ be a second copy of $I_S$, and put $\mathscr{O}_{I'}=\mathscr{O}_S[t']$ (with $t'^2=0$). Apply the result of \cref{scheme group Lie bracket definition by diagram} to $G=\sAut_{\mathbb{O}_S}(F)$ and $L=\mathfrak{Lie}(G/S)=\sAut_{\mathbb{O}_S}(F)$, where we identify $X$ with its image under the canonical section $L(S)\hookrightarrow L(I)$; its image in $G(I\times I')$ is then $\id+t'X$, hence the inverse is $\id-t'X$. Similarly, $Y$ is send to $\id+tY$, so the inverse is $\id-tY$. Then the commutator
+\[(\id+t'X)\circ(\id+tY)\circ(\id-t'X)\circ(\id-tY)=\id+tt'(X\circ Y-Y\circ X)\]
+is the image of $Z=X\circ Y-Y\circ X$ in $G(I\times I')$ (in fact, $Z$ is send to $tZ\in L(I)$, hence to $\id+tt'Z\in G(I\times I')$). By \cref{scheme group Lie bracket definition by diagram}, we conclude that $[X,Y]=X\circ Y-Y\circ X$.
+\end{proof}
+
+\begin{corollary}\label{scheme O_S-module good Jacobi identity}
+Let $G$ be a good $S$-group and $x,y,z\in\mathfrak{Lie}(G/S)(S')$. We have
+\[[x,[y,z]]+[y,[z,x]]+[z,[x,y]]=0.\]
+\end{corollary}
+\begin{proof}
+In fact, as $G$ is good, $\mathfrak{Lie}(G/S)$ is a good $\mathbb{O}_S$-module and hence, by \cref{scheme O_S-module good Aut is good}, $\sAut_{\mathbb{O}_S}(\mathfrak{Lie}(G/S))$ is a good $S$-group. Then, the morphism of $S$-groups
+\[\Ad:G\to\sAut_{\mathbb{O}_S}(\mathfrak{Lie}(G/S))\]
+gives by functoriality $\ad([x,y])=[\ad(x),\ad(y)]$. Combined with \cref{scheme O_S-module good Lie bracket expression}, this shows that
+\[\ad([x,y])=[\ad(x),\ad(y)]=\ad(x)\circ\ad(y)-\ad(y)\circ\ad(x),\]
+which implies the Jacobi identity by applied to an element $z$.
+\end{proof}
+
+\begin{corollary}\label{scheme O_S-module good representation induced}
+Let $G$ be a good $S$-group linearly acted on a good $\mathbb{O}_S$-module $F$ (i.e. $F$ is an $\mathbb{O}_S[G]$-module, $G$ and $F$ being good). Then the linear map $d\rho:\mathfrak{Lie}(G/S)\to\sEnd_{\mathbb{O}_S}(F)$ is a representation, that is, we have
+\[d\rho([x,y])=d\rho(x)\circ d\rho(y)-d\rho(y)\circ d\rho(x).\]
+\end{corollary}
+\begin{proof}
+This follows from the functoriality of bracket and \cref{scheme O_S-module good Lie bracket expression}.
+\end{proof}
+
+To any good $S$-group (for example representable), we have associated a good $\mathbb{O}_S$-module $\mathfrak{Lie}(G/S)$ endowed functorially a bilinear map verifying
+\[[x,y]+[y,x]=0,\quad [x,[y,z]]+[y,[z,x]]+[z,[x,y]]=0.\]
+We therefore say that $\mathfrak{Lie}(G/S)$, endowed with this structure, is the \textbf{quasi-Lie algebra} of $G$ over $S$. For any linear representation of $G$ over a good $\mathbb{O}_S$-module $F$, we can associate a representation of the quasi-Lie algebra $\mathfrak{Lie}(G/S)$. In particular, the adjoint representation of $G$ is associated to the adjoint representation of the quasi-Lie algebra.
+
+\begin{example}\label{scheme group very good example}
+A group functor $G$ over $S$ is called very good if it is good and $\mathfrak{Lie}(G/S)$ is a Lie algebra over $\mathbb{O}_S$ (that is, if we have the identity $[x,x]=0$). The following $S$-groups are very good: $\sAut_{\mathbb{O}_S}(F)$ for any good $\mathbb{O}_S$-module $F$ (cf. \cref{scheme O_S-module good Lie bracket expression} and \cref{scheme O_S-module good Jacobi identity}), any representable group (see below), any good $S$-group admitting a monomorphism into a very good $S$-group (cf. \cref{scheme tangent bundle functorial on X}), for example any good subgroup of a very good representable group, or any good $S$-group admitting a faithful representation over a good $\mathbb{O}_S$-module, for example any good $S$-group such that $\Ad$ is faithful.
+\end{example}
+
+Now suppose that $G$ is a group scheme. By \cref{scheme group Lie and right invariant I_S-endomorphism}, $\mathfrak{Lie}(G/S)(S)$ is identified with right invariant infinitesimal automorphisms of $G$, hence by (\ref{scheme group representable tangent bundle section and derivation}) with derivations of $\mathscr{O}_G$ over $\mathscr{O}_S$ invariant under right translations. Moreover, this identification respects the module structure and is an \textit{anti-isomorphism} of Lie algebras: put $\mathscr{O}_I=\mathscr{O}_S[t]$ and $\mathscr{O}_{I'}=\mathscr{O}_S[t']$ and let $x\in L(I)$ and $y\in L(I')$. The left translation $\lambda_x$ (resp. $\lambda_y$) is an $S$-automorphism of $G_{I\times I'}$ which induces the identity on $G_{I'}$ (resp. $G_I$) and which corresponds to an $\mathscr{O}_S$-automorphism
+\[u=\id+td_x,\quad\quad (\text{resp.}\quad v=\id+t'd_y)\]
+of $\mathscr{O}_{G_{I\times I'}}=\mathscr{O}_G[t,t']/(t^2,t'^2)$, where $d_x,d_y$ are $\mathscr{O}_S$-derivations of $\mathscr{O}_G$ invariant under right translations. As the correspondence of $S$-automorphisms of $G_{I\times I'}$ and $\mathscr{O}_S$-automorphisms of $\mathscr{O}_{G_{I\times I'}}$ is contravariant, $\lambda_x\lambda_y\lambda_x^{-1}\lambda_y^{-1}$ corresponds to $v^{-1}u^{-1}vu=\id+tt'(d_yd_x-d_xd_y)$. We then deduce from \cref{scheme group Lie bracket definition by diagram} that the map $x\mapsto-d_x$ is an isomorphism of Lie algebras. The preceding argument is valid for $\mathfrak{Lie}(G/S)(S')=\mathfrak{Lie}(G_{S'}/S')(S')$ for any $S'\to S$, so we recover the following classical definition:
+
+\begin{proposition}\label{scheme group scheme Lie algebra isomorphic to derivation}
+Via the isomorphism $x\mapsto -d_x$, $\mathfrak{Lie}(G/S)$ is identified with the functor which associates any $S'\to S$ to the Lie algebra of derivations of $G_{S'}$ over $S'$ invariant under right translations.
+\end{proposition}
+
+As we have seen in \cref{scheme group representable is good} that any representable group is good, we conclude the following corollary:
+
+\begin{corollary}\label{scheme group representable is very good}
+Any representable grop is very good.
+\end{corollary}
+
+Let $e:S\to G$ be the unit section of $G$. Put $\omega_{G/S}^1=e^*(\Omega_{G/S}^1)$ and recall that (cf. \cref{scheme tangent bundle representable if}) $\mathfrak{Lie}(G/S)$ is represented by the vector bundle $\V(\omega_{G/S}^1)$. We then have assocaited functorially to any $S$-group scheme $G$ a vector bundle $\mathrm{Lie}(G/S)=\V(\omega_{G/S}^1)$ over $S$, which represents the functor $\mathfrak{Lie}(G/S)$, hence is endowed with the structure of a Lie algebra $S$-scheme over $\mathbb{O}_S$. Moreover, this construction commutes with base change and finite products.
+
+\begin{remark}\label{scheme group omega_G/S differential module prop}
+Let $\pi:G\to S$ be the structural morphism. The $\mathscr{O}_G$-module $\Omega_{G/S}^1$ is evidently $(G\times_SG)$-equivariant and hence, by (\cite{SGA3} \Rmnum{1}, 6.8.1), we have $\Omega_{G/S}^1\cong\pi^*(\omega_{G/S}^1)$. It follows for example that $\Omega_{G/S}^1$ is locally free (resp. locally free of finite rank) if $\omega_{G/S}^1$ is, which is in particular the case if $S$ is the spectrum of a field (resp. if $S$ is the spectrum of a field and $G$ is locally of finite type over $S$). Moreover, by (\cite{SGA3} \Rmnum{1}, 6.8.2), $\omega_{G/S}^1$ is endowed with a canonical $\mathbb{O}_S[G]$-module structure, which induces over $\V(\omega_{G/S}^1)=\mathrm{Lie}(G/S)$ the adjoint representation.\par
+On the other hand, $e$ is an immersion, and is a closed immersion if $G$ is separated over $S$ (cf. \cref{scheme morphism cartesian square with diagonal morphism}). Hence $\omega_{G/S}^1$ is identified with $\mathscr{I}/\mathscr{I}^2$, where $\mathscr{I}$ is the quasi-coherent ideal defining $e(S)$ in an open subset $U$ of $G$ in which $e(G)$ is closed (if $G$ is separated over $S$, we can put $U=G$, and if $G=\Spec(\mathscr{A}(G))$ is affine over $S$, $\mathscr{I}$ is none other than the augmented ideal of $\mathscr{A}(G)$, i.e. the kernel of $e^{\sharp}:\mathscr{A}(G)\to\mathscr{O}_S$).
+\end{remark}
+
+\begin{remark}\label{scheme group omega_G/S invariant sheaf of differential}
+We deduce from the isomorphism $\Omega_{G/S}^1\cong\pi^*(\omega_{G/S}^1)$ that the $\mathscr{O}_S$-module $\omega_{G/S}^1$ is identified with the sheaf $\pi_*^G(\Omega_{G/S}^1)$ of right invariant differentials of $G$ over $S$, that is, the sheaf whose sections over an open subset $U$ of $S$ are the sections of $\Omega_{G/S}^1$ over $\pi^{-1}(U)$ which are invariant under right translations (cf. (\cite{SGA3} \Rmnum{1}, 6.8.3)).
+\end{remark}
+
+We denote by $\sLie(G/S)$ the sheaf of sections of the vector bundle $\mathrm{Lie}(G/S)\to S$, which is the $\mathscr{O}_S$-module $(\omega_{G/S}^1)^{\vee}=\sHom_{\mathscr{O}_S}(\omega_{G/S}^1,\mathscr{O}_S)$ dual to $\omega_{G/S}^1$ (cf. \cref{scheme qcoh associated vector bundle def}). It is endowed with a Lie algebra structure over $\mathscr{O}_S$. As this construction does not commute with base change (in general), the Lie algebra structure on $\sLie(G/S)$ does not allow us to reconstruct the $S$-scheme structure on the $\mathbb{O}_S$-Lie algebra $\mathrm{Lie}(G/S)$. However, we have:
+
+\begin{proposition}\label{scheme group omega_G/S locally free construct Lie}
+Suppose that $\omega_{G/S}^1$ is locally free of finite type. Then $\sLie(G/S)^{\vee}\cong(\omega_{G/S})^{\vee\vee}\cong\omega_{G/S}^1$ and hence
+\[\mathrm{Lie}(G/S)=\V(\omega_{G/S}^1)=\V(\sLie(G/S)^{\vee})=\Gamma_{\sLie(G/S)}.\]
+\end{proposition}
+\begin{proof}
+In fact, $\omega_{G/S}^1$ is reflexive if it is locally free of finite type, and the assertion follows from \cref{scheme Gamma module functor isomorphic if locally free}.
+\end{proof}
+
+Finally, let $G\to H$ be a monomorphism of group functors. Then $\mathfrak{Lie}(G/S)\to\mathfrak{Lie}(H/S)$ is also a monomorphism (cf. \cref{scheme tangent bundle functorial on X}). As any monomorphism of vector bundles is a closed immersion\footnote{Let $f:\mathscr{M}\to\mathscr{N}$ be a morphism of $\mathscr{O}_S$-modules and $\mathscr{P}=\coker f$. If $\V(\mathscr{N})\to\V(\mathscr{M})$ is a monomorphism, the surjective morphism $\bm{S}(\mathscr{N})\to\bm{S}(\mathscr{P})$ factors through $\mathscr{O}_S$, hence $\mathscr{P}=0$.}, we obtain:
+
+\begin{corollary}
+Let $G\to H$ be a monomorphism of $S$-groups.
+\begin{enumerate}
+    \item[(\rmnum{1})] $\mathrm{Lie}(G/S)\to\mathrm{Lie}(H/S)$ is a closed immersion and hence $\omega_{H/S}^1\to\omega_{G/S}^1$ is an epimorphism.
+    \item[(\rmnum{2})] If $\omega_{G/S}^1$ is locally free of finite type, then the corresponding morphism $\sLie(G/S)\to\sLie(H/S)$ is an isomorphism from $\sLie(G/S)$ to a submodule of $\sLie(H/S)$ which is locally a direct factor. 
+\end{enumerate}
+\end{corollary}
+
+\begin{example}\label{scheme O_S-module alpha_p not good}
+Let $S=\Spec(k)$ with $k$ a field of characteristic $p$. Let $\bm{\alpha}_{p,S}$ be the $S$-functor which to any $S$-scheme $T$ associates
+\[\bm{\alpha}_{p,S}(T)=\{x\in\mathscr{O}(T):x^p=0\}.\]
+Then $\bm{\alpha}_{p,S}$ is represented by $\Spec(\mathscr{O}_S[X]/(X^p))$, and hence is a very good $S$-group. It is also endowed with an $\mathbb{O}_S$-module structure, which is not very good, because the canonical morphism $\bm{\alpha}_{p,S}\to\mathfrak{Lie}(\bm{\alpha}_{p,S}/S)=\G_{a,S}$\footnote{This can be deduced from the exact sequence (\ref{scheme group tangent space and Lie split exact sequence}), or we can also note that $\omega_{G/k}^1=k[X]$.} is not bijective.
+\end{example}
+
+\begin{example}\label{scheme group condition (E) but not good}
+Let $\mathrm{Nil}$ be the $\Z$-functor defined as follows: for any scheme $S$, $\mathrm{Nil}(S)$ is the nilideal of $\mathscr{O}_S$:
+\[\Nil(S)=\{x\in\mathscr{O}(S):\text{there exists $n\in\N$ such that $x^n=0$}\}.\]
+Let $\Nil^2$, $\mathbb{O}_{\red}$ and $F$ be the $\Z$-functors in groups which associate to any scheme $S$, respectively, the ideal $\Nil(S)^2$ and \[\mathbb{O}_{\red}(S)=\mathscr{O}(S)/\Nil(S),\quad F(S)=\mathscr{O}(S)/\Nil(S)^2.\]
+It is easily seen that $\mathfrak{Lie}(\mathbb{O}_{\red}/\Z)=0$, hence the $\mathbb{O}_{\Z}$-module $\mathbb{O}_{\red}$ is not good (although it is a good $\Z$-group). If $M,N$ are free $\Z$-modules of finite rank, we have
+\[\Nil^2(I_S(M\oplus N))=\Nil^2(S)\oplus\Nil^2(S)\otimes_{\Z}M \oplus\Nil(S)\otimes_{\Z}N\]
+and hence
+\[F(I_S(M\oplus N))=F(S)\oplus\mathbb{O}_{\red}(S)\otimes_{\Z}M\oplus\mathbb{O}_{\red}(S)\otimes_{\Z}N.\]
+We then deduce, on the one hand, that the $\Z$-functor $F$ satisfies condition (E) and, on the other hand, that $\mathfrak{Lie}(F/\Z)=\mathbb{O}_{\red}$ (cf. (\ref{scheme group tangent space and Lie split exact sequence})); as the latter is not a good $\mathbb{O}_\Z$-module, this shows that $F$ is a $\Z$-group which satisfies condition (E) but is not good.
+\end{example}
+
+\subsection{Calculation of some Lie algebras}
+\paragraph{Lie algebras of diagonalizable groups}
+Let $G=D_S(M)$ be a diagonalizable group over $S$ (cf. \ref{scheme diagonalizable group paragraph}). The formation of $\mathfrak{Lie}(G/S)$ commutes with base change, so it suffices to consider this construction for $G=D(M)$. We then have
+\[G(I_S)=\Hom_{\Grp}(M,\Gamma(I_S,\mathscr{O}_{I_S})^\times)=\Hom_{\Grp}(M,\Gamma(S,\mathscr{D}_{\mathscr{O}_S})^\times).\]
+Now the section $S\to I_S$ induces a split exact sequence
+\[\begin{tikzcd}
+1\ar[r]&\Gamma(S,\mathscr{O}_S)\ar[r]&\Gamma(S,\mathscr{D}_{\mathscr{O}_S})^\times\ar[r]&\Gamma(S,\mathscr{O}_S)^\times\ar[r]&0
+\end{tikzcd}\]
+which implies that $\mathfrak{Lie}(G)(S)$ is identified with $\Hom_{\Grp}(M,\mathbb{O}_S)$, endowed with the evident $\mathbb{O}(S)$-module structure. We then obtain by base change the following:
+
+\begin{proposition}\label{scheme diagonalizable group Lie isomorphism}
+We have isomorphisms
+\[\sHom_{S\dash\Grp}(M_S,\mathbb{O}_S)\stackrel{\sim}{\to}\mathfrak{Lie}(D_S(M)/S),\quad \sHom_{\Grp}(\widetilde{M}_S,\mathscr{O}_S)\stackrel{\sim}{\to} \sLie(D_S(M)/S),\]
+where, in the second isomorhism, $\widetilde{M}_S$ is the sheaf of constant group over $S$ defined by $M$, and $\sHom_{\Grp}$ is the sheaf of homomorphisms of groups.
+\end{proposition}
+
+\begin{corollary}\label{scheme diagonalizable group of free group Lie isomorphism}
+If $M$ is free of finite rank, then
+\[\Gamma_{\sLie(D_S(M)/S)}\stackrel{\sim}{\to} \mathfrak{Lie}(D_S(M)/S),\quad M^{\vee}\otimes_{\Z}\mathscr{O}_S\stackrel{\sim}{\to} \sLie(D_S(M)/S).\]
+In particular, $\mathbb{O}_S\cong\mathfrak{Lie}(\G_{m,S}/S)$ and $\mathscr{O}_S\cong\sLie(\G_{m,S}/S)$.
+\end{corollary}
+\begin{proof}
+The second isomorphism follows from \cref{scheme diagonalizable group Lie isomorphism} the isomorphism
+\[M^\vee\otimes_{\Z}\mathscr{O}_S=\Hom_{\Z}(\widetilde{M}_S,\mathscr{O}_S)=\Hom_{\Grp}(\widetilde{M}_S,\mathscr{O}_S),\]
+which it implies that $\Gamma_{\sLie(D_S(M)/S)}=\sHom_{S\dash\Grp}(M_S,\mathbb{O}_S)$, whence the first isomorphism.
+\end{proof}
+
+\paragraph{Normalizers and centralizers} Recall that a sequence $0\to F'\to F\to F''\to 0$ of $\mathbb{O}_S$-modules is called \textbf{exact} if for any $S'\to S$ the sequence $0\to F'(S')\to F(S')\to F''(S')\to 0$ of $\mathbb{O}(S')$-modules is exact. Similarly, a sequence $1\to G'\to G\to G''\to 1$ of $S$-groups is exact if for any $S'\to S$ the sequence of groups $1\to G'(S')\to G(S')\to G''(S')\to 1$ is exact.
+
+\begin{lemma}\label{scheme group condition (E) good and exact sequence}
+Let $1\to G'\to G\to G''\to 1$ be an exact sequence of $S$-groups.
+\begin{enumerate}
+    \item[(\rmnum{1})] The sequences $1\to T_{G'/S}(\mathscr{M})\to T_{G/S}(\mathscr{M})\to T_{G''/S}(\mathscr{M})\to 1$ and $1\to\mathfrak{Lie}(G'/S,\mathscr{M})\to \mathfrak{Lie}(G/S,\mathscr{M})\to \mathfrak{Lie}(G''/S,\mathscr{M})\to 1$ are exact.
+    \item[(\rmnum{2})] Let $1\to H'\to H\to H''\to 1$ be a second exact sequence of groups; it is exact if and only if the following sequence is exact:
+    \[\begin{tikzcd}
+    1\ar[r]&G'\times_SH'\ar[r]&G\times_SH\ar[r]&G''\times_SH''\ar[r]&1
+    \end{tikzcd}\]
+    \item[(\rmnum{3})] If two of the $S$-groups $G',G,G''$ satisfy condition (E), then the third one satisfies condition (E).
+    \item[(\rmnum{4})] If $0\to F'\to F\to F'\to 0$ is an exact sequence of $\mathbb{O}_S$-modules and two of the modules $F',F,F''$ are good, the third one is good.
+    \item[(\rmnum{5})] If two of the $S$-groups are good, the third one is good.
+\end{enumerate}
+\end{lemma}
+
+\begin{lemma}\label{scheme O_S-module good and invariant under group}
+Let $G$ be an $S$-group, $E,H$ be $G$-objects, $F$ be an $\mathbb{O}_S[G]$-module.
+\begin{enumerate}
+    \item[(a)] The canonical homomorphism $E^G\times_SH^G\to (E\times_SH)^G$ is an isomorphism.
+    \item[(b)] If $F$ is a good $\mathbb{O}_S$-module, so is $F^G$.
+\end{enumerate}
+\end{lemma}
+
+If $E$ is an $S$-group and $F$ is a sub-$S$-group of $E$, we denote by $E/F$ the $S$-functor which to any $S'\to S$ associates the set $E(S')/F(S')$ of classes $\bar{x}=xF(S')$, $x\in E(S')$. If $E$ is an abelian group over $S$, then $E/F$ is endowed with an abelian group structure.\par
+Now let $G$ be an $S$-group and $K$ be a sub-$S$-group of $G$; put $E=\mathfrak{Lie}(G/S,\mathscr{M})$ and $F=\mathfrak{Lie}(K/S,\mathscr{M})$. The adjoint action of $K$ on $E$ stablize $F$, hence induces an action of $K$ over the $S$-functor $E/F$. For any $S'\to S$, we then have
+\[(E/F)^K(S')=\{\bar{x}\in E(S')/F(S'):\text{$f^*(x^{-1})\Ad(k)(f^*(x))\in F(S'')$ for $f:S''\to S'$, $k\in K(S'')$}\}\]
+where $f^*(x)$ denotes the image of $x$ in $E(S'')$.
+
+\begin{theorem}\label{scheme group normalizer and centralizer Lie prop}
+Let $G$ be an $S$-group, $K$ be a sub-$S$-group of $G$, $N=N_G(K)$ and $Z=Z_G(K)$.
+\begin{enumerate}
+    \item[(\rmnum{1})] If the group law of $\mathfrak{Lie}(G/S,\mathscr{M})$ is abelian, then
+    \[\mathfrak{Lie}(N/S,\mathscr{M})/\mathfrak{Lie}(K/S,\mathscr{M})=\big(\mathfrak{Lie}(G/S,\mathscr{M})/\mathfrak{Lie}(K/S,\mathscr{M})\big)^K.\]
+    \item[(\rmnum{2})] If the group law of $\mathfrak{Lie}(G/S,\mathscr{M})$ is abelian, then $\mathfrak{Lie}(Z/S,\mathscr{M})=\mathfrak{Lie}(G/S,\mathscr{M})^K$.
+    \item[(\rmnum{3})] If $G$ satisfies condition (E) (resp. if $G$ and $K$ satisfy condition (E)), then $Z$ satisfies condition (E) (resp. $N$ satisfies condition (E)).
+    \item[(\rmnum{4})] If $G$ is good (resp. very good), then $Z$ is good (resp. very good).
+    \item[(\rmnum{5})] If $G$ and $K$ are good, then $N$ is good. If moreover $G$ is very good, then $N$ is very good.
+\end{enumerate}
+\end{theorem}
+
+\begin{corollary}\label{scheme group Lie of centralizer char}
+We have $\mathfrak{Lie}(Z(G)/S)=\mathfrak{Lie}(G/S)^G$ if the group law of $\mathfrak{Lie}(G/S)$ is abelian.
+\end{corollary}
+
+\begin{corollary}\label{scheme group normal subgroup Lie invariant under Ad}
+If the group law of $\mathfrak{Lie}(G/S)$ is abelian and $K$ is a normal subgroup of $G$, then
+\[\mathfrak{Lie}(G/S,\mathscr{M})/\mathfrak{Lie}(K/S,\mathscr{M})=\big(\mathfrak{Lie}(G/S,\mathscr{M})/\mathfrak{Lie}(K/S,\mathscr{M})\big)^K.\]
+\end{corollary}
+
+Let $G$ be a good $S$-group acting linearly on a good $\mathbb{O}_S$-module $F$ via
+\[\rho:G\to\sAut_{\mathbb{O}_S}(F).\]
+We have defined a corresponding linear representation
+\[d\rho:\mathfrak{Lie}(G/S)\to\sEnd_{\mathbb{O}_S}(F).\]
+The subgroups $N_G(E)$ and $Z_G(E)$ are defined for any subset $E$ of $F$. Similarly, for any $S'\to S$, we define
+\begin{align*}
+N_{\mathfrak{Lie}(G/S)}(E)(S')&=\{X\in\mathfrak{Lie}(G/S):d\rho(X)E_{S'}\sub E_{S'}\},\\
+Z_{\mathfrak{Lie}(G/S)}(E)(S')&=\{X\in\mathfrak{Lie}(G/S):d\rho(X)E_{S'}=0\}.
+\end{align*}
+called the \textbf{normalizer} and \textbf{centralizer}, respectively, of $E$ in $F$.
+
+\begin{theorem}\label{scheme group normalizer and centralizer of rep Lie prop}
+Let $G$ be a good $S$-group acting linearly on a good $\mathbb{O}_S$-module $F$, and $E$ be a sub-$\mathbb{O}_S$-module of $F$.
+\begin{enumerate}
+    \item[(a)] We have $\mathfrak{Lie}(Z_G(E)/S)=Z_{\mathfrak{Lie}(G/S)}(E)$ and $Z_G(E)$ is a good $S$-group; it is very good if $G$ is.
+    \item[(b)] Suppose that $E$ is a good $\mathbb{O}_S$-module. Then $\mathfrak{Lie}(N_G(E)/S)=N_{\mathfrak{Lie}(G/S)}(E)$ and $N_G(E)$ is a good $S$-group; it is very good if $G$ is.
+\end{enumerate}
+\end{theorem}
+
+\begin{example}
+Let $G$ be a good $S$-group. Then \cref{scheme group normalizer and centralizer of rep Lie prop} can be applied to the adjoint representation of $G$. Let $E$ be a good submodule of $\mathfrak{Lie}(G/S)$, for which we can associate the normalizer and centralizer. By \cref{scheme group normalizer and centralizer of rep Lie prop}, their Lie algebras are respectively the normalizer and centralizer of $E$ in $\mathfrak{Lie}(G/S)$, given by the usual definition:
+\begin{align*}
+N_{\mathfrak{Lie}(G/S)}(E)(S')&=\{X\in\mathfrak{Lie}(G/S):[X,E_{S'}]\sub E_{S'}\},\\
+Z_{\mathfrak{Lie}(G/S)}(E)(S')&=\{X\in\mathfrak{Lie}(G/S):d\rho[X,E_{S'}]=0\}.
+\end{align*}
+\end{example}
+
+\begin{example}
+Let $K$ be a sub-$S$-group of $G$, then $\mathfrak{Lie}(K/S)$ is a sub-$\mathbb{O}_S$-module of $\mathfrak{Lie}(G/S)$. Suppose that $\mathfrak{Lie}(K/S)$ is a good $\mathbb{O}_S$-module; we evidently have
+\[N_G(K)\sub N_G(\mathfrak{Lie}(K/S)),\quad Z_G(K)\sub Z_G(\mathfrak{Lie}(K/S))\]
+whence, by \cref{scheme group normalizer and centralizer of rep Lie prop}, we obtain
+\[\mathfrak{Lie}(N_G(K)/S)\sub N_{\mathfrak{Lie}(G/S)}(\mathfrak{Lie}(K/S)),\quad \mathfrak{Lie}(Z_G(K)/S)\sub Z_{\mathfrak{Lie}(G/S)}(\mathfrak{Lie}(K/S)),\]
+but none of these four inclusions is a priori an identity. In particular, if $K$ is a normal subgroup of $G$, then $\mathfrak{Lie}(K/S)$ is an ideal of $\mathfrak{Lie}(G/S)$.
+\end{example}
+
+\begin{example}\label{scheme group Lie and normalizer nonequal example}
+Let $S$ be a scheme, $F$ be the good $\mathbb{O}_S$-module $\mathbb{O}_S^2$ endowed with the natural action of the good $S$-group $G=\GL_{2,S}$, and $E$ be the sub-$\mathbb{O}_S$-module of $F$ formed by couples $(x_1,x_2)$ such that $x_2$ is nilpotent. Put $N=N_G(E)$, then $\mathfrak{Lie}(N/S)=\mathfrak{Lie}(G/S)$ while, for any $S'\to S$, we have
+\[N_{\mathfrak{Lie}(G/S)}(E)(S')=\Big\{\begin{pmatrix}
+a&b\\
+x&c
+\end{pmatrix}:\text{$a,b,c,x\in\mathscr{O}(S')$, $x$ nilpotent}\Big\}\]
+hence $\mathfrak{Lie}(N_G(E)/S)\neq N_{\mathfrak{Lie}(G/S)}(E)$.\par
+By considering the semi-direct product $G'=F\rtimes G$, we obtain a similar conter-example where $E$ is a sub-$\mathbb{O}_S$-module of $\mathfrak{Lie}(G'/S)$. We also note that with the notations above, $E=\mathfrak{Lie}(K/S)$ where $K$ is the subgroup $\mathbb{O}_S\oplus\Nil^2$ of $F$ (that is, for any $S'\to S$, $K(S')$ is formed by couples $(x_1,x_2)$ where $x_2\in\Nil(S')^2$).
+\end{example}

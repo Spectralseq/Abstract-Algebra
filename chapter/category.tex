@@ -3287,7 +3287,7 @@ and for a sheaf $\mathscr{F}$ over $X$, the adjoint morphisms fit into exact seq
 \end{equation}
 where the last arrow is surjective if $\mathscr{F}$ is injective.\par
 
-For an adjoint pair $(T^*,T_*)$, the adjunction morphism $T^*T_*\to\id$ (resp. $\id\to T_*T^*$) is an isomorphism if and onyl if $T_*$ (resp. $T^*$) is fully faithful. The assertion (\ref{triangle cat recollement-1}) is then equivalent to that $i_*$, $j_*$ and $j_!$ are fully faithful.\par
+For an adjoint pair $(T^*,T_*)$, the adjunction morphism $T^*T_*\to\id$ (resp. $\id\to T_*T^*$) is an isomorphism if and only if $T_*$ (resp. $T^*$) is fully faithful. The assertion (\ref{triangle cat recollement-1}) is then equivalent to that $i_*$, $j_*$ and $j_!$ are fully faithful.\par
 
 For an exact functor $T$ between abelian categories, it trivially extends to the derived categories. We shall use the same symbol for this extension. This extension coincides with the left derived functor $LT$ and the right derived functor $RT$, whenever they are defined.\par
 The functors described above induce functors over $D^+(X,\mathscr{O}_X)$, $D^+(U,\mathscr{O}_U)$ and $D^+(Z,\mathscr{O}_Z)$, which form adjoint pairs $(j_!,j^*,Rj_*)$ and $(i^*,i_*,Ri^!)$. We have $j^*i_*=0$, whence by adjunction $i^*j_!=0$ and $Ri^!Rj_*=0$. For $K\in K^+(X,\mathscr{O}_X)$, the exact sequences (\ref{triangle cat recollement-3}) and (\ref{triangle cat recollement-3}) then gives distinguished triangles $(j_!j^*K,K,i_*i^*K)$ and $(i_*Ri^!K,K,Rj_*j^*K)$. Finally, for $K\in D^+(Z,\mathscr{O}_Z)$ (resp. $K\in D^+(U,\mathscr{O}_U)$), by (\ref{triangle cat recollement-1}) we have isomorphisms
@@ -3296,7 +3296,7 @@ In fact, $j_*$ and $i_*$ transform injectives to injectives, so we can apply Gro
 
 The properties listed above are all that we need to glue $t$-structures, and we meet them in various contexts: for example, for $\ell$-adic derived categories, which do not come strictly within the scope of \ref{triangle cat recollement topo space paragraph}. To cover these cases, we will place ourselves in a more general framework. In this context, the sheaf categories no longer appear (only the triangulated categories appear) and we take advantage of this to lighten the notation by simply writing $j_*$ and $i^*$ for the derived functors $Rj_*$ and $Ri^!$.
 
-\paragraph{Recollement of \texorpdfstring{$t$}{t}-structures}
+\paragraph{Recollement of \texorpdfstring{$t$}{t}-structures}\label{triangle cat t-structure recollement paragraph}
 Let $\mathcal{T}$ be a triangulated category endowed with strictly full subcategories $\mathcal{U}$, $\mathcal{V}$, which are stable under translations. Suppose that for $U\in\mathcal{U}$ and $V\in\mathcal{V}$ we have $\Hom(U,V)=0$, and that any $X\in\mathcal{T}$ fits into a distinguished triangle $(U,X,V)$, with $U\in\mathcal{U}$ and $V\in\mathcal{V}$. The pair $(\mathcal{U},\mathcal{V})$ is then a $t$-structure over $\mathcal{T}$. By \cref{triangle cat t-structure truncation Hom prop}, $\mathcal{V}$ is the right orthogonal of $\mathcal{U}$ and $\mathcal{U}$ is the left orthogonal of $\mathcal{V}$. In particular, $\mathcal{U}$ and $\mathcal{V}$ are Serre subcategories of $\mathcal{T}$. The hypothesis (\rmnum{1}), (\rmnum{2}) of (\cite{tohoku} 6.4, p.25) are then satisfied and by (\cite{tohoku} 6.4, p.23-p.26), the projection $\mathcal{T}\to\mathcal{T}/\mathcal{U}$ admits a fully faithful right adjoint, with image $\mathcal{V}$, and the projection $\mathcal{T}\to\mathcal{T}/\mathcal{V}$ admits a fully faithful left adjoint, with image $\mathcal{U}$. In other words, the inclusion $u:\mathcal{U}\to\mathcal{T}$ (resp. $v:\mathcal{V}\to\mathcal{T}$) has a right adjoint $u_\bullet$ (resp. a left adjoint $v^\bullet$) and the sequences
 \[\begin{tikzcd}
 0\ar[r]&\mathcal{U}\ar[r,"u"]&\mathcal{T}\ar[r,"v^\bullet"]&\mathcal{V}\ar[r]&0
@@ -3401,7 +3401,7 @@ Now let $(\mathcal{D}_U^{\leq 0},\mathcal{D}_U^{\geq 0})$ be a $t$-structure ove
 \mathcal{D}^{\geq 0}&:=\{K\in\mathcal{D}:\text{$j^*(K)\in\mathcal{D}_U^{\geq 0}$ and $i^!(K)\in\mathcal{D}_Z^{\geq 0}$}\}.
 \end{align*}
 
-\begin{theorem}\label{triangle car recollement theorem}
+\begin{theorem}\label{triangle cat recollement theorem}
 With the preceding hypotheses, $(\mathcal{D}^{\leq 0},\mathcal{D}^{\geq 0})$ is a $t$-structure over $\mathcal{D}$.
 \end{theorem}
 \begin{proof}
@@ -3436,8 +3436,8 @@ Applying $j^*$, $i^*$, $i^!$ to the distinguished triangles in this octahedron, 
 We then conclude that $A\in\mathcal{D}^{\leq 0}$ and $B\in\mathcal{D}^{\geq 1}$, and this proves axiom (t3).
 \end{proof}
 
-\begin{proposition}\label{triangle car recollement t-structure iff}
-Under the hypothesis and notations of \cref{triangle car recollement theorem}, let $(\mathcal{D}^{\leq 0},\mathcal{D}^{\geq 0})$ be a $t$-structure over $\mathcal{D}$. Then the following conditions are equivalent:
+\begin{proposition}\label{triangle cat recollement t-structure iff}
+Under the hypothesis and notations of \cref{triangle cat recollement theorem}, let $(\mathcal{D}^{\leq 0},\mathcal{D}^{\geq 0})$ be a $t$-structure over $\mathcal{D}$. Then the following conditions are equivalent:
 \begin{enumerate}
     \item[(\rmnum{1})] $j_!j^*$ is right $t$-exact;
     \item[(\rmnum{1}')] $j_*j^*$ is left $t$-exact;
@@ -3455,33 +3455,33 @@ It is clear that (\rmnum{2})$\Rightarrow$(\rmnum{1}), (\rmnum{1}'), and that the
 By \cref{triangle cat t-structure subcategory eg}, the original $t$-structure of $\mathcal{D}$ is therefore obtained by glueing $(j^*\mathcal{D}^{\leq 0},j^*\mathcal{D}^{\geq 0})$ and $(i^*\mathcal{D}^{\leq 0},i^!\mathcal{D}^{\geq 0})$.
 \end{proof}
 
-Suppose that we are given a $t$-structure over $\mathcal{D}_Z$, and apply \cref{triangle car recollement theorem} to the degenerate $t$-structure $(\mathcal{D}_U,0)$ over $\mathcal{D}_U$ and the given $t$-structure over $\mathcal{D}_Z$. The functor $\tau^{\leq n}$ relative to the $t$-structure obtained over $\mathcal{D}$ is then denoted by $\tau^{\leq n}_Z$, which is right adjoint to the inclusion of the full subcategory of $\mathcal{D}$ formed by $X\in\mathcal{D}$ such that $i^*(X)\in\mathcal{D}_Z^{\leq n}$. The proof of axiom (t3) in \cref{triangle car recollement theorem} shows that we have a distinguished triangle
-\begin{equation}\label{triangle car recollement truncation tau_Z^leq dt}
+Suppose that we are given a $t$-structure over $\mathcal{D}_Z$, and apply \cref{triangle cat recollement theorem} to the degenerate $t$-structure $(\mathcal{D}_U,0)$ over $\mathcal{D}_U$ and the given $t$-structure over $\mathcal{D}_Z$. The functor $\tau^{\leq n}$ relative to the $t$-structure obtained over $\mathcal{D}$ is then denoted by $\tau^{\leq n}_Z$, which is right adjoint to the inclusion of the full subcategory of $\mathcal{D}$ formed by $X\in\mathcal{D}$ such that $i^*(X)\in\mathcal{D}_Z^{\leq n}$. The proof of axiom (t3) in \cref{triangle cat recollement theorem} shows that we have a distinguished triangle
+\begin{equation}\label{triangle cat recollement truncation tau_Z^leq dt}
 (\tau^{\leq n}_ZX,X,i_*\tau^{>n}i^*(X))
 \end{equation}
-(with the notations of \cref{triangle car recollement theorem}, we have $X=Y$ since $j_*\tau^{>0}j^*(X)=0$). The cohomology functor $H^n$ for this $t$-structure is then given by $i_*H^ni^*(X)$.\par
+(with the notations of \cref{triangle cat recollement theorem}, we have $X=Y$ since $j_*\tau^{>0}j^*(X)=0$). The cohomology functor $H^n$ for this $t$-structure is then given by $i_*H^ni^*(X)$.\par
 Dually, we define $\tau^{\geq n}_Z$ via the degenerate $t$-structure $(0,\mathcal{D}_U)$ over $\mathcal{D}_U$, which is left adjoint to the inclusion of the full subcategory of $\mathcal{D}$ formed by $X\in\mathcal{D}$ such that $i^!(X)\in\mathcal{D}_Z^{\geq n}$. We have a distinguished triangle
-\begin{equation}\label{triangle car recollement truncation tau_Z^geq dt}
+\begin{equation}\label{triangle cat recollement truncation tau_Z^geq dt}
 (i_*\tau^{<n}i^!(X),X,\tau^{\geq n}_ZX),
 \end{equation}
 and the functor $H^n$ is given by $i_*H^ni^!(X)$.\par
 Similarly, if we are given a $t$-structure over $\mathcal{D}_U$, and we endow $\mathcal{D}_Z$ with the $t$-structure $(\mathcal{D}_Z,0)$ (resp. $(0,\mathcal{D}_Z)$), we can define $t$-structure over $\mathcal{D}$, and truncation functor $\tau^{\leq n}_U$ (resp. $\tau^{\geq n}_U$), which fit into distinguished triangles
-\begin{equation}\label{triangle car recollement truncation tau_U dt}
+\begin{equation}\label{triangle cat recollement truncation tau_U dt}
 (\tau^{\leq n}_UX,X,j_*\tau^{>n}j^*(X)),\quad\quad (\text{resp.}\quad (j_!\tau^{<n}j^*(X),X,\tau^{\geq n}_UX)).
 \end{equation}
 The cohomology functor $H^n$ is given by $j_*H^nj^*(X)$ (resp. $j_!H^nj^*(X)$).\par
-The proof of axiom (t3) in \cref{triangle car recollement theorem} shows that $\tau^{\leq 0}=\tau^{\leq 0}_Z\tau^{\leq 0}_U$. By translating and duality, we obtain
-\begin{equation}\label{triangle car recollement truncation functor decomposition}
+The proof of axiom (t3) in \cref{triangle cat recollement theorem} shows that $\tau^{\leq 0}=\tau^{\leq 0}_Z\tau^{\leq 0}_U$. By translating and duality, we obtain
+\begin{equation}\label{triangle cat recollement truncation functor decomposition}
 \tau^{\leq n}=\tau^{\leq n}_Z\tau^{\leq n}_U,\quad \tau^{\geq n}=\tau^{\geq n}_Z\tau^{\geq n}_U.
 \end{equation}
 
-\begin{example}
+\begin{example}\label{triangle cat recollement truncation tau_Z for topo space}
 In the situation of \ref{triangle cat recollement topo space paragraph} and for the natural $t$-structure of $D^+(Z,\mathscr{O}_Z)$, the functor $\tau_Z^{\leq n}$ is deduced from the functor of the category of complexes of sheaves into itself which to a complex $K$ associates the subcomplex which coincides with $K$ over $U$, and with the subcomplex $\tau^{\leq n}K$ over $Z$.
 \end{example}
 
-A \textbf{prolongation} of an object $Y$ of $\mathcal{D}_U$ is defined to be an object $X$ of $\mathcal{D}$ endowed with an isomorphism $j^*(X)\cong Y$. Such an isomorphism gives by adjunction morphisms $j_!(Y)\to X\to j_*(Y)$. If $n\in\Z$ is an integer, then from the distinguished triangle (\ref{triangle car recollement truncation tau_Z^leq dt}) (resp. (\ref{triangle car recollement truncation tau_Z^geq dt})) and (R3), (R5), we see that $\tau^{\geq n}_Zj_!(Y)$ (resp. $\tau_Z^{\leq n}j_*(Y)$) is a prolongation of $Y$. If a prolongation $X$ is isomorphic as a prolongation to $\tau^{\geq n}_Zj_!(Y)$ (resp. $\tau_Z^{\leq n}j_*(Y)$), the isomorphism $j^*(X)\cong Y$ is then uniquely determined, and we simply write $X=\tau^{\geq n}_Zj_!(Y)$ (resp. $\tau_Z^{\leq n}j_*(Y)$).
+A \textbf{prolongation} of an object $Y$ of $\mathcal{D}_U$ is defined to be an object $X$ of $\mathcal{D}$ endowed with an isomorphism $j^*(X)\cong Y$. Such an isomorphism gives by adjunction morphisms $j_!(Y)\to X\to j_*(Y)$. If $n\in\Z$ is an integer, then from the distinguished triangle (\ref{triangle cat recollement truncation tau_Z^leq dt}) (resp. (\ref{triangle cat recollement truncation tau_Z^geq dt})) and (R3), (R5), we see that $\tau^{\geq n}_Zj_!(Y)$ (resp. $\tau_Z^{\leq n}j_*(Y)$) is a prolongation of $Y$. If a prolongation $X$ is isomorphic as a prolongation to $\tau^{\geq n}_Zj_!(Y)$ (resp. $\tau_Z^{\leq n}j_*(Y)$), the isomorphism $j^*(X)\cong Y$ is then uniquely determined, and we simply write $X=\tau^{\geq n}_Zj_!(Y)$ (resp. $\tau_Z^{\leq n}j_*(Y)$).
 
-\begin{proposition}\label{triangle car recollement prolongation exist}
+\begin{proposition}\label{triangle cat recollement prolongation exist}
 Let $Y\in\mathcal{D}_U$ and $n$ be an integer. There exists, up to unique isomorphisms, a unique prolongation $X$ of $Y$ such that $i^*(X)\in\mathcal{D}_Z^{\leq n-1}$ and $i^!(X)\in\mathcal{D}_Z^{\geq n+1}$. This prolongation is given by $\tau^{\leq n-1}_Zj_*(Y)$, and we have $\tau^{\leq n-1}_Zj_*(Y)=\tau^{\geq n+1}_Zj_!(Y)$.
 \end{proposition}
 \begin{proof}
@@ -3494,12 +3494,12 @@ Let $X$ be a prolongation of $Y$. The distinguished triangle $(i^*(X),(j_*/j_!)(
 The distinguished triangles $(X,j_*(Y),i_*i^!(X)[1])$ of (\ref{triangle cat recollement octahedron}) and $(\tau^{\leq n-1}_Z,\id,i_*\tau^{>n-1}i^*)$ imply that condition (\rmnum{2}) is equivalent to $X=\tau^{\leq n-1}_Fj_*(Y)$, and the triangles $(j_!(Y),X,i_*i^*(X))$ of (\ref{triangle cat recollement octahedron}) and $(i_*\tau^{<n+1}i^!,\id,\tau_Z^{\geq n+1})$ imply that condition (\rmnum{2}') is equivalent to $X=\tau_Z^{\geq n+1}j_!(Y)$; we therefore conclude the proposition.
 \end{proof}
 
-\begin{remark}
-Let $n$ be an integer and $\mathcal{D}_m$ be the full subcategory of $\mathcal{D}$ formed by objects $X$ such that $i^*(X)\in\mathcal{D}_Z^{\leq n-1}$ and $i^!(X)\in\mathcal{D}_Z^{\geq n+1}$. The functor $j^*$ then induces an equivalence of categories $\mathcal{D}_m\stackrel{\sim}{\to}\mathcal{D}_U$. It admits $\tau^{\leq n-1}_Zj_*$ as a quasi-inverse, which we often denote by ${^pj_{!*}}$.
+\begin{remark}\label{triangle cat recollement prolongation equivalence by j^*}
+Let $n\in\Z$ be an integer and $\mathcal{D}_m$ be the full subcategory of $\mathcal{D}$ formed by objects $X$ such that $i^*(X)\in\mathcal{D}_Z^{\leq n-1}$ and $i^!(X)\in\mathcal{D}_Z^{\geq n+1}$. The functor $j^*$ then induces an equivalence of categories $\mathcal{D}_m\stackrel{\sim}{\to}\mathcal{D}_U$, and it admits $\tau^{\leq n-1}_Zj_*$ as a quasi-inverse, which we often denote by ${^pj_{!*}}$.
 \end{remark}
 
 Let $\mathcal{C}$, $\mathcal{C}_U$ and $\mathcal{C}_Z$ be the hearts of the $t$-categories $\mathcal{D}$, $\mathcal{D}_U$ and $\mathcal{D}_Z$, respectively, where $\mathcal{D}_U$ and $\mathcal{D}_Z$ are endowed with given $t$-structures, and $\mathcal{D}$ with the glueing $t$-structure. Denote by $\eps$ the inclusions of $\mathcal{C}$, $\mathcal{C}_U$ or $\mathcal{C}_Z$ into $\mathcal{D}$, $\mathcal{D}_U$ or $\mathcal{D}_Z$, and for $T$ the functors $j_!,j^*,j_*,i^*,i_*,i^!$, we denote by $^{pT}$ the functor $H^0\circ T\circ\eps$. By the definition of the $t$-structure of $\mathcal{D}$, $j^*$ is $t$-exact, $i^*$ is right $t$-exact, and $i^!$ is left $t$-exact. Applying \cref{triangle cat t-exact functor prop}~(c) and (d), we obtain the following result:
-\begin{proposition}\label{triangle car recollement functors composition and exact sequence}
+\begin{proposition}\label{triangle cat recollement functors composition and exact sequence}
 Let $\mathcal{D}$, $\mathcal{D}_U$ and $\mathcal{D}_Z$ be triangulated categories as above.
 \begin{enumerate}
     \item[(a)] The functors $j_!$ and $i^*$ (resp. $j_*$ and $i^!$, resp. $j^*$ and $i_*$) are right $t$-exact (resp. left $t$-exact, resp. $t$-exact), and we have adjoint triples $({^pj_!},{^pj^*},{^pj_*})$ and $({^pi^*},{^pi_*},{^pi^!})$.
@@ -3525,11 +3525,11 @@ Only the exact sequences in (c) are nontrivial. For this, we note that by \cref{
 To see that the morphism $A\to H^0(i_*i^*(A))$ is surjective, we note that since $j_!$ is right $t$-exact and $j^*$ is $t$-exact, we have $j_!j^*(A)\in\mathcal{D}^{\leq 0}$, so $H^1(j_!j^*(A))=0$ and we obtain the first exact sequence in (c). The second one can be deduced similarly, using the fact that $j_*$ is left $t$-exact and $j^*$ is $t$-exact (so $j_*j^*(A)\in\mathcal{D}^{\geq 0}$).
 \end{proof}
 
-\begin{remark}\label{triangle car recollement ^pi_* adjoint char}
+\begin{remark}\label{triangle cat recollement ^pi_* adjoint char}
 By ${^pj^*}{^pi_*}=0$ and the exact sequence of (c), for $X\in\mathcal{C}$ to be in the essential image $\widebar{\mathcal{C}}_Z$ of ${^pi_*}$, it is necessary and sufficient that ${^pj^*}(X)=0$. Since the functor ${^pj^*}$ is exact, this essential image is a Serre subcategory of $\mathcal{C}$. If we identify $\mathcal{C}_Z$ with $\widebar{\mathcal{C}}_Z$ by the fully faithful functor ${^pi_*}$, the adjunctions $({^pi^*},{^pi_*})$ and $({^pi_*},{^pi_!})$ show that for $X\in\mathcal{C}$, ${^pi^*}(X)$ is the largest quotient of $X$ which is in $\mathcal{C}_Z$, and ${^pi^!}(X)$ is the largest sub-object of $X$ that is in $\mathcal{C}_Z$.
 \end{remark}
 
-\begin{proposition}\label{triangle car recollement ^pj^* is quotient}
+\begin{proposition}\label{triangle cat recollement ^pj^* is quotient}
 The functor ${^pj^*}$ identifies $\mathcal{C}_U$ with the quotient of $\mathcal{C}$ by the Serre subcategory $\mathcal{C}_Z$ (or, more precisely, its iamge $\widebar{\mathcal{C}}_Z$).
 \end{proposition}
 \begin{proof}
@@ -3549,7 +3549,7 @@ admits a section $Q{^pj_!}$, and hence is surjective. This completes the proof.
 \end{proof}
 
 \begin{remark}
-In the situation of \ref{triangle cat recollement topo space paragraph}, if we endow $D^+(U,\mathscr{O}_U)$ and $D^+(Z,\mathscr{O}_Z)$ the natural $t$-structures, then the glueing $t$-structure on $D^+(X,\mathscr{O}_X)$ is the natural $t$-structure, and the abelian categories $\mathcal{C}$, $\mathcal{C}_U$ and $\mathcal{C}_Z$ are $\Mod(\mathscr{O}_X)$, $\Mod(\mathscr{O}_U)$ and $\Mod(\mathscr{O}_Z)$. In the general case, however, the functor ${^pj_!}$ is only right exact, ${^pi_*}$ is only left exact, and the first sequence of \cref{triangle car recollement functors composition and exact sequence}~(c) is not left exact.
+In the situation of \ref{triangle cat recollement topo space paragraph}, if we endow $D^+(U,\mathscr{O}_U)$ and $D^+(Z,\mathscr{O}_Z)$ the natural $t$-structures, then the glueing $t$-structure on $D^+(X,\mathscr{O}_X)$ is the natural $t$-structure, and the abelian categories $\mathcal{C}$, $\mathcal{C}_U$ and $\mathcal{C}_Z$ are $\Mod(\mathscr{O}_X)$, $\Mod(\mathscr{O}_U)$ and $\Mod(\mathscr{O}_Z)$. In the general case, however, the functor ${^pj_!}$ is only right exact, ${^pi_*}$ is only left exact, and the first sequence of \cref{triangle cat recollement functors composition and exact sequence}~(c) is not left exact.
 \end{remark}
 
 Since the functor ${^pi_*}$ is fully faithful, the composition of the adjunction morphisms ${^pi_*}{^pi^!}\to\id\to{^pi_*}{^pi^*}$ is the image under ${^pi_*}$ of a unique morphism of functors
@@ -3566,9 +3566,9 @@ Therefore, for $A\in\mathcal{C}$, the morphism ${^pi^!}(A)\to {^pi^*}(A)$ in (\r
 \begin{equation}\label{triangle cat recollement i^! to i^* heart morphism-2}
 {^pi^!}(A)\to i^!(A)\stackrel{(\ref{triangle cat recollement i^! to i^* morphism})}{\longrightarrow} i^*(A)\to {^pi^*}(A).
 \end{equation}
-By \cref{triangle car recollement functors composition and exact sequence}(d), if we apply (\ref{triangle cat recollement i^! to i^* heart morphism-1}) to ${^pi_*}(A)$ (for $A\in\mathcal{C}_Z$), then we obtain the identity morphism of $A$.\par
+By \cref{triangle cat recollement functors composition and exact sequence}(d), if we apply (\ref{triangle cat recollement i^! to i^* heart morphism-1}) to ${^pi_*}(A)$ (for $A\in\mathcal{C}_Z$), then we obtain the identity morphism of $A$.\par
 
-On the other hand, since the functor ${^pj^*}$ is identified with the quotient functor (\cref{triangle car recollement ^pj^* is quotient}), the composition of the adjunction morphisms ${^pj_!}{^pj^*}\to\id\to{^pj_*}{^pj^*}$ provides a unique morphism of functors
+On the other hand, since the functor ${^pj^*}$ is identified with the quotient functor (\cref{triangle cat recollement ^pj^* is quotient}), the composition of the adjunction morphisms ${^pj_!}{^pj^*}\to\id\to{^pj_*}{^pj^*}$ provides a unique morphism of functors
 \begin{equation}\label{triangle cat recollement j_! to j_* heart morphism-1}
 {^pj_!}\to{^pj_*}.
 \end{equation}
@@ -3582,7 +3582,7 @@ Therefore, for $B\in\mathcal{C}_U$, the morphism $j_!(B)\to j_*(B)$ of (\ref{tri
 \begin{equation}\label{triangle cat recollement j_! to j_* heart morphism-2}
 j_!(B)\to \tau^{\geq 0}j_!(B)={^pj_!}(B)\stackrel{(\ref{triangle cat recollement j_! to j_* morphism})}{\longrightarrow}{^pj_*}(B)=\tau^{\leq 0}j_*(B)\to j_*(B).
 \end{equation}
-By \cref{triangle car recollement functors composition and exact sequence}(d), if we apply ${^pj_*}$ to (\ref{triangle cat recollement j_! to j_* heart morphism-1}), then we obtain the identity morphism. In particular, for $B\in\mathcal{C}_U$, the kernel and cokernel of ${^pj_!}(B)\to {^pj_*}(B)$ are in ${^pi_*}\mathcal{C}_Z$.
+By \cref{triangle cat recollement functors composition and exact sequence}(d), if we apply ${^pj_*}$ to (\ref{triangle cat recollement j_! to j_* heart morphism-1}), then we obtain the identity morphism. In particular, for $B\in\mathcal{C}_U$, the kernel and cokernel of ${^pj_!}(B)\to {^pj_*}(B)$ are in ${^pi_*}\mathcal{C}_Z$.
 
 \begin{definition}
 The functor $j_{!*}:\mathcal{C}_U\to\mathcal{C}$ is defined to be the functor which to $B\in\mathcal{C}_U$ associates the image of ${^pj_!}(B)$ into ${^pj_*}(B)$.
@@ -3603,12 +3603,12 @@ j_{!*}(B)&=\tau^{\geq 1}_Zj_!(B)=\tau^{\leq-1}_Zj_*(B),\\
 More precisely, ${^pj_!}(B)$, endowed with the morphism $j_!(B)\to{^pj_!}(B)$, is isomorphic to $\tau^{\geq 0}_Zj_!(B)$, and so on.
 \end{proposition}
 \begin{proof}
-Since $j^*j_!(B)\cong B$ is in $\mathcal{C}_U$, we see that $j_!(B)$ is stable under $\tau^{\geq 0}_U$. By (\ref{triangle car recollement truncation functor decomposition}) and \cref{triangle car recollement functors composition and exact sequence}~(a), we then have ${^pj_!}(B)=\tau^{\geq 0}j_!(B)=\tau^{\geq 0}_Zj_!(B)$, and \cref{triangle car recollement prolongation exist} shows that $\tau^{\geq 0}_Zj_!(B)=\tau^{\leq -2}_Zj_*(B)$. Similarly, since $j^*j_*(B)\cong B$, we have ${^pj_*}(B)=\tau^{\leq 0}_Zj_*(B)=\tau^{\geq 2}_Zj_!(B)$.\par
+Since $j^*j_!(B)\cong B$ is in $\mathcal{C}_U$, we see that $j_!(B)$ is stable under $\tau^{\geq 0}_U$. By (\ref{triangle cat recollement truncation functor decomposition}) and \cref{triangle cat recollement functors composition and exact sequence}~(a), we then have ${^pj_!}(B)=\tau^{\geq 0}j_!(B)=\tau^{\geq 0}_Zj_!(B)$, and \cref{triangle cat recollement prolongation exist} shows that $\tau^{\geq 0}_Zj_!(B)=\tau^{\leq -2}_Zj_*(B)$. Similarly, since $j^*j_*(B)\cong B$, we have ${^pj_*}(B)=\tau^{\leq 0}_Zj_*(B)=\tau^{\geq 2}_Zj_!(B)$.\par
 The determination $H^n=i_*H^ni^!$ for the $t$-structure defining $\tau^{\geq n}_Z$ shows that we have a distinguished triangle
 \[(i_*H^0i^!j_!(B),\tau^{\geq 0}_Zj_!(B),\tau^{\geq 1}_Zj_!(B))=(i_*H^0i_!j_!(B),{^pj_!}(B),\tau^{\geq 1}_Zj_!(B)),\]
 which implies that $\tau_Z^{\geq 1}j_!(B)\in\mathcal{D}^{[-1,0]}$. A dual argument provides a distinguished triangle
 \[(\tau^{\leq -1}_Zj_*(B),\tau^{\leq 0}_Fj_*(B),i_*H^0i^*j_*(B))=(\tau^{\leq -1}_Zj_*(B),{^pj_*}(B),i_*H^0i^*(B)),\]
-which shows that $\tau^{\leq -1}_Zj_*(B)\in\mathcal{D}^{[0,1]}$. By \cref{triangle car recollement prolongation exist}, we then conclude that $\tau^{\geq 1}_Zj_!(B)=\tau^{\leq -1}_Zj_*(B)$ belongs to $\mathcal{C}$, and the above triangles produce short exact sequences
+which shows that $\tau^{\leq -1}_Zj_*(B)\in\mathcal{D}^{[0,1]}$. By \cref{triangle cat recollement prolongation exist}, we then conclude that $\tau^{\geq 1}_Zj_!(B)=\tau^{\leq -1}_Zj_*(B)$ belongs to $\mathcal{C}$, and the above triangles produce short exact sequences
 \[\begin{tikzcd}
 0\ar[r]&i_*H^0i^!j_!(B)\ar[r]&{^pj_!}(B)\ar[r]&\tau^{\geq 1}_Zj_!(B)\ar[r]&0
 \end{tikzcd}\]
@@ -3623,14 +3623,14 @@ These together show that $\tau^{\geq 1}_Zj_!(B)=\tau^{\leq -1}_Zj_*(B)$ is the i
 For $B\in\mathcal{C}_U$, $j_{!*}(B)$ is the unique prolongation $X$ of $B$ in $\mathcal{D}$ such that $i^*(X)\in\mathcal{D}_Z^{\leq -1}$ and $i^!(X)\in\mathcal{D}_Z^{\geq 1}$.
 \end{corollary}
 \begin{proof}
-This follows from \cref{triangle car recollement prolongation exist}. Similarly, ${^pj_!}(B)$ (resp. ${^pj_*}(B)$) is the unique prolongation $X$ such that $i^*(X)\in\mathcal{D}_Z^{\leq -2}$ (resp. $\mathcal{D}_Z^{\leq 0}$) and $i^!(X)\in\mathcal{D}_Z^{\geq 0}$ (Resp. $\mathcal{D}_Z^{\geq 2}$).
+This follows from \cref{triangle cat recollement prolongation exist}. Similarly, ${^pj_!}(B)$ (resp. ${^pj_*}(B)$) is the unique prolongation $X$ such that $i^*(X)\in\mathcal{D}_Z^{\leq -2}$ (resp. $\mathcal{D}_Z^{\leq 0}$) and $i^!(X)\in\mathcal{D}_Z^{\geq 0}$ (Resp. $\mathcal{D}_Z^{\geq 2}$).
 \end{proof}
 
 \begin{corollary}\label{triangle cat recollement j_!* char by subobject quotient}
 For $B\in\mathcal{C}_U$, $j_{!*}(B)$ is the unique prolongation $X$ of $B$ in $\mathcal{C}$ with no nontrivial sub-object or quotient in the essential image $\widebar{\mathcal{C}}_Z$ of $\mathcal{C}_Z$ under ${^pi}_*$.
 \end{corollary}
 \begin{proof}
-By definition, $j_{!*}(B)$ is in $\mathcal{C}\sub\mathcal{D}$. For any prolongation $X\in\mathcal{C}$ of $B$, we have $i^*(X)\in\mathcal{D}_Z^{\leq 0}$, and $i^*(X)\in\mathcal{D}_Z^{\leq -1}$ if and only if ${^pi^*}(X)=0$. Dually, $i^!(X)\in\mathcal{D}_Z^{\geq 0}$, and $i^!(X)\in\mathcal{D}_Z^{\geq 1}$ if and only if ${^pi^!}(X)=0$. Identify $\mathcal{C}_Z$ with $\widebar{\mathcal{C}}_Z$ via ${^pi_*}$. Since ${^pi^*}(X)$ (resp. ${^pi^!}(X)$) is the largets quotient (resp. sub-object) of $X$ which is in $\mathcal{C}_Z$ (cf. \cref{triangle car recollement ^pi_* adjoint char}), the characterization \cref{triangle cat recollement j_!* char by subobject quotient} of $j_{!*}(B)$ follows from \cref{triangle cat recollement j_!* prolongation char}.
+By definition, $j_{!*}(B)$ is in $\mathcal{C}\sub\mathcal{D}$. For any prolongation $X\in\mathcal{C}$ of $B$, we have $i^*(X)\in\mathcal{D}_Z^{\leq 0}$, and $i^*(X)\in\mathcal{D}_Z^{\leq -1}$ if and only if ${^pi^*}(X)=0$. Dually, $i^!(X)\in\mathcal{D}_Z^{\geq 0}$, and $i^!(X)\in\mathcal{D}_Z^{\geq 1}$ if and only if ${^pi^!}(X)=0$. Identify $\mathcal{C}_Z$ with $\widebar{\mathcal{C}}_Z$ via ${^pi_*}$. Since ${^pi^*}(X)$ (resp. ${^pi^!}(X)$) is the largets quotient (resp. sub-object) of $X$ which is in $\mathcal{C}_Z$ (cf. \cref{triangle cat recollement ^pi_* adjoint char}), the characterization \cref{triangle cat recollement j_!* char by subobject quotient} of $j_{!*}(B)$ follows from \cref{triangle cat recollement j_!* prolongation char}.
 \end{proof}
 
 \begin{proposition}\label{triangle cat recollement simple object of heart char}
@@ -3642,25 +3642,25 @@ Since the essential image $\widebar{\mathcal{C}}_Z$ of $\mathcal{C}_Z$ under ${^
     \item[(a)] $X\in\widebar{\mathcal{C}}_Z$ and is simple in $\widebar{\mathcal{C}}_Z$;
     \item[(b)] the image of $X$ in $\mathcal{C}/\widebar{\mathcal{C}}_Z$ is simple, and $X$ has no nontrial sub-object or quotient in $\widebar{\mathcal{C}}_Z$.
 \end{enumerate}
-The case (a) corresponds to $X={^pi_*}(S)$, for $S$ simple in $\mathcal{C}_Z$, and by \cref{triangle cat recollement j_!* char by subobject quotient} and \cref{triangle car recollement ^pj^* is quotient}, case (b) corresponds to $X=j_{!*}(S)$, for $S$ simple in $\mathcal{C}_U$.
+The case (a) corresponds to $X={^pi_*}(S)$, for $S$ simple in $\mathcal{C}_Z$, and by \cref{triangle cat recollement j_!* char by subobject quotient} and \cref{triangle cat recollement ^pj^* is quotient}, case (b) corresponds to $X=j_{!*}(S)$, for $S$ simple in $\mathcal{C}_U$.
 \end{proof}
 
 \section{Perverse sheaves}
-\subsection{Stratified spaces}
+\subsection{Stratified spaces}\label{triangle cat perverse sheaf stratified space subsection}
 Let $X$ be a topological space endowed with a structural sheaf of rings $\mathscr{O}_X$, $\mathcal{S}$ be a finite partition of $X$ by locally closed subsets (a \textit{stratification}), and $p:\mathcal{S}\to\Z$ be a function (called the \textbf{perversity}). By definition, the stratum $S$ is nonempty. We further suppose that the closure of any strarum is a union of strata.\par
 For a continuous map $f:X\to Y$, we shall simply write $f_!$, $f_*$, $f^!$, $f^*$ for the derived functors $Rf_!$, $Rf_*$, $Rf^!$, $Lf^*$. This notation is motivated by the fact that we often work with the derived categories, rather than the module categories. The corresponding functors on module categories will be denoted by ${^0f_!}$, ${^0f_*}$, ${^0f^!}$, ${^0f^*}$.
 
 \begin{definition}
-We denote by ${^pD^{\leq 0}}(X,\mathscr{O}_X)$ (resp. ${^pD^{\geq 0}}(X,\mathscr{O}_X)$) the subcategory of $D(X,\mathscr{O}_X)$ formed by complexes $K\in D(X,\mathscr{O}_X)$ (resp. $K\in D^+(X,\mathscr{O}_X)$) such that for any strata $S\in\mathcal{S}$, we have $H^n(i_S^*(K))=0$ for $n>p(S)$ (resp. $H^n(i_S^!(K))=0$ for $n<p(S)$), where $i_S:S\to X$ denote the inclusion map.
+We denote by ${^pD^{\leq 0}}(X,\mathscr{O}_X)$ (resp. ${^pD^{\geq 0}}(X,\mathscr{O}_X)$) the subcategory of $D(X,\mathscr{O}_X)$ formed by complexes $\mathscr{F}\in D(X,\mathscr{O}_X)$ (resp. $\mathscr{F}\in D^+(X,\mathscr{O}_X)$) such that for any strata $S\in\mathcal{S}$, we have $H^n(i_S^*(\mathscr{F}))=0$ for $n>p(S)$ (resp. $H^n(i_S^!(\mathscr{F}))=0$ for $n<p(S)$), where $i_S:S\to X$ denote the inclusion map.
 \end{definition}
 
-The exactness of the functor ${^0i^*}$ allows us to give another definition for ${^pD^{\leq 0}(X,\mathscr{O}_X)}$: for $K$ to be in ${^pD^{\leq 0}}(X,\mathscr{O}_X)$, it is necessary and sufficient that the restriction of $H^i(K)$ to $S$ is zero for $i>p(S)$. The truncation functors $\tau^{\leq n}$ and $\tau^{\geq n}$, relative to the natrual $t$-structure of $D(X,\mathscr{O}_X)$, therefore sends ${^pD^{\leq 0}}(X,\mathscr{O}_X)$ into itself.
+The exactness of the functor ${^0i^*}$ allows us to give another definition for ${^pD^{\leq 0}(X,\mathscr{O}_X)}$: for $\mathscr{F}$ to be in ${^pD^{\leq 0}}(X,\mathscr{O}_X)$, it is necessary and sufficient that the restriction of $H^i(\mathscr{F})$ to $S$ is zero for $i>p(S)$. The truncation functors $\tau^{\leq n}$ and $\tau^{\geq n}$, relative to the natrual $t$-structure of $D(X,\mathscr{O}_X)$, therefore sends ${^pD^{\leq 0}}(X,\mathscr{O}_X)$ into itself.
 
 \begin{remark}\label{triangle cat perverse condition finite cohomology dim}
-If the functors ${^0i_S^!}$ have finite cohomological dimensions, then $i_S^!:D^+(X,\mathscr{O}_X)\to D^+(S,\mathscr{O}_S)$ has a natural extension $D^+(X,\mathscr{O}_X)\to D^+(S,\mathscr{O}_S)$, still denoted by $i_S^!$. In this case, the condition "$H^n(i_S^!(K))=0$ for $n<p(S)$" makes sense for any complex $K$ in $D(X,\mathscr{O}_X)$. In fact, this condition implies that $K\in D^+(X,\mathscr{O}_X)$, or more precisely, that $K\in D^{\geq n}(X,\mathscr{O}_X)$ for $p\geq n$. To see this, we shall prove by descendent induction on the strata $\mathcal{S}$ (for the order $S_1\sub\widebar{S}_2$) that the restriction of $H^i(K)$ to $S$ is zero for $i<n$. We first note that the distinguished triangle $(\tau^{<n}K,K,\tau^{\geq n}K)$ and the left exactness of ${^0i_S^!}$ imply that $H^i(i_S^!\tau^{<n}K)\stackrel{\sim}{\to} H^i(i_S^!(K))$. The induction hypothesis shows that $H^j(\tau^{<n}K)$ is zero over the strata $T\neq S$ such that $S\sub\widebar{T}$, so $S$ admits an neighborhood in which $H^j(\tau^{<n}K)$ is supported in $S$. We then have
-\[H^i(K)|_S=H^i(i_S^*\tau^{<n}K)=H^i(i_S^!\tau^{<n}(K)),\]
+If the functors ${^0i_S^!}$ have finite cohomological dimensions, then $i_S^!:D^+(X,\mathscr{O}_X)\to D^+(S,\mathscr{O}_S)$ has a natural extension $D^+(X,\mathscr{O}_X)\to D^+(S,\mathscr{O}_S)$, still denoted by $i_S^!$. In this case, the condition "$H^n(i_S^!(\mathscr{F}))=0$ for $n<p(S)$" makes sense for any complex $\mathscr{F}$ in $D(X,\mathscr{O}_X)$. In fact, this condition implies that $\mathscr{F}\in D^+(X,\mathscr{O}_X)$, or more precisely, that $\mathscr{F}\in D^{\geq n}(X,\mathscr{O}_X)$ for $p\geq n$. To see this, we shall prove by descendent induction on the strata $\mathcal{S}$ (for the order $S_1\sub\widebar{S}_2$) that the restriction of $H^i(\mathscr{F})$ to $S$ is zero for $i<n$. We first note that the distinguished triangle $(\tau^{<n}\mathscr{F},\mathscr{F},\tau^{\geq n}\mathscr{F})$ and the left exactness of ${^0i_S^!}$ imply that $H^i(i_S^!\tau^{<n}\mathscr{F})\stackrel{\sim}{\to} H^i(i_S^!(\mathscr{F}))$. The induction hypothesis shows that $H^j(\tau^{<n}\mathscr{F})$ is zero over the strata $T\neq S$ such that $S\sub\widebar{T}$, so $S$ admits an neighborhood in which $H^j(\tau^{<n}\mathscr{F})$ is supported in $S$. We then have
+\[H^i(\mathscr{F})|_S=H^i(i_S^*(\tau^{<n}\mathscr{F}))=H^i(i_S^!(\tau^{<n}\mathscr{F})),\]
 and the last member is zero by our hypothesis.\par
-Without the hypothesis on cohomological dimension, the same argument is applicable for $K\in K^+(X,\mathscr{O}_X)$, and for integers $a\leq p\leq b$, we have
+Without the hypothesis on cohomological dimension, the same argument is applicable for $\mathscr{F}\in D^+(X,\mathscr{O}_X)$, and for integers $a\leq p\leq b$, we have
 \begin{align}
 D^{\leq a}(X,\mathscr{O}_X)\sub &{^pD^{\leq 0}}(X,\mathscr{O}_X)\sub D^{\leq b}(X,\mathscr{O}_X),\label{triangle cat perverse condition inclusion-1}\\
 D^{\geq a}(X,\mathscr{O}_X)\sups &{^pD^{\geq 0}}(X,\mathscr{O}_X)\sups D^{\geq b}(X,\mathscr{O}_X).\label{triangle cat perverse condition inclusion-2}
@@ -3668,22 +3668,324 @@ D^{\geq a}(X,\mathscr{O}_X)\sups &{^pD^{\geq 0}}(X,\mathscr{O}_X)\sups D^{\geq b
 We denote by ${^pD^{+,\leq 0}}(X,\mathscr{O}_X)$ the intersection of $D^+(X,\mathscr{O}_X)$ with ${^pD^{\leq 0}}(X,\mathscr{O}_X)$, and similarly for $+$ replaced by $-,b$ and $0$ replaced by $n\in\Z$.
 \end{remark}
 
-
-\begin{proposition}\label{triangle cat perverse t-structure}
-For any perversity $p:\mathcal{S}\to\Z$, the pair $({^pD^{+,\leq 0}}(X,\mathscr{O}_X),{^pD^{+,\geq 0}}(X,\mathscr{O}_X))$ is a $t$-structure over $D^+(X,\mathscr{O}_X)$.
+\begin{proposition}\label{triangle cat perverse t-structure on D^+}
+For any perversity $p$, the pair $({^pD^{+,\leq 0}}(X,\mathscr{O}_X),{^pD^{+,\geq 0}}(X,\mathscr{O}_X))$ is a $t$-structure over $D^+(X,\mathscr{O}_X)$.
 \end{proposition}
 \begin{proof}
-We preceed by induction on the number $N$ of the stratum. If $N=0$, we have $X=\emp$, and the assertion is trivial. If $N=1$, then we obtain the natrual $t$-structure on $D^+(X,\mathscr{O}_X)$, translated by $p(X)$. For $N\geq 2$, let $Z$ be a proper closed subset of $X$ which is a union of strata, and $U$ be its complement. The induction hypothesis, applied to $Z$ and $U$, endowed with the induced stratification, gives $t$-structures over $D^+(U,\mathscr{O}_U)$ and $D^+(Z,\mathscr{O}_Z)$. The $t$-structure considered over $D^+(X,\mathscr{O}_X)$ is then obtained by glueing: this is clear for ${^pD^{+,\leq 0}}(X,\mathscr{O}_X)$, since $i_S^*$ is exact. As for ${^pD^{+,\geq 0}}(X,\mathscr{O}_X)$, we note that for $K\in D^+(X,\mathscr{O}_X)$ and $S\in\mathcal{S}$, we have
+We preceed by induction on the number $N$ of the stratum. If $N=0$, we have $X=\emp$, and the assertion is trivial. If $N=1$, then we obtain the natrual $t$-structure on $D^+(X,\mathscr{O}_X)$, translated by $p(X)$. For $N\geq 2$, let $Z$ be a proper closed subset of $X$ which is a union of strata, and $U$ be its complement. The induction hypothesis, applied to $Z$ and $U$, endowed with the induced stratification, gives $t$-structures over $D^+(U,\mathscr{O}_U)$ and $D^+(Z,\mathscr{O}_Z)$. The $t$-structure considered over $D^+(X,\mathscr{O}_X)$ is then obtained by glueing: this is clear for ${^pD^{+,\leq 0}}(X,\mathscr{O}_X)$, since $i_S^*$ is exact. As for ${^pD^{+,\geq 0}}(X,\mathscr{O}_X)$, we note that for $\mathscr{F}\in D^+(X,\mathscr{O}_X)$ and $S\in\mathcal{S}$, we have
 \begin{align*}
-H^n(i_{S\cap U}^!j^*(K))&=H^n(i_{S\cap U}^!j^!(K))=H^n(i_{S\cap U}^!(K)),\\
-H^n(i_{S\cap Z}^!i^!(K))&=H^n(i_{S\cap Z}^!(K)).
+H^n(i_{S\cap U}^!j^*(\mathscr{F}))&=H^n(i_{S\cap U}^!j^!(\mathscr{F}))=H^n(i_{S\cap U}^!(\mathscr{F})),\\
+H^n(i_{S\cap Z}^!i^!(\mathscr{F}))&=H^n(i_{S\cap Z}^!(\mathscr{F})).
 \end{align*}
-On the other hand, since $Z$ is a union of strata, $S$ is either disjoint from $Z$ or contained in $Z$, so we see that $H^n(i_S^!(K))=0$ if and only if $H^n(i_{S\cap U}^!j^*(K))=H^n(i_{S\cap Z}^!i^!(K))=0$. We can then apply \cref{triangle car recollement theorem} to conclude the proposition.
+On the other hand, since $Z$ is a union of strata, $S$ is either disjoint from $Z$ or contained in $Z$, so we conclude that $H^n(i_S^!(\mathscr{F}))=0$ if and only if $H^n(i_{S\cap U}^!j^*(\mathscr{F}))=H^n(i_{S\cap Z}^!i^!(\mathscr{F}))=0$. We can then apply \cref{triangle cat recollement theorem} to conclude the proposition.
 \end{proof}
 
-\begin{corollary}
+\begin{corollary}\label{triangle cat perverse t-structure on D(X)}
 The pair $({^pD^{\leq 0}}(X,\mathscr{O}_X),{^pD^{\geq 0}}(X,\mathscr{O}_X))$ is a $t$-structure over $D(X,\mathscr{O}_X)$. It induces a $t$-structure over $D^*(X,\mathscr{O}_X)$ for $*\in\{+,-,b\}$.
 \end{corollary}
 \begin{proof}
-Let $a,b$ be integers such that $a\leq p\leq b$. For $K\in {^p\mathcal{D}^{\leq 0}}$
+Let $a,b$ be integers such that $a\leq p\leq b$. For $\mathscr{F}\in {^pD^{\leq 0}}(X,\mathscr{O}_X)$ and $\mathscr{G}\in{^pD^{\geq 0}}(X,\mathscr{O}_X)$, we have $\Hom(\tau^{\leq a}\mathscr{F},\mathscr{G})=0$ since $L$ is in $D^{>a}(X,\mathscr{O}_X)$, and $\Hom(\tau^{>a}\mathscr{F},\mathscr{G})=0$ since $\tau^{>a}\mathscr{F}$ is in ${^pD^{+,\leq 0}}(X,\mathscr{O}_X)$ and we can apply \cref{triangle cat perverse t-structure on D^+}. We then conclude from the long exact sequence of $\Hom$ induced from the distinguished triangle $(\tau^{\leq a}\mathscr{F},\mathscr{F},\tau^{>a}\mathscr{F})$ that $\Hom(\mathscr{F},\mathscr{G})=0$. Finally, for any $\mathscr{F}\in D(X,\mathscr{O}_X)$, by \cref{triangle cat perverse t-structure on D^+}, there exists a distinguished triangle $(\mathscr{M},\tau^{>a}\mathscr{F},\mathscr{N})$ with $\mathscr{M}\in {^pD^{\leq 0}}(X,\mathscr{O}_X)$ and $\mathscr{N}\in {^pD^{\geq 0}}(X,\mathscr{O}_X)$. Applying (TR4), we obtain two distinguished triangles $(\tau^{\leq a}\mathscr{F},\mathscr{G},\mathscr{M})$ and $(\mathscr{G},\mathscr{F},\mathscr{N})$. The first one shows that $\mathscr{G}$ is in ${^pD^{\leq 0}}(X,\mathscr{O}_X)$, and the second one proves axiom (t3). The axiom (t1) being trivial, we then obtain a $t$-structure over $D(X,\mathscr{O}_X)$, which is called the \textbf{$t$-structure of perversity $p$}.
 \end{proof}
+
+Let ${^p}\tau$ be the corresponding truncation functor of the perverse $t$-structure. Since we have ${^pD^{\leq 0}}(X,\mathscr{O}_X)\sub D^{\leq b}(X,\mathscr{O}_X)$ and ${^pD^{\geq 0}}(X,\mathscr{O}_X)\sub D^{\geq a}(X,\mathscr{O}_X)$, the (usual) cohomology long exact sequence of the distinguished triangle $({^p\tau^{\leq 0}}\mathscr{F},\mathscr{F},{^p\tau^{\geq 1}}\mathscr{F})$ shows that $H^i({^p\tau^{\leq 0}}\mathscr{F})=H^i(\mathscr{F})$ for $i<a$ and $H^i({^p\tau^{\leq 0}}\mathscr{F})=H^i(\mathscr{F})$ for $i>b$. It follows that ${^p\tau^{\leq 0}}$ and ${^p\tau^{\geq 0}}$ preserves $D^*(X,\mathscr{O}_X)$ for $*\in\{+,-,b\}$.
+
+\begin{definition}
+The heart $\Perv(X,\mathscr{O}_X,p)$ of the $t$-structure $({^pD^{\leq 0}}(X,\mathscr{O}_X),{^pD^{\geq 0}}(X,\mathscr{O}_X))$ is called the category of \textbf{sheaves of $p$-perverse $\mathscr{O}_X$-modules over $X$}. This is an admissible abelian subcategory of $D(X,\mathscr{O}_X)$.
+\end{definition}
+
+\begin{proposition}\label{triangle cat perverse t-structure t-exactness}
+Let $W$ be a locally closed subset of $X$ which is a union of strata, and $j:W\to X$ be the inclusion. For any perversity $p$, the functors $j_!:D(W,\mathscr{O}_W)\to D(X,\mathscr{O}_X)$ and $j^*:D(X,\mathscr{O}_X)\to D(W,\mathscr{O}_W)$ are right $t$-exact, and $j^!:D(X,\mathscr{O}_X)\to D(W,\mathscr{O}_W)$ and $j_*:D(W,\mathscr{O}_W)\to D(X,\mathscr{O}_X)$ are left $t$-exact.
+\end{proposition}
+\begin{proof}
+Let $\mathscr{F}\in {^pD^{\leq 0}}(W,\mathscr{O}_W)$ and $\mathscr{G}\in {^pD^{\leq 0}}(X,\mathscr{O}_X)$. We note that for any stratum $S$ contained in $W$, if $i_S^W:S\to W$ denotes the inclusion map, we have (cf. \cref{sheaf locally closed extension image char} and \cref{sheaf locally closed extension right adjoint})
+\begin{align*}
+i_S^*j_!(\mathscr{F})=(i_S^W)^*(j^*j_!(\mathscr{F}))\cong (i_S^W)^*(\mathscr{F}),\quad (i_S^W)^*j^*(\mathscr{G})=i_S^*(\mathscr{G})
+\end{align*}
+from which we conclude that $j_!(\mathscr{F})\in {^pD^{\leq 0}}(X,\mathscr{O}_X)$ and $j^*(\mathscr{G})\in {^pD^{\leq 0}}(W,\mathscr{O}_W)$. The rest of the proposition follows from \cref{triangle cat t-exact functor prop}~(c).
+\end{proof}
+
+To simplify the notation, we shall omit $(X,\mathscr{O}_X)$ and write $D$ for $D(X,\mathscr{O}_X)$. We also sometimes write $D^{\leq p}$ (resp. $D^{\geq p}$) for ${^pD^{\leq 0}}$ (resp. ${^pD^{\geq 0}}$). If $p$ has constant value $a$, then $D^{\leq p}=D^{\leq a}$ (the natural $t$-structure), and $D^{\geq p}=D^{\geq a}$. For any integer $n$, we have $D^{\leq p+n}={^pD^{\leq n}}$ and $D^{\geq p+n}={^pD^{\geq n}}$. Finally, for $p\leq q$, we have $D^{\leq p}\sub D^{\leq q}$ and $D^{\geq p}\sups D^{\geq q}$, which generalizes (\ref{triangle cat perverse condition inclusion-1}) and (\ref{triangle cat perverse condition inclusion-2}). Similarly, we write $\tau^{\leq p}$ and $\tau^{\geq p}$ for ${^p\tau^{\leq 0}}$ and ${^p\tau^{\geq 0}}$, and $H^p$ for $H^0$ in the sense of the $t$-structure of perversity $p$.\par
+In the situation of \cref{triangle cat perverse t-structure t-exactness}, we denote simply by $j_!$, $j^!$, $j_*$ and $j^*$ the functors on derived categories. The functors deduced from them by passing to $p$-perverse sheaves will be denoted with $p$ as a left exponent. For example, for $\mathscr{A}\in\Perv(U,\mathscr{O}_U,p)$, we put ${^pj_!}(\mathscr{A})=\tau^{\geq p}j_!(\mathscr{A})=H^p(j_!(\mathscr{A}))$. By \cref{triangle cat t-exact functor prop}, $({^pj_!},{^pj^!})$ and $({^pj^*},{^pj_*})$ are adjoint pairs of functors. The induced functors on the category of usual sheaves of modules will be denoted with $0$ as a left exponent.\par
+For $\mathscr{A}$ a $p$-perverse sheaf over $U$, $j_!(\mathscr{A})$ is in $D^{\leq p}(X,\mathscr{O}_X)$ and $j_*(\mathscr{A})$ is in $D^{\geq p}(X,\mathscr{O}_X)$. The natural morphism $\alpha:j_!(\mathscr{A})\to j_*(\mathscr{A})$ admits a factorization
+\[j_!(\mathscr{A})\to{^pj_!}(\mathscr{A})\stackrel{\beta}{\to}{^pj_*}(\mathscr{A})\to j_*(\mathscr{A})\]
+where $\beta={^pH^0}(\alpha)$. We then define the functor ${^pj_{!*}}$, or simply $j_{!*}$, by
+\[j_{!*}(\mathscr{A})=\im({^pj_!}(\mathscr{A})\to {^pj_*}(\mathscr{A})).\]
+On the other hand, for $\mathscr{B}$ a $p$-perverse sheaf over $X$, we define a canonical morphism ${^pj^!}(\mathscr{B})\to {^pj^*}(\mathscr{B})$ as the composition
+\[{^pj^!}(\mathscr{B})\to j^!(\mathscr{B})\to j^*(\mathscr{B})\to {^pj^*}(\mathscr{B}).\]
+
+If $k:U\to V$ and $j:V\to X$ are locally closed subsets which are unions of strata, the transititity formule for the functors $k_!,k^!,k_*,k^*$ and $j_!,j^!,j_*,j^*$ imply the similar fomule for the functors on $p$-perverse sheaves (\cref{triangle cat t-exact functor prop}~(d)). Applying ${^pj_!}$, ${^pj_*}$ and ${^pj_*}$ to the morphisms ${^pk_!}\twoheadrightarrow {^pk_{!*}}\hookrightarrow {^pk_*}$, we obtain a chain
+\[{^p(jk)_!}={^pj_!}{^pk_!}\twoheadrightarrow {^pj_!}{^pk_{!*}}\twoheadrightarrow {^pj_{!*}}{^pk_{!*}}\hookrightarrow {^pj_*}{^pk_{!*}}\hookrightarrow {^pj_*}{^pk_*}={^p(jk)_*}\]
+which gives an isomorphism of functors
+\begin{equation}\label{triangle cat perverse t-structure j_!* transitivity}
+{^p(jk)_{!*}}={^pj_{!*}}{^pk_{!*}}.
+\end{equation}
+
+\begin{remark}
+Let $U$ be an open subset of $X$ which is a union of strata, and $Z$ be its complement, endowed with the induced stratifications. The $t$-structure of \cref{triangle cat perverse t-structure on D^+} over $D^+(X,\mathscr{O}_X)$ is then induced by that of $D^+(U,\mathscr{O}_U)$ and $D^+(Z,\mathscr{O}_Z)$ by glueing, and we can apply the formalism of \ref{triangle cat t-structure recollement paragraph}. Let $i:Z\to X$ and $j:U\to X$ be the inclusion maps, the functors $(j_!,j^*,j_*)$, $(i^*,i_*,i^!)$, and $j_{!*}$, thus coincide with the situation of \ref{triangle cat t-structure recollement paragraph}.
+\end{remark}
+
+\begin{proposition}\label{triangle cat perverse t-structure j_!* prolongation char}
+For $\mathscr{B}\in\Perv(U,\mathscr{O}_U,p)$, $j_{!*}(\mathscr{B})$ is the unique prolongation $\mathscr{P}$ of $\mathscr{B}$ such that, for any stratum $S\sub Z$, we have $H^i(s^*(P))=0$ for $i\geq p(S)$ and $H^i(s^!(P))=0$ for $i\leq p(S)$, where $s:S\to X$ is the inclusion map.
+\end{proposition}
+\begin{proof}
+This follows from \cref{triangle cat recollement ^pj_! and ^pj_* is truncation}. More precisely, it follows from \cref{triangle cat recollement prolongation equivalence by j^*} that if $\mathcal{D}'$ is the  subcategory of $D(X,\mathscr{O}_X)$ formed by $\mathscr{F}$ such that $H^i(s^*(\mathscr{F}))=0$ for $i\geq p(S)$ and $H^i(s^!(\mathscr{F}))=0$ for $i\leq p(S)$ for any strata $s:S\to Z$, then $j^*$ induces an equivalence $\mathcal{D}'\to D(U,\mathscr{O}_U)$. Its restriction to $\mathcal{D}'\cap\Perv(X,\mathscr{O}_X,p)$ is then an equivalence $\mathcal{D}'\cap\Perv(X,\mathscr{O}_X,p)\to \Perv(U,\mathscr{O}_U,p)$, with quasi-inverse $j_{!*}$. We have similar characterizations for ${^pj_!}(\mathscr{B})$ and ${^pj_*}(\mathscr{B})$ (cf. \cref{triangle cat recollement ^pj_! and ^pj_* is truncation}).
+\end{proof}
+
+Suppose that the perversity $p$ satisfies the following condition: if $S\sub\widebar{T}$, then $p(S)\geq p(T)$ (in this case, we say that $p$ is \textbf{decreasing}). For each $n\in\Z$, the union $Z_n$ (resp. $U_n$) of the strata $S$ such that $p(S)\geq n$ (resp. $p(S)\leq n$) is then closed (resp. open). We denote by $j_n:U_{n-1}\to U_n$ and $i_n:Z_{n-1}\to Z_n$ the inclusion maps.
+
+\begin{proposition}\label{triangle cat perverse t-structure j_!* for open union char}
+With the hypothesis and notations above, let $\mathscr{A}$ be a $p$-perverse sheaf over $U_k$ and $a\geq k$ be an integer such that $p\leq a$. If $j:U_k\to X=U_a$ denotes the inclusion map, then
+\[j_{!*}(\mathscr{A})=\tau^{\leq a-1}j_{a,*}\cdots\tau^{\leq k}j_{k+1,*}(\mathscr{A}),\]
+where the $\tau^{\leq i}$ are relative to the natural $t$-structure.
+\end{proposition}
+\begin{proof}
+Applying (\ref{triangle cat perverse t-structure j_!* transitivity}), and noting that $j=j_a\cdots j_{k+1}$, it suffices to prove that $j_{k+1,!*}(\mathscr{A})=\tau^{\leq k}j_{k+1,*}(\mathscr{A})$ for each $k\in\Z$. If $Z=U_{k+1}-U_k$, then by \cref{triangle cat recollement ^pj_! and ^pj_* is truncation} we have $j_{k+1,!*}(\mathscr{A})={^p\tau^{\leq -1}_Z}j_{k+1,*}(\mathscr{A})$. On the other hand, over $Z$, the function $p$ is constant with value $k+1$, so ${^p\tau^{\leq-1}_Z}$ is none other than the functor $\tau^{\leq k}_Z$ (for the natural $t$-structure over $Z$). Since over $U_k$ we have $p\leq k$, $\mathscr{A}$ belongs to $D^{\leq k}(U,\mathscr{O}_U)$ (cf. (\ref{triangle cat perverse condition inclusion-1})) and we conclude from (\ref{triangle cat recollement truncation functor decomposition}) that $\tau^{\leq k}j_{k+1,*}(\mathscr{A})\cong\tau^{\leq k}_Zj_{k+1,*}(\mathscr{A})$.
+\end{proof}
+
+\begin{remark}
+Let's explain the relationship between our notations and that of Mr. Goresky and R. MacPherson \cite{*}.
+\begin{itemize}
+    \item They work with cohomology with coefficients in a field $R$ (especially $R=\R$ or $\C$), i.e. they take for $\mathscr{O}_X$ the constant sheaf with value $R$.
+    \item Their strata are topological manifolds, everywhere of the same dimension, and the stratifications satisfies a triviality conditions which ensures that for $j:S\to X$ a stratum and $\mathscr{F}$ a locally constant sheaf of $R$-vector spaces of finite dimension over $S$, the restrictions at each stratum of the $R^ij_*(\mathscr{F})$ are again locally constants of finite dimension. For $S$, $T$ two stratum with $S\sub\widebar{T}-T$, we have $\dim(S)<\dim(T)$.
+    \item The space $X$ has an open dense stratum $U_0$ whose complement satisfies $\dim(U_0)-\dim(X-U_0)\geq 2$.
+    \item The perversity function only depends on the dimension: we have a function $\bar{p}:\N\to\Z$ such that $p(S)=\bar{p}(\dim(S))$. The function $\bar{p}$ is assumed to be decreasing and positive, with $p(U_0)=\bar{p}(\dim(U_0))=0$.
+\end{itemize}
+Let $j:U_0\to X$ be the inclusion map, we are concerned with the object $j_{!*}(R)$ of $D^b(X,R)$. If we are given the description \cref{triangle cat perverse t-structure j_!* for open union char}, we are led to utilize the function $p'$ which satisfies $p'(U_0)=0$ and attach for each stratum $S\neq U_0$ with the integer $p(S)-1$. The operator $j_{!*}$ consists, starting from the constant sheaf $R$ over $U=U_0$, to successively take a direct image into the strata $S$ of dimension $\dim(U_0)-2$, $\dim(U_0)-3$, $\cdots$, truncated by $\tau^{\leq p'(S)}$. It is the functor $p'$ that they call perversty. From the point of view adopted here, this amounts to describing ${^pj_{!*}}$ as being ${^{p'}j_*}$, and it leads to shifts in the description of the phenomena of duality.\par
+Goresky and MacPherson also assume that the function $p$ does not decrease too fast: $\bar{p}(n)-\bar{p}(n+1)=0$ or $1$. \cref{triangle cat constructible perverse structure refinement} below shows that this provides the independence of the perverse $t$-structure with the stratification.
+\end{remark}
+
+We now adapt the following assumption on the stratified space $(X,\mathscr{O}_X)$:
+\begin{enumerate}[leftmargin=40pt]
+    \item[(P1)] $\mathscr{O}_X$ is the constant sheaf with value $R$, for $R$ a left Noetherian ring.
+    \item[(P2)] The strata are topological manifolds with equal dimension. If two strata $S,T$ satisfies $S\sub\widebar{T}$, then $\dim(S)<\dim(T)$.
+    \item[(P3)] For $j:S\to X$ a stratum, the functor ${^0j_*}$ is of finite cohomological dimension over the category of $R$-modules. For any locally constant sheaf $\mathscr{F}$ of $R$-modules of finite type over $S$, the higher direct images $R^ij_*(\mathscr{F})$ are locally free of finite type over any stratum. 
+\end{enumerate}
+
+For $U$ a locally closed subset which is a union of strata, we denote by $D_c(U,R)$ (or $D_\mathcal{S}(U,R)$ if we want to stress the stratification $\mathcal{S}$) the triangulated full subcategory of $D(U,R)$ formed by constructible complexes $\mathscr{F}$\footnote{That is, for each $i\in\Z$, the cohomology sheaf $H^i(\mathscr{F})$ is constructible over $X$.} such that $H^i(\mathscr{F})$ is locally free and of finite type over each stratum of $\mathcal{S}$. We define similarly subcategories $D^*_c(U,R)$ for $*\in\{+,-,b\}$.
+
+\begin{proposition}\label{triangle cat constructible preserve by ! and *}
+For $j:U\to V$ with $U$ and $V$ being locally closed and are unions of strata, the functors $j_!$, $j^!$, $j_*$ and $j^*$ respects these subcategories.
+\end{proposition}
+\begin{proof}
+In fact, the case for $j_!$ and $j^*$ are trivial, and for the case where $U$ is reduced to a single stratum, the assertion for $j_*$ follows from the spectral sequence $R^pj_*H^q(\mathscr{F})\to H^{p+q}(Rj_*(\mathscr{F}))$ and condition (P3). The general case can then be proved by induction on the number of strara in $U$: If $k:S\to U$ is the inclusion of an open stratum in $U$, and $\mathscr{G}$ is defined by the distinguished triangle $(\mathscr{F},k_*k^*(\mathscr{F}),\mathscr{G})$, then $\mathscr{G}$ is constructible because $k_*k^*(\mathscr{F})$ is, and is supported in $U'=U-S$. The induction hypothesis can be applied to the inclusion $U'\to X$, and $j_*(\mathscr{G})$ is then constructible; we deduce from the distinguished triangle $(j_*(\mathscr{F}),(jk)_*k^*(\mathscr{F}),j_*(\mathscr{G}))$ that $j_*(\mathscr{F})$ is constructible. Finally, the case for $j^!$ is reduced to the case where $j$ is a closed embedding, and this can deduced from the distinguished triangle $(j_!j^!(\mathscr{F}),\mathscr{F},k_*k^*(\mathscr{F}))$ and the assertion for $k_*$, where $k$ the embedding of the open complement.
+\end{proof}
+
+For $Z\sub U$ a closed subset which is a union of strata, by \cref{triangle cat recollement truncation tau_Z for topo space} the functor $\tau^{\leq a}_Z$ trivially respects $D_c(U,R)$. The proof of \cref{triangle cat recollement theorem} then shows that for any perversity $p$, $\tau^{\leq p}$ and $\tau^{\geq p}$ respects $D_c(X,R)$. The \textbf{$(p,\mathcal{S})$-perverse sheaves} over $X$ are then defined to be the $p$-perverse sheaves in $D_c(X,R)$.\par
+
+\begin{proposition}\label{triangle cat constructible perverse structure refinement}
+Let $\mathcal{T}$ be a stratification of $X$ which refines $\mathcal{S}$ and satisfies conditions (P2), (P3). Let $p$ be a perversity over $S$ and $q$ a perversity over $\mathcal{T}$. Suppose that for any stratum $S$ of $\mathcal{S}$ containing a stratum $T$ of $\mathcal{T}$, we have
+\[p(S)\leq q(T)\leq p(S)+\dim(S)-\dim(T).\]
+Then the $t$-structure of perversity $q$ over $D_\mathcal{T}(X,R)$ induces the $t$-structure of perversity $p$ over $D_\mathcal{S}(X,R)$.
+\end{proposition}
+\begin{proof}
+It suffices to verify that $D_\mathcal{S}^{\leq p}(X,R)\sub D_\mathcal{T}^{\leq q}(X,R)$ and $D_\mathcal{S}^{\geq p}(X,R)\sub D_\mathcal{T}^{\geq q}(X,R)$. In fact, the inclusion $D_\mathcal{S}^{\leq p}(X,R)\sub D_\mathcal{T}^{\leq q}(X,R)$ implies $D_\mathcal{T}^{\geq q}(X,R)\cap D_\mathcal{S}(X,R)\sub D_\mathcal{S}^{\geq p}(X,R)$ since $\mathcal{F}\in D_\mathcal{S}^{\geq p}(X,R)$ if and only if $\Hom(\mathcal{F},\mathcal{G})=0$ for any $\mathcal{G}\in D_\mathcal{S}^{<p}(X,R)$, and similarly for $D_\mathcal{S}^{\leq p}(X,R)$.\par
+The first inclusion follows immediately from that fact that $p(S)\leq q(T)$ for $S\sups T$. To see the second one, let $\mathscr{F}\in D_\mathcal{S}^{\geq p}(X,R)$, $T\in\mathcal{T}$, and $S\in\mathcal{S}$ containing $T$. Let $i:T\to S$ and $j:S\to X$ be the inclusion maps. We have $(ji)^!(\mathscr{F})=i^!j^!(\mathscr{F})$, and $H^n(j^!(\mathscr{F}))$ is locally constant over $S$, zero for $n<p(S)$. Let $\omega_T$ (resp. $\omega_S$) be the orientation sheaf over $T$ (resp. $S$), which is locally isomorphic to the constant sheaf $\Z$. Let $\omega=\sHom(\omega_T,i^*\omega_S)$ be the sheaf of normal orientations of $T$ in $S$, and put $d=\dim(S)-\dim(T)$. If $\mathscr{G}$ is a complex of sheaves over $S$, whose cohomology sheaves are locally constant, we then have $i^!(\mathscr{G})\cong i^*(\mathscr{G})\otimes_{\Z}\omega[-d]$. Put $\mathscr{G}=j^!(\mathscr{F})$, we see that $H^n(i^!j^!(\mathscr{F}))=0$ for $n<p(S)+d$, and the assertion follows since $q(T)\leq p(S)+d$ by hypothesis.
+\end{proof}
+
+\begin{corollary}\label{triangle cat constructible perverse refinement functor prop}
+Any $(p,\mathcal{S})$-perverse sheaf is $(q,\mathcal{T})$-perverse, and the inclusion functor $D_\mathcal{S}(X,R)\to D_\mathcal{T}(X,R)$ is $t$-exact. For any locally closed subset $U$ which is a union of strata in $\mathcal{S}$, and $j:U\to X$ the inclusion map, the functors ${^qj_!}$, ${^qj^!}$, ${^qj_*}$, ${^qj^*}$, ${^qj_{!*}}$, restricted to the category of $(p,\mathcal{S})$-sheaves, coincide with the functors ${^pj_!}$, ${^pj^!}$, ${^pj_*}$, ${^pj^*}$, ${^pj_{!*}}$.
+\end{corollary}
+
+In addition to the situation of \cref{triangle cat constructible perverse structure refinement}, suppose that $R$ is a field and that $X$ admits a (locally finite) triangulation such that each stratum $S$ of $\mathcal{S}$ is a union of (open) simplices (for example, $X$ is an algebraic variety endowed with a Whitney stratification). We can then apply Verdier's duality, which is an involutive automorphism of $D_c(X,R)$, and for $j:U\to X$ locally closed which is a union of strata, this automorphism exchanges $j_!$ and $j_*$, as well as $j^!$ and $j^*$.\par
+For any stratum $S$, with sheaf of orientation $\omega$, and of fimension $d$, the Verdier duality $D$ over $S$ ($\mathscr{F}\mapsto R\sHom(\mathscr{F},R\otimes\omega[d])$) satisfies for $\mathscr{F}\in D_\mathcal{S}(S,R)$ the equality
+\[H^i(D(\mathscr{F}))=(H^{-d-i})^{\vee}\otimes\omega.\]
+It is essential here that the cohomology sheaves of $\mathscr{F}$ are locally constant of finite rank, and that $R$ is a field (a local Artinian ring, for example $\Z/\ell^n\Z$, will sill do the trick, because we have an injective dualizing module $I$ ($\Z/\ell^n\Z$ in this case); the Verdier duality is then given by $\mathscr{F}\mapsto R\sHom(\mathscr{F},Rf^!(I))$, where $f$ is the projection to $\pt$.)\par
+We define the \textbf{dual perversity} $p^*$ of a perversity $p$ by
+\[p^*(S)=-p(S)-\dim(S).\]
+The preceding arguments imply that $D$ exchanges $D^{\geq p}$ and $D^{\leq p^*}$ (and thus $D^{\leq p}$ with $D^{\geq p^*}$, since we have $p=p^{**}$). It in particular exchanges $p$-perverse sheaves and $p^*$-perverse sheaves, and ${^{p^*}H}^i$ and ${^pH^{-i}}$. For $j:U\to X$ the inclusion of a locally closed subset which is a union of strata, the functor $D$ also exchanges ${^pj_!}$ and ${^{p^*}j_*}$, ${^pj^!}$ and ${^{p^*}j^*}$, and ${^pj_{!*}}$ and ${^{p^*}j_{!*}}$.\par
+In $D_c(X,R)$, the condition defining the $p$-perversity can then be rewritten as follows: for any stratum $j:S\to X$, we have $H^i(j^*(\mathscr{F}))=0$ for $i>p(S)$ and $H^i(j^*(D(\mathscr{F})))=0$ for $i>p^*(S)$. If every stratum of $\mathcal{S}$ is of even dimension, then there exists a \textbf{self-dual perversity} $p_{1/2}$, given by
+\[p_{1/2}(S)=-\frac{1}{2}\dim(S).\]
+A $p_{1/2}$-perverse sheaf over $X$ is also called a \textbf{self-dual perverse sheaf}.
+\begin{proposition}\label{triangle cat constructible self-dual perverse prolongation char}
+Under the hypothesis above, assume that every stratum of $\mathcal{S}$ is of even dimension and consider the self-dual perversity $p_{1/2}$. If $j:U\to X$ is an open subset of $X$ which is a union of strata and $\mathscr{A}$ is a $p_{1/2}$-perverse sheaf over $U$, then $j_{!*}(\mathscr{A})$ is the unique self-dual prolongation $\mathscr{P}$ of $\mathscr{A}$ (in $D_c(X,R)$) such that for any stratum $S\sub X-U$, the restriction of $H^i(\mathscr{P})$ to $S$ is zero for $i\geq-\frac{1}{2}\dim(S)$.  
+\end{proposition}
+\begin{proof}
+That $j_{!*}(\mathscr{A})$ is self-dual follows from the self-duality of $\mathscr{A}$ and that of $j_{!*}$. This being the case, the proposition then follows from \cref{triangle cat perverse t-structure j_!* prolongation char}.
+\end{proof}
+
+\begin{remark}
+If $U$ is orientable and smooth with pure dimension $d$, we can choose $\mathscr{A}$ to be the constant sheaf $R$, placed at degree $-d/2$. For this choice, the self-dual perverse sheaf $j_{!*}(\mathscr{A})$ is the "intersection complex" of $X$, denoted by $\mathrm{IC}_X$.
+\end{remark}
+
+Let $(X,\mathcal{S},\mathscr{O}_X)$ be as in the begining of this subsection, $\mathscr{O}_X^{\op}$ be the sheaf of opposite rings of $\mathscr{O}_X$, and $p,q$ be two perversities.
+\begin{proposition}\label{triangle cat perverse structure and tensor Hom}
+The functor $\otimes^L$ sends $D^{\leq p}\times D^{\leq q}$ into $D^{\leq p+q}$, and $R\sHom$ sends $D^{\leq p}\times D^{\geq q}$ into $D^{\geq (q-p)}$.
+\end{proposition}
+\begin{proof}
+The first assertion is clear by definition, since $\otimes^L$ is compatible with restrictions. Let $\mathscr{F}\in D^{\leq p}$ and $\mathscr{G}\in D^{\geq q}$. A d\'evissage argument shows that we can suppose that $\mathscr{F}$ is of the form $j_!(\mathscr{A})[-n]$, where $\mathscr{A}$ is a sheaf over a stratum $S$, $j:S\to X$ is the inclusion, and $n\leq p(S)$. By adjunction, we then have
+\[R\sHom(j_!(\mathscr{A})[-n],\mathscr{G})=j_*R\sHom(\mathscr{A}[-n],j^!(\mathscr{G})).\]
+By hypothesis, we have $j^!(\mathscr{G})\in D^{\geq q(S)}(S,\mathscr{O}_S)$, so $R\sHom(\mathscr{A}[-n],j^!(\mathscr{G}))$ is in $D^{\geq q(S)-n}(S,\Z)\sub D^{\geq q(S)-p(S)}(S,\Z)$. The left $t$-exactness of $j_*$ then implies that $R\sHom(j_!(\mathscr{A})[-n],\mathscr{G})$ is in $D^{\geq q-p}$.
+\end{proof}
+
+\begin{corollary}\label{triangle cat perverse structure Hom of D^geq and D^leq}
+For $\mathscr{F}\in D^{\leq p}(X,\mathscr{O}_X)$ and $\mathscr{G}\in D^{\geq p}(X,\mathscr{O}_X)$, we have $H^iR\sHom(\mathscr{F},\mathscr{G})=0$ for $i<0$.
+\end{corollary}
+\begin{proof}
+This follows from \cref{triangle cat perverse structure and tensor Hom} by setting $p=q$. Alternatively, it can be deduced by localizing that $\Hom(\mathscr{F},\mathscr{G}[i])=0$ for $i<0$ (\cref{triangle cat perverse t-structure on D(X)}).
+\end{proof}
+
+\begin{corollary}\label{triangle cat perverse structure Hom define sheaf}
+For $\mathscr{F}\in D^{\leq p}(X,\mathscr{O}_X)$ and $\mathscr{G}\in D^{\geq p}(X,\mathscr{O}_X)$, the presheaf
+\[U\mapsto\Hom_{D(U,\mathscr{O}_U)}(\mathscr{F}|_U,\mathscr{G}|_U)\]
+is a sheaf.
+\end{corollary}
+\begin{proof}
+Since $H^iR\sHom(\mathscr{F},\mathscr{G})=0$ for $i<0$, the Grothendieck spectral sequence of $R\sHom$ and $\Gamma(U,-)$ implies that
+\[\Hom_{D(U,\mathscr{O}_U)}(\mathscr{F}|_U,\mathscr{G}_U)=H^0(U,H^0R\sHom(\mathscr{F},\mathscr{G})),\]
+and this proves our claim.
+\end{proof}
+
+Endow each open subset $U$ of $X$ the stratification induced by $\mathcal{S}$, and the perversity induced by $p$. The restriction of a $p$-perverse sheaf over $X$ to $U$ is then a $p$-perverse sheaf over $U$. We thus get a functor $U\mapsto\Perv(U,\mathscr{O}_U,p)$ on the category of open subset of $X$.
+\begin{corollary}\label{triangle cat perverse sheaf is stack}
+The functor $U\mapsto\Perv(U,\mathscr{O}_U,p)$ is a stack.
+\end{corollary}
+\begin{proof}
+By \cref{triangle cat perverse structure Hom define sheaf}, the functor $U\mapsto\Perv(U,\mathscr{O}_U,p)$ is a prestack over $X$. The glueing property for objects follows from \cref{*} and \cref{triangle cat perverse structure Hom of D^geq and D^leq}.
+\end{proof}
+
+\subsection{Schemes}\label{triangle cat perverse sheaf scheme subsection}
+\paragraph{The case of a complex algebraic variety}\label{triangle cat perverse sheaf complex variety paragraph}
+As a model, we first consider the case of a complex algebraic variety. We want to apply the constructions of \autoref{triangle cat perverse sheaf stratified space subsection} to the space $X(\C)$ of rational points of $X$, endowed with the usual analytic topology.
+\begin{itemize}
+    \item We consider the perversity which $p(S)$ only depends on the dimension of $S$. For this, we need a function $p:\N\to\Z$. Let $p^*(n):-n-p(n)$, called the dual perversity of $p$. We assume that $p$ and $p^*$ are both decreasing: for $n\leq m$, we have
+    \[0\leq p(n)-p(m)\leq m-n.\]
+    \item Recall that any (algebraic) stratification of $X$ admits a Whitney refinement. We choose a Whitney stratification of equidimensional subvarieties of $X$, which satisfies conditions (P1), (P2) and (P3) of \autoref{triangle cat perverse sheaf stratified space subsection} (without further specifications, we therefore only consider Whitney stratifications of $X$). For any stratification $\mathcal{S}$, the perversity $p_\mathcal{S}$ of $\mathcal{S}$ is defined by
+    \[p_\mathcal{S}(S)=p(2\dim_{\mathrm{alg}}(S))=p(\dim_{\mathrm{top}}(S)).\]
+    We write $\dim(S)$ for the algebraic dimension $\dim_{\mathrm{alg}}(S)$ of $S$.
+\end{itemize}
+
+Let $R$ be a left Noetherian ring. The derived category $D_c(X(\C),R)$ is the full subcategory of $D(X(\C),R)$ formed by complexes $\mathcal{F}$ such that the cohomology sheaves $H^i(\mathscr{F})$ are constructible. The category $D^b_c(X(\C),R)=D^b(X(\C),R)\cap D_c(X(\C),R)$ is the (filtered) union of subcategories $D^b_\mathcal{S}(X(\C),R)$ of $D(X(\C),R)$ (where $\mathcal{S}$ runs over Whitney stratifications of $X$), over which the perversity $p_\mathcal{S}$ defines a $t$-structure. By \cref{triangle cat constructible perverse structure refinement} and the hypothesis on $p$, for $\mathcal{S}$ finer and finer, these $t$-structures are compatible with refinements, so by passing to limit we obtain a $t$-structure $(D^{b,\leq p}_c(X(\C),R),D^{b,\geq p}_c(X(\C),R))$ over $D^b_c(X(\C),R)$, called the \textbf{$t$-structure of perversity $p$}. Mimiking the proof of \cref{triangle cat perverse t-structure on D(X)}, we obtain a $t$-structure over $D_c(X(\C),R)$: let $a\leq p(2i)\leq b$ be integers where $0\leq i\leq\dim(X)$; we define $D_c^{\leq p}(X(\C),R)$ (resp. $D_c^{\geq p}(X(\C),R)$) as the subcategory of $D_c(X(\C),R)$ formed by complexes $\mathscr{F}$ such that $H^i(\mathscr{F})=0$ for $i>b$ (resp. $i<a$) and that $\tau^{[a,b]}\mathscr{F}$ is in $\mathcal{D}_c^{b,\leq p}(X(\C),R)$ (resp. $D_c^{b,\geq p}(X(\C),R)$).
+
+\begin{proposition}\label{triangle cat perverse sheaf over scheme D^p char}
+For $\mathscr{F}\in D_c(X(\C),R)$, the following conditions are equivalent:
+\begin{enumerate}
+    \item[(\rmnum{1})] $\mathscr{F}$ is in $D_c^{\leq p}(X(\C),R)$ (resp. $D_c^{\geq p}(X(\C),R)$).
+    \item[(\rmnum{2})] Any irreducible subvariety $S'$ of $X$ has an open dense Zariski subset $S$ such that, if $i:S(\C)\to X(\C)$ is the inclusion morphism, we have $H^i(i^*(\mathscr{F}))=0$ for $i>p(S)$ (resp. $H^i(i^!(\mathscr{F}))=0$ for $i<p(S)$).
+\end{enumerate}
+If $\mathcal{T}$ is a finite family of smooth equidimensional locally closed subset (for the Zariski topology), which union $X$, such that for each $S\in\mathcal{T}$, the $H^i(i_S^*(\mathscr{F}))$ and $H^i(i_S^!(\mathscr{F}))$ are locally constant, then the above conditions are equivalent to
+\begin{enumerate}
+    \item[(\rmnum{3})] For any $S\in\mathcal{T}$, $H^i(i_S^*(\mathscr{F}))=0$ for $i>p(S)$ (resp. $H^i(i_S^!(\mathscr{F}))=0$ for $i<p(S)$).
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+We first suppose that $\mathscr{F}$ is bounded. For any stratification $\mathcal{S}$ fine enough, we then have $\mathscr{F}\in D^b_\mathcal{S}$. In particular, there exists a stratification $\mathcal{T}$ with the required properties, and it suffices to show that (\rmnum{1})$\Rightarrow$(\rmnum{2})$\Rightarrow$(\rmnum{3})$\Rightarrow$(\rmnum{1}). The implication (\rmnum{2})$\Rightarrow$(\rmnum{3}) is trivial. To verify (\rmnum{1})$\Rightarrow$(\rmnum{2}), it suffices to choose $\mathcal{S}$ fine enough so that $\mathscr{F}$ is in $D^b_\mathcal{S}$ (hence in $D_\mathcal{S}^{b,\leq p}$ (resp. $D_\mathcal{S}^{b,\geq p}$)) and that $S'$ is a closure of strata. Finally, to see that (\rmnum{3})$\Rightarrow$(\rmnum{1}), let $\mathcal{S}$ be a refinement of $\mathcal{T}$ so that $\mathscr{F}$ is in $D_\mathcal{S}^b$. The hypothesis over $p$ and the proof of \cref{triangle cat constructible perverse structure refinement} show that $\mathscr{F}$ is in $D_\mathcal{S}^{b,\leq p}$ (resp. $D_\mathcal{S}^{b,\geq p}$), whence (\rmnum{1}).\par
+In the general case, let $a,b$ be integers such that $a\leq p(2i)\leq b$ for $0\leq i\leq\dim(X)$. If in (\rmnum{1}), (\rmnum{2}) or (\rmnum{3}) we replace $\mathscr{F}$ by $\tau^{\geq a}\mathscr{F}$ (resp. $\tau^{\leq b}\mathscr{F}$), we obtain an equivalent condition and it remains to show that each of them implies $H^i(\mathscr{F})=0$ for $i>b$ (resp. $i<a$). For (\rmnum{1}), this is in the definition. For (\rmnum{3}), we start by replacing $\mathcal{T}$ by a finer stratification and recall the proof of \cref{triangle cat perverse condition finite cohomology dim}. For (\rmnum{2}), we prove by descendent induction on $\dim(S')$ that for each irreducible subvariety $S'$ and each $i>b$ (resp. $i<a$), there exists an open dense subset $S$ of $S'$ such that $H^i(\mathscr{F})$ is zero over $S$.
+\end{proof}
+
+If $U$ be a locally closed subset of $X$, for any stratification fine enough, $U$ is a union of strata. This allows us to apply \cref{triangle cat perverse t-structure t-exactness} to the inclusion map $j:U\to X$. We use the notations $\tau^{\leq p}$, $H^p$, ${^pj_!}$ and so on in \autoref{triangle cat perverse sheaf stratified space subsection}, and the corresponding results. For $U$ an open subset of $X$, with complement $Z$, the $t$-structure of perversity $p$ of $D_c(X(\C),R)$ is obtained by glueing that of $D_c(U(\C),R)$ and $D_c(Z(\C),R)$. We can therefore apply \cref{triangle cat recollement theorem}, as in \cref{triangle cat perverse t-structure j_!* prolongation char}. In particular, for a perverse sheaf $\mathscr{A}$ over $U$, we have (\cref{triangle cat recollement ^pj_! and ^pj_* is truncation})
+\begin{equation}\label{triangle cat perverse sheaf over scheme j_!*}
+j_{!*}(\mathscr{A})={^p\tau_Z^{\leq -1}}j_*(\mathscr{A})
+\end{equation}
+Suppose that $Z$ is of dimension $\leq d$ and put $t=p(2d)$. Since $\tau^{<t}i^*j_*(\mathscr{A})$ is in ${^pD_c^{<0}}$ and that the triangle $(\tau^{<t}i^*j_*(\mathscr{A}),i^*j_*(\mathscr{A}),\tau^{\geq t}i^*j_*(\mathscr{A}))$ is distinguished, if $\tau^{\geq t}i^*j_*(\mathscr{A})$ is in ${^pD_c^{\geq 0}}$, we have ${^p\tau^{<0}}i^*j_*(\mathscr{A})\cong\tau^{<t}i^*j_*(\mathscr{A})$ and hence ${^p\tau^{<0}}j_*(\mathscr{A})\cong\tau_Z^{<t}j_*(\mathscr{A})$\footnotetext{Here $\tau_Z^{\leq n}$ is the truncation functor induced by the natural $t$-structures, and ${^p\tau_Z^{\leq n}}$ denotes that induced by the $p$-perverse $t$-structure.}. In particular, we obtain the following:
+
+\begin{proposition}\label{triangle cat perverse sheaf over scheme j_!* of j_*}
+If $Z$ is smooth of dimension $d$ and that $H^i(j_*(\mathscr{A}))$ are locally constant over $Z$ for $i\geq t:=p(2d)$, we have
+\begin{equation}\label{triangle cat perverse sheaf over scheme j_!* of j_*-1}
+j_{!*}(\mathscr{A})=\tau_Z^{\leq t-1}j_*(\mathscr{A}).
+\end{equation}
+\end{proposition}
+\begin{proof}
+By \cref{triangle cat perverse sheaf over scheme D^p char}~(\rmnum{3}), applie to $Z$ and $\mathcal{T}=\{Z\}$, we conclude that $\tau^{\geq t}i^*j_*(\mathscr{A})$ is in ${^pD_c^{\geq 0}}$, so the claim follows.
+\end{proof}
+
+This, together with the transitivity of $j_{!*}$, is analogous to \cref{triangle cat perverse t-structure j_!* for open union char}. Similarly, under the same hypothesis over $Z$ and if the $H^i(i^*j_*(\mathscr{A}))$ are locally free for $i\geq t-1$ (resp. $t+1$), we have respectively, by (\cref{triangle cat recollement ^pj_! and ^pj_* is truncation}),
+\begin{align}
+{^pj_!}(\mathscr{A})&=\tau^{t-2}_Zj_*(\mathscr{A}),\label{triangle cat perverse sheaf over scheme ^pj_! char}\\
+{^pj_*}(\mathscr{A})&=\tau^{\leq t}_Z.\label{triangle cat perverse sheaf over scheme ^pj_* char}
+\end{align}
+
+\begin{proposition}\label{triangle cat perverse sheaf over scheme quasi-finite morphism t-exact}
+If $f:X\to Y$ is a quasi-finite morphism, the functors $f_!$ and $f^*$ are right $t$-exact, and $f^!$ and $f_*$ are left $t$-exact.
+\end{proposition}
+\begin{proof}
+For $\mathscr{F}\in D_c(X(\C),R)$, the condition $\mathscr{F}\in {^pD_c^{\leq 0}}$ is equivalent to
+\begin{equation}\label{triangle cat perverse sheaf over scheme quasi-finite morphism t-exact-1}
+p(2\dim(\supp(H^i(\mathscr{F}))))\geq i.
+\end{equation}
+To see this, we choose a stratification $\mathcal{S}$ of $X$ so that $\supp(H^i(\mathscr{F}))$ is a union of strata of $\mathcal{S}$. If (\ref{triangle cat perverse sheaf over scheme quasi-finite morphism t-exact-1}) is satisfied, then for any stratum $S\in\mathcal{S}$ contained in $Y$, where $Y=\supp(H^i(\mathscr{F}))$, we have $p(S)\geq p(2\dim(Y))\geq i$, so $H^i(i_S^*(\mathscr{F}))=0$ if $i>p(S)$. Conversely, if $\mathscr{F}\in {^pD_c^{\leq 0}}$, then $p(S)\geq i$ for each stratum $S\in\mathcal{S}$ contained in $Y$, whence $p(2\dim(Y))\geq i$.\par
+Now the functor ${^0f_!}$ being exact, we have $H^i(f_!(\mathscr{F}))={^0f_!}(H^i(\mathscr{F}))$, whence $\supp(f_!(\mathscr{F}))=\overline{f(\supp(H^i(\mathscr{F})))}$ and
+\[\dim(\supp(H^i(f_!(\mathscr{F}))))=\dim(\supp(H^i(\mathscr{F}))).\] Similarly, $H^i(f^*(\mathscr{F}))={^0f^*}(H^i(\mathscr{F}))$, $\supp(H^i(f^*(\mathscr{F})))=f^{-1}(\supp(H^i(\mathscr{F})))$ and
+\[\dim(\supp(H^i(f^*(\mathscr{F}))))\leq\dim(\supp(H^i(\mathscr{F}))).\] This proves the right $t$-exactness of $f_!$ and $f^*$, and the assertion for $f^!$ and $f_*$ follows from \cref{triangle cat t-exact functor prop}~(c).
+\end{proof}
+
+\begin{corollary}\label{triangle cat perverse sheaf over scheme finite etale morphism t-exact}
+If $f$ is finite, $f_!=f_*$ is $t$-exact. If $f$ is \'etale, $f^!=f^*$ is $t$-exact.
+\end{corollary}
+
+For a quasi-finite morphism $f:X\to Y$ and a $p$-perverse sheaf $\mathscr{F}$ over $X$, by \cref{triangle cat perverse sheaf over scheme quasi-finite morphism t-exact}, $f_!(\mathscr{F})$ is in ${^pD^{\leq 0}}$ and $f_*(\mathscr{F})$ is in ${^pD^{\geq 0}}$. The natural morphism $f_!(\mathscr{F})\to f_*(\mathscr{F})$ then admits a factorization
+\begin{equation}\label{triangle cat perverse sheaf over scheme f_! to f_*-1}
+f_!(\mathscr{F})\to {^pf_!}(\mathscr{F})\to {^pf_*}(\mathscr{F})\to f_*(\mathscr{F}).
+\end{equation}
+We denote by $f_{!*}(\mathscr{F})$ the image of ${^pf_!}(\mathscr{F})$ in ${^pf_*}(\mathscr{F})$.\par
+
+As in \cref{triangle cat perverse sheaf stratified space subsection}, if the perversities $p,q$ satisfy 
+\[(p+q)(n)-(p+q)(m)\leq m-n\]
+for $m\leq n$, $\otimes^L$ sends $D_c^{-,\leq p}\times D_c^{-,\leq q}$ into $D^{\leq p+q}_c$, and if $q-p$ is decreasing, $R\sHom$ sends $D_c^{-,\leq p}\times D_c^{+,\geq q}$ into $D_c^{+,\geq(q-p)}$. In particular, for $\mathscr{F}\in D_c^{\leq p}$ and $\mathscr{G}\in D_c^{\geq p}$, the chomology sheaves $H^iR\sHom(\mathscr{F},\mathscr{G})$ are zero for $i<0$, and $U\mapsto\Hom_{D(U)}(\mathscr{F}|_U,\mathscr{G}|_U)$ is a sheaf. As in \cref{triangle cat perverse sheaf is stack}, the $p$-perverse sheaves form a stack.\par
+If $R$ is a field, the Verdier duality exchanges $D^{\geq p}$ and $D^{\leq p^*}$, $D^{\geq p}$ and $D^{\leq p^*}$, $p$-perverse sheaves and $p^*$-perverse sheaves, and ${^pH^j}$ and ${^{p^*}H^{-j}}$.
+
+\paragraph{The case of an algberaic variety over a field \texorpdfstring{k}{k}}
+Let $X$ be a scheme of finite type over a field $k$, and let $\ell$ be a prime number, which is coprime to the characteristic of $k$. Over $X$, we consider the sheaves for the \'etale topology, but locally closed subsets refer to Zariski topology. Our goal is to define $\Q_\ell$-perverse sheaves over $X$. The case of the sheaves of $\Z/\ell\Z$-modules being a bit easier, we start with them.\par
+Due to the phenomena of wild ramification, we do not have stratifications playing the role of Whitney stratifications. We will have to consider pairs $(\mathcal{S},L)$ where
+\begin{enumerate}
+    \item[(a)] $\mathcal{S}$ is a finite partition of $X$ by locally closed subsets (the strata). The closure of any stratum is a union of strata, and over $\widebar{k}$ each stratrum is reduced and smooth, all of the same dimension.
+    \item[(b)] $L$ associates for each stratum $\mathcal{S}$ to a \textit{finite} set $L(S)$ of isomorphy classes of locally constant sheaves of $\Z/\ell\Z$-modules over $S$, which is irreducible in the category of locally constant sheaves of $\Z/\ell\Z$-modules.
+\end{enumerate}
+
+A sheaf of $\Z/\ell\Z$-modules is called \textbf{$(\mathcal{S},L)$-constructible} if its restriction to any stratum $S$ of $\mathcal{S}$ is locally constant and a (finite) iterated extension of sheaves whose isomorphism classes are in $L(S)$. We denote by $D^b_{\mathcal{S},L}(X,\Z/\ell\Z)$ the full subcategory of $D^b(X,\Z/\ell\Z)$ formed by $(\mathcal{S},L)$-constructible complexes $\mathscr{F}$, i.e. such that $H^i(\mathscr{F})$ are $(\mathcal{S},L)$-constructible. We say that $(\mathcal{S}',L')$ refines $(\mathcal{S},L)$ if each stratum $S\in\mathcal{S}$ is a union of strata of $\mathcal{S}'$, and that any $\mathscr{F}\in L(S)$ is $(\mathcal{S}',L')$-constructible (i.e. $(\mathcal{S}'|_S,L'|_{\mathcal{S}'|_S})$-constructible).\par
+Finally, we impose the following conditions:
+\begin{enumerate}
+    \item[(c)] For $S\in\mathcal{S}$ and $\mathscr{F}\in L(S)$. if $j:S\to X$ is the inclusion, the $R^nj_*(\mathscr{F})$ are $(\mathcal{S},L)$-constructible.
+\end{enumerate}
+
+It follows from the constructability theorem for $Rj_*$ (\cite{*}, 1.1) that for any system $(\mathcal{S}',L')$ verifying (a), (b), there exists a refinement $(\mathcal{S},L)$ of $(\mathcal{S}',L')$ which satisfies (a), (b), (c): if (a), (b), (c) are true with $X$ replaced by the union of strata of dimension $\geq n$, the constructability theorem makes it possible to refine $(\mathcal{S},L)$ into $(\mathcal{S}',L')$ without touching the strata of dimension $\geq n$, and to make (a), (b), (c) true with $X$ replaced by the union of strata of dimension $\geq n-1$. We can then iterate this construction to obtain the desired refinement.\par
+
+Let $p:\mathcal{S}\to\Z$ be as \ref{triangle cat perverse sheaf complex variety paragraph}, defined by a perversity functor $p_\mathcal{S}:\mathcal{S}\to\Z, S\mapsto p(2\dim(S))$. Preceeding as in \autoref{triangle cat perverse sheaf stratified space subsection}, we obtain a $t$-structure over $D_{\mathcal{S},L}(X,\Z/\ell\Z)$. For $(\mathcal{S},L)$ finer and finer, these $t$-structures induce each other: the purity theorem of (\cite{SGA4-3}, \Rmnum{16}, 3.7) gives an analogue of \cref{triangle cat constructible perverse structure refinement}. By passing to limit, we obtain a $t$-structure $(D_c^{b,\leq p}(X,\Z/\ell\Z),D_c^{b,\geq p}(X,\Z/\ell\Z))$ over the filterred union $D_c^b(X,\Z/\ell\Z)$ of the $D_{\mathcal{S},L}^b(X,\Z/\ell\Z)$. We then deruce a $t$-stucture over $D_c(X,\Z/\ell\Z)$ as in \cref{triangle cat perverse t-structure on D(X)}, and \cref{triangle cat perverse sheaf over scheme D^p char} to \cref{triangle cat perverse sheaf over scheme finite etale morphism t-exact} are still valid, with similar arguments (the Verdier duality is replaced by the duality formalism of etale cohomology (\cite{SGA4-3}, \Rmnum{18})).\par
+For a point $x$ of $X$ (closed or not), if $i_x:\{x\}\to X$ denotes the inclusion map, which factors into $x\stackrel{j}{\to}\widebar{\{x\}}\stackrel{i}{\to}X$, we define $i_x^!:=j^*i^!$. With this notation, the characterization of \cref{triangle cat perverse sheaf over scheme D^p char}~(\rmnum{2}) of $D_c^{\leq p}$ (resp. $D_c^{\geq p}$) admits the following formulation\footnote{This formulation leads to an extension of the construction of $t$-structures associated to perversity functions, avioding constructibility and the use of stratifications, see [Gab04].}:
+\begin{enumerate}
+    \item[(\rmnum{2}')] For any point $x$ of $X$ (closed or not), denote by $\dim(x)$ the dimension of $\widebar{\{x\}}$, we have $H^i(i_x^*(\mathscr{F}))=0$ for $i>p(2\dim(x))$ (resp. $H^i(i_x^!(\mathscr{F}))=0$ for $i<p(2\dim(X))$). 
+\end{enumerate}
+
+For the sheaves of $\Z/\ell^n\Z$-modules (or more generally $R$-modules, with $R$ finite over $\Z/\ell^n\Z$), we have similar definitions. It is convenient to continue to take for $L$ the datum, for each stratum, of a finite family of locally constant irreducible sheaves of $\Z/\ell\Z$-modules, and to say that $\mathscr{F}\in D^b(X,R)$ is $(\mathcal{S},L)$-constructible if $\ell^iH^*(\mathscr{F})/\ell^{i+1}H^*(\mathscr{F})$ are $(\mathscr{S},L)$-constructible (as sheaves of $\Z/\ell\Z$-modules).\par
+
+For $\Z_\ell$-sheaves (resp. $\Q_\ell$-sheaves), we preceed with the same definition, once we can define triangulated categories $D_c^b(X,\Z_\ell)$ (resp. $D^b_c(X,\Q_\ell)$) obeying the usual variance formalism, and once we define their "natural" $t$-structures, through which we can consider the abelian category of constructible $\Z_\ell$-sheaves (resp. $\Q_\ell$-sheaves) on $X$ (\cite{SGA5}, \Rmnum{7}, 1.1). In the case of finite fields or algebraically closed fields (or more generally when for any finite extension $k'$ of $k$ the groups $H^i(\Gal(\widebar{k}/k'),\Z/\ell\Z)$ are finite), a solution is proposed in (\cite{*} 1.1.2): put
+\begin{equation}\label{triangle cat Z_ell etale perverse sheaf over scheme-1}
+D^b_c(X,\Z_\ell):=\rlim D^b_{\mathrm{ctf}}(X,\Z/\ell^n\Z)
+\end{equation}
+(ctf for "constructible with finite Tor-dimension). The transition functors are chosen to be the functors of extension of scalars $-\otimes_{\Z/\ell^n\Z}^L\Z/\ell^m\Z$; the restriction of having finite Tor-dimension is necessary for that they send $D^b$ into $D^b$. The following proposition, together with the theorem of finiteness in (\cite{*}), assure that we obtain a triangulated category.
+
+\begin{proposition}\label{triangle cat 2-proj limit triangle if finite Hom}
+Let $(\mathcal{D}_n)_{n\in\N}$ be a projective system of triangulated categories whose transition functors $T_{m,n}:\mathcal{D}_n\to\mathcal{D}_m$ are assumed to be exact. If for any $n\in\N$ and $K,L\in\mathcal{D}_n$, $\Hom(K,L)$ is finite, then the $2$-projective limit $\mathcal{D}$ of $\mathcal{D}_n$, endowed with the triangles whose image in each $\mathcal{D}_n$ are distinguished, is triangulated.
+\end{proposition}
+\begin{proof}
+Let $u:X\to Y$ in $\mathcal{D}$, and $u_n:X_n\to Y_n$ be its image in $\mathcal{D}_n$. For
+\end{proof}
+
+Definition (\ref{triangle cat Z_ell etale perverse sheaf over scheme-1}) has the advantage that the variance formalism of $D^b_c(X,\Z_\ell)$ is obtained by passing to limit. The definition of the natural $t$-structure is more delicate, because the usual truncation functors $\tau^{\leq i}$ in $D^b_c(X,\Z/\ell^n\Z)$ do not respect finite Tor-dimension and do not commute with extensions of scalars. We define the functor $H^i$ of $D^b_c(X,\Z_\ell)$ in the abelian category of constructible $\Z_\ell$-sheaves by attaching to $\mathscr{F}$, defined by a system $\mathscr{F}_n\in D^b_c(X,\Z/\ell^n\Z)$, the projective limit of the $\Z_\ell$-sheaf $H^i(\mathscr{F}_n)$. We shall write $\mathscr{F}\otimes_{\Z_\ell}\Z/\ell^n\Z$ for $\mathscr{F}_n$, and we have the usual exact sequences
+\begin{equation}\label{triangle cat Z_ell etale perverse sheaf over scheme-2}
+\begin{tikzcd}
+0\ar[r]&H^i(\mathscr{F})\otimes_{\Z_\ell}\Z/\ell^n\Z\ar[r]&H^i(\mathscr{F}\otimes_{\Z_\ell}\Z/\ell^n\Z)\ar[r]&\Tor_1(H^{i+1}(\mathscr{F}),\Z/\ell^n\Z)\ar[r]&0
+\end{tikzcd}
+\end{equation}
+As $n$ varies, these form a projective system, and the projective limit of $\Tor_1$ is essentially zero. We define $D^{b,\leq 0}_c(X,\Z_\ell)$ (resp. $D^{b,\geq 0}_c(X,\Z_\ell)$) by the condition $H^i(\mathscr{F})=0$ for $i>0$ (resp. $i<0$). For that we obtain a $t$-structure, it is essential to construct the operators $\tau^{\leq i}$. This is done in (\cite{*}, 1.1.2). The functor $H^0$ induces an equivalenct of categories from $D^{b,\leq 0}_c(X,\Z_\ell)\cap D^{b,\geq 0}_c(X,\Z_\ell)$ to the category of constructible $\Z_\ell$-sheaves. The exact sequence (\ref{triangle cat Z_ell etale perverse sheaf over scheme-2}) shows that for $\mathscr{F}$ to be in $D^{b,\leq 0}_c(X,\Z_\ell)$, it is necessary and sufficient that for an (any) integer $n$, $\mathscr{F}\otimes_{\Z_\ell}\Z/\ell^n\Z$ is in $D^{b,\leq 0}(X,\Z/\ell^n\Z)$.\par
+
+Let $D^b_{\mathcal{S},L}(X,\Z_\ell)$ be the full subcategory of $D^b_c(X,\Z_\ell)$ formed by complexes $\mathscr{F}$ verifying the following conditions (the equivalence follows from (\ref{triangle cat Z_ell etale perverse sheaf over scheme-2})):
+\begin{enumerate}
+    \item[(a)] for an (any) integer $n$, $\mathscr{F}\otimes_{\Z_\ell}\Z/\ell^n\Z$ is in $D^b_{\mathcal{S},L}(X,\Z/\ell^n\Z)$;
+    \item[(b)] the $H^i(\mathscr{F})\otimes_{\Z_\ell}\Z/\ell^n\Z$ are $(\mathcal{S},L)$-constructible. 
+\end{enumerate}
+As $(\mathcal{S},L)$ varies, $D^b_c$ is the filtered union of $D_{\mathcal{S},L}^b$, and we define the $p$-perverse $t$-structure by passing to limit over $(\mathcal{S},L)$. Again, for $\mathscr{F}$ to be in $D_c^{\leq p}(X,\Z_\ell)$, it is necessary and sufficient that mod $\ell$ it is in $D_c^{\leq p}(X,\Z/\ell\Z)$.\par
+
+We recall that by definition, $D^b_c(X,\Q_\ell):=D^b_c(X,\Z)\otimes_{\Z_\ell}\Q_\ell$, and that the abelian category of constructible $\Q_\ell$-sheaves is induced by constructible $\Z_\ell$-sheaves via tensoring with $\Q_\ell$. The full subcategory $D^b_{\mathcal{S},L}(X,\Q_\ell)$ (which is the image of $D^b_{\mathcal{S},L}(X,\Z_\ell)\otimes\Q_\ell$) is formed by the complexes $\mathscr{F}$ such that each $H^i(\mathscr{F})$ is tensoring with $\Q_\ell$ of an $(\mathcal{S},L)$-constructible, i.e. its mod $\ell$ reduction is $(\mathcal{S},L)$-constructible. We define the $p$-perverse structure over $D^b_c(X,\Q_\ell)$ by passing to limit over $(\mathcal{S},L)$ and glueing. For any interval $[a,b]$ of $\Z$, the natural functor
+\[{^pD_c}^{[a,b]}(X,\Z_\ell)\otimes\Q_\ell\to {^pD}_c^{[a,b]}(X,\Q_\ell)\]
+is an equivalence. In particular (for $a=b=0$), the abelian category of perverse $\Q_\ell$-sheaves is induced from that of $\Z_\ell$ by tensoring with $\Q_\ell$.\par
+
+The proof of \cref{triangle cat perverse sheaf is stack} that the perverse sheaves form a stack no longer applies as $\Z_\ell$-sheaves and $\Q_\ell$-sheaves because it was written assuming that one is working inside of a derived category derived of a category of sheaves. Here is another proof. We already know, as in \cref{triangle cat perverse structure Hom define sheaf}, that the morphisms glue together, and it is a question of proving that if $(U_i)_{i\in I}$ is an \'etale covering of $X$, any family $\mathscr{A}_i$ of perverse sheaves endowed with a glueing datum, provides a perverse sheaf $\mathscr{A}$ over $X$. The given glueing datum permits us to define, for each \'etale morphism $j:V\to X$ which factors through one of the $U_i$, a perverse sheaf $\mathscr{A}_V$ over $V$, and these are compatible with inverse images $V'\to V$.\par
+We also note that for any morphism $f:Y\to X$ and any irreducible subvariety $i:S'\to X$ of $X$, which give rise to a Cartesian diagram
+\[\begin{tikzcd}
+T'\ar[r,hook,"i"]\ar[d,"f"]&Y\ar[d,"f"]\\
+S'\ar[r,hook,"i"]&X
+\end{tikzcd}\]
+we have $i^!f_*=f_*i^!$ as functors over derived categories. If $f$ is quasi-finite, $S'$ admits an open dense subset $S$ such that $T=f^{-1}(S)$ is finite over $S$, and is empty or purely of dimension $\dim(S)$. It then follows that $f_*$ sends $D_c^{>p}(Y,\Q_\ell)$ into $D_c^{>p}(X,\Q_\ell)$, and ${^pf_*}:=H^0f_*\eps$ is a left exact functor from perverse sheaves over $Y$ to perverse sheaves of $X$, whose left adjoint is ${^pf^*}:=H^0f^*\eps$ (\cref{triangle cat t-exact functor prop}).\par
+Let $h_i$ (resp. $h_{ij}$) be the covering morphism from $U_i$ to $X$ (resp. $U_{ij}=U_i\times_XU_j$) into $X$. Put
+\[\mathscr{A}:=\ker\Big(\prod_i{^ph_{i,*}(\mathscr{A}_{U_i})}\rightrightarrows\prod_{i,j}{^ph_{ij}}(\mathscr{A}_{U_{ij}})\Big).\]
+It suffices to show that the morphism ${^ph_i^*}(\mathscr{A})\to\mathscr{A}_i=\mathscr{A}_{U_i}$ induced from $\mathscr{A}\to h_{i,*}(\mathscr{A}_{U_i})$ by adjunction is an isomorphism, which can be verified under a base change by any of the $h_i$. The direct images and inverse images commutes with such a localization, so we are reduced to the case where $U_i\to X$ admits a section. In this case, the $\mathscr{A}_i$ is the inverse image of an $\mathscr{A}_X$, and that $\mathscr{A}=\mathscr{A}_X$ follows from the usual homotopy argument which shows that two open covers which are refinements of each other give the same \v{C}ech cohomology.

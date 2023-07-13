@@ -535,22 +535,140 @@ Let $\mathcal{H}(\mathcal{F},\mathcal{C})$ be the category of couples of familys
 
 \end{proof}
 \section{Faithfully flat descent}
-The notion "descent" provides a general framework for "glueing" process of objects, and hence the "glueing" of categories. The most classical case of glueing is giving a topological space $X$ and an open covering $(X_i)$ of $X$; if for each $i$ we are given a fiber space (say) $E_i$ over $X_i$, and for each pair $(i,j)$ an isomorphism $f_{ji}$ from $E_i|_{X_ij}$ to $E_j|_{X_ij}$ (where $X_{ij}=X_i\cap X_j$), satisfying a transitive condition (that is, $f_{kj}f_{ji}=f_{ki}$), then we know that there exists a unique (up to isomorphism) space $E$ over $X$, defined by the condition that we have isomorphisms $f_i:E|_{X_i}\to E_i$, satisfying the relations $f_{ji}=f_jf_i^{-1}$. Let $X'$ be the sum of $X_i$, which is a fiber space over $X$ (endowed with the continous map $X'\to X$). The data of the spaces $E_i$ then can be interpreted as a fiber space $E'$ over $X'$, and the isomorphisms $f_{ji}$ give an isomorphism of the inverse images $E_1''$ and $E_2''$ of $E'$ (under the canonical projection) over $X''=X\times_XX'$. The gluing condition can then be written as an identity between isomorphisms of the fiber spaces $E_1'''$ and $E_3'''$ over the triple fiber product $X'''=X'\times_XX'\times_XX'$ (where $E_i'''$ is the inverse image of $E'$ over $X'''$ under the canonical projection of index $i$). The construction of $E$ from $E_i$ and $f$ is a typical case of a "descent" process.
+The notion "descent" provides a general framework for "glueing" process of objects, and hence the "glueing" of categories. The most classical case of glueing is giving a topological space $X$ and an open covering $(X_i)$ of $X$; if for each $i$ we are given a fiber space (say) $E_i$ over $X_i$, and for each pair $(i,j)$ an isomorphism $f_{ji}$ from $E_i|_{X_{ij}}$ to $E_j|_{X_{ij}}$ (where $X_{ij}=X_i\cap X_j$), satisfying a transitive condition (that is, $f_{kj}f_{ji}=f_{ki}$), then we know that there exists a unique (up to isomorphism) space $E$ over $X$, defined by the condition that we have isomorphisms $f_i:E|_{X_i}\to E_i$, satisfying the relations $f_{ji}=f_jf_i^{-1}$. Let $X'$ be the sum of $X_i$, which is a fiber space over $X$ (endowed with the continous map $X'\to X$). The data of the spaces $E_i$ then can be interpreted as a fiber space $E'$ over $X'$, and the isomorphisms $f_{ji}$ give an isomorphism of the inverse images $E_1''$ and $E_2''$ of $E'$ (under the canonical projection) over $X''=X\times_XX'$. The gluing condition can then be written as an identity between isomorphisms of the fiber spaces $E_1'''$ and $E_3'''$ over the triple fiber product $X'''=X'\times_XX'\times_XX'$ (where $E_i'''$ is the inverse image of $E'$ over $X'''$ under the canonical projection of index $i$). The construction of $E$ from $E_i$ and $f$ is a typical case of a "descent" process.
+\subsection{Universally effective morphisms}
+Let $\mathcal{C}$ be a fixed category. We recall that a morphism $u:T\to S$ is called an \textbf{epimorphism} if, for any object $T\in\mathcal{C}$, the corresponding map
+\[X(S)=\Hom(S,X)\to X(T)=\Hom(T,X)\]
+is injective. We say that $u$ is a \textbf{universal epimorphism} if for any morphism $S'\to S$, the fiber product $T'=T\times_SS'$ exists and $u':T'\to S'$ is an epimorphism.
+\begin{definition}
+A diagram
+\[\begin{tikzcd}
+A\ar[r,"u"]&B\ar[r,shift left=2pt,"v_1"]\ar[r,shift right=2pt,swap,"v_2"]&C
+\end{tikzcd}\]
+of maps of sets is called \textbf{exact} if $u$ is injective and its image is formed by the elements $b\in B$ such that $v_1(b)=v_2(b)$. A diagram of the same type in $\mathcal{C}$ is called \textbf{exact} if for any object $X$ of $\mathcal{C}$, the corresponding diagram of sets
+\[\begin{tikzcd}
+A(X)\ar[r]&B(X)\ar[r,shift left=2pt]\ar[r,shift right=2pt]&C(X)
+\end{tikzcd}\]
+is exact; we also say that $(A,u)$ is a kernel of the couple $(v_1,v_2)$. Dually, a diagram
+\[\begin{tikzcd}
+C\ar[r,shift left=2pt,"v_1"]\ar[r,shift right=2pt,swap,"v_2"]&B\ar[r,"u"]&A
+\end{tikzcd}\]
+in $\mathcal{C}$ is called exact if it is exact as a diagram in the opposite category $\mathcal{C}^{\op}$, i.e. if for any object $X$ of $\mathcal{C}$, the corresponding diagram of sets
+\[\begin{tikzcd}
+X(A)\ar[r]&X(B)\ar[r,shift left=2pt]\ar[r,shift right=2pt]&X(C)
+\end{tikzcd}\]
+is exact. We also say that $(A,u)$ is a cokernel of the couple $(v_1,v_2)$.
+\end{definition}
+\begin{definition}
+A morphism $u:T\to S$ is called an effective morphism effective epimorphism if the fiber product $T\times_ST$ exist, and if the diagram
+\[\begin{tikzcd}
+T\times_ST\ar[r,shift left=2pt,"\pr_1"]\ar[r,shift right=2pt,swap,"\pr_2"]&T\ar[r,"u"]&S
+\end{tikzcd}\]
+is exact, i.e. if $u$ is a cokernel of $(\pr_1,\pr_2)$. We say that $u$ is a \textbf{universally effective epimorphism} if for any morphism $S'\to S$, the fiber product $T'=T\times_SS'$ exists and the morphism $u':T'\to S'$ is an effective epimorphism.
+\end{definition}
+A morphism $u:T\to S$ is called \textbf{squarable} if for any morphism $S'\to S$, the fiber product $T\times_SS'$ exists. The following lemma is trivial from the above definitions:
+\begin{lemma}\label{category universal epi and composition}
+Consider morphisms $U\stackrel{v}{\to}T\stackrel{u}{\to} S$, then
+\begin{enumerate}
+    \item[(a)] $u,v$ epimorphism $\Rightarrow$ $uv$ epimorphism $\Rightarrow$ $u$ epimorphism.
+    \item[(b)] $u,v$ universal epimorphism $\Rightarrow$ $uv$ universal epimorphism $\Rightarrow$ $u$ universal epimorphism.
+\end{enumerate}
+\end{lemma}
+\begin{corollary}
+Let $u:X\to Y$ and $u':X'\to Y'$ be universal epimorphisms such that $Y\times Y'$ exists. Then $X\times X'$ exists and $u\times u':X\times X'\to Y\times Y'$ is a universal epimorphism.
+\end{corollary}
+
+\begin{definition}
+We say that an object $S$ of $\mathcal{C}$ is squarable if its product by any object of $\mathcal{C}$ exists (if $\mathcal{C}$ has a final object $e$, this means $S\to e$ is squatable).
+\end{definition}
+
+\begin{lemma}\label{category effective epimorphism in C/S iff in C}
+Let $u:X\to Y$ be a morphism in $\mathcal{C}_{/S}$; for this to be an epimorphism (resp. universal epimorphism, resp, effective epimorphism, resp. universally effective morphism), it is sufficient that the corresponding morphism in $\mathcal{C}$ is, and this is also necessary if $S$ is a squarable object in $\mathcal{C}$.
+\end{lemma}
+
+\subsection{Descent morphisms}
+Let $f:S'\to S$ be a morphism such that $S''=S'\times_SS'$ exists, and let $u':X'\to S'$ be an object over $S'$. A \textbf{glueing datum} over $X'/S'$, relative to $f$, is defined to be an $S''$-isomorphism
+\[\phi:X_1''\stackrel{\sim}{\to} X_2''\]
+where $X_i''$ ($i=1,2$) denotes the inverse image (assumed to exist) of $X'/S'$ under the projection $\pr_i:S''\to S'$. We say the the glueing datum $\phi$ is a \textbf{descent datum} if it satisfies the cocycle condition:
+\[\pr_{3,1}^*(\phi)=\pr_{3,2}^*(\phi)\pr_{2,1}^*(\phi)\]
+where $\pr_{i,j}$ ($1\leq j<i\leq 3$) are the canonical projections of $S'''=S'\times_SS'\times_SS'$ to $S''$ (we assume that $S'''$ exists), and $\pr_{i,j}^*(\phi)$ is the inverse image of $\phi$, considered as an $S'''$-morphism from $X_j'''$ to $X_i'''$, and for any integer $1\leq k\leq 3$, $X'''_k$ denotes the inverse image (assumed to exist) of $X'/S'$ under the canonical projection $q_k:S'''\to S'$.\par
+
+Let $f:S'\to S$ be a morphism such that $S''=S'\times_SS'$ exists, and $X$ be an object over $X$ such that $X'=X\times_SS'$ and $X''=X\times_SS''$ exist. Then the inverse images of $X'$ by $\pr_i$ ($i=1,2$) exist and are canonically isomorphic, so $X'/S'$ is endowed with a canonical glueing datum relative to $f$. If $S'''$ and $X'''=X\times_SS'''$ exist, then this is also a descent datum. If $Y$ is another object over $S$ satisfying the same conditions, then for any $S$-morphism $X\to Y$, the corresponding $S'$-morphism $X'\to Y'$ is \textit{compatible} with the canonical glueing datum over $X',Y'$. If in particular $S'\to S$ is a squarable morphism, then
+\[X\mapsto X'=X\times_SS'\]
+is a functor from the category $\mathcal{C}_{/S}$ to the category of objects over $S'$ endowed with a descent datum relative to $f$. We say that $f:S'\to S$ is a \textbf{descent morphism} (resp. an \textbf{effective descent morphism}) if $f$ is squarable (i.e. for any $X\to S$, the fiber product $X'=X\times_SS'$ exists) and if the preceding functor $X\mapsto X'=X\times_SS'$ from $\mathcal{C}_{/S}$ to the category of objects over $S'$ endowed with a descent datum relative to $f$, is fully faithfully (resp. an quivalence of categories).\par
+We note that the first definition only concerns the notion of glueing (hence do not intervene the fiber product $S'''$): $f$ is a descent morphism if $f$ is squarable and $X\mapsto X'$ is a fully faithful functor from $\mathcal{C}_{/S}$ to the category of objects over $S'$ endowed with a glueing datum relative to $f$. To make this definition explicit, we note that it means that for two objects $X,Y$ over $S$, the following diagram of sets
+\begin{equation}\label{category descent morphism sequence-1}
+\begin{tikzcd}
+\Hom_S(X,Y)\ar[r]&\Hom_{S'}(X',Y')\ar[r,shift left=2pt,"p_1"]\ar[r,shift right=2pt,swap,"p_2"]&\Hom_{S''}(X'',Y'')
+\end{tikzcd}
+\end{equation}
+is exact, where $p_i(u')$ denotes the inverse image of $u'\in\Hom_{S'}(X',Y')$ by the projection $\pr_i:S''\to S'$, for $i=1,2$. In fact, the kernel of the couple $(p_1,p_2)$ is by definition the set of $S'$-morphisms $X'\to Y'$ compatible with the canonical glueing datum.\par
+Note that, by the definition of inverse images $Y',Y''$, we have canonical bijections
+\[\Hom_{S'}(X',Y')\cong\Hom_S(X',Y),\quad \Hom_{S''}(X'',Y'')\cong \Hom_S(X'',Y),\]
+so the exactness of (\ref{category descent morphism sequence-1}) is equivalent to that of
+\begin{equation}\label{category descent morphism sequence-2}
+\begin{tikzcd}
+\Hom_S(X,Y)\ar[r]&\Hom_S(X',Y)\ar[r,shift left=2pt]\ar[r,shift right=2pt]&\Hom_S(X'',Y)
+\end{tikzcd}
+\end{equation}
+obtained by applying $\Hom_S(-,Y)$ to the diagram in $\mathcal{C}_{/S}$:
+\begin{equation}\label{category descent morphism sequence-3}
+\begin{tikzcd}
+X''\ar[r,shift left=2pt]\ar[r,shift right=2pt]&X'\ar[r]&X
+\end{tikzcd}
+\end{equation}
+which is deduced from
+\[\begin{tikzcd}
+X''\ar[r,shift left=2pt]\ar[r,shift right=2pt]&X'\ar[r]&X
+\end{tikzcd}\]
+by base change $X\to S$. This proves, in view of \cref{category effective epimorphism in C/S iff in C}, the first part of the following proposition:
+
+\begin{proposition}\label{category descent morphism and effective morphism}
+If $f:S'\to S$ is a universally effective morphism, then it is a descent morphism, and the converse is also true if $S$ is a squarable object in $\mathcal{C}$.
+\end{proposition}
+\begin{proof}
+It remains to prove that if $f$ is a descent morphism, then is it a universally effective morphism, if $S$ is squarable. This means for any $X\to S$, we muse show that the diagram (\ref{category descent morphism sequence-3}) is exact, i.e. for any object $Z$ of $\mathcal{C}$, the diagram of sets obtained by applying $\Hom(-,Z)$ is exact. Now by hypothesis $Z\times S$ exists; let $Y$ be the corresponding object in $\mathcal{C}_{/S}$, then the transformed diagram of (\ref{category descent morphism sequence-3}) by $\Hom(-,Z)$ is isomorphic to that by $\Hom_S(-,Y)$, and the latter is exact by our hypothesis on $f$.
+\end{proof}
+
+We can therefore apply the results of descent morphisms to universally effective epimorphisms, such as the following:
+\begin{proposition}\label{category descent morphism object uniqueness prop}
+Let $f:S'\to S$ be a descent morphism (for example a universally effective epimorphism), then
+\begin{enumerate}
+    \item[(a)] For any $S$-morphism $u:X\to Y$, $u$ is an isomorphism (resp. a monomorphism) if and only if $u':X'\to Y'$ is.
+    \item[(b)] Let $X,Y$ be two sub-objects of $S$ and $X',Y'$ be the sub-objects of $S'$ obtained by base change. For that $X$ is dominated by $Y$ (resp. equal to $Y$), it is necessary and sufficient that so is for $X',Y'$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+For (a), it follows by definition that if $u'$ is an isomorphism in the category of glueing objects, then $u$ is an isomorphism. But we also note that any isomorphism of objects over $S'$, compatible with glueing datum, is an isomorphism of glueing object, i.e. its inverse is also compatible with glueing datum. For (b), we are reduced to proving that if $X'$ is dominated by $Y'$, i.e. there exists an $S'$-morphism $X'\to Y'$, then the same is true for $X,Y$ over $S$. Now as $Y'\to S'$, hence also $Y''\to S''$, is a monomorphism, we see that $X'\to Y'$ is automatically compatible with the glueing datum, hence provides an $S$-morphism $X\to Y$.
+\end{proof}
+
+\begin{corollary}\label{category descent morphism monomorphism if fiber product isomorphic}
+Let $f:S'\to S$ be a univerally effective epimorphism and $g:S\to T$ be a morphism such that $S\times_TS$ exists. Suppose that $S''=S'\times_SS'$ is isomorphic to $S'\times_TS'$, then $g:S\to T$ is a monomorphism.
+\end{corollary}
+\begin{proof}
+In fact, consider the Cartesian diagram
+\[\begin{tikzcd}
+S'\times_SS'\ar[r,"\cong"]\ar[d]&S'\times_TS'\ar[d]&\\
+X\ar[r]&S\times_TS
+\end{tikzcd}\]
+In view of (\cite{SGA3}, \Rmnum{4}, 1.9), the morphism $S'\times_TS'\to S\times_TS$ is a universally effective epimorphism, so by \cref{category descent morphism object uniqueness prop} the diagonal morphism $S\to S\times_TS$ is also an isomorphism, which means $g:S\to T$ is a monomorphism.
+\end{proof}
+
 \subsection{Descent of quasi-coherent modules}
 Let $\mathbf{Sch}$ be the category of schemes. We consider the category $\mathcal{F}$ of couples $(X,\mathscr{F})$, where $X$ is a scheme and $\mathscr{F}$ is an $\mathscr{O}_X$-module over $X$. A morphism from $(X,\mathscr{F})$ to $(Y,\mathscr{G})$ is defined to be a couple $(f,\varphi)$, where $f:X\to Y$ is a morphism of schemes and $\varphi:\mathscr{G}\to f_*(\mathscr{F})$ is a homomorphism. This category can be considered as a fibre category over $\mathbf{Sch}$, where the inverse image functor of a morphism $f:X\to Y$ in $\mathbf{Sch}$ is given by the usual pullback functor of modules defined by $f$. As the inverse image of a quasi-coherent module is quasi-coherent, we see that the full subcategory formed by couples $(X,\mathscr{F})$, wherer $\mathscr{F}$ is a quasi-coherent $\mathscr{O}_X$-module, is a fibre subcategory. This category is called the \textbf{fibre category of quasi-coherent modules over schemes}, and denoted by $\mathbf{Qcoh}$. By definition, the structural functor $p:\mathbf{Qcoh}\to \mathbf{Sch}$ sends a couplt $(X,\mathscr{F})$ to its base scheme $X$, and the categorical fiber of $\mathbf{Qcoh}$ at an object $X$ in $\mathbf{Sch}$ is the \textit{opposite} category $\mathbf{Qcoh}(X)^{\op}$.\par
 Recall that a morphism $f:X\to Y$ of ringed spaces is called \textbf{faithfully flat} if it is flat and surjective, and \textbf{quasi-compact} if the inverse image of any quasi-compact open is quasi-compact. By 
 \begin{theorem}
-Let $\mathbf{Qcoh}$ be the fibre category of quasi-coherent modules over schemes. Let $g:S'\to S$ be a faithfully flat and quasi-compact morphism of schemes, then $g$ is a morphism of effective descents.
+Let $\mathbf{Qcoh}$ be the fibre category of quasi-coherent modules over schemes and $g:S'\to S$ be a faithfully flat and quasi-compact morphism of schemes. Then $g$ is an effective descent morphism for $\mathbf{Qcoh}$.
 \end{theorem}
 \section{Grothendieck topologies and sheaves}
 \subsection{Topologies and basis}
 Let $\mathcal{C}$ be a category. A full subcategory $\mathcal{D}$ of $\mathcal{C}$ is called a \textbf{sieve} of $\mathcal{C}$ if it satisfies the following property: any object of $\mathcal{C}$ such that there exists a morphism from this object to an object of $\mathcal{D}$ is in $\mathcal{D}$. If $X$ is an object of $\mathcal{C}$, then the sieves of the category $\mathcal{C}_{/X}$ are also called \textbf{sieves of $\bm{X}$}.\par
 Let $\mathscr{U}$ be a universe such that $\mathcal{C}$ is a $\mathscr{U}$-category, and $\PSh(\mathcal{C})$ be the corresponding category of presheaves. For any sieve of $X$, we can define a sub-object of $X$ in $\PSh(\mathcal{C})$ by associating any object $Y$ in $\mathcal{C}$ with the set of morphisms $f:Y\to X$ such that the object $(Y,f)$ of $\mathcal{C}_{/X}$ belongs to the sieve. In this way, we obtain a correspondence between sieves and sub-objects:
 \begin{proposition}\label{category sieve and subobject correspondence}
-The map defined above is a correspondence between the set of sieves of $X$ and the set of sub-objects of $X$ in $\PSh(\mathcal{C})$.
+The association defined above is a correspondence between the set of sieves of $X$ and the set of sub-objects of $X$ in $\PSh(\mathcal{C})$.
 \end{proposition}
 \begin{proof}
-It suffices to establish a converse process from sub-objects of $X$ in $\PSh(\mathcal{C})$ to sieves of $X$. For this, we associate each sub-functor $R$ of $X$ with the category $\mathcal{C}_{/R}$ of objects lying over $R$. Since $R\sub X$, it is immediate that $\mathcal{C}_{/R}$ is a sieve of $\mathcal{C}{/X}$, whose corresponding sub-object of $X$ is $R$.
+It suffices to establish a converse process from sub-objects of $X$ in $\PSh(\mathcal{C})$ to sieves of $X$. For this, we associate each sub-functor $R$ of $X$ with the category $\mathcal{C}_{/R}$ of objects lying over $R$. Since $R\sub X$, it is immediate that $\mathcal{C}_{/R}$ is a sieve of $\mathcal{C}_{/X}$, whose corresponding sub-object of $X$ is $R$.
 \end{proof}
 Let $\mathcal{C}$ be a $\mathscr{U}$-category. In view of {category sieve and sub-object correspondence}, we shall identify sieves of $X$ with sub-objects of $X$ in the category $\PSh(\mathcal{C})$. In this way, for any presheaf $F$ and any sieve $R$ of $X$, we can then define $\Hom_{\PSh(\mathcal{C})}(R,F)$ to be the set of morphisms of functors $R\to F$, and we have a functorial isomorphism (\cite{SGA4-1}, \Rmnum{1}, 3.5)
 \begin{equation}\label{category Hom of functors char by limit}
@@ -572,13 +690,13 @@ Let $\mathcal{C}$ be a category. A \textbf{topology} $\mathcal{T}$ on $\mathcal{
 \item[(T3)] For any object $X$ of $\mathcal{C}$, $X$ belongs to $\mathcal{T}(X)$.
 \end{enumerate}
 \end{definition}
-The sieves in $\mathcal{T}(X)$ are called \textbf{covering sieves of $\bm{X}$}, or simply the \textbf{coverings of $\bm{X}$}. If $R\in\mathcal{T}(X)$, the inclusion $R\hookrightarrow X$ is also called a \textbf{refinement} of $X$. From the above axioms, we immediately deduce that the set of coverings of $X$ is stable under finite intersection and that any sieve containing a covering sieve is a covering sieve. For example, if $R'$ contains a covering sieve of $X$, then for any morphism $Y\to R$, we have the following Cartesian diagram
+The sieves in $\mathcal{T}(X)$ are called \textbf{covering sieves of $\bm{X}$}, or simply the \textbf{coverings of $\bm{X}$}. If $R\in\mathcal{T}(X)$, the inclusion $R\hookrightarrow X$ is also called a \textbf{refinement} of $X$. From the above axioms, we immediately deduce that the set of coverings of $X$ is stable under finite intersection and that any sieve containing a covering sieve is a covering sieve. In fact, if $R'$ contains a covering sieve $R$ of $X$, then for any morphism $Y\to R$, we have the following Cartesian diagram
 \[\begin{tikzcd}
 R\times_XY\ar[r,hook]\ar[d]&R'\times_XY\ar[d]\ar[r,hook]&Y\ar[d]\\
-R\ar[d]\ar[r]&R\ar[r]\ar[d]&R\ar[d,hook]\\
+R\ar[d,equal]\ar[r,equal]&R\ar[r,equal]\ar[d,hook]&R\ar[d,hook]\\
 R\ar[r,hook]&R'\ar[r,hook]&X
 \end{tikzcd}\]
-We then conclude that $R\times_XY$ (and a fortiori $R'\times_XY$) is equal to $Y$, so $R'\in J(X)$ by axiom (T2). The set $\mathcal{T}(X)$ of covering sieves of $X$, ordered by the inclusion relation, is therefore directed.\par
+from which we conclude that $R\times_XY$ (and a fortiori $R'\times_XY$) is equal to $Y$, so $R'\in\mathcal{T}(X)$ by axiom (T2). The set $\mathcal{T}(X)$ of covering sieves of $X$, ordered by the inclusion relation, is therefore cofiltered.\par
 Let $\mathcal{C}$ be a category and $\mathcal{T},\mathcal{T}'$ be topologies over $\mathcal{C}$. The topology $\mathcal{T}$ is called \textbf{finer than} $\mathcal{T}'$ (or equivalently, $\mathcal{T}'$ is \textbf{coarser than} $\mathcal{T}$) if for any object $X$ of $\mathcal{C}$, any covering of $X$ for the topology $\mathcal{T}'$ is also a covering for the topology $\mathcal{T}$. In this way, we define an order relation on the set of topologies over $\mathcal{C}$.
 \begin{example}\label{G-topo intersection and union}
 Let $(\mathcal{T}_i)_{i\in I}$ be a family of topologies over $\mathcal{C}$. Then for any object $X$ of $\mathcal{C}$, the intersection of the sets $\mathcal{T}_i(X)$ is easily verified to satisfy the axioms (T1), (T2) and (T3), so it defines a topology $\mathcal{T}$ over $\mathcal{C}$, called the \textbf{intersection} of the $\mathcal{T}_i$. This is the finest topology on $\mathcal{C}$ that coarser than any of the $\mathcal{T}_i$, and is clearly the infimum of the topologies $(\mathcal{T}_i)_{i\in I}$. On the other hand, the family $(\mathcal{T}_i)_{i\in I}$ also admits a supremum: the intersection of the topologies than are finer than each of the $\mathcal{T}_i$.
@@ -664,35 +782,36 @@ By (\cite{SGA4-1}, \Rmnum{1}, 3.5), we have a functorial isomorphism
 \[\Hom_{\PSh(\mathcal{C})}(F,R)=\llim_{(X,u)\in\mathcal{C}_{/R}}F(X).\]
 so the corollary follows from \cref{G-topo generated by morphism sheaf iff} and (\cite{SGA4-1}, \Rmnum{1}, 2.12).
 \end{proof}
-Let $\mathcal{C}$ be a $\mathscr{U}$-category. We define the \textbf{canonical topology} of $\mathcal{C}$ to be the finest topology such that all representable functors are sheaves. A covering sieve of $X$ for the canonical topology is then called \textbf{universally effective-epimorphic}. In other words, this means for any object $Z$ of $\mathcal{C}$, the canonical map
+
+Let $\mathcal{C}$ be a $\mathscr{U}$-category. We define the \textbf{canonical topology} of $\mathcal{C}$ to be the finest topology such that all representable functors are sheaves. A covering sieve of $X$ for the canonical topology is called \textbf{universally effective epimorphic}. In other words, this means for any object $Z$ of $\mathcal{C}$, the canonical map
 \[\Hom_{\PSh(\mathcal{C})}(X,Z)\to \Hom_{\PSh(\mathcal{C})}(R,Z)\]
-is bijective. More generally, a topology $\mathcal{T}$ over $\mathcal{C}$ such that all representable functors are sheaves is called \textbf{subcanonical}, so the canonical topology is the finest subcanonical topology on $\mathcal{C}$. In most cases, the topology considered over a category $\mathcal{C}$ is subcanonical, so the covering sieves of $\mathcal{C}$ are universally effective-epimorphic. The only exception is the site $\PSh(\mathcal{C})$ obtained from a site $\mathcal{C}$, whose topology is finer, and often strictly finer, than the canonical topology.
+is bijective. More generally, a topology $\mathcal{T}$ over $\mathcal{C}$ such that all representable functors are sheaves is called \textbf{subcanonical}, so the canonical topology is the finest subcanonical topology on $\mathcal{C}$. In most cases, the topology considered over a category $\mathcal{C}$ is subcanonical, so the covering sieves of $\mathcal{C}$ are universally effective epimorphic. The only exception is the site $\PSh(\mathcal{C})$ obtained from a site $\mathcal{C}$, whose topology is finer, and often strictly finer, than the canonical topology.
 \begin{proposition}\label{G-topo sieve universal effective epi iff}
-For a sieve $R$ of an object $X$ of $\mathcal{C}$ to be universally effective-epimorphic, it is necessary and sufficient that for any object $Y\to X$ of $\mathcal{C}_{/X}$ and any object $Z$ of $\mathcal{C}$, the map
+For a sieve $R$ of an object $X$ of $\mathcal{C}$ to be universally effective epimorphic, it is necessary and sufficient that for any object $Y\to X$ of $\mathcal{C}_{/X}$ and any object $Z$ of $\mathcal{C}$, the map
 \[\Hom_{\mathcal{C}}(Y,Z)\to \llim_{U\in\mathcal{C}_{/(Y\times_XR)}}\Hom_\mathcal{C}(U,Z)\]
 is a bijection.
 \end{proposition}
 \begin{proof}
-By definition of canonical topology and \cref{G-topo generated by family of presheaf}, $R$ is universally effective-epimorphic if and only if for any for any object $Z$ of $\mathcal{C}$ and any morphism $Y\to X$ in $\mathcal{C}$, the map
+By definition of canonical topology and \cref{G-topo generated by family of presheaf}, $R$ is universally effective epimorphic if and only if for any for any object $Z$ of $\mathcal{C}$ and any morphism $Y\to X$ in $\mathcal{C}$, the map
 \[\Hom_{\PSh(\mathcal{C})}(Y,Z)\to \Hom_{\PSh(\mathcal{C})}(R\times_XY,Z)\]
 is bijective. On the other hand, by (\cite{SGA4-1}, \Rmnum{1}, 3.5), we have a functorial isomorphism 
 \[\Hom_{\PSh(\mathcal{C})}(R\times_XY,Z)=\llim_{U\in\mathcal{C}_{/R\times_XY}}h_Z(U)=\llim_{U\in\mathcal{C}_{/R\times_XY}}\Hom_{\mathcal{C}}(U,Z),\]
 whence the proposition.
 \end{proof}
 \begin{corollary}\label{G-topo generated by basis sieve universal effective epi iff}
-Let $\mathcal{C}$ be a $\mathscr{U}$-category endowed with a basis. Then for a sieve $R$ of $X$ defined by a covering $\{X_\alpha\to X\}$ to be universally effective-epimorphic, it is necessary and sufficient that for any object $Z$ of $\mathcal{C}$, the sequence
+Let $\mathcal{C}$ be a $\mathscr{U}$-category endowed with a basis. Then for a sieve $R$ of $X$ defined by a covering $\{X_\alpha\to X\}$ to be universally effective epimorphic, it is necessary and sufficient that for any object $Z$ of $\mathcal{C}$, the sequence
 \begin{equation}\label{G-topo generated by basis sieve universal effective epi iff-1}
 \begin{tikzcd}
 \Hom_{\mathcal{C}}(X,Z)\ar[r]&\prod_{\alpha}\Hom_{\mathcal{C}}(X_\alpha,Z)\ar[r,shift left=3pt]\ar[r,shift right=3pt]&\prod_{\alpha,\beta}\Hom_{\mathcal{C}}(X_\alpha\times_XX_\beta,Z)
 \end{tikzcd}
 \end{equation}
-is exact. In particular, the covering families of the canonical topology of $\mathcal{C}$ are universally effective-epimorphic families.
+is exact. In particular, the covering families of the canonical topology of $\mathcal{C}$ are universally effective epimorphic families.
 \end{corollary}
 \begin{proof}
-The first assertion follows from the proof of \cref{G-topo generated by basis sheaf iff} and \cref{G-topo sieve universal effective epi iff}. As for the second one, it suffices to note that a family $\{X_\alpha\to X\}$ of morphisms in $\mathcal{C}$ is universally effective-epimorphic if and only if the sequence (\ref{G-topo generated by basis sieve universal effective epi iff-1}) is exact.
+The first assertion follows from the proof of \cref{G-topo generated by basis sheaf iff} and \cref{G-topo sieve universal effective epi iff}. As for the second one, it suffices to note that a family $\{X_\alpha\to X\}$ of morphisms in $\mathcal{C}$ is universally effective epimorphic if and only if the sequence (\ref{G-topo generated by basis sieve universal effective epi iff-1}) is exact.
 \end{proof}
 \begin{remark}
-\cref{G-topo sieve universal effective epi iff} gives a characterization of universally effective epimorphisms of a category $\mathcal{C}$, which is independent of the universe in which the presheaves take their values, with the sole condition that the sets of morphisms $\Hom_{\mathcal{C}}(X,Y)$ of $\mathcal{C}$ belong to this universe. It therefore permits thus to define the canonical topology for any category $\mathcal{C}$, without specifying the universes we are considering.
+\cref{G-topo sieve universal effective epi iff} provides a characterization of universally effective epimorphisms of a category $\mathcal{C}$, which is independent of the universe in which the presheaves take their values, with the sole condition that the sets of morphisms $\Hom_{\mathcal{C}}(X,Y)$ of $\mathcal{C}$ belong to this universe. It therefore permits thus to define the canonical topology for any category $\mathcal{C}$, without specifying the universes we are considering.
 \end{remark}
 \subsection{Sheafifications of presheaves}
 Let $\mathcal{C}$ be a site. We define a \textbf{topological generating family} (or simply a \textbf{generating family} of $\mathcal{C}$ is there is no risk of confusion) of $\mathcal{C}$ to be a set $G$ of objects of $\mathcal{C}$ such that any object of $\mathcal{C}$ is the target of a family of covering morphisms of $\mathcal{C}$ whose sources are elements of $G$. A site $\mathcal{C}$ is called a \textbf{$\mathscr{U}$-site} (where $\mathscr{U}$ is the fixed universe) if the underlying category is a $\mathscr{U}$-category and $\mathcal{C}$ has a $\mathscr{U}$-small topological generating family. If $\mathcal{C}$ is a category, we define a \textbf{$\mathscr{U}$-topology} over $\mathcal{C}$ to be a topology with which $\mathcal{C}$ is a $\mathscr{U}$-site. The site $\mathcal{C}$ is called \textbf{$\mathscr{U}$-small} (or by abusing of language, small) if the underlying category is small. It follows immediately from definition that any topology finer than a $\mathscr{U}$-topology is a $\mathscr{U}$-topology, and any small site is a $\mathscr{U}$-site.
@@ -712,7 +831,7 @@ Let $\mathcal{C}$ be a $\mathscr{U}$-site, $\mathscr{V}$ be a universe containin
 \begin{equation}\label{site small generated sheafification-1}
 \rlim_{R\in\mathcal{T}(X)}\Hom_{\PSh(\mathcal{C})}(R,F)
 \end{equation}
-is then represented by an element of $\mathscr{V}$ (\cite{SGA4-1} \Rmnum{1}, 2.4.1). Moreover, it follows from \cref{site small generated sieve set prop}~(b) and (\ref{category Hom of functors char by limit}) that, for any $R\in\mathcal{T}(X)$, $\Hom_{\PSh(\mathcal{C})}(R,F)$ is $\mathscr{U}$-small, and as $\mathcal{T}_G(X)$ is a $\mathscr{U}$-small cofinal set in $\mathcal{T}(X)$, it follows from (\cite{SGA4-1} \Rmnum{1}, 2.4.2) that the limit (\ref{site small generated sheafification-1}) is $\mathscr{U}$-small. We then choose, for any $F$ and for any $X$, an element of $\mathscr{U}$ that represents this inductive limit and let
+is then represented by an element of $\mathscr{V}$ (\cite{SGA4-1} \Rmnum{1}, 2.4.1). Moreover, it follows from \cref{site small generated sieve set prop} and (\ref{category Hom of functors char by limit}) that, for any $R\in\mathcal{T}(X)$, $\Hom_{\PSh(\mathcal{C})}(R,F)$ is $\mathscr{U}$-small, and as $\mathcal{T}_G(X)$ is a $\mathscr{U}$-small cofinal set in $\mathcal{T}(X)$, it follows from (\cite{SGA4-1} \Rmnum{1}, 2.4.2) that the limit (\ref{site small generated sheafification-1}) is $\mathscr{U}$-small. We then choose, for any $F$ and for any $X$, an element of $\mathscr{U}$ that represents this inductive limit and let
 \begin{equation}\label{site small generated sheafification-2}
 LF(X)=\rlim_{R\in\mathcal{T}(X)}\Hom_{\PSh(\mathcal{C})}(R,F).
 \end{equation}
@@ -759,7 +878,7 @@ F\ar[r,"\ell_F"]&LF
 By the definition of $\ell_F$, the morphism $Z_{R\times_XY}(u\circ f')$ is equal to $\ell_F\circ u\circ g$. On the other hand, the commutative diagram (\ref{site small generated sheafification-3}) shows that $Z_{R\times_XY}(u\circ f')=Z_R(u)\circ f$, so we conclude that
 \begin{equation*}
 \ell_F\circ u\circ g=Z_R(u)\circ f=Z_R(u)\circ i_R\circ g.\qedhere
-\end{equation*}.
+\end{equation*}
 \end{proof}
 \begin{proposition}\label{site small generated sheafification functor prop}
 Let $L$ be the functor on $\PSh(\mathcal{C})$ defined by (\ref{site small generated sheafification-2}).
@@ -795,29 +914,31 @@ The exactness properties of the category of sheaves is then induced from that of
 \begin{proposition}\label{site morphism of presheaf covering def}
 Let $\mathcal{C}$ be a $\mathscr{U}$-site and $f:H\to K$ be a morphism in $\PSh(\mathcal{C})$. Then the following conditions are equivalent:
 \begin{enumerate}
-\item[(\rmnum{1})] For any morphism $X\to K$, where $X\in\Ob(\mathcal{C})$, the corresponding morphism $H\times_KX\to X$ generates a covering sieve of $X$.
-\item[(\rmnum{2})] The morphism $f^\#:H^\#\to K^\#$ of sheafifications is an epimorphism in $\Sh(\mathcal{C})$.
-\item[(\rmnum{2}')] For any sheaf $F$ over $\mathcal{C}$, the map $f^*:\Hom(K,F)\to \Hom(H,F)$ is injective.
+\item[(\rmnum{1})] For any morphism $X\to K$, with $X\in\Ob(\mathcal{C})$, the image of the corresponding morphism $H\times_KX\to X$ is a covering sieve of $X$.
+\item[(\rmnum{2})] The morphism $f^\#:H^\#\to K^\#$ is an epimorphism in $\Sh(\mathcal{C})$.
+\item[(\rmnum{2}')] For any sheaf $F$ over $\mathcal{C}$, the map $\Hom(K,F)\to \Hom(H,F)$ is injective.
 \end{enumerate}
 \end{proposition}
 \begin{proof}
-By \cref{site small generated sheafification exist}, for any sheaf $F$ over $\mathcal{C}$ we have $\Hom(K,F)=\Hom(K^\#,F)$, so it is clear that (\rmnum{2}) is equivalent to (\rmnum{2}'). On the other hand, in view of (\cite{SGA4-1}, \Rmnum{2}, 4.4), condition (\rmnum{1}) signifies that $u:(H\times_KX)^\#\to X^\#$ is an epimorphism. Since epimorphisms in $\Sh(\mathcal{C})$ are stable under base change and $u$ is induced from $f^\#$ by base change, this proves (\rmnum{2})$\Rightarrow$(\rmnum{1}).\par
+By the adjunction property of \cref{site small generated sheafification exist}, for any sheaf $F$ over $\mathcal{C}$ we have
+\[\Hom(K,F)=\Hom(K^\#,F),\]
+so it is clear that (\rmnum{2}) is equivalent to (\rmnum{2}'). On the other hand, in view of (\cite{SGA4-1}, \Rmnum{2}, 4.4), condition (\rmnum{1}) signifies that $(H\times_KX)^\#\to X^\#$ is an epimorphism. Since epimorphisms in $\Sh(\mathcal{C})$ are stable under base change and $u$ is induced from $f^\#$ by base change, this proves (\rmnum{2})$\Rightarrow$(\rmnum{1}).\par
 Conversely, since the family $\{X\to K:X\in\Ob(\mathcal{C})\}$ is epimorphic in $\PSh(\mathcal{C})$, so is the induced family $\{X^\#\to K^\#:X\in\Ob(\mathcal{C})\}$ in $\Sh(\mathcal{C})$ (\cite{SGA4-1} \Rmnum{2}, 4.1). Therefore, the morphism $f^\#:H^\#\to K^\#$ in $\Sh(\mathcal{C})$ is an epimorphism if and only if its base change $f^\#:H^\#\times_{K^\#}X^\#\to X^\#$ is an epimorphism for any $X\to K$, $X\in\Ob(\mathcal{C})$. This proves the implication (\rmnum{1})$\Rightarrow$(\rmnum{2}) in view of (\cite{SGA4-1}, \Rmnum{2}, 4.1).
 \end{proof}
-A morphism $f:H\to K$ satisfying the equivalent conditions of \cref{site morphism of presheaf covering def} is called a \textbf{covering} morphism. A family $\{f_i:H_i\to K\}$ is called \textbf{covering} if the induced morphism $f:\coprod_iH_i\to K$ is covering. A morphism $f:H\to K$ is called \textbf{bicovering} if it is covering and the diagonal morphism $H\to H\times_KH$ is covering. Similarly, a family $\{f_i:H_i\to K\}$ is called \textbf{bicovering} if the induced morphism $f:\coprod_iH_i\to K$ is bicovering\footnote{We note that, in view of condition (\rmnum{2}) of \cref{site morphism of presheaf covering def}, the condition of being covering (resp. bicovering) for a family of morphisms in $\PSh(\mathcal{C})$ is stable under base change.}.\par
+A morphism $f:H\to K$ satisfying the equivalent conditions of \cref{site morphism of presheaf covering def} is called a \textbf{covering} morphism. A family $\{f_i:H_i\to K\}$ of morphims in $\PSh(\mathcal{C})$ is called \textbf{covering} if the induced morphism $f:\coprod_iH_i\to K$ is covering. A morphism $f:H\to K$ is called \textbf{bicovering} if it is covering and the diagonal morphism $H\to H\times_KH$ is covering. Similarly, a family $\{f_i:H_i\to K\}$ is called \textbf{bicovering} if the induced morphism $f:\coprod_iH_i\to K$ is bicovering\footnote{We note that, in view of condition (\rmnum{2}) of \cref{site morphism of presheaf covering def}, the condition of being covering (resp. bicovering) for a family of morphisms in $\PSh(\mathcal{C})$ is stable under base change.}.\par
 By condition (\rmnum{1}) of \cref{site morphism of presheaf covering def}, to say that a family $\{f_i:H_i\to K\}$ is a covering signifies that for any morphism $X\to K$, where $X\in\Ob(\mathcal{C})$, the family $\{H_i\times_KX\to X\}$ generates a covering sieve of $X$. Or equivalently, by (\rmnum{2}), the family $\{f_i^\#:H_i^\#\to K^\#\}$ in $\Sh(\mathcal{C})$ is epimorphic (since the functor $\#$ commutes with direct sums).
 \begin{proposition}\label{site morphism of presheaf bicovering iff}
 Let $\mathcal{C}$ be a $\mathscr{U}$-site and $f:H\to K$ be a morphism in $\PSh(\mathcal{C})$. The following conditions are equivalent:
 \begin{enumerate}
 \item[(\rmnum{1})] The morphism $f$ is bicovering.
-\item[(\rmnum{1}')] The morphism $f$ is covering and for any object $X$ of $\mathcal{C}$ and any couple of morphisms $u,v:X\rightrightarrows H$ such that $fu=fv$, the kernel $(u,v)$ is a covering sieve of $X$.
+\item[(\rmnum{1}')] The morphism $f$ is covering and for any couple of morphisms $u,v:X\rightrightarrows H$ with $X\in\Ob(\mathcal{C})$ such that $fu=fv$, the kernel $(u,v)$ is a covering sieve of $X$.
 \item[(\rmnum{2})] The morphism $f^\#:H^\#\to K^\#$ is an isomorphism in $\Sh(\mathcal{C})$.
 \item[(\rmnum{2}')] For any sheaf $F$ over $\mathcal{C}$, the map $\Hom(K,F)\to \Hom(H,F)$ is a bijection.
 \end{enumerate}
 \end{proposition}
 \begin{proof}
-The equivalence (\rmnum{1})$\Leftrightarrow$(\rmnum{1}') follows from condition (\rmnum{1}) of \cref{site morphism of presheaf covering def}, applied to the diagonal morphism $H\to H\times_KH$ (recall that $\ker(u,v)$ is given by the base change of the diagonal morphism $H\to H\times_KH$ along $(u,v)_K:X\to H\times_KH$), and that of (\rmnum{2}) and (\rmnum{2}') is trivial. We now prove that (\rmnum{1})$\Rightarrow$(\rmnum{2}), so let $f:H\to K$ be a bicovering morphism in $\PSh(\mathcal{C})$. The morphism $f^\#:H^\#\to K^\#$ is then an epimorphism by \cref{site morphism of presheaf covering def}, and the diagonal morphism $H^\#\to H^\#\times_{K^\#}H^\#$ is an epimorphism since the functor $\#$ commutes with fiber products. As the diagonal morphism always a monomorphism, it is then an isomorphism (\cite{SGA4-1}, \Rmnum{2}, 4.2), so $f^\#$ is a monomorphism, whence an isomorphism.\par
-Conversely, if $f^\#$ is an isomorphism, then the morphism $f$ and the diagonal $H\to H\times_KH$ are both isomorphisms (since $\#$ commutes with fiber products). In particular, their image under $\#$ are isomorphisms, so the morphism $f$ is covering.
+The equivalence (\rmnum{1})$\Leftrightarrow$(\rmnum{1}') follows from condition (\rmnum{1}) of \cref{site morphism of presheaf covering def}, applied to the diagonal morphism $H\to H\times_KH$ (recall that $\ker(u,v)$ is given by the base change of the diagonal morphism $H\to H\times_KH$ along $(u,v)_K:X\to H\times_KH$), and that of (\rmnum{2}) and (\rmnum{2}') is trivial. We now prove that (\rmnum{1})$\Rightarrow$(\rmnum{2}), so let $f:H\to K$ be a bicovering morphism in $\PSh(\mathcal{C})$. The morphism $f^\#:H^\#\to K^\#$ is then an epimorphism by \cref{site morphism of presheaf covering def}, and the diagonal morphism $H^\#\to H^\#\times_{K^\#}H^\#$ is also an epimorphism since the functor $\#$ commutes with fiber products. As the diagonal morphism is always a monomorphism, it is then an isomorphism (\cite{SGA4-1}, \Rmnum{2}, 4.2), so $f^\#$ is a monomorphism, whence an isomorphism.\par
+Conversely, if $f^\#$ is an isomorphism, then the diagonal morphism $H\to H^\#\times_{K^\#}H^{\#}$ is also an isomorphism. Since $\#$ commutes with fiber products, we conclude that the diagonal morphism $H\to H\times_KH$ is covering, so the morphism $f$ is bicovering.
 \end{proof}
 \begin{remark}
 It follows from \cref{site morphism of presheaf bicovering iff} and the fact that $\#$ commutes with direct sums that a family $\{f_i:H_i\to K\}$ of morphisms in $\PSh(\mathcal{C})$ is bicovering if and only if the $f_i$ induce an isomorphism $\coprod_iH_i^\#\to K^\#$, of equivalently, if and only if for any sheaf $F$, the map
@@ -833,37 +954,188 @@ Let $\mathcal{C}$ be a $\mathscr{U}$-site. Then there exists a (unique) topology
 \end{proposition}
 \begin{proof}
 We first show that the covering families in the sense of \cref{site morphism of presheaf covering def} generates a topology $\mathcal{T}_\mathcal{C}$ on $\PSh(\mathcal{C})$.\par 
-The covering family of the canonical topology over $\PSh(\mathcal{C})$ are the universally effective-epimorphic families of $\PSh(\mathcal{C})$ (\cref{G-topo generated by basis sieve universal effective epi iff}). As $\#$ commutes with inductive limits, the topology $\mathcal{T}_\mathcal{C}$ is then finer than the canonical topology of $\PSh(\mathcal{C})$. Moreover, the covering families of $\mathcal{C}$ are also that of $\mathcal{T}_\mathcal{C}$ (\cref{site morphism of presheaf covering def}(\rmnum{1})), so if $\mathcal{T}'$ denote the coarsest topology on $\PSh(\mathcal{C})$ satisfying conditions (a), (b), then $\mathcal{T}_\mathcal{C}$ is fiber than $\mathcal{T}'$. 
+The covering family of the canonical topology over $\PSh(\mathcal{C})$ are the universally effective epimorphic families of $\PSh(\mathcal{C})$ (\cref{G-topo generated by basis sieve universal effective epi iff}). As $\#$ commutes with inductive limits, the topology $\mathcal{T}_\mathcal{C}$ is then finer than the canonical topology of $\PSh(\mathcal{C})$. Moreover, the covering families of $\mathcal{C}$ are also that of $\mathcal{T}_\mathcal{C}$ (\cref{site morphism of presheaf covering def}(\rmnum{1})), so if $\mathcal{T}'$ denote the coarsest topology on $\PSh(\mathcal{C})$ satisfying conditions (a), (b), then $\mathcal{T}_\mathcal{C}$ is fiber than $\mathcal{T}'$. 
 \end{proof}
 \begin{remark}\label{site topology on PSh finer than canonical char}
-The proof of \cref{site induced topology on PSh char} in fact proves that any topology $\mathcal{T}'$ over $\PSh(\mathcal{C})$, finer than the canonical topology, is the coarsest topology $\mathcal{T}$ of $\PSh(\mathcal{C})$ with the following properties:
+The proof of \cref{site induced topology on PSh char} in fact proves that any subcanonical topology $\mathcal{T}'$ over $\PSh(\mathcal{C})$, finer than the canonical topology, is the coarsest topology $\mathcal{T}$ of $\PSh(\mathcal{C})$ with the following properties:
 \begin{itemize}
-\item[(a)] $\mathcal{T}$ is fiber than the canonical topology of $\PSh(\mathcal{C})$.
+\item[(a)] $\mathcal{T}$ is finer than the canonical topology of $\PSh(\mathcal{C})$.
 \item[(b)] Any covering family for $\mathcal{T}'$ of the form $\{u_i:X_i\to X\}$, where $X_i$ and $X$ are objects of $\mathcal{C}$, is covering for $\mathcal{T}$.
 \end{itemize}
 In particular, any topology over $\PSh(\mathcal{C})$, finer than the canonical topology, is completely determined by its covering families of morphisms in $\mathcal{C}$.\par
 Conversely, one can easily show that for any topology $\mathcal{T}'$ over $\PSh(\mathcal{C})$, finer than the canonical topology, the set of covering families of morphisms $\{X_i\to X\}$ in $\mathcal{C}$ is the set of covering families of a topology on $\mathcal{C}$. Therefore, we obtain a correspondence between topologies on $\mathcal{C}$ and topologies on $\PSh(\mathcal{C})$ finer than the canonical topology.
 \end{remark}
-Let $\mathcal{C}$ be a small category. We denote by $\mathrm{Caf}$ the set of strictly full subcategories (any object isomorphic to an object of the subcategory is an object of it) of $\PSh(\mathcal{C})$ whose inclusion functor to $\PSh(\mathcal{C})$ admits a left adjoint which commutes with finite projective limits, and by $\mathscr{T}$ the set of topologies on $\mathcal{C}$. In view of \cref{site small generated sheafification exist}, we have a map
-\[\Phi:\mathscr{T}\to \mathrm{Caf}\]
+
+Let $\mathcal{C}$ be a small category. We denote by $\mathbf{Caf}$ the set of strictly full subcategories (any object isomorphic to an object of the subcategory is an object of it) of $\PSh(\mathcal{C})$ whose inclusion functor to $\PSh(\mathcal{C})$ admits a left adjoint which commutes with finite projective limits, and by $\mathscr{T}$ the set of topologies on $\mathcal{C}$. In view of \cref{site small generated sheafification exist}, we have a map
+\[\Phi:\mathscr{T}\to \mathbf{Caf}\]
 which sends a topology over $\mathcal{C}$ to the sheaf category it defines. We now construct an inverse of the map $\Phi$. For this, we need to associate for each element
 \[
 \begin{tikzcd}
 \mathcal{C}'\ar[r,shift left=3pt,"i'"]&\PSh(\mathcal{C})\ar[l,shift left=3pt,"j'"]
 \end{tikzcd}
 \]
-(where $j'$ is the adjoint of $i'$) of $\mathrm{Caf}$ a topology $\mathcal{T}_e$ over $\mathcal{C}$. For any object $X$ of $\mathcal{C}$, we define $\mathcal{T}_e(X)$ to be the set of sub-objects of $X$ whose canonical inclusion to $X$ is transformed by $j'$ into an isomorphism. It is immediately verified, using the assumptions made on $j'$, that this defines a topology $\mathcal{T}_e$ over $\mathcal{c}$. We have therefore defined an application $\Psi:\mathrm{Caf}\to \mathscr{T}$.
+(where $j'$ is the adjoint of $i'$) of $\mathbf{Caf}$ a topology $\mathcal{T}_e$ over $\mathcal{C}$. For any object $X$ of $\mathcal{C}$, we define $\mathcal{T}_e(X)$ to be the set of sub-objects of $X$ whose canonical inclusion to $X$ is transformed by $j'$ into an isomorphism. It is immediately verified, using the assumptions made on $j'$, that this defines a topology $\mathcal{T}_e$ over $\mathcal{C}$. We have therefore defined an application $\Psi:\mathbf{Caf}\to \mathscr{T}$.
 \begin{theorem}[\textbf{J. Giraud}]\label{site topology correspond to subcategory}
 The map $\Phi$ is an bijection with inverse map $\Psi$.
 \end{theorem}
 \begin{proof}
-The map $\Psi\circ\Phi$ is the identity in view of \cref{site morphism of presheaf bicovering iff} and the axioms (T1), (T2). Conversely, let $i':\mathcal{C}'\to \PSh(\mathcal{C})$ be an element of $\mathrm{Caf}$ with left adjoint $j'$, $\mathcal{T}_e$ be the corresponding topology, and $\mathcal{C}_e$ be the sheaf category defined by $\mathcal{T}_e$. By using the definition of $\mathcal{T}_e$ and bicovering morphisms, we can then prove the equivalence of the following conditions for a morphism $u$ of $\PSh(\mathcal{C})$:
+The map $\Psi\circ\Phi$ is the identity in view of \cref{site morphism of presheaf bicovering iff} and the axioms (T1), (T2). Conversely, let $i':\mathcal{C}'\to \PSh(\mathcal{C})$ be an element of $\mathbf{Caf}$ with left adjoint $j'$, $\mathcal{T}_e$ be the corresponding topology, and $\mathcal{C}_e$ be the sheaf category defined by $\mathcal{T}_e$. By using the definition of $\mathcal{T}_e$ and bicovering morphisms, we can then prove the equivalence of the following conditions for a morphism $u$ of $\PSh(\mathcal{C})$:
 \begin{enumerate}
 \item[(a)] $u$ is bicovering for the topology $\mathcal{T}_e$.
 \item[(b)] $u$ is transformed by $j'$ to an isomorphism.
 \end{enumerate}
 It is clear that $\mathcal{C}'$ is a full subcategory of $\mathcal{C}_e$, so it suffices to prove that any sheaf $F$ for the topology $\mathcal{T}_e$ is an object of $\mathcal{C}'$. However, by the above equivalence, the morphism $F\to i'\circ j'(F)$ is bicovering ($j'\circ i'$ is isomorphic to the identity functor since $j'$ is exact), whose source and target are sheaves. We deduce from \cref{site morphism of presheaf bicovering iff}(\rmnum{2}) that $F\to i'\circ j'(F)$ is an isomorphism, so $F\in\mathcal{C}'$ (recall that $\mathcal{C}'$ is strictly full).
 \end{proof}
+
+\subsection{Topologies on the category of schemes}
+Let $\mathbf{Sch}$ be the category of schemes, to which we can assocate the Zariski topology, that is, the topology generated by the family of morphisms $\{S_i\to S\}$, where each $S_i\to S$ is an open immersion and the union of images of $S_i$ is equal to $S$. A sheaf over the Zariski topology is also called of local nature: this is a contravariant functor $F:\mathbf{Sch}^{\op}\to\mathbf{Set}$ such that for any scheme $S$ and any covering $\{S_i\to S\}$, we have an exact diagram
+\[\begin{tikzcd}
+F(S)\ar[r]&\prod_iF(S_i)\ar[r,shift left=2pt]\ar[r,shift right=2pt]&\prod_{i,j}F(S_i\cap S_j)
+\end{tikzcd}\]
+In particular, a functor of local natura transforms direct sums to products. As any representable functor is a sheaf, this topology is coarser than the canonical topology.\par
+To introduce (and handle) more topologies on $\mathbf{Sch}$, we need a general criterion to identify the covering families of the topology generated by certain family of morphisms. This is contained in the following proposition.
+\begin{proposition}\label{site topology generated by refining family prop}
+Let $\mathcal{C}$ be a category and $\mathcal{C}'$ be a full subcategory. Let $P$ be a set of families of morphisms of $\mathcal{C}$ with the same codomains, which is stable under composition and base change, and $P'$ be a set of families of morphisms of $\mathcal{C}'$ containing the families of identity morphisms. We endow $\mathcal{C}$ with the topology generated by $P$ and $P'$ and suppose that the following conditions are satisfied:
+\begin{enumerate}
+    \item[(a)] If $\{S_i\to S\}\in P'$ (hence $S_i,S\in\Ob(\mathcal{C}')$) and $T\to S$ is a morphism in $\mathcal{C}'$, then the fiber products $S_i\times_ST$ (in $\mathcal{C}$) exist and the family $\{S_i\times_ST\to T\}$ belongs to $P'$.
+    \item[(b)] For any $S\in\Ob(\mathcal{C})$, there exists $\{S_i\to S\}\in P$ with $S_i\in\Ob(\mathcal{C}')$ for each $i$.
+    \item[(c)] In the following situation
+    \[\begin{tikzcd}
+    S_{ijk}\ar[r,"(P')"]&S_{ij}\ar[r,"(P)"]&S_i\ar[r,"(P')"]&S
+    \end{tikzcd}\]
+    where $S,S_i,S_{ij},S_{ijk}\in\Ob(\mathcal{C}')$, $\{S_i\to S\}\in P'$, $\{S_{ij}\to S_i\}\in P$ for each $i$, $\{S_{ijk}\to S_{ij}\}\in P'$ for any $i,j$, there exists a family $\{T_n\to S\}\in P'$ and for each $n$ a multi-index $ijk$ and a commutative diagram
+    \[\begin{tikzcd}[row sep=4mm, column sep=4mm]
+    T_n\ar[rd]\ar[rr]&&S_{ijk}\\
+    &S\ar[ru]&
+    \end{tikzcd}\]
+\end{enumerate}
+Then for a sieve $R$ of $S\in\Ob(\mathcal{C})$ to be covering, it is necessary and sufficient that there exists a composite family
+\begin{equation}\label{site topology generated by refining family prop-1}
+\begin{tikzcd}[row sep=4mm, column sep=4mm]
+S_{ij}\ar[d,swap,"(P')"]\ar[r,dashed]&R\ar[d]\\
+S_i\ar[r,"(P)"]&S
+\end{tikzcd}
+\end{equation}
+where $S_i,S_{ij}\in\Ob(\mathcal{C}')$, $\{S_i\to S\}\in P$, $\{S_{ij}\to S_i\}\in P'$ for each $i$, and the morphisms $S_{ij}\to S$ factors through $R$.
+\end{proposition}
+\begin{proof}
+Since the families in $P$ and $P'$ are covering, any family which is the composite of such families is again covering, so a sieve of the form indicated in the proposition is covering for $\mathcal{C}$, since it contains a covering sieve. Conversely, it suffices to prove that sieves of the form (\ref{site topology generated by refining family prop-1}) form a topology, i,e, it suffices to verify the axioms (T1)--(T3).\par
+To verify (T3), let $S\in\Ob(\mathcal{C})$. There exists by (b) a family $\{S_i\to S\}\in P$ with $S_i\in\Ob(\mathcal{C}')$. The families $\{\id_{S_i}:S_i\to S_i\}$ belong to $P'$ by hypothesis, so the sieve $S$ of $S$ is of the following form:
+\[\begin{tikzcd}[row sep=4mm, column sep=4mm]
+S_i\ar[r]\ar[d,swap,"(P')"]&S\ar[d,"\id_S"]\\
+S_i\ar[r,"(P)"]&S
+\end{tikzcd}\]
+
+Now let $R$ be a sieve of $S$ with desired form (\ref{site topology generated by refining family prop-1}) and $R'$ be a sieve such that for any $T\to R$ in $\mathcal{C}$, the sieve $R'\times_TS$ is of the desired from. Then as the morphism $S_{ij}\to S$ factors through $R$, the sieve $R'_{ij}=R'\times_SS_{ij}$ of $S_{ij}$ is of the desicred form by hypothesis:
+\[\begin{tikzcd}[row sep=4mm, column sep=4mm]
+R'_{ij}\ar[dd]\ar[r,hook]&S_{ij}\ar[d,swap,"(P')"]\ar[rd]&\\
+&S_i\ar[d,swap,"(P)"]&R\ar[ld,hook']\\
+R'\ar[r,hook]&S&
+\end{tikzcd}\]
+so for each $ij$, we have a diagram of the form
+\[\begin{tikzcd}
+S_{ijkl}\ar[rd]\ar[d,swap,"(P')"]&\\
+S_{ijk}\ar[d,swap,"(P)"]&R'_{ij}\ar[ld,hook']\\
+S_{ij}
+\end{tikzcd}\]
+We have thus proved that there exists a composite family
+\[\begin{tikzcd}
+S_{ijkl}\ar[r,"(P')"]&S_{ijk}\ar[r,"(P)"]&S_{ij}\ar[r,"(P')"]&S_i\ar[r,"(P)"]&S
+\end{tikzcd}\]
+belonging to $P\circ P'\circ P\circ P'$, which factors through $R'$ and with all objects (except $S$) belong to $\mathcal{C}'$. Applying condition (c) to the family $\{S_{ijkl}\to S_i\}$, we then obtain for each $i$ a family $\{T_{in}\to S_i\}\in P'$, such that $T_{in}\to S$ factors through one of the $S_{ijkl}$, hence through $R'$:
+\[\begin{tikzcd}[row sep=4mm, column sep=4mm]
+T_{in}\ar[r]\ar[d,swap,"(P')"]&S_{ijkl}\ar[dd]\\
+S_i\ar[d,swap,"(P)"]&\\
+S&R'\ar[l,hook']
+\end{tikzcd}\]
+The sieve $R'$ of $S$ is therefore of the desired form (\ref{site topology generated by refining family prop-1}), which verifies axiom (T2).\par
+
+Fianlly, as for axiom (T1), let $R$ be a sieve of $S$ of the desired form and $T\to S$ be a morphism in $\mathcal{C}$. Let $T_i=S_i\times_ST$; the family $\{T_i\to T\}$ then belongs to $P$, and applying condition (b), we obtain for each $i$ a family $\{U_{ik}\to T_i\}\in P$, with $U_{ik}\in\Ob(\mathcal{C}')$. By the hypotesis on $P$, we have $\{U_{ik}\to T\}\in P$, so by condition (a), $U_{ik}\times_{S_i}S_{ij}=U_{ikj}$ is an object of $\mathcal{C}'$ and for each $ik$, $\{U_{ikj}\to U_{ik}\}\in P'$.
+\[\begin{tikzcd}
+U_{ikj}\ar[d,swap,"(P')"]\ar[rr]&&S_{ij}\ar[rdd,bend left=20pt]\ar[d,"(P')"]&\\
+U_{ik}\ar[r,"(P)"]\ar[rd,swap,"(P)"]&T_i\ar[r]\ar[d,"(P)"]&S_i\ar[d,"(P)"]&\\
+&T\ar[r]&S&R\ar[l,hook']
+\end{tikzcd}\]
+We therefore conclude that the family $\{U_{ikj}\to T\}$ factors through the sieve $T\times_SR$ of $T$, which is hence of the desired form. This proves axiom (T1) and completes the proof.
+\end{proof}
+
+\begin{corollary}\label{site topology generated by refining family covering sieve iff}
+If $S\in\Ob(\mathcal{C}')$ and $R$ is a sieve of $S$, then $R$ is covering if and only if there exists a family $\{T_i\to S\}\in P'$ which factors through $R$.
+\end{corollary}
+\begin{proof}
+In fact, any such sieve is covering. Conversely, it suffices to apply (c) to the family $\{S_i\to S\}$ and the identity morphisms of $S_i$ to deduce that any covering sieve is of the indicated form. 
+\end{proof}
+
+\begin{corollary}\label{site topology generated by refining family sheaf iff}
+For a presheaf $F\in\PSh(\mathcal{C})$ to be separated (resp. a sheaf), it is necessary and sufficient that the morphisms
+\[\begin{tikzcd}
+F(S)\ar[r]&\prod_iF(S_i)
+\end{tikzcd}\]
+is injective (resp. that the diagram
+\[\begin{tikzcd}
+F(S)\ar[r]&\prod_iF(S_i)\ar[r,shift left=2pt]\ar[r,shift right=2pt]&\prod_{i,j}F(S_i\times_SS_j)
+\end{tikzcd}\]
+is exact) for $\{S_i\to S\}\in P$ and $\{S_i\to S\}\in P'$, respectively.
+\end{corollary}
+\begin{proof}
+In fact, these conditions are necessary, because the families above are covering. Conversely, if $R$ is the sieve of $S$ of a family of morphisms $\{S_{ij}\stackrel{(P')}{\to} S_i\stackrel{(P)}{\to} S\}$, a diagram chasing shows that the above conditions imply that $\Hom(S,F)\to\Hom(R,F)$ is injective (resp. bijective). But any covering sieve $R'$ of $S$ contains a sieve generated by such a family and we have a commutative diagram
+\[\begin{tikzcd}[row sep=6mm,column sep=4mm]
+\Hom(S,F)\ar[rr,"f"]\ar[rd,swap,"g"]&&\Hom(R,F)\ar[ld,"h"]\\
+&\Hom(R',F)&
+\end{tikzcd}\]
+If $g$ is injective, then so is $f$, so in this case $F$ is separated. In this case, since the morphism $R'\to R$ is covering, we see that $h$ is also injective (cf. \cref{site morphism of presheaf covering def}). Therefore, if $g$ is bijective, so is $f$, hence $F$ is a sheaf.
+\end{proof}
+
+\begin{remark}
+The condition (c) of \cref{site topology generated by refining family prop} is satisfies if $P'$ is stable under composition and if any family $\{S_i\to S\}$ of morphisms in $P$ with $S_i,S\in\Ob(\mathcal{C}')$ has a subfamily belonging to $P'$.
+\end{remark}
+
+We now let $\mathcal{C}=\mathbf{Sch}$ be the category of schemes, and $\mathcal{C}'$ be the full subcategory formed by affine schemes. We shall consider the following sets $P'$:
+\begin{itemize}
+    \item[] $P_1'$: finite and surjective families, formed by flat morphisms;
+    \item[] $P_2'$: finite and surjective families, formed by flat morphisms of finite presentation;
+    \item[] $P_3'$: finite and surjective families, formed by \'etale morphisms;
+    \item[] $P_4'$: finite and surjective families, formed by finite \'etale morphisms;
+\end{itemize}
+For each of these sets $P_i'$ (except $P_4'$), the conditions of \cref{site topology generated by refining family prop} are satisfied (as for (c), note that an affine scheme is quasi-compact, so any family of morphisms of $\mathcal{C}'$, belonging to $P$, contains a finite subfamily which is equally in $P$, hence in $P_i'$ for $i=1,2,3$). The corresponding topology $\mathcal{T}_i$ generated by $P$ and $P'_i$ is denoted and called by the following manner:
+\begin{itemize}
+    \item[] $\mathcal{T}_1$ is the faifufully flat and quasi-compact topology (\fpqc);
+    \item[] $\mathcal{T}_2$ is the faifufully flat and finite presented topology (\fppf);
+    \item[] $\mathcal{T}_3$ is the \'etale topology (\et);
+    \item[] $\mathcal{T}_4$ is the finite \'etale topology (\etf).
+\end{itemize}
+As $P_1'\sups P_2'\sups P_3'\sups P_4'$, we have
+\[\fpqc\geq\fppf\geq\et\geq \etf\geq \Zar.\]
+\begin{proposition}
+Let $\mathcal{T}_i$ ($i=1,2,3,4$) be the topologies on $\mathbf{Sch}$ defined above.
+\begin{enumerate}
+    \item[(a)] For a sieve $R$ of $S$ to be covering for $\mathcal{T}_i$ ($1\leq i\leq 3$), it is necessary and sufficient that there exists a covering $(S_\alpha)$ of $S$ by affine opens and for each $\alpha$ a family $\{S_{\alpha\beta}\to S_\alpha\}\in P_i'$, with $S_{\alpha\beta}$ affine, such that the the family $\{S_{\alpha\beta}\to S\}$ factors through $R$.
+    \item[(b)] For a presheaf $F$ over $\mathbf{Sch}$ to be a sheaf for the fpqc topology (resp. fppf, \'etale, finite \'etale), it is necessary and sufficient that
+    \begin{enumerate}
+        \item[(\rmnum{1})] $F$ is a sheaf over the Zariski topology, i.e. a functor of local nature.
+        \item[(\rmnum{2})] For any faithfully flat morphism (resp. faithfully flat morphism of finite presentation, resp. surjective \'etale, resp. finite surjective \'etale) $T\to S$ of affine schemes, we have an exact diagram
+        \[\begin{tikzcd}
+        F(S)\ar[r]&F(T)\ar[r,shift left=2pt]\ar[r,shift right=2pt]&F(T\times_ST)
+        \end{tikzcd}\]
+    \end{enumerate}   
+    \item[(c)] The topologies $\mathcal{T}_i$ ($1\leq i\leq 4$) are subcanonical.
+    \item[(d)] Any surjective family formed by open and flat morphisms (resp. flat and locally of finite presentation, resp. \'etale, resp. finite and \'etale) is covering for the fpqc topology (resp. fppf, resp. \'etale, resp. finite \'etale).
+    \item[(e)] Any finite and surjective family, formed by flat and quasi-compact morphisms, is covering for the fpqc topology. 
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+Assertion (a) follows from \cref{site topology generated by refining family prop}, and (b) follows from \cref{site topology generated by refining family sheaf iff}, since a sheaf for the Zariski topology transforms direct sums into products. Any representable functor is a sheaf for Zariski topology, and satisfies condition (\rmnum{2}) by (\cite{SGA1}, \Rmnum{8}, 5.3), so $\mathcal{T}_1$ is subcanonical, which proves (c).\par
+Let $\{S_i\to S\}$ be a family of morphisms as in (d). By considering a covering of $S$ by affine opens, we are reduced to the case where $S$ is affine. We first deal with the case where each $S_i\to S$ is flat and open (resp. \'etale). Let $S_{ij}$ be a covering og $S_i$ be affine opens. As the morphisms considered are open, the images $T_{ij}$ of $S_{ij}$ in $S$ form an open covering of $S$. As $S$ is affine, hence quasi-compact, there exists a finite subcover of $T_{ij}$, with $i,j$ belongs to a finite set $F$. Then $S'=\coprod_FS_{ij}$ is affine, and the morphism $S'\to S$ belongs to $P_1'$ (resp. $P_3'$), hence is covering. As this factors through the given family $\{S_i\to S\}$, the latter is also covering.\par
+In the case of the finite \'etale topology, each $S_i$ is finite over $S$, hence is affine; in the preceding argument, we can then take for $\{S_{ij}\}$ the covering $\{S_i\}$ of $S_i$, and we obtain a morphism $S'\to S$ belonging to $P_4'$.\par
+Now consider the case where $f_i:S_i\to S$ are flat and locally of finite presentation. For any $s\in S$, there exists (by the proof of (\cite{EGA4}, $\text{\Rmnum{4}}_4$, 17.16.2)) an affine subscheme $X(s)$ of one of the $S_i$ such that $s\in f_i(X(s))$ and that the morphism $g_i:X(s)\to S$, restriction of $f_i$, is flat and quasi-finite. Then $g_i(X(s))$ is an open neighborhood $U(s)$ of $s$ ((\cite{EGA4}, $\text{\Rmnum{4}}_2$, 2.4.6)), and as $S$ is affine, it is covered by a finite number of such opens $U(s_j)$, $j=1,\dots,n$. Therefore, $X'=\coprod_jX(s_j)$ is affine, and the morphism $X'\to S$ is surjective, flat, of finite presentation and quasi-finite, hence belongs to $P_2'$, which completes the proof of (d).\par
+Finally, let $\{S_i\to S\}$ be a finite and surjective family of flat and quasi-compact morphisms. Let $T_j$ be a covering of $S$ be affine opens. Then $S_{ij}=T_j\times_SS_i$ is quasi-compact and hence has a finite affine covering $T_{ijk}$. Each morphism $T_{ijk}\to T_j$ is flat, and the family $\{T_{ijk}\to T_j\}$ is finite and surjective, hence covering for $\mathcal{T}_1$. The family $\{T_{ijk}\to S\}$ is hence also, by composition, covering, and it factors through the given family:
+\[\begin{tikzcd}
+T_{ijk}\ar[rd]\ar[r]&S_{ij}\ar[d]\ar[r]&S_i\ar[d]\\
+&T_j\ar[r]&S
+\end{tikzcd}\]
+so the given family $\{S_i\to S\}$ is also covering for $\mathcal{T}_1$.
+\end{proof}
+
 \section{Functoriality of categories of sheaves}
 In \autoref{category presheaf section}, we studied the behavior of the categories of presheaves with respect to the functors between the underlying categories. In this section, we extend these results to sites and categories of sheaves.
 \subsection{Continuous functors}
