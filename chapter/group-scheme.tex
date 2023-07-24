@@ -40,7 +40,7 @@ In particular, let $\mathcal{C}$ be a category, then the constant functor $E\map
 It is worth noting that the previous construction, applied to the category $\widehat{\mathcal{C}}$, restores the notions that have already been defined there. In others words, it amounts to the same thing to give oneself a $\mathcal{T}$ structure over an object of $\widehat{\mathcal{C}}$ when we consider this object as a functor on $\mathcal{C}$, or to give ourselves a $\mathcal{T}$ structure on the representable functor over $\mathcal{C}$ defined by this object. For example, let $G\in\widehat{\mathcal{C}}$; if the functor $F\mapsto\Hom_{\widehat{\mathcal{C}}}(F,G)$ is endowed with a group structure, then so is its restriction to $\mathcal{C}$. Conversely, if $G$ is a group in $\widehat{\mathcal{C}}$, then the multiplication morphism $\pi_G:G\times G\to G$ induces for each $F\in\widehat{\mathcal{C}}$ a group structure over $\Hom_{\widehat{\mathcal{C}}}(F,G)$, which is functorial on $F$.
 \end{remark}
 
-\paragraph{Group action in \texorpdfstring{$\widehat{\mathcal{C}}$}{PSh}}
+\paragraph{Group action in \texorpdfstring{$\widehat{\mathcal{C}}$}{PSh}}\label{category group action in PSh paragraph}
 Let $E\in\widehat{\mathcal{C}}$ and $G\in\Grp_{\widehat{\mathcal{C}}}$. A \textbf{$\bm{G}$-object structure} over $E$ is defined to be an assignment over $E(S)$, for each $S\in\Ob(\mathcal{C})$, a $G(S)$-set structure on $G(S)$, so that for any morphism $S'\to S$ in $\mathcal{C}$, the map $E(S)\to E(S')$ is compatible with the group homomorphism $G(S)\to G(S')$. As usual, this is equivalent to giving a morphism
 \[\mu:G\times E\to E\]
 which for each $S$ endows $E(S)$ with a $G(S)$-set structure. On the other hand, since $\Hom(G\times E,E)\cong\Hom(G,\sEnd(E))$, the morphism $\mu$ defines also a morphism $G\to\sEnd(E)$ and it is immediate to see that this is a group homomorphism which sends $G$ into $\sAut(E)$. Therefore, giving a $G$-object structure over $E$ is equivalent to giving a group homomorphism
@@ -58,9 +58,9 @@ Z_G(F)(S)&=\{g\in G(S):\rho(g)|_{F_S}=\id\}\\
 &=\{g\in G(S):\text{$\rho(g)|_{F(S')}=\id$ for any morphism $S'\to S$}\}.
 \end{align*}
 \end{definition}
-In particular, let $x\in\Gamma(E)$, i.e. a collection of elements $x_S\in E(S)$, $S\in\Ob(\mathcal{C})$, such that for any morphism $f:S'\to S$, we have $E(f)(x_s)=x_{S'}$ (if $\mathcal{C}$ admits a final object $S_0$, then we have $\Gamma(E)=E(S_0)$). Then $x$ can be considered as a sub-functor of $E$, also denoted by $x$, and we have $N_G(x)=Z_G(x)$. This common functor is also denoted by $\Stab_G(x)$ and called the \textbf{stablizer} of $x$. For any $S\in\Ob(\mathcal{C})$, we then have
+In particular, let $x\in\Gamma(E)$, i.e. a collection of elements $x_S\in E(S)$, $S\in\Ob(\mathcal{C})$, such that for any morphism $f:S'\to S$, we have $E(f)(x_s)=x_{S'}$ (if $\mathcal{C}$ admits a final object $S_0$, then we have $\Gamma(E)=E(S_0)$). Then $x$ can be considered as a sub-functor of $E$, also denoted by $x$, and we have $N_G(x)=Z_G(x)$. This common functor is also denoted by $\Stab_G(x)$ and called the \textbf{stabilizer} of $x$. For any $S\in\Ob(\mathcal{C})$, we then have
 \[\Stab_G(x)(S)=\{g\in G(S):\rho(g)x_S=x_S\}.\]
-Suppose that fiber products exist in $\mathcal{C}$. If $G=h_G$ (resp. $E=h_E$), where $G$ is a group in $\mathcal{C}$ (resp. $E\in\Ob(\mathcal{C})$), and if $\mathcal{C}$ possesses a final object $S_0$, so that $x$ is a morphism $S_0\to E$, then the stablizer $\Stab_G(x)$ is represented by the fiber product $G\times_ES_0$, where $G\to E$ is the composition of $\id_G\times x:G=G\times S_0\to G\times E$ and $\mu:G\times E\to E$.
+Suppose that fiber products exist in $\mathcal{C}$. If $G=h_G$ (resp. $E=h_E$), where $G$ is a group in $\mathcal{C}$ (resp. $E\in\Ob(\mathcal{C})$), and if $\mathcal{C}$ possesses a final object $S_0$, so that $x$ is a morphism $S_0\to E$, then the stabilizer $\Stab_G(x)$ is represented by the fiber product $G\times_ES_0$, where $G\to E$ is the composition of $\id_G\times x:G=G\times S_0\to G\times E$ and $\mu:G\times E\to E$.
 
 \begin{remark}
 The formation of $E^G$, $N_G(F)$ and $Z_G(F)$ commute with base changes, so for any $S\in\Ob(\mathcal{C})$, weh ave
@@ -195,6 +195,13 @@ Let $\pi:M\to X$ be a morphism in $\widehat{\Sch}$, and $\mathbb{O}_X=\mathbb{O}
 which is an $X$-morphism and for any $x\in X(S)$, endows $M(x)=\{m\in M(S):\pi(m)=x\}$ an $\mathbb{O}(S)$-module structure. In this case, for any $Y\in\widehat{\Sch}_{/X}$ (not necessarily representable), the set $\Hom_X(Y,M)=\Gamma(M_Y/Y)$ is an $\mathbb{O}(Y)$-module, which is functorial on $Y$.
 \end{definition}
 
+\begin{example}
+Let $k$ be a field of characteristic zero and $A$ be a $k$-algebra. Then the set $\Hom_{\Grp}(\G_a,\G_m)(\Spec(A))$ consists of nilpotent elements of $A$; more precisely, all group homomorphisms from $\G_{a,\Spec(A)}$ to $\G_{m,\Spec(A)}$ are of the form $x\mapsto e^{ax}$ with $a\in A$ nilpotent. To see that, note that the underlying schemes of $\G_{a,\Spec(A)}$ and $\G_{m,\Spec(A)}$ are $\Spec(A[X])$ and $\Spec(A[Y,Y^{-1}])$, so any group homomorphism is of the form $Y\mapsto\sum_if_iX^i$ for some $f_i\in A$. The condition that this is a group homomorphism is that
+\[\sum_if_i(X_1+X_2)^i=\Big(\sum_if_iX_1^i\Big)\Big(\sum_jf_jX_2^j\Big).\]
+Expanding this, we conclude that $f_{i+j}/(i+j)!=f_i/i!f_j/j!$, so every such homomorphism is of the form $f_i=a^i/i!$, and $a$ must be nilpotent since the sum is finite.\par
+Now, we conclude that the functor $\sHom_{\Grp}(\G_a,\G_m)$ is not representable. For any positive integer $n$, let $A_n=k[t]/(t^n)$. Then the morphism $x\mapsto e^{tx}$ is in $\Hom_{\Grp}(\G_a,\G_m)(\Spec(A_n))$ for each $n$. However, if $A$ is the inverse limit $k\llbracket t\rrbracket$, then there is no corresponding morphism in $\Hom_{\Grp}(\G_a,\G_m)(\Spec(A))$, so $\sHom_{\Grp}(\G_a,\G_m)$ is not representable.
+\end{example}
+
 \paragraph{Diagonalizable groups}\label{scheme diagonalizable group paragraph}
 The construction of $\G_m$ can be generalized in the following manner. Let $M$ be an abelian group and $M_\Z$ be the constant group scheme associated with $M$. We then consider the functor $D(M):\Sch^{\op}\to\Set$ defined by
 \[D(M)(S)=\Hom_{\Grp}(M_\Z(S),\G_m(S))\cong \Hom_{S\dash\Grp}(M_S,\G_{m,S})\cong \sHom_{\Grp}(M_\Z,\G_m)(S).\]
@@ -208,7 +215,7 @@ This is associated with the $\mathscr{O}_S$-bigebra $\mathscr{O}_S[M]$, whose co
 
 If $f:M\to N$ is a homomorphism of abelian groups, we then have obtain a morphism of $S$-groups
 \[D_S(f):D_S(N)\to D_S(M),\]
-whence a functor $D_S:M\mapsto D_S(M)$ from the category of abelian groups to the category of affine groups over $S$, which can also be described as the composition of the functor $M\mapsto M_S$ with the functor $M_S\mapsto\sHom_{\Grp}(M_S,\G_{m,S})$. This functor clearlt commutes with base changes. An $S$-group isomorphic to a group of them form $D_S(M)$ is called \textbf{diagonalizable}. We note that the elements of $M$ can be interpreted as some characters of $D_S(M)$, that is, certain elements of $\Hom_{\Grp}(D_S(M),\G_{m,S})$.
+whence a functor $D_S:M\mapsto D_S(M)$ from the category of abelian groups to the category of affine groups over $S$, which can also be described as the composition of the functor $M\mapsto M_S$ with the functor $M_S\mapsto\sHom_{\Grp}(M_S,\G_{m,S})$. This functor clearly commutes with base changes. An $S$-group isomorphic to a group of them form $D_S(M)$ is called \textbf{diagonalizable}. We note that the elements of $M$ can be interpreted as some characters of $D_S(M)$, that is, certain elements of $\Hom_{\Grp}(D_S(M),\G_{m,S})$.
 \begin{example}
 It is clear that we have $D(\Z)=\G_m$ and $D(\Z^n)=(\G_m)^n$. We now consider the group scheme
 \[\bm{\mu}_n=D(\Z/n\Z)\]
@@ -272,7 +279,7 @@ The proposition then follows from \cref{scheme Gamma module functor prop}~(a) an
 \begin{remark}
 Let $\mathscr{F}$ be a quasi-coherent $\mathscr{O}_S$-module. Recall that the $S$-functor $\check{\Gamma}_\mathscr{F}$ is represented by an affine $S$-scheme which is denoted by $\V(\mathscr{F})$ and called the vector bundle defined by $\mathscr{F}$:
 \[\V(\mathscr{F})=\Spec(\bm{S}(\mathscr{F})),\]
-where $\bm{S}(\mathscr{F})$ denotes the symmetric algebra over $\mathscr{F}$. On the other hand, the article (\cite{*}) shows that if $S$ is Noetherian and $\mathscr{F}$ is a coherent $\mathscr{O}_S$-module, then $\Gamma_\mathscr{F}$ is representable if and only if $\mathscr{F}$ is locally free, and in this case we have an isomorphism $\Gamma_\mathscr{F}\cong\check{\Gamma}_\mathscr{F}$.
+where $\bm{S}(\mathscr{F})$ denotes the symmetric algebra over $\mathscr{F}$. On the other hand, the article (\cite{Nitsure_rep_of_Hom}) shows that if $S$ is Noetherian and $\mathscr{F}$ is a coherent $\mathscr{O}_S$-module, then $\Gamma_\mathscr{F}$ is representable if and only if $\mathscr{F}$ is locally free, and in this case we have an isomorphism $\Gamma_\mathscr{F}\cong\check{\Gamma}_\mathscr{F}$.
 \end{remark}
 
 \begin{proposition}\label{scheme Gamma module functor Hom with Spec prop}
@@ -753,7 +760,7 @@ Let $\phi,\psi$ be two such morphisms, we define $\phi+\psi$ as the composition 
 \[\begin{tikzcd}
 X\times_SH'\ar[r,"\phi\times\psi"]&M\times_YM\ar[r,"m"]&M
 \end{tikzcd}\]
-and we verify that this endows $\sHom_{Z/S}(X,M)$ an abelian group structure over $H=\sHom_{Z/S}(X,Y)$.\par
+and this endows $\sHom_{Z/S}(X,M)$ an abelian group structure over $H=\sHom_{Z/S}(X,Y)$.\par
 Similarly, if $a$ is an element of $\mathbb{O}(X\times_SH')$, i.e. an $S$-morphism $a:X\times_SH'\to\mathbb{O}_S$, we define $a\phi$ as the composition $\lambda\circ(a\times\phi)$, where $a\times\phi$ denotes the $Y$-morphism from $X\times_SH$ to $\mathbb{O}_Y\times_YM\cong\mathbb{O}_S\times_SM$ with components $a$ and $\phi$. We verify that this endows $\Hom_H(H',\sHom_{Z/S}(X,M))$ with an $\mathbb{O}(X\times_SH')$-module structure, which is functorial on $H'$.
 \end{remark}
 
@@ -1762,7 +1769,7 @@ As we have seen in \cref{scheme group representable is good} that any representa
 Any representable grop is very good.
 \end{corollary}
 
-Let $e:S\to G$ be the unit section of $G$. Put $\omega_{G/S}^1=e^*(\Omega_{G/S}^1)$ and recall that (cf. \cref{scheme tangent bundle representable if}) $\mathfrak{Lie}(G/S)$ is represented by the vector bundle $\V(\omega_{G/S}^1)$. We then have assocaited functorially to any $S$-group scheme $G$ a vector bundle $\mathrm{Lie}(G/S)=\V(\omega_{G/S}^1)$ over $S$, which represents the functor $\mathfrak{Lie}(G/S)$, hence is endowed with the structure of a Lie algebra $S$-scheme over $\mathbb{O}_S$. Moreover, this construction commutes with base change and finite products.
+Let $e:S\to G$ be the unit section of $G$. Put $\omega_{G/S}^1=e^*(\Omega_{G/S}^1)$ and recall that (cf. \cref{scheme tangent bundle representable if}) $\mathfrak{Lie}(G/S)$ is represented by the vector bundle $\mathrm{Lie}(G/S)=\V(\omega_{G/S}^1)$. We then have assocaited functorially to any $S$-group scheme $G$ a vector bundle $\V(\omega_{G/S}^1)$ over $S$, which represents the functor $\mathfrak{Lie}(G/S)$, hence is endowed with the structure of a Lie algebra $S$-scheme over $\mathbb{O}_S$. Moreover, this construction commutes with base change and finite products.
 
 \begin{remark}\label{scheme group omega_G/S differential module prop}
 Let $\pi:G\to S$ be the structural morphism. The $\mathscr{O}_G$-module $\Omega_{G/S}^1$ is evidently $(G\times_SG)$-equivariant and hence, by (\cite{SGA3} \Rmnum{1}, 6.8.1), we have $\Omega_{G/S}^1\cong\pi^*(\omega_{G/S}^1)$. It follows for example that $\Omega_{G/S}^1$ is locally free (resp. locally free of finite rank) if $\omega_{G/S}^1$ is, which is in particular the case if $S$ is the spectrum of a field (resp. if $S$ is the spectrum of a field and $G$ is locally of finite type over $S$). Moreover, by (\cite{SGA3} \Rmnum{1}, 6.8.2), $\omega_{G/S}^1$ is endowed with a canonical $\mathbb{O}_S[G]$-module structure, which induces over $\V(\omega_{G/S}^1)=\mathrm{Lie}(G/S)$ the adjoint representation.\par
@@ -1931,3 +1938,1466 @@ x&c
 hence $\mathfrak{Lie}(N_G(E)/S)\neq N_{\mathfrak{Lie}(G/S)}(E)$.\par
 By considering the semi-direct product $G'=F\rtimes G$, we obtain a similar conter-example where $E$ is a sub-$\mathbb{O}_S$-module of $\mathfrak{Lie}(G'/S)$. We also note that with the notations above, $E=\mathfrak{Lie}(K/S)$ where $K$ is the subgroup $\mathbb{O}_S\oplus\Nil^2$ of $F$ (that is, for any $S'\to S$, $K(S')$ is formed by couples $(x_1,x_2)$ where $x_2\in\Nil(S')^2$).
 \end{example}
+
+\section{Equivalence relations and passing to quotient}
+\subsection{Universally effective equivalence relations}
+\paragraph{Equivalence relations}
+\begin{definition}
+Let $\mathcal{C}$ be a category. A \textbf{$\mathcal{C}$-equivalence relation} over $X\in\Ob(\mathcal{C})$ is defined to be a representable sunfunctor $R$ of $X\times X$, such that for any $S\in\Ob(\mathcal{C})$, $R(S)$ is the graph of an equivalence relation over $X(S)$.
+\end{definition}
+This definition is applicable in particular to the category $\widehat{\mathcal{C}}$. If we consider $X$ as an object of $\widehat{\mathcal{C}}$, then a $\widehat{\mathcal{C}}$-equivalance relation over $X$ is none other than a subfunctor $R$ of $X\times X$ (not necessarily representable in $\mathcal{C}$) such that $R(S)$ is the graph of an equivalence relation on $X(S)$ for any $S\in\Ob(\mathcal{C})$. In fact, this conditon is evidently necessary. Conversely, if for any $S\in\Ob(\mathcal{C})$, $R(S)$ is the graph of an equivalence relation, then this equivalence relation extends to $R(F)$ for any $F\in\Ob(\widehat{\mathcal{C}})$ by declearing two morphisms $\phi,\psi:F\to R$ to be equivalent if, for any $S\in\Ob(\mathcal{C})$ and $x\in F(S)$, $\phi(x)$ is equivalent to $\psi(x)$ in $X(S)$.\par
+If $R$ is a $\mathcal{C}$-equivalence relation on $X$, we denote by $p_i:R\to X$ the morphism induced by the projection $\pr_i:X\times X\to X$. We then have a diagram
+\[p_1,p_2:R\rightrightarrows X.\]
+A morphism $u:X\to Z$ is called \textbf{compatible with $R$} if $up_1=up_2$. The cokernel in $\mathcal{C}$ of the couple $(p_1,p_2)$ is also called the \textbf{quotient object} of $X$ by $R$, and denoted by $X/R$. We then have an exact diagram
+\[\begin{tikzcd}
+R\ar[r,shift left=2pt,"p_1"]\ar[r,shift right=2pt,swap,"p_2"]&X\ar[r,"p"]&X/R
+\end{tikzcd}\]
+and $X/R$ represents the covariant functor
+\[\Hom_{\mathcal{C}}(X/R,Z)=\{\text{morphisms $X\to Z$ compatible with $R$}\}.\]
+Since the quotient objects have been chosen in $\mathcal{C}$, the quotient $X/R$ is unique (when it exists).\par
+These definitions immediately generalize to $\widehat{\mathcal{C}}$-equivalence relations on $X$, but note that the Yoneda embedding functor $\mathcal{C}\to\widehat{\mathcal{C}}$ does not commutes with the formation of quotients, so the quotient $X/R$ of $X$ by $R$ in $\mathcal{C}$ if not a priori a quotient of $X$ by $R$ in $\widehat{\mathcal{C}}$. Therefore, we will be careful not to identity $\mathcal{C}$ indiscriminetly with its image in $\widehat{\mathcal{C}}$ when dealing with questions involving passages to the quotient. In the following, by "equivalence relation", we simply mean $\widehat{\mathcal{C}}$-equivalence relations.\par
+
+If $X$ is an object of $\mathcal{C}$ over $S$, an \textbf{equivalence relation on $\bm{X}$ over $\bm{S}$} is defined to be an equivalence relation $R$ over $X$ such that the structural morphism $X\to S$ is compatible with $R$. In this case, the canonical morphism $R\to X\times X$ then factors through the monomorphism
+\[X\times_SX\to X\times X\]
+and defines an equivalence relation over the object $X\to S$ of $\mathcal{C}_{/S}$. If the quotient $X/R$ exists, it is endowed with a canonical morphism to $S$ and the corresponding object of $\mathcal{C}_{/S}$ is a quotient of $X\in\Ob(\mathcal{C}_{/S})$ by the preceding equivalence relation. Conversely, if $S$ is a squarable object of $\mathcal{C}$ and $Y\to S$ is a quotient of $X$ by this equivalence relation (in $\mathcal{C}_{/S}$), then $Y$ is a quotient by $R$ in $\mathcal{C}$.
+
+\begin{definition}
+If $X$ (resp. $X'$) is an object of $\mathcal{C}$ endowed with an equivalence relation $R$ (resp. $R'$), a morphism $u:X\to X'$ is called compatible with $R$ and $R'$ if the following equivalence relations are satisfied:
+\begin{enumerate}
+    \item[(\rmnum{1})] For any $S\in\Ob(\mathcal{C})$, two points of $X(S)$ congruent modulo $R(S)$ are transformed by $u$ to two points of $X'(S)$ congruent modulo $R'(S)$
+    \item[(\rmnum{2})] There exists a morphism $R\to R'$ (necessarily unique) fitting into the diagram
+    \[\begin{tikzcd}
+    R\ar[r]\ar[d]&R'\ar[d]\\
+    X\times X\ar[r,"u\times u"]&X'\times X'
+    \end{tikzcd}\]
+\end{enumerate}
+By the universal property of $X/R$, there then exists (if the quotients $X/R$ and $X'/R'$ exists) a unique morphism $v$ fitting into the commutative diagram
+\[\begin{tikzcd}
+X\ar[r,"p"]\ar[d,"u"]&X/R\ar[d,"v"]\\
+X'\ar[r,"p'"]&X'/R'
+\end{tikzcd}\]
+\end{definition}
+
+\begin{definition}
+A sub-object $Y$ of $X$ is called \textbf{stable} under the equivalence relation $R$ if the following equivalent conditions are satisfied:
+\begin{enumerate}
+    \item[(\rmnum{1})] For any $S\in\Ob(\mathcal{C})$, the subset $Y(S)$ of $X(S)$ is stable under $R(S)$.
+    \item[(\rmnum{2})] The inverse images of $Y$ under $p_1$ and $p_2$ are identical. 
+\end{enumerate}
+\end{definition}
+A particular important case is the following: the quotient $X/R$ exists and $Y$ is the inverse image of a sub-object of $X/R$ in $X$.
+
+\begin{definition}
+Let $R$ be an equivalence relation over $X$ and $X'\to X$ ve a morphism. The equivalence relation $R'$ over $X$ obtained by the Cartesian diagram
+\[\begin{tikzcd}
+R'\ar[r]\ar[d]&R\ar[d]\\
+X'\times X'\ar[r]&X\times X
+\end{tikzcd}\]
+is called the inverse image of $R$ in $X'$. In particular, if $X'$ is a sub-object of $X$, the corresponding equivalence relation is called the induced relation on $X'$, and denoted by $R_{X'}$.
+\end{definition}
+
+The morphism $X'\to X$ is compatible with $R'$ and $R$; we then have, if the quotients exist, a morphism $X'/R'\to X/R$. If $X'$ is a sub-object of $X$, we shall see that in certain case we can prove that $X'/R'\to X/R$ is a monomorphism, hence identifies $X'/R'$ with a sub-object of $X/R$. If this is the case, the inverse image of this sub-object in $X$ will be a sub-object of $X$ containing $X'$ and stable under $R$, called the \textbf{saturation} of $X'$ for the equivalence relation $R$.
+
+\begin{proposition}\label{category equivalence relation subobject Cartesian diagram}
+If the sub-object $Y$ of $X$ is stable under $R$, we have two Cartesian squares for $i=1,2$:
+\[\begin{tikzcd}
+R_Y\ar[r]\ar[d,swap,"p_i"]&R\ar[d,"p_i"]\\
+Y\ar[r]&X
+\end{tikzcd}\]
+\end{proposition}
+\begin{proof}
+This follows from the definition of $R_Y$ and the stability of $Y$ under $R$.
+\end{proof}
+
+\paragraph{Equivalence relation defiend by a free group action}
+\begin{definition}
+Let $X$ be an object of $\mathcal{C}$ and $H$ be a $\mathcal{C}$-group acting on $X$. We say that $H$ acts freely on $X$ if the following conditions are satisfied:
+\begin{enumerate}
+    \item[(\rmnum{1})] For any $S\in\Ob(\mathcal{C})$, the group $H(S)$ acts freely on $X(S)$.
+    \item[(\rmnum{2})] The morphism of functors $H\times X\to X\times X$ defined by $(h,x)\mapsto(hx,x)$ is a monomorphism. 
+\end{enumerate}
+\end{definition}
+If $H$ acts freely on $X$, the image of $H\times X$ by the morphism in (\rmnum{2}) is an equivalence relation on $X$, called the \textbf{equivalence relation defined by the action of $\bm{H}$ over $\bm{X}$}. The quotient of $X$ by this equivalence relation, if exists, is denoted by $H\backslash X$. It represents the following covariant functor: if $Z$ is an object of $\mathcal{C}$, we have
+\[\Hom(H\backslash X,Z)=\{\text{morphisms $X\to Z$ invariant under $H$}\}\]
+where a morphism $f:X\to Z$ is invariant under $H$ if for any $S\in\Ob(\mathcal{C})$, the corresponding morphism $X(S)\to Z(S)$ is invariant under the group $H(S)$.
+
+\begin{lemma}
+Let $H$ be a group acting freely on $X$ and $Y$ be a sub-object of $X$. The following conditions are equivalent:
+\begin{enumerate}
+    \item[(\rmnum{1})] $Y$ is stable under the equivalence relation defined by $H$.
+    \item[(\rmnum{2})] For any $S\in\Ob(\mathcal{C})$, the subset $Y(S)$ of $X(S)$ is stable under $H(S)$.
+    \item[(\rmnum{3})] There exists a morphism $f$ (necessarily unique) fitting into the commutative diagram
+    \[\begin{tikzcd}
+    H\times Y\ar[r,"f"]\ar[d]&Y\ar[d]\\
+    H\times X\ar[r]&X
+    \end{tikzcd}\]
+\end{enumerate}
+Under these conditions, $f$ defines a morphism of $\widehat{\mathcal{C}}$-groups $H\to\sAut(Y)$ and the equivalence relation over $Y$ defined by $H$ is the induced one from $X$.
+\end{lemma}
+\begin{proof}
+The proof is immediate, by the definition of stable objects and the equivalence relation induced by $H$. The operation of $H$ on $Y$ is called the induced action.
+\end{proof}
+
+Now consider the following situation: $H$ and $G$ are two $\mathcal{C}$-groups and we are given a group morphism $u:H\to G$. Then $H$ acts on $G$ by translations (we put $h\cdot g=u(h)g$) and it acts freely on $G$ if and only if $u$ is a monomorphism. In this case, the quotient of $G$ by this action of $H$ is denoted (if exists) by $H\backslash G$. Similarly, we can define a right action of $H$ on $G$, and a quotient $G/H$. These quotients are functorial relative to the two groups. More precisely, we have the following lemma for right actions of $H$:
+
+\begin{lemma}\label{category equivalence relation by free action compatible morphism iff}
+Let $u:H\to G$ and $u':H'\to G'$ be two monomorphisms of $\mathcal{C}$-groups. Suppose that we are given a morphism of $\mathcal{C}$-groups $f:G\to G'$, then the following conditions are equivalent:
+\begin{enumerate}
+    \item[(\rmnum{1})] $f$ is compatible with the equivalence relations defined by $H$ and $H'$.
+    \item[(\rmnum{2})] For any $S\in\Ob(\mathcal{C})$, we have $f(u(H(S)))\sub u'(H(S))$.
+    \item[(\rmnum{3})] There exists a morphism $g:H\to H'$ (necessarily unique and multiplicative) such that the following diagram is commutative:
+    \[\begin{tikzcd}
+    H\ar[r,"g"]\ar[d,swap,"u"]&H'\ar[d,"u'"]\\
+    G\ar[r,"f"]&G'
+    \end{tikzcd}\] 
+\end{enumerate}
+Under these conditions, if the quotients $G/H$ and $G'/H'$ exist, there is a unique morphism $\bar{f}$ fitting into the commutative diagram
+\[\begin{tikzcd}
+G\ar[r,"f"]\ar[d,swap,"p"]&G'\ar[d,"p'"]\\
+G/H\ar[r,"\bar{f}"]&G'/H'
+\end{tikzcd}\]
+\end{lemma}
+\begin{proof}
+The first assertion can be verified element-wisely, and the second one then follows from (\rmnum{1}).
+\end{proof}
+
+We can then translate the notions introduced above for general equivalence relations to the present situation. Let us simply point out the following lemma, whose proof is immediate by reduction to the set case:
+\begin{lemma}\label{category equivalence relation by free action stable subobject iff}
+Let $u:H\to G$ be a monomorphism of $\mathcal{C}$-groups and $G'$ be a sub-group of $G$. For a sub-object $G'$ of $G$ to be stable under the equivalence relation defined by $H$, it is necessary and sufficient that $u$ factors through the canonical monomorphism $G'\to G$. In this case, the induced action of $H$ on $G'$ is none other than that deduced by the monomorphism $H\to G'$ factorizing $u$.
+\end{lemma}
+
+\paragraph{Universally effective equivalence relations}\label{category universally effective relation paragraph}
+\begin{definition}
+Let $f:X\to Y$ be a morphism. The image of the canonical monomorphism
+\[X\times_YX\to X\times X\]
+then defines a $\widehat{\mathcal{C}}$-equivalence relation on $X$, called the \textbf{equivalence relation defined by $\bm{f}$ over $\bm{X}$} and denoted by $R(f)$.
+\end{definition}
+\begin{definition}
+Let $R$ be an equivalence relation over $X$. We say that $R$ is effective if
+\begin{enumerate}
+    \item[(\rmnum{1})] $R$ is representable (i.e. is a $\mathcal{C}$-equivalence relation);
+    \item[(\rmnum{2})] the quotient $Y/R$ exists in $\mathcal{C}$;
+    \item[(\rmnum{3})] the diagram
+    \[\begin{tikzcd}
+    R\ar[r,shift left=2pt,"p_1"]\ar[r,shift right=2pt,swap,"p_2"]&X\ar[r,"p"]&Y
+    \end{tikzcd}\]
+    makes $R$ the fiber product of $X$ over $Y$, that is, $R$ is the equivalence relation defined by $p$.
+\end{enumerate}
+\end{definition}
+If $R$ is an effective equivalence relation over $X$, then $p$ is an effective epimorphism. If $f:X\to Y$ is an effective epimorphism, then $R(f)$ is an effective equivalence relation over $X$ whose quotient is $Y$. There then exists a correspondence bewteen effective equivalence relations over $X$ and effective quotients of $X$.
+
+\begin{definition}
+An equivalence relation $R$ over $X$ is called \textbf{universally effective} if the quotient $Y=X/R$ exists and if, for any $Y'\to Y$, the fiber product $X'=X\times_YY'$ and $R'=R\times_YY'$ exist and $R'$ is a fiber product of $X'$ over $Y'$. Equivalently, this amouts to saying that $R$ is effective and $p:X\to X/R$ is a universally effective epimorphism.
+\end{definition}
+
+\begin{remark}\label{category universal effective equivalence section is invariant}
+Suppose that $\mathcal{C}$ is the category of $S$-schemes and denote by $\G_{a,S}$ the additive group over $S$. Let $R\sub X\times_SX$ be a universally effective equivalence relation and $p:X\to Y$ be the quotient. Then, for any open subset $U$ of $Y$, $\mathscr{O}(U)=\Hom_S(U,\G_{a,S})$ is the set of elements $\phi\in\mathscr{O}(p^{-1}(U))=\Hom_S(p^{-1}(U),\G_{a,S})$ such that $\phi\circ p_1=\phi\circ p_2$. In particular, if $R$ is given by a free right action over $X$ of a group $H$, then $\mathscr{O}(U)$ is the set of $\phi\in\mathscr{O}(p^{-1}(U))$ such that $\phi(xh)=\phi(x)$ for any $S'\to S$ and $x\in X(S')$, $h\in H(S')$. 
+\end{remark}
+
+\begin{proposition}\label{category universal effective equivalence factor monomorphism iff}
+Let $R$ be a universally effective equivalence relation over $X$, $f:X\to Z$ be a morphism compatible with $R$, with a factorization $g:X/R\to Z$. The following conditions are equivalent:
+\begin{enumerate}
+    \item[(\rmnum{1})] $g$ is a monomorphism;
+    \item[(\rmnum{2})] $R$ is the equivalence relation defined by $f$. 
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+In fact, (\rmnum{1}) clearly implies (\rmnum{2}), and the converse follows from \cref{category descent morphism monomorphism if fiber product isomorphic}. 
+\end{proof}
+
+\begin{definition}
+Let $H$ be a $\mathcal{C}$-group acting freely on $X$. We say that $H$ acts \textbf{effectively} on $X$, or the action of $H$ on $X$ is \textbf{effective} (resp. \textbf{universally effective}), if the equivalence relation defined by $H$ is effective (resp. universally effective).
+\end{definition}
+
+In practive, it is often difficult to characterize universally effective epimorphisms. We often have, however, a certain number of morphisms of this type, for example, faithfully flat and quasi-compact morphisms of schemes. This leads to the following definition: Let $\mathcal{M}$ be a family of morphisms of $\mathcal{C}$ satisfying the following properties:
+\begin{enumerate}[leftmargin=40pt]
+    \item[(M1)] $\mathcal{M}$ is \textit{stable under base change}, i.e. for any morphism $u:T\to S$ in $\mathcal{M}$ is squarable and for any $S'\to S$, $u':T\times_SS'\to S'$ belongs to $\mathcal{M}$. 
+    \item[(M2)] The composition of two morphisms in $\mathcal{M}$ belongs to $\mathcal{M}$.
+    \item[(M3)] Any isomorphism belongs to $\mathcal{M}$.
+    \item[(M4)] Any morphism in $\mathcal{M}$ is an effective epimorphism.  
+\end{enumerate}
+Note that (M1) and (M2) imply:
+\begin{enumerate}[leftmargin=40pt]
+    \item[(M1')] The Cartesian product of two morphisms in $\mathcal{M}$ is in $\mathcal{M}$: Let $u:X\to Y$ and $u':X'\to Y'$ be two $S$-morphisms belonging to $\mathcal{M}$. If $Y\times_SY'$ exsits, then $X\times_SX'$ exists and $u\times_Su'$ belongs to $\mathcal{M}$.
+\end{enumerate}
+This follows from the diagram
+\[\begin{tikzcd}
+&Y'&X'\ar[l,swap,"u'"]\\
+X\ar[d,"u"]&X\times_SY'\ar[l]\ar[d]\ar[u]&X\times_SX'\ar[ld,"u\times_Su'"]\ar[l]\ar[u]\\
+Y&Y\times_SY'\ar[l] 
+\end{tikzcd}\]
+Similarly, (M1) and (M4) imply:
+\begin{enumerate}[leftmargin=40pt]
+    \item[(M4')] Any morphism of $\mathcal{M}$ is a universally effective epimorphism.
+\end{enumerate}
+
+The family $\mathcal{M}_0$ of universally effective morphisms verifies the conditions (M1)--(M4). In fact, (M1), (M3) and (M4) follows by definition, (M2) follows from (\cite{SGA3} \Rmnum{4}, 1.8). In the following, we suppose that $\mathcal{M}$ is a family of morphisms in $\mathcal{C}$ verifying the above conditions. In particular, our result is applicable to the family $\mathcal{M}_0$.
+
+\begin{definition}
+We say that an equivalence relation $R$ over $X$ is \textbf{of type $\mathcal{M}$} if it is representable and if $p_1\in\mathcal{M}$\footnote{This by (M2) and (M3) implies $p_2\in\mathcal{M}$, since $p_1$ and $p_2$ are exchanged by an isomorphism of $X\times X$.}. We say that $R$ is \textbf{$\mathcal{M}$-effective} if it is effective and if the canonical morphism $X\to X/R$ belongs to $\mathcal{M}$. Finally, we say the quotient $Y$ of $X$ is \textbf{$\mathcal{M}$-effective} if the canonical morphism $X\to Y$ belongs to $\mathcal{M}$.
+\end{definition}
+
+\begin{proposition}\label{category equivalence relation M-effective prop}
+Let $\mathcal{M}$ be a family of morphisms in $\mathcal{C}$ as above.
+\begin{enumerate}
+    \item[(a)] An $\mathcal{M}$-effective equivalence relation is of type $\mathcal{M}$ and universally effective. 
+    \item[(b)] An $\mathcal{M}$-effective quotient is universally effective.
+    \item[(c)] The map $R\mapsto X/R$ and $p\mapsto R(p)$ is a bijective correspondence from the set of effective equivalence relations over $X$ to the set of $\mathcal{M}$-effective quotients of $X$.
+    \item[(d)] $\mathcal{M}_0$-effectivity is equivalent to universally effectivity.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+Let $R$ be $\mathcal{M}$-effective, so that we have a Cartesian square
+\[\begin{tikzcd}
+R\ar[r,"p_2"]\ar[d,swap,"p_1"]&X\ar[d,"p"]\\
+X\ar[r,"p"]&X/R
+\end{tikzcd}\]
+and $p\in\mathcal{M}$. By (M1), $p_1$ and $p_2$ belong to $\mathcal{M}$, so $R$ is of type $\mathcal{M}$.\par
+Put $Y=X/R$ and let $Y'\to Y$ be a morphism. By (M1), the fiber products $X'=X\times_YY'$ and $R'=R\times_YY'$ exist and the morphisms $X'\to Y'$ and $p'_i:R'\to X'$ belong to $\mathcal{M}$. Finally, as $R=X\times_YX$, we obtain, by associativity of fiber products:
+\[R'=X\times_YX\times_YY'=X'\times_{Y'}X'\]
+so $R'$ is $\mathcal{M}$-effective and in particular $R$ is universally effective. This proves (a) and also (d). The assertions of (b) and (c) then follows from this and the definition.
+\end{proof}
+
+\begin{example}
+Let $H$ be an $S$-group whose structural morphism belongs to $\mathcal{M}$. If $H$ acts freely on the $S$-object $X$, then it defines an equivalence relation of type $\mathcal{M}$. In fact, by (M1) the fiber product $H\times_SX$ exists and $p_2:H\times_SX\to X$ belongs to $\mathcal{M}$. We say that the operation of $H$ is \textbf{$\mathcal{M}$-effective} if the equivalence relation over $X$ defined by $H$ is $\mathcal{M}$-effective.
+\end{example}
+
+\begin{proposition}[\textbf{$\mathcal{M}$-effectivity and Base Change}]\label{category equivalence relation M-effective and base change}
+Let $R$ be an $\mathcal{M}$-effective equivalence relation on $X$ over $S$ and put $Y=X/R$. Let $S'\to S$ be a base change morphism such that $Y'=Y\times_SS'$ exists. Then $X'=X\times_SS'$ exists, $R'=R\times_SS'$ exists and is an $\mathcal{M}$-effective equivalence relation on $X'$ over $S'$ and $X'/R'\cong(X/R)'$.
+\end{proposition}
+\begin{proof}
+In fact, the canonical morphisms $X\to Y$ and $R\to Y$ belong to $\mathcal{M}$, hence by (M1'), $X'$ and $R'$ are representable. By associativity of fiber products, $R'$ is the equivalence relation defined by the canonical morphism $X'\to Y'$ which belongs to $\mathcal{M}$, whence the conclusion.
+\end{proof}
+
+\begin{proposition}[\textbf{$\mathcal{M}$-effectivity and Cartesian Product}]\label{category equivalence relation M-effective and product}
+Let $R$ (resp. $R'$) be an $\mathcal{M}$-effective equivalence relation on $X$ (resp. $X'$) over $S$. If $(X/R)\times_S(X'/R')$ exists, then $X\times_SX'$ exists, $R\times_SR'$ is an $\mathcal{M}$-effective equivalence relation on $X\times_SX'$ over $S$ and
+\[(X\times_SX')/(R\times_SR')\cong (X/R)\times_S(X'/R').\]
+\end{proposition}
+\begin{proof}
+Put $Y=X/R$ and $Y'=X'/R'$. By (M1'), the fiber product $X\times_SX'$ exists and the canonical morphism $q:X\times_SX'\to Y\times_SY'$ belongs to $\mathcal{M}$. Now the formula
+\[(X\times X')\times_{Y\times Y'}(X\times X')\cong (X\times_YX)\times(X'\times_{Y'}X')\]
+(where the product without subscript is taken over $S$) shows that $R\times_SR'$ is the equivalence relation defined by $q$ on $X\times_SX'$, whence the proposition.
+\end{proof}
+
+Suppose that $\mathcal{C}$ possesses a final object $e$ and let $f:G\to G'$ be a morphism of $\mathcal{C}$-groups such that $f\in\mathcal{M}$. Then by (M1), the kernel $\ker f$ is representable by $e\times_{G'}G$, and the morphism $\ker f\to e$ belongs to $\mathcal{M}$. On the other hand, the equivalence relation defined by $f$ is the same as that defined by the action of $\ker f$ (right, say) over $G$, that is, the image of the morphism $G\times \ker f\to G\times G$, defined by $(g,h)\mapsto(g,gh)$.
+
+\begin{corollary}\label{category M-morphism kernel M-effective}
+Suppose that $\mathcal{C}$ possesses a final object $e$ and let $f:G\to G'$ be a morphism of $\mathcal{C}$-groups such that $f\in\mathcal{M}$. Then the action of $\ker f$ on $G$ is $\mathcal{M}$-effective and $G'$ is the the quotient $G/\ker f$.
+\end{corollary}
+\begin{proof}
+Since $f$ is a universally effective epimorphism by (M4'), $G'$ is identified with the quotient of $G$ by the equivalence relation defined by $f$, that is, by the action of $\ker f$. Since $\ker\to e$ belongs to $\mathcal{M}$, this equivalence relation is therefore representable by (M1), and we conclude the corollary.
+\end{proof}
+
+\paragraph{Construction of quotients by descent}
+\begin{definition}
+We say that a descent data over $X'$ relative to $S'\to S$ is \textbf{effective} if $X'$ endowed with the descent data is isomorphic to the inverse image over $S'$ of an object $X$ over $S$.
+\end{definition}
+
+If $S'\to S$ is a descent morphism, then the $X$ in the above definition is unique up to unique isomorphism. The morphism $S'\to S$ is an effective descent morphism if it is a descent morphism and any descent data relative to $S'\to S$ is effective.\par
+Now consider an equivalence relation $R$ over an object $X$ over $S$. Let $X'$ (resp. $X''$, resp. $X'''$) be the inverse image of $X$ over $S'$, $S''=S'\times_SS'$ and $S'''=S'\times_SS'\times_SS'$ and let $R'$, $R''$, $R'''$ be the induced equivalence relations of $R$ by inverse image. Suppose that the equivalence relation $R'$ on $X'$ is $\mathcal{M}$-effective, and consider the quotient $Y'=X'/R'$ which is an object over $S'$. Its inverse images under the two projections from $S''$ are isomorphic to $X''/R''$ by \cref{category equivalence relation M-effective and base change}, so the $S'$-object $Y'$ is endowed with a canonical glueing data. Using the same uniqueness for $X'''/R'''$, we see that this is a descent data (note that we have implicitly assumed have all these fiber products exist, for example if $S'\to S$ is squarable).
+
+\begin{proposition}\label{category equivalence relation M-effective and descent}
+Let $R$ be an equivalence relation on an object $X$ over $S$, and $S'\to S$ be a universally effective epimorphism. Suppose that any $S$-morphism whose inverse image over $S'$ belongs to $\mathcal{M}$ is itself in $\mathcal{M}$. Then the following conditions are equivalent:
+\begin{enumerate}
+    \item[(\rmnum{1})] $R$ is $\mathcal{M}$-effective on $X$;
+    \item[(\rmnum{2})] $R'$ is $\mathcal{M}$-effective and the canonical descent date over $X'/R'$ is effective.
+\end{enumerate}
+Moreover, if this is the case, the descent object of $X'/R'$ is canonically isomorphic to $X/R$.
+\end{proposition}
+\begin{proof}
+The fact that (\rmnum{1}) implies (\rmnum{2}) follows directly from the definition of $\mathcal{M}$-effectivity and \cref{category equivalence relation M-effective prop}~(a). If the converse is true, then the last assertion follows from the fact that a universally effective epimorphism is a descent morphism, so the descent object is unique (up to isomorphism).\par
+We now prove that (\rmnum{2})$\Rightarrow$(\rmnum{1}). Let $Y'=X'/R'$ and $Y$ be the descent object. As the canonical morphism $p':X'\to X'/R'=Y'$ is compatible with the descent data (its inverse image over $S''$ coincides with the canonical morphism $X''\to X''/R''$ by \cref{category equivalence relation M-effective and base change}), it comes from an $S$-morphism $p:X\to Y$. As $p'$ belongs to $\mathcal{M}$, it follows from the hypothesis made on the morphism $S'\to S$ that $p$ also belongs to $\mathcal{M}$. As $p'$ is compatible with the equivalence relation $R'$, $p$ is compatible with $R$, since a universally effective epimorphism is a descent morphism. We then have a morphism
+\[R\to X\times_YX.\]
+To see that $R$ is $\mathcal{M}$-effective and that $Y$ is isomorphic to $X/R$, it suffices to prove that this morphism is an isomorphism. Now since $R'$ is effective, this becomes an isomorphism after base change to $S'$, and it is therefore an isomorphism for the same reason.
+\end{proof}
+
+We note that the hypothesis of \cref{category equivalence relation M-effective and descent} is verified if we take $\mathcal{M}=\mathcal{M}_0$ to be the family of universally effective epimorphisms and if $\mathcal{C}$ possesses fiber products (cf. \cite{SGA3}, \Rmnum{4}, Corollaire 1.10). We then deduce the following corollary:
+
+\begin{corollary}\label{category equivalence relation universally effective and descent}
+Suppose that $\mathcal{C}$ possesses fiber products (over $S$). Let $R$ be an equivalence relation on $X$ over $S$ and $S'\to S$ be a universally effective epimorphism. Then the following conditions are equivalent:
+\begin{enumerate}
+    \item[(\rmnum{1})] $R$ is universally effective on $X$;
+    \item[(\rmnum{2})] $R'$ is universally effective and the canonical descent date over $X'/R'$ is effective.
+\end{enumerate}
+Moreover, if this is the case, the descent object of $X'/R'$ is canonically isomorphic to $X/R$.
+\end{corollary}
+
+\subsection{Equivalence relations in the category of sheaves}
+
+\paragraph{Equivalence relations in \texorpdfstring{$\widetilde{\mathcal{C}}$}{C}}
+
+Let $\mathcal{C}$ be a site and $\widetilde{\mathcal{C}}$ be the category of sheaves over $\mathcal{C}$. Let $i:\mathcal{C}\to\widehat{\mathcal{C}}$ be the inclusion functor.
+
+\begin{proposition}\label{site sheaf equivalence relation is universally effective}
+Any equivalence relation in $\widetilde{\mathcal{C}}$ is universally effective: let $R$ be a $\widetilde{\mathcal{C}}$-equivalence relation on the sheaf $X$, then the sheaf associated with the separated presheaf
+\[i(X)/i(R):S\mapsto X(S)/R(S)\]
+is a universally effective quotient sheaf of $X$ by $R$.
+\end{proposition}
+\begin{proof}
+Let $X/R=(i(X)/i(R))^\#$ be the quotient sheaf of $X$ by $R$, which exists by (\cite{SGA3}, \Rmnum{4}, 4.4.1(\rmnum{2})). It is necessary to show that $X\to X/R$ is a universally effective epimorphism, and that the morphism $f:R\to X\times_{X/R}X$ is an isomorphism. The first assertion follows from the proof of (\cite{SGA3}, \Rmnum{4}, 4.4.3). As for $f$, it comes from the sheafification of the morphism $i(R)\to i(X)\times_{i(X/R)}i(X)$, or, as $i(X)/i(R)$ is separated (\cite{SGA3}, \Rmnum{4}, 4.4.5(\rmnum{2})) so that $i(X)/i(R)\to i(X/R)$ is a monomorphism, from the canonical morphism $i(R)\to i(X)\times_{i(X)/i(R)}i(X)$.\par
+We are therefore reduced to the same assertion for the category of presheaves. But $i(X)/i(R)$ is the presheaf $S\mapsto X(S)/R(S)$ and we are then reduced to the same assertion for the category of sets, which is immediate.
+\end{proof}
+
+\begin{proposition}\label{site sheaf quotient of subsheaf is image}
+Under the conditions of \cref{site sheaf equivalence relation is universally effective}, let $Y$ be a subsheaf of $X$. Denote by $R_Y$ the equivalence relation induced on $Y$ by $R$, then the canonical morphism $Y/R_Y\to X/R$ is a monomorphism: it identifies $Y/R_Y$ with the subsheaf of $X/R$, which is the image sheaf of the composition morphism $Y\to X\to X/R$.
+\end{proposition}
+\begin{proof}
+The morphism of presheaves
+\[i(Y)/i(R_Y)=i(Y)/i(R)_{i(Y)}\to i(X)/i(R)\]
+is a monomorphism. As the functor $\#$ is left exact, it preserves monomorphisms and hence $Y/R_Y\to X/R$ is a monomorphism. The last assertion then follows from the commutative diagram
+\[\begin{tikzcd}
+Y\ar[r]\ar[d]&X\ar[d]\\
+Y/R_Y\ar[r]&X/R
+\end{tikzcd}\]
+and the fact that $Y\to Y/R_Y$ is covering.
+\end{proof}
+In view of \ref{site sheaf quotient of subsheaf is image}, we can identify $Y/R_Y$ with a subsheaf of $X/R$.
+
+\begin{proposition}\label{site sheaf stable subsheaf and subquotient correspond}
+Let $R$ be a $\widetilde{\mathcal{C}}$-equivalence relation on a sheaf $X$. For any subsheaf $Y$ of $X$ stable under $R$, denote by $Y'=Y/R_Y$ the quotient considered as a subsheaf of $X'=X/R$. Then $Y=Y'\times_{X'}X$ and the maps $Y\mapsto Y/R_Y$ and $Y'\mapsto Y'\times_{X'}X$ give a bijective correspoondence between the set of subsheaves $Y$ of $X$ stable under $R$ and the set of subsheaves $Y'$ of $X'$.
+\end{proposition}
+\begin{proof}
+If $Y'$ is a subsheaf of $X'$, then $Y'\times_{X'}X$ is a subsheaf of $X$ stable under $R$, and we have $(Y'\times_{X'}X)/R=Y'$. If $Y'$ is obtained by passing to quotient of a subsheaf $Y$ of $X$, then $Y$ is a subobject of $Y'\times_{X'}X$. It then suffices to show that if we have two subobjects $Y_1$ and $Y_2$ of $X$, stable under $R$ and $Y_1\sub Y_2$, and if the quotients $Y_1/R_{Y_1}$ and $Y_2/R_{Y_2}$ are identical, then $Y_1=Y_2$. For this, we are evidently reduced to the same assertion in the case $Y_2=X$. Denote then by $P$ (resp. $Q$) the presheaf $i(X)/i(R)$ (resp. $i(Y)/i(R_Y)$), the diagram
+\[\begin{tikzcd}
+Y\ar[d,hook]\ar[r]&Q\ar[d,hook]\\
+X\ar[r]&P
+\end{tikzcd}\]
+is Cartesian. As we have a commutative diagram
+\[\begin{tikzcd}
+Q\ar[r,hook]\ar[d,hook]&Q^\#\ar[d,equal]\\
+P\ar[r,hook]&P^\#
+\end{tikzcd}\]
+and $Q\mapsto Q^\#$ is covering, the monomorphism $Q\hookrightarrow P$ is covering, so $Q$ is a refinement of $P$. By base change, $Y$ is then a refinement of $X$. As $X$ and $Y$ are both sheaves, we conclude that $Y=X$.
+\end{proof}
+In particular, if $Y$ is a subsheaf of $X$ and $Y'=Y/R_Y$, then the preceding correspondence ddefines a subsheaf $\widebar{Y}$ of $X$, stable under $R$, containing $Y$ and minimal with these properties; this subsheaf is called the saturation of $Y$ for the equivalence relation $R$.
+
+\paragraph{Description of the quotient of a sheaf by an equivalence relation}\label{site sheaf quotient by equivalence relation paragraph}
+Now assume that the topology of $\mathcal{C}$ is subcanonical. In this case, we know that any covering sieve is universally effective epimorphic, and the canonical functor $i:\mathcal{C}\to\widehat{\mathcal{C}}$ factors through $\widetilde{\mathcal{C}}$.
+
+\begin{proposition}\label{site sheaf quotient by equivalence relation char}
+Let $R$ be a $\widetilde{\mathcal{C}}$-equivalence relation on a sheaf $X$. Let $F\in\Ob(\widehat{\mathcal{C}})$ be the presheaf defined as follows: for any $S\in\Ob(\mathcal{C})$\footnote{$R\times S$ is the equivalence relation on $X\times S$ defined by $R\times S\sub X\times X\times S\times S$ (induced by the diagonal) and $R_Z$ is the equivalence relation induced over $Z$.},
+\begin{equation*}
+F(S)=\{\text{sub-$S$-sheaves $Z$ of $X\times S$ stable under $R\times S$ whose quotient by $R_Z$ is $S$}\}.
+\end{equation*}
+Then for any sheaf $Y$, $\Hom(Y,F)$ is identified with the set
+\[\{\text{sub-$Y$-sheaves of $X\times Y$ stable under $R\times Y$ whose quotient is $Y$}\}.\]
+In particular, the subsheaf $R$ of $X\times X$ corresponds to a morphism $p:X\to F$ and the diagram
+\[\begin{tikzcd}
+R\ar[r,shift left=2pt,"p_1"]\ar[r,shift right=2pt,swap,"p_2"]&X\ar[r,"p"]&F
+\end{tikzcd}\]
+is exact, hence identifies $F$ with the quotient sheaf $X/R$.
+\end{proposition}
+\begin{proof}
+Let $Q=X/R$. For any sheaf $Y$ and any morphism $f:Y\to Q$ corresponding to a section $s:Y\to Q\times Y$, consider the diagram
+\begin{equation}\label{site sheaf quotient by equivalence relation char-1}
+\begin{tikzcd}
+&Z\ar[r]\ar[d,hook]&Y\ar[d,hook,"s"]\\
+R\times Y\ar[r,shift left=2pt]\ar[r,shift right=2pt]&X\times Y\ar[r]&Q\times Y
+\end{tikzcd}
+\end{equation}
+where the square is Cartesian. It is immediate from \cref{site sheaf stable subsheaf and subquotient correspond} that $Z$ is a sub-$Y$-sheaf of $X\times Y$ stable under $R\times Y$ whose quotient is $Y$; conversely, any $Z$ with these properties provides a unique section of $Q\times Y$ over $Y$. Taking $Y$ to be representable or arbitrary, we obtain an isomorphism $Q\cong F$ and the desired form of $\Hom(Y,F)$. Finally, consider the canonical morphism $X\to Q$, we immdediately see that it corresponds to the sub-$X$-sheaf $R$ of $X\times X$, which proves our assertion.
+\end{proof}
+
+\begin{corollary}\label{site sheaf quotient factor through if}
+Let $G$ be a subfunctor of $F$ such that $\Hom(X,G)\sub\Hom(X,F)$ contains $R$. Then the canonical morphism $p:X\to F$ factors through $G$. As $p$ is covering, it follows that $G$ is a refinement of $F$. In particular, any subsheaf $G$ of $F$ verifying the preceding condition is equal to $F$.
+\end{corollary}
+\begin{proof}
+By the identification of \cref{site sheaf quotient by equivalence relation char}, the hypothesis implies that $p:X\to F$ belongs to the image of $\Hom(X,G)$, whence it factors through $G$.
+\end{proof}
+
+We now consider the case where $X$ and $R$ are representable. Let's first introduce some terminology. In addition to the conditions (M1)--(M4) introduced in \ref{category universally effective relation paragraph}, we will use other conditions on a family $\mathcal{M}$ of morphisms of $\mathcal{C}$ (for completeness, we recall conditions (M1)--(M3)):
+\begin{enumerate}[leftmargin=40pt]
+    \item[(M1)] $\mathcal{M}$ is stable under base change.
+    \item[(M2)] The composition of two elements of $\mathcal{M}$ belongs to $\mathcal{M}$.
+    \item[(M3)] Any isomorphism belongs to $\mathcal{M}$.
+    \item[($\text{M4}_\mathcal{T}$)] Any element of $\mathcal{M}$ is covering.
+    \item[($\text{M5}_\mathcal{T}$)] Let $f:X\to Y$ be a morphism in $\mathcal{C}$. If there exists a covering sieve $R\hookrightarrow Y$ such that for any $Y'\to R$, $X\times_YY'\to Y'$ belongs to $\mathcal{M}$, then $f$ belongs to $\mathcal{M}$.
+\end{enumerate}
+Recall that (M1) and (M2) implies
+\begin{enumerate}[leftmargin=40pt]
+    \item[(M1')] The Cartesian product of two morphisms in $\mathcal{M}$ belongs to $\mathcal{M}$.
+\end{enumerate}
+and (M1) and ($\text{M4}_\mathcal{T}$) implies (by \cite{SGA3}, \Rmnum{4}, 4.3.9):
+\begin{enumerate}[leftmargin=40pt]
+    \item[(M4')] Any morphism in $\mathcal{M}$ is a universally effective epimorphism.
+\end{enumerate}
+
+The preceding conditions are verified for the family of covering morphisms, denoted by $\mathcal{M}_\mathcal{T}$, if $\mathcal{C}$ possesses fiber products. The results we are going to establish for a family $\mathcal{M}$ satisfying these conditions will apply in particular to the family $\mathcal{M}_\mathcal{T}$. In particular, we can take for $\mathcal{T}$ the canonical topology and for $\mathcal{M}$ the family of universally effective epimorphisms.
+
+\begin{proposition}\label{site sheaf M-effective relation iff quotient representable}
+Let $\mathcal{M}$ be a family of morphisms verifying conditions (M1)--($\text{M5}_\mathcal{T}$). Let $R$ be a $\widetilde{\mathcal{C}}$-equivalence relation on $X\in\Ob(\mathcal{C})$ of type $\mathcal{M}$, $\widetilde{X}$ be the sheaf associated with $X$, $\widetilde{R}$ the $\widetilde{\mathcal{C}}$-equivalence relation on $\widetilde{X}$ defined by $R$, and $\widetilde{X}/\widetilde{R}$ the quotient sheaf. For $R$ to be $\mathcal{M}$-effective, it is necessary and sufficient that $\widetilde{X}/\widetilde{R}$ is representable, and in this case it is represented by the quotient $X/R$.
+\end{proposition}
+\begin{proof}
+Suppose that $R$ is $\mathcal{M}$-effective and let $Y=X/R$. The canonical morphism $p:X\to Y$ belongs to $\mathcal{M}$, hence is covering by ($\text{M4}_\mathcal{T}$). The corresponding morphism
+\[\tilde{p}:\widetilde{X}\to\widetilde{Y}\]
+is then a universally effective epimorphism in $\widetilde{\mathcal{C}}$, hence identifies $\widetilde{Y}$ with the quotient of $\widetilde{X}$ by the equivalence relation $R'$ defined by $\tilde{p}$. As the functor $\mathcal{C}\to\widetilde{\mathcal{C}}$ commutes with fiber products, $R'$ is none other than $\widetilde{R}$, because $R$ is the equivalence relation defined by $R$ (since it is effective). We then conclude that $\widetilde{X}/\widetilde{R}$ is represented by $Y$.\par
+Conversely, suppose that $\widetilde{X}/\widetilde{R}$ is represented by an object $Y$ of $\mathcal{C}$. Let $p:X\to Y$ be the morphism induced by the canonical morphism $\widetilde{X}\to\widetilde{X}/\widetilde{R}$, which is a covering morphism by (\cite{SGA3}, \Rmnum{4}, 4.4.3). It is clear as before that $R$ is the equivalence relation defined by $p$, so it remains to show that $p\in\mathcal{M}$. But the Cartesian square
+\[\begin{tikzcd}
+R\ar[r,"\cong"]&X\times_YX\ar[d,"p_2"]\ar[r,"p_1"]&X\ar[d,"p"]\\
+&X\ar[r,"p"]&Y
+\end{tikzcd}\]
+shows that the base change of $p$ by the covering morphism $p$ belongs to $\mathcal{M}$ (since $p_2\in\mathcal{M}$ by our hypothesis). We then conclude from (M1) and ($\text{M5}_\mathcal{T}$) that $p\in\mathcal{M}$.
+\end{proof}
+
+\begin{corollary}\label{site sheaf M-morphism kernel M-effective}
+Let $\mathcal{M}$ be a family of morphisms verifying conditions (M1)--($\text{M5}_\mathcal{T}$) and $f:G\to G'$ be a morphism of $\mathcal{C}$-groups belonging to $\mathcal{M}$. Suppose that $\ker f$ is representable (for example, if $\mathcal{C}$ has a final object $e$), then the equivalence relation on $G$ defined by $H=\ker f$ is $\mathcal{M}$-effective and $G'$ represents the quotient sheaf $\widetilde{G}/\widetilde{H}$ for the topology $\mathcal{T}$.
+\end{corollary}
+\begin{proof}
+This follows from \cref{category M-morphism kernel M-effective} and \cref{site sheaf M-effective relation iff quotient representable}.
+\end{proof}
+
+We are now in a position to state the main theroem of this paragraph. Before this, let recall the following result:
+\begin{proposition}\label{site sheaf representable iff descent data effective}
+Let $\{S_i\to S\}$ be a covering family and $Z$ be a sheaf over $S$. Suppose that for each $i$, the $S_i$-functor $Z\times_SS_i$ is represented by an object $T_i$. Then the family $T_i$ is endowed with a canonical descent data relative to $\{S_i\to S\}$. For $Z$ to be representable, it is necessary and sufficient that this descent data is effective, and in this case the descent object represents $Z$.
+\end{proposition}
+\begin{proof}
+By (\cite{SGA3}, \Rmnum{4}, 4.4.3), $\{S_i\to S\}$ is universally effective epimorphic in $\widetilde{\mathcal{C}}$, hence is a descent family in $\widetilde{\mathcal{C}}$. If $Z$ is represented by an object $T$, the $T\times_SS_i$ (considered as sheaves) is isomorphic to $Z\times_SS_i$, hence the descent data over $T_i$ is effective and the descent object (necessarily unique) is isomorphic to $Z$. Conversely, suppose that the canonical descent data over $T_i$ is effective and let $T$ be a descent object. As the family $\{S_i\to S\}$ is a descent family, there exsits an $S$-morphism $T\to Z$ whose base change to $S_i$ is the canonical morphism $T_i\to Z\times_SS_i$. This morphism is therefore locally an isomorphism, and it follows from (\cite{SGA3}, \Rmnum{4}, 4.4.8) that it is an isomorphism.
+\end{proof}
+
+\begin{theorem}\label{site sheaf quotient by M-effective char}
+Let $\mathcal{M}$ be a family of morphisms verifying conditions (M1)--($\text{M5}_\mathcal{T}$) and $R$ be a $\mathcal{C}$-equivalence relation of type $\mathcal{M}$ on an object $X$ of $\mathcal{C}$. Consider the functor $F\in\Ob(\widehat{\mathcal{C}})$ defined as follows:
+\[F(S)=\{\text{sub-$S$-sheaf $Z$ of $X\times S$ stable under $R\times S$ whose quotient by $R_Z$ is $S$}\}.\]
+Let $F_0$ be the sub-functor of $F$ such that $F_0(S)$ is formed by representable $Z\in F(S)$, that is,
+\[F_0(S)=\Bigg\{\parbox{4in}{%
+sub-$\mathcal{C}_{/S}$-objects $Z$ of $X\times S$ stable under $R\times S$ such that $R_Z$ is $\mathcal{M}$-effective and the quotient of $Z$ by $R_Z$ is $S$%
+}\Bigg\}.\]
+\begin{enumerate}
+    \item[(a)] The morphism $p:X\to F$ defined by the sub-object $R$ of $X\times X$ identifies $F$ with the quotient sheaf of $X$ by $R$.
+    \item[(b)] The following conditions are equivalent:
+    \begin{enumerate}
+        \item[(\rmnum{1})] $F$ is representable.
+        \item[(\rmnum{2})] $F_0$ is representable.
+        \item[(\rmnum{3})] $R$ is $\mathcal{M}$-effective.
+    \end{enumerate}
+    and under these conditions, we have $F=F_0=X/R$.
+    \item[(c)] Let $\mathcal{N}$ be a family of morphisms which is stable under base change and such that for any covering family $\{S_i\to S\}$ and any family $\{T_i\to S_i\}$ of morphisms in $\mathcal{N}$, any descent data on the $T_i$ relative to $\{S_i\to S\}$ is effective. Suppose that $X$ is squarable and the morphism $R\to X\times X$ belongs to $\mathcal{N}$, then $F_0=F$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+The proof of (\rmnum{1}) follows from \cref{site sheaf quotient by equivalence relation char}. As for (\rmnum{2}), we have seen the equivalence of (\rmnum{1}) and (\rmnum{3}) as well as the equality $F=X/R$ (cf. \cref{site sheaf M-effective relation iff quotient representable}). It remains to prove that (\rmnum{2}) or (\rmnum{3}) implies $F_0=F$, but for this we first note that $F_0$ is indeed a sub-functor of $F$. In fact, for any $S\in\Ob(\mathcal{C})$ and $Z\in F_0(S)$, the morphism $Z\to S$ belongs to $\mathcal{M}$ and hence is squarable, so $Z\times_SS'$ belongs to $F_0(S')$ for any $S'\to S$. As $R\in F(X)$ belongs to $F_0(X)$, \cref{site sheaf quotient factor through if} shows that (\rmnum{2}) implies $F_0=F$.\par
+Now suppose that (\rmnum{3}) is satisfied and let $Q$ be an object of $\mathcal{C}$ representing $X/R$. Then the morphism $X\to Q$ belongs to $\mathcal{M}$ and, for any $S\in\Ob(\mathcal{C})$ and any $Z\in F(S)$, the diagram (\ref{site sheaf quotient by equivalence relation char-1}) of \cref{site sheaf quotient by equivalence relation char} shows that $Z=S\times_{(Q\times S)}X\times S$ is representable, and $Z\to S$ belongs to $\mathcal{M}$, hence $Z\in F_0(S)$.\par
+Finally, to prove (c), let $f:S\to F$ be a morphism corresponding to $Z\in F(S)$. We must show that $f$ factors through $F_0$, which means $Z$ is representable. For this, we first note that if $f$ factors through $X$, then it is the image of an element $x_0\in X(S)$, and the corresponding sheaf $Z$ is defined by the Cartesian squares (since the morphism $p:X\to F$ corresponds to the subsheaf $R$ of $X\times X$)
+\[\begin{tikzcd}
+Z\ar[r]\ar[d]&R_S\ar[r]\ar[d]&R\ar[d]\\
+X_S\ar[r,"{\id_{X_S}\times\tau_{x_0}}"]&X_S\times_SX_S\ar[r]&X\times X
+\end{tikzcd}\]
+where $\tau_{x_0}$ is the morphism $X_S\to X_S$ defined by $(x,s)\mapsto(x_0(s),s)$\footnote{Unwinding the definitions, we see that for any $S'\to S$, $Z(S)$ consists of elements $(x,s)\in X(S')\times S'$ such that $(x_0(s),x)\in R(S')$, so its quotient by $R_Z$ is $S$.}. Moreover, as $R\to X\times X$ belongs to $\mathcal{N}$, so is $Z\to X_S$.\par
+For the general case, as $X\to F$ is a covering morphism, there exists a covering family $\{S_i\to S\}$ and for each $i$ a morphism $S_i\to X$ fitting into the diagram
+\[\begin{tikzcd}
+X\ar[r]&F\\
+S_i\ar[r]\ar[u]&S\ar[u,swap,"f"]
+\end{tikzcd}\]
+By the preceding arguments, the morphism $f_i:S_i\to F$ defined by this diagram belongs to $F_0(S_i)$ and corresponds to the subsheaf $Z\times_SS_i$ of $X_{S_i}$, and the morphism $Z\times_SS_i\to X_{S_i}$ belongs to $\mathcal{N}$. As the family $\{X_{S_i}\to X_S\}$ is covering, the descent data on $Z\times_SS_i$ provides a descent object over $S$ by our hypothesis, which must represents $Z$ in view of \cref{site sheaf representable iff descent data effective}.
+\end{proof}
+
+\begin{corollary}\label{site sheaf quotient by M-effective Hom set char}
+Let $R$ be an $\mathcal{M}$-effective equivalence relation on $X$. For any sheaf $F$, the map
+\[\Hom(X/R,F)\to\Hom(X,F)\]
+identifies $\Hom(X/R,F)$ with the subset formed by morphisms $X\to F$ compatible with $R$.
+\end{corollary}
+\begin{proof}
+By \cref{site sheaf quotient by M-effective char}, $X/R$ represents the quotient sheaf $\widetilde{X}/\widetilde{R}$, and the defining property of $\widetilde{X}/\widetilde{R}$ gives the assertion.
+\end{proof}
+
+\begin{remark}\label{site sheaf quotient by M-effective descent morphism in N remark}
+In the hypothesis of \cref{site sheaf quotient by M-effective char}~(\rmnum{3}), if we further suppose that the descent object $T$ is such that the morphism $T\to S$ belongs to $\mathcal{N}$, then the inclusion morphism $Z\to X_S$ also belongs to $\mathcal{N}$, as it is obtained by the descent data on the morphisms $Z\times_SS_i\to X_{S_i}$, which are in $\mathcal{N}$.
+\end{remark}
+
+\begin{remark}\label{site sheaf quotient by M-effective M1 to M4 remark}
+We have proved the implications (\rmnum{3})$\Rightarrow$(\rmnum{2})$\Rightarrow$(\rmnum{1}) and (\rmnum{3})$\Rightarrow$$[F_0=F=X/R]$ in \cref{site sheaf quotient by M-effective char} without resorting the "sufficient" part of \cref{site sheaf quotient by M-effective char}, which is the only place we use condition ($\text{M5}_\mathcal{T}$). Therefore, they remain valid if $\mathcal{M}$ only satisfies conditions (M1)--($\text{M4}_\mathcal{T}$). An example of such a family of that of squarable covering morphisms.
+\end{remark}
+
+
+\begin{corollary}\label{site sheaf quotient by M-effective quotient for subcanonical topology}
+Under the conditions of \cref{site sheaf quotient by M-effective char}~(\rmnum{2}), $X/R$ is also the quotient sheaf of $X$ by $R$ for any intermediate topology between $\mathcal{T}$ and the canonical topology.
+\end{corollary}
+\begin{proof}
+If $\mathcal{T}'$ is an intermediate topology between $\mathcal{T}$ and the canonical topology, then $\mathcal{M}$ satisfies (M1)--($\text{M4}_{\mathcal{T}'}$), so $F_0$ is identified with the quotient sheaf of $X$ by $R$ for $\mathcal{T}'$ (\cref{site sheaf quotient by M-effective M1 to M4 remark}), which is $X/R$.
+\end{proof}
+
+\begin{corollary}
+Let $R$ be a universally effective equivalence relation on $X$. Then the object $X/R$ of $\mathcal{C}$ represents the quotient sheaf of $X$ by $R$ for the canonical topology. Moreover, $(X/R)(S)$ is the set of sub-$\mathcal{C}_{/S}$-objects $Z$ of $X_S$ stable under $R\times S$ such that $R_Z$ is universally effective and the quotient of $Z$ by $R_Z$ is $S$.
+\end{corollary}
+
+\begin{corollary}
+Let $\mathcal{M}$ be the family of squarable covering morphisms. If $R$ is an $\mathcal{M}$-effective equivalence relation on $X$, then $X/R$ of $\mathcal{C}$ represents the quotient sheaf of $X$ by $R$ and it also represents the functor $F_0$ of \cref{site sheaf quotient by M-effective char}.
+\end{corollary}
+
+While in questions involving exclusively projective limits (fiber products, algebraic structures, etc.) we can identify $\mathcal{C}$ indiscriminately with a full subcategory of $\widetilde{\mathcal{C}}$ or of $\widehat{\mathcal{C}}$, it is not the same in those which combine projective and inductive limits. In questions involving both projective limits and inductive limits (in particular passages to the quotient), we should consider the given category as embedded in the category of sheaves. Thus if $R$ is a $\mathcal{C}$-equivalence relation on the object $X$ of $\mathcal{C}$, $X/R$ will denote the quotient sheaf of $X$ by $R$ (designated previously by $(i(X)/i(R))^\#$), so in the case where this sheaf is representable, the object representing it. The previous results show that in the most important cases, a quotient in $\mathcal{C}$ will also be a quotient in the category of sheaves.\par
+
+We now give an example of the usage of effectivity criteria. As before, let $\mathcal{T}$ be a subcanonical topology on $\mathcal{C}$ and choose a family $\mathcal{M}$ of morphisms satisfying conditions (M1)--($\text{M5}_\mathcal{T}$). We consider a family $\mathcal{N}$ of morphisms in $\mathcal{C}$ with the following properties:
+\begin{enumerate}[leftmargin=40pt]
+    \item[(N1)] $\mathcal{N}$ is stable under base change.
+    \item[($\text{N}_\mathcal{T}$)] The morphisms of $\mathcal{N}$ have descent property for the given topology. That is, for any $S\in\Ob(\mathcal{C})$, any covering family $\{S_i\to S\}$ and any family $\{T_i\to S_i\}$ of morphisms in $\mathcal{N}$, any dascent data on $T_i$ relative to $\{S_i\to S\}$ is effective, and if $T$ is the descent object, the morphism $T\to S$ belongs to $\mathcal{N}$.
+\end{enumerate}
+As any element of $\mathcal{M}$ is covering, ($\text{N}_\mathcal{T}$) implies the following property:
+\begin{enumerate}[leftmargin=40pt]
+    \item[($\text{N}_\mathcal{M}$)] If $Y'\to X'$ belongs to $\mathcal{N}$ and $X'\to X$ belongs to $\mathcal{M}$, any descent data over $Y'$ relative to $X'\to X$ is effective. If $Y$ is the descent object, then $Y\to X$ belongs to $\mathcal{N}$.
+\end{enumerate}
+A particular important example is the following: $\mathcal{C}$ is the category of schemes, $\mathcal{T}$ is the fpqc topology, $\mathcal{M}$ is the family of faithfully flat and quasi-compact morphisms, $\mathcal{N}$ is the family of closed immersions, or that of quasi-compact immersions.\par
+By \cref{site sheaf quotient by M-effective char}, we then have the following result (cf. \cref{site sheaf quotient by M-effective descent morphism in N remark}):
+\begin{proposition}\label{site sheaf quotient by type MN char}
+Let $X$ be a squarable object in $\mathcal{C}$ and $R$ be an equivalence relation on $X$ of type $\mathcal{M}$ such that $R\to X\times X$ belongs to $\mathcal{N}$. Then the quotient sheaf $X/R$ is defined by
+\[(X/R)(S)=\Bigg\{\parbox{4in}{%
+sub-$\mathcal{C}_{/S}$-objects $Z$ of $X\times S$ stable under $R\times S$ such that $Z\to X_S$ belongs to $\mathcal{N}$, that $R_Z$ is $\mathcal{M}$-effective, and that the quotient of $Z$ by $R_Z$ is $S$%
+}\Bigg\}.\]
+\end{proposition}
+
+Moreover, we have the following correspondence of stable subobjects of $X$ and $\mathcal{M}$-effective equivalence relations.
+\begin{proposition}\label{site sheaf quotient by M-effective stable N-subobject correspond}
+Let $X\in\Ob(\mathcal{C})$ and $R$ be an $\mathcal{M}$-effective equivalence relation on $X$.
+\begin{enumerate}
+    \item[(a)] For any sub-object $Y$ of $X$, stable under $R$ and such that $Y\to X$ belongs to $\mathcal{N}$, the equivalence relation induced on $Y$ by $R$ is $\mathcal{M}$-effective and the quotient $Y/R_Y=Y'$ is a sub-object of $X'=X/R$ such that $Y'\to X'$.
+    \item[(b)] The map $Y\mapsto Y'$ is a bijection from the set of sub-objects $Y$ of $X$ stable under $R$ such that $Y\to X$ belongs to $\mathcal{N}$ to the set of sub-objects $Y'$ of $X'$ such that $Y'\to X'$ belongs to $\mathcal{N}$. The inverse map is given by $Y'\to Y'\times_{X'}X$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+As $R$ is $\mathcal{M}$-effective, the morphism $X\to X'$ belongs to $\mathcal{M}$. Let $Y'$ be a sub-object of $X'$ such that the canonical morphism $Y'\to X'$ belongs to $\mathcal{N}$. Then, the sub-object $Y=Y'\times_{X'}X$ of $X$ is stable under $R$, and the morphism $Y\to X$ (resp. $Y\to Y'$) belongs to $\mathcal{N}$ (resp. $\mathcal{M}$) since $\mathcal{N}$ and $\mathcal{M}$ are stable under base change. By \cref{site sheaf stable subsheaf and subquotient correspond}, the quotient sheaf $R/R_Y$ is represented by $Y'$ and hence, by \cref{site sheaf M-effective relation iff quotient representable}, $R_Z$ is $\mathcal{M}$-effective.\par
+Conversely, any sub-object $Y$ of $X$, stable under $R$ and such that the morphism $Y\to X$ belongs to $\mathcal{N}$, is obtained in this way. In fact, if $Y$ is stable under $R$, its two inverse images in $R=X\times_{X'}X$ are identical and $Y$ is endowed with a descent data relative to $X\to X'$; our assertion then follows from ($\text{N}_\mathcal{M}$).
+\end{proof}
+
+\begin{corollary}
+Let $X\in\Ob(\mathcal{C})$ and $R$ be an $\mathcal{M}$-effective equivalence relation on $X$. Suppose that $R\to X\times X$ belongs to $\mathcal{N}$, then for any $Y$ as in \cref{site sheaf quotient by M-effective stable N-subobject correspond}, $R_Y\to Y\times Y$ belongs to $\mathcal{N}$ and hence, by \cref{site sheaf quotient by type MN char}, we have
+\[(Y/R_Y)(S)=\left\{\parbox{4in}{%
+sub-$\mathcal{C}_{/S}$-objects $Z$ of $Y\times S$ stable under $R_Y\times S$ such that $Z\to Y_S$ belongs to $\mathcal{N}$, that $R_Z$ is $\mathcal{M}$-effective, and that the quotient of $Z$ by $R_Z$ is $S$%
+}\right\}.\]
+\end{corollary}
+
+\subsection{Passage to quotient and algebraic structures}
+\paragraph{Principal homogeneous bundles} 
+We recall that an object $X$ in $\widehat{\mathcal{C}}$ with a (right) group action by a group functor $H$ is called \textbf{formally principal homogeneous} under $H$ if the canonical morphism
+\[X\times H\to X\times X,\quad (x,h)\mapsto (x,xh)\]
+is an isomorphism. Equivalently, this means for any $S\in\Ob(\mathcal{C})$, $X(S)$ is formally principal homogeneous under $H(S)$, which is therefore empty or principal homogeneous under $H(S)$. In particular, if we act $H$ on itself by (right) translations, then $H$ is formally principal homogeneous under itself. The $H$-object $X$ is called trivial if it is isomorphic to $H$ acted by right translations.
+\begin{proposition}\label{category formally principal homogeneous global section char}
+If $X$ be formally principal homogeneous under $H$, we have an isomorphism
+\[\Gamma(X)\stackrel{\sim}{\to}\Iso_H(H,X)\]
+of principal homogeneous sets under $\Gamma(H)$.
+\end{proposition}
+\begin{proof}
+To any section $x$ of $X$, we can associate the morphism $H\to X$ defined set-wise by $h\mapsto xh$. The assertion is then immediate.
+\end{proof}
+
+\begin{corollary}
+We have an isomorphism of $H$-objects
+\[X\stackrel{\sim}{\to} \sIso_H(H,X).\]
+Moreover, for $X$ to be trivial, it is necessary and sufficient that $X$ is formally principal homogeneous and possesses a global section.
+\end{corollary}
+
+\begin{definition}
+Let $\mathcal{C}$ be a site. An $S$-object $X$ with an action by $H$ is called a \textbf{principal homogeneous bundle under $H$} if it is \textbf{locally trivial}, that is, if the following equivalent conditions are satisfied:
+\begin{enumerate}
+    \item[(\rmnum{1})] The set of morphisms $T\to S$ such that (the functor) $X\times_ST$ is trivial under $H\times_ST$ is a refinement of $S$.
+    \item[(\rmnum{2})] There exists a covering family $\{S_i\to S\}$ such that for each $i$, the $S_i$-functor $X\times_SS_i$ is trivial under $H\times_SS_i$.
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}\label{site formally principal homogeneous under M-group iff}
+Let $\mathcal{C}$ be a site and $\mathcal{M}$ be a family of morphisms in $\mathcal{C}$ satisfying conditions (M1)--($\text{M}5_\mathcal{T}$) of \ref{site sheaf quotient by equivalence relation paragraph}. Let $H$ be an $S$-group such that the structural morphism $H\to S$ belongs to $\mathcal{M}$ and $P$ be an $S$-object acted by $H$. The following conditions are equivalent:
+\begin{enumerate}
+    \item[(\rmnum{1})] $P$ is a principal homogeneous bundle under $H$.
+    \item[(\rmnum{2})] $P$ is formally principal homogeneous under $H$ and the structural morphism $P\to S$ belongs to $\mathcal{M}$.
+    \item[(\rmnum{3})] There exists a morphism $S'\to S$ in $\mathcal{M}$ such that the base change of $P$ to $S'$ is trivial, that is, $P\times_SS'$ is trivial under $H\times_SS'$.
+    \item[(\rmnum{4})] $H$ acts freely and $\mathcal{M}$-effectively on $P$ and the quotient $P/H$ is isomorphic to $S$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+We first note that (\rmnum{2}) and (\rmnum{4}) are equivalent, in view of the fact that, in either case, $P\to S$ belongs to $\mathcal{M}$, hence is squarable, which ensures the representability of $H\times_SP$ and $P\times_SP$. It is clear that (\rmnum{2}) implies (\rmnum{3}), because we can take $S'=P$, and the hypothesis that $P$ is formally principal homogeneous implies that $P\times_SP$ is trivial under $H\times_SP$, since it has a section (the diagonal section $P\to P\times_SP$). On the other hand, (\rmnum{3}) implies (\rmnum{1}), since $\{S'\to S\}$ is a covering family by condition ($\text{M4}_\mathcal{T}$). It then remains to show that (\rmnum{1})$\Rightarrow$(\rmnum{2}). In this case, the morphism of sheaves $P\times_SH\to P\times_SP$ is locally an isomorphism, hence an isomorphism (\cite{SGA3} \Rmnum{4}, 4.5.8); $P$ is then formally principal homogeneous. The structural morphism $P\to S$ is locally isomorphic to the structural morphism $H\to S$, which belongs to $\mathcal{M}$. It is then an element of $\mathcal{M}$ by (M1) and ($\text{M5}_\mathcal{T}$).
+\end{proof}
+
+We note that if $H$ acts freely on an $S$-object $X$ and $p:X\to Y=X/H$ is the quotient morphism, then we have an induced morphism
+\[(H\times_SY)\times_YX=H\times_SX\to X.\]
+Therefore, $H\times_SY$ has an induced action on $X$ over $Y$, and the quotient $X/H\times_SY$ is $Y$. The equivalence of (\rmnum{1}) and (\rmnum{4}) in \cref{site formally principal homogeneous under M-group iff} can therefore be generalized to the following proposition:
+\begin{proposition}\label{site M-effective principal homogeneous bundle iff}
+Under the same hypothesis of \cref{site formally principal homogeneous under M-group iff}, assume that the topology $\mathcal{T}$ is subcanonical. Let $H$ be an $S$-group and $X$ be an $S$-object over which $H$ acts (on right). Suppose that the structural morphism $H\to S$ belongs to $\mathcal{M}$, then the following conditions are equivalent:
+\begin{enumerate}
+    \item[(\rmnum{1})] $H$ acts freely and $\mathcal{M}$-effectively on $X$. 
+    \item[(\rmnum{2})] There exists an $S$-morphism $p:X\to Y$ compatible with the equivalence relation on $X$ defined by $H$ and such that the induced action of $H\times_SY$ on $X$ over $Y$ makes $X$ a principal homogeneous bundle under $H_Y$ over $Y$.
+\end{enumerate}
+Under these conditions, $p$ identifies $Y$ with the quotient $X/H$.
+\end{proposition}
+
+\begin{corollary}\label{site covering morphism of quotient by ker is torsor}
+Let $\mathcal{C}$ be a category possessing a final object, arbitrary fiber products, and endowed with a subcanonical topology $\mathcal{T}$. Let $f:G\to H$ be a morphism of $\mathcal{C}$-groups and $K=\ker f$, and suppose that $f$ belongs to a family $\mathcal{M}$ satisfying conditions (M1)--($\text{M}5_\mathcal{T}$). Then $H$ represents the quotient sheaf $G/K$, and $f$ is a $K_H$-torsor\footnote{We also say that $G$ is a $K$-torsor over $H$.}.
+\end{corollary}
+\begin{proof}
+In fact, as $f$ is covering, it is a universally effective epimorphism, so $H$ is the quotient of $G$ by the equivalence relation $R(f)=G\times_HG$, which is also the equivalence relation defined by $K$. On the other hand, the morphism $G\times K\to G\times_HG$, $(g,k)\mapsto(g,gk)$ is an isomorphism of $K_G=G\times_HK_H$-objects. Since the morphism $f:G\to H$ is covering, $f$ is a $K_H$-torsor by \cref{site formally principal homogeneous under M-group iff}~(\rmnum{2}).
+\end{proof}
+
+We can now specify \cref{site sheaf quotient by M-effective char} in the case of passage to quotient by a group action:
+\begin{proposition}\label{site sheaf quotient by M-effective free group action char}
+Under the hypothesis of \cref{site formally principal homogeneous under M-group iff}, assume that the topology $\mathcal{T}$ is subcanonical and denote by $F_0$ the functor over $S$ defined as follows: for any $S'\to S$, $F_0(S')$ is the set of representable sub-$S'$-functors $Z$ of $X\times_SS'$, stable under $H\times_SS'$ and is a principal homogeneous bundle under the induced $S'$-group action.
+\begin{enumerate}
+    \item[(a)] The following conditions are equivalent:
+    \begin{enumerate}
+        \item[(\rmnum{1})] The action of $H$ on $X$ is $\mathcal{M}$-effective and free.
+        \item[(\rmnum{2})] $F_0$ is representable 
+    \end{enumerate}
+    Under these conditions, we have $F_0=X/H$.
+    \item[(b)] Let $\mathcal{N}$ be a family of morphisms which is stable under base change and such that for any covering family $\{S_i\to S\}$ and any family $\{T_i\to S_i\}$ of morphisms in $\mathcal{N}$, any descent data on the $T_i$ relative to $\{S_i\to S\}$ is effective. Suppose that $X$ is squarable and the morphism $X\times_SH\to X\times_SX$ belongs to $\mathcal{N}$, then the morphism $p:X\to F_0$ corresponding to the sub-object $X\times_SH$ of $X\times_SX$ identifies $F_0$ with the quotient sheaf $X/H$.
+\end{enumerate}
+\end{proposition}
+
+\paragraph{Group structure and passage to quotient}
+We are now intersted in the algebraic structure induced on the quotient $G/H$ of a group by a subgroup. We first consider category of sheaves over $\mathcal{C}$ for an arbitrary topology. By taking the canonical topology and apply \cref{site sheaf quotient by M-effective M1 to M4 remark}, we then obtain results for the passage to universally effective quotients in $\mathcal{C}$.
+
+\begin{proposition}\label{site quotient sheaf by subgroup G-action structure}
+Let $u:H\to G$ be a monomorphisms of sheaves of groups. Then there exists a unique $G$-object structure on the quotient sheaf $G/H$ such that the canonical morphism
+\[p:G\to G/H\]
+is a morphism of $G$-objects. This structure is functorial relative to $(G,H)$: if we have a commutative diagram
+\[\begin{tikzcd}
+H\ar[r]\ar[d]&G\ar[d]\\
+H'\ar[r]&G'
+\end{tikzcd}\]
+Then the induced morphism $G/H\to G'/H'$ is compatible with $G\to G'$.
+\end{proposition}
+\begin{proof}
+The sheaf $G/H$ is the sheaf associated with the presheaf
+\[i(G)/i(H):S\mapsto G(S)/H(S);\]
+as $\#$ is left exact, it transforms objects acted by groups into objects acted by groups. Since the presheaf $i(G)/i(H)$ is endowed with an action by $i(G)$, $G/H=(i(G)/i(H))^\#$ is endowed with an action by $(i(G))^\#=G$. This structure clearly has the required properties.
+\end{proof}
+
+\begin{corollary}\label{site quotient by universally effective subgroup G-action structure}
+Let $u:H\to G$ be a monomorphism of $\mathcal{C}$-groups. Suppose that the action of $H$ on $G$ is universally effective, then there exists a uniqur $G$-object structure on the quotient object $G/H$ in $\mathcal{C}$ such that $p:G\to G/H$ is a morphism of $G$-objects. This structure is functorial relative to $(G,H)$.
+\end{corollary}
+
+\begin{proposition}\label{site quotient sheaf by normal subgroup group structure}
+Let $u:H\to G$ be a monomorphism of sheaves of groups which identifies $H$ with a normal subsheaf of $G$. Then there exists a unique group structure on the quotient sheaf $G/H$ such that the caonical morphism $p:G\to G/H$ is a group morphism. This structure is functorial relative to the couple $(G,H)$ ($H$ being normal).
+\end{proposition}
+\begin{proof}
+The proof is the same as \cref{site quotient sheaf by subgroup G-action structure}.
+\end{proof}
+
+\begin{corollary}\label{site quotient by universally effective normal subgroup group structure}
+Let $u:H\to G$ be a monomorphism of $\mathcal{C}$-groups identifying $H$ with a normal subgroup of $G$. Suppose that the action of $H$ on $G$ is universally effective, then there exists a group structure on the quotient object $G/H$ in $\mathcal{C}$ such that $p:G\to G/H$ is a morphism of groups. This structure is functorial relative to $(G,H)$ ($H$ being normal and acts universally effectively).
+\end{corollary}
+
+We can characterize the group structure of $G/H$ in the following way:
+\begin{proposition}\label{site quotient by normal subgroup universal prop}
+Under the conditions of \cref{site quotient sheaf by normal subgroup group structure}, let $K$ be a $\mathcal{C}$-group and $f:G\to K$ be a morphism. The following conditions are equivalent:
+\begin{enumerate}
+    \item[(\rmnum{1})] $f$ is a morphism of groups compatible with the equivalence relation defined by $H$.
+    \item[(\rmnum{2})] $f$ is a morphism of groups inducing the trivial morphism $H\to K$.
+    \item[(\rmnum{3})] $f$ factors into a morphism of groups $G/H\to K$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+The equivalence of (\rmnum{1}) and (\rmnum{2}) is proved set-wisely. We evidently have (\rmnum{3})$\Rightarrow$(\rmnum{2}). The equivalence of (\rmnum{3}) and (\rmnum{2}) then follows from the formula
+\[\Hom(G/H,K)\cong\Hom(i(G)/i(H),K)\]
+and the definition of the group structure of $G/H$.
+\end{proof}
+
+\begin{remark}
+In the preceding situation, if the kernel of $f$ is exactly $H$, then the morphism $G/H\to K$ which factors $f$ is a monomorphism. This follows from \cref{category universal effective equivalence factor monomorphism iff}.
+\end{remark}
+
+In the case of sheaves of groups, we can precise \cref{site sheaf stable subsheaf and subquotient correspond} as following:
+
+\begin{proposition}\label{site sheaf quotient by normal subgroup correspond}
+Let $G$ be a sheaf of groups, $H$ be a normal subsheaf of groups. For any subsheaf of groups $K$ of $G$ containing $H$, let $K'$ be the quotient group $K/H$ considered as a a subgroup of $G'=G/H$. Then we have $K=K'\times_{G'}G$, and the maps $K\mapsto K/H$, $K'\mapsto K'\times_{G'}G$ define a bijection between the set of subsheaves of groups of $G$ containing $H$ and the set of subsheaves of groups of $G'$. In this correspondence, normal subgroups of $G$ corresponds to that of $G'$.
+\end{proposition}
+\begin{proof}
+The first assertion follows equally from \cref{site sheaf stable subsheaf and subquotient correspond} and \cref{category equivalence relation by free action stable subobject iff}. It remains to show that $K$ is normal in $G$ if and only if $K'$ is normal in $G'$. If $K$ is normal in $G$, then the presheaf $i(K)/i(H)$ is normal in $i(G)/i(H)$, and the same is true for the associated sheaves. Conversely, if $K'$ is normal in $G'$, then the fiber product $K'\times_{G'}G$ is normal in $G$, which is equal to $K$.
+\end{proof}
+Now if $L$ is a subsheaf of groups of $G$, then there exists a smallest normal subsheaf of groups $\widebar{L}$ of $G$ containing $L$, called the saturation of $L$. In fact, we have $\widebar{L}=L\cdot H$.
+
+\begin{proposition}\label{site sheaf quotient by normal subgroup second isomorphism}
+Under the preceding conditions, $L\cdot H$ is a subsheaf of groups of $G$ containing $H$ and the image of $L$ in $G/H$ is identified with
+\[(L\cdot H)/H\cong L/(H\cap L).\]
+\end{proposition}
+\begin{proof}
+Denote by $L'$ the image sheaf of $L$ in $G/H$. This is a subsheaf of groups of $G/H$ corresponding to $L\cdot H$ by \cref{site sheaf quotient by normal subgroup correspond}. As the morphism $L\to L'$ is covering, hence a universally effective epimorphism of sheaves, it follows from \cref{site sheaf equivalence relation is universally effective} that $L'$ is identified with the quotient of $L$ by the kernel of $L\to L'$, which is evidently $H\cap L$.
+\end{proof}
+
+Finally, we consider the following case: we have a sheaf of groups $G$, a subsheaf of groups $K$ of $G$ and a subsheaf of groups $H$ of $K$, which is normal in $K$. Let us first define a (right) action of the sheaf in groups $H\backslash K$ ($=K/H$) on $G/H$. The group $K$ operates by right translations on $G$. As $H$ is normal in $K$, this operation is compatible with the equivalence relation defined by the action of $H$ and thus defines an operation of $K$ on $G/H$, that is, a morphism of the opposite group $K^\op$ to $\sAut(G/H)$. Since the latter is a sheaf (cf. \cite{SGA3}, \Rmnum{4}, 4.5.13) and that this morphism is trivial on $H$, it factors through $K/H$ and defines the desired operation. Since the right and left operations of $G$ on itself commute, the operations of $G$ and $K/H$ on $G/H$ commute.
+
+\begin{proposition}\label{site sheaf quotient by normal subgroup third isomorphism}
+Under the preceding conditions, $K/H$ acts freely on $G/H$ (on the right) and we have a canonical isomorphism of sheaves operated by $G$:
+\[(G/H)/(K/H)\cong G/K.\]
+If $K$ is normal in $G$, then $K/H$ is normal in $G/H$ and this isomorphism is a group isomorphism.
+\end{proposition}
+\begin{proof}
+We have an isomorphism of presheaves
+\[i(G)/i(K)\stackrel{\sim}{\to} (i(G)/i(H))/(i(K)/i(H))\]
+which respects the action of $i(G)$. The result then follows by applying $\#$ on both sides.
+\end{proof}
+
+\begin{corollary}\label{site sheaf quotient by normal subgroup third isomorphism M-effective iff}
+Let $G$ be a $\mathcal{C}$-group, $K$ be a sub-$\mathcal{C}$-group of $G$, $H$ be a normal sub-$\mathcal{C}$-group of $K$. Let $\mathcal{M}$ be a family of morphisms in $\mathcal{C}$ verifying the conditions (M1)--($\text{M5}_\mathcal{T}$). Suppose that the right action of $H$ on $G$ (resp. $K$) is $\mathcal{M}$-effective, then $K/H$ acts freely on $G/H$, and this action commutes with that of $G$. The following conditions are equivalent:
+\begin{enumerate}
+    \item[(\rmnum{1})] The action of $K$ on $G$ is $\mathcal{M}$-effective.
+    \item[(\rmnum{2})] The action of $K/H$ on $G/H$ is $\mathcal{M}$-effective.
+\end{enumerate}
+Under these conditions, we have an isomorphism of $G$-objects in $\mathcal{C}$:
+\[(G/H)/(K/H)\cong G/K.\]
+\end{corollary}
+\begin{proof}
+Since $H$ acts $\mathcal{M}$-effectively on $G$ and $K$, by \cref{site sheaf quotient by normal subgroup third isomorphism} we have a diagram
+\[\begin{tikzcd}
+H\ar[r,hook]&K\ar[r,hook]\ar[d]&G\ar[d]\\
+&K/H\ar[r,hook]&G/H\ar[d]\\
+&&G/K
+\end{tikzcd}\]
+where the square is Cartesian. Since $\mathcal{M}$ is stable under composition, if $K/H$ acts on $G/H$ $\mathcal{M}$-effectively, then we conclude that $G\to G/K\in\mathcal{M}$, so $K$ acts on $G$ $\mathcal{M}$-effectively. Conversely, if $G\to G/K$ belongs to $\mathcal{M}$, then consider the Cartesian diagram
+\[\begin{tikzcd}
+K\times G\ar[r]\ar[d]&G\ar[d]\\
+(K/H)\times(G/H)\ar[r]&(G/H)
+\end{tikzcd}\]
+By hypothesis, the morphism $K\times G\to G\times G$ belongs to $\mathcal{M}$ (\cref{category equivalence relation M-effective prop}), and $G\to G/H$ belongs to $\mathcal{M}$. We then conclude from (M1) and ($\text{M5}_\mathcal{T}$) that $(K/H)\times(G/H)\to G/H$ belongs to $\mathcal{M}$, so the equivalence relation on $G/H$ defined by $K/H$ is of type $\mathcal{M}$. Since the quotient of $G/H$ by this equivalence relation is represented by $G/K$, we conclude from \cref{site sheaf quotient by M-effective char} that the action of $K/H$ on $G/H$ is $\mathcal{M}$-effective. 
+\end{proof}
+
+Now let $\mathcal{N}$ be a family of morphisms in $\mathcal{C}$ verifying conditions (N1) and ($\text{N}_\mathcal{M}$) of \cref{site sheaf quotient by equivalence relation paragraph}. By \cref{site sheaf quotient by normal subgroup correspond} and \cref{site sheaf quotient by M-effective stable N-subobject correspond}, we obtain:
+\begin{proposition}\label{site sheaf quotient by normal N-subgroup correspond}
+Let $G$ be a $\mathcal{C}$-group and $H$ be a normal sub-$\mathcal{C}$-group of $G$ whose action on $G$ is $\mathcal{M}$-effective.
+\begin{enumerate}
+    \item[(a)] For any sub-$\mathcal{C}$-group $K$ of $G$ containing $H$ and such that the morphism $K\to G$ belongs to $\mathcal{N}$, $H$ acts $\mathcal{M}$-effectively on $K$ and the quotient $K/H\to K'$ is a sub-$\mathcal{C}$-group of $G'=G/H$ such that the morphism $K'\to G'$ belongs to $\mathcal{N}$.
+    \item[(b)] The map $K\mapsto K'=K/H$ is a bijection from the set of sub-$\mathcal{C}$-groups $K$ of $G$ containing $H$ and such that the morphism $K\to G$ belongs to $\mathcal{N}$, $H$ acts $\mathcal{M}$-effectively on $K$ to the set of sub-$\mathcal{C}$-groups $K'$ of $G'$ such that the morphism $K'\to G'$ belongs to $\mathcal{N}$. Under this correspondence, the normal subgroups of $G$ correspond to that of $G'$.
+\end{enumerate}
+\end{proposition}
+\begin{corollary}\label{site sheaf quotient by normal N-subgroup unit section in N}
+If $H\to G$ belongs to $\mathcal{N}$, then $\mathcal{C}$ possesses a final object $e$ and the unit section $e\to G/H$ belongs to $\mathcal{N}$.
+\end{corollary}
+\begin{proof}
+This follows form \cref{site sheaf quotient by normal N-subgroup correspond} by taking $K=H$.
+\end{proof}
+
+\subsection{Applications to the category of schemes}\label{site topology on Sch subsection}
+Let $\mathbf{Sch}$ be the category of schemes, to which we can assocate the Zariski topology, that is, the topology generated by the family of morphisms $\{S_i\to S\}$, where each $S_i\to S$ is an open immersion and the union of images of $S_i$ is equal to $S$. A sheaf over the Zariski topology is also called of local nature: this is a contravariant functor $F:\mathbf{Sch}^{\op}\to\mathbf{Set}$ such that for any scheme $S$ and any covering $\{S_i\to S\}$, we have an exact diagram
+\[\begin{tikzcd}
+F(S)\ar[r]&\prod_iF(S_i)\ar[r,shift left=2pt]\ar[r,shift right=2pt]&\prod_{i,j}F(S_i\cap S_j)
+\end{tikzcd}\]
+In particular, a functor of local natura transforms direct sums to products. As any representable functor is a sheaf, this topology is coarser than the canonical topology.\par
+To introduce (and handle) more topologies on $\mathbf{Sch}$, we need a general criterion to identify the covering families of the topology generated by certain family of morphisms. This is contained in the following proposition.
+\begin{proposition}\label{site topology generated by refining family prop}
+Let $\mathcal{C}$ be a category and $\mathcal{C}'$ be a full subcategory. Let $P$ be a set of families of morphisms of $\mathcal{C}$ with the same codomains, which is stable under composition and base change, and $P'$ be a set of families of morphisms of $\mathcal{C}'$ containing the families of identity morphisms. We endow $\mathcal{C}$ with the topology generated by $P$ and $P'$ and suppose that the following conditions are satisfied:
+\begin{enumerate}
+    \item[(a)] If $\{S_i\to S\}\in P'$ (hence $S_i,S\in\Ob(\mathcal{C}')$) and $T\to S$ is a morphism in $\mathcal{C}'$, then the fiber products $S_i\times_ST$ (in $\mathcal{C}$) exist and the family $\{S_i\times_ST\to T\}$ belongs to $P'$.
+    \item[(b)] For any $S\in\Ob(\mathcal{C})$, there exists $\{S_i\to S\}\in P$ with $S_i\in\Ob(\mathcal{C}')$ for each $i$.
+    \item[(c)] In the following situation
+    \[\begin{tikzcd}
+    S_{ijk}\ar[r,"(P')"]&S_{ij}\ar[r,"(P)"]&S_i\ar[r,"(P')"]&S
+    \end{tikzcd}\]
+    where $S,S_i,S_{ij},S_{ijk}\in\Ob(\mathcal{C}')$, $\{S_i\to S\}\in P'$, $\{S_{ij}\to S_i\}\in P$ for each $i$, $\{S_{ijk}\to S_{ij}\}\in P'$ for any $i,j$, there exists a family $\{T_n\to S\}\in P'$ and for each $n$ a multi-index $ijk$ and a commutative diagram
+    \[\begin{tikzcd}[row sep=4mm, column sep=4mm]
+    T_n\ar[rd]\ar[rr]&&S_{ijk}\\
+    &S\ar[ru]&
+    \end{tikzcd}\]
+\end{enumerate}
+Then for a sieve $R$ of $S\in\Ob(\mathcal{C})$ to be covering, it is necessary and sufficient that there exists a composite family
+\begin{equation}\label{site topology generated by refining family prop-1}
+\begin{tikzcd}[row sep=4mm, column sep=4mm]
+S_{ij}\ar[d,swap,"(P')"]\ar[r,dashed]&R\ar[d]\\
+S_i\ar[r,"(P)"]&S
+\end{tikzcd}
+\end{equation}
+where $S_i,S_{ij}\in\Ob(\mathcal{C}')$, $\{S_i\to S\}\in P$, $\{S_{ij}\to S_i\}\in P'$ for each $i$, and the morphisms $S_{ij}\to S$ factors through $R$.
+\end{proposition}
+\begin{proof}
+Since the families in $P$ and $P'$ are covering, any family which is the composite of such families is again covering, so a sieve of the form indicated in the proposition is covering for $\mathcal{C}$, since it contains a covering sieve. Conversely, it suffices to prove that sieves of the form (\ref{site topology generated by refining family prop-1}) form a topology, i,e, it suffices to verify the axioms (T1)--(T3).\par
+To verify (T3), let $S\in\Ob(\mathcal{C})$. There exists by (b) a family $\{S_i\to S\}\in P$ with $S_i\in\Ob(\mathcal{C}')$. The families $\{\id_{S_i}:S_i\to S_i\}$ belong to $P'$ by hypothesis, so the sieve $S$ of $S$ is of the following form:
+\[\begin{tikzcd}[row sep=4mm, column sep=4mm]
+S_i\ar[r]\ar[d,swap,"(P')"]&S\ar[d,"\id_S"]\\
+S_i\ar[r,"(P)"]&S
+\end{tikzcd}\]
+
+Now let $R$ be a sieve of $S$ with desired form (\ref{site topology generated by refining family prop-1}) and $R'$ be a sieve such that for any $T\to R$ in $\mathcal{C}$, the sieve $R'\times_TS$ is of the desired from. Then as the morphism $S_{ij}\to S$ factors through $R$, the sieve $R'_{ij}=R'\times_SS_{ij}$ of $S_{ij}$ is of the desicred form by hypothesis:
+\[\begin{tikzcd}[row sep=4mm, column sep=4mm]
+R'_{ij}\ar[dd]\ar[r,hook]&S_{ij}\ar[d,swap,"(P')"]\ar[rd]&\\
+&S_i\ar[d,swap,"(P)"]&R\ar[ld,hook']\\
+R'\ar[r,hook]&S&
+\end{tikzcd}\]
+so for each $ij$, we have a diagram of the form
+\[\begin{tikzcd}
+S_{ijkl}\ar[rd]\ar[d,swap,"(P')"]&\\
+S_{ijk}\ar[d,swap,"(P)"]&R'_{ij}\ar[ld,hook']\\
+S_{ij}
+\end{tikzcd}\]
+We have thus proved that there exists a composite family
+\[\begin{tikzcd}
+S_{ijkl}\ar[r,"(P')"]&S_{ijk}\ar[r,"(P)"]&S_{ij}\ar[r,"(P')"]&S_i\ar[r,"(P)"]&S
+\end{tikzcd}\]
+belonging to $P\circ P'\circ P\circ P'$, which factors through $R'$ and with all objects (except $S$) belong to $\mathcal{C}'$. Applying condition (c) to the family $\{S_{ijkl}\to S_i\}$, we then obtain for each $i$ a family $\{T_{in}\to S_i\}\in P'$, such that $T_{in}\to S$ factors through one of the $S_{ijkl}$, hence through $R'$:
+\[\begin{tikzcd}[row sep=4mm, column sep=4mm]
+T_{in}\ar[r]\ar[d,swap,"(P')"]&S_{ijkl}\ar[dd]\\
+S_i\ar[d,swap,"(P)"]&\\
+S&R'\ar[l,hook']
+\end{tikzcd}\]
+The sieve $R'$ of $S$ is therefore of the desired form (\ref{site topology generated by refining family prop-1}), which verifies axiom (T2).\par
+
+Fianlly, as for axiom (T1), let $R$ be a sieve of $S$ of the desired form and $T\to S$ be a morphism in $\mathcal{C}$. Let $T_i=S_i\times_ST$; the family $\{T_i\to T\}$ then belongs to $P$, and applying condition (b), we obtain for each $i$ a family $\{U_{ik}\to T_i\}\in P$, with $U_{ik}\in\Ob(\mathcal{C}')$. By the hypotesis on $P$, we have $\{U_{ik}\to T\}\in P$, so by condition (a), $U_{ik}\times_{S_i}S_{ij}=U_{ikj}$ is an object of $\mathcal{C}'$ and for each $ik$, $\{U_{ikj}\to U_{ik}\}\in P'$.
+\[\begin{tikzcd}
+U_{ikj}\ar[d,swap,"(P')"]\ar[rr]&&S_{ij}\ar[rdd,bend left=20pt]\ar[d,"(P')"]&\\
+U_{ik}\ar[r,"(P)"]\ar[rd,swap,"(P)"]&T_i\ar[r]\ar[d,"(P)"]&S_i\ar[d,"(P)"]&\\
+&T\ar[r]&S&R\ar[l,hook']
+\end{tikzcd}\]
+We therefore conclude that the family $\{U_{ikj}\to T\}$ factors through the sieve $T\times_SR$ of $T$, which is hence of the desired form. This proves axiom (T1) and completes the proof.
+\end{proof}
+
+\begin{corollary}\label{site topology generated by refining family covering sieve iff}
+If $S\in\Ob(\mathcal{C}')$ and $R$ is a sieve of $S$, then $R$ is covering if and only if there exists a family $\{T_i\to S\}\in P'$ which factors through $R$.
+\end{corollary}
+\begin{proof}
+In fact, any such sieve is covering. Conversely, it suffices to apply (c) to the family $\{S_i\to S\}$ and the identity morphisms of $S_i$ to deduce that any covering sieve is of the indicated form. 
+\end{proof}
+
+\begin{corollary}\label{site topology generated by refining family sheaf iff}
+For a presheaf $F\in\PSh(\mathcal{C})$ to be separated (resp. a sheaf), it is necessary and sufficient that the morphisms
+\[\begin{tikzcd}
+F(S)\ar[r]&\prod_iF(S_i)
+\end{tikzcd}\]
+is injective (resp. that the diagram
+\[\begin{tikzcd}
+F(S)\ar[r]&\prod_iF(S_i)\ar[r,shift left=2pt]\ar[r,shift right=2pt]&\prod_{i,j}F(S_i\times_SS_j)
+\end{tikzcd}\]
+is exact) for $\{S_i\to S\}\in P$ and $\{S_i\to S\}\in P'$, respectively.
+\end{corollary}
+\begin{proof}
+In fact, these conditions are necessary, because the families above are covering. Conversely, if $R$ is the sieve of $S$ of a family of morphisms $\{S_{ij}\stackrel{(P')}{\to} S_i\stackrel{(P)}{\to} S\}$, a diagram chasing shows that the above conditions imply that $\Hom(S,F)\to\Hom(R,F)$ is injective (resp. bijective). But any covering sieve $R'$ of $S$ contains a sieve generated by such a family and we have a commutative diagram
+\[\begin{tikzcd}[row sep=6mm,column sep=4mm]
+\Hom(S,F)\ar[rr,"f"]\ar[rd,swap,"g"]&&\Hom(R,F)\ar[ld,"h"]\\
+&\Hom(R',F)&
+\end{tikzcd}\]
+If $g$ is injective, then so is $f$, so in this case $F$ is separated. In this case, since the morphism $R'\to R$ is covering, we see that $h$ is also injective (cf. \cref{site morphism of presheaf covering def}). Therefore, if $g$ is bijective, so is $f$, hence $F$ is a sheaf.
+\end{proof}
+
+\begin{remark}
+The condition (c) of \cref{site topology generated by refining family prop} is satisfies if $P'$ is stable under composition and if any family $\{S_i\to S\}$ of morphisms in $P$ with $S_i,S\in\Ob(\mathcal{C}')$ has a subfamily belonging to $P'$.
+\end{remark}
+
+We now let $\mathcal{C}=\mathbf{Sch}$ be the category of schemes, and $\mathcal{C}'$ be the full subcategory formed by affine schemes. We shall consider the following sets $P'$:
+\begin{enumerate}[leftmargin=35pt]
+    \item[$P_1'$:] finite and surjective families, formed by flat morphisms;
+    \item[$P_2'$:] finite and surjective families, formed by flat morphisms of finite presentation;
+    \item[$P_3'$:] finite and surjective families, formed by \'etale morphisms;
+    \item[$P_4'$:] finite and surjective families, formed by finite \'etale morphisms;
+\end{enumerate}
+For each of these sets $P_i'$ (except $P_4'$), the conditions of \cref{site topology generated by refining family prop} are satisfied (as for (c), note that an affine scheme is quasi-compact, so any family of morphisms of $\mathcal{C}'$, belonging to $P$, contains a finite subfamily which is equally in $P$, hence in $P_i'$ for $i=1,2,3$). The corresponding topology $\mathcal{T}_i$ generated by $P$ and $P'_i$ is denoted and called by the following manner:
+\begin{enumerate}[leftmargin=35pt]
+    \item[$\mathcal{T}_1$] is the faifufully flat and quasi-compact topology (\fpqc);
+    \item[$\mathcal{T}_2$] is the faifufully flat and finite presented topology (\fppf);
+    \item[$\mathcal{T}_3$] is the \'etale topology (\et);
+    \item[$\mathcal{T}_4$] is the finite \'etale topology (\etf).
+\end{enumerate}
+As $P_1'\sups P_2'\sups P_3'\sups P_4'$, we have
+\[\fpqc\geq\fppf\geq\et\geq \etf\geq \Zar.\]
+
+\begin{proposition}\label{scheme topology on Sch by refining family prop}
+Let $\mathcal{T}_i$ ($i=1,2,3,4$) be the topologies on $\mathbf{Sch}$ defined above.
+\begin{enumerate}
+    \item[(a)] For a sieve $R$ of $S$ to be covering for $\mathcal{T}_i$ ($1\leq i\leq 3$), it is necessary and sufficient that there exists a covering $(S_\alpha)$ of $S$ by affine opens and for each $\alpha$ a family $\{S_{\alpha\beta}\to S_\alpha\}\in P_i'$, with $S_{\alpha\beta}$ affine, such that the the family $\{S_{\alpha\beta}\to S\}$ factors through $R$.
+    \item[(b)] For a presheaf $F$ over $\mathbf{Sch}$ to be a sheaf for the fpqc topology (resp. fppf, \'etale, finite \'etale), it is necessary and sufficient that
+    \begin{enumerate}
+        \item[(\rmnum{1})] $F$ is a sheaf over the Zariski topology, i.e. a functor of local nature.
+        \item[(\rmnum{2})] For any faithfully flat morphism (resp. faithfully flat morphism of finite presentation, resp. surjective \'etale, resp. finite surjective \'etale) $T\to S$ of affine schemes, we have an exact diagram
+        \[\begin{tikzcd}
+        F(S)\ar[r]&F(T)\ar[r,shift left=2pt]\ar[r,shift right=2pt]&F(T\times_ST)
+        \end{tikzcd}\]
+    \end{enumerate}   
+    \item[(c)] The topologies $\mathcal{T}_i$ ($1\leq i\leq 4$) are subcanonical.
+    \item[(d)] Any surjective family formed by open and flat morphisms (resp. flat and locally of finite presentation, resp. \'etale, resp. finite and \'etale) is covering for the fpqc topology (resp. fppf, resp. \'etale, resp. finite \'etale).
+    \item[(e)] Any finite and surjective family, formed by flat and quasi-compact morphisms, is covering for the fpqc topology. 
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+Assertion (a) follows from \cref{site topology generated by refining family prop}, and (b) follows from \cref{site topology generated by refining family sheaf iff}, since a sheaf for the Zariski topology transforms direct sums into products. Any representable functor is a sheaf for Zariski topology, and satisfies condition (\rmnum{2}) by (\cite{SGA1}, \Rmnum{8}, 5.3), so $\mathcal{T}_1$ is subcanonical, which proves (c).\par
+Let $\{S_i\to S\}$ be a family of morphisms as in (d). By considering a covering of $S$ by affine opens, we are reduced to the case where $S$ is affine. We first deal with the case where each $S_i\to S$ is flat and open (resp. \'etale). Let $S_{ij}$ be a covering og $S_i$ be affine opens. As the morphisms considered are open, the images $T_{ij}$ of $S_{ij}$ in $S$ form an open covering of $S$. As $S$ is affine, hence quasi-compact, there exists a finite subcover of $T_{ij}$, with $i,j$ belongs to a finite set $F$. Then $S'=\coprod_FS_{ij}$ is affine, and the morphism $S'\to S$ belongs to $P_1'$ (resp. $P_3'$), hence is covering. As this factors through the given family $\{S_i\to S\}$, the latter is also covering.\par
+In the case of the finite \'etale topology, each $S_i$ is finite over $S$, hence is affine; in the preceding argument, we can then take for $\{S_{ij}\}$ the covering $\{S_i\}$ of $S_i$, and we obtain a morphism $S'\to S$ belonging to $P_4'$.\par
+Now consider the case where $f_i:S_i\to S$ are flat and locally of finite presentation. For any $s\in S$, there exists (by the proof of (\cite{EGA4}, $\text{\Rmnum{4}}_4$, 17.16.2)) an affine subscheme $X(s)$ of one of the $S_i$ such that $s\in f_i(X(s))$ and that the morphism $g_i:X(s)\to S$, restriction of $f_i$, is flat and quasi-finite. Then $g_i(X(s))$ is an open neighborhood $U(s)$ of $s$ ((\cite{EGA4}, $\text{\Rmnum{4}}_2$, 2.4.6)), and as $S$ is affine, it is covered by a finite number of such opens $U(s_j)$, $j=1,\dots,n$. Therefore, $X'=\coprod_jX(s_j)$ is affine, and the morphism $X'\to S$ is surjective, flat, of finite presentation and quasi-finite, hence belongs to $P_2'$, which completes the proof of (d).\par
+Finally, let $\{S_i\to S\}$ be a finite and surjective family of flat and quasi-compact morphisms. Let $T_j$ be a covering of $S$ be affine opens. Then $S_{ij}=T_j\times_SS_i$ is quasi-compact and hence has a finite affine covering $T_{ijk}$. Each morphism $T_{ijk}\to T_j$ is flat, and the family $\{T_{ijk}\to T_j\}$ is finite and surjective, hence covering for $\mathcal{T}_1$. The family $\{T_{ijk}\to S\}$ is hence also, by composition, covering, and it factors through the given family:
+\[\begin{tikzcd}
+T_{ijk}\ar[rd]\ar[r]&S_{ij}\ar[d]\ar[r]&S_i\ar[d]\\
+&T_j\ar[r]&S
+\end{tikzcd}\]
+so the given family $\{S_i\to S\}$ is also covering for $\mathcal{T}_1$.
+\end{proof}
+
+\begin{proposition}\label{scheme topology T_i family M_i}
+Let $\mathcal{M}_i$ be the family of the following morphisms:
+\begin{enumerate}[leftmargin=35pt]
+    \item[$\mathcal{M}_1$:] faithfully flat and quasi-compact morphisms.
+    \item[$\mathcal{M}_2$:]  faithfully flat and locally of finite presentaion morphisms.
+    \item[$\mathcal{M}_3$:]  surjective \'etale morphisms.
+    \item[$\mathcal{M}_4$:]  finite surjective \'etale morphisms. 
+\end{enumerate}
+Then the family $\mathcal{M}_i$ verifies conditions (M1)--($\text{M}_{\mathcal{T}_i}$) of \ref{site sheaf quotient by equivalence relation paragraph}.
+\end{proposition}
+\begin{proof}
+For (M1)--(M3), these are classical results. By \cref{scheme topology on Sch by refining family prop}~(d) and (e), we see that $\mathcal{M}_i$ satisfies ($\text{M4}_{\mathcal{T}_i}$), so it remains to verify ($\text{M5}_{\mathcal{T}_i}$). For this, it suffices to show that each $\mathcal{M}_i$ satisfies condition ($\text{M5}_{\mathcal{T}_1}$), since it implies the others. This follows from (\cite{SGA1}, \Rmnum{8}, n4 and n5).
+\end{proof}
+
+\begin{corollary}\label{scheme equivalence relation M_i-effective iff quotient represent}
+If $X$ is a scheme and $R$ is an equivalence relation of type $\mathcal{M}_i$, then $R$ is $\mathcal{M}_i$-effective if and only if the quotient sheaf $X$ by $R$ for $\mathcal{T}_i$ is representable and in this case it is represented by $X/R$.
+\end{corollary}
+\begin{proof}
+In fact, this is a concequence of \cref{site sheaf M-effective relation iff quotient representable}.
+\end{proof}
+
+We also consider families $\mathcal{N}$ of morphisms verifying conditions (N1) and ($\text{N}_{\mathcal{T}_i}$). But note, as above, that condition ($\text{N}_{\mathcal{T}_1}$) implies the others.
+
+\begin{proposition}\label{scheme morphism descent by fpqc eg}
+The following families satisfy conditions (N1) and ($\text{N}_{\mathcal{T}_1}$) of \ref{site sheaf quotient by equivalence relation paragraph}, that is, have descent property for the fpqc topology:
+\begin{enumerate}[leftmargin=35pt]
+    \item[$\mathcal{N}$:] open immersions.
+    \item[$\mathcal{N}'$:] closed immersions.
+    \item[$\mathcal{N}''$:] quasi-compact immersions.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+In view of \cref{scheme topology on Sch by refining family prop}~(b), it suffices to consider the descent data relative to the Zariski topology and to a faithfully flat and quasi-compact morphism. The first assertion is clear; for the second one, the case for $\mathcal{N}$ and $\mathcal{N}'$ follows from (\cite{SGA1}, \Rmnum{8}, 4.4) and (\cite{SGA1}, \Rmnum{8}, 1.9). The case for $\mathcal{N}''$ can be deduce as in (\cite{SGA1}, \Rmnum{8}, 5.5), by using the previous two results.
+\end{proof}
+
+We can therefore apply the results of the previous subsections to the families of morphisms given above. Let us give one as an example (\cref{site sheaf quotient by M-effective quotient for subcanonical topology} and \cref{site sheaf quotient by type MN char}):
+
+\begin{corollary}\label{scheme quotient by fpqc equivalence relation prop}
+Let $X$ be a scheme and $R$ be an equivalence relation on $X$. Suppose that $R\to X$ is faithfully flat and quasi-compact and $R\to X\times X$ is a closed immersion (resp. open immersion, resp. quasi-compact immersion). Then the quotient sheaf $X/R$ is the same for the fpqc topology and the canonical topology, and for any scheme $S$, we have
+\[(X/R)(S)=\left\{\parbox{4in}{%
+closed (resp. open, resp. quasi-compact) subschemes $Z$ of $X\times S$ stable under $R\times S$ such that $Z\to X_S$ belongs to $\mathcal{N}$, that $R_Z$ is faithfully flat and quasi-compact, and that diagram $R_Z\rightrightarrows Z\to S$ is exact%
+}\right\}.\]
+\end{corollary}
+
+\begin{remark}
+The corresponding principal homogeneous bundles for the \'etale topology (resp. finite \'etale topology, resp. Zariski topology) is called \textbf{quasi-isotrivial} (resp. \textbf{locally isotrivial}, resp. \textbf{locally trivial}).
+\end{remark}
+
+\paragraph{Homogeneous spaces}
+Let $G$ be an $S$-group scheme, $X$ an $S$-scheme acted (on right) by $G$, and
+\[\Phi:G\times_SX\to X\times_SX\]
+be the $S$-morphism defined setwise by $(g,x)\mapsto(gx,x)$. Recall that $X$ is called formally principal homogeneous under $G$ if the following equivalent conditions are satisfied\footnote{The equivalence of (\rmnum{1}) and (\rmnum{2}) is clear, and (\rmnum{2})$\Leftrightarrow$(\rmnum{3}) since $\mathcal{C}$ is a full subcategory of $\widehat{\mathcal{C}}$.}:
+\begin{enumerate}
+    \item[(\rmnum{1})] For any $T\to S$, the set $X(T)$ is either empty of pincipal homogeneous under $G(T)$,
+    \item[(\rmnum{2})] $\Phi$ is an isomorphism of $S$-functors,
+    \item[(\rmnum{3})] $\Phi$ is an isomorphism of $S$-schemes.  
+\end{enumerate}
+The definition of \textbf{formally homogeneous spaces} (not necessarily principal) is obtained by demanding that $\Phi$ is an epimorphism in the category of sheaves for an appropriate topology $\mathcal{T}$. On the other hand, the condition that $\Phi$ is an epimorphism of $S$-functors is equivalent to that, for any $T\to S$, the set $X(T)$ is empty or homogeneous (not necessarily principal) under $G(T)$. But this condition is too restrictive, as shown in the following example.
+
+\begin{example}
+Let $S=\Spec(\R)$, $G=\G_{m,\R}$ and $X=\G_{m,R}$ over which $G$ acts by $t\cdot x=t^2x$. Then the morphism $\Phi$ is \'etale, finite and surjective, hence an epimorphism in the category of sheaves for the finite \'etale topology (a fortiori, an epimorphism of $S$-schemes). However, the points $1$ and $-1$ of $X(\R)$ are not conjugate under $G(\R)$, so that the morphism $G(\R)\times X(\R)\to X(\R)\times X(\R)$ is not surjective\footnote{Obviously, this difficulty comes from the fact that if $\mathcal{C}'$ is a full subcategory of $\widehat{\mathcal{C}}$ containing $\mathcal{C}$, for example, the category of sheaves on $\mathcal{C}$ for a subcanonical topology $\mathcal{T}$, and if $f:X\to Y$ is a morphism in $\mathcal{C}$, then the implications
+\[\text{$f$ is an epimorphism in $\widehat{\mathcal{C}}$}\Rightarrow\text{$f$ is an epimorphism in $\mathcal{C}'$}\Rightarrow\text{$f$ is an epimorphism in $\mathcal{C}$}\]
+is in general strict.
+}.
+\end{example}
+
+We are then proposed to the following definition:
+
+\begin{definition}
+Let $G$ be an $S$-group, $X$ be an $S$-group scheme acted by $G$ and $\mathcal{T}$ be a subcanonical topology over $\mathbf{Sch}_{/S}$. We say that $X$ is a \textbf{formally homogeneous space under $G$} (relative to the topology $\mathcal{T}$) if the following equivalent conditions are satisfied:
+\begin{enumerate}
+    \item[(\rmnum{1})] the morphism $\Phi:G\times_SX\to X\times_SX$ is an epimorphism in the category of sheaves for the topology $\mathcal{T}$.
+    \item[(\rmnum{2})] for any $T\to S$ and $x,y\in X(T)$, there exists a covering morphism $T'\to T$ for the topology $\mathcal{T}$ and $g\in G(T')$ such that $y_{T'}=g\cdot x_{T'}$.
+\end{enumerate}
+\end{definition}
+
+\begin{remark}
+Condition (\rmnum{1}) implies that $\Phi$ is a universally effective epimorphism in $\mathbf{Sch}_{/S}$ (cf. \cite{SGA3}, \Rmnum{4}, 4.4.3). This implies, in particular, that $\Phi$ is a surjective morphism of schemes.
+\end{remark}
+
+\begin{proposition}\label{scheme formally homogeneous iff}
+Let $G$ be an $S$-group, $X$ be an $S$-scheme acted by $G$, and $\mathcal{T}$ be a subcanonical topology over $\mathbf{Sch}_{/S}$. The following conditions are equivalent:
+\begin{enumerate}
+    \item[(\rmnum{1})] $X$ verifies the following conditions:
+    \begin{enumerate}
+        \item[(a)] the morphism $\Phi:G\times_SX\to X\times_SX$ is covering, i.e. $X$ is a formally homogeneous $G$-space.
+        \item[(b)] the morphism $X\to S$ is covering, i.e. locally for the topology $\mathcal{T}$, it possesses a section\footnote{Note that the morphism $X\to S$ is an epimorphism in $\widehat{\mathbf{Sch}_{/S}}$ if and only if for any $T\to S$, the morphism $X(T)\to S(T)=\{T\to S\}$ is surjective, that is, the morphism $T\to S$ factors through $X$. But since $T\to S\in S(T)$ is the image of the identity morphism $\id_S:S\to S$, this is true if and only if $\id_S$ factors through $X$, which means $X$ admits a section.}.
+    \end{enumerate}
+    \item[(\rmnum{2})] $X$ is locally isomorphic (as a $G$-scheme) to the quotient sheaf (for $\mathcal{T}$) of $G$ by a subgroup scheme $H$, that is, there exists a covering family $\{S_i\to S\}$ such that each $X\times_SS_i$ represents the quotient sheaf of $G\times_SS_i$ by a subgroup scheme $H_i$.
+\end{enumerate}
+Under these conditions, we say that $X$ is a \textbf{homogeneous $G$-space} (relative to the topology $\mathcal{T}$).
+\end{proposition}
+\begin{proof}
+Suppose that (\rmnum{2}) is satisfied. Put $G_i=G\times_SS_i$ and $X_i=X\times_SS_i$, then $X_i$ possesses a section over $S_i$, namely the composition of the unit section $\eps_i:S_i\to G_i$ and the projection $\pi_i:G_i\to X_i=G_i/H_i$. We then conclude that $X\to S$ is covering.\par
+On the other hand, $\pi_i$ is covering, so $\pi_i\times\pi_i$ is also covering, and we have a commutative diagram
+\[\begin{tikzcd}
+G_i\times_{S_i}G_i\ar[r,"\Psi_i"]\ar[d,"\id\times\pi_i"]&G_i\times_{S_i}X_i\ar[d,"\pi_i\times\pi_i"]\\
+G_i\times_{S_i}X_i\ar[r,"\Phi_i","\cong"']&G_i\times_{S_i}X_i
+\end{tikzcd}\]
+where $\Phi_i$ is induced by $\Phi$ by base change $S_i\to S$ and $\Psi_i$ is the isomorphism defined by $(g,g')\mapsto(gg',g)$. Then $(\pi_i\times\pi_i)\circ\Psi_i$ is covering, hence $\Phi_i$ is a covering. This shows that $\Phi$ is locally covering, hence is covering, whence (\rmnum{2})$\Rightarrow$(\rmnum{1}).\par
+Conversely, suppose that (\rmnum{1}) is satisfied, and moreover the structural morphism $X\to S$ possesses a section $\sigma\in X(S)$. By \cref{scheme morphism graph is immersion}, $\sigma$ is an immersion. Define $H=G\times_XS$ by the diagram below, where the two squares are Cartesian:
+\[\begin{tikzcd}
+H\ar[r]&G\ar[r,"\id_G\boxtimes\sigma"]\ar[d,"\pi"]&G\times_SX\ar[d,"\Phi"]\\
+S\ar[r,"\sigma"]&X\ar[r,"\id_X\boxtimes\sigma"]&X\times_SX
+\end{tikzcd}\]
+where $\pi$, $\id_G\boxtimes\sigma$ and $\id_X\boxtimes\sigma$ denote the morphisms defined setwisely, for $T\to S$ and $g\in G(T)$, $x\in X(T)$, by
+\[\pi(g)=g\cdot\sigma_T,\quad (\id_G\boxtimes\sigma)(g)=(g,\sigma_T),\quad (\id_X\boxtimes\sigma)(x)=(x,\sigma_T).\]
+Then $\pi$ is covering, and $H$ is a subgroup scheme of $G$, represented by the stabilizer $\Stab_G(\sigma)$ of $\sigma$, that is, for any $T\to S$, we have
+\[H(T)=\{g\in G(T):g\cdot\sigma_T=\sigma_T\}.\]
+Denote by $G/H$ the presheaf $T\mapsto G(T)/H(T)$, and $(G/H)^\#$ the associated sheaf for the topology $\mathcal{T}$. From the above arguments, we obtain a commutative diagram of morphisms of presheaves acted by $G$:
+\[\begin{tikzcd}
+G\ar[r,"\pi"]\ar[d]&X\\
+G/H\ar[ru,swap,"\bar{\pi}"]
+\end{tikzcd}\]
+where $\bar{\pi}$ is a monomorphism (cf. \cref{category universal effective equivalence factor monomorphism iff}). As $\pi$ is covering, $\bar{\pi}$ is also a covering, so $\bar{\pi}$ induces an isomorphism $(G/H)^\#\cong X$. Therefore, we have shown that: if $X$ is a homogeneous $G$-space such that $X\to S$ admits a section $\sigma$, then $X$ represents the quotient sheaf $G/H$, where $H=G\times_XS$ is the stabilizer of $\sigma$.\par
+In the general case, by hypothesis there exists a covering family $\{S_i\to S\}$ such that each morphism $X_i=X\times_SS_i\to S_i$ possesses a section $\sigma_i$. Put $G_i=G\times_SS_i$, then the morphism $\Phi_i=G_i\times_{S_i}X_i\to X_i\times_{S_i}X_i$ deduced from $\Phi$ by base change $S_i\to S$ is covering, hence, by the preceding arguments, $X_i\cong G_i/H_i$ where $H_i=\Stab_{G_i}(\sigma_i)$. This proves the implication (\rmnum{1})$\Rightarrow$(\rmnum{2}).
+\end{proof}
+
+\section{Construction of quotient schemes}
+\subsection{\texorpdfstring{$\mathcal{C}$}{C}-groupoids}
+Let $\mathcal{C}$ be a category which has finite products and coproducts. Recall that a diagram
+\[\begin{tikzcd}
+X_1\ar[r,shift left=2pt,"d_1"]\ar[r,shift right=2pt,swap,"d_0"]&X_0\ar[r,"p"]&Y
+\end{tikzcd}\]
+in $\mathcal{C}$ is called \textbf{exact} if $pd_0=pd_1$ and if, for any $T\in\mathcal{C}$, $T(p)$ is a bijection from $T(Y)$ to the subset of $T(X_0)$ formed by morphisms $f:X_0\to T$ such that $fd_0=fd_1$. We also say that $(Y,p)$ is the cokernel of $(d_0,d_1)$, and write
+\[(Y,p)=\coker(d_0,d_1).\]
+Let $\mathcal{C}$ be the category $\mathbf{Rsp}$ of ringed spaces. In this case, there always exists a cokernel $(Y,p)$, of which we can give the following description: the underlying topological space $Y$ is obtained from $X_0$ by identifying the points $d_0(x)$ and $d_1(x)$, endowed with the quotient topology. The canonical morphisms $\pi:X_0\to Y$ and $d_0$, $d_1$ then induce a double arrow of sheaves of rings over $Y$:
+\[\begin{tikzcd}
+\pi_*(\mathscr{O}_{0})\ar[r,shift left=2pt,"\delta_1"]\ar[r,shift right=2pt,swap,"\delta_0"]&\pi_*((d_0)_*(\mathscr{O}_{1}))=\pi_*((d_1)_*(\mathscr{O}_{1}))
+\end{tikzcd}\]
+where $\mathscr{O}_i$ is the structural sheaf of $X_i$. We choose $\mathscr{O}_Y$ to be the sheaf of rings over $Y$ whose sections $s$ are such that $\delta_0(s)=\delta_1(s)$. The morphism $p:X_0\to Y$ is defined in the evident way.\par
+Let $d_0,d_1:X_1\rightrightarrows X_0$ be a diagram in $\mathbf{Rsp}$ and $(Y,p)$ be the cokernel. We say that an open subset $U$ of $X_0$ is saturated if $d_0^{-1}(U)=d_1^{-1}(U)$, which is equivalent to that $U=p^{-1}(p(U))$. In this case, as $Y$ is endowed with the quotient topology, $p(U)$ is an open subset of $Y$.
+
+\begin{lemma}\label{ringed space groupoid restriction to saturated prop}
+Let $U$ be a saturated open subset of $X$ and $V=p(U)$. If we denote by $U_1=d_0^{-1}(U)=d_1^{-1}(U)$ the open subset of $X_1$, and $\tilde{d}_0$, $\tilde{d}_1$ and $\tilde{p}$ the restriction of $d_0$, $d_1$ to $U_1$ and $p$ to $U$, then $(V,\tilde{p})$ is the cokernel of the following diagram in $\mathbf{Rsp}$:
+\[\begin{tikzcd}
+U_1\ar[r,shift left=2pt,"\tilde{d}_1"]\ar[r,shift right=2pt,swap,"\tilde{d}_0"]&U\ar[r,"\tilde{p}"]&V
+\end{tikzcd}\]
+\end{lemma}
+\begin{proof}
+Since $U$ is saturated, the morphisms $d_0,d_1$ and $p$ restricts to give the desired diagram. The claim that $(V,\tilde{p})$ is the cokernel is an immediate verification.
+\end{proof}
+
+\begin{remark}
+The result of \cref{ringed space groupoid restriction to saturated prop} is not true in the category of schemes. For example, let $S=\Spec(\C)$, $X_0=\A_S^2=\Spec(\C[x_1,x_2])$, $d_1:\G_{m,S}\times_S\A_S^2\to\A_S^2$ be the action of $\G_{m,S}$ on $\A_S^2$ by multiplication, and $d_0:\G_{m,S}\times_S\A_S^2\to\A_S^2$ the projection to the second factor. Let $U=\A_S^2-\{\m\}$, where $\m$ is the point $(0,0)$. Then the projective space $\P_S^1$ is the cokernel of $(\tilde{d}_0,\tilde{d}_1)$ in $\mathbf{Rsp}$ and $\mathbf{Sch}_{/S}$, and the cokernel $Y$ of $(d_0,d_1)$ in $\mathbf{Rsp}$ is the union of $\P^1_S$ and the point $y_0=\{p(\m)\}$, with the unique open subset containing $y_0$ being $Y$ and we have $\Gamma(Y,\mathscr{O}_Y)=\C$ (note that $Y$ is not a scheme). If $f:\A_S^2\to T$ is a morphism of $S$-schemes such that $fd_0=fd_1$ and $\bar{f}:Y\to T$ is the induced morphism of ringed spaces, then for any affine open subset $V=\Spec(A)$ of $T$ containing the point $t_0=f(\m)$, we have $f^{-1}(V)=Y$, so the ring homomorphism $A\to\C[x_1,x_2]$ factors through $\C$. This shows that $S=\Spec(\C)$ is the cokernel of $(d_0,d_1)$ in the category $\mathbf{Sch}_{/S}$.
+\end{remark}
+
+\begin{lemma}\label{ringed space groupoid cokernel in scheme if}
+Let $d_0,d_1:X_1\rightrightarrows X_0$ be a diagram in $\mathbf{Sch}$ and $(Y,p)$ be the cokernel in $\mathbf{Rsp}$.
+\begin{enumerate}
+    \item[(a)] If $Y$ is a scheme and $p$ is a morphism of schemes, then $(Y,p)$ is a cokernel of $(d_0,d_1)$ in $\mathbf{Sch}$.
+    \item[(b)] Suppose that any point of $X_0$ has a saturated open neighborhood $U$ such that, if $(\tilde{d}_0,\tilde{d}_1)$ is the induced diagram to $d_0^{-1}(U)=d_1^{-1}(U)$ and $(Q,q)$ is the cokernel of $(\tilde{d}_0,\tilde{d}_1)$ in $\mathbf{Rsp}$, then $Q$ is a scheme and $q$ is a morphism of schemes. Then $(Y,p)$ is a cokernel of $(d_0,d_1)$ in $\mathbf{Sch}$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+In the situation of (a), since $(Y,p)$ is a cokernel of $(d_0,d_1)$ in $\mathbf{Rsp}$, every morphism $f:X_0\to T$ of schemes such that $fd_0=fd_1$ factors into a morphism $\bar{f}:Y\to T$ of ringed spaces. Now we know that $f=\bar{f}p$, and $f$, $p$ are both morphisms of locally ringed spaces with $p$ being surjective; it follows that $\bar{f}$ is also a morphism of locally ringed spaces, hence $(Y,p)$ is a cokernel on $(d_0,d_1)$ in $\mathbf{Sch}$. Now (b) follows from (a) and \cref{ringed space groupoid restriction to saturated prop} by glueing.
+\end{proof}
+
+In this section, we consider the existence of $\coker(d_0,d_1)$ if the two morphisms arise from a groupoid. More precisely, denote by $X_2=X_1\times_{d_1,d_0}X_1$ the fiber product and $d_0',d_2'$ the two projections of $X_2$ to $X_1$, so that we have a Cartesian square:
+\begin{equation}\label{category groupoid square-1}
+\begin{tikzcd}
+X_2\ar[r,"d_0'"]\ar[d,swap,"d_2'"]&X_1\ar[d,"d_1"]\\
+X_1\ar[r,"d_0"]&X_0
+\end{tikzcd}
+\end{equation}
+Moreover, suppose that we are given a third morphism $d'_1:X_2\to X_1$. We say that $(d_0,d_1:X_1\rightrightarrows X_0,d_1')$ is a \textbf{$\mathcal{C}$-groupoid} if for any object $T$ of $\mathcal{C}$, $X_1(T)$ is the set of morphisms of a groupoid $X_*(T)$ whose set of objects is $X_0(T)$, with source map $d_1(T)$, target map $d_0(T)$, and whose composition map is $d'_1(T)$ (we identify $(X_1\times_{d_1,d_0}X_1)(T)$ with $X_1(T)\times_{d_1(T),d_0(T)}X_1(T)$)\footnote{Therefore, in this case, $X_2(T)$ is the set of pairs of composable morphisms $(f_2,f_1)$, that is, such that $d_0(f_1)=d_1(f_2)$, and $d_0'$, $d_1'$ and $d_2'$ send $(f_2,f_1)$ to $f_2$, $f_2\circ f_1$, $f_1$, respectively.}.\par
+
+If $\varphi$ is a morphism of the groupid $X_*(T)$, the map $f\mapsto\varphi f$ is a bijection from the set of morphisms $f$ whose target coincides with the source of $\varphi$ to the set of morphisms with the same target as $\varphi$. We then conclude that there is a Cartesian square
+\begin{equation}\label{category groupoid square-2}
+\begin{tikzcd}
+X_2\ar[r,"d_1'"]\ar[d,swap,"d_0'"]&X_1\ar[d,"d_0"]\\
+X_1\ar[r,"d_0"]&X_0
+\end{tikzcd}
+\end{equation}
+Moreover, this square is also cocartesian: if $\varphi:X_1\to Y$ is a morphism in $\mathcal{C}$ such that $\varphi d_1'=\varphi d_0'$, then for any $T\in\Ob(\mathcal{C})$, the value of the morphism $\varphi(T):X_1(T)\to Y(T)$ on $f\in X_1(T)$ only depends on the target of $f$ (if $g$ is another morphism with the same target as $f$, then $f^{-1}g$ is in the image of $d_1'$ and we have $\varphi(f)=\varphi d_1'(g,g^{-1}f)=\varphi d_0'(g,g^{-1}f)=\varphi(g)$), so it factors through $d_0(T)$.\par
+
+Similarly, the map $g\mapsto g\circ\varphi$ is a bijection from the set of morphisms $g$ whose source coincides with the target of $\varphi$ to the set of morphisms with the same source as $\varphi$. We then conclude that there is a Cartesian square
+\begin{equation}\label{category groupoid square-3}
+\begin{tikzcd}
+X_2\ar[r,"d_1'"]\ar[d,swap,"d_2'"]&X_1\ar[d,"d_1"]\\
+X_1\ar[r,"d_1"]&X_0
+\end{tikzcd}
+\end{equation}
+which is also cocartesian.\par
+On the other hand, let $s:X_0\to X_1$ be the unique morphis in $\mathcal{C}$ such that, for any $T\in\Ob(\mathcal{C})$, $s(T):X_0(T)\to X_1(T)$ associates to any object of $X_*(T)$ the identity morphism of this object. The morphism $s$ satisfies the following equalities:
+\begin{align}
+d_1s=\id_{X_0},\label{category groupoid morphism s equality-1}\\
+d_0s=\id_{X_0}.\label{category groupoid morphism s equality-2}
+\end{align}
+Finally, the associativity of the composition maps is expressed by the commutativity of the following diagram
+\begin{equation}\label{category groupoid square-4}
+\begin{tikzcd}
+X_1\times_{d_1,d_0}X_1\times_{d_1,d_0}X_1\ar[r,"d_1'\times\id_{X_1}"]\ar[d,swap,"\id_{X_1}\times d'_1"]&X_1\times_{d_1,d_0}X_1\ar[d,"d_1"]\\
+X_1\times_{d_1,d_0}X_1\ar[r,"d_1'"]&X_0
+\end{tikzcd}
+\end{equation}
+
+Conversely, the conditions (\ref{category groupoid square-2}), (\ref{category groupoid square-3}) and (\ref{category groupoid square-4}) and the existence of a morphism $s$ satisfying (\ref{category groupoid morphism s equality-1}) imply that $(d_0,d_1:X_1\rightrightarrows X_0,d'_1)$ is a groupoid. In the rest of this section, we mainly use the squares (\ref{category groupoid square-1}), (\ref{category groupoid square-2}) and (\ref{category groupoid square-3}), which are summarized into the following diagram:
+\begin{equation}\label{category groupoid commutative diagram}
+\begin{tikzcd}
+X_2\ar[r,shift left=2pt,"d_0'"]\ar[r,shift right=2pt,swap,"d_1'"]\ar[d,shift left=2pt,"d_1'"]\ar[d,shift right=2pt,swap,"d_2'"]&X_1\ar[r,"d_0"]\ar[d,"d_1"]&X_0\\
+X_1\ar[d,swap,"d_1"]\ar[r,"d_0"]&X_0\\
+X_0
+\end{tikzcd}
+\end{equation}
+where the square is Cartesian and the first row and first column are exact.\par
+We only use associativity in an indirect way, for example to ensure the existence of a morphism $s$ satisfying (\ref{category groupoid morphism s equality-1}) and (\ref{category groupoid morphism s equality-2}), or to ensure the existence of a morphism $\sigma:X_1\to X_1$ such that
+\begin{equation}\label{category groupoid morphism sigma equality}
+d_0\sigma=d_1,\quad d_1\sigma=d_0.
+\end{equation}
+(We choose $\sigma$ so that $\sigma(T):X_1(T)\to X_1(T)$ sends a morphism of $X_*(T)$ to its inverse.)\par
+By abusing of languages, a $\mathcal{C}$-groupoid is also defined to be a diagram
+\[\begin{tikzcd}[column sep=12mm]
+X_2\ar[r,shift left=8pt,"d_0'"]\ar[r,shift right=8pt,swap,"d_2'"]\ar[r,"d_1'"description]&X_1\ar[r,shift left=2pt,"d_0"]\ar[r,shift right=2pt,swap,"d_1"]&X_0
+\end{tikzcd}\]
+such that (\ref{category groupoid square-1}), (\ref{category groupoid square-2}) and (\ref{category groupoid square-3}) are Cartesian, that (\ref{category groupoid square-4}) is commutative and that there exists $s$ satisfying (\ref{category groupoid morphism s equality-1}) and (\ref{category groupoid morphism s equality-2})\footnote{For a gropoid $X_*$, we often say that $X_0$ is the base of the groupoid and $X_1$ is the equvialence prerelation.}.
+
+\begin{example}\label{category groupoid by group action}
+Let $X$ be an object in $\mathcal{C}$ and $G$ be a $\mathcal{C}$-group acting on $X$ (on the left). We denote by $d_0:G\times X\to X$ the morphism defining the action of $G$ over $X$, by $d_1:G\times X\to X$ the projection onto the second factor, by $\mu:G\times G\to G$ the multiplication of $G$, and finally by $\pr_{2,3}$ the projection of $G\times G\times X=G\times(G\times X)$ onto the second and third factors. Then
+\[\begin{tikzcd}[column sep=15mm]
+G\times G\times X\ar[r,shift left=8pt,"\pr_{2,3}"]\ar[r,shift right=8pt,swap,"\id_G\times d_0"]\ar[r,"\mu\times\id_X"description]&G\times X\ar[r,shift left=2pt,"d_0"]\ar[r,shift right=2pt,swap,"d_1"]&X_0
+\end{tikzcd}\]
+is a groupoid in $\mathcal{C}$. For any $T\in\Ob(\mathcal{C})$, the groupoid $X_*(T)$ has object set $X(T)$ and morphisms $(g,x)$, where $g\in G(T)$ and $x\in X(T)$. Moreover, $X_*(T)$ is a setoid if and only if for any $x\in G(T)$, the automorphism group $\Aut(x)$ is trivial, that is, if and only if $G(T)$ acts freely on $X(T)$.
+\end{example}
+
+\begin{example}\label{category groupoid from equivalence relation}
+Let $d_0,d_1:X_1\to X_0$ be an \textbf{equivalence couple}, that is, if $d_0\boxtimes d_1:X_1\to X_0\times X_0$ is the morphism with components $d_0$, $d_1$, then for any $T\in\Ob(\mathcal{C})$, $(d_0\boxtimes d_1)(T)$ is a bijection from $X_1(T)$ to the graph of an equivalence relation on $X_0(T)$. The set $X_1(T)$ is then identified with the set of couples $(x,y)$ formed by elements of $X_1(T)$ such that $x\sim y$; similarly, the set $X_2(T)=(X_1\times_{d_1,d_0}X_1)(T)$ is identified with the set of triples $(x,y,z)$ of elements of $X_0(T)$ such that $x\sim y$ and $y\sim z$. There is then a unique morphism $d_1':X_2\to X_1$ fitting into the squares (\ref{category groupoid square-2}) and (\ref{category groupoid square-3}): $d_1'(T)$ sends $(x,y,z)\in X_2(T)$ to $(x,z)\in X_1(T)$. For this choice of $d_1'$, $(d_0,d_1:X_1\rightrightarrows X_0,d_1')$ is a $\mathcal{C}$-groupoid.\par
+Conversely, consider a $\mathcal{C}$-groupoid $X_*$ such that $d_0\boxtimes d_1:X_1\to X_0\times X_0$ is a monomorphism (in other words, for any $T\in\Ob(\mathcal{C})$ and $x,y\in X_0(T)$, there exists a unique morphism from $x$ to $y$). Then $(d_0,d_1)$ is an equivalence couple and $X_*$ can be reconstructed from $(d_0,d_1)$ as explained above\footnote{In particular, if $G$ is a $\mathcal{C}$-group acting on the left on an object $X$ of $\mathcal{C}$ and $X_*$ is the associated groupoid, then $(d_0,d_1)$ is an equivalence couple if and only if $G$ acts freely on $X$.}. 
+\end{example}
+
+\begin{example}
+Let $p:X\to Y$ be a morphism in $\mathcal{C}$ and $\pr_1,\pr_2$ be two projections from $X\times_{p,p}X$ to $X$. Then $(\pr_1,\pr_2):X\times_{p,p}X\rightrightarrows X$ is an equivalence couple. We say that $p$ is an \textbf{effective epimorphism} if the diagram
+\[\begin{tikzcd}
+X\times_{p,p}X\ar[r,shift left=2pt,"\pr_1"]\ar[r,shift right=2pt,swap,"\pr_2"]&X\ar[r,"p"]&Y
+\end{tikzcd}\]
+is exact, that is, if $(Y,p)=\coker(\pr_1,\pr_2)$.\par
+For example, let $S$ be a Noetherian scheme and $\mathcal{C}$ be the category of schemes finite over $S$. We show that an epimorphism in $\mathcal{C}$ is not necassarily effective: we choose $S=\Spec(k[T^3,T^5])$, where $k$ is a field, $Y=S$ and $X=\Spec(k[T])$. If $i$ denotes the inclusion of $B=k[T^3,T^5]$ to $A=k[T]$ and $p=\Spec(i)$, then $X\times_{p,p}X$ is identified with $\Spec(A\otimes A)$ and $\coker(\pr_1,\pr_2)$ is equal to $\Spec(B')$, where $B'$ is the subring of $A$ formed by elements $a$ such that $a\otimes_B1=1\otimes_Ba$. Now
+\[T^7\otimes_B1=(T^2T^5)\otimes_B1=T^2\otimes_BT^5=T^2\otimes_B(T^3T^2)=T^5\otimes_BT^2=1\otimes_BT^7\]
+hence $T^7\in B'$, $T^7\notin B$ and $\Spec(B)\neq\Spec(B')$, whence a couterexample\footnote{The same arguments apply to $B=k[T^n,T^{n+r}]$ and the element $T^{n+2r}\otimes_B1$, provided that $2r\nmid n$.}.
+\end{example}
+
+Consider a $\mathcal{C}$-groupoid
+\[\begin{tikzcd}[column sep=12mm]
+X_2\ar[r,shift left=8pt,"d_0'"]\ar[r,shift right=8pt,swap,"d_2'"]\ar[r,"d_1'"description]&X_1\ar[r,shift left=2pt,"d_0"]\ar[r,shift right=2pt,swap,"d_1"]&X_0
+\end{tikzcd}\]
+and let $f_0:Y_0\to X_0$ be a morphism in $\mathcal{C}$. Then by base change to $Y_0$, we obtain a $\mathcal{C}$-groupoid
+\[\begin{tikzcd}[column sep=12mm]
+Y_2\ar[r,shift left=8pt,"e_0'"]\ar[r,shift right=8pt,swap,"e_2'"]\ar[r,"e_1'"description]&Y_1\ar[r,shift left=2pt,"e_0"]\ar[r,shift right=2pt,swap,"e_1"]&Y_0
+\end{tikzcd}\]
+which is said to be \textbf{induced} by $X_*$ and $f_0$. We also say that $Y_*$ is the \textbf{inverse image} of $X_*$ by the base change morphism $f_0:Y_0\to X_0$. More precisely, we choose for $Y_1$ the fiber product of the diagram
+\[\begin{tikzcd}
+Y_1\ar[d,dashed]\ar[r,dashed,"f_1"]&X_1\ar[d,"d_0\boxtimes d_1"]\\
+Y_0\times Y_0\ar[r,"f_0\times f_0"]&X_0\times X_0
+\end{tikzcd}\]
+for $e_0$ and $e_1$ the composition of the canonical morphism $Y_1\to Y_0\times Y_0$ and the first and second projections of $Y_0\times Y_0$. The morphism $Y_1\to Y_0\times Y_0$ is then $e_0\boxtimes e_1$, and we have $f_0\circ e_i=d_i\circ f_1$ for $i=0,1$, where we denote by $f_1$ the projection of $Y_1$ to $X_1$. We put $Y_2=Y_1\times_{e_0,e_1}Y_1$. We can say that the couple $(e_0,e_1)$ is defined such that, for any $T\in\Ob(\mathcal{C})$, and any couple $(y,x)$ of elements of $Y_0(T)$, there is a one-to-one correspondence $\psi\mapsto{_y\psi_x}$ between the set of morphisms $\psi$ of $X_*(T)$ with source $f_0(x)$, target $f_0(y)$ and the arrows ${_y\psi_x}$ of $Y_*(T)$ with source $x$ and target $y$. We therefore determine $e'_1:Y_2\to Y_1$ by defining for all $T\in\Ob(\mathcal{C})$ the composition of the morphism of $Y_*(T)$ using the formula
+\[{_z\psi_y}\circ{_y\varphi_x}={_z(\psi\circ\varphi)_x}.\]
+It is then clear that this makes $Y_*(T)$ a groupoid.\par
+From the $\mathcal{C}$-groupoid $X_*$ and the base change $f_0:Y_0\to X_0$, we can reconstruct the couple $(e_0,e_1):Y_1\rightrightarrows Y_0$ in another way: consider $Y_0\times_{X_0}X_1$ and $\pr_1,\pr_2$ such that the square
+\begin{equation}\label{category groupoid base change Y_1 square-1}
+\begin{tikzcd}
+Y_0\times_{X_0}X_1\ar[d,swap,"\pr_1"]\ar[r,"\pr_2"]&X_1\ar[d,"d_0"]\\
+Y_0\ar[r,"f_0"]&X_0
+\end{tikzcd}
+\end{equation}
+is Cartesian. We then verify that we have a Cartesian square
+\begin{equation}\label{category groupoid base change Y_1 square-2}
+\begin{tikzcd}
+Y_1\ar[r,"e_0\boxtimes f_1"]\ar[d,swap,"e_1"]&Y_0\times_{X_0}X_1\ar[d,"d_1\circ\pr_2"]\\
+Y_0\ar[r,"f_0"]&X_0
+\end{tikzcd}
+\end{equation}
+where $f_1$ denotes the canonical projection from $Y_1=(Y_0\times Y_0)\times_{X_0\times X_0}X_1$ to $X_1$.
+
+\begin{example}\label{category groupoid base change by d_0 and d_1}
+Let's take $Y_0=X_1$, $f_0=d_0$. For any object $T$ of $\mathcal{C}$, $Y_1(T)$ is then identified with the set of diagrams of the form
+\[\begin{tikzcd}
+b\ar[r,"\varphi"]&d\\
+a\ar[u,"f"]&c\ar[u,"g"]
+\end{tikzcd}\]
+of $X_*(T)$. The source of this diagram is the morphism $f$, the target is the morphism $g$, and the composition of two diagrams is clear (by taking the compositin of the horizontal morphisms).\par
+Similarly, by choosing $Y_0'=X_1$ and $f_0'=d_1$, the set $Y_1'(T)$ is identified for any $T\in\Ob(\mathcal{C})$ with the set of diagrams of the form
+\[\begin{tikzcd}
+b&d\\
+a\ar[r,"\psi"]\ar[u,"f"]&c\ar[u,"g"]
+\end{tikzcd}\]
+of the groupoid $X_*(T)$. The source of this diagram is the morphism $f$, the target is the morphism $g$, and the composition of two diagrams is evident.\par
+Now since $X_*(T)$ is a groupoid for any $T\in\Ob(\mathcal{C})$, the identity map on $Y_0(T)$ and the map
+\[\begin{tikzcd}
+b\ar[r,"\varphi"]&d\\
+a\ar[u,"f"]&c\ar[u,"g"]
+\end{tikzcd}\mapsto\begin{tikzcd}
+b&d\\
+a\ar[r,"g^{-1}\varphi f"]\ar[u,"f"]&c\ar[u,"g"]
+\end{tikzcd}\]
+from $Y_1(T)$ to $Y'_1(T)$ define an isomorphism of groupoids $Y_*(T)$ and $Y'_*(T)$. Moreover, this isomorphism depends functorial on $T$, hence is an isomorphism of the $\mathcal{C}$-groupoids $Y_*$ and $Y_*'$.
+\end{example}
+
+\begin{proposition}\label{category groupoid cokernel under universal effective base change prop}
+Let $X_*$ be a $\mathcal{C}$-groupoid and suppose that $f_0:Y_0\to X_0$ is a universally effective epimorphism. Then $\coker(d_0,d_1)$ exists if and only if $\coker(e_0,e_1)$ exists. Moreover, in this case $f_0$ induces an isomorphism
+\[\coker(d_0,d_1)\stackrel{\sim}{\to}\coker(e_0,e_1).\]
+\end{proposition}
+\begin{proof}
+We denote by $C(d_0,d_1)$ the covariant functor from $\mathcal{C}$ to the category of sets which associates to any $T\in\Ob(\mathcal{C})$ the kernel of the couple $T(d_0),T(d_1):T(X_0)\rightrightarrows T(X_1)$ (in $\Set$), and similarly for $C(e_0,e_1)$. For any $T\in\mathcal{C}$, we then have a commutative diagram
+\[\begin{tikzcd}
+C(d_0,d_1)(T)\ar[r]\ar[d,"T(f)"]&T(X_0)\ar[r,shift left,"T(d_1)"]\ar[r,shift right,swap,"T(d_0)"]\ar[d,"T(f_0)"]&T(X_1)\ar[d,"T(f_1)"]\\
+C(e_0,e_1)(T)\ar[r]&T(Y_0)\ar[r,shift left,"T(e_1)"]\ar[r,shift right,swap,"T(e_0)"]&T(Y_1)
+\end{tikzcd}\]
+where $T(f)$ is the injection induced by the injection $T(f_0)$. If we can show that $T(f)$ is a surjection for any $T$, then we obtain a functorial isomorphsim $f:C(d_0,d_1)\stackrel{\sim}{\to}C(e_0,e_1)$, which implies the proposition. For this, consider the diagram
+\[\begin{tikzcd}
+&Y_1\ar[r,"f_1"]\ar[d,shift left=2pt,"e_0"]\ar[d,shift right=2pt,swap,"e_1"]&X_1\ar[d,shift left=2pt,"d_0"]\ar[d,shift right=2pt,swap,"d_1"]\\
+Y_0\times_{X_0}Y_0\ar[ru,"\Delta"]\ar[r,shift left=2pt,"\pr_2"]\ar[r,shift right=2pt,swap,"\pr_1"]&Y_0\ar[d,"g"]\ar[r,"f_0"]&X_0\ar[ld,dashed,"h"]\\
+&T&
+\end{tikzcd}\]
+where $\Delta$ is the section of $Y_1\to Y_0\times Y_0$ defined by the morphism $s\circ f_0\circ\pr_1:Y_0\times Y_0\to X_1$, the morphism $s:X_0\to X_1$ satisfying the equalities (\ref{category groupoid morphism s equality-1}) and (\ref{category groupoid morphism s equality-2}). If a morphism $g:Y_0\to T$ is such that $ge_0=ge_1$, we then have $ge_0\Delta=ge_1\Delta$, hence $g\pr_1=g\pr_2$. As $f_0$ is an effective epimorphism, $g$ is then the composition of $f_0$ with a morphism $h:X_0\to T$, that is, we have $g=T(f_0)(h)$. It remains to show that $h$ belongs to $C(d_0,d_1)(T)$, which means $hd_0=hd_1$; now we have
+\[hd_0f_1=hf_0e_0=ge_0=ge_1=hf_0e_1=hd_1f_1\]
+whence the desired equality since $f_1$ is an epimorphism (because $f_0$ is a universally epimorphism).
+\end{proof}
+
+Consider now a scheme $S$ and choose $\mathcal{C}=\mathbf{Sch}_{/S}$. Then a $\mathcal{C}$-groupoid
+\[\begin{tikzcd}[column sep=12mm]
+X_2\ar[r,shift left=8pt,"d_0'"]\ar[r,shift right=8pt,swap,"d_2'"]\ar[r,"d_1'"description]&X_1\ar[r,shift left=2pt,"d_0"]\ar[r,shift right=2pt,swap,"d_1"]&X_0
+\end{tikzcd}\]
+permits us to define an equivalence relation on the underlying set $|X_0|$ : if $x,y\in|X_0|$, we write $x\sim y$ if there exists $z\in|X_1|$ such that $x=d_1(z)$ and $y=d_0(z)$. The reflecxivity and symmetricity of this equation is evident\footnote{The reflecxivity follows from the existence of $s:X_0\to X_1$ which is a section of $d_0$ and $d_1$; the symmetricity follows from the existence of an involution $\sigma$ of $X_1$ which exchanges $d_0$ and $d_1$.}. As for the transtivity, if $x\sim y$ and $y\sim z$, then there exists $u,v\in |X_1|$ such that $x=d_1(u)$, $y=d_0(u)$, $y=d_1(v)$, $z=d_0(v)$. It then follows that $(v,u)$ belongs to the set $|X_1|\times_{d_1,d_0}|X_1|$. As the canonical map
+\[|X_1\times_{d_1,d_0}X_1|\to |X_1|\times_{d_1,d_0}|X_1|\]
+on underlying sets is surjective, $(v,u)$ is the image of some $w\in|X_2|$. We then have $x=d_1d_1'(w)$ and $z=d_0d_1'(w)$, then $x\sim z$.\par
+Now let $f_0:Y_0\to X_0$ be a base change morphism of schemes over $S$. If $x,y$ are points of $|Y_0|$, we see that $x\sim y$ if and only if $f_0(x)\sim f_0(y)$. In fact, if $x\sim y$, then there exists $z\in|Y_1|$ such that $x=e_1(z)$ and $y=e_0(z)$. As $f_0\circ e_i=d_i\circ f_1$ for $i=0,1$, we then have $f_0(x)=d_1f_1(z)$ and $f_0(y)=d_0f_1(z)$, whence $f_0(x)\sim f_0(y)$.\par
+Conversely, if $f_0(x)\sim f_0(y)$ and $z\in|X_1|$ is such that $f_0(y)=d_1(z)$ and $f_0(x)=d_0(z)$, then by the square (\ref{category groupoid base change Y_1 square-1}), there exists a point $t\in|Y_0\times_{X_0}X_1|$ such that $\pr_1(t)=x$ and $\pr_2(t)=z$. Similarly, as $f_0(y)=d_1\pr_2(t)$, there exists $s\in|Y_1|$ such that $y=e_1(s)$ and $(e_0\boxtimes f_1)(s)=t$ (cf. the square (\ref{category groupoid base change Y_1 square-2})). We then have $e_0(s)=\pr_1(e_0\boxtimes f_1)(s)=\pr_1(t)=x$, whence $x\sim y$.
+
+\subsection{Passage to quotient for a finite and locally free groupoid}
+Let $S$ be a scheme and consider a $\mathbf{Sch}_{/S}$-grupoid 
+\[\begin{tikzcd}[column sep=12mm]
+X_2\ar[r,shift left=8pt,"d_0'"]\ar[r,shift right=8pt,swap,"d_2'"]\ar[r,"d_1'"description]&X_1\ar[r,shift left=2pt,"d_0"]\ar[r,shift right=2pt,swap,"d_1"]&X_0
+\end{tikzcd}\]
+In this subsection, we prove the existence of a quotient of $X_*$ under the hypothesis that the strucutral morphism is finite and locally free. More precisely, we shall prove the following theorem:
+\begin{theorem}\label{scheme groupoid quotient by locally free finite prop}
+Suppose that $X_*$ satisfies the following conditions\footnote{As $d_0$ and $d_1$ are exchanged by the involution $\sigma$, these conditions are symemtric on $d_0$ and $d_1$. Moreover, for any $x\in X_0$ we have $d_0d_1^{-1}(x)=d_1d_0^{-1}(x)$.}:
+\begin{enumerate}
+    \item[(\rmnum{1})] $d_1$ is locally free and finite.
+    \item[(\rmnum{2})] For any $x\in X_0$, the set $d_0d_1^{-1}(x)$ is contained in an affine open subset of $X_0$.
+\end{enumerate}
+Then we have the following:
+\begin{enumerate}
+    \item[(a)] There exists a cokernel $(Y,p)$ of $(d_0,d_1)$ in $\mathbf{Sch}_{/S}$. Moreover, such a pair $(Y,p)$ is a cokernel of $(d_0,d_1)$ in the category of ringed spaces.
+    \item[(b)] The morphism $p$ is open and integral, and $Y$ is affine if $X_0$ is affine.
+    \item[(c)] The morphism $X_1\to X_0\times_YX_0$ with components $d_0$ and $d_1$ is surjective.
+    \item[(d)] If $(d_0,d_1)$ is an equivalence couple, then the morphism $X_1\to X_0\times_YX_0$ in (c) is an isomorphism and $p:X_0\to Y$ is locally free and finite. Further, $(Y,p)$ is a cokernel of $(d_0,d_1)$ in the category of sheaves for the fppf topology and, for any base change $Y'\to Y$, $Y'$ is the cokernel of the groupoid $X_*\times_YY'$ induced from $X_*$ by base change. 
+\end{enumerate}
+In particular, for any base change $S'\to S$, $Y'=Y\times_SS'$ is the cokernel of the $S'$-groupoid $X_*'=X_*\times_SS'$. Hence, in this case, the formation of quotient commutes with base change.
+\end{theorem}
+
+It follows from \cref{scheme groupoid quotient by locally free finite prop}~(a) that the underlying topological space of $Y$ is the quotient of that of $X_0$ by the equivalence relation defined by the groupoid $X_*$. The rest of this subsection is devoted to the proof of \cref{scheme groupoid quotient by locally free finite prop}.
+
+\paragraph{Quotient by a finite and locally free groupoid (affine case)}\label{scheme groupoid quotient by locally free finite affine case paragraph}
+We first prove the theorem under the asssumption that $X_0$ is affine and $d_1$ is locally free of constant rank $n$ (then we shall see how to reduce the general case to this particular one). In this case, $X_0$, $X_1$ and $X_2$ are all affine, so we can suppose that $X_i=\Spec(A_i)$, $d_j=\Spec(\delta_j)$, $d_k'=\Spec(\delta_k')$, where $\delta_j$, $\delta_k'$ are homomorphism of rings. From (\ref{category groupoid commutative diagram}), we then obtain a diagram
+\begin{equation}\label{scheme groupoid quotient by locally free finite prop-1}
+\begin{tikzcd}
+A_2&A_1\ar[l,shift left=2pt,"\delta_0'"]\ar[l,shift right=2pt,swap,"\delta_1'"]&A_0\ar[l,swap,"\delta_0"]\\
+A_1\ar[u,"\delta_2'"]&A_0\ar[l,shift left=2pt,"\delta_0"]\ar[l,shift right=2pt,swap,"\delta_1"]\ar[u,"\delta_1"]
+\end{tikzcd}
+\end{equation}
+where the two squares are cocartesian and the first row is exact. Denote by $B$ the subring of $A_0$ formed by $a\in A_0$ such that $\delta_0(a)=\delta_1(a)$. If $a_0\in A_0$, let
+\[P_{\delta_1}(T,\delta_0(a))=T^n-\sigma_1T^{n-1}+\cdots+(-1)^n\sigma_n\]
+be the characteristic polynomial of $\delta_0(a)$ if we consider $A_1$ as an $A_0$-algebra via the homomorphism $\delta_1$. As the two squares of (\ref{scheme groupoid quotient by locally free finite prop-1}) are cocartesian, we have
+\begin{align*}
+\delta_0(P_{\delta_1}(T,\delta_0(a)))=P_{\delta_2'}(T,\delta_0'\delta_0(a)),\quad \delta_1(P_{\delta_1}(T,\delta_0(a)))=P_{\delta_2'}(T,\delta_1'\delta_0(a)).
+\end{align*}
+As $\delta_0'\delta_0=\delta_1'\delta_0$, we then conclude that
+\[\delta_0(P_{\delta_1}(T,\delta_0(a)))=\delta_1(P_{\delta_1}(T,\delta_0(a)))\]
+that is, $\delta_0(\sigma_i)=\delta_1(\sigma_i)$ for any $i$. On the other hand, Hamilton-Cayley theorem shows that we have
+\[\delta_0(a)^n-\delta_1(\sigma_1)\delta_0(a)^{n-1}+\cdots+(-1)^{n}\delta_1(\sigma_n)=0.\]
+As $\delta_1(\sigma_i)=\delta_0(\sigma_i)$, we also have
+\[\delta_0(a)^n-\delta_0(\sigma_1)\delta_0(a)^{n-1}+\cdots+(-1)^{n}\delta_0(\sigma_n)=0,\]
+whence
+\[a^n-\sigma_1a^{n-1}+\cdots+(-1)^{n}\sigma_n=0\]
+because $\delta_0$ has a section $\tau:A_1\to A_0$ such that $\tau\delta_0=\id_{A_0}$, so it is injective. We then conclude that \textit{$A_0$ is integral over $B$}.\par
+Now consider two prime ideals $\p,\q$ of $A_0$; we show that the equality $\p\cap B=\q\cap B$ implies the existence of a prime ideal $\r$ of $A_1$ such that $\p=d_0(\r)$ and $\q=d_1(\r)$. In fact, if the assertion was not true, $\p$ would be distinct from $\delta_0^{-1}(\n)$ any prime ideal $\n$ of $A_1$ such that $\delta_1^{-1}(\n)=\q$. For such an ideal $\n$ we would have $\delta_0^{-1}(\n)\cap B=\delta_1^{-1}(\n)\cap B=\q\cap B=\p\cap B$, so by \cref{integral ring extension prime lying over same contraction}, $\p$ is not contained in $\delta_0^{-1}(\n)$. But there are finitely many prime ideals $\n$ of $A_1$ such that $\delta_1^{-1}(\n)=\q$ (\cref{integral finite ring lying over prime finite}), hence, by prime aviodence, there exists $a\in\p$ which is not in any of the $\delta_0^{-1}(\n)$. Therefore, $\delta_0(a)$ is not conained in these ideals $\n$, and hence, by the lemma bolow, the norm $N_{\delta_1}(\delta_0(a))$ does not belong to $B\cap\q$ (the norm is calculated by considering $A_1$ as an $A_0$-algebra via the homomorphism $\delta_1$, and we have $N_{\delta_1}(\delta_0(a))=\sigma_n$ with the notations above). As $(-1)^{n-1}\sigma_n=a^n+\sum_{i=1}^{n-1}(-1)^i\sigma_ia^{n-i}$, this norm belongs to $B\cap\p=B\cap\q$, which is a contradiction.
+
+\begin{lemma}\label{ring homomorphism lying over prime iff norm belong to p}
+Let $A\to A'$ be a ring homomorphism such that $A'$ is a projective $A$-module of rank $n$. Let $\p$ be a prime ideal of $A$ and $\q_1,\dots,\q_r$ be the prime ideals of $A'$ lying over $\p$. Let $a\in A'$, then $a$ belongs to $\q_1\cup\cdots\cup\q_r$ if and only if its norm $N(a)$ belongs to $\p$.
+\end{lemma}
+\begin{proof}
+By replacing $A$ and $A'$ by the localizations $A_\p$ and $A'_\p$, we may assume that $(A,\p)$ is local and $A'$ is semi-local, with $\Spec(A')=\{\q_1,\dots,\q_r\}$. In this case, $A'$ is a free $A$-module of rank $n$, and $N(a)$ is the determinant of the endomorphism $h_a:A'\to A'$ with ratio $a$. We then conclude that $N(a)\notin\p$ if and only if $N(a)$ is invertible, if and only if $h_a$ is invertible, and this is equivalent to that $a\notin\q_1\cup\cdots\cup\q_r$. 
+\end{proof}
+
+We now prove assertion (a) of \cref{scheme groupoid quotient by locally free finite prop} in this case. Let $Y=\Spec(B)$ and $p=\Spec(i)$, where $i:B\to A_0$ is the inclusion. By the preceding arguments, $p:X_0\to Y$ is integral, hence surjective, and the underlying space of $\Spec(B)$ is obtained from that of $X_0$ by identifying points $x,y$ such that thre exists $z\in X_1$ such that $d_1(z)=y$, $d_0(z)=x$. Moreover, as $i$ is integral, $p$ is closed (\cref{integral ring closed map on spec}) so that $Y$ is endowed with the quotient topology of that of $X_0$. In particular, $p$ is open: if $U$ is an open subset of $X_0$, as $d_1$ is surjective and locally free and finite (hence faithfully flat and finitely presented), hence open, the saturation $U'=d_1d_0^{-1}(U')$ of $U'$ under the equivalence relation defined by $X_*$ is open, so $p(U')=p(U)$ is open, since $Y$ is endowed with the quotient topology.\par
+Finally, it follows from the choice of $B$ and the fact that $p$, $d_0$, $d_1$ are affine that the canonical sequence of sheaf of rings
+\[\begin{tikzcd}
+\mathscr{O}_Y\ar[r]&p_*(\mathscr{O}_{X_0})\ar[r,shift left=2pt,"p_*(\delta_1)"]\ar[r,shift right=2pt,swap,"p_*(\delta_0)"]&p_*((d_0)_*(\mathscr{O}_{X_1}))=p_*((d_1)_*(\mathscr{O}_{X_1}))
+\end{tikzcd}\]
+is exact. It remains to prove that $(Y,p)$ is also the cokernel of $(d_0,d_1)$ in the category of schemes (or more generally in the category of locally ringed spaces). Let $f:X_0\to Z$ be a morphism of schemes such that $fd_0=fd_1$. By the above arguments, there exists a unique morphism of ringed spaces $\tilde{f}:Y\to Z$ such that $f=\tilde{f}p$. Since the composition $f$ and $p$ are both local morphisms, we conclude that $\tilde{f}$ is a local morphism, hence a morphism of schemes.\par
+Now the assertion (b) of \cref{scheme groupoid quotient by locally free finite prop} follows immediately. On the other hand, since $p:|X_0|\to |Y|$ is a quotient map, the following map
+\[d_0\boxtimes d_1:|X_1|\to |X_0|\times_{|Y|}|X_0|\]
+is surjective. This map factors into
+\[|X_1|\stackrel{d_0\boxtimes d_1}{\to} |X_0\times_YX_0|\stackrel{q}{\to}|X_0|\times_{|Y|}|X_0|\]
+where $q$ is the canonical map. We therefore conclude that the image of $d_0\boxtimes d_1$ then contains points $v\in X_0\times_YX_0$ such that $\{v\}=q^{-1}(q(v))$, which is staisfied if $v$ is a rational point over $Y$ (that is, if the residue field $\kappa(v)$ is identified with $\kappa(w)$, where $w$ is the image of $v$ in $Y$). If $v\in X_0\times_YX_0$ is not rational over $Y$, let $w$ be the image of $v$ in $Y$. By (\cite{EGA3} $0_{\text{\Rmnum{3}}}$, 10.3.1) there exists a local ring $C$ and a flat local homomorphism $\rho:\mathscr{O}_w\to C$ such that $C/\m_wC$ is isomorphic to $\kappa(v)$ as $\kappa(w)$-algebras. If we put $Y'=\Spec(C)$ and $\pi:Y'\to Y$ is the morphism induced by $\rho$, it is clear that the canonical projection of $(X_0\times_YX_0)\times_YY'$ onto $X_0\times_YX_0$ sends $v$ to a point $v'$ of $(X_0\times_YX_0)\times_YY'$ which is rational over $Y'$. As
+\[(X_0\times_YX_0)\times_YY'\cong(X_0\times_YY')\times_{Y'}(X_0\times_YY'),\]
+and as the hypothesis of \cref{scheme groupoid quotient by locally free finite prop} and the preceding results, in particular that of (b), is valid under base change $\pi:Y'\to Y$, we conclude that $v'$ is the image of an element $u'\in X_1\times_YY'$ under the morphism deduced from $d_0\boxtimes d_1$ by base change. If $u$ is the image of $u'$ in $X_1$, we then have $v=(d_0\boxtimes d_1)(u)$.\par
+Finally, we prove assertion (d) of \cref{scheme groupoid quotient by locally free finite prop}. By hypothesis, $X_0=\Spec(A_0)$, $X_1=\Spec(A_1)$, and for $i=0,1$, the morphism $\delta_i:A_0\to A_1$ is finite; hence the morphism $A_0\otimes_BA_0\to A_1$ is finite. Since $(d_0,d_1)$ is assumed to be an equivalence couple, we may further assume that $d_0\boxtimes d_1:X_1\to X_0\times_YX_0$ is a monomorphism; then, by (\cite{EGA4} $\text{\Rmnum{4}}_4$, 18.12.6), $d_0\boxtimes d_1$ is a closed immersion, so $A_0\otimes_BA_0\to A_1$ is surjective. We will show that this is an isomorphism (and also that $p:X_0\to Y$ is finite and locally free). For this, it suffices to show that for any prime ideal $\p$ of $B$, the homomorphism $(A_0)_\p\otimes_{B_\p}(A_0)_\p\to (A_1)_\p$ with components $(\delta_0)_\p$ and $(\delta_1)_\p$ is bijective. In other words, we may assume that $B$ is local. It then follows from \cref{integral finite ring lying over prime finite} that $(A_0)_\p$ is semi-local. By applying (\cite{EGA3} $0_{\text{\Rmnum{3}}}$, 10.3.1) to perform a faithfully flat base change, we may also assume that the residue field of $B$ is infinite, so that we can use the following lemma:
+
+\begin{lemma}\label{semilocal ring submodule generating contain basis}
+Let $B$ be a local ring with infinite residue field, $A$ be a semi-local ring and $i:B\to A$ be a homomorphism wich sends the maximal ideal $\m$ of $B$ into the radical $\r$ of $A$. Let $M$ be a free $A$-module of rank $n$ and $N$ be a sub-$B$-module of $M$ which generates $M$ as an $A$-module. Then $N$ contains a basis of $M$ over $A$.
+\end{lemma}
+\begin{proof}
+We recall that, by Nakayama lemma, a sequence $m_1,\dots,m_n$ of elements of $M$ is an $A$-basis of $M$ if and only if the canonical images of $m_1,\dots,m_n$ in $M/\r M$ form a basis of $M/\r M$ over $A/\r$. We can then replace $M$ by $M/\r M$, $N$ by $N/(N\cap\r M)$, $A$ by $A/\r$ and $B$ by $B/\m$, in which case the lemma is immediate. In fact, we then have $A=K_1\times\cdots\times K_r$, and $M$ can be identified with $K_1^n\times\cdots\times K_r^n$. We can choose elements $(x_{ij})_{1\leq i\leq r,1\leq j\leq n}$ of $N$ such that for each $1\leq i\leq r$, the $i$-th component of $(x_{i,1},\dots,x_{i,n})$ in $K_i^n$ is linearly independent over $K_i$. Then, we can consider the polynomial
+\[f(k_{1,1},\dots,k_{n,r})=\prod_{i=1}^{r}\det_{K_i}(\sum_{j=1}^{n}k_{j,1}x_{j,1},\dots,\sum_{j=1}^{n}k_{j,r}x_{j,r})\]
+where $\det_{K_i}(z_1,\dots,z_n)$ denotes the determinant of the $i$-th components of $z_1,\dots,z_n$. As $k$ is an infinite field and each polynomial $\det_{K_i}(\sum_{j=1}^{n}k_{j,1}x_{j,1},\dots,\sum_{j=1}^{n}k_{j,r}x_{j,r})$ with coefficient in $A$ is nonzero (take $k_{i,1}=\cdots=k_{i,n}=1$ and others to be zero), we conclude that there exists a family $(y_\ell)_{1\leq\ell\leq n}$ of $k$-linear combinations of the $x_{ij}$ such that for any $1\leq i\leq n$, the $i$-th component of $(y_\ell)_{1\leq\ell\leq n}$ is linearly independent over $K_i$. We therefore conclude that $(y_\ell)_{1\leq\ell\leq n}$ is a basis of $M$ over $A$.
+\end{proof}
+
+We shall apply \cref{semilocal ring submodule generating contain basis} for the ring homomorphism $B\to A_0$ and $M=A_1$ (as an $A_0$-module via the homomorphism $\delta_1$), and $N=\delta_0(A_0)$. In fact, as $d_0\boxtimes d_1:X_1\to X_0\times_YX_0$ is a closed immersion, the homomorphism $A_0\otimes_BA_0\to A_1$ with components $\delta_0$ and $\delta_1$ is surjective; this signifies that $\delta_0(A_0)$ generates the $A_0$-module $A_1$.\par
+Let $a_1,\dots,a_n$ be elements of $A_0$ such that $\delta_0(a_1),\dots,\delta_0(a_n)$ form a basis of $A_1$ over $A_0$. If we can show that $a_1,\dots,a_n$ is a basis of $A_0$ over $B$, then the homomorphism $A_0\otimes_BA_0\to A_1$ sends the basis $(1\otimes a_i)_{1\leq i\leq n}$ to the basis $(\delta_0(a_i))_{1\leq i\leq n}$, hence is bijective. Therefore, if $\eps:\Z^n\to A_0$ is a homomorphism of abelian groups which sends the natural basis of $\Z^n$ to $a_1,\dots,a_n$, it suffices to prove that the map $B\otimes_{\Z}\Z^n\to A_0$ with components $i$ and $\eps$ is bijective. Now the diagram (\ref{scheme groupoid quotient by locally free finite prop-1}) gives the following commutative diagram:
+\[\begin{tikzcd}
+A_2&A_1\ar[l,shift left=2pt,"\delta_0'"]\ar[l,shift right=2pt,swap,"\delta_1'"]&A_0\ar[l,swap,"\delta_0"]\\
+A_1\otimes_{\Z}\Z^n\ar[u,"u_2"]&A_0\otimes_{\Z}\Z^n\ar[l,shift left=2pt,"\delta_0\otimes 1"]\ar[l,shift right=2pt,swap,"\delta_1\otimes 1"]\ar[u,"u_1","\cong"']&B\otimes_{\Z}\Z^n\ar[l,swap,"i\otimes 1"]\ar[u,"u_0"]
+\end{tikzcd}\]
+where $u_0$, $u_1$ and $u_2$ have components $i$ and $\eps$, $\delta$ and $\delta_0\eps$, $\delta_2'$ and $\delta_0'\delta_0\eps$, respectively. We see that $u_1$ is an isomorphism. As the two squares in (\ref{scheme groupoid quotient by locally free finite prop-1}) are cocartesian, $u_2$ is then an isomorphism. Since the horizontal row of the above diagram is exact, we conclude that $u_0$ is bijective. This shows that $A_0$ is a locally free $B$-module of rank $n$, whence $\delta_0\otimes\delta_1:A_0\otimes_BA_0\to A_1$ is an isomorphism. This proves \cref{scheme groupoid quotient by locally free finite prop} in the particular case where $X_0$ is affine and $d_1$ is locally free of rank $n$.
+
+\paragraph{Quotient by a finite and locally free groupoid (general case)}
+Let $U^n$ be the largest open subset of $X_0$ over which $d_1$ is finite and locally free of rank $n$. We know that $X_0$ is the direct sum of these $U^n$. On the other hand, it follows from the Cartesian squares
+\[\begin{tikzcd}
+X_2\ar[r,"d_0'"]\ar[d,swap,"d_2'"]&X_1\ar[d,"d_1"]\\
+X_1\ar[r,"d_0"]&X_0
+\end{tikzcd}\quad\quad \begin{tikzcd}
+X_2\ar[r,"d_1'"]\ar[d,swap,"d_2'"]&X_1\ar[d,"d_1"]\\
+X_1\ar[r,"d_1"]&X_0
+\end{tikzcd}\]
+that the inverse images of $U^n$ under $d_0$ and $d_1$ both coincide with the lagest open subset of $X_1$ over which $d_2'$ is locally free of rank $n$: in fact, as $d_0$ (resp. $d_1$) is surjective, finite and flat, hence faithfully flat and affine, $d_2'$ is of rank $n$ at a point $x$ of $X_1$ if and only if $d_1$ is of rank $n$ on a neighborhood of $d_0(x)$ (resp. $d_1(x)$). We then have $d_0^{-1}(U^n)=d_1^{-1}(U^n)$ so that the groupoid $X_*$ is the direct sum of the groupoids $X_*^n$ induced from $X_*$ on the open and closed subsets $U^n$. It then suffices to prove \cref{scheme groupoid quotient by locally free finite prop} for each $X_*^n$, so we can assume that $d_1$ is locally free of finite rank $n$.\par 
+We now prove the theorem in the general case. By the above arguments, we can assume that $d_1$ is locally free of rank $n$. Let $(Y,p)$ be a cokernel of $(d_0,d_1)$ in the category of ringed spaces. Then as before, for (a) it suffices to prove that $Y$ is a scheme and $p:X_0\to Y$ is a morphism of schemes. By \cref{ringed space groupoid cokernel in scheme if}, this question is local over $Y$: let $y\in Y$ and $x_0\in X_0$ such that $p(x)=y$; if $x$ has a saturated affine open neighborhood $U$, then $p(U)$ is an affine open of $Y$ by \cref{scheme groupoid quotient by locally free finite prop}~(b) in the affine case and $p|_U$ is a morphism of schemes. It then suffices to prove that any $x\in X_0$ has a saturated affine open neighborhood $U$. Here is how we proceed (the proof is taken from \cite{SGA1}, \Rmnum{8}, cor. 7.6). By condition (\rmnum{2}) of \cref{scheme groupoid quotient by locally free finite prop}, there exists an open affine subset $V$ of $X_0$ containing $d_1(d_0^{-1}(X))$; if $F=X_0-V$, $d_1(d_0^{-1}(F))$ is closed because $d_1$ is integral and $V'=X_0-d_1(d_0^{-1}(F))$ is the largest saturated open subset containing $V$. As $V'$ is an neighborhood of the finite set $d_1(d_0^{-1}(x))$ ($d_0$ is alsl finite, hence has finite fiber), there exists a section $f$ of the structural sheaf of $V$ which vanishes over $V-V'$ and such that $d_1(d_0^{-1}(x))$ is contained in the open subset $V_f\sub V$ formed by points where $f$ is non-vanishing. We then see that the largest saturated open subset $V_f'$ of $V_f$ is affine: in fact, let $Z(f)=V'-V_f$. Then $d_0^{-1}(Z(f))$ is the set of points of $d_0^{-1}(V')=d_1^{-1}(V')$ where the image $d_0^*(f)$ of $f$ under the map induced by $d_0$ vanishes. On the other hand, as $d_1$ induces a locally free morphism of rank $n$ from $d_0^{-1}(V')=d_1^{-1}(V')$ to $V'$, by \cref{ring homomorphism lying over prime iff norm belong to p}, $d_1(d_0^{-1}(Z(f)))$ is the set of points where the norm $N(d_0^*(f))$ relative to the morphism $d_1$ vanishes. It follows that $V_f'=V'-d_1(d_0(Z(f)))$ is the set of points of $V_f$ where $N(d_0^*(f))$ does not vanish, so $V_f'$ is affine.\par
+We therefore conclude assertion (a), and (b), (c), together with the first part of (d), are then clear from the affine case. It remains to see the other concequences in (d). By hypothesis, the groupoid $X_*$ is given by an equivalence relation $R\to X_0\times_SX_0$, and we have proved that $R$ is effective and that $p:X_0\to Y=X_0/R$ is surjective, finite and locally free, hence, in particular, faithfully flat and finitely presented. Therefore, if $\mathcal{M}$ is the family of faithfully flat morphisms locally of finite presentaion, then $R$ is $\mathcal{M}$-effective. By \cref{scheme equivalence relation M_i-effective iff quotient represent}, we conclude that $(Y,p)$ represents the quotient sheaf of $X_0$ by $R$ for the fppf topology, and the assertion concerning base change follows from \cref{category equivalence relation M-effective prop}.
+
+\begin{remark}
+With the hypothesis and notations of \cref{scheme groupoid quotient by locally free finite prop}, suppose that $S$ is locally Noetherian and $\pi_0:X_0\to S$ is quasi-projective. Let $\mathscr{A}$ be an ample $\mathscr{O}_{X_0}$-module relative to $\pi_0$. By \cref{scheme morphism finite locally free iff direct image}, $p_*(\mathscr{A})$ is an invertible $p_*(\mathscr{O}_{X_0})$-module, so there exists a covering $(V_i)_{i\in I}$ of $Y$ by affine opens, such that $\mathscr{A}$ is trivial over each saturated affine open subset $U_i=p^{-1}(V_i)$. For each $i\in I$, let $A_{i,0}=\mathscr{O}_{X_0}(U_i)$, $A_{i,1}=\mathscr{O}_{X_1}(d_0^{-1}(U_i))=\mathscr{O}_{X_1}(d_1^{-1}(U_i))$, $\delta_{i,0}$ (resp. $\delta_{i,1}$) be the morphism $A_{i,0}\to A_{i,1}$ induced by $d_0$ (resp. $d_1$), and $B_i=\mathscr{O}_Y(V_i)=\{b\in A_{i,0}:\delta_{i,0}(b)=\delta_{i,1}(b)\}$. Following \autoref{scheme norm of invertible sheaf subsection}, consider the invertible $\mathscr{O}_{X_0}$-module $N_{d_1}(d_0^*(\mathscr{A}))$, the norm of $d_0^*(\mathscr{A})$ relative to the finite and locally free morphism $d_1:X_1\to X_0$. If $\mathscr{A}$ is given, relative to the open covering $(U_i)_{i\in I}$, by the transition functions $c_{ij}\in\mathscr{O}_{X_0}(U_i\cap U_j)^{\times}$, then $N_{d_1}(d_0^*(\mathscr{A}))$ is given by the transition functions $N_{\delta_1}(\delta_0(c_{ij}))\in\mathscr{O}_{X_0}(U_i\cap U_j)^\times$. As, by the proof of \ref{scheme groupoid quotient by locally free finite affine case paragraph}, these elements belong to $\mathscr{O}_Y(U_i\cap U_j)^\times$, they define an invertible $\mathscr{O}_Y$-module $\mathscr{L}$, such that $p^*(\mathscr{L})=N_{d_1}(d_0^*(\mathscr{A}))$. We also note that, for any $n\in\N$, we have $p^*(\mathscr{L}^n)=N_{d_1}(d_0^*(\mathscr{A}^n))$.\par
+We now prove that $\mathscr{L}$ is ample for the morphism $\pi:Y\to S$ (the proof that $\pi:Y\to S$ is of finite type follows from that of \cref{scheme groupoid quasi-section lemma}~(b)). For this, by replacing $S$ with an affine open, we may assume that $S$ is affine. Let $y\in Y$, $x\in X_0$ such that $p(x)=y$, $V$ be an open subset of $Y$ containing $y$, and $U=p^{-1}(V)$. As $\mathscr{A}$ is $\pi_0$-ample, there exists an integer $n\geq 1$ and a section $s\in\Gamma(X_0,\mathscr{A}^n)$ such that the open subset $(X_0)_s$ satisfies $x\in (X_0)_s\sub U$ (cf. \cref{scheme ample sheaf iff}). With the preceding notations, $s$ is given by the sections $a_i\in A_{i,0}=\mathscr{O}_{X_0}(U_i)$ such that $a_i=c_{ij}a_j$ over $U_i\cap U_j$, and $(X_0)_s$ is the union of $U_i'=\{p\in\Spec(A_{i,0}):a_i\notin\p\}$. For each $i\in I$, put $N(a_i)=N_{\delta_1}(\delta_0(a_i))\in B_i$. By \cref{scheme groupoid quotient by locally free finite prop}~(a) and \cref{ring homomorphism lying over prime iff norm belong to p}, we have
+\[p(U'_i)=pd_1d_0^{-1}(U_i')=pd_1(\{\q\in\Spec(A_{i,1}):\delta_{i,0}(a_i)\notin\q\})\]
+and $d_1(\{\q\in\Spec(A_{i,1}):\delta_{i,0}(a_i)\notin\q\})=\{\p\in\Spec(A_{i,0}):N_{\delta_1}(\delta_{i,0}(a_i))\notin\p\}$, whence
+\[p(U_i')=\{\p\in\Spec(B_i):N(a_i)\notin\p\}.\]
+It then follows that $p((X_0)_s)=Y_{N(s)}$, so if we denote by $N(s)$ the section of $\mathscr{L}^n$ over $Y$ defined by the sections $N(a_i)\in\mathscr{O}_Y(V_i)$, we then have
+\begin{equation}
+y\in p((X_0)_s)=Y_{N(s)}\sub p(U)=V.
+\end{equation} 
+This proves that $\mathscr{L}$ is ample for $\pi:Y\to S$ (\cref{scheme ample sheaf iff}), so $\pi:Y\to S$ is quasi-projective.
+\end{remark}
+
+\subsection{Passage to quotient if there exists a quasi-section}
+We now prove a techniqucal lemma which will be used in the proof of the forecoming two theorems. Let $S$ be a scheme and
+\[\begin{tikzcd}[column sep=12mm]
+X_2\ar[r,shift left=8pt,"d_0'"]\ar[r,shift right=8pt,swap,"d_2'"]\ar[r,"d_1'"description]&X_1\ar[r,shift left=2pt,"d_0"]\ar[r,shift right=2pt,swap,"d_1"]&X_0
+\end{tikzcd}\]
+be a $\mathbf{Sch}_{/S}$-groupoid. A \textbf{quasi-section} of $X_*$ is defined to be a subscheme $U$ of $X_0$ such that
+\begin{enumerate}
+    \item[(a)] The restriction of $d_1$ to $d_0^{-1}(U)$ is a finite, locally free and surjective morphism from $d_0^{-1}(U)$ to $X_0$.
+    \item[(b)] Any subset $E$ of $U$ formed by equivalent points for the equivalence relation defined by $X_*$ is contained in an affine open subset of $U$\footnote{If $x,y\in E$, then there exists $z\in X_1$ such that $d_1(z)=x$, $d_0(z)=y$, that is, $z\in (d_1|_{d_0^{-1}(U)})^{-1}(x)$, which is a finite set by (a). Hence $E$ is contained in the finite subset $d_0d_1^{-1}(x)\cap U$}.
+\end{enumerate}
+If $U$ is a quasi-section of $X_*$, the $\mathbf{Sch}_{/S}$-groupoid
+\[\begin{tikzcd}[column sep=12mm]
+U_2\ar[r,shift left=8pt,"u_0'"]\ar[r,shift right=8pt,swap,"u_2'"]\ar[r,"u_1'"description]&U_1\ar[r,shift left=2pt,"u_0"]\ar[r,shift right=2pt,swap,"u_1"]&U
+\end{tikzcd}\]
+induced from $X_*$ and the inclusion $U\to X_0$ verifies the hypotheses of \cref{scheme groupoid quotient by locally free finite prop}. In fact, put $V=d_0^{-1}(U)$ and let $u,v$ be morphisms induced by $d_0$ and $d_1$:
+\[\begin{tikzcd}
+X_0&V\ar[r,"u"]\ar[l,swap,"v"]&U
+\end{tikzcd}\]
+By (\ref{category groupoid base change Y_1 square-2}), we then have a Cartesian square
+\[\begin{tikzcd}
+U_1\ar[r]\ar[d,swap,"u_1"]&V\ar[d,"v"]\\
+U\ar[r,hook]&X_0
+\end{tikzcd}\]
+hence $u_1$ is surjective and finite locally free by (a). With (b), condition (a) then assures that the groupoid $U_*$ satisfies the hypotheses of \cref{scheme groupoid quotient by locally free finite prop}. In particular, $\coker(u_0,u_1)$ exists in $\mathbf{Sch}_{/S}$. Moreover, as $d_0$ possesses a section (the morphism $s:X_0\to X_1$), $u$ is a universally effective epimorphism by (\cite{SGA3}, \Rmnum{4}, 1.12); this ensures, by \cref{category groupoid cokernel under universal effective base change prop}, that $\coker(u_0,u_1)$ coincides with the cokernel $\coker(v_0,v_1)$ of the groupoid $V_*$:
+\[\begin{tikzcd}[column sep=12mm]
+V_2\ar[r,shift left=8pt,"v_0'"]\ar[r,shift right=8pt,swap,"v_2'"]\ar[r,"v_1'"description]&V_1\ar[r,shift left=2pt,"v_0"]\ar[r,shift right=2pt,swap,"v_1"]&V
+\end{tikzcd}\]
+induced by $U_*$ and the base change $u:V\to U$, which is also the inverse image of $X_*$ under the base change
+\[V\hookrightarrow X_1\stackrel{d_0}{\to} X_0.\]
+By \cref{category groupoid base change by d_0 and d_1}, $V_*$ is isomorphic to the groupoid $V_*'$, the inverse image of $X_*$ under the base change
+\[V\hookrightarrow X_1\stackrel{d_1}{\to} X_0\]
+and hence $V_*'$ admits a cokernel in $\mathbf{Sch}_{/S}$. Now, being flat, surjective and finite, $v:V\to X_0$ is faithfully flat and quasi-compact, hence a universally effective epimorphism by \cref{scheme topology T_i family M_i}. Therefore by \cref{category groupoid base change by d_0 and d_1}, the groupoid $X_*$ also admits a cokernel $\coker(d_0,d_1)$ in $\mathbf{Sch}_{/S}$. We have therefore proved the first assertion of (a) in the following lemma:
+
+\begin{lemma}\label{scheme groupoid quasi-section lemma}
+Suppose that the $\mathbf{Sch}_{/S}$-groupoid $X_*$ possesses a quasi-section. Then:
+\begin{enumerate}
+    \item[(a)] There exists a cokernel $(Y,p)$ of $(d_0,d_1)$ in $\mathbf{Sch}_{/S}$. Moreover, such a couple $(Y,p)$ is also a cokernel of $(d_0,d_1)$ in the category of ringed spaces.
+    \item[(a')] $p$ is surjective, and is open (resp. universally closed) if $d_0$ is.
+    \item[(b)] Suppose that $S$ is locally Noetherian and $X_0$ is locally of finite type (resp. of finite type) over $S$. Then $p$ and $Y\to S$ are locally of finite presentation (resp. of finite presentation).
+    \item[(c)] The morphism $X_1\to X_0\times_YX_0$ with components $d_0$ and $d_1$ is surjective.
+    \item[(d)] If $(d_0,d_1)$ is an equivalence couple, $X_1\to X_0\times_YX_0$ is an isomorphism. Moreover, if $d_0:X_1\to X_0$ is flat, $p$ is faithfully flat.   
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+Before proving the second assertion of (a), let us first consider (a'), (b) and (c). We have seen that $(Y,p)$ is identified with $\coker(v_0,v_1)$ and $\coker(u_0,u_1)$. Let $q$ and $r$ be the canonical epimorphisms of $U$ and $Y$ onto $Y$:
+\begin{equation}\label{scheme groupoid quasi-section lemma-1}
+\begin{tikzcd}
+X_0\ar[rd,swap,"p"]&V\ar[l,swap,"v"]\ar[d,"r"]\ar[r,"u"]&U\ar[ld,"q"]\\
+&Y&
+\end{tikzcd}
+\end{equation}
+By hypothesis, $v$ is surjective and finite locally free, hence open. On the other hand, if $d_0:X_1\to X_0$ is open (resp. universally closed), then $u$, which is induced from $d_0$ by restriction, is also open (resp. universally closed). As, by \cref{scheme groupoid quotient by locally free finite prop}, $q$ is surjective, integral and open, we conclude that $r$ is surjective, and open (resp. universally closed) if $d_0$ is. The same assertion then holds for $p$, since $v$ is surjective. This proves (a').\par
+Now suppose that $S$ is locally Noetherian and $X_0$ is locally of finite type over $S$, so that $X_0$ is locally Noetherian. Let $S'=\Spec(R)$ be an open affine subset of $S$, $Y'=\Spec(B)$ an open affine subset of $Y$ which projections into $S'$, and $U'=\Spec(A)$ be the inverse image of $Y'$ in $U$. As $R$ is Noetherian, it suffices to show that $B$ is a finite type $R$-algebra, and this follows from the fact that $R$ is Noetherian and $A$ is integral over $B$ (cf. (\ref{Artin-Tate lemma})). Finally, as $X_0\to S$ is locally of finite type, so is $p$ (\cref{scheme morphism local ft permanence prop}), hence $p$ is locally of finite presentation since $Y$ is locally Neotherian.\par
+It remains to see that second assertion of (b). Suppose that $X_0$ is of finite type over $S$. Then, as $p$ is surjective, $Y$ is also quasi-compact over $S$, hence of finite type over $S$. As $S$ is locally Noetherian, $X_0\to S$ and $Y\to S$ are then finitely presented, and hence $p:X_0\to Y$ is also finitele presented (\cref{scheme morphism fp permanence prop}).\par
+Finally, as the groupoid $V_*$ with base $V$ is isomorphic to the inverse image of $U_*$ by the base change $u$ and to the inverse image of $X_*$ by the base change $v$, we have Cartesian squares
+\begin{equation}\label{scheme groupoid quasi-section lemma-2}
+\begin{tikzcd}
+X_1\ar[d,"d_0\boxtimes d_1"]&V_1\ar[l]\ar[r]\ar[d,"v_0\boxtimes v_1"]&U_1\ar[d,"u_0\boxtimes u_1"]\\
+X_0\times_YX_0&V\times_YV\ar[l,swap,"v\times v"]\ar[r,"u\times u"]&U\times_YU
+\end{tikzcd}
+\end{equation}
+As $u_0\boxtimes u_1$ is surjective, so is $v_0\boxtimes v_1$. Since $v\times v$ is surjective, the composition $V_1\to X_0\times_YX_0$ is also surjective, whence so is $d_0\boxtimes d_1$.\par
+We now turn to the proof of the second assertion of (a). To see that $(Y,p)$ is a cokernel of $(d_0,d_1)$ in $\mathbf{Rsp}$, we first show that $Y$ is obtained from $X_0$ by identifying points $x,y$ such that there exists $z\in X_1$ with $d_0(z)=x$ and $d_1(z)=y$. In fact, $p$ is surjective and we have $pd_0=pd_1$; conversely, if $p(x)=p(y)$, there exists a point $z'$ of $X_0\times_YX_0$ whose first projection is $x$ and second projection is $y$. If $z$ is a point of $X_1$ such that $(d_0\boxtimes d_1)(z)=z'$, then $d_0(z)=x$ and $d_1(z)=y$, whence our assertion. Also, if $W$ is a saturated open subset of $X_0$, $W\cap U$ is saturated open in $U$, so by \cref{scheme groupoid quotient by locally free finite prop}, $q(W\cap U)$ is open in $Y$. As $q(W\cap U)=p(W)$, we see that $Y$ is endowed with the quotient topology of that of $X_0$.\par
+It remains to show that the canonical sequence 
+\[\begin{tikzcd}
+\mathscr{O}_Y\ar[r]&p_*(\mathscr{O}_{X_0})\ar[r,shift left=2pt]\ar[r,shift right=2pt,swap]&p_*((d_0)_*(\mathscr{O}_{X_1}))=p_*((d_1)_*(\mathscr{O}_{X_1}))
+\end{tikzcd}\]
+is exact. Let $Y'$ be an open subset of $Y$ and put $U'=q^{-1}(Y')$, $X_0'=p^{-1}(Y')$, etc. Then, $U'$ is a saturated open subset of $U$ for the equivalence relation defined by the groupoid $U_*$, and it follows from \cref{*} and \cref{*} that $Y'$ is its cokernel, in $\mathbf{Sch}_{/S}$ and in $\mathbf{Rsp}$. Similarly, $X_0'$ is saturated open in $X_0$ for the equivalence relation defined by $X_*$ and we have the following Cartesian squares
+\[\begin{tikzcd}
+X_0'\ar[d]&V'=d_0^{-1}(U')\ar[l,swap,"\tilde{d}_1"]\ar[r,"\tilde{d}_0"]\ar[d]&U'\ar[d]\\
+X_0&V=d_0^{-1}(U)\ar[l,swap,"d_1"]\ar[r,"d_0"]&U'
+\end{tikzcd}\]
+Hence $\tilde{d}_1$ is surjective and finite locally free. On the other hand, let $x\in U'$. As $U$ is a quasi-section, the set $E=d_0d_1^{-1}(x)\cap U$ is finite and contained in an affine open $W$ of $U$. The intersection $E'=E\cap U'$ is then a finite subset contained in a quasi-affine open subset $W\cap U'$. Therefore, there exists an affine open $W'$ of $W\cap V$ containing $E'$, so $U'$ is a quasi-section of the groupoid $X_*'$ induced by $X_*$ over $X_0'$. The first assertion of (a), applied to $X_*'$ and $U'$, shows that $Y'$ is the cokernel of $X_*'$ in $\mathbf{Sch}_{/S}$. In particular, for any $S$-scheme $T$, we have an exact sequence
+\[\begin{tikzcd}
+T(Y')\ar[r,"T(p|_{X_0'})"]&T(X_0')\ar[r,shift left=2pt,"T(d_1|_{X_1'})"]\ar[r,shift right=2pt,swap,"T(d_0|_{X_1'})"]&T(X_1')
+\end{tikzcd}\] 
+Now if $T=\G_{a,S}$, this sequence is identified with
+\[\begin{tikzcd}
+\Gamma(Y',\mathscr{O}_Y)\ar[r]&\Gamma(p^{-1}(Y'),\mathscr{O}_{X_0})\ar[r,shift left=2pt,"\delta_1"]\ar[r,shift right=2pt,swap,"\delta_0"]&\Gamma(d_0^{-1}p^{-1}(Y'),\mathscr{O}_{X_1})=\Gamma(d_1^{-1}p^{-1}(Y'),\mathscr{O}_{X_1})
+\end{tikzcd}\]
+which is then exact for any open subset $Y'$ of $Y$. This conclude the proof of (a).\par
+Finally, if $(d_0,d_1)$ is an equivalence couple, so is $(u_0,u_1)$ and the morphism $u_0\boxtimes u_1:U_1\to U\times_YU$ is an isomorphism (\cref{scheme groupoid quotient by locally free finite prop}). As $v\times v$ is faithfully flat and quasi-compact, we conclude from (\ref{scheme groupoid quasi-section lemma-2}) that $d_0\boxtimes d_1$ is an isomorphism (\cite{SGA1}, \Rmnum{8}, 5.4). Moreover, if $d_0$ is flat, $u$ is also flat. Now $q$ is flat by \cref{scheme groupoid quotient by locally free finite prop}, so $r$ is also flat from the diagram (\ref{scheme groupoid quasi-section lemma-1}). As $v$ is faithfully flat, $p$ is then flat, and hence faithfully flat since it is surjective.
+\end{proof}
+
+\subsection{Passage to quotient for a proper and flat groupoid}
+
+\subsection{Quotients by a group scheme}
+We now consider the action of a group scheme $G$ over $S$ on an $S$-scheme $X$, and use the preceding results to construct the quotient $G\backslash X$. We first recall the following result:
+
+\begin{theorem}\label{scheme morphism local fp factorization by quotient iff}
+Let $S$ be a scheme and $f:X\to Y$ be an $S$-morphism. Suppose that one of the following conditions is satisfied:
+\begin{enumerate}
+    \item[($\alpha$)] The morphism $f$ is locally of finite presentation.
+    \item[($\beta$)] The scheme $S$ is locally Noetherian and $X$ is locally of finite type over $S$. 
+\end{enumerate} Then the following conditions are equivalent:
+\begin{enumerate}
+    \item[(\rmnum{1})] There exists an $S$-scheme $X'$ and a factorization of $f$:
+    \[f:X\stackrel{f'}{\to} X'\stackrel{i}{\to}Y\]
+    where $f'$ is a faithfully flat $S$-morphism locally of finite presentation and $i$ is a monomorphism.
+    \item[(\rmnum{2})] The first projection $\pr_1:X\times_YX\to X$ is a flat morphism.
+\end{enumerate}
+Moreover, under these conditions, $(X',f')$ is a quotient of $X$ by the equivalence relation induced by $f$ (for the fppf topology), so that the factorization $f=i\circ f'$ is unique up to isomorphisms.
+\end{theorem}
+\begin{proof}
+The implication (\rmnum{1})$\Rightarrow$(\rmnum{2}) is trivial. In fact, the first projection $\pr_1':X\times_{X'}X\to X$ factors through $X\times_YX$:
+\[\pr_1':X\times_{X'}X\stackrel{u}{\to} X\times_YX\stackrel{\pr_1}{\to} X.\]
+The morphism $u$ is an isomorphism, since $i$ is a monomorphism, and $\pr_1'$ is flat since $f'$ is flat, hence $\pr_1$ is flat.\par
+To prove that (\rmnum{2})$\Rightarrow$(\rmnum{1}), we first note that the assertions of \cref{scheme morphism local fp factorization by quotient iff} are local on $Y$ (hence are local on $S$); they are also local on $X$, as it easily follows from the fact that a flat morphism locally of finite presentation is open (\cite{EGA4}, $\text{\Rmnum{4}}_3$, 11.3.1).\par
+The case where $Y$ is locally Noetherian and $X$ is of finite type over $Y$ is treated in (\cite{Murre1964}, cor.2 du th.2). We now see how to reduce ourselves to this case. Under the hypothesis ($\alpha$), we can therefore assume that $X,Y$ are affine and $f$ is finitely presented. By replacing $S$ with $Y$, we may also assume that $X$ and $Y$ are finitely presented over $S$. We then reduce to the case where $S$ is Noetherian thanks to (\cite{EGA4}, $\text{\Rmnum{4}}_3$, 11.2.6).\par
+Under the hypothesis ($\beta$), we can suppose that $X,Y,S$ are affine, $S$ is Noetherian and $X$ is of finite type over $S$. Consider $Y$ as a filtered projective limit of affine schemes $Y_i$ which are of finite type over $S$. The schemes $X\times_{Y_i}X$ then form a descreasing filtered system of closed subschemes of $X\times_SX$, whose projective limit is $X\times_YX$. As $X\times_SX$ is Noetherian, we have $X\times_{Y_i}X=X\times_YX$ for $i$ large enough, so that the composition
+\[f_i:X\stackrel{f}{\to} Y\to Y_i\]
+satisfies the hypothesis of (\rmnum{2}) if so does for $f$. As the equivalence relation defined by $f$ over $X$ coincides with that by $f_i$, it is clear that it suffices to prove (\rmnum{2})$\Rightarrow$(\rmnum{1}) for $f_i$, which means we can reduce to the case where $Y$ is of finite type over $S$. 
+\end{proof}
+
+Now let $S$ be a scheme, $G$ be a group scheme over $S$ which is locally of finite presentation over $S$, and $X$ be an $S$-scheme acted by $G$. If $X\to S$ possesses a section $\xi$, we recall that the stabilizer $\Stab_G(\xi)$ is represented by a group subscheme of $G$ (in fact, by the group subscheme $G\times_XS$, cf. \ref{category group action in PSh paragraph}).
+
+\begin{theorem}\label{scheme group action by local fp quotient by stabilizer exist}
+Let $S$ be a scheme and $G$ be a $S$-group scheme locally of finite presentation over $S$, which acts on an $S$-scheme $X$. Suppose that $X\to S$ possesses a section $\xi$ such that the stabilizer $H$ of $\xi$ in $G$ is flat over $S$. If one of the following conditions is satisfied:
+\begin{enumerate}
+    \item[(a)] $X$ is locally of finite type over $S$;
+    \item[(b)] $S$ is locally Noetherian,
+\end{enumerate}
+then the fppf quotient sheaf $G/H$ is representable by an $S$-scheme which is locally of finite presentation over $S$, and the $S$-morphism induced by $\xi$:
+\[f:G=G\times_SS\to G\times_SX\to X,\quad g\mapsto g\cdot\xi\]
+factors into
+\[\begin{tikzcd}
+G\ar[rd,swap,"p"]\ar[rr,"f"]&&X\\
+&G/H\ar[ru,hook,"i"]&
+\end{tikzcd}\]
+where $p$ is the canonical projection, which is a faithfully flat morphism locally of finite presentation, and $i$ is a monomorphism.
+\end{theorem}
+\begin{proof}
+The morphism $f$ makes $G$ an $X$-scheme. By the definition of the stabilizer of $\xi$, the morphism
+\[G\times_SH\to G\times_XG,\quad (g,h)\mapsto (g,gh)\]
+is an isomorphism. As $H$ is flat over $S$, $G\times_SH$ is flat over $G$, hence the first projection $\pr_1:G\times_SG\to G$ is flat. Therefore, if $X$ is locally of finite type over $S$, then $f$ is locally of finite presentation (\cref{scheme morphism local fp permanence prop}), and otherwise $S$ is supposed to be Noetherian. It then suffices to apply \cref{scheme morphism local fp factorization by quotient iff} to the morphism $f$. Also, it follows from (\cite{EGA4}, $\text{\Rmnum{4}}_4$, 17.7.5) that $G/H$ is locally of finite presentation over $S$.
+\end{proof}
+
+\begin{corollary}\label{scheme group morphism factorization by quotient if flat}
+Let $S$ be a scheme and $u:G\to H$ be a morphism of $S$-group schemes. Suppose that $G$ is locally of finite presentation over $S$ and that, either $H$ is locally of finite type over $S$, or $S$ is locally Noetherian. Then, if $K=\ker u$ is flat over $S$, the quotient group $G/K$ is representable by an $S$-group scheme which is of finite presentation over $S$, and $u$ factors into
+\[\begin{tikzcd}
+G\ar[rd,swap,"p"]\ar[rr,"u"]&&H\\
+&G/K\ar[ru,hook,"i"]&
+\end{tikzcd}\]
+where $p$ is the canonical projection which is faithfully flat and locally of finite presentation, and $i$ is a monomorphism.
+\end{corollary}
+\begin{proof}
+We can apply \cref{scheme group action by local fp quotient by stabilizer exist} to $X=H$ and the unit section of $H$.
+\end{proof}
+
