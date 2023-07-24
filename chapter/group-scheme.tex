@@ -3378,10 +3378,10 @@ then the fppf quotient sheaf $G/H$ is representable by an $S$-scheme which is lo
 \[f:G=G\times_SS\to G\times_SX\to X,\quad g\mapsto g\cdot\xi\]
 factors into
 \[\begin{tikzcd}
-G\ar[rd,swap,"p"]\ar[rr,"f"]&&X\\
-&G/H\ar[ru,hook,"i"]&
+G\ar[rd,"p"]\ar[rr,"f"]&&X\\
+&G/H\ar[ru,hook,"j"]&
 \end{tikzcd}\]
-where $p$ is the canonical projection, which is a faithfully flat morphism locally of finite presentation, and $i$ is a monomorphism.
+where $p$ is the canonical projection, which is a faithfully flat morphism locally of finite presentation, and $j$ is a monomorphism.
 \end{theorem}
 \begin{proof}
 The morphism $f$ makes $G$ an $X$-scheme. By the definition of the stabilizer of $\xi$, the morphism
@@ -3392,10 +3392,10 @@ is an isomorphism. As $H$ is flat over $S$, $G\times_SH$ is flat over $G$, hence
 \begin{corollary}\label{scheme group morphism factorization by quotient if flat}
 Let $S$ be a scheme and $u:G\to H$ be a morphism of $S$-group schemes. Suppose that $G$ is locally of finite presentation over $S$ and that, either $H$ is locally of finite type over $S$, or $S$ is locally Noetherian. Then, if $K=\ker u$ is flat over $S$, the quotient group $G/K$ is representable by an $S$-group scheme which is of finite presentation over $S$, and $u$ factors into
 \[\begin{tikzcd}
-G\ar[rd,swap,"p"]\ar[rr,"u"]&&H\\
-&G/K\ar[ru,hook,"i"]&
+G\ar[rd,"p"]\ar[rr,"u"]&&H\\
+&G/K\ar[ru,hook,"j"]&
 \end{tikzcd}\]
-where $p$ is the canonical projection which is faithfully flat and locally of finite presentation, and $i$ is a monomorphism.
+where $p$ is the canonical projection which is faithfully flat and locally of finite presentation, and $j$ is a monomorphism.
 \end{corollary}
 \begin{proof}
 We can apply \cref{scheme group action by local fp quotient by stabilizer exist} to $X=H$ and the unit section of $H$.

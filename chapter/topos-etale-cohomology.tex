@@ -200,19 +200,7 @@ A category $\mathcal{F}$ over $\mathcal{E}$ is said to be \textbf{prefibre} if i
 If $\mathcal{F}$ is a (pre)fibre category over $\mathcal{E}$, a subcategory $\mathcal{G}$ of $\mathcal{F}$ is called a \textbf{(pre)fibre subcategory} if it is a fibre category (resp. prefibre category) over $\mathcal{E}$, and if the inclusion functor is Cartesian. If for example $\mathcal{G}$ is a full subcategory of $\mathcal{F}$, we see that this signifies that for any morphism $f:T\to S$ in $\mathcal{E}$ and any $\xi\in\Ob(\mathcal{G}_S)$, $f^*_\mathcal{F}(\xi)$ is $T$-isomorphisc to an object of $\mathcal{G}_T$. An interesting case is the following: $\mathcal{F}$ being a fibre category over $\mathcal{E}$, consider the subcategory $\mathcal{G}$ of $\mathcal{F}$ with the same objects, and whose morphisms are Cartesian morphisms of $\mathcal{F}$. In particular, the morphisms of $\mathcal{G}_S$ are the isomorphisms of $\mathcal{F}_S$. Then $\mathcal{G}$ is a fibre subcategory of $\mathcal{F}$, because the bijection
 \[\Hom_T(\eta',\eta)\stackrel{\sim}{\to }\Hom_f(\eta',\xi)\]
 of (\ref{fiber cat Cartesian morphism represent Hom}) sends $T$-isomorphisms to Cartesian morphisms, and conversely. By definition, the Cartesian sections $\mathcal{E}\to \mathcal{F}$ then correspond to $\mathcal{E}$-functors $\mathcal{E}\to \mathcal{G}$.
-\begin{example}\label{fibre cat in groupoid example}
-Let $\mathcal{F}$ be a category over $\mathcal{E}$. Then the following conditions are equivalent:
-\begin{enumerate}
-\item[(\rmnum{1})] Every morphism of $\mathcal{F}$ is Cartesian.
-\item[(\rmnum{2})] $\mathcal{F}$ is a fibre category over $\mathcal{E}$ and for any $S\in\Ob(\mathcal{E})$, the category $\mathcal{F}_S$ is a groupoid.
-\end{enumerate}
-In fact, it is clear that (\rmnum{1}) implies (\rmnum{2}), and conversely, condition (\rmnum{2}) implies that for any morphism $\alpha:\eta\to \xi$ in $\mathcal{F}$, the object $\eta$ is isomorphic to $f^*(\xi)$ in $\mathcal{F}_T$, where $f=p(\alpha)$.\par
-A category $\mathcal{F}$ over $\mathcal{E}$ satisfying the above equivalent conditions is called a \textbf{fibre category in groupoids}. If $\mathcal{E}$ is a groupoid, then the above conditions is also equivalent to the following:
-\begin{enumerate}
-\item[(\rmnum{3})] $\mathcal{F}$ is a groupoid and the structural functor $p:\mathcal{F}\to \mathcal{E}$ is transportable. 
-\end{enumerate}
-For example, if $\mathcal{E}$ and $\mathcal{F}$ are groupoids such that $\Ob(\mathcal{E})$ and $\Ob(\mathcal{F})$ are reduced to singletones, which means $\mathcal{E}$ and $\mathcal{F}$ are defined by groups $E$ and $F$ and the functor $p:\mathcal{F}\to \mathcal{E}$ is defined by a homomorphism $\phi:F\to E$. Then $\mathcal{F}$ is fibre over $\mathcal{E}$ if and only if $p$ is surjective, i.e. if $\phi$ defines an extension of the group $E$ by the group $G=\ker\phi$. 
-\end{example}
+
 \begin{proposition}\label{fibre cat E-equivalence invariant}
 Let $\mathcal{F}$ be an $\mathcal{E}$-equivalence. For $\mathcal{F}$ to be a (pre)fibre category over $\mathcal{E}$, it is necessary and sufficient that $\mathcal{G}$ is.
 \end{proposition}
@@ -304,6 +292,25 @@ Let $\alpha:\eta\to \xi$ and $\beta:\zeta\to \eta$ be morphisms in a fibre categ
 \begin{proof}
 In fact, this property is true for strongly Cartesian morphisms, so the corollary follows from \cref{fibre cat iff Cartesian is strong Cartesian}. 
 \end{proof}
+
+The classical Yoneda lemma embeds a category into its associated category
+of functors to sets. We now provide a generalization of the Yoneda lemma for fibered categories. Let $p:\mathcal{F}\to\mathcal{E}$ be a fibre category over a category $\mathcal{E}$, and $\mathcal{E}_{/S}$ be the comma category of objects over $S\in\Ob(\mathcal{E})$. Then the category $\mathcal{E}_{/S}$ is canonically a fibre category over $\mathcal{E}$, with functor $\mathcal{E}_{/S}\to\mathcal{E}$ sending $(T\to S)\in\mathcal{E}_{/S}$ to $T$. There is a functor
+\[\xi:\sHom_{\Cart}(\mathcal{E}_{/S},\mathcal{F})\to\mathcal{F}(S)\]
+sending a morphism of fibre categories $u:\mathcal{E}_{/S}\to\mathcal{F}$ to $u(\id:S\to S)$.
+
+\begin{proposition}[\textbf{$2$-Yoneda lemma}]
+The functor $\xi$ is an equivalence of categories.
+\end{proposition}
+\begin{proof}
+
+\end{proof}
+
+\begin{corollary}
+Let $S,T$ be objects of $\mathcal{E}$. Then the functor
+\[\sHom_{\Cart}(\mathcal{E}_{/S},\mathcal{E}_{/T})\to\Hom_{\mathcal{E}}(X,Y),\quad u\mapsto u(\id_X)\]
+is an equivalence of categories.
+\end{corollary}
+
 \subsection{Cleavages and pseudo-functors}
 Let $\mathcal{F}$ be a category over $\mathcal{E}$. We define a \textbf{cleavage} of $\mathcal{F}$ over $\mathcal{E}$ to be a function which attaches to each morphism $f:T\to S$ an inverse image \textit{functor} of $f$ in $\mathscr{F}$, denoted by $f^*:\mathscr{F}_S\to \mathscr{F}_T$ (the pullback functor of $f$). The cleavage is called \textbf{normalized} if $f=\id_S$ implies $f^*=\id_{\mathscr{F}_S}$. A category $\mathcal{F}$ over $\mathcal{E}$, together with a chosen (normalized) cleavage, is called a \textbf{(normalized) cloven category}.\par
 It is evident that $\mathcal{F}$ admits a cleavage if and only if it is prefibre over $\mathcal{E}$, and in this case the cleavage can be chosen to be normalized. The set of cleavages over $\mathcal{F}$ corresponds to the subset $K$ of $\Arr(\mathcal{F})$ satisfying the following conditions:
@@ -503,9 +510,9 @@ Suppose that $\mathcal{E}$ has exactly two objects $S$ and $T$, and a unique non
 Let $\mathcal{F}$ be a normalized cloven category over $\mathcal{E}$. For any object $S$ of $\mathcal{E}$, we denote by $i_S:\mathcal{F}_S\to \mathcal{F}$ the inclusion functor. We then have a functorial homomorphism, for any morphism $f:T\to S$ in $\mathcal{E}$:
 \[\alpha_f:i_Tf^*\to i_S,\]
 where $f^*$ is the inverse image functor $\mathcal{F}_S\to \mathcal{F}_T$ for $f$ defined by the cleavage. Now let $F:\mathcal{F}\to \mathcal{C}$ be a functor from $\mathcal{F}$ into a category $\mathcal{C}$. For $S\in\Ob(\mathcal{E})$, we set
-\[F_S:F\circ i_S:\mathcal{F}_S\to \mathcal{C}\]
+\[F_S:=F\circ i_S:\mathcal{F}_S\to \mathcal{C}\]
 and for any morphism $f:T\to S$ in $\mathcal{E}$, we define
-\[\varphi_f:F\circ\alpha_f:F_Tf^*\to F_S.\]
+\[\varphi_f:=F\circ\alpha_f:F_Tf^*\to F_S.\]
 We therefore obtain a family $(F_S)$ of functors $\mathcal{F}_S\to \mathcal{C}$, and a family $(\varphi_f)$ of homomorphisms of functors $F_Tf^*\to F_S$. This family satisfies the following conditions:
 \begin{enumerate}
 \item[(a)] $\varphi_{\id_S}=\id_{F_S}$.
@@ -521,7 +528,7 @@ g^*f^*(\xi)\ar[r,"c_{f,g}(\xi)"]\ar[d,"\alpha_g(f^*(\xi))"]&(fg)^*(\xi)\ar[d,"\a
 f^*(\xi)\ar[r,"\varphi_f"]&\xi
 \end{tikzcd}\]
 for any object $\xi$ in $\mathcal{F}_S$.\par
-If $G:\mathscr{F}\to \mathcal{C}$ is another functor, given by functors $G_S:\mathcal{F}_S\to \mathcal{C}$ and the functorial homomorphisms $\psi_f:G_Tf\to G_S$, and if $u:F\to G$ is a functorial homomorphism, then there is a corresponding homomorphism $u_S=u\circ i_S:F_S\to G_S$, and for any morphism $f:T\to S$ in $\mathcal{E}$, we have a commutative diagram
+If $G:\mathcal{F}\to \mathcal{C}$ is another functor, given by functors $G_S:\mathcal{F}_S\to \mathcal{C}$ and the functorial homomorphisms $\psi_f:G_Tf\to G_S$, and if $u:F\to G$ is a functorial homomorphism, then there is a corresponding homomorphism $u_S=u\circ i_S:F_S\to G_S$, and for any morphism $f:T\to S$ in $\mathcal{E}$, we have a commutative diagram
 \begin{equation}\label{fibre cat functor diagram-1}
 \begin{tikzcd}
 F_Tf^*\ar[r,"\phi_f"]\ar[d,swap,"u_T\circ f^*"]&F_S\ar[d,"u_S"]\\
@@ -534,143 +541,93 @@ Let $\mathcal{H}(\mathcal{F},\mathcal{C})$ be the category of couples of familys
 \begin{proof}
 
 \end{proof}
-\section{Faithfully flat descent}
-The notion "descent" provides a general framework for "glueing" process of objects, and hence the "glueing" of categories. The most classical case of glueing is giving a topological space $X$ and an open covering $(X_i)$ of $X$; if for each $i$ we are given a fiber space (say) $E_i$ over $X_i$, and for each pair $(i,j)$ an isomorphism $f_{ji}$ from $E_i|_{X_{ij}}$ to $E_j|_{X_{ij}}$ (where $X_{ij}=X_i\cap X_j$), satisfying a transitive condition (that is, $f_{kj}f_{ji}=f_{ki}$), then we know that there exists a unique (up to isomorphism) space $E$ over $X$, defined by the condition that we have isomorphisms $f_i:E|_{X_i}\to E_i$, satisfying the relations $f_{ji}=f_jf_i^{-1}$. Let $X'$ be the sum of $X_i$, which is a fiber space over $X$ (endowed with the continous map $X'\to X$). The data of the spaces $E_i$ then can be interpreted as a fiber space $E'$ over $X'$, and the isomorphisms $f_{ji}$ give an isomorphism of the inverse images $E_1''$ and $E_2''$ of $E'$ (under the canonical projection) over $X''=X\times_XX'$. The gluing condition can then be written as an identity between isomorphisms of the fiber spaces $E_1'''$ and $E_3'''$ over the triple fiber product $X'''=X'\times_XX'\times_XX'$ (where $E_i'''$ is the inverse image of $E'$ over $X'''$ under the canonical projection of index $i$). The construction of $E$ from $E_i$ and $f$ is a typical case of a "descent" process.
-\subsection{Universally effective morphisms}
-Let $\mathcal{C}$ be a fixed category. We recall that a morphism $u:T\to S$ is called an \textbf{epimorphism} if, for any object $T\in\mathcal{C}$, the corresponding map
-\[X(S)=\Hom(S,X)\to X(T)=\Hom(T,X)\]
-is injective. We say that $u$ is a \textbf{universal epimorphism} if for any morphism $S'\to S$, the fiber product $T'=T\times_SS'$ exists and $u':T'\to S'$ is an epimorphism.
-\begin{definition}
-A diagram
-\[\begin{tikzcd}
-A\ar[r,"u"]&B\ar[r,shift left=2pt,"v_1"]\ar[r,shift right=2pt,swap,"v_2"]&C
-\end{tikzcd}\]
-of maps of sets is called \textbf{exact} if $u$ is injective and its image is formed by the elements $b\in B$ such that $v_1(b)=v_2(b)$. A diagram of the same type in $\mathcal{C}$ is called \textbf{exact} if for any object $X$ of $\mathcal{C}$, the corresponding diagram of sets
-\[\begin{tikzcd}
-A(X)\ar[r]&B(X)\ar[r,shift left=2pt]\ar[r,shift right=2pt]&C(X)
-\end{tikzcd}\]
-is exact; we also say that $(A,u)$ is a kernel of the couple $(v_1,v_2)$. Dually, a diagram
-\[\begin{tikzcd}
-C\ar[r,shift left=2pt,"v_1"]\ar[r,shift right=2pt,swap,"v_2"]&B\ar[r,"u"]&A
-\end{tikzcd}\]
-in $\mathcal{C}$ is called exact if it is exact as a diagram in the opposite category $\mathcal{C}^{\op}$, i.e. if for any object $X$ of $\mathcal{C}$, the corresponding diagram of sets
-\[\begin{tikzcd}
-X(A)\ar[r]&X(B)\ar[r,shift left=2pt]\ar[r,shift right=2pt]&X(C)
-\end{tikzcd}\]
-is exact. We also say that $(A,u)$ is a cokernel of the couple $(v_1,v_2)$.
-\end{definition}
-\begin{definition}
-A morphism $u:T\to S$ is called an effective morphism effective epimorphism if the fiber product $T\times_ST$ exist, and if the diagram
-\[\begin{tikzcd}
-T\times_ST\ar[r,shift left=2pt,"\pr_1"]\ar[r,shift right=2pt,swap,"\pr_2"]&T\ar[r,"u"]&S
-\end{tikzcd}\]
-is exact, i.e. if $u$ is a cokernel of $(\pr_1,\pr_2)$. We say that $u$ is a \textbf{universally effective epimorphism} if for any morphism $S'\to S$, the fiber product $T'=T\times_SS'$ exists and the morphism $u':T'\to S'$ is an effective epimorphism.
-\end{definition}
-A morphism $u:T\to S$ is called \textbf{squarable} if for any morphism $S'\to S$, the fiber product $T\times_SS'$ exists. The following lemma is trivial from the above definitions:
-\begin{lemma}\label{category universal epi and composition}
-Consider morphisms $U\stackrel{v}{\to}T\stackrel{u}{\to} S$, then
+
+\subsection{Categories fibre in groupoids}
+\begin{proposition}\label{fibre cat in groupoid def}
+Let $\mathcal{F}$ be a category over $\mathcal{E}$. Then the following conditions are equivalent:
 \begin{enumerate}
-    \item[(a)] $u,v$ epimorphism $\Rightarrow$ $uv$ epimorphism $\Rightarrow$ $u$ epimorphism.
-    \item[(b)] $u,v$ universal epimorphism $\Rightarrow$ $uv$ universal epimorphism $\Rightarrow$ $u$ universal epimorphism.
-\end{enumerate}
-\end{lemma}
-\begin{corollary}
-Let $u:X\to Y$ and $u':X'\to Y'$ be universal epimorphisms such that $Y\times Y'$ exists. Then $X\times X'$ exists and $u\times u':X\times X'\to Y\times Y'$ is a universal epimorphism.
-\end{corollary}
-
-\begin{definition}
-We say that an object $S$ of $\mathcal{C}$ is squarable if its product by any object of $\mathcal{C}$ exists (if $\mathcal{C}$ has a final object $e$, this means $S\to e$ is squatable).
-\end{definition}
-
-\begin{lemma}\label{category effective epimorphism in C/S iff in C}
-Let $u:X\to Y$ be a morphism in $\mathcal{C}_{/S}$; for this to be an epimorphism (resp. universal epimorphism, resp, effective epimorphism, resp. universally effective morphism), it is sufficient that the corresponding morphism in $\mathcal{C}$ is, and this is also necessary if $S$ is a squarable object in $\mathcal{C}$.
-\end{lemma}
-
-\subsection{Descent morphisms}
-Let $f:S'\to S$ be a morphism such that $S''=S'\times_SS'$ exists, and let $u':X'\to S'$ be an object over $S'$. A \textbf{glueing datum} over $X'/S'$, relative to $f$, is defined to be an $S''$-isomorphism
-\[\phi:X_1''\stackrel{\sim}{\to} X_2''\]
-where $X_i''$ ($i=1,2$) denotes the inverse image (assumed to exist) of $X'/S'$ under the projection $\pr_i:S''\to S'$. We say the the glueing datum $\phi$ is a \textbf{descent datum} if it satisfies the cocycle condition:
-\[\pr_{3,1}^*(\phi)=\pr_{3,2}^*(\phi)\pr_{2,1}^*(\phi)\]
-where $\pr_{i,j}$ ($1\leq j<i\leq 3$) are the canonical projections of $S'''=S'\times_SS'\times_SS'$ to $S''$ (we assume that $S'''$ exists), and $\pr_{i,j}^*(\phi)$ is the inverse image of $\phi$, considered as an $S'''$-morphism from $X_j'''$ to $X_i'''$, and for any integer $1\leq k\leq 3$, $X'''_k$ denotes the inverse image (assumed to exist) of $X'/S'$ under the canonical projection $q_k:S'''\to S'$.\par
-
-Let $f:S'\to S$ be a morphism such that $S''=S'\times_SS'$ exists, and $X$ be an object over $X$ such that $X'=X\times_SS'$ and $X''=X\times_SS''$ exist. Then the inverse images of $X'$ by $\pr_i$ ($i=1,2$) exist and are canonically isomorphic, so $X'/S'$ is endowed with a canonical glueing datum relative to $f$. If $S'''$ and $X'''=X\times_SS'''$ exist, then this is also a descent datum. If $Y$ is another object over $S$ satisfying the same conditions, then for any $S$-morphism $X\to Y$, the corresponding $S'$-morphism $X'\to Y'$ is \textit{compatible} with the canonical glueing datum over $X',Y'$. If in particular $S'\to S$ is a squarable morphism, then
-\[X\mapsto X'=X\times_SS'\]
-is a functor from the category $\mathcal{C}_{/S}$ to the category of objects over $S'$ endowed with a descent datum relative to $f$. We say that $f:S'\to S$ is a \textbf{descent morphism} (resp. an \textbf{effective descent morphism}) if $f$ is squarable (i.e. for any $X\to S$, the fiber product $X'=X\times_SS'$ exists) and if the preceding functor $X\mapsto X'=X\times_SS'$ from $\mathcal{C}_{/S}$ to the category of objects over $S'$ endowed with a descent datum relative to $f$, is fully faithfully (resp. an quivalence of categories).\par
-We note that the first definition only concerns the notion of glueing (hence do not intervene the fiber product $S'''$): $f$ is a descent morphism if $f$ is squarable and $X\mapsto X'$ is a fully faithful functor from $\mathcal{C}_{/S}$ to the category of objects over $S'$ endowed with a glueing datum relative to $f$. To make this definition explicit, we note that it means that for two objects $X,Y$ over $S$, the following diagram of sets
-\begin{equation}\label{category descent morphism sequence-1}
-\begin{tikzcd}
-\Hom_S(X,Y)\ar[r]&\Hom_{S'}(X',Y')\ar[r,shift left=2pt,"p_1"]\ar[r,shift right=2pt,swap,"p_2"]&\Hom_{S''}(X'',Y'')
-\end{tikzcd}
-\end{equation}
-is exact, where $p_i(u')$ denotes the inverse image of $u'\in\Hom_{S'}(X',Y')$ by the projection $\pr_i:S''\to S'$, for $i=1,2$. In fact, the kernel of the couple $(p_1,p_2)$ is by definition the set of $S'$-morphisms $X'\to Y'$ compatible with the canonical glueing datum.\par
-Note that, by the definition of inverse images $Y',Y''$, we have canonical bijections
-\[\Hom_{S'}(X',Y')\cong\Hom_S(X',Y),\quad \Hom_{S''}(X'',Y'')\cong \Hom_S(X'',Y),\]
-so the exactness of (\ref{category descent morphism sequence-1}) is equivalent to that of
-\begin{equation}\label{category descent morphism sequence-2}
-\begin{tikzcd}
-\Hom_S(X,Y)\ar[r]&\Hom_S(X',Y)\ar[r,shift left=2pt]\ar[r,shift right=2pt]&\Hom_S(X'',Y)
-\end{tikzcd}
-\end{equation}
-obtained by applying $\Hom_S(-,Y)$ to the diagram in $\mathcal{C}_{/S}$:
-\begin{equation}\label{category descent morphism sequence-3}
-\begin{tikzcd}
-X''\ar[r,shift left=2pt]\ar[r,shift right=2pt]&X'\ar[r]&X
-\end{tikzcd}
-\end{equation}
-which is deduced from
-\[\begin{tikzcd}
-X''\ar[r,shift left=2pt]\ar[r,shift right=2pt]&X'\ar[r]&X
-\end{tikzcd}\]
-by base change $X\to S$. This proves, in view of \cref{category effective epimorphism in C/S iff in C}, the first part of the following proposition:
-
-\begin{proposition}\label{category descent morphism and effective morphism}
-If $f:S'\to S$ is a universally effective morphism, then it is a descent morphism, and the converse is also true if $S$ is a squarable object in $\mathcal{C}$.
-\end{proposition}
-\begin{proof}
-It remains to prove that if $f$ is a descent morphism, then is it a universally effective morphism, if $S$ is squarable. This means for any $X\to S$, we muse show that the diagram (\ref{category descent morphism sequence-3}) is exact, i.e. for any object $Z$ of $\mathcal{C}$, the diagram of sets obtained by applying $\Hom(-,Z)$ is exact. Now by hypothesis $Z\times S$ exists; let $Y$ be the corresponding object in $\mathcal{C}_{/S}$, then the transformed diagram of (\ref{category descent morphism sequence-3}) by $\Hom(-,Z)$ is isomorphic to that by $\Hom_S(-,Y)$, and the latter is exact by our hypothesis on $f$.
-\end{proof}
-
-We can therefore apply the results of descent morphisms to universally effective epimorphisms, such as the following:
-\begin{proposition}\label{category descent morphism object uniqueness prop}
-Let $f:S'\to S$ be a descent morphism (for example a universally effective epimorphism), then
-\begin{enumerate}
-    \item[(a)] For any $S$-morphism $u:X\to Y$, $u$ is an isomorphism (resp. a monomorphism) if and only if $u':X'\to Y'$ is.
-    \item[(b)] Let $X,Y$ be two sub-objects of $S$ and $X',Y'$ be the sub-objects of $S'$ obtained by base change. For that $X$ is dominated by $Y$ (resp. equal to $Y$), it is necessary and sufficient that so is for $X',Y'$.
+\item[(\rmnum{1})] Every morphism of $\mathcal{F}$ is Cartesian.
+\item[(\rmnum{2})] $\mathcal{F}$ is a fibre category over $\mathcal{E}$ and for any $S\in\Ob(\mathcal{E})$, the category $\mathcal{F}_S$ is a groupoid.
 \end{enumerate}
 \end{proposition}
 \begin{proof}
-For (a), it follows by definition that if $u'$ is an isomorphism in the category of glueing objects, then $u$ is an isomorphism. But we also note that any isomorphism of objects over $S'$, compatible with glueing datum, is an isomorphism of glueing object, i.e. its inverse is also compatible with glueing datum. For (b), we are reduced to proving that if $X'$ is dominated by $Y'$, i.e. there exists an $S'$-morphism $X'\to Y'$, then the same is true for $X,Y$ over $S$. Now as $Y'\to S'$, hence also $Y''\to S''$, is a monomorphism, we see that $X'\to Y'$ is automatically compatible with the glueing datum, hence provides an $S$-morphism $X\to Y$.
+In fact, it is clear that (\rmnum{1}) implies (\rmnum{2}), and conversely, condition (\rmnum{2}) implies that for any morphism $\alpha:\eta\to \xi$ in $\mathcal{F}$, the object $\eta$ is isomorphic to $f^*(\xi)$ in $\mathcal{F}_T$, where $f=p(\alpha)$.
 \end{proof}
 
-\begin{corollary}\label{category descent morphism monomorphism if fiber product isomorphic}
-Let $f:S'\to S$ be a univerally effective epimorphism and $g:S\to T$ be a morphism such that $S\times_TS$ exists. Suppose that $S''=S'\times_SS'$ is isomorphic to $S'\times_TS'$, then $g:S\to T$ is a monomorphism.
-\end{corollary}
+A category $\mathcal{F}$ over $\mathcal{E}$ satisfying the above equivalent conditions is called a \textbf{fibre category in groupoids}. If $\mathcal{E}$ is a groupoid, then the above conditions is also equivalent to the following:
+\begin{enumerate}
+\item[(\rmnum{3})] $\mathcal{F}$ is a groupoid and the structural functor $p:\mathcal{F}\to \mathcal{E}$ is transportable. 
+\end{enumerate}
+For example, if $\mathcal{E}$ and $\mathcal{F}$ are groupoids such that $\Ob(\mathcal{E})$ and $\Ob(\mathcal{F})$ are reduced to singletones, which means $\mathcal{E}$ and $\mathcal{F}$ are defined by groups $E$ and $F$ and the functor $p:\mathcal{F}\to \mathcal{E}$ is defined by a homomorphism $\phi:F\to E$. Then $\mathcal{F}$ is fibre over $\mathcal{E}$ if and only if $p$ is surjective, i.e. if $\phi$ defines an extension of the group $E$ by the group $G=\ker\phi$. 
+
+\begin{proposition}\label{fibre cat in groupoid Hom cat is groupoid}
+Let $\mathcal{F}$ and $\mathcal{G}$ be categories fibered in groupoids over $\mathcal{E}$. Then $\sHom_{\Cart}(\mathcal{F},\mathcal{G})$ is a groupoid.
+\end{proposition}
 \begin{proof}
-In fact, consider the Cartesian diagram
-\[\begin{tikzcd}
-S'\times_SS'\ar[r,"\cong"]\ar[d]&S'\times_TS'\ar[d]&\\
-X\ar[r]&S\times_TS
-\end{tikzcd}\]
-In view of (\cite{SGA3}, \Rmnum{4}, 1.9), the morphism $S'\times_TS'\to S\times_TS$ is a universally effective epimorphism, so by \cref{category descent morphism object uniqueness prop} the diagonal morphism $S\to S\times_TS$ is also an isomorphism, which means $g:S\to T$ is a monomorphism.
+We have to show that if $f,g:\mathcal{F}\to\mathcal{G}$ are two morphisms of fibre categories and $u:f\to g$ is a morphism, then for any $X\in\mathcal{F}$, the morphism $u(X):f(X)\to g(X)$ is an isomorphism. This is clear for if $S\in\mathcal{E}$ is the image of $X$ in $\mathcal{E}$, then $u(X)$ is, by definition, a morphism in $\mathcal{G}_S$, hence is an isomorphism.
 \end{proof}
 
-\subsection{Descent of quasi-coherent modules}
-Let $\mathbf{Sch}$ be the category of schemes. We consider the category $\mathcal{F}$ of couples $(X,\mathscr{F})$, where $X$ is a scheme and $\mathscr{F}$ is an $\mathscr{O}_X$-module over $X$. A morphism from $(X,\mathscr{F})$ to $(Y,\mathscr{G})$ is defined to be a couple $(f,\varphi)$, where $f:X\to Y$ is a morphism of schemes and $\varphi:\mathscr{G}\to f_*(\mathscr{F})$ is a homomorphism. This category can be considered as a fibre category over $\mathbf{Sch}$, where the inverse image functor of a morphism $f:X\to Y$ in $\mathbf{Sch}$ is given by the usual pullback functor of modules defined by $f$. As the inverse image of a quasi-coherent module is quasi-coherent, we see that the full subcategory formed by couples $(X,\mathscr{F})$, wherer $\mathscr{F}$ is a quasi-coherent $\mathscr{O}_X$-module, is a fibre subcategory. This category is called the \textbf{fibre category of quasi-coherent modules over schemes}, and denoted by $\mathbf{Qcoh}$. By definition, the structural functor $p:\mathbf{Qcoh}\to \mathbf{Sch}$ sends a couplt $(X,\mathscr{F})$ to its base scheme $X$, and the categorical fiber of $\mathbf{Qcoh}$ at an object $X$ in $\mathbf{Sch}$ is the \textit{opposite} category $\mathbf{Qcoh}(X)^{\op}$.\par
-Recall that a morphism $f:X\to Y$ of ringed spaces is called \textbf{faithfully flat} if it is flat and surjective, and \textbf{quasi-compact} if the inverse image of any quasi-compact open is quasi-compact. By 
-\begin{theorem}
-Let $\mathbf{Qcoh}$ be the fibre category of quasi-coherent modules over schemes and $g:S'\to S$ be a faithfully flat and quasi-compact morphism of schemes. Then $g$ is an effective descent morphism for $\mathbf{Qcoh}$.
-\end{theorem}
+\begin{example}
+One important construction of categories fibered in groupoids is the following. Let $\mathcal{E}$ be a category with finite fiber products. A \textbf{groupoid in $\mathcal{E}$} is defined to be a collection of data $(X_0,X_1,s,t,\eps,i,m)$ as follows:
+\begin{enumerate}
+    \item[(a)] $X_0$ and $X_1$ are objects of $\mathcal{E}$.
+    \item[(b)] $s:X_1\to X_0$, $t:X_1\to X_0$, $\eps:X_0\to X_1$, $m:X_1\times_{s,X_0,t}X_1\to X_1$ are morphisms in $\mathcal{E}$ (we usually refer to $s$ as the "source", $t$ as the "target", $\eps$ as the "identity", $i$ as the "inverse", and $m$ as the "composition" morphism).
+\end{enumerate}
+This data is required to satisfy the following conditions:
+\begin{enumerate}
+    \item[(A)] We have the identities:
+    \[s\circ\eps=t\circ\eps=\id,\quad s\circ i=t,\quad t\circ i=s,\quad s\circ m=s\circ\pr_2,\quad t\circ m=t\circ\pr_1.\]
+    \item[(B)] (Associativity) The two compositions
+    \[\begin{tikzcd}
+    X_1\times_{s,X_0,t}X_1\times_{s,X_0,t}X_1\ar[r,shift left=2pt,"m\times\id"]\ar[r,shift right=2pt,swap,"\id\times m"]&X_1\times_{s,X_0,t}X_1\ar[r,"m"]&X_1
+    \end{tikzcd}\]
+    are equal.
+    \item[(C)] (Identity) The two compositions
+    \[\begin{tikzcd}
+    &X_1\times_{s,X_0}X_0\ar[rd,"\eps\times\id"]&&\\
+    X_1\ar[ru,equal]\ar[rd,equal]&&X_1\times_{s,X_0,t}X_1\ar[r,"m"]&X_1\\
+    &X_0\times_{X_0,t}X_1\ar[ru,swap,"\id\times\eps"]
+    \end{tikzcd}\]
+    are equal to $\id_{X_1}$.
+    \item[(D)] (Inverse) The diagrams
+    \[\begin{tikzcd}
+    X_1\ar[r,"i\times\id"]\ar[d,swap,"s"]&X_1\times_{s,X_0,t}X_1\ar[d,"m"]\\
+    X_0\ar[r,"\eps"]&X_1
+    \end{tikzcd}\quad\quad
+    \begin{tikzcd}
+    X_1\ar[r,"\id\times i"]\ar[d,swap,"t"]&X_1\times_{s,X_0,t}X_1\ar[d,"m"]\\
+    X_0\ar[r,"\eps"]&X_1
+    \end{tikzcd}\]
+    commute.
+\end{enumerate}
+
+For every $S\in\mathcal{E}$, consider the category $X_0(S)/X_1(S)$ whose objects are elements $u\in X_0(S)$ and for which a morphism $u\to u'$ is an element $\xi\in X_1(S)$ for which $s(\xi)=u$ and $t(\xi)=u'$. Given a composition
+\[\begin{tikzcd}
+u''\ar[r,"\eta"]&u'\ar[r,"\xi"]&u
+\end{tikzcd}\]
+we define $\xi\circ\eta$ to be the image under $m$ of the element $(\xi,\eta)\in X_1(S)\times_{s,X_0(S),t}X_1(S)$. The above axioms ensure that $X_0(S)/X_1(S)$ is a category and in fact a groupoid (the inverse of $\xi\in X_1(S)$ is given by $i(\xi)$).\par
+Note als that for any morphism $f:T\to S$ in $\mathcal{E}$, there is a functor
+\[f^*:X_0(S)/X_1(S)\to X_0(T)/X_1(T)\]
+induced by the pullback maps
+\[f^*:X_0(S)\to X_0(T),\quad f^*:X_1(S)\to X_1(T),\]
+and for a composition $U\stackrel{g}{\to}T\stackrel{f}{\to}S$, the two functors $g^*\circ f^*$ and $(fg)^*$ are equal (not just isomorphic). We then define a fibre category $p:X_0/X_1\to\mathcal{E}$ with objects pairs $(S,u)$, where $S\in\mathcal{E}$ and $u\in X_0(S)/X_1(S)$. A morphism $(T,v)\to (S,u)$ in $X_0/X_1$ is a pair $(f,\alpha)$, where $f:T\to S$ is a morphism in $\mathcal{E}$ and $\alpha:v\to f^*u$ is an isomorphism in $X_0(T)\to X_1(T)$. The composition of arrows
+\[\begin{tikzcd}
+(U,w)\ar[r,"{(g,\beta)}"]&(T,v)\ar[r,"{(f,\alpha)}"]&(S,u)
+\end{tikzcd}\]
+is defined to be $(f\circ g,g^*(\alpha)\circ\beta)$. The functor $p$ sends $(S,u)$ to $S$. In this way, we obtain a fibre category over $\mathcal{E}$ whose fiber over $S\in\Ob(\mathcal{E})$ is the groupoid $X_0(S)/X_1(S)$.
+\end{example}
+
 \section{Grothendieck topologies and sheaves}
 \subsection{Topologies and basis}
-Let $\mathcal{C}$ be a category. A full subcategory $\mathcal{D}$ of $\mathcal{C}$ is called a \textbf{sieve} of $\mathcal{C}$ if it satisfies the following property: any object of $\mathcal{C}$ such that there exists a morphism from this object to an object of $\mathcal{D}$ is in $\mathcal{D}$. If $X$ is an object of $\mathcal{C}$, then the sieves of the category $\mathcal{C}_{/X}$ are also called \textbf{sieves of $\bm{X}$}.\par
-Let $\mathscr{U}$ be a universe such that $\mathcal{C}$ is a $\mathscr{U}$-category, and $\PSh(\mathcal{C})$ be the corresponding category of presheaves. For any sieve of $X$, we can define a sub-object of $X$ in $\PSh(\mathcal{C})$ by associating any object $Y$ in $\mathcal{C}$ with the set of morphisms $f:Y\to X$ such that the object $(Y,f)$ of $\mathcal{C}_{/X}$ belongs to the sieve. In this way, we obtain a correspondence between sieves and sub-objects:
+Let $\mathcal{C}$ be a category. A subcategory $\mathcal{D}$ of $\mathcal{C}$ is called a \textbf{sieve} of $\mathcal{C}$ if it satisfies the following property: any object of $\mathcal{C}$ such that there exists a morphism from this object to an object of $\mathcal{D}$ is in $\mathcal{D}$. If $X$ is an object of $\mathcal{C}$, then the sieves of the category $\mathcal{C}_{/X}$ are also called \textbf{sieves on $\bm{X}$}.\par
+Let $\mathscr{U}$ be a universe such that $\mathcal{C}$ is a $\mathscr{U}$-category, and $\PSh(\mathcal{C})$ be the corresponding category of presheaves. For any sieve on $X$, we can define a sub-object of $X$ in $\PSh(\mathcal{C})$ by associating any object $Y$ in $\mathcal{C}$ with the set of morphisms $f:Y\to X$ such that the object $(Y,f)$ of $\mathcal{C}_{/X}$ belongs to the sieve. In this way, we obtain a correspondence between sieves and sub-objects:
 \begin{proposition}\label{category sieve and subobject correspondence}
-The association defined above is a correspondence between the set of sieves of $X$ and the set of sub-objects of $X$ in $\PSh(\mathcal{C})$.
+The association defined above is a correspondence between the set of sieves of $\mathcal{C}_{/X}$ and the set of sub-objects of $X$ in $\PSh(\mathcal{C})$.
 \end{proposition}
 \begin{proof}
 It suffices to establish a converse process from sub-objects of $X$ in $\PSh(\mathcal{C})$ to sieves of $X$. For this, we associate each sub-functor $R$ of $X$ with the category $\mathcal{C}_{/R}$ of objects lying over $R$. Since $R\sub X$, it is immediate that $\mathcal{C}_{/R}$ is a sieve of $\mathcal{C}_{/X}$, whose corresponding sub-object of $X$ is $R$.
 \end{proof}
-Let $\mathcal{C}$ be a $\mathscr{U}$-category. In view of {category sieve and sub-object correspondence}, we shall identify sieves of $X$ with sub-objects of $X$ in the category $\PSh(\mathcal{C})$. In this way, for any presheaf $F$ and any sieve $R$ of $X$, we can then define $\Hom_{\PSh(\mathcal{C})}(R,F)$ to be the set of morphisms of functors $R\to F$, and we have a functorial isomorphism (\cite{SGA4-1}, \Rmnum{1}, 3.5)
+Let $\mathcal{C}$ be a $\mathscr{U}$-category. In view of \cref{category sieve and sub-object correspondence}, we shall identify sieves of $X$ with sub-objects of $X$ in the category $\PSh(\mathcal{C})$. In this way, for any presheaf $F$ and any sieve $R$ of $X$, we can then define $\Hom_{\PSh(\mathcal{C})}(R,F)$ to be the set of morphisms of functors $R\to F$, and we have a functorial isomorphism (\cite{SGA4-1}, \Rmnum{1}, 3.5)
 \begin{equation}\label{category Hom of functors char by limit}
 \Hom_{\PSh(\mathcal{C})}(R,F) \stackrel{\sim}{\to } \llim_{Y\in\mathcal{C}_{/R}}F(Y).
 \end{equation}
@@ -987,153 +944,70 @@ The map $\Psi\circ\Phi$ is the identity in view of \cref{site morphism of preshe
 It is clear that $\mathcal{C}'$ is a full subcategory of $\mathcal{C}_e$, so it suffices to prove that any sheaf $F$ for the topology $\mathcal{T}_e$ is an object of $\mathcal{C}'$. However, by the above equivalence, the morphism $F\to i'\circ j'(F)$ is bicovering ($j'\circ i'$ is isomorphic to the identity functor since $j'$ is exact), whose source and target are sheaves. We deduce from \cref{site morphism of presheaf bicovering iff}(\rmnum{2}) that $F\to i'\circ j'(F)$ is an isomorphism, so $F\in\mathcal{C}'$ (recall that $\mathcal{C}'$ is strictly full).
 \end{proof}
 
-\subsection{Topologies on the category of schemes}
-Let $\mathbf{Sch}$ be the category of schemes, to which we can assocate the Zariski topology, that is, the topology generated by the family of morphisms $\{S_i\to S\}$, where each $S_i\to S$ is an open immersion and the union of images of $S_i$ is equal to $S$. A sheaf over the Zariski topology is also called of local nature: this is a contravariant functor $F:\mathbf{Sch}^{\op}\to\mathbf{Set}$ such that for any scheme $S$ and any covering $\{S_i\to S\}$, we have an exact diagram
-\[\begin{tikzcd}
-F(S)\ar[r]&\prod_iF(S_i)\ar[r,shift left=2pt]\ar[r,shift right=2pt]&\prod_{i,j}F(S_i\cap S_j)
-\end{tikzcd}\]
-In particular, a functor of local natura transforms direct sums to products. As any representable functor is a sheaf, this topology is coarser than the canonical topology.\par
-To introduce (and handle) more topologies on $\mathbf{Sch}$, we need a general criterion to identify the covering families of the topology generated by certain family of morphisms. This is contained in the following proposition.
-\begin{proposition}\label{site topology generated by refining family prop}
-Let $\mathcal{C}$ be a category and $\mathcal{C}'$ be a full subcategory. Let $P$ be a set of families of morphisms of $\mathcal{C}$ with the same codomains, which is stable under composition and base change, and $P'$ be a set of families of morphisms of $\mathcal{C}'$ containing the families of identity morphisms. We endow $\mathcal{C}$ with the topology generated by $P$ and $P'$ and suppose that the following conditions are satisfied:
+\subsection{Characterization of representability by schemes}
+Let $\mathcal{C}=\Aff_{S}$ be the category of affine schemes over a fixed affine scheme $S$. Any $S$-scheme $X$ then defines a functor
+\[h_X:\mathcal{C}^{\op}\to\Set,\quad \Spec(A)\mapsto\Hom_S(\Spec(A),X).\]
+In the case when $X$ is an affine $S$-scheme, this is just the functor associated to $X$ by the Yoneda embedding. In this subsection, we characterize presheaves over $\mathcal{C}$ which can be represented by $S$-schemes.
+
+\begin{definition}
+A morphism $f:F\to G$ of presheaves over $\mathcal{C}$ is called an \textbf{affine open (resp. closed) immersion} if the following conditions are satisfies:
 \begin{enumerate}
-    \item[(a)] If $\{S_i\to S\}\in P'$ (hence $S_i,S\in\Ob(\mathcal{C}')$) and $T\to S$ is a morphism in $\mathcal{C}'$, then the fiber products $S_i\times_ST$ (in $\mathcal{C}$) exist and the family $\{S_i\times_ST\to T\}$ belongs to $P'$.
-    \item[(b)] For any $S\in\Ob(\mathcal{C})$, there exists $\{S_i\to S\}\in P$ with $S_i\in\Ob(\mathcal{C}')$ for each $i$.
-    \item[(c)] In the following situation
-    \[\begin{tikzcd}
-    S_{ijk}\ar[r,"(P')"]&S_{ij}\ar[r,"(P)"]&S_i\ar[r,"(P')"]&S
-    \end{tikzcd}\]
-    where $S,S_i,S_{ij},S_{ijk}\in\Ob(\mathcal{C}')$, $\{S_i\to S\}\in P'$, $\{S_{ij}\to S_i\}\in P$ for each $i$, $\{S_{ijk}\to S_{ij}\}\in P'$ for any $i,j$, there exists a family $\{T_n\to S\}\in P'$ and for each $n$ a multi-index $ijk$ and a commutative diagram
-    \[\begin{tikzcd}[row sep=4mm, column sep=4mm]
-    T_n\ar[rd]\ar[rr]&&S_{ijk}\\
-    &S\ar[ru]&
-    \end{tikzcd}\]
+    \item[(a)] $f$ is relatively representable, that is, for any morphism $X\to G$ with $X\in\Aff_S$, the fiber product $X\times_GF$ is representable.
+    \item[(b)] For any $X\in\Aff_S$ and $g:X\to G$, the map $F\times_GX\to X$ is an open (resp. closed) immersion. 
 \end{enumerate}
-Then for a sieve $R$ of $S\in\Ob(\mathcal{C})$ to be covering, it is necessary and sufficient that there exists a composite family
-\begin{equation}\label{site topology generated by refining family prop-1}
-\begin{tikzcd}[row sep=4mm, column sep=4mm]
-S_{ij}\ar[d,swap,"(P')"]\ar[r,dashed]&R\ar[d]\\
-S_i\ar[r,"(P)"]&S
-\end{tikzcd}
-\end{equation}
-where $S_i,S_{ij}\in\Ob(\mathcal{C}')$, $\{S_i\to S\}\in P$, $\{S_{ij}\to S_i\}\in P'$ for each $i$, and the morphisms $S_{ij}\to S$ factors through $R$.
+\end{definition}
+
+Note that in condition (b), since the fiber product $F\times_GX$ is representable, the morphism $F\times_GX\to X$ is a morphism of schemes over $S$, so we can talk about open and closed immersions.
+
+\begin{proposition}\label{scheme functor represented by separated scheme iff}
+A presheaf $F:\Aff_S^{\op}\to\Set$ is representable by a separated $S$-scheme if and only if the following hold:
+\begin{enumerate}
+    \item[(\rmnum{1})] $F$ is a Zariski sheaf.
+    \item[(\rmnum{2})] The diagonal morphism $F\to F\times F$ is an affine closed immersion.
+    \item[(\rmnum{3})] There exists a family of morphisms $\{X_i\to F\}$ with $X_i\in\Aff_S$ which are affine open immersions and jointly surjective as morphisms of Zariski sheaves. 
+\end{enumerate}
+Moreover, the functor $h$ defines an equivalence from the category of separated $S$-schemes to that of presheaves $F:\Aff_S^{\op}\to\Set$ satisfying (\rmnum{1})--(\rmnum{3}).
 \end{proposition}
 \begin{proof}
-Since the families in $P$ and $P'$ are covering, any family which is the composite of such families is again covering, so a sieve of the form indicated in the proposition is covering for $\mathcal{C}$, since it contains a covering sieve. Conversely, it suffices to prove that sieves of the form (\ref{site topology generated by refining family prop-1}) form a topology, i,e, it suffices to verify the axioms (T1)--(T3).\par
-To verify (T3), let $S\in\Ob(\mathcal{C})$. There exists by (b) a family $\{S_i\to S\}\in P$ with $S_i\in\Ob(\mathcal{C}')$. The families $\{\id_{S_i}:S_i\to S_i\}$ belong to $P'$ by hypothesis, so the sieve $S$ of $S$ is of the following form:
-\[\begin{tikzcd}[row sep=4mm, column sep=4mm]
-S_i\ar[r]\ar[d,swap,"(P')"]&S\ar[d,"\id_S"]\\
-S_i\ar[r,"(P)"]&S
-\end{tikzcd}\]
-
-Now let $R$ be a sieve of $S$ with desired form (\ref{site topology generated by refining family prop-1}) and $R'$ be a sieve such that for any $T\to R$ in $\mathcal{C}$, the sieve $R'\times_TS$ is of the desired from. Then as the morphism $S_{ij}\to S$ factors through $R$, the sieve $R'_{ij}=R'\times_SS_{ij}$ of $S_{ij}$ is of the desicred form by hypothesis:
-\[\begin{tikzcd}[row sep=4mm, column sep=4mm]
-R'_{ij}\ar[dd]\ar[r,hook]&S_{ij}\ar[d,swap,"(P')"]\ar[rd]&\\
-&S_i\ar[d,swap,"(P)"]&R\ar[ld,hook']\\
-R'\ar[r,hook]&S&
-\end{tikzcd}\]
-so for each $ij$, we have a diagram of the form
+We start by showing that if $X$ is a separated $S$-scheme, then $F=h_X$ satisfies condition (\rmnum{1})--(\rmnum{3}). For (\rmnum{1}), let $U\in\Aff_S$ and $\{U_i\to U\}$ be an open covering. Then (\rmnum{1}) is equivalent to the statement that giving a morphism of schemes $f:U\to X$ is equivalent to giving a collection of morphisms $\{f_i:U_i\to X\}$ such that for each $i,j$, the restrictions $f_i|_{U_i\cap U_j}$ and $f_j|_{U_i\cap U_j}$ are equal, which is immediate.\par
+For (\rmnum{2}), note that the Yoneda embedding commutes with fiber products, so the diagonal morphism $h_X\to h_X\times h_X$ is identified with $h_X\to h_{X\times_SX}$, which is induced by the diagonal morphism of schemes $X\to X\times_XX$, and is a closed immersion since $X$ is separated over $S$. Its base change to any affine $S$-scheme is therefore closed.\par
+To verify property (\rmnum{3}), let $\{X_i\to X\}$ be an open covering with $X_i$ affine, and let $h_{X_i}\to h_X$ be the induced morphism. For any $T\in\Aff_S$ and morphism $h_T\to h_X$, the fiber product $h_T\times_{h_X}h_{X_i}$ is represented by $f^{-1}(X_i)$, hence is an affine open subset of $T$ ($X$ is separated and $X_i$ is affine, cf. \cref{scheme morphism separated preimage of affine open in affine open}). This proves that each morphism $h_{X_i}\to h_X$ is an affine open immersion.\par
+The statement that $\coprod_ih_{X_i}\to F$ is a surjective morphism as Zariski sheaves amounts to saying that given a morphism of schemes $f:T\to X$ with $T\in\Aff_S$, there exists an open covering $\{T_i\to T\}$ such that $f|_{T_i}$ factors through $X_i$ for some $i$. This is clear as we can just take $T_i=f^{-1}(X_i)$.\par
+Next, suppose that $F$ is a presheaf over $\Aff_S$ satisfying condition (\rmnum{1})--(\rmnum{3}), and choose morphisms $h_{X_i}\to F$ as in (\rmnum{3}). For each $i,j$, consider the fiber product $h_{X_i}\times_Fh_{X_j}$:
 \[\begin{tikzcd}
-S_{ijkl}\ar[rd]\ar[d,swap,"(P')"]&\\
-S_{ijk}\ar[d,swap,"(P)"]&R'_{ij}\ar[ld,hook']\\
-S_{ij}
+h_{X_i}\times_Fh_{X_j}\ar[d]\ar[r]&h_{X_i}\ar[d]\\
+h_{X_j}\ar[r]&F
 \end{tikzcd}\]
-We have thus proved that there exists a composite family
+Since the morphisms $h_{X_i}\to F$ are an affine open immersions, this fiber product is represented by an affine scheme $V_{ij}$, and we obtain open immersions
 \[\begin{tikzcd}
-S_{ijkl}\ar[r,"(P')"]&S_{ijk}\ar[r,"(P)"]&S_{ij}\ar[r,"(P')"]&S_i\ar[r,"(P)"]&S
+V_{ij}\ar[d,hook]\ar[r,hook]&X_i\\
+X_j
 \end{tikzcd}\]
-belonging to $P\circ P'\circ P\circ P'$, which factors through $R'$ and with all objects (except $S$) belong to $\mathcal{C}'$. Applying condition (c) to the family $\{S_{ijkl}\to S_i\}$, we then obtain for each $i$ a family $\{T_{in}\to S_i\}\in P'$, such that $T_{in}\to S$ factors through one of the $S_{ijkl}$, hence through $R'$:
-\[\begin{tikzcd}[row sep=4mm, column sep=4mm]
-T_{in}\ar[r]\ar[d,swap,"(P')"]&S_{ijkl}\ar[dd]\\
-S_i\ar[d,swap,"(P)"]&\\
-S&R'\ar[l,hook']
-\end{tikzcd}\]
-The sieve $R'$ of $S$ is therefore of the desired form (\ref{site topology generated by refining family prop-1}), which verifies axiom (T2).\par
-
-Fianlly, as for axiom (T1), let $R$ be a sieve of $S$ of the desired form and $T\to S$ be a morphism in $\mathcal{C}$. Let $T_i=S_i\times_ST$; the family $\{T_i\to T\}$ then belongs to $P$, and applying condition (b), we obtain for each $i$ a family $\{U_{ik}\to T_i\}\in P$, with $U_{ik}\in\Ob(\mathcal{C}')$. By the hypotesis on $P$, we have $\{U_{ik}\to T\}\in P$, so by condition (a), $U_{ik}\times_{S_i}S_{ij}=U_{ikj}$ is an object of $\mathcal{C}'$ and for each $ik$, $\{U_{ikj}\to U_{ik}\}\in P'$.
-\[\begin{tikzcd}
-U_{ikj}\ar[d,swap,"(P')"]\ar[rr]&&S_{ij}\ar[rdd,bend left=20pt]\ar[d,"(P')"]&\\
-U_{ik}\ar[r,"(P)"]\ar[rd,swap,"(P)"]&T_i\ar[r]\ar[d,"(P)"]&S_i\ar[d,"(P)"]&\\
-&T\ar[r]&S&R\ar[l,hook']
-\end{tikzcd}\]
-We therefore conclude that the family $\{U_{ikj}\to T\}$ factors through the sieve $T\times_SR$ of $T$, which is hence of the desired form. This proves axiom (T1) and completes the proof.
+The isomorphism of functors $h_{X_i}\times_Fh_{X_j}\cong h_{X_j}\times_Fh_{X_i}$ obtained by switching the factors induces an isomorphism
+\[\varphi_{ij}:V_{ij}\to V_{ji}\]
+and the morphisms $\varphi_{ij}$ satisfies an obvious cocycle condition. This enables us to glue the schemes $X_i$ together along the subschemes $V_{ij}$ to obtain a scheme $X$. Let $G=\coprod_ih_{X_i}$, then the fiber product $G\times_{h_X}G$ is isomorphic to $\coprod_{ij}h_{V_{ij}}$, and this implies that the surjection of Zariski sheaves $G\twoheadrightarrow F$ factors through an isomorphism $h_X\cong F$. Moreover, since each $V_{ij}$ is affine, we conclude from \cref{scheme separated over affine iff intersection of affine open cover} that $X$ is separated over $S$.\par
+To prove the last statement of \cref{scheme functor represented by separated scheme iff}, it remains to see that the functor $h$ is fully faithful. Let $X$ and $Y$ be two separated schemes, and $h_X$ and $h_Y$ denote the corresponding functors on $\Aff_S$. Choose an open covering $\{U_i\to X\}$ with each $U_i$ affine, and let $U_{ij}$ denote the intersection $U_i\cap U_j$ which is again an affine scheme since $X$ is $S$-separated and $S$ is affine (\ref{scheme separated over affine iff intersection of affine open cover}). We then have a coequalizer diagram of Zariski sheaves
+\[\coprod_{i,j}h_{U_{i,j}}\rightrightarrows\coprod_ih_{U_i}\to h_X\]
+and therefore
+\[\Hom(h_X,h_Y)=\ker\big(\prod_ih_Y(U_i)\rightrightarrows\prod_{i,j}h_Y(U_{ij})\big).\]
+Since the map
+\[\Hom(X,Y)=\ker\big(\prod_ih_Y(U_i)\rightrightarrows\prod_{i,j}h_Y(U_{ij})\big)\]
+is an isomorphism, we obtain the fully faithfulness.
 \end{proof}
 
-\begin{corollary}\label{site topology generated by refining family covering sieve iff}
-If $S\in\Ob(\mathcal{C}')$ and $R$ is a sieve of $S$, then $R$ is covering if and only if there exists a family $\{T_i\to S\}\in P'$ which factors through $R$.
-\end{corollary}
-\begin{proof}
-In fact, any such sieve is covering. Conversely, it suffices to apply (c) to the family $\{S_i\to S\}$ and the identity morphisms of $S_i$ to deduce that any covering sieve is of the indicated form. 
-\end{proof}
+Let $F,G:\Aff_S^{\op}\to\Set$ be two presheaves over $\Aff_S$. We say that a morphism $F\to G$ is \textbf{represented by separated schemes} if for any $U\in\Aff_S$ and morphism $U\to G$, the morphism $F\times_GU$ is represented by a separated $U$-scheme (which is a notion defined purely functorially by \cref{scheme functor represented by separated scheme iff}).
 
-\begin{corollary}\label{site topology generated by refining family sheaf iff}
-For a presheaf $F\in\PSh(\mathcal{C})$ to be separated (resp. a sheaf), it is necessary and sufficient that the morphisms
-\[\begin{tikzcd}
-F(S)\ar[r]&\prod_iF(S_i)
-\end{tikzcd}\]
-is injective (resp. that the diagram
-\[\begin{tikzcd}
-F(S)\ar[r]&\prod_iF(S_i)\ar[r,shift left=2pt]\ar[r,shift right=2pt]&\prod_{i,j}F(S_i\times_SS_j)
-\end{tikzcd}\]
-is exact) for $\{S_i\to S\}\in P$ and $\{S_i\to S\}\in P'$, respectively.
-\end{corollary}
-\begin{proof}
-In fact, these conditions are necessary, because the families above are covering. Conversely, if $R$ is the sieve of $S$ of a family of morphisms $\{S_{ij}\stackrel{(P')}{\to} S_i\stackrel{(P)}{\to} S\}$, a diagram chasing shows that the above conditions imply that $\Hom(S,F)\to\Hom(R,F)$ is injective (resp. bijective). But any covering sieve $R'$ of $S$ contains a sieve generated by such a family and we have a commutative diagram
-\[\begin{tikzcd}[row sep=6mm,column sep=4mm]
-\Hom(S,F)\ar[rr,"f"]\ar[rd,swap,"g"]&&\Hom(R,F)\ar[ld,"h"]\\
-&\Hom(R',F)&
-\end{tikzcd}\]
-If $g$ is injective, then so is $f$, so in this case $F$ is separated. In this case, since the morphism $R'\to R$ is covering, we see that $h$ is also injective (cf. \cref{site morphism of presheaf covering def}). Therefore, if $g$ is bijective, so is $f$, hence $F$ is a sheaf.
-\end{proof}
-
-\begin{remark}
-The condition (c) of \cref{site topology generated by refining family prop} is satisfies if $P'$ is stable under composition and if any family $\{S_i\to S\}$ of morphisms in $P$ with $S_i,S\in\Ob(\mathcal{C}')$ has a subfamily belonging to $P'$.
-\end{remark}
-
-We now let $\mathcal{C}=\mathbf{Sch}$ be the category of schemes, and $\mathcal{C}'$ be the full subcategory formed by affine schemes. We shall consider the following sets $P'$:
-\begin{itemize}
-    \item[] $P_1'$: finite and surjective families, formed by flat morphisms;
-    \item[] $P_2'$: finite and surjective families, formed by flat morphisms of finite presentation;
-    \item[] $P_3'$: finite and surjective families, formed by \'etale morphisms;
-    \item[] $P_4'$: finite and surjective families, formed by finite \'etale morphisms;
-\end{itemize}
-For each of these sets $P_i'$ (except $P_4'$), the conditions of \cref{site topology generated by refining family prop} are satisfied (as for (c), note that an affine scheme is quasi-compact, so any family of morphisms of $\mathcal{C}'$, belonging to $P$, contains a finite subfamily which is equally in $P$, hence in $P_i'$ for $i=1,2,3$). The corresponding topology $\mathcal{T}_i$ generated by $P$ and $P'_i$ is denoted and called by the following manner:
-\begin{itemize}
-    \item[] $\mathcal{T}_1$ is the faifufully flat and quasi-compact topology (\fpqc);
-    \item[] $\mathcal{T}_2$ is the faifufully flat and finite presented topology (\fppf);
-    \item[] $\mathcal{T}_3$ is the \'etale topology (\et);
-    \item[] $\mathcal{T}_4$ is the finite \'etale topology (\etf).
-\end{itemize}
-As $P_1'\sups P_2'\sups P_3'\sups P_4'$, we have
-\[\fpqc\geq\fppf\geq\et\geq \etf\geq \Zar.\]
-\begin{proposition}
-Let $\mathcal{T}_i$ ($i=1,2,3,4$) be the topologies on $\mathbf{Sch}$ defined above.
+\begin{proposition}\label{scheme functor represented by scheme iff}
+A presheaf $F:\Aff_S^{\op}\to\Set$ is representable by an $S$-scheme
+if and only if the following hold:
 \begin{enumerate}
-    \item[(a)] For a sieve $R$ of $S$ to be covering for $\mathcal{T}_i$ ($1\leq i\leq 3$), it is necessary and sufficient that there exists a covering $(S_\alpha)$ of $S$ by affine opens and for each $\alpha$ a family $\{S_{\alpha\beta}\to S_\alpha\}\in P_i'$, with $S_{\alpha\beta}$ affine, such that the the family $\{S_{\alpha\beta}\to S\}$ factors through $R$.
-    \item[(b)] For a presheaf $F$ over $\mathbf{Sch}$ to be a sheaf for the fpqc topology (resp. fppf, \'etale, finite \'etale), it is necessary and sufficient that
-    \begin{enumerate}
-        \item[(\rmnum{1})] $F$ is a sheaf over the Zariski topology, i.e. a functor of local nature.
-        \item[(\rmnum{2})] For any faithfully flat morphism (resp. faithfully flat morphism of finite presentation, resp. surjective \'etale, resp. finite surjective \'etale) $T\to S$ of affine schemes, we have an exact diagram
-        \[\begin{tikzcd}
-        F(S)\ar[r]&F(T)\ar[r,shift left=2pt]\ar[r,shift right=2pt]&F(T\times_ST)
-        \end{tikzcd}\]
-    \end{enumerate}   
-    \item[(c)] The topologies $\mathcal{T}_i$ ($1\leq i\leq 4$) are subcanonical.
-    \item[(d)] Any surjective family formed by open and flat morphisms (resp. flat and locally of finite presentation, resp. \'etale, resp. finite and \'etale) is covering for the fpqc topology (resp. fppf, resp. \'etale, resp. finite \'etale).
-    \item[(e)] Any finite and surjective family, formed by flat and quasi-compact morphisms, is covering for the fpqc topology. 
+    \item[(\rmnum{1})] $F$ is a Zariski sheaf.
+    \item[(\rmnum{2}')] The diagonal morphism $F\to F\times F$ is representable by separated schemes.
+    \item[(\rmnum{3}')] There exists a family $\{X_i\to F\}$ with $X_i\in\Aff_S$ which are represented by open immersions and jointly surjective as morphisms of Zariski sheaves. 
 \end{enumerate}
 \end{proposition}
 \begin{proof}
-Assertion (a) follows from \cref{site topology generated by refining family prop}, and (b) follows from \cref{site topology generated by refining family sheaf iff}, since a sheaf for the Zariski topology transforms direct sums into products. Any representable functor is a sheaf for Zariski topology, and satisfies condition (\rmnum{2}) by (\cite{SGA1}, \Rmnum{8}, 5.3), so $\mathcal{T}_1$ is subcanonical, which proves (c).\par
-Let $\{S_i\to S\}$ be a family of morphisms as in (d). By considering a covering of $S$ by affine opens, we are reduced to the case where $S$ is affine. We first deal with the case where each $S_i\to S$ is flat and open (resp. \'etale). Let $S_{ij}$ be a covering og $S_i$ be affine opens. As the morphisms considered are open, the images $T_{ij}$ of $S_{ij}$ in $S$ form an open covering of $S$. As $S$ is affine, hence quasi-compact, there exists a finite subcover of $T_{ij}$, with $i,j$ belongs to a finite set $F$. Then $S'=\coprod_FS_{ij}$ is affine, and the morphism $S'\to S$ belongs to $P_1'$ (resp. $P_3'$), hence is covering. As this factors through the given family $\{S_i\to S\}$, the latter is also covering.\par
-In the case of the finite \'etale topology, each $S_i$ is finite over $S$, hence is affine; in the preceding argument, we can then take for $\{S_{ij}\}$ the covering $\{S_i\}$ of $S_i$, and we obtain a morphism $S'\to S$ belonging to $P_4'$.\par
-Now consider the case where $f_i:S_i\to S$ are flat and locally of finite presentation. For any $s\in S$, there exists (by the proof of (\cite{EGA4}, $\text{\Rmnum{4}}_4$, 17.16.2)) an affine subscheme $X(s)$ of one of the $S_i$ such that $s\in f_i(X(s))$ and that the morphism $g_i:X(s)\to S$, restriction of $f_i$, is flat and quasi-finite. Then $g_i(X(s))$ is an open neighborhood $U(s)$ of $s$ ((\cite{EGA4}, $\text{\Rmnum{4}}_2$, 2.4.6)), and as $S$ is affine, it is covered by a finite number of such opens $U(s_j)$, $j=1,\dots,n$. Therefore, $X'=\coprod_jX(s_j)$ is affine, and the morphism $X'\to S$ is surjective, flat, of finite presentation and quasi-finite, hence belongs to $P_2'$, which completes the proof of (d).\par
-Finally, let $\{S_i\to S\}$ be a finite and surjective family of flat and quasi-compact morphisms. Let $T_j$ be a covering of $S$ be affine opens. Then $S_{ij}=T_j\times_SS_i$ is quasi-compact and hence has a finite affine covering $T_{ijk}$. Each morphism $T_{ijk}\to T_j$ is flat, and the family $\{T_{ijk}\to T_j\}$ is finite and surjective, hence covering for $\mathcal{T}_1$. The family $\{T_{ijk}\to S\}$ is hence also, by composition, covering, and it factors through the given family:
-\[\begin{tikzcd}
-T_{ijk}\ar[rd]\ar[r]&S_{ij}\ar[d]\ar[r]&S_i\ar[d]\\
-&T_j\ar[r]&S
-\end{tikzcd}\]
-so the given family $\{S_i\to S\}$ is also covering for $\mathcal{T}_1$.
+If $F$ is a functor satisfying (\rmnum{1})--(\rmnum{2}), then it is represented by a scheme by (\cite{EGA1} new, 0, 4.5.4). Conversely, if $F=h_X$ is represented by an $S$-scheme $X$, then it is a Zariski sheaf and we easily see that condition (\rmnum{3}) is satisfied (as in \cref{scheme functor represented by separated scheme iff}, but we do not have the fiber products are affine). 
 \end{proof}
 
 \section{Functoriality of categories of sheaves}
@@ -1240,6 +1114,445 @@ is commutative.
 \end{enumerate}
 More precisely, we can choose the sheafification functors on $\PSh(\mathcal{C})$ and $\PSh(\mathcal{D})$ to satisfy condition (a). Then we can choose the functor $u^*$ in such a way that condition (b) is fulfilled.
 \end{remark}
+
+\section{Descent and stacks}
+The notion "descent" provides a general framework for "glueing" process of objects, and hence the "glueing" of categories. The most classical case of glueing is giving a topological space $X$ and an open covering $(X_i)$ of $X$; if for each $i$ we are given a fiber space (say) $E_i$ over $X_i$, and for each pair $(i,j)$ an isomorphism $f_{ji}$ from $E_i|_{X_{ij}}$ to $E_j|_{X_{ij}}$ (where $X_{ij}=X_i\cap X_j$), satisfying a transitive condition (that is, $f_{kj}f_{ji}=f_{ki}$), then we know that there exists a unique (up to isomorphism) space $E$ over $X$, defined by the condition that we have isomorphisms $f_i:E|_{X_i}\to E_i$, satisfying the relations $f_{ji}=f_jf_i^{-1}$. Let $X'$ be the sum of $X_i$, which is a fiber space over $X$ (endowed with the continous map $X'\to X$). The data of the spaces $E_i$ then can be interpreted as a fiber space $E'$ over $X'$, and the isomorphisms $f_{ji}$ give an isomorphism of the inverse images $E_1''$ and $E_2''$ of $E'$ (under the canonical projection) over $X''=X\times_XX'$. The gluing condition can then be written as an identity between isomorphisms of the fiber spaces $E_1'''$ and $E_3'''$ over the triple fiber product $X'''=X'\times_XX'\times_XX'$ (where $E_i'''$ is the inverse image of $E'$ over $X'''$ under the canonical projection of index $i$). The construction of $E$ from $E_i$ and $f$ is a typical case of a "descent" process.
+
+\subsection{Generalities on descent}
+\paragraph{Universally effective morphisms}
+Let $\mathcal{C}$ be a fixed category. We recall that a morphism $u:T\to S$ is called an \textbf{epimorphism} if, for any object $T\in\mathcal{C}$, the corresponding map
+\[X(S)=\Hom(S,X)\to X(T)=\Hom(T,X)\]
+is injective. We say that $u$ is a \textbf{universal epimorphism} if for any morphism $S'\to S$, the fiber product $T'=T\times_SS'$ exists and $u':T'\to S'$ is an epimorphism.
+\begin{definition}
+A diagram
+\[\begin{tikzcd}
+A\ar[r,"u"]&B\ar[r,shift left=2pt,"v_1"]\ar[r,shift right=2pt,swap,"v_2"]&C
+\end{tikzcd}\]
+of maps of sets is called \textbf{exact} if $u$ is injective and its image is formed by the elements $b\in B$ such that $v_1(b)=v_2(b)$. A diagram of the same type in $\mathcal{C}$ is called \textbf{exact} if for any object $X$ of $\mathcal{C}$, the corresponding diagram of sets
+\[\begin{tikzcd}
+A(X)\ar[r]&B(X)\ar[r,shift left=2pt]\ar[r,shift right=2pt]&C(X)
+\end{tikzcd}\]
+is exact; we also say that $(A,u)$ is a kernel of the couple $(v_1,v_2)$. Dually, a diagram
+\[\begin{tikzcd}
+C\ar[r,shift left=2pt,"v_1"]\ar[r,shift right=2pt,swap,"v_2"]&B\ar[r,"u"]&A
+\end{tikzcd}\]
+in $\mathcal{C}$ is called exact if it is exact as a diagram in the opposite category $\mathcal{C}^{\op}$, i.e. if for any object $X$ of $\mathcal{C}$, the corresponding diagram of sets
+\[\begin{tikzcd}
+X(A)\ar[r]&X(B)\ar[r,shift left=2pt]\ar[r,shift right=2pt]&X(C)
+\end{tikzcd}\]
+is exact. We also say that $(A,u)$ is a cokernel of the couple $(v_1,v_2)$.
+\end{definition}
+\begin{definition}
+A morphism $u:T\to S$ is called an effective morphism effective epimorphism if the fiber product $T\times_ST$ exist, and if the diagram
+\[\begin{tikzcd}
+T\times_ST\ar[r,shift left=2pt,"\pr_1"]\ar[r,shift right=2pt,swap,"\pr_2"]&T\ar[r,"u"]&S
+\end{tikzcd}\]
+is exact, i.e. if $u$ is a cokernel of $(\pr_1,\pr_2)$. We say that $u$ is a \textbf{universally effective epimorphism} if for any morphism $S'\to S$, the fiber product $T'=T\times_SS'$ exists and the morphism $u':T'\to S'$ is an effective epimorphism.
+\end{definition}
+A morphism $u:T\to S$ is called \textbf{squarable} if for any morphism $S'\to S$, the fiber product $T\times_SS'$ exists. The following lemma is trivial from the above definitions:
+\begin{lemma}\label{category universal epi and composition}
+Consider morphisms $U\stackrel{v}{\to}T\stackrel{u}{\to} S$, then
+\begin{enumerate}
+    \item[(a)] $u,v$ epimorphism $\Rightarrow$ $uv$ epimorphism $\Rightarrow$ $u$ epimorphism.
+    \item[(b)] $u,v$ universal epimorphism $\Rightarrow$ $uv$ universal epimorphism $\Rightarrow$ $u$ universal epimorphism.
+\end{enumerate}
+\end{lemma}
+\begin{corollary}
+Let $u:X\to Y$ and $u':X'\to Y'$ be universal epimorphisms such that $Y\times Y'$ exists. Then $X\times X'$ exists and $u\times u':X\times X'\to Y\times Y'$ is a universal epimorphism.
+\end{corollary}
+
+\begin{definition}
+We say that an object $S$ of $\mathcal{C}$ is squarable if its product by any object of $\mathcal{C}$ exists (if $\mathcal{C}$ has a final object $e$, this means $S\to e$ is squatable).
+\end{definition}
+
+\begin{lemma}\label{category effective epimorphism in C/S iff in C}
+Let $u:X\to Y$ be a morphism in $\mathcal{C}_{/S}$; for this to be an epimorphism (resp. universal epimorphism, resp, effective epimorphism, resp. universally effective morphism), it is sufficient that the corresponding morphism in $\mathcal{C}$ is, and this is also necessary if $S$ is a squarable object in $\mathcal{C}$.
+\end{lemma}
+
+\paragraph{Descent morphisms}
+Let $\mathcal{C}$ be a category and $f:S'\to S$ be a morphism in $\mathcal{C}$ such that $S''=S'\times_SS'$ exists, and let $u':X'\to S'$ be an object over $S'$. A \textbf{glueing datum} over $X'/S'$, relative to $f$, is defined to be an $S''$-isomorphism
+\[\phi:X_1''\stackrel{\sim}{\to} X_2''\]
+where $X_i''$ ($i=1,2$) denotes the inverse image (assumed to exist) of $X'/S'$ under the projection $\pr_i:S''\to S'$. We say the the glueing datum $\phi$ is a \textbf{descent datum} if it satisfies the cocycle condition:
+\[\pr_{3,1}^*(\phi)=\pr_{3,2}^*(\phi)\pr_{2,1}^*(\phi)\]
+where $\pr_{i,j}$ ($1\leq j<i\leq 3$) are the canonical projections of $S'''=S'\times_SS'\times_SS'$ to $S''$ (we assume that $S'''$ exists), and $\pr_{i,j}^*(\phi)$ is the inverse image of $\phi$, considered as an $S'''$-morphism from $X_j'''$ to $X_i'''$, and for any integer $1\leq k\leq 3$, $X'''_k$ denotes the inverse image (assumed to exist) of $X'/S'$ under the canonical projection $q_k:S'''\to S'$.\par
+
+Let $f:S'\to S$ be a morphism such that $S''=S'\times_SS'$ exists, and $X$ be an object over $X$ such that $X'=X\times_SS'$ and $X''=X\times_SS''$ exist. Then the inverse images of $X'$ by $\pr_i$ ($i=1,2$) exist and are canonically isomorphic, so $X'/S'$ is endowed with a canonical glueing datum relative to $f$. If $S'''$ and $X'''=X\times_SS'''$ exist, then this is also a descent datum. If $Y$ is another object over $S$ satisfying the same conditions, then for any $S$-morphism $X\to Y$, the corresponding $S'$-morphism $X'\to Y'$ is \textit{compatible} with the canonical glueing datum over $X',Y'$. If in particular $S'\to S$ is a squarable morphism, then
+\[X\mapsto X'=X\times_SS'\]
+is a functor from the category $\mathcal{C}_{/S}$ to the category of objects over $S'$ endowed with a descent datum relative to $f$. We say that $f:S'\to S$ is a \textbf{descent morphism} (resp. an \textbf{effective descent morphism}) if $f$ is squarable (i.e. for any $X\to S$, the fiber product $X'=X\times_SS'$ exists) and if the preceding functor $X\mapsto X'=X\times_SS'$ from $\mathcal{C}_{/S}$ to the category of objects over $S'$ endowed with a descent datum relative to $f$, is fully faithfully (resp. an quivalence of categories).\par
+We note that the first definition only concerns the notion of glueing (hence do not intervene the fiber product $S'''$): $f$ is a descent morphism if $f$ is squarable and $X\mapsto X'$ is a fully faithful functor from $\mathcal{C}_{/S}$ to the category of objects over $S'$ endowed with a glueing datum relative to $f$. To make this definition explicit, we note that it means that for two objects $X,Y$ over $S$, the following diagram of sets
+\begin{equation}\label{category descent morphism sequence-1}
+\begin{tikzcd}
+\Hom_S(X,Y)\ar[r]&\Hom_{S'}(X',Y')\ar[r,shift left=2pt,"p_1"]\ar[r,shift right=2pt,swap,"p_2"]&\Hom_{S''}(X'',Y'')
+\end{tikzcd}
+\end{equation}
+is exact, where $p_i(u')$ denotes the inverse image of $u'\in\Hom_{S'}(X',Y')$ by the projection $\pr_i:S''\to S'$, for $i=1,2$. In fact, the kernel of the couple $(p_1,p_2)$ is by definition the set of $S'$-morphisms $X'\to Y'$ compatible with the canonical glueing datum.\par
+Note that, by the definition of inverse images $Y',Y''$, we have canonical bijections
+\[\Hom_{S'}(X',Y')\cong\Hom_S(X',Y),\quad \Hom_{S''}(X'',Y'')\cong \Hom_S(X'',Y),\]
+so the exactness of (\ref{category descent morphism sequence-1}) is equivalent to that of
+\begin{equation}\label{category descent morphism sequence-2}
+\begin{tikzcd}
+\Hom_S(X,Y)\ar[r]&\Hom_S(X',Y)\ar[r,shift left=2pt]\ar[r,shift right=2pt]&\Hom_S(X'',Y)
+\end{tikzcd}
+\end{equation}
+obtained by applying $\Hom_S(-,Y)$ to the diagram in $\mathcal{C}_{/S}$:
+\begin{equation}\label{category descent morphism sequence-3}
+\begin{tikzcd}
+X''\ar[r,shift left=2pt]\ar[r,shift right=2pt]&X'\ar[r]&X
+\end{tikzcd}
+\end{equation}
+which is deduced from
+\[\begin{tikzcd}
+X''\ar[r,shift left=2pt]\ar[r,shift right=2pt]&X'\ar[r]&X
+\end{tikzcd}\]
+by base change $X\to S$. This proves, in view of \cref{category effective epimorphism in C/S iff in C}, the first part of the following proposition:
+
+\begin{proposition}\label{category descent morphism and effective morphism}
+If $f:S'\to S$ is a universally effective morphism, then it is a descent morphism, and the converse is also true if $S$ is a squarable object in $\mathcal{C}$.
+\end{proposition}
+\begin{proof}
+It remains to prove that if $f$ is a descent morphism, then is it a universally effective morphism, if $S$ is squarable. This means for any $X\to S$, we muse show that the diagram (\ref{category descent morphism sequence-3}) is exact, i.e. for any object $Z$ of $\mathcal{C}$, the diagram of sets obtained by applying $\Hom(-,Z)$ is exact. Now by hypothesis $Z\times S$ exists; let $Y$ be the corresponding object in $\mathcal{C}_{/S}$, then the transformed diagram of (\ref{category descent morphism sequence-3}) by $\Hom(-,Z)$ is isomorphic to that by $\Hom_S(-,Y)$, and the latter is exact by our hypothesis on $f$.
+\end{proof}
+
+We can therefore apply the results of descent morphisms to universally effective epimorphisms, such as the following:
+\begin{proposition}\label{category descent morphism object uniqueness prop}
+Let $f:S'\to S$ be a descent morphism (for example a universally effective epimorphism), then
+\begin{enumerate}
+    \item[(a)] For any $S$-morphism $u:X\to Y$, $u$ is an isomorphism (resp. a monomorphism) if and only if $u':X'\to Y'$ is.
+    \item[(b)] Let $X,Y$ be two sub-objects of $S$ and $X',Y'$ be the sub-objects of $S'$ obtained by base change. For that $X$ is dominated by $Y$ (resp. equal to $Y$), it is necessary and sufficient that so is for $X',Y'$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+For (a), it follows by definition that if $u'$ is an isomorphism in the category of glueing objects, then $u$ is an isomorphism. But we also note that any isomorphism of objects over $S'$, compatible with glueing datum, is an isomorphism of glueing object, i.e. its inverse is also compatible with glueing datum. For (b), we are reduced to proving that if $X'$ is dominated by $Y'$, i.e. there exists an $S'$-morphism $X'\to Y'$, then the same is true for $X,Y$ over $S$. Now as $Y'\to S'$, hence also $Y''\to S''$, is a monomorphism, we see that $X'\to Y'$ is automatically compatible with the glueing datum, hence provides an $S$-morphism $X\to Y$.
+\end{proof}
+
+\begin{corollary}\label{category descent morphism monomorphism if fiber product isomorphic}
+Let $f:S'\to S$ be a univerally effective epimorphism and $g:S\to T$ be a morphism such that $S\times_TS$ exists. Suppose that $S''=S'\times_SS'$ is isomorphic to $S'\times_TS'$, then $g:S\to T$ is a monomorphism.
+\end{corollary}
+\begin{proof}
+In fact, consider the Cartesian diagram
+\[\begin{tikzcd}
+S'\times_SS'\ar[r,"\cong"]\ar[d]&S'\times_TS'\ar[d]&\\
+X\ar[r]&S\times_TS
+\end{tikzcd}\]
+In view of (\cite{SGA3}, \Rmnum{4}, 1.9), the morphism $S'\times_TS'\to S\times_TS$ is a universally effective epimorphism, so by \cref{category descent morphism object uniqueness prop} the diagonal morphism $S\to S\times_TS$ is also an isomorphism, which means $g:S\to T$ is a monomorphism.
+\end{proof}
+
+\paragraph{Descent for fibre categories}
+More generally, let $p_\mathcal{F}:\mathcal{F}\to\mathcal{C}$ be a fibre category over a site $\mathcal{C}$ and $\mathfrak{U}=\{S_i\to S\}$ be a covering family. Fix a cleavage of $\mathcal{F}$, we define a category $\mathcal{F}(\mathfrak{U})$ of descent data as follows: an object of $\mathcal{F}(\mathfrak{U})$ is a collection $(\{\xi_i\},\{\phi_{ij}\})$, where $\xi_i\in\mathcal{F}(S_i)$ and $\phi_{ij}:\pr_2^*(\xi_j)\stackrel{\sim}{\to}\pr_1^*(\xi_i)$ are isomorphisms in $\mathcal{F}(S_i\times_SS_j)$ satisfying the following cocycle condition. For any triple of indices $i,j,k$, we have the equality
+\[\pr_{13}^*(\phi_{ik})=\pr_{12}^*(\phi_{ij})\circ \pr_{23}^*(\phi_{jk}):\pr_3^*(\xi_k)\to\pr_1^*(\xi_i)\]
+where $\pr_{ij}^*$ and $\pr_i$ are projections on the $i$-th and $j$-th factor, or the $i$-th factor, respectively. The isomorphisms $\phi_{ij}$ are called transition isomorphisms of the object $(\{\xi_i\},\{\phi_{ij}\})$.\par
+A morphisms between descent objects
+\[\alpha:(\{\xi_i\},\{\phi_{ij}\})\to (\{\eta_i\},\{\psi_{ij}\})\]
+is a collection of morphisms $\alpha_i:\xi_i\to\eta_i$ in $\mathcal{F}(S_i)$ with the property that for each pair of indices $i,j$, the diagram
+\[\begin{tikzcd}
+\pr_2^*(\xi_j)\ar[r,"\pr_2^*(\alpha_j)"]\ar[d,swap,"\phi_{ij}"]&\pr_2^*(\eta_j)\ar[d,"\psi_{ij}"]\\
+\pr_1^*(\xi_j)\ar[r,"\pr_1^*(\alpha_i)"]&\pr_1^*(\eta_j)
+\end{tikzcd}\]
+commutes. There is an obvious way of composing morphisms, which makes objects with descent data the objects of a category.
+
+\begin{remark}
+In understanding the definition above it may be useful to contemplate the cube
+\begin{equation}\label{descent category projection square}
+\begin{tikzcd}[row sep=4mm,column sep=4mm]
+&S_{ijk}\ar[ld,swap,"\pr_{12}"]\ar[rr,"\pr_{23}"]\ar[dd,"\pr_{13}",pos=0.2]&&S_{jk}\ar[ld]\ar[dd]\\
+S_{ij}\ar[dd]\ar[rr,crossing over]&&S_j\ar[dd]&\\
+&S_{ik}\ar[ld]\ar[rr]&&S_k\ar[ld]\\
+S_i\ar[rr]&&S
+\arrow[from=2-3,to=4-3,crossing over]
+\end{tikzcd}
+\end{equation}
+in which all arrows are given by projections, and every face is cartesian.
+\end{remark}
+
+For each object $\xi$ of $\mathcal{F}(S)$, we can construct an object of $\mathcal{F}(\mathfrak{U})$ as follows. The objects $\xi_i$ are the pullbacks $\sigma_i^*(\xi)$, and the isomorphisms $\phi_{ij}:\pr_2^*(\sigma^*(\xi))\stackrel{\sim}{\to} \pr_1^*(\sigma_i(\xi))$ are the isomorphisms that come from the fact that both $\pr_2^*(\sigma_j^*(\xi))$ and $\pr_1^*(\sigma_i^*(\xi))$ are pullbacks of $\xi$ to $U_{ij}$. If we identify $\pr_2(\sigma_j^*(\xi))$ with $\pr_1(\sigma_i^*(\xi))$, as is commonly done, then $\phi_{ij}$ are identities.\par
+Given an morphism $\alpha:\xi\to\eta$ in $\mathcal{F}(S)$, we obtain morphisms $\sigma_i^*(\alpha):\sigma_i^*(\xi)\to \sigma_i^*(\eta)$, yielding an morphism from the descent object associated with $\xi$ to the one associated with $\eta$. This defines a functor $\mathcal{F}(U)\to\mathcal{F}(\mathfrak{U})$. It is important to notice that these construction do not depend on the choice of a cleavage, in the following sense. Given a different cleavage, for each covering $\{S_i\to S\}$ there is a canonical isomorphism of the resulting categories $\mathcal{F}(\{S_i\to S\})$; and the functors $\mathcal{F}(S)\to\mathcal{F}(\{S_i\to S\})$ commute with these equivalences.
+
+\begin{remark}
+Here is a definition of the category of descent data that does not depend on choosing of a cleavage. Let $\mathfrak{U}=\{S_i\to S\}$ be a covering. We define an object with descent data to be a triple of sets
+\[(\{\xi_i\},\{\xi_{ij}\},\{\xi_{ijk}\})\]
+where each $\xi_i$ is an object of $\mathcal{F}(S_i)$, and for each triple of indices $i,j,k$, we have a commutative diagram
+\[\begin{tikzcd}[row sep=4mm,column sep=4mm]
+&\xi_{ijk}\ar[rr]\ar[dd]&&\xi_{jk}\ar[dd]\\
+\xi_{ij}\ar[dd]\ar[rr,crossing over]&&\xi_j&\\
+&\xi_{ik}\ar[ld]\ar[rr]&&\xi_k\\
+\xi_i
+\end{tikzcd}\]
+in which every arrow is Cartesian, and such that when applying $p_\mathcal{F}$ every arrow maps to the appropriate projection in the diagram (\ref{descent category projection square}). These form the objects of a category $\mathcal{F}_{\desc}(\mathfrak{U})$. A morphism
+\[\phi:(\{\xi_i\},\{\xi_{ij}\},\{\xi_{ijk}\})\to (\{\xi_i\},\{\xi_{ij}\},\{\xi_{ijk}\})\]
+consists of set of morphisms with $\phi_i:\xi_i\to\eta_i$ in $\mathcal{F}(S_i)$, such that for each pair of indicies $i,j$ we have
+\[\pr_1^*(\phi_i)=\pr_2^*(\phi_j):\xi_{ij}\to\eta_{ij}.\]
+We can also define a morphism as a triple $(\{\phi_i\},\{\phi_{ij}\},\{\psi_{ijk}\})$, where $\phi_i:\xi_i\to\eta_i$ is a morphism in $\mathcal{F}(U_i)$ for each $i$, with the obvious compatibility conditions with the various arrows involved in the definition of an object. It can be checked that these two definitions of morphisms are equivalent.\par
+Once we have chosen a cleavage, there is a functor from $\mathcal{F}_{\desc}(\mathfrak{U})$ to $\mathcal{F}(\mathfrak{U})$. Given an object $(\{\xi_i\},\{\xi_{ij}\},\{\xi_{ijk}\})$ of $\mathcal{F}_{\desc}(\mathfrak{U})$, the morphisms $\xi_{ij}\to\xi_i$ and $\xi_{ij}\to\xi_j$ induce isomorphisms $\xi_{ij}\cong\pr_1^*(\xi_i)$ and $\xi_{ij}\cong\pr_2^*(\xi_j)$, and the resulting isomorphism $\pr_2^*(\xi_j)\cong\pr_1^*(\xi_i)$ is easily seen to satisfy the cocycle condition, thus defining an object of $\mathcal{F}(\mathfrak{U})$. A morphism $\phi$ in $\mathcal{F}_{\desc}(\mathfrak{U})$ is already a morphism in $\mathcal{F}(\mathfrak{U})$. It is not hard to check that this functor is an equivalence of categories.\par
+We can not define a functor $\mathcal{F}(S)\to\mathcal{F}_{\desc}(\mathfrak{U})$ directly, without the choice of a cleavage. However, let us define another category $\mathcal{F}_{\comp}(\mathfrak{U})$ in which the objects are quadruples $(\xi,\{\xi_i\},\{\xi_{ij}\},\{\xi_{ijk}\})$, where $\xi$ is an object of $\mathcal{F}(S)$ and each $\xi_i$ is an object of $\mathcal{F}(S_i)$, with a commutative cube
+\[\begin{tikzcd}[row sep=4mm,column sep=4mm]
+&\xi_{ijk}\ar[rr]\ar[dd]&&\xi_{jk}\ar[dd]\\
+\xi_{ij}\ar[dd]\ar[rr,crossing over]&&\xi_j&\\
+&\xi_{ik}\ar[ld]\ar[rr]&&\xi_k\ar[ld]\\
+\xi_i\ar[rr]&&\xi
+\arrow[from=2-3,to=4-3,crossing over]
+\end{tikzcd}\]
+in $\mathcal{F}$ for all the triples of indices, in which all the arrows are Cartesian, and whose image in $\mathcal{C}$ is the cube (\ref{descent category projection square}) above. A morphism from $(\xi,\{\xi_i\},\{\xi_{ij}\},\{\xi_{ijk}\})$ to $(\eta,\{\eta_i\},\{\eta_{ij}\},\{\eta_{ijk}\})$ can be indifferently defined as a morphism $\phi:\xi\to\eta$ in $\mathcal{F}(S)$, or as collections of arrows $\xi\to\eta$, $\xi_i\to\eta_i,\xi_{ij}\to\eta_{ij}$ and $\xi_{ijk}\to\eta_{ijk}$ satisfying the obvious commutativity conditions.\par
+There is a functor from $\mathcal{F}_{\comp}(\mathfrak{U})$ to $\mathcal{F}(S)$ that sends a whole object $(\xi,\{\xi_i\},\{\xi_{ij}\},\{\xi_{ijk}\})$ to $\xi$, and is easily seen to be an equivalence. There is also a functor from $\mathcal{F}_{\comp}(\mathfrak{U})$ to $\mathcal{F}_{\desc}(\mathfrak{U})$ that forgets the object of $\mathcal{F}(S)$, and this takes the place of the functor from $\mathcal{F}(S)$ to $\mathcal{F}(\mathfrak{U})$ defined using cleavages.
+\end{remark}
+
+The most elegant definition of objects with descent data is one that uses sieves: it does not require choosing anything. Let $\mathfrak{U}=\{S_i\to S\}$ be a covering in $\mathcal{C}$. The associated sieve $R\hookrightarrow S$ is a functor, whose associated category fibered in sets is the full subcategory of $\mathcal{C}_{/S}$, whose objects are arrows $T\to S$ that factor through some $S_i\to S$. According to our principle that functors and categories fibered in sets should be identified, we denote by $h_\mathfrak{U}$ this category. By the same principle, we also denote by $h_S$ the category $\mathcal{C}_{/S}$. There is a functor $\sHom_{\Cart}(h_\mathfrak{U},\mathcal{F})$ defined as follows. Suppose that we are given a morphism $F:h_\mathfrak{U}\to\mathcal{F}$. For any triple of indices $i,j,k$, we have objects $S_i\to S$, $S_{ij}\to S$ and $S_{ijk}\to S$ of $h_\mathfrak{U}$, and each of the projections of (\ref{descent category projection square}) not landing in $U$ is an arrow in $h_\mathfrak{U}$. Hence we can apply $F$ and get a diagram
+\[\begin{tikzcd}[row sep=4mm,column sep=4mm]
+&F(S_{ijk})\ar[rr]\ar[dd]\ar[ld]&&F(S_{jk})\ar[dd]\ar[ld]\\
+F(S_{ij})\ar[dd]\ar[rr,crossing over]&&F(S_j)&\\
+&F(S_{ik})\ar[ld]\ar[rr]&&F(S_k)\\
+F(S_i)&&
+\end{tikzcd}\]
+giving an object of $\mathcal{F}_{\desc}(\mathfrak{U})$. This extends to a functor $\sHom_{\mathcal{C}}(h_\mathfrak{U},\mathcal{F})\to\mathcal{F}_{\desc}(\mathfrak{U})$ in the obvious way.\par
+Also, consider the functor 
+\[\Hom_{\Cart}(h_S,\mathcal{F})\to\Hom_{\Cart}(h_\mathfrak{U},\mathcal{F})\]
+induced by the inclusion $h_\mathfrak{U}\sub h_S$. After choosing a cleavage, it is easy to verify that the composite of functors
+\[\Hom_{\Cart}(h_S,\mathcal{F})\to \Hom_{\Cart}(h_\mathfrak{U},\mathcal{F})\stackrel{\sim}{\to} \mathcal{F}_{\desc}(\mathfrak{U})\stackrel{\sim}{\to} \mathcal{F}(\mathfrak{U})\]
+is isomorphic to the composition
+\[\Hom_{\Cart}(h_S,\mathcal{F})\stackrel{\sim}{\to} \mathcal{F}(S)\to\mathcal{F}(\mathfrak{U})\]
+where the first functor is the equivalence of the $2$-Yoneda Lemma.
+
+\begin{proposition}\label{descent Hom cat and descent cat equivalence}
+The functor $\Hom_{\Cart}(h_\mathfrak{U},\mathcal{F})\to\mathcal{F}_{\desc}(\mathfrak{U})$ is an equivalence.
+\end{proposition}
+\begin{proof}
+Let us construct a functor $\mathcal{F}_{\desc}(\mathfrak{U})\to \Hom_{\Cart}(h_\mathfrak{U},\mathcal{F})$. For each $T\to S$ in $h_\mathfrak{U}$, choose a factorization $T\to S_i\to S$. Assume that we given an object $(\{\xi_i\},\{\xi_{ij}\},\{\xi_{ijk}\})$; for each arrow $T\to S$ in the category $h_\mathfrak{U}$, we get an object $\xi_T$ of $\mathcal{F}$ by pulling back $\xi_i$ along the chosen arrow $T\to S_i$. This defines a function from the class of objects of $h_\mathfrak{U}$ to $\mathcal{F}$.\par
+Given an arrow $T'\to T\to S$ in $h_\mathfrak{U}$, chose a factorization $T'\to S_j\to S$ of the composite $T'\to S$. This, together with the composite $T'\to T\to S_i$, yields a morphism $T'\to S_{ij}$ fitting into the diagram
+\[\begin{tikzcd}
+T'\ar[r]\ar[d]&S_{ij}\ar[r]\ar[d]&S_j\ar[d]\\
+T\ar[r]&S_i\ar[r]&S
+\end{tikzcd}\]
+Since the given morphism $\xi_{ij}\to\xi_j$ is Cartesian, the canonical morphism $\xi_{T'}\to\xi_j$, that is given by definition, because $\xi_{T'}$ is a pullback of $\xi_j$, will factor through uniquely as $\xi_{T'}\to\xi_{ij}\to\xi_j$, in a way that $\xi_{T'}\to\xi_{ij}$ sends $T'\to S_{ij}$. Now the composition $\xi_{T'}\to\xi_{ij}\to\xi_i$ factors as $\xi_{T'}\to\xi_T\to\xi_i$ for a unique morphism $\xi_{T'}\to\xi_T$ lying over the morphism $T'\to T$ in $\mathcal{C}$, and by transitivity, the morphism $\xi_{T'}\to\xi_T$ is Cartesian. These two functions, on objects and on arrows, define a morphism $h_\mathfrak{U}\to\mathcal{F}$. It is now immediate that they are quasi-inverses of each other. 
+\end{proof}
+
+Let $\mathcal{F}\to\mathcal{C}$ be a fibre category over a site $\mathcal{C}$. We say that $\mathcal{F}$ is a prestack (resp. stack) over $\mathcal{C}$ if for each covering $\{S_i\to S\}$ in $\mathcal{C}$, the functor $\mathcal{F}(S)\to \mathcal{F}(\{S_i\to S\})$ is fully faithful (resp. an equivalence of categories).\par
+Concretely, for $\mathcal{F}$ to be a prestack means the following. Let $S$ be an object of $\mathcal{C}$, $\eta$ and $\eta$ be object of $\mathcal{F}(S)$, $\{S_i\to S\}$ be a covering, $\xi_i$ and $\eta_i$ be the pullbacks of $\xi$ and $\eta$ to $S_i$, $\xi_{ij}$ and $\eta_{ij}$ be the pull backs of $\xi$ and $\eta$ to $S_{ij}$. Suppose that there are morphisms $\alpha_i:\xi_i\to\eta_i$ in $\mathcal{F}(S_i)$ such that $\pr_1^*(\alpha_i)=\pr_2^*(\alpha_j):\xi_{ij}\to\eta_{ij}$ for any $i,j$. Then there is a unique morphism $\alpha:\xi\to\eta$ whose pullback to $S_i$ is $\alpha_i$ for all $i$. This condition can be restated using the category $\mathcal{C}_{/S}$ and the comma topology.
+
+\begin{proposition}\label{descent fibre cat stack iff sheaf Hom}
+Let $\mathcal{F}$ be a fibered category over a site $\mathcal{C}$. Then $\mathcal{F}$ is a prestack if and only if for any object $S$ of $\mathcal{C}$ and any two objects $\xi,\eta$ over $S$, the functor $\sHom_S(\xi,\eta):\mathcal{C}_{/S}^{\op}\to\Set$ is a sheaf in the comma topology.
+\end{proposition}
+\begin{proof}
+Recall that the comma topology over $\mathcal{C}_{/S}$ is induced from the topology of $\mathcal{C}$. Assume that for any object $S$ of $\mathcal{C}$ and any two objects $\xi,\eta$ over $S$, the functor $\sHom_S(\xi,\eta):\mathcal{C}_{/S}^{\op}\to\Set$ is a sheaf in the comma topology. Now take a covering $\{S_i\to S\}$ and two objects $\xi,\eta$ of $\mathcal{F}(S)$. If we denote by $(\{\xi_i\},\{\alpha_{ij}\})$ and $(\{\eta_i\},\{\beta_{ij}\})$ the descent data associated with $\xi$ and $\eta$, respectively, then the morphisms in $\mathcal{F}(\{S_i\to S\})$ are the collections of morphisms $\{\phi_i:\xi_i\to\eta_i\}$ such that the restrictions of $\phi_i$ and $\phi_j$ to the pullbacks of $\xi$ and $\eta$ over $S_{ij}$ coincide. The fact that $\sHom_U(\xi,\eta)$ is a sheaf ensures that this comes from a unique morphism $\xi\to\eta$ in $\mathcal{F}(S)$, which means precisely that the functor $\mathcal{F}(S)\to\mathcal{F}(\{S_i\to S\})$ is fully faithful. The proof of the reverse direction is similar.
+\end{proof}
+
+An object with descent data $(\{\xi_i\},\{\phi_{ij}\})$ in $\mathcal{F}(\{U_i\to U\})$ is called \textbf{effective} if it is isomorphic to the image of an object of $\mathcal{F}(U)$. Equivalently, an object $(\{\xi_i\},\{\phi_{ij}\})$ is effective if there exists an object $\xi$ of $\mathcal{F}(S)$ together with Cartesian morphisms $\xi_i\to\xi$ over $\sigma_i:S_i\to S$, such that the diagram
+\[\begin{tikzcd}
+\pr_2^*(\xi_j)\ar[d]\ar[rr,"\phi_{ij}"]&&\pr_1^*(\xi_i)\ar[d]\\
+\xi_j\ar[rd]&&\xi_i\ar[ld]\\
+&\xi&
+\end{tikzcd}\]
+commutes for any $i,j$. In fact, the cartesian arrows $\xi_i\to\xi$ correspond to isomorphisms $\xi_i\cong\sigma_i^*(\xi)$ in $\mathcal{F}(S_i)$; and the commutativity of the diagram above is easily seen to be equivalent to the cocycle condition. Clearly, $\mathcal{F}$ is a stack if and only if it is a prestack, and all objects with descent data in $\mathcal{F}$ are effective. 
+
+\begin{proposition}\label{descent fibre cat of presheaf stack iff sheaf}
+Let $\mathcal{C}$ be a site, $F:\mathcal{C}^{\op}\to\Set$ a functor; we can also consider it as a category fibered in sets $\mathcal{F}\to\mathcal{C}$.
+\begin{enumerate}
+    \item[(a)] $\mathcal{F}$ is a prestack if and only if $F$ is a separated functor.
+    \item[(b)] $\mathcal{F}$ is a stack if and only if $F$ is a sheaf.
+\end{enumerate}
+\end{proposition}
+
+
+\subsection{Descent of quasi-coherent modules}
+Let $\mathbf{Sch}$ be the category of schemes. We consider the category $\mathcal{F}$ of couples $(X,\mathscr{F})$, where $X$ is a scheme and $\mathscr{F}$ is an $\mathscr{O}_X$-module over $X$. A morphism from $(X,\mathscr{F})$ to $(Y,\mathscr{G})$ is defined to be a couple $(f,\varphi)$, where $f:X\to Y$ is a morphism of schemes and $\varphi:\mathscr{G}\to f_*(\mathscr{F})$ is a homomorphism. This category can be considered as a fibre category over $\mathbf{Sch}$, where the inverse image functor of a morphism $f:X\to Y$ in $\mathbf{Sch}$ is given by the usual pullback functor of modules defined by $f$. As the inverse image of a quasi-coherent module is quasi-coherent, we see that the full subcategory formed by couples $(X,\mathscr{F})$, wherer $\mathscr{F}$ is a quasi-coherent $\mathscr{O}_X$-module, is a fibre subcategory. This category is called the \textbf{fibre category of quasi-coherent modules over schemes}, and denoted by $\mathbf{Qcoh}$. By definition, the structural functor $p:\mathbf{Qcoh}\to \mathbf{Sch}$ sends a couple $(X,\mathscr{F})$ to its base scheme $X$, and the categorical fiber of $\mathbf{Qcoh}$ at an object $X$ in $\mathbf{Sch}$ is the \textit{opposite} category $\mathbf{Qcoh}(X)^{\op}$.\par
+Recall that a morphism $f:X\to Y$ of ringed spaces is called \textbf{faithfully flat} if it is flat and surjective, and \textbf{quasi-compact} if the inverse image of any quasi-compact open is quasi-compact. By 
+\begin{theorem}
+Let $\mathbf{Qcoh}$ be the fibre category of quasi-coherent modules over schemes and $g:S'\to S$ be a faithfully flat and quasi-compact morphism of schemes. Then $g$ is an effective descent morphism for $\mathbf{Qcoh}$.
+\end{theorem}
+
+\subsection{Algebraic spaces}
+
+\paragraph{Properties of sheaves and definition of algebraic space}
+In order to speak about various properties of algebraic spaces and morphisms between them, we first discuss some formal language which enables us to speak about many geometric properties of schemes and morphisms between them in terms of the corresponding sheaves on the big Zariski site.
+
+\begin{definition}
+Let $\mathcal{C}$ be a site with a subcanonical topology. A class of objects $\mathcal{S}\sub\mathcal{C}$ is called \textbf{stable} if for every covering $\{U_i\to U\}$, the object $U$ is in $\mathcal{S}$ if and only if $U_i\in\mathcal{S}$ for each $i$. A property $\mathcal{P}$ of objects of $\mathcal{C}$ is called stable if the class of objects satisfying $\mathcal{P}$ is stable.
+\end{definition}
+
+\begin{example}
+Let $\mathcal{C}$ be the category of schemes with the Zariski topology. Then the following properties are stable: locally noetherian, reduced, normal, regular. If $S$ is a scheme and we take $\mathcal{C}$ to be the category of $S$-schemes with the Zariski topology then the following properties are stable: locally of finite presentation over $S$, locally of finite type over $S$, being a local complete intersection over $S$.
+\end{example}
+
+Let $\mathcal{C}$ be a site. A closed subcategory of $\mathcal{C}$ is a subcategory $\mathcal{C}'\sub\mathcal{C}$ such that the following hold:
+\begin{enumerate}
+    \item[(a)] $\mathcal{C}'$ contains all isomorphisms,
+    \item[(b)] for any Cartesian diagram
+    \[\begin{tikzcd}
+    X'\ar[r]\ar[d,"f'"]&X\ar[d,"f"]&\\
+    Y'\ar[r]&Y
+    \end{tikzcd}\]
+    in $\mathcal{C}$, if $f$ is a morphism in $\mathcal{C}'$, then $f'$ belongs to $\mathcal{C}'$.
+\end{enumerate}
+A closed subcategory $\mathcal{C}'\sub\mathcal{C}$ is called \textbf{stable} if for any morphism $f:X\to Y$ in $\mathcal{C}$ and any covering $\{Y_i\to Y\}$, the morphism $f$ is in $\mathcal{C}'$ if and only if all the maps $f_i:X\times Y_i\to Y_i$ are in $\mathcal{C}'$. A stable closed subcategory $\mathcal{C}'$ is called \textbf{local on domain} if for all $f:X\to Y$ in $\mathcal{C}$ and all coverings $\{j_i:X_i\to X\}$, the morphism $f$ is in $\mathcal{C}'$ if and only if the compositions $f\circ j_i$ are in $\mathcal{C}'$.\par
+If $\mathcal{P}$ is a property of morphisms in $\mathcal{C}$ satisfied by isomorphisms and closed under composition, let $\mathcal{C}_{\mathcal{P}}$ be the subcategory of $\mathcal{C}$ with the same objects as those in $\mathcal{C}$, but whose morphisms are morphisms satisfying $\mathcal{P}$. We say that $\mathcal{P}$ is \textbf{stable} (resp. \textbf{local on domain}) if the subcategory $\mathcal{C}_\mathcal{P}$ is stable (resp. local on domain).
+
+\begin{example}
+Let $S$ be a scheme and $\mathcal{C}$ be the category of $S$-schemes with the \'etale topology. Then the following properties of morphisms in $\mathcal{C}$ are stable: proper, separated, surjective, quasi-compact; and the following properties of morphisms in $\mathcal{C}$ are stable and local on domain: locally of finite type, locally of finite presentation, flat, \'etale, universally open, locally quasi-finite, smooth.
+\end{example}
+
+Let $S$ be a scheme and $f:F\to G$ be a morphism of \'etale sheaves over $\mathbf{Sch}_{/S}$. We say that $f$ is \textbf{represented by schemes} if for any $S$-scheme $T$ and morphism $T\to G$, the fiber product $F\times_GT$. Let $\mathcal{P}$ be a stable property of morphisms of schemes. If $f$ is representable by schemes, we say that $f$ \textbf{has property $\mathcal{P}$} if for every $S$-scheme $T$ the morphism of schemes $F\times_GT\to T$ has property $\mathcal{P}$.
+
+\begin{example}\label{scheme morphism represented by scheme}
+If $F$ and $G$ are representable, then any morphism $f:F\to G$ is representable by schemes. Indeed, if $F=h_X$ and $G=h_Y$, so $f$ is induced by a morphism of schemes $X\to Y$, then for any $S$-schemes $T$ and morphism $g:T\to G$ corresponding to a morphism of schemes $T\to Y$, we have $F\times_GT\cong h_{T\times_YX}$. Moreover, if $\mathcal{P}$ is a stable property of morphisms of schemes, then $f$ has property $\mathcal{P}$ if and only if the corresponding morphism $X\to Y$ has property $\mathcal{P}$.
+\end{example}
+
+\begin{proposition}\label{scheme etale sheaf morphism representable by scheme if diagonal}
+Let $S$ be a scheme and $F$ be an \'etale sheaf over $\mathbf{Sch}_{/S}$. Suppose that the diagonal morphism $\Delta:F\to F\times F$ is represented by schemes, then for any scheme $T$, any morphism $f:T\to F$ is representable by schemes.
+\end{proposition}
+\begin{proof}
+If $T$ and $T'$ are schemes, the fiber product of the diagram
+\[\begin{tikzcd}
+&T\ar[d,"f"]&\\
+T'\ar[r,"g"]&F
+\end{tikzcd}\]
+is isomorphic to the fiber product of the diagram
+\[\begin{tikzcd}
+&T\times_ST'\ar[d,"f\times g"]&\\
+F\ar[r,"\Delta"]&F\times F
+\end{tikzcd}\]
+and since $\Delta$ is represented by schemes, this fiber product is a scheme.
+\end{proof}
+
+Let $S$ be a scheme. An \textbf{algebraic space over $\bm{S}$} is a functor $X:\mathbf{Sch}_{/S}^{\op}\to \Set$ satisfying the following conditions:
+\begin{enumerate}[leftmargin=40pt]
+    \item[(AS1)] $X$ is a sheaf for the \'etale topology.
+    \item[(AS2)] The diagonal morphism $\Delta:X\to X\times X$ is represented by schemes.
+    \item[(AS3)] There exists an $S$-scheme $U$ and a surjective \'etale morphism $U\to X$\footnote{By (AS2) and \cref{scheme etale sheaf morphism representable by scheme if diagonal}, any morphism $U\to X$ is represented by schemes, so we can say that it is surjective or \'etale.}.
+\end{enumerate}
+The morphisms of algebraic spaces over $S$ are defined to be morphisms of sheaves. By \cref{scheme morphism represented by scheme}, it is clear that any scheme over $S$ is an algebraic space over $S$, and any morphism of the corresponding algebraic spaces is represented by a morphism of schemes.\par
+
+Let $g:S'\to S$ be a morphism of schemes and $\mathbf{AEsp}_{/S}$ (resp. $\mathbf{AEsp}_{/S'}$) be the category of algebraic spaces over $S$ (resp. $S'$). Let $\mathcal{C}$ be the category whose objects are pairs $(X,f)$, where $X$ is an algebraic space over $S$ and $f:X\to S'$ is a morphism of algebraic spaces over $S$. A morphism $(X',f')\to (X,f)$ in $\mathcal{C}$ is a commutative diagram of $\mathbf{AEsp}_{/S}$:
+\[\begin{tikzcd}
+X'\ar[rd,swap,"f'"]\ar[rr]&&X\ar[ld,"f"]\\
+&S'&
+\end{tikzcd}\]
+For an algebraic space $Y$ over $S'$, let $Y_S:\mathbf{Sch}_{/S}^{\op}\to\Set$ denote the functor sending an $S$-scheme $T$ to the set of pairs $(\eps,y)$, where $\eps:T\to S'$ is an $S$-morphism and $y\in Y(\eps)$. There is a natural morphism of functors $f_Y:Y_S\to S'$ sending $(\eps,y)$ to $\eps$\footnote{In fact, $Y_S$ is the image of $Y$ under the equivalence of categories $\widehat{\mathbf{Sch}_{/S'}}\stackrel{\sim}{\to} \widehat{\Sch_{/S}}_{/S'}$}.
+
+\begin{proposition}\label{algebraic space base change equivalence of cat}
+For any algebraic space $Y$ over $S'$, the functor $Y_S$ is an algebraic space over $S$. Moreover, the induced functor
+\[\mathbf{AEsp}_{/S'}\to\mathcal{C},\quad Y\mapsto (Y_S,f_Y)\]
+is an equivalence of categories.
+\end{proposition}
+\begin{proof}
+To see that $Y_S$ is an \'etale sheaf, let $\{T_i\to T\}$ be an \'etale covering of an $S$-scheme $T$, and $\{(\eps_i,y_i)\}\in\prod_iY_S(T_i)$ be an element in the equalizer of
+\[\prod_iY_S(T_i)\rightrightarrows \prod_{i,j}Y_S(T_i\times_TT_j).\]
+We must show that this collection is induced by a unique element $(\eps,y)\in Y_S(T)$. For this, note first that the $\eps_i$ dfine an element of the equalizer of
+\[\prod_iS'(T_i)\rightrightarrows \prod_{i,j}S'(T_i\times_TT_j)\]
+and hence are induced by a unique morphism $\eps:T\to S'$. Viewing $T$ and $T_i$ as $S'$-schemes via this morphism, the elements $y_i$ are then given by an element of the equalizer of
+\[\prod_iY(T_i)\rightrightarrows \prod_{i,j}Y(T_i\times_TT_j)\]
+and therefore are induced by a unique element $y\in Y(T)$. The resulting element $(\eps,y)\in Y_S(T)$ is then the required one.\par
+To see that the diagonal of $Y_S$ is representable, note that the fiber product $P$ of the diagram
+\[\begin{tikzcd}
+&Y_S\times_SY_S\ar[d,"f_Y\times f_Y"]\\
+S'\ar[r,"\Delta_{S'/S}"]&S'\times_SS'
+\end{tikzcd}\]
+is isomorphic as a presheav over $\mathbf{Sch}_{/S'}$ to $Y\times_{S'}Y$, so for an $S$-scheme $T$ and a morphism $T\to Y_S\times_SY_S$, the fiber product $T\times_{Y_S\times_SY_S,\Delta_{Y_S}}$ is given by first taking the fiber product $T':=T\times_{S'\times_SS',\Delta_{S'/S}}S'$, which is an $S'$-scheme, and then forming the fiber product $T'\times_{Y\times_{S'}Y,\Delta_Y}Y$, which is representable by the assumption on $Y$.\par
+Finally, to get an \'etale cover of $Y_S$, let $U\to Y$ be an \'etalte surjection over $S'$ corresponding to an element $u\in Y(U)$. Let $g:U\to S'$ be the structural morphism; then the pair $(g,u)$ defines an element of $Y_S(U)$, or equivalently a morphism $u_S:U\to Y_S$ over $S$. By the preceding argument for the diagonal morphism, for any $S$-scheme $T$ and object $(\eps,y)\in Y_S(T)$, the fiber product $U\times_{Y_S}T$ is given by $U\times_{Y,y}T$, which is \'etale and surjective by hypothesis. This implies that $u_S$ is an \'etale surjection, so we conclude that $Y_S$ is an algebraic space over $S$.\par
+We also note that we can recover an algebraic space $Y$ over $S'$ from $(Y_S,f_Y)$ as the functor associating to a $S'$-scheme $T$ the set of morphisms of functors $T\to Y_S$ over $S'$. Conversely, given an object $(X,f)\in\mathcal{C}$, let $Y$ be the functor on $\mathbf{Sch}_{/S'}^{\op}$ whose value on $T\to S'$ is the set of morphisms $T\to Y$ over $S'$. We claim that this is an algebraic space. That $Y$ is a sheaf for the \'etale topology follows from the fact that we have descent for \'etale sheaves. For an $S'$-scheme $T$ and morphism $T\to Y\times_{S'}Y$, the fiber product $T\times_{Y\times_{S'}Y,\Delta}Y$ is given by
+\[(T\times_{X\times_SX,\Delta_X}X)\times_{S'\times_SS',\Delta_{S'}}S',\]
+and in particular is a scheme. Finally, if $U\to X$ is an \'etale covering with $U$ an $S$-scheme, the composition $U\to X\to S'$ gives $U$ the structure of an $S'$-scheme and the induced morphism $U\to Y$ is also an \'etale surjection. In this way, we obtain a functor $\mathcal{C}\to\mathbf{AEsp}_{/S'}$ which is quasi-inverse to the functor $Y\mapsto (Y_S,f_Y)$.
+\end{proof}
+
+In particular, one can develop the theory of algebraic spaces as an absolute theory taking $S=\Spec(\Z)$ and then obtain the notion of algebraic space over a scheme $S$ as a pair $(X,f)$, where $X$ is an algebraic space (over $\Z$) and $f:X\to S$ is a morphism of algebraic spaces.
+
+\paragraph{Algebraic spaces as sheaf quotients}
+Fix a base scheme $S$, an \'etale equivalence relation on an $S$-scheme $X$ is a monomorphism of schemes
+\[R\hookrightarrow X\times_SX\]
+such that the following condition holds:
+\begin{enumerate}
+    \item[(\rmnum{1})] For each $S$-scheme $T$, the $T$-points $R(T)\sub X(T)\times X(T)$ is an equivalence relation on $X(T)$.
+    \item[(\rmnum{2})] The two morphisms $s,t:R\to X$ induced by the projections of $X\times_SX$ are \'eale. 
+\end{enumerate}
+Note that if $R$ is an \'etale equivalence relation, then the diagonal morphism $\Delta_X:X\to X\times_SX$ factors through $R$.\par
+
+Let $R$ be an \'etale equivalence relation on $X$. We define the quotient sheaf $X/R$ of $X$ to be the sheaf associated with the presheaf
+\[\mathbf{Sch}_{/S}^{\op}\to \Set,\quad T\mapsto X(T)/R(T)\]
+with respect to the \'etale topology.
+
+\begin{proposition}\label{algebraic space given by quotient by equivalence relation}
+Let $R$ be an \'etale equivalence relation on an $S$-scheme $X$.
+\begin{enumerate}
+    \item[(a)] The quotient sheaf $X/R$ is an algebraic space over $S$.
+    \item[(b)] If $Y$ is an algebraic space over $S$ and $X\to Y$ is an \'etale surjective morphism, then $R:=X\times_YX$ is a scheme and the inclusion $R\hookrightarrow X\times_SX$ is an \'etale equivalence relation. Moreover, the natural morphism $X/R\to Y$ is an isomorphism.
+\end{enumerate}
+\end{proposition} 
+
+The proof of \cref{algebraic space given by quotient by equivalence relation} will be in several steps. First, we note that to prove (a), let $Y$ denote the quotient sheaf. To see that $Y$ is an algebraic space, the key point is that the diagonal
+\[\Delta_Y:Y\to Y\times_SY\]
+is representable. In deed, once this is true, by \cref{scheme etale sheaf morphism representable by scheme if diagonal} we see that any morphism $U\to Y$ is represented by schemes, and in particular for the projection $X\to Y$. We claim that $X\to Y$ is an \'etale surjection; in fact, if $T\to Y$ is a morphism with $T$ a scheme over $S$, then to verify that $X\times_YT\to T$ is \'etale surjective, we can replace $T$ by an \'etale cover, and consider the base change to this cover. Since $X\to Y$ is in any case an epimorphism of \'etale sheaves, by taking a common refinement, we see that it suffices to consider morphisms $T\to Y$ which factor through $X$. In this case, we have a commutative diagram with Cartesian squares
+\[\begin{tikzcd}
+T\times_YX\ar[r]\ar[d]&R\ar[d,"s"]\ar[r,"t"]&X\ar[d]\\
+T\ar[r]&X\ar[r]&Y
+\end{tikzcd}\]
+and since $s$ is \'etale surjective this implies that $T\times_XY\to T$ is \'etale surjective.\par
+Let $j:U\to X$ be an open immersion, and $R_U$ be the fiber product $R\times_{X\times_SX}(U\times_SU)$. Then $R_U$ is an \'etale equivalence relation of $U$, and there is an induced morphism $\bar{j}:U/R_U\to Y$.
+
+\begin{lemma}\label{scheme etale sheaf quotient by equivalence relation open subscheme prop}
+The morphism $\bar{j}$ is represented by open immersions.
+\end{lemma}
+\begin{proof}
+It is clear from the definitions that $\bar{j}$ is a monomorphism. For any $S$-scheme $T$, a morphism $f:T\to Y$ is contained in the $T$-point of $U/R_U$ if and only if \'etale locally on $T$ the morphism $f$ factors through $U$. This condition on $f$ is representable by an open subset of $T$: in fact, this can be verified \'etale locally on $T$, so we may assume that there exists a morphism $\tilde{f}:T\to X$ lifting $f$. In this case the required open subset is $\tilde{f}^{-1}(s(t^{-1}(U)))$.
+\end{proof}
+
+To see that the diagonal morphism $\Delta_Y:Y\to Y\times_SY$ is representable, let $f:T\to Y\times_SY$ be a morphism and $F:=Y\times_{\Delta_Y,Y\times_SY}T$ be the fiber product. To prove that $F$ is a scheme, we may work Zariski locally on $S$ and $T$, and assume that $S$ and $T$ are an affine scheme.\par
+In this case, since $X\to Y$ is an epimorphism of sheaves, there exists an \'etale cover $T'\to T$ such that the composition morphism $T'\to T\to Y\times_SY$ factors through $X\times_SX$, and we may also assume that $T'$ is an affine scheme since $T$ is quasi-compact. Now observe that since the square 
+\[\begin{tikzcd}
+R\ar[r]\ar[d]&X\times_SX\ar[d]\\
+Y\ar[r,"\Delta"]&Y\times_SY
+\end{tikzcd}\]
+is Cartesian, if $F'=F\times_TT'$, then we have
+\[F'\cong Y\times_{\Delta_Y,Y\times_SY}T'\cong R\times_{X\times_SX}T'.\]
+In particular, $F'$ is a scheme and $F'\to T'$ is a monomorphism, which implies that $F'$ is a separated $S$-scheme (since $T'$ is separated over $S$).\par
+Now since $T'$ is \'etale surjective over $T$ and the square
+\[\begin{tikzcd}
+F'\ar[r]\ar[d]&T'\ar[d]\\
+F\ar[r]&T
+\end{tikzcd}\]
+is Cartesian, the morphism $F'\to F$ is representable and \'etale surjective, so $F$ is a quotient of $F'$ by the equivalence relation
+\[R'=F'\times_FF'\sub F'\times_SF'.\]
+Since $F\to T$ is a monomorphism, for either of the two projections $p_i:T'\times_TT'\to T'$, the square
+\[\begin{tikzcd}
+R'=F'\times_FF'\ar[d,"p_i"]\ar[r]&T'\times_TT'\ar[d,"p_i"]\\
+F'\ar[r]&T'
+\end{tikzcd}\]
+is Cartesian. This implies that $R'$ is a scheme and that the projections $p_i:F'\times_FF'\to F'$ are quasi-compact.
+\begin{lemma}
+Let $U'\sub F'$ be a quasi-compact open subset, $F_{U'}$ be the quotient sheaf $U'/R'_{U'}$, $\bar{j}:F_{U'}\to F$ be the natural representable open immersion, and $F'_{U'}\sub F'$ be the fiber product of the diagram
+\[\begin{tikzcd}
+&F'\ar[d]\\
+F_{U'}\ar[r,"\bar{j}"]&F
+\end{tikzcd}\]
+Then $F'_{U'}$ is a quasi-compact open subset of $F'$ containing $U'$.
+\end{lemma}
+\begin{proof}
+In fact, we have $F'_{U'}=p_1p_2^{-1}(U')$, where we write $p_i$ for the projections of $F'\times_FF'$. Since the morphisms $p_i$ are quasi-compact and $U'$ is also quasi-compact, we conclude the lemma.
+\end{proof}
+Since we can also write $F'_{U'}=F_{U'}\times_TT'$, we are then reduced to proving that $F_{U'}$ is representable. For this, note that since $F'_{U'}$ is quasi-compact, the morphism $F'_{U'}\to T'$ is quasi-affine by Zariski's main theorem (\cite{EGA4}, \Rmnum{4}, 18.12.13). That $F_{U'}$ is a scheme then follows from the fact that quasi-affine morphisms are effective for the fppf topology. This completes the proof of statement (a) of \cref{algebraic space given by quotient by equivalence relation}.\par
+For (b), note that since the square
+\[\begin{tikzcd}
+R\ar[d]\ar[r]&X\times_SX\ar[d]\\
+Y\ar[r,"\Delta"]&Y\times_SY
+\end{tikzcd}\]
+is Cartesian, $R$ is a scheme, and the projections $p_i:R\to X$ are \'etale since $X\to Y$ is \'etale. The remaining statements in (b) are immediate, and this completes the proof of \cref{algebraic space given by quotient by equivalence relation}.
+
+\begin{example}\label{algebraic space given by quotient scheme by free action}
+Let $X$ be a scheme and $G$ be a discrete group acting on $X$. The action of $G$ is called \textbf{free} if the map
+\begin{equation}\label{algebraic space given by quotient scheme by free action-1}
+G\times X\to X\times X\times X,\quad (g,x)\mapsto (x,\rho(g,x))
+\end{equation}
+is a monomorphism, where $\rho:G\times X\to X$ is the action map. In this case, let $X/G$ be the sheaf (with respect to the \'etale topology) assocaited to the presheaf $T\mapsto X(T)/G$. Then $X/G$ is a quotient of $X$ by the \'etale equivalence relation (\ref{algebraic space given by quotient scheme by free action-1}), and therefore $X/G$ is an algebraic space.
+\end{example}
+
+\begin{example}
+Let $k$ be a field and consider the scheme $X:=\Spec(k[s,t]/(st))$ obtained by glueing two copies of the affine line along the origin. Let $U\sub X$ be the open subset obtained by deleting the origin, and set $R:=X\coprod U$. Consider two morphisms $\pi_1,\pi_2:R\to X$ defined as follows. The restriction of both $\pi_1$ and $\pi_2$ to $X$ is the identity, but on $U$ we define $\pi_1$ to be the natural inclusion, and $\pi_2$ to be the morphism which switches the two components. Then the resulting morphism
+\[\pi_1\times\pi_2:R\to X\times X\]
+is an \'etale equivalence relation. Let $F=X/R$ be the resulting algebraic space, we claim that $F$ is not a scheme. 
+\end{example}
+
+\begin{example}
+Let $k$ be a field of characteristic $0$ and let $\Z$ act on $\A^1_k$ by the usual translation action. This is a free action and the quotient $X:=\A^1_k/\Z$ is an algebraic space which is not a scheme. To see this suppose to the contrary that $X$ is a scheme. Then $X$ has a surjective \'etale covering by $\A^1_k$ and therefore is smooth and connected, and for any affine open $U\sub X$ the sections $\mathscr{O}_X(U)$ are included into the $\Z$-invariants of the rational function field $k(x)$, where $n\in\Z$ acts by $x\mapsto x+n$. The $\Z$-invariants in $k(x)$ are just the constant functions since a nonconstant $\Z$-invariant function $f\in k(x)$ would have infinitely many zeros and poles. It follows that the coordinate ring of any nonempty open subset of $X$ is $k$, which implies that $X=\Spec(k)$. This contradicts the fact that the map $\A^1_k\to X$ is \'etale, and therefore $X$ does not contain any nonempty open subspace which is a scheme.\par
+Similarly, let $\Z^2$ act on $\A^1_\C$ by the imbedding $\Z^2\hookrightarrow\C$ sending $(a,b)$ to $a+\i b$ and the standard translation action of $\C$ on $\A^1_{\C}$. Then the quotient $\A^1_{\C}/\Z^2$ is an algebraic space which is not a scheme by the same argument. On the other hand, the quotient of $\C$, with the analytic topology, by this action of $\Z^2$ is an elliptic curve.
+\end{example}
+
+
 \section{Grothendieck Topoi}
 We have seen in \autoref{site category sheaf exactness property subsection} that various exactness properties for the category of sheaves over $\mathcal{C}$, where $\mathcal{C}$ is a small site, which can be expressed by saying that in many respects such a category inherit familiar properties from the category $\mathbf{Set}$ of (small) sets. In this section, we consider categories that can be realized as the category of sheaves of sets over a site. As we shall see, topoi behave much like the category of sets and possess a notion of localization.
 \subsection{Characterization of topoi}
@@ -2071,7 +2384,7 @@ The functors $\sExt_A^p(-,-)$ and $\Ext_A^p(X;-,-)$ are $\delta$-functors on eac
 in view of (\ref{ringed topos sheaf Hom with support closed-3}) and (\ref{ringed topos Hom with support closed-4}).
 \end{proof}
 
-\section{The method of cohomological descent}
+\section{Cohomological descent}
 Let $X$ be a topological space and $\mathfrak{U}=(U_i)_{i\in I}$ be a covering of $X$, which we suppose to be open or locally finite and closd. Let $\mathscr{F}$ be an abelian sheaf over $X$, the Leray spectral sequence
 \begin{equation}\label{cohomology descent introduction-1}
 \check{H}^p(\mathfrak{U},\mathcal{H}^p(X,\mathscr{F}))\Rightarrow H^{p+q}(X,\mathscr{F})
@@ -2868,7 +3181,7 @@ where $X_0=X\times_{Y_0}Y\cong\Spec(\kappa(\bar{y}))$. Now the restriction homom
 A sheaf $F$ over a scheme $X$ is representable if and only if the following conditions are satisfied:
 \begin{enumerate}
     \item[(a)] The stalks of $F$ are finite,
-    \item[(b)] For each \'etale scheme $U\to X$ over $X$ and every two sections $s,t\in F(U)$, the set of points $x\in U$ such that the fibers $s_{\bar{x}}$, $t_{\bar{x}}$ are different in $F_{\bar{x}}$ is an open subset.
+    \item[(b)] For each \'etale scheme $U\to X$ over $X$ and two sections $s,t\in F(U)$, the set of points $x\in U$ such that the fibers $s_{\bar{x}}$, $t_{\bar{x}}$ are different in $F_{\bar{x}}$ is an open subset.
 \end{enumerate}
 \end{lemma}
 
@@ -2982,7 +3295,7 @@ where $L=L''_\mathcal{X}\times_{M''_\mathcal{X}}F$ and $G=L''_\mathcal{X}\times_
 
 We now return to the \'etale topos of a scheme $X$. As we shall see,  locally constant sheaves over $X$ corresponds to \'etale covering spaces of $X$.
 \begin{proposition}\label{scheme etale locally constant sheaf represented by etale cover}
-Let $X$ be a scheme and $F$ be a sheaf of sets over $X$. If $F$ is locally constant, then it is represented by a \'etale scheme $U$ over $X$. If $F$ has finite (resp. nonempty) fibers, then $U$ is a finite (resp. surjective) \'etale covering of $X$. Conversely, if $U$ is finite \'etale over $X$, then the sheaf represented by $U$ is locally constant.
+Let $X$ be a scheme and $F$ be a sheaf of sets over $X$. If $F$ is locally constant, then it is represented by a \'etale scheme $U$ over $X$. Moreover, if $F$ has finite (resp. nonempty) fibers, then $U$ is a finite (resp. surjective) \'etale covering of $X$. Conversely, if $U$ is finite \'etale over $X$, then the sheaf represented by $U$ is locally constant.
 \end{proposition}
 \begin{proof}
 Descent (\cite{SGA1} \Rmnum{9} 4.1 if $F$ has finite fibers, and \cite{SGA3} \Rmnum{10} 5.4 in the general case).
@@ -3427,3 +3740,5 @@ We now embed $X$ into a complete smooth connected curve $\widebar{X}$, so that c
 \begin{remark}
 The reasoning of \cref{scheme qcqs semi-exact functor on etale zero iff} in fact establishes the following result: Let $X$ be a quasi-compact and quasi-separate scheme, $\ell$ a prime number, $\mathcal{C}$ a strictly full subcategory of the category of constructible $\ell$-torsion abelian sheaves which is stable under direct factor and extensions. Suppose that for any finite morphism $f:Y\to X$ and any open immersion $i:U\to Y$ of $Y$ that is finite presented over $X$, we have $f_*(i_!((\Z/\ell\Z)_U))\in\mathcal{C}$, then $\mathcal{C}$ contains any constructible $\ell$-torsion sheaves.
 \end{remark}
+
+
