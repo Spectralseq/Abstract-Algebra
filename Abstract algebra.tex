@@ -1,6 +1,7 @@
-\documentclass[11pt,a4paper]{book}
+\documentclass[10pt,a4paper]{book}
 \include{documentpre}
 %\usepackage{showkeys}
+%\usepackage{apacite}
 \usepackage{adjustbox}
 \usepackage{indentfirst} 
 
@@ -48,23 +49,25 @@ Algebra\\}
 %\include{chapter/linear-algebra-2}
 %\include{chapter/homological-algebra}
 %\include{chapter/dim-theory}
-
+%\include{chapter/D-module}
 
 %\include{chapter/topo}
 %\include{chapter/ring}
 %\include{chapter/Field}
-\include{chapter/commutative-algebra}
-%\include{chapter/Lie-alg-grp}
+%\include{chapter/commutative-algebra}
+\include{chapter/Lie-alg-grp}
+%\include{chapter/category}
+%\include{chapter/inf-category}
 %\include{chapter/sheaf}
 \include{chapter/scheme}
 %\include{chapter/topos-etale-cohomology}
-%\include{chapter/inf-category}
-%\include{chapter/category}
-\include{chapter/group-scheme}
-%\include{chapter/D-module}
 
-%\bibliographystyle{plain}
-%\bibliography{Bibtex}
+\include{chapter/group-scheme}
+
+%\bibliographystyle{abbrv}
+%\bibliography{Bibtex} 
+
+
 
 \end{document}
 
@@ -169,4 +172,3 @@ where the colimit is taken over all open subgroups $U$ of $G$, ordered by inclus
 \[(x,U)\cdot g=(y,g^{-1}Ug),\]
 where $y$ is the image of $x$ under the canonical morphism $F(G/g^{-1}Ug\stackrel{g}{\to}G/U)$. This action is continuous since $G_x\sups U$, and is well-defined on equivalent classes.
 \end{proof}
-

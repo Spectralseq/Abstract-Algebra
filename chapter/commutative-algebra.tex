@@ -7,7 +7,7 @@ An ideal $\p$ of a ring $A$ is called \textbf{prime} if the ring $A/\p$ is an in
 A maximal ideal $\m$ of $A$ is prime since $A/\m$ is a field; then it follows from Krull's theorem that every proper ideal of $A$ is contained in at least one prime ideal. In particular, for prime ideals to exist in a ring $A$, it is necessary and sufficient that $A$ be not reduced to $0$.\par
 Let $\rho:A\to B$ be a ring homomorphism and $\q$ an ideal of $B$. Set $\p=\rho^{-1}(\q)$. Then the homomorphism $\bar{\rho}:A/\p\to B/\q$ derived from $\rho$ by taking quotients is injective. Suppose that $\q$ is prime; as the ring $B/\q$ is an integral domain, so is $A/\p$, being isomorphic to a subring of $B/\q$. Consequently the ideal $\p=\rho^{-1}(\q)$ is prime. In particular, let $A$ be a subring of $B$. For every ideal $\q$ of $B$, $\q\cap A$ is a prime ideal $A$.\par
 If $\rho$ is surjective, then $\bar{\rho}$ is an isomorphism, so the conditions "$\p$ is prime" and "$\q$ is prime" are then equivalent. Hence, if $\p$ and $\a$ are ideals of $A$ such that $\a\sub\p$, a necessary and sufficient condition for $\p$ to be prime is that $\p/\a$ be prime in $A/\a$.
-\begin{proposition}
+\begin{proposition}\label{prime ideal containing product of ideal prop}
 Let $A$ be a ring, $\a_1,\dots,\a_n$ ideals of $A$ and $\p$ a prime ideal of $A$. If $\p$ contains the product $\prod_{i=1}^{n}\a_i$, it contains at least one of the $\a_i$.
 \end{proposition}
 \begin{proof}
@@ -1534,7 +1534,7 @@ so by the exactness of the sequence, there must be some element of $A$ whose ima
 Let $A$ be a nonzero ring. Then $\Spec(A)$ is connected if and only if $A$ has no nontrivial idempotents.
 \end{corollary}
 \begin{proposition}\label{Spec of ring idempotent ideal prop}
-Let $A$ be a ring. Let $\a$ be a finitely generated ideal. Assume that $\a=\a^2$. Then $V(\a)$ is open and closed in $\Spec(A)$, and $A/\a\cong A_e$ for some idempotent $e\in A$.
+Let $A$ be a ring and $\a$ be a finitely generated ideal such that $\a=\a^2$. Then $V(\a)$ is open and closed in $\Spec(A)$, and $A/\a\cong A_e$ for some idempotent $e\in A$.
 \end{proposition}
 \begin{proof}
 By Nakayama's Lemma there exists an element $f=1+a$, $a\in\a$ in $A$ such that $f\a=0$. It follows that $V(\a)=D(f)$ by a simple argument. Also,
@@ -3128,7 +3128,7 @@ Let $0\to M_1\to M_2\to M_3\to 0$ be an exact sequence of finitely-generated mod
 is exact.
 \end{corollary}
 \begin{proposition}\label{Noe ring finite module closure of 0 char}
-Let $A$ be a Noetherian ring, $\a$ an ideal of $A$ and $M$ a finitely generated $A$-module. The closure $\bigcap_{n=0}^{\infty}\a^nM$ of $\{0\}$ in $M$ with respect to the $\a$-adic topology is the set of $x\in M$ for which there exists an element $a\in \a$ such that $(1-a)x=0$.
+Let $A$ be a Noetherian ring, $\a$ an ideal of $A$ and $M$ a finitely generated $A$-module. The closure $\bigcap_{n}\a^nM$ of $\{0\}$ in $M$ with respect to the $\a$-adic topology is the set of $x\in M$ for which there exists an element $a\in \a$ such that $(1-a)x=0$.
 \end{proposition}
 \begin{proof}
 If $x=ax$ mod $\a$ where $a\in \a$, then $x=a^nx$ for every integer $n>0$ and hence $x\in\bigcap_{n}\a^nM$. Conversely, if $x\in\bigcap_n\a^nM$, $Ax$ is contained in the intersection of the neighbourhoods of $0$ in $M$; it then follows from \cref{filtration I-topo induce on submodule} that the $\a$-adic topology on $Ax$, which is induced by that on $M$, is the trivial topology; as $\a x$ is by definition a neighbourhood of $0$ with this topology, $\a x=A x$ and hence there exists $a\in \a$ such that $x=ax$.
@@ -3139,6 +3139,7 @@ Let $A$ be a Noetherian ring and $\a$ an ideal of $A$. Then the ideal $\bigcap_n
 \begin{remark}
 The hypothesis that $A$ is Noetherian is essential in this corollary. For example, let $A$ be the ring of infinitely differentiable maps from $\R$ to itself and let $\m$ be the (maximal) ideal of $A$ consisting of the functions $f$ such that $f(0)=0$. It is immediate that $\bigcap_{n}\m^n$ is the set of functions $f$ such that $f^{(n)}(0)=0$ for all $n\geq 0$ and there exist such functions with $f(x)\neq 0$ for all $x\neq 0$, for example the function $f$ defined by $f(x)=e^{-1/x^{2}}$ for $x\neq 0$ and $f(0)=0$. Also, note that for such an $f$, the elment $1+f$ is even invertible in $A$.
 \end{remark}
+
 \subsection{The adic completion of a Noetherian ring}
 Let $A$ be a ring, $\a$ an ideal of $A$ and $M$ an $A$-module; let $\widehat{A}$ and $\widehat{M}$ denote the respective Hausdorff completions of $A$ and $M$ with respect to the $\a$-adic topology and $\iota_M:M\to\widehat{M}$ the canonical map. The $A$-bilinear map $(a,x)\mapsto a\iota_M(x)$ of $\widehat{A}\times M$ to $\widehat{M}$ defines a canonical $A$-linear map
 \[\alpha_M:\widehat{A}\otimes_AM\to\widehat{M}.\]
@@ -3442,10 +3443,13 @@ such that $\tilde{\rho}(a)=f(a)$ for all $a\in A$ and $\tilde{\rho}(X_i)=b_i$ fo
 \begin{proof}
 There exists a unique homomorphism $v:A[X_1,\dots,X_p]\to B$ such that $v(a)=\rho(a)$ for $a\in A$ and $v(X_i)=b_i$, for $1\leq i\leq p$. Moreover, if $\b$ is a neighbourhood of $0$ in $B$ which is an ideal, $\rho^{-1}(\a)$ is an ideal of $A$ which is a neighbourhood of $0$ and, for every polynomial $P\in N_\a$, clearly $v(P)\in \b$ and hence $v$ is continuous. As $A[X_1,\dots,X_p]$ is dense in $A\{X_1,\dots,X_p\}$, the existence and uniqueness of $\tilde{\rho}$ follow from \cref{topological group complete Hausdorff into extension} and the principle of extension of identities.
 \end{proof}
+
 \begin{example}
 In the special case where $A=B$ and $f$ is the identity map we shall write $P(b_1,\dots,b_p)$ for the value of $\tilde{f}(P)$ for every restricted formal power series $P\in A\{X_1,\dots,X_p\}$.
 \end{example}
+
 Now we turn to the most important application of restricted power series in this part. In a topological ring $A$, an element $x$ is called \textbf{topologically nilpotent} if $0$ is a limit of the sequence $(x^n)$. If $A$ is a linearly topologized ring, to say that $x$ is topologically nilpotent means that for every open ideal $\a$ of $A$ the canonical image of $x$ in $A/\a$ is a nilpotent element of that ring. If $\r_\a$ is the nilradical of $A/\a$, clearly $(\r_\a)$ is an inverse system of subsets and the set $\t$ of topological nilpotent elements of $A$ is the inverse image of $\llim\nolimits_\a \r_\a$ under the canonical homomorphism $A\to\llim A/\a$; it is therefore a closed ideal of $A$. If also $A$ is Hausdorff and complete, this ideal is contained in the Jacobson radical of $A$ and, for an element $x\in A$ to be invertible, it is necessary and sufficient that its class mod $\t$ be invertible in $A/\t$ (\cref{filtration complete Hausdorff ring invertibility}). Note that if $A$ is a ring and $\a$ an ideal of $A$, the elements of $\a$ are topologically nilpotent with respect to the $\a$-adic topology.
+
 \begin{theorem}[\textbf{Hensel's Lemma}]
 Let $A$ be a complete Hausdorff linearly topologized ring. Let $\m$ be a closed ideal of $A$ whose elements are topologically nilpotent. Let $A/\m$ be the quotient topological ring and $\pi:A\to A/\m$ the canonical map. Let $T$ be a restricted formal power series in $A\{X\}$, $\bar{P}$ a monic polynomial in $(A/\m)[X]$ and $\bar{Q}$ a restricted formal power series in $(A/\m)\{X\}$. Suppose that $\pi(T)=\bar{P}\bar{Q}$ and that $\bar{P}$ and $\bar{Q}$ are strongly relatively prime in $(A/\m)\{X\}$. Then there exists a unique ordered pair $(P,Q)$ consisting of a monic polynomial $P\in A[X]$ and a restricted formal power series $Q\in A\{X\}$ such that
 \begin{align}\label{filtration Hensel's lemma-1}
@@ -3482,6 +3486,7 @@ It remains to verify that, if $T$ is a polynomial, so is $Q$. Now, the $Q_\a$ ar
 \[\deg(Q_\a)\leq\deg(T_\a)\leq\deg(T)\]
 for all $\a\in\mathcal{B}$, whence immediately the required result by definition of $Q$.
 \end{proof}
+
 \subsection{System of equations in complete rings}
 Let $A$ be a ring; we shall say that a system
 \[\bm{f}=(f_1,\dots,f_p)\in(A\llbracket X_1,\dots,X_q\rrbracket)^p\]
@@ -3510,8 +3515,7 @@ The existence and uniqueness of $\bm{g}$ are clear. It then follows that $J_{\bm
 \[\bm{h}=\mathbf{1}_n\circ\bm{h}=(\bm{f}\circ\bm{g})\circ\bm{h}=\bm{f}\circ(\bm{g}\circ\bm{h})=\bm{f}\circ\mathbf{1}_n=\bm{f}\]
 so the second clam follows.
 \end{proof}
-To abbreviate, we shall say in what follows that a ring satisfies \textbf{Hensel's conditions} if it is linearly topologized, Hausdorff and complete; given an ideal $\m$ in such a ring, $\a$ (or the ordered pair $(A,\m)$) will be said to satisfy Hensel's conditions if $\m$ is closed in $A$ and its elements are topologically nilpotent. The ideal $\t$ of $A$ consisting of all the topologically nilpotent elements satisfies Hensel's conditions.\par
-In particular, if $A$ is a ring and $\m$ an ideal of $A$ and $A$ is Hausdorff and complete with respect to the $\m$-adic topology, the ordered pair $(A,\m)$ satisfies Hensel's conditions.
+To abbreviate, we shall say in what follows that a ring satisfies \textbf{Hensel's conditions} if it is linearly topologized, Hausdorff and complete; given an ideal $\m$ in such a ring, $\m$ (or the ordered pair $(A,\m)$) will be said to satisfy Hensel's conditions if $\m$ is closed in $A$ and its elements are topologically nilpotent. The ideal $\t$ of $A$ consisting of all the topologically nilpotent elements satisfies Hensel's conditions. In particular, if $A$ is a ring and $\m$ an ideal of $A$ and $A$ is Hausdorff and complete with respect to the $\m$-adic topology, the ordered pair $(A,\m)$ satisfies Hensel's conditions.
 \begin{proposition}\label{power series to Hensel ring comtinuous map}
 Let $A$ be a commutative ring, $B$ a ring satisfying Hensel's conditions and $\phi:A\to B$ a homomorphism. For every family $\bm{x}=(x_1,\dots,x_n)$ of topologically nilpotent elements of $B$, there exists a unique homomorphism $\tilde{\phi}$ from $A\llbracket X_1,\dots,X_n\rrbracket$ to $B$ such that $\tilde{\phi}(a)=\phi(a)$ for all $a\in A$ and $\tilde{\phi}(X_i)=x_i$ for $1\leq i\leq n$. Moreover, if $\m$ denotes the ideal of series without constant term in $A\llbracket X_1,\dots,X_n\rrbracket$, then $\tilde{\phi}$ is continuous for the $\m$-adic topology.
 \end{proposition}
@@ -3590,12 +3594,14 @@ Let $p$ be a prime number $\neq 2$ and $n$ an integer whose class mod $p$ is a n
 \begin{example}
 Let $A=K\llbracket Y\rrbracket$ be the ring of formal power series in one indeterminate with coefficients in a field $K$; with the $(Y)$-adic topology, the ring $A$ is Hausdorff and complete and the map $f(Y)\mapsto f(0)$ defines by passing to the quotient ring an isomorphism of $\kappa_A$ onto the field $K$. By \cref{Hensel ring root of restricted power series}, if $F(Y,X)$ is a polynomial in $X$ with coefficients in $A$ and $a$ is a simple root of $F(0,X)$ in $K$, there exists a unique formal power series $f(Y)$ such that $f(0)=a$ and $F(Y,f(Y))=0$.
 \end{example}
+
 \begin{corollary}
 Let $A$ be a ring and $\m$ an ideal of $A$ such that the ordered pair $(A,\m)$ satisfies Hensel's conditions. Let $r$, $n$ be integers such that $0\leq r<n$ and $\bm{f}=(f_{r+1},\dots,f_n)$ is a system of $n-r$ elements of $A\{X_1,\dots,X_n\}$. Let $J_{\bm{f}}^{(n-r)}$ denote the minor of $M_{\bm{f}}(X)$ consisting of the columns of index $j$ such that $r+1\leq j\leq n$. Let $\bm{a}\in A^n$ be such that $J_{\bm{f}}(\bm{a})$ is invertible in $A$ and $\bm{f}(\bm{a})\equiv 0$ mod $\m^{\times(n-r)}$. Then there exists a unique $\bm{x}=(x_1,\dots,x_n)\in A^n$ such that $x_j=a_j$ for $1\leq j\leq r$ and $x\equiv a$ mod $\m^{\times n}$ and $\bm{f}(\bm{x})=0$.
 \end{corollary}
 \begin{proof}
 Substituting $a_j$ for $X_j$ for $1\leq j\leq r$ in the $f_i$, we see immediately that we may restrict our attention to the case where $r=0$ to prove the corollary. \cref{power series substitution is bijective if} shows then that $\bm{f}$ defines a bijection on $\bm{a}+\m^{\times n}$ onto $\bm{f}(\bm{a})+\m^{\times n}=\m^{\times n}$; the corollary follows from the fact that $0\in\m^{\times n}$.
 \end{proof}
+
 \section{Complements on complete rings}
 \subsection{Admissible rings}
 Let $A$ be a linearly topologized ring and $\mathfrak{I}$ be an open ideal of $A$. We say that $\mathfrak{I}$ is a \textbf{nilideal} if for any open neighborhood $V$ of $0$ in $A$, there exists an integer $n>0$ such that $\mathfrak{I}^n\sub V$ (which means, by abusing language, that $(\mathfrak{I}^n)$ tends to $0$). The linearly topologized $A$ is called \textbf{preadmissible} if there exists a nilideal of $A$, and $A$ is \textbf{admissible} if it is preadmissible and is complete and separated.\par
@@ -3642,7 +3648,7 @@ It is clear that (\rmnum{1}) imples (\rmnum{2}), and (\rmnum{3}) implies (\rmnum
 A Noetherian preadmissible ring admits a largest nilideal.
 \end{corollary}
 \begin{proof}
-If $A$ is a Noetherian preadmissible ring, then $A/\mathfrak{I}$ is also Noetherian, so its nilradical is nilpotent.
+If $A$ is Noetherian preadmissible, then $A/\mathfrak{I}$ is also Noetherian, so its nilradical is nilpotent.
 \end{proof}
 We note that any defining ideal $\mathfrak{I}$ of $A$ is necessarily a nilideal, but the converse is not true. In view of this, we say that a ring $A$ is \textbf{preadic} if there exists a nilideal $\mathfrak{I}$ of $A$ such that $\mathfrak{I}^n$ form a fundamental system of open neighborhoods of $0$ in $A$ (which means each $\mathfrak{I}^n$ is open, or that $\mathfrak{I}$ is a defining ideal of $A$). The ring $A$ is \textbf{adic} if it is preadic and separated and complete. If $\mathfrak{J}$ is a nilideal of a preadic ring $A$ with defining ideal $\mathfrak{I}$, then it is easy to see that each $\mathfrak{J}^n$ is open in $A$, hence also a defining ideal of $A$. In other words, if $A$ is a preadic ring, then any nilideal defines the topology of $A$, hence is a defining ideal of $A$.
 \begin{proposition}\label{admissible ring nilideal contained in Jacobson radical}
@@ -3664,18 +3670,21 @@ If these are satisfied, the kernel $\mathfrak{I}$ of $u_0:A\to A_0$ is equal to 
 This condition is necessary in view of the above remarks, since we can choose a fundamental system $(\mathfrak{I}_\lambda)$ of neighbrohoods of $0$ formed by nilideals contained in a fixed nilideal $\mathfrak{I}_0$, and note that $\mathfrak{I}_0^n\sub\mathfrak{I}_\lambda$ for sufficiently large $n$. The converse of this follows from the definition of projective limits, since $\mathfrak{I}$ is then a nilideal of $A$, and the last assertion is immediate.
 \end{proof}
 Let $A$ be an admissible ring and $\mathfrak{I}$ be an ideal of $A$ contained in a nilideal (which means $(\mathfrak{I}^n)$ tends to $0$). We can then consider the $\mathfrak{I}$-adic topology on $A$, and the hypothesis on $A$ implies that $\bigcap_n\mathfrak{I}^n=0$, so the $\mathfrak{I}$-adic topology on $A$ is separated.
+
 \begin{proposition}\label{admissible ring I-adic complete separated if I^n nilpotent closed}
 If $A$ is an admissible ring and $\mathfrak{I}$ be an ideal of $A$ contained in a nilideal such that the $\mathfrak{I}^n$ are closed in $A$, then $A$ is separated and complete for the $\mathfrak{I}$-adic topology.
 \end{proposition}
 \begin{proof}
 This follows from \cref{topological group abelian two topo complete subset}, since the $\mathfrak{I}$-adic topology is finer than the original topology on $A$.
 \end{proof}
+
 \begin{corollary}\label{admissible ring nilideal closed Noe iff A/I Noe}
 Let $A$ be an admissible ring, $\mathfrak{I}$ be a nilideal of $A$ such that the $\mathfrak{I}^n$ are closed in $A$. For $A$ to be Noetherian, it is necessary and sufficient that $A/\mathfrak{I}$ is Noetherian and that $\mathfrak{I}/\mathfrak{I}^2$ is a finitely generated $(A/\mathfrak{I})$-module.
 \end{corollary}
 \begin{proof}
 These conditions are clearly necessary. Conversely, if they are satisfied, then since $\gr(A)$ is generated by $\gr_1(A)=\mathfrak{I}/\mathfrak{I}^2$ over $\gr_0(A)=A/\mathfrak{I}$, it is Noetherian by Hilbert basis theorem, and the conclusion follows from \cref{filtration complete ring gr(A) Noe imply A Noe}.
 \end{proof}
+
 If $A$ is an adic ring and $\mathfrak{I}$ is a defining ideal of $A$, then $A$ is the projective limit of the discrete rings $A_i=A/\mathfrak{I}^{i+1}$, which is identified with the $\mathfrak{I}$-adic completion of $A$. Conversely, we can in fact use this to characterize adic rings such that there exists a defining ideal $\mathfrak{I}$ such that $\mathfrak{I}/\mathfrak{I}^2$ is finitely generated, as the following proposition shows:
 \begin{proposition}\label{adic ring given by I-adic completion}
 Let $A$ be a ring, $\mathfrak{I}$ be an ideal of $A$ such that $\mathfrak{I}/\mathfrak{I}^2$ is a finitely generated $A/\mathfrak{I}$-module.
@@ -3688,6 +3697,7 @@ Moreover, for $A$ to be Noetherian, it is necessary and sufficient that $A_0$ is
 \begin{proof}
 It is clear that the conditions of \cref{ring inverse limit complete and finiteness prop} and \cref{ring inverse limit topology is adic if finite ideal} are satisfied, and the last assertion follows from \cref{ring inverse limit Noe iff A_0 Noe}.
 \end{proof}
+
 \subsection{Complete localizations}
 Let $A$ be a linearly topologized ring, $(\mathfrak{I}_\lambda)$ be a fundamental system of neighborhoods of $0$ formed by ideals of $A$, and $S$ be a multiplicative subset of $A$. Let $u_\lambda:A\to A_\lambda=A/\mathfrak{I}_\lambda$ be the canonical homomorphism, and for $\mathfrak{I}_\mu\sub\mathfrak{I}_\lambda$, let $u_{\lambda\mu}:A_\mu\to A_\lambda$ be the canonical homomorphism. Put $S_\lambda=u_\lambda(S)$, so that $u_{\lambda\mu}(S_\mu)=S_\lambda$. The homomorphisms $u_{\lambda\mu}$ then induce canonical surjections $S_\mu^{-1}A_\mu\to S_\lambda^{-1}A_\lambda$, which form a projective system and we denote by $A\{S^{-1}\}$ its projective limit. It is clear that this does not depend on the choice of the system $(\mathfrak{I}_\lambda)$.
 \begin{proposition}\label{topo ring complete localization char}
@@ -6975,12 +6985,12 @@ so the claim follows.
 \end{proof}
 \subsection{Krull domains}
 \begin{definition}
-An integral domain $A$ is called a \textbf{Krull domain} if there exists a family $(v_i)_{i\in I}$ valuations on the field of fractions $K$ of $A$ with the following properties:
-\begin{itemize}
+An integral domain $A$ is called a \textbf{Krull domain} if there exists a family $(v_i)_{i\in I}$ of valuations on the field of fractions $K$ of $A$ with the following properties:
+\begin{enumerate}[leftmargin=40pt]
 \item[(K1)] the valuations $v_i$ are discrete;
 \item[(K2)] the intersection of the rings of the $v_i$ is $A$;
 \item[(K3)] for all $x\in K^\times$, the set of indices $i\in I$ such that $v_i(x)\neq 0$ is finite.
-\end{itemize}
+\end{enumerate}
 Such a family $(v_i)_{i\in I}$ is called a \textbf{defining family of valuations}.
 \end{definition}
 \begin{example}[\textbf{Examples of Krull domains}]
@@ -7211,9 +7221,9 @@ Now the hypothesis in \cref{Krull domain intersection is Krull if} is easily ver
 Let $A$ be a Krull domain. Recall that the group $\mathfrak{D}(A)$ of divisors of $A$ is the free commutative group generated by the set $P(A)$ of its irreducible elements and that $P(A)$ is identified with the set of prime ideals of $A$ of height $1$. For $\p\in P(A)$ we shall denote by $v_\p$ the normed essential valuation corresponding to $\p$. Recall that the ring of $v_\p$ is $A_\p$. We shall denote by $\mathfrak{P}(A)$ the subgroup of $\mathfrak{D}(A)$ consisting of the principal divisors and by $\mathfrak{C}(A)=\mathfrak{D}(A)/\mathfrak{P}(A)$ the divisor class group of $A$.
 \begin{proposition}\label{Krull domain divisor map i prop}
 Let $A$ be a Krull domain and $B$ a Krull domain containing $A$. Suppose that the following condition holds
-\begin{itemize}
+\begin{enumerate}[leftmargin=40pt]
 \item[(PD)] For every prime ideal $\mathfrak{P}$ of $B$ of height $1$, the prime ideal $\mathfrak{P}\cap A$ is zero or of height $1$.
-\end{itemize}
+\end{enumerate}
 For $\p\in P(A)$ the $\mathfrak{P}\in P(B)$ such that $\mathfrak{P}\cap A=\p$ are finite in number. We write
 \[i(\p)=\sum_{\mathfrak{P}\in P(B),\mathfrak{P}\cap A=\p}e(\mathfrak{P}/\p)\mathfrak{P},\]
 where $e(\mathfrak{P}/\p)$ denotes the ramification index of $v_{\mathfrak{P}}$ over $v_\p$. Then $i$ defines, by linearity, an increasing homomorphism of $\mathfrak{D}(A)$ to $\mathfrak{D}(B)$, which enjoys the following properties:
@@ -11868,9 +11878,9 @@ Let $A$ be a Noetherian local ring, $M$ be a finitely generated nonzero $A$-modu
 \end{proposition}
 \begin{proof}
 Suppose that the sequence $(x_1,\dots,x_r)$ is $M$-regular. Then by \cref{depth of module quotient by regular sequence} we have
-\begin{align*}
-\dim(M)&=r+\dim(M/(x_1M+\cdots+x_rM)),\quad \depth(M)&=r+\depth(M/(x_1M+\cdots+x_rM))
-\end{align*}
+\begin{equation*}
+\dim(M)=r+\dim(M/(x_1M+\cdots+x_rM)),\quad \depth(M)=r+\depth(M/(x_1M+\cdots+x_rM))
+\end{equation*}
 whence the implication (\rmnum{2})$\Rightarrow$(\rmnum{1}). Suppose now that the $A$-module $M$ is Cohen-Macaulay, we prove (\rmnum{2}) by recurrence on $r$. The assertion is evident if $r=0$, so assume that $r\geq 1$; the $A$-module $N=M/(x_1M+\cdots+x_{r-1}M)$ is then Cohen-Macaulay by hypotheses and we have $\dim(N/x_rN)=\dim(N)-1$ since the sequence $(x_1,\dots,x_r)$ is secant. The hypothety $(x_r)_N$ is then injective by \cref{Noe local pure module secant element iff homothety injective}, and $N/x_rN$ is Cohen-Macaulay by \cref{CM module quotient regular sequence is CM}, whence (\rmnum{2}).
 \end{proof}
 \begin{theorem}\label{CM over local Noe iff secant is regular}

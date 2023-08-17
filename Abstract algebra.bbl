@@ -1,132 +1,97 @@
 \begin{thebibliography}{10}
 
 \bibitem{SGA4-1}
-Michael Artin, Alexandre Grothendieck, and Jean~Louis Verdier.
-\newblock {\em Th{\'e}orie des Topos et Cohomologie Etale des Sch{\'e}mas. S{\'e}minaire de G{\'e}om{\'e}trie Alg{\'e}brique du Bois-Marie 1963-1964 (SGA 4): Tome 1}.
+M.~Artin, A.~Grothendieck, and J.~L. Verdier.
+\newblock {\em {T}h{\'e}orie des {T}opos et {C}ohomologie {\'E}tale des {S}ch{\'e}mas. {S}{\'e}minaire de {G}{\'e}om{\'e}trie {A}lg{\'e}brique du {B}ois-{M}arie 1963-1964 ({SGA} 4): {T}ome 1}.
 \newblock Lecture Notes in Mathematics. Springer, 2006.
 
 \bibitem{SGA4-2}
-Michael Artin, Alexandre Grothendieck, and Jean~Louis Verdier.
-\newblock {\em Th{\'e}orie des Topos et Cohomologie Etale des Sch{\'e}mas. S{\'e}minaire de G{\'e}om{\'e}trie Alg{\'e}brique du Bois-Marie 1963-1964 (SGA 4): Tome 2}.
+M.~Artin, A.~Grothendieck, and J.~L. Verdier.
+\newblock {\em {T}h{\'e}orie des {T}opos et {C}ohomologie {\'E}tale des {S}ch{\'e}mas. {S}{\'e}minaire de {G}{\'e}om{\'e}trie {A}lg{\'e}brique du {B}ois-{M}arie 1963-1964 ({SGA} 4): {T}ome 2}.
 \newblock Lecture Notes in Mathematics. Springer, 2006.
-
-\bibitem{SGA4-3}
-Michael Artin, Alexandre Grothendieck, and Jean~Louis Verdier.
-\newblock {\em Th{\'e}orie des Topos et Cohomologie Etale des Sch{\'e}mas. S{\'e}minaire de G{\'e}om{\'e}trie Alg{\'e}brique du Bois-Marie 1963-1964 (SGA 4): Tome 3}.
-\newblock Lecture Notes in Mathematics. Springer, 2006.
-
-\bibitem{Bourbaki_Alg8}
-Nicolas Bourbaki.
-\newblock {\em Algebre: Chapitre 8. Modules et anneaux semi-simples}.
-\newblock Hermann, 1958.
-
-\bibitem{Bourbaki_LieI}
-Nicolas Bourbaki.
-\newblock {\em Lie Groups and Lie Algebras: Chapters 1-3}, volume~1.
-\newblock Springer Science \& Business Media, 1989.
-
-\bibitem{Bourbaki_AlgI}
-Nicolas Bourbaki.
-\newblock {\em Algebra I: Chapters 1-3}, volume~1.
-\newblock Springer Science \& Business Media, 1998.
 
 \bibitem{Bourbaki_CA1-7}
-Nicolas Bourbaki.
-\newblock {\em Commutative algebra: chapters 1-7}.
+N.~Bourbaki.
+\newblock {\em Commutative algebra: {C}hapters 1-7}.
 \newblock Springer Science \& Business Media, 1998.
 
-\bibitem{Bourbaki_LieII}
-Nicolas Bourbaki.
-\newblock {\em Lie Groups and Lie Algebras: Chapters 4-6}, volume~2.
-\newblock Springer Science \& Business Media, 2002.
+\bibitem{Chevalley1958}
+C.~Chevalley.
+\newblock {C}lassification des groupes de {L}ie alg{\'e}briques: {S}{\'e}minaire {C. Chevalley}, 1956-1958.
+\newblock 1958.
 
-\bibitem{Bourbaki_CA10}
-Nicolas Bourbaki.
-\newblock {\em Alg{\`e}bre commutative: Chapitre 10}.
-\newblock Springer Berlin Heidelberg, 2006.
+\bibitem{SGA3-3}
+M.~Demazure.
+\newblock {\em Sch{\'e}mas en {G}roupes. {S}{\'e}minaire de {G}{\'e}om{\'e}trie {A}lg{\'e}brique du {B}ois {M}arie 1962/64 ({SGA} 3) {III}: {S}tructure des Sch{\'e}mas en {G}roupes {R}eductifs}, volume 153.
+\newblock Institut des Hautes \'Etudes Scientifiques, 1970.
 
-\bibitem{Bourbaki_CA8-9}
-Nicolas Bourbaki.
-\newblock {\em Alg{\`e}bre commutative: Chapitres 8 et 9}.
-\newblock Springer Berlin Heidelberg, 2006.
-
-\bibitem{Bourbaki_Alg10}
-Nicolas Bourbaki.
-\newblock {\em Algebre: Chapitre 10. Algebre homologique}.
-\newblock Springer Science \& Business Media, 2007.
-
-\bibitem{Bourbaki_Alg9}
-Nicolas Bourbaki.
-\newblock {\em Algèbre: Chapitre 9}.
-\newblock Springer Berlin, Heidelberg, 2007.
-
-\bibitem{Bourbaki_LieIII}
-Nicolas Bourbaki.
-\newblock {\em Lie groups and Lie Algebras: Chapters 7-9}, volume~3.
-\newblock Springer Science \& Business Media, 2008.
-
-\bibitem{Bourbaki_AlgII}
-Nicolas Bourbaki.
-\newblock {\em Algebra II: Chapters 4-7}, volume~2.
-\newblock Springer Science \& Business Media, 2013.
-
-\bibitem{Bourbaki_Topo1-4}
-Nicolas Bourbaki.
-\newblock {\em General Topology: Chapters 1-4}, volume~18.
-\newblock Springer Science \& Business Media, 2013.
+\bibitem{SGA3-1}
+M.~Demazure and P.~Gabriel.
+\newblock {\em Sch{\'e}mas en {G}roupes. {S}{\'e}minaire de {G}{\'e}om{\'e}trie {A}lg{\'e}brique du {B}ois {M}arie 1962/64 ({SGA} 3) {I}: {Proprietes Generales des Schemas en Groupes}}, volume 151.
+\newblock Institut des Hautes \'Etudes Scientifiques, 1970.
 
 \bibitem{tohoku}
-Alexander Grothendieck.
-\newblock Sur quelques points d'alg{\`e}bre homologique, i.
+A.~Grothendieck.
+\newblock {S}ur quelques points d'alg{\`e}bre homologique, {I}.
 \newblock {\em Tohoku Mathematical Journal}, 9:119--221, 1957.
 
 \bibitem{EGA1}
-Alexander Grothendieck.
+A.~Grothendieck.
 \newblock {\'E}l{\'e}ments de g{\'e}om{\'e}trie alg{\'e}brique: {I}. {Le} langage des sch{\'e}mas.
 \newblock {\em Publications Math{\'e}matiques de l'IH{\'E}S}, 4:5--228, 1960.
 
 \bibitem{EGA2}
-Alexander Grothendieck.
+A.~Grothendieck.
 \newblock {\'E}l{\'e}ments de g{\'e}om{\'e}trie alg{\'e}brique: {II}. {{\'E}tude} globale {\'e}l{\'e}mentaire de quelques classes de morphismes.
 \newblock {\em Publications Math{\'e}matiques de l'IH{\'E}S}, 8:5--222, 1961.
 
-\bibitem{EGA3}
-Alexander Grothendieck.
-\newblock {\'E}l{\'e}ments de g{\'e}om{\'e}trie alg{\'e}brique: {III}. {{\'E}tude} cohomologique des faisceaux coh{\'e}rents, premi{\`e}re partie.
+\bibitem{EGA3-1}
+A.~Grothendieck.
+\newblock {\'E}l{\'e}ments de g{\'e}om{\'e}trie alg{\'e}brique: {III}. {{\'E}tude} cohomologique des faisceaux coh{\'e}rents, {Premi{\`e}re} partie.
 \newblock {\em Publications Math{\'e}matiques de l'IH{\'E}S}, 11:5--167, 1961.
 
-\bibitem{EGA4}
-Alexander Grothendieck.
-\newblock {\'E}l{\'e}ments de g{\'e}om{\'e}trie alg{\'e}brique: {IV}. {{\'E}tude} locale des sch\'emas et des morphismes de sch\'emas, {Quatri\`eme} partie.
-\newblock {\em Publications Math\'ematiques de l'IH\'ES}, 32:5--361, 1967.
+\bibitem{EGA3-2}
+A.~Grothendieck.
+\newblock {\'E}l{\'e}ments de g{\'e}om{\'e}trie alg{\'e}brique: {III}. {{\'E}}tude cohomologique des faisceaux coh{\'e}rents, {Seconde} partie.
+\newblock {\em Publications Math{\'e}matiques de l'IH{\'E}S}, 17:5--91, 1963.
+
+\bibitem{EGA4-1}
+A.~Grothendieck.
+\newblock {\'E}l{\'e}ments de g{\'e}om{\'e}trie alg{\'e}brique: {IV}. {{\'E}}tude locale des sch{\'e}mas et des morphismes de sch{\'e}mas, {Premi{\`e}re} partie.
+\newblock {\em Publications Math{\'e}matiques de l'IH{\'E}S}, 20:5--259, 1964.
+
+\bibitem{EGA4-2}
+A.~Grothendieck.
+\newblock {\'E}l{\'e}ments de g{\'e}om{\'e}trie alg{\'e}brique: {IV}. {{\'E}}tude locale des sch{\'e}mas et des morphismes de sch{\'e}mas, {Seconde} partie.
+\newblock {\em Publications Math{\'e}matiques de l'IH{\'E}S}, 24:5--231, 1965.
+
+\bibitem{EGA4-3}
+A.~Grothendieck.
+\newblock {\'E}l{\'e}ments de g{\'e}om{\'e}trie alg{\'e}brique: {IV}. {{\'E}}tude locale des sch{\'e}mas et des morphismes de sch{\'e}mas, {Troisi{\`e}me} partie.
+\newblock {\em Publications Math{\'e}matiques de l'IH{\'E}S}, 28:5--255, 1966.
+
+\bibitem{EGA4-4}
+A.~Grothendieck.
+\newblock {\'E}l{\'e}ments de g{\'e}om{\'e}trie alg{\'e}brique: {IV}. {{\'E}}tude locale des sch\'emas et des morphismes de sch\'emas, {Quatri\`eme} partie.
+\newblock {\em Publications Math\'ematiques de l'IH\'ES}, 32, 1967.
 
 \bibitem{SGA1}
-Alexander Grothendieck and Michele Raynaud.
-\newblock {\em Rev{\^e}tements {\'E}tales et Groupe Fondamental: S{\'e}minaire de G{\'e}om{\'e}trie Alg{\'e}brique du Bois Marie 1960/61 (SGA 1)}, volume 224.
+A.~Grothendieck and M.~Raynaud.
+\newblock {\em {R}ev{\^e}tements {\'E}tales et {G}roupe {F}ondamental: {S}{\'e}minaire de {G}{\'e}om{\'e}trie {A}lg{\'e}brique du {B}ois {M}arie 1960/61 ({SGA} 1)}, volume 224.
 \newblock Springer, 2006.
 
-\bibitem{SGA3}
-Alexandre Grothendieck and Michel Demazure.
-\newblock {\em Sch{\'e}mas en groupes I--III}.
-\newblock Institut des Hautes Etudes Scientifiques, 1963.
-
-\bibitem{Hartshorne}
-Robin Hartshorne.
-\newblock {\em Algebraic geometry}, volume~52.
-\newblock Springer Science \& Business Media, 2013.
-
-\bibitem{hotta_Dmodule}
-Ryoshi Hotta and Toshiyuki Tanisaki.
-\newblock {\em D-modules, perverse sheaves, and representation theory}, volume 236.
-\newblock Springer Science \& Business Media, 2007.
-
-\bibitem{kashiwara_SAC}
-Masaki Kashiwara and Pierre Schapira.
-\newblock {\em Categories and Sheaves}.
-\newblock Grundlehren der mathematischen Wissenschaften. Springer Berlin Heidelberg, 2005.
+\bibitem{Murre1964}
+J.~Murre.
+\newblock Representation of unramified functors. applications.
+\newblock {\em S{\'e}minaire Bourbaki, Exp}, (294):65, 1964.
 
 \bibitem{Nitsure_rep_of_Hom}
-Nitin Nitsure.
-\newblock Representability of hom implies flatness, 2003.
+N.~Nitsure.
+\newblock {R}epresentability of {H}om implies flatness, 2003.
+
+\bibitem{SGA3-2}
+M.~Raynaud, M.~Artin, A.~Grothendieck, and J.-P. Serre.
+\newblock {\em Sch{\'e}mas en {G}roupes. {S}{\'e}minaire de G{\'e}om{\'e}trie {A}lg{\'e}brique du {B}ois {M}arie 1962/64 ({SGA} 3) {II}: {G}roupes de {T}ype {M}ultiplicatif, et {S}tructure des {S}ch{\'e}mas en {G}roupes {G}eneraux}, volume 152.
+\newblock Institut des Hautes \'Etudes Scientifiques, 1970.
 
 \end{thebibliography}

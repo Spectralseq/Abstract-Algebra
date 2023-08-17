@@ -154,7 +154,7 @@ This signifies that for any $\eta'\in\Ob(\mathcal{F}_T)$, the map
 \begin{equation}\label{fiber cat Cartesian morphism represent Hom}
 \Hom_T(\eta',\eta)\to \Hom_f(\eta',\xi),\quad v\mapsto\alpha\circ v
 \end{equation}
-is bijective. In other words, the couple $(\eta,\alpha)$ represents the functor $\eta'\mapsto\Hom_f(\eta',\xi)$ from $\mathcal{F}_T^{\op}\to \mathbf{Set}$. If for any morphism $f:T\to S$ and any object $\xi\in\Ob(\mathcal{F}_S)$, there exists a such couple $(\eta,\alpha)$, i.e. a Cartesian morphism $\alpha:\eta\to \xi$ in $\mathcal{F}$ such that $p(\alpha)=f$, then $\eta$ is uniquely determined in $\mathcal{F}_T$. In this case, we then say that the inverse image of $\xi$ under $f$ exists, and an object $\eta$ together with a Cartesian $f$-morphism $\alpha:\eta\to \xi$ is called an \textbf{inverse image of $\bm{\xi}$ by $\bm{f}$}. We often assume that such an inverse image is chosen whenever it exists ($\mathcal{F}$ being fixed), and denote it by $f^*_\mathcal{F}(\xi)$, or simply $f^*(\xi)$ or $\xi\times_ST$ if there is no risk of confusion. The canonical homomorphism $\alpha:\eta\to \xi$ is then denoted in this case by $\alpha_f(\xi)$. If for any $\xi\in\Ob(\mathcal{F}_S)$, the inverse image of $\xi$ by $f$ exists, we then say that the \textbf{inverse image functor of $f$ in $\mathcal{F}$ exists}, and $\xi\mapsto f^*(\xi)$ defines a covariant functor from $\mathcal{F}_S$ to $\mathcal{F}_T$. This functorial dependence of $f^*(\xi)$ is explained as follows: consider Cartesian $f$-morphisms
+is bijective. In other words, the couple $(\eta,\alpha)$ represents the functor $\eta'\mapsto\Hom_f(\eta',\xi)$ from $\mathcal{F}_T^{\op}\to \mathbf{Set}$. If for any morphism $f:T\to S$ and any object $\xi\in\Ob(\mathcal{F}_S)$, there exists a such couple $(\eta,\alpha)$, i.e. a Cartesian morphism $\alpha:\eta\to \xi$ in $\mathcal{F}$ such that $p(\alpha)=f$, then $\eta$ is uniquely determined in $\mathcal{F}_T$. In this case, we then say that the inverse image of $\xi$ under $f$ exists, and an object $\eta$ together with a Cartesian $f$-morphism $\alpha:\eta\to \xi$ is called an \textbf{inverse image of $\xi$ by $f$}. We often assume that such an inverse image is chosen whenever it exists ($\mathcal{F}$ being fixed), and denote it by $f^*_\mathcal{F}(\xi)$, or simply $f^*(\xi)$ or $\xi\times_ST$ if there is no risk of confusion. The canonical homomorphism $\alpha:\eta\to \xi$ is then denoted in this case by $\alpha_f(\xi)$. If for any $\xi\in\Ob(\mathcal{F}_S)$, the inverse image of $\xi$ by $f$ exists, we then say that the \textbf{inverse image functor of $f$ in $\mathcal{F}$ exists}, and $\xi\mapsto f^*(\xi)$ defines a covariant functor from $\mathcal{F}_S$ to $\mathcal{F}_T$. This functorial dependence of $f^*(\xi)$ is explained as follows: consider Cartesian $f$-morphisms
 \[\alpha:\eta\to \xi,\quad \alpha':\eta'\to \xi'\]
 and an $S$-morphism $\lambda:\xi\to \xi'$. Then there exits a unique  $T$-morphism $\mu:\eta\to\eta'$ such that the diagram
 \[\begin{tikzcd}
@@ -619,7 +619,7 @@ is defined to be $(f\circ g,g^*(\alpha)\circ\beta)$. The functor $p$ sends $(S,u
 
 \section{Grothendieck topologies and sheaves}
 \subsection{Topologies and basis}
-Let $\mathcal{C}$ be a category. A subcategory $\mathcal{D}$ of $\mathcal{C}$ is called a \textbf{sieve} of $\mathcal{C}$ if it satisfies the following property: any object of $\mathcal{C}$ such that there exists a morphism from this object to an object of $\mathcal{D}$ is in $\mathcal{D}$. If $X$ is an object of $\mathcal{C}$, then the sieves of the category $\mathcal{C}_{/X}$ are also called \textbf{sieves on $\bm{X}$}.\par
+Let $\mathcal{C}$ be a category. A subcategory $\mathcal{D}$ of $\mathcal{C}$ is called a \textbf{sieve} of $\mathcal{C}$ if it satisfies the following property: any object of $\mathcal{C}$ such that there exists a morphism from this object to an object of $\mathcal{D}$ is in $\mathcal{D}$. If $X$ is an object of $\mathcal{C}$, then the sieves of the category $\mathcal{C}_{/X}$ are also called \textbf{sieves on $X$}.\par
 Let $\mathscr{U}$ be a universe such that $\mathcal{C}$ is a $\mathscr{U}$-category, and $\PSh(\mathcal{C})$ be the corresponding category of presheaves. For any sieve on $X$, we can define a sub-object of $X$ in $\PSh(\mathcal{C})$ by associating any object $Y$ in $\mathcal{C}$ with the set of morphisms $f:Y\to X$ such that the object $(Y,f)$ of $\mathcal{C}_{/X}$ belongs to the sieve. In this way, we obtain a correspondence between sieves and sub-objects:
 \begin{proposition}\label{category sieve and subobject correspondence}
 The association defined above is a correspondence between the set of sieves of $\mathcal{C}_{/X}$ and the set of sub-objects of $X$ in $\PSh(\mathcal{C})$.
@@ -635,7 +635,7 @@ Therefore, \cref{category sieve and subobject correspondence} allows us to trans
 \begin{itemize}
 \item \textbf{Base change}. Let $R$ be a sieve of $X$ and $f:Y\to X$ be a morphism in $\mathcal{C}$. The fiber product $R\times_XY$ is then a sieve of $Y$, which is called the \textbf{base change} of $R$ to $Y$. The corresponding subcategory of $\mathcal{C}_{/Y}$ is then the inverse image of the subcategories of $\mathcal{C}_{/X}$ defined by $R$ under the morphism $f$.
 \item \textbf{Order relation, intersection, union}. The inclusion of sub-functors of $X$ is an order relation, which then defines an order relation on sieves of $X$. We define the union and intersection of a family of sieves as the supremum and infimum of the corresponding family of sub-presheaves.
-\item \textbf{Image, generated sieve}. Let $(F_\alpha)_{\alpha\in I}$ be a family of presheaves and $f_\alpha:F_\alpha\to X$ be a morphism for each $\alpha$, where $X$ is an object of $\mathcal{C}$. We define the image of this family of morphisms to be the union of the images of $f_\alpha$, which is then a sieve of $X$. In particular, if the $F_\alpha$ are objects of $\mathcal{C}$, the image sieve is called the \textbf{sieve generated by the morphisms $\bm{f_\alpha}$}. The corresponding subcategory of $\mathcal{C}_{/X}$ is by definition the full subcategory of $\mathcal{C}_{/X}$ formed by objects $Y\to X$ such that there exists an $X$-morphism of $Y$ into one of the $F_\alpha$.
+\item \textbf{Image, generated sieve}. Let $(F_\alpha)_{\alpha\in I}$ be a family of presheaves and $f_\alpha:F_\alpha\to X$ be a morphism for each $\alpha$, where $X$ is an object of $\mathcal{C}$. We define the image of this family of morphisms to be the union of the images of $f_\alpha$, which is then a sieve of $X$. In particular, if the $F_\alpha$ are objects of $\mathcal{C}$, the image sieve is called the \textbf{sieve generated by the morphisms $f_\alpha$}. The corresponding subcategory of $\mathcal{C}_{/X}$ is by definition the full subcategory of $\mathcal{C}_{/X}$ formed by objects $Y\to X$ such that there exists an $X$-morphism of $Y$ into one of the $F_\alpha$.
 \end{itemize}
 
 The use of sieves allows us to define a topology on a category $\mathcal{C}$. Roughly speaking, this amounts to associate for each object $X$ of $\mathcal{C}$ a class of sieves of $X$. A sieve of $X$ in this class can then be considered as a \textit{covering} of $X$, or a way to "localize" $X$.
@@ -647,7 +647,7 @@ Let $\mathcal{C}$ be a category. A \textbf{topology} $\mathcal{T}$ on $\mathcal{
 \item[(T3)] For any object $X$ of $\mathcal{C}$, $X$ belongs to $\mathcal{T}(X)$.
 \end{enumerate}
 \end{definition}
-The sieves in $\mathcal{T}(X)$ are called \textbf{covering sieves of $\bm{X}$}, or simply the \textbf{coverings of $\bm{X}$}. If $R\in\mathcal{T}(X)$, the inclusion $R\hookrightarrow X$ is also called a \textbf{refinement} of $X$. From the above axioms, we immediately deduce that the set of coverings of $X$ is stable under finite intersection and that any sieve containing a covering sieve is a covering sieve. In fact, if $R'$ contains a covering sieve $R$ of $X$, then for any morphism $Y\to R$, we have the following Cartesian diagram
+The sieves in $\mathcal{T}(X)$ are called \textbf{covering sieves of $X$}, or simply the \textbf{coverings of $X$}. If $R\in\mathcal{T}(X)$, the inclusion $R\hookrightarrow X$ is also called a \textbf{refinement} of $X$. From the above axioms, we immediately deduce that the set of coverings of $X$ is stable under finite intersection and that any sieve containing a covering sieve is a covering sieve. In fact, if $R'$ contains a covering sieve $R$ of $X$, then for any morphism $Y\to R$, we have the following Cartesian diagram
 \[\begin{tikzcd}
 R\times_XY\ar[r,hook]\ar[d]&R'\times_XY\ar[d]\ar[r,hook]&Y\ar[d]\\
 R\ar[d,equal]\ar[r,equal]&R\ar[r,equal]\ar[d,hook]&R\ar[d,hook]\\
@@ -663,7 +663,7 @@ The topology $\mathcal{T}$ such that $\mathcal{T}(X)$ is the set of sieves of $X
 \end{example}
 A category $\mathcal{C}$, endowed with a topology, is called a \textbf{site}. The category $\mathcal{C}$ is called the underlying category of the site.
 \begin{definition}
-Let $\mathcal{C}$ be a site and $X$ be an object of $\mathcal{C}$. A family $\{f_\alpha:X_\alpha\to X\}$ is called a \textbf{covering of $\bm{X}$} if the sieve generated by the $f_\alpha$ is a covering sieve of $X$.
+Let $\mathcal{C}$ be a site and $X$ be an object of $\mathcal{C}$. A family $\{f_\alpha:X_\alpha\to X\}$ is called a \textbf{covering of $X$} if the sieve generated by the $f_\alpha$ is a covering sieve of $X$.
 \end{definition}
 Let $\mathcal{C}$ be a category. If for each object $X$ of $\mathcal{C}$ we are given a set of families of morphisms with target $X$, then there exists a coarsest topology $\mathcal{T}$ on $\mathcal{C}$ for which the given families of morphisms are coverings, namely the intersection of all these topologies. This topology is called the \textbf{topology generated by the set of families of morphisms}. In general, it is difficult to describe all the coverings in this topology, but the situation is this topology is generated by a \textit{basis}:
 \begin{definition}
@@ -770,7 +770,7 @@ The first assertion follows from the proof of \cref{G-topo generated by basis sh
 \begin{remark}
 \cref{G-topo sieve universal effective epi iff} provides a characterization of universally effective epimorphisms of a category $\mathcal{C}$, which is independent of the universe in which the presheaves take their values, with the sole condition that the sets of morphisms $\Hom_{\mathcal{C}}(X,Y)$ of $\mathcal{C}$ belong to this universe. It therefore permits thus to define the canonical topology for any category $\mathcal{C}$, without specifying the universes we are considering.
 \end{remark}
-\subsection{Sheafifications of presheaves}
+\subsection{Sheafifications of presheaves}\label{site sheafification subsection}
 Let $\mathcal{C}$ be a site. We define a \textbf{topological generating family} (or simply a \textbf{generating family} of $\mathcal{C}$ is there is no risk of confusion) of $\mathcal{C}$ to be a set $G$ of objects of $\mathcal{C}$ such that any object of $\mathcal{C}$ is the target of a family of covering morphisms of $\mathcal{C}$ whose sources are elements of $G$. A site $\mathcal{C}$ is called a \textbf{$\mathscr{U}$-site} (where $\mathscr{U}$ is the fixed universe) if the underlying category is a $\mathscr{U}$-category and $\mathcal{C}$ has a $\mathscr{U}$-small topological generating family. If $\mathcal{C}$ is a category, we define a \textbf{$\mathscr{U}$-topology} over $\mathcal{C}$ to be a topology with which $\mathcal{C}$ is a $\mathscr{U}$-site. The site $\mathcal{C}$ is called \textbf{$\mathscr{U}$-small} (or by abusing of language, small) if the underlying category is small. It follows immediately from definition that any topology finer than a $\mathscr{U}$-topology is a $\mathscr{U}$-topology, and any small site is a $\mathscr{U}$-site.
 \begin{proposition}\label{site small generated sieve set prop}
 Let $\mathcal{C}$ be a $\mathscr{U}$-site and $G$ be a small topological generating family of $\mathcal{C}$. For any object $X$ of $\mathcal{C}$, we denote by $\mathcal{T}_G(X)$ the set of covering sieves of $X$ generated by the families of morphisms $\{u_\alpha:Y_\alpha\to X\}$, where $Y_\alpha\in G$. Then
@@ -825,7 +825,7 @@ is commutative.
 \end{enumerate}
 \end{lemma}
 \begin{proof}
-In fact, any morphism $v:X\to LF$ corresponds to an element of the inductive limit $\rlim_{R\in\mathcal{T}(X)}\Hom_{\PSh(\mathcal{C})}(R,F)$, which is the canonical image of an element of $\Hom_{\PSh(\mathcal{C})}(R,F)$, and two such images coincide if and only if their canonical images to a further refinement are equal; this proves (b) and (d). Now if $Y$ is an object of $C$ and $u,v:Y\to F$ are two morphisms such that $\ell_F\circ u=\ell_F\circ v$, then by our preceding remarks, there exists a refinement $R$ of $Y$ such that $u$ and $v$ coincides on $R$. Since the kernel of $(u,v)$ must contains $R$, it is therefore a refinement of $Y$.\par
+In fact, any morphism $v:X\to LF$ corresponds to an element of the inductive limit in (\ref{site small generated sheafification-2}), which is the canonical image of an element of $\Hom_{\PSh(\mathcal{C})}(R,F)$, and two such images coincide if and only if their canonical images to a further refinement are equal; this proves (b) and (d). Now if $Y$ is an object of $C$ and $u,v:Y\to F$ are two morphisms such that $\ell_F\circ u=\ell_F\circ v$, then by our preceding remarks, there exists a refinement $R$ of $Y$ such that $u$ and $v$ coincides on $R$. Since the kernel of $(u,v)$ must contains $R$, it is therefore a refinement of $Y$.\par
 Finally, in view of Yoneda's lemma, to prove (a), it suffices to show that the compositions of $Z_R(u)\circ i_R$ and $\ell_F\circ u$ with any morphism $g:Y\to R$ ($Y$ being an object of $\mathcal{C}$) are equal. For this, we consider $f=i_R\circ g$ and the fiber product $R\times_XY$:
 \[\begin{tikzcd}
 R\times_XY\ar[r,hook,"i'"]\ar[d,swap,"f'"]&Y\ar[ld,swap,"g"]\ar[d,"f"]\\
@@ -1411,7 +1411,7 @@ F\ar[r,"\Delta"]&F\times F
 and since $\Delta$ is represented by schemes, this fiber product is a scheme.
 \end{proof}
 
-Let $S$ be a scheme. An \textbf{algebraic space over $\bm{S}$} is a functor $X:\mathbf{Sch}_{/S}^{\op}\to \Set$ satisfying the following conditions:
+Let $S$ be a scheme. An \textbf{algebraic space over $S$} is a functor $X:\mathbf{Sch}_{/S}^{\op}\to \Set$ satisfying the following conditions:
 \begin{enumerate}[leftmargin=40pt]
     \item[(AS1)] $X$ is a sheaf for the \'etale topology.
     \item[(AS2)] The diagonal morphism $\Delta:X\to X\times X$ is represented by schemes.
@@ -1525,7 +1525,7 @@ Then $F'_{U'}$ is a quasi-compact open subset of $F'$ containing $U'$.
 \begin{proof}
 In fact, we have $F'_{U'}=p_1p_2^{-1}(U')$, where we write $p_i$ for the projections of $F'\times_FF'$. Since the morphisms $p_i$ are quasi-compact and $U'$ is also quasi-compact, we conclude the lemma.
 \end{proof}
-Since we can also write $F'_{U'}=F_{U'}\times_TT'$, we are then reduced to proving that $F_{U'}$ is representable. For this, note that since $F'_{U'}$ is quasi-compact, the morphism $F'_{U'}\to T'$ is quasi-affine by Zariski's main theorem (\cite{EGA4}, \Rmnum{4}, 18.12.13). That $F_{U'}$ is a scheme then follows from the fact that quasi-affine morphisms are effective for the fppf topology. This completes the proof of statement (a) of \cref{algebraic space given by quotient by equivalence relation}.\par
+Since we can also write $F'_{U'}=F_{U'}\times_TT'$, we are then reduced to proving that $F_{U'}$ is representable. For this, note that since $F'_{U'}$ is quasi-compact, the morphism $F'_{U'}\to T'$ is quasi-affine by Zariski's main theorem (\cite{EGA4-4}, \Rmnum{4}, 18.12.13). That $F_{U'}$ is a scheme then follows from the fact that quasi-affine morphisms are effective for the fppf topology. This completes the proof of statement (a) of \cref{algebraic space given by quotient by equivalence relation}.\par
 For (b), note that since the square
 \[\begin{tikzcd}
 R\ar[d]\ar[r]&X\times_SX\ar[d]\\
@@ -1728,7 +1728,7 @@ Let $(\mathcal{X},A)$ be a ringed topos, $i:\mathcal{Z}\to \mathcal{X}$ be a clo
 It follows from \cref{ringed topos closed immersion projection formula} and (\cite{SGA4-1} \Rmnum{4} 14) that the functor $N\mapsto i_*(M)\otimes_AN$ is exact, so $i_*(M)$ is flat.
 \end{proof}
 
-Let $(\mathcal{X},A)$ be a ringed topos, $x:\mathcal{P}\to \mathcal{X}$ be a point of $\mathcal{X}$ (SGA \Rmnum{4}, 6.1), and $\mathfrak{U}(x)$ be the category of neighborhoods of $x$ (SGA \Rmnum{4}, 6.8). For any object $V$ of $\mathfrak{U}(x)$, we can associates an object of $\mathcal{X}$ (still denote by $V$), and a point $x_V:\mathcal{P}\to \mathcal{X}/V$ of $\mathcal{X}/V$. Moreover, any morphism $u:V\to W$ in $\mathfrak{U}(x)$ corresponds to a commutative diagram of topos (SGA \Rmnum{4}, 6.7)
+Let $(\mathcal{X},A)$ be a ringed topos, $x:\mathcal{P}\to \mathcal{X}$ be a point of $\mathcal{X}$ (SGA \Rmnum{4}, 6.1), and $\mathfrak{U}(x)$ be the category of neighborhoods of $x$ (SGA \Rmnum{4}, 6.8). For any object $V$ of $\mathfrak{U}(x)$, we can associates an object of $\mathcal{X}$ (still denote by $V$), and a point $x_V:\mathcal{P}\to \mathcal{X}/V$ of $\mathcal{X}/V$. Moreover, any morphism $u:V\to W$ in $\mathfrak{U}(x)$ corresponds to a commutative diagram of topos (\cite{SGA4-1} \Rmnum{4}, 6.7)
 \[\begin{tikzcd}[row sep=12mm,column sep=12mm]
 \mathcal{P}\ar[rd,swap,"x_W"]\ar[r,"x_V"]&\mathcal{X}/V\ar[d,"j_u"]\\
 &\mathcal{X}/W
@@ -1787,12 +1787,12 @@ Suppose first that $\mathcal{X}$ is the topos of sets. Then the augmented comple
 &S\ar[r]&\ast
 \end{tikzcd}\]
 where $\ast$ is the set with a single element. Since each of these complexes is homotopically trivial, we then conclude that $S_\bullet(\mathfrak{U})$ is a homotopically trivial augmented complex, whence the proposition in this case.\par
-Now let $p:\mathbf{Set}\to \mathcal{X}$ be a point of $\mathcal{X}$. As the formation of the complex $\Z_\bullet(\mathfrak{U})$ commutes with inverse image functors between topos, $p^*(\Z_\bullet(\mathfrak{U}))\cong\Z_\bullet(p^*(\mathfrak{U}))$ is a resolution of $\Z_{p^*(X)}\cong p^*(\Z_X)$, which proves the proposition if $\mathcal{X}$ possesses enough fiber functors (\cite{SGA4-1} \Rmnum{4} 4.6). This is the case in particular if $\mathcal{X}$ is the topos of presheaves over a small site $\mathcal{C}$, because for any object $X$ of $\mathcal{C}$, $\Gamma(X,-)$ is a fiber functor. In the general case, $\mathcal{X}$ is equivalent to the topos of sheaves over a small site $\mathcal{C}$ (\cref{topos Giraud characterization}), and the epimorphic family $\mathfrak{U}$ is the image, under the sheafification functor, of an epimorphic family $\mathfrak{U}'=\{U_i'\to X'\}$. Therefore we have $\Z_\bullet(\mathfrak{U})=(\Z_\bullet(\mathfrak{U}'))^\#$, which is a resolusion of $(\Z_{X'})^\#\cong\Z_X$.
+Now let $p:\mathbf{Set}\to \mathcal{X}$ be a point of $\mathcal{X}$. As the formation of the complex $\Z_\bullet(\mathfrak{U})$ commutes with inverse image functors, $p^*(\Z_\bullet(\mathfrak{U}))\cong\Z_\bullet(p^*(\mathfrak{U}))$ is a resolution of $\Z_{p^*(X)}\cong p^*(\Z_X)$, which proves the proposition if $\mathcal{X}$ possesses enough fiber functors (\cite{SGA4-1} \Rmnum{4} 4.6). This is the case in particular if $\mathcal{X}$ is the topos of presheaves over a small site $\mathcal{C}$, because for any object $X$ of $\mathcal{C}$, $\Gamma(X,-)$ is a fiber functor. In the general case, $\mathcal{X}$ is equivalent to the topos of sheaves over a small site $\mathcal{C}$ (\cref{topos Giraud characterization}), and the epimorphic family $\mathfrak{U}$ is the image, under the sheafification functor, of an epimorphic family $\mathfrak{U}'=\{U_i'\to X'\}$. Therefore we have $\Z_\bullet(\mathfrak{U})=(\Z_\bullet(\mathfrak{U}'))^\#$, which is a resolusion of $(\Z_{X'})^\#\cong\Z_X$.
 \end{proof}
 
 \subsection{\v{C}ech cohomology}
 \paragraph{The general notion of cohomology}\label{ringed topos cohomology def paragarph}
-Let $(\mathcal{X},A)$ be a ringed topos, $M$, $N$ be two $A$-modules (say left modules). We denote by $\Ext_A^p(\mathcal{X};M,N)$ (or simply $\Ext_A^p(M,N)$ if there is no risk of confusion) the value of the $p$-th right derived functor of the functor $\Hom_A(M,-)$ at $N$. In other words,
+Let $(\mathcal{X},A)$ be a ringed topos, $M$, $N$ be two (left) $A$-modules. We denote by $\Ext_A^p(\mathcal{X};M,N)$ (or simply $\Ext_A^p(M,N)$ if there is no risk of confusion) the value of the $p$-th right derived functor of the functor $\Hom_A(M,-)$ at $N$. In other words,
 \begin{equation}\label{ringed topos cohomology def-1}
 \Ext_A^p(\mathcal{X};M,N):=R^p\Hom_A(M,-)(N).
 \end{equation}
@@ -1815,9 +1815,9 @@ For any object $X$ of $\mathcal{X}$ and any couple $M$, $N$ of $A$-modules, we p
 \begin{equation}\label{ringed topos Ext on object def}
 \Ext_A^p(X;M,N):=\Ext_A^p(\mathcal{X}_{/X};M|_X,N|_X)
 \end{equation}
-From the above remarks, the functors $\Ext_A^p(X;M,-)$ are the derived functors of the functors $\Hom_{A|_X}(M|_X,(-)|_X)$, and the functors $(M,N)\mapsto\Ext_A^p(X;M,N)$ form an $\delta$-functor with respect to each of the variables.
+We then see that $\Ext_A^p(X;M,-)$ are the derived functors of the functors $\Hom_{A|_X}(M|_X,(-)|_X)$, and the functors $(M,N)\mapsto\Ext_A^p(X;M,N)$ form a $\delta$-functor with respect to each of the variables.
 
-\paragraph{Cohomology for topos of presheaves}\label{ringed topos presheaf cohomology paragarph}
+\paragraph{Cohomology for the topos of presheaves}\label{ringed topos presheaf cohomology paragarph}
 Let $\mathcal{C}$ be a small category endowed with a presheaf of rings $A$, $\PSh(\mathcal{C})$ be the topos of presheaves over $\mathcal{C}$. We divide the computation of cohomology groups into two cases:
 \begin{itemize}
     \item Let $X$ be a representable object of $\PSh(\mathcal{C})$. The functor which associates an $A$-module $M$ with the group $\Gamma(X,M)=M(X)$ is then exact by (\cite{SGA4-1} \Rmnum{1}, 3), so we have $H^p(X,M)=0$ for any $p>0$ and any $A$-module $M$. In particular, since $M(X)=\Hom_A(A_X,M)$, we conclude that $A_X$ is a projective $A$-module.
@@ -1840,7 +1840,7 @@ We now turn to the computation of \v{C}ech cohomologies of $\PSh(\mathcal{C})$. 
 &\bigoplus_iA_{U_i}\ar[r]
 &A_X
 \end{tikzcd}\]
-For any $A$-module $M$, we denote by $C^\bullet(\mathfrak{U},M)$ the complex obtained by applying the functor $\Hom_A(A_\bullet,M)$:
+For any $A$-module $M$, we denote by $C^\bullet(\mathfrak{U},M)$ the complex obtained by applying $\Hom_A(A_\bullet,M)$:
 \[C^\bullet(\mathfrak{U},M):\begin{tikzcd}[column sep=12mm]
 \prod_{i}M(U_i)\ar[r,shift left=2pt]\ar[r,shift right=2pt]
 &\prod_{i,j}M(U_i\times_XU_j)\ar[r,shift left=4pt]\ar[r]\ar[r,shift right=4pt]
@@ -1867,23 +1867,23 @@ be morphisms (lying over $X$) from $\mathfrak{U}$ to $\mathfrak{V}$. Then $\phi$
 
 \paragraph{Cohomology for small sites}\label{ringed small site cohomology paragraph}
 Let $(\mathcal{C},A)$ be a ringed $\mathscr{U}$-site, $\Sh(\mathcal{C})$ be the topos of sheaves over $\mathcal{C}$, and $\eps:\mathcal{C}\to \Sh(\mathcal{C})$ be the canonical functor which associated an object of $\mathcal{C}$ with the associated sheaf. By abusing of languages, for any object $X$ of $\mathcal{C}$ and any sheaf of $A$-modules $M$, we define $H^p(X,M)$ to be the $p$-th derived functor of the functor $\Gamma(X,-)$. Recall that if the topology on $\mathcal{C}$ is subcanonical, then the functor $\eps$ is fully faithful and we can identify $\mathcal{C}$ with a subcategory of $\Sh(\mathcal{C})$.\par
-Now consider the inclusion functor $\mathcal{H}^0:\Sh(\mathcal{C}_A)\to \PSh(\mathcal{C}_A)$ from the category of sheaves of $A$-modules to the category of presheaves of $A$-modules. For any sheaf of $A$-modules $M$ and any object $X$ of $\mathcal{C}$, we have by definition
+Now consider the inclusion functor $\mathcal{H}^0:\Sh(\mathcal{C},A)\to\PSh(\mathcal{C},A)$ from the category of sheaves of $A$-modules to the category of presheaves of $A$-modules. For any sheaf of $A$-modules $M$ and any object $X$ of $\mathcal{C}$, we have by definition
 \[\mathcal{H}^0(M)(X)=H^0(X,M)=M(X).\]
 Since functor $\mathcal{H}^0$ is obviously left exact, we can define its right derived functors, which are denoted by $\mathcal{H}^p$. Note that as for any object $X$ of $\mathcal{C}$, the functor $\Gamma(X,-)$ is exact on the category of presheaves, we have
 \begin{equation}\label{ringed small site sheaf cohomology sheaf section char}
 \mathcal{H}^p(M)(X)=H^p(X,M)
 \end{equation}
 for any sheaf of $A$-modules $M$, so the presheaf $\mathcal{H}^p(M)$ is defined by $X\mapsto H^p(X,M)$.\par
-The definition of the cohomology group $H^p(X,M)$ is simple, but hard to compute. Because of this, it is necessary to introduce another cohomology group, the \v{C}ech cohomology group, which are much easily to handle. Suppose that $(\mathcal{C},A)$ is a small ringed site, so that $\PSh(\mathcal{C})$ is a topos and we can apply the results of \ref{ringed topos presheaf cohomology paragarph}. Let $X$ be an object of $\mathcal{C}$ and $R\hookrightarrow X$ be a covering sieve. For any presheaf of $A$-modules $G$, the groups $H^p(R,G)$ (which are computed in the topos $\PSh(\mathcal{C})$) are then called the \textbf{\v{C}ech cohomology groups of the presheaf $\bm{G}$ relative to the covering sieve $\bm{R}$}. If $R\hookrightarrow X$ is generated by a covering family $\mathfrak{U}=\{U_i\to X\}$, these groups are then computed by the \v{C}ech complex $C^\bullet(\mathfrak{U},G)$, and called the \textbf{\v{C}ech cohomology groups of the presheaf $\bm{G}$ relative to the covering family $\mathfrak{U}$} (denoted by $H^p(\mathfrak{U},G)=H^p(R,G)$). If $M$ is a sheaf of $A$-modules over $\mathcal{C}$, the groups $H^p(\mathfrak{U},\mathcal{H}^0(M))$ are then denoted by $H^p(\mathfrak{U},M)$, and called the \v{C}ech cohomology groups of the sheaf $M$ relative to the covering family $\mathfrak{U}$.\par
-The cohomology group $H^p(R,M)$ thus defined is inadequate to reflect the cohomological natures of $M$, and in fact differs from the group $H^p(X,M)$. To fix this, we must apply a limit process as the case of classical \v{C}ech cohomologies. Now let $\check{\mathcal{H}}^0:\PSh(\mathcal{C}_A)\to \PSh(\mathcal{C}_A)$ be the natrual extension of the functor $\mathcal{H}^0$ to the category of presheaves of $A$-modules (composed with the functor $L$). We then have, by (\ref{site small generated sheafification-2}), for any presheaf $G$ and any object $X$ of $\mathcal{C}$:
+The definition of the cohomology group $H^p(X,M)$ is simple, but hard to compute. It is therefore necessary to introduce another cohomology group, the \v{C}ech cohomology group, which are much easily to handle. Suppose that $(\mathcal{C},A)$ is a small ringed site, so that $\PSh(\mathcal{C})$ is a topos and we can apply the results of \ref{ringed topos presheaf cohomology paragarph}. Let $X$ be an object of $\mathcal{C}$ and $R\hookrightarrow X$ be a covering sieve. For any presheaf of $A$-modules $G$, the groups $H^p(R,G)$ (which are computed in the topos $\PSh(\mathcal{C})$) are then called the \textbf{\v{C}ech cohomology groups of the presheaf $G$ relative to the covering sieve $R$}. If $R\hookrightarrow X$ is generated by a covering family $\mathfrak{U}=\{U_i\to X\}$, these groups are then computed by the \v{C}ech complex $C^\bullet(\mathfrak{U},G)$, and called the \textbf{\v{C}ech cohomology groups of the presheaf $G$ relative to the covering family $\mathfrak{U}$} (denoted by $H^p(\mathfrak{U},G)=H^p(R,G)$). If $M$ is a sheaf of $A$-modules over $\mathcal{C}$, the groups $H^p(\mathfrak{U},\mathcal{H}^0(M))$ are then denoted by $H^p(\mathfrak{U},M)$, and called the \v{C}ech cohomology groups of the sheaf $M$ relative to the covering family $\mathfrak{U}$.\par
+The cohomology group $H^p(R,M)$ thus defined is inadequate to reflect the cohomological natures of $M$, and in fact differs from the group $H^p(X,M)$. To fix this, we must apply a limit process as the case of classical \v{C}ech cohomologies. So let $\check{\mathcal{H}}^0:\PSh(\mathcal{C},A)\to \PSh(\mathcal{C},A)$ be the natrual extension of the functor $L$ of \autoref{site sheafification subsection} to the category of presheaves of $A$-modules. We then have, by (\ref{site small generated sheafification-2}), for any presheaf $G$ and any object $X$ of $\mathcal{C}$:
 \begin{equation}\label{ringed small site presheaf 0-cohomology sheaf section char}
 \check{\mathcal{H}}^0(G)(X)=\rlim_{R\hookrightarrow X}G(R)
 \end{equation}
-where the inductive limit is taken over all covering sieves of $X$. From this, we see that the functor $\check{\mathcal{H}}^0$ is left exact, and we denote its right derived functors by $\check{\mathcal{H}}^p$. As the section functor $\Gamma(X,-)$ and taking filtered limits are both exact, it follows from (\ref{ringed small site presheaf 0-cohomology sheaf section char}) that
+where the inductive limit is taken over all covering sieves of $X$. Recall that the functor $\check{\mathcal{H}}^0$ is left exact (\cref{site small generated sheafification functor prop}), and we denote its right derived functors by $\check{\mathcal{H}}^p$. As taking filtered limits is exact, it follows from (\ref{ringed small site presheaf 0-cohomology sheaf section char}) that
 \begin{equation}\label{ringed small site presheaf p-cohomology sheaf section char}
 \check{\mathcal{H}}^p(G)(X)=\rlim_{R\hookrightarrow X}H^p(R,G),
 \end{equation}
-The presheaves $\check{\mathcal{H}}^p(G)$ are then called the \textbf{presheaves of \v{C}ech chomologies of $\bm{G}$}. For any object $X$ of $\mathcal{C}$, the \textbf{\v{C}ech cohomology groups of $G$} are defined to be
+The presheaves $\check{\mathcal{H}}^p(G)$ are then called the \textbf{presheaves of \v{C}ech chomologies of $G$}. For any object $X$ of $\mathcal{C}$, the \textbf{\v{C}ech cohomology groups of $G$} are defined to be
 \begin{equation}\label{ringed small site presheaf Cech cohomology group def}
 \check{H}^p(X,G):=\check{\mathcal{H}}^p(G)(X).
 \end{equation}
@@ -1891,11 +1891,11 @@ If the topology of $\mathcal{C}$ is defined by a basis, which is most of the cas
 \begin{equation}\label{ringed small site presheaf Cech p-cohomology sheaf section char}
 \check{H}^p(X,G)=\rlim_\mathfrak{U}H^p(\mathfrak{U},G)
 \end{equation}
-where the inductive limit is taken over all covering families $\mathfrak{U}$ of $X$, ordered by refinements. If $M$ is a sheaf of $A$-modules, then by abusing of languages, we write
+where the inductive limit is taken over all covering families $\mathfrak{U}$ of $X$. If $M$ is a sheaf of $A$-modules, then by abusing of languages, we write
 \begin{equation}\label{ringed small site sheaf Cech cohomology group def}
 \check{H}^p(X,M)=\check{H}^p(X,\mathcal{H}^0(M))=\check{\mathcal{H}}^p(\mathcal{H}^0(M))(X).
 \end{equation}
-The groups $\check{H}^p(X,M)$ are called the \textbf{\v{C}ech cohomology groups of the sheaf $\bm{M}$}. Note that although the functors $\check{H}^p$ are derived functors on the category of presheaves, they do not, in general, form a $\delta$-functor on the category of sheaves.
+The groups $\check{H}^p(X,M)$ are called the \textbf{\v{C}ech cohomology groups of the sheaf $M$}. Note that although the functors $\check{H}^p$ are derived functors on the category of presheaves, they do not, in general, form a $\delta$-functor on the category of sheaves.
 \paragraph{\v{C}ech cohomology for \texorpdfstring{$\mathscr{U}$}{U}-sites}\label{site cohomology change universe paragraph}
 Let $(\mathcal{C},A)$ be a ringed $\mathscr{U}$-site and $\mathscr{V}$ be a universe containing $\mathscr{U}$. Then the site $(\mathcal{C},A)$ is also a $\mathscr{V}$-site, and we have a $\mathscr{U}$-topos $\Sh(\mathcal{C})_\mathscr{U}$, a $\mathscr{V}$-topos $\Sh(\mathcal{C})_\mathscr{V}$, and a canonical inclusion functor $\eps:\Sh(\mathcal{C})_\mathscr{U}\to \Sh(\mathcal{C})_\mathscr{V}$. The functor $\eps$ is exact and fully faithful over the category of modules and transforms injective modules to injective modules (\cref{abelian category generaring family in universe prop}). For any couple of $\mathscr{U}$-sheaves of $A$-modules, we then have caonical isomorphisms
 \begin{equation}\label{site cohomology change universe-1}
@@ -1911,23 +1911,23 @@ we have canonical isomorphisms
 H^p(X,M)\stackrel{\sim}{\to } H^p(X,\eps(M)).
 \end{equation}
 We can therefore say that the cohomology of sheaves does not depend on the choice of universes and one can always, for the need of a proof or a construction, augment the universe to calculate the cohomology of a sheaf.\par
-Now consider the inclusion functor $\hat{\eps}:\PSh(\mathcal{C})_\mathscr{U}\to \PSh(\mathcal{C})_\mathscr{V}$ from $\mathscr{U}$-presheaves to $\mathscr{V}$-presheaves. This functor is exact, so the derived functors of $\hat{\eps}\mathcal{H}^0:\Sh(\mathcal{C}_A)\to \PSh(\mathcal{C}_A)_\mathscr{V}$ are equal to $\hat{\eps}\mathcal{H}^p$ for $p\geq 0$. By abusing of languages, we then denote them by $\mathcal{H}^p:\Sh(\mathcal{C}_A)\to \PSh(\mathcal{C}_A)_\mathscr{V}$. This enlargement of the universe has the following advantage if $\mathcal{C}$ is $\mathscr{V}$-small: The category $\PSh(\mathcal{C})_\mathscr{U}$ is in general not a $\mathscr{U}$-topos and the $\mathscr{U}$-presheaves of $A$-modules are not necessarily submodules of injective $\mathscr{U}$-presheaves, whereas the category of $\mathscr{V}$-presheaves is a $\mathscr{V}$-topos and therefore any $\mathscr{V}$-presheaf of $A$-modules is a sub-object of an injective $\mathscr{V}$-presheaf. Therefore for any $\mathscr{V}$-presheaf of sets $R$ (and in particular when $R$ is a $\mathscr{U}$-presheaf) and any $\mathscr{U}$-sheaf of $A$-modules $M$, the groups $H^p(R,\mathcal{H}^p(M))$ are defined by (\ref{ringed topos cohomology def paragarph}) and it follows from (\ref{site cohomology change universe-2}) that these groups do not depend on the considered universe. Similarly, for any pair of positive integer $p$ and $q$, the presheaves $\check{\mathcal{H}}^p(\mathcal{H}^p(M))$ are defined by (\ref{ringed small site sheaf Cech cohomology group def}) and it follows from (\ref{site cohomology change universe-2}) and (\ref{ringed small site presheaf Cech p-cohomology sheaf section char}) that these presheaves do not depend on the universe $\mathscr{V}$ used to define them.
+Now consider the inclusion functor $\hat{\eps}:\PSh(\mathcal{C})_\mathscr{U}\to \PSh(\mathcal{C})_\mathscr{V}$ from $\mathscr{U}$-presheaves to $\mathscr{V}$-presheaves. This functor is exact, so the derived functors of $\hat{\eps}\mathcal{H}^0:\Sh(\mathcal{C},A)\to \PSh(\mathcal{C},A)_\mathscr{V}$ are equal to $\hat{\eps}\mathcal{H}^p$ for $p\geq 0$. By abusing of languages, we then denote them by $\mathcal{H}^p:\Sh(\mathcal{C},A)\to \PSh(\mathcal{C},A)_\mathscr{V}$. This enlargement of the universe has the following advantage if $\mathcal{C}$ is $\mathscr{V}$-small: The category $\PSh(\mathcal{C})_\mathscr{U}$ is in general not a $\mathscr{U}$-topos and the $\mathscr{U}$-presheaves of $A$-modules are not necessarily submodules of injective $\mathscr{U}$-presheaves, whereas the category of $\mathscr{V}$-presheaves is a $\mathscr{V}$-topos and therefore any $\mathscr{V}$-presheaf of $A$-modules is a sub-object of an injective $\mathscr{V}$-presheaf. Therefore for any $\mathscr{V}$-presheaf of sets $R$ (and in particular when $R$ is a $\mathscr{U}$-presheaf) and any $\mathscr{U}$-sheaf of $A$-modules $M$, the groups $H^p(R,\mathcal{H}^p(M))$ are defined by (\ref{ringed topos cohomology def paragarph}) and it follows from (\ref{site cohomology change universe-2}) that these groups do not depend on the considered universe. Similarly, for any pair of positive integer $p$ and $q$, the presheaves $\check{\mathcal{H}}^p(\mathcal{H}^p(M))$ are defined by (\ref{ringed small site sheaf Cech cohomology group def}) and it follows from (\ref{site cohomology change universe-2}) and (\ref{ringed small site presheaf Cech p-cohomology sheaf section char}) that these presheaves do not depend on the universe $\mathscr{V}$ used to define them.
 
 \subsection{The Cartan-Laray spectral sequence}
 The classical Leray spectral sequence for a covering $\mathfrak{U}$ (also called the \v{C}ech-to-derive spectral sequence) of a topological space $X$ relates the cohomology sheaf and \v{C}ech cohomology into a spectral sequence of the form
 \begin{equation*}
 E_2^{p,q}=\check{H}^p(\mathfrak{U},\mathcal{H}^q(X,\mathscr{F}))\Rightarrow H^{p+q}(X,\mathscr{F})
 \end{equation*}
-where $\mathscr{F}$ is a sheaf on $X$. This spectral sequence has many useful concequences. For example, if the cohomology vanishes for any finite intersections of the covering $\mathfrak{U}$, then the $E_2$-term degenerates and the edge morphisms yield an isomorphism of \v{C}ech cohomology for this covering to sheaf cohomology. This provides a method of computing sheaf cohomology using \v{C}ech cohomology: for instance, this happens if $\mathscr{F}$ is a quasi-coherent sheaf on a scheme and each element of $\mathfrak{U}$ is an open affine subscheme such that all finite intersections are again affine (e.g. if the scheme is separated).\par
+where $\mathscr{F}$ is a sheaf over $X$. This spectral sequence has many useful concequences. For example, if the cohomology vanishes for any finite intersections of the covering $\mathfrak{U}$, then the $E_2$-term degenerates and the edge morphisms yield an isomorphism of \v{C}ech cohomology for this covering to sheaf cohomology. This provides a method of computing sheaf cohomology using \v{C}ech cohomology: for instance, this happens if $\mathscr{F}$ is a quasi-coherent sheaf on a scheme and each element of $\mathfrak{U}$ is an open affine subscheme such that all finite intersections are again affine (e.g. if the scheme is separated).\par
 In this paragraph we provide a direct genralization of the Leray spectral sequence for cohomology of topos. As we shall see, the language of derived functors and the Grothendieck spectral sequence can be used to give an easy proof of such generalizations. A relative version of this, which relates the sheaf cohomology with higher direct images of a morphism, will also be given after we introduce the notion of flasque sheaves.
 
 \begin{proposition}\label{ringed site change universe cohomology prop}
-Let $(\mathcal{C},A)$ be a ringed $\mathscr{U}$-site and $\mathscr{V}$ be a universe containing $\mathscr{U}$. Then the functor $\mathcal{H}^0:\Sh(\mathcal{C}_A)\to \PSh(\mathcal{C}_A)_\mathscr{V}$ transforms injective $A$-modules to injective presheaves. For any integer $p>0$ and any $A$-module $M$, the sheaf associated with the presheaf $\mathcal{H}^p(M)$ is zero.
+Let $(\mathcal{C},A)$ be a ringed $\mathscr{U}$-site and $\mathscr{V}$ be a universe containing $\mathscr{U}$. Then the functor $\mathcal{H}^0:\Sh(\mathcal{C},A)\to \PSh(\mathcal{C},A)_\mathscr{V}$ transforms injective $A$-modules to injective presheaves. For any integer $p>0$ and any $A$-module $M$, the sheaf associated with the presheaf $\mathcal{H}^p(M)$ is zero.
 \end{proposition}
 \begin{proof}
-We denote by $(-)^\#_\mathscr{V}$ the sheafification functor on $\mathscr{V}$-presheaves, and $\eps:\Sh(\mathcal{C}_A)\to \Sh(\mathcal{C}_A)_\mathscr{V}$ the inclusion functor. Since we have $(\mathcal{H}^0)^\#_\mathscr{V}=\eps$ by \cref{site small generated sheafification functor prop} and the functors $(-)^\#_\mathscr{V}$ and $\eps$ are exact, we conclude that $(\mathcal{H}^p)^\#=0$ for any integer $p>0$. Now for any $\mathscr{U}$-sheaf $M$ and any $\mathscr{V}$-presheaf $N$, we have a functorial isomorphism
-\[\Hom_{\PSh(\mathcal{C}_A)}(N,\mathcal{H}^0(M)) \stackrel{\sim}{\to } \Hom_{\Sh(\mathcal{A})_\mathscr{V}}(N^\#_\mathscr{V},\eps(M)).\]
-If $M$ is injective, then $\eps(M)$ is injective (\cref{abelian cat adjoint functor exact iff injective to injective}) and as the functor $(-)^\#_\mathscr{V}$ is exact, the functor $\Hom_{\PSh(\mathcal{C}_A)}(-,\mathcal{H}^0(M))$ is exact, therefore $\mathcal{H}^0(M)$ is injective.
+We denote by $(-)^\#_\mathscr{V}$ the sheafification functor on $\mathscr{V}$-presheaves, and $\eps:\Sh(\mathcal{C},A)\to \Sh(\mathcal{C},A)_\mathscr{V}$ the inclusion functor. Since we have $(\mathcal{H}^0)^\#_\mathscr{V}=\eps$ by \cref{site small generated sheafification functor prop} and the functors $(-)^\#_\mathscr{V}$ and $\eps$ are exact, we conclude that $(\mathcal{H}^p)^\#=0$ for any integer $p>0$. Now for any $\mathscr{U}$-sheaf $M$ and any $\mathscr{V}$-presheaf $N$, we have a functorial isomorphism
+\[\Hom_{\PSh(\mathcal{C},A)}(N,\mathcal{H}^0(M)) \stackrel{\sim}{\to } \Hom_{\Sh(\mathcal{A})_\mathscr{V}}(N^\#_\mathscr{V},\eps(M)).\]
+If $M$ is injective, then $\eps(M)$ is injective (\cref{abelian cat adjoint functor exact iff injective to injective}) and as the functor $(-)^\#_\mathscr{V}$ is exact, the functor $\Hom_{\PSh(\mathcal{C},A)}(-,\mathcal{H}^0(M))$ is exact, therefore $\mathcal{H}^0(M)$ is injective.
 \end{proof}
 
 \begin{theorem}\label{ringed site Leray spectral sequence for presheaf functor}
@@ -1935,7 +1935,7 @@ Let $(\mathcal{C},A)$ be a ringed $\mathscr{U}$-site, $R$ be a $\mathscr{U}$-pre
 \begin{equation}\label{ringed site Leray spectral sequence for presheaf functor-1}
 E_2^{p,q}=H^p(R,\mathcal{H}^q(M))\Rightarrow H^{p+q}(R^\#,M).
 \end{equation}
-(If $\mathcal{C}$ is not $\mathscr{U}$-small, the term $H^p(R,\mathcal{H}^q(M))$ should be considered as the cohomology of the presheaf $\mathcal{H}^p(M)$ in the topos $\PSh(\mathcal{C}_A)_\mathscr{V}$, where $\mathscr{V}$ is a universe containing $\mathscr{U}$ such that $\mathcal{C}$ is $\mathscr{V}$-small.)
+(If $\mathcal{C}$ is not $\mathscr{U}$-small, the term $H^p(R,\mathcal{H}^q(M))$ should be considered as the cohomology of the presheaf $\mathcal{H}^p(M)$ in the topos $\PSh(\mathcal{C},A)_\mathscr{V}$, where $\mathscr{V}$ is a universe containing $\mathscr{U}$ such that $\mathcal{C}$ is $\mathscr{V}$-small.)
 \end{theorem}
 \begin{proof}
 By the definition of the functor $\#$, we have an isomorphism of functors
@@ -2002,9 +2002,9 @@ which associates each $G$-set $X$ over $(E_G)^{\times n}$ with its orbit set $X/
 \end{example}
 
 \subsection{Acyclic sheaves}
-Let $(\mathcal{X},A)$ be a ringed topos, $F$ be an $A$-module, $S$ be a topological generating family of $\mathcal{X}$. The sheaf $F$ is said to be \textbf{$\bm{S}$-acyclic} if for any object $X$ of $S$ and any integer $p>0$, we have $H^p(X,F)=0$, and \textbf{$\mathcal{C}$-acyclic} if $S$ is the family of sheaves assoicated with the objects of $\mathcal{C}$. If $S$ is equal to $\Ob(\mathcal{X})$, the $S$-acyclic sheaves are then called \textbf{flasque sheaves}.
+Let $(\mathcal{X},A)$ be a ringed topos, $F$ be an $A$-module, $S$ be a topological generating family of $\mathcal{X}$. The sheaf $F$ is said to be \textbf{$S$-acyclic} if for any object $X$ of $S$ and any integer $p>0$, we have $H^p(X,F)=0$, and \textbf{$\mathcal{C}$-acyclic} if $S$ is the family of sheaves assoicated with the objects of $\mathcal{C}$. If $S$ is equal to $\Ob(\mathcal{X})$, the $S$-acyclic sheaves are then called \textbf{flasque sheaves}.
 \begin{proposition}\label{ringed site C-acyclic sheaf iff}
-Let $(\mathcal{C},A)$ be a ringed $\mathscr{U}$-site, $F$ be a sheaf of $A$-modules. Denote by $\mathcal{H}^0:\Sh(\mathcal{C}_A)\to \PSh(\mathcal{C}_A)$ the canonical inclusion functor. The following conditions are equivalent:
+Let $(\mathcal{C},A)$ be a ringed $\mathscr{U}$-site, $F$ be a sheaf of $A$-modules. Denote by $\mathcal{H}^0:\Sh(\mathcal{C},A)\to \PSh(\mathcal{C},A)$ the canonical inclusion functor. The following conditions are equivalent:
 \begin{enumerate}
     \item[(\rmnum{1})] $F$ is $\mathcal{C}$-acyclic.
     \item[(\rmnum{2})] For any object $X$ of $\mathcal{C}$ and any covering sieve $R\hookrightarrow X$, we have $H^p(R,\mathcal{H}^0(F))=0$ for $p>0$.
@@ -2110,7 +2110,7 @@ Let $G$ be a discrete group and $\mathcal{B}G$ be the classifying topos. Prove t
 \end{example}
 
 \begin{example}
-We say a topos $\mathcal{X}$ is \textbf{generated by its opens} if the opens of $\mathcal{X}$ (i.e. the sub-objects of the final object $e$ of $E$) form a generating family. Such a topos has the following property:
+We say a topos $\mathcal{X}$ is \textbf{generated by its open subtopos} if the open subtopoi of $\mathcal{X}$ (i.e. the sub-objects of the final object $e$ of $E$) form a generating family. Such a topos has the following property:
 \begin{enumerate}
 \item[(P)] Any epimorphic family $\{X_i\to X\}$ is dominated by an epimorphic family $\{U_j\to X\}$, where the $U_j\to X$ are monomorphisms.
 \end{enumerate}
@@ -2446,11 +2446,11 @@ Explicitly, a bifibre category $\mathcal{F}$ over $\mathcal{E}$ is bifibered int
 \item[(FD2)] For any morphism $f:T\to S$ in $\mathcal{E}$, there exists a morphism of topoi $\alpha:\mathcal{F}_S\to \mathcal{F}_T$ such that $\alpha^*=f^*$, $\alpha_*=f_*$ (or equivalently, the functor $f^*$ is left exact).
 \end{enumerate}
 
-Recall that a functor $X:\mathcal{D}^{\op}\to \mathcal{E}$ is often called an \textbf{$\mathcal{D}$-object} of $\mathcal{E}$, and we denote by $X_i$ the image of an object $i$ in $\mathcal{D}$ under $X$. The $\mathcal{D}$-objects of $\mathcal{E}$ then form a category, which is denoted by $\mathcal{E}_\mathcal{D}$. If $S$ is an object of $\mathcal{E}$, an $\mathcal{D}$-object of $\mathcal{E}_{/S}$ is also called a \textbf{$\mathcal{D}$-object augmented by $\bm{S}$}. If $\mathcal{F}\to \mathcal{E}$ be a bifibre category into dual topoi over $\mathcal{E}$ and $X:\mathcal{D}^{\op}\to \mathcal{E}$ is a $\mathcal{D}$-object of $\mathcal{E}$, then the fiber product $(\mathcal{D}^{\op}\times_\mathcal{E}\mathcal{F})^{\op}$ is a $\mathcal{D}$-topos, which we denote by $X_\mathcal{F}$. Note that if $i$ is an object of $\mathcal{D}$, the fiber of $X_\mathcal{F}$ is then given by
+Recall that a functor $X:\mathcal{D}^{\op}\to \mathcal{E}$ is often called an \textbf{$\mathcal{D}$-object} of $\mathcal{E}$, and we denote by $X_i$ the image of an object $i$ in $\mathcal{D}$ under $X$. The $\mathcal{D}$-objects of $\mathcal{E}$ then form a category, which is denoted by $\mathcal{E}_\mathcal{D}$. If $S$ is an object of $\mathcal{E}$, an $\mathcal{D}$-object of $\mathcal{E}_{/S}$ is also called a \textbf{$\mathcal{D}$-object augmented by $S$}. If $\mathcal{F}\to \mathcal{E}$ be a bifibre category into dual topoi over $\mathcal{E}$ and $X:\mathcal{D}^{\op}\to \mathcal{E}$ is a $\mathcal{D}$-object of $\mathcal{E}$, then the fiber product $(\mathcal{D}^{\op}\times_\mathcal{E}\mathcal{F})^{\op}$ is a $\mathcal{D}$-topos, which we denote by $X_\mathcal{F}$. Note that if $i$ is an object of $\mathcal{D}$, the fiber of $X_\mathcal{F}$ is then given by
 \begin{equation}\label{topos fibre given by D-object-1}
 (X_\mathcal{F})_i=(\mathcal{D}^{\op}\times_\mathcal{E}\mathcal{F})^{\op}\times_\mathcal{D}i=\mathcal{F}^{\op}\times_{\mathcal{E}^{\op}}\mathcal{D}\times_\mathcal{D}i=\mathcal{F}^{\op}\times_{\mathcal{E}^{\op}}X_i=\mathcal{F}_{X_i}^{\op}.
 \end{equation}
-The $\mathcal{D}$-topos $X_\mathcal{F}$ obtained from a bifibre category into dual topoi over $\mathcal{E}$ and any $\mathcal{D}$-object $X$ is called the \textbf{topos induced by $\bm{X}$}.
+The $\mathcal{D}$-topos $X_\mathcal{F}$ obtained from a bifibre category into dual topoi over $\mathcal{E}$ and any $\mathcal{D}$-object $X$ is called the \textbf{topos induced by $X$}.
 
 \begin{example}\label{topos fibre D-object given by fiber product}
 Suppose that the category $\mathcal{E}$ possesses finite fiber products. Let $f:T\to S$ be a morphism in $\mathcal{E}$. The bifunctor
@@ -2580,6 +2580,7 @@ This follows immediately from \cref{fibre cat pullback on Hom adjoint exist lemm
 In this section, we develop the we develop the elementary properties of \'etale topology and cohomology for schemes. Certain properties in this section is essentially valid for many other different topologies, such as the "fppf topology". However, there are also distinguished properties for the \'etale topology, due to the very particular nature of \'etale morphisms.
 
 \subsection{The \'etale topology}
+\paragraph{The big and small \'etale site}
 We denote by $\mathbf{Sch}$ the category of schemes (in a fixed universe $\mathscr{U}$). Recall that a morphism $f:X\to Y$ is \'etale if it is locally of finite presentation, formally smooth and formally unramified. Equivalently, this means $f$ is locally of finite presentation and for any affine scheme $Y'$ over $Y$ and any subscheme $Y'_0$ defined by a nilpotent ideal, the map
 \[\Hom(Y,X)\to\Hom_Y(Y'_0,X)\]
 is bijective. We define the \textbf{\'etale topology} on $\mathbf{Sch}$ to be the topology generated by the basis given by $X\mapsto\Cov(X)$, where $\Cov(X)$ is formed by families of jointly surjective morphisms $\{u_i:X_i\to X\}$ such that each $u_i$ is \'etale. For each object $X$ of $\mathbf{Sch}$, we consider the subcategory $\mathbf{Et}_{/X}$ of $\mathbf{Sch}_{/X}$ formed by \'etale schemes over $X$, and endow it with the induced \'etale topology of that on $\mathbf{Sch}$ (called the \textbf{\'etale topology}). The resulting site is denoted by $X_{\et}$, and called the \textbf{\'etale site} of $X$. We note that any morphism in $\mathbf{Et}_{/X}$ is \'etale (\cref{scheme unramified smooth permanence prop}), so a family $\{U_i\to U\}$ of morphisms in $X_\et$ is covering if and only if it is jointly surjective. The topos $\Sh(X_{\et})$ of sheaves over $X_\et$ is called the \textbf{\'etale topos} of $X$. We usually use capital letters $F,G$ to denote a sheaf over the \'etale site $X_\et$, and the usual (Zariski) sheaves of modules over the scheme $X$ will be still denoted by $\mathscr{F},\mathscr{G}$.
@@ -2592,7 +2593,7 @@ This is trivial in view of the comparision lemma (\cite{SGA4-1} \Rmnum{3}).
 \end{proof}
 
 \begin{corollary}\label{scheme qs etale site of fp scheme prop}
-suppose that $X$ is quasi-separated. Let $\mathcal{C}$ be the full subcategory of $X_\et$ formed by \'etale schemes over $X$ that are of finite presentation, endowed with the induced topology of $X_\et$. Then
+Suppose that $X$ is quasi-separated. Let $\mathcal{C}$ be the full subcategory of $X_\et$ formed by \'etale schemes over $X$ that are of finite presentation, endowed with the induced topology of $X_\et$. Then
 \begin{enumerate}
     \item[(a)] $\mathcal{C}$ is stable under fiber products and is a site of finite type if $X$ is quasi-compact.
     \item[(b)] The restriction functor $\Sh(X_\et)\to\Sh(\mathcal{C})$ is an equivalence of categories.
@@ -2603,7 +2604,8 @@ In particular, if $X$ is quasi-compact and quasi-separated, the functors $H^p(X_
 The first assertion is trivial in view of \cref{scheme morphism fp permanence prop}, and the second one follows from \cref{scheme etale site small generator exist} because $\mathcal{C}$ satisfies the condition of \cref{scheme etale site small generator exist}. In fact, since $X$ is quasi-separated, if $Y$ is quasi-compact, then it is quasi-compact over $X$, hence of finite presentation over $X$ if $Y$ is \'etale over $X$. Finally, if $X$ is quasi-compact, then by replacing $X_\et$ with $\mathcal{C}$, the last assertion follows from (a) and (\cite{SGA4-2} \Rmnum{6} 6.1.2(3)).
 \end{proof}
 
-As $X_\et$ is then a $\mathscr{U}$-site and $\Sh(X_\et)$ is a $\mathscr{U}$-topos, the general constructions and results can be applied to them. In the sequel, unless specified, the topologies on $\mathbf{Et}_{/X}$ or $\mathbf{Sch}$ are understood to be the \'etale topologies, and we often write $X$ instead of $X_\et$ or $\mathbf{Et}_{/X}$. For example, by sheaves of $X$, we mean sheaves for the \'etale topology on the site $X_{\et}$. We will denote by ̃$\Sh(X_\et)$ the category of these sheaves, which is a $\mathscr{U}$-topos. If $F$ is an abelian sheaf on $X$, we will denote its cohomology group by $H^p(X,F)$, which should be understood to be given by $H^p(X_\et,F)$.\par
+As $X_\et$ is then a $\mathscr{U}$-site and $\Sh(X_\et)$ is a $\mathscr{U}$-topos, the general constructions and results can be applied to them. In the sequel, unless specified, the topologies on $\mathbf{Et}_{/X}$ or $\mathbf{Sch}$ are understood to be the \'etale topologies, and we often write $X$ instead of $X_\et$ or $\mathbf{Et}_{/X}$. For example, by sheaves of $X$, we mean sheaves for the \'etale topology on the site $X_{\et}$. We will denote by ̃$\Sh(X_\et)$ the category of these sheaves, which is a $\mathscr{U}$-topos. If $F$ is an abelian sheaf on $X$, we will denote its cohomology group by $H^p(X,F)$, which should be understood to be given by $H^p(X_\et,F)$.
+\paragraph{The functoriality of \'etale topos}
 Let $f:X\to Y$ be a morphism of schemes. Then the base change operation induces a functor
 \begin{equation}\label{scheme etale morphism induced on topos-1}
 f^*:Y_\et\to X_\et,\quad Y'\mapsto Y'\times_YX
@@ -2611,8 +2613,8 @@ f^*:Y_\et\to X_\et,\quad Y'\mapsto Y'\times_YX
 which commutes with finite projective limits and sends covering families to covering families, hence is continuous. By (\cite{SGA4-1} \Rmnum{1}), $f^*$ therefore defines a functor
 \[f_\star:\PSh(X_\et)\to\PSh(Y_\et),\quad f_\star(F)(Y')=F(Y'\times_YX).\]
 which admits a left adjoint
-\[f^\star:\PSh(Y_\et)\to\PSh(X_\et),\quad f^\star(G)(U)=\rlim_{Y'\in\mathcal{I}_{U}^{\op}}G(Y')\]
-We also note that in this case the category $\mathcal{I}_U$ can be identified with the category of commutative diagrams
+\[f^\star:\PSh(Y_\et)\to\PSh(X_\et),\quad f^\star(G)(X')=\rlim_{Y'\in\mathcal{I}_{X'}^{\op}}G(Y')\]
+We also note that in this case the category $\mathcal{I}_{X'}$ can be identified with the category of commutative diagrams
 \[\begin{tikzcd}
 &X\times_YY'\ar[r]\ar[d]&Y'\ar[d]\\
 U\ar[ru]\ar[r]&X\ar[r,"f"]&Y
@@ -2650,21 +2652,21 @@ f^*(G)=G\circ i_{X/Y}
 where $G$ is a sheaf over $Y_\et$ and $i_{X/Y}:X_\et\to Y_\et$ is the canonical inclusion.
 
 \begin{remark}
-Note that if $X$ is nonempt, then $X_\et$ is not an element of the chosen universe $\mathscr{U}$. However, as we pointed out, it can be proved that we can find a full subcategory $\mathcal{C}$ of $X_\et$ satisfying the conditions of the "comparison lemma" (\cite{SGA4-1} \Rmnum{3}), so that the restriction functor induces an equivalence $\Sh(X_\et)\stackrel{\sim}{\to}\Sh(\mathcal{C})$. Therefore, the \'etale topos is equivalent to a topos defined by a small site, so it is a $\mathscr{U}$-site.
+Note that if $X$ is nonempty, then $X_\et$ is not an element of the chosen universe $\mathscr{U}$. However, as we pointed out, it can be proved that we can find a full subcategory $\mathcal{C}$ of $X_\et$ satisfying the conditions of the "comparison lemma" (\cite{SGA4-1} \Rmnum{3}), so that the restriction functor induces an equivalence $\Sh(X_\et)\stackrel{\sim}{\to}\Sh(\mathcal{C})$. Therefore, the \'etale topos is equivalent to a topos defined by a small site, so it is a $\mathscr{U}$-site.
 \end{remark}
 
 \begin{example}\label{scheme etale site subcanonical}
 Let $Y$ be a scheme over $X$. Then $Y$ defines a sheaf over $\mathbf{Sch}_{/X}$ for the \'etale topology, given by $Y(X')=\Hom_X(X',Y)$. In other words, the \'etale topology is subcanonical on $\mathbf{Sch}_{/X}$ (this fact is essentially due to the result of (SGA1 \Rmnum{8} 5.1)). A fortiori, the restriction of this sheaf on $X_\et$ is a sheaf, which is still denoted by $Y$ if there is no risk of confusion. We also note that the functor thus obtained
 \[\mathbf{Sch}_{/X}\to\Sh(X_\et)\]
-commutes with finite projective limits (this is trivial). This implies for example if $Y$ is a group (resp. abelian group, ring, etc.) scheme over $X$, then the sheaf defined by $Y$ is a sheaf of groups (resp. abelian group, ring, etc.). Note that the induced functor $X_\et\to\Sh(X_\et)$ is nothing but the canonical functor of $X_\et$, which associates an object $Y$ of $X_\et$ the functor it represents. It is therefore an isomorphism from the category $X_\et$ to a full subcategory of the \'etale topos $\Sh(X_\et)$, by which we identify usually an object $Y$ of $X_\et$ with the corresponding sheaf, which will be denoted $h_Y$ or simply $Y$. It is clear that we have $H^0(X,Y)=\Hom_X(X,Y)$, and if $F$ is a group scheme over $X$ (abelian by our definition of cohomology groups, but note that this is also true for nonabelian group schemes), then $H^1(X,F)$ is canonically isomorphic to the classes of $F$-torsors over $X_\et$.
+commutes with finite projective limits (this is trivial). This implies for example if $Y$ is a group (resp. abelian group, ring, etc.) scheme over $X$, then the sheaf defined by $Y$ is a sheaf of groups (resp. abelian group, ring, etc.). Note that the induced functor $X_\et\to\Sh(X_\et)$ is nothing but the canonical functor of $X_\et$, which associates an object $Y$ of $X_\et$ the functor it represents. It is therefore an isomorphism from the category $X_\et$ to a full subcategory of the \'etale topos $\Sh(X_\et)$, by which we identify usually an object $Y$ of $X_\et$ with the corresponding sheaf, which will be denoted $h_Y$ or simply $Y$. It is clear that we have $H^0(X,Y)=\Hom_X(X,Y)$, and if $G$ is a group scheme over $X$ (abelian by our definition of cohomology groups, but note that this is also true for nonabelian group schemes), then $H^1(X,G)$ is canonically isomorphic to the classes of $G$-torsors over $X_\et$.
 \end{example}
 
 \begin{remark}
-For \textit{any} scheme $Y$ over $X$, we denote by $\widetilde{Y}$ the associated sheaf over $X_\et$. If $f:X'\to X$ is a morphism of schemes, we have a evident homomorphism (functorial on $Z$)
+For \textit{any} scheme $Y$ over $X$, we denote by $\widetilde{Y}$ the associated sheaf over $X_\et$. If $f:X'\to X$ is a morphism of schemes, we have a evident homomorphism
 \begin{equation}\label{scheme etale site associated sheaf and inverse image}
 f^*(\widetilde{Y})\to\widetilde{Y_{(X')}},
 \end{equation}
-(where $Y_{(X')}=Y\times_XX'$), which is the adjoint homomorphism of the canonical homomorphism $\widetilde{Y}\to f_*(\widetilde{Y_{(X')}})$ obtained from the functorial homomorphism
+(where $Y_{(X')}=Y\times_XX'$) which is the adjoint homomorphism of the canonical homomorphism $\widetilde{Y}\to f_*(\widetilde{Y_{(X')}})$ obtained from the functorial homomorphism
 \[\Hom_X(U,Y)\to\Hom_{X'}(U_{(X')},Y_{(X')})\]
 where $U\in\Ob(X_\et)$. This homomorphism is in general not an isomorphism, i.e. the formation of associated \'etale sheaf does not commute with inverse image functors. However, if $Y$ is a \'etale scheme over $X$ (that is, $Y\in\Ob(X_\et)$), then for any sheaf $F'$ over $X'_\et$, we have
 \begin{align*}
@@ -2673,7 +2675,8 @@ where $U\in\Ob(X_\et)$. This homomorphism is in general not an isomorphism, i.e.
 so (\ref{scheme etale site associated sheaf and inverse image}) is an isomorphism in this case. Similarly, the functor
 \[\varphi_X:\mathbf{Sch}_{/X}\to\Sh(X_\et)\]
 is not faithful if $X$ is nonempty, but its restriction to $X_\et$, which is the canonical functor $X_\et\to\Sh(X_\et)$, is fully faithful (since the topology on $X_\et$ is subcanonical).\par
-Note that (\ref{scheme etale site associated sheaf and inverse image}) commutes with (small) direct sums, as can be easily verified. In particular, if for any set $I$ we denote by $I_X=\coprod_{i\in I}X$ the constant $X$-scheme over $X$, then the associated sheaf is none other than the constant sheaf $I_{X_\et}$ (direct sum of $I$ copies of final sheaf over $X_\et$, which sends $Y$ to $\coprod_{i\in I}Y$). As the functor $I\mapsto I_X$ commutes with finite projective limits, it transforms (abelian) groups to (abelian) groups, etc. If $G$ is a ordinary abelian group, we write $H^p(X,G)$ for $H^p(X,G_X)$. Suppose, for example, that $G$ is a finite group; then $G_X$ is finite and hence affine over $X$, so using the remarks in \cref{scheme etale site subcanonical}, we obtain an interpretation of $H^1(X,G)$ as the classes of principal $G$-bundles over $X$ (SGA1 \Rmnum{5} 2.7). If $X$ is connected and endowed with a geometric point $\bar{x}$, then in terms of the \'etale fundamental group $\pi_1(X,\bar{x})$, we obtain an isomorphism
+Note that (\ref{scheme etale site associated sheaf and inverse image}) commutes with (small) direct sums, as can be easily verified. In particular, if for any set $I$ we denote by $I_X=\coprod_{i\in I}X$ the constant $X$-scheme over $X$, then this is none other than the constant sheaf $I_{X_\et}$ (direct sum of $I$ copies of final sheaf over $X_\et$, which sends $Y$ to $\coprod_{i\in I}Y$). As the functor $I\mapsto I_X$ commutes with finite projective limits, it transforms (abelian) groups to (abelian) groups, etc.\par
+If $G$ is a ordinary abelian group, we write $H^p(X,G)$ for $H^p(X,G_X)$. Suppose, for example, that $G$ is a finite group; then $G_X$ is finite and hence affine over $X$, so using the remarks in \cref{scheme etale site subcanonical}, we obtain an interpretation of $H^1(X,G)$ as the classes of $G$-torsors over $X$ (SGA1 \Rmnum{5} 2.7). If $X$ is connected and endowed with a geometric point $\bar{x}$, then in terms of the \'etale fundamental group $\pi_1(X,\bar{x})$, we obtain an isomorphism
 \begin{equation}\label{scheme etale site cohomology G coefficient is pi_1 Hom}
 H^1(X,G)\stackrel{\sim}{\to}\Hom(\pi_1(X,\bar{x}),G)
 \end{equation}
@@ -2729,11 +2732,11 @@ If $\mathscr{F}$ is quasi-coherent, then the preceding homomorphism is an isomor
 \begin{proof}
 In fact, the cohomology group $H^*(X,\mathscr{F})$ is equal to $H^*(X_\Zar,i_*(\mathscr{F}_\et))$, and with the preceding notations, it suffices to prove that
 \[R^qi_*(\mathscr{F})=0\for q>0.\]
-Since affine opens form a basis for the topology of $X$, it suffices to assume that $X$ is affine and prove that
+Since affine opens form a basis for the topology of $X$ and the formation of $Ri_*(\mathscr{F})$ is local (cf. \cref{ringed topos morphism higher direct image prop}), it suffices to assume that $X$ is affine and prove that
 \[H^q(X_\et,\mathscr{F}_\et)=0\for q>0.\]
-To this end, let $\mathcal{C}$ be the full subcategory of $X_\et$ formed by \'etale affine schemes over $X$. In view of \cref{scheme etale site small generator exist}, we have
+For this, let $\mathcal{C}$ be the full subcategory of $X_\et$ formed by \'etale affine schemes over $X$. In view of \cref{scheme etale site small generator exist}, we have
 \[H^q(X_\et,\mathscr{F}_\et)\cong H^q(\mathcal{C},\mathscr{F}|_\mathcal{C}).\]
-It then suffices to prove that $\mathscr{F}|_\mathcal{C}$ is $\mathcal{C}$ acyclic (\cite{SGA4-1} \Rmnum{5}, 4.1), or that it satisfies the condition of (\cite{SGA4-1} \Rmnum{5}, 4.3), i.e. that for all $U\in\Ob(\mathcal{C})$ and all covering family $\mathfrak{U}=\{U_i\to U\}$, we have $H^q(\mathfrak{U},\mathscr{F})=0$ for $q>0$. Since $U$ is quasi-compact, we can assume that $\mathfrak{U}$ is finite, so by replacing the $U_i$ with their direct sum, the covering family consists of a single morphism which is covering, i.e. (\'etale and) surjective. We are therefore reduced to proving that if $f:X\to Y$ is a surjective \'etale morphism of affine scheme and $\mathscr{F}$ a quasi-coherent module on $Y$, then $H^q(X/Y,\mathscr{F})=0$ for $q>0$, which follows from the lemma below.
+It then suffices to prove that $\mathscr{F}|_\mathcal{C}$ is $\mathcal{C}$-acyclic (\cite{SGA4-1} \Rmnum{5}, 4.1), or that it satisfies the condition of (\cite{SGA4-1} \Rmnum{5}, 4.3), i.e. that for all $U\in\Ob(\mathcal{C})$ and all covering family $\mathfrak{U}=\{U_i\to U\}$, we have $H^q(\mathfrak{U},\mathscr{F})=0$ for $q>0$. Since $U$ is quasi-compact, we can assume that $\mathfrak{U}$ is finite, so by replacing the $U_i$ with their direct sum, the covering family consists of a single morphism which is covering, i.e. \'etale and surjective. We are therefore reduced to proving that if $f:X\to Y$ is a surjective \'etale morphism of affine scheme and $\mathscr{F}$ a quasi-coherent module on $Y$, then $H^q(\{X\to Y\},\mathscr{F})=0$ for $q>0$, which follows from \cref{scheme etale cohomology of qcoh vanish} below.
 \end{proof}
 \begin{lemma}\label{scheme etale cohomology of qcoh vanish}
 Let $A\to B$ is a faithfully flat homomorphism of rings and $M$ is an $A$-module. Then the sequence
@@ -2759,21 +2762,28 @@ It is then immediate to check that $d_{n-1}h_n+h_{n+1}d_n=\id$, whence our asser
 If $X$ is an affine scheme, then $H^p(X_\et,\mathscr{F}_\et)=0$ for $p>0$.
 \end{corollary}
 
-\subsection{Cohomology of a projective limit of schemes}
+\begin{remark}
+In fact, by \cref{scheme etale cohomology of qcoh vanish}, to have $H^q(\{X\to Y\},\mathscr{F})=0$ it suffices that $X\to Y$ be faithfully flat (instead of \'etale). This allows us to show by the previous proof that we still has isomorphisms analogous to that of \cref{scheme cohomology X_et and X_Zar qcoh isomorphism} if we consider (for example) any intermidiate topology between the Zariski topology and the fpqc topology.
+\end{remark}
+
+\subsection{Cohomology of a projective limit of schemes}\label{scheme etale cohomology of projective system}
 
 \section{Fiber functor, supports, and cohomology of finite morphisms}
 In this section, we consider the fiber functors on \'etale sites and topos associated with a geometric point, and definte the support of a \'etale sheaf. As an application, we discuss the cohomology groups of finite morphisms of schemes.
 
 \subsection{Topological invariance of \'etale topos}
 \begin{theorem}\label{scheme etale site equivalence if integral surj radical}
-Let $f:X'\to X$ be a surjective, radical and integral morphism (or equivalently, a universal homeomorphism, cf. \cite{EGA4} 18). Then the base change functor
+Let $f:X'\to X$ be a surjective, radical and integral morphism (or equivalently, a universal homeomorphism, cf. \cite{EGA4-4} 18.12.11). Then the base change functor
 \[f^*:X_\et\to X'_\et\]
 is an equivalence of sites (i.e an equivalence of sites whose quasi-inverse is continuous). Therefore, the functors
 \[f_*:\Sh(X'_\et)\to\Sh(X_\et),\quad f^*:\Sh(X_\et)\to\Sh(X'_\et)\] 
 are equivalences of categories and quasi-inverses of each other.
 \end{theorem}
 \begin{proof}
-The first assertion is well-known if $f$ is of finite presentation or if $f$ is flat (\cite{SGA1} \Rmnum{9}, 4.10 et 4.11), and the general case can be reduced to the case where $f$ is of finite presentation. In fact, by (\cite{SGA1} \Rmnum{9} 3.4) the functor $f^*$ is fully faithful, so it suffices to prove that $f^*$ is essentially surjective, i.e. that any \'etale scheme $Z'$ over $X'$ is obtained by an \'etale scheme $Z$ over $X$. Using the fact that $f$ is a universal homeomorphism, and the fully faithfullness of $f^*$, we can reduce to the case where $X=\Spec(A),X'=\Spec(A'),Z'=\Spec(B')$ are affine. Writting $A'$ as an inductive limit of sub-$A$-algebras of finite type of $A'_i$, with $B'$ coming from a \'etale algebra over an $A'_i$ (cf. \cite{EGA4} 8), we may further assume that $A'$ is integral and of finite type over $A$, hence finite over $A$. We then have an isomorphism $A'\cong A''/\mathfrak{I}$, where $A''=A[T_1,\dots,T_n]$ and $\mathfrak{I}$ is an ideal of $A''$. Again, by writting $\mathfrak{I}$ as an inductive limit of its finitely generated subideals $\mathfrak{I}_i$ and putting $A'_i=A''/\mathfrak{I}_i$, we have $A'=\rlim_iA'_i$, so $B'$ comes from an \'etale algebra $B'_i$ over $A'_i$ (cf. \cite{EGA4} 8). On the other hand, as $\Spec(A')\to\Spec(A)$ is surjective, so is the morphism $\Spec(A'_i)\to\Spec(A)$, and we can verify that if $\Spec(A')\to\Spec(A)$ is radical, so is $\Spec(A'_i)\to\Spec(A)$ for $i\gg 0$ (apply \cite{EGA4} 1.9.9 to $\Spec(A)$). This brings us back to the case where $A'$ is one of $A'_i$, hence of finite presentation on $A$. This proves the first assertion, and the fact that $f^*$ and $f_*$ are quasi-inverse of each other is immediate.
+By (\cite{SGA1} \Rmnum{9} 3.4), the functor $f^*$ is fully faithful, so it remains to prove that it is essentially surjective, i.e. that any \'etale scheme $Z'$ over $X'$ is obtained by an \'etale scheme $Z$ over $X$. Suppose first that the assertion holds for $X$ and $X'$ being affine. In this case, we can choose an affine open covering $Z'=\bigcup_iZ_i'$ such that each $Z_i'$ maps into an affine open of $X'$. By assumption (affine case) we can find \'etale morphisms $Z_i\to X$ such that $Z_i\times_XX'\cong Z_i'$. Let $Z_{ij}$ be the open subscheme whose underlying space is $Z_i'\cap Z_j'$. From the fully faithfulness of $f^*$, we obtain isomorphisms
+\[Z_{ij}\times_XX'\cong Z_i'\cap Z_j'\cong Z_{ji}\times_XX',\]
+hence isomorphisms $\varphi_{ji}:Z_{ij}\to Z_{ji}$. Again, by the fully faithfulness, we see that $\varphi_{ji}$ form a dascent data on $Z_i$ ralative to $X'\to X$, so we can glue them to obtain a (\'etale) scheme $Z$ over $X$ such that $Z_i\cong Z\times_XX'$. It is then clear that $Z\times_XX'\cong Z'$.\par
+We are therefore reduce to the case where $X=\Spec(A)$, $X'=\Spec(A')$, $Z'=\Spec(B')$ are affine. Writting $A'$ as an inductive limit of sub-$A$-algebras of finite type of $A'_i$, with $B'$ coming from a \'etale algebra over an $A'_i$ (cf. \cite{EGA4-4} 17.7.8), we may further assume that $A'$ is integral and of finite type over $A$, hence finite over $A$. We then have an isomorphism $A'\cong A''/\mathfrak{I}$, where $A''=A[T_1,\dots,T_n]$ and $\mathfrak{I}$ is an ideal of $A''$. Again, by writting $\mathfrak{I}$ as an inductive limit of its finitely generated subideals $\mathfrak{I}_i$ and putting $A'_i=A''/\mathfrak{I}_i$, we have $A'=\rlim_iA'_i$, so $B'$ comes from an \'etale algebra $B'_i$ over $A'_i$ (cf. \cite{EGA4-4} 17.7.8). On the other hand, as $\Spec(A')\to\Spec(A)$ is surjective, so is the morphism $\Spec(A'_i)\to\Spec(A)$, and we can verify that if $\Spec(A')\to\Spec(A)$ is radical, so is $\Spec(A'_i)\to\Spec(A)$ for $i\gg 0$ (apply \cite{EGA4-3} 8.10.5 to $\Spec(A)$). This brings us back to the case where $A'$ is one of $A'_i$, hence of finite presentation on $A$. We therefore conclude the first assertion by (\cite{SGA1} \Rmnum{9} 4.10), and the fact that $f^*$ and $f_*$ are quasi-inverse of each other is immediate.
 \end{proof}
 \begin{corollary}\label{scheme etale cohomology integral surj radical isomorphisms}
 Let $F$ be an abelian sheaf over $X$ and $F'$ be the inverse image over $X'$. Then the canonical homomorphisms
@@ -2851,17 +2861,17 @@ Our main purpose for introducing the fiber functor is of course to show that var
 \begin{equation}\label{scheme fiber functor classical expression}
 \mathscr{F}_x=\rlim_{U\ni x}\mathscr{F}(U)
 \end{equation}
-where $U$ runs through neighborhoods of $x$ in $X$. In the \'etale setting, we can also obtain an analogue of (\ref{scheme fiber functor classical expression}), provided that we replace topological neighborhoods by suitable \'etale neighborhoods over $X$: more precisely, an \textbf{\'etale neighborhoods of $\xi$ in $\bm{X}$} is defined to be a commutative diagram
+where $U$ runs through neighborhoods of $x$ in $X$. In the \'etale setting, we can also obtain an analogue of (\ref{scheme fiber functor classical expression}), provided that we replace topological neighborhoods by suitable \'etale neighborhoods over $X$: more precisely, an \textbf{\'etale neighborhoods of $\xi$ in $X$} is defined to be a commutative diagram
 \[\begin{tikzcd}
 &U\ar[d]\\
 \xi\ar[ru]\ar[r]&X
 \end{tikzcd}\]
-where $U$ is an \'etale over $X$. The etale neighborhoods of $\xi$ in $X$ clearly form a category, which will be denoted by $\mathcal{C}_\xi$ (in fact, this is nothing than the category $\mathcal{I}_\xi$). Since \'etale morphisms are stable under fiber products, it is not hard to see that the category $\mathcal{C}_\xi$ is filtered. It turns our thar the fiber $F_\xi$ can be derived by taking inductive limits in this category, as the following proposition shows:
+where $U$ is an \'etale over $X$. The etale neighborhoods of $\xi$ in $X$ clearly form a category, which will be denoted by $\mathcal{C}_\xi$ (in fact, this is nothing than the category $\mathcal{I}_\xi$). Since \'etale morphisms are stable under fiber products, it is not hard to see that the category $\mathcal{C}_\xi$ is cofiltered. It turns out that the fiber $F_\xi$ can be derived by taking inductive limits in this category, as the following proposition shows:
 \begin{proposition}\label{scheme etale site fiber functor expression}
 Let $\xi$ be a geometric point of $X$ and $\mathcal{C}_\xi$ be the category of etale neighborhoods of $\xi$ in $X$. Then for any sheaf $F$ (resp. presheaf $P$) over $X$, we have a canonical functorial isomorphism
 \begin{equation}\label{scheme etale site fiber functor expression-1}
 F_\xi \stackrel{\sim}{\to} \rlim_{U\in\mathcal{C}_\xi^{\op}} F(U),\quad 
-(\text{resp.}(P^\#)_\xi \stackrel{\sim}{\to} \rlim_{U\in\mathcal{C}_\xi^{\op}} P(U)).
+(\text{resp.}\quad (P^\#)_\xi \stackrel{\sim}{\to} \rlim_{U\in\mathcal{C}_\xi^{\op}} P(U)).
 \end{equation}
 \end{proposition}
 \begin{proof}
@@ -2905,13 +2915,75 @@ From the preceding remark we see that if $\bar{x}=\Spec(\widebar{\kappa(x)})$, t
 which is essentially equivalent to the functor $F\mapsto F_x$.
 
 \begin{remark}
-Consider a subset $E$ of $X$ such that for any \'etale morphism $f:X'\to X$, $E'=f^{-1}(E)$ is very dense in $X'$ (\cite{EGA4} 10.1.3), i.e. that for any $f$ as above, any open subset of $X'$ cointaing $E'$ is equal to $X'$. Then the fiber functor $F_{\bar{x}}$ over $\Sh(X_\et)$, for $x\in E$, form a conservative system (this can be seen from the proof of \cref{scheme etale site fiber functor conservative}~(b)). This observation is applicable in the following cases:
+Consider a subset $E$ of $X$ such that for any \'etale morphism $f:X'\to X$, $E'=f^{-1}(E)$ is very dense in $X'$ (\cite{EGA4-3} 10.1.3), i.e. that for any $f$ as above, any open subset of $X'$ cointaing $E'$ is equal to $X'$. Then the fiber functor $F_{\bar{x}}$ over $\Sh(X_\et)$, for $x\in E$, form a conservative system (this can be seen from the proof of \cref{scheme etale site fiber functor conservative}~(b)). This observation is applicable in the following cases:
 \begin{enumerate}
     \item[(a)] $X$ is a Jacobson scheme, for example a locally algebraic scheme over a field, or over $\Spec(\Z)$, and $E$ is the set of closed points of $X$.
     \item[(b)] $X$ is locally of finite type over a scheme $X$ and $E$ is the set of points of $X$ that is closed in the corresponding fiber.
-    \item[(c)] $X$ is locally Noetherian and $E$ is the set of $x\in X$ such that $\bar{x}$ is a finite set (i.e. an Artinian scheme) (c.f. \cite{EGA4} 10.5.3 et 10.5.5).
+    \item[(c)] $X$ is locally Noetherian and $E$ is the set of $x\in X$ such that $\bar{x}$ is a finite set (i.e. an Artinian scheme) (c.f. \cite{EGA4-3} 10.5.3 et 10.5.5).
 \end{enumerate} 
 \end{remark}
+
+\subsection{Strict local rings and schemes}
+We recall that a local ring $(A,\m)$ is called henselian if the following equivalent conditions are satisfied:
+\begin{enumerate}
+    \item[(\rmnum{1})] Any algebra $B$ finite over $A$ is a direct product $\prod_iB_i$ of local rings (the $B_i$ are necessarily isomorphic to $B_{\m_i}$, where $\m_i$ are maximal ideals of $B$). 
+    \item[(\rmnum{2})] Any algebra $B$ over $A$ that is a localization of an algebra $C$ of finite type over $A$ at a prime ideal $\p$ lying over a maximal ideal $\m$ of $A$, and such that $B/\m B$ is finite over $k=A/\m$, is finite over $A$.
+    \item[(\rmnum{3})] As in (\rmnum{2}), but we suppose that $C$ is \'etale over $A$ at $\p$ and $k\to B/\m B$ is an isomorphism.
+    \item[(\rmnum{4})] The "Hensel lemma" is valid for $A$: for any monic polynomial $F\in A[X]$, denote by $\bar{F}\in k[X]$ the induced polynomial, then for any decomposition
+    \[\bar{F}=\bar{F}_1\bar{F}_2\]
+    of $\bar{F}$ into two coprime monoic polynomials in $k[X]$, there exists liftings $F_1,F_2\in A[X]$ such that $F=F_1F_2$.
+\end{enumerate}
+(for a proof of the equivalence of these conditions and some general properties for henselian rings, cf. \cite{EGA4-4} 18.5.11). Recall that if $A$ is a local ring, then we can form a local homomorphism
+\[A\to A^h\]
+where $A^h$ is henselian, which is universal in the sense that any local homomorphism from $A$ to a local henselian ring factors through $A^h$. The ring $A^h$ is called the henselization of $A$, whose construction is given (in \cite{EGA4-4} 18.6) by
+\[A^h=\rlim_iA_i\]
+where $A_i$ runs through $A$-algebras essentially of finite type and essentially \'etale over $A$ (i.e. the localization of an \'etale algebra over $A$) such that $A\to A_i$ is a local homomorphism and the extension $\kappa(A_i)/\kappa(A)$ is trivial. This construction shows in particular that $A^h$ is flat over $A$ and that if $A$ is Noetherian, so is its henselization.\par
+A local ring $A$ is called \textbf{strictly local} if it is henselian and its residue field is separably closed. A scheme is called \textbf{strictly local} if it is isomorphic to the spectrum of a strictly local ring.
+\begin{definition}
+Let $X$ be a scheme, $\mathscr{O}_{X_\et}$ the sheaf over $X_{\et}$ defined by
+\[\mathscr{O}_{X_\et}(X')=\Gamma(X',\mathscr{O}_{X'}).\]
+Let $\xi:\Spec(\Omega)\to X$ be a geometric point of $X$ (located at $x\in X$). We define the \textbf{strictly local ring} of $X$ at $\xi$, denoted by $\mathscr{O}_{X,\xi}$, to be the fiber of the sheaf $\mathscr{O}_{X_\et}$ at the point $\xi$. Its spectrum is called the \textbf{strict localization} of $X$ at $\xi$.
+\end{definition}
+In view of \cref{scheme etale site fiber functor expression}, we see that the fiber $\mathscr{O}_{X,\xi}$ of $X$ at $\xi$ has the description:
+\begin{equation}\label{scheme strict localization description-1}
+\mathscr{O}_{X,\xi}=\rlim\Gamma(Y,\mathscr{O}_Y),
+\end{equation}
+where $Y$ runs through the filtered opposite category of \'etale neighborhoods of $\xi$, i.e. an \'etale scheme $Y\to X$ endowed with an $X$-morphism $\xi\to Y$. By the transitivity of inductive limits, we can replace the right hand side $\Gamma(Y,\mathscr{O}_Y)$ by $\mathscr{O}_{Y,y}$, where $y$ is the image of $\xi$ in $Y$. We thus obtain the expression
+\begin{equation}\label{scheme strict localization description-2}
+\mathscr{O}_{X,\xi}=\rlim_iA_i,
+\end{equation}
+where $A_i$ runs through algebras essentially of finite type and \'etale over $A=\mathscr{O}_{X,x}$, endowed with a $k$-homomorphism $\kappa(A_i)\to\Omega$.\par
+The description (\ref{scheme strict localization description-2}) shows that the strict localization of $X$ at $\xi$ depends only on the local ring $A=\mathscr{O}_{X,x}$ and the extension $\Omega$ of $k=\kappa(x)$. This is also caleld the strict henselization of $A$ (relative to the separably closed field $\Omega$) and denoted by $A^{sh}$. For the general properties of $A^{sh}$, see (\cite{EGA4-4} 18.8). We only remark that the construction of $A^{sh}$ shows that it is flat over $A$, and is Noetherian if $A$ is. On the other hand, one can show that the local homomorphism
+\[A\to A^{sh}\]
+endowed with the $k$-homomorphism $\kappa(A^{sh})\to\Omega$, satisfies the following universal property: any local homomorphism $A\to A'$, with $A'$ strict local, endowed with a $k$-homomorphism $\kappa(A')\to\Omega$, must factor through $A$. In particular, $A^{sh}$ is itself a strictly local ring.\par
+Now we consider an affine open neighborhood $U$ of $x$. Note that in the inductive limit (\ref{scheme strict localization description-1}), we can clearly choose $Y$ to be affine over $U$. The latter then form a filtered projective system of affine schemes, so that we are in the general situation of \autoref{scheme etale cohomology of projective system}. In view of the expression (\ref{scheme strict localization description-1}) of $\mathscr{O}_{X,\xi}$, we obtain an $X$-isomorphism
+\[\Spec(\mathscr{O}_{X,\xi})\stackrel{\sim}{\to}\llim X'\]
+where $X'$ runs through \'etale neighborhoods which are affine over $U$. This justifies our intuition of $\Spec(\mathscr{O}_{X,\xi})$ as being the "limit" of the \'etale neighborhoods of $\xi$.
+
+\begin{proposition}\label{scheme strictly local etale global section isomorphic to fiber}
+Let $X$ be a strictly local scheme, $x$ be its closed point, which is hence a geometric point of $X$. Then the functor
+\[\Sh(X_\et)\to\Set,\quad F\mapsto\Gamma(X,F)\]
+is canonically isomorphic to the fiber functor $F\mapsto F_x$, and therefore commutes with arbitrary inductive limit.
+\end{proposition}
+\begin{proof}
+In fact, by (\cite{EGA4-4} 18.8.1), any \'etale covering of $X$ is trivial, so the final object $X$ in the category of \'etale neighborhoods of $\xi$ dominates any other object, hence $\rlim F(Y)$ is isomorphic to $F(X)$.
+\end{proof}
+
+\begin{corollary}\label{scheme strictly local etale cohomology trivial}
+Under the conditions of \cref{scheme strictly local etale global section isomorphic to fiber}, for any abelian sheaf $F$ over $X$, we have
+\[H^q(X,F)=0\for q\neq 0.\]
+\end{corollary}
+\begin{proof}
+This follows from \cref{scheme strictly local etale global section isomorphic to fiber}, since the global section functor is therefore isomorphic to the fiber functor, hence is exact.
+\end{proof}
+
+\begin{corollary}\label{scheme strictly local fiber and inverse image section}
+Let $X$ be a scheme, $\xi$ be a geometric point of $X$, $\widebar{X}=\Spec(\mathscr{O}_{X,\xi})$ the strict localization of $X$, $F$ be a sheaf over $X$ and $\widebar{F}$ be its inverse image over $\widebar{X}$. Then we have a functorial isomorphism
+\[F_\xi\stackrel{\sim}{\to}\Gamma(\widebar{X},\widebar{F}).\]
+\end{corollary}
+\begin{proof}
+In fact, $\xi$ can be considered as a geometric point of $\widebar{X}$, and it suffices to apply \cref{scheme strictly local etale global section isomorphic to fiber} and the transitivity of fibers.
+\end{proof}
 
 \subsection{Applications to the calculation of \texorpdfstring{$R^pf_*$}{Rf}}
 Let $f:X\to Y$ be a morphism of schemes and $F$ be an abelian sheaf over $X$. In view of \cref{scheme etale site fiber functor conservative}, to determine the sheaf $R^pf_*(F)$, it suffices to determine the geometric fibers $R^pf_*(F)_{\bar{y}}$ for $y\in Y$. But by \cref{ringed topos morphism higher direct image prop}, $R^pf_*(F)$ is the sheaf associated with the presheaf
@@ -2923,9 +2995,9 @@ where $Y'$ runs through the opposite category of \'etale neighborhoods of $\bar{
 R^pf_*(F)_{\bar{y}}\cong \rlim_{Y'} H^p(X\times_YY',F).
 \end{equation}
 
-We now introduce $\widebar{Y}=\Spec(\mathscr{O}_{Y,\bar{y}})=\rlim Y'$ (cf. \cite{SGA4-2} \Rmnum{8} 4.5) and $\widebar{X}=X\times_Y\widebar{Y}$. Since the projective system $X\times_YY'$ (induced from that of the $Y'$ by base change) has affine transition morphisms, we see that the general conditions of (\cite{SGA4-2} \Rmnum{7} 5.1) are satisfied, so we have a caonical isomorphism
+We now consider the strict localization $\widebar{Y}=\Spec(\mathscr{O}_{Y,\bar{y}})=\rlim Y'$ of $Y$ at $\bar{y}$ and set $\widebar{X}=X\times_Y\widebar{Y}$. Since the projective system $X\times_YY'$ (induced from that of $Y'$ by base change) has affine transition morphisms, we see that the general conditions of (\cite{SGA4-2} \Rmnum{7} 5.1) are satisfied, so we have a caonical isomorphism
 \[\widebar{X}=\llim X\times_YY'.\]
-Denote by $\widebar{F}$ the sheaf over $\widebar{X}$ induced by $F$. We then obtain a canonical homomorphism
+Denote by $\widebar{F}$ the sheaf over $\widebar{X}$ induced by $F$, we then obtain a canonical homomorphism
 \[\rlim_{Y'}H^p(X\times_YY',F)\to H^p(\widebar{X},\widebar{F})\]
 whence by composing with (\ref{scheme etale site higher direct image fiber morphism-1}), a canonical homomorphism
 \begin{equation}\label{scheme etale site higher direct image fiber morphism-2}
@@ -2938,13 +3010,13 @@ Let $f:X\to Y$ be a quasi-compact and quasi-separated morphism, $F$ be an abelia
 \[R^pf_*(F)_{\bar{y}}\stackrel{\sim}{\to} H^p(\widebar{X},\widebar{F}).\]
 \end{theorem}
 
-This statement brings practically the determination of the fibers of $R^pf_*(F)$ to the determination of the cohomology of a scheme above a strictly local scheme, and will be used constantly thereafter. Technically, it's \cref{scheme qcqs etale site higher direct image fiber isomorphism} that explains the important role of Henselian rings and strictly local rings in the study of \'etale cohomology.\par
+This statement brings the determination of the fibers of $R^pf_*(F)$ to the determination of the cohomology of a scheme above a strictly local scheme, and will be used constantly thereafter. Technically, it's \cref{scheme qcqs etale site higher direct image fiber isomorphism} that explains the important role of Henselian rings and strictly local rings in the study of \'etale cohomology.\par
 
-Suppose that $f:X\to Y$ is a finite morphism. Then $\bar{f}:\widebar{X}\to\widebar{Y}$ is also a finite morphism, and as $\widebar{Y}$ is strictly local, the scheme $\widebar{X}$ is a finite sum of strictly local schemes $\widebar{X}_i$. Therefore, using (\cite{SGA4-2} \Rmnum{8} 4.7), we have
+Suppose that $f:X\to Y$ is a finite morphism. Then $\bar{f}:\widebar{X}\to\widebar{Y}$ is also a finite morphism, and as $\widebar{Y}$ is strictly local, the scheme $\widebar{X}$ is a finite sum of strictly local schemes $\widebar{X}_i$ (cf. \cite{EGA4-4} 18.8.10). Therefore, using \cref{scheme strictly local etale cohomology trivial}, we have
 \begin{equation}\label{scheme morphism etale finite direct image char-1}
 H^p(\widebar{X},\widebar{F})=0\for p>0.
 \end{equation}
-On the other hand, we note that the components $\widebar{X}_i$ of $\widebar{X}$ corresponds to points $\bar{x}_i$ of $\widebar{X}$ lying over the closed point $\bar{y}$ of $\widebar{Y}$, i.e. to points of $\widebar{X}_{\bar{y}}=X_y\otimes_{\kappa(y)}\widebar{\kappa(y)}$. Therefore, these poitns can be considered as geometric points of $X$, and $\widebar{X}_i$ is then none other than the strict localization of $X$ at $\bar{x}_i$. We then have $H^0(\widebar{X}_i,\widebar{F})\cong F_{\bar{x}_i}$, whence
+On the other hand, we note that the components $\widebar{X}_i$ of $\widebar{X}$ corresponds to points $\bar{x}_i$ of $\widebar{X}$ lying over the closed point $\bar{y}$ of $\widebar{Y}$, i.e. to points of $\widebar{X}_{\bar{y}}=X_y\otimes_{\kappa(y)}\widebar{\kappa(y)}$. Therefore, these poitns can be considered as geometric points of $X$, and $\widebar{X}_i$ is then none other than the strict localization of $X$ at $\bar{x}_i$. By \cref{scheme strictly local fiber and inverse image section}, we then have $H^0(\widebar{X}_i,\widebar{F})\cong F_{\bar{x}_i}$, whence
 \begin{equation}\label{scheme morphism etale finite direct image char-2}
 H^0(\widebar{X},\widebar{F})=\prod_iF_{\bar{x}_i},
 \end{equation}
@@ -2981,10 +3053,10 @@ is bijective, which follows from \cref{scheme morphism etale finite direct image
 \subsection{Localization functors and supports}
 Let $U$ be a Zariski open of a scheme $X$. Then $U\in\Ob(X_\et)$, and in fact that $U$ is a sub-object of the final object $X$ of $X_\et$, hence defines a sub-object $\widetilde{U}$ of the final object of $\Sh(X_\et)$, i.e. an open of the \'etale topos $X_\et$ of $X$ (cf. \cite{SGA4-1} 8.3).
 \begin{proposition}\label{scheme etale topos open given by Zariski}
-The preceding map $U\mapsto\widetilde{U}$ is an isomorphism from the ordered set of (Zariski) open subsets of $X$ to the set of opens of the \'etale topos $X_\et$.
+The preceding map $U\mapsto\widetilde{U}$ is an isomorphism from the ordered set of (Zariski) open subsets of $X$ to the set of open subtopoi of the \'etale topos $X_\et$.
 \end{proposition}
 \begin{proof}
-As $X_\et\to\Sh(X_\et)$ is fully faithful, we see that the map $U\mapsto\widetilde{U}$ is order preserving, and in particular injective. To see that it is surjective, consider a subsheaf $F$ of the final sheaf $\widetilde{X}$, and consider the objects of $(X_{\et})_{/F}$, i.e. the \'etale schemes $X'$ over $X$ such that $F(X')\neq\emp$ (note that, since $F$ is a subobject of $\widetilde{X}$, $F(U)$ is either empty or a singleton). As $X'\to X$ is \'etale, it is an open map (\cite{EGA4} 2.4.6), and in particular its image is open in $X$. Let $U$ be the union of the images of $X'\in\Ob((X_{\et})_{/F})$. As the family $\{X'\to U:X'\in\Ob((X_{\et})_{/F})\}$ is surjective, hence covering, we conclude by the sheaf condition that there is a unique element in $F(U)$ which maps to the unique element of $F(X')$ for each $X'$. In other words, $U$ is an object of $(X_{\et})_{/F}$, so $(X_\et)_{/F}=(X_\et)_{/U}$, and $F=U$.
+As $X_\et\to\Sh(X_\et)$ is fully faithful, we see that the map $U\mapsto\widetilde{U}$ is order preserving, and in particular injective. To see that it is surjective, consider a subsheaf $F$ of the final sheaf $\widetilde{X}$, and consider the objects of $(X_{\et})_{/F}$, i.e. the \'etale schemes $X'$ over $X$ such that $F(X')\neq\emp$ (note that, since $F$ is a subobject of $\widetilde{X}$, $F(U)$ is either empty or a singleton). As $X'\to X$ is \'etale, it is an open map (\cite{EGA4-2} 2.4.6), and in particular its image is open in $X$. Let $U$ be the union of the images of $X'\in\Ob((X_{\et})_{/F})$. As the family $\{X'\to U:X'\in\Ob((X_{\et})_{/F})\}$ is surjective, hence covering, we conclude by the sheaf condition that there is a unique element in $F(U)$ which maps to the unique element of $F(X')$ for each $X'$. In other words, $U$ is an object of $(X_{\et})_{/F}$, so $(X_\et)_{/F}=(X_\et)_{/U}$, and $F=U$.
 \end{proof}
 
 By \cref{scheme etale topos open given by Zariski}, we can therefore unambiguously speak of an "open" of $X$, without specifying whether we are considering the usual Zariski topology or the \'etale topology.
@@ -3022,7 +3094,7 @@ is an isomorphism at $\bar{x}$. But this follows from \cref{scheme immersion eta
 The functor $i_*$ induces an equivalence from the category of abelian sheaves over $Z$ to the category of abelian sheaves over $X$ whose restriction to $U=X-Z$ is zero.
 \end{corollary}
 
-In view of \cref{scheme etale topos open given by Zariski}, we can identify opens of the topos $\Sh(X_\et)$ with open subsets $U$ of $X$, and \cref{scheme closed immersion etale topos restriciton prop} tells us that the complement topos $\mathcal{E}_{U^c}$ of (\cite{SGA4-1} \Rmnum{4} 3) is canonically equivalent to the topos $\Sh(Z_\et)$, where $Z=X-U$ is endowed with the induced reduced scheme structure. We can therefore apply the results of (\cite{SGA4-1} \Rmnum{4} 3), which allows us to view a sheaf $F$ over $X$ as a triple $(F,G,u)$, where $F$ is a sheaf over $U$, $F$ is a sheaf over $U$ and $u:F\to i^*(j_*(G))$ is a homomorphism. We can also use the functors $i^!$ and $j_!$ defined in (\cite{SGA4-1} \Rmnum{5} 3):
+In view of \cref{scheme etale topos open given by Zariski}, we can identify open subtopoi of the topos $\Sh(X_\et)$ with open subsets $U$ of $X$, and \cref{scheme closed immersion etale topos restriciton prop} tells us that the complement topos $\mathcal{E}_{U^c}$ of (\cite{SGA4-1} \Rmnum{4} 3) is canonically equivalent to the topos $\Sh(Z_\et)$, where $Z=X-U$ is endowed with the induced reduced scheme structure. We can therefore apply the results of (\cite{SGA4-1} \Rmnum{4} 3), which allows us to view a sheaf $F$ over $X$ as a triple $(F,G,u)$, where $F$ is a sheaf over $U$, $F$ is a sheaf over $U$ and $u:F\to i^*(j_*(G))$ is a homomorphism. We can also use the functors $i^!$ and $j_!$ defined in (\cite{SGA4-1} \Rmnum{5} 3):
 \[j_!:\Ab(U_\et)\to \Ab(X_\et),\quad i^!:\Ab(X_\et)\to \Ab(Z_\et)\]
 where $\Ab$ means the category of abelian sheaves. In view of the preceding arguments, we introduce, for an abelian sheaf $F$ on $X$ (resp. a section $s$ of a sheaf) the notion of the support of $F$ (resp. of $\varphi$), which is defined to be the complement of the largets open subset of $X$ on which the restriction of $F$ (resp. $\varphi$) is zero. Also, we apply the notations $H_Y^p(X,F)$ and $\mathcal{H}^p_Y(F)$ to denote $H^p(\mathcal{Z},F)$ and $\mathcal{H}^p_{\mathcal{Z}}(F)$, where $\mathcal{Z}$ is the complement of $\mathcal{E}_{/U}$. In particular, we have $\mathcal{H}^p_Y=R^pi_!$, etc. One may consult (\cite{SGA4-1} \Rmnum{5} 6) for the general properties of these functors.
 
@@ -3084,7 +3156,7 @@ By \cref{scheme geometric point specialization bijection to Hom} the described f
 In other words, giving a generalization $\xi'$ of a geometric point $\xi$ is essentially equivalent to giving a geometric point of $\widebar{X}(\xi)$. We also note that in view of \cref{scheme strict localization morphism to scheme lemma}~(c), the corresonding morphism $\widebar{X}(\xi')\to\widebar{X}(\xi)$ makes $\widebar{X}(\xi')$ into a strict localization of $\widebar{X}(\xi)$ relative to $\xi'$.\par
 
 
-Now for any geometric point $\xi$ of $X$ and any sheaf $F$ over $X$, the fiber $F_\xi$ can be interprete as $\Gamma(\widebar{X}(\xi),\widebar{F}(\xi))$, where $\widebar{F}(\xi)$ is the inverse image of $F$ over $\widebar{X}(\xi)$ (cf. \cite{SGA4-2} \Rmnum{8}). Then we see that any specialization
+Now for any geometric point $\xi$ of $X$ and any sheaf $F$ over $X$, the fiber $F_\xi$ can be interprete as $\Gamma(\widebar{X}(\xi),\widebar{F}(\xi))$, where $\widebar{F}(\xi)$ is the inverse image of $F$ over $\widebar{X}(\xi)$. Then we see that any specialization
 \[u:\xi'\to\xi\]
 induces a canonical homomorphism
 \[u^*:F_\xi\to F_{\xi'}\]
@@ -3170,11 +3242,11 @@ Let $Y$ be a local Henselian scheme with closed point $y$, $F$ be an abelian she
 are isomorphisms.
 \end{corollary}
 \begin{proof}
-Let $\bar{y}$ be a geometric point over $y$, corresponding to a separably closure $\kappa(\bar{y})$ of $\kappa(y)$. As $Y$ is Henselian, the strict localization $X$ of $Y$ at $\bar{y}$ is the projective limit of Galois \'etale neighborhoods $X_i$ of $\bar{y}$, so we can apply \cref{scheme etale Hochschild-Serre spectral sequence}. As $H^q(X,F_X)=0$ for $q>0$ in view of (\cite{SGA4-2} \Rmnum{8} 4.7), we then conclude the isomorphisms
+Let $\bar{y}$ be a geometric point over $y$, corresponding to a separably closure $\kappa(\bar{y})$ of $\kappa(y)$. As $Y$ is Henselian, the strict localization $X$ of $Y$ at $\bar{y}$ is the projective limit of Galois \'etale neighborhoods $X_i$ of $\bar{y}$, so we can apply \cref{scheme etale Hochschild-Serre spectral sequence}. As $H^q(X,F_X)=0$ for $q>0$ in view of \cref{scheme strictly local etale cohomology trivial}, we then conclude the isomorphisms
 \[H^p(G,F(X)) \stackrel{\sim}{\to} H^p(Y,F),\]
 where $G$ is the Galois group of $X$ over $Y$, isomorphic to $\Gal(\kappa(\bar{y})/\kappa(y))$. Similarly, we have
 \[H^p(G,F_0(X_0)) \stackrel{\sim}{\to} H^p(Y_0,F_0),\]
-where $X_0=X\times_{Y_0}Y\cong\Spec(\kappa(\bar{y}))$. Now the restriction homomorphism $F(X)\to F_0(X_0)$ is an isomorphism by (\cite{SGA4-2} \Rmnum{8} 4.8), whence the assertion of the corollary.
+where $X_0=X\times_{Y_0}Y\cong\Spec(\kappa(\bar{y}))$. Now the restriction homomorphism $F(X)\to F_0(X_0)$ is an isomorphism by \cref{scheme strictly local fiber and inverse image section}, whence the assertion of the corollary.
 \end{proof}
 \subsection{Appendix: representability lemma}
 \begin{lemma}[\textbf{Representability Lemma}]\label{scheme etale representability lemma}
@@ -3234,7 +3306,7 @@ Now assume that $\mathcal{X}$ is locally of finite type. To verify that $\rlim_n
 We also need a non-abelian variant of $p$-torsion sheaves, which turns our to be techniquely subtle. We therefore restrict ourselves to \'etale topos over a scheme $X$.
 
 \begin{definition}
-Let $p$ be a prime number (or a set of prime numbers). A group $G$ is called a \textbf{$\bm{p}$-group} if it is finite with order $n$ such that $p\dashv n$, and is called a \textbf{ind-$\bm{p}$-group} if any finite subset of $G$ generates a $p$-group. Equivalently, this means that the finite sub-$p$-groups $G_\alpha$ form a filtered set and that $G=\rlim G_\alpha$. If $p$ is equal to the set of all prime numbers, then $G$ is simply called a \textbf{ind-finite group}.
+Let $p$ be a prime number (or a set of prime numbers). A group $G$ is called a \textbf{$p$-group} if it is finite with order $n$ such that $p\dashv n$, and is called a \textbf{ind-$p$-group} if any finite subset of $G$ generates a $p$-group. Equivalently, this means that the finite sub-$p$-groups $G_\alpha$ form a filtered set and that $G=\rlim G_\alpha$. If $p$ is equal to the set of all prime numbers, then $G$ is simply called a \textbf{ind-finite group}.
 \end{definition}
 
 \begin{proposition}\label{scheme etale topos ind p-group prop}
@@ -3318,7 +3390,7 @@ Let $X$ be a scheme.
 \end{enumerate}
 \end{proposition}
 \begin{proof}
-Evidently, if $f:Y\to X$ is a morphism and there exists a morphism and there exists a stratification of $X$ into finitely many locally closed and constructible subsets $X=\coprod_iX_i$ such that $F$ is locally constant over $X_i$, then the same holds for $Y$ and $f^*(F)$ (cf. \cite{EGA4} 1.8.2). Conversely, suppose that $X$ is quasi-compact and quasi-separated, and let $\{U_1,\dots,U_n\}$ be an affine open covering of $X$ such that $F|_{U_i}$ is constructible for each $i$. To find a stratification of $X$ as in (a), it suffices to consider such stratifications for $U_n$ and $Y=X-U_n$ (with the reduced induced scheme structure), since they are constructible by the hypothesis that $X$ is quasi-separated. Now such a stratification exists for $U_n$ by hypothesis, and $Y$ is a union of $n-1$ affine opens $V_i=Y\cap U_i$ with $F|_{V_i}$ being constructible, whence the assertion of (a) by induction on $n$. The same reasoning proves (b), in fact, the hypothesis in (b) implies that $F|_U$ is constructible for any sufficiently small affine opens, and we can cover an arbitrary open affine $V$ by a finite number of such opens. Since assertion (b) implies that the notion of constructibility is local, (c) and (d) then follows immediately from \cref{topos locally constant sheaf morphism prop}. Fianlly, the implication $\Rightarrow$ in (e) is immediate, and does not depend on the Noetherian hypothesis. On the other hand, if $X$ is Noetherian, we can then prove the implication $\Leftarrow$ by Noetherian induction.
+Evidently, if $f:Y\to X$ is a morphism and there exists a morphism and there exists a stratification of $X$ into finitely many locally closed and constructible subsets $X=\coprod_iX_i$ such that $F$ is locally constant over $X_i$, then the same holds for $Y$ and $f^*(F)$ (cf. \cite{EGA4-4} 1.8.2). Conversely, suppose that $X$ is quasi-compact and quasi-separated, and let $\{U_1,\dots,U_n\}$ be an affine open covering of $X$ such that $F|_{U_i}$ is constructible for each $i$. To find a stratification of $X$ as in (a), it suffices to consider such stratifications for $U_n$ and $Y=X-U_n$ (with the reduced induced scheme structure), since they are constructible by the hypothesis that $X$ is quasi-separated. Now such a stratification exists for $U_n$ by hypothesis, and $Y$ is a union of $n-1$ affine opens $V_i=Y\cap U_i$ with $F|_{V_i}$ being constructible, whence the assertion of (a) by induction on $n$. The same reasoning proves (b), in fact, the hypothesis in (b) implies that $F|_U$ is constructible for any sufficiently small affine opens, and we can cover an arbitrary open affine $V$ by a finite number of such opens. Since assertion (b) implies that the notion of constructibility is local, (c) and (d) then follows immediately from \cref{topos locally constant sheaf morphism prop}. Fianlly, the implication $\Rightarrow$ in (e) is immediate, and does not depend on the Noetherian hypothesis. On the other hand, if $X$ is Noetherian, we can then prove the implication $\Leftarrow$ by Noetherian induction.
 \end{proof}
 
 \begin{proposition}\label{scheme qcqs etale constructible sheaf filtration}
@@ -3349,7 +3421,7 @@ We only consider the case for sheaves of $A$-modules, the corresponding assertio
 Let $X$ be a quasi-compact and quasi-separated scheme and $F$ be a sheaf of sets (resp. $A$-modules). For $F$ to be constructible, it is necessary and sufficient that it is isomorphic to the cokernel of morphisms $H\rightrightarrows G$, where $H$ and $G$ are sheaves of sets represented by \'etale schemes of finite presentation over $X$ (resp. that $F$ is isomorphic to the cokernel of a homomorphism $A_{V}\to A_{U}$, where $U,V$ are \'etale schemes of finite presentation over $X$).
 \end{proposition}
 \begin{proof}
-This condition is sufficient in view of \cref{scheme etale constructible sheaf category prop}~(a), so suppose that $F$ is a constructible sheaf of sets. Using the existence of infinite direct sums in the \'etale site $X_\et$, we see that we can find an epimorphism $\widetilde{G}\to F$, where $G$ is an \'etale scheme over $X$, which we can assume to be a sum of affine schemes $G_i$ ($i\in I$), hence separated over $X$. For any finite subset $J$ of $I$, let $G_J$ be the sum of $G_i$ for $i\in J$, and $F_J$ be its image in $F$. As $G_J$ and $F$ are constructible, so is $F_J$ (\cref{scheme etale locally constant sheaf represented by etale cover} and \cref{scheme etale constructible sheaf category prop}~(a)), so the set $X_J$ of $x\in X$ such that the fibers of $F$ and $F_J$ at a geometric point of $X$ over $x$ is equal, is locally constructible (\cref{scheme etale constructible sheaf prop}~(d)). As the family $X_J$ is increasing with union $X$, and $X$ is quasi-compact, one of the $X_J$ is equal to $X$ (\cite{EGA4} 1.9.9). Therefore, by replacing $G$ with $G_J$, we can assume that $G$ is affine, hence separated over $X$, and quasi-compact over $X$ since $X$ is quasi-separated (\cref{scheme morphism qc permanence prop}). Let $H=\widetilde{G}\times_F\widetilde{G}$, which is a subsheaf of the representable sheaf $\widetilde{G\times_XG}$, hence representable by \cref{scheme etale representability lemma}. As $H$ are constructible by \cref{scheme etale constructible sheaf category prop}~(a), it follows from the previous arguments that it is quasi-compact, hence of finite presentation over $X$. This prove the first assertion of the proposition, and the second one can be proved by the same method.
+This condition is sufficient in view of \cref{scheme etale constructible sheaf category prop}~(a), so suppose that $F$ is a constructible sheaf of sets. Using the existence of infinite direct sums in the \'etale site $X_\et$, we see that we can find an epimorphism $\widetilde{G}\to F$, where $G$ is an \'etale scheme over $X$, which we can assume to be a sum of affine schemes $G_i$ ($i\in I$), hence separated over $X$. For any finite subset $J$ of $I$, let $G_J$ be the sum of $G_i$ for $i\in J$, and $F_J$ be its image in $F$. As $G_J$ and $F$ are constructible, so is $F_J$ (\cref{scheme etale locally constant sheaf represented by etale cover} and \cref{scheme etale constructible sheaf category prop}~(a)), so the set $X_J$ of $x\in X$ such that the fibers of $F$ and $F_J$ at a geometric point of $X$ over $x$ is equal, is locally constructible (\cref{scheme etale constructible sheaf prop}~(d)). As the family $X_J$ is increasing with union $X$, and $X$ is quasi-compact, one of the $X_J$ is equal to $X$ (\cite{EGA4-1} 1.9.9). Therefore, by replacing $G$ with $G_J$, we can assume that $G$ is affine, hence separated over $X$, and quasi-compact over $X$ since $X$ is quasi-separated (\cref{scheme morphism qc permanence prop}). Let $H=\widetilde{G}\times_F\widetilde{G}$, which is a subsheaf of the representable sheaf $\widetilde{G\times_XG}$, hence representable by \cref{scheme etale representability lemma}. As $H$ are constructible by \cref{scheme etale constructible sheaf category prop}~(a), it follows from the previous arguments that it is quasi-compact, hence of finite presentation over $X$. This prove the first assertion of the proposition, and the second one can be proved by the same method.
 \end{proof}
 
 \begin{corollary}\label{scheme qcqs etale represented constructible iff fp}
@@ -3453,18 +3525,19 @@ where $\Pic(X)$ is the group of invertible (Zariski) sheaves over $X$.
 \begin{proof}
 Since as a Zariski sheaf $\G_{m,X}$ is isomorphic to $\mathscr{O}_X^\times$, it suffices to prove that the canonical homomorphism
 \[H^1(X_\Zar,\G_{m,X})\to H^1(X_\et,\G_{m,X})\]
-is bijective, which is equivalent to saying that $R^1i_*(\G_{m,X})=0$, where $i:X_\et\to X_\Zar$ is the canonical homomorphism. We are therefore reduced to the case where $X$ is affine (\cref{ringed topos morphism higher direct image prop}). As we can calculte $H^1$ by \v{C}ech cohomology (\cref{ringed site Cech to derive spectral sequence}) and as it suffices to take quasi-compact coverings of a quasi-compact $X$, this is an immediate consequence of the descent theory for sheaves (cf. FGA 190, or SGA VIII 1).
+is bijective, which is equivalent to saying that $R^1i_*(\G_{m,X})=0$, where $i:X_\et\to X_\Zar$ is the canonical morphism. We are therefore reduced to the case where $X$ is affine and prove that $H^1(X_\et,\G_{m,X})=0$ (cf. \cref{ringed topos morphism higher direct image prop}). As we can calculte $H^1$ by \v{C}ech cohomology (\cref{ringed site Cech to derive spectral sequence}), it suffices to consider an \'etale covering $\mathfrak{U}=\{U_i\to X\}$ (where each $X_i$ is affine and we can assume that this is a finite family) and an element $\xi\in H^1(\mathfrak{U},X)$. By definition, $\xi$ is represented by a cocycle $(\xi_{ij})\in\prod_{ij}\G_m(U_{ij})$, where $U_{ij}=U_i\times_XU_j$. To apply a descent argument, we consider the $X$-scheme $U=\coprod_iU_i$, which is faithfully flat and quasi-compact over $X$; let $p:U\to X$ be the structual morphism and
+\[U'=U\times_XU=\coprod_{ij}U_{ij},\quad U'''=U\times_XU\times_XU=\coprod_{ijk}U_{ijk}.\]
+Using the elements $\xi_{ij}$, we now define an isomorphism $\phi:p_1^*(\mathscr{O}_U)\stackrel{\sim}{\to}p_2^*(\mathscr{O}_U)$ such that on each $U_{ij}$, the following diagram is commutative:
+\[\begin{tikzcd}
+p_1^*(\mathscr{O}_U)|_{U_{ij}}\ar[r,"\phi"]\ar[d,"\sim"]&p_2^*(\mathscr{O}_U)|_{U_{ij}}\ar[d,"\sim"]\\
+\mathscr{O}_{U_{ij}}\ar[r,"\xi_{ij}"]&\mathscr{O}_{ij}
+\end{tikzcd}\]
+(where $p_i$ and $p_{ij}$ are the canonical projections, and the bottom morphism is given by multiplication by $\xi_{ij}$) The cocycle condition on $\xi_{ij}$ implies that $\phi$ gives a descent data on $\mathscr{O}_U$ relative to $U\to X$, so by (\cite{SGA1} \Rmnum{8} 1.1), there exists a quasi-coherent $\mathscr{O}_X$-module $\mathscr{L}$ and an isomorphism $\sigma:p^*(\mathscr{L})\stackrel{\sim}{\to}\mathscr{O}_U$ such that $\phi\circ p_1^*(\sigma)=p_2^*(\sigma)$. By (\cite{SGA1} \Rmnum{8} remarque 1.12), we see that $\mathscr{L}$ is invertible over $X$, so there exists an open covering $\{V_j\to X\}$ (which we can choose to be a refinement of $\mathfrak{U}$) such that $\mathscr{L}|_{V_j}\cong\mathscr{O}_{V_j}$ for each $j$. This isomorphism, together with the inverse image of the isomorphism $\sigma:p^*(\mathscr{L})\cong\mathscr{O}_U$, provide for each $j$ a unique element $\alpha_j\in\G_m(V_j)$, and since $\mathfrak{V}$ refines $\mathfrak{U}$, the transition functions of the $\alpha_j$ are given by $\xi_{ij}$, so $\xi_{ij}$ is the coboundary defined by $\alpha_j$, and this proves our assertion.
 \end{proof}
-
-\begin{example}\label{scheme etale cohomology Hilbert 90}
-Let $X$ be a scheme and consider the sheaf $\mathscr{O}_{X_\et}^\times$. By \cref{scheme etale cohomology of O_X^times char}, the \'etale cohomology group $H^1(X_\et,\mathscr{O}_{X_\et}^\times)$ is isomorphic to $H^1(X,\mathscr{O}_X^\times)=\Pic(X)$. On the other hand, if $X=\Spec(k)$ is the spectrum of a field and $G=\Gal(\widebar{k}/k)$, then by \cref{scheme field etale cohomology is Galois cohomology} we have
-\[H^1(X_\et,\mathscr{O}_{X_\et}^\times)=H^1(G,M)\]
-where $M=\mathscr{O}_{X_\et}^\times(X)=k^\times$. Since $\Pic(X)=0$ in this case, we conclude that $H^1(G,k^\times)=0$, which is the famous theorem Hilbert's 90.
-\end{example}
 
 Now suppose that $X$ is a Noetherian scheme without embedded components, and let $x_j$ be the generic points of irreducible components of $X$. Let $R_j$ be the local ring of $X$ at $x_j$ (which is Artinian) and $i_j:\Spec(R_j)\to X$ be the inclusion morphism. We have a canonical injection
 \[\G_{m,X}\to\prod_j(i_j)_*(\G_{m,\Spec(R_j)})\]
-of sheaves over $X_\et$ (resp. $X_\Zar$). The cokernel of this morphism is called the sheaves of Cartier divisors over $X_\et$ (resp. $X_\Zar$).
+of sheaves over $X_\et$ (resp. $X_\Zar$). The cokernel of this morphism is called the \textbf{sheaves of Cartier divisors} over $X_\et$ (resp. $X_\Zar$).
 
 \begin{corollary}\label{scheme Noe etale Cartier divisor sheaf direct image of Zar}
 Let $X$ be Noetherian without embedded components, $i:X_\et\to X_\Zar$ be the canonical morphism of sites, and $D$ be the sheaf of Cartier divisors over $X_\et$. Then $i_*(D)$ is the sheaf $D_\Zar$ of Cartier divisors over $X_\Zar$, and we have
@@ -3487,7 +3560,7 @@ If $X$ is of characteristic $p>0$, we have an exact sequence
 where $\wp$ is the morphism of abelian groups defined by $\wp(s)=s^p-s$.
 \end{theorem}
 \begin{proof}
-Let $U=\Spec(A)$ be an affine \'etale scheme over $X$ and $s\in\Gamma(U,\mathscr{O}_{X_\et})=A$ be a section. Then the canonical morphism
+Let $U=\Spec(A)$ be an affine \'etale scheme over $X$ and $a\in\Gamma(U,\mathscr{O}_{X_\et})=A$ be a section. Then the canonical morphism
 \[V=\Spec(A[T]/(T^p-T-a))\to U=\Spec(A)\]
 is \'etale and surjective, hence an \'etale covering of $U$. The restriction of $a$ to $V$ is the image of $T$ under the homomorphism $\wp$, so $\wp:\mathscr{O}_{X_\et}\to\mathscr{O}_{X_\et}$ is surjective. Note that for any \'etale scheme $U$ over $X$, we have a bijection
 \[\Hom_X(U,\Spec(\mathscr{O}_X[T]/(T^p-T)))\stackrel{\sim}{\to} \{s\in\Gamma(U,\mathscr{O}_U):s^p-s=0\}\]
@@ -3511,11 +3584,11 @@ provides an injection $H^1(X,i_*(G_x))\to H^1(x,G_x)$. Now since $x=\Spec(\kappa
 \end{proof}
 
 \subsection{Cohomology of algebraic curves}
-Let $X$ be a Noetherian scheme of dimension $1$. Let $K(X)$ be the ring of rational functions of $X$, and $i:\Spec(K(X))\to X$ be the inclusion morphism. Let $F$ be an abelian sheaf over $\Spec(K(X))$ and consider the sheaves $R^pi_*(F)$ over $X$, where $p>0$. If $\eta$ is the generic point of an irreducible component of $X$, $\bar{\eta}$ is the geometric point lying over $\eta$, and $X_{\bar{\eta}}=\Spec(\mathscr{O}_{X,\bar{\eta}})$ is the corresponding strict localization, then \cref{scheme qcqs etale site higher direct image fiber isomorphism}, we have
+Let $X$ be a Noetherian scheme of dimension $1$, $K(X)$ be the ring of rational functions of $X$, and $i:\Spec(K(X))\to X$ be the canonical morphism. Let $F$ be an abelian sheaf over $\Spec(K(X))$ and consider the sheaves $R^pi_*(F)$ over $X$, where $p>0$. If $\eta$ is the generic point of an irreducible component of $X$, $\bar{\eta}$ is the geometric point lying over $\eta$, and $X_{\bar{\eta}}=\Spec(\mathscr{O}_{X,\bar{\eta}})$ is the corresponding strict localization, then by \cref{scheme qcqs etale site higher direct image fiber isomorphism}, we have
 \[(R^pi_*(F))_{\bar{\eta}}=H^p(\Spec(K(X))\times_XX_\eta,\widebar{F})=H^p(\Spec(K(X)\otimes_{\mathscr{O}_X}\mathscr{O}_{X,\bar{\eta}}),\widebar{F})\]
-where $\widebar{F}$ is the inverse image of $F$ over $\Spec(K(X)\otimes_{\mathscr{O}_X}\mathscr{O}_{X,\bar{\eta}})$. Since we have
+where $\widebar{F}$ is the inverse image of $F$ over $\Spec(K(X)\otimes_{\mathscr{O}_X}\mathscr{O}_{X,\bar{\eta}})$. Since
 \[K(X)\otimes_{\mathscr{O}_X}\mathscr{O}_{X,\bar{\eta}}\cong K(X_{\bar{\eta}})\cong \mathscr{O}_{X,\bar{\eta}},\]
-it follows from (\cite{SGA4-2} \Rmnum{8} 4.7) that $(R^pi_*(F))_{\bar{\eta}}$ is zero. Since $X$ is of dimension $1$, such a sheaf is very special in nature:
+it follows from \cref{scheme strictly local etale cohomology trivial} that $(R^pi_*(F))_{\bar{\eta}}$ is zero. Since $X$ is of dimension $1$, such a sheaf is very special in nature:
 \begin{lemma}\label{scheme Noe skyscraper sheaf char}
 Let $X$ be a Noetherian scheme and $F$ be a sheaf over $X$. The following conditions are equivalent:
 \begin{enumerate}
@@ -3530,7 +3603,7 @@ A sheaf over $X$ satisfying the above equivalent conditions is called a \textbf{
 \begin{proof}
 Suppose that (\rmnum{1}) is satisfied, and let $z\in F(X')$, where $X'$ is \'etale of finite type over $X$. Then by hypothesis, the support of $z$ is a closed subset of $X'$ formed by closed points, hence finite ($X'$ being Noetherian), whence (\rmnum{1})$\Rightarrow$(\rmnum{2}). The implication (\rmnum{2})$\Rightarrow$(\rmnum{1}) follows trivially from calculation on fibers (\cref{scheme etale site fiber functor expression-1}), and (\rmnum{3})$\Rightarrow$(\rmnum{1}) since for any family $(G_x)$ of sheaves over closed point $x$ of $X$, the sheaf $F=\bigoplus_i(i_x)_*(G_x)$ over $X$ satisfies (\rmnum{1}), as it follows from the fact that the fiber functor commutes with direct sums and that the support of $(i_x)_*(G_x)$ is equal to $\{x\}$ (cf. \cref{scheme morphism etale finite direct image char}).\par
 It remains to prove that (\rmnum{2})$\Rightarrow$(\rmnum{3}), so consider the canonical morphism
-\[F\to \prod_{x\in X_0}(i_x)_*(i_x)^*(F)\]
+\[F\to \prod_{x\in X_0}(i_x)_*(i_x)^*(F).\]
 By (\rmnum{2}), the image of $F$ is contained in $\bigoplus_x(i_x)_*(i_x)^*(F)$, so we obtain a morphism
 \[F\to\bigoplus_{x\in X_0}(i_x)_*(i_x)^*(F).\]
 This is an isomorphism since we have the formula
@@ -3545,28 +3618,31 @@ If $X$ is a Noetherian scheme of dimension $1$, then the non-closed points of $X
 \[R^pi_*(F) \stackrel{\sim}{\to} \bigoplus_{x\in X_0}(i_x)_*(i_x)^*(R^pi_*(F))\]
 On the other hand, as we have already remarked, the fiber of $R^pi_*(F)$ at a geometric point $\bar{x}$ of $X$ is 
 \[(R^pi_*(F))_{\bar{x}}\cong H^p(\Spec(\mathscr{O}_{X,\bar{x}}),\widebar{F}).\]
-Suppose now that the residue field of any closed point $x$ of $X$ is separably closed, by \cref{scheme separably closed field etale topos is set}, we then have
+Suppose now that the residue field of any closed point $x$ of $X$ is separably closed. By \cref{scheme separably closed field etale topos is set}, we then have
 \begin{align*}
 H^p(X,R^qi_*(F))&\cong H^p(X,\bigoplus_{x\in X_0}(i_x)_*(i_x)^*(R^pi_*(F)))\cong \bigoplus_{x\in X_0}H^p(X,(i_x)_*(i_x)^*(R^qi_*(F)))\\
-&\cong \bigoplus_{x\in X_0}H^p(x,(i_x)^*(R^qi_*(F)))
+&\cong \bigoplus_{x\in X_0}H^p(x,(i_x)^*(R^qi_*(F)))\\
+&\cong\begin{cases}
+\bigoplus_{x\in X_0}H^q(\Spec(\mathscr{O}_{X,\bar{x}}),F)&\text{if $p=0$},\\
+0&\text{if $p>0$}.
+\end{cases}
 \end{align*}
-which is equal to $\bigoplus_{x\in X_0}H^q(\Spec(\mathscr{O}_{X,x}),F)$ if $p=0$, and zero if $p>0$.
 
 \begin{corollary}\label{scheme Noe dim 1 etale cohomology over K(X) prop}
-Let $X$ be a Noetherian scheme of dimension $1$ such that for any closed point of $x$ of $X$, the residue field $\kappa(x)$ is separably closed. Let $F$ be an abelian sheaf over $\Spec(K(X))$, and consider the Leray spectra lsequence
+Let $X$ be a Noetherian scheme of dimension $1$ such that for any closed point of $x$ of $X$, the residue field $\kappa(x)$ is separably closed. Let $F$ be an abelian sheaf over $\Spec(K(X))$ and consider the Leray spectra lsequence
 \[E_2^{p,q}=H^p(X,R^qi_*(F))\Rightarrow H^{p+q}(\Spec(K(X)),F).\]
 Then we have 
 \[E_2^{p,q}=\begin{cases}
-\displaystyle\bigoplus_{x} H^q(\Spec(\mathscr{O}_{X,x}),F)&p=0,\\[8pt]
-0&p>0.
+\displaystyle\bigoplus_{x\in X_0} H^q(\Spec(\mathscr{O}_{X,\bar{x}}),F)&\text{if $p=0$},\\[8pt]
+0&\text{if $p>0$}.
 \end{cases}\]
 where $X_x$ is the strict localization of $X$ at $x$. Therefore, we obtain a long exact sequence
 \[\begin{tikzcd}[column sep=3.6mm]
-0\ar[r]&H^1(X,i_*(F))\ar[r]&H^1(\Spec(K(X)),F)\ar[r]&\bigoplus_{x} H^q(\Spec(\mathscr{O}_{X,x}),F)\ar[r]&H^2(X,i_*(F))\ar[r]&\cdots
+0\ar[r]&H^1(X,i_*(F))\ar[r]&H^1(\Spec(K(X)),F)\ar[r]&\bigoplus_{x\in X_0} H^q(\Spec(\mathscr{O}_{X,\bar{x}}),F)\ar[r]&H^2(X,i_*(F))\ar[r]&\cdots
 \end{tikzcd}\]
 \end{corollary}
 
-We now suppose that the global $\ell$-dimension of $\Spec(K(X))$, for any prime number $\ell$, is less than $1$ (that is, $H^q(\Spec(K(X)),F)=0$ for $q>1$ and any $\ell$-torsion sheaf over $\Spec(K(X))$). Let $K_1,\dots,K_n$ be the residue fields of $K(X)$, i.e. the residue fields of the maximal points of $X$. In view of \cref{scheme field etale cohomology is Galois cohomology}, we have 
+We now suppose that the global $\ell$-dimension of $\Spec(K(X))$ is less than $1$ for any prime number $\ell$ (that is, $H^q(\Spec(K(X)),F)=0$ for $q>1$ and any $\ell$-torsion sheaf over $\Spec(K(X))$). Let $K_1,\dots,K_n$ be the residue fields of $K(X)$, i.e. the residue fields of the maximal points of $X$. In view of \cref{scheme field etale cohomology is Galois cohomology}, we have 
 \[\gldim_\ell(\Spec(K(X)))=\sup_i\{\gldim_\ell(\Gal(\widebar{K}_i/K_i))\}\]
 where $\gldim_\ell(G)$ is the global $\ell$-dimension of the profinite group $G$. The residue field $K_x$ of $K(X_{\bar{x}})$, for the strict localization $X_{\bar{x}}$ of $X$, is clearly identified with a (infinite) separable extension of $K_i$, so we have
 \[\gldim_\ell(\Gal(\widebar{K}_x/K_x))\leq\gldim_\ell(\Gal(\widebar{K}_i/K_i))\]
@@ -3591,7 +3667,7 @@ Let $X$ be a Noetherian scheme of dimension $1$ and $n$ be an integer that is in
 \end{equation}
 \end{theorem}
 \begin{proof}
-Suppose that $\ell$ is a prime divisor of $n$, then by applying \cref{scheme etale Hilbert theorem 90} and [Serre, J.P. Cohomologie Galoisienne, chap \Rmnum{1}, prop.12], we conclude that $H^1(\Spec(K(X)),\G_m)=0$, and $H^q(\Spec(K(X)),\G_m)$ has no $\ell$-torsion for $q\geq 2$. By replacing $K(X)$ by $K(X_{\bar{x}})$, we also have a similar result for $H^q(\Spec(K(X_{\bar{x}})),i_*(\G_m))$. Now in view of \cref{scheme Noe skyscraper sheaf char}, for any sheaf $F$ over $X$, the kernel $P$ and cokernel $Q$ of the canonical homomorphism $F\mapsto i_*(i^*(F))$ (where $i:\Spec(K(X))\to X$ is the inclusion) is a skyscraper sheaf, so we have (since the residue fields of the closed points of $X$ are supposed to be separably closed)
+Suppose that $\ell$ is a prime divisor of $n$, then by applying \cref{scheme etale Hilbert theorem 90} and [CG, \Rmnum{1}, prop.12], we conclude that $H^1(\Spec(K(X)),\G_m)=0$, and $H^q(\Spec(K(X)),\G_m)$ has no $\ell$-torsion for $q\geq 2$. By replacing $K(X)$ with $K(X_{\bar{x}})$, we also have a similar result for $H^q(\Spec(K(X_{\bar{x}})),i_*(\G_m))$. Now in view of \cref{scheme Noe skyscraper sheaf char}, for any sheaf $F$ over $X$, the kernel $P$ and cokernel $Q$ of the canonical homomorphism $F\mapsto i_*(i^*(F))$ (where $i:\Spec(K(X))\to X$ is the inclusion) is a skyscraper sheaf, so we have (since the residue fields of the closed points of $X$ are supposed to be separably closed)
 \[H^i(X,P)=H^i(X,Q)=0\for i>0.\]
 This implies, in view of the long exact sequence on cohomology, that
 \[H^i(X,F)\to H^i(X,i_*(i^*(F)))\]
@@ -3632,7 +3708,7 @@ H^2(X,\bm{\mu}_{n,X})\cong\Pic(X)/n\Pic(X)\cong\Z/n\Z.
 By \cref{scheme Noe dim 1 etale cohomology ell-dimension 1 prop}, we have $H^q(X,\bm{\mu}_{n,X})=0$ for $q\geq 3$, so the claim follows.
 \end{proof}
 
-\subsection{M\'ethode de la trace}
+\subsection{The trace method}
 Let $X$ be a scheme and $f:X'\to X$ be a \'etale morphism. Then we have an adjoint triple $(f_!,f^*,f_*)$ (the functor $f_!$ will be defined later). The adjunction map $\id\to f_*f^*$ is called the \textbf{restriction map}, and the adjunction map $f_!f^*\to\id$ is called the \textbf{trace map}. If $f$ is finite, then the functor $f_!$ coincides with $f_*$, and in this case the trace morphism $f_*f^*\to\id$ can be characterized by the following properties:
 \begin{enumerate}
     \item[(\rmnum{1})] It commutes with \'etale localization on $X$.
@@ -3695,7 +3771,7 @@ Let $X$ be a quasi-compact and quasi-separated scheme, $\ell$ be a prime number,
  
 \end{proposition}
 \begin{proof}
-By \cref{scheme qcqs etale sheaf limit of constructible} and \cref{scheme qcqs etale constructible sheaf filtration}, it suffices to verify that $H(F)=0$ for $F=i_!(G)$, where $i:U\to X$ is the inclusion of a finitely presented subscheme of $X$ and $G$ is a locally constant $\ell$-torsion sheaf over $U$. Let $U''\to U$ be a principal \'etale covering with group $g$ such that $G$ is constant over $U''$, and let $A$ be the $\ell$-group such that $G|_{U''}\cong A_{U''}$. Note that the group $g$ acts on $A$, and this action determines the structure of $G$. Let $h$ be a Sylow $\ell$-subgroup of $g$, and $U'=U''/h$ be the principal covering corresponding to $h$, so that the degree $d$ of $U'$ over $U$ is coprime to $\ell$. By Zariski's Main Theorem (\cite{EGA4}, 8.12.6), we may choose a diagram
+By \cref{scheme qcqs etale sheaf limit of constructible} and \cref{scheme qcqs etale constructible sheaf filtration}, it suffices to verify that $H(F)=0$ for $F=i_!(G)$, where $i:U\to X$ is the inclusion of a finitely presented subscheme of $X$ and $G$ is a locally constant $\ell$-torsion sheaf over $U$. Let $U''\to U$ be a principal \'etale covering with group $g$ such that $G$ is constant over $U''$, and let $A$ be the $\ell$-group such that $G|_{U''}\cong A_{U''}$. Note that the group $g$ acts on $A$, and this action determines the structure of $G$. Let $h$ be a Sylow $\ell$-subgroup of $g$, and $U'=U''/h$ be the principal covering corresponding to $h$, so that the degree $d$ of $U'$ over $U$ is coprime to $\ell$. By Zariski's Main Theorem (\cite{EGA4-3}, 8.12.6), we may choose a diagram
 \[\begin{tikzcd}
 U'\ar[d,swap,"f"]\ar[r,"i'"]&X'\ar[d,"g"]\\
 U\ar[r,"i"]&X
