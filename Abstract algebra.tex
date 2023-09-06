@@ -5,6 +5,7 @@
 \usepackage{adjustbox}
 \usepackage{indentfirst} 
 
+
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}[theorem]{Corollary}
@@ -59,18 +60,51 @@ Algebra\\}
 %\include{chapter/category}
 %\include{chapter/inf-category}
 %\include{chapter/sheaf}
-\include{chapter/scheme}
+%\include{chapter/scheme}
 %\include{chapter/topos-etale-cohomology}
 
-\include{chapter/group-scheme}
+%\include{chapter/group-scheme}
+
 
 %\bibliographystyle{abbrv}
 %\bibliography{Bibtex} 
-
-
-
 \end{document}
 
+\section{Reductive groups: uniqueness of pinned groups}
+\subsection{Pinnings}
+\begin{definition}
+Let $S$ be a scheme, $(G,T,M,R)$ be a splitting $S$-group. We define a \textbf{pinning} of this splitting group to be the data of a system $\Delta$ of simple roots of $R$ and for each $\alpha\in\Delta$ a section $X_\alpha\in\Gamma(S,\g^\alpha)^\times$. In other words, a \textbf{pinning} of a reductive group $G$ over a nonempty scheme $S$ is the following data:
+\begin{enumerate}
+    \item[(\rmnum{1})] a maximal torus $T$,
+    \item[(\rmnum{2})] an abelian group $M$ and an isomorphism $T\cong D_S(M)$,
+    \item[(\rmnum{3})] a root system $R$ of $G$ relative to $T$,
+    \item[(\rmnum{4})] for each $\alpha\in\Delta$ a section $X_\alpha\in\Gamma(S,\g^\alpha)^\times$, that is, for any $\alpha\in\Delta$, a section
+    \[u_\alpha=\exp_\alpha(X_\alpha)\in U_\alpha^\times(S),\]
+\end{enumerate}
+which verifies the conditoin (D1) of \cref{scheme group reductive splitting def} (note that condition (D2) is automatically verified).
+\end{definition}
+Any splitting group possesses a pinning; in particular, any reductive group reductive group is locally pinnable for the \'etale topology (\cref{scheme group reductive etale local splittable}).\par
+If $G$ is a \textbf{pinned} $S$-group, that is, a splitting $S$-group endowed with a pinning, it is canonically endowed with a system of positive roots $R_+$ defined by $\Delta$, with corresponding Borel subgroup $B=B_{R_+}$ and opposite Borel subgroup $B^-=B_{R_-}$, and unipotent groups $U=B^u$, $U^-=(B^-)^u$, and open subset $U^-\cdot T\cdot U$, etc. Similarly, for each $\alpha\in\Delta$, we have a canonical isomorphism of vectorial groups
+\[p_\alpha:\G_{a,S}\stackrel{\sim}{\to} U_\alpha,\quad x\mapsto\exp_\alpha(xX_\alpha)=u_\alpha^x,\]
+which is normalized by $T$ with multiplicator $\alpha$, and whose data is equivalent to that of $X_\alpha$.\par
+By duality, we then deduce a section $X_{-\alpha}\in\Gamma(S,\g^{-\alpha})^\times$ and an isomorphism
+\[p_{-\alpha}:\G_{a,S}\stackrel{\sim}{\to} U_{-\alpha},\]
+which is the contragredient of the preceding morphism. We put (cf. \cref{scheme group elementary system Weyl group prop})
+\[w_\alpha=w_\alpha(X_\alpha)=p_\alpha(1)p_{-\alpha}(-1)p_\alpha(1)\]
+By \cref{scheme group elementary system Weyl group prop}, \cref{scheme group elementary system a_alpha morphism prop} and \cref{scheme group elementary system a_alpha exp prop}, we then have
+\begin{gather}
+w_\alpha^2=\check{\alpha}(-1),\quad \inn(w_\alpha)t=s_\alpha(t)=t\cdot\check{\alpha}(\alpha(t)^{-1}),\label{scheme group pinned w_alpha prop-1}\\
+\begin{cases*}
+\inn(w_\alpha)p_\alpha(x)=p_{-\alpha}(-x)=p_{-\alpha}(x)^{-1},\\
+\Ad(w_\alpha)X_\alpha=-X_{-\alpha},
+\end{cases*}\label{scheme group pinned w_alpha prop-2}\\
+\begin{cases*}
+\inn(w_\alpha)p_{-\alpha}(x)=p_\alpha(-x)=p_\alpha(x)^{-1},\\
+\Ad(w_\alpha)X_{-\alpha}=-X_\alpha.
+\end{cases*}\label{scheme group pinned w_alpha prop-3}
+\end{gather}
+
+Let $S$ be a scheme, $(G,T,M,R,\Delta,(X_\alpha))$ and $(G',T',M',R',\Delta',(X'_\alpha))$ be two pinned $S$-groups.
 
 \section{Constructible sets}
 In this section, we introduce constructible sets which are a class of subsets of a topological space that have a relatively "simple" structure. This notation is used particularly in algebraic geometry and related fields: for example, a key result known as Chevalley's theorem in algebraic geometry shows that the image of a constructible set is constructible for an important class of mappings (more specifically morphisms) of algebraic varieties (or more generally schemes). In addition, a large number of "local" geometric properties of schemes, morphisms and sheaves are (locally) constructible. Constructible sets also feature in the definition of various types of constructible sheaves in algebraic geometry and intersection cohomology, for example the notion of constructible sheaves in \'etale cohomology.

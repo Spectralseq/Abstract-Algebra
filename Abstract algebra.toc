@@ -1,439 +1,179 @@
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{\numberline {1}Lie algebras}{9}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Definition of Lie algebras}{9}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Algebras and Lie algebras}{9}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}Ideals of Lie algebras}{13}{subsection.1.1.2}%
-\contentsline {subsection}{\numberline {1.1.3}Extensions of Lie algebras}{13}{subsection.1.1.3}%
-\contentsline {subsection}{\numberline {1.1.4}Semi-direct product of Lie algebras}{14}{subsection.1.1.4}%
-\contentsline {subsection}{\numberline {1.1.5}Extension of scalars}{16}{subsection.1.1.5}%
-\contentsline {section}{\numberline {1.2}Enveloping algebra of a Lie algebra}{17}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}The enveloping algebra}{17}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Enveloping algebra of the opposite Lie algebra}{18}{subsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.2.3}Enveloping algebra of product of algebras}{18}{subsection.1.2.3}%
-\contentsline {subsection}{\numberline {1.2.4}Extension of scalars}{19}{subsection.1.2.4}%
-\contentsline {subsection}{\numberline {1.2.5}Filtration on the enveloping algebra}{19}{subsection.1.2.5}%
-\contentsline {subsection}{\numberline {1.2.6}The Poincar\'e-Birkhoff-Witt theorem}{20}{subsection.1.2.6}%
-\contentsline {subsection}{\numberline {1.2.7}Enveloping algebra of subalgebras and quotients}{23}{subsection.1.2.7}%
-\contentsline {subsection}{\numberline {1.2.8}Extension by derivations}{24}{subsection.1.2.8}%
-\contentsline {section}{\numberline {1.3}Representations of Lie algebras}{25}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Representations}{25}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}Tensor product of $\mathfrak {g}$-modules}{26}{subsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.3.3}Representation on homomorphism modules}{27}{subsection.1.3.3}%
-\contentsline {subsection}{\numberline {1.3.4}Invariant elements and bilinear forms}{29}{subsection.1.3.4}%
-\contentsline {subsection}{\numberline {1.3.5}Casimir element}{31}{subsection.1.3.5}%
-\contentsline {subsection}{\numberline {1.3.6}Extension of scalars}{32}{subsection.1.3.6}%
-\contentsline {section}{\numberline {1.4}Nilpotent Lie algebras}{33}{section.1.4}%
-\contentsline {subsection}{\numberline {1.4.1}Central series and nilpotent Lie algebras}{33}{subsection.1.4.1}%
-\contentsline {paragraph}{\numberline {1.4.1.1}Lower central series and upper central series}{33}{paragraph.1.4.1.0.1}%
-\contentsline {subsection}{\numberline {1.4.2}Engel's theorem}{35}{subsection.1.4.2}%
-\contentsline {subsection}{\numberline {1.4.3}The largest nilpotency ideal of a representation}{36}{subsection.1.4.3}%
-\contentsline {section}{\numberline {1.5}Solvable Lie algebras}{37}{section.1.5}%
-\contentsline {subsection}{\numberline {1.5.1}Solvable Lie algebras}{38}{subsection.1.5.1}%
-\contentsline {subsection}{\numberline {1.5.2}Nilpotent radical of a Lie algebra}{39}{subsection.1.5.2}%
-\contentsline {subsection}{\numberline {1.5.3}Cartan's criterion for solvability}{41}{subsection.1.5.3}%
-\contentsline {subsection}{\numberline {1.5.4}Properties of the radical ideal}{41}{subsection.1.5.4}%
-\contentsline {section}{\numberline {1.6}Semi-simple Lie algebras}{42}{section.1.6}%
-\contentsline {subsection}{\numberline {1.6.1}Semi-simple Lie algebras}{42}{subsection.1.6.1}%
-\contentsline {subsection}{\numberline {1.6.2}Semi-simplicity of representations}{44}{subsection.1.6.2}%
-\contentsline {subsection}{\numberline {1.6.3}Jordan decomposition}{45}{subsection.1.6.3}%
-\contentsline {subsection}{\numberline {1.6.4}Reductive Lie algebras}{46}{subsection.1.6.4}%
-\contentsline {subsection}{\numberline {1.6.5}The Levi-Malcev theorem}{50}{subsection.1.6.5}%
-\contentsline {subsection}{\numberline {1.6.6}The invariant theorem}{53}{subsection.1.6.6}%
-\contentsline {subsection}{\numberline {1.6.7}Extension of scalars}{53}{subsection.1.6.7}%
-\contentsline {section}{\numberline {1.7}Ado's theorem}{54}{section.1.7}%
-\contentsline {subsection}{\numberline {1.7.1}Coefficients of a representation}{54}{subsection.1.7.1}%
-\contentsline {subsection}{\numberline {1.7.2}The extension theorem}{54}{subsection.1.7.2}%
-\contentsline {subsection}{\numberline {1.7.3}Ado's theorem}{55}{subsection.1.7.3}%
-\contentsline {chapter}{\numberline {2}Free Lie algebras}{57}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Enveloping bigebra of a Lie algebra}{57}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Primitive elements}{57}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Enveloping bigebra of a Lie algebra}{60}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Structure of the cogebra \boldmath $U(\mathfrak {g})$ in characteristic zero}{61}{subsection.2.1.3}%
-\contentsline {section}{\numberline {2.2}Free Lie algebra over a set \boldmath $X$}{64}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}The free Lie algebra \boldmath $L(X)$}{64}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Graduation of the free Lie algebra}{67}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Elimination theorem}{69}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Bases for the free Lie algebra}{71}{subsection.2.2.4}%
-\contentsline {subsection}{\numberline {2.2.5}Subalgebras of the free Lie algebra}{73}{subsection.2.2.5}%
-\contentsline {section}{\numberline {2.3}Enveloping algebra of the free Lie algebra}{75}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}The enveloping algebra of $\bm {L(X)}$}{75}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Projection of \boldmath $A^+(X)$ onto \boldmath $L(X)$}{76}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Dimension of the homogeneous components}{77}{subsection.2.3.3}%
-\contentsline {section}{\numberline {2.4}Central filtrations}{79}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Real filtrations and order functions}{79}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Central filtrations on a group}{80}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}Integral central filtrations}{82}{subsection.2.4.3}%
-\contentsline {subsection}{\numberline {2.4.4}Magnus algebras}{83}{subsection.2.4.4}%
-\contentsline {subsection}{\numberline {2.4.5}Magnus group}{84}{subsection.2.4.5}%
-\contentsline {section}{\numberline {2.5}The Hausdorff series}{86}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Exponential and logarithm in filtered algebras}{86}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}The Hausdorff series}{89}{subsection.2.5.2}%
-\contentsline {subsection}{\numberline {2.5.3}Convergence of the Hausdorff series}{92}{subsection.2.5.3}%
-\contentsline {paragraph}{\numberline {2.5.3.1}Real or complex case}{92}{paragraph.2.5.3.0.1}%
-\contentsline {paragraph}{\numberline {2.5.3.2}Ultrametric case}{95}{paragraph.2.5.3.0.2}%
-\contentsline {chapter}{\numberline {3}Coxeter systems and tits systems}{99}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Coxeter systems}{99}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Length and reduced decompositions}{99}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Coxeter systems and Coxeter groups}{100}{subsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.1.3}Reduced decompositions for a Coxeter system}{102}{subsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.1.4}Characterization of Coxeter systems}{105}{subsection.3.1.4}%
-\contentsline {subsection}{\numberline {3.1.5}Coxeter system defined by partitions}{107}{subsection.3.1.5}%
-\contentsline {subsection}{\numberline {3.1.6}Subgroups of a Coxeter group}{108}{subsection.3.1.6}%
-\contentsline {section}{\numberline {3.2}Tits systems}{109}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Tits systems and Bruhat decompositions}{109}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Relation with Coxeter systems}{111}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Parabolic subgroups in a Tits system}{112}{subsection.3.2.3}%
-\contentsline {chapter}{\numberline {4}Groups generated by reflections}{115}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Hyperplanes, chambers and facets}{115}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Facets and chambers}{115}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Walls and faces}{118}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Intersection hyperplanes}{119}{subsection.4.1.3}%
-\contentsline {section}{\numberline {4.2}Reflections over a vector space}{119}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Pseudo-reflections and reflections}{120}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Orthogonal reflections in a Euclidean affine space}{121}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Complements on plane rotations}{123}{subsection.4.2.3}%
-\contentsline {section}{\numberline {4.3}Reflection group over affine spaces}{124}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}The associated Coxeter system}{124}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Fundamental domain and stabilisers}{125}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Coexter matrix and Coxeter graph of reflection groups}{127}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Systems of obtuse vectors}{128}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.3.5}Finiteness theorems}{129}{subsection.4.3.5}%
-\contentsline {subsection}{\numberline {4.3.6}Representation of the Weyl group on the underlying space}{130}{subsection.4.3.6}%
-\contentsline {subsection}{\numberline {4.3.7}Structure of chambers}{132}{subsection.4.3.7}%
-\contentsline {subsection}{\numberline {4.3.8}Special points}{134}{subsection.4.3.8}%
-\contentsline {section}{\numberline {4.4}Geometric representation of a Coxeter matrix}{135}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Associated form and reflections of a Coxeter matrix}{135}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Contragradient representation}{137}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Irreducibility and finiteness criterion}{139}{subsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.4.4}Coxeter matrices with positive degenerate bilinear form}{141}{subsection.4.4.4}%
-\contentsline {section}{\numberline {4.5}Invariants in the symmetric algebra}{142}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Poincar\'e series of graded algebras}{142}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Invariants of finite linear groups}{144}{subsection.4.5.2}%
-\contentsline {section}{\numberline {4.6}Coxeter transformations for reflection groups}{150}{section.4.6}%
-\contentsline {subsection}{\numberline {4.6.1}Ordered chamber and Coxeter transformations}{150}{subsection.4.6.1}%
-\contentsline {subsection}{\numberline {4.6.2}Eigenvalues of Coxeter transformations}{152}{subsection.4.6.2}%
-\contentsline {chapter}{\numberline {5}Root systems and Weyl groups}{157}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Abstract root systems}{157}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Root systems in a vector space}{157}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Irreducibility of root systems}{160}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Relation between two roots}{162}{subsection.5.1.3}%
-\contentsline {subsection}{\numberline {5.1.4}Chambers and bases}{165}{subsection.5.1.4}%
-\contentsline {subsection}{\numberline {5.1.5}Positive roots}{167}{subsection.5.1.5}%
-\contentsline {subsection}{\numberline {5.1.6}Closed and parabolic subsets}{170}{subsection.5.1.6}%
-\contentsline {subsection}{\numberline {5.1.7}Weights and dominant weights}{175}{subsection.5.1.7}%
-\contentsline {subsection}{\numberline {5.1.8}Coxeter transformation}{181}{subsection.5.1.8}%
-\contentsline {subsection}{\numberline {5.1.9}Exponential invariants}{182}{subsection.5.1.9}%
-\contentsline {section}{\numberline {5.2}Affine Weyl groups}{186}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}The affine Weyl group}{186}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Characterization of Weyl groups}{191}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Classification of root systems}{193}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Finite Coxeter groups}{193}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Dynkin graphs}{197}{subsection.5.3.2}%
-\contentsline {chapter}{\numberline {6}Semi-simple Lie algebras and its representations}{203}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Cartan subalgebras and regular elements}{203}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Root decomposition of representations}{203}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}Cartan subalgebras and regular elements}{211}{subsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.1.3}Conjugacy of Cartan subalgebras}{216}{subsection.6.1.3}%
-\contentsline {section}{\numberline {6.2}Split semi-simple Lie algebras}{220}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}The Lie algebra $\mathfrak {sl}(2,\mathbb {K})$ and its representations}{220}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}Root system of a split semi-simple Lie algebra}{224}{subsection.6.2.2}%
-\contentsline {subsection}{\numberline {6.2.3}Subalgebras invariant under a Cartan subalgebra}{229}{subsection.6.2.3}%
-\contentsline {subsection}{\numberline {6.2.4}Lie algebra defined by a reduced root system}{234}{subsection.6.2.4}%
-\contentsline {subsection}{\numberline {6.2.5}Automorphism of split semi-simple Lie algebras}{241}{subsection.6.2.5}%
-\contentsline {section}{\numberline {6.3}Modules over a split semi-simple Lie algebra}{245}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Weights and primitive elements}{245}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Commutant of $\mathfrak {h}$ in the enveloping algebra}{250}{subsection.6.3.2}%
-\contentsline {subsection}{\numberline {6.3.3}Finite dimensional $\mathfrak {g}$-modules}{251}{subsection.6.3.3}%
-\contentsline {subsection}{\numberline {6.3.4}Tensor product and dual of $\mathfrak {g}$-modules}{257}{subsection.6.3.4}%
-\contentsline {subsection}{\numberline {6.3.5}Representation ring and characters}{259}{subsection.6.3.5}%
-\contentsline {subsection}{\numberline {6.3.6}Symmetric invariants}{262}{subsection.6.3.6}%
-\contentsline {paragraph}{\numberline {6.3.6.1}The exponential of a linear functional}{262}{paragraph.6.3.6.0.1}%
-\contentsline {paragraph}{\numberline {6.3.6.2}Invariant polynomial functions}{264}{paragraph.6.3.6.0.2}%
-\contentsline {paragraph}{\numberline {6.3.6.3}Centre of the universal enveloping algebra}{267}{paragraph.6.3.6.0.3}%
-\contentsline {subsection}{\numberline {6.3.7}Weyl's character formula}{269}{subsection.6.3.7}%
-\contentsline {section}{\numberline {6.4}Classical splittable simple Lie algebras}{274}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}Lie algebras of type $A_l$}{274}{subsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2}Lie algebras of type $B_l$}{274}{subsection.6.4.2}%
-\contentsline {chapter}{\numberline {7}Compact real Lie groups}{279}{chapter.7}%
-\contentsline {subsection}{\numberline {7.0.1}Connected commutative real Lie groups}{279}{subsection.7.0.1}%
-\contentsline {section}{\numberline {7.1}Compact Lie algebras and maximal tori}{280}{section.7.1}%
-\contentsline {subsection}{\numberline {7.1.1}Compact Lie algebras}{280}{subsection.7.1.1}%
-\contentsline {subsection}{\numberline {7.1.2}Maximal tori of compact Lie groups}{283}{subsection.7.1.2}%
-\contentsline {subsection}{\numberline {7.1.3}The Weyl group associated with a maximal torus}{287}{subsection.7.1.3}%
-\contentsline {section}{\numberline {7.2}Compact real forms}{288}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}The real form associated with a Chevalley system}{289}{subsection.7.2.1}%
-\contentsline {subsection}{\numberline {7.2.2}Examples of complex Lie algebras}{291}{subsection.7.2.2}%
-\contentsline {paragraph}{\numberline {7.2.2.1}Compact Lie algebras of type $A_n$}{291}{paragraph.7.2.2.0.1}%
-\contentsline {paragraph}{\numberline {7.2.2.2}Compact Lie algebras of type $B_n$ and $D_n$}{292}{paragraph.7.2.2.0.2}%
-\contentsline {paragraph}{\numberline {7.2.2.3}Compact groups of rank $1$}{292}{paragraph.7.2.2.0.3}%
-\contentsline {section}{\numberline {7.3}Root system associated to a compact Lie group}{293}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}The character group and nodal group}{293}{subsection.7.3.1}%
-\contentsline {subsection}{\numberline {7.3.2}Weight of a representation}{296}{subsection.7.3.2}%
-\contentsline {subsection}{\numberline {7.3.3}Nodal vectors and coroots}{298}{subsection.7.3.3}%
-\contentsline {subsection}{\numberline {7.3.4}Application: the fundamental groups of \boldmath $G$ and \boldmath $H$}{300}{subsection.7.3.4}%
-\contentsline {subsection}{\numberline {7.3.5}Subgroups of maximal rank}{301}{subsection.7.3.5}%
-\contentsline {subsection}{\numberline {7.3.6}Root diagrams}{302}{subsection.7.3.6}%
-\contentsline {subsection}{\numberline {7.3.7}Automorphisms of a connected compact Lie group}{305}{subsection.7.3.7}%
-\contentsline {section}{\numberline {7.4}Conjugacy classes of maximal tori}{306}{section.7.4}%
-\contentsline {chapter}{\numberline {8}The language of schemes}{307}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Affine schemes}{307}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}Sheaves associated with a module}{307}{subsection.8.1.1}%
-\contentsline {subsection}{\numberline {8.1.2}Functorial properties of the associated sheaf}{311}{subsection.8.1.2}%
-\contentsline {subsection}{\numberline {8.1.3}Quasi-coherent sheaves over affine schemes}{314}{subsection.8.1.3}%
-\contentsline {section}{\numberline {8.2}General schemes}{317}{section.8.2}%
-\contentsline {subsection}{\numberline {8.2.1}Schemes and morphisms of schemes}{317}{subsection.8.2.1}%
-\contentsline {subsection}{\numberline {8.2.2}Local schemes}{320}{subsection.8.2.2}%
-\contentsline {subsection}{\numberline {8.2.3}Shemes over a scheme}{321}{subsection.8.2.3}%
-\contentsline {subsection}{\numberline {8.2.4}Quasi-coherent sheaves on schemes}{322}{subsection.8.2.4}%
-\contentsline {subsection}{\numberline {8.2.5}Noetherian schemes and locally Noetherian schemes}{323}{subsection.8.2.5}%
-\contentsline {section}{\numberline {8.3}Product of schemes}{325}{section.8.3}%
-\contentsline {subsection}{\numberline {8.3.1}Product of schemes}{325}{subsection.8.3.1}%
-\contentsline {subsection}{\numberline {8.3.2}Base change of schemes}{327}{subsection.8.3.2}%
-\contentsline {subsection}{\numberline {8.3.3}Tensor product of quasi-coherent sheaves}{330}{subsection.8.3.3}%
-\contentsline {subsection}{\numberline {8.3.4}Scheme valued points}{331}{subsection.8.3.4}%
-\contentsline {subsection}{\numberline {8.3.5}Surjective morphisms}{334}{subsection.8.3.5}%
-\contentsline {subsection}{\numberline {8.3.6}Radical morphisms}{335}{subsection.8.3.6}%
-\contentsline {subsection}{\numberline {8.3.7}Fibers of morphisms}{336}{subsection.8.3.7}%
-\contentsline {subsection}{\numberline {8.3.8}Universally open and closed morphisms}{337}{subsection.8.3.8}%
-\contentsline {section}{\numberline {8.4}Subschemes and immersions}{340}{section.8.4}%
-\contentsline {subsection}{\numberline {8.4.1}Subschemes}{340}{subsection.8.4.1}%
-\contentsline {subsection}{\numberline {8.4.2}Immersions of schemes}{341}{subsection.8.4.2}%
-\contentsline {subsection}{\numberline {8.4.3}Inverse image of subschemes}{343}{subsection.8.4.3}%
-\contentsline {subsection}{\numberline {8.4.4}Local immersions and local isomorphisms}{345}{subsection.8.4.4}%
-\contentsline {subsection}{\numberline {8.4.5}Nilradical and associated reduced scheme}{346}{subsection.8.4.5}%
-\contentsline {subsection}{\numberline {8.4.6}Reduced scheme structure on closed subsets}{350}{subsection.8.4.6}%
-\contentsline {section}{\numberline {8.5}Separated schemes and morphisms}{351}{section.8.5}%
-\contentsline {subsection}{\numberline {8.5.1}Diagonal and graph of a morphism}{351}{subsection.8.5.1}%
-\contentsline {subsection}{\numberline {8.5.2}Separated morphisms and schemes}{355}{subsection.8.5.2}%
-\contentsline {subsection}{\numberline {8.5.3}Criterion of separated morphisms}{356}{subsection.8.5.3}%
-\contentsline {section}{\numberline {8.6}Finiteness conditions for morphisms}{359}{section.8.6}%
-\contentsline {subsection}{\numberline {8.6.1}Quasi-compact and quasi-separated morphisms}{359}{subsection.8.6.1}%
-\contentsline {subsection}{\numberline {8.6.2}Morphisms of finite type and of finite presentation}{364}{subsection.8.6.2}%
-\contentsline {subsection}{\numberline {8.6.3}Algebraic schemes}{369}{subsection.8.6.3}%
-\contentsline {subsection}{\numberline {8.6.4}Local determination of morphisms}{371}{subsection.8.6.4}%
-\contentsline {subsection}{\numberline {8.6.5}Direct image of quasi-coherent sheaves}{373}{subsection.8.6.5}%
-\contentsline {subsection}{\numberline {8.6.6}Extension of quasi-coherent sheaves}{374}{subsection.8.6.6}%
-\contentsline {subsection}{\numberline {8.6.7}Scheme-theoretic image}{375}{subsection.8.6.7}%
-\contentsline {section}{\numberline {8.7}Rational maps over schemes}{376}{section.8.7}%
-\contentsline {subsection}{\numberline {8.7.1}Rational maps and rational functions}{376}{subsection.8.7.1}%
-\contentsline {subsection}{\numberline {8.7.2}Defining domain of a rational map}{378}{subsection.8.7.2}%
-\contentsline {subsection}{\numberline {8.7.3}Sheaf of rational functions}{380}{subsection.8.7.3}%
-\contentsline {subsection}{\numberline {8.7.4}Torsion sheaves and torsion-free sheaves}{381}{subsection.8.7.4}%
-\contentsline {subsection}{\numberline {8.7.5}Separation criterion for integral schemes}{382}{subsection.8.7.5}%
-\contentsline {section}{\numberline {8.8}Formal schemes}{385}{section.8.8}%
-\contentsline {subsection}{\numberline {8.8.1}Formal affine schemes and morphisms}{385}{subsection.8.8.1}%
-\contentsline {subsection}{\numberline {8.8.2}Formal schemes and morphisms}{387}{subsection.8.8.2}%
-\contentsline {subsection}{\numberline {8.8.3}Inductive limits of schemes}{390}{subsection.8.8.3}%
-\contentsline {subsection}{\numberline {8.8.4}Formal completion of schemes}{393}{subsection.8.8.4}%
-\contentsline {subsection}{\numberline {8.8.5}Coherent sheaves over formal schemes}{398}{subsection.8.8.5}%
-\contentsline {chapter}{\numberline {9}Global properties of morphisms of schemes}{403}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Affine morphisms}{403}{section.9.1}%
-\contentsline {subsection}{\numberline {9.1.1}Schemes affine over a scheme}{403}{subsection.9.1.1}%
-\contentsline {subsection}{\numberline {9.1.2}Affine $S$-scheme associated with an $\mathscr {O}_S$-algebra}{405}{subsection.9.1.2}%
-\contentsline {subsection}{\numberline {9.1.3}Quasi-coherent sheaves over affine $S$-schemes}{406}{subsection.9.1.3}%
-\contentsline {subsection}{\numberline {9.1.4}Base change of affine $S$-schemes}{408}{subsection.9.1.4}%
-\contentsline {subsection}{\numberline {9.1.5}Vector bundles}{410}{subsection.9.1.5}%
-\contentsline {section}{\numberline {9.2}Homogeneous specturm of graded algebras}{413}{section.9.2}%
-\contentsline {subsection}{\numberline {9.2.1}Localization of graded rings}{413}{subsection.9.2.1}%
-\contentsline {subsection}{\numberline {9.2.2}The homogeneous specturm of a graded ring}{415}{subsection.9.2.2}%
-\contentsline {subsection}{\numberline {9.2.3}Sheaf associated with a graded module}{418}{subsection.9.2.3}%
-\contentsline {subsection}{\numberline {9.2.4}Graded $S$-module associated with a sheaf}{422}{subsection.9.2.4}%
-\contentsline {subsection}{\numberline {9.2.5}Functorial properties of $\mathrm {Proj}(S)$}{425}{subsection.9.2.5}%
-\contentsline {subsection}{\numberline {9.2.6}Closed subschemes of $\mathrm {Proj}(S)$}{429}{subsection.9.2.6}%
-\contentsline {section}{\numberline {9.3}Homogeneous spectrum of sheaves of graded algebras}{430}{section.9.3}%
-\contentsline {subsection}{\numberline {9.3.1}Homogeneous spectrum of a graded $\mathscr {O}_Y$-algebra}{430}{subsection.9.3.1}%
-\contentsline {subsection}{\numberline {9.3.2}Sheaves associated with a graded $\mathscr {S}$-module}{433}{subsection.9.3.2}%
-\contentsline {subsection}{\numberline {9.3.3}Graded $\mathscr {S}$-module assocaited with a sheaf}{435}{subsection.9.3.3}%
-\contentsline {subsection}{\numberline {9.3.4}Functorial properties of $\mathrm {Proj}(\mathscr {S})$}{438}{subsection.9.3.4}%
-\contentsline {subsection}{\numberline {9.3.5}Closed subschemes of $\mathrm {Proj}(\mathscr {S})$}{440}{subsection.9.3.5}%
-\contentsline {subsection}{\numberline {9.3.6}Morphisms into $\mathrm {Proj}(\mathscr {S})$}{441}{subsection.9.3.6}%
-\contentsline {section}{\numberline {9.4}Projective bundles and ample sheaves}{446}{section.9.4}%
-\contentsline {subsection}{\numberline {9.4.1}Projective bundles}{446}{subsection.9.4.1}%
-\contentsline {subsection}{\numberline {9.4.2}Morphisms into $\mathbb {P}(\mathscr {E})$}{447}{subsection.9.4.2}%
-\contentsline {subsection}{\numberline {9.4.3}The Segre morphism}{449}{subsection.9.4.3}%
-\contentsline {subsection}{\numberline {9.4.4}Very ample sheaves}{451}{subsection.9.4.4}%
-\contentsline {subsection}{\numberline {9.4.5}Ample sheaves}{455}{subsection.9.4.5}%
-\contentsline {subsection}{\numberline {9.4.6}Relatively ample sheaves}{458}{subsection.9.4.6}%
-\contentsline {section}{\numberline {9.5}Projective morphisms and Chow's lemma}{461}{section.9.5}%
-\contentsline {subsection}{\numberline {9.5.1}Quasi-affine morphisms}{461}{subsection.9.5.1}%
-\contentsline {subsection}{\numberline {9.5.2}Serre's criterion on affineness}{463}{subsection.9.5.2}%
-\contentsline {subsection}{\numberline {9.5.3}Quasi-projective morphisms}{465}{subsection.9.5.3}%
-\contentsline {subsection}{\numberline {9.5.4}Universally closed and proper morphisms}{466}{subsection.9.5.4}%
-\contentsline {subsection}{\numberline {9.5.5}Projective morphisms}{468}{subsection.9.5.5}%
-\contentsline {subsection}{\numberline {9.5.6}Chow's lemma}{470}{subsection.9.5.6}%
-\contentsline {section}{\numberline {9.6}Integral morphisms and finite morphisms}{473}{section.9.6}%
-\contentsline {subsection}{\numberline {9.6.1}Integral and finite morphisms}{473}{subsection.9.6.1}%
-\contentsline {subsection}{\numberline {9.6.2}Quasi-finite morphisms}{476}{subsection.9.6.2}%
-\contentsline {subsection}{\numberline {9.6.3}Integral closure of a scheme}{477}{subsection.9.6.3}%
-\contentsline {subsection}{\numberline {9.6.4}Determinant of an endomorphism of $\mathscr {O}_X$-modules}{480}{subsection.9.6.4}%
-\contentsline {subsection}{\numberline {9.6.5}Norm of invertible sheafs}{482}{subsection.9.6.5}%
-\contentsline {subsection}{\numberline {9.6.6}A criterion for ample sheaves}{485}{subsection.9.6.6}%
-\contentsline {subsection}{\numberline {9.6.7}Chevally's theorem}{487}{subsection.9.6.7}%
-\contentsline {section}{\numberline {9.7}Valuative criterion}{488}{section.9.7}%
-\contentsline {subsection}{\numberline {9.7.1}Remainders for valuation rings}{489}{subsection.9.7.1}%
-\contentsline {subsection}{\numberline {9.7.2}Valuative criterion of separation}{490}{subsection.9.7.2}%
-\contentsline {subsection}{\numberline {9.7.3}Valuative criterion of properness}{491}{subsection.9.7.3}%
-\contentsline {subsection}{\numberline {9.7.4}Algebraic curves}{494}{subsection.9.7.4}%
-\contentsline {section}{\numberline {9.8}Blow up of schemes, projective cones and closures}{497}{section.9.8}%
-\contentsline {subsection}{\numberline {9.8.1}Blow up of schemes}{497}{subsection.9.8.1}%
-\contentsline {subsection}{\numberline {9.8.2}Homogenization of graded rings}{501}{subsection.9.8.2}%
-\contentsline {subsection}{\numberline {9.8.3}Projective cones}{505}{subsection.9.8.3}%
-\contentsline {subsection}{\numberline {9.8.4}Functorial properties}{509}{subsection.9.8.4}%
-\contentsline {subsection}{\numberline {9.8.5}Blunt cones over a homogeneous specturm}{511}{subsection.9.8.5}%
-\contentsline {subsection}{\numberline {9.8.6}Blow up of projective cones}{512}{subsection.9.8.6}%
-\contentsline {subsection}{\numberline {9.8.7}Ample sheaves and contractions}{515}{subsection.9.8.7}%
-\contentsline {subsection}{\numberline {9.8.8}Quasi-coherent sheaves over the projective cone}{516}{subsection.9.8.8}%
-\contentsline {chapter}{\numberline {10}Cohomology of coherent sheaves over schemes}{519}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Cohomology of affine schemes}{519}{section.10.1}%
-\contentsline {subsection}{\numberline {10.1.1}\v {C}ech cohomology and Koszul complex}{519}{subsection.10.1.1}%
-\contentsline {subsection}{\numberline {10.1.2}Cohomology of affine schemes}{520}{subsection.10.1.2}%
-\contentsline {subsection}{\numberline {10.1.3}Applications to cohomology of schemes}{521}{subsection.10.1.3}%
-\contentsline {section}{\numberline {10.2}Coholomogical properties of projective morphisms}{525}{section.10.2}%
-\contentsline {subsection}{\numberline {10.2.1}Cohomology associated with an invertible sheaf}{525}{subsection.10.2.1}%
-\contentsline {subsection}{\numberline {10.2.2}The coherence theorem for projective morphisms}{528}{subsection.10.2.2}%
-\contentsline {subsection}{\numberline {10.2.3}Applications to associated sheaves of graded modules}{529}{subsection.10.2.3}%
-\contentsline {subsection}{\numberline {10.2.4}Euler characteristic and Hilbert polynomial}{531}{subsection.10.2.4}%
-\contentsline {subsection}{\numberline {10.2.5}Cohomological criterion for ampleness}{532}{subsection.10.2.5}%
-\contentsline {section}{\numberline {10.3}The finiteness theorem for proper morphisms}{532}{section.10.3}%
-\contentsline {subsection}{\numberline {10.3.1}The d\'evissage lemma}{532}{subsection.10.3.1}%
-\contentsline {subsection}{\numberline {10.3.2}The finiteness theorem for proper morphisms}{533}{subsection.10.3.2}%
-\contentsline {subsection}{\numberline {10.3.3}Generalization to formal schemes}{534}{subsection.10.3.3}%
-\contentsline {section}{\numberline {10.4}Zariski's main theorem and applications}{534}{section.10.4}%
-\contentsline {subsection}{\numberline {10.4.1}Grothendieck's comparison theorem}{534}{subsection.10.4.1}%
-\contentsline {subsection}{\numberline {10.4.2}Zariski's connectedness theorem}{539}{subsection.10.4.2}%
-\contentsline {subsection}{\numberline {10.4.3}Zariski's "Main Theorem"}{541}{subsection.10.4.3}%
-\contentsline {section}{\numberline {10.5}Covariant functors on $\mathbf {Mod}(A)$ and base change}{543}{section.10.5}%
-\contentsline {subsection}{\numberline {10.5.1}Functor on $\mathbf {Mod}(A)$}{543}{subsection.10.5.1}%
-\contentsline {subsection}{\numberline {10.5.2}Characterization of tensor product functor}{544}{subsection.10.5.2}%
-\contentsline {subsection}{\numberline {10.5.3}Exactness of cohomological functors on $\mathbf {Mod}(A)$}{546}{subsection.10.5.3}%
-\contentsline {subsection}{\numberline {10.5.4}Exactness of the fonctor $H^\bullet (P^\bullet \otimes _AM)$}{549}{subsection.10.5.4}%
-\contentsline {subsection}{\numberline {10.5.5}The case of Noetherian local rings}{552}{subsection.10.5.5}%
-\contentsline {subsection}{\numberline {10.5.6}Descent of exactness and the semi-continuity theorem}{553}{subsection.10.5.6}%
-\contentsline {subsection}{\numberline {10.5.7}Application to proper morphisms}{556}{subsection.10.5.7}%
-\contentsline {paragraph}{\numberline {10.5.7.1}The semicontinuity and exchange property}{556}{paragraph.10.5.7.0.1}%
-\contentsline {paragraph}{\numberline {10.5.7.2}Cohomological flatness}{560}{paragraph.10.5.7.0.2}%
-\contentsline {paragraph}{\numberline {10.5.7.3}Invariance of Euler characteristic and Hilbert function}{561}{paragraph.10.5.7.0.3}%
-\contentsline {chapter}{\numberline {11}Local study of schemes and morphisms of schemes}{565}{chapter.11}%
-\contentsline {section}{\numberline {11.1}Unramified morphisms, smooth morphisms and \'etale morphisms}{565}{section.11.1}%
-\contentsline {subsection}{\numberline {11.1.1}Formally unramification and formally smoothness}{565}{subsection.11.1.1}%
-\contentsline {subsection}{\numberline {11.1.2}Differential properties and characterizations}{567}{subsection.11.1.2}%
-\contentsline {subsection}{\numberline {11.1.3}Unramified morphisms and smooth morphisms}{568}{subsection.11.1.3}%
-\contentsline {subsection}{\numberline {11.1.4}Characterization of unramification and smoothness}{570}{subsection.11.1.4}%
-\contentsline {paragraph}{\numberline {11.1.4.1}Characterization of unramified morphisms}{570}{paragraph.11.1.4.0.1}%
-\contentsline {paragraph}{\numberline {11.1.4.2}Characterization of smooth morphisms}{573}{paragraph.11.1.4.0.2}%
-\contentsline {paragraph}{\numberline {11.1.4.3}Characterization of \'etale morphisms}{575}{paragraph.11.1.4.0.3}%
-\contentsline {section}{\numberline {11.2}Galois categories}{576}{section.11.2}%
-\contentsline {subsection}{\numberline {11.2.1}The axioms of Galois theory}{576}{subsection.11.2.1}%
-\contentsline {section}{\numberline {11.3}The \'etale fundamental group}{576}{section.11.3}%
-\contentsline {subsection}{\numberline {11.3.1}Finite group quotients of schemes}{576}{subsection.11.3.1}%
-\contentsline {subsection}{\numberline {11.3.2}Decomposition groups and inertia groups}{578}{subsection.11.3.2}%
-\contentsline {subsection}{\numberline {11.3.3}The Galois category $\textup {\textbf {F\'Et}}_S$}{579}{subsection.11.3.3}%
-\contentsline {chapter}{\numberline {12}Group schemes}{583}{chapter.12}%
-\contentsline {section}{\numberline {12.1}Algebraic structures}{583}{section.12.1}%
-\contentsline {subsection}{\numberline {12.1.1}Algebraic structures on the category of presheaves}{583}{subsection.12.1.1}%
-\contentsline {paragraph}{\numberline {12.1.1.1}Group objects in $\setbox \z@ \hbox {\mathsurround \z@ $\textstyle \mathcal {C}$}\mathaccent "0362{\mathcal {C}}$}{583}{paragraph.12.1.1.0.1}%
-\contentsline {paragraph}{\numberline {12.1.1.2}Group action in $\setbox \z@ \hbox {\mathsurround \z@ $\textstyle \mathcal {C}$}\mathaccent "0362{\mathcal {C}}$}{584}{paragraph.12.1.1.0.2}%
-\contentsline {subsection}{\numberline {12.1.2}Algebraic structures on the category of schemes}{587}{subsection.12.1.2}%
-\contentsline {paragraph}{\numberline {12.1.2.1}Constant schemes}{587}{paragraph.12.1.2.0.1}%
-\contentsline {paragraph}{\numberline {12.1.2.2}Affine $S$-groups}{587}{paragraph.12.1.2.0.2}%
-\contentsline {paragraph}{\numberline {12.1.2.3}The groups $\mathbb {G}_a$ and $\mathbb {G}_m$}{588}{paragraph.12.1.2.0.3}%
-\contentsline {paragraph}{\numberline {12.1.2.4}Diagonalizable groups}{589}{paragraph.12.1.2.0.4}%
-\contentsline {paragraph}{\numberline {12.1.2.5}Module functors in the category of schemes}{590}{paragraph.12.1.2.0.5}%
-\contentsline {paragraph}{\numberline {12.1.2.6}The category of $\mathscr {O}_S[G]$-modules}{592}{paragraph.12.1.2.0.6}%
-\contentsline {subsection}{\numberline {12.1.3}Cohomology of groups}{594}{subsection.12.1.3}%
-\contentsline {paragraph}{\numberline {12.1.3.1}The standard complex}{594}{paragraph.12.1.3.0.1}%
-\contentsline {paragraph}{\numberline {12.1.3.2}Cohomology of $\mathscr {O}_S[G]$-modules}{597}{paragraph.12.1.3.0.2}%
-\contentsline {subsection}{\numberline {12.1.4}$G$-equivariant objects and modules}{599}{subsection.12.1.4}%
-\contentsline {section}{\numberline {12.2}Tangent spaces and Lie algebras}{600}{section.12.2}%
-\contentsline {subsection}{\numberline {12.2.1}The tangent bundle and tangent space}{600}{subsection.12.2.1}%
-\contentsline {paragraph}{\numberline {12.2.1.1}The functor $\sHom _{Z/S}(X,Y)$}{600}{paragraph.12.2.1.0.1}%
-\contentsline {paragraph}{\numberline {12.2.1.2}The restriction functor $\mathrm {Res}_{Z/S}Y$}{601}{paragraph.12.2.1.0.2}%
-\contentsline {paragraph}{\numberline {12.2.1.3}The scheme $I_S(\mathscr {M})$}{602}{paragraph.12.2.1.0.3}%
-\contentsline {paragraph}{\numberline {12.2.1.4}The tangent bundle and condition (E)}{603}{paragraph.12.2.1.0.4}%
-\contentsline {subsection}{\numberline {12.2.2}Tangent space of a group}{613}{subsection.12.2.2}%
-\contentsline {subsection}{\numberline {12.2.3}Calculation of some Lie algebras}{625}{subsection.12.2.3}%
-\contentsline {paragraph}{\numberline {12.2.3.1}Lie algebras of diagonalizable groups}{625}{paragraph.12.2.3.0.1}%
-\contentsline {paragraph}{\numberline {12.2.3.2}Inverse system of group schemes}{625}{paragraph.12.2.3.0.2}%
-\contentsline {paragraph}{\numberline {12.2.3.3}Normalizers and centralizers}{626}{paragraph.12.2.3.0.3}%
-\contentsline {section}{\numberline {12.3}Equivalence relations and passing to quotient}{629}{section.12.3}%
-\contentsline {subsection}{\numberline {12.3.1}Universally effective equivalence relations}{629}{subsection.12.3.1}%
-\contentsline {paragraph}{\numberline {12.3.1.1}Equivalence relations}{629}{paragraph.12.3.1.0.1}%
-\contentsline {paragraph}{\numberline {12.3.1.2}Equivalence relation defiend by a free group action}{630}{paragraph.12.3.1.0.2}%
-\contentsline {paragraph}{\numberline {12.3.1.3}Universally effective equivalence relations}{632}{paragraph.12.3.1.0.3}%
-\contentsline {paragraph}{\numberline {12.3.1.4}Construction of quotients by descent}{634}{paragraph.12.3.1.0.4}%
-\contentsline {subsection}{\numberline {12.3.2}Equivalence relations in the category of sheaves}{635}{subsection.12.3.2}%
-\contentsline {paragraph}{\numberline {12.3.2.1}Equivalence relations in $\setbox \z@ \hbox {\mathsurround \z@ $\textstyle \mathcal {C}$}\mathaccent "0365{\mathcal {C}}$}{635}{paragraph.12.3.2.0.1}%
-\contentsline {paragraph}{\numberline {12.3.2.2}Description of the quotient of a sheaf by an equivalence relation}{636}{paragraph.12.3.2.0.2}%
-\contentsline {subsection}{\numberline {12.3.3}Passage to quotient and algebraic structures}{641}{subsection.12.3.3}%
-\contentsline {paragraph}{\numberline {12.3.3.1}Principal homogeneous bundles}{641}{paragraph.12.3.3.0.1}%
-\contentsline {paragraph}{\numberline {12.3.3.2}Group structure and passage to quotient}{642}{paragraph.12.3.3.0.2}%
-\contentsline {subsection}{\numberline {12.3.4}Applications to the category of schemes}{645}{subsection.12.3.4}%
-\contentsline {paragraph}{\numberline {12.3.4.1}Homogeneous spaces}{650}{paragraph.12.3.4.0.1}%
-\contentsline {section}{\numberline {12.4}Construction of quotient schemes}{651}{section.12.4}%
-\contentsline {subsection}{\numberline {12.4.1}$\mathcal {C}$-groupoids}{651}{subsection.12.4.1}%
-\contentsline {subsection}{\numberline {12.4.2}Quotient for a finite locally free groupoid}{657}{subsection.12.4.2}%
-\contentsline {paragraph}{\numberline {12.4.2.1}Quotient by a finite and locally free groupoid (affine case)}{658}{paragraph.12.4.2.0.1}%
-\contentsline {paragraph}{\numberline {12.4.2.2}Quotient by a finite and locally free groupoid (general case)}{660}{paragraph.12.4.2.0.2}%
-\contentsline {subsection}{\numberline {12.4.3}Quasi-sections for a groupoid}{661}{subsection.12.4.3}%
-\contentsline {subsection}{\numberline {12.4.4}Quotient for a flat proper groupoid}{664}{subsection.12.4.4}%
-\contentsline {subsection}{\numberline {12.4.5}Quotient by a group scheme}{664}{subsection.12.4.5}%
-\contentsline {section}{\numberline {12.5}Generalities on algebraic groups}{666}{section.12.5}%
-\contentsline {subsection}{\numberline {12.5.1}Some preliminary remarks}{666}{subsection.12.5.1}%
-\contentsline {subsection}{\numberline {12.5.2}Local properties for algebraic groups}{667}{subsection.12.5.2}%
-\contentsline {subsection}{\numberline {12.5.3}Connected components}{669}{subsection.12.5.3}%
-\contentsline {subsection}{\numberline {12.5.4}Morphisms of algebraic groups}{674}{subsection.12.5.4}%
-\contentsline {subsection}{\numberline {12.5.5}Construction of the quotient $F\backslash G$}{677}{subsection.12.5.5}%
-\contentsline {paragraph}{\numberline {12.5.5.1}Passage to the quotient $F\backslash G$ (case where $F$ and $G$ are of finite type over $A$)}{678}{paragraph.12.5.5.0.1}%
-\contentsline {paragraph}{\numberline {12.5.5.2}Passage to the quotient $F\backslash G$ (general case)}{680}{paragraph.12.5.5.0.2}%
-\contentsline {paragraph}{\numberline {12.5.5.3}Connections with \autoref {category equivalence relation and quotient section} and consequences}{683}{paragraph.12.5.5.0.3}%
-\contentsline {paragraph}{\numberline {12.5.5.4}Factorization for a quasi-compact group homomorphism}{683}{paragraph.12.5.5.0.4}%
-\contentsline {paragraph}{\numberline {12.5.5.5}Complements on the identity component}{684}{paragraph.12.5.5.0.5}%
-\contentsline {paragraph}{\numberline {12.5.5.6}The quotient $G_\mathrm {red}\backslash G$}{685}{paragraph.12.5.5.0.6}%
-\contentsline {paragraph}{\numberline {12.5.5.7}Complements on $k$-groups not necessarily of finite type}{686}{paragraph.12.5.5.0.7}%
-\contentsline {section}{\numberline {12.6}Generalities on group schemes}{687}{section.12.6}%
-\contentsline {subsection}{\numberline {12.6.1}Open properties for group morphisms}{687}{subsection.12.6.1}%
-\contentsline {subsection}{\numberline {12.6.2}Identity component of a group scheme}{691}{subsection.12.6.2}%
-\contentsline {subsection}{\numberline {12.6.3}Dimension of fibers}{694}{subsection.12.6.3}%
-\contentsline {subsection}{\numberline {12.6.4}Separation of groups and homogeneous spaces}{695}{subsection.12.6.4}%
-\contentsline {subsection}{\numberline {12.6.5}Representability of sub-functors in groups}{696}{subsection.12.6.5}%
-\contentsline {subsection}{\numberline {12.6.6}Sheaf quotients}{700}{subsection.12.6.6}%
-\contentsline {subsection}{\numberline {12.6.7}Affine group schemes}{701}{subsection.12.6.7}%
-\contentsline {section}{\numberline {12.7}Diagonalizable groups}{701}{section.12.7}%
-\contentsline {subsection}{\numberline {12.7.1}Duality for group schemes}{701}{subsection.12.7.1}%
-\contentsline {subsection}{\numberline {12.7.2}Scheme-theoretic properties}{705}{subsection.12.7.2}%
-\contentsline {subsection}{\numberline {12.7.3}Torsors under a diagonalizable group}{707}{subsection.12.7.3}%
-\contentsline {subsection}{\numberline {12.7.4}Quotient by diagonalizable groups}{709}{subsection.12.7.4}%
-\contentsline {section}{\numberline {12.8}Group schemes of multiplicative type}{711}{section.12.8}%
-\contentsline {subsection}{\numberline {12.8.1}Extension of cartain properties to groups of multiplicative type}{712}{subsection.12.8.1}%
-\contentsline {subsection}{\numberline {12.8.2}Infinitesimal properties: lifting and conjugation}{715}{subsection.12.8.2}%
-\contentsline {subsection}{\numberline {12.8.3}The density theorem of torsion subgroups}{716}{subsection.12.8.3}%
-\contentsline {subsection}{\numberline {12.8.4}Central homomorphisms of groups of multiplicative type}{718}{subsection.12.8.4}%
-\contentsline {subsection}{\numberline {12.8.5}Canonical factorization of morphisms from groups of multiplicative type}{720}{subsection.12.8.5}%
-\contentsline {subsection}{\numberline {12.8.6}Algebricity of formal homomorphisms}{722}{subsection.12.8.6}%
-\contentsline {subsection}{\numberline {12.8.7}Groups of multiplicative type over a field}{723}{subsection.12.8.7}%
-\contentsline {section}{\numberline {12.9}Characterization and classification of groups of multiplicative type}{724}{section.12.9}%
-\contentsline {subsection}{\numberline {12.9.1}Classification of isotrivial groups of multiplicative type}{724}{subsection.12.9.1}%
-\contentsline {subsection}{\numberline {12.9.2}Variations of the infinitesimal structure}{726}{subsection.12.9.2}%
-\contentsline {subsection}{\numberline {12.9.3}Variations of finite structure and the quasi-isotrivial theorem}{729}{subsection.12.9.3}%
-\contentsline {paragraph}{\numberline {12.9.3.1}Variations of finite structure: case of complete base}{729}{paragraph.12.9.3.0.1}%
-\contentsline {paragraph}{\numberline {12.9.3.2}Case of arbitrary base. Theorem of quasi-isotrivial}{731}{paragraph.12.9.3.0.2}%
-\contentsline {subsection}{\numberline {12.9.4}Twisted constant groups}{734}{subsection.12.9.4}%
-\contentsline {subsection}{\numberline {12.9.5}Principal Galois bundles and enlarged fundamental group}{737}{subsection.12.9.5}%
-\contentsline {section}{\numberline {12.10}Criterion of representability and applications to subgroups of multiplicative type}{740}{section.12.10}%
-\contentsline {subsection}{\numberline {12.10.1}Formally smooth functors}{740}{subsection.12.10.1}%
-\contentsline {subsection}{\numberline {12.10.2}Auxiliary results on representability}{742}{subsection.12.10.2}%
-\contentsline {subsection}{\numberline {12.10.3}The functor of subgroups of multiplicative type}{745}{subsection.12.10.3}%
-\contentsline {section}{\numberline {12.11}Maximal tori, Weyl group, Cartan subgroups and reductive center of affine smooth group schemes}{748}{section.12.11}%
-\contentsline {subsection}{\numberline {12.11.1}Maximal tori, Cartan subgroups and Weyl group}{748}{subsection.12.11.1}%
-\contentsline {paragraph}{\numberline {12.11.1.1}Maximal tori}{748}{paragraph.12.11.1.0.1}%
-\contentsline {paragraph}{\numberline {12.11.1.2}The Weyl group}{753}{paragraph.12.11.1.0.2}%
-\contentsline {paragraph}{\numberline {12.11.1.3}Cartan subgroups}{754}{paragraph.12.11.1.0.3}%
-\contentsline {subsection}{\numberline {12.11.2}The reductive center}{755}{subsection.12.11.2}%
-\contentsline {paragraph}{\numberline {12.11.2.1}Application to subgroups of multiplicative type}{758}{paragraph.12.11.2.0.1}%
-\contentsline {section}{\numberline {12.12}Regular elements of algebraic groups and Lie algebras}{759}{section.12.12}%
-\contentsline {subsection}{\numberline {12.12.1}An auxilary lemma for schemes with operators}{759}{subsection.12.12.1}%
-\contentsline {subsection}{\numberline {12.12.2}Regular elements of algebraic groups and density theorem}{761}{subsection.12.12.2}%
-\contentsline {paragraph}{\numberline {12.12.2.1}The case of an algebraic group over a field}{761}{paragraph.12.12.2.0.1}%
-\contentsline {paragraph}{\numberline {12.12.2.2}The case of a group over arbitrary base}{768}{paragraph.12.12.2.0.2}%
-\contentsline {subsection}{\numberline {12.12.3}Cartan subalgebras and regular elements of Lie algebras}{770}{subsection.12.12.3}%
+\contentsline {chapter}{\numberline {1}Lie algebras}{7}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Definition of Lie algebras}{7}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Algebras and Lie algebras}{7}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Ideals of Lie algebras}{11}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Extensions of Lie algebras}{11}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.4}Semi-direct product of Lie algebras}{12}{subsection.1.1.4}%
+\contentsline {subsection}{\numberline {1.1.5}Extension of scalars}{14}{subsection.1.1.5}%
+\contentsline {section}{\numberline {1.2}Enveloping algebra of a Lie algebra}{15}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}The enveloping algebra}{15}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Enveloping algebra of the opposite Lie algebra}{16}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Enveloping algebra of product of algebras}{16}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Extension of scalars}{17}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.5}Filtration on the enveloping algebra}{17}{subsection.1.2.5}%
+\contentsline {subsection}{\numberline {1.2.6}The Poincar\'e-Birkhoff-Witt theorem}{18}{subsection.1.2.6}%
+\contentsline {subsection}{\numberline {1.2.7}Enveloping algebra of subalgebras and quotients}{21}{subsection.1.2.7}%
+\contentsline {subsection}{\numberline {1.2.8}Extension by derivations}{22}{subsection.1.2.8}%
+\contentsline {section}{\numberline {1.3}Representations of Lie algebras}{23}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Representations}{23}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Tensor product of $\mathfrak {g}$-modules}{24}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Representation on homomorphism modules}{25}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}Invariant elements and bilinear forms}{27}{subsection.1.3.4}%
+\contentsline {subsection}{\numberline {1.3.5}Casimir element}{29}{subsection.1.3.5}%
+\contentsline {subsection}{\numberline {1.3.6}Extension of scalars}{30}{subsection.1.3.6}%
+\contentsline {section}{\numberline {1.4}Nilpotent Lie algebras}{31}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Central series and nilpotent Lie algebras}{31}{subsection.1.4.1}%
+\contentsline {paragraph}{\numberline {1.4.1.1}Lower central series and upper central series}{31}{paragraph.1.4.1.0.1}%
+\contentsline {subsection}{\numberline {1.4.2}Engel's theorem}{33}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}The largest nilpotency ideal of a representation}{34}{subsection.1.4.3}%
+\contentsline {section}{\numberline {1.5}Solvable Lie algebras}{35}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Solvable Lie algebras}{36}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Nilpotent radical of a Lie algebra}{37}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.5.3}Cartan's criterion for solvability}{39}{subsection.1.5.3}%
+\contentsline {subsection}{\numberline {1.5.4}Properties of the radical ideal}{39}{subsection.1.5.4}%
+\contentsline {section}{\numberline {1.6}Semi-simple Lie algebras}{40}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}Semi-simple Lie algebras}{40}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}Semi-simplicity of representations}{42}{subsection.1.6.2}%
+\contentsline {subsection}{\numberline {1.6.3}Jordan decomposition}{43}{subsection.1.6.3}%
+\contentsline {subsection}{\numberline {1.6.4}Reductive Lie algebras}{44}{subsection.1.6.4}%
+\contentsline {subsection}{\numberline {1.6.5}The Levi-Malcev theorem}{48}{subsection.1.6.5}%
+\contentsline {subsection}{\numberline {1.6.6}The invariant theorem}{51}{subsection.1.6.6}%
+\contentsline {subsection}{\numberline {1.6.7}Extension of scalars}{51}{subsection.1.6.7}%
+\contentsline {section}{\numberline {1.7}Ado's theorem}{52}{section.1.7}%
+\contentsline {subsection}{\numberline {1.7.1}Coefficients of a representation}{52}{subsection.1.7.1}%
+\contentsline {subsection}{\numberline {1.7.2}The extension theorem}{52}{subsection.1.7.2}%
+\contentsline {subsection}{\numberline {1.7.3}Ado's theorem}{53}{subsection.1.7.3}%
+\contentsline {chapter}{\numberline {2}Free Lie algebras}{55}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Enveloping bigebra of a Lie algebra}{55}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Primitive elements}{55}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Enveloping bigebra of a Lie algebra}{58}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Structure of the cogebra \boldmath $U(\mathfrak {g})$ in characteristic zero}{59}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}Free Lie algebra over a set \boldmath $X$}{62}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}The free Lie algebra \boldmath $L(X)$}{62}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Graduation of the free Lie algebra}{65}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Elimination theorem}{67}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Bases for the free Lie algebra}{69}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Subalgebras of the free Lie algebra}{71}{subsection.2.2.5}%
+\contentsline {section}{\numberline {2.3}Enveloping algebra of the free Lie algebra}{73}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}The enveloping algebra of $\bm {L(X)}$}{73}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Projection of \boldmath $A^+(X)$ onto \boldmath $L(X)$}{74}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Dimension of the homogeneous components}{75}{subsection.2.3.3}%
+\contentsline {section}{\numberline {2.4}Central filtrations}{77}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Real filtrations and order functions}{77}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Central filtrations on a group}{78}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Integral central filtrations}{80}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}Magnus algebras}{81}{subsection.2.4.4}%
+\contentsline {subsection}{\numberline {2.4.5}Magnus group}{82}{subsection.2.4.5}%
+\contentsline {section}{\numberline {2.5}The Hausdorff series}{84}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Exponential and logarithm in filtered algebras}{84}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}The Hausdorff series}{87}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}Convergence of the Hausdorff series}{90}{subsection.2.5.3}%
+\contentsline {paragraph}{\numberline {2.5.3.1}Real or complex case}{90}{paragraph.2.5.3.0.1}%
+\contentsline {paragraph}{\numberline {2.5.3.2}Ultrametric case}{93}{paragraph.2.5.3.0.2}%
+\contentsline {chapter}{\numberline {3}Coxeter systems and tits systems}{97}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Coxeter systems}{97}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Length and reduced decompositions}{97}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Coxeter systems and Coxeter groups}{98}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Reduced decompositions for a Coxeter system}{100}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Characterization of Coxeter systems}{103}{subsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.1.5}Coxeter system defined by partitions}{105}{subsection.3.1.5}%
+\contentsline {subsection}{\numberline {3.1.6}Subgroups of a Coxeter group}{106}{subsection.3.1.6}%
+\contentsline {section}{\numberline {3.2}Tits systems}{107}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Tits systems and Bruhat decompositions}{107}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Relation with Coxeter systems}{109}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Parabolic subgroups in a Tits system}{110}{subsection.3.2.3}%
+\contentsline {chapter}{\numberline {4}Groups generated by reflections}{113}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Hyperplanes, chambers and facets}{113}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Facets and chambers}{113}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Walls and faces}{116}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Intersection hyperplanes}{117}{subsection.4.1.3}%
+\contentsline {section}{\numberline {4.2}Reflections over a vector space}{117}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Pseudo-reflections and reflections}{118}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Orthogonal reflections in a Euclidean affine space}{119}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Complements on plane rotations}{121}{subsection.4.2.3}%
+\contentsline {section}{\numberline {4.3}Reflection group over affine spaces}{122}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}The associated Coxeter system}{122}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Fundamental domain and stabilisers}{123}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Coexter matrix and Coxeter graph of reflection groups}{125}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Systems of obtuse vectors}{126}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}Finiteness theorems}{127}{subsection.4.3.5}%
+\contentsline {subsection}{\numberline {4.3.6}Representation of the Weyl group on the underlying space}{128}{subsection.4.3.6}%
+\contentsline {subsection}{\numberline {4.3.7}Structure of chambers}{130}{subsection.4.3.7}%
+\contentsline {subsection}{\numberline {4.3.8}Special points}{132}{subsection.4.3.8}%
+\contentsline {section}{\numberline {4.4}Geometric representation of a Coxeter matrix}{133}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Associated form and reflections of a Coxeter matrix}{133}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Contragradient representation}{135}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Irreducibility and finiteness criterion}{137}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}Coxeter matrices with positive degenerate bilinear form}{139}{subsection.4.4.4}%
+\contentsline {section}{\numberline {4.5}Invariants in the symmetric algebra}{140}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Poincar\'e series of graded algebras}{140}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Invariants of finite linear groups}{142}{subsection.4.5.2}%
+\contentsline {section}{\numberline {4.6}Coxeter transformations for reflection groups}{148}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Ordered chamber and Coxeter transformations}{148}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Eigenvalues of Coxeter transformations}{150}{subsection.4.6.2}%
+\contentsline {chapter}{\numberline {5}Root systems and Weyl groups}{155}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Abstract root systems}{155}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Root systems in a vector space}{155}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Irreducibility of root systems}{158}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Relation between two roots}{160}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Chambers and bases}{163}{subsection.5.1.4}%
+\contentsline {subsection}{\numberline {5.1.5}Positive roots}{165}{subsection.5.1.5}%
+\contentsline {subsection}{\numberline {5.1.6}Closed and parabolic subsets}{168}{subsection.5.1.6}%
+\contentsline {subsection}{\numberline {5.1.7}Weights and dominant weights}{174}{subsection.5.1.7}%
+\contentsline {subsection}{\numberline {5.1.8}Coxeter transformation}{179}{subsection.5.1.8}%
+\contentsline {subsection}{\numberline {5.1.9}Exponential invariants}{181}{subsection.5.1.9}%
+\contentsline {section}{\numberline {5.2}Affine Weyl groups}{185}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}The affine Weyl group}{185}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Characterization of Weyl groups}{190}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Classification of root systems}{192}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Finite Coxeter groups}{192}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Dynkin graphs}{196}{subsection.5.3.2}%
+\contentsline {chapter}{\numberline {6}Semi-simple Lie algebras and its representations}{201}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Cartan subalgebras and regular elements}{201}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Root decomposition of representations}{201}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Cartan subalgebras and regular elements}{209}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Conjugacy of Cartan subalgebras}{214}{subsection.6.1.3}%
+\contentsline {section}{\numberline {6.2}Split semi-simple Lie algebras}{218}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}The Lie algebra $\mathfrak {sl}(2,\mathbb {K})$ and its representations}{218}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Root system of a split semi-simple Lie algebra}{222}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}Subalgebras invariant under a Cartan subalgebra}{227}{subsection.6.2.3}%
+\contentsline {subsection}{\numberline {6.2.4}Lie algebra defined by a reduced root system}{232}{subsection.6.2.4}%
+\contentsline {subsection}{\numberline {6.2.5}Automorphism of split semi-simple Lie algebras}{239}{subsection.6.2.5}%
+\contentsline {section}{\numberline {6.3}Modules over a split semi-simple Lie algebra}{243}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Weights and primitive elements}{243}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Commutant of $\mathfrak {h}$ in the enveloping algebra}{248}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Finite dimensional $\mathfrak {g}$-modules}{249}{subsection.6.3.3}%
+\contentsline {subsection}{\numberline {6.3.4}Tensor product and dual of $\mathfrak {g}$-modules}{255}{subsection.6.3.4}%
+\contentsline {subsection}{\numberline {6.3.5}Representation ring and characters}{257}{subsection.6.3.5}%
+\contentsline {subsection}{\numberline {6.3.6}Symmetric invariants}{260}{subsection.6.3.6}%
+\contentsline {paragraph}{\numberline {6.3.6.1}The exponential of a linear functional}{260}{paragraph.6.3.6.0.1}%
+\contentsline {paragraph}{\numberline {6.3.6.2}Invariant polynomial functions}{262}{paragraph.6.3.6.0.2}%
+\contentsline {paragraph}{\numberline {6.3.6.3}Centre of the universal enveloping algebra}{265}{paragraph.6.3.6.0.3}%
+\contentsline {subsection}{\numberline {6.3.7}Weyl's character formula}{267}{subsection.6.3.7}%
+\contentsline {section}{\numberline {6.4}Classical splittable simple Lie algebras}{272}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Lie algebras of type $A_l$}{272}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Lie algebras of type $B_l$}{272}{subsection.6.4.2}%
+\contentsline {chapter}{\numberline {7}Compact real Lie groups}{277}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Compact Lie algebras and maximal tori}{278}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Compact Lie algebras}{278}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Maximal tori of compact Lie groups}{281}{subsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.1.3}The Weyl group associated with a maximal torus}{285}{subsection.7.1.3}%
+\contentsline {section}{\numberline {7.2}Compact real forms}{287}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}The real form associated with a Chevalley system}{287}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Examples of complex Lie algebras}{290}{subsection.7.2.2}%
+\contentsline {paragraph}{\numberline {7.2.2.1}Compact Lie algebras of type $A_n$}{290}{paragraph.7.2.2.0.1}%
+\contentsline {paragraph}{\numberline {7.2.2.2}Compact Lie algebras of type $B_n$ and $D_n$}{290}{paragraph.7.2.2.0.2}%
+\contentsline {paragraph}{\numberline {7.2.2.3}Compact groups of rank $1$}{290}{paragraph.7.2.2.0.3}%
+\contentsline {section}{\numberline {7.3}Root system associated to a compact Lie group}{291}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}The character group and nodal group}{292}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Weight of a linear representation}{294}{subsection.7.3.2}%
+\contentsline {subsection}{\numberline {7.3.3}Nodal vectors and coroots}{296}{subsection.7.3.3}%
+\contentsline {subsection}{\numberline {7.3.4}Application to fundamental groups}{299}{subsection.7.3.4}%
+\contentsline {subsection}{\numberline {7.3.5}Subgroups of maximal rank}{300}{subsection.7.3.5}%
+\contentsline {subsection}{\numberline {7.3.6}Root diagrams}{301}{subsection.7.3.6}%
+\contentsline {paragraph}{\numberline {7.3.6.1}Definitions and elementary properties}{301}{paragraph.7.3.6.0.1}%
+\contentsline {paragraph}{\numberline {7.3.6.2}Root diagrams of compact Lie groups}{302}{paragraph.7.3.6.0.2}%
+\contentsline {subsection}{\numberline {7.3.7}Automorphisms of a connected compact Lie group}{304}{subsection.7.3.7}%
+\contentsline {section}{\numberline {7.4}Conjugacy classes of maximal tori}{305}{section.7.4}%
 \contentsfinish 

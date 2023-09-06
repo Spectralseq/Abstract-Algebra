@@ -76,6 +76,11 @@ root-radius=.06cm]{dynkin-diagrams}
   <-> s*[1]  BOONDOX-r-frak}{}
 %\DeclareMathAlphabet{\mathfrak}{U}{BOONDOX-frak}{m}{n}
 
+%----------------------------------------------------
+%设置目录中number和文字的间距
+\usepackage{tocloft}
+\setlength{\cftsecnumwidth}{25pt} % resets space for section number (usually 2.3em)
+\setlength{\cftsubsecnumwidth}{35pt} % resets space for subsection number (usually 3.2em)
 
 %-----------------------------------------------------
 %设置页面样式
@@ -174,6 +179,7 @@ root-radius=.06cm]{dynkin-diagrams}
 \def\T{\mathbb{T}}
 \def\H{\mathbb{H}}
 \def\V{\mathbb{V}}
+\def\W{\mathbb{W}}
 \def\RP{\mathbb{RP}}
 \def\CP{\mathbb{CP}}
 \def\P{\mathbb{P}}
@@ -217,13 +223,7 @@ root-radius=.06cm]{dynkin-diagrams}
 \def\su{\mathfrak{su}}
 \def\Lie{\mathfrak{Lie}}
 \def\nil{\mathfrak{nil}}
-\def\rad{\mathfrak{rad}}
 \def\eff{\mathfrak{eff}}
-\def\ho{\mathrm{h}}
-\def\Ch{\mathrm{Ch}}
-\def\Lan{\mathrm{Lan}}
-\def\Ran{\mathrm{Ran}}
-\def\Qis{\mathrm{Qis}}
 %-----------------------------
 
 
@@ -280,6 +280,7 @@ root-radius=.06cm]{dynkin-diagrams}
 \def\Gal{\mathrm{Gal}}
 \def\Inv{\mathrm{Inv}}
 \def\Inn{\mathrm{Inn}}
+\def\inn{\mathrm{inn}}
 \def\Ann{\mathrm{Ann}}
 \def\Ass{\mathrm{Ass}}
 \def\Spec{\mathrm{Spec}}
@@ -350,6 +351,15 @@ root-radius=.06cm]{dynkin-diagrams}
 \def\Centr{\mathrm{Centr}}
 \def\Card{\mathrm{Card}}
 \def\pro{\mathrm{pro}}
+\def\cd{\mathrm{cd}}
+\def\aff{\mathrm{aff}}
+\def\ho{\mathrm{h}}
+\def\Ch{\mathrm{Ch}}
+\def\Lan{\mathrm{Lan}}
+\def\Ran{\mathrm{Ran}}
+\def\Qis{\mathrm{Qis}}
+\def\rad{\mathrm{rad}}
+
 %-----------------------------
 
 %-----------------------------mathbf定义
@@ -390,7 +400,8 @@ root-radius=.06cm]{dynkin-diagrams}
 \def\sub{\subseteq}
 \def\sups{\supseteq}
 \def\emp{\varnothing}
-\def\dcheck{\check{ }\hspace{4pt}\check{}}
+\def\dcheck{\check{}\hspace{4pt}\check{}}
+\def\rcheck{\hspace*{1pt}\widecheck{}}
 \def\eps{\varepsilon}
 \def\llim{\varprojlim}
 \def\rlim{\varinjlim}
@@ -414,6 +425,7 @@ root-radius=.06cm]{dynkin-diagrams}
 \DeclareMathOperator{\sDiff}{\mathcal{D}\hspace*{-0.2pt}\textit{iff}\hspace{0.5pt}}
 \DeclareMathOperator{\sProj}{\mathscr{P}\hspace*{-0.5pt}\textit{roj}}
 \DeclareMathOperator{\sLie}{\mathscr{L}\hspace*{-0.5pt}\textit{ie}}
+\DeclareMathOperator{\sGr}{\mathscr{G}\hspace*{-0.5pt}\textit{r}}
 %------------------------------
 
 
@@ -580,3 +592,13 @@ root-radius=.06cm]{dynkin-diagrams}
 }
 %--------------------------------------------------------------
 
+%--------------------------------------------------------------
+%define double langle and rangle
+\makeatletter
+\newsavebox{\@brx}
+\newcommand{\llangle}[1][]{\savebox{\@brx}{\(\m@th{#1\langle}\)}%
+  \mathopen{\copy\@brx\mkern2mu\kern-0.9\wd\@brx\usebox{\@brx}}}
+\newcommand{\rrangle}[1][]{\savebox{\@brx}{\(\m@th{#1\rangle}\)}%
+  \mathclose{\copy\@brx\mkern2mu\kern-0.9\wd\@brx\usebox{\@brx}}}
+\makeatother
+%--------------------------------------------------------------

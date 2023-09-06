@@ -3450,7 +3450,7 @@ In the special case where $A=B$ and $f$ is the identity map we shall write $P(b_
 
 Now we turn to the most important application of restricted power series in this part. In a topological ring $A$, an element $x$ is called \textbf{topologically nilpotent} if $0$ is a limit of the sequence $(x^n)$. If $A$ is a linearly topologized ring, to say that $x$ is topologically nilpotent means that for every open ideal $\a$ of $A$ the canonical image of $x$ in $A/\a$ is a nilpotent element of that ring. If $\r_\a$ is the nilradical of $A/\a$, clearly $(\r_\a)$ is an inverse system of subsets and the set $\t$ of topological nilpotent elements of $A$ is the inverse image of $\llim\nolimits_\a \r_\a$ under the canonical homomorphism $A\to\llim A/\a$; it is therefore a closed ideal of $A$. If also $A$ is Hausdorff and complete, this ideal is contained in the Jacobson radical of $A$ and, for an element $x\in A$ to be invertible, it is necessary and sufficient that its class mod $\t$ be invertible in $A/\t$ (\cref{filtration complete Hausdorff ring invertibility}). Note that if $A$ is a ring and $\a$ an ideal of $A$, the elements of $\a$ are topologically nilpotent with respect to the $\a$-adic topology.
 
-\begin{theorem}[\textbf{Hensel's Lemma}]
+\begin{theorem}[\textbf{Hensel's Lemma}]\label{filtration Hensel's lemma}
 Let $A$ be a complete Hausdorff linearly topologized ring. Let $\m$ be a closed ideal of $A$ whose elements are topologically nilpotent. Let $A/\m$ be the quotient topological ring and $\pi:A\to A/\m$ the canonical map. Let $T$ be a restricted formal power series in $A\{X\}$, $\bar{P}$ a monic polynomial in $(A/\m)[X]$ and $\bar{Q}$ a restricted formal power series in $(A/\m)\{X\}$. Suppose that $\pi(T)=\bar{P}\bar{Q}$ and that $\bar{P}$ and $\bar{Q}$ are strongly relatively prime in $(A/\m)\{X\}$. Then there exists a unique ordered pair $(P,Q)$ consisting of a monic polynomial $P\in A[X]$ and a restricted formal power series $Q\in A\{X\}$ such that
 \begin{align}\label{filtration Hensel's lemma-1}
 T=PQ,\quad \pi(P)=\bar{P},\quad \pi(Q)=\bar{Q}.
@@ -4119,9 +4119,14 @@ Let $A$ be a Noetherian ring, $M$ an $A$-module and $a\in A$. For the homothety 
 \begin{proof}
 If $a$ belongs to a prime ideal $\p\in\Ass(M)$, then $\p=\Ann(x)$ where $x\in M$ and $x\neq 0$, whence $ax=0$ and the homothety with ratio $a$ is not injective. Conversely, if $ax=0$ for some $x\in M$ such that $x\neq 0$, then $Ax\neq\{0\}$, whence $\Ass(Ax)\neq\emp$. Let $\p\in\Ass(Ax)$, then obviously $\p\in\Ass(M)$ and $\p=\Ann(bx)$ for some $b\in A$; then $a\in\p$, since $abx=0$.
 \end{proof}
+
 \begin{corollary}\label{Noe ring divisor of zero union of associated prime}
 The set of divisors of zero in a Noetherian ring $A$ is the union of the ideals in $\Ass(A)$.
 \end{corollary}
+\begin{proof}
+This follows from \cref{associated prime and homothety injective}, as a disivor of zero is then contains in an associated prime of $A$.
+\end{proof}
+
 \begin{proposition}\label{associated prime and exact sequence}
 If we have a short exact sequence of $A$-modules
 \[\begin{tikzcd}
@@ -4132,12 +4137,14 @@ then $\Ass(L)\sub\Ass(M)\sub\Ass(L)\cup\Ass(N)$.
 \begin{proof}
 The inclusion $\Ass(L)\sub\Ass(M)$ is obvious. Let $\p\in\Ass(M)$, $E$ be a submodule of $M$ isomorphic to $A/\p$ and $F=E\cap L$. If $F=\{0\}$, $E$ is isomorphic to a submodule of $N$, whence $\p\in\Ass(N)$. If $F\neq\{0\}$, the annihilator of every nonzero element of $F$ is $\p$ (\cref{associated prime maximal element of Ann}) and hence $\p\in\Ass(F)\sub\Ass(L)$.
 \end{proof}
+
 \begin{corollary}\label{associated prime of direct sum}
 If $M=\bigoplus_{i\in I}M_i$ then $\Ass(M)=\bigcup_{i\in I}\Ass(M_i)$.
 \end{corollary}
 \begin{proof}
 It may be reduced to the case where $I$ is finite by means of (\ref{associated prime union of modules}), then to the case where $|I|=2$ by induction. Then let $I=\{i,j\}$, where $i\neq j$. As $M/M_i$ is isomorphic to $M_j$, we have $\Ass(M)\sub\Ass(M_i)\cup\Ass(M_j)$. Moreover, $\Ass(M_i)$ and $\Ass(M_j)$ are contained in $\Ass(M)$ by \cref{associated prime and exact sequence}, whence the result.
 \end{proof}
+
 \begin{corollary}\label{associated prime of union of zero intersection module}
 Let $M$ be an $A$-module and $(Q_i)_{i\in I}$ a finite family of submodules of $M$. If $\bigcap_{i\in I}Q_i=\{0\}$ then
 \[\Ass(M)\sub\bigcup_{i\in I}\Ass(M/Q_i).\] 
@@ -4145,12 +4152,14 @@ Let $M$ be an $A$-module and $(Q_i)_{i\in I}$ a finite family of submodules of $
 \begin{proof}
 The canonical map $M\to\bigoplus_i(M/Q_i)$ is injective; then it suffices to apply \cref{associated prime and exact sequence} and \cref{associated prime of direct sum}.
 \end{proof}
+
 \begin{proposition}\label{associated prime submodule with given subset}
 Let $M$ be an $A$-module and $\Phi$ a subset of $\Ass(M)$. Then there exists a submodule $N$ of $M$ such that $\Ass(N)=\Ass(M)-\Phi$ and $Ass(M/N)=\Phi$.
 \end{proposition}
 \begin{proof}
 Let $\mathcal{M}$ be the set of submodules $P$ of $M$ such that $\Ass(P)\sub\Ass(M)-\Phi$. Formula (\ref{associated prime union of modules}) shows that the set $\mathcal{M}$, ordered by inclusion, is inductive. Moreover, $\{0\}\in\mathcal{M}$ and hence $\mathcal{M}\neq\emp$. Let $N$ be a maximal element of $\mathcal{M}$. Then $\Ass(N)\sub\Ass(M)-\Phi$. We shall see that $\Ass(M/N)\sub\Phi$, which, by \cref{associated prime and exact sequence}, will complete the proof. Let $\p\in\Ass(M/N)$; then $M/N$ contains a submodule $F/N$ isomorphic to $A/\p$. By \cref{associated prime and exact sequence} and \cref{associated prime of A/p}, $\Ass(F)\sub\Ass(N)\cup\{\p\}$. Since $N$ is maximal in $\mathcal{M}$, $F\notin\mathcal{M}$ and hence $\p\in\Phi$.
 \end{proof}
+
 \begin{proposition}\label{associated prime of localization}
 Let $A$ be a ring, $S$ a multiplicative subset of $A$, $\Phi$ the set of ideals of $A$ which do not meet $S$ and $M$ an $A$-module. Then:
 \begin{itemize}
@@ -4159,11 +4168,9 @@ Let $A$ be a ring, $S$ a multiplicative subset of $A$, $\Phi$ the set of ideals 
 \end{itemize}
 \end{proposition}
 \begin{proof}
-Recall that the map $\p\mapsto S^{-1}\p$ is a bijection of $\Phi$ onto the set of prime ideals of $S^{-1}A$. If $\p\in\Ass_A(M)\cap\Phi$, $\p$ is the annihilator of a monogenous submodule $N$ of $M$; then $S{^-1}\p$ is the annihilator of the monogenous submodule $S^{-1}\N$ of $S^{-1}M$ (\cref{localization and Ann}) and hence $S^{-1}\p\in\Ass_{S^{-1}A}(S^{-1}M)$. Conversely, suppose that $\p\in\Phi$ is finitely generated and such that $S^{-1}\p$ is associated with $S^{-1}M$, then there exists $x\in M$ and $t\in S$ such that $S^{-1}\p$ is the annihilator of $x/t$. Let $a_1,\dots,a_n$ be a system of generators of $\p$; then $(a_i)(x/t)=0$ and hence there exists $s_i\in S$ such that $s_ia_ix=0$. Let us write $s=s_1\cdots s_n$, then for all $a\in\p$ we have $sax=0$, whence $\p\sub\Ann(sx)$. On the other hand, if $b\in A$ satisfies $bsx=0$, then $b/1\in S^{-1}\p$ by definition, whence $b\in\p$. Then $\p=\Ann(sx)$ and $\p\in\Ass_A(M)$.
+Recall that the map $\p\mapsto S^{-1}\p$ is a bijection of $\Phi$ onto the set of prime ideals of $S^{-1}A$. If $\p\in\Ass_A(M)\cap\Phi$, $\p$ is the annihilator of a monogenous submodule $N$ of $M$; then $S{^-1}\p$ is the annihilator of the monogenous submodule $S^{-1}N$ of $S^{-1}M$ (\cref{localization and Ann}) and hence $S^{-1}\p\in\Ass_{S^{-1}A}(S^{-1}M)$. Conversely, suppose that $\p\in\Phi$ is finitely generated and such that $S^{-1}\p$ is associated with $S^{-1}M$, then there exists $x\in M$ and $t\in S$ such that $S^{-1}\p$ is the annihilator of $x/t$. Let $a_1,\dots,a_n$ be a system of generators of $\p$; then $(a_i)(x/t)=0$ and hence there exists $s_i\in S$ such that $s_ia_ix=0$. Let us write $s=s_1\cdots s_n$, then for all $a\in\p$ we have $sax=0$, whence $\p\sub\Ann(sx)$. On the other hand, if $b\in A$ satisfies $bsx=0$, then $b/1\in S^{-1}\p$ by definition, whence $b\in\p$. Then $\p=\Ann(sx)$ and $\p\in\Ass_A(M)$.
 \end{proof}
-\begin{corollary}
-If the ring $A$ is Noetherian, the map $\p\mapsto S^{-1}\p$ is a bijection of $\Ass_A(M)\cap\Phi$ onto $\Ass_{S^{-1}A}(S^{-1}M)$.
-\end{corollary}
+
 \begin{proposition}\label{associated prime and kernel of localization}
 Let $A$ be a Noetherian ring, $M$ an $A$-module, $S$ a multiplicative subset of $A$ and $\Phi$ the set of elements of $\Ass_A(M)$ which do not meet $S$. Then the kernel $N$ of the canonical map $M\mapsto S^{-1}M$ is the unique submodule of $M$ which satisfies the relations
 \[\Ass(N)=\Ass(M)-\Phi,\quad \Ass(M/N)=\Phi.\]
@@ -4177,7 +4184,9 @@ S^{-1}M\ar[r,"S^{-1}\pi"]&S^{-1}(M/N')
 where $\pi$, $i_M^S$, and $i_{M/N'}^S$ are the canonical homomorphisms. We shall show that $S^{-1}\pi$ and $i_{M/N'}^S$ are injective, which will prove that $i_M^S$ and $\pi$ have the same kernel and hence $N=N'$.\par
 As $\Ass(N')\cap \Phi=\emp$, every element of $\Ass(N')$ meets $S$. Then by \cref{associated prime of localization} we have $\Ass_{S^{-1}A}(S^{-1}N')=\emp$, whence $S^{-1}N'=\{0\}$ by \cref{associated prime empty iff}. This proves that $S^{-1}\pi$ is injective. On the other hand, if $x$ belongs to the kernel $K$ of $i_{M/N'}^S$, then $\Ann(x)\cap S\neq\emp$, so $\Ass(K)\cap\Phi=\emp$. But $\Ass(K)\sub\Ass(M/N')=\Phi$, which means $\Ass(K)=\emp$ and $K=\{0\}$ by \cref{associated prime empty iff}. This shows $i_{M/N'}^S$ is injective.
 \end{proof}
+
 Let $M$ be a module over a ring $A$. Recall that the set of prime ideals $\p$ of $A$ such that $M_\p\neq 0$ is called the \textit{support} of $M$ and is denoted by $\supp(M)$.
+
 \begin{proposition}\label{associated prime and supp}
 Let $A$ be a ring and $M$ an $A$-module.
 \begin{itemize}
@@ -4188,12 +4197,15 @@ Let $A$ be a ring and $M$ an $A$-module.
 \begin{proof}
 If $\p$ contains an element $\q$ of $\Ass(M)$, then $\q\cap(A-\p)=\emp$ and hence, if we write $S=A-\p$, $S^{-1}\p$ is a prime ideal associated with $S^{-1}M=M_\p$, and a fortiori $M_\p\neq\emp$, hence $\p\in\supp(M)$. Conversely, if $A$ is Noetherian, so is $A_\p$. If $M_\p\neq\emp$, then $\Ass_{A_\p}(M_\p)\neq\emp$ and hence there exists $\q\in\Ass_A(M)$ such that $\q\cap(A-\p)=\emp$ by \cref{associated prime of localization}.
 \end{proof}
+
 \begin{corollary}\label{associated prime ideal contained in supp}
 If $M$ is a module over a Noetherian ring, then $\Ass(M)\sub\supp(M)$ and these two sets have the same minimal elements.
 \end{corollary}
+
 \begin{corollary}
 The nilradical of a Noetherian ring $A$ is the intersection of the ideals $\p\in\Ass(A)$.
 \end{corollary}
+
 \subsection{Associated prime ideals of Noetherian rings}
 \begin{proposition}\label{associated prime of Noe chain of submodule}
 Let $A$ be a Noetherian ring and $M$ a finitely generated $A$-module. Then there exists a chain $(M_i)_{0\leq i\leq n}$ of submodules of $M$ such that $M_{i}/M_{i+1}$ is isomorphic to $A/\p_i$ where $\p_i$ is a prime ideal of $A$.
@@ -4201,6 +4213,7 @@ Let $A$ be a Noetherian ring and $M$ a finitely generated $A$-module. Then there
 \begin{proof}
 Let $\mathcal{M}$ be the set of submodules of $M$ which have a chain with the property of the statement. As $\mathcal{M}$ is non-empty (for $\{0\}$ belongs to $\mathcal{M}$) and $M$ is Noetherian, $\mathcal{M}$ has a maximal element $N$. If $M\sub N$, then $M/N\neq\emp$ and hence $\Ass(M/N)\neq\emp$ by \cref{associated prime empty iff}. The module $M/N$ therefore contains a submodule $N'/N$ isomorphic to an $A$-module of the form $A/\p$, where $\p$ is prime; then by definition $N'\in\mathcal{M}$, which contradicts the maximal character of $N$. Then necessarily $N=M$.
 \end{proof}
+
 \begin{theorem}\label{associated prime of Noe prime ideals in composition}
 Let $M$ be a finitely generated module over a Noetherian ring $A$ and $(M_i)_{0\leq i\leq n}$ a chain of submodules of $M$ such that $M_{i}/M_{i+1}$ is isomorphic to $A/\p_i$ where $\p_i$ is a prime ideal of $A$. Then
 \begin{align}\label{associated prime of Noe prime ideals in composition-1}
@@ -4213,9 +4226,16 @@ The inclusion $\Ass(M)\sub\{\p_0,\dots,\p_{n-1}\}$ follows immediately from \cre
 \[\p_i\in\supp(A/\p_i)=\supp(M_i/M_{i+1})\]
 so $\p_i\in\supp(M_i)\sub\supp(M)$ (\cref{supp of module and exact sequence}), which shows $\{\p_0,\dots,\p_{n-1}\}\sub\supp(M)$. \cref{associated prime and supp} shows that $\Ass(M)$ and $\supp(M)$ have the same minimal elements and (\ref{associated prime of Noe prime ideals in composition-1}) shows that these are just the minimal elements of $\{\p_0,\dots,\p_{n-1}\}$. The last assertion then follows from \cref{supp of finite module is V(Ann)}.
 \end{proof}
+
 \begin{corollary}\label{associated prime ideal finite if Noe finite}
-If $M$ is a finitely generated module over a Noetherian ring $A$, $\Ass(M)$ is finite.
+If $M$ is a finitely generated module over a Noetherian ring $A$, then $\Ass(M)$ is finite, and the natrual map
+\[M\to\prod_{\p\in\Ass(M)}M_\p\]
+is injective.
 \end{corollary}
+\begin{proof}
+The first assertion is an immediate concequence of \cref{associated prime of Noe prime ideals in composition}. For the second one, let $x\in M$ be an element of the kernel of this map. Then if $\p$ is an associated prime of $Ax\sub M$, we see on the one hand that $\p\in\Ass(M)$ (\cref{associated prime and exact sequence}), and on the other hand that $(Rx)_\p\sub M_\p$ is not zero. This contradiction shows that $\Ass(Ax)=\emp$, so $Ax=0$ by \cref{associated prime empty iff}.
+\end{proof}
+
 \begin{proposition}
 Let $A$ be a Noetherian ring, $\a$ an ideal of $A$ and $M$ a finitely generated $A$-module. The following conditions are equivalent:
 \begin{itemize}
@@ -4310,7 +4330,7 @@ is a primary decomposition of $(n)$ in $\Z$.
 By an abuse of language, the relation $N=\bigcap_{i\in I}Q_i$ is called a primary decomposition of $N$ in $M$. It amounts to the same to say that $\{0\}=\bigcap_{i\in I}(Q_i/N)$ is a primary decomposition of $\{0\}$ in $M/N$. If $(Q_i)_{i\in I}$ is a primary decomposition of $N$ in $M$, the canonical map from $M/N$ to $\bigcap_{i\in I}(M/Q_i)$ is injective. Conversely let $N$ be a submodule of $M$ and $\phi$ an injective homomorphism from $M/N$ to a finite direct sum $P=\bigoplus_iP_i$, where each set $\Ass(P_i)$ is reduced to a single element $\p_i$. Let $\phi_i$ be the homomorphism $M/N\to P_i$ obtained by taking the composition off with the projection $P\to P_i$, and let $Q_i/N$ be the kernel of $\phi_i$; then the $Q_i$ distinct from $M$ are primary with respect to $M$ and $N=\bigcap_{i\in I}Q_i$. Moreover, $\Ass(M/N)\sub\bigcup_{i\in I}\{\p_i\}$ by virtue of \cref{associated prime and exact sequence}.
 \begin{theorem}\label{primary decomposition module exist}
 Let $M$ be a finitely generated module over a Noetherian ring and let $N$ be a submodule of $M$. Then there exists a primary decomposition of $N$ of the form
-\begin{align}
+\begin{align}\label{primary decomposition module exist-1}
 N=\bigcap_{\p\in\Ass(M/N)}Q(\p)
 \end{align}
 where for each $\p\in\Ass(M/N)$, $Q(\p)$ is $\p$-primary with respect to $M$.
@@ -4318,12 +4338,14 @@ where for each $\p\in\Ass(M/N)$, $Q(\p)$ is $\p$-primary with respect to $M$.
 \begin{proof}
 We may replace $M$ by $M/N$ and therefore suppose that $N=0$. By \cref{associated prime ideal finite if Noe finite}, $\Ass(M)$ is finite. By \cref{associated prime submodule with given subset}, there exists, for each $\p\in\Ass(M)$, a submodule $Q(\p)$ of $M$ such that $\Ass(M/Q(\p))=\{\p\}$ and $\Ass(Q(\p))=\Ass(M)-\{\p\}$. Let us write $P=\bigcap_{\p\in\Ass(M)}Q(\p)$. For all $\p\in\Ass(M)$, $\Ass(P)\sub\Ass(Q(\p))$ and hence $\Ass(P)=\{\p\}$, which implies $P=0$ and therefore proves the theorem.
 \end{proof}
+
 Let $M$ be a module over a Noetherian ring and $N$ a submodule of $M$. A primary decomposition $N=\bigcap_{i\in I}Q_i$ of $N$ in $M$ is called \textbf{reduced} if the following conditions are fulfilled:
 \begin{itemize}
 \item[(a)] there exists no index $i\in I$ such that $\bigcap_{j\neq i}Q_j\sub Q_i$;
 \item[(b)] if $\Ass(M/Q_i)=\{\p_i\}$, the $\p_i$'s are distinct.
 \end{itemize}
 From every primary decomposition $N=\bigcap_{i\in I}Q_i$ of $N$ in $M$ a reduced primary decomposition of $M$ in $N$ can be deduced as follows: let $J$ be a minimal element of the set of subsets $I'$ of $I$ such that $N=\bigcap_{i\in I'}Q_i$. Clearly $(Q_i)_{i\in J}$ satisfies condition (a). Then let $\Phi$ be the set of $\p_i$ for $i\in J$. For all $\p\in\Phi$, let $H(\p)$ be the set of $i\in J$ such that $\p_i=\p$ and let $Q(\p)=\bigcap_{i\in H(\p)}Q_i$. It follows from \cref{primary submodule intersection is primary} that $Q(\p)$ is $\p$-primary with respect to $M$; further $N=\bigcap_{\p\in\Phi}Q(\p)$ and the family $(Q(\p))_{\p\in\Phi}$ is therefore a reduced primary decomposition of $N$ in $M$. 
+
 \begin{proposition}\label{primary decomposition reduced iff}
 Let $M$ be a module over a Noetherian ring, $N$ a submodule of $M$, $N=\bigcap_{i\in I}Q_i$ a primary decomposition of $N$ in $M$ and, for all $i\in I$, let $\{\p_i\}=\Ass(M/Q_i)$. For this decomposition to be reduced, it is necessary and sufficient that the $\p_i$ be distinct and belong to $\Ass(M/N)$. In this case, we have
 \begin{align}\label{primary decomposition reduced iff-1}
@@ -4336,26 +4358,32 @@ Conversely, assume that $(Q_i)_{i\in I}$ is reduced. Note that $\Ass(M/N)\sub\bi
 \[\Ass(Q_i/N)\sub\bigcup_{j\neq i}\Ass(Q_i/(Q_i\cap Q_j))=\bigcup_{j\neq i}\Ass((Q_i+Q_j)/Q_j)\sub\bigcup_{j\neq i}\{\p_j\}.\]
 Taking account of the first formula of (\ref{primary decomposition reduced iff-1}) and \cref{associated prime and exact sequence}, the second formula of (\ref{primary decomposition reduced iff-1}) follows easily.
 \end{proof}
+
 \begin{corollary}\label{primary decomposition card iff reduced}
 Let $A$ be a Noetherian ring, $M$ an $A$-module, $N$ a submodule of $M$ and $(Q_i)_{i\in I}$ a primary decomposition of $N$ in $M$. Then $|I|\geq|\Ass(M/N)|$, and the equality holds if and only if $(Q_i)_{i\in I}$ is reduced.
 \end{corollary}
 \begin{proof}
 It follows from the remarks preceding \cref{primary decomposition reduced iff} that there exists a reduced primary decomposition $(R_i)_{i\in J}$ of $N$ in $M$ such that $\mathrm{Card}(J)\sub\mathrm{Card}(I)$. The first assertion then follows from the second and the latter is a consequence of \cref{primary decomposition reduced iff}.
 \end{proof}
+
 \begin{proposition}\label{primary decomposition minimal part and saturation}
 Let $A$ be a Noetherian ring, $M$ an $A$-module and $N$ a submodule of $M$. Let $N=\bigcap_{i\in I}Q_i$ be a reduced primary decomposition of $N$ where $Q_i$ is $\p_i$-primary. If $\p_i$ is a minimal element of $\Ass(M/N)$, then $Q_i$ is equal to the saturation on $N$ with respect to $\p_i$.
 \end{proposition}
 \begin{proof}
 We can obviously restrict our attention to the case where $N=0$, replacing if need be $M$ by $M/N$. If $\p_i$ is minimal in $\Ass(M)$, then the set of elements of $\Ass(M)$ which do not meet $A-\p_i$ reduces to $\p_i$. The proposition then follows from the second formula of (\ref{primary decomposition reduced iff-1}) above and \cref{associated prime and kernel of localization}, since the kernel of the canonical map $M\mapsto M_{\p_i}$ equals to the saturation of $0$ with respect to $\p_i$.
 \end{proof}
-The minimal elements of $\Ass(M/N)$ are called the \textbf{minimal} or \textbf{isolated prime ideals} associated with $M/N$, and the prime ideals $\p\in\Ass(M/N)$ which are not minimal are called the \textbf{embedded prime ideals} associated with $M/N$. If $M/N$ is finitely generated, then by \cref{associated prime ideal contained in supp} we know the isolated ideals of $M/N$ are just the minimal prime ideals containing $\supp(M/N)=V(\Ann(M/N))$, so for $\p\in\Ass(M/N)$ to be embedded, it is necessary and sufficient that $V(\p)$ be not an irreducible component of $\supp(M/N)$.\par
+
+The minimal elements of $\Ass(M/N)$ are called the \textbf{minimal} or \textbf{isolated prime ideals} associated with $M/N$, and the prime ideals $\p\in\Ass(M/N)$ which are not minimal are called the \textbf{embedded prime ideals} associated with $M/N$. If $M/N$ is finitely generated, then by \cref{associated prime ideal contained in supp} we know the isolated ideals of $M/N$ are just the minimal prime ideals of $\supp(M/N)=V(\Ann(M/N))$, so for $\p\in\Ass(M/N)$ to be embedded, it is necessary and sufficient that $V(\p)$ be not an irreducible component of $\supp(M/N)$.\par
 If $(Q(\p))$ and $(R(\p))$ are two reduced primary decompositions of $N$ in $M$, then by \cref{primary decomposition minimal part and saturation} we see $Q(\p)=R(\p)$ if $\p$ is an isolated prime associated with $M/N$, being the saturation of $N$ with respect to $\p$. However, it may happen that $Q(\p)\neq R(\p)$ for $\p$ an embedded prime, as the following example shows.
+
 \begin{example}
 Consider the ring $A=K[X,Y]$ where $K$ is a field. Then for every positive integer $n$, a primary decomposition of the ideal $\a=(X^2,XY)$ is
 \[(X^2,XY)=(X)\cap (X^2,XY,Y^n)\]
 where $(X)$ is prime and $(X^2,XY,Y^n)$ is $(X,Y)$-primary. Note that $(X)$ is isolated and $(X,Y)$ is embedded.
 \end{example}
+
 Given a submodule $N$ of a module $M$ over a Noetherian ring $A$, to simplify we shall denote by $D_I(M/N)$, in this part, the set of reduced primary decompositions of $N$ in $M$ whose indexing set is $I$.
+
 \begin{proposition}\label{primary decomposition and localization}
 Let $A$ be a Noetherian ring, $M$ an $A$-module, $N$ a submodule of $M$ and $I=\Ass(M/N)$. Let $S$ be a multiplicative subset of $A$ and $I_S$ the subset $I$ consisting of the indices $i$ such that $S\cap\p_i=\emp$. Let $\phi(N)$ be the saturation of $N$ with respect to $S$ in $M$. Then:
 \begin{itemize}
@@ -4372,6 +4400,7 @@ Finally, we prove (c). From (a) we have $\phi(N)=\bigcap_{i\in I_S}R_i$, whence
 \[N=\phi(N)\cap\bigcap_{i\in I-I_S}R_i=\Big(\bigcap_{i\in I_S}Q_i\Big)\cap\Big(\bigcap_{i\in I-I_S}R_i\big)\]
 and it follows immediately from \cref{primary decomposition card iff reduced} that this primary decomposition is reduced.
 \end{proof}
+
 \begin{corollary}
 The maps
 \[D_I(M/N)\to D_{I_S}(M/\phi(N))\And D_I(M/N)\to D_{I_S}(S^{-1}M/S^{-1}N)\]
@@ -4380,6 +4409,7 @@ defined in \cref{primary decomposition and localization} are surjective.
 \begin{proof}
 \cref{primary decomposition and localization}(c) shows that the map $D_I(M/N)\to D_{I_S}(M/\phi(N))$ is suijective and \cref{primary decomposition and localization}(b) then shows that $D_I(M/N)\to D_{I_S}(M/N)\to D_{I_S}(S^{-1}M/S^{-1}N)$ is surjective.
 \end{proof}
+
 \subsection{Finite length modules}
 If an $A$-module $M$ is of finite length, we shall denote this length by $\ell_A(M)$ or $\ell(M)$. Recall that every Artinian ring is Noetherian and that every finitely generated module over an Artinian ring is of finite length.
 \begin{proposition}\label{associated prime maximal iff finite length}
@@ -4393,24 +4423,29 @@ Let $M$ be a finitely generated module over a Noetherian ring $A$. The following
 \begin{proof}
 Let $(M_i)$ be a chain of submodules of $M$ such that $M_i/M_{i+1}$ is isomorphic to $A/\p_i$ where $\p_i$ is prime. If $M$ is of finite length, so is each of the $A$-modules $A/\p_i$, which implies that each of the rings $A/\p_i$ is Artinian. But as $A/\p_i$ is an integral domain, it is therefore a field, in other words $\p_i$ is maximal; we conclude that (\rmnum{1}) implies (\rmnum{2}). Condition (\rmnum{2}) implies (\rmnum{3}) by \cref{associated prime and supp}. Finally, if all the ideals of $\supp(M)$ are maximal, so are the $\p_i$, hence the $A/\p_i$ are simple $A$-modules and $M$ is of finite length, which completes the proof.
 \end{proof}
+
 \begin{corollary}\label{associated prime of finite length is supp}
 For every module of finite length $M$ over a Noetherian ring $A$, we have $\Ass(M)=\supp(M)$.
 \end{corollary}
 \begin{proof}
 Every element of $\supp(M)$ is then minimal in $\supp(M)$ and the conclusion follows from \cref{associated prime ideal contained in supp}.
 \end{proof}
+
 \begin{corollary}\label{associated prime of finite length localization iff}
 Let $M$ be a finitely generated module over a Noetherian ring $A$ and $\p$ a prime ideal of $A$. For $M_\p$ to be a non-zero $A_\p$-module of finite length, it is necessary and sufficient that $\p$ be a minimal element of $\Ass(M)$.
 \end{corollary}
 \begin{proof}
 By \cref{associated prime of localization}, $\Ass_{A_\p}(M_\p)$ is the set of ideals $\q A_\p$, where $\q$ runs through the set of ideals of $\Ass(M)$ which are contained in $\p$. Thus by \cref{associated prime maximal iff finite length}, for $M_\p$ to be an $A_\p$-module of finite length, it is necessary and sufficient that no element of $\Ass(M)$ be strictly contained in $\p$. On the other hand, for $M_\p\neq 0$, it is necessary and sufficient by definition that $\p\in\supp(M)$, that is that $\p$ contain an element of $\Ass(M)$. This proves the corollary.
 \end{proof}
+
 \begin{remark}
 Note that \cref{associated prime maximal iff finite length} is not equivalent to the condition that each prime ideal $\p\in\Ass(M)$ is \textit{maximal in $\Ass(M)$}. In fact, this condition signifies that each element of $\Ass(M)$ is minimal, so is a minimal prime ideal of $\supp(M)$ (in other words, $M$ has no embedded prime ideals). 
 \end{remark}
+
 \begin{remark}\label{Noe ring finite module length of M_p is number of p_i}
 Let $M$ be a finitely generated module over a Noetherian ring $A$ and let $(M_i)$ be a chain of $M$ such that $M_i/M_{i+1}$ is isomorphic to $A/\p_i$ where $\p_i$ is a prime ideal of $A$. If $\p$ is a minimal element of $\Ass(M)$, the modules $(M_i)_{\p}$ then form a chain of $M_\p$ and $(M_i)_\p/(M_{i+1})_\p$ is isomorphic to $(A/\p_i)_\p$ and hence to $\{0\}$ if $\p_i\neq\p$, and to $(A/\p)_\p$ which is a field, if $\p_i=\p$.
 \end{remark}
+
 \begin{proposition}\label{primary decomposition of finite length module prop}
 Let $M$ be a module of finite length over a Noetherian ring $A$.
 \begin{itemize}
@@ -4424,6 +4459,7 @@ Let $M$ be a module of finite length over a Noetherian ring $A$.
 Since each ideal of $M$ is maximal, part (a) follows from \cref{primary decomposition minimal part and saturation}. As $M/Q(\p)$ is finitely generated, by \cref{associated prime intersection and a^nM=0} there exists $n_0>0$ such that $\p^nM\sub Q(\p)$ for all $n\geq n_0$. But as $\p$ is a maximal ideal, $\p^nM$ is $\p$-primary with respect to $M$ and, as $\bigcap_{\p\in\Ass(M)}\p^nM=\{0\}$, it follows from (a) that necessarily $\p^nM=Q(\p)$ for all $\p\in\Ass(M)$, whence (b) follows. As the $\p^n$, for $\p\in\Ass(M)$, are relatively prime in pairs, the canonical map $M\mapsto\bigoplus_{\p\in\Ass(M)}(M/\p^nM)$ is suijective, whence (d).\par
 Now $\Ass(Q(\p))=\Ass(M)-\{\p\}$ and $\Ass(M/Q(\p))=\{\p\}$. As the elements of Ass(M) are maximal ideals, $\p$ is the only element of $\Ass(M)$ which does not meet $A-\p$. Then $Q(\p)$ is the kernel of the canonical map $i_\p:M\to M_\p$ by \cref{associated prime submodule with given subset}. If $s\in A-\p$, the homothety of $M/Q(\p)$ with ratio $s$ isinjective by virtue of the relation $\Ass(M/Q(\p))=\{\p\}$. Since $M/Q(\p)$ is Artinian, this homothety is bijective. Therefore, if $m\in M$ and $s\in A-\p$, then there exists $n\in M$ such that $\bar{m}=s\bar{n}$ in $M/Q(\p)$, whence $m-ns\in Q(\p)$. By the characterization of $M_\p$, we can then find $t\in A-\p$ such that $t(m-ns)=0$, that is, $m/s=n/1$ in $M_\p$. This proves the canonical map $M\to M_\p$ is surjective and finishes the proof.
 \end{proof}
+
 \begin{corollary}\label{module of finite length equals sum of localization length}
 If $M$ is a module of finite length over a Noetherian ring $A$, then
 \[\ell_A(M)=\sum_{\p\in\Ass(M)}\ell_{A_\p}(M_\p).\]
@@ -4433,6 +4469,16 @@ This will follow from \cref{primary decomposition of finite length module prop}(
 \[\ell_A(M/Q(\p))=\ell_{A_\p}(M_\p).\]
 Now, since $\Ass(M/Q(\p))=\{\p\}$, for all $s\in A-\p$ the homothety with ratio $s$ on $M/Q(\p)$ is injective; the homothety with ratio $s$ on every submodule $N$ of $M/Q(\p)$ is therefore injective and, as $N$ is Artinian, it is bijective. We conclude that the sub-$A$-modules of $M/Q(\p)$ are the images under the bijection $M_\p\to M/Q(\p)$ of the sub-$A_\p$-modules of $M_\p$, whence our assertion.
 \end{proof}
+
+\begin{corollary}\label{associated prime module over Noe injection to product over Artinian}
+Let $M$ be a finitely generated module over a Noetherian ring. Then there exists finitely many prime ideals $\p_i\in\Ass(M)$, integers $n_i$ and a reduced decomposition $\{0\}=\bigcap_iN_i$ in $M$ such that the map
+\[M\to\prod_i(M/N_i)\otimes_AA_{\p_i}/\p_i^{n_i}A_{\p_i}\]
+is injective.
+\end{corollary}
+\begin{proof}
+By \cref{primary decomposition module exist}, there exists a reduced decomposition $\{0\}=\bigcap_iN_i$ in $M$, with $\Ass(M/N_i)=\{\p_i\}$. Then the map $M\to\prod_i(M/N_i)$ is injective. Now by \cref{associated prime of finite length localization iff}, the module $(M/N_i)_{\p_i}$ has finite length over $A_{\p_i}$, so \cref{primary decomposition of finite length module prop} implies that there exists a unique decomposition $Q(\p_i)=\{0\}$ in $(M/N_i)_{\p_i}$, and in view of \cref{primary decomposition of finite length module prop}~(c), we then obtain an integer $n_i$ such that $\p_i^n(M/N_i)_{\p_i}=0$ for $n\geq n_i$, so $(M/N_i)_{\p_i}$ is isomorphic to $(M/N_i)\otimes_AA_{\p_i}/\p_i^{n_i}A_{\p_i}$, whence the corollary.
+\end{proof}
+
 \begin{proposition}\label{associated prime maximal of A iff Artin}
 Let $A$ be a Noetherian ring. The following conditions are equivalent:
 \begin{itemize}
@@ -4446,6 +4492,7 @@ If these conditions are fulfilled, $A$ has only a finite number prime ideals, wh
 To say that $A$ is Artinian is equivalent to saying that $A$ is an $A$-module of finite length, hence (\rmnum{1}) and (\rmnum{2}) are equivalent by \cref{associated prime maximal iff finite length}. We already know that (\rmnum{1}) and (\rmnum{2}) are equivalent by \cref{Noe local is Artin iff power of maximal ideal}.\par
 Suppose they hold. As every prime ideal of $A$ belongs to $\supp(A)$ and every element of $\supp(A)$ contains an element of $\Ass(A)$, it follows from (\rmnum{3}) that $\Ass(A)$ is the set ofall prime ideals of $A$. Then $A$ has only a finite number of prime ideals, all of them maximal and associated with the $A$-module $A$. Finally, we know that the Jacobson radical of an Artinian ring is nilpotent.
 \end{proof}
+
 \begin{corollary}
 Every Artinian ring $A$ is isomorphic to the direct composition of a finite family of Artinian local rings.
 \end{corollary}
@@ -5626,6 +5673,7 @@ Let $A$ be a ring. Then the following are equivalent.
 First assume (\rmnum{2}). Let $\p$ be a prime ideal of $A$ which is not maximal, and let $B=A/\p$. Let $v$ be a non-zero element of $B$. Then $B_v=B[v^{-1}]$ is a finitely generated $A$-algebra. If it is a field then by condition (\rmnum{2}) it is finite over $A$, hence integral over $B$ and therefore $B$ is a field by \cref{integral ring extension field iff}. Since $\p$ is not maximal, we then see $B_v$ is not a field and therefore has a non-zero maximal ideal, whose contraction in $B$ is a non-zero prime ideal $\q$ such that $v\notin\q$. By \cref{Jacobson ring def}(\rmnum{4}), this shows $A$ is a Jacobson ring.\par
 Conversely, let $A$ be a Jacobson ring and $B$ be a finitely generated $A$-algebra that is a field. Since a quotient ring of a Jacobson ring is Jacobson, we can assume $B$ contains $A$ as a subring. Let $s\in A$ be such that for every homomorphism $\phi$ from $A$ to an algebraically closed field $\Omega$ such that $\phi(s)\neq 0$, there exists a homomorphism $\tilde{\phi}$ from $B$ to $\Omega$ extending $\phi$ (\cref{algebra finite homomorphism to algebraically closed prop}). Since $A$ is then a integral domain and Jacobson, there exists a maximal ideal $\m$ of $A$ not containing $s$. We take $\Omega$ to be the algebraic closure of $A/\m$ and $\phi$ the canonical homomorphism $A\to A/\m\to\Omega$. Then $\phi$ extends to a homomorphism $\psi$ of $B$ into $\Omega$. Since $B$ is a field, $\psi$ is injective, and so $B$ is algebraic (thus finite algebraic) over $A/\m$, whence finite over $A$.
 \end{proof}
+
 Since a field is Jacobson, we get immediately the following statement.
 \begin{corollary}[\textbf{Zariski's Lemma}]\label{field ft algebra Zariski lemma}
 Let $k$ ba a field and $K$ a finitely generated $k$-algebra. If $K$ is a field then it is a finite field extension of $k$.
