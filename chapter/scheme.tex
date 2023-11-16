@@ -641,7 +641,7 @@ Let $X$ be a scheme. Then the following conditions are equivalent:
 \begin{enumerate}
 \item[(\rmnum{1})] $X=\Spec(A)$ is affine and $A$ is Artinian;
 \item[(\rmnum{2})] $X$ is Noetherian and has discrete underlying space;
-\item[(\rmnum{3})] $X$ is Noetherian and every point in $X$ is closed (in other words, $X$ is T1).
+\item[(\rmnum{3})] $X$ is Noetherian and every point in $X$ is closed (in other words, $X$ is $T_1$).
 \end{enumerate}
 If these equivalent conditions hold, then $X$ is finite and the ring $A$ is a direct product of finitely many Artinian local rings.
 \end{proposition}
@@ -1087,7 +1087,6 @@ Since the projection $Y'\to Y$ is surjective by \cref{scheme surjective stable u
 \subsection{Universally open and closed morphisms}
 Following the usual terminology, we say a morphism $f:X\to Y$ is \textbf{universally open} (resp. \textbf{universally closed}, resp. a \textbf{universal embedding,} resp. a \textbf{universal homeomorphism}) if for any base change $Y'\to Y$, the morphism $f_{(Y')}:X_{(Y')}\to Y'$ is open (resp. closed, resp. an embedding, resp. a homeomorphism).
 \begin{proposition}\label{scheme universally open closed stable prop}
-\mbox{}
 \begin{enumerate}
 \item[(\rmnum{1})] The composition of two universally open morphisms (resp. universally closed morphisms, resp. two universal embeddings, resp. two universal homeomorphisms) is universally open (resp. universally closed, resp. a universal embedding, resp. a universal homeomorphism). 
 \item[(\rmnum{2})] If $f:X\to X'$, $g:Y\to Y'$ are two universally open (resp. universally closed, resp. two universal embeddings, resp. two universal homeomorphisms) $S$-morphisms, so is the product $f\times_Sg$.
@@ -1417,15 +1416,15 @@ Let $X$ be a scheme and $x$ a point of $X$.
 \begin{enumerate}
 \item[(a)] For $x$ to belong to a unique irreducible component of $X$, it is necessary and sufficient that the nilradical of $\mathscr{O}_{X,x}$ is prime.
 \item[(b)] If the nilradical of $\mathscr{O}_{X,x}$ is prime and the family of irreducible components of $X$ is locally finite, there exists an open neighborhood $U$ of $x$ that is irreducible.
-\item[(c)] For $X$ to be the coproduct of its irreducible components, it is necessary and sufficient that the family of irreducible components of $X$ is locally finite and for each $x\in X$, the nilradical of $\mathscr{O}_{X,x}$ is prime.
+\item[(c)] For $X$ to be the coproduct of its irreducible components\footnote{Note that in this case, the connected components of $X$ are exactly the irreducible components.}, it is necessary and sufficient that the family of irreducible components of $X$ is locally finite and for each $x\in X$, the nilradical of $\mathscr{O}_{X,x}$ is prime.
 \end{enumerate}
 \end{proposition}
 \begin{proof}
-To check that whether $x$ belongs to distinct irreducible components of $X$, we may assume that $X=\Spec(A)$ is affine (\cref{topo space open irre closed intersection}). Then this signifies that $\p_x$ contains two distinct minimal prime ideals of $A$, and equivalently $\m_x$ contains two distinct minimal prime ideals of $\mathscr{O}_{X,x}$, which is a contradiction if and only if the nilradical of $\mathscr{O}_{X,x}$ is prime.\par
-Now assume the conditions in (a). As the family of irreducible components of $X$ is locally finite, the union of those of these components which do not contain $x$ is closed, so its complement $U$ is open and contained in the unique irreducible component of $X$ containing $x$, and therefore irreducible (\cref{topo space irreducible iff}). The assertion in (c) follows from (b) and \cref{topo space locally Noe irre component open iff}.
+To check that whether $x$ belongs to distinct irreducible components of $X$, we may assume that $X=\Spec(A)$ is affine (\cref{topo space open irre closed intersection}). The considered condition then signifies that $\p_x$ contains two distinct minimal prime ideals of $A$, or equivalently that $\m_x$ contains two distinct minimal prime ideals of $\mathscr{O}_{X,x}$, which is impossible if and only if the nilradical of $\mathscr{O}_{X,x}$ is prime; this proves (a).\par
+Now assume the condition in (a). As the family of irreducible components of $X$ is locally finite, the union of those which do not contain $x$ is closed, so its complement $U$ is open and contained in the unique irreducible component of $X$ containing $x$, hence is irreducible (\cref{topo space irreducible iff}). This proves (b), and (c) then follows from (b) and \cref{topo space locally Noe irre component open iff}.
 \end{proof}
 \begin{proposition}\label{scheme locally integral iff}
-For a scheme $X$ to be locally integral, it is necessary and sufficient that the family of irreducible components is locally finite and for each point $x\in X$, the local ring $\mathscr{O}_{X,x}$ is integral. In this case, $X$ is the coproduct of its irreducible components, which are integral subschemes.
+For a scheme $X$ to be locally integral, it is necessary and sufficient that the family of irreducible components is locally finite and for each point $x\in X$, the local ring $\mathscr{O}_{X,x}$ is integral. In this case, every connected component of $X$ is irreducible, and therefore $X$ is the coproduct of its irreducible components, which are integral subschemes.
 \end{proposition}
 \begin{proof}
 As the localizations of integral domains are integral, for a locally integral scheme $X$, its local rings $\mathscr{O}_{X,x}$ are inegral. The set of the irreducible components of $X$ is locally finite since each $x\in X$ admits an irreducible open neighborhoods, and $X$ is the coproduct of its irreducible components by \cref{scheme irreducible component open and nilradical}. Conversely, if $X$ satisfies these conditions, then $X$ is the coproduct of its irreducible components, which are open and integral. It follows immediately that $X$ is locally integral.
@@ -1830,7 +1829,6 @@ Also, if the conclusion in \cref{scheme morphism cancelled by separated eg} hold
 \end{remark}
 \subsection{Criterion of separated morphisms}
 \begin{proposition}[\textbf{Propoerties of Seperated Morphisms}]\label{scheme morphism separated permanence prop}
-\mbox{}
 \begin{enumerate}
 \item[(\rmnum{1})] Any radical morphism (and in particular any monomorphism, hence any immersion) is a separated morphism.
 \item[(\rmnum{2})] The composition of two separated morphisms is separated.
@@ -1937,7 +1935,6 @@ A closed immersion is quasi-compact since a closed subset of a quasi-compact set
 \end{example}
 We say a morphism $f:X\to Y$ of schemes is \textbf{quasi-separated} (of $X$ is an \textbf{$Y$-scheme quasi-separated over $Y$}) if the diagonal morphism $\Delta_f:X\to X\times_YX$ is quasi-compact. A scheme $X$ is called \textbf{quasi-separated} if it is quasi-separated over $\Z$. Since a closed immersion is quasi-compact, we see any separated morphism is quasi-separated. In particular, any separated scheme is quasi-separated.
 \begin{proposition}[\textbf{Properties of Quasi-Compact Morphisms}]\label{scheme morphism qc permanence prop}
-\mbox{}
 \begin{enumerate}
 \item[(\rmnum{1})] An immersion $j:X\to Y$ is quasi-compact if it is closed, or $Y$ is locally Noetherian, or $X$ is Noetherian.
 \item[(\rmnum{2})] The composition of two quasi-compact morphisms is quasi-compact.
@@ -2002,7 +1999,6 @@ X\ar[r,"f"]&Y
 commutes. As $f$ is quasi-compact, so is $f'$ (\cref{scheme morphism qc permanence prop}(\rmnum{1}) and (\rmnum{5})). We are then reduced to proving that if $f$ is a quasi-compact dominant morphism, then $f(X)=Y$. Now let $y'$ be a point of $y$ and let $y$ be the generic point of a irreducible component of $Y$ containing $y'$; by (\rmnum{2}), it suffices to note that $f^{-1}(y)$ is nonempty, which follows from \cref{scheme morphism qs dominant char}.
 \end{proof}
 \begin{proposition}[\textbf{Properties of Quasi-Separated Morphisms}]\label{scheme morphism qs permanence prop}
-\mbox{}
 \begin{enumerate}
 \item[(\rmnum{1})] Any radical morphism $f:X\to Y$ (in particular, any monomorphism and any immersion) is quasi-separated.
 \item[(\rmnum{2})] If $f:X\to Y$ and $g:Y\to Z$ are two quasi-separated morphisms, $g\circ f$ is quasi-separated.
@@ -2138,7 +2134,6 @@ If $Y$ is locally Noetherian, then $f:X\to Y$ is locally of finite type if and o
 The first assertion is clear since we can take $\Gamma(V,\mathscr{O}_Y)$ to be Noetherian. The second one follows because $\Gamma(U,\mathscr{O}_X)$ is then also Noetherian.
 \end{proof}
 \begin{proposition}[\textbf{Properties of Morphisms Locally of Finite Type}]\label{scheme morphism local ft permanence prop}
-\mbox{}
 \begin{enumerate}
 \item[(\rmnum{1})] Any local immersion is locally of finite type.
 \item[(\rmnum{2})] If $f:X\to Y$ and $g:Y\to Z$ are two morphisms locally of finite type, then $g\circ f$ is locally of finite type.
@@ -2166,7 +2161,6 @@ Let $\rho:A\to B$ be a homomorphism of rings. For the corresponding morphism $f:
 This condition is clearly sufficient. Conversely, assume that $f$ is locally of finite type. Then by \cref{scheme ft fp at point affine open prop} there exists a finite cover of $\Spec(B)$ by open sets $D(g_i)$ (where $g_i\in B$) such that $B_{g_i}$ is an $A$-algebra of finite type. Since the $D(g_i)$'s cover $\Spec(B)$, we see $g_i$ generate the ring $B$, and it follows from \cref{Spec finite standard open cov on domain glue property} that $B$ is of finite type over $A$.
 \end{proof}
 \begin{proposition}[\textbf{Properties of Morphisms Locally of Finite Presentation}]\label{scheme morphism local fp permanence prop}
-\mbox{}
 \begin{enumerate}
 \item[(\rmnum{1})]  Any local isomorphism is locally of finite presentation.
 \item[(\rmnum{2})] If two morphisms $f:X\to Y$, $g:Y\to Z$ are locally of finite presentation, so is $g\circ f$.
@@ -2271,7 +2265,6 @@ Let $f:X\to Y$ be a morphism of finite type. If $Y$ is Noetherian (resp. locally
 This follows from \cref{scheme local Noe local ft iff fp} and \cref{topo space Noe prop}.
 \end{proof}
 \begin{proposition}[\textbf{Properties of Morphisms of Finite Type}]\label{scheme morphism ft permanence prop}
-\mbox{}
 \begin{enumerate}
 \item[(\rmnum{1})] Any quasi-compact immersion is of finite type.
 \item[(\rmnum{2})] The composition of two morphisms of finite type is of finite type.
@@ -2305,7 +2298,6 @@ Let $X$ and $Y$ be two schemes. We say a morphism $f:X\to Y$ is \textbf{of finit
 \end{enumerate}
 In this case, we say $X$ is \textbf{of finite presentation over $Y$}, or is an \textbf{$Y$-scheme of finite presentation}. It is clear that condition (\rmnum{3}) is automatic if $f$ is separated, or if $X$ is locally Noetherian. If $Y$ is locally Noetherian, then again, $f$ is of finite type if and only if it is of finite presentation, and in this case $X$ is also locally Noetherian.\par
 \begin{proposition}[\textbf{Properties of Morphisms of Finite Presentation}]\label{scheme morphism fp permanence prop}
-\mbox{}
 \begin{enumerate}
 \item[(\rmnum{1})] Any quasi-compact immersion that is locally of finite presentation (in particular any quasi-compact open immersion) is of finite presentation.
 \item[(\rmnum{2})] The composition of two morphisms of finite presentation is of finite presentation.
@@ -3713,7 +3705,6 @@ In fact, the canonical isomorphism of \cref{scheme S-affine algebra under base c
 Recall that we say a morphism $f:X\to Y$ is affine if $X$ is an affine scheme over $Y$. The properties of affine $S$-schemes then translate into properties of affine morphisms.
 \begin{proposition}[\textbf{Properties of Affine Morphisms}]
 \label{scheme affine morphism permanence prop}
-\mbox{}
 \begin{enumerate}
 \item[(\rmnum{1})] A closed immersion is affine.
 \item[(\rmnum{2})] The composition of two affine morphisms is affine.
@@ -4553,7 +4544,7 @@ If $\mathscr{M}$ is a quasi-coherent graded $\mathscr{S}$-module and $\mathscr{I
 Let $f\in\Gamma(Y,\mathscr{S}_d)$ with $d>0$. Over the open subset $X_f$, the $(\mathscr{O}_X|_{X_f})$-module $\widetilde{\mathscr{S}(nd)}|_{X_f}$ is canonically isomorphic to $\mathscr{O}_X|_{X_f}$ for any $n\in\Z$. In particular, if the $\mathscr{O}_Y$-algebra $\mathscr{S}$ is generated by $\mathscr{S}_1$, the $\mathscr{O}_X$-module $\widetilde{\mathscr{S}(n)}$ is invertible for all $n\in\Z$. 
 \end{proposition}
 \begin{proof}
-For any affine open $U$ of $Y$, by \cref{scheme Proj qcoh S(nd) local is O_X} we have a canonical isomorphism $\widetilde{\mathscr{S}(nd)}|_{X_f\cap p^{-1}(U)}\cong\mathscr{O}_X|_{X_f\cap p^{-1}(U)}$, in view of \cref{scheme Proj of qcoh graded algebra X_f def} (where $p:X\to Y$ is the structural morphism). It is immediate that this isomorphism is compatible with restrictions, whence the first assertion. For the second one, if $\mathscr{S}$ is generated by $\mathscr{S}_1$, there exists an affine open cover $(U_\alpha)$ of $Y$ such that $\Gamma(U_\alpha,\mathscr{S})$ is generated by $\Gamma(U_\alpha,\mathscr{S}_1)=\Gamma(U_\alpha,\mathscr{S})_1$, and we can then use \cref{scheme Proj qcoh S(n) invertible if}.
+For any affine open subset $U$ of $Y$, by \cref{scheme Proj qcoh S(nd) local is O_X} we have a canonical isomorphism $\widetilde{\mathscr{S}(nd)}|_{X_f\cap p^{-1}(U)}\cong\mathscr{O}_X|_{X_f\cap p^{-1}(U)}$, in view of \cref{scheme Proj of qcoh graded algebra X_f def} (where $p:X\to Y$ is the structural morphism). It is immediate that this isomorphism is compatible with restrictions, whence the first assertion. For the second one, if $\mathscr{S}$ is generated by $\mathscr{S}_1$, there exists an affine open cover $(U_\alpha)$ of $Y$ such that $\Gamma(U_\alpha,\mathscr{S})$ is generated by $\Gamma(U_\alpha,\mathscr{S}_1)=\Gamma(U_\alpha,\mathscr{S})_1$, and we can then use \cref{scheme Proj qcoh S(n) invertible if}.
 \end{proof}
 Again, for any integer $n\in\Z$ and any $\mathscr{O}_X$-module $\mathscr{F}$, we set
 \[\mathscr{O}_X(n)=\widetilde{\mathscr{S}(n)},\quad \mathscr{F}(n)=\mathscr{F}\otimes_{\mathscr{O}_X}\mathscr{O}_X(n).\]
@@ -5194,7 +5185,6 @@ Let $f:X\to Y$ be a quasi-compact morphism where $Y$ is quasi-compact, and $\mat
 Since $\mathscr{L}$ is very ample, $f$ is separated and by \cref{scheme very ample sigma surjective} the canonical homomorphism $\sigma:f^*(f_*(\mathscr{F}(n)))\to\mathscr{F}(n)$ is surjective for $n$ sufficiently large. The proposition is then a generalization of \cref{scheme Proj of qcoh alg qcoh ft is quotient}, and can be proved similarly.
 \end{proof}
 \begin{proposition}[\textbf{Properties of Very Ample Sheaves}]\label{scheme very ample permanence prop}
-\mbox{}
 \begin{enumerate}
 \item[(\rmnum{1})] For any scheme $Y$, any invertible $\mathscr{O}_Y$-module $\mathscr{L}$ is very ample relative to the identify morphism $1_Y$.
 \item[(\rmnum{2})] Let $f:X\to Y$ be a morphism and $j:X'\to X$ be an immersion. If $\mathscr{L}$ is a very ample $\mathscr{O}_X$-module relative to $f$, then $j^*(\mathscr{L})$ is very ample relative to $f\circ j$.
@@ -5454,7 +5444,6 @@ Let $Z,Z'$ be two $S$-schemes, $p,p'$ be the projections of $T=Z\times_SZ'$, $\m
 
 \end{proof}
 \begin{proposition}[\textbf{Properties of Relative Ample Sheaves}]\label{scheme relative ample permanence prop}
-\mbox{}
 \begin{enumerate}
 \item[(\rmnum{1})] For any scheme $Y$, any invertible $\mathscr{O}_Y$-module $\mathscr{L}$ is relative ample relative to the identify morphism $1_Y$.
 \item[(\rmnum{2})] Let $f:X\to Y$ be a quasi-compact morphism and $j:X'\to X$ be a quasi-compact morphism that is a homeomorphism from $X'$ onto a subspace of $X$. If $\mathscr{L}$ is an $\mathscr{O}_X$-module relative to $f$, then $j^*(\mathscr{L})$ is relative relative to $f\circ j$.
@@ -5554,7 +5543,6 @@ Let $Y$ be a quasi-compact and quasi-separated scheme, $f:X\to Y$ be a morphism 
 In fact, $\mathscr{A}(X)$ is the inductive limit of its quasi-coherent sub-$\mathscr{O}_Y$-algebras of finite type (\cref{scheme local Noe qcoh is inductive limit ft}); the assertion is then a particular case of \cref{scheme morphism to Proj inductive limit immersion iff}, in view of the identification of $\Spec(\mathscr{A}(X))$ and $\Proj(\mathscr{A}(X)[T])$ (\cref{scheme Proj of qcoh polynomial algebra}) and the canonical morphisms from $X$ into them (cf. \cref{scheme quasi-affine direct image of O_X}).
 \end{proof}
 \begin{proposition}[\textbf{Properties of Quasi-affine Morphisms}]\label{scheme morphism quasi-affine permanence prop}
-\mbox{}
 \begin{enumerate}
 \item[(\rmnum{1})] A quasi-compact morphism $f:X\to Y$ that is a homeomorphism from $X$ onto a subspace of $Y$ (and in particular a quasi-compact immersion) is quasi-affine.
 \item[(\rmnum{2})] The composition of two quasi-affine morphisms is quasi-affine.
@@ -5670,7 +5658,6 @@ By the hypothesis on $Y$, if $\mathscr{E}$ is a quasi-coherent $\mathscr{O}_Y$-m
 \end{proof}
 
 \begin{proposition}[\textbf{Properties of Quasi-projective Morphisms}]\label{scheme morphism quasi-projective permanence prop}
-\mbox{}
 \begin{enumerate}
 \item[(\rmnum{1})] A quasi-affine morphism of finite type (in particular a quasi-compact immersion or an affine morphism of finite type) is quasi-projective.
 \item[(\rmnum{2})] If $f:X\to Y$ and $g:Y\to Z$ are quasi-projective and if $Z$ is quasi-compact, $g\circ f$ is quasi-projective.
@@ -5697,7 +5684,6 @@ This follows from \cref{scheme relative ample and coproduct}.
 \subsection{Universally closed and proper morphisms}
 As the terminology indicates, we say a morphism $f:X\to Y$ is \textbf{universally closed} if the projection $f\times_Y1_{Y'}:X\times_YY'\to Y'$ is closed for any base change $Y'\to Y$. By \cref{scheme immersion stable under base change}, we know that a closed immersion is universally closed. We say a morphism $f:X\to Y$ is \textbf{proper} if it is separated, of finite type, and universally closed, and in this case $X$ is said to be \textbf{proper over $Y$}, or a \textbf{proper $Y$-scheme}. It is clear that all these notations are local over $Y$. We also note that, to verify that the image of a closed subset $Z$ of $X\times_YY'$ under the projection $q:X\times_YY'\to Y'$ is closed in $Y'$, it suffices to shows that $q(Z)\cap U'$ is closed in $U'$ for any affine open subset $U'$ of $Y'$. As $q(Z)\cap U'=q(Z\cap q^{-1}(U'))$ and $q^{-1}(U')$ is identified with $X\times_YU'$ (\cref{scheme product inverse image of base open}), we see that to verify the universally closedness of $f$, it suffices to limit the case where $Y'$ is affine. We will see later that if $Y$ is locally Noetherian, we can even assume that $Y'$ is of finite type over $Y$.
 \begin{proposition}[\textbf{Properties of Proper Morphisms}]\label{scheme morphism proper permanence prop}
-\mbox{}
 \begin{enumerate}
 \item[(\rmnum{1})] A closed immersion is proper.
 \item[(\rmnum{2})] The composition of two proper morphisms is proper. 
@@ -5812,7 +5798,6 @@ The reasoning of \cref{scheme projective and quasi-projective} shows that for an
 \end{remark}
 
 \begin{proposition}[\textbf{Properties of Projective Morphisms}]\label{scheme morphism projective permanence prop}
-\mbox{}
 \begin{enumerate}
 \item[(\rmnum{1})] A closed immersion is projective.
 \item[(\rmnum{2})] If $f:X\to Y$ and $g:Y\to Z$ are projective morphisms and if $Z$ is quasi-compact and quasi-separated, then $g\circ f$ is projective.
@@ -5899,7 +5884,7 @@ The $W_k$ then form an open covering of $g(X')$, so to show that $g$ is an immer
 \[u_k:W_k\stackrel{p_k}{\to}V_k\stackrel{\varphi_k^{-1}}{\to}U_k\to X\]
 which fits into the following commutative diagram
 \[\begin{tikzcd}[row sep=12mm,column sep=12mm]
-U'\ar[rd]\ar[r,hook]&U'_k\ar[rd]\ar[r,hook]&U''_k\ar[rr,bend left=50pt,"g|_{U''_k}"]\ar[r,hook,"h|_{U''_k}"]\ar[rd,swap,"f|_{U''_k}"description]&X\times_SW_k\ar[d,"q_1"description]\ar[r,"q_2"]&W_k\ar[d,"p_k"]\ar[l,bend right=30pt,swap,"\Gamma_{u_k}"]\ar[ld,"u_k"description]\\
+U'\ar[rd]\ar[r,hook]&U'_k\ar[rd]\ar[r,hook]&U''_k\ar[rr,bend left=50pt,"g|_{U''_k}"]\ar[r,hook,"h|_{U''_k}"]\ar[rd,swap,"f|_{U''_k}"description]&X\times_SW_k\ar[d,"q_1"description]\ar[r,"q_2"]&W_k\ar[d,"p_k"]\ar[l,bend right=30pt,swap,"\Gamma_{u_k}",pos=0.55]\ar[ld,"u_k"description]\\
 &U\ar[r,hook]&U_k\ar[rr,bend right=30pt,swap,"\varphi_k","\cong"']\ar[r,hook]&X&V_k
 \end{tikzcd}\]
 
@@ -5951,7 +5936,6 @@ If we suppose first that each $B_{h_i}$ is a finite algebra over $A_{g_i}$, then
 \end{proof}
 
 \begin{proposition}[\textbf{Properties of Integral and Finite morphisms}]\label{scheme morphism integral finite permanence prop}
-\mbox{}
 \begin{enumerate}
 \item[(\rmnum{1})] A closed immersion is finite (and a fortiori integral).
 \item[(\rmnum{2})] The composition of two integral morphisms (resp. finite) is integral (resp. finite).
@@ -6070,7 +6054,6 @@ The equivalence of (\rmnum{1}) and (\rmnum{3}) follows from \cref{scheme morphis
 \end{proof}
 We say a morphism $f:X\to Y$ of finite type is \textbf{quasi-finite}, or $X$ is \textbf{quasi-finite} over $Y$, if it satisfies the equivalent conditions of \cref{scheme morphism ft quasi-finite iff fiber discrete}. We say a morphism $f:X\to Y$ is quasi-finite at a point $x\in X$ if there exists an affine open neighborhood $V$ of $y=f(x)$ and an affine open neighborhood $U$ of $x$ such that $f(U)\sub V$ and the restriction $f|_U:U\to V$ is quasi-finite. We say that $f:X\to Y$ is locally quasi-finite if it is quasi-finite at every point of $X$. From \cref{scheme morphism integral fiber finite discrete}, it is clear that any finite morphism is quasi-finite.
 \begin{proposition}[\textbf{Properties of Quasi-finite Morphisms}]\label{scheme morphism quasi-finite permanence prop}
-\mbox{}
 \begin{enumerate}
 \item[(\rmnum{1})] Any quasi-compact immersion (in particular any closed immersion) is quasi-finite.
 \item[(\rmnum{2})] If $f:X\to Y$ and $g:Y\to Z$ are quasi-finite morphisms, $g\circ f$ is quasi-finite.
@@ -6508,7 +6491,7 @@ Let $A$ be a valuation ring with fraction field $K$, $Y=\Spec(A)$, $b$ be the ge
 Let $x$ be a rational point of $f^{-1}(b)$ over $K$. As $f$ is separated, so is the morphism $f^{-1}(b)\to\Spec(K)$ corresponding to $f$ (\cref{scheme morphism separated permanence prop}(\rmnum{4})), since and any section of $f^{-1}(b)$ a closed immersion by \cref{scheme morphism to separated graph is closed}, $\{x\}$ is closed in $f^{-1}(b)$. Consider the reduced closed subscheme $X'$ of $X$ with underlying space $\widebar{\{x\}}$ of $\{x\}$ in $X$. It is clear that the restriction of $f$ to $X'$ satisfies the conditions of \cref{scheme morphism from valuation specturm iso if} (note that since $x$ is rational over $K$, we have $\kappa(x)=K$), hence an isomorphism from $X'$ to $Y$, whose inverse isomorphism is the $Y$-section of $X$ we want.
 \end{proof}
 
-We recall that if $F$ is a subset of the scheme $Y$, the codimension of $F$ in $Y$ is equal to the infimum of $\dim(\mathscr{O}_{Y,z})$ where $z\in F$ (this can be easily verified after reducing to affine case), and we denote this number by $\codim_Y(F)$.
+We recall that if $F$ is a subset of the scheme $Y$, the \textit{codimension of} $F$ in $Y$ is equal to the infimum of $\dim(\mathscr{O}_{Y,z})$ where $z\in F$ (this can be easily verified after reducing to affine case), and we denote this number by $\codim_Y(F)$.
 \begin{corollary}\label{scheme local Noe section not defined codim prop}
 Let $Y$ be a locally Noetherian reduced scheme such that the subset $N$ of $y\in Y$ where $Y$ is not regular has codimension $\geq 2$. Let $f:X\to Y$ be a separted and closed morphism of finite type and $g$ be a rational $Y$-section of $X$. If $Y'$ is the set of points of $Y$ where $g$ is not defined, then $\codim_Y(Y')\geq 2$.
 \end{corollary}
@@ -7578,7 +7561,7 @@ Since this question is local, we may assume that $Y$ is affine. Consider the Ler
 By \cref{scheme qcqs morphism qcoh higher direct image}, we see that the $R^qf_*(\mathscr{F})$ are quasi-coherent $\mathscr{O}_Y$-module, so we have $H^p(Y,R^qf_*(\mathscr{F}))=0$ for $p>0$ (\cref{Serre's criterion for affineness}). The spectral sequence therefore collapses at $E_2$ page and we obtain an isomorphism $H^q(X,\mathscr{F})\cong H^0(Y,R^qf_*(\mathscr{F}))$.
 \end{proof}
 \begin{corollary}\label{scheme qcsp over qc qcoh R^pf_* vanish for p>r}
-Let $f:X\to Y$ be a quasi-compact and separated morphism, and suppose that $Y$ is quasi-compact. Then there exists an integer $r>0$ such that for any quasi-coherent $\mathscr{O}_X$-module, we have $R^pf_*(\mathscr{F})=0$ for $p>r$. If $Y$ is affine, then we can choose $r$ so that there exists a covering of $X$ by $r$ affine opens.
+Let $f:X\to Y$ be a quasi-compact and separated morphism, and suppose that $Y$ is quasi-compact. Then there exists an integer $r>0$ such that for any quasi-coherent $\mathscr{O}_X$-module, we have $R^pf_*(\mathscr{F})=0$ for $p>r$. If $Y$ is affine, then we can choose $r$ so that there exists a covering of $X$ by $r+1$ affine opens.
 \end{corollary}
 \begin{proof}
 Since $Y$ is a union of affine opens, it suffices to prove the second assertion, in view of \cref{scheme qcqs morphism direct image over affine char}. Now if $\mathfrak{U}$ is a covering of $X$ by $r$ affine opens, then $H^p(\mathfrak{U},\mathscr{F})=0$ for $p>r$, since the cochains can be taken to be alternating. The conclusion then follows from \cref{scheme separated cohomology compute by finite affine cover}.
@@ -7983,7 +7966,7 @@ R^{p-1}f_*(\mathscr{F}'')\ar[r,"\partial"]&R^pf_*(\mathscr{F})\ar[r]&R^pf_*(\mat
 \end{tikzcd}\]
 in which the four outer terms are coherent. It then follows from \cref{sheaf of module coh 5 of 4} that $R^pf_*(\mathscr{F})$ is coherent. We also note that any direct factor $\mathscr{F}'\in\mathcal{A}$ of a coherent $\mathscr{O}_X$-module $\mathscr{F}\in\mathfrak{E}$ belongs to $\mathfrak{E}$: in fact, $R^pf_*(\mathscr{F}')$ is then a direct factor of $R^pf_*(\mathscr{F})$ (G, \Rmnum{2} 4.4.4), so is of finite type, and since it is quasi-coherent (\cref{scheme qcqs morphism qcoh higher direct image}), it is coherent (note that $Y$ is Noetherian). In view of \cref{scheme Noe direct factor stable devissage lemma}, we only need to prove that if $X$ is irreducible with generic point $x$, then there exists a coherent $\mathscr{O}_X$-module $\mathscr{F}\in\mathfrak{E}$ such that $\mathscr{F}_x\neq 0$. In fact, for any irreducible closed subscheme $Y$ of $X$ with canonical injection $j:Y\to X$, the composition $f\circ j$ is proper (\cref{scheme morphism proper permanence prop}), and if $\mathscr{G}$ is a coherent $\mathscr{O}_Y$-module supported in $Y$, then $j_*(\mathscr{G})$ is a coherent $\mathscr{O}_X$-module such that $R^p(f\circ j)_*(\mathscr{G})=R^pf_*(j_*(\mathscr{G}))$ (G, \Rmnum{2}, 4.9.1), so we can apply our result on $Y$.\par
 By Chow's lemma (\cref{scheme morphism ft over Now Chow lemma}), there exists an irreducible scheme $X'$ and a surjective projective morphism $g:X'\to X$ such that $f\circ g:X'\to Y$ is projective. By \cref{scheme quasi-projective over qcqs iff P(E)}, there exists a $g$-ample $\mathscr{O}_{X'}$-module $\mathscr{L}$, so by \cref{scheme morphism projective cohomology of coh prop} we see that there exists an integer $n_0$ such that $\mathscr{F}=g_*(\mathscr{O}_{X'}(n))$ is a coherent $\mathscr{O}_X$-module and $R^pg_*(\mathscr{O}_{X'}(n))=0$ for $p>0$ and $n\geq n_0$. Moreover, if $x$ (resp. $x'$) is the generic point of $X$ (resp. $X')$, there exists an open subset $U$ of $x$ such that $g$ is an isomorphism from $g^{-1}(U)$ onto $U$, so $\mathscr{F}_x\cong(\mathscr{O}_{X'}(n))_{x'}\neq 0$. On the other hand, since $f\circ g$ is projective and $Y$ is Noetherian, the $R^p(f\circ g)(\mathscr{O}_{X'}(n))$ are coherent by \cref{scheme morphism projective cohomology of coh prop}. Consider the Grothendieck's spectral sequence:
-\[E_2^{p,q}=R^pf_*(R^qg_*(\mathscr{O}_{X'}(n)))\Rightarrow R^*(f\circ g)_*(\mathscr{O}_{X'}(n)).\]
+\[E_2^{p,q}=R^pf_*(R^qg_*(\mathscr{O}_{X'}(n)))\Rightarrow R^{p+q}(f\circ g)_*(\mathscr{O}_{X'}(n)).\]
 We have already remarked that for $n\gg 0$ we have $R^qg_*(\mathscr{O}_{X'}(n))=0$ for $q>0$, so this sequence collapse at $E_2$ and we obtain an isomorphism $E_2^{p,0}=R^pf_*(\mathscr{F})\cong R^p(f\circ g)_*(\mathscr{O}_{X'}(n))$, which implies $\mathscr{F}\in\mathfrak{E}$ and completes the proof.
 \end{proof}
 \begin{corollary}\label{scheme proper over Noe ring coherence of cohomology}
@@ -8259,7 +8242,7 @@ Let $A$ be a unibranch Noethreian local ring, $\a$ be a defining ideal of $A$, $
 \begin{proof}
 Let $\m$ be the maximal ideal of $A$; $Y=\Spec(A)$ is an integral scheme with unique closed point $y$. By hypothesis, we have $\m^k\sub\a\sub\m$ for an integer $k$, so $V(\a)=\{\m\}$. Let $S'=\bigoplus_{n\geq 0}\a^n$, and $X=\Proj(S')$, which is the blow up $Y$-scheme relative to $\a$. Then $X$ is integral and the structural morphism $f:X\to Y$ is birational and projective (\cref{scheme integral blow up scheme prop}). \cref{scheme integral morphism proper fiber and separable degree} is then applicable and shows that $f^{-1}(y)$ is connected. But $f^{-1}(y)$ is the underlying space of $\Proj(S'\otimes_AA_0)$ (\cref{scheme Proj base ring change prop} and \cref{scheme morphism base change by local scheme prop}), and as $S'\otimes_AA_0=S$ by definition, the proposition follows.
 \end{proof}
-\subsection{Zariski's "Main Theorem"}
+\subsection{Zariski's Main Theorem}
 \begin{proposition}\label{scheme proper over local Noe isolated in fiber open prop}
 Let $Y$ be a locally Noetherian scheme and $f:X\to Y$ be a proper morphism. Let $X'$ be the set of points $x\in X$ which is isolated in the fiber $f^{-1}(f(x))$. Then $X'$ is open in $X$, and if
 \[\begin{tikzcd}
@@ -8281,7 +8264,7 @@ Let $Y$ be a locally Noetherian scheme, $f:X\to Y$ be a morphism. Then the follo
 \begin{proof}
 We see that (\rmnum{1})$\Rightarrow$(\rmnum{2}) by \cref{scheme morphism finite is projective}. If $f$ is proper and affine, then so is the induced morphism $f^{-1}(y)\to\Spec(\kappa(y))$ (\cref{scheme morphism proper permanence prop} and \cref{scheme affine morphism permanence prop}), and the finiteness theorem \cref{scheme morphism proper over Noe R^pf_* coherence}, applied to the structural sheaf of $f^{-1}(y)$, shows that $f^{-1}(y)=\Spec(A)$, where $A$ is a finite dimensional $\kappa(y)$-algebra. Then $f^{-1}(y)$ is a finite $\kappa(y)$-scheme, so is a finite set (\cref{scheme algebraic Artinian iff}), and we see that (\rmnum{2})$\Rightarrow$(\rmnum{3}). Finally, as $f^{-1}(y)$ is an algebraic scheme, the hypothesis that $f^{-1}(y)$ is a finite set implies that it is discrete (\cref{scheme algebraic Artinian iff}). With the notations of \cref{scheme proper over local Noe isolated in fiber open prop}, we then have $X'=X$, and $f':X'\to Y'$ is an isomorphism; as $g$ is a finite morphism, we then conclude that (\rmnum{3})$\Rightarrow$(\rmnum{1}).
 \end{proof}
-\begin{theorem}[\textbf{Zariski's "Main Theorem"}]\label{scheme quasi-projective over Noe ZMT}
+\begin{theorem}[\textbf{Zariski's Main Theorem}]\label{scheme quasi-projective over Noe ZMT}
 Let $Y$ be a Noetherian scheme, $f:X\to Y$ be a quasi-projective morphism, and $X'$ be the set of points $x\in X$ that is isolated in the fiber $f^{-1}(f(x))$. Then $X'$ is an open subset of $X$, and the open subscheme $X'$ of $X$ is isomorphic via $f$ to an open subscheme of a $Y$-scheme $Y'$ that is finite over $Y$.
 \end{theorem}
 \begin{proof}
@@ -8290,48 +8273,60 @@ The hypotheses implies that there exists a projective $Y$-scheme $P$ such that $
 \begin{remark}\label{scheme quasi-projective over Noe ZMT reduced irreducible condition}
 If $X$ is reduced (resp. irreducible and $X'$ is nonempty), then we can suppose, in the situation of \cref{scheme quasi-projective over Noe ZMT}, that $Y'$ is reduced (resp. irreducible). In fact, we can replace $Y'$ by the scheme-theoretic closure $\widebar{X'}$ of $X'$ in $Y'$, and it is reduced if $X'$ is (\cref{scheme theoretic image exist if}). If $X'$ is nonempty, then it is irreducible if $X$ is, and then $\widebar{X'}$ is also irreducible.
 \end{remark}
+
 \begin{corollary}\label{scheme morphism ft isolated point nbhd finite}
-Let $Y$ be a locally Noetherian and separated scheme, $f:X\to Y$ be morphism of finite type, and $x\in X$ be a point that is isolated in $f^{-1}(f(x))$. then there exists an open neighborhood $U$ of $x$ that is isomorphic to an open subscheme of a $Y$-scheme that is finite over $Y$.
+Let $Y$ be a locally Noetherian and separated scheme, $f:X\to Y$ be morphism of finite type, and $x\in X$ be a point that is isolated in $f^{-1}(f(x))$. Then there exists an open neighborhood $U$ of $x$ that is isomorphic to an open subscheme of a $Y$-scheme that is finite over $Y$.
 \end{corollary}
 \begin{proof}
 Let $y=f(x)$, $U$ be an affine open neighborhood of $Y$, $V$ an affine open neighborhood of $x$ contained in $f^{-1}(U)$. As $Y$ is separated, the injection $U\to Y$ is affine (\cref{scheme morphism affine to sp is affine}), and as $V$ is affine over $U$ (again by \cref{scheme morphism affine to sp is affine}), the restriction of $f$ to $V$ is an affine morphism $V\to Y$ (\cref{scheme affine morphism permanence prop}(\rmnum{2})); a fortiori, this restriction is quasi-projective since it is of finite type (\cref{scheme morphism ft permanence prop}(\rmnum{1}) and \cref{scheme morphism quasi-projective permanence prop}). It then suffices to apply \cref{scheme quasi-projective over Noe ZMT}.
 \end{proof}
+
+\begin{example}\label{scheme morphism ft of variety same dimension generic finite}
+Let $f:X\to Y$ be a morphism of finite type between integral algebraic schemes of the same dimension over a field $k$. Then in view of \cref{algebra finite over field tensor with field dimension}, the fiber $X_\eta$ at the generic point $\eta$ of $Y$ has dimension zero, hence is discrete, and we conclude from \cref{scheme morphism ft isolated point nbhd finite} that there is an open dense subset $U$ of $X$ such that $f^{-1}(U)\to U$ is finite.
+\end{example}
+
 \begin{corollary}\label{scheme affine ZMT}
 Let $A$ be a Noetherian ring, $B$ be an $A$-algebra of finite type, $\mathfrak{P}$ be a prime ideal of $B$, $\p$ be its contraction in $A$. Suppose that $\mathfrak{P}$ is both maximal and minimal among prime ideals of $B$ with contraction $\p$, then there exists $g\in B-\mathfrak{P}$, a finite $A$-algebra $A'$ and an element $f'\in A'$ such that the $A$-algebra $B_g$ and $A'_{f'}$ are isomorphic.
 \end{corollary}
 \begin{proof}
 It suffices to apply \cref{scheme morphism ft isolated point nbhd finite} to $Y=\Spec(A)$ and $X=\Spec(B)$, since the hypothesis on $\mathfrak{P}$ signified that it is isolated in the fiber.
 \end{proof}
+
 \begin{corollary}\label{scheme affine local ZMT}
 Let $A$ be a Noetherian local ring, $B$ be an $A$-algebra of finite type, $\mathfrak{M}$ be a maximal ideal of $B$ whose contraction in $A$ is the maximal ideal $\m$ of $A$. Suppose that $\mathfrak{M}$ and minimal among prime ideals of $B$ with contraction $\m$. Then there exists a finite $A$-algebra $A'$ and a maximal ideal $\m'$ of $A'$ (whose contraction is $\m$) such that $B_{\mathfrak{M}}$ is isomorphic to the $A$-algebra $A'_{\m'}$.
 \end{corollary}
 \begin{proof}
 This follows from \cref{scheme affine ZMT} by taking stalks at $\m$ and $\mathfrak{M}$.
 \end{proof}
+
 \begin{corollary}\label{scheme affine local integrally closed ZMT}
 Under the hypothesis of \cref{scheme affine local ZMT}, suppose that $A$ and $B$ are integral with the same fraction field $K$. Then, if $A$ is integrally closed, we have $B=A$.
 \end{corollary}
 \begin{proof}
 By \cref{scheme quasi-projective over Noe ZMT reduced irreducible condition} we can suppose that $A'$ is integral with fraction field $K$. The hypothesis over $A$ implies that $A'=A$, so $B_{\mathfrak{M}}=A$. As $A\sub B\sub B_{\mathfrak{M}}$, we conclude that $A=B$.
 \end{proof}
+
 \begin{corollary}\label{scheme morphism spft birational finite fiber open immersion}
 Let $Y$ be a locally Noetherian integral scheme, $f:X\to Y$ be a separated morphism that is of finite type and birational. Suppose that $Y$ is normal and the fibers $f^{-1}(y)$ are finite for $y\in Y$. Then $f$ is an open immersion; if moreover $f$ is closed, then it is an isomorphism.
 \end{corollary}
 \begin{proof}
 Let $x\in X$ and put $y=f(x)$. As $f^{-1}(y)$ is an algebraic scheme over $\kappa(y)$, the hypothesis that it is finite implies that it is discrete (\cref{scheme algebraic Artinian iff}); moreover $\mathscr{O}_{Y,y}$ is integrally closed and $\mathscr{O}_{X,x}$ and $\mathscr{O}_{Y,y}$ have the same fraction field. We can then apply \cref{scheme affine local integrally closed ZMT}, and the homomorphism $f^{\sharp}_y:\mathscr{O}_{Y,y}\to\mathscr{O}_{X,x}$ is bijective. We then conclude that $f$ is a local isomorphism.
 \end{proof}
+
 \begin{proposition}\label{scheme morphism local ft isolated in fiber open}
 Let $Y$ be a locally Noetherian scheme and $f:X\to Y$ be a morphism locally of finite type. Then the set $X'$ of $x\in X$ isolated in the fiber $f^{-1}(f(x))$ is open in $X$.
 \end{proposition}
 \begin{proof}
 This question is local over $X$ and $Y$, so we can assume that $X$ and $Y$ are affine Noetherian; $f$ is then affine and of finite type, hence quasi-projective (\cref{scheme morphism quasi-projective permanence prop}(\rmnum{1})), and it suffices to apply \cref{scheme quasi-projective over Noe ZMT}.
 \end{proof}
+
 \begin{corollary}\label{scheme morphism proper fiber isolated restriction finite}
 Let $Y$ be a locally Noetherian scheme, $f:X\to Y$ be a proper morphism. Then the set $U$ of points $y\in Y$ such that $f^{-1}(y)$ is discrete is open in $Y$, and the restriction morphism $f|_{f^{-1}(U)}:f^{-1}(U)\to U$ is finite. In particular, a proper and quasi-finite morphism is finite.
 \end{corollary}
 \begin{proof}
 In fact, the complement of $U$ in $Y$ is the image of $X-X'$ under $f$, which is closed in $X$ by \cref{scheme morphism local ft isolated in fiber open}. As $f$ is a closed map, $U$ is then open in $Y$. Moreover, it follows from \cref{scheme algebraic Artinian iff} that $f^{-1}(y)$ is finite for any $y\in U$; as the restriction morphism $f|_{f^{-1}(U)}:f^{-1}(U)\to U$ is proper (\cref{scheme morphism proper permanence prop}), it is finite in view of \cref{scheme morphism over local Noe finite iff affine proper}.
 \end{proof}
+
 \section{Covariant functors on \texorpdfstring{$\mathbf{Mod}(A)$}{A} and base change}
 Let $f:X\to Y$ be a morphism of schemes and $\mathscr{F}$ be a quasi-coherent $\mathscr{O}_X$-module. In the study of the higher direct images $R^pf_*(\mathscr{F})$, the following problem is proposed: given a base change morphism $g:Y'\to Y$, we put $X'=X\times_YY'$, $f'=f_{(Y)}$ and $\mathscr{F}'=\mathscr{F}\otimes_Y\mathscr{O}_{Y'}$, so that the following diagram commutes:
 \[\begin{tikzcd}
@@ -9231,7 +9226,6 @@ is surjective (resp. injective), so we can also take this as the definition of f
 is surjective (resp. bijective). To see this, let $(U_\alpha)$ be an open affine covering of $Z$ such that the ideal $\mathscr{I}|_{U_\alpha}$ is nilpotent, and for each $\alpha$, let $U_\alpha^0$ be the inverse image of $U_\alpha$ in $Z_0$, which is the closed subscheme of $U_\alpha$ defined by $\mathscr{I}|_{U_\alpha}$. Let $f_0:Z_0\to X$ be a $Y$-morphism, then by the hypotheses and \cref{algebra formally smooth lifting for complete algebras}, for any $\alpha$, there is a (resp. unique) $Y$-morphism $f_\alpha:U_\alpha\to X$ whose restriction to $U_\alpha^0$ equals to $f_0|_{U_\alpha^0}$. Since $f_\alpha$ and $f_\beta$ then coincide on any affine open of $U_\alpha\cap U_\beta$, we conclude that there exists a (resp. unique) morpism $f:Z\to X$ whose restriction to $Z_0$ is equal to $f_0$.
 \end{example}
 \begin{proposition}[\textbf{Properties of Formally Unramified and Formally Smooth Morphisms}]\label{scheme formally unramified smooth permanence prop}
-\mbox{}
 \begin{enumerate}
 \item[(\rmnum{1})] A monomorphism is formally unramified, and an open immersion is formally \'etale.
 \item[(\rmnum{2})] The composition of two formally smooth (resp. formally unramified) morphisms is formally smooth (resp. formally unramified).
@@ -9351,7 +9345,6 @@ We say that a morphism $f:X\to Y$ is \textbf{smooth} (resp. \textbf{unramified})
 Let $A$ be a ring and $B$ be an $A$-algebra. Then $B$ is a smooth (resp. unramified) algebra if the corresponding morphism $\Spec(B)\to\Spec(A)$ is smooth (resp. unramified).
 \end{example}
 \begin{proposition}[\textbf{Properties of Unramified and Smooth Morphisms}]\label{scheme unramified smooth permanence prop}
-\mbox{}
 \begin{enumerate}
 \item[(\rmnum{1})] An open immersion is \'etale. For an immersion to be unramified, it is necessary and sufficient that it is locally of finite presentation.
 \item[(\rmnum{2})] The composition of two smooth (resp. unramified) morphisms is formally smooth (resp. formally unramified).

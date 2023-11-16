@@ -1524,7 +1524,7 @@ T_{\sHom_{\mathbb{O}_S}(X,Y)/S}(\mathscr{M})\ar[r,"\sim"]&\sHom_{\mathbb{O}_S}(X
 \end{tikzcd}
 \end{equation}
 Moreover, if $Y/S$ satisfies condition (E), we deduce from \cref{scheme tangent bundle condition (E) morphism extension is iso}, as the proof of \cref{scheme tangent bundle condition (E) fiber of Iso to Hom}, that for any $u\in\Iso_{\mathbb{O}_S}(X,Y)$, we have
-\begin{equation}\label{scheme O_S-module tangent bundle of sIso and sHom isomorphism-1}
+\begin{equation}\label{scheme O_S-module tangent bundle of sIso and sHom isomorphism-2}
 T_{\sIso_{\mathbb{O}_S}(X,Y)/S}(\mathscr{M})\cong T_{\sHom_{\mathbb{O}_S}(X,Y)/S}(\mathscr{M}).
 \end{equation}
 \end{remark}
@@ -3502,7 +3502,7 @@ satisfies the hypothesis of (\rmnum{2}) if so does for $f$. As the equivalence r
 Now let $S$ be a scheme, $G$ be a group scheme over $S$ which is locally of finite presentation over $S$, and $X$ be an $S$-scheme acted by $G$. If $X\to S$ possesses a section $\xi$, we recall that the stabilizer $\Stab_G(\xi)$ is represented by a group subscheme of $G$ (in fact, by the group subscheme $G\times_XS$, cf. \ref{category group action in PSh paragraph}).
 
 \begin{theorem}\label{scheme group action by local fp quotient by stabilizer exist}
-Let $S$ be a scheme and $G$ be a $S$-group scheme locally of finite presentation over $S$, which acts on an $S$-scheme $X$. Suppose that $X\to S$ possesses a section $\xi$ such that the stabilizer $H$ of $\xi$ in $G$ is flat over $S$. If one of the following conditions is satisfied:
+Let $S$ be a scheme and $G$ be a $S$-group scheme locally of finite presentation over $S$, which acts on an $S$-scheme $X$. Suppose that $X$ possesses a section $\xi$ over $S$ such that the stabilizer $H$ of $\xi$ in $G$ is flat over $S$. If one of the following conditions is satisfied:
 \begin{enumerate}
     \item[(a)] $X$ is locally of finite type over $S$;
     \item[(b)] $S$ is locally Noetherian,
@@ -3517,7 +3517,7 @@ G\ar[rd,swap,"p"]\ar[rr,"f"]&&X\\
 where $p$ is the canonical projection, which is a faithfully flat morphism locally of finite presentation, and $j$ is a monomorphism.
 \end{theorem}
 \begin{proof}
-The morphism $f$ makes $G$ an $X$-scheme, and the definition of the stabilizer of $\xi$, the morphism
+The morphism $f$ makes $G$ an $X$-scheme, and by the definition of the stabilizer of $\xi$, the morphism
 \[G\times_SH\to G\times_XG,\quad (g,h)\mapsto (g,gh)\]
 is an isomorphism. As $H$ is flat over $S$, $G\times_SH$ is flat over $G$, hence the first projection $\pr_1:G\times_SG\to G$ is flat. Therefore, if $X$ is locally of finite type over $S$, then $f$ is locally of finite presentation (\cref{scheme morphism local fp permanence prop}), and otherwise $S$ is supposed to be Noetherian. It then suffices to apply \cref{scheme morphism local fp factorization by quotient iff} to the morphism $f$. Also, it follows from (\cite{EGA4-4}, 17.7.5) that $G/H$ is locally of finite presentation over $S$.
 \end{proof}
@@ -3748,10 +3748,12 @@ As $G$ is irreducible, it then follows that $u$ is an immersion. In fact, for an
 
 \subsection{Orbits under an algebraic group}
 \begin{lemma}\label{scheme A-group action orbit map flat iff at point}
-Let $A$ be a local Artinian ring, $k$ be its residue field, $G$ be a flat $A$-group, $X$ be an $A$-scheme endowed with a right action $\mu:G\times_AX\to X$ of $G$ and a section $s_0:\Spec(A)\to X$. Let $\phi$ be the morphism $\mu\circ(\id_G\times s_0)$ from $G=G\times_AA$ to $X$. If $\phi$ is flat at a point $g\in G$, then it is flat.
+Let $A$ be a local Artinian ring and $k$ be its residue field. Let $G$ be a flat $A$-group, $X$ be an $A$-scheme endowed with a right action $\mu:G\times_AX\to X$ of $G$ and a section $x_0:\Spec(A)\to X$. Consider the morphism
+\[\phi=\mu\circ(\id_G\times x_0):G\to G\to X.\]
+If $\phi$ is flat at a point $g\in G$, then it is flat.
 \end{lemma}
 \begin{proof}
-As $G$ is flat over $A$, by the fiber criterion of flatness (\cite{EGA4-3}, 11.3.10.2), it suffices to show that $\phi\otimes_Ak$ is flat, hence we can assume that $A=k$. In this case, $s_0$ can be considered as a $k$-point $x_0\in X(k)$, and $\phi$ is the orbit morphism $h\mapsto h\cdot x_0$.\par
+As $G$ is flat over $A$, by the fiber criterion of flatness (\cite{EGA4-3}, 11.3.10.2), it suffices to show that $\phi\otimes_Ak$ is flat, hence we may assume that $A=k$. In this case, $x_0$ can be considered as a $k$-point in $X(k)$, and $\phi$ is the orbit morphism $h\mapsto h\cdot x_0$.\par
 Let $h\in G$, we show that $\phi$ is flat at $h$. Let $K$ be an extension of $k$ containing $\kappa(g)$ and $\kappa(h)$; we have a Cartesian square
 \[\begin{tikzcd}
 G_K\ar[r,"\phi_K"]\ar[d]&X_K\ar[d]\\
@@ -3782,28 +3784,28 @@ Let $A$ be a local Artinian ring, $k$ be its residue field, $G$ be an $A$-group 
 In view of \cref{scheme over local Artinian ft closed immersion if closed fiber}, we may suppose that $A=k$. We first consider the case where $k$ is algebraically closed. Then $G_\red$ is a $k$-group locally of finite type and hence, by replacing $G$ with $G_\red$ and $X$ with $X_\red$, we may assume that $G$ and $X$ are reduced.\par
 As $G\times_kX$ is locally of finite type over $k$, $\phi$ is locally of finite type by \cref{scheme morphism local ft permanence prop}, hence locally of finite presentation since $X\times_kX$ is locally Noetherian. Let $x$ be a rational point of $X$, then the orbit map $\phi_x:G\to X$, induced from $\phi$ by base change along $\id\times x:X\to X\times_AX$, is surjective and locally of finite presentation. If $\eta$ is a maximal point of $X$, then $\mathscr{O}_{X,\eta}$ is a field (since $X$ is reduced), so $\phi_x$ is flat at any point of $G$ lying over $\eta$. By \cref{scheme A-group action orbit map flat iff at point}, we then conclude that $\phi_x$ is flat. Now $\phi_x$ is faithfully flat and locally of finite presentation, hence open (cf. \cite{EGA4-2}, 2.4.6). As $G^0$ is open in $G$, irreducible and quasi-compact (\cref{scheme alg group identity component prop}), each orbit $G^0\cdot x=\phi_x(G^0)$, for $x$ a rational point of $X$, is an open subset of $X$, irreducible and quasi-compact, hence of finite type over $k$ (since $X$ is locally of finite type over $k$).\par
 As any nonempty open subset of $X$ contains a rational point (equivalently, a closed point, since $k$ is assumed to be algebraically closed), it then follows that $X$ is covered by the orbits of $G^0$. Moreover, any two orbits are either disjoint or equal. In fact, if $\phi_x(G^0)\cap\phi_y(G^0)$ is nonempty, it contains a rational point $z$ and there then exists $g,h\in G^0$ such that $g\cdot x=z=h\cdot y$, whence $x=g^{-1}\cdot z$ and $y=h^{-1}\cdot z$ and hence $\phi_x(G^0)=\phi_z(G^0)=\phi_y(G^0)$. Therefore, the orbits $\phi_x(G^0)$ are the irreducible components of $X$, and also the connected components of $X$.\par
-Finally, let $x,y$ be two rational points of $X$. As $\phi_x$ is surjective, there exists a point $g\in G$ such that $y=g\cdot x$ and, as $G^0$ is a normal subgroup of $G$, the orbit $G^0\cdot y$ is then the image of $G^0$ under the left translation $\ell_g$ of $X$, so that $G^0\cdot y$ and $G^0\cdot x$ have the same dimension.\par
+Let $x,y$ be two rational points of $X$. As $\phi_x$ is surjective, there exists a point $g\in G$ such that $y=g\cdot x$ and, as $G^0$ is a normal subgroup of $G$, the orbit $G^0\cdot y$ is then the image of $G^0$ under the left translation $\ell_g$ of $X$, so that $G^0\cdot y$ and $G^0\cdot x$ have the same dimension.\par
 If $x$ is a closed point of $X$, the stabilizer of $x$ is represented by the closed subscheme $F$ of $G$ defined by the Cartesian square:
 \[\begin{tikzcd}
 F\ar[r]\ar[d]&G\ar[d,"\phi_x"]\\
 \Spec(k)\ar[r,"x"]&X
 \end{tikzcd}\]
 Then $F$ is a $k$-group locally of finite type, $F\cap G^0$ is a $k$-group of finite type containing $F^0$, and by \cref{scheme alg group connected component prop}, $F$ and $F\cap G^0$ are equidimensional, with the same dimension as $F^0$. Let $C=\phi_x(G^0)$ be the irreducible component of $X$ containing $x$. By the same arguments as \cref{scheme A-group homomorphism of local ft image prop}, we can show that $\dim(C)=\dim(G^0)-\dim(F^0)=\dim(G)-\dim(F)$.\par
-In the general case (i.e. $k$ is an arbitrary field), let $\bar{k}$ be an algebraic closure of $k$. Let $C$ be a connected component of $X$ and $C'$ be a connected component of $C\otimes_k\bar{k}$, then $C'$ is a connected component of $X'=X\otimes_k\bar{k}$. The morphism $\pi:X'\to X$ is open by (\cite{EGA4-2}, 2.4.10), and as it is integral, it is also closed, so $\pi(C')=C$. As $C'$ is irreducible and quasi-compact, so is $C$, and hence $C$ is of fnite type over $k$ (because $X$ is locally of finite type over $k$).\par
-Finally, since the dimension is invariant under base change of fields (\cite{EGA4-2}, 4.1.4), $\dim(C)=\dim(C')$, and as any irreducible components of $X'$ are of the same dimension, the same is true for $X$.
+In the general case (i.e. $k$ is an arbitrary field), let $\bar{k}$ be an algebraic closure of $k$. Let $C$ be a connected component of $X$ and $C'$ be a connected component of $C\otimes_k\bar{k}$, then $C'$ is a connected component of $X'=X\otimes_k\bar{k}$. The morphism $\pi:X'\to X$ is open by (\cite{EGA4-2}, 2.4.10), and as it is integral, it is also closed, so $\pi(C')=C$. As $C'$ is irreducible and quasi-compact, so is $C$, and hence $C$ is of fnite type over $k$ (because $X$ is locally of finite type over $k$). Finally, since the dimension is invariant under base change of fields (\cite{EGA4-2}, 4.1.4), $\dim(C)=\dim(C')$, and as any irreducible components of $X'$ are of the same dimension, the same is true for $X$.
 \end{proof}
 
 \begin{proposition}[\textbf{Closed Orbit Lemma}]\label{scheme alg group closed orbit lemma}
-Let $A$ be a local Artinian ring, $k$ be its residue field, $G$ be an $A$-group locally of finite type and $X$ be a nonempty $A$-scheme of finite type endowed with a left action by $G$. Then each orbit of a rational point of $X$ is open in its closure, and the boundary of each orbit is a union of orbits of lower dimension. In particular, the orbits of minimal dimension are closed.
+Let $G$ be a group locally of finite type over a field $k$ and $X$ be a nonempty $A$-scheme of finite type endowed with a left action by $G$. 
+\begin{enumerate}
+    \item[(a)] Each orbit of $X$ is open in its closure, and the boundary of each orbit is a union of orbits of lower dimension. In particular, the orbits of minimal dimension are closed.
+    \item[(b)] If $G$ is smooth, then given the reduced subscheme structure, each orbit of $X$ is smooth. 
+\end{enumerate}
 \end{proposition}
 \begin{proof}
-As in \cref{scheme A-group-object transitive prop}, we may assume that $A=k$ is algebraically closed and $G$, $X$ are reduced. In this case, if $x\in X(k)$ is a rational point of $X$ and $M=\phi_x(G)$ is the orbit of $x$ under $G$, then $G$ is clearly stable under $G$. We note that any two rational points of $M$ are conjugate: in fact, if $y\in M(k)$, then by definition there exists $g\in G$ such that $\phi_x(g)=y$. Since $y$ is rational and $\phi_x$ is a $k$-morphism, it follows that $g$ is rational over $k$, whence $\ell_g(x)=y$.\par
-Now as $X$ is of finite type over $k$, it is Noetherian, so by Chevalley's constructibility theorem  (\cite{EGA4-1}, 1.8.5), $M$ is a constructible subset (and dense) of $\widebar{M}$, hence contains an open dense subset $U$ of $\widebar{M}$ (\cite{EGA3} $0_{\Rmnum{3}}$, 9.2.2). It is clear that $U$ contains the closed point $x$ of $M$, so by homogeneity, every closed point of $\widebar{M}$ is contained in an open subset of $\widebar{M}$ contained in $M$. We therefore conclude from (\cite{EGA4-3}, 10.1.2) that $M$ is open in $\widebar{M}$, so $\widebar{M}-M$ is closed and of lower dimension, as well as being $G$-stable; it is therefore a union of orbits of $G$ of lower dimension.
+As in \cref{scheme A-group-object transitive prop}, we may assume that $k$ is algebraically closed and $G$, $X$ are reduced. In this case, if $x\in X(k)$ is a rational point of $X$ and $O=\phi_x(G)$ is the orbit of $x$ under $G$, then $G$ is clearly stable under $G$. We note that any two rational points of $O$ are conjugate: in fact, if $y\in O(k)$, then by definition there exists $g\in G$ such that $\phi_x(g)=y$. Since $y$ is rational and $\phi_x$ is a $k$-morphism, it follows that $g$ is rational over $k$, whence $\ell_g(x)=y$.\par
+Now as $X$ is of finite type over $k$, it is Noetherian, so by Chevalley's constructibility theorem  (\cite{EGA4-1}, 1.8.5), $O$ is a constructible subset (and dense) of $\widebar{O}$, hence contains an open dense subset $U$ of $\widebar{O}$ (\cite{EGA3} $0_{\Rmnum{3}}$, 9.2.2). It is clear that $U$ contains the closed point $x$ of $O$, so by homogeneity, every closed point of $\widebar{O}$ is contained in an open subset of $\widebar{O}$ contained in $O$. We therefore conclude from (\cite{EGA4-3}, 10.1.2) that $O$ is open in $\widebar{O}$, so $\widebar{O}-O$ is closed and of lower dimension, as well as being $G$-stable; it is therefore a union of orbits of $G$ of lower dimension.\par
+Finally, assume that $G$ is smooth. Since the morphism $\phi_x:G\to O$ is faithfully flat ($O$ is isomorphic to the quotient $G/G_x$), the homomorphism $\mathscr{O}_O\to(\phi_x)_*(\mathscr{O}_G)$ is an injective homomorphism, and remains so after base change of fields. It then follows that $O$ is geometrically reduced, and since its smooth locus is nonempty (hence open dense in $O$, cf. \cite{EGA4-4} 17.15.12), we see that $O$ is smooth over $k$ by homogeneity.
 \end{proof}
-
-\begin{remark}
-We note that if $G$ is reduced, then the morphism $\phi_x:G\to X$ is faithfully flat, so $\mathscr{O}_M\to(\phi_x)_*(\mathscr{O}_G)$ is an injective homomorphism, and remains so after base change of fields. Therefore, if $G$ is smooth, then $M$ is geometrically reduced, and since its smooth locus is nonempty (hence open dense in $M$, cf. \cite{EGA4-4} 17.15.12), we see that $M$ is smooth over $k$ by homogeneity. 
-\end{remark}
 
 \begin{example}
 Let $k$ be an algebraically closed field and consider the action
@@ -4877,6 +4879,44 @@ We say that an algebraic group $N$ over a field $k$ is \textbf{anti-affine} if $
 1\ar[r]&G_{\mathrm{ant}}\ar[r]&G\ar[r]&G^\aff\ar[r]&1
 \end{tikzcd}\]
 If $k$ is algebraically closed, a basis class of anti-affine algebraic groups is that of \textbf{abelian varieties}, that is, complete connected $k$-algebraic groups.
+
+\section{Infinitesimal properties of group schemes}
+\subsection{Frobenius morphisms}
+Let $p$ be a fixed prime number and $\Sch_{/\F_p}$ denote the category of schemes of characteristic $p$, that is, schemes over the prime field $\F_p$. As is always the case, we identify $\Sch_{/\F_p}$ with a subcategory of $\widehat{\Sch_{/\F_p}}$ using the Yoneda embedding. If $T$ is an $\F_p$-scheme, a $T$-functor is just a morphism $q:F\to T$ in $\widehat{\Sch_{/\F_p}}$; for any $T$-scheme $r:X\to T$, the set of $T$-morphisms $X\to F$, i.e. of $\F_p$-morphisms $s:X\to F$ such that $q\circ s=r$, is denoted by $F(r)$ or $F(X/T)$.\par
+For any scheme $S$ of characteristic $p$, we denote by $\fr(S)$, or simply $\fr$, the endomorphism of $S$ which induces the identity over underlying topological space and the $p$-th power map on $\mathscr{O}_S$. Then the map $\fr:S\to\fr(S)$ is an endomorphism of the identity functor of $\Sch_{/\F_p}$, i.e. for any morphism $f:Y\to X$ of $\F_p$-schemes, the following diagram is commutative:
+\[\begin{tikzcd}
+Y\ar[r,"f"]\ar[d,swap,"\fr(Y)"]&X\ar[d,"\fr(X)"]\\
+Y\ar[r,"f"]&X
+\end{tikzcd}\]
+Now let $E$ be an $\F_p$-functor, or equivalently an object of $\widehat{\Sch_{/\F_p}}$. The map associating to each $\F_p$-scheme $S$ the endomorphism $E(\fr(S))$, is a functorial endomorphism of $E$ that we denote by $\fr(E)$ or $\fr$ (this is called the absolute Frobenius morphism of $E$). This notation is compatible with the identification of $\Sch_{/\F_p}$ with a subcategory of $\widehat{\Sch_{/\F_p}}$. Moreover, the map $E\mapsto\fr(E)$ is an endomorphism of the identity functor of $\widehat{\Sch_{/\F_p}}$ (which we also denote by $\fr$).\par
+For any $\F_p$-scheme $S$ and any $S$-functor $\pi:X\to S$, we denote by $X^{(p/S)}$ or $X^{(p)}$ the inverse image of $X$ under the base change morphism $\fr(S)$. The commutative square
+\[\begin{tikzcd}
+X\ar[r,"\fr(X)"]\ar[d,swap,"\pi"]&X\ar[d,"\pi"]\\
+S\ar[r,"\fr(S)"]&S
+\end{tikzcd}\]
+then induces an $S$-morphism $\Fr(X/S):X\to X^{(p/S)}$ such that $\fr(X)=\pr_X\circ\Fr(X/S)$:
+\[\begin{tikzcd}
+X\ar[rd,"\Fr(X/S)"]\ar[rrd,bend left=50pt,"\fr(X)"]\ar[rdd,swap,"q"]&&\\
+&X^{(p/S)}\ar[d]\ar[r,"\pr_X"]&X\ar[d,"q"]\\
+&S\ar[r,"\fr(S)"]&S
+\end{tikzcd}\]
+We say that $\Fr(X/S)$ is the \textbf{Frobenius morphism of $X$ relative to $S$}; it is clear that the map $\Fr:X\to\Fr(X/S)$ is a functorial homomorphism.\par
+Let $r:T\to S$ be an $S$-scheme. For any $\phi\in X(r)=\Hom_S(T,X)$, we have a commutative diagram
+\[\begin{tikzcd}[row sep=12mm,column sep=12mm]
+X\ar[r,"\Fr(X/S)"]\ar[rd,"\pi"]&X^{(p/S)}\ar[d,"\pi^{(p/S)}"]\ar[r,"\pr_X"]&X\ar[d,"\pi"]\\
+T\ar[u,"\phi"]\ar[r]&S\ar[r,"\fr(S)"]&S
+\end{tikzcd}\]
+By the definition of $X^{(p/S)}$ as a fiber product, $\pr_X$ induces a bijection:
+\[X^{(p/S)}(r)=\Hom_S(T,X^{(p/S)})\stackrel{\sim}{\to} X(\fr(S)\circ r).\]
+On the other hand, $r\circ\fr(T)=\fr(S)\circ r$, since $\fr$ is an endomorphism of the identity functor. It then follows that the map $\Fr(X/S)(r):X(r)\to X^{(p/S)}(r)$ can be characterized by the following square:
+\begin{equation}\label{scheme Frobenius presheaf prop}
+\begin{tikzcd}
+X(r)\ar[r,"\Fr(X/S)(r)"]&X^{(p/S)}(r)\ar[d,"\sim"]\\
+X(r\circ\fr(T))\ar[r,equal]&X(\fr(S)\circ r)
+\end{tikzcd}
+\end{equation}
+
+For example, if $X$ is the subscheme of $S$ defined by an quasi-coherent ideal $\mathscr{I}$, then $X^{(p)}$ is the subscheme of $S$ defined by the ideal $\mathscr{I}^{\{p\}}$ generated by the $p$-th powers of sections of $\mathscr{I}$. Moreover, $\Fr(X/S)$ is then the canonical immersion of $\Spec(\mathscr{O}_S/\mathscr{I})$ into $\Spec(\mathscr{O}/\mathscr{I}^{\{p\}})$.\par
 
 \section{Diagonalizable groups}
 \subsection{Duality for group schemes}\label{scheme group duality}
@@ -6183,7 +6223,7 @@ Let $S$ be a local Henselian scheme, $s$ be its closed point, $X$ be a scheme lo
 \end{enumerate}
 \end{lemma}
 \begin{proof}
-By the local form of Zariski's main theorem (\cite{*} \Rmnum{4} Th.1), $x$ admits an affine open neighborhood $U=\Spec(B)$ of finite type and quasi-finite over $A=\mathscr{O}_{S,s}$, and there is an open immersion $U\hookrightarrow Y=\Spec(C)$, where $C$ is a finite $A$-algebra. As $A$ is Henselian, $Y$ is the direct sum of local schemes $Y_1,\dots,Y_n$ (with $Y_i=\Spec(C_i)$, $C_i$ being a finite local $A$-algebra), each is finite over $S$, and the points of $Y$ lying over $s$ are the closed points $y_1,\dots,y_n$. Therefore $x=y_i$ for certain index $i$, and $\mathscr{O}_{X,x}=\mathscr{O}_{U,x}=C_i$ is finite over $A$. Moreover, $X'=\Spec(C_i)$ is an open subscheme of $U$, hence of $X$.\par
+By the local form of Zariski's main theorem (\cite{A} \Rmnum{4} Th.1), $x$ admits an affine open neighborhood $U=\Spec(B)$ of finite type and quasi-finite over $A=\mathscr{O}_{S,s}$, and there is an open immersion $U\hookrightarrow Y=\Spec(C)$, where $C$ is a finite $A$-algebra. As $A$ is Henselian, $Y$ is the direct sum of local schemes $Y_1,\dots,Y_n$ (with $Y_i=\Spec(C_i)$, $C_i$ being a finite local $A$-algebra), each is finite over $S$, and the points of $Y$ lying over $s$ are the closed points $y_1,\dots,y_n$. Therefore $x=y_i$ for certain index $i$, and $\mathscr{O}_{X,x}=\mathscr{O}_{U,x}=C_i$ is finite over $A$. Moreover, $X'=\Spec(C_i)$ is an open subscheme of $U$, hence of $X$.\par
 Suppose that $X$ is separated over $S$. Then as the morphism $X'\to S$ is finite ($C_i$ being finite over $A$), so is the immersion $X'\to X$ (\cref{scheme morphism integral finite permanence prop}), and hence $X'$ is also closed in $X$.
 \end{proof}
 
@@ -6396,7 +6436,7 @@ Since we often consider locally Noetherian schemes, we may suppose that $S$ is a
 where $G$ acts naturally on $P$ by definition. In fact, since any principal Galois bundle over $S$ is trivialized over $\xi$, the map $\pi^1(S,\xi;G)\to\pi^1(S;G)$ is surjective. If two $\xi$-pointed principal Galois bundle $\sigma:\xi\to P$ and $\sigma':\xi\to P'$ over $S$ are identified in $\pi^1(S;G)$, then there exists a $G$-equivariant isomorphism $\phi:P\to P'$, which then induces a map
 \[\phi^*:P(\xi)\to P'(\xi).\]
 If we denote by $g\in G$ the (unique) element such that $\sigma'\cdot g=\phi^*(\sigma)=\sigma\circ\phi$, then $\phi$ induces an isomorphism $P\cong P'\cdot g$ of $\xi$-pointed principal Galois bundles, whence our assertion.\par
-For any morphism $S'\to S$ which is universally effective descent for the fibre category of twisted constant schemes over a variable base (for example fppf morphisms, cf. \cref{scheme twisted constant group fppf effective descent}), we propose the determination of the subsets of the preceding sets, denoted by $\pi^1(S'/S,\xi;G)$ and $\pi^1(S'/S;G)$, formed by principal Galois bundles over $S$ which are trivialized by $S'$. We determine in fact the fibre category of principal Galois bundles $P$ over $S$ which are trivialized by $S'$. Of course we have
+For any morphism $S'\to S$ which is universally effective descent for the fibre category of twisted constant schemes over a variable base (for example fppf morphisms, cf. \cref{scheme twisted constant group fppf effective descent}), we propose the determination of the subsets, denoted by $\pi^1(S'/S,\xi;G)$ and $\pi^1(S'/S;G)$, formed by principal Galois bundles over $S$ which are trivialized by $S'$. We determine in fact the fibre category of principal Galois bundles $P$ over $S$ which are trivialized by $S'$. Of course we have
 \[\pi^1(S,\xi;G)=\rlim_{S'}\pi^1(S'/S,\xi;G)\]
 where $S'$ runs through a cofinal system of the set of covering morphisms $S'\to S$ for the \'etale topology (for example, if $S$ is quasi-compact, we can take the set of $S'$ over $S$ which are quasi-compact and have \'etale surjective structural morphism). Similarly, the fibre category of principal Galois bundles over $S$ is the inductive limit of its subcategories defined by the $S'$ (formed by bundles trivialized over $S'$).\par
 Thanks to the assumption made on $S'\to S$, the fiber category of principal Galois bundles over $S$ trivialized by $S'$ is equivalent to the fibre category of principal Galois bundles trivial over $S'$ (hence of the form $G_{S'}$, where $G$ acts by right translation), endowed with a descent data relative to $S'\to S$. The datum of a base point over a principal Galois bundle $P$ over $S$ trivialized by $S'$ then translates, in terms of the trivial bundle $P'$ over $S'$ and its descent data, to the data of a trivialization of $P'\times_{S'}S'_\xi$ compatible with the induced descent data under base change, relative to $S'_\xi\to\xi$ (we put $S'_\xi=S'\times_S\xi$), i.e. a section $\sigma$ of $P'_\xi$ over $S'_\xi$ compatible with the descent data. For a general morphism $S'\to S$ (not necessarily universally effective descent for the fibre category of twisted constant groups), we can then define $\pi^1(S'/S;G)$ and $\pi^1(S'/S,\xi;G)$ to be the set of isomorphism classes of trivial bundle $P'$ over $S'$ endowed with a descent data (and a trivialization of $P'_\xi$ compatible with the induced descent data).\par
@@ -6412,16 +6452,18 @@ Suppose that the connected components of $S'$ and $S''$ are open.
 \end{enumerate}
 \end{proposition}
 
-If $S$ is connected and Noetherian, then any \'etale scheme $S'$ over $S$ is locally Noetherian, hence its connected components are open. We then conclude from the arguments above that the functor $G\mapsto\pi^1(S,\xi;G)$, from the category of groups to that of sets, is strictly pro-representable, i.e. there exists a projective system 
+If $S$ is connected and Noetherian, then any \'etale scheme $S'$ over $S$ is locally Noetherian, so its connected components are open. We then conclude from the arguments above that the functor $G\mapsto\pi^1(S,\xi;G)$, from the category of groups to that of sets, is strictly pro-representable, i.e. there exists a projective system 
 \[\Pi=\Pi_1(S;\xi)=(\pi_i)_{i\in I}\]
-of ordinary groups, with a filtered index set $I$, that is strict (i.e. the transition morphisms $\pi_j\to\pi_i$ are surjective), and an isomorphism of functors on $G$:
-\[\pi^1(S,\xi;G)\stackrel{\sim}{\to}\rlim_i\Hom_{\Grp}(\pi_i,G).\]
-The right member is also denoted by $\Hom_{\pro\dash\Grp}(\Pi,G)$.\par
-In the case where the projective limit $\pi=\llim\pi_i$ is "large enough", i.e. if the canonical homomorphisms $\pi\to\pi_i$ are surjective for $i$ sufficiently large, it is necessary to endow $\pi$ with the projective limit topology of the discrete topologies of the $\pi_i$, and the isomorphism can also be written:
-\[\pi^1(S,\xi;G)\stackrel{\sim}{\to} \Hom_{\mathrm{Cont}\Grp}(\pi,G),\]
-where the right member denotes the set of continous homomorphism of topological groups, where $G$ is endowed with the discrete topology.\par
-The hypothesis that we have just formulated on the projective system $\Pi$ is verified, as it is well known, when the $\pi_i$ are finite groups (cf. \cite{BEns}, \Rmnum{3} \S 7.4, Th.1). This last condition also means that any principal Galois bundle over $S$ is isotrivial, i.e. is trivialized by a finite surjective \'etale morphism, which is the case when $S$ is geometrically unibranched (for example normal) as it follows immediately from \cref{scheme group multiplicative ft over Noe geo.uni is isotrivial}. In the case where the $\pi_i$ are finite, the group $\pi$ also coincides with the \'etale fundamental group $\pi_1(S,\xi)$ of $S$ at $\xi$.\par
-Also, in the prefered case ($\pi\to\pi_i$ being surjectives), we could also call $\pi$ the extended group fundamental of $S$ at $\xi$. In other cases, $\pi$ itself does not present much interest, and the role of the usual fundamental group is played by the projective system itself, which we will call the \textbf{enlarged fundamental pro-group of $S$ at $\xi$}.\par
+of ordinary groups, with a filtered index set $I$, that is strict (i.e. the transition morphisms $\pi_j\to\pi_i$ are surjective), and an isomorphism of functors on $G$\footnote{The RHS of (\ref{scheme relative fundamental group pro-representable}) is also denoted by $\Hom_{\pro\dash\Grp}(\Pi,G)$.}:
+\begin{equation}\label{scheme relative fundamental group pro-representable}
+\pi^1(S,\xi;G)\stackrel{\sim}{\to}\rlim_i\Hom_{\Grp}(\pi_i,G).
+\end{equation}
+
+In the case where the projective limit $\pi=\llim\pi_i$ is "large enough", i.e. if the canonical homomorphisms $\pi\to\pi_i$ are surjective for $i$ sufficiently large, it is necessary to endow $\pi$ with the projective limit topology of the discrete topologies of the $\pi_i$, and the isomorphism (\ref{scheme relative fundamental group pro-representable}) can then be written as:
+\[\pi^1(S,\xi;G)\stackrel{\sim}{\to} \Hom_{\mathrm{Cont}.\Grp}(\pi,G),\]
+where the RHS denotes the set of continous homomorphism of topological groups, and $G$ is endowed with the discrete topology.\par
+The hypothesis that we have just formulated on the projective system $\Pi$ is verified, as it is well known, when the $\pi_i$ are finite groups (cf. \cite{BEns}, \Rmnum{3} \S 7.4, Th.1). This last condition also means that any principal Galois bundle over $S$ is isotrivial, i.e. is trivialized by a finite surjective \'etale morphism, which is true if $S$ is geometrically unibranched (as it follows immediately from \cref{scheme group multiplicative ft over Noe geo.uni is isotrivial}). In the case where the $\pi_i$ are finite, the group $\pi$ also coincides with the \'etale fundamental group $\pi_1(S,\xi)$ of $S$ at $\xi$.\par
+Therefore, in the prefered case ($\pi\to\pi_i$ being surjectives), we could call $\pi$ the \textit{enlarged fundamental group of $S$ at $\xi$}. In other cases, $\pi$ itself does not present much interest, and the role of the usual fundamental group is played by the projective system itself, which is called \textbf{enlarged fundamental pro-group of $S$ at $\xi$}.\par
 
 Let us quickly indicate the calculation of $\pi_1(S'/S,\xi)$. Let $S_i$ be the $(i+1)$-th fiber power of $S'$ over $S$ (i.e. $S_0=S'$, $S_1=S''$, etc.). We have obvious simplicial operations over the $S_i$, which make $(S_i)_{i\in\N}$ a simplicial object of $\Sch_{/S}$. Transforming this simplicial object by the functor of connected component
 \[\pi_0:\Sch_{/S}\to\Set,\]
@@ -7341,7 +7383,7 @@ With the notations of \cref{scheme alg smooth connected subgroup contain Cartan 
 \end{enumerate}
 \end{corollary}
 \begin{proof}
-This follows from \cref{scheme alg group smooth twisted product morphism smooth prop} and \cref{scheme alg smooth connected subgroup contain Cartan iff}, since in this case $\psi$ is birational if and only if $d=1$, which is equivalent by \cref{scheme alg group smooth twisted product morphism smooth prop} to that $N_G(T)\cap N_G(H)=N_G(T)$ (recall that $N_G(T)=N_G(C)$ by \cite{scheme smooth affine ft normalizer of torus and Cartan equal}).
+This follows from \cref{scheme alg group smooth twisted product morphism smooth prop} and \cref{scheme alg smooth connected subgroup contain Cartan iff}, since in this case $\psi$ is birational if and only if $d=1$, which is equivalent by \cref{scheme alg group smooth twisted product morphism smooth prop} to that $N_G(T)\cap N_G(H)=N_G(T)$ (recall that $N_G(T)=N_G(C)$ by \cref{scheme smooth affine ft normalizer of torus and Cartan equal}).
 \end{proof}
 
 \begin{corollary}\label{scheme alg group smooth conjugates containing g unique iff}
@@ -7359,7 +7401,7 @@ The equivalence of (\rmnum{1}), (\rmnum{2}) and (\rmnum{3}), as well as the last
 \end{proof}
 
 \begin{theorem}\label{scheme alg group smooth twisted product morphism for Cartan group and eigenvalue of 1}
-Let $G$ be a connected smooth algebraic group over an algebraically closed field $k$, $C$ be a Cartan subgroup, with maximal torus $T$, $N=N_G(C)=N_G(T)$ (cf. \cite{scheme smooth affine ft normalizer of torus and Cartan equal}), Let $X=G\times^NC$ be the twisted product of $G$ and $C$ over $N$, where $N$ acts over $C$ by inner automorphisms, and $\psi:X\to G$ be the canonical morphism.
+Let $G$ be a connected smooth algebraic group over an algebraically closed field $k$, $C$ be a Cartan subgroup, with maximal torus $T$, $N=N_G(C)=N_G(T)$ (cf. \cref{scheme smooth affine ft normalizer of torus and Cartan equal}), Let $X=G\times^NC$ be the twisted product of $G$ and $C$ over $N$, where $N$ acts over $C$ by inner automorphisms, and $\psi:X\to G$ be the canonical morphism.
 \begin{enumerate}
     \item[(a)] The morphism $\psi$ is birational.
     \item[(b)] Let $U$ be the largest open subset of $G$ such that $\psi$ induces an isomorphism $\psi^{-1}(U)\stackrel{\sim}{\to}U$, and
@@ -11144,7 +11186,7 @@ Let $S$ be a scheme and $G$ be a reductive $S$-group.
 In fact, (\rmnum{1}) follows from \cref{scheme group splitting Borel subgroup given by positive root} and \cref{scheme group reductive etale local splittable}, (\rmnum{2}) from (\rmnum{1}) and \cref{scheme group type (RR) functor of Borel subgroup containing torus is principal homogeneous}, (\rmnum{3}) from (\rmnum{1}) and \cref{scheme group splitting Borel subgroup given by positive root}, and (\rmnum{4}) from (\rmnum{3}) and \cref{scheme group reductive etale local splittable}.
 \end{proof}
 
-Let $G=\GL_{n,k}$ where $k$ is an algebraically closed field. Then any Borel subgroup of $G$ is conjugate to the subgroup $B$ of upper triangular matrices of $G$, which can be written as a semi-direct product of $T$ (the subgroup of diagonal matrices) and $\mathbb{U}_n$ (the subgroup of strictly upper triangular matrices). We note that the subgroup $\mathbb{U}_n$ is unipotent and has a standard central decomposition series (\cite{*}). This result can be generalized to splitting groups over an arbitrary scheme, as in the following proposition:
+Let $G=\GL_{n,k}$ where $k$ is an algebraically closed field. Then any Borel subgroup of $G$ is conjugate to the subgroup $B$ of upper triangular matrices of $G$, which can be written as a semi-direct product of $T$ (the subgroup of diagonal matrices) and $\mathbb{U}_n$ (the subgroup of strictly upper triangular matrices). We note that the subgroup $\mathbb{U}_n$ is unipotent and has a standard central decomposition series (citation to Milnor). This result can be generalized to splitting groups over an arbitrary scheme, as in the following proposition:
 
 \begin{proposition}\label{scheme group splitting Borel subgroup filtration induced by chain of roots}
 Let $(G,T,M,R)$ be a splitting $S$-group and $\alpha_1\prec\cdots\prec\alpha_n$ be the elements of a positive root system $R_+$ of $R$ (endowed with an order). Consider the isomorphism
@@ -11344,12 +11386,12 @@ form, for $w$ runs through $(N/T)(k)$, a partition of $G(k)$. If $B'$ is another
 Now let $(G,T,M,R)$ be a splitting $S$-group, $R_+$ be a positive root system of $R$. For $w\in W$, we set
 \[R_-^w=R_-\cap w(R_-),\quad U^-_w=U_{R_-^w}=\prod_{\alpha\in R_-^w}U_\alpha.\]
 If $n_w\in N_G(T)(S)$ is a representative of $w$, we can also write
-\[U^-_w=U^-\cap\inn(n_w)U^-.\]
+\[U^-_w=U^-\cap \inn(n_w)U^-.\]
 
 \begin{proposition}\label{scheme group splitting BNB image representable}
 Let $(G,T,M,R)$ be a splitting $S$-group, $R_+$ be a positive root system of $R$, $B$ (resp. $B^-$) be the Borel subgroup of $G$ defined by $R_+$ (resp. $R_-$). Let $w\in W$, and $N_w$, $B_w^u$ be the corresponding subschemes of $G$.
 \begin{enumerate}
-    \item[(a)] The sheaf $B^-\cdot N_w\cdot B$ is representable by a subscheme of $G$ (and in fact a closed subscheme of the open subscheme $n_w\Omega_{R_+}$).
+    \item[(a)] The sheaf $B^-\cdot N_w\cdot B$ is representable by a subscheme of $G$ (and in fact a closed subscheme of the open subscheme $n_w\Omega_{R_+}$\footnote{The Zariski closure of $B^-\cdot N_w\cdot B$ (with the reduced subscheme structure) is called a \textbf{schubert subscheme} of $G$ defined by $w$.}).
     \item[(b)] The morphism
     \[U^-_w\times_SN_w\times U\to G\]
     induced by the product in $G$, is an immersion whose image is the subscheme in (a). 

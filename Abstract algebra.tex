@@ -6,7 +6,7 @@
 \usepackage{indentfirst} 
 
 
-\newtheorem{theorem}{Theorem}[section]
+\newtheorem{theorem}{Theorem}[subsection]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{proposition}[theorem]{Proposition}
@@ -56,18 +56,18 @@ Algebra\\}
 %\include{chapter/ring}
 %\include{chapter/Field}
 %\include{chapter/commutative-algebra}
-\include{chapter/Lie-alg-grp}
-%\include{chapter/category}
+%\include{chapter/Lie-alg-grp}
+\include{chapter/category}
 %\include{chapter/inf-category}
 %\include{chapter/sheaf}
 %\include{chapter/scheme}
-%\include{chapter/topos-etale-cohomology}
-
+%\include{chapter/topos-cohomology}
 %\include{chapter/group-scheme}
 
-
 %\bibliographystyle{abbrv}
+%\bibliographystyle{alpha}
 %\bibliography{Bibtex} 
+
 \end{document}
 
 \section{Reductive groups: uniqueness of pinned groups}
@@ -108,6 +108,7 @@ Let $S$ be a scheme, $(G,T,M,R,\Delta,(X_\alpha))$ and $(G',T',M',R',\Delta',(X'
 
 \section{Constructible sets}
 In this section, we introduce constructible sets which are a class of subsets of a topological space that have a relatively "simple" structure. This notation is used particularly in algebraic geometry and related fields: for example, a key result known as Chevalley's theorem in algebraic geometry shows that the image of a constructible set is constructible for an important class of mappings (more specifically morphisms) of algebraic varieties (or more generally schemes). In addition, a large number of "local" geometric properties of schemes, morphisms and sheaves are (locally) constructible. Constructible sets also feature in the definition of various types of constructible sheaves in algebraic geometry and intersection cohomology, for example the notion of constructible sheaves in \'etale cohomology.
+
 \subsection{Constructible sets in topological spaces}
 A subset $Z$ of a topological space $X$ is called \textbf{retrocompact} in $X$ if for any quasi-compact open subset $U$ of $X$, the intersection $Z\cap U$ is quasi-compact. A closed subset of $X$ is clearly retrocompact in $X$, but a non-closed quasi-compact subset of $X$ is not necessarilly retrocompact. If $X$ is quasi-compact, then any retrocompact open subset of $X$ is quasi-compact, since we can take $U=X$ in the above definition. It is clear that any finite union of retrocompact subsets in $X$ is retrocompact in $X$, since any finite union of quasi-compact subsets is quasi-compact. Also, a finite intersection of open retrocompact open subsets in $X$ is a retrocompact open subset in $X$. It is also important to note that, in a locally Noetherian space $X$, any quasi-compact subset is a Noetherian space, so any subset of $X$ is retrocompact in $X$.
 

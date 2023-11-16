@@ -47,12 +47,15 @@ edge-length=1cm,
 root-radius=.06cm]{dynkin-diagrams}
 \usepackage[T1]{fontenc}
 \PassOptionsToPackage{no-math}{fontspec}
+
 \usepackage[noBBpl]{mathpazo}
-\usepackage{bbold}
+
+%\usepackage{libertine}
 %\usepackage{palatino}
-%\usepackage{newpxmath}
-%\usepackage{txfonts}
-%\usepackage{pxfonts}
+%\usepackage{utopia}
+%\usepackage{newcent}
+
+\usepackage{bbold}%定义bbold符号
 \usepackage{l3draw,xparse}
 \usepackage{accents}%创建新的widetilde
 \usepackage{scalerel} %放大数学字体
@@ -315,6 +318,7 @@ root-radius=.06cm]{dynkin-diagrams}
 \def\gldim{\mathrm{gl.dim}}
 \def\projdim{\mathrm{proj.dim}}
 \def\injdim{\mathrm{inj.dim}}
+\def\cdim{\mathrm{c.dim}}
 \def\pr{\mathrm{pr}}
 \def\Arr{\mathrm{Arr}}
 \def\Cart{\mathrm{Cart}}
@@ -359,7 +363,14 @@ root-radius=.06cm]{dynkin-diagrams}
 \def\Ran{\mathrm{Ran}}
 \def\Qis{\mathrm{Qis}}
 \def\rad{\mathrm{rad}}
-
+\def\Perv{\mathrm{Perv}}
+\def\fr{\mathrm{fr}}
+\def\Fr{\mathrm{Fr}}
+\def\Frob{\mathrm{Frob}}
+\def\tor{\mathrm{tor}}
+\def\tf{\mathrm{tf}}
+\def\cosp{\mathrm{cosp}}
+\def\sp{\mathrm{sp}}
 %-----------------------------
 
 %-----------------------------mathbf定义
@@ -396,6 +407,7 @@ root-radius=.06cm]{dynkin-diagrams}
 \def\comp{\textup{comp}}
 \def\perf{\textup{perf}}
 \def\dash{\textup{-}}
+
 %--------------------其他定义
 \def\sub{\subseteq}
 \def\sups{\supseteq}
@@ -412,7 +424,7 @@ root-radius=.06cm]{dynkin-diagrams}
 %------------------------------
 \renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
-\renewcommand{\i}{\mathrm{i}}
+\renewcommand{\i}{\mathbf{i}}
 %------------------------------
 
 %------------------------------花写Hom,Ext,End,Aut,Iso,Proj
@@ -438,10 +450,10 @@ root-radius=.06cm]{dynkin-diagrams}
 %\@addtoreset{figure}{subsection}
 %\makeatother
 %\renewcommand{\thefigure}{\arabic{section}.\arabic{subsection}.\arabic{figure}}
-\counterwithin*{figure}{section}
+\counterwithin*{figure}{subsection}
 
 %\renewcommand{\theequation}{\arabic{section}.\arabic{subsection}.\arabic{equation}}
-\numberwithin{equation}{section}
+\numberwithin{equation}{subsection}
 %-------------------------------------------
 
 

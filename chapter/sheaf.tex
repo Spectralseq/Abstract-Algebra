@@ -78,7 +78,7 @@ In particular, the presheaves $C(-,Y)$ and $C^n$ are in fact sheaves.
 The presheaf of constant functions with values in some set is in general not a sheaf: if $U_1$ and $U_2$ are disjoint non-empty open subsets and if $f_1:U_1\to E$ and $f_2:U_2\to E$ are constant maps that take different values, then there does not exist a constant map $f$ on $U=U_1\cup U_2$ whose restriction to $U_i$ is $f_i$ for $i=1,2$.\par 
 If one takes instead the sheaf of locally constant functions with values in some set $E$, then this is a sheaf. This comes from the simple observation: endow $E$ with the discrete topology, then locally constant maps are exactly continuous maps from $U$ to $E$. This is called the \textbf{constant sheaf associated to $\bm{E}$}. We denote this sheaf $E_X$.
 \end{example}
-\subsection{Stalks of presheaves and sheaves}
+\subsection{Stalks}
 Let $X$ be a topological space, $\mathscr{F}$ be a presheaf on $X$, and let $x\in X$ be a point. The \textbf{stalk} of $\mathscr{F}$ in $x$ is defined by the direct limit
 \begin{align*}
 \mathscr{F}_x:=\rlim_{U\ni x}\mathscr{F}(U).
@@ -414,12 +414,14 @@ which is exactly the stalk of $\mathscr{F}$ at $x$. Thus the adjointness comes f
 \end{proof}
 
 \subsection{Locally closed subspaces}
-In this paragraph, we shall be concerned with a locally closed subspace $W$ of $X$. This means that any point $x\in W$ has an open neighbourhood $V$ in $X$ such that $W\cap V$ is closed relative to $V$. The inclusion of $W$ in $X$ will be denoted $f:W\to X$.
+In this subsection, we shall be concerned with a locally closed subspace $W$ of $X$. This means that any point $x\in W$ has an open neighbourhood $V$ in $X$ such that $W\cap V$ is closed relative to $V$. The inclusion of $W$ in $X$ will be denoted by $f:W\to X$.
+
 \begin{definition}
-For a sheaf $\mathscr{E}$ over $W$ we define $f_!(\mathscr{E})$ to be the sheaf on $X$ whose section over an open subset $U$ of $X$ is given by
+For a sheaf $\mathscr{E}$ over $W$ we define $f_!(\mathscr{E})$ to be the subsheaf of $f_*(\mathscr{E})$ on $X$ whose section over an open subset $U$ of $X$ is given by
 \[\Gamma(U,f_!(\mathscr{E}))=\{s\in\Gamma(W\cap U,\mathscr{E}):\text{$\supp(s)$ is closed relative to $U$}\}.\]
-The restriction maps of $f_!(\mathscr{E})$ are induced from $f_*(\mathscr{E})$, of which it is a subsheaf. We therefore obtain a canonical monomorphism $f_!(\mathscr{E})\to f_*(\mathscr{E})$.
+The restriction maps of $f_!(\mathscr{E})$ are induced from $f_*(\mathscr{E})$, and we therefore obtain a canonical monomorphism $f_!(\mathscr{E})\to f_*(\mathscr{E})$.
 \end{definition}
+
 From the description of the sections of $f_!(\mathscr{E})$, it is not hard to see, in view of the fact that $W$ is locally closed, that we have
 \[(f_!(\mathscr{E}))_x=\begin{cases}
 \mathscr{E}_x&\text{if $x\in W$},\\
@@ -428,12 +430,12 @@ From the description of the sections of $f_!(\mathscr{E})$, it is not hard to se
 which in particular shows that $f_!$ is exact.
 
 \begin{proposition}\label{sheaf locally closed extension image char}
-The functor $f_!:\Sh(W)\to\Sh(X)$ is an equivalence between the category of sheaves on $W$ and the full subcategory of $\Sh(X)$ consisting of sections of $\mathscr{F}$ that are supported in $W$. The inverse functor is given by $f^{-1}$.
+The functor $f_!:\Sh(W)\to\Sh(X)$ is an equivalence between the category of sheaves on $W$ and the full subcategory of $\Sh(X)$ consisting of sections of $\mathscr{F}$ that are supported in $W$; the inverse functor being given by $f^{-1}$.
 \end{proposition}
 \begin{proof}
-For a sheaf $\mathscr{E}$ on $W$, we note the following simple identity among sheaves on $W$:
+For a sheaf $\mathscr{E}$ on $W$, we note the following simple identity:
 \[f^{-1}(f_!(\mathscr{E}))=\mathscr{E}.\]
-Next, consider a sheaf $\mathscr{F}$ on $X$ whose stalks vanish outside $W$. A close examination reveals that the adjunction morphism $\mathscr{F}\to f_*(f^{-1}(\mathscr{F}))$ may be factored through $f_!(f^{-1}\mathscr{F})$, so that we obtain an isomorphism $\mathscr{F}\cong f_!(f^{-1}(\mathscr{F}))$.
+Now consider a sheaf $\mathscr{F}$ on $X$ whose stalks vanish outside $W$. A close examination reveals that the adjunction morphism $\mathscr{F}\to f_*(f^{-1}(\mathscr{F}))$ may be factored through $f_!(f^{-1}\mathscr{F})$, so that we obtain an isomorphism $\mathscr{F}\cong f_!(f^{-1}(\mathscr{F}))$.
 \end{proof}
 
 \begin{proposition}\label{sheaf locally closed extension right adjoint}
@@ -442,9 +444,9 @@ The functor $f_!:\Sh(W)\to\Sh(X)$ admits a right adjoint $f^!:\Sh(X)\to\Sh(W)$.
 \begin{proof}
 For a sheaf $\mathscr{F}$ over $X$, we let $\Gamma_W(\mathscr{F})$ denote the sheaf on $X$ whose section over an open subset $U$ is given by
 \[\Gamma(U,\Gamma_W(\mathscr{F}))=\{s\in\Gamma(U,\mathscr{F}):\supp(s)\sub W\}.\]
-The stalks of $\Gamma_W(\mathscr{F})$ are then zero at any poitns outside $W$, so if $f^!(\mathscr{F})=f^{-1}(\Gamma_W(\mathscr{F}))$, then by the last assertion of \cref{sheaf locally closed extension image char} applied to $\Gamma_W(\mathscr{F})$, we have
+The stalks of $\Gamma_W(\mathscr{F})$ are then zero at any poitns outside $W$, so if $f^!(\mathscr{F}):=f^{-1}(\Gamma_W(\mathscr{F}))$, then by the last assertion of \cref{sheaf locally closed extension image char} applied to $\Gamma_W(\mathscr{F})$, we have
 \begin{equation}\label{sheaf locally closed extension right adjoint-1}
-\Gamma(U,f_!(f^!(\mathscr{F})))=\Gamma(U,\Gamma_W(\mathscr{F}))=\{s\in\Gamma(U,\mathscr{F}):\supp(s)\sub W\}.
+\Gamma(U,f_!(f^!(\mathscr{F})))=\Gamma(U,\Gamma_W(\mathscr{F})).
 \end{equation}
 This formula provides a monomorphism $f_!(f^!(\mathscr{F}))\to\mathscr{F}$, and it follows from (\ref{sheaf locally closed extension right adjoint-1}) that any morphism $\mathscr{G}\to\mathscr{F}$, where $\mathscr{G}$ is a sheaf on $X$ whose stalks are zero outside $W$, may by factored through the monomorphism $f_!(f^!(\mathscr{F}))\to\mathscr{F}$. In particular, for a sheaf $\mathscr{E}$ on $W$, we get accordingly
 \[\Hom(f_!(\mathscr{E}),\mathscr{F})=\Hom(f_!(\mathscr{E}),f_!(f^!(\mathscr{F}))).\]
