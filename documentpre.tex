@@ -41,6 +41,7 @@
 \usepackage{easybmat}%定义大型分块矩阵
 \usepackage{dsfont}%定义bold 1
 \usepackage{calligra}
+\usepackage{physics}
 \usepackage[
 ordering=Kac,
 edge-length=1cm,
@@ -63,6 +64,16 @@ root-radius=.06cm]{dynkin-diagrams}
 \usepackage{mathtools}%def new widetilde
 \usepackage{calc}%定义箭头不同样式symbol
 \usepackage[normalem]{ulem}%定义合适的下划线
+\usepackage[backend=biber,style=alphabetic,firstinits=true]{biblatex}%use autocite
+
+%-----create a cited category in printbibliography
+\DeclareBibliographyCategory{cited}
+\AtEveryCitekey{\addtocategory{cited}{\thefield{entrykey}}}
+
+%-----omit p. in \cite
+\DeclareFieldFormat{postnote}{#1}
+\DeclareFieldFormat{multipostnote}{#1}
+
 
 %-----------------------------------------------------
 %定义BOONDOX包的字体
@@ -240,23 +251,24 @@ root-radius=.06cm]{dynkin-diagrams}
 \def\Sp{\mathrm{Sp}}
 \def\U{\mathrm{U}}
 \def\SU{\mathrm{SU}}
-\def\dom{\mathrm{dom}}
-\def\codom{\mathrm{codom}}
 \def\End{\mathrm{End}}
 \def\Hom{\mathrm{Hom}}
 \def\Mor{\mathrm{Mor}}
 \def\Obj{\mathrm{Obj}}
 \def\Aut{\mathrm{Aut}}
-\def\det{\mathrm{det}}
-\def\supp{\mathrm{supp}}
-\def\conv{\mathrm{conv}}
-\def\mult{\mathrm{mult}}
-\def\Homgr{\mathrm{Homgr}}
 \def\Sh{\mathrm{Sh}}
 \def\Lib{\mathrm{Lib}}
 \def\Ad{\mathrm{Ad}}
-\def\ad{\mathrm{ad}}
-\def\Der{\mathrm{Der}}
+\def\Homgr{\mathrm{Homgr}}
+
+%-----------------define mathoperator
+\DeclareMathOperator{\dom}{\mathrm{dom}}
+\DeclareMathOperator{\codom}{\mathrm{codom}}
+\DeclareMathOperator{\supp}{\mathrm{supp}}
+\DeclareMathOperator{\conv}{\mathrm{conv}}
+\DeclareMathOperator{\mult}{\mathrm{mult}}
+\DeclareMathOperator{\ad}{\mathrm{ad}}
+\DeclareMathOperator{\Der}{\mathrm{Der}}
 \def\reg{\mathrm{reg}}
 \def\div{\mathrm{div}}
 \def\Sym{\mathrm{Sym}}
@@ -266,8 +278,8 @@ root-radius=.06cm]{dynkin-diagrams}
 \def\tr{\mathrm{tr}}
 \def\gr{\mathrm{gr}}
 \def\lcm{\mathrm{lcm}}
-\def\codim{\mathrm{codim}}
-\def\gldim{\mathrm{gldim}}
+\DeclareMathOperator{\codim}{\mathrm{codim}}
+\DeclareMathOperator{\gldim}{\mathrm{gl.dim}}
 \def\rank{\mathrm{rank}}
 \def\char{\mathrm{char}}
 \def\cl{\mathrm{cl}}
@@ -389,12 +401,11 @@ root-radius=.06cm]{dynkin-diagrams}
 \def\FEt{\textup{\textbf{F\'Et}}}
 
 %------------------operatorname定义
-\def\ker{\operatorname{ker}}
-\def\coker{\operatorname{coker}}
-\def\im{\operatorname{im}}
-\def\coim{\operatorname{coim}}
-\def\id{\operatorname{id}}
-\def\Int{\operatorname{Int}}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Int}{Int}
 %-----------------------------
 
 %--------------------text定义
@@ -422,8 +433,6 @@ root-radius=.06cm]{dynkin-diagrams}
 %------------------------------
 
 %------------------------------
-\renewcommand{\Re}{\operatorname{Re}}
-\renewcommand{\Im}{\operatorname{Im}}
 \renewcommand{\i}{\mathbf{i}}
 %------------------------------
 

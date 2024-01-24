@@ -2406,7 +2406,7 @@ Choose an exact sequence $0\to Y'\to Y\to Y''$ as in \cref{derived category F-in
 0\ar[r]&Y'\ar[d,equal]\ar[r]&X\ar[r]\ar[d]&X''\ar[r]\ar[d]&0\\
 0\ar[r]&Y'\ar[r]&Y\ar[r]&Y''\ar[r]&0
 \end{tikzcd}\]
-where the right square is Cartesian. Since $F$ is left exact, it transforms this square to a Cartesian square and the bottom row to an exact row. Hence, the result follows from (\cite{kashiwara_SAC} lemma 8.3.11).
+where the right square is Cartesian. Since $F$ is left exact, it transforms this square to a Cartesian square and the bottom row to an exact row. Hence, the result follows from \cite[lemma 8.3.11]{kashiwara_SAC}.
 \end{proof}
 \begin{lemma}\label{derived category truncation resolution if factor through monomorphism}
 With the assumptions of \cref{derived category F-injective subcat if factor through monomorphism}, let $X^\bullet\in\Ch^+(\mathcal{A})$ be an exact complex, and assume $X^i=0$ for $i<n$ and $X^n\in\mathcal{J}$. There exist an exact complex $Y^\bullet\in\Ch^+(\mathcal{J})$ and a morphism $f:X^\bullet\to Y^\bullet$ such that $Y^i=0$ for $i<n$, $f^n:X^n\to Y^n$ is an isomorphism, and $\im d^i_Y\in\mathcal{J}$ for all $i$.
@@ -2475,7 +2475,7 @@ D^+(\mathcal{A})\ar[r]&D^+(\Pro(\mathcal{A}))\ar[r,"R^+\pi_\mathcal{A}"]&D^+(\ma
 is isomorphic to the identity.
 \end{proposition}
 \begin{proof}
-We shall verify the conditions of \cref{derived category F-injective subcat if factor through monomorphism}. The category $\mathcal{J}_{\pro}$ is cogenerating in $\Pro(\mathcal{A})$ since for $A=\text{"$\llim$\!"}\!_{i\in I}\hspace*{1pt}\alpha(i)\in\Pro(\mathcal{A})$, we obtain a monomorphism $A\hookrightarrow\text{"$\prod$"\!}_iX_i$ by choosing a monomorphism $\alpha(i)\hookrightarrow X_i$ with $X_i\in\mathcal{J}$ for each $i\in I$. Now consider a monomorphism $Y\hookrightarrow A$ in $\Pro(\mathcal{A})$ with $A\in\Pro(\mathcal{A})$ and $Y=\text{"$\prod$"\!}_iY_i$, $Y_i\in\mathcal{J}$. Applying the dual version of (\cite{kashiwara_SAC} proposition 8.6.9), for each $i$ we can find $X_i\in\mathcal{A}$ and a commutative exact diagram
+We shall verify the conditions of \cref{derived category F-injective subcat if factor through monomorphism}. The category $\mathcal{J}_{\pro}$ is cogenerating in $\Pro(\mathcal{A})$ since for $A=\text{"$\llim$\!"}\!_{i\in I}\hspace*{1pt}\alpha(i)\in\Pro(\mathcal{A})$, we obtain a monomorphism $A\hookrightarrow\text{"$\prod$"\!}_iX_i$ by choosing a monomorphism $\alpha(i)\hookrightarrow X_i$ with $X_i\in\mathcal{J}$ for each $i\in I$. Now consider a monomorphism $Y\hookrightarrow A$ in $\Pro(\mathcal{A})$ with $A\in\Pro(\mathcal{A})$ and $Y=\text{"$\prod$"\!}_iY_i$, $Y_i\in\mathcal{J}$. Applying the dual version of \cite[proposition 8.6.9]{kashiwara_SAC}, for each $i$ we can find $X_i\in\mathcal{A}$ and a commutative exact diagram
 \[\begin{tikzcd}
 0\ar[r]&Y\ar[r]\ar[d]&A\ar[d]\\
 0\ar[r]&Y_i\ar[r]&X_i
@@ -2517,7 +2517,7 @@ is right localizable at $(X,Y)$, then for any $n\in\Z$, we have
 \begin{proof}
 By hypothesis, we have
 \[R\Hom_\mathcal{A}(X,Y)\stackrel{\sim}{\to} \rlim_{\substack{(X'\to X)\in\Qis,\\(Y\to Y')\in\Qis}}\Hom_\mathcal{A}^\bullet(X',Y').\]
-Applying the functor $H^n$ and recalling that $\rlim$ commutes with $H^n$, we conclude from (\cite{kashiwara_SAC} Proposition 11.7.3) that
+Applying the functor $H^n$ and recalling that $\rlim$ commutes with $H^n$, we conclude from \cite[Proposition 11.7.3]{kashiwara_SAC} that
 \begin{equation*}
 R^n\Hom_\mathcal{A}(X,Y)\cong \rlim H^n(\Hom_\mathcal{A}^\bullet(X',Y'))\cong \rlim \Hom_{K(\mathcal{A})}(X',Y'[n])\cong\Hom_{D(\mathcal{A})}(X,Y[n]).\qedhere
 \end{equation*}
@@ -2525,7 +2525,7 @@ R^n\Hom_\mathcal{A}(X,Y)\cong \rlim H^n(\Hom_\mathcal{A}^\bullet(X',Y'))\cong \r
 
 Consider now three abelian categories $\mathcal{A}$, $\mathcal{A}'$, $\mathcal{A}''$ and an additive bifunctor
 \[F:\mathcal{A}\times\mathcal{A}'\to\mathcal{A}''.\]
-By (\cite{kashiwara_SAC} Proposition 11.6.3), the triangulated functor
+By \cite[Proposition 11.6.3]{kashiwara_SAC}, the triangulated functor
 \[K^+F:K^+(\mathcal{A})\times K^+(\mathcal{A}')\to K^+(\mathcal{A}'')\]
 is naturally defined by setting
 \[K^+F(X,X')=\Tot(F(X,X')).\]
@@ -2553,7 +2553,7 @@ Let $\mathcal{J}$ and $\mathcal{J}'$ be full additive subcategories of $\mathcal
 Then $(\mathcal{J},\mathcal{J}')$ is $F$-injective.
 \end{proposition}
 \begin{proof}
-Let $(Y,Y')\in K^+(\mathcal{J})\times K^+(\mathcal{J}')$. If either $Y$ or $Y'$ is quasi-isomorphic to zero, then $\Tot(F(Y,Y'))$ is quasi-isomorphic to zero by (\cite{kashiwara_SAC} Proposition 12.5.5), so $(\mathcal{J},\mathcal{J}')$ is $F$-injective.
+Let $(Y,Y')\in K^+(\mathcal{J})\times K^+(\mathcal{J}')$. If either $Y$ or $Y'$ is quasi-isomorphic to zero, then $\Tot(F(Y,Y'))$ is quasi-isomorphic to zero by \cite[Proposition 12.5.5]{kashiwara_SAC}, so $(\mathcal{J},\mathcal{J}')$ is $F$-injective.
 \end{proof}
 
 \begin{corollary}\label{derived category bifunctor localization if exact one variable}
@@ -2724,7 +2724,7 @@ We shall show that the hypotheses of the Brown representability theorem are sati
 \begin{theorem}\label{abelian translation Grothendieck derived Brown representability}
 Let $(\mathcal{A},T)$ be an abelian category with translation where $\mathcal{A}$ is a Grothendieck category. Then the triangulated category $D_c(\mathcal{A})$ admits small direct sums and a system of $t$-generators.
 \end{theorem}
-Applying (\cite{kashiwara_SAC} corollary 10.5.2 and corollary 10.5.3), we then obtain the following corollaries.
+Applying \cite[corollary 10.5.2 and corollary 10.5.3]{kashiwara_SAC}, we then obtain the following corollaries.
 \begin{corollary}\label{abelian translation Grothendieck derived presheaf representable if}
 Let $(\mathcal{A},T)$ be an abelian category with translation where $\mathcal{A}$ is a Grothendieck category. Let $G:D^c(\mathcal{A})^{\op}\to\mathbf{Mod}(\Z)$ be a cohomological functor which commutes with small products, then $G$ is representable.
 \end{corollary}
@@ -2767,7 +2767,7 @@ k-abelian category. Then $(K(\mathcal{A})^{\op},K_{hi}(\mathcal{A}))$ is $\Hom_{
 for $X,Y\in D(\mathcal{A})$.
 \end{corollary}
 \begin{proof}
-The functor $\Hom_\mathcal{A}$ induces a functor $\Hom_\mathcal{A}^\bullet:K(\mathcal{A})^{\op}\times K(\mathcal{A})\to K(k)$ and by (\cite{kashiwara_SAC}, proposition 11.7.3) we have
+The functor $\Hom_\mathcal{A}$ induces a functor $\Hom_\mathcal{A}^\bullet:K(\mathcal{A})^{\op}\times K(\mathcal{A})\to K(k)$ and by \cite[proposition 11.7.3]{kashiwara_SAC} we have
 \[H^n(\Hom_\mathcal{A}^\bullet(X,Y))=\Hom_{K(\mathcal{A})}(X,Y[n]).\]
 Let $I\in K_{hi}(\mathcal{A})$; if $X\in K(\mathcal{A})$ is quasi-isomorphic to zero, then $\Hom_{K(\mathcal{A})}(X,I)=0$. Moreover, if $I\in K_{hi}(\mathcal{A})$ is quasi-isomorphic to zero, then $I$ is isomorphic to zero. Therefore $(K(\mathcal{A})^{\op},K_{hi}(\mathcal{A}))$ is $\Hom_{\mathcal{A}}$-injective and we can apply \cref{derived category bifunctor derive exists if}. The last assertion follows from \cref{derived category R^0Hom is Hom in D(A)}.
 \end{proof}
@@ -3299,7 +3299,7 @@ In fact, $j_*$ and $i_*$ transform injectives to injectives, so we can apply Gro
 The properties listed above are all that we need to glue $t$-structures, and we meet them in various contexts: for example, for $\ell$-adic derived categories, which do not come strictly within the scope of \ref{triangle cat recollement topo space paragraph}. To cover these cases, we will place ourselves in a more general framework. In this context, the sheaf categories no longer appear (only the triangulated categories appear) and we take advantage of this to lighten the notation by simply writing $j_*$ and $i^*$ for the derived functors $Rj_*$ and $Ri^!$.
 
 \paragraph{Recollement of \texorpdfstring{$t$}{t}-structures}\label{triangle cat t-structure recollement paragraph}
-Let $\mathcal{T}$ be a triangulated category endowed with strictly full subcategories $\mathcal{U}$, $\mathcal{V}$, which are stable under translations. Suppose that for $U\in\mathcal{U}$ and $V\in\mathcal{V}$ we have $\Hom(U,V)=0$, and that any $X\in\mathcal{T}$ fits into a distinguished triangle $(U,X,V)$, with $U\in\mathcal{U}$ and $V\in\mathcal{V}$. The pair $(\mathcal{U},\mathcal{V})$ is then a $t$-structure over $\mathcal{T}$. By \cref{triangle cat t-structure truncation Hom prop}, $\mathcal{V}$ is the right orthogonal of $\mathcal{U}$ and $\mathcal{U}$ is the left orthogonal of $\mathcal{V}$. In particular, $\mathcal{U}$ and $\mathcal{V}$ are Serre subcategories of $\mathcal{T}$. The hypothesis (\rmnum{1}), (\rmnum{2}) of (\cite{tohoku} 6.4, p.25) are then satisfied and by (\cite{tohoku} 6.4, p.23-p.26), the projection $\mathcal{T}\to\mathcal{T}/\mathcal{U}$ admits a fully faithful right adjoint, with image $\mathcal{V}$, and the projection $\mathcal{T}\to\mathcal{T}/\mathcal{V}$ admits a fully faithful left adjoint, with image $\mathcal{U}$. In other words, the inclusion $u:\mathcal{U}\to\mathcal{T}$ (resp. $v:\mathcal{V}\to\mathcal{T}$) has a right adjoint $u_\bullet$ (resp. a left adjoint $v^\bullet$) and the sequences
+Let $\mathcal{T}$ be a triangulated category endowed with strictly full subcategories $\mathcal{U}$, $\mathcal{V}$, which are stable under translations. Suppose that for $U\in\mathcal{U}$ and $V\in\mathcal{V}$ we have $\Hom(U,V)=0$, and that any $X\in\mathcal{T}$ fits into a distinguished triangle $(U,X,V)$, with $U\in\mathcal{U}$ and $V\in\mathcal{V}$. The pair $(\mathcal{U},\mathcal{V})$ is then a $t$-structure over $\mathcal{T}$. By \cref{triangle cat t-structure truncation Hom prop}, $\mathcal{V}$ is the right orthogonal of $\mathcal{U}$ and $\mathcal{U}$ is the left orthogonal of $\mathcal{V}$. In particular, $\mathcal{U}$ and $\mathcal{V}$ are Serre subcategories of $\mathcal{T}$. The hypothesis (\rmnum{1}), (\rmnum{2}) of \cite[6.4, p.25]{tohoku} are then satisfied and by \cite[6.4, p.23-p.26]{tohoku}, the projection $\mathcal{T}\to\mathcal{T}/\mathcal{U}$ admits a fully faithful right adjoint, with image $\mathcal{V}$, and the projection $\mathcal{T}\to\mathcal{T}/\mathcal{V}$ admits a fully faithful left adjoint, with image $\mathcal{U}$. In other words, the inclusion $u:\mathcal{U}\to\mathcal{T}$ (resp. $v:\mathcal{V}\to\mathcal{T}$) has a right adjoint $u_\bullet$ (resp. a left adjoint $v^\bullet$) and the sequences
 \[\begin{tikzcd}
 0\ar[r]&\mathcal{U}\ar[r,"u"]&\mathcal{T}\ar[r,"v^\bullet"]&\mathcal{V}\ar[r]&0
 \end{tikzcd}\]
@@ -3370,7 +3370,6 @@ j_!j^*(X)\ar[ruuu]\ar[rruu]&&&&&C\ar[rdd]\ar[rrd]\\
 &&&&&&&{}\\
 &&&&&&{}&
 \end{tikzcd}
-\vspace*{-2mm}
 \end{equation*}
 By (R3), (R4) and \cref{triangle cat morphism extension to triangle iff}, there exists a unique isomorphism $A\cong i_*i^*(X)$, which identified $X\to A$ with the adjunction morphism. It also identifies $(j_!j^*X,X,A)$ to the distinguished triangle $(j_!j^*(X),X,i_*i^*(X))$ of (R4).\par
 The same argument, applied to $j_*j^*(X)$, whose image under $j^*$ is $X$, we see that $B$ is identified with $i_*i^*j_*j^*(X)=i_*(j_*/j_!)j^*(X)$ (cf. (\ref{triangle cat recollement j_*/j_! isomorphic})) and $j_*j^*(X)\to B$ is identified with the adjunction morphism of $(i^*,i_*)$. By \cref{triangle cat morphism extension to triangle iff}, there is a unique morphism $A\to B$ rendering the upper cap of an octahedron, i.e. a morphism $i_*i^*(X)\to i_*i^*j_*j^*(X)$; this is then deduced from the morphism $X\to j_*j^*(X)$ by adjunction.\par
@@ -3378,7 +3377,6 @@ Dually, there exists a unique isomorphism from $C$ to $i_*i^!(X)[1]$, which iden
 \[i_*(j_*/j_!)j^*(X)=i_*i^!j_!j^*(X)[1]\to i_*i^!(X)[1]\]
 induced from $j_!j^*(X)\to X$ by functoriality.\par
 We have thus determined all the vertices, and all the arrows of the octahedron ($C\to A$ is the composition $C\to X\to A$), and proves its functoriality. If we replace $A$, $B$, $C$ by their values, the octahedron is then written as 
-\vspace*{-2mm}
 \begin{equation}\label{triangle cat recollement octahedron}
 \begin{tikzcd}[row sep=2pt,column sep=2pt]
 &&&{}&\\
@@ -3391,7 +3389,6 @@ j_!j^*(X)\ar[ruuu]\ar[rruu]&&&&i_*i^!(X)[1]\ar[rdd]\ar[rrd]\\
 &&&&&&{}\\
 &&&&&{}&
 \end{tikzcd}
-\vspace*{-3mm}
 \end{equation}
 Since $i_*$ is fully faithful, the distinguished triangle $(i_*i^*(X),i_*(j_*/j_!)j^*(X),i_*i^!(X)[1])$ is then the image under $i_*$ of a distinguished triangle $(i^*(X),(j_*/j_!)j^*(X),i^!(X)[1])$. The image under $i_*$ of the $+1$ morphism of this triangle is the composition $i_*i^!X[1]\to X\to i_*i^*(X)$, so $d:i^!(X)[1]\to i^*(X)[1]$ is the morphism (\ref{triangle cat recollement i^! to i^* morphism}) for $X[1]$ (the translation of (\ref{triangle cat recollement i^! to i^* morphism}) for $X$). Rotating the triangle, with a sign change for the morphism of degree $+1$ and erasing $i_*$ (cf. \cref{triangle cat t-structure subcategory eg}), we obtain a functorial distinguished triangle
 \begin{equation}\label{triangle cat recollement j_*/j_! dt-2}
@@ -3414,7 +3411,6 @@ Let $X\in\mathcal{D}^{\leq 0}$ and $Y\in\mathcal{D}^{\geq 1}$. The triangle $(j_
 \end{small}
 We then conclude from axiom (t2) of $\mathcal{D}_U$ and $\mathcal{D}_Z$ that $\Hom(X,Y)=0$. Also, in view of the definition above, the axiom (t1) for $\mathcal{D}$ follows from that of $\mathcal{D}_U$ and $\mathcal{D}_Z$.\par
 For $X\in\mathcal{D}$, to verify axiom (t3), we choose objects $Y$ and $A$ so that we have distinguished triangles $(Y,X,j_*\tau^{>0}j^*(X))$ and $(A,Y,i_*\tau^{>0}i^*(Y))$, and apply (TR4):
-\vspace*{-2mm}
 \begin{equation*}
 \begin{tikzcd}[row sep=2pt,column sep=4pt]
 &&&{}&\\
@@ -3427,7 +3423,6 @@ A\ar[ruuu]\ar[rruu]&&&&&j_*\tau^{>0}j^*(X)\ar[rdd]\ar[rrd]\\
 &&&&&&&{}\\
 &&&&&&{}&
 \end{tikzcd}
-\vspace*{-3mm}
 \end{equation*}
 Applying $j^*$, $i^*$, $i^!$ to the distinguished triangles in this octahedron, we conclude from (R3) and (R5) that
 \begin{alignat*}{2}
@@ -3498,7 +3493,7 @@ The distinguished triangles $(X,j_*(Y),i_*i^!(X)[1])$ of (\ref{triangle cat reco
 \end{proof}
 
 \begin{remark}\label{triangle cat recollement prolongation equivalence by j^*}
-Let $n\in\Z$ be an integer and $\mathcal{D}_n$ be the full subcategory of $\mathcal{D}$ formed by objects $X$ such that $i^*(X)\in\mathcal{D}_Z^{\leq n-1}$ and $i^!(X)\in\mathcal{D}_Z^{\geq n+1}$. The functor $j^*$ then induces an equivalence of categories $\mathcal{D}_n\stackrel{\sim}{\to}\mathcal{D}_U$, and it admits $\tau^{\leq n-1}_Zj_*$ as a quasi-inverse, which we often denote by ${^p\!j_{!*}}$.
+Let $n\in\Z$and $\mathcal{D}_n$ be the full subcategory of $\mathcal{D}$ formed by objects $X$ such that $i^*(X)\in\mathcal{D}_Z^{\leq n-1}$ and $i^!(X)\in\mathcal{D}_Z^{\geq n+1}$. The functor $j^*$ then induces an equivalence of categories $\mathcal{D}_n\stackrel{\sim}{\to}\mathcal{D}_U$, and it admits $\tau^{\leq n-1}_Zj_*$ as a quasi-inverse, which we often denote by ${^p\!j_{!*}}$.
 \end{remark}
 
 Let $\mathcal{C}$, $\mathcal{C}_U$ and $\mathcal{C}_Z$ be the hearts of the $t$-categories $\mathcal{D}$, $\mathcal{D}_U$ and $\mathcal{D}_Z$, respectively, where $\mathcal{D}_U$ and $\mathcal{D}_Z$ are endowed with given $t$-structures, and $\mathcal{D}$ with the glueing $t$-structure. Denote by $\eps$ the inclusions of $\mathcal{C}$, $\mathcal{C}_U$ or $\mathcal{C}_Z$ into $\mathcal{D}$, $\mathcal{D}_U$ or $\mathcal{D}_Z$, and for $T$ the functors $j_!,j^*,j_*,i^*,i_*,i^!$, we denote by $^{pT}$ the functor $H^0\circ T\circ\eps$. By the definition of the $t$-structure of $\mathcal{D}$, $j^*$ is $t$-exact, $i^*$ is right $t$-exact, and $i^!$ is left $t$-exact. Applying \cref{triangle cat t-exact functor prop}~(c) and (d), we obtain the following result:
@@ -3732,13 +3727,13 @@ Let $U$ be an open subset of $X$ which is a union of strata, and $Z$ be its comp
 \end{remark}
 
 \begin{proposition}\label{stratified space perverse t-structure j_!* prolongation char}
-For $\mathscr{B}\in\Perv(U,\mathscr{O}_U,p)$, $j_{!*}(\mathscr{B})$ is the unique prolongation $\mathscr{P}$ of $\mathscr{B}$ such that, for any stratum $S\sub Z$, we have $H^i(s^*(\mathscr{P}))=0$ for $i\geq p(S)$ and $H^i(s^!(\mathscr{P}))=0$ for $i\leq p(S)$, where $s:S\to X$ is the inclusion map.
+For $\mathscr{B}\in\Perv(U,\mathscr{O}_U,p)$, $j_{!*}(\mathscr{B})$ is the unique prolongation $\mathscr{P}$ of $\mathscr{B}$ such that, for any stratum $S\sub Z$, we have $H^i(i_S^*(\mathscr{P}))=0$ for $i\geq p(S)$ and $H^i(i_S^!(\mathscr{P}))=0$ for $i\leq p(S)$, where $i_S:S\to X$ is the inclusion map.
 \end{proposition}
 \begin{proof}
-This follows from \cref{triangle cat recollement ^pj_! and ^pj_* is truncation}. More precisely, it follows from \cref{triangle cat recollement prolongation equivalence by j^*} that if $\mathcal{D}'$ is the  subcategory of $D(X,\mathscr{O}_X)$ formed by $\mathscr{F}$ such that $H^i(s^*(\mathscr{F}))=0$ for $i\geq p(S)$ and $H^i(s^!(\mathscr{F}))=0$ for $i\leq p(S)$ for any strata $s:S\to Z$, then $j^*$ induces an equivalence $\mathcal{D}'\to D(U,\mathscr{O}_U)$. Its restriction to $\mathcal{D}'\cap\Perv(X,\mathscr{O}_X,p)$ is then an equivalence $\mathcal{D}'\cap\Perv(X,\mathscr{O}_X,p)\to \Perv(U,\mathscr{O}_U,p)$, with quasi-inverse $j_{!*}$. We have similar characterizations for ${^p\!j_!}(\mathscr{B})$ and ${^p\!j_*}(\mathscr{B})$ (cf. \cref{triangle cat recollement ^pj_! and ^pj_* is truncation}).
+This follows from \cref{triangle cat recollement ^pj_! and ^pj_* is truncation}. More precisely, it follows from \cref{triangle cat recollement prolongation equivalence by j^*} that if $\mathcal{D}'$ is the  subcategory of $D(X,\mathscr{O}_X)$ formed by $\mathscr{F}$ such that $H^i(i_S^*(\mathscr{F}))=0$ for $i\geq p(S)$ and $H^i(i_S^!(\mathscr{F}))=0$ for $i\leq p(S)$ for any strata $i_S:S\to Z$, then $j^*$ induces an equivalence $\mathcal{D}'\to D(U,\mathscr{O}_U)$. Its restriction to $\mathcal{D}'\cap\Perv(X,\mathscr{O}_X,p)$ is then an equivalence $\mathcal{D}'\cap\Perv(X,\mathscr{O}_X,p)\to \Perv(U,\mathscr{O}_U,p)$, with quasi-inverse $j_{!*}$. We have similar characterizations for ${^p\!j_!}(\mathscr{B})$ and ${^p\!j_*}(\mathscr{B})$ (cf. \cref{triangle cat recollement ^pj_! and ^pj_* is truncation}).
 \end{proof}
 
-Suppose that the perversity $p$ satisfies the following condition: if $S\sub\widebar{T}$, then $p(S)\geq p(T)$ (in this case, we say that $p$ is \textbf{decreasing}). For each $n\in\Z$, the union $Z_n$ (resp. $U_n$) of the strata $S$ such that $p(S)\geq n$ (resp. $p(S)\leq n$); $Z_n$ (resp. $U_n$) is then closed (resp. open). We denote by $j_n:U_{n-1}\to U_n$ and $i_n:Z_{n-1}\to Z_n$ the inclusion maps.
+Suppose that the perversity $p$ satisfies the following condition: if $S\sub\widebar{T}$, then $p(S)\geq p(T)$ (in this case, we say that $p$ is \textbf{decreasing}). For each $n\in\Z$, the union $Z_n$ (resp. $U_n$) of the strata $S$ such that $p(S)\geq n$ (resp. $p(S)\leq n$) is then closed (resp. open). We denote by $j_n:U_{n-1}\to U_n$ and $i_n:Z_{n-1}\to Z_n$ the inclusion maps.
 
 \begin{proposition}\label{stratified space perverse t-structure j_!* open union truncation char}
 With the hypothesis and notations above, let $\mathscr{A}$ be a $p$-perverse sheaf over $U_k$ and $a\geq k$ be an integer such that $p\leq a$. If $j:U_k\to X=U_a$ denotes the inclusion map, then
@@ -3757,6 +3752,7 @@ Let's explain the relationship between our notations and that of Mr. Goresky and
     \item The space $X$ has an open dense stratum $U_0$ whose complement satisfies $\dim(U_0)-\dim(X-U_0)\geq 2$.
     \item The perversity function only depends on the dimension: we have a function $\bar{p}:\N\to\Z$ such that $p(S)=\bar{p}(\dim(S))$. The function $\bar{p}$ is assumed to be decreasing and positive, with $p(U_0)=\bar{p}(\dim(U_0))=0$.
 \end{itemize}
+
 Let $j:U_0\to X$ be the inclusion map, we are concerned with the object $j_{!*}(\K)$ of $D^b(X,\K)$. If we are given the description of \cref{stratified space perverse t-structure j_!* open union truncation char}, we are then led to utilize the function $p'$ which satisfies $p'(U_0)=0$ and attach for each stratum $S\neq U_0$ the integer $p(S)-1$. The operator $j_{!*}$ consists, starting from the constant sheaf $\K$ over $U=U_0$, of successively adding to $U$ the strata $S$ of dimension $\dim(U_0)-2$, $\dim(U_0)-3$, $\cdots$, and each time taking a direct image, truncated by $\tau^{\leq p'(S)}$. It is the functor $p'$ that they call \textit{perversity}. From the point of view adopted here, this amounts to describing ${^p\!j_{!*}}$ as being ${^{p'}j_*}$, and leads to discrepancies in the description of duality phenomena.\par
 Goresky and MacPherson also assume that the function $\bar{p}$ does not decrease too fast: $\bar{p}(n)-\bar{p}(n+1)=0$ or $1$. The result of \cref{stratified space constructible perverse structure refinement} below shows that this provides the independence of the perverse $t$-structure of the stratification.
 \end{remark}
@@ -3851,7 +3847,7 @@ Endow each open subset $U$ of $X$ the stratification induced by $\mathcal{S}$, a
 The functor $U\mapsto\Perv(U,\mathscr{O}_U,p)$ is a stack.
 \end{corollary}
 \begin{proof}
-By \cref{stratified space perverse structure Hom define sheaf}, the functor $U\mapsto\Perv(U,\mathscr{O}_U,p)$ is a prestack over $X$. The glueing property for objects follows from (\cite{BBD} 3.2.4), since \cref{stratified space perverse structure Hom of D^geq and D^leq} ensures that the hypotheses are satisfied.
+By \cref{stratified space perverse structure Hom define sheaf}, the functor $U\mapsto\Perv(U,\mathscr{O}_U,p)$ is a prestack over $X$. The glueing property for objects follows from \cite[3.2.4]{BBD}, since \cref{stratified space perverse structure Hom of D^geq and D^leq} ensures that the hypotheses are satisfied.
 \end{proof}
 
 \paragraph{Complex algebraic varieties}\label{perverse sheaf complex variety paragraph}
@@ -3953,9 +3949,9 @@ Finally, we impose the following condition:
 \end{enumerate}
 As in \ref{perverse sheaf stratified space paragraph}, these conditions ensures that for $j:U\hookrightarrow V\sub X$ locally closed and unions of strata, the functors $j_*$, $j_!$, $j^*$, $j^!$ preserve the subcategories $D_{\mathcal{S},L}^b(U,\Z/\ell\Z)$ and $D_{\mathcal{S},L}^b(U,\Z/\ell\Z)$.
 
-It follows from the constructability theorem for $Rj_*$ (\cite{SGA4.5}, \Rmnum{7}) that for any system $(\mathcal{S}',L')$ verifying (S1)--(S2), there exists a refinement $(\mathcal{S},L)$ of $(\mathcal{S}',L')$ which satisfies (S1)--(S3): if (S1)--(S3) are true with $X$ replaced by the union of strata of dimension $\geq n$, the constructability theorem makes it possible to refine $(\mathcal{S},L)$ into $(\mathcal{S}',L')$ without touching the strata of dimension $\geq n$, and to make (S1)--(S3) true with $X$ replaced by the union of strata of dimension $\geq n-1$. We can then iterate this construction to obtain the desired refinement.\par
+It follows from the constructability theorem for $Rj_*$ \cite[VII]{SGA4.5} that for any system $(\mathcal{S}',L')$ verifying (S1)--(S2), there exists a refinement $(\mathcal{S},L)$ of $(\mathcal{S}',L')$ which satisfies (S1)--(S3): if (S1)--(S3) are true with $X$ replaced by the union of strata of dimension $\geq n$, the constructability theorem makes it possible to refine $(\mathcal{S},L)$ into $(\mathcal{S}',L')$ without touching the strata of dimension $\geq n$, and to make (S1)--(S3) true with $X$ replaced by the union of strata of dimension $\geq n-1$. We can then iterate this construction to obtain the desired refinement.\par
 
-Let $p:\mathcal{S}\to\Z$ be as \ref{perverse sheaf complex variety paragraph}, defined by a perversity functor $p_\mathcal{S}:\mathcal{S}\to\Z, S\mapsto p(2\dim(S))$. By a similar argument as in \ref{perverse sheaf complex variety paragraph}, we obtain a $t$-structure over $D_{\mathcal{S},L}(X,\Z/\ell\Z)$, which is compatible under refinements: the purity theorem (\cite{SGA4-3}, \Rmnum{16}, 3.7) provides an analogue of \cref{stratified space constructible perverse structure refinement}. By passing to limit, we obtain a $t$-structure $(D_c^{b,\leq p}(X,\Z/\ell\Z),D_c^{b,\geq p}(X,\Z/\ell\Z))$ over the filterred union $D_c^b(X,\Z/\ell\Z)$ of the $D_{\mathcal{S},L}^b(X,\Z/\ell\Z)$. We then deruce a $t$-stucture over $D_c(X,\Z/\ell\Z)$ as in \cref{stratified space perverse t-structure on D(X)}, and \cref{scheme perverse sheaf D^p char} to \cref{scheme perverse sheaf finite etale morphism t-exact} are still valid, with similar arguments (the Verdier duality is replaced by the duality formalism of etale cohomology (\cite{SGA4-3}, \Rmnum{18})).\par
+Let $p:\mathcal{S}\to\Z$ be as \ref{perverse sheaf complex variety paragraph}, defined by a perversity functor $p_\mathcal{S}:\mathcal{S}\to\Z, S\mapsto p(2\dim(S))$. By a similar argument as in \ref{perverse sheaf complex variety paragraph}, we obtain a $t$-structure over $D_{\mathcal{S},L}(X,\Z/\ell\Z)$, which is compatible under refinements: the purity theorem \cite[XVI 3.7]{SGA4-3} provides an analogue of \cref{stratified space constructible perverse structure refinement}. By passing to limit, we obtain a $t$-structure $(D_c^{b,\leq p}(X,\Z/\ell\Z),D_c^{b,\geq p}(X,\Z/\ell\Z))$ over the filterred union $D_c^b(X,\Z/\ell\Z)$ of the $D_{\mathcal{S},L}^b(X,\Z/\ell\Z)$. We then deruce a $t$-stucture over $D_c(X,\Z/\ell\Z)$ as in \cref{stratified space perverse t-structure on D(X)}, and \cref{scheme perverse sheaf D^p char} to \cref{scheme perverse sheaf finite etale morphism t-exact} are still valid, with similar arguments (the Verdier duality is replaced by the duality formalism of etale cohomology \cite[XVIII]{SGA4-3}.\par
 
 For a point $x$ of $X$ (closed or not), if $i_x:\{x\}\to X$ denotes the inclusion map, which factors into
 \[i_x:\{x\}\stackrel{j}{\to}\widebar{\{x\}}\stackrel{i}{\to}X,\]
@@ -3966,11 +3962,11 @@ we define $i_x^!:=j^*i^!$. With this notation, the characterization of \cref{sch
 
 As for the sheaves of $\Z/\ell^n\Z$-modules (or more generally $R$-modules, with $R$ finite over $\Z/\ell^n\Z$), we have similar definitions. It is convenient to continue to take for $L$ the datum, for each stratum, of a finite family of locally constant irreducible sheaves of $\Z/\ell\Z$-modules, and to say that $\mathscr{F}\in D^b(X,R)$ is $(\mathcal{S},L)$-constructible if $\ell^iH^*(\mathscr{F})/\ell^{i+1}H^*(\mathscr{F})$ are $(\mathcal{S},L)$-constructible (as sheaves of $\Z/\ell\Z$-modules).\par
 
-For $\Z_\ell$-sheaves (resp. $\Q_\ell$-sheaves), we preceed with the same definition, once we can define triangulated categories $D_c^b(X,\Z_\ell)$ (resp. $D^b_c(X,\Q_\ell)$) obeying the usual variance formalism, and once we define their "natural" $t$-structures, through which we can consider the abelian category of constructible $\Z_\ell$-sheaves (resp. $\Q_\ell$-sheaves) on $X$ (\cite{SGA5}, \Rmnum{7}, 1.1). In the case of finite fields or algebraically closed fields (or more generally if for any finite extension $k'$ of $k$ the groups $H^i(\Gal(\widebar{k}/k'),\Z/\ell\Z)$ are finite), a solution is proposed in \cite{Deligne_WeilII} 1.1.2, also see \cite{FK}: we define
+For $\Z_\ell$-sheaves (resp. $\Q_\ell$-sheaves), we preceed with the same definition, once we can define triangulated categories $D_c^b(X,\Z_\ell)$ (resp. $D^b_c(X,\Q_\ell)$) obeying the usual variance formalism, and once we define their "natural" $t$-structures, through which we can consider the abelian category of constructible $\Z_\ell$-sheaves (resp. $\Q_\ell$-sheaves) on $X$ (\cite[XII 1.1]{SGA5}). In the case of finite fields or algebraically closed fields (or more generally if for any finite extension $k'$ of $k$ the groups $H^i(\Gal(\widebar{k}/k'),\Z/\ell\Z)$ are finite), a solution is proposed in \cite[1.2.1]{Deligne_WeilII}, also see \cite{FK}: we define
 \begin{equation*}
 D^b_c(X,\Z_\ell):=\text{2-}\rlim D^b_{\mathrm{ctf}}(X,\Z/\ell^n\Z)
 \end{equation*}
-(ctf for "constructible with finite $\Tor$-dimension"). The transition functors are chosen to be the functors of extension of scalars\footnote{The restriction of having finite Tor-dimension is necessary for them to send $D^b$ into $D^b$.}. The following proposition, together with the theorem of finiteness in ((\cite{SGA4.5}, \Rmnum{7})), assure that we obtain a triangulated category.
+(ctf for "constructible with finite $\Tor$-dimension"). The transition functors are chosen to be the functors of extension of scalars\footnote{The restriction of having finite Tor-dimension is necessary for them to send $D^b$ into $D^b$.}. The following proposition, together with the theorem of finiteness in \cite[XII]{SGA4.5}, assure that we obtain a triangulated category.
 
 \begin{proposition}\label{triangle cat 2-proj limit triangle if finite Hom}
 Let $(\mathcal{D}_n)_{n\in\N}$ be a projective system of triangulated categories whose transition functors $T_{m,n}:\mathcal{D}_n\to\mathcal{D}_m$ are exact. If for any $n$ and $K,L\in\mathcal{D}_n$, $\Hom(K,L)$ is finite, then the $2$-projective limit $\mathcal{D}$ of $\mathcal{D}_n$, endowed with the triangles whose image in each $\mathcal{D}_n$ are distinguished, is triangulated.
@@ -3982,7 +3978,7 @@ The above definition of $D^b_c(X,\Z_\ell)$ has the advantage that the "six-funct
 0\ar[r]&H^i(\mathscr{F})\otimes_{\Z_\ell}\Z/\ell^n\Z\ar[r]&H^i(\mathscr{F}\otimes_{\Z_\ell}\Z/\ell^n\Z)\ar[r]&\Tor_1(H^{i+1}(\mathscr{F}),\Z/\ell^n\Z)\ar[r]&0
 \end{tikzcd}
 \end{equation}
-As $n$ varies, these form a projective system, and the projective limit of $\Tor_1$ is essentially zero. We define $D^{b,\leq 0}_c(X,\Z_\ell)$ (resp. $D^{b,\geq 0}_c(X,\Z_\ell)$) by the condition $H^i(\mathscr{F})=0$ for $i>0$ (resp. $i<0$). For that we obtain a $t$-structure, it is essential to construct the operators $\tau^{\leq i}$, and this is done in (\cite{A}, 1.1.2). The functor $H^0$ induces an equivalenct of categories from $D^{b,\leq 0}_c(X,\Z_\ell)\cap D^{b,\geq 0}_c(X,\Z_\ell)$ to the category of constructible $\Z_\ell$-sheaves. The exact sequence (\ref{scheme etale sheaf Z_l  cohomology exact sequence}) shows that for $\mathscr{F}$ to be in $D^{b,\leq 0}_c(X,\Z_\ell)$, it is necessary and sufficient that for an (any) integer $n$, $\mathscr{F}\otimes_{\Z_\ell}\Z/\ell^n\Z$ is in $D^{b,\leq 0}(X,\Z/\ell^n\Z)$.\par
+As $n$ varies, these form a projective system, and the projective limit of $\Tor_1$ is essentially zero. We define $D^{b,\leq 0}_c(X,\Z_\ell)$ (resp. $D^{b,\geq 0}_c(X,\Z_\ell)$) by the condition $H^i(\mathscr{F})=0$ for $i>0$ (resp. $i<0$). For that we obtain a $t$-structure, it is essential to construct the operators $\tau^{\leq i}$, and this is done in \autocite[1.1.2]{Deligne_WeilII}. The functor $H^0$ induces an equivalenct of categories from $D^{b,\leq 0}_c(X,\Z_\ell)\cap D^{b,\geq 0}_c(X,\Z_\ell)$ to the category of constructible $\Z_\ell$-sheaves. The exact sequence (\ref{scheme etale sheaf Z_l  cohomology exact sequence}) shows that for $\mathscr{F}$ to be in $D^{b,\leq 0}_c(X,\Z_\ell)$, it is necessary and sufficient that for an (any) integer $n$, $\mathscr{F}\otimes_{\Z_\ell}\Z/\ell^n\Z$ is in $D^{b,\leq 0}(X,\Z/\ell^n\Z)$.\par
 
 Let $D^b_{\mathcal{S},L}(X,\Z_\ell)$ be the full subcategory of $D^b_c(X,\Z_\ell)$ formed by complexes $\mathscr{F}$ verifying the following conditions (the equivalence follows from (\ref{scheme etale sheaf Z_l  cohomology exact sequence})):
 \begin{enumerate}
@@ -4016,7 +4012,7 @@ Let $h_i$ (resp. $h_{ij}$) be the covering morphism from $U_i$ to $X$ (resp. $U_
 It suffices to show that the morphism ${^p\!h_i^*}(\mathscr{A})\to\mathscr{A}_i=\mathscr{A}_{U_i}$ induced from $\mathscr{A}\to h_{i,*}(\mathscr{A}_{U_i})$ by adjunction is an isomorphism, which can be verified under a base change by any of the $h_i$. The direct images and inverse images commutes with such a localization, so we are reduced to the case where $U_i\to X$ admits a section. In this case, the $\mathscr{A}_i$ is the inverse image of an $\mathscr{A}_X$, and that $\mathscr{A}=\mathscr{A}_X$ follows from the usual homotopy argument which shows that two open covers which are refinements of each other give the same \v{C}ech cohomology.
 \end{remark}
 
-\section{The self-dual perversity: geometric properties}
+\section{Geometric properties of perverse sheaves}\label{scheme perverse sheaf geometric property section}
 In this section, except \autoref{*} concerning vanishing cycles, we only consider schemes separated of finite type over a field $k$ and the self-dual perversity $p_{1/2}$. We will work in the category $D^b_c(X):=D^b_c(X,\widebar{\Q}_\ell)$ (defined in \ref{perverse sheaf algebraic variety paragraph}); for this to be well-defined, we may hence assume that for any finite extension $k'$ of $k$, the $H^i(\Gal(\bar{k}/k'),\Z/\ell\Z)$ is finite (for example $k$ is finite or algebraically closed). However, most of our results are also valid for $\Q_\ell$, $\Z_\ell$, or even $\Z/\ell^n\Z$, and in particular for $\Z/\ell\Z$-cohomology.\par
 We also recall that (\ref{perverse sheaf algebraic variety paragraph}) for the self-dual perversity (defined by $S\mapsto-\dim(S)$), the perverse $t$-structure of $D^b_c(X,\widebar{\Q}_\ell)$ have the following characterization: for any point $x$ of $X$, put $\dim(x)=\dim(\widebar{\{x\}})=\deg(\kappa(x)/k)$ and let $i_x:\{x\}\to X$ be the inclusion, we have
 \begin{align}
@@ -4030,8 +4026,7 @@ In view of the proof of \cref{scheme perverse sheaf quasi-finite morphism t-exac
 (whence in particular $H^i(\mathscr{K})=0$ for $i>0$). From this, we can easily give examples of perverse sheaves over $X$ (for example, $\widebar{\Q}_\ell[n]$ with $n=\dim(X)$, or more generally a locally constant sheaf placed at degree $-n$). Finally, since the self-dual perversity is self-dual, the Verdier duality $D$ exchanges ${^p\!D_c^{\geq 0}}$ and ${^p\!D_c^{\leq 0}}$. It therefore induces an anti-equivalence of the category of perverse sheaves over $X$.
 
 \subsection{Affine morphisms}
-
-We first consider an affine morphism $f:X\to Y$ between schemes of finite type over $k$. The following theorem reformulate the theorem of (\cite{SGA4-3} \Rmnum{14} 3.1) about cohomological dimension of $Rf_*$:
+We first consider an affine morphism $f:X\to Y$ between schemes of finite type over $k$. The following theorem reformulate the theorem of \cite[XIV 3.1]{SGA4-3} about cohomological dimension of $Rf_*$:
 
 \begin{theorem}\label{scheme perverse affine morphism f_* right t-exact}
 If $f:X\to Y$ is an affine morphism, the functor $Rf_*:D^b_c(X)\to D^b_c(Y)$ is right $t$-exact.
@@ -4039,7 +4034,7 @@ If $f:X\to Y$ is an affine morphism, the functor $Rf_*:D^b_c(X)\to D^b_c(Y)$ is 
 \begin{proof}
 We are easily reduced to prove the analogous result for $\Z/\ell\Z$-cohomology. If $\mathscr{F}$ is a consructible sheaf, we define an integer $d(\mathscr{F})$ by
 \[d(\mathscr{F})=\sup\{\dim(x):\text{$x\in X$ and $\mathscr{F}_x\neq 0$}\}.\]
-In view of (\ref{scheme self-dual perversity D^leq char}), this is the smallest integer such that $\mathscr{F}$ is in ${^p\!D_c^{\leq d}}(X)$: in fact, $\mathscr{F}\in{^p\!D_c^{\leq d}}$ if and only if for any $x\in X$, we have $H^{i-d}(\mathscr{F}_x)=0$ for $i-d>-\dim(x)$, or equivalently $\mathscr{F}_x=0$ for $\dim(x)<d$. Since a complex $\mathscr{K}$ is in ${^p\!D_c^{\leq 0}}(X)$ if and only if $H^i(\mathscr{K})[-i]$ is so for each $i$, the integer $d(\mathscr{K}):=\sup(i+d(H^i(\mathscr{K})))$ is then the smallest integer such that $\mathscr{K}$ is in ${^p\!D_c^{\leq d}}$. To prove that $Rf_*$ sends ${^p\!D_c^{\leq 0}}(X)$ into ${^p\!D_c^{\leq 0}}(Y)$, it then suffices to verify that for any sheaf $\mathscr{F}$ with $d(\mathscr{F})\leq d$, we have $d(R^if_*(\mathscr{F}))\leq d-i$, which is exactly the statement of (\cite{SGA4-3} \Rmnum{14} 3.1).
+In view of (\ref{scheme self-dual perversity D^leq char}), this is the smallest integer such that $\mathscr{F}$ is in ${^p\!D_c^{\leq d}}(X)$: in fact, $\mathscr{F}\in{^p\!D_c^{\leq d}}$ if and only if for any $x\in X$, we have $H^{i-d}(\mathscr{F}_x)=0$ for $i-d>-\dim(x)$, or equivalently $\mathscr{F}_x=0$ for $\dim(x)<d$. Since a complex $\mathscr{K}$ is in ${^p\!D_c^{\leq 0}}(X)$ if and only if $H^i(\mathscr{K})[-i]$ is so for each $i$, the integer $d(\mathscr{K}):=\sup(i+d(H^i(\mathscr{K})))$ is then the smallest integer such that $\mathscr{K}$ is in ${^p\!D_c^{\leq d}}$. To prove that $Rf_*$ sends ${^p\!D_c^{\leq 0}}(X)$ into ${^p\!D_c^{\leq 0}}(Y)$, it then suffices to verify that for any sheaf $\mathscr{F}$ with $d(\mathscr{F})\leq d$, we have $d(R^if_*(\mathscr{F}))\leq d-i$, which is exactly the statement of \cite[XIV 3.1]{SGA4-3}.
 \end{proof}
 
 By applying the Verdier duality, \cref{scheme perverse affine morphism f_* right t-exact} has the following dual form:
@@ -4071,16 +4066,14 @@ In fact, $u^*\mathscr{K}$ is in ${^p\!D_c^{\leq 0}}(Z)$ (analogue of \cref{schem
 In fact, this property characterizes complexes in ${^p\!D^{\leq 0}_c}(X)$, and we have the following converse of \cref{scheme perverse inverse image under qf affine D^leq cohomology}:
 
 \begin{corollary}\label{scheme perverse D^leq if negative cohomology on open affine}
-Suppose that $k$ is algebraically closed, and let $\mathscr{K}$ be in $D^b_c(X)$. If for any Zariski open affine $V$ of $X$, we have $H^i(V,\mathscr{K})=0$ for $i>0$, then $K$ is in ${^p\!D_c^{\leq 0}}(X)$.
+Suppose that $k$ is algebraically closed, and let $\mathscr{K}$ be in $D^b_c(X)$. If for any Zariski open affine $U$ of $X$, we have $H^i(U,\mathscr{K})=0$ for $i>0$, then $K$ is in ${^p\!D_c^{\leq 0}}(X)$.
 \end{corollary}
-
-To prove this, we need the following lemma.
 
 \begin{lemma}\label{scheme affine smooth over ac field cohomology over affine nonzero}
 Let $X$ be affine smooth irreducible over an algebraically closed $k$, of dimension $d\geq 1$, and $\mathscr{F}$ be a locally constant sheaf over $X$. If $\mathscr{F}\neq 0$, there exists an affine open $U$ of $X$, of the form $X_f$ (with $f\neq 0$ in $\Gamma(X,\mathscr{O}_X)$), such that $H^d(U,\mathscr{F})\neq 0$.
 \end{lemma}
 \begin{proof}
-Let $f_1,\dots,f_d\in\Gamma(X,\mathscr{O}_X)$ be such that the subscheme $S$ of $X$ defined by the equations $f_i=0$ is finite nonempty over $k$. If $\mathscr{F}\neq 0$, we have $H_S^{2d}(X,\mathscr{F})\neq 0$ (by purity, since $S$ has codimension $d$ in $X$, cf. \cite{SGA4-3} \Rmnum{16} 3.7), and the exact sequence
+Let $f_1,\dots,f_d\in\Gamma(X,\mathscr{O}_X)$ be such that the subscheme $S$ of $X$ defined by the equations $f_i=0$ is finite nonempty over $k$. If $\mathscr{F}\neq 0$, we have $H_S^{2d}(X,\mathscr{F})\neq 0$ (by purity, since $S$ has codimension $d$ in $X$, cf. \cite[XVI 3.7]{SGA4-3}), and the exact sequence
 \[\begin{tikzcd}
 H^{2d-1}(X-S,\mathscr{F})\ar[r]&H_S^{2d}(X,\mathscr{F})\ar[r]&H^{2d}(X,\mathscr{F})
 \end{tikzcd}\]
@@ -4104,7 +4097,7 @@ Let $j:U\hookrightarrow X$ be a affine open immersion, and $i:Z\hookrightarrow X
     0\ar[r]&i_*{^p\!H^{-1}}i^*(\mathscr{F})\ar[r]&j_!j^*(\mathscr{F})\ar[r]&\mathscr{F}\ar[r]&i_*{^p\!H^0}i^*(\mathscr{F})\ar[r]&0
     \end{tikzcd}
     \end{equation}
-    \vspace*{-4mm}
+    \vspace*{-3mm}
     \begin{equation}\label{scheme perverse affine open immersion functor prop-2}
     \begin{tikzcd}
     0\ar[r]&i_*{^p\!H^{0}}i^!(\mathscr{F})\ar[r]&\mathscr{F}\ar[r]&j_*j^*(\mathscr{F})\ar[r]&i_*{^p\!H^1}i^!(\mathscr{F})\ar[r]&0
@@ -4113,13 +4106,14 @@ Let $j:U\hookrightarrow X$ be a affine open immersion, and $i:Z\hookrightarrow X
 \end{enumerate}
 \end{corollary}
 \begin{proof}
-The first assertion is a particular case of \cref{scheme perverse quasi-finite affine f_* f_! t-exact}, since $j$ is quasi-finite. The long exact sequences on perverse cohomology of the triangle $(j_!j^*(\mathscr{F}),\mathscr{F},i_*i^*(\mathscr{F}))$ then gives (recall that since $j$ is \'etale, the inverse image $j^*(\mathscr{F})$ is perverse, cf. \cref{scheme perverse sheaf finite etale morphism t-exact})
+The first assertion is a particular case of \cref{scheme perverse quasi-finite affine f_* f_! t-exact}, since $j$ is quasi-finite. The long exact sequences on perverse cohomology of the triangle $(j_!j^*(\mathscr{F}),\mathscr{F},i_*i^*(\mathscr{F}))$ then gives (since $j$ is \'etale, the inverse image $j^*(\mathscr{F})$ is perverse, cf. \cref{scheme perverse sheaf finite etale morphism t-exact})
 \[\begin{tikzcd}
 0\ar[r]&{^p\!H^{-1}}i_*i^*(\mathscr{F})\ar[r]&j_!j^*(\mathscr{F})\ar[r]&\mathscr{F}\ar[r]&{^p\!H^0}i_*i^*(\mathscr{F})\ar[r]&0
 \end{tikzcd}\]
 Since ${^p\!H^n}i_*i^*(\mathscr{F})=i_*{^p\!H^n}i^*(\mathscr{F})$ for any $n$, we then obtain (\ref{scheme perverse affine open immersion functor prop-1}), and the triviality of ${^p\!H^ni_*i^*(\mathscr{F})}=i_*{^p\!H^n}i^*(\mathscr{F})$ for $n\neq -1,0$. Since $i_*=i_!$ is exact, this then implies ${^p\!H^n}i^*(\mathscr{F})=0$ for $n\neq -1,0$, i.e. $i^*(\mathscr{F})\in {^p\!D_c}^{[-1,0]}$. Applying the same argument to the triangle $(i_*i^!(\mathscr{F}),\mathscr{F},j_*j^*(\mathscr{F}))$, we then obtain the remaining claims in (b).
 \end{proof}
 
+\begin{remark}\label{scheme perverse affine open immersion j_* exact sequence}
 In (\ref{scheme perverse affine open immersion functor prop-1}), if $\mathscr{F}$ is of the form $j_*(\mathscr{G})$, we then obtain an exact sequence for the perverse cohomologies of $i^*j_*(\mathscr{G})$ (recall that $j^*j_*\cong 1$):
 \begin{equation}\label{scheme perverse affine open immersion functor prop-3}
 \begin{tikzcd}
@@ -4133,6 +4127,7 @@ Similarly, if we apply (\ref{scheme perverse affine open immersion functor prop-
 \end{tikzcd}
 \end{equation}
 which, via the isomorphism of $i^*j_*(\mathscr{G})\cong i^!j_!(\mathscr{G})[1]$ (cf. (\ref{triangle cat recollement j_*/j_! isomorphic})), coincides with (\ref{scheme perverse affine open immersion functor prop-4}) (except that the arrow $j_*(\mathscr{G})\to i_*{^p\!H^0}i^*j_*(\mathscr{G})$ has changed a sign). 
+\end{remark}
 
 \begin{corollary}\label{scheme perverse affine open immersion i^*j_!* perverse}
 Under the hypothesis of \cref{scheme perverse affine open immersion functor prop}, $i^*j_{!*}(\mathscr{G})[-1]$ and $i^!j_{!*}(\mathscr{G})[1]$ are perverse, and we have
@@ -4196,19 +4191,73 @@ The following two cases are particularly useful for our applications:
 If $f$ is smooth of relative dimension $d$, with connected geometric fibers (and hence by definition nonempty), the $t$-exact functor $f^*[d]$ induces a fully faithful functor from $\Perv(Y)$ to $\Perv(X)$.
 \end{proposition}
 \begin{proof}
-IN the proof, the usual functor $f_*$ for sheaves is denoted by ${^0f_*}$. For $\mathscr{K}$ and $\mathscr{L}$ in $D^b_c(Y,\widebar{\Q}_\ell)$, we have, since $f$ is smooth,
-\begin{equation}
+In the proof, the usual functor $f_*$ for sheaves is denoted by ${^0f_*}$. For $\mathscr{K}$ and $\mathscr{L}$ in $D^b_c(Y,\widebar{\Q}_\ell)$, we have, since $f$ is smooth,
+\begin{equation}\label{scheme perverse smooth morphism f^*[d] fully faithful-1}
 f^*R\!\sHom(\mathscr{K},\mathscr{L})\stackrel{\sim}{\to} R\!\sHom(f^*(\mathscr{K}),f^*(\mathscr{L})).
 \end{equation}
-On the other hand, for any morphism $f$, we have
+On the other hand, for any morphism $f$, we have an isomorphism
 \[f^!R\!\sHom(\mathscr{K},\mathscr{L})\stackrel{\sim}{\to} R\!\sHom(f^*(\mathscr{K}),f^!(\mathscr{L})).\]
+For $\mathscr{K}$ and $\mathscr{L}$ perverse, $R\!\sHom(\mathscr{K},\mathscr{L})$ is in $D^{\geq 0}_c$ by \cref{stratified space perverse structure Hom of D^geq and D^leq}, and similarly for
+\[R\!\sHom(f^*\mathscr{K},f^*\mathscr{L})=R\!\sHom(f^*\mathscr{K}[d],f^*\mathscr{L}[d]).\]
+Applying ${^0f_*H^0}$ to (\ref{scheme perverse smooth morphism f^*[d] fully faithful-1}), we then obtain
+\begin{equation}\label{scheme perverse smooth morphism f^*[d] fully faithful-2}
+{^0f_*}f^*H^0R\!\sHom(\mathscr{K},\mathscr{L})\to {^0f_*}H^0R\!\sHom(f^*\mathscr{K}[d],f^*\mathscr{L}[d]).
+\end{equation}
+Let us admit for now that for any sheaf $\mathscr{H}$ on $Y$ we have
+\begin{equation}\label{scheme perverse smooth morphism f^*[d] fully faithful-3}
+\mathscr{H}\stackrel{\sim}{\to} {^0f_*}f^*\mathscr{H}.
+\end{equation}
+From (\ref{scheme perverse smooth morphism f^*[d] fully faithful-2}), we then deduce by passing to global sections that
+\[\Gamma H^0R\!\sHom(\mathscr{K},\mathscr{L})\stackrel{\sim}{\to} \Gamma H^0R\!\sHom(f^*\mathscr{K}[d],f^*\mathscr{L}[d]).\]
+The two members $R\!\sHom$ is in $D^{\geq 0}_c$, so we have
+\[\Gamma H^0R\!\sHom=H^0R\Gamma R\!\sHom=H^0R\Hom=\Hom,\]
+whence the assertion.
+
+The proof of (\ref{scheme perverse smooth morphism f^*[d] fully faithful-3}) is reduced to the case of sheaves of sets. The morphism $f$ is smooth surjective, so it locally has a section, and we may therefore assume that $f$ has a section $e$. This gives a retraction of $\mathscr{H}\to f_*f^*\mathscr{H}$, and it remains to verify that two local sections of $f_*f^*\mathscr{H}$, which, considered as sections of $f^*\mathscr{H}$, coincide over $e$, is equal. This can be done fiber by fiber, so we can assume that $Y$ is a point. But then the assertion is trivial.
 \end{proof}
 
-\section{The self-dual perversity: weights}
-In this section, we complete the geometric results of \autoref{*} by arithmetric tools. We consider schemes separated of finite type over a finite field, or over the algebraic closed of a finite field, and the self-dual pervertity $p_{1/2}$.\par
-Let $p\neq\ell$ be a prime number, $q$ be a power of $p$, $\F_q$ be a finite field with $q$ elements, and $\F$ the algebraic closure of $\F_q$. As in (\cite{Deligne_WeilII} 0.7), we use a subscript $0$ for an object over $\F_q$ (a scheme or a sheaf), and removing this index indicates the extension of scalars from $\F_q$ to $\F$.
+\subsection{Simple objects}
+\begin{theorem}[\textbf{Characterization of Simple Perverse Sheaves}]
+\label{scheme perverse simple char}
+\mbox{}
+\begin{enumerate}
+    \item[(\rmnum{1})] The category of perverse sheaves over $X$ is Artinian and Noetherian: any object has finite length.
+    \item[(\rmnum{2})] If $j:V\hookrightarrow X$ is the inclusion of an irreducible subvariety whose reduction over $\widebar{k}$ is smooth, and $\mathscr{L}$ is a lisse irreducible $\widebar{\Q}_\ell$-sheaf over $V$ (corresponding to an irreducible $\ell$-adic representation of $\pi_1(V)$), then $j_{!*}(\mathscr{L}[\dim(V)])$ is a simple perverse sheaf over $X$. Any simple perverse sheaf arises in this way.
+\end{enumerate}
+\end{theorem}
 
-\subsection{Reminders on the theory of weights}
+Since the \'etale topology is invariant for topology, we can extend $k$ to a perfect closure, so assume that $k$ is perfect. The hypothesis "reduction over $\widebar{k}$ is smooth" then reduces to "smooth".
+
+\begin{lemma}\label{scheme perverse irreducible lisse extension from open prop}
+If $\mathscr{L}$ is an irreducible lisse $\widebar{\Q}_\ell$-sheaf over $X$, for any nonempty Zariski open subset $j:U\hookrightarrow X$, the perverse sheaf $\mathscr{F}=\mathscr{L}[\dim(X)]$ satisfies $\mathscr{F}=j_{!*}j^*\mathscr{F}$.
+\end{lemma}
+\begin{proof}
+In view of \cref{stratified space perverse t-structure j_!* prolongation char} and (\ref{scheme self-dual perversity D^leq char}), (\ref{scheme self-dual perversity D^geq char}), it suffices to verify that for any $x\in X$, we have $H^ii_x^*\mathscr{F}=0$ for $i\geq-\dim(x)$ and $H^ii_x^!\mathscr{F}=0$ for $i\leq-\dim(x)$. For the first condition, we note that $\dim(x)<\dim(X)$ and we have
+\[H^ii_x^*\mathscr{F}=H^{i+\dim(X)}i_x^*\mathscr{L}=i_x^*(H^{i+\dim(X)}\mathscr{L})\]
+which is zero for $i>-\dim(X)=-\dim(x)-(\dim(X)-\dim(x))$. As for the second condition, note that as $k$ is perfect, the subscheme $\widebar{\{x\}}$ is smooth at the generic point $x$, so there exists an open subscheme (hence smooth) $U$ of $X$ such that $U\cap\widebar{\{x\}}$ is smooth (\cref{algebra es.ft over field regular locus open}). By the purity theorem of \autocite[XVI, 3.7]{SGA4-3} applied to the couple $(U\cap\widebar{\{x\}},U)$, we conclude that $H^ii_x^!\mathscr{F}=H^{i+\dim(X)}i_x^!\mathscr{L}=0$ for
+\[i<-\dim(X)+2\codim(x)=-\dim(x)+(\dim(X)-\dim(x)),\]
+and this completes the proof.
+\end{proof}
+
+\begin{lemma}\label{scheme perverse irreducible constant is simple}
+If $\mathscr{L}$ is a lisse irreducible $\widebar{\Q}_\ell$-sheaf over an irreducible and smooth variety $X$, the perverse sheaf $\mathscr{F}:=\mathscr{L}[\dim(X)]$ is simple.
+\end{lemma}
+\begin{proof}
+Let $\mathscr{G}\sub\mathscr{F}$, then there exists a nonempty Zariski open $j:U\hookrightarrow X$ of $X$ over which $\mathscr{G}$ is of the form $\mathscr{M}[\dim(X)]$, where $\mathscr{M}$ is a lisse subsheaf of $\mathscr{L}$. The space $X$ being normal, the monodromy of $\mathscr{L}$ is unchanged after restricting to $U$, and $\mathscr{L}|_U$ is also irreducible. We thus have $\mathscr{M}=0$ or $\mathscr{M}=\mathscr{L}$. If $\mathscr{M}=0$ (resp. $\mathscr{M}=\mathscr{L}$), $\mathscr{G}$ (resp. $\mathscr{F}/\mathscr{G}$) is supported in the closed subset $F=X-U$ of $X$. Since $\mathscr{F}=j_{!*}j^*\mathscr{F}$ by \cref{scheme perverse irreducible lisse extension from open prop}, $\mathscr{F}$ has no nontrivial subobject (resp. quotient) with support in $\mathscr{F}$ (\cref{triangle cat recollement j_!* char by subobject quotient}): we thus have $\mathscr{G}=0$ (resp. $\mathscr{G}=0$) and the assertion follows.
+\end{proof}
+
+\begin{proof}[\textbf{Proof of \cref{scheme perverse simple char}}]
+The perverse sheaves in (\rmnum{2}) are simple by \cref{scheme perverse irreducible constant is simple} and \cref{triangle cat recollement j_!* char by subobject quotient} applied to the inclusions $V\hookrightarrow\widebar{V}$ and $\widebar{V}\hookrightarrow X$. To completes the proof, it remains to show that any perverse sheaf of $X$ is a successive extension of simple perverse sheaves. We prove by Noetherian induction on $X$, so assume that this is true for any perverse sheaf supported on $Y\neq X$. Now any perverse sheaf $\mathscr{F}$ on $X$ has the form $\mathscr{L}[\dim(U)]$ over some irreducible smooth open subset $j:U\hookrightarrow X$, with $\mathscr{L}$ a lisse $\widebar{\Q}_\ell$-sheaf. From this it follows (cf. \cref{scheme perverse affine open immersion functor prop} and \cref{scheme perverse affine open immersion j_* exact sequence}) that $\mathscr{F}$ is an extension of sheaves of the form $j_{!*}\mathscr{L}'[\dim(U)]$, with $\mathscr{L}'$ irreducible sub-quotient of $\mathscr{L}$, and perverse sheaves supported in the complement of $U$. The assertion is then proved by induction.
+\end{proof}
+
+\subsection{Vanishing cycles}
+
+\section{The theory of weights}
+In this section, we complete the geometric results of \autoref{scheme perverse sheaf geometric property section} by arithmetric tools. We consider schemes separated of finite type over a finite field, or over the algebraic closure of a finite field, and the self-dual pervertity $p_{1/2}$.
+
+Let $p\neq\ell$ be a prime number, $q$ be a power of $p$, $\F_q$ be a finite field with $q$ elements, and $\F$ the algebraic closure of $\F_q$. As in \cite[0.7]{Deligne_WeilII}, we use a subscript $0$ for an object over $\F_q$ (a scheme or a sheaf), and removing this index indicates the extension of scalars from $\F_q$ to $\F$.
+
+\subsection{Reminders on the results of \cite{Deligne_WeilII}}
 Let $X_0$ be a scheme of finite type over $\F_q$ and $\mathscr{F}_0$ be a $\widebar{\Q}_\ell$-sheaf over $X_0$. Over the algebraic closure $\F$, we have a Frobenius morphism $\fr_q:X\to X$ (the absolute Frobenius morphism of $X$) and a Frobenius correspondence $\Fr_q^*:\fr_q^*(\mathscr{F})\stackrel{\sim}{\to}\mathscr{F}$. If $\mathscr{F}$ is represented by an \'etale scheme $F$ over $X$, this corresponds to the inverse of the relative Frobenius morphism $\Fr_{F/X}:F\to F^{(q)}:=\Fr_q^*(F)\to F$, as shown in the following diagram
 \[\begin{tikzcd}[row sep=10mm,column sep=10mm]
 F\ar[rd]\ar[r,dashed,"\Fr_{F/X}"]\ar[rr,bend left=40pt,"\fr_{q}"]&F^{(p/X)}=\fr_q^*(F)\ar[r]\ar[d]&F\ar[d]\\
@@ -4225,7 +4274,7 @@ Let $u:X_0\to\Spec(\F_q)$ be the projection, and $\Gamma$ be the global section 
 \begin{equation}\label{scheme perverse sheaf Frobenius extension functor fully faithful-1}
 E_2^{p,q}=H^p(\Spec(\F_q),H^q(\mathscr{M}_0))=H^p(\Gal(\F/\F_q),H^q(\mathscr{M}))\Rightarrow H^{p+q}R\Gamma(\mathscr{M}_0).
 \end{equation}
-Since $\Gal(\F/\F_q)=\widehat{\Z}$, topologically generated by the geometric Frobenius morphism $\Frob$ (the inverse of the arithmetic Frobenius morphism $\varphi:\F\to\F,x\mapsto x^q$), the considered Galois cohomology groups are zero for $p\neq 0,1$ (\cite{Fulei} 4.3.7). For $p=0$, we get the invariants of $\Frob$, and for $p=1$ the coinvariants; therefore (\ref{scheme perverse sheaf Frobenius extension functor fully faithful-1}) reduces to the following long exact sequence
+Since $\Gal(\F/\F_q)=\widehat{\Z}$, topologically generated by the geometric Frobenius morphism $\Frob$ (the inverse of the arithmetic Frobenius morphism $\varphi:\F\to\F,x\mapsto x^q$), the considered Galois cohomology groups are zero for $p\neq 0,1$ (\cite[4.3.7]{Fulei}). For $p=0$, we get the invariants of $\Frob$, and for $p=1$ the coinvariants; therefore (\ref{scheme perverse sheaf Frobenius extension functor fully faithful-1}) reduces to the following long exact sequence
 \begin{equation}\label{scheme perverse sheaf Frobenius extension functor fully faithful-2}
 \begin{tikzcd}
 \cdots\ar[r]&(H^i(\mathscr{M}))^{\Frob}\ar[r]&H^iR\Gamma(\mathscr{M}_0)\ar[r]&(H^{i-1}(\mathscr{M}))_{\Frob}\ar[r]&H^{i+1}(\mathscr{M})^{\Frob}\ar[r]&\cdots
@@ -4247,26 +4296,28 @@ For $i=0$, if $\mathscr{K}_0$ and $\mathscr{L}_0$ are perverse, the $H^iR\Hom$ a
 We can show that for $\Z_\ell$-perverse sheaves, the analogous functor is an equivalence of categories. For the coefficients $\Q_\ell$ or $\widebar{\Q}_\ell$, it is not essentially surjective. For example, if $X_0=\Spec(\F_q)$ is a point, $\mathscr{F}=\Q_\ell$, and $\sigma:\fr_q^*(\Q_\ell)\to\Q_\ell$ is the multiplication by $b\in\widebar{\Q}_\ell$, then $(\mathscr{F},\sigma)$ is in the essential image of this functor if and only if $b$ is a unit in $\Z_\ell$. 
 \end{remark}
 
-We now fix an embedding $\tau:\widebar{\Q}_\ell\to\C$. Recall (\cite{Deligne_WeilII} 1.2.1) that a $\widebar{\Q}_\ell$-sheaf $\mathscr{F}_0$ over $X_0$ is called \textbf{punctually $\tau$-pure of weight $w$} (with $w\in\Z$) if for any integer $n$ and any any point $x\in X_0(\F_{q^n})$, the eigenvalues of the automorphism $\Fr_{q^n}^*$ of $\mathscr{F}_x$ is an algebraic number whose complex conjugates are all of absolute value $(q^n)^{w/2}$\footnote{The eigenvalues of Frobenius are naturally elements of $\widebar{\Q}_\ell$. While it can be shown that $\widebar{\Q}_\ell\cong\C$, there is no natural isomorphism between them. However, since $\Q\sub\widebar{\Q}_\ell$, it makes sense to request that the eigenvalues are algebraic numbers (i.e., their being algebraic is independent of the choice of an isomorphism $\tau:\widebar{\Q}_\ell\stackrel{\sim}{\to}\C$). Once a number is algebraic, the set of its algebraic conjugates is well defined independently of the choice of the isomorphism $\tau$, and this renders meaningful the request on the absolute values. This is a strong request: $1+\sqrt{2}$ and $1-\sqrt{2}$ are algebraic conjugates; however, they have different absolute values.}. Recall (\cite{Deligne_WeilII} 1.2.2) that $\mathscr{F}_0$ is called \textbf{mixed} if it admits a finite filtration whose successive quotients are punctually pure. The nonzero weights of these quotients are called the \textbf{pointwise weights} of $\mathscr{F}$.\par
+We now fix an embedding $\tau:\widebar{\Q}_\ell\to\C$. Recall \cite[1.2.1]{Deligne_WeilII} that a $\widebar{\Q}_\ell$-sheaf $\mathscr{F}_0$ over $X_0$ is called \textbf{punctually $\tau$-pure of weight $w$} (with $w\in\Z$) if for any integer $n$ and any any point $x\in X_0(\F_{q^n})$, the eigenvalues of the automorphism $\Fr_{q^n}^*$ of $\mathscr{F}_x$ is an algebraic number whose complex conjugates are all of absolute value $(q^n)^{w/2}$\footnote{The eigenvalues of Frobenius are naturally elements of $\widebar{\Q}_\ell$. While it can be shown that $\widebar{\Q}_\ell\cong\C$, there is no natural isomorphism between them. However, since $\Q\sub\widebar{\Q}_\ell$, it makes sense to request that the eigenvalues are algebraic numbers (i.e., their being algebraic is independent of the choice of an isomorphism $\tau:\widebar{\Q}_\ell\stackrel{\sim}{\to}\C$). Once a number is algebraic, the set of its algebraic conjugates is well defined independently of the choice of the isomorphism $\tau$, and this renders meaningful the request on the absolute values. This is a strong request: $1+\sqrt{2}$ and $1-\sqrt{2}$ are algebraic conjugates; however, they have different absolute values.}. Recall \cite[1.2.2]{Deligne_WeilII} that $\mathscr{F}_0$ is called \textbf{mixed} if it admits a finite filtration whose successive quotients are punctually pure. The nonzero weights of these quotients are called the \textbf{pointwise weights} of $\mathscr{F}$.\par
 
-We define the category $D^b_m(X_0,\widebar{\Q}_\ell)$ of \textbf{mixed complexes} as the subcategory of $D^b_c(X_0,\widebar{\Q}_\ell)$ formed by complexes $\mathscr{K}$ such that the cohomology sheaves $H^i(\mathscr{K})$ are mixed. By (\cite{SGA4.5} \Rmnum{1} 6.1), the triangulated subcategory $D^b_m(X_0,\widebar{\Q}_\ell)$ of $D^b_c(X_0,\widebar{\Q}_\ell)$ is stable under the usual operations ($Rf_*$, $Rf_!$, $f^*$, $f^!$, $\otimes$, $R\!\sHom$, Verdier duality). We also have the stablity under $\tau_{\leq i}$ and $\tau^{\geq i}$, since mixednes is tested over cohomology sheaves. These operations are the only ones used to construct the ${^p\!\tau_{\leq i}}$ and ${^p\!\tau_{\geq i}}$, for $p$ a perversity.
+We define the category $D^b_m(X_0,\widebar{\Q}_\ell)$ of \textbf{mixed complexes} as the subcategory of $D^b_c(X_0,\widebar{\Q}_\ell)$ formed by complexes $\mathscr{K}$ such that the cohomology sheaves $H^i(\mathscr{K})$ are mixed. By \cite[I 6.1]{SGA4.5}, the triangulated subcategory $D^b_m(X_0,\widebar{\Q}_\ell)$ of $D^b_c(X_0,\widebar{\Q}_\ell)$ is stable under the usual operations ($Rf_*$, $Rf_!$, $f^*$, $f^!$, $\otimes$, $R\!\sHom$, Verdier duality). We also have the stablity under $\tau_{\leq i}$ and $\tau^{\geq i}$, since mixednes is tested over cohomology sheaves. These operations are the only ones used to construct the ${^p\!\tau_{\leq i}}$ and ${^p\!\tau_{\geq i}}$, for $p$ a perversity.
 
 \begin{proposition}\label{scheme perverse structure on mixed cat}
 The $t$-structure of perversity $p_{1/2}$ of $D^b_c(X_0,\widebar{\Q}_\ell)$ induces a $t$-structure over $D^b_m(X_0,\widebar{\Q}_\ell)$, and any subquotient of a mixed perverse sheaf is mixed.
 \end{proposition}
 \begin{proof}
-The first assertion follows from the fact that $D^b_m$ is stable under ${^p\!\tau_{\leq i}}$ and ${^p\!\tau_{\geq i}}$. It implies that the mixed perverse sheaves form a full abelian subcategory stable under kernel, cokernel and extensions of perverse sheaves. The second assertion follows from (\cite{BBD} 5.1.4), the hypothesis of (\cite{BBD} 5.1.3) being satisfied by the above observations.
+The first assertion follows from the fact that $D^b_m$ is stable under ${^p\!\tau_{\leq i}}$ and ${^p\!\tau_{\geq i}}$. It implies that the mixed perverse sheaves form a full abelian subcategory stable under kernel, cokernel and extensions of perverse sheaves. The second assertion follows from \cite[5.1.4]{BBD}, the hypothesis of \cite[5.1.3]{BBD} being satisfied by the above observations.
 \end{proof}
 
 In the sequel, we only consider mixed complexes. An object $\mathscr{K}$ in $D^b_m(X_0,\widebar{\Q}_\ell)$ is called \textbf{of weight $\leq w$} if for each $i$, the pointwise weight of $H^i(\mathscr{K})$ is $\leq w+i$. We denote by $D^b_{\leq w}(X_0,\widebar{\Q}_\ell)$ the corresponding subcategory of $D^b_m(X_0,\widebar{\Q}_\ell)$. By the dependence on $i$ in this definition, we have
 \[(D^b_{\leq w}(X_0,\widebar{\Q}_\ell))[1]=D^b_{\leq w+1}(X_0,\widebar{\Q}_\ell)\]
-and in particular $D^b_{\leq w}[1]\supset D^b_{\leq w}$. We say that $\mathscr{K}$ is of \textbf{weight $\geq w$} if its Verdier dual $D\mathscr{K}$ is of weight $\leq -w$, and we denote by $D^b_{\geq w}(X_0,\widebar{\Q}_\ell)$ the corresponding subcategory of $D^b_m(X_0,\widebar{\Q}_\ell)$. We say that $\mathscr{K}$ is \textbf{pure of weight $w$} if it is of weight $\leq w$ and $\geq w$ (this should be distinguished from ponctually purity). If $X_0$ is smooth purely of dimension $d$, and the $\widebar{\Q}_\ell$-sheaves $H^i(\mathscr{K})$ are locally constant, we have $H^i(D\mathscr{K})=(H^{-2d-i}(\mathscr{K}))^\vee(d)$, so $\mathscr{K}$ is pure of weight $w$ if and only if each $H^i(\mathscr{K})$ is pure of weight $w+i$. From our definition, the following result is immediate:
+and in particular $D^b_{\leq w}[1]\supset D^b_{\leq w}$. We say that $\mathscr{K}$ is of \textbf{weight $\geq w$} if its Verdier dual $D\mathscr{K}$ is of weight $\leq -w$, and we denote by $D^b_{\geq w}(X_0,\widebar{\Q}_\ell)$ the corresponding subcategory of $D^b_m(X_0,\widebar{\Q}_\ell)$. We say that $\mathscr{K}$ is \textbf{pure of weight $w$} if it is of weight $\leq w$ and $\geq w$ (this should be distinguished from ponctually purity of sheaves). If $X_0$ is smooth purely of dimension $d$ and the $\widebar{\Q}_\ell$-sheaves $H^i(\mathscr{K})$ are locally constant, we have $H^i(D\mathscr{K})=(H^{-2d-i}(\mathscr{K}))^\vee(d)$, so $\mathscr{K}$ is pure of weight $w$ if and only if each $H^i(\mathscr{K})$ is pure of weight $w+i$ (but in general, this is not ture).
+
+From our definition, the following result is immediate:
 
 \begin{proposition}\label{scheme perverse pure of weight iff pullback to point}
 Let $\mathscr{K}$ be an object of $D^b_m(X_0,\widebar{\Q}_\ell)$. For that $\mathscr{K}$ is of weight $\leq w$, it is necessary and sufficient that for each closed point $x_0$ with inclusion $i:\{x_0\}\to X_0$, the sheaf $i^*(\mathscr{K})$ (resp. $i^!(\mathscr{K})$) is of weight $\leq w$ (resp. $\geq w$).
 \end{proposition}
 
-The principal theorems of \cite{Deligne_WeilII} (\cite{Deligne_WeilII} 3.3.1, 6.2.3) is that, if $f:X_0\to Y_0$ is a separated morphism between schemes of finite type over $\F_q$, the functor $Rf_!$ sends $D^b_{\leq w}(X_0,\widebar{\Q}_\ell)$ into $D^b_{\leq}(Y_0,\widebar{\Q}_\ell)$. It is clear that $f^*$ preserves $D^b_{\leq w}$, and that $\otimes$ sends $D^b_{\leq w}\times D^b_{\leq w'}$ into $D^{b}_{\leq w+w'}$. By applying duality, we then obtain the following table of stability (we write $f_!$, $f^!$ for $Rf_!$, $Rf^!$):
+The principal theorems of \cite{Deligne_WeilII} (\cite[3.3.1, 6.2.3]{Deligne_WeilII}) is that, if $f:X_0\to Y_0$ is a separated morphism between schemes of finite type over $\F_q$, the functor $Rf_!$ sends $D^b_{\leq w}(X_0,\widebar{\Q}_\ell)$ into $D^b_{\leq w}(Y_0,\widebar{\Q}_\ell)$. It is clear that $f^*$ preserves $D^b_{\leq w}$, and that $\otimes$ sends $D^b_{\leq w}\times D^b_{\leq w'}$ into $D^{b}_{\leq w+w'}$. By applying duality, we then obtain the following table of stability (we write $f_!$, $f^!$ for $Rf_!$, $Rf^!$):
 
 \begin{proposition}\label{scheme perverse sheaf functor stability on weight}
 Let $f:X_0\to Y_0$ be as above.
@@ -4312,7 +4363,7 @@ We are easily reduced to the case where $w=0$. Let $\mathscr{F}_0$ be of weights
 \[H^0(U,\mathscr{F})\to H^0(U,\mathscr{G})\to H^0(U,\mathscr{K})\]
 shows that $H^0(U,\mathscr{G})$ is of weights $\geq 0$, and we can apply \cref{scheme mixed perverse sheaf weight char}. If $\mathscr{G}_0$ is a perverse subsheaf of $\mathscr{F}_0$, the exact sequence
 \[H^{-1}(U,\mathscr{F}/\mathscr{G})\to H^0(\mathscr{U},\mathscr{G})\to H^0(U,\mathscr{F})\]
-shows that $\mathscr{G}_0$ is of weights $\geq -1$. We can improve this estimate by passing to $X_0\times X_0$: $\mathscr{G}_0\boxtimes\mathscr{G}_0$ is a subsheaf of $\mathscr{F}_0\boxtimes\mathscr{F}_0$, so it is of weights $\geq -1$, and by (\cite{BBD} 5.1.14.1*), $\mathscr{G}_0$ is therefore of weights $\geq -1/2$. The weights being integers, we conclude that it is of weights $\geq 0$. Finally, the case for $\leq w$ can be obtained by duality.
+shows that $\mathscr{G}_0$ is of weights $\geq -1$. We can improve this estimate by passing to $X_0\times X_0$: $\mathscr{G}_0\boxtimes\mathscr{G}_0$ is a subsheaf of $\mathscr{F}_0\boxtimes\mathscr{F}_0$, so it is of weights $\geq -1$, and by \cite[5.1.14.1*]{BBD}, $\mathscr{G}_0$ is therefore of weights $\geq -1/2$. The weights being integers, we conclude that it is of weights $\geq 0$. Finally, the case for $\leq w$ can be obtained by duality.
 \end{proof}
 
 \begin{corollary}\label{scheme mixed perverse sheaf weight under j_!* preverse}
@@ -4326,7 +4377,7 @@ Suppose that $\mathscr{F}_0$ is of weights $\leq w$. Since $j$ is affine, $j_!\m
 Any mixed simple perverse sheaf $\mathscr{F}_0$ is pure.
 \end{corollary}
 \begin{proof}
-There exists $j:U_0\hookrightarrow X_0$ smooth connected of dimension $d$ and a smooth sheaf $\mathscr{L}_0$ over $U_0$ such that $\mathscr{F}_0=j_{!*}(\mathscr{L}_0[d])$ (\cite{BBD} 4.3.1), and we can take $U_0$ to be affine by shrinking it. The smooth sheaf $\mathscr{L}_0$ being irreducible, it follows by definition that we can take it to be ponctually pure (or equivalently pure, since $U_0$ is smooth), and the assertion then follows from \cref{scheme mixed perverse sheaf weight under j_!* preverse}.
+There exists $j:U_0\hookrightarrow X_0$ smooth connected of dimension $d$ and a smooth sheaf $\mathscr{L}_0$ over $U_0$ such that $\mathscr{F}_0=j_{!*}(\mathscr{L}_0[d])$ (\cref{scheme perverse simple char}), and we can take $U_0$ to be affine by shrinking it. The smooth sheaf $\mathscr{L}_0$ being irreducible, it follows by definition that we can take it to be ponctually pure (or equivalently pure, since $U_0$ is smooth), and the assertion then follows from \cref{scheme mixed perverse sheaf weight under j_!* preverse}.
 \end{proof}
 
 \begin{theorem}\label{scheme mixed perverse sheaf weight filtration}
@@ -4337,7 +4388,7 @@ A mixed perverse sheaf admits a unique finite decreasing filtration $\mathcal{W}
 For a mixed perverse sheaf $\mathscr{F}_0$ over $X_0$ to be of weights $\leq w$, it is necessary and sufficient that any irreducible subvariety $Y_0$ of $X_0$ (of dimension $d$) admits an open dense subset $U_0$ such that $H^{-d}(\mathscr{F}_0)|_{U_0}$ is of weights $\leq w-d$.
 \end{corollary}
 \begin{proof}
-This condition is clearly necessary. Conversely, we prove that it is sufficient. If $\mathscr{F}_0$ is not of weights $\leq w$, by \cref{scheme mixed perverse sheaf weight filtration}, it admits a simple quotient $\mathscr{G}_0$ of weight $w_1>w$. Let $j:Y_0\hookrightarrow X_0$ be smooth connected of dimension $d$ and $\mathscr{L}_0$ be a smooth sheaf over $Y_0$ such that $\mathscr{G}_0\cong j_{!*}(\mathscr{L}_0[d])$ (\cite{BBD} 4.3.1). We can choose $\mathscr{L}_0$ to be ponctually pure of weights $w_1-d$ and $Y_0$ be affine. The long exact sequence of cohomology of the exact sequence
+This condition is clearly necessary. Conversely, we prove that it is sufficient. If $\mathscr{F}_0$ is not of weights $\leq w$, by \cref{scheme mixed perverse sheaf weight filtration}, it admits a simple quotient $\mathscr{G}_0$ of weight $w_1>w$. Let $j:Y_0\hookrightarrow X_0$ be smooth connected of dimension $d$ and $\mathscr{L}_0$ be a smooth sheaf over $Y_0$ such that $\mathscr{G}_0\cong j_{!*}(\mathscr{L}_0[d])$ (\cref{scheme perverse simple char}). We can choose $\mathscr{L}_0$ to be ponctually pure of weights $w_1-d$ and $Y_0$ be affine. The long exact sequence of cohomology of the exact sequence
 \[0\to\ker(\mathscr{F}_0\to\mathscr{G}_0)\to\mathscr{F}_0\to\mathscr{G}_0\to 0\]
 then provides, over an open dense subset $V_0$ of $Y_0$, an epimorphism
 \[H^{-d}(\mathscr{F}_0)|_{V_0}\twoheadrightarrow H^{-d}(\mathscr{G}_0)|_{V_0}=\mathscr{L}_0|_{V_0}.\]
@@ -4348,7 +4399,7 @@ The hypothesis ensures that for $V_0$ small enough, the weights of $H^{-d}(\math
 If $\mathscr{F}_0$ is a pure perverse sheaf over $X_0$, the perverse sheaf $\mathscr{F}$ over $X$ is semi-simple, hence is a direct sum of simple perverse sheaves of the form $j_{!*}\mathscr{L}[d]$, where $j:U\hookrightarrow X$ is the inclusion of a smooth connected subvariety purely of dimension $d$ and $\mathscr{L}$ is a smooth irreducible $\widebar{\Q}_\ell$-sheaf over $U$.
 \end{theorem}
 \begin{proof}
-The proof is proceed as (\cite{Deligne_WeilII} 3.4.1 (\rmnum{3})). Let $\mathscr{F}'$ be the sum of simple perverse subsheaves of $\mathscr{F}$. This is the largest semi-simple sub-object of $\mathscr{F}$, and it suffices to verify that $\mathscr{F}'=\mathscr{F}$. The subsheaf $\mathscr{F}'$ is clearly stable under Frobenius, so it comes from $\mathscr{F}'_0\sub\mathscr{F}_0$ (the essential image of $\mathscr{F}_0\to(\mathscr{F},\fr_q^*)$ is stable under subquotient, cf. \cref{scheme perverse sheaf Frobenius extension functor fully faithful}). Let $\mathscr{F}''_0=\mathscr{F}_0/\mathscr{F}_0'$. The class of the extension
+The proof is proceed as \cite[3.4.1~(iii)]{Deligne_WeilII}. Let $\mathscr{F}'$ be the sum of simple perverse subsheaves of $\mathscr{F}$. This is the largest semi-simple sub-object of $\mathscr{F}$, and it suffices to verify that $\mathscr{F}'=\mathscr{F}$. The subsheaf $\mathscr{F}'$ is clearly stable under Frobenius, so it comes from $\mathscr{F}'_0\sub\mathscr{F}_0$ (the essential image of $\mathscr{F}_0\to(\mathscr{F},\fr_q^*)$ is stable under subquotient, cf. \cref{scheme perverse sheaf Frobenius extension functor fully faithful}). Let $\mathscr{F}''_0=\mathscr{F}_0/\mathscr{F}_0'$. The class of the extension
 \[0\to\mathscr{F}_0'\to\mathscr{F}_0\to\mathscr{F}_0''\to 0\]
 has zero image in $\Ext^1(\mathscr{F}'',\mathscr{F}')$ (\cref{scheme mixed complex unequal weight RHom prop}~(c)), since $\mathscr{F}_0'$ and $\mathscr{F}_0''$ are pure of the same weight (\cref{scheme mixed perverse sheaf weight of subquotient}); we then have $\mathscr{F}\cong\mathscr{F}'\oplus\mathscr{F}''$. If $\mathscr{F}''$ is nonzero, it then admits a simple subobject, which contradicts the maximality of $\mathscr{F}''$. Thus $\mathscr{F}''=0$ and we have $\mathscr{F}'=\mathscr{F}$.
 \end{proof}
@@ -4362,7 +4413,7 @@ Let $\mathscr{E}_n$ be the $\widebar{\Q}_\ell$-sheaf over $\Spec(\F_q)$ with fib
 \end{enumerate}
 \end{proposition}
 
-\subsection{Pure complexes}
+\subsection{Pure perverse sheaves}
 \begin{theorem}\label{scheme mixed complex weight iff perverse cohomology}
 For that $\mathscr{K}_0$ in $D^b_m(X_0,\widebar{\Q}_\ell)$ is of weights $\leq w$ (resp. $\geq w$), it is necessary and sufficient that each ${^p\!H^i}(\mathscr{K}_0)$ is of weights $\leq w+i$ (resp. $w\geq i$).
 \end{theorem}
@@ -4403,7 +4454,7 @@ amd the theorem then follows by induction.
 Combing \cref{scheme mixed complex weight iff perverse cohomology}, \cref{scheme pure complex semi-simple for perverse cohomology} and \cref{scheme pure perverse sheaf semisimple}, we then obtain the following result:
 
 \begin{corollary}\label{scheme pure complex decomposition}
-If $\mathscr{K}_0$ is pure, then $\mathscr{K}$ is a direct sum of $(j_{!*}\mathscr{L}[d])[n]$, where $j:U\to X$ is the inclusion of a smooth connected subvariety $U$ of dimension $d$, $\mathscr{L}$ is smooth irreducible over $U$, and $n$ is an integer. 
+If $\mathscr{K}_0$ is pure, then $\mathscr{K}$ is a direct sum of shifts of $(j_{!*}\mathscr{L}[d])$, where $j:U\to X$ is the inclusion of a smooth connected subvariety $U$ of dimension $d$, $\mathscr{L}$ is smooth irreducible over $U$. 
 \end{corollary}
 
 

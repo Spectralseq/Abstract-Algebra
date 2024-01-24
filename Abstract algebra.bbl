@@ -1,0 +1,341 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{anyt/global//global/global}
+    \entry{SGA4-3}{book}{}
+      \name{author}{3}{}{%
+        {{hash=69a473a63b6a5b334a00dacc5c3ef319}{%
+           family={Artin},
+           familyi={A\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=aa39afb043bb2b10255ad9e6efbd0775}{%
+           family={Grothendieck},
+           familyi={G\bibinitperiod},
+           given={Alexandre},
+           giveni={A\bibinitperiod}}}%
+        {{hash=14963e4d84f5a9508f39078eff8db07c}{%
+           family={Verdier},
+           familyi={V\bibinitperiod},
+           given={Jean\bibnamedelima Louis},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{e794b7d0d4072e307e1b319cde2ee9bb}
+      \strng{fullhash}{e794b7d0d4072e307e1b319cde2ee9bb}
+      \strng{bibnamehash}{e794b7d0d4072e307e1b319cde2ee9bb}
+      \strng{authorbibnamehash}{e794b7d0d4072e307e1b319cde2ee9bb}
+      \strng{authornamehash}{e794b7d0d4072e307e1b319cde2ee9bb}
+      \strng{authorfullhash}{e794b7d0d4072e307e1b319cde2ee9bb}
+      \field{labelalpha}{AGV06}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Lecture Notes in Mathematics}
+      \field{title}{{T}héorie des {T}opos et {C}ohomologie Étale des {S}chémas. {S}éminaire de {G}éométrie {A}lgébrique du {B}ois-{M}arie 1963-1964 ({SGA} 4): {T}ome 3}
+      \field{year}{2006}
+    \endentry
+    \entry{BBD}{article}{}
+      \name{author}{3}{}{%
+        {{hash=ab87193a439f9abdd62d93fd890789df}{%
+           family={Beilinson},
+           familyi={B\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod}}}%
+        {{hash=1c686e876bdd2285e932d404b87b235a}{%
+           family={Bernstein},
+           familyi={B\bibinitperiod},
+           given={Joseph},
+           giveni={J\bibinitperiod}}}%
+        {{hash=876d32ddd7383ddfb7c5ca89662b261d}{%
+           family={Deligne},
+           familyi={D\bibinitperiod},
+           given={Pierre},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{d4053ffb5b854e1809e4d494d555a81f}
+      \strng{fullhash}{d4053ffb5b854e1809e4d494d555a81f}
+      \strng{bibnamehash}{d4053ffb5b854e1809e4d494d555a81f}
+      \strng{authorbibnamehash}{d4053ffb5b854e1809e4d494d555a81f}
+      \strng{authornamehash}{d4053ffb5b854e1809e4d494d555a81f}
+      \strng{authorfullhash}{d4053ffb5b854e1809e4d494d555a81f}
+      \field{labelalpha}{BBD82}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Astérisque}
+      \field{number}{1}
+      \field{title}{Faisceaux pervers}
+      \field{volume}{100}
+      \field{year}{1982}
+    \endentry
+    \entry{SGA4.5}{book}{}
+      \name{author}{1}{}{%
+        {{hash=876d32ddd7383ddfb7c5ca89662b261d}{%
+           family={Deligne},
+           familyi={D\bibinitperiod},
+           given={Pierre},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{876d32ddd7383ddfb7c5ca89662b261d}
+      \strng{fullhash}{876d32ddd7383ddfb7c5ca89662b261d}
+      \strng{bibnamehash}{876d32ddd7383ddfb7c5ca89662b261d}
+      \strng{authorbibnamehash}{876d32ddd7383ddfb7c5ca89662b261d}
+      \strng{authornamehash}{876d32ddd7383ddfb7c5ca89662b261d}
+      \strng{authorfullhash}{876d32ddd7383ddfb7c5ca89662b261d}
+      \field{extraname}{1}
+      \field{labelalpha}{Del77}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-540-08066-4 978-3-540-37507-4}
+      \field{series}{Lecture Notes in Mathematics}
+      \field{title}{Cohomologie Etale: Séminaire de Géométrie Algébrique du Bois-Marie {SGA} 4 1/2}
+      \field{volume}{569}
+      \field{year}{1977}
+      \field{dateera}{ce}
+    \endentry
+    \entry{Deligne_WeilII}{article}{}
+      \name{author}{1}{}{%
+        {{hash=876d32ddd7383ddfb7c5ca89662b261d}{%
+           family={Deligne},
+           familyi={D\bibinitperiod},
+           given={Pierre},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Institut des Hautes Études Scientifiques}%
+      }
+      \strng{namehash}{876d32ddd7383ddfb7c5ca89662b261d}
+      \strng{fullhash}{876d32ddd7383ddfb7c5ca89662b261d}
+      \strng{bibnamehash}{876d32ddd7383ddfb7c5ca89662b261d}
+      \strng{authorbibnamehash}{876d32ddd7383ddfb7c5ca89662b261d}
+      \strng{authornamehash}{876d32ddd7383ddfb7c5ca89662b261d}
+      \strng{authorfullhash}{876d32ddd7383ddfb7c5ca89662b261d}
+      \field{extraname}{2}
+      \field{labelalpha}{Del80}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Publications Mathématiques de l'IHÉS}
+      \field{title}{La conjecture de {Weil}: {II}}
+      \field{volume}{52}
+      \field{year}{1980}
+      \field{pages}{137\bibrangedash 252}
+      \range{pages}{116}
+    \endentry
+    \entry{FK}{book}{}
+      \name{author}{2}{}{%
+        {{hash=fca8c0b18304933e1402c218bd1b3cab}{%
+           family={Freitag},
+           familyi={F\bibinitperiod},
+           given={Eberhard},
+           giveni={E\bibinitperiod}}}%
+        {{hash=fea46bb24a3bd2b91c965a05df70c28d}{%
+           family={Kiehl},
+           familyi={K\bibinitperiod},
+           given={Reinhardt},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Science \& Business Media}%
+      }
+      \strng{namehash}{98a9f06e713ff97065cb22ab1a1e0600}
+      \strng{fullhash}{98a9f06e713ff97065cb22ab1a1e0600}
+      \strng{bibnamehash}{98a9f06e713ff97065cb22ab1a1e0600}
+      \strng{authorbibnamehash}{98a9f06e713ff97065cb22ab1a1e0600}
+      \strng{authornamehash}{98a9f06e713ff97065cb22ab1a1e0600}
+      \strng{authorfullhash}{98a9f06e713ff97065cb22ab1a1e0600}
+      \field{labelalpha}{FK13}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Etale cohomology and the {W}eil conjecture}
+      \field{volume}{13}
+      \field{year}{2013}
+    \endentry
+    \entry{MPMG_PoincareDuality}{article}{}
+      \name{author}{2}{}{%
+        {{hash=b15942e14abdb631ba51589b6335f824}{%
+           family={Goresky},
+           familyi={G\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1a0002b3b9ae04202872e159c0ec9712}{%
+           family={MacPherson},
+           familyi={M\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{5c3535441b3c2a883f5637805dfd81be}
+      \strng{fullhash}{5c3535441b3c2a883f5637805dfd81be}
+      \strng{bibnamehash}{5c3535441b3c2a883f5637805dfd81be}
+      \strng{authorbibnamehash}{5c3535441b3c2a883f5637805dfd81be}
+      \strng{authornamehash}{5c3535441b3c2a883f5637805dfd81be}
+      \strng{authorfullhash}{5c3535441b3c2a883f5637805dfd81be}
+      \field{extraname}{1}
+      \field{labelalpha}{GM77}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{CR Acad. Sci.}
+      \field{title}{La dualité de Poincaré pour les espaces singuliers}
+      \field{volume}{284}
+      \field{year}{1977}
+      \field{pages}{1549\bibrangedash 1551}
+      \range{pages}{3}
+    \endentry
+    \entry{MPMG_ICT}{article}{}
+      \name{author}{2}{}{%
+        {{hash=b15942e14abdb631ba51589b6335f824}{%
+           family={Goresky},
+           familyi={G\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1a0002b3b9ae04202872e159c0ec9712}{%
+           family={MacPherson},
+           familyi={M\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{5c3535441b3c2a883f5637805dfd81be}
+      \strng{fullhash}{5c3535441b3c2a883f5637805dfd81be}
+      \strng{bibnamehash}{5c3535441b3c2a883f5637805dfd81be}
+      \strng{authorbibnamehash}{5c3535441b3c2a883f5637805dfd81be}
+      \strng{authornamehash}{5c3535441b3c2a883f5637805dfd81be}
+      \strng{authorfullhash}{5c3535441b3c2a883f5637805dfd81be}
+      \field{extraname}{2}
+      \field{labelalpha}{GM80}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Topology}
+      \field{number}{2}
+      \field{title}{Intersection homology theory}
+      \field{volume}{19}
+      \field{year}{1980}
+      \field{pages}{135\bibrangedash 162}
+      \range{pages}{28}
+    \endentry
+    \entry{tohoku}{article}{}
+      \name{author}{1}{}{%
+        {{hash=fb0e3184fdd2fcd28fa74ca67d7cdcc1}{%
+           family={Grothendieck},
+           familyi={G\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{fb0e3184fdd2fcd28fa74ca67d7cdcc1}
+      \strng{fullhash}{fb0e3184fdd2fcd28fa74ca67d7cdcc1}
+      \strng{bibnamehash}{fb0e3184fdd2fcd28fa74ca67d7cdcc1}
+      \strng{authorbibnamehash}{fb0e3184fdd2fcd28fa74ca67d7cdcc1}
+      \strng{authornamehash}{fb0e3184fdd2fcd28fa74ca67d7cdcc1}
+      \strng{authorfullhash}{fb0e3184fdd2fcd28fa74ca67d7cdcc1}
+      \field{extraname}{1}
+      \field{labelalpha}{Gro57}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Tohoku Mathematical Journal}
+      \field{title}{{S}ur quelques points d'algèbre homologique, {I}}
+      \field{volume}{9}
+      \field{year}{1957}
+      \field{pages}{119\bibrangedash 221}
+      \range{pages}{103}
+    \endentry
+    \entry{SGA5}{article}{}
+      \name{author}{1}{}{%
+        {{hash=fb0e3184fdd2fcd28fa74ca67d7cdcc1}{%
+           family={Grothendieck},
+           familyi={G\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag}%
+      }
+      \strng{namehash}{fb0e3184fdd2fcd28fa74ca67d7cdcc1}
+      \strng{fullhash}{fb0e3184fdd2fcd28fa74ca67d7cdcc1}
+      \strng{bibnamehash}{fb0e3184fdd2fcd28fa74ca67d7cdcc1}
+      \strng{authorbibnamehash}{fb0e3184fdd2fcd28fa74ca67d7cdcc1}
+      \strng{authornamehash}{fb0e3184fdd2fcd28fa74ca67d7cdcc1}
+      \strng{authorfullhash}{fb0e3184fdd2fcd28fa74ca67d7cdcc1}
+      \field{extraname}{2}
+      \field{labelalpha}{Gro77}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{{S}éminaire de {G}éométrie {A}lgébrique du {B}ois-{M}arie 1965-66}
+      \field{title}{Cohomologie {$\ell$}-adique et fonctions {$L$}}
+      \field{year}{1977}
+    \endentry
+    \entry{kashiwara_SAC}{book}{}
+      \name{author}{2}{}{%
+        {{hash=b7bb8fb56d75656703f28621f0b6f412}{%
+           family={Kashiwara},
+           familyi={K\bibinitperiod},
+           given={Masaki},
+           giveni={M\bibinitperiod}}}%
+        {{hash=293299db3b6075e5092ae25eeea861ae}{%
+           family={Schapira},
+           familyi={S\bibinitperiod},
+           given={Pierre},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{635bcffc280fb5c48749bcb90f36612a}
+      \strng{fullhash}{635bcffc280fb5c48749bcb90f36612a}
+      \strng{bibnamehash}{635bcffc280fb5c48749bcb90f36612a}
+      \strng{authorbibnamehash}{635bcffc280fb5c48749bcb90f36612a}
+      \strng{authornamehash}{635bcffc280fb5c48749bcb90f36612a}
+      \strng{authorfullhash}{635bcffc280fb5c48749bcb90f36612a}
+      \field{labelalpha}{KS05}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Grundlehren der mathematischen Wissenschaften}
+      \field{title}{{C}ategories and {S}heaves}
+      \field{year}{2005}
+    \endentry
+  \enddatalist
+  \missing{Fulei}
+\endrefsection
+\endinput
+

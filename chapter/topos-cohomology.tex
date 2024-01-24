@@ -4001,7 +4001,7 @@ Since $\widetilde{X}_{\bar{x}}$ is strictly local, we have $K_{\bar{x}}=R\Gamma(
 \begin{equation}\label{scheme morphism locally acyclic def-1}
 K_{\bar{x}}=R\Gamma(\widetilde{X}_{\bar{x}},K)\to R\Gamma(X_{\bar{x},\bar{t}},K).
 \end{equation}
-induced from the canonical morphism $X_{\bar{x},\bar{t}}\to\widetilde{X}_{\bar{x}}$ (for any morphism of schemes $g:Y\to X$, we write $R\Gamma(Y,K)$ for $R\Gamma(Y,g^*K)$). Alternatively, this morphism can be deduced as follows. Let $\widetilde{K}$ be the inverse image of $K$ on $X\times_S\widetilde{S}_{\bar{s}}$. Since the strict localization of $X\times_S\widetilde{S}_{\bar{s}}$ at $\bar{s}$ is isomorphic to $\widetilde{X}_{\bar{s}}$, we have $(\tilde{i}_*\widetilde{K})_{\bar{x}}=K_{\bar{x}}$ and
+induced from the canonical morphism $X_{\bar{x},\bar{t}}\to\widetilde{X}_{\bar{x}}$ (for any morphism of schemes $g:Y\to X$, we write $R\Gamma(Y,K)$ for $R\Gamma(Y,g^*K)$). Alternatively, this morphism can be deduced as follows. Let $\widetilde{K}$ be the inverse image of $K$ on $X\times_S\widetilde{S}_{\bar{s}}$. Since the strict localization of $X\times_S\widetilde{S}_{\bar{s}}$ at $\bar{s}$ is isomorphic to $\widetilde{X}_{\bar{s}}$, we have $(\tilde{i}^*\widetilde{K})_{\bar{x}}=K_{\bar{x}}$ and (cf. \cref{scheme qcqs etale site higher direct image fiber isomorphism})
 \begin{align*}
 (\tilde{i}^*R\tilde{j}_*\tilde{j}^*\widetilde{K})_{\bar{x}}=(R\tilde{j}_*\tilde{j}^*\widetilde{K})_{\bar{x}}=R\Gamma(\widetilde{X}_{\bar{x},\bar{t}},K)
 \end{align*}
@@ -4012,7 +4012,7 @@ We say that $f$ is \textbf{locally acyclic at $x$ relative to $K$} if for every 
 
 \begin{example}\label{scheme morphism locally acyclic relative to constant char}
 Let $M$ be an abelian group, then local acyclicity of $f$ at $\bar{x}$ with respect to the constant sheaf with value $M$ boils down to the requirement that
-\[H^\bullet(\widetilde{X}_{\bar{x},\bar{t}},M)=M.\]
+\[R\Gamma(\widetilde{X}_{\bar{x},\bar{t}},M)=M.\]
 That is, the \textit{reduced cohomology} of $\widetilde{X}_{\bar{x},\bar{t}}$ with coefficients $M$ is zero for any vanishing cycle of $f$ at $\bar{x}$.
 \end{example}
 
@@ -4066,7 +4066,7 @@ so $f$ is strongly locally acyclic relative to $K$.
 Let $A$ be a ring, $f:X\to S$ be a (resp. strongly) locally acyclic morphism at $x$ relative to $K\in\Ob(D^+(X))$ and $g:S'\to S$ be a locally quasi-finite (or integral) morphism. Let $\bar{x}'$ be a geometric point of $X'$ lying over $\bar{x}$, then the base change morphism $f':X'\to S'$ induced from $f$ is (resp. strongly) locally acyclic at $x'$ relative to the inverse image $K'$ of $K$ on $X'$. Conversely, if $f'$ is (resp. strongly) locally acyclic relative at $x'$ to $K'$, then $f$ is locally acyclic (resp. strongly locally acyclic) at $x$ relative to $K$. 
 \end{proposition}
 \begin{proof}
-We only consider the statements for locally acyclicity, the strongly locally acyclicity can be proved similarly. Denote by $\bar{s}'$ and $\bar{s}$ the images of $\bar{x}'$ and $\bar{x}$ in $S'$ and $S$ (so that $\bar{s}'$ is lying over $\bar{s}$). Let $\bar{t}'$ be a geometric point of $\widetilde{S}'_{\bar{s}'}$ and denote by $\bar{t}$ its image in $\widetilde{S}_{\bar{s}}$. By (\cite{SP} Algebra, lemma 156.6) and our assumption on $g$, the canonical morphism $\widetilde{X}'_{\bar{x}'}\to\widetilde{X}_{\bar{x}}\times_{\widetilde{S}_{\bar{s}}}\widetilde{S}'_{\bar{s}'}$ is an isomorphism. Since $\kappa(\bar{t})=\kappa(\bar{t}')$ by our conventions, we conclude that
+We only consider the statements for locally acyclicity (the strongly locally acyclicity can be proved similarly). Denote by $\bar{s}'$ and $\bar{s}$ the images of $\bar{x}'$ and $\bar{x}$ in $S'$ and $S$ (so that $\bar{s}'$ is lying over $\bar{s}$). Let $\bar{t}'$ be a geometric point of $\widetilde{S}'_{\bar{s}'}$ and denote by $\bar{t}$ its image in $\widetilde{S}_{\bar{s}}$. By (\cite{SP} Algebra, lemma 156.6) and our assumption on $g$, the canonical morphism $\widetilde{X}'_{\bar{x}'}\to\widetilde{X}_{\bar{x}}\times_{\widetilde{S}_{\bar{s}}}\widetilde{S}'_{\bar{s}'}$ is an isomorphism. Since $\kappa(\bar{t})=\kappa(\bar{t}')$ by our conventions, we conclude that
 \[\widetilde{X}_{\bar{x},\bar{t}}=\widetilde{X}'_{\bar{x}'}\times_{\widetilde{S}'_{\bar{s}'}}\bar{t}'=\widetilde{X}_{\bar{x}}\times_{\widetilde{S}_{\bar{s}}}\bar{t}=\widetilde{X}_{\bar{x},\bar{t}}.\]
 In other words, the vanishing cycles of $f'$ at $\bar{x}'$ are also vanishing cycles of $f$ at $\bar{x}$. The assertion then follows immediately by definitions.
 \end{proof}
@@ -4080,7 +4080,8 @@ We prove the statements for local acyclicity. Let $x'\in X'$ and $s'$, $x_\lambd
 Any algebraic geometric point $\bar{t}$ of $\widetilde{S}_{\bar{s}'}$ is also an algebraic geometric point of $\widetilde{S}_{\bar{s}}$. We then use the same argument as in the proof of \cref{scheme morphism locally acyclic base change by quasi-finite}.
 \end{proof}
 
-We now consider the relation of locally acyclicty with base change morphisms. First, note that we have the following result:
+\paragraph{Relations with base change morphisms}
+We consider the relation between locally acyclicty and base change morphisms. 
 
 \begin{proposition}\label{scheme morphism locally acyclic direct image under generalization}
 Let $f:X\to S$ be a morphism, $A$ be a ring, and $K\in\Ob(D^b_{\tf}(X,A))$. For any geometric point $\bar{t}$ of $S$, consider the Cartesian diagram
@@ -4101,7 +4102,7 @@ We only prove (b), the assertion of (a) can be proved similarly. Let $S'$ be the
 X_{\bar{t}}\ar[r,"\beta'"]\ar[d,"f_{\bar{t}}"]&X'=X\times_SS'\ar[d,"f'"]\ar[r,"\alpha'"]&X\ar[d,"f"]\\
 \bar{t}\ar[r,"\beta"]&S'\ar[r,"\alpha"]&S
 \end{tikzcd}\]
-where $\eta=\alpha\beta$. We note that $\alpha:S'\to S$ is an integral morphism, so using \cref{scheme morphism etale integral direct image vanish} and the same argument as in the proof of \cref{scheme morphism compactifiable projection formula} (and \cite{Fulei} 6.5.5), we can show that
+where $\eta=\alpha\beta$. Note that $\alpha:S'\to S$ is an integral morphism, so using \cref{scheme morphism etale integral direct image vanish} and the same argument as in the proof of \cref{scheme morphism compactifiable projection formula} (and \cite{Fulei} 6.5.5), we can show that
 \[K\otimes_A^Lf^*R\alpha_*R\beta_*M\cong R\alpha'_*(\alpha'^*K\otimes_A^Lf'^*R\beta_*M),\]
 which imples that
 \begin{gather*}
@@ -4113,14 +4114,14 @@ To prove our assertion, it then suffices to show that
 so by replacing $\alpha'^*K$ with $K$, we can assume that $S'=S$.  For any $s\in S$, $\mathscr{O}_{S,s}$ is then a normal local integral domain, and its fraction field is $\kappa(\bar{t})$, which is separably closed. By (\cite{Fulei} 7.6.5), $\mathscr{O}_{S,s}$ is strictly local, so the strict localization $\widetilde{S}_{\bar{s}}$ of $S$ at $\bar{s}$ can be identified with $\Spec(\mathscr{O}_{S,s})$. It then follows that the squares in the following commutative diagram are Cartesian:
 \[\begin{tikzcd}
 \bar{t}\ar[r,"j"]\ar[d,equal]&\widetilde{S}_{\bar{s}}\ar[d]&\bar{s}\ar[d,equal]\ar[l]\\
-\bar{t}\ar[r,"\eta"]&S&\bar{s}'\ar[l]
+\bar{t}\ar[r,"\eta"]&S&\bar{s}\ar[l]
 \end{tikzcd}\]
 so the squares in the following commutative diagram are Cartesian:
 \[\begin{tikzcd}[row sep=4mm, column sep=4mm]
 &X_{\bar{t}}\ar[ld,equal]\ar[rrr,"\tilde{j}"]\ar[ddd]&&&X\times_S\widetilde{S}_{\bar{s}}\ar[ld]\ar[ddd,"\tilde{f}",pos=0.6]&&&X_{\bar{s}}\ar[lll,swap,"\tilde{i}"]\ar[ld,equal]\ar[ddd]\\
 X_{\bar{t}}\ar[rrr,"\eta'",crossing over,pos=0.6]&&&X&&&X_{\bar{s}}\ar[lll,swap,"i'",pos=0.35,crossing over]\\
 &&&&&&&\\
-&\bar{t}\ar[rrr,"j",pos=0.4]\ar[ld,equal]&&&\widetilde{S}_{\bar{s}}\ar[ld]&&&\bar{s}'\ar[ld]\ar[lll]\\
+&\bar{t}\ar[rrr,"j",pos=0.4]\ar[ld,equal]&&&\widetilde{S}_{\bar{s}}\ar[ld]&&&\bar{s}\ar[ld]\ar[lll]\\
 \bar{t}\ar[rrr,"\eta",pos=0.6]&&&S&&&\bar{s}\ar[lll]
 \arrow[from=2-1,to=5-1,"f_{\bar{t}}",pos=0.4,crossing over]
 \arrow[from=2-4,to=5-4,"f",pos=0.4,crossing over]
@@ -4150,10 +4151,42 @@ Let $A$ be a noetherian ring and $K\in\Ob(D^b_{\tf}(X,A))$. Suppose that $S$ is 
     \item[(b)] $f$ is strongly locally acyclic relative to $K$.
 \end{enumerate}
 Then for any $L\in\Ob(D^+(S',A))$, we have a canonical isomorphism
-\[K\otimes_A^Lf^*Rg^*L\stackrel{\sim}{\to} Rg'_*(g'^*K\otimes_A^Lf'^*L).\]
+\begin{equation}\label{scheme locally ayclic morphism base change by open immersion isomorphism-1}
+K\otimes_A^Lf^*Rg_*L\stackrel{\sim}{\to} Rg'_*(g'^*K\otimes_A^Lf'^*L).
+\end{equation}
 \end{proposition}
 \begin{proof}
-
+First we prove that under the condition (b) (resp. (a)), we have
+\[K\otimes_A^Lf^*Rg_*\eta_*M\cong Rg'_*(g'^*K\otimes_A^Lf'^*\eta_*M)\]
+for any algebraic geometric point $\eta:\bar{t}\to S'$ and any $A$-module $M$ (resp. $M=A$). If $f$ is strongly locally acyclic relative to $K$, then $f'$ is strongly locally acyclic relative to $g'^*K$ since $g$ is an open immersion (\cref{scheme morphism locally acyclic base change by quasi-finite}). We consider the following commutative diagram:
+\[\begin{tikzcd}
+X_t\ar[r,"\eta'"]\ar[d,"f_{\bar{t}}"]&X\times_SS'\ar[r,"g'"]\ar[d,"f'"]&X\ar[d,"f"]\\
+\bar{t}\ar[r,"\eta"]&S'\ar[r,"g"]&S
+\end{tikzcd}\]
+By \cref{scheme morphism locally acyclic direct image under generalization}, we have isomorphisms
+\begin{align*}
+K\otimes_A^Lf^*R(g\eta)_*M&\cong R(g'\eta')_*((g'\eta')^*K\otimes_A^Lf_{\bar{t}}^*M),\\
+g'^*K\otimes_A^Lf'^*R\eta_*M&\cong R\eta'_*(\eta'^*g'^*K\otimes_A^Lf_{\bar{t}}^*M).
+\end{align*}
+It then follows that (note that we have $R\eta_*=\eta_*$, cf. \cref{scheme qcqs etale site higher direct image fiber isomorphism})
+\begin{align*}
+K\otimes_A^Lf^*Rg_*\eta_*M&\cong K\otimes_A^Lf^*R(g\eta)_*M\cong Rg'_*R\eta'_*(\eta'^*g'^*K\otimes_A^Lf_{\bar{t}}^*M)\\
+&\cong Rg'_*(g'^*K\otimes_A^Lf'^*R\eta_*M)\cong Rg'_*(g'^*K\otimes_A^Lf'^*\eta_*M),
+\end{align*}
+which proves our assertion (if $f$ is locally acyclic, the above argument works for $M=A$).\par
+By (\cite{Fulei} 6.5.2), to prove (\ref{scheme locally ayclic morphism base change by open immersion isomorphism-1}) for any $L$ in $D^+(S',A)$, it suffices to treat the case where $L=F$ is a sheaf of $A$-modules over $S'$. For convenience, we set
+\[S^p(F)=H^q(K\otimes_A^Lf^*Rg_*F),\quad T^q(F)=R^qg'_*(g'^*K\otimes_A^Lf'^*F),\]
+and let $\phi_F^q:S^p(F)\to T^q(F)$ be the homomorphisms induced by the canonical morphism in (\ref{scheme locally ayclic morphism base change by open immersion isomorphism-1}). We show that $\phi^q_F$ is an isomorphism by induction on $q$. If $K$ is represented by a bounded complex of flat sheaves of $A$-modules such that $K^i=0$ for $i\notin[a,b]$, then both $S^q(F)$ and $T^q(F)$ vanishes for $q<a$, so $\phi^q_F$ is an isomorphism in this case. Now suppose we have shown that $\phi^q_F$ is an isomorphism for any $q<n$ and $F$. By \cref{scheme constructible sheaf cat under limit prop} and (\cite{Fulei} 5.9.2), it suffices to consider the case where $F$ is constructible, say $S'=\amalg_iU_i$ with $U_i$ locally closed irreducible and $F|_{U_i}$ is locally constant. For each $i$, let $\eta_i:\bar{t}_i\to S'$ be an algebraic geometric point lying above the generic point of $U_i$, and $M_i=F_{\bar{t}_i}$. Note that
+the canonical morphism $F|_{U_i}\to((\eta_i)_*M_i)|_{U_i}$ is injective, so the canonical morphism $F\to\prod_i(\eta_i)_*M_i$ is injective. We can then find an exact sequence
+\[\begin{tikzcd}
+0\ar[r]&F\ar[r]&G\ar[r]&H\ar[r]&0
+\end{tikzcd}\]
+where $G=\prod\eta_*M$ for some geometric points $\eta:\bar{t}\to S'$ and some finitely generated $A$-modules $M$ (we can take $M=A$ under condition (a)). From this, we deduce a commutative diagram (note that $S$ and $T$ are cohomological functors)
+\[\begin{tikzcd}
+S^{n-1}(G)\ar[r]\ar[d,"\phi^{n-1}_G"]&S^{n-1}(H)\ar[r]\ar[d,"\phi^{n-1}_H"]&S^n(F)\ar[r]\ar[d,"\phi^n_F"]&S^n(G)\ar[r]\ar[d,"\phi^n_G"]&S^q(H)\ar[d,"\phi^n_H"]\\
+T^{n-1}(G)\ar[r]&T^{n-1}(H)\ar[r]&T^n(F)\ar[r]&T^n(G)\ar[r]&T^n(H)
+\end{tikzcd}\]
+where the horizontal lines are exact and $\phi^{n-1}_G$, $\phi^{n-1}_G$ are bijective by our induction hypothesis. By what we have shown at the beginning, $\phi_G^n$ is bijective, so we conclude that $\phi^n_F$ is injective for any constructible sheaf $F$, and hence for any sheaf $F$. In particular, $\phi^n_H$ is injective, which in ture implies that $\phi_F^n$ is bijective for any constructible sheaf $F$, and hence for any sheaf $F$.
 \end{proof}
 
 \begin{theorem}\label{scheme morphism locally acyclity and base change theorem iff}
@@ -4175,7 +4208,31 @@ Suppose furthermore that every finitely generated $A$-module can be embedded int
 \end{enumerate}
 \end{theorem}
 \begin{proof}
-The second statement follows easily from the first one, so it suffices to prove the converse. The problem is local with respect to $S$, so we may assume that $S$ is affine. Cover $S'$ by finitely many affine open subset $U_\alpha$.
+The second statement follows easily from the first one, so it suffices to prove the converse. The problem is local with respect to $S$, so we may assume that $S$ is affine. Cover $S'$ by finitely many affine open subset $(U_i)_{1\leq i\leq n}$, we have spectral sequences\footnote{This follows by applying the corresponding functors to the bicomplex $\prod_I(\pi_I)_*(\pi_I)^I\mathscr{I}$, where $\mathscr{I}$ is an injective resolution of $L$.}
+\begin{align*}
+E_2^{p,q}&=\prod_{I=(\alpha_0,\dots,\alpha_p)}H^p(K\otimes_A^Lf^*R(g|_{U_I})_*(L|_{U_I}))\Longrightarrow H^{p+q}(K\otimes_A^Lf^*Rg_*L),\\
+E_2^{p,q}&=\prod_{I=(\alpha_0,\dots,\alpha_p)}R^p(g'|_{U_I})_*((g'^*K\otimes_A^Lf'^*L)|_{U_I})\Longrightarrow R^{p+q}g'_*(g'^*K\otimes_A^Lf'^*L)
+\end{align*}
+so it suffices to prove that
+\[K\otimes_A^Lf^*R(g|_{U_I})_*(L|_{U_I})\cong R(g'|_{U_I})_*((g'^*K\otimes_A^Lf'^*L)|_{U_I}).\]
+We are thus reduced first to the case where $S'\to S$ is separated, and then to the case where $S=\Spec(A)$ and $S'=\Spec(A')$ are affine. By a passing to limit argument similar to \cref{scheme morphism locally acyclic base change by limit}, we can further assume that $A'$ is a finitely generated $A$-algebra, and we then have an epimorphism
+\[A[T_1,\dots,T_n]\to B'\]
+which defines a closed immersion $i:S'\hookrightarrow\A_S^n$. Let $j:\A_S^n\hookrightarrow\P^n_S$ be the canonical open immersion and $\pi:\P^n_S\to S$ be the projection: we then have $g=\pi ji$. Consider now the following commutative diagram of Cartesian squares:
+\[\begin{tikzcd}
+X\times_SS'\ar[r,"i'"]\ar[d,"f'"]&\A^n_X\ar[r,"j'"]\ar[d,"f_1"]&\P^n_X\ar[r,"\pi'"]\ar[d,"f_2"]&X\ar[d,"f"]\\
+S'\ar[r,"i"]&\A^n_S\ar[r,"j"]&\P^n_S\ar[r,"\pi"]&S
+\end{tikzcd}\]
+Since $\pi$ and $i$ are proper and the morphism $f_2$ is strongly locally acyclic relative to $\pi'^*K$, by the proper base change theorem, we then see that the assertion of (\rmnum{2}) is valid.\par
+Conversely, assume (\rmnum{2}), and let $S'\to S$ be a base change morphism with $S'$ Noetherian, $s'\in S'$. Then the strict localization $\widetilde{S}'_{\bar{s}'}$ of $S'$ at $\bar{s}'$ is also Noetherian. For any algebraic geometric point $\eta:\bar{t}\to\widetilde{S}'_{\bar{s}'}$, applying (\rmnum{2}) to the base change square 
+\[\begin{tikzcd}
+X\times_S\bar{t}\ar[r,"\eta'"]\ar[d,swap,"f_{\bar{t}}"]&X\times_S\widetilde{S}'_{\bar{s}'}\ar[d,"\tilde{f}"]\\
+\bar{t}\ar[r,"\eta"]&\widetilde{S}'_{\bar{s}'}
+\end{tikzcd}\]
+we obtain a canonical isomorphism
+\[K|_{X\times_S\widetilde{S}'_{\bar{s}'}}\otimes_A^L\tilde{f}^*R\eta_*M\cong R\eta'_*(\eta'^*(K|_{X\times_S\widetilde{S}'_{\bar{s}'}})\otimes_A^Lf_{\bar{t}}^*M)\]
+for any $A$-module $M$. Taking the restriction to the closed fiber $X_{\bar{s}'}$ of $X\times_S\widetilde{S}'_{\bar{s}'}$, this implies that
+\[K_{X_{\bar{s}'}}\otimes_A^LM\cong(R\eta'_*(\eta'^*(K|_{X\times_S\widetilde{S}'_{\bar{s}'}})\otimes_A^LM))|_{X_{\bar{s}'}},\]
+so $X\times_SS'\to S'$ is strongly locally acyclic relative to $K|_{X\times_SS'}$.
 \end{proof}
 
 \paragraph{The cospecialization morphism}
@@ -4225,7 +4282,7 @@ is an isomorphsim, so the canonical morphism (\ref{scheme cospecialization isomo
 \end{proof}
 
 \subsection{The smooth base change theorem}
-In this subsection, we show that a smooth morphism is locally acyclic relative to $\Z/n\Z$, with $n$ invertible. This result will then implies a base change theorem for smooth morphisms, which is the main purpose of this section. 
+\paragraph{Local acyclity of smooth morphisms} In this paragraph, we show that a smooth morphism is locally acyclic relative to $\Z/n\Z$, with $n$ invertible. This result will then implies a base change theorem for smooth morphisms, which is the main purpose of this section. 
 
 \begin{theorem}\label{scheme morphism smooth universally local ayclic}
 A smooth morphism $f:X\to S$ is universally locally acyclic relative to $\Z/n\Z$ for any integer $n$ invertible over $S$.
@@ -4256,31 +4313,60 @@ Let $f:X\to S$ be a smooth morphism and let us prove that $f$ is universally loc
 \[X\stackrel{j}{\hookrightarrow}\A_S^k\to S,\]
 where $j$ is an \'etale morphsim (\cite{EGA4-4} 17.11.4). As the formation of direct images is local for \'etale morphisms, it then suffices to prove that $\A_S^k\to S$ is universally acyclic relative to $\Z/n\Z$. Now this projection can be factorized as a series of composition
 \[\A_S^k\to\A_S^{k-1}\to\cdots\to\A_S^1\to S\]
-so by induction on $k$ and using \cref{scheme morphism smooth universally local ayclic composition prop}, we are reduced to the case where $k=1$, so we can assume that $X$ is the affine space of dimension $1$ over $S$. Let $s\in S$ and $\bar{x}$ be a geometric point of $X$ lying over a closed point of $X_{\bar{s}}$. It then suffices to show that the geometric fibers of the morphism $\widetilde{X}_{\bar{x}}\to\widetilde{S}_{\bar{s}}$ are acyclic (\cref{scheme morphism locally acyclic relative to constant char}), so we can further assume that $S=\widetilde{S}_{\bar{s}}=\Spec(A)$ and $X=\widetilde{X}_{\bar{x}}$. We then have $X=\Spec(A\{T\})$, where $A\{T\}$ is the strict hensenlization of $A[T]$ at the closed point $T=0$ over $s$.\par
-If $\bar{t}$ is a geometric point of $S$, the fiber $X_{\bar{t}}$ is the projective limit of smooth affine curves over $\bar{t}$, so we have $H^q(X_{\bar{t}},\Z/n\Z)=0$ for $q>1$ (cf. \cref{scheme curve over separably closed field cohomology of ell-sheaf vanish >2}) and it suffices to show that $H^0(X_{\bar{t}},\Z/n\Z)=\Z/n\Z$ and $H^1(X_{\bar{t}},\Z/n\Z)=1$ for any $n$ invertible over $S$. This follows from the following propositions.
+so by induction on $k$ and using \cref{scheme morphism smooth universally local ayclic composition prop}, we are reduced to the case where $k=1$, so we can assume that $X$ is the affine space of dimension $1$ over $S$. Let $s\in S$ and $\bar{x}$ be a geometric point of $X$ lying over a closed point of $X_{\bar{s}}$. It then suffices to show that the geometric fibers of the morphism $\widetilde{X}_{\bar{x}}\to\widetilde{S}_{\bar{s}}$ are acyclic (\cref{scheme morphism locally acyclic relative to constant char}), so we can further assume that $S=\widetilde{S}_{\bar{s}}=\Spec(A)$ and $X=\widetilde{X}_{\bar{x}}$. We then have $X=\Spec(A\{t\})$, where $A\{t\}$ is the strict hensenlization of $A[t]$ at $(\m,t)$, where $\m$ is the maximal ideal of $A$.\par
+If $\bar{t}$ is a geometric point of $S$, the fiber $X_{\bar{t}}$ is the projective limit of smooth affine curves over $\bar{t}$, so we have $H^q(X_{\bar{t}},\Z/n\Z)=0$ for $q>1$ (cf. \cref{scheme curve over separably closed field cohomology of ell-sheaf vanish >2}) and it suffices to show that $H^0(X_{\bar{t}},\Z/n\Z)=\Z/n\Z$ and $H^1(X_{\bar{t}},\Z/n\Z)=1$ for any $n$ invertible over $S$. This is still quite difficult and relies on the following propositions.
 
 \begin{proposition}\label{scheme strict local affine space geometric fiber connected}
-Let $A$ be a strict local ring, $S=\Spec(A)$ and $X=\Spec(A\{T\})$. Then the geometric fibers of $X\to S$ are connected.
+Let $A$ be a strict local ring, $S=\Spec(A)$ and $X=\Spec(A\{t\})$. Then the geometric fibers of $X\to S$ are connected.
 \end{proposition}
 \begin{proof}
-By passing to limit, we can assume that $A$ is a strict henselization of a $\Z$-algebra of finite type. Let $\bar{t}$ be a geometric point of $S$, located at $t$, and $k'$ be a finite separable extension of $\kappa(t)$ in $\kappa(\bar{t})$. We put $t'=\Spec(k')$ and $X_{t'}=X\times_S\Spec(k')$, then we need to verify that, for any $\bar{t}$ and $t'$, $X_{t'}$ is connected (and nonempty). Let $A'$ be the normalization of $A$ in $k'$, we then have $A\{T\}\otimes_AA'\cong A'\{T\}$: the right member is in fact local Henselian (because $A'$ is finite over $A$ and local) and a limit of \'etale local algebras over $A'[T]=A[T]\otimes_AA'$. The scheme $X_{t'}$ is hence the fiber at $t'$ of the scheme $X=\Spec(A'\{T\})$ over $S'=\Spec(A')$. Now the local scheme $X'$ is normal, hence integral; its localization $X_{t'}$ is hence integral, a fortiori connected. 
+By passing to limit, we can assume that $A$ is a strict henselization of a $\Z$-algebra of finite type. Let $\bar{t}$ be a geometric point of $S$, located at $t$, and $k'$ be a finite separable extension of $\kappa(t)$ in $\kappa(\bar{t})$. Put $t'=\Spec(k')$ and $X_{t'}=X\times_S\Spec(k')$, we need to verify that, for any $\bar{t}$ and $t'$, $X_{t'}$ is connected (and nonempty). Let $A'$ be the normalization of $A$ in $k'$, we then have $A\{t\}\otimes_AA'\cong A'\{t\}$: the right member is in fact local Henselian (because $A'$ is finite over $A$ and local) and a limit of \'etale local algebras over $A'[t]=A[t]\otimes_AA'$. The scheme $X_{t'}$ is hence the fiber at $t'$ of the scheme $X=\Spec(A'\{t\})$ over $S'=\Spec(A')$. Now the local scheme $X'$ is normal, hence integral; its localization $X_{t'}$ is hence integral, a fortiori connected. 
 \end{proof}
-
-In view of \cref{scheme strict local affine space geometric fiber connected}, it then remains to prove the following result concerning principal Galois coverings of $X_{\bar{t}}$:
 
 \begin{proposition}\label{scheme strict local Galois covering trivial if oder prime}
-Let $A$ be a strict local ring, $S=\Spec(A)$ and $X=\Spec(A\{T\})$. Let $\bar{t}$ be a geometric point of $S$ and $X_{\bar{t}}$ be the corresponding geometric fiber. Then any Galois covering of $X_{\bar{t}}$ with order coprime to the characteristic of the residue field of $A$ is trivial.
+Let $A$ be an excellent strict local ring and $\widebar{Z}$ be a geometric fiber of $X=\Spec(A\{t\})$ over $S=\Spec(A)$. Then any Galois covering $\widebar{Z}'$ of $\widebar{Z}$ with order coprime to the characteristic of the residue field of $A$ is trivial.
 \end{proposition}
 
-In order to prove this proposition, we need the following two lemmas:
+By replacing $A$ with a finite algebra $A'$ (cf. \cite{EGA4-4} 18.8.10), we can reduce the assertion of \cref{scheme strict local Galois covering trivial if oder prime} to the case where $A$ is integral and $X_{\bar{t}}$ is the generic geometric fiber of $X$ over $S$. Let $K$ be the fraction field of $A$ and $Z=X\otimes_AK$ be the generic fiber of $X$ over $S$. If $\widebar{Z}'$ is a Galois covering of $\widebar{Z}$, we can descent it to a Galois covering over $Z_{K'}$, where $K'$ is a finite separable extension of $K$. By replacing $A$ with its normalization in $K'$ (and using \cite{EGA4-4} 18.8.10), which is a finite $A$-algebra by (\cite{EGA4-3} 7.8.3(\rmnum{6})), we are then reduced to prove the following lemma:
 
-\begin{lemma}[\textbf{The purity theorem of Zariski-Nagata at dimension $2$}]
-Let $C$ be a regular local ring of dimension $2$ and $C'$ be a finite normal $C$-algebra which is \'etale over the open complement of the closed point of $\Spec(C)$. Then $C'$ is \'etale over $C$.
+\begin{lemma}
+With the notations of \cref{scheme strict local Galois covering trivial if oder prime}, suppose that $A$ is normal and let $Z'/Z$ be a Galois \'etale covering, with group $G$ having order prime to the residue characteristic $p$ of $A$. Then $Z'$ is induced by a Galois extension $K'$ of $K$, i.e. the covering $\widebar{Z}'$ of $\widebar{Z}$ induced from $Z'$ is trivial (cf. \cite{SGA1} \Rmnum{9} 6.2). 
 \end{lemma}
-\begin{proof}
-In fact, $C'$ is normal of dimension $2$, hence $\depth(C)=2$. Since $2=\dim(C)=\depth(C')+\gldim(C')$, we conclude that $C'$ is projective (hence free) over $C$. Then the set of points of $C$ where $C'$ is ramified is defined by a single equation (namely the discriminant); since it does not contain the points of height $1$, it is empty.
-\end{proof}
 
+Let $B'$ be the normalization of $A\{t\}$ in the rational function ring of $Z'$, and consider the prime ideals $\mathfrak{P}$ of height $1$ of $A\{t\}$ over which the algebra $B'$ is ramified. Since $Z'/Z$ is \'etale, $\mathfrak{P}$ is not lying over the generic point of $S$, i.e. $\p=\mathfrak{P}\cap A\neq 0$. Hence $A\{t\}/\p A\{t\}=(A/\p)\{t\}$ is integral and of dimension at most equal to $\dim(A)$. Since $A\{t\}$ is excellent (\cite{EGA4-3} 7.8.6(\rmnum{1})) and hence catenary (\cite{EGA4-4} 18.7.6), we have
+\[\dim(A\{t\}/\mathfrak{P})=\dim(A+1)-1=\dim(A)\geq\dim(A\{t\}/\p A\{t\})\]
+so $\mathfrak{P}=\p A\{t\}$ since we have $\mathfrak{P}\supset\p A\{t\}$.\par
+Let $\p_1,\dots,\p_m$ be the prime ideals of height $1$ of $A$ such that $B'/A\{t\}$ is ramified at the ideals $\p_iA\{t\}$, $e$ be the gcd of the orders of the inertia groups $G_i\sub G$ for $B'$ at prime ideals over the $\p_iA\{t\}$, which is an integer dividing the order of $G$, hence prime to $p$. Let $f\in A$ be a function which has vanishing order $1$ at each $\p_i$ (so that the image of $f$ in $A_{\p_i}$ is a uniformizer; such an $f$ exists, for example by \cref{Bourbaki_CA1-7} \Rmnum{2} \S 3, cor. a prop.17). By replacing $A$ with its normalization $A_1$ in the finite extension $K_1=K[f^{1/e}]$ of $K$ and $B'$ with the normalization of $A_1\otimes_AB'$ (\cite{EGA4-4} 18.8.10), we then reduce by Abhyankar's lemma (\cite{SGA1} \Rmnum{10} 3.6) to the case where $B'$ is unramified at prime ideals of height $1$ of $A\{t\}$.\par
+Then the algebra $B'/A\{t\}$ is also \'etale over the fibers of $X$ at any point of $S$ of codimension $1$. In fact, let $\p$ be such a prime ideal, i.e. of height $1$ in $A$. Since $A$ is normal, $A_\p$ is a discrete valuation ring, hence regular, and $A\{t\}\otimes_AA_\p$ is therefore regular (in fact, this is a limit of \'etale schemes over $A_\p[t]$). By hypothesis, the algebra $B'/A\{t\}$ is \'etale at any point of codimension $\leq 1$ of $X\otimes_AA_\p$, so it is \'etale everywhere over $X\otimes_AA_\p$ by Zariski-Nagata purity theorem (\cite{SGA1} \Rmnum{10} 3.1).\par
+By replacing $A$ with a finite $A$-algebra, we can further reduce to the case where the algebra $B'/tB'$ over $A\{t\}/tA\{t\}\cong A$ is splitting over the generic point of $S$, so it suffices to prove that under these conditions, the algebra $B'/A\{t\}$ is trivial, and since $A\{t\}$ is henselian, it suffices to show that $B'$ is \'etale over $A\{t\}$; in fact, if the algebra $B'/tB'$ splits over the generic point of $S$, then it splits over $S$ (\cite{SGA1} \Rmnum{1} 10.1), so the residue extensions of $B'$ over the maximal ideal of $A\{t\}$ is trivial, and we can apply (\cite{EGA4-4} 18.5.14). We are then reduced to the following lemma:
+
+\begin{lemma}
+Let $B$ be an excellent local normal ring, $0\neq t\in\r(B)$ be such that $B/tB$ is normal. Let $B'$ be an integral normal finite $B$-algebra containing $B$ such that
+\begin{enumerate}
+    \item[(a)] The algebra $B'/tB'$ over $B/tB$ splits at the maximal points of $\Spec(B/tB)$.
+    \item[(b)] The algebra $B'$ over $B$ is \'etale at codimension $1$ points of $\Spec(B/tB)$.
+\end{enumerate}
+Then $B'$ is \'etale over $B$.
+\end{lemma}
+
+In view of (b), the assertion is trivial for $\dim(B)\leq 2$, that is, for $\dim(B/tB)\leq 1$. Suppose that $B'/B$ is not \'etale, let $x$ be a maximal point of the set of points of $\Spec(B/tB)$ over which $B'/B$ is not \'etale, and $C$ be the local ring of $\Spec(B)$ at $x$. Then $C$ is also excellent and normal (\cite{EGA4-3} 7.8.2), we have $0\neq t\in\r(C)$, and conditions (a), (b) are valid for the $C$-algebra $C'=C\otimes_BB'$. We can hence suppose that $B=C$, i.e. that $B'$ is \'etale over $B$ at every point of $\Spec(B/tB)$, except for the unique closed point. Since $B/tB$ is normal, condition (a) implies that the algebra $B'/tB'$ splits outside the closed point. Moreover, we can assume that $\dim(B)\geq 3$. We are then reduced to the following general lemma:
+
+\begin{lemma}\label{scheme etale over punctured open prop}
+Let $B$ be a local excellent normal ring, $0\neq t\in\r(B)$ with $\dim(B)\geq 3$. Let $B'$ be a finite integral normal $B$-algebra containing $B$ such that the algebra $B'/tB'$ over $B/tB$ splits outside the unique closed point. Then $B'$ is \'etale over $B$.
+\end{lemma}
+
+Let $X=\Spec(B)$, $X_1=X-\{x_0\}$, where $x_0$ is the closed point, and let $i:U\to X$ be the open subset of $x\in X$ over which the algebra $B'/B$ is \'etale. Then $(X-U)\cap V(t)=\{x_0\}$  is of dimension $0$. Since $V(t)$ is defined by a single equation, it follows that $\dim(X-U)\leq 1$ (\cite{EGA4-1} $0_{\text{\Rmnum{4}}}$ 16.2.5), hence ($X$ being catenary) for $x\in X-U$, we have $\dim(\mathscr{O}_{X,x})\geq \dim(B)-1\geq 2$, i.e. $\codim(X-U,X)\geq 2$.\par
+Let $X'=\Spec(B')$ and $U'$ be the inverse image of $U$ in $X'$. Then $X$ being universally catenary, the relation $\codim(X-U,X)\geq 2$ implies that $\codim(X'-U',X')\geq 2$ (\cite{EGA4-2} 5.6.10), hence, as $X'$ is normal, we have
+\[B'=\Gamma(X',\mathscr{O}_{X'})\stackrel{\sim}{\to}\Gamma(U',\mathscr{O}_{U'}).\]
+Let $\mathscr{B}=\widetilde{B}'$ be the sheaf of $\mathscr{O}_X$-algebras which defines $X'$ over $X$, $\mathscr{C}$ be its restriction to $U$. The preceding formula is then equivalent to $\mathscr{B}\stackrel{\sim}{\to} i_*(\mathscr{C})$, and \cref{scheme etale over punctured open prop} therefore reduces to the following statement: Let $B$ and $t$ be as in \cref{scheme etale over punctured open prop}, $X=\Spec(B)$, $Y=\Spec(B/tB)$, $U$ be an open neighborhood of $Y_1=Y-\{x_0\}$ in $X_1=X-\{x_0\}$, $U'$ be an \'etale covering of $U$ whose restriction to $Y_1$ splits, $\mathcal{C}$ be the sheaf of $\mathscr{O}_{U'}$-algebras defining $U'$, then $i_*(\mathscr{C})$ is a coherent algebra \'etale over $X$ (with $i:U\to X$ being the canonical inclusion).\par
+Let $\widehat{X}=\Spec(\widehat{B})$, where $\widehat{B}$ is the completion of $B$. Then $\widehat{B}$ is normal (\cite{EGA4-3} 7.8.3(\rmnum{5})) and $\widebar{B}$ is faithfully flat over $B$. Let
+\[\begin{tikzcd}
+\widehat{U}\ar[d,swap,"\hat{f}"]\ar[r,"\hat{i}"]&\widehat{X}\ar[d,"f"]\\
+U\ar[r,"i"]&X
+\end{tikzcd}\]
+be the Cartesian diagram induced by $\widehat{X}\to X$. Since $f$ is faithfully flat, the functor $i_*$ commues with base change by $f$ (\cref{scheme morphism qcsp base change formula}), and we are reduced to prove that $\hat{i}_*(\widehat{\mathscr{C}})$ is an \'etale algebra over $\widehat{X}$ (\cite{EGA4-4} 17.7.1). We can hence replace $B$ with $\widehat{B}$, that is, we can suppose that $B$ is complete. In this case, we can in fact prove that $U'$ is a splitting \'etale covering over $U$ (which will obviously imply that it extends into an \'etale covering of $X$, and will complete the demonstration): This is an immediate consequence of the "local Lefschetz theory" (\cite{SGA2} \Rmnum{10} 2.1(\rmnum{1}) et 2.5), since we have $\depth(\mathscr{O}_{X,x})\geq 2$ for $\dim(\widebar{\{x\}})=1$ ($X$ is catenary, and we have condition (S2), cf. \cref{Noe ring normal iff R1S2}).
+
+\paragraph{Applications}
 We now give some applications of \cref{scheme morphism smooth universally local ayclic}. The first one is the main theorem of this section, namely the base change theorem of a smooth morphism.
 
 \begin{theorem}[\textbf{Smooth Base Change Theorem}]
@@ -4362,7 +4448,7 @@ where $\bar{f}$ is proper and $j$ is quasi-finite and separated. An $S$-scheme $
 \end{proposition}
 \begin{proof}
 It is easy to see that (\rmnum{1}), (\rmnum{2}) and (\rmnum{4}). To prove (\rmnum{3}), let $f:X\to Y$ and $g:Y\to Z$ be $S$-compactifiable morphisms. We can find proper $S$-schemes $P$, $Q$ and quasi-finite separated morphisms $X\to Y\times_SP$, $Y\to Z\times_SQ$ such that their composites with the first projections are $f$ and $g$, respectively. Now consider the commutative diagram
-\[\begin{tikzcd}[column sep=6mm,row sep=6mm]
+\[\begin{tikzcd}[column sep=5mm,row sep=6mm]
 X\ar[r]\ar[rd,swap,"f"]&P\times_SY\ar[r]\ar[d]&P\times_SQ\times_SZ\ar[d]\\
 &Y\ar[r]\ar[rd,swap,"g"]&Q\times_SZ\ar[d]\\
 &&Z

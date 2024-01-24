@@ -8412,8 +8412,8 @@ Let $\rho:A\to B$ be a ring homomorphism with the going-down property. Then for 
 \begin{proof}
 Let $\mathfrak{P}$ be a prime ideal of $B$ containing $\a^e$, and $\p=\mathfrak{P}^c$. By \cref{ring homomorphism condition PM prop}, the homomorphism $\rho_\p:A_\p\to B_{\mathfrak{P}}$ satisfies condition (PM), whence $\dim(A_\p)\leq\dim(B_{\mathfrak{P}})$ by \cref{ring homomorphism going-down dim inequality}. But $\height(\a)\leq\dim(A_\p)$ since $\p$ contains $\a$, so $\height(\a)\leq\dim(B_{\mathfrak{P}})$ for any prime ideal $\mathfrak{P}$ containing $\a^e$, whence $\height(\a)\leq\height(\a^e)$.
 \end{proof}
-\begin{remark}
-Let $\rho:A\to B$ be a local homomorphism of Noetherian local rings satisfying the going down property. Then (\cref{Noe local ring homomorphism dim and secant prop}) the equality holds in (\ref{ring homomorphism going-down dim inequality-1}). On the other hand, the inequality in (\ref{ring homomorphism going-down dim inequality-1}) can be strict (c.f. \cref{ring homomorphism going down prop strict inequality}).
+\begin{remark}\label{ring homomorphism Noe going-down dimension equality}
+Let $\rho:A\to B$ be a local homomorphism of Noetherian local rings satisfying the going down property. Then the equality holds in (\ref{ring homomorphism going-down dim inequality-1}) (cf. \cref{Noe local ring homomorphism dim and secant prop}). On the other hand, the inequality in (\ref{ring homomorphism going-down dim inequality-1}) can be strict (c.f. \cref{ring homomorphism going down prop strict inequality}).
 \end{remark}
 \subsection{Dimension of finite type algebras}
 \begin{proposition}\label{dimension ring extension plus fiber inequality}
@@ -11756,10 +11756,10 @@ A ring $A$ is called \textbf{normal} if it is Noetherian and it satisfies the eq
 We now prresent Serre's criterion for the normality of a Noetherian ring. To beging with, we give the following characterization for a Noetherian ring to be reduced. Recall that for any prime ideal $\p$ of $A$, we have $\depth(A_\p)\leq\height(\p)$ by \cref{depth of module local Noe depth leq dim}.
 \begin{proposition}\label{Noe ring reduced iff R0S1}
 Let $A$ be a Noetherian ring. Then $A$ is reduced if and only if it satisfies the following conditions:
-\begin{itemize}
+\begin{enumerate}[leftmargin=40pt]
 \item[(R0)] for any minimal prime ideal, $A_\p$ is a regular local ring;
 \item[(S1)] for any prime ideal $\p$ of $A$ with $\height(\p)\geq 1$, we have $\depth(A_\p)\geq 1$.
-\end{itemize}
+\end{enumerate}
 \end{proposition}
 \begin{proof}
 Denote by $\n$ the nilradical of $A$. If $A$ is reduced, then each local ring $A_\p$ is reduced, so if $\height(\p)=0$, then $A_\p$ is a field, and if $\height(\p)\geq 1$, then $\depth(A_\p)\geq 1$ (\cref{depth of module zero iff annihilated by element}). Conversely, assume that $A$ satisfies the above conditions. Then for any minimal prime ideal $\p$ of $A$, we have $\n_\p=0$ by condition (R0), which means $\p\notin\supp(\n)$, and a fortiori $\p\notin\Ass(\n)$. For any $\p\in\Spec(A)$ with $\height(\p)\geq 1$, by condition (S1) and \cref{depth of module zero iff annihilated by element} we have $\p A_\p\notin\Ass_{A_\p}(A_\p)$ and a fortiori $\p A_\p\notin\Ass_{A_\p}(\n_\p)$ (\cref{associated prime and exact sequence}), so $\p\notin\Ass_A(\n)$ (\cref{associated prime of localization}). We then conclude that $\Ass(\n)=\emp$, so $\n=0$ and $A$ is reduced.
@@ -11778,10 +11778,10 @@ This follows from the fact that an integrally closed Noetherian local ring $A$ i
 \end{proof}
 \begin{theorem}[\textbf{Serre's Normality Criterion}]\label{Noe ring normal iff R1S2}
 Let $A$ be a Noetherian ring. Then $A$ is normal if and only if it satisfies the following properties:
-\begin{itemize}
+\begin{enumerate}[leftmargin=40pt]
 \item[(R1)] for any prime ideal $\p$ of $A$ with $\height(\p)\leq 1$, $A_\p$ is a regular local ring.
 \item[(S2)] for any prime ideal $\p$ of $A$ with $\height(\p)\geq 2$, we have $\depth(A_\p)\geq 2$.
-\end{itemize}
+\end{enumerate}
 \end{theorem}
 \begin{proof}
 By definition, if $A$ is normal, then $A_\p$ is integrally closed for any prime ideal $\p$ of $A$, so condition (S2) follows from \cref{Noe integral closed depth geq 2 if dim geq 2}. Also, it is clear that an integrally closed Noetherian local ring of dimension $\leq 1$ must be regular. Conversely, assume that $A$ satisfies condition (R1) and (S2). We show that $A_\p$ is integrally closed by recurrence on $\height(\p)$. For $\height(\p)\leq 1$, this follows directly from condition (R1). Suppose then that $\height(\p)\geq 2$ and that $A_\q$ is integrally closed for any prime ideal $\q$ with $\height(\q)<\height(\p)$. By condition (S2), we have $\depth(A_\p)\geq 2$. By the recurrence hypotheses and \cref{depth of ring geq 2 locally integral normal char} applied to the ring $A_\p$ and the closed subset $\{\p A_\p\}$ of $\Spec(A_\p)$, we then conclude that $A_\p$ is integral. Let $K$ be the fraction field of $A_\p$ and $B$ be a subring of $K$ which is finite over $A_\p$. It then suffices to prove that $B=A_\p$, so let $i:A_\p\to B$ be the canonical injection. As $B$ is contained in $K$, it is a torsion-free $A_\p$-module, so $\depth_{A_\p}(B)\geq 1$. On the other hand, for any prime ideal $\q$ of $A_\p$ distinct from $\p A_p$, the homomorphism $i_\q:(A_\p)_\q\to B_\q$ is bijective since $A_\q$ is integrally closed by hypotheses. By \cref{depth of module injective and bijective lemma} applied to the closed subset $F=\{\p A_\p\}$ of $\Spec(A_\p)$, the homomorphism $i$ is then bijective, which proves our assertion.
@@ -12458,7 +12458,7 @@ Let $A$ be a Noetherian regular local ring and $M$ be a finitely generated nonze
 \[\projdim_A(M)+\depth_A(M)=\dim(A).\]
 \end{proposition}
 \begin{proof}
-In fact, $M$ has finite projective dimension by \cref{Noe regular local ring hd is dim}, and we have $\depth(A)=\dim(A)$ since $A$ is Cohen-Macaulay (\cref{CM ring example}). We can therefore apply the formula \cref{Noe local ring Auslander-Buchsbaum formula}.
+In fact, $M$ has finite projective dimension by \cref{Noe regular local ring hd is dim}, and we have $\depth(A)=\dim(A)$ since $A$ is Cohen-Macaulay (\cref{CM ring example}). We can therefore apply \cref{Noe local ring Auslander-Buchsbaum formula}.
 \end{proof}
 \begin{corollary}\label{Noe regular local pd>dim-dim equality iff CM}
 We have $\projdim_A(M)\geq\dim(A)-\dim(M)$, and the equality holds if and only if $M$ is Cohen-Macaulay.
